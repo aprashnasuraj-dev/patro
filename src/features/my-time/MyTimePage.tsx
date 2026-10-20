@@ -18,6 +18,16 @@ import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
+function isMyTimeSnapshot(value: unknown): value is Snapshot {
+  if (!value || typeof value !== "object") return false;
+  const data = value as Partial<Snapshot>;
+  return data.schema_version === 1 && typeof data.date === "string" && typeof data.timezone === "string"
+    && !!data.location && Number.isFinite(data.location.lat) && Number.isFinite(data.location.lng)
+    && !!data.panchang && Number.isInteger(data.panchang.tithi_index) && Number.isInteger(data.panchang.nakshatra_index)
+    && Number.isInteger(data.panchang.yoga_index) && Number.isInteger(data.panchang.karana_index)
+    && !!data.sky && typeof data.sky.solar_altitude_deg_at_evaluation === "number"
+    && !!data.twilight && !!data.methodology;
+}
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null } | null; rashifalSign: string | null; effectiveSign: string | null };
@@ -271,8 +281,8 @@ export default function MyTimePage() {
       const response = await fetch(`/api/v1/mytime/today?${query}`, { signal: controller.signal, headers: { accept: "application/json" }, credentials: "same-origin" });
       const body = await response.json().catch(() => ({}));
       if (requestId !== loadSequence.current) return;
-      if (!response.ok || !body?.ok || !body?.data) throw new Error(body?.error || `HTTP ${response.status}`);
-      setSnapshot(body.data as Snapshot);
+      if (!response.ok || !body?.ok || !isMyTimeSnapshot(body?.data)) throw new Error("snapshot_unavailable");
+      setSnapshot(body.data);
       setOfflineSnapshot(false);
       void writeMyTimeSnapshot(cacheKey,body.data as Snapshot).catch(()=>{});
       if (persistPreferences) try { localStorage.setItem(PREF_KEY, JSON.stringify(nextPreferences)); } catch {}
@@ -284,16 +294,14 @@ export default function MyTimePage() {
         setSnapshot(local);
         setOfflineSnapshot(true);
         void writeMyTimeSnapshot(cacheKey,local).catch(()=>{});
-        setError(l(language,"सर्भर उपलब्ध नभएकाले साझा खगोलीय इन्जिनबाट स्थानीय गणना प्रयोग भइरहेको छ।","Server calculation is unavailable; the shared local astronomy engine is being used."));
+        setError(l(language,"अनलाइन सेवा उपलब्ध नभएकाले यस उपकरणमै गणना गरिएको छ।","The online service is unavailable, so calculations are running on this device."));
       } catch {
         if (cached) {
           setSnapshot(cached); setOfflineSnapshot(true);
           setError(l(language,"सञ्जाल उपलब्ध छैन; पछिल्लो सुरक्षित गणना प्रयोग भइरहेको छ।","Offline: showing the last cached calculation."));
         } else {
           setSnapshot(null); setOfflineSnapshot(false);
-          setError(message === "feature_disabled"
-            ? l(language, "स्थानीय गणना पनि उपलब्ध भएन। सेवा सक्रिय भएपछि Worker गणना प्रयोग हुनेछ।", "Local calculation failed too. Worker calculations will be used when the service is enabled.")
-            : l(language, "गणना लोड हुन सकेन। नेटवर्क र सेटिङ जाँच गरी फेरि प्रयास गर्नुहोस्।", "Could not calculate locally or load a cached result. Check the network and settings."));
+          setError(l(language, "यो मिति र स्थानका लागि गणना उपलब्ध भएन। स्थान, समय क्षेत्र वा सञ्जाल जाँच गरी फेरि प्रयास गर्नुहोस्।", "Calculations are unavailable for this date and location. Check the location, timezone or connection and try again."));
         }
       }
     } finally {
