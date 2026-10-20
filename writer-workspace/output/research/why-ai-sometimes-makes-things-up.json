@@ -1,0 +1,54 @@
+{
+  "slug": "why-ai-sometimes-makes-things-up",
+  "research_question": "What authoritative evidence explains why ai sometimes makes things up?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Large Language Models",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/large-language-models/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "GPT-4 Technical Report",
+      "publisher": "OpenAI",
+      "url": "https://arxiv.org/abs/2303.08774",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "AI Risk Management Framework",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    }
+  ]
+}
