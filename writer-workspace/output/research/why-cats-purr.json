@@ -11,7 +11,8 @@
       "reliability": "Established animal welfare organisation",
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
-      ]
+      ],
+      "apa": "Cats Protection. (n.d.). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr"
     },
     {
       "n": 2,
@@ -21,7 +22,8 @@
       "reliability": "Peer-reviewed research indexed by PubMed",
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
-      ]
+      ],
+      "apa": "Current Biology via PubMed. (n.d.). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/"
     },
     {
       "n": 3,
@@ -31,7 +33,8 @@
       "reliability": "Peer-reviewed research indexed by PubMed",
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
-      ]
+      ],
+      "apa": "Current Biology via PubMed. (n.d.). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/"
     },
     {
       "n": 4,
@@ -41,7 +44,8 @@
       "reliability": "Peer-reviewed research indexed by PubMed",
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
-      ]
+      ],
+      "apa": "Journal of Veterinary Science via PubMed. (n.d.). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/"
     },
     {
       "n": 5,
@@ -51,11 +55,20 @@
       "reliability": "Established animal welfare organisation",
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
-      ]
+      ],
+      "apa": "Cats Protection. (n.d.). Cat Body Language. https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language"
     }
   ],
   "notes": [
     "Article draft committed; hero image remains pending because image upload is unavailable through the current text-file workflow.",
-    "Validate word count and schema again before batch completion."
+    "Validate word count and schema again before batch completion.",
+    "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata."
+  ],
+  "apa_references": [
+    "Cats Protection. (n.d.). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr",
+    "Current Biology via PubMed. (n.d.). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/",
+    "Current Biology via PubMed. (n.d.). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/",
+    "Journal of Veterinary Science via PubMed. (n.d.). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/",
+    "Cats Protection. (n.d.). Cat Body Language. https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language"
   ]
 }
