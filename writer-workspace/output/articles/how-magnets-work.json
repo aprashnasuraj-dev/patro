@@ -81,7 +81,7 @@
       "h2": "The main idea",
       "paras": [
         "Magnetism is a fundamental part of electromagnetism. Atoms contain magnetic moments associated with electrons; in some materials those moments align collectively, producing permanent magnets. Magnetic fields describe how forces act on other magnets, suitable materials, currents and moving charges. [1][2]",
-        "From a compass to an electric motor and Earth’s magnetosphere, the same broad physics appears at different scales. The visible attraction of a magnet is one effect of a field that can be measured, modelled and engineered. Material, geometry, motion and energy conservation constrain what any magnetic system can do. [5]"
+        "From a compass to an electric motor and Earth’s magnetosphere, the same broad physics appears at different scales. The visible attraction of a magnet is one effect of a field that can be measured, modelled and engineered. Material, geometry, motion and energy conservation constrain what any magnetic system can do. [2][3][4][5]"
       ]
     }
   ],
@@ -144,7 +144,7 @@
       "n": 5,
       "title": "Magnetism",
       "publisher": "HyperPhysics, Georgia State University",
-      "url": "http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html",
+      "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html",
       "published_at": null,
       "retrieved_at": "2026-10-20"
     }
@@ -154,7 +154,7 @@
     "OpenStax. (n.d.). *University Physics Volume 2: Magnetism*. https://openstax.org/books/university-physics-volume-2/pages/11-introduction",
     "NASA Science. (n.d.). *Earth's Magnetosphere*. https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/",
     "OpenStax. (n.d.). *College Physics: Electromagnetism*. https://openstax.org/books/college-physics/pages/22-introduction",
-    "HyperPhysics, Georgia State University. (n.d.). *Magnetism*. http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html"
+    "HyperPhysics, Georgia State University. (n.d.). *Magnetism*. https://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html"
   ],
   "word_count": 1148,
   "reading_minutes": 5,
