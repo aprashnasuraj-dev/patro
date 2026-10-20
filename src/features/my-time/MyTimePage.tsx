@@ -763,7 +763,7 @@ export default function MyTimePage() {
         <button className="mt-primary" type="submit">{l(language,"व्यक्तिगत समय मिलाउनुहोस्","Personalize my time")}</button>
       </form>
       {birthError && <p role="alert">{birthError}</p>}
-      {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>
+      {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>}
       <PersonalAstrologyObservatory language={language} timezone={preferences.timezone} selectedDate={snapshot?.date || date} now={now}
         birth={personalContext.birthChart} nakshatra={personalContext.birthChart?.nakshatra || ""} pada={personalContext.birthChart?.pada ?? null}
         tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
