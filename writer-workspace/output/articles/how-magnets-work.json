@@ -2,8 +2,8 @@
   "id": "mm-0055",
   "slug": "how-magnets-work",
   "canonical_url": "https://aafnaipatro.com/how-magnets-work/",
-  "title": "How Magnets Work: Magnetic Fields Explained",
-  "meta_description": "A clear, evidence-based explanation of how magnets work, how it works, common misconceptions, and what the science can and cannot tell us.",
+  "title": "How Magnets Work: Magnetic Fields",
+  "meta_description": "Understand how magnetic fields, electron properties, magnetic domains and electric currents explain permanent magnets, electromagnets and everyday devices.",
   "h1": "How Magnets Work?",
   "category": "Everyday Science",
   "author": "Suraj Dahal",
@@ -22,7 +22,7 @@
   ],
   "sections": [
     {
-      "h2": "What a magnet does",
+      "h2": "The short answer",
       "paras": [
         "A magnet creates a magnetic field, a physical field that can exert forces on magnetic materials and moving electric charges. Familiar effects include attraction between opposite poles and repulsion between like poles. The field is invisible, but its effects can be measured and visualized with a compass or iron filings. [1][2]",
         "A magnet does not pull every metal object. Iron, nickel and cobalt respond strongly in common conditions, while copper, aluminium and many other materials behave differently. A fridge magnet sticks to suitable steel because of the material’s magnetic properties, not simply because the object is metallic. Composition and microscopic structure determine the response. [1][2]"
@@ -81,7 +81,7 @@
       "h2": "The main idea",
       "paras": [
         "Magnetism is a fundamental part of electromagnetism. Atoms contain magnetic moments associated with electrons; in some materials those moments align collectively, producing permanent magnets. Magnetic fields describe how forces act on other magnets, suitable materials, currents and moving charges. [1][2]",
-        "From a compass to an electric motor and Earth’s magnetosphere, the same broad physics appears at different scales. The visible attraction of a magnet is one effect of a field that can be measured, modelled and engineered. Material, geometry, motion and energy conservation constrain what any magnetic system can do. [2][3][4]"
+        "From a compass to an electric motor and Earth’s magnetosphere, the same broad physics appears at different scales. The visible attraction of a magnet is one effect of a field that can be measured, modelled and engineered. Material, geometry, motion and energy conservation constrain what any magnetic system can do. [5]"
       ]
     }
   ],
@@ -97,6 +97,14 @@
     {
       "q": "Do magnets create energy?",
       "a": "No. Magnets can exert forces and transfer energy, but they do not provide unlimited energy or make perpetual motion possible. A working device needs an energy source. [2][4]"
+    },
+    {
+      "q": "Are magnetic field lines real?",
+      "a": "They are a model used to represent a field’s direction and relative strength, not physical threads in space. Their pattern helps visualize forces and predict how a compass or another magnet will respond. [2][5]"
+    },
+    {
+      "q": "Why does a compass point north?",
+      "a": "A compass needle is a small magnet that aligns with the local magnetic field. It points approximately toward magnetic north, which differs from geographic north; the offset depends on location and changes over time. [2][3][5]"
     }
   ],
   "sources": [
@@ -131,15 +139,24 @@
       "url": "https://openstax.org/books/college-physics/pages/22-introduction",
       "published_at": null,
       "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "title": "Magnetism",
+      "publisher": "HyperPhysics, Georgia State University",
+      "url": "http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
     }
   ],
   "references": [
     "Encyclopaedia Britannica. (n.d.). *Magnetism*. https://www.britannica.com/science/magnetism",
     "OpenStax. (n.d.). *University Physics Volume 2: Magnetism*. https://openstax.org/books/university-physics-volume-2/pages/11-introduction",
     "NASA Science. (n.d.). *Earth's Magnetosphere*. https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/",
-    "OpenStax. (n.d.). *College Physics: Electromagnetism*. https://openstax.org/books/college-physics/pages/22-introduction"
+    "OpenStax. (n.d.). *College Physics: Electromagnetism*. https://openstax.org/books/college-physics/pages/22-introduction",
+    "HyperPhysics, Georgia State University. (n.d.). *Magnetism*. http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html"
   ],
-  "word_count": 1069,
+  "word_count": 1148,
   "reading_minutes": 5,
   "image": null
 }
