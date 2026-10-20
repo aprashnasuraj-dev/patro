@@ -1,0 +1,39 @@
+{
+  "slug": "how-black-holes-form",
+  "research_question": "How do black holes form, and what remains uncertain?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.nasa.gov/universe/what-are-black-holes/",
+      "title": "What Are Black Holes?",
+      "publisher": "NASA",
+      "reliability": "U.S. space agency",
+      "notes": [
+        "A sufficiently massive stellar core can collapse into a black hole; matter around the event horizon may emit detectable radiation."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://science.nasa.gov/universe/black-holes/types/",
+      "title": "Types of Black Holes",
+      "publisher": "NASA Science",
+      "reliability": "U.S. space agency science resource",
+      "notes": [
+        "Stellar-mass, intermediate-mass and supermassive categories are used; mass ranges and the evidence for intermediate objects are still refined."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://science.nasa.gov/astrophysics/programs/physics-of-the-cosmos/massive-black-holes-and-the-evolution-of-galaxies/",
+      "title": "Massive Black Holes and the Evolution of Galaxies",
+      "publisher": "NASA Science",
+      "reliability": "U.S. space agency research overview",
+      "notes": [
+        "Supermassive black-hole seed formation is uncertain; possible routes include growth from stellar remnants or direct collapse of massive gas clouds."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
