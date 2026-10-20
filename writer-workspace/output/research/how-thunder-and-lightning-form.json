@@ -1,0 +1,69 @@
+{
+  "slug": "how-thunder-and-lightning-form",
+  "research_question": "How do thunderstorms separate charge, create lightning, and produce thunder, and what safety conclusions are supported by authoritative meteorological agencies?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.noaa.gov/jetstream/lightning/how-lightning-is-created",
+      "title": "How Lightning Is Created",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "reliability": "High: U.S. federal meteorological agency educational resource",
+      "notes": [
+        "Charge separation is associated with collisions involving ice particles and graupel in turbulent storms.",
+        "The electric field strengthens as charge separates, and lightning occurs when air's insulating capacity is overcome.",
+        "Cloud-to-ground lightning may involve a stepped leader, upward streamers, and repeated strokes along a channel."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://www.nesdis.noaa.gov/about/k-12-education/severe-weather/what-causes-lightning-and-thunder",
+      "title": "What Causes Lightning and Thunder?",
+      "publisher": "NOAA National Environmental Satellite, Data, and Information Service",
+      "reliability": "High: U.S. federal weather and satellite agency",
+      "notes": [
+        "Lightning begins with separated static charges in a turbulent cloud.",
+        "Rapid heating and expansion of air around the channel generate the pressure wave heard as thunder.",
+        "The time gap between flash and thunder can provide a rough distance estimate, and audible thunder is a warning to seek shelter."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://www.weather.gov/safety/lightning-science-overview",
+      "title": "Understanding Lightning Science",
+      "publisher": "National Weather Service",
+      "reliability": "High: official U.S. weather service",
+      "notes": [
+        "Thunderstorms grow through convection and contain mixtures of ice crystals, hail and rain.",
+        "Collisions and air movement contribute to charge separation; lightning occurs when air's insulating capacity breaks down.",
+        "Thunder is sound from rapid air expansion, and thunder may be heard many miles from a strike."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 4,
+      "url": "https://www.weather.gov/safety/lightning",
+      "title": "Lightning Safety Tips and Resources",
+      "publisher": "National Weather Service",
+      "reliability": "High: official U.S. weather service safety resource",
+      "notes": [
+        "The agency emphasizes that lightning remains dangerous and offers guidance for reducing exposure.",
+        "Its lightning safety resources direct people toward indoor shelter and situational safety guidance."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "url": "https://www.cdc.gov/lightning/about/index.html",
+      "title": "Lightning and Your Safety",
+      "publisher": "Centers for Disease Control and Prevention",
+      "reliability": "High: U.S. federal public-health agency",
+      "notes": [
+        "Lightning can occur in any region and presents a preventable injury hazard.",
+        "The page directs readers to practical indoor, outdoor and worker-safety recommendations."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
