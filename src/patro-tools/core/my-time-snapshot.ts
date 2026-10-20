@@ -1,5 +1,6 @@
 import * as Astronomy from "astronomy-engine";
 import { placeTiming } from "../../place/timing";
+import { civilBounds } from "../../place/civil";
 import { panchangAt } from "./astro";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "./names";
 
@@ -99,6 +100,16 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const observer = new Astronomy.Observer(lat, lng, 0);
   const sunEquator = Astronomy.Equator(Astronomy.Body.Sun, evaluatedAt, observer, true, true);
   const solarAltitude = Astronomy.Horizon(evaluatedAt, observer, sunEquator.ra, sunEquator.dec, "normal").altitude;
+  const bounds = civilBounds(date, timezone);
+  const twilightAt = (direction: 1 | -1, altitude: number) => {
+    try { return Astronomy.SearchAltitude(Astronomy.Body.Sun, observer, direction, bounds.start, 1, altitude)?.date.toISOString() ?? null; }
+    catch { return null; }
+  };
+  const twilight = {
+    civil_dawn_utc: twilightAt(1, -6), civil_dusk_utc: twilightAt(-1, -6),
+    nautical_dawn_utc: twilightAt(1, -12), nautical_dusk_utc: twilightAt(-1, -12),
+    astronomical_dawn_utc: twilightAt(1, -18), astronomical_dusk_utc: twilightAt(-1, -18)
+  };
   const timeAnchor = daily ? "local sunrise (shared AafnaiPatro Panchang provider)" : "local noon fallback (sunrise/sunset unavailable)";
 
   return {
@@ -148,7 +159,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
       limitations: [
         "The shared Panchang provider calculates Tithi, Nakshatra/Pada, Yoga, Karana, sidereal Sun/Moon signs and local sunrise/sunset where available.",
         "If sunrise or sunset is unavailable for the selected civil day, the Panchang snapshot falls back to local noon and solar event fields are null.",
-        "Choghadiya, Rahu Kaal, Hora, twilight, eclipse contacts, Tarabalam/Chandrabalam, and personalized Muhurta are not included in this API slice.",
+        "Choghadiya, Rahu Kaal, Hora, eclipse contacts, Tarabalam/Chandrabalam, and personalized Muhurta are not included in this API slice.",
         "Moon illumination is a simplified phase-angle estimate, not a high-precision illuminated fraction."
       ]
     }
