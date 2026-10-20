@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState, type CSSProperties } from "react";
 import { setPageTitle } from "../title";
 import { l, useUiLanguage } from "../useUiLanguage";
+import { readJanmaPatroBirthInput } from "../jyotish/my-time-bridge";
 import "./rashifal-experience.css";
 
 type Period = "daily" | "weekly" | "monthly" | "yearly";
@@ -101,8 +102,30 @@ export function RashifalExperience(){
   const [loading,setLoading]=useState(true);
   const [error,setError]=useState("");
   const [personalError,setPersonalError]=useState("");
+  const [savedBirthProfile,setSavedBirthProfile]=useState(readJanmaPatroBirthInput);
+  const [personalBirthDate,setPersonalBirthDate]=useState(()=>readJanmaPatroBirthInput()?.date||"");
+  const [personalBirthTime,setPersonalBirthTime]=useState(()=>readJanmaPatroBirthInput()?.time||"");
+  const [personalBirthEdited,setPersonalBirthEdited]=useState(false);
 
   useEffect(()=>setLanguage(siteLanguage),[siteLanguage]);
+  useEffect(()=>{
+    const syncBirthProfile=()=>{
+      const next=readJanmaPatroBirthInput();
+      setSavedBirthProfile(next);
+      if(!personalBirthEdited){
+        setPersonalBirthDate(next?.date||"");
+        setPersonalBirthTime(next?.time||"");
+      }
+    };
+    window.addEventListener("patro:china-updated",syncBirthProfile);
+    window.addEventListener("storage",syncBirthProfile);
+    window.addEventListener("patro:navigation",syncBirthProfile);
+    return ()=>{
+      window.removeEventListener("patro:china-updated",syncBirthProfile);
+      window.removeEventListener("storage",syncBirthProfile);
+      window.removeEventListener("patro:navigation",syncBirthProfile);
+    };
+  },[personalBirthEdited]);
   useEffect(()=>setPageTitle(language==="ne"?"राशिफल":"Rashifal"),[language]);
 
   const currentKey=useMemo(()=>cacheKey(period,system,calendar,date,selectedSign),[period,system,calendar,date,selectedSign]);
@@ -148,12 +171,13 @@ export function RashifalExperience(){
       <div className="rx-broadcast-strip"><span className="rx-live-dot"/>{l(language,"एउटै अवधि key बाट बनेको प्रकाशन सबैलाई प्रसारण हुन्छ; D1/R2 publication read आवश्यक छैन।","The same period-keyed publication is broadcast to everyone; no D1/R2 publication read is required.")} {publication?.window?<b>{windowLabel(publication,language)}</b>:null}</div>
     </section>
 
-    {mode==="universal"?<section className="rx-universal">
+    {mode==="universal"?<section className="rx-universal"><p className="rx-mode-explanation">{l(language,"सार्वभौमिक दृश्यले यहाँ छानिएको राशिको साझा प्रकाशन देखाउँछ; जन्म मिति परिवर्तन गर्दा यसको चयन स्वतः बदलिँदैन। जन्ममितिबाट निजी गणना गर्न “मेरो जन्ममिति” खोल्नुहोस्।","Universal mode shows the shared publication for the sign selected below; changing birth details does not change this selector. Use “My birthday” for a private calculation from birth date and time.")}</p>
       <div className="rx-section-head"><div><span>{l(language,"राशि छान्नुहोस्","Choose a sign")}</span><h2>{l(language,"सबै १२ राशि वा आफ्नो राशि","All 12 signs or yours")}</h2></div><label className="rx-remember"><input type="checkbox" checked={remember} onChange={e=>toggleRemember(e.target.checked)}/>{l(language,"यस यन्त्रमा सम्झनुहोस्","Remember on this device")}</label></div>
       <div className="rx-sign-picker"><button className={!selectedSign?"is-selected":""} onClick={()=>chooseSign("")}><span>✦</span>{l(language,"सबै","All")}</button>{SIGNS.map(([id,ne,en,glyph])=><button key={id} className={selectedSign===id?"is-selected":""} onClick={()=>chooseSign(id)}><span>{glyph}</span>{language==="ne"?ne:en}</button>)}</div>
     </section>:<section className="rx-personal-panel">
       <div className="rx-section-head"><div><span>{l(language,"निजी · no-store","Private · no-store")}</span><h2>{l(language,"जन्ममिति-आधारित राशिफल","Birthday-based Rashifal")}</h2><p>{l(language,"जन्मसमय थाहा भए दिनुहोस्। समय नदिए दिउँसो १२ बजे नेपाल समयलाई अस्थायी एङ्कर मानिन्छ। ठीक चन्द्र राशि र पूर्ण जन्मविश्लेषणका लागि जन्मपत्रो प्रयोग गर्नुहोस्।","Add a birth time when known. Without it, noon Nepal time is used as a temporary anchor. Use Janma Patro for an exact Moon-sign and full birth analysis.")}</p></div><a href="/jyotish/china">{l(language,"जन्मपत्रो →","Janma Patro →")}</a></div>
-      <form onSubmit={calculatePersonal} className="rx-birth-form" autoComplete="off"><label><span>{l(language,"जन्ममिति","Birth date")}</span><input required name="birth_date" type="date" max={todayNepal()}/></label><label><span>{l(language,"जन्मसमय (वैकल्पिक)","Birth time (optional)")}</span><input name="birth_time" type="time" step="60"/></label><label className="rx-consent"><input required name="consent" type="checkbox"/> <span>{l(language,"यो विवरण यही गणनाका लागि मात्र प्रयोग गर्न सहमत छु; यसलाई भण्डारण नगरियोस्।","I consent to using these details only for this calculation; do not store them.")}</span></label><button type="submit" disabled={loading}>{l(language,"मेरो राशिफल बनाउनुहोस्","Create my Rashifal")}</button></form>
+      {savedBirthProfile && <p className="rx-profile-prefill">{l(language,`सुरक्षित जन्मपत्रोबाट पूर्वभरिएको: ${savedBirthProfile.date} · ${savedBirthProfile.time} NPT · ${savedBirthProfile.location}। यो व्यक्तिगत अनुरोधमा मिति र समय मात्र पठाइन्छ; स्थान वा पूर्ण कुण्डली पठाइँदैन।`,`Prefilled from your saved JanmaPatro profile: ${savedBirthProfile.date} · ${savedBirthProfile.time} NPT · ${savedBirthProfile.location}. This personal request sends the date and time only—not your location or full chart.`)}</p>}
+      <form onSubmit={calculatePersonal} className="rx-birth-form" autoComplete="off"><label><span>{l(language,"जन्ममिति","Birth date")}</span><input required name="birth_date" type="date" max={todayNepal()} value={personalBirthDate} onChange={e=>{setPersonalBirthDate(e.target.value);setPersonalBirthEdited(true)}}/></label><label><span>{l(language,"जन्मसमय (नेपाल समय, वैकल्पिक)","Birth time (Nepal time, optional)")}</span><input name="birth_time" type="time" step="60" value={personalBirthTime} onChange={e=>{setPersonalBirthTime(e.target.value);setPersonalBirthEdited(true)}}/></label><label className="rx-consent"><input required name="consent" type="checkbox"/> <span>{l(language,"यो विवरण यही गणनाका लागि मात्र प्रयोग गर्न सहमत छु; यसलाई भण्डारण नगरियोस्।","I consent to using these details only for this calculation; do not store them.")}</span></label><button type="submit" disabled={loading}>{l(language,"मेरो राशिफल बनाउनुहोस्","Create my Rashifal")}</button>{savedBirthProfile && personalBirthEdited && <button type="button" className="rx-use-saved-profile" onClick={()=>{setPersonalBirthDate(savedBirthProfile.date);setPersonalBirthTime(savedBirthProfile.time);setPersonalBirthEdited(false)}}>{l(language,"सुरक्षित जन्म विवरण फेरि प्रयोग गर्नुहोस्","Use saved birth profile")}</button>}</form>
       {personalNote?<p className="rx-precision-note">{personalNote}</p>:null}
     </section>}
 

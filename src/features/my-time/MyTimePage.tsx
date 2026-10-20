@@ -11,7 +11,7 @@ import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/
 import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
 import { useUiLanguage, l } from "../../useUiLanguage";
-import { calculateChart } from "../../jyotish/jyotishEngine";
+import { calculateChart, normalizeBirthDate } from "../../jyotish/jyotishEngine";
 import { calculateTara } from "./tarabalam";
 import { JANMAPATRO_BIRTH_PLACES, createJanmaPatroContext, findJanmaPatroBirthPlace, saveJanmaPatroContext } from "../../jyotish/my-time-bridge";
 
@@ -60,9 +60,10 @@ function birthInputFromContext(chart: SavedJanmaPatroContext | null): BirthInput
   };
 }
 function isValidBirthDate(value: string): boolean {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
-  const date = new Date(value + "T00:00:00.000Z");
-  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value;
+  try { normalizeBirthDate(value); return true; } catch { return false; }
+}
+function normalizedBirthDateOrEmpty(value: string): string {
+  try { return normalizeBirthDate(value); } catch { return ""; }
 }
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
@@ -242,12 +243,14 @@ export default function MyTimePage() {
   const [birthSuccess,setBirthSuccess]=useState(false);
   const saveBirthChart=(event: React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();setBirthError("");setBirthSuccess(false);
-    const date=birthInput.date.trim(), time=birthInput.time.trim(), location=birthInput.location.trim();
+    const time=birthInput.time.trim(), location=birthInput.location.trim();
+    let date: string;
+    try { date = normalizeBirthDate(birthInput.date); }
+    catch { setBirthError(l(language,"मान्य जन्म मिति भर्नुहोस् (जस्तै 1992-1-31 वा 1992-01-31)।","Enter a real birth date (for example, 1992-1-31 or 1992-01-31)."));return; }
     const matchedPlace=findJanmaPatroBirthPlace(location);
     const latText=birthInput.lat.trim()||(matchedPlace?String(matchedPlace.lat):"");
     const lngText=birthInput.lng.trim()||(matchedPlace?String(matchedPlace.lng):"");
     const lat=Number(latText),lng=Number(lngText);
-    if(!isValidBirthDate(date)){setBirthError(l(language,"जन्म मिति YYYY-MM-DD ढाँचामा भर्नुहोस् वा पात्रोबाट छान्नुहोस्।","Enter a valid YYYY-MM-DD birth date or choose it from the calendar."));return;}
     if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time)){setBirthError(l(language,"जन्म समय छान्नुहोस्। समय नेपाल मानक समय (UTC+05:45) मा हुनुपर्छ।","Enter a valid birth time in Nepal Standard Time (UTC+05:45)."));return;}
     if(!location||!latText||!lngText||!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>66.5||Math.abs(lng)>180){
       setBirthError(l(language,"जन्मस्थान छान्नुहोस् वा निर्देशाङ्कमा अक्षांश −६६.५° देखि ६६.५° र देशान्तर −१८०° देखि १८०° भित्र भर्नुहोस्।","Choose a birthplace or enter coordinates within latitude −66.5° to 66.5° and longitude −180° to 180°."));return;
@@ -751,7 +754,7 @@ export default function MyTimePage() {
       <form className="mt-birth-form" onSubmit={saveBirthChart}>
         <label className="mt-birth-date-field"><span>{l(language,"जन्म मिति (ईस्वी)","Birth date (AD)")}</span><div className="mt-birth-date-controls">
           <input type="text" required inputMode="numeric" autoComplete="bday" value={birthInput.date} placeholder="YYYY-MM-DD" aria-label={l(language,"जन्म मिति टाइप गर्नुहोस्","Type birth date")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
-          <input type="date" value={isValidBirthDate(birthInput.date)?birthInput.date:""} aria-label={l(language,"पात्रोबाट जन्म मिति छान्नुहोस्","Choose birth date from calendar")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
+          <input type="date" value={normalizedBirthDateOrEmpty(birthInput.date)} aria-label={l(language,"पात्रोबाट जन्म मिति छान्नुहोस्","Choose birth date from calendar")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
         </div><small>{l(language,"YYYY-MM-DD टाइप गर्नुहोस् वा पात्रोबाट छान्नुहोस्।","Type YYYY-MM-DD or choose from the calendar.")}</small></label>
         <label><span>{l(language,"जन्म समय (नेपाल समय)","Birth time (Nepal time)")}</span><input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
         <label><span>{l(language,"नाम (ऐच्छिक)","Name (optional)")}</span><input maxLength={100} autoComplete="name" value={birthInput.name} placeholder={l(language,"तपाईंको नाम","Your name")} onChange={e=>setBirthInput(v=>({...v,name:e.target.value}))}/></label>
