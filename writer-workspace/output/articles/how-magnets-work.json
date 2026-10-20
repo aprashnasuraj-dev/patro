@@ -1,0 +1,145 @@
+{
+  "id": "mm-0055",
+  "slug": "how-magnets-work",
+  "canonical_url": "https://aafnaipatro.com/how-magnets-work/",
+  "title": "How Magnets Work: Magnetic Fields Explained",
+  "meta_description": "A clear, evidence-based explanation of how magnets work, how it works, common misconceptions, and what the science can and cannot tell us.",
+  "h1": "How Magnets Work?",
+  "category": "Everyday Science",
+  "author": "Suraj Dahal",
+  "published": "2026-10-20",
+  "keywords": [
+    "magnets",
+    "magnetic field",
+    "electrons",
+    "electromagnetism"
+  ],
+  "key_takeaways": [
+    "What a magnet does: A magnet creates a magnetic field, a physical field that can exert forces on magnetic materials and moving electric charges.",
+    "Microscopic origins: At the microscopic level, magnetism is connected to electric charge and quantum properties of electrons, especially spin and orbital motion.",
+    "Magnetic domains: In ferromagnetic materials, regions called magnetic domains contain many aligned atomic moments.",
+    "Poles and field lines: A bar magnet has north and south poles, but they are not separate stores of magnetic fluid."
+  ],
+  "sections": [
+    {
+      "h2": "What a magnet does",
+      "paras": [
+        "A magnet creates a magnetic field, a physical field that can exert forces on magnetic materials and moving electric charges. Familiar effects include attraction between opposite poles and repulsion between like poles. The field is invisible, but its effects can be measured and visualized with a compass or iron filings. [1][2]",
+        "A magnet does not pull every metal object. Iron, nickel and cobalt respond strongly in common conditions, while copper, aluminium and many other materials behave differently. A fridge magnet sticks to suitable steel because of the material’s magnetic properties, not simply because the object is metallic. Composition and microscopic structure determine the response. [1][2]"
+      ]
+    },
+    {
+      "h2": "Microscopic origins",
+      "paras": [
+        "At the microscopic level, magnetism is connected to electric charge and quantum properties of electrons, especially spin and orbital motion. In many atoms, contributions from electrons cancel. In ferromagnetic materials such as iron, interactions can align many atomic magnetic moments, allowing a strong net magnetization. [1][2]",
+        "It is tempting to picture every electron as a tiny planet orbiting a nucleus, but that classical image is incomplete. Electron spin is a quantum property, not a little ball literally spinning like a top. The useful explanation is that electrons have magnetic moments and quantum interactions can organize those moments into collective behaviour. [2]"
+      ]
+    },
+    {
+      "h2": "Magnetic domains",
+      "paras": [
+        "In ferromagnetic materials, regions called magnetic domains contain many aligned atomic moments. An unmagnetized piece of iron can contain domains pointing in different directions, so their effects largely cancel at the scale of the whole object. Applying a magnetic field can move domain boundaries and rotate domains, producing stronger overall magnetization. [1][2]",
+        "In a permanent magnet, the material’s microstructure helps preserve a preferred alignment after the external field is removed. Heat, mechanical shock or a strong opposing field can disturb that arrangement, depending on the material. This is why magnets differ in strength and resistance to demagnetization. Their properties depend on composition and processing. [1]"
+      ]
+    },
+    {
+      "h2": "Poles and field lines",
+      "paras": [
+        "A bar magnet has north and south poles, but they are not separate stores of magnetic fluid. Cutting a bar magnet in half normally produces two smaller magnets, each with its own north and south pole. Magnetic field lines are a drawing convention that shows direction and relative strength; closer lines indicate a stronger field in the diagram. [1][2]",
+        "Outside a bar magnet, field lines are drawn from north toward south, forming closed loops when the whole field is considered. They are not physical strings. A compass needle aligns with the local field, which is why compasses can indicate direction while also responding to nearby magnets or electrical equipment. [2]"
+      ]
+    },
+    {
+      "h2": "Attraction, repulsion and current",
+      "paras": [
+        "When two magnets approach, their fields interact. In one orientation, the arrangement can lower the system’s magnetic energy and the magnets pull together; in another, the configuration produces a force that pushes them apart. Poles are a convenient way to describe this interaction, while the field gives the more complete picture. [1][2]",
+        "Magnetic forces also act on moving charges and current-carrying wires. A charged particle moving through a magnetic field experiences a force that depends on its velocity and the field direction. This principle matters in electric motors, loudspeakers and scientific instruments. Magnetic effects depend on the electromagnetic situation, not simply on whether an object is near a magnet. [2][4]"
+      ]
+    },
+    {
+      "h2": "Electromagnets and motors",
+      "paras": [
+        "An electric current creates a magnetic field around a conductor. Winding wire into a coil concentrates the field, and inserting a suitable iron core can make it stronger. This is the basis of an electromagnet, whose strength can be controlled by changing current or coil design. Unlike a permanent magnet, it can be switched off when unpowered. [2][4]",
+        "Electric motors use interactions between magnetic fields and current to produce motion. Generators use motion to induce electrical voltage, converting mechanical energy into electrical energy. The devices exploit relationships between current, magnetic fields and forces. Design details vary, but the general principle underlies a wide range of everyday technology. [4]"
+      ]
+    },
+    {
+      "h2": "Earth's magnetic field",
+      "paras": [
+        "Earth has a large-scale magnetic field generated mainly by motion of electrically conducting molten iron alloy in its outer core. This geodynamo differs from Earth being a giant solid bar magnet. The field extends into space and forms the magnetosphere, which interacts with charged particles from the Sun. [3]",
+        "A compass points approximately toward magnetic north, not exactly to the geographic North Pole. The difference, magnetic declination, varies by location and time. Earth's field also changes over long timescales. The magnetosphere helps deflect and guide charged particles, while interactions with the solar wind produce auroras and other space-weather effects. [3]"
+      ]
+    },
+    {
+      "h2": "Limits and misconceptions",
+      "paras": [
+        "A magnet cannot provide unlimited energy or create perpetual motion. Magnetic forces transfer energy between objects, but a cycle returning everything to its starting state cannot deliver net energy without an energy source. Magnets also do not attract every object, and their effects depend on distance, orientation and nearby materials. [1][2]",
+        "Magnetic shielding is not a simple wall that blocks every field. High-permeability materials can redirect low-frequency magnetic flux, while conductive materials can oppose changing fields under suitable conditions. The right method depends on field strength, frequency and geometry. Claims that a small magnet powers a device indefinitely conflict with energy conservation and need extraordinary evidence. [2][4]"
+      ]
+    },
+    {
+      "h2": "The main idea",
+      "paras": [
+        "Magnetism is a fundamental part of electromagnetism. Atoms contain magnetic moments associated with electrons; in some materials those moments align collectively, producing permanent magnets. Magnetic fields describe how forces act on other magnets, suitable materials, currents and moving charges. [1][2]",
+        "From a compass to an electric motor and Earth’s magnetosphere, the same broad physics appears at different scales. The visible attraction of a magnet is one effect of a field that can be measured, modelled and engineered. Material, geometry, motion and energy conservation constrain what any magnetic system can do. [2][3][4]"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why does a magnet attract iron but not every metal?",
+      "a": "Iron is ferromagnetic and can develop strong collective magnetization. Many other metals do not respond strongly to an ordinary permanent magnet. Being metallic alone does not determine magnetic behaviour. [1][2]"
+    },
+    {
+      "q": "Can cutting a magnet separate its poles?",
+      "a": "Ordinary cutting produces smaller pieces that each have north and south poles. It does not normally isolate a north pole from a south pole. [1][2]"
+    },
+    {
+      "q": "Do magnets create energy?",
+      "a": "No. Magnets can exert forces and transfer energy, but they do not provide unlimited energy or make perpetual motion possible. A working device needs an energy source. [2][4]"
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "Magnetism",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/science/magnetism",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "title": "University Physics Volume 2: Magnetism",
+      "publisher": "OpenStax",
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/11-introduction",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "title": "Earth's Magnetosphere",
+      "publisher": "NASA Science",
+      "url": "https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 4,
+      "title": "College Physics: Electromagnetism",
+      "publisher": "OpenStax",
+      "url": "https://openstax.org/books/college-physics/pages/22-introduction",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    }
+  ],
+  "references": [
+    "Encyclopaedia Britannica. (n.d.). *Magnetism*. https://www.britannica.com/science/magnetism",
+    "OpenStax. (n.d.). *University Physics Volume 2: Magnetism*. https://openstax.org/books/university-physics-volume-2/pages/11-introduction",
+    "NASA Science. (n.d.). *Earth's Magnetosphere*. https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/",
+    "OpenStax. (n.d.). *College Physics: Electromagnetism*. https://openstax.org/books/college-physics/pages/22-introduction"
+  ],
+  "word_count": 1069,
+  "reading_minutes": 5,
+  "image": null
+}
