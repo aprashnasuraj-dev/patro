@@ -205,16 +205,16 @@ export default function MyTimePage() {
     const defaults = { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true };
     const presets = {
       universal: defaults,
-      scientific: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      panchang: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      jyotish: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      tantra: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
+      scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
+      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: true },
+      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: true },
+      tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
+      combined: defaults
     };
     try {
       const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v3") || "null");
       const optedOut = localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true";
-      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut };
+      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut && (presets[lens] || defaults).tantra };
       const lens = readMyTimePersonalSettings().lens;
       return { ...(presets[lens] || defaults), tantra: !optedOut };
     } catch { return defaults; }
@@ -403,16 +403,17 @@ export default function MyTimePage() {
     void loadSnapshot(nextDate, next, true);
   }, [loadSnapshot]);
   const applyTimeLens = useCallback((lens: "universal" | "scientific" | "panchang" | "jyotish" | "tantra" | "combined") => {
+    const allLayers = { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true };
     const presets = {
-      universal: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      scientific: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      panchang: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      jyotish: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      tantra: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
+      universal: allLayers,
+      scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
+      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: true },
+      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: true },
+      tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
+      combined: allLayers
     };
     const optedOut = (() => { try { return localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true"; } catch { return false; } })();
-    setObservatoryLayers({ ...presets[lens], tantra: !optedOut });
+    setObservatoryLayers({ ...presets[lens], tantra: !optedOut && presets[lens].tantra });
   }, []);
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
