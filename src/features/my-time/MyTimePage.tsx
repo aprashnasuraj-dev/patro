@@ -211,7 +211,7 @@ export default function MyTimePage() {
       combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
     };
     try {
-      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null");
+      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v2") || "null");
       if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales === true, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal === true, hora: saved.hora === true, twilight: saved.twilight === true, tantra: saved.tantra === true };
       const lens = readMyTimePersonalSettings().lens;
       return presets[lens] || defaults;
@@ -274,9 +274,10 @@ export default function MyTimePage() {
           : l(language, currentChoghadiya.name_ne + " चौघडिया परम्परागत रूपमा अनुकूल मानिन्छ। आफ्नो कामअनुसार समय रोज्नुहोस्; परिणामको ग्यारेन्टी होइन।", currentChoghadiya.name_en + " Choghadiya is traditionally considered favorable. Choose according to your task; it is not a guarantee.")
         : l(language, "यो चौघडिया परम्परागत रूपमा तटस्थ वा कम अनुकूल मानिन सक्छ। आफ्नो काम र परम्पराअनुसार निर्णय लिनुहोस्।", "This Choghadiya may be considered neutral or less favorable in tradition. Decide according to your practice and the task.")
       : nextKaal
-        ? l(language, "अर्को " + nextKaal.name_ne + " " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + " मा पर्छ। यो परम्परागत समय-सङ्केत हो।", "Next " + nextKaal.name_en + " is " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + ". This is a traditional timing guide.");
+        ? l(language, "अर्को " + nextKaal.name_ne + " " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + " मा पर्छ। यो परम्परागत समय-सङ्केत हो।", "Next " + nextKaal.name_en + " is " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + ". This is a traditional timing guide.")
+        : l(language, "स्थानीय सूर्योदय/सूर्यास्त उपलब्ध भएपछि समय-सङ्केत देखिनेछ।", "Timing guidance appears when local sunrise and sunset are available.");
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
-  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v1", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
+  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v2", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
   useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
   useEffect(() => {
