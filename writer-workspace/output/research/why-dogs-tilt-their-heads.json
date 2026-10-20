@@ -16,12 +16,13 @@
     },
     {
       "n": 2,
-      "url": "https://news.ubc.ca/",
-      "title": "Why do dogs tilt their heads?",
-      "publisher": "University of British Columbia",
-      "reliability": "University news portal; topic-specific article needs verification",
+      "url": "https://www.eurekalert.org/news-releases/932924",
+      "title": "Talk-to-tilt: head tilting in dogs",
+      "publisher": "EurekAlert!, American Association for the Advancement of Science",
+      "reliability": "Research news release reporting a peer-reviewed experimental study",
       "notes": [
-        "University reporting can provide context on canine cognition research; use alongside primary studies."
+        "The study reports an association between frequent head tilting and meaningful object labels in gifted word-learning dogs.",
+        "The authors caution that the study examined a specific dog-owner interaction, not every context in which dogs tilt their heads."
       ]
     },
     {
