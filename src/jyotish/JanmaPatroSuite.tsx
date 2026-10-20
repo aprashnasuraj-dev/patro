@@ -1,14 +1,13 @@
-import { RASHIS as NE_SIGNS, NAKSHATRAS as NE_NAKSHATRAS, toNepaliDigits } from "../patro-tools/core/names";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { calculateChart, calculateGuna, type BirthInput, type ChartResult, type GunaResult, SIGNS } from "./jyotishEngine";
+import { calculateChart, calculateGuna, type BirthInput, type ChartResult, type GunaResult } from "./jyotishEngine";
 import { JANMAPATRO_BIRTH_PLACES as DISTRICTS, createJanmaPatroContext, readJanmaPatroBirthInput, saveJanmaPatroContext } from "./my-time-bridge";
-import { calculateNameGuna, nameSyllableFromNakshatra, type NameGunaResult } from "../../packages/engine/src/name-guna.js";
+import { calculateNameGuna, type NameGunaResult } from "../../packages/engine/src/name-guna.js";
 import { createJanmaPatroShareUrl, readJanmaPatroShareState } from "../../packages/engine/src/share-state.js";
 import { adToBs, bsToAd, daysInBsMonth } from "../../packages/core/src/bsDate";
 import "./janmapatro.css";
+import { DetailedBirthChartReport, DetailedGunaMilanReport } from "./JanmaPatroDetailedReports";
 
 type Language="ne"|"en";
-const GRAHA_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द्र",Mars:"मङ्गल",Mercury:"बुध",Jupiter:"बृहस्पति",Venus:"शुक्र",Saturn:"शनि",Rahu:"राहु",Ketu:"केतु"};
 type Tab="chart"|"match";
 type MatchMode="birth"|"name";
 type ProfileInput=BirthInput&{father?:string};
@@ -31,8 +30,6 @@ function isProfile(value:unknown):value is ProfileInput{
 function resolveBsDate(year:number,month:number,day:number){
  return bsToAd({year,month,day});
 }
-function dateText(date:Date){return date.toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"2-digit",timeZone:"UTC"});}
-function degreeText(value:number){const d=Math.floor(value),m=Math.floor((value-d)*60);return d+"° "+m+"′";}
 function reportSlug(name:string){return (name||"report").trim().replace(/\s+/g,"-").replace(/[^a-zA-Z0-9\u0900-\u097f-]/g,"").toLowerCase()||"report";}
 function verdict(total:number,language:Language){
  if(total>=28)return tx(language,"उत्तम मिलान","Excellent match");
@@ -63,64 +60,41 @@ function ProfileForm({value,onChange,prefix,language}:{value:ProfileInput;onChan
  </fieldset>;
 }
 
-function NorthIndianChart({chart,anchorSign=chart.ascSignIndex,title}:{chart:ChartResult;anchorSign?:number;title:string}){
- const graha:Record<string,string>={sun:"सू",moon:"चं",mars:"मं",mercury:"बु",jupiter:"गु",venus:"शु",saturn:"श",rahu:"रा",ketu:"के"};
- const houses=Array.from({length:12},(_,i)=>chart.planets.filter((p)=>((p.signIndex-anchorSign+12)%12)+1===i+1).map((p)=>graha[p.key]||p.name.slice(0,2)).join(" "));
- const labels:[number,number][]=[[150,75],[75,32],[32,75],[75,150],[32,225],[75,268],[150,225],[225,268],[268,225],[225,150],[268,75],[225,32]];
- return <figure className="jp-chart"><svg viewBox="0 0 300 300" role="img" aria-label={title}>
-  <rect x="8" y="8" width="284" height="284"/><path d="M8 8L292 292M292 8L8 292M150 8L292 150L150 292L8 150Z"/>
-  {labels.map(([x,y],i)=><g key={i}><text x={x} y={y-8} className="jp-house-number">{toNepaliDigits(((anchorSign+i)%12)+1)}</text><text x={x} y={y+8}>{houses[i]||"·"}</text></g>)}
-  <text x="150" y="142" className="jp-lagna-label">{anchorSign===chart.ascSignIndex?"लग्न":"चन्द्र"}</text><text x="150" y="160" className="jp-lagna-value">{NE_SIGNS[anchorSign]}</text>
- </svg><figcaption>{title}</figcaption></figure>;
+function ProfileSummary({name,nakshatra,pada,sign,language}:{name:string;nakshatra:string;pada:number;sign:string;language:Language}) {
+ return <article className="jp-person-card"><small>{name}</small><strong>{nakshatra}</strong><span>{tx(language,"चरण","Pada")} {language==="ne"?toLocalDigits(pada):pada}</span><span>{sign}</span></article>;
 }
-
-function ChartReport({chart,language}:{chart:ChartResult;language:Language}){
- const moon=chart.planets.find((p)=>p.key==="moon");
- const syllable=nameSyllableFromNakshatra(chart.moonNakshatraIndex,chart.moonPada);
- return <section className="jp-paper" aria-label={tx(language,"जन्मपत्रिका","Birth chart report")}>
-  <div className="jp-invocation">॥ श्री गणेशाय नमः ॥</div>
-  <p className="jp-shloka">आदित्याद्या ग्रहाः सर्वे नक्षत्राणि च राशयः ।<br/>देहिमनुः प्रकुर्वन्तु यस्यैषा जन्मपत्रिका ॥</p>
-  <h2>{tx(language,"जन्मपत्रिका","Birth Chart")}</h2><div className="jp-rule"/>
-  <p className="jp-intro">{tx(language,"जन्म मिति, समय र स्थानका आधारमा गणना गरिएको ग्रहस्थिति, लग्न, नक्षत्र र दशा विवरण।","Planetary positions, ascendant, nakshatra and dasha calculated from the supplied birth date, exact time and location.")}</p>
-  <dl className="jp-facts">
-   <dt>{tx(language,"नाम","Name")}</dt><dd><strong>{chart.input.name||"—"}</strong></dd>
-   <dt>{tx(language,"पिता / अभिभावक","Father / Guardian")}</dt><dd>{(chart.input as ProfileInput).father||"—"}</dd>
-   <dt>{tx(language,"जन्म मिति","Birth date")}</dt><dd>{chart.input.date}</dd>
-   <dt>{tx(language,"जन्म समय","Birth time")}</dt><dd>{chart.input.time} (UTC+05:45)</dd>
-   <dt>{tx(language,"जन्म स्थान","Birth place")}</dt><dd>{chart.input.location} ({chart.input.lat.toFixed(4)}, {chart.input.lng.toFixed(4)})</dd>
-   <dt>{tx(language,"लग्न","Ascendant")}</dt><dd>{language==="ne"?NE_SIGNS[chart.ascSignIndex]:SIGNS[chart.ascSignIndex]} · {degreeText(chart.ascendant%30)}</dd>
-   <dt>{tx(language,"नक्षत्र","Nakshatra")}</dt><dd>{language==="ne"?NE_NAKSHATRAS[chart.moonNakshatraIndex]:chart.moonNakshatra} · {tx(language,"चरण","Pada")} {chart.moonPada}{syllable?" · "+tx(language,"नामाक्षर","Name syllable")+" "+syllable:""}</dd>
-   <dt>{tx(language,"चन्द्र राशि","Moon sign")}</dt><dd>{moon?(language==="ne"?NE_SIGNS[moon.signIndex]:moon.sign):"—"}</dd>
-  </dl>
-  <div className="jp-chart-pair"><NorthIndianChart chart={chart} title={tx(language,"लग्न कुण्डली","Lagna chart")}/><NorthIndianChart chart={chart} anchorSign={moon?.signIndex??chart.ascSignIndex} title={tx(language,"चन्द्र कुण्डली","Moon chart")}/></div>
-  <h3>{tx(language,"ग्रह स्थिति","Planetary positions")}</h3>
-  <div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"ग्रह","Graha")}</th><th>{tx(language,"निरायण अंश","Sidereal longitude")}</th><th>{tx(language,"राशि","Rashi")}</th><th>{tx(language,"भाव","House")}</th></tr></thead><tbody>{chart.planets.map((p)=><tr key={p.key}><td>{language==="ne"?GRAHA_NE[p.name]||p.name:p.name}</td><td>{language==="ne"?toNepaliDigits(p.longitude.toFixed(3)):p.longitude.toFixed(3)}°</td><td>{language==="ne"?NE_SIGNS[p.signIndex]:p.sign}</td><td>{language==="ne"?toNepaliDigits(p.house):p.house}</td></tr>)}</tbody></table></div>
-  <h3>{tx(language,"विंशोत्तरी महादशा","Vimshottari Mahadasha")}</h3>
-  <div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"स्वामी","Lord")}</th><th>{tx(language,"सुरु","Start")}</th><th>{tx(language,"अन्त्य","End")}</th><th>{tx(language,"वर्ष","Years")}</th></tr></thead><tbody>{chart.dashas.map((d,i)=><tr key={i}><td>{language==="ne"?GRAHA_NE[d.lord]||d.lord:d.lord}</td><td>{dateText(d.start)}</td><td>{dateText(d.end)}</td><td>{d.years.toFixed(2)}</td></tr>)}</tbody></table></div>
-  <div className="jp-note"><strong>Kuja / Manglik: {chart.manglik.severity}</strong><p>{chart.manglik.explanation}</p></div>
-  <details className="jp-method"><summary>{tx(language,"गणना पद्धति र सीमाहरू","Methodology and limitations")}</summary><ul>{chart.methodology.map((x)=><li key={x}>{x}</li>)}</ul></details>
- </section>;
-}
-
-function ProfileSummary({name,nakshatra,pada,sign}:{name:string;nakshatra:string;pada:number;sign:string}){return <article className="jp-person-card"><small>{name}</small><strong>{nakshatra}</strong><span>Pada {pada}</span><span>{sign}</span></article>;}
-function GunaTable({items,language}:{items:Array<{key:string;label:string;score:number;max:number;detail:string}>;language:Language}){return <><h3>{tx(language,"अष्टकूट गुण तालिका","Ashtakoota score table")}</h3><div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"कूट","Koota")}</th><th>{tx(language,"पूर्णाङ्क","Max")}</th><th>{tx(language,"प्राप्त","Score")}</th><th>{tx(language,"महत्व","Meaning")}</th></tr></thead><tbody>{items.map((x)=><tr key={x.key}><td><strong>{x.label}</strong></td><td>{x.max}</td><td>{x.score}</td><td>{x.detail}</td></tr>)}</tbody></table></div></>;}
-
-function BirthGunaReport({result,language}:{result:GunaResult;language:Language}){
- const aMoon=result.profileA.planets.find((p)=>p.key==="moon"),bMoon=result.profileB.planets.find((p)=>p.key==="moon");
- return <section className="jp-paper jp-milan">
-  <div className="jp-invocation">॥ श्री गणेशाय नमः ॥</div><h2>{tx(language,"गुण मिलान — विवाह मिलान","Guna Milan — Matchmaking")}</h2><div className="jp-rule"/>
-  <div className="jp-match-head"><ProfileSummary name={result.profileA.input.name||"Profile A"} nakshatra={result.profileA.moonNakshatra} pada={result.profileA.moonPada} sign={aMoon?.sign||""}/><div className="jp-score"><strong>{result.total}<small>/36</small></strong><span>{verdict(result.total,language)}</span></div><ProfileSummary name={result.profileB.input.name||"Profile B"} nakshatra={result.profileB.moonNakshatra} pada={result.profileB.moonPada} sign={bMoon?.sign||""}/></div>
-  <div className="jp-chart-pair"><NorthIndianChart chart={result.profileA} title={tx(language,"पहिलो व्यक्ति · लग्न कुण्डली","Profile A · Lagna chart")}/><NorthIndianChart chart={result.profileB} title={tx(language,"दोस्रो व्यक्ति · लग्न कुण्डली","Profile B · Lagna chart")}/></div>
-  <GunaTable items={result.items} language={language}/>
-  <div className="jp-note"><p>{tx(language,"यो परम्परागत अष्टकूट स्कोर हो; सम्बन्धको सफलता निश्चित गर्ने मापन होइन।","This is a traditional Ashtakoota score, not a prediction of relationship success.")}</p></div>
- </section>;
+function toLocalDigits(value:number){return String(value).replace(/[0-9]/g,d=>"०१२३४५६७८९"[Number(d)]);}
+function GunaTable({items,language}:{items:Array<{key:string;label:string;score:number;max:number;detail:string}>;language:Language}) {
+ const labelsNe:Record<string,string>={varna:"वर्ण",vashya:"वश्य",tara:"तारा",yoni:"योनि",maitri:"ग्रह मैत्री",gana:"गण",bhakoot:"भकूट",nadi:"नाडी"};
+ const labelsEn:Record<string,string>={varna:"Varna",vashya:"Vashya",tara:"Tara",yoni:"Yoni",maitri:"Graha Maitri",gana:"Gana",bhakoot:"Bhakoot",nadi:"Nadi"};
+ const detailNe:Record<string,string>={
+  varna:"चन्द्र राशिमा आधारित परम्परागत वर्ण-वर्गीकरण।",
+  vashya:"राशिगत समूहको आधारमा पारस्परिक प्रभावको परम्परागत सूचक।",
+  tara:"जन्म नक्षत्रबीचको नवतारा दूरीको तुलना।",
+  yoni:"नक्षत्रसँग सम्बन्धित प्रतीकात्मक योनि-वर्गको तुलना।",
+  maitri:"चन्द्र राशिका स्वामी ग्रहबीचको परम्परागत मैत्री।",
+  gana:"देव, मनुष्य वा राक्षस नक्षत्र-समूहको परम्परागत वर्गीकरण।",
+  bhakoot:"दुई चन्द्र राशिबीचको परम्परागत दूरी-आधारित मिलान।",
+  nadi:"जन्म नक्षत्रका तीन नाडी समूहको तुलना।"
+ };
+ const detailEn:Record<string,string>={
+  varna:"Traditional Varna classification based on Moon signs.",
+  vashya:"Traditional sign-group affinity and influence indicator.",
+  tara:"Comparison of the birth Nakshatra distance in the Tara cycle.",
+  yoni:"Comparison of the symbolic Yoni category associated with each Nakshatra.",
+  maitri:"Traditional friendship between the lords of the Moon signs.",
+  gana:"Traditional Deva, Manushya or Rakshasa Nakshatra grouping.",
+  bhakoot:"Traditional distance-based comparison between the Moon signs.",
+  nadi:"Comparison of the three Nadi groups assigned to the birth Nakshatras."
+ };
+ return <><h3>{tx(language,"अष्टकूट गुण तालिका","Ashtakoota score table")}</h3><div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"कूट","Koota")}</th><th>{tx(language,"पूर्णाङ्क","Max")}</th><th>{tx(language,"प्राप्त","Score")}</th><th>{tx(language,"परम्परागत अर्थ","Traditional meaning")}</th></tr></thead><tbody>{items.map(x=><tr key={x.key}><td><strong>{(language==="ne"?labelsNe:labelsEn)[x.key]||x.label}</strong></td><td>{language==="ne"?toLocalDigits(x.max):x.max}</td><td>{language==="ne"?toLocalDigits(x.score):x.score}</td><td>{(language==="ne"?detailNe:detailEn)[x.key]||x.detail}</td></tr>)}</tbody></table></div></>;
 }
 function NameGunaReport({result,language}:{result:NameGunaResult;language:Language}){
  return <section className="jp-paper jp-milan">
   <div className="jp-invocation">॥ श्री गणेशाय नमः ॥</div><h2>{tx(language,"नामबाट गुण मिलान","Name-based Guna Milan")}</h2><div className="jp-rule"/>
   <p className="jp-intro">{tx(language,"जन्म समय उपलब्ध नभएको अवस्थामा नामको प्रारम्भिक नक्षत्र-अक्षरबाट सीमित अष्टकूट सन्दर्भ। लग्न, भाव वा दशा देखाइँदैन।","A limited Ashtakoota reference from the starting nakshatra syllable when birth time is unavailable. Lagna, houses and dasha are intentionally not shown.")}</p>
-  <div className="jp-match-head"><ProfileSummary name={result.profileA.name} nakshatra={result.profileA.nakshatraNe} pada={result.profileA.pada} sign={result.profileA.signNe}/><div className="jp-score"><strong>{result.total}<small>/36</small></strong><span>{language==="ne"?result.verdict:verdict(result.total,"en")}</span></div><ProfileSummary name={result.profileB.name} nakshatra={result.profileB.nakshatraNe} pada={result.profileB.pada} sign={result.profileB.signNe}/></div>
-  <p className="jp-name-evidence">{result.profileA.name}: <strong>{result.profileA.syllable}</strong> → {result.profileA.nakshatraNe} · Pada {result.profileA.pada} &nbsp;|&nbsp; {result.profileB.name}: <strong>{result.profileB.syllable}</strong> → {result.profileB.nakshatraNe} · Pada {result.profileB.pada}</p>
+  <div className="jp-match-head"><ProfileSummary name={result.profileA.name} nakshatra={result.profileA.nakshatraNe} pada={result.profileA.pada} sign={language==="ne"?result.profileA.signNe:["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"][result.profileA.signIndex]} language={language}/><div className="jp-score"><strong>{result.total}<small>/36</small></strong><span>{language==="ne"?result.verdict:verdict(result.total,"en")}</span></div><ProfileSummary name={result.profileB.name} nakshatra={result.profileB.nakshatraNe} pada={result.profileB.pada} sign={language==="ne"?result.profileB.signNe:["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"][result.profileB.signIndex]} language={language}/></div>
+  <p className="jp-name-evidence">{result.profileA.name}: <strong>{result.profileA.syllable}</strong> → {result.profileA.nakshatraNe} · {tx(language,"चरण ","Pada ")}{result.profileA.pada} &nbsp;|&nbsp; {result.profileB.name}: <strong>{result.profileB.syllable}</strong> → {result.profileB.nakshatraNe} · {tx(language,"चरण ","Pada ")}{result.profileB.pada}</p>
   <GunaTable items={result.items} language={language}/>
  </section>;
 }
@@ -192,8 +166,8 @@ export function JanmaPatroSuite(){
    else setNotice(tx(language,"शेयर लिंक तयार भयो।","Share link is ready."));
   }catch(err){if((err as Error)?.name!=="AbortError")setError(tx(language,"शेयर लिंक बनाउन सकिएन।","Could not create a share link."));}
  };
- const exportPdf=async()=>{if(!reportRef.current)return;setPdfBusy(true);try{const mod=await import("html2pdf.js");await mod.default().set({margin:5,filename:"aafnai-patro-"+reportSlug(a.name||nameA)+".pdf",image:{type:"jpeg",quality:.98},html2canvas:{scale:2,useCORS:true,backgroundColor:"#fffaf0"},jsPDF:{unit:"mm",format:"a4",orientation:"portrait"}}).from(reportRef.current).save();}finally{setPdfBusy(false);}};
- const exportJpg=async()=>{if(!reportRef.current)return;setJpgBusy(true);try{const{toJpeg}=await import("html-to-image");const dataUrl=await toJpeg(reportRef.current,{quality:.96,pixelRatio:2,backgroundColor:"#fffaf0",cacheBust:true});const link=document.createElement("a");link.href=dataUrl;link.download="aafnai-patro-"+reportSlug(a.name||nameA)+".jpg";document.body.appendChild(link);link.click();link.remove();}catch{setError(tx(language,"JPG तयार हुन सकेन।","Could not create JPG."));}finally{setJpgBusy(false);}};
+ const exportPdf=async()=>{const target=reportRef.current;if(!target)return;setPdfBusy(true);target.classList.add("jpr-pdf-export");try{const mod=await import("html2pdf.js");const options={margin:5,filename:"aafnai-patro-"+reportSlug(a.name||nameA)+".pdf",image:{type:"jpeg",quality:.98},html2canvas:{scale:2,useCORS:true,backgroundColor:"#fffaf0"},jsPDF:{unit:"mm",format:"a4",orientation:"portrait"},pagebreak:{mode:["css","legacy"]}} as any;await mod.default().set(options).from(target).save();}finally{target.classList.remove("jpr-pdf-export");setPdfBusy(false);}};
+ const exportJpg=async()=>{if(!reportRef.current)return;setJpgBusy(true);try{const{toJpeg}=await import("html-to-image");const target=reportRef.current.querySelector(".jpr-page--cover") as HTMLElement|null;if(!target)throw new Error("report_cover_not_found");const dataUrl=await toJpeg(target,{quality:.96,pixelRatio:2,backgroundColor:"#fffaf0",cacheBust:true});const link=document.createElement("a");link.href=dataUrl;link.download="aafnai-patro-"+reportSlug(a.name||nameA)+".jpg";document.body.appendChild(link);link.click();link.remove();}catch{setError(tx(language,"JPG तयार हुन सकेन।","Could not create JPG."));}finally{setJpgBusy(false);}};
 
  const hasReport=Boolean(chart||guna||nameGuna);
  return <main className="jyotish-suite jp-page" id="main-content">
@@ -211,7 +185,7 @@ export function JanmaPatroSuite(){
   {notice&&<div className="jp-status is-success" role="status">{notice}</div>}
   {shareUrl?<div className="jp-share-url"><input readOnly value={shareUrl} aria-label="Share URL"/></div>:null}
 
-  <div ref={reportRef} className="jp-report-surface">{tab==="chart"&&chart?<ChartReport chart={chart} language={language}/>:null}{tab==="match"&&matchMode==="birth"&&guna?<BirthGunaReport result={guna} language={language}/>:null}{tab==="match"&&matchMode==="name"&&nameGuna?<NameGunaReport result={nameGuna} language={language}/>:null}</div>
+  <div ref={reportRef} className="jp-report-surface">{tab==="chart"&&chart?<DetailedBirthChartReport chart={chart} language={language}/>:null}{tab==="match"&&matchMode==="birth"&&guna?<DetailedGunaMilanReport result={guna} language={language}/>:null}{tab==="match"&&matchMode==="name"&&nameGuna?<NameGunaReport result={nameGuna} language={language}/>:null}</div>
 
   {hasReport?<div className="jp-actions"><button type="button" onClick={buildShare}>↗ {tx(language,"शेयर गर्नुहोस्","Share")}</button><button type="button" onClick={exportPdf} disabled={pdfBusy||jpgBusy}>{pdfBusy?tx(language,"PDF तयार हुँदैछ…","Preparing PDF…"):"PDF"}</button><button type="button" onClick={exportJpg} disabled={jpgBusy||pdfBusy}>{jpgBusy?tx(language,"JPG तयार हुँदैछ…","Preparing JPG…"):"JPG"}</button><button type="button" onClick={()=>window.print()}>⎙ {tx(language,"प्रिन्ट","Print")}</button></div>:null}
 
