@@ -18,7 +18,7 @@
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
     "test:typing": "node --test tests/nepali-tools.test.mjs",
-    "test:patro-tools": "vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts tests/my-time-core.test.ts tests/my-time-temporal-windows.test.ts tests/my-time-apparent-solar-time.test.ts tests/my-time-extended.test.ts tests/tantra-chronometry.test.ts",
+    "test:patro-tools": "vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts tests/my-time-core.test.ts tests/my-time-temporal-windows.test.ts tests/my-time-apparent-solar-time.test.ts tests/my-time-extended.test.ts tests/tantra-chronometry.test.ts tests/my-time-personal-settings.test.ts",
     "test:full-product": "node --test tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/fresh-build-ux-contract.test.mjs",
     "test:release-safety": "node --test tests/production-release-safety.test.mjs tests/today-hero-detail-route.test.mjs tests/mobile-cache-boot.test.mjs tests/pwa-install-delivery-contract.test.mjs && npm run test:security-promotion && npm run test:google-auth",
     "test:security-promotion": "vitest run tests/promotion-security.test.ts",
