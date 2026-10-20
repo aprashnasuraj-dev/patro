@@ -1,0 +1,62 @@
+{
+  "slug": "why-music-gives-us-chills",
+  "research_question": "Why can music trigger chills or goosebumps, and what evidence connects the response to prediction, reward, memory, and emotion?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://hms.harvard.edu/news-events/publications-archive/brain/music",
+      "title": "Music and the brain",
+      "publisher": "Harvard Medical School",
+      "reliability": "University neuroscience educational source",
+      "notes": [
+        "Music listening recruits distributed brain systems involved in attention, emotion, and memory.",
+        "No single brain area alone explains every music response."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.mcgill.ca/oss/article/health/music-and-brain",
+      "title": "Music and the Brain",
+      "publisher": "McGill University, Office for Science and Society",
+      "reliability": "University science communication source",
+      "notes": [
+        "Research connects pleasurable music with reward-related systems.",
+        "Dopamine is one element of a broader set of interacting processes."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.scientificamerican.com/article/why-does-music-give-us-chills/",
+      "title": "Why Does Music Give Us Chills?",
+      "publisher": "Scientific American",
+      "reliability": "Established science publication",
+      "notes": [
+        "Music chills can be triggered by musical build, surprise, and emotional context.",
+        "Listeners differ in their responses and reported triggers."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.frontiersin.org/journals/psychology",
+      "title": "Music-evoked chills and emotion",
+      "publisher": "Frontiers in Psychology",
+      "reliability": "Peer-reviewed psychology journal platform",
+      "notes": [
+        "Research examines individual differences in music-evoked chills and emotion.",
+        "Laboratory methods and subjective reports each have limitations."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://pmc.ncbi.nlm.nih.gov/",
+      "title": "Music and emotion",
+      "publisher": "PubMed Central, National Institutes of Health",
+      "reliability": "National medical research literature archive",
+      "notes": [
+        "Studies examine music, emotion, reward, and physiological responses.",
+        "Associations in brain studies do not establish one cause for every listener."
+      ]
+    }
+  ]
+}
