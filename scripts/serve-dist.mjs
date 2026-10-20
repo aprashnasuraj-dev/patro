@@ -42,6 +42,14 @@ async function serveAuditApi(url, res) {
     json(res, 200, { items: [] });
     return true;
   }
+  if (url.pathname === "/api/v1/radio/catalog") {
+    json(res, 200, {
+      ok: true, source: "static-audit-fixture", directory_warning: "Static audit fixture",
+      country: "NP", total: 0, page: 1, pages: 1, page_size: 24,
+      has_more: false, verified_total: 0, items: []
+    });
+    return true;
+  }
   if (url.pathname === "/api/v1/noc/fuel-prices") {
     json(res, 200, {
       ok: true,
