@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } from "lucide-react";
 import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
@@ -160,6 +160,7 @@ export default function MyTimePage() {
   const [preferences, setPreferences] = useState<Preferences>(readPreferences);
   const [date, setDate] = useState(() => localDate(readPreferences().timezone));
   const [now, setNow] = useState(() => new Date());
+  const observedLocalDay = useRef(localDate(readPreferences().timezone));
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [offlineSnapshot, setOfflineSnapshot] = useState(false);
   const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
@@ -289,6 +290,14 @@ export default function MyTimePage() {
   }, [date, preferences, language]);
 
   useEffect(() => { void loadSnapshot(date, preferences); }, []); // Initial load only; edits apply on submit.
+  useEffect(() => {
+    const today = localDate(preferences.timezone, now);
+    if (today !== observedLocalDay.current) {
+      observedLocalDay.current = today;
+      setDate(today);
+      void loadSnapshot(today, preferences);
+    }
+  }, [now, preferences, loadSnapshot]); // Refresh the briefing after the selected timezone crosses midnight.
   const dateLabel = useMemo(() => localDateLabel(date, preferences.timezone, language), [date, preferences.timezone, language]);
   const localTime = localClock(preferences.timezone, now);
   const solarTime = apparentSolarTime(now, preferences.lng);
