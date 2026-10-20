@@ -39,3 +39,39 @@
 .mt-recommended-windows>div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 9px;border-radius:9px;background:color-mix(in srgb,var(--mt-soft) 62%,transparent)}
 .mt-recommended-windows>div>span{font-size:11px;line-height:1.5;color:var(--mt-ink)}
 .mt-recommended-windows>div>strong{flex:none;font-size:12px;font-variant-numeric:tabular-nums;color:var(--mt-accent)}
+
+
+/* Tantra Vidya: opt-in traditional chronometry layer */
+.mt-tantra-toggle{padding:5px 9px;border:1px solid color-mix(in srgb,#a855f7 34%,var(--mt-line));border-radius:10px;background:color-mix(in srgb,#a855f7 7%,var(--mt-card))}
+.mt-legend-tatwa{display:inline-block;width:15px;height:5px;border-radius:5px}
+.mt-tantra-panel{margin:0 0 16px;overflow:hidden;position:relative}
+.mt-tantra-panel:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,#d97706,#7c3aed,#2563eb);opacity:.9}
+.mt-tantra-active{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border:1px solid #a855f766;border-radius:999px;background:#a855f715;color:#8b45b4;font-size:11px;font-weight:800;white-space:nowrap}
+.mt-tantra-devi{display:flex;align-items:flex-start;gap:14px;margin:18px 0 12px;padding:16px;border:1px solid var(--mt-line);border-radius:15px;background:linear-gradient(115deg,color-mix(in srgb,#f59e0b 9%,var(--mt-card)),color-mix(in srgb,#8b5cf6 6%,var(--mt-card)))}
+.mt-tantra-om{display:grid;place-items:center;flex:none;width:46px;height:46px;border:1px solid #d9770655;border-radius:50%;background:color-mix(in srgb,#f59e0b 12%,var(--mt-card));color:#b7791f;font-size:25px}
+.mt-tantra-devi-copy{min-width:0}
+.mt-tantra-name{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.mt-tantra-name strong{font-size:20px;letter-spacing:-.025em}
+.mt-tantra-name span{color:#b7791f;font-family:serif;font-size:15px}
+.mt-tantra-devi-copy>small,.mt-tatwa-card>small{display:block;color:var(--mt-muted);font-size:10px;margin-top:3px}
+.mt-tantra-devi-copy p,.mt-tatwa-card p{font-size:12px;line-height:1.6;margin:7px 0 0;color:var(--mt-muted)}
+.mt-tantra-devi-copy .mt-tantra-mantra{font-style:italic;color:var(--mt-ink);margin-top:8px}
+.mt-tatwa-card{padding:15px;border:1px solid var(--mt-line);border-radius:15px;background:var(--mt-card)}
+.mt-tatwa-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--mt-muted);font-size:11px}
+.mt-tatwa-top strong{color:var(--mt-ink);font-variant-numeric:tabular-nums}
+.mt-tatwa-name{display:flex;align-items:center;gap:8px;margin-top:12px}
+.mt-tatwa-name i{width:12px;height:12px;border-radius:50%;box-shadow:0 0 0 4px color-mix(in srgb,currentColor 9%,transparent)}
+.mt-tatwa-name strong{font-size:17px}
+.mt-tatwa-name span{color:var(--mt-muted);font-size:12px}
+.mt-tatwa-track{height:6px;border-radius:999px;background:var(--mt-line);overflow:hidden;margin-top:12px}
+.mt-tatwa-track span{display:block;height:100%;border-radius:inherit;transition:width .35s linear}
+.mt-tatwa-card>small{margin-top:8px}
+.mt-tantra-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.mt-tantra-details>div{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:13px;border:1px solid var(--mt-line);border-radius:13px;background:color-mix(in srgb,var(--mt-soft) 40%,var(--mt-card));min-width:0}
+.mt-tantra-details small{color:var(--mt-muted);font-size:10px;font-weight:750}
+.mt-tantra-details strong{font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.mt-tantra-details span{color:var(--mt-muted);font-size:10px;line-height:1.5}
+.mt-tantra-note{font-size:10px;line-height:1.65;color:var(--mt-muted);margin:12px 0 0}
+.mt-tantra-unavailable{padding:13px 15px;margin-bottom:16px;border:1px solid var(--mt-line);border-radius:13px;color:var(--mt-muted);font-size:12px}
+@media(max-width:520px){.mt-tantra-panel{padding:16px}.mt-tantra-devi{padding:12px;gap:10px}.mt-tantra-om{width:38px;height:38px;font-size:21px}.mt-tantra-name strong{font-size:17px}.mt-tantra-details{grid-template-columns:minmax(0,1fr)}.mt-tantra-active{font-size:10px;padding:4px 6px}}
+@media(prefers-reduced-motion:reduce){.mt-tatwa-track span{transition:none}}
