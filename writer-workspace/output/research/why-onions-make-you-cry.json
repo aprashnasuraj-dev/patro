@@ -1,0 +1,61 @@
+{
+  "slug": "why-onions-make-you-cry",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.loc.gov/everyday-mysteries/browse-all-questions/item/why-does-chopping-an-onion-make-you-cry/",
+      "title": "Why does chopping an onion make you cry?",
+      "publisher": "Library of Congress",
+      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "notes": [
+        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.nature.com/articles/419685a",
+      "title": "Plant biochemistry: an onion enzyme that makes the eyes water",
+      "publisher": "Nature",
+      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "notes": [
+        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.acs.org/pressroom/reactions/library/why-do-onions-make-you-cry.html",
+      "title": "Why Do Onions Make You Cry?",
+      "publisher": "American Chemical Society",
+      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "notes": [
+        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.aao.org/eye-health/tips-prevention/no-more-tears-how-to-chop-onions-without-crying",
+      "title": "No More Tears: Here's How to Chop Onions Without Crying",
+      "publisher": "American Academy of Ophthalmology",
+      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "notes": [
+        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.onions-usa.org/all-about-onions/",
+      "title": "All About Onions",
+      "publisher": "National Onion Association",
+      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "notes": [
+        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+      ]
+    }
+  ],
+  "notes": [
+    "Draft committed; hero image pending.",
+    "Library of Congress source was opened; other source URLs need final direct verification before the batch is marked complete."
+  ]
+}
