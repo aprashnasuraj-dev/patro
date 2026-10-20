@@ -451,7 +451,6 @@ export default function MyTimePage() {
 
   const selectedInterestKey = personalSettings.interests.filter(item => item !== "general").join("|") || "general";
   const selectedInterests = selectedInterestKey.split("|");
-  const selectedInterest = selectedInterests[0] || "general";
   const combinedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
     const preferredTatwas: Record<string, string[]> = { general: [], work: ["Prithvi", "Tejas / Agni", "Vayu"], study: ["Vayu", "Akash"], travel: ["Vayu", "Aap / Jala"], prayer: ["Akash", "Vayu"], meditation: ["Akash", "Aap / Jala"], family: ["Aap / Jala", "Prithvi"] };
