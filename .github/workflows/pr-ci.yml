@@ -63,7 +63,7 @@ jobs:
             esac
 
             case "$file" in
-              *tool*|*tools*|tests/core.test.ts|tests/tithi-events.test.ts|tests/sait-baby.test.ts|tests/language.test.ts|tests/bots-letters.test.ts)
+              *tool*|*tools*|tests/my-time-personal-engine.test.ts|tests/core.test.ts|tests/tithi-events.test.ts|tests/sait-baby.test.ts|tests/language.test.ts|tests/bots-letters.test.ts)
                 tools=true ;;
             esac
 
