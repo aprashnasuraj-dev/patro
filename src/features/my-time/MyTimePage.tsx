@@ -11,8 +11,8 @@ type Snapshot = {
   timezone: string;
   evaluated_at_utc: string;
   location: { lat: number; lng: number };
-  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number };
-  sky: { sun_longitude_tropical_deg: number; moon_longitude_tropical_deg: number; moon_illumination_percent: number };
+  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number; nakshatra_index: number; nakshatra_name_ne: string; nakshatra_pada: number; yoga_index: number; yoga_name_ne: string; karana_index: number; karana_name_ne: string; moon_rashi_ne: string; sun_rashi_ne: string; sunrise_utc: string | null; sunset_utc: string | null; moonrise_utc: string | null; tithi_end_utc: string | null };
+  sky: { sun_longitude_tropical_deg: number; moon_longitude_tropical_deg: number; sun_longitude_sidereal_deg: number; moon_longitude_sidereal_deg: number; solar_altitude_deg_at_evaluation: number; moon_illumination_percent: number };
   methodology: { engine: string; time_anchor: string; sidereal_positions: boolean; limitations: string[] };
 };
 type Preferences = { timezone: string; lat: number; lng: number };
@@ -44,6 +44,7 @@ function localDateLabel(date: string, timezone: string, language: "ne" | "en") {
   catch { return date; }
 }
 function fmt(value: number, digits = 2) { return Number.isFinite(value) ? value.toFixed(digits) : "—"; }
+function formatInstant(value: string | null, timezone: string, language: "ne" | "en") { if (!value) return "—"; try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); } catch { return "—"; } }
 
 function PolarClock({ timezone, now, language }: { timezone: string; now: Date; language: "ne" | "en" }) {
   const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", hourCycle: "h23" }).format(now));
@@ -74,12 +75,12 @@ function PolarClock({ timezone, now, language }: { timezone: string; now: Date; 
 }
 
 const UPCOMING = [
-  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","सौर क्षितिज र सन्ध्याकाल","Solar horizon and twilight"],
-  ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations"],
-  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing"],
-  ["✦","शुभ मुहूर्त","Smart Muhurta","व्याख्या गर्न मिल्ने व्यक्तिगत समय सिफारिस","Explainable personal timing windows"],
-  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context"],
-  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context"]
+  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","स्थानअनुसार सौर घटना गणना","Location-specific solar events","ready"],
+  ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations","ready"],
+  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing","pending"],
+  ["✦","शुभ मुहूर्त","Smart Muhurta","व्याख्या गर्न मिल्ने व्यक्तिगत समय सिफारिस","Explainable personal timing windows","pending"],
+  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context","pending"],
+  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context","pending"]
 ] as const;
 
 export default function MyTimePage() {
@@ -164,6 +165,14 @@ export default function MyTimePage() {
         {snapshot ? <>
           <div className="mt-tithi-hero"><div className="mt-moon-mark"><Moon size={28}/></div><div><small>{l(language,"तिथि","Tithi")} {snapshot.panchang.tithi_index}/30</small><strong>{tithiName}</strong><span>{snapshot.panchang.paksha === "Shukla Paksha" ? l(language,"शुक्ल पक्ष","Shukla Paksha") : l(language,"कृष्ण पक्ष","Krishna Paksha")}</span></div><div className="mt-tithi-progress"><b>{fmt(snapshot.panchang.tithi_progress_percent,0)}%</b><span>{l(language,"प्रगति","progress")}</span></div></div>
           <div className="mt-progress-track"><span style={{width:`${snapshot.panchang.tithi_progress_percent}%`}}/></div>
+          <div className="mt-panchang-details">
+            <div><small>{l(language,"नक्षत्र / पाद","Nakshatra / Pada")}</small><strong>{snapshot.panchang.nakshatra_name_ne} · {snapshot.panchang.nakshatra_pada}</strong></div>
+            <div><small>{l(language,"योग","Yoga")}</small><strong>{snapshot.panchang.yoga_name_ne}</strong></div>
+            <div><small>{l(language,"करण","Karana")}</small><strong>{snapshot.panchang.karana_name_ne}</strong></div>
+            <div><small>{l(language,"चन्द्र / सूर्य राशि","Moon / Sun Rashi")}</small><strong>{snapshot.panchang.moon_rashi_ne} / {snapshot.panchang.sun_rashi_ne}</strong></div>
+            <div><small>{l(language,"सूर्योदय / सूर्यास्त","Sunrise / sunset")}</small><strong>{formatInstant(snapshot.panchang.sunrise_utc,preferences.timezone,language)} / {formatInstant(snapshot.panchang.sunset_utc,preferences.timezone,language)}</strong></div>
+            <div><small>{l(language,"सौर उचाइ","Solar altitude")}</small><strong>{fmt(snapshot.sky.solar_altitude_deg_at_evaluation,1)}°</strong></div>
+          </div>
           <div className="mt-metrics"><div><span>{l(language,"चन्द्र उज्यालोपन","Moon illumination")}</span><strong>{fmt(snapshot.sky.moon_illumination_percent,1)}%</strong></div><div><span>{l(language,"सूर्य देशान्तर","Sun longitude")}</span><strong>{fmt(snapshot.sky.sun_longitude_tropical_deg)}°</strong></div><div><span>{l(language,"चन्द्र देशान्तर","Moon longitude")}</span><strong>{fmt(snapshot.sky.moon_longitude_tropical_deg)}°</strong></div></div>
         </> : <div className="mt-empty-snapshot"><Moon size={28}/><strong>{l(language,"तपाईंको समयको गणना तयार हुँदैछ","Your time snapshot is waiting")}</strong><span>{l(language,"स्थान, समय क्षेत्र र मिति अनुसार गणना लोड गर्नुहोस्।","Load calculations for your location, timezone and date.")}</span></div>}
         <div className="mt-method-note"><span>{l(language,"इन्जिन","Engine")}: {snapshot?.methodology.engine || "astronomy-engine"}</span><span>{l(language,"स्थानीय मिति एंकर","Local date anchor")}: {snapshot?.methodology.time_anchor || l(language,"स्थानीय मध्याह्न","Local noon")}</span></div>
@@ -177,7 +186,7 @@ export default function MyTimePage() {
 
     <section className="mt-section">
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह एउटै मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। गणना उपलब्ध नभएका भागलाई स्पष्ट रूपमा चिनाइएको छ।","Every layer shares the same date, location and timezone. Capabilities not yet calculated are explicitly marked.")}</p></div>
-      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn])=><article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className="mt-layer-status">{l(language,"इन्जिन जडान हुँदै","Engine integration pending")}</span></article>)}</div>
+      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=><article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(status==="ready"?"is-ready":"")}>{status==="ready"?l(language,"गणना उपलब्ध","Calculation available"):l(language,"इन्जिन जडान हुँदै","Engine integration pending")}</span></article>)}</div>
     </section>
 
     <section className="mt-personal">
