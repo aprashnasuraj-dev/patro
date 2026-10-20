@@ -164,12 +164,6 @@ export default function MyTimePage() {
     if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
     return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
   }, [snapshot, now, preferences.timezone]);
-  const personalizedMuhurta = useMemo(() => {
-    if (!snapshot) return null;
-    try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
-    catch { return null; }
-  }, [snapshot, now, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
-
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
   useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v1", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
@@ -253,6 +247,12 @@ export default function MyTimePage() {
   const chandraHouse = snapshot && natalMoonSignIndex >= 0 ? ((snapshot.panchang.moon_rashi_index - natalMoonSignIndex + 12) % 12) + 1 : null;
   const chandraScore = chandraHouse === null ? null : [1,3,6,7,10,11].includes(chandraHouse) ? 100 : [4,8,12].includes(chandraHouse) ? 0 : 50;
   const declaredSign = SIGNS.find(sign => sign.id === personalContext.effectiveSign);
+  const personalizedMuhurta = useMemo(() => {
+    if (!snapshot) return null;
+    try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
+    catch { return null; }
+  }, [snapshot, now, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
+
 
   return <main className="mt-page">
     <header className="mt-heading">
