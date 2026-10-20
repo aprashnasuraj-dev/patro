@@ -15,6 +15,12 @@ function time(value: string, timezone: string) {
 export default function TantraVidyaWidget({ data, language, timezone }: Props) {
   const { nityaDevi, activeTatwa, tatwaRemainingMinutes, tatwaElapsedMinutes, tatwaWindow, yoginiDirection, mahanishaKaal } = data;
   const progress = Math.min(100, Math.max(0, (tatwaElapsedMinutes / 24) * 100));
+  const attributesNe: Record<string, string> = {
+    "Fulfillment of desires & creative impulse": "इच्छापूर्ति र सिर्जनात्मक प्रेरणा", "Attraction & solar radiance": "आकर्षण र सौर तेज", "Compassion & fluidity": "करुणा र सहज प्रवाह", "Protection & inner strength": "संरक्षण र आन्तरिक शक्ति", "Transformative fire energy": "रूपान्तरणकारी अग्नि ऊर्जा", "Indestructible clarity": "अविनाशी स्पष्टता", "Integration of Shiva/Shakti forces": "शिव–शक्ति तत्त्वको समन्वय", "Swift spiritual realization": "शीघ्र आध्यात्मिक अनुभूति", "Harmony in relationships & family": "सम्बन्ध र परिवारमा सामञ्जस्य", "Perpetual movement & rhythm": "निरन्तर गति र लय", "Victory over internal blockages": "आन्तरिक अवरोधमाथि विजय", "Success in Sadhana and work": "साधना र कर्ममा सफलता", "All-pervading auspiciousness": "सर्वव्यापी मङ्गल", "Purification through light": "प्रकाशद्वारा शुद्धीकरण", "Multidimensional expression & art": "बहुआयामिक अभिव्यक्ति र कला"
+  };
+  const recommendationsNe: Record<string, string> = {
+    "Grounding, stability, building, physical work": "स्थिरता, आधार निर्माण र शारीरिक काम", "Fluidity, emotional work, social bonding, rest": "लचकता, भावनात्मक काम, सामाजिक सम्बन्ध र विश्राम", "Focus, transformation, athletic effort, sharp tasks": "एकाग्रता, रूपान्तरण, शारीरिक अभ्यास र तीक्ष्ण काम", "Intellectual work, movement, strategy, ideation": "बौद्धिक काम, गति, रणनीति र नयाँ विचार", "Meditation, inner Sadhana, solitude, silence": "ध्यान, आन्तरिक साधना, एकान्त र मौन"
+  };
   const direction = (value: string) => {
     const ne: Record<string, string> = { East: "पूर्व", "South-East": "आग्नेय", South: "दक्षिण", "South-West": "नैऋत्य", West: "पश्चिम", "North-West": "वायव्य", North: "उत्तर", "North-East": "ईशान", Center: "केन्द्र", Above: "माथि", Below: "तल", "Center / Sky": "केन्द्र / आकाश" };
     return language === "ne" ? (ne[value] || value) : value;
@@ -30,14 +36,14 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
         <div className="mt-tantra-name"><strong>{nityaDevi.name}</strong><span>{nityaDevi.sanskritName}</span></div>
         <small>{l(language, "पक्ष", "Paksha")}: {data.paksha === "Shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")} · {l(language, "नित्यादेवी", "Nitya Devi")} {nityaDevi.id}/15</small>
         <p className="mt-tantra-mantra">{nityaDevi.mantra}</p>
-        <p>{l(language, nityaDevi.attribute === "Fulfillment of desires & creative impulse" ? "इच्छापूर्ति र सिर्जनात्मक प्रेरणा" : nityaDevi.attribute, nityaDevi.attribute)}</p>
+        <p>{l(language, attributesNe[nityaDevi.attribute] || nityaDevi.attribute, nityaDevi.attribute)}</p>
       </div>
     </div>
     <div className="mt-tatwa-card">
       <div className="mt-tatwa-top"><span>{l(language, "सक्रिय पञ्चतत्त्व तरङ्ग", "Active Pancha Tatwa wave")}</span><strong>{tatwaRemainingMinutes}{l(language, " मिनेट बाँकी", "m remaining")}</strong></div>
       <div className="mt-tatwa-name"><i style={{ backgroundColor: activeTatwa.color }} /><strong>{activeTatwa.name}</strong><span>{activeTatwa.element}</span></div>
       <div className="mt-tatwa-track" role="progressbar" aria-label={l(language, "तत्त्व चक्रको प्रगति", "Tatwa cycle progress")} aria-valuemin={0} aria-valuemax={24} aria-valuenow={tatwaElapsedMinutes}><span style={{ width: progress + "%", backgroundColor: activeTatwa.color }} /></div>
-      <p>{l(language, activeTatwa.recommended === "Grounding, stability, building, physical work" ? "स्थिरता, आधार निर्माण र शारीरिक काम" : activeTatwa.recommended, activeTatwa.recommended)}</p>
+      <p>{l(language, recommendationsNe[activeTatwa.recommended] || activeTatwa.recommended, activeTatwa.recommended)}</p>
       <small>{time(tatwaWindow.start, timezone)}–{time(tatwaWindow.end, timezone)} · {l(language, "२४ मिनेटको परम्परागत चक्र", "traditional 24-minute segment")}</small>
     </div>
     <div className="mt-tantra-details">
