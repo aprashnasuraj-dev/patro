@@ -1,6 +1,7 @@
 import { RASHIS as NE_SIGNS, NAKSHATRAS as NE_NAKSHATRAS, toNepaliDigits } from "../patro-tools/core/names";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { calculateChart, calculateGuna, type BirthInput, type ChartResult, type GunaResult, SIGNS } from "./jyotishEngine";
+import { JANMAPATRO_BIRTH_PLACES as DISTRICTS, createJanmaPatroContext, saveJanmaPatroContext } from "./my-time-bridge";
 import { calculateNameGuna, nameSyllableFromNakshatra, type NameGunaResult } from "../../packages/engine/src/name-guna.js";
 import { createJanmaPatroShareUrl, readJanmaPatroShareState } from "../../packages/engine/src/share-state.js";
 import { adToBs, bsToAd, daysInBsMonth } from "../../packages/core/src/bsDate";
@@ -13,12 +14,7 @@ type MatchMode="birth"|"name";
 type ProfileInput=BirthInput&{father?:string};
 type SharedState={tab:Tab;matchMode:MatchMode;language:Language;a:ProfileInput;b:ProfileInput;nameA:string;nameB:string};
 
-const DISTRICTS=[
- ["Kathmandu",27.7172,85.3240],["Lalitpur",27.6644,85.3188],["Bhaktapur",27.6710,85.4298],["Pokhara",28.2096,83.9856],
- ["Biratnagar",26.4525,87.2718],["Janakpur",26.7288,85.9250],["Birgunj",27.0104,84.8774],["Chitwan",27.5291,84.3542],
- ["Butwal",27.7006,83.4484],["Nepalgunj",28.0500,81.6167],["Dhangadhi",28.7017,80.5898],["Charikot",27.6667,86.0333],
- ["Manthali",27.3833,86.0667],["Chautara",27.7744,85.7120],["Melamchi",27.8294,85.5775]
-] as const;
+
 const DEFAULT:ProfileInput={name:"",father:"",date:"1995-01-01",time:"12:00",lat:27.7172,lng:85.324,location:"Kathmandu"};
 const tx=(language:Language,ne:string,en:string)=>language==="ne"?ne:en;
 
@@ -59,7 +55,7 @@ function ProfileForm({value,onChange,prefix,language}:{value:ProfileInput;onChan
    {calendar==="AD"?<label>{tx(language,"जन्ममिति","Birth date")}<input type="date" value={value.date} onChange={(e)=>set("date",e.target.value)}/></label>:
    <div className="jp-bs-date"><label>BS year<input type="number" value={bs.year} onChange={(e)=>setBs({...bs,year:Number(e.target.value)})}/></label><label>Month<input type="number" min="1" max="12" value={bs.month} onChange={(e)=>setBs({...bs,month:Number(e.target.value)})}/></label><label>Day<input type="number" min="1" max={(()=>{try{return daysInBsMonth(bs.year,bs.month)}catch{return 32}})()} value={bs.day} onChange={(e)=>setBs({...bs,day:Number(e.target.value)})}/></label><button type="button" onClick={applyBs} disabled={busy}>{busy?tx(language,"रूपान्तरण हुँदैछ…","Converting…"):tx(language,"वि.सं. मिति प्रयोग गर्नुहोस्","Use BS date")}</button></div>}
    <label>{tx(language,"जन्म समय","Exact time")}<input type="time" value={value.time} onChange={(e)=>set("time",e.target.value)}/></label>
-   <label>{tx(language,"जन्मस्थान","District")}<select value={DISTRICTS.some((x)=>x[0]===value.location)?value.location:""} onChange={(e)=>chooseDistrict(e.target.value)}><option value="">{tx(language,"अन्य स्थान · Coordinates","Other · Coordinates")}</option>{DISTRICTS.map((x)=><option key={x[0]}>{x[0]}</option>)}</select></label>
+   <label>{tx(language,"जन्मस्थान / सहर","Birthplace / city")}<select value={DISTRICTS.some((x)=>x[0]===value.location)?value.location:""} onChange={(e)=>chooseDistrict(e.target.value)}><option value="">{tx(language,"अन्य स्थान · Coordinates","Other · Coordinates")}</option>{DISTRICTS.map((x)=><option key={x[0]}>{x[0]}</option>)}</select></label>
    <label>Latitude<input type="number" step=".0001" value={value.lat} onChange={(e)=>set("lat",Number(e.target.value))}/></label>
    <label>Longitude<input type="number" step=".0001" value={value.lng} onChange={(e)=>set("lng",Number(e.target.value))}/></label>
   </div>
@@ -136,6 +132,7 @@ export function JanmaPatroSuite(){
  const[error,setError]=useState<string|null>(null),[notice,setNotice]=useState(""),[shareUrl,setShareUrl]=useState(""),[pdfBusy,setPdfBusy]=useState(false),[jpgBusy,setJpgBusy]=useState(false);
  const reportRef=useRef<HTMLDivElement|null>(null);
  const canMatch=useMemo(()=>matchMode==="name"?Boolean(nameA.trim()&&nameB.trim()):Boolean(a.date&&a.time&&b.date&&b.time),[a,b,matchMode,nameA,nameB]);
+ const hasEditedBirthDetails=a.date!==DEFAULT.date||a.time!==DEFAULT.time||a.location!==DEFAULT.location||a.lat!==DEFAULT.lat||a.lng!==DEFAULT.lng;
 
  const calculate=(state?:Partial<SharedState>)=>{
   const activeTab=state?.tab??tab,activeMode=state?.matchMode??matchMode,aa=state?.a??a,bb=state?.b??b,nA=state?.nameA??nameA,nB=state?.nameB??nameB;
@@ -144,8 +141,8 @@ export function JanmaPatroSuite(){
    if(activeTab==="match"&&activeMode==="name"){setChart(null);setGuna(null);setNameGuna(calculateNameGuna(nA,nB));return;}
    const ca=calculateChart(aa);setChart(ca);
    if(activeTab==="chart"){
-    const context={time_known:true,lagna:{name:NE_SIGNS[ca.ascSignIndex],degree:ca.ascendant},rashi:{name:NE_SIGNS[ca.planets.find(p=>p.key==="moon")!.signIndex]},nakshatra:{name:NE_NAKSHATRAS[ca.moonNakshatraIndex],pada:ca.moonPada},birth:{...ca.input},planets:ca.planets.map(p=>({planet_en:p.name,rashi:{name:NE_SIGNS[p.signIndex]},house:p.house,degree:p.longitude})),dasha:{periods:ca.dashas.map(d=>({...d,start:d.start.toISOString(),end:d.end.toISOString()}))},other_important_points:{manglik:ca.manglik},data_quality:{source:"janmapatro-engine",methodology:ca.methodology}};
-    try{localStorage.setItem("aafnai.jyotish.china.context.v1",JSON.stringify(context));window.dispatchEvent(new CustomEvent("patro:china-updated",{detail:context}));}catch{}
+    const context=createJanmaPatroContext(ca);
+    saveJanmaPatroContext(context);
    }
    if(activeTab==="match"){const cb=calculateChart(bb);setGuna(calculateGuna(ca,cb));}else setGuna(null);
   }catch(err){setError(err instanceof Error?err.message:tx(language,"गणना हुन सकेन। विवरण जाँचेर फेरि प्रयास गर्नुहोस्।","Calculation failed. Check the details and try again."));}
@@ -166,6 +163,17 @@ export function JanmaPatroSuite(){
 
  const setTab=(next:Tab)=>{setTabState(next);setChart(null);setGuna(null);setNameGuna(null);setError(null);setNotice("");if(typeof window!=="undefined")window.history.replaceState(window.history.state,"",canonicalFor(next));};
  const generate=(e:FormEvent)=>{e.preventDefault();calculate();};
+ const connectToMyTime=()=>{
+  setError(null);setNotice("");
+  if(!hasEditedBirthDetails){setError(tx(language,"पहिले जन्म मिति, समय वा स्थान आफ्नो विवरणअनुसार भर्नुहोस्।","Enter your birth date, time or birthplace before connecting."));return;}
+  try{
+   const calculated=calculateChart(a);
+   const context=createJanmaPatroContext(calculated);
+   if(!saveJanmaPatroContext(context)){setError(tx(language,"जन्म विवरण यस ब्राउजरमा सुरक्षित हुन सकेन। स्थानीय भण्डारण अनुमति जाँच्नुहोस्।","Birth details could not be saved in this browser. Check local storage permissions."));return;}
+   window.history.pushState(window.history.state,"","/mytime");
+   window.dispatchEvent(new Event("patro:navigation"));
+  }catch(err){setError(err instanceof Error?err.message:tx(language,"मेरो समयसँग जोड्न सकिएन। जन्म विवरण जाँच्नुहोस्।","Could not connect to My Time. Check the birth details."));}
+ };
  const buildShare=async()=>{
   try{
    const url=createJanmaPatroShareUrl(new URL(canonicalFor(tab),window.location.origin).toString(),{tab,matchMode,language,a,b,nameA,nameB});
@@ -187,6 +195,7 @@ export function JanmaPatroSuite(){
    {tab==="match"?<div className="jp-mode"><button type="button" className={matchMode==="birth"?"is-active":""} onClick={()=>{setMatchMode("birth");setNameGuna(null)}}>{tx(language,"जन्म विवरणबाट","Birth details")}</button><button type="button" className={matchMode==="name"?"is-active":""} onClick={()=>{setMatchMode("name");setChart(null);setGuna(null)}}>{tx(language,"नामबाट","By name")}</button></div>:null}
    {tab==="chart"||matchMode==="birth"?<><ProfileForm value={a} onChange={setA} language={language} prefix={tab==="match"?tx(language,"पहिलो व्यक्ति · Profile A","Profile A"):tx(language,"जन्म विवरण","Birth details")}/>{tab==="match"?<ProfileForm value={b} onChange={setB} language={language} prefix={tx(language,"दोस्रो व्यक्ति · Profile B","Profile B")}/>:null}</>:<div className="jp-name-mode"><label>{tx(language,"पहिलो नाम","First name")}<input value={nameA} onChange={(e)=>setNameA(e.target.value)} placeholder="राम"/></label><span>×</span><label>{tx(language,"दोस्रो नाम","Second name")}<input value={nameB} onChange={(e)=>setNameB(e.target.value)} placeholder="सीता"/></label><p>{tx(language,"नामको पहिलो नक्षत्र-अक्षरबाट सीमित मिलान हुन्छ। जन्म समय नभएकाले लग्न/भाव/दशा देखाइँदैन।","This limited mode maps the starting name syllable to a nakshatra. It never invents lagna, houses or dasha without a birth time.")}</p></div>}
    <button className="jp-primary" type="submit" disabled={tab==="match"&&!canMatch}>{tab==="match"?tx(language,"गुण मिलाउनुहोस्","Calculate match"):tx(language,"जन्मपत्रिका बनाउनुहोस्","Generate birth chart")}</button>
+   {tab==="chart"&&<button type="button" className="jp-connect-mytime" onClick={connectToMyTime} disabled={!hasEditedBirthDetails}>↗ {tx(language,"मेरो समयसँग जोड्नुहोस्","Connect to My Time")}</button>}
   </form>
 
   {error&&<div className="jp-status is-error" role="alert">{error}</div>}
