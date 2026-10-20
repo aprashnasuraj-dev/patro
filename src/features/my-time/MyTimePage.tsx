@@ -67,14 +67,16 @@ function PolarClock({ timezone, now, language }: { timezone: string; now: Date; 
   const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", hourCycle: "h23" }).format(now));
   const minutes = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, minute: "2-digit" }).format(now));
   const seconds = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, second: "2-digit" }).format(now));
-  const angle = ((hours + minutes / 60 + seconds / 3600) / 24) * Math.PI * 2 - Math.PI / 2;
+  const dayProgress = (hours + minutes / 60 + seconds / 3600) / 24;
+  const angle = dayProgress * Math.PI * 2 - Math.PI / 2;
   const x = 150 + Math.cos(angle) * 92, y = 150 + Math.sin(angle) * 92;
+  const progressLength = Math.max(0.5, dayProgress * 2 * Math.PI * 100);
   return <div className="mt-polar-wrap">
     <svg className="mt-polar" viewBox="0 0 300 300" role="img" aria-label={l(language, "तपाईंको स्थानीय दिनको २४ घण्टे घडी", "24-hour clock for your selected timezone")}>
       <defs><linearGradient id="mt-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#e8bd70"/><stop offset="100%" stopColor="#4d9d8b"/></linearGradient></defs>
-      <circle cx="150" cy="150" r="118" fill="none" stroke="var(--mt-line)" strokeWidth="1"/>
+      <circle className="mt-polar-orbit" cx="150" cy="150" r="126" fill="none" stroke="var(--mt-accent)" strokeWidth="1" strokeDasharray="1 9" strokeLinecap="round"/><circle cx="150" cy="150" r="118" fill="none" stroke="var(--mt-line)" strokeWidth="1"/>
       <circle cx="150" cy="150" r="100" fill="none" stroke="var(--mt-line)" strokeWidth="10" opacity=".55"/>
-      <circle cx="150" cy="150" r="100" fill="none" stroke="url(#mt-ring)" strokeWidth="10" strokeDasharray="157 471" transform="rotate(-90 150 150)" strokeLinecap="round"/>
+      <circle className="mt-polar-progress" cx="150" cy="150" r="100" fill="none" stroke="url(#mt-ring)" strokeWidth="10" strokeDasharray={`${progressLength} 628.32`} transform="rotate(-90 150 150)" strokeLinecap="round"/>
       <circle cx="150" cy="150" r="78" fill="none" stroke="var(--mt-line)" strokeDasharray="2 6"/>
       {Array.from({ length: 24 }, (_, hour) => {
         const a = (hour / 24) * Math.PI * 2 - Math.PI / 2;
@@ -82,7 +84,7 @@ function PolarClock({ timezone, now, language }: { timezone: string; now: Date; 
         return <g key={hour}><line x1={150 + Math.cos(a) * (major ? 104 : 109)} y1={150 + Math.sin(a) * (major ? 104 : 109)} x2={150 + Math.cos(a) * 116} y2={150 + Math.sin(a) * 116} stroke="var(--mt-muted)" strokeWidth={major ? 2 : 1}/>{major && <text x={150 + Math.cos(a) * 88} y={154 + Math.sin(a) * 88} textAnchor="middle" fontSize="10" fill="var(--mt-muted)">{String(hour).padStart(2,"0")}</text>}</g>;
       })}
       <line x1="150" y1="150" x2={x} y2={y} stroke="var(--mt-accent)" strokeWidth="2.5" strokeLinecap="round"/>
-      <circle cx={x} cy={y} r="6" fill="var(--mt-accent)" stroke="var(--mt-card)" strokeWidth="3"/>
+      <circle className="mt-polar-dot" cx={x} cy={y} r="6" fill="var(--mt-accent)" stroke="var(--mt-card)" strokeWidth="3"/>
       <circle cx="150" cy="150" r="43" fill="var(--mt-card)" stroke="var(--mt-line)"/>
       <text x="150" y="145" textAnchor="middle" fontSize="23" fontWeight="700" fill="var(--mt-ink)">{localClock(timezone, now).slice(0,5)}</text>
       <text x="150" y="164" textAnchor="middle" fontSize="10" fill="var(--mt-muted)">LOCAL TIME</text>
