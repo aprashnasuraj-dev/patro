@@ -4,21 +4,13 @@ import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { deviceZone, readPlace } from "../../place/place";
+import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
+import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import "./my-time.css";
 
-type Snapshot = {
-  schema_version: number;
-  date: string;
-  timezone: string;
-  weekday: number;
-  evaluated_at_utc: string;
-  location: { lat: number; lng: number };
-  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number; nakshatra_index: number; nakshatra_name_ne: string; nakshatra_pada: number; moon_rashi_index: number; sun_rashi_index: number; yoga_index: number; yoga_name_ne: string; karana_index: number; karana_name_ne: string; moon_rashi_ne: string; sun_rashi_ne: string; sunrise_utc: string | null; sunset_utc: string | null; next_sunrise_utc: string | null; moonrise_utc: string | null; tithi_end_utc: string | null };
-  sky: { sun_longitude_tropical_deg: number; moon_longitude_tropical_deg: number; sun_longitude_sidereal_deg: number; moon_longitude_sidereal_deg: number; solar_altitude_deg_at_evaluation: number; moon_illumination_percent: number };
-  methodology: { engine: string; time_anchor: string; sidereal_positions: boolean; limitations: string[] };
-};
+type Snapshot = MyTimeSnapshot;
 type Preferences = { timezone: string; lat: number; lng: number };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null } | null; rashifalSign: string | null; effectiveSign: string | null };
@@ -113,6 +105,7 @@ export default function MyTimePage() {
   const [date, setDate] = useState(() => localDate(readPreferences().timezone));
   const [now, setNow] = useState(() => new Date());
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
+  const [offlineSnapshot, setOfflineSnapshot] = useState(false);
   const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
   const [rashifalSummary, setRashifalSummary] = useState("");
@@ -140,6 +133,9 @@ export default function MyTimePage() {
   const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences, persistPreferences = false) => {
     setLoading(true); setError("");
     const controller = new AbortController();
+    const cacheKey = myTimeCacheKey(nextDate,nextPreferences.timezone,nextPreferences.lat,nextPreferences.lng);
+    const cached = await readMyTimeSnapshot(cacheKey);
+    if (cached) { setSnapshot(cached); setOfflineSnapshot(true); }
     const referencePromise = homeToday(nextDate, controller.signal).then((body: any) => {
       const p = body?.archive_panchang || body?.panchang || {};
       const t = body?.tithi || p?.tithi || {};
@@ -158,13 +154,28 @@ export default function MyTimePage() {
       const body = await response.json().catch(() => ({}));
       if (!response.ok || !body?.ok || !body?.data) throw new Error(body?.error || `HTTP ${response.status}`);
       setSnapshot(body.data as Snapshot);
+      setOfflineSnapshot(false);
+      void writeMyTimeSnapshot(cacheKey,body.data as Snapshot);
       if (persistPreferences) try { localStorage.setItem(PREF_KEY, JSON.stringify(nextPreferences)); } catch {}
     } catch (cause) {
-      setSnapshot(null);
       const message = cause instanceof Error ? cause.message : "request_failed";
-      setError(message === "feature_disabled"
-        ? l(language, "My Time को गणना सेवा अझै सक्रिय गरिएको छैन।", "The My Time calculation service is not enabled yet.")
-        : l(language, "गणना लोड हुन सकेन। नेटवर्क र सेटिङ जाँच गरी फेरि प्रयास गर्नुहोस्।", "Could not load calculations. Check the network and settings, then try again."));
+      try {
+        const local = calculateMyTimeSnapshot({ date: nextDate, timezone: nextPreferences.timezone, lat: nextPreferences.lat, lng: nextPreferences.lng });
+        setSnapshot(local);
+        setOfflineSnapshot(true);
+        void writeMyTimeSnapshot(cacheKey,local);
+        setError(l(language,"सर्भर उपलब्ध नभएकाले साझा खगोलीय इन्जिनबाट स्थानीय गणना प्रयोग भइरहेको छ।","Server calculation is unavailable; the shared local astronomy engine is being used."));
+      } catch {
+        if (cached) {
+          setSnapshot(cached); setOfflineSnapshot(true);
+          setError(l(language,"सञ्जाल उपलब्ध छैन; पछिल्लो सुरक्षित गणना प्रयोग भइरहेको छ।","Offline: showing the last cached calculation."));
+        } else {
+          setSnapshot(null); setOfflineSnapshot(false);
+          setError(message === "feature_disabled"
+            ? l(language, "स्थानीय गणना पनि उपलब्ध भएन। सेवा सक्रिय भएपछि Worker गणना प्रयोग हुनेछ।", "Local calculation failed too. Worker calculations will be used when the service is enabled.")
+            : l(language, "गणना लोड हुन सकेन। नेटवर्क र सेटिङ जाँच गरी फेरि प्रयास गर्नुहोस्।", "Could not calculate locally or load a cached result. Check the network and settings."));
+        }
+      }
     } finally {
       const reference = await referencePromise;
       if (reference) setCalendarReference(reference);
@@ -223,7 +234,7 @@ export default function MyTimePage() {
           </div>
           <div className="mt-metrics"><div><span>{l(language,"चन्द्र उज्यालोपन","Moon illumination")}</span><strong>{fmt(snapshot.sky.moon_illumination_percent,1)}%</strong></div><div><span>{l(language,"सूर्य देशान्तर","Sun longitude")}</span><strong>{fmt(snapshot.sky.sun_longitude_tropical_deg)}°</strong></div><div><span>{l(language,"चन्द्र देशान्तर","Moon longitude")}</span><strong>{fmt(snapshot.sky.moon_longitude_tropical_deg)}°</strong></div></div>
         </> : <div className="mt-empty-snapshot"><Moon size={28}/><strong>{l(language,"तपाईंको समयको गणना तयार हुँदैछ","Your time snapshot is waiting")}</strong><span>{l(language,"स्थान, समय क्षेत्र र मिति अनुसार गणना लोड गर्नुहोस्।","Load calculations for your location, timezone and date.")}</span></div>}
-        <div className="mt-method-note"><span>{l(language,"इन्जिन","Engine")}: {snapshot?.methodology.engine || "astronomy-engine"}</span><span>{l(language,"स्थानीय मिति एंकर","Local date anchor")}: {snapshot?.methodology.time_anchor || l(language,"स्थानीय मध्याह्न","Local noon")}</span></div>
+        <div className="mt-method-note"><span>{l(language,"इन्जिन","Engine")}: {snapshot?.methodology.engine || "astronomy-engine"}</span><span>{l(language,"पञ्चाङ्ग एंकर","Panchang anchor")}: {snapshot?.methodology.time_anchor || l(language,"स्थानीय मध्याह्न","Local noon")}</span><span>{offlineSnapshot ? l(language,"स्थानीय/क्यास गणना","Local / cached calculation") : l(language,"Worker गणना","Worker calculation")}</span></div>
       </section>
     </div>
 
