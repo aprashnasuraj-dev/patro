@@ -1,0 +1,72 @@
+{
+  "slug": "why-websites-load-slowly",
+  "research_question": "Why websites load slowly",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+      "title": "Populating the page: how browsers work",
+      "publisher": "MDN Web Docs",
+      "published_at": null,
+      "reliability": "Mozilla developer reference",
+      "notes": [
+        "Navigation includes DNS lookup, connection setup, secure negotiation, request and response.",
+        "Extra hostnames can require additional DNS lookups, while network latency and bandwidth affect load time.",
+        "Parsing, CSS, JavaScript and rendering all influence when content appears and becomes interactive."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://web.dev/articles/optimize-lcp",
+      "title": "Optimize Largest Contentful Paint",
+      "publisher": "web.dev",
+      "published_at": "2025-03-31",
+      "reliability": "Google web performance documentation",
+      "notes": [
+        "Largest Contentful Paint measures when the main visible content is rendered.",
+        "A good LCP target is 2.5 seconds or less for at least 75% of visits.",
+        "High time to first byte, redirects, poor networks and render-blocking assets can delay content."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
+      "title": "Web performance",
+      "publisher": "MDN Web Docs",
+      "published_at": null,
+      "reliability": "Mozilla developer reference",
+      "notes": [
+        "Performance includes load time, responsiveness, smooth interactions and perceived speed.",
+        "Latency is the time for data to travel between endpoints.",
+        "Measure actual user experience as well as lab performance."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+      "title": "Lighthouse performance scoring",
+      "publisher": "Chrome for Developers",
+      "published_at": null,
+      "reliability": "Official browser developer documentation",
+      "notes": [
+        "Lighthouse combines performance metrics into a score; the score is diagnostic, not a complete user-experience description.",
+        "Performance metrics have different weights and vary by test conditions.",
+        "Use diagnostics to identify bottlenecks rather than optimizing a score in isolation."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.w3.org/TR/navigation-timing-2/",
+      "title": "Navigation Timing Level 2",
+      "publisher": "World Wide Web Consortium",
+      "published_at": null,
+      "reliability": "Web standards specification",
+      "notes": [
+        "Navigation Timing defines browser timestamps for navigation and resource loading milestones.",
+        "The measurements help separate DNS, connection, request and response delays.",
+        "Timing data helps diagnose where a page load spends time."
+      ]
+    }
+  ]
+}

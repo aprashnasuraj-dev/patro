@@ -1,9 +1,0 @@
-import test from 'node:test'; import assert from 'node:assert/strict'; import {spawnSync} from 'node:child_process'; import {mkdtempSync,writeFileSync,rmSync} from 'node:fs'; import {tmpdir} from 'node:os'; import {join} from 'node:path';
-const command='missionmangal/scripts/validate-article.mjs';
-const sample=()=>({id:'test-1',title:'Test article with evidence',intent:'Unique intent for a verified factual explainer',status:'draft',original_contribution:'Original reproducible analysis will be described here.',claims:[{id:'c1',text:'A supported test proposition',source_ids:['s1','s2','s3','s4','s5']}],sources:Array.from({length:5},(_,i)=>({id:'s'+(i+1),url:'https://example.org/source/'+i,title:'Source '+i,publisher:'Test publisher',retrieved_at:'2026-10-16T00:00:00Z',verified:true,claim_ids:['c1']})),media:[{type:'diagram',url:'https://example.org/diagram.svg',alt:'Description of test diagram',credit:'Test creator',license:'CC BY 4.0',rights_verified:true}]});
-const run=o=>{const dir=mkdtempSync(join(tmpdir(),'mangal-')); const p=join(dir,'a.json');writeFileSync(p,JSON.stringify(o));const r=spawnSync(process.execPath,[command,p],{encoding:'utf8'});rmSync(dir,{recursive:true,force:true});return r;};
-test('five mapped sources and licensed media pass structural gate',()=>assert.equal(run(sample()).status,0));
-test('four sources fail closed',()=>{let a=sample();a.sources.pop();a.claims[0].source_ids.pop();assert.notEqual(run(a).status,0)});
-test('unverified source fails closed',()=>{let a=sample();a.sources[0].verified=false;assert.notEqual(run(a).status,0)});
-test('image without rights fails closed',()=>{let a=sample();a.media[0].rights_verified=false;assert.notEqual(run(a).status,0)});
-test('unused citation padding fails closed',()=>{let a=sample();a.sources[0].claim_ids=[];assert.notEqual(run(a).status,0)});

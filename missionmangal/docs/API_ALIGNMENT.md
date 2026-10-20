@@ -1,9 +1,0 @@
-# Provider and data catalog alignment (implementation policy)
-
-The existing reported GitHub secret labels are registered under `config/providers.json` but their *actual validity cannot be read*. Before enabling any provider: identify official API endpoint and official terms, available models, commercial-use and content rights, quota, regional eligibility, maximum prompt size, privacy/logging, error classification, accurate billing and secret scope. `healthy-crab api` is unresolved until its provider and endpoint are known.
-
-The five requested catalogs are in `config/catalogs.json`. Their purpose is source discovery; reviewed, pinned snapshots and vetted entries are separate deliverables. RapidAPI's collection is a webpage rather than a Git repo. The other four upstream repositories may be pinned as Git submodules after dependency/license review; this branch does not pretend that listing a URL has cloned it.
-
-Adapter contract: id, capabilities, official_terms_verified, commercial_use_verified, enabled, endpoint (HTTPS), secret_env (uppercase normalized), daily_limit (finite), max_concurrency, retry_after, timeout, model, license_notes, review_date. Provider router rejects disabled/unverified adapters and returns null when all quotas exhausted. Never create extra accounts to evade limits. Sources used for factual citations must come from verified primary publications or retrievable data, never from a model's own assertion.
-
-Suggested role assignments after qualification: Gemini/Groq/SiliconFlow/OpenRouter to brief/draft/edit/check independently, Pollinations for properly licensed media where allowed, public data adapters for NASA, OWID, World Bank, Crossref, OpenAlex, Wikidata and topic-specific official data; do not send every user topic to every provider. Cache public evidence snapshots with provenance and attribution. All client pageviews read static output, not provider APIs. No secrets in HTML, commits, or PR checks.

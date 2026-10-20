@@ -1,0 +1,145 @@
+{
+  "id": "mm-0097",
+  "slug": "why-websites-load-slowly",
+  "canonical_url": "https://aafnaipatro.com/why-websites-load-slowly/",
+  "title": "Why Websites Load Slowly: Facts and Evidence",
+  "meta_description": "Learn why websites load slowly, from network latency and heavy images to server delays, render-blocking scripts and browser work.",
+  "h1": "Why Websites Load Slowly?",
+  "category": "Technology & Internet",
+  "author": "Suraj Dahal",
+  "published": "2026-10-20",
+  "key_takeaways": [
+    "A slow website can be caused by the network, server, page resources or the device rendering them.",
+    "DNS, connection setup and server response happen before much of the page can appear.",
+    "Large images and render-blocking JavaScript can delay visible content and responsiveness.",
+    "Measurements such as LCP and Navigation Timing help identify the real bottleneck."
+  ],
+  "sections": [
+    {
+      "h2": "The short answer",
+      "paras": [
+        "Websites load slowly when one or more steps in the trip from your device to the page takes too long. The browser may need to find the server, establish a secure connection, download HTML and other files, parse code, run JavaScript, decode images and draw the result on screen. A delay can come from the network, the server, the page itself or the device displaying it. [1][2][5]",
+        "That is why a site can feel slow even when your internet connection appears healthy. A server may take too long to send the first byte, an oversized image may arrive late, or a script may keep the browser busy before the main content becomes visible. The useful question is not simply “How fast is the internet?” but “Which step is holding this page back?” [1][2]"
+      ]
+    },
+    {
+      "h2": "The journey begins before the page appears",
+      "paras": [
+        "When you open a web address, the browser first needs to locate the host. A Domain Name System lookup translates the hostname into an address, after which the browser establishes a network connection and, for HTTPS, negotiates a secure session. Each stage can add delay, particularly on a high-latency mobile network or when the page requests files from many different hostnames. [1][5]",
+        "Once a connection is ready, the browser requests the HTML document and waits for the server's response. Time to First Byte measures the interval between navigation starting and the first response bytes arriving. A high value can point to slow server processing, redirects, distant infrastructure, poor connectivity or caching that did not help. The browser cannot render content it has not yet received. [2][5]"
+      ]
+    },
+    {
+      "h2": "Why images and downloads matter",
+      "paras": [
+        "Large images can make a page heavier than it needs to be. If the main image is several megabytes, a phone on a constrained connection must download more data before the image can be decoded and displayed. Responsive image sizes, modern formats, sensible compression and lazy loading for below-the-fold images can reduce unnecessary work, while the main visible image should be discoverable and prioritised when appropriate. [2]",
+        "Other files add up as well: web fonts, video, analytics, advertising scripts, icon libraries and third-party widgets may each require requests and processing. Using multiple domains can mean extra DNS lookups and connections, and a page that loads many resources at once can create network contention. The problem is not that every extra file is bad; it is that every file should earn its cost in bytes, requests and execution time. [1][2]"
+      ]
+    },
+    {
+      "h2": "JavaScript can block the browser",
+      "paras": [
+        "Downloading a file is only part of the work. The browser must parse HTML, build the document tree, process CSS, calculate layout, paint pixels and often execute JavaScript. Some scripts block parsing or occupy the main thread, which is also needed to respond to taps and scrolling. A page can therefore have all its bytes downloaded and still feel frozen while the browser processes the code. [1]",
+        "Large bundles, unnecessary libraries, complex layouts and long-running tasks make this problem worse, especially on lower-powered phones. Developers can reduce main-thread work, split code so that essential functionality loads first, defer scripts that are not needed immediately and avoid doing expensive computation during initial rendering. These techniques do not replace measurement; they are ways to address a diagnosed bottleneck. [1][4]"
+      ]
+    },
+    {
+      "h2": "What users mean by ‘slow’",
+      "paras": [
+        "Page speed is not one number. Someone may mean that the first text appears late, the largest image takes too long, a button does not respond, or scrolling stutters. MDN describes performance as a combination of load time, responsiveness, smoothness and perceived experience. A page that shows useful content quickly but finishes optional work later can feel faster than a page that waits to reveal everything at once. [3]",
+        "Web.dev highlights Largest Contentful Paint, or LCP, as a metric for when the largest visible image or text block has rendered. Its recommended good threshold is 2.5 seconds or less for at least 75% of visits. LCP is helpful but does not capture every aspect of the experience, so it should be considered alongside response and interaction metrics and actual user reports. [2]"
+      ]
+    },
+    {
+      "h2": "How to find the bottleneck",
+      "paras": [
+        "Start by testing the same page under repeatable conditions and separating real-user data from a single lab run. PageSpeed Insights can show field data from Chrome users where available, while browser developer tools help inspect requests, execution and rendering. A score is a diagnostic clue rather than a verdict: the same site may behave differently on mobile and desktop, on a cold cache and a warm cache, or across regions. [2][4]",
+        "Look at the timeline. If the first response is late, investigate server response time, redirects, network distance and cache behaviour. If the response is quick but the main content appears late, inspect render-blocking CSS and JavaScript, image discovery and main-thread activity. Navigation Timing provides standard timestamps for several stages, making it possible to compare where time is spent instead of guessing from the spinner alone. [1][5]"
+      ]
+    },
+    {
+      "h2": "Common fixes and common mistakes",
+      "paras": [
+        "Useful fixes usually target the biggest measured cost: resize and compress images, cache stable assets, reduce unnecessary requests, keep critical rendering resources small, improve server response and move nonessential scripts out of the critical path. A content delivery network can bring cached files closer to visitors, but it cannot fix every cause of slowness, such as a huge client-side bundle or an inefficient database query. [2][4]",
+        "A common mistake is to chase a perfect lab score while ignoring what actual visitors experience. Another is to add a new optimisation tool without checking whether it creates more scripts, requests or complexity. Because page loading is a chain, speeding up a minor step will not help much if a different step dominates the delay. Re-test after each significant change and make sure the improvement holds for real devices and network conditions. [2][3]"
+      ]
+    },
+    {
+      "h2": "Why it matters",
+      "paras": [
+        "Slow pages can make routine tasks feel unreliable: checking a timetable, reading an article, filling a form or completing a purchase. Performance also affects accessibility because people use older devices, assistive technologies and networks with limited bandwidth. Designing for fast initial content and responsive interactions benefits more than a benchmark; it makes the service easier to use under imperfect conditions. [3]",
+        "The central lesson is that a website does not load in one action. It passes through network, server, download, parsing, execution and rendering stages, and any one can become the bottleneck. Measure where time goes, prioritise the user-visible content, and use real-user data to check whether changes help. Once the cause is identified, “the internet is slow” becomes a testable engineering problem rather than a vague diagnosis. [1][2][5]"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can a fast internet connection still load a website slowly?",
+      "a": "Yes. Server response, DNS and connection setup, heavy images, render-blocking code and a busy device can all delay a page even when the connection has high bandwidth. [1][2]"
+    },
+    {
+      "q": "What is a good Largest Contentful Paint time?",
+      "a": "Web.dev recommends an LCP of 2.5 seconds or less for at least 75% of visits. LCP is one useful measure of visible loading, not a complete description of every interaction or device. [2]"
+    },
+    {
+      "q": "Do more servers or a CDN always make a site faster?",
+      "a": "No. A CDN can reduce distance for cached resources, but it cannot automatically fix slow application logic, large JavaScript bundles or unnecessary work in the browser. The bottleneck should be measured first. [2][4]"
+    },
+    {
+      "q": "How can I tell what is making a site slow?",
+      "a": "Compare field data with browser developer tools and inspect the timeline. A late first byte points toward the response path; a late main-content render can indicate resource discovery, blocking CSS or JavaScript, large images or heavy rendering work. [1][2][5]"
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "Populating the page: how browsers work",
+      "publisher": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "title": "Optimize Largest Contentful Paint",
+      "publisher": "web.dev",
+      "url": "https://web.dev/articles/optimize-lcp",
+      "published_at": "2025-03-31",
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "title": "Web performance",
+      "publisher": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 4,
+      "title": "Lighthouse performance scoring",
+      "publisher": "Chrome for Developers",
+      "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "title": "Navigation Timing Level 2",
+      "publisher": "World Wide Web Consortium",
+      "url": "https://www.w3.org/TR/navigation-timing-2/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
+    }
+  ],
+  "word_count": 1217,
+  "reading_minutes": 6,
+  "image": null,
+  "keywords": [
+    "websites",
+    "load slowly",
+    "latency",
+    "browser performance",
+    "Core Web Vitals"
+  ]
+}

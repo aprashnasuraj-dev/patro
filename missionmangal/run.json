@@ -1,7 +1,0 @@
-{
-  "shards": 25,
-  "min_minutes": 100,
-  "deadline_minutes": 335,
-  "auto_approve": "true",
-  "allow_ymyl": "false"
-}

@@ -1,9 +1,0 @@
-# Reproducible provider workflow
-
-The user-reported GitHub secret labels are `siliconflow_api`, `groq_api`, `openrouter`, `Gemini API Key`, `pollinations`, `healthy-crab api`. This connector cannot inspect secret values and names with spaces are not valid normalized environment variables. A separately reviewed manual workflow must map actual GitHub secret names to `SILICONFLOW_API_KEY`, `GROQ_API_KEY`, `OPENROUTER_API_KEY`, `GEMINI_API_KEY`, etc. GitHub secrets do not automatically exist in Cloudflare Worker secrets.
-
-The three catalog submodules are pinned discovery references, not executable APIs. Review official provider docs, terms, model identifiers, current free limits and commercial usage before setting an adapter's `enabled`, `official_terms_verified` and `commercial_use_verified` to true. Never assume that advertised free credits are available or bypass rate limits by credential rotation.
-
-For each *individual article*, a source pack with 5–20 independently vetted actually used sources is prepared first. The router separately selects an eligible model for draft and editing; an independent **different provider** must produce advisory critical-review notes. When one provider fails with 429/transient network/5xx, retries use Retry-After or bounded exponential backoff, followed by the next allowlisted provider. Permanent errors immediately fall through. No eligible provider -> article BLOCKED with resumable ledger event, never fabricated output or approval. Usage is tracked conservatively per attempted request. To run distributed workers, persist budget counters and leases transactionally, not in an in-process dictionary.
-
-No secret or full provider error payload is logged. Never send private site/customer data to free models. The source/claim/quality gate and actual editor sign-off remain separate from a model's opinion. This is an initial protocol layer, not a claim that any unverified provider has been activated.

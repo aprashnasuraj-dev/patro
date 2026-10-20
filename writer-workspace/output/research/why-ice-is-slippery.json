@@ -1,0 +1,72 @@
+{
+  "slug": "why-ice-is-slippery",
+  "research_question": "Why ice is slippery",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://almanac.upenn.edu/articles/why-are-icy-surfaces-slippery",
+      "title": "Why Are Icy Surfaces Slippery?",
+      "publisher": "University of Pennsylvania Almanac",
+      "published_at": "2026-02-10",
+      "reliability": "University research news",
+      "notes": [
+        "Pressure melting explains slipperiness only in a narrow temperature range.",
+        "Ice can develop a premelted, liquid-like surface layer below the bulk melting point.",
+        "Recent simulations suggest contact can rearrange surface molecules; researchers say the mechanism is not fully settled."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29741089/",
+      "title": "Molecular Insight into the Slipperiness of Ice",
+      "publisher": "The Journal of Physical Chemistry Letters / PubMed",
+      "published_at": "2018",
+      "reliability": "Peer-reviewed research indexed by the U.S. National Library of Medicine",
+      "notes": [
+        "Measurements and simulations linked low friction to mobile molecules at the ice surface.",
+        "Surface mobility rises with temperature and helps explain why friction changes across cold conditions.",
+        "The precise contribution of surface water and other mechanisms remains an active research question."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.011025",
+      "title": "Friction on Ice: How Temperature, Pressure, and Speed Control the Slipperiness of Ice",
+      "publisher": "Physical Review X",
+      "published_at": "2021-02-08",
+      "reliability": "Peer-reviewed physics journal",
+      "notes": [
+        "Experiments examined ice friction across temperature, contact pressure and sliding speed.",
+        "High local pressure can suppress surface mobility and increase friction.",
+        "Near melting, deformation and friction depend on surface geometry and speed."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.wtamu.edu/~cbaird/sq/2013/12/10/why-is-ice-slippery/",
+      "title": "Why is ice slippery?",
+      "publisher": "West Texas A&M University, Science Questions with Surprising Answers",
+      "published_at": "2013-12-10",
+      "reliability": "University physics educator explainer",
+      "notes": [
+        "Surface molecules have fewer neighbours than molecules in the bulk crystal.",
+        "A liquid-like surface layer can exist even when the ice is not visibly melting.",
+        "Pressure and friction alone cannot explain slipperiness under every condition."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://link.springer.com/article/10.1007/s40544-022-0715-5",
+      "title": "Rubber-ice friction",
+      "publisher": "Friction, Springer Nature",
+      "published_at": "2023-01-06",
+      "reliability": "Peer-reviewed open-access research",
+      "notes": [
+        "Rubber-on-ice friction depends on temperature and sliding speed.",
+        "At some conditions a thin premelted film contributes, while rubber deformation and ice particles also matter.",
+        "Results from steel, rubber and skate contacts should not be treated as interchangeable."
+      ]
+    }
+  ]
+}
