@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
+import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
 
 const base = {
   startUtc: "2026-10-20T08:00:00Z",
@@ -63,7 +63,7 @@ describe("personal-time recommendation engine", () => {
     const context = normalizeJanmaPatroContext({
       time_known: true,
       rashi: { name: "वृष" }, lagna: { name: "कन्या" }, nakshatra: { name: "रोहिणी", pada: 2 },
-      birth: { date: "1995-04-10", time: "08:30", location: "Kathmandu" },
+      birth: { name: "Suraj", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 },
       planets: [
         { planet_en: "Moon", rashi: { name: "वृष" }, house: 9, degree: 42.5 },
         { planet_en: "Mars", rashi: { name: "मिथुन" }, house: 13, degree: 80 }
@@ -76,13 +76,32 @@ describe("personal-time recommendation engine", () => {
     });
     expect(context).toMatchObject({
       rashi: "वृष", lagna: "कन्या", nakshatra: "रोहिणी", pada: 2,
-      birth: { date: "1995-04-10", time: "08:30", location: "Kathmandu" },
+      birth: { name: "Suraj", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 },
       planets: [{ key: "Moon", name: "Moon", sign: "वृष", house: 9 }, { key: "Mars", house: null }],
       dashas: [{ lord: "Venus", start: "2020-01-01T00:00:00.000Z", end: "2030-01-01T00:00:00.000Z" }]
     });
     expect(normalizeJanmaPatroContext(null)).toBeNull();
     expect(normalizeJanmaPatroContext({ birth: {} })).toBeNull();
   });
+  it("preserves name and coordinates when normalizing Janmapatro context", () => {
+    const context = normalizeJanmaPatroContext({
+      rashi: { name: "वृष" }, nakshatra: { name: "रोहिणी", pada: 2 },
+      birth: { name: "Suraj", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 }
+    });
+    expect(context?.birth).toEqual({ name: "Suraj", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 });
+  });
+
+  it("derives the traditional daily lucky number from birth-date digit root and Tithi", () => {
+    expect(calculatePersonalLuckyNumber("1995-04-10", 11)).toBe(4);
+    expect(calculatePersonalLuckyNumber("1995-04-10", 0)).toBeNull();
+    expect(calculatePersonalLuckyNumber("not-a-date", 11)).toBeNull();
+  });
+
+  it("rejects invalid coordinates instead of exposing them as reusable birth data", () => {
+    const context = normalizeJanmaPatroContext({ rashi: { name: "वृष" }, birth: { date: "1995-04-10", lat: 91, lng: 181 } });
+    expect(context?.birth).toMatchObject({ lat: null, lng: null });
+  });
+
   it("rejects invalid windows and scores", () => {
     expect(() => evaluatePersonalTime({ ...base, startUtc: "bad" })).toThrow("invalid_window");
     expect(() => evaluatePersonalTime({ ...base, panchangScore: 101 })).toThrow("invalid_panchang_score");
