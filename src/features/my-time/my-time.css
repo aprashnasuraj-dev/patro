@@ -368,3 +368,16 @@
 .mt-personal-score-breakdown>div>span{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .6rem;border:1px solid var(--mt-line);border-radius:999px;background:var(--mt-card);font-size:.8rem;color:var(--mt-ink)}
 .mt-personal-score-breakdown ul{margin:.7rem 0 0;padding-left:1.15rem;color:var(--mt-muted);font-size:.85rem;line-height:1.5}
 .mt-personal-score-breakdown li+li{margin-top:.25rem}
+
+/* My Time: accessible language control and native birth-chart entry. */
+.mt-language-switch{display:flex;justify-content:flex-end;gap:5px;margin-bottom:12px}
+.mt-language-switch button{border:1px solid var(--mt-line);border-radius:999px;padding:7px 14px;background:var(--mt-card);color:var(--mt-ink);font:inherit;font-size:12px;cursor:pointer}
+.mt-language-switch button[aria-pressed="true"]{background:var(--mt-accent);color:#171622;font-weight:800}
+.mt-birth-entry{margin-top:24px}
+.mt-birth-entry>p{font-size:13px;line-height:1.7;color:var(--mt-muted)}
+.mt-birth-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.mt-birth-form label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700;color:var(--mt-ink)}
+.mt-birth-form input{width:100%;min-width:0;box-sizing:border-box;border:1px solid var(--mt-line);border-radius:10px;padding:10px;background:var(--mt-card);color:var(--mt-ink);font:inherit;color-scheme:dark}
+.mt-birth-form button{align-self:end}
+@media(max-width:700px){.mt-birth-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.mt-birth-form{grid-template-columns:1fr}}
