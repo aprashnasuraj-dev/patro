@@ -119,17 +119,34 @@ export type SavedJanmaPatroContext = {
   lagna: string;
   nakshatra: string;
   pada: number | null;
-  birth: { date: string; time: string; location: string } | null;
+  birth: { name: string; date: string; time: string; location: string; lat: number | null; lng: number | null } | null;
   planets: Array<{ key: string; name: string; sign: string; house: number | null }>;
   dashas: Array<{ lord: string; start: string; end: string }>;
 };
+
+/** Traditional reference metric; it is not a prediction of real-world outcomes. */
+export function calculatePersonalLuckyNumber(birthDate: string, tithiIndex: number): number | null {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(birthDate) || !Number.isInteger(tithiIndex) || tithiIndex < 1 || tithiIndex > 30) return null;
+  const parsed = new Date(birthDate + "T00:00:00.000Z");
+  if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== birthDate) return null;
+  const sum = birthDate.replace(/\D/g, "").split("").reduce((total, digit) => total + Number(digit), 0);
+  const root = ((sum - 1) % 9) + 1;
+  return ((root + tithiIndex - 1) % 9) + 1;
+}
 
 /** Normalize the actual localStorage payload written by JanmaPatroSuite. */
 export function normalizeJanmaPatroContext(value: unknown): SavedJanmaPatroContext | null {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   const raw = value as Record<string, any>;
   const birth = raw.birth && typeof raw.birth === "object" && !Array.isArray(raw.birth)
-    ? { date: String(raw.birth.date || ""), time: String(raw.birth.time || ""), location: String(raw.birth.location || "") }
+    ? {
+        name: String(raw.birth.name || ""),
+        date: String(raw.birth.date || ""),
+        time: String(raw.birth.time || ""),
+        location: String(raw.birth.location || ""),
+        lat: typeof raw.birth.lat === "number" && Number.isFinite(raw.birth.lat) && Math.abs(raw.birth.lat) <= 90 ? raw.birth.lat : null,
+        lng: typeof raw.birth.lng === "number" && Number.isFinite(raw.birth.lng) && Math.abs(raw.birth.lng) <= 180 ? raw.birth.lng : null
+      }
     : null;
   const planets = Array.isArray(raw.planets)
     ? raw.planets.filter((planet: unknown) => !!planet && typeof planet === "object" && !Array.isArray(planet))
