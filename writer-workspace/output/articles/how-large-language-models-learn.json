@@ -100,45 +100,40 @@
       "title": "How ChatGPT and our foundation models are developed",
       "publisher": "OpenAI",
       "url": "https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
-      "published_at": "2025-04-01",
-      "retrieved_at": "2026-10-20",
+      "published_at": null,
       "apa": "OpenAI. (n.d.). How ChatGPT and our foundation models are developed. https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/"
     },
     {
       "n": 2,
       "title": "Attention Is All You Need",
-      "publisher": "arXiv / NeurIPS authors",
+      "publisher": "NeurIPS",
       "url": "https://arxiv.org/abs/1706.03762",
       "published_at": "2017-06-12",
-      "retrieved_at": "2026-10-20",
-      "apa": "arXiv / NeurIPS authors. (n.d.). Attention Is All You Need. https://arxiv.org/abs/1706.03762"
+      "apa": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. Advances in Neural Information Processing Systems, 30. https://arxiv.org/abs/1706.03762"
     },
     {
       "n": 3,
-      "title": "How ChatGPT and our foundation models are developed",
-      "publisher": "OpenAI Help Center",
-      "url": "https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed",
-      "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20",
-      "apa": "OpenAI Help Center. (n.d.). How ChatGPT and our foundation models are developed. https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed"
+      "title": "The Pile: An 800GB dataset of diverse text for language modeling",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2101.00027",
+      "published_at": "2020-12-31",
+      "apa": "Gao, L., Biderman, S., Black, S., et al. (2020). The Pile: An 800GB dataset of diverse text for language modeling. arXiv. https://arxiv.org/abs/2101.00027"
     },
     {
       "n": 4,
-      "title": "On the scaling relationship between cloze probabilities and language model next-token prediction",
-      "publisher": "Association for Computational Linguistics",
-      "url": "https://aclanthology.org/2026.conll-main.32/",
-      "published_at": "2026-07-01",
-      "retrieved_at": "2026-10-20",
-      "apa": "Association for Computational Linguistics. (n.d.). On the scaling relationship between cloze probabilities and language model next-token prediction. https://aclanthology.org/2026.conll-main.32/"
+      "title": "On the opportunities and risks of foundation models",
+      "publisher": "Stanford Center for Research on Foundation Models",
+      "url": "https://arxiv.org/abs/2108.07258",
+      "published_at": "2021-08-18",
+      "apa": "Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). On the opportunities and risks of foundation models. arXiv. https://arxiv.org/abs/2108.07258"
     },
     {
       "n": 5,
-      "title": "Token Prediction as Implicit Classification to Identify LLM-Generated Text",
-      "publisher": "Association for Computational Linguistics",
-      "url": "https://aclanthology.org/2023.emnlp-main.810/",
-      "published_at": "2023-12-01",
-      "retrieved_at": "2026-10-20",
-      "apa": "Association for Computational Linguistics. (n.d.). Token Prediction as Implicit Classification to Identify LLM-Generated Text. https://aclanthology.org/2023.emnlp-main.810/"
+      "title": "Language models are few-shot learners",
+      "publisher": "NeurIPS",
+      "url": "https://arxiv.org/abs/2005.14165",
+      "published_at": "2020-05-28",
+      "apa": "Brown, T. B., Mann, B., Ryder, N., et al. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877–1901. https://arxiv.org/abs/2005.14165"
     }
   ],
   "word_count": 1206,
