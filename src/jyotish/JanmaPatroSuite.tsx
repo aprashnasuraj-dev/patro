@@ -133,6 +133,14 @@ export function JanmaPatroSuite(){
  const reportRef=useRef<HTMLDivElement|null>(null);
  const canMatch=useMemo(()=>matchMode==="name"?Boolean(nameA.trim()&&nameB.trim()):Boolean(a.date&&a.time&&b.date&&b.time),[a,b,matchMode,nameA,nameB]);
  const hasEditedBirthDetails=a.name!==DEFAULT.name||a.date!==DEFAULT.date||a.time!==DEFAULT.time||a.location!==DEFAULT.location||a.lat!==DEFAULT.lat||a.lng!==DEFAULT.lng;
+ useEffect(()=>{
+  const sync=()=>{const saved=readJanmaPatroBirthInput();if(saved)setA(old=>({...old,...saved}));};
+  window.addEventListener("patro:china-updated",sync);
+  window.addEventListener("storage",sync);
+  window.addEventListener("patro:navigation",sync);
+  return ()=>{window.removeEventListener("patro:china-updated",sync);window.removeEventListener("storage",sync);window.removeEventListener("patro:navigation",sync);};
+ },[]);
+
 
  const calculate=(state?:Partial<SharedState>)=>{
   const activeTab=state?.tab??tab,activeMode=state?.matchMode??matchMode,aa=state?.a??a,bb=state?.b??b,nA=state?.nameA??nameA,nB=state?.nameB??nameB;
@@ -142,7 +150,7 @@ export function JanmaPatroSuite(){
    const ca=calculateChart(aa);setChart(ca);
    if(activeTab==="chart"){
     const context=createJanmaPatroContext(ca);
-    saveJanmaPatroContext(context);
+    if(!saveJanmaPatroContext(context))setNotice(tx(language,"जन्म विवरण स्थानीय रूपमा सुरक्षित हुन सकेन।","Birth chart calculated, but local profile storage failed."));
    }
    if(activeTab==="match"){const cb=calculateChart(bb);setGuna(calculateGuna(ca,cb));}else setGuna(null);
   }catch(err){setError(err instanceof Error?err.message:tx(language,"गणना हुन सकेन। विवरण जाँचेर फेरि प्रयास गर्नुहोस्।","Calculation failed. Check the details and try again."));}
