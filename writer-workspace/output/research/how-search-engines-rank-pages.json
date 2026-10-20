@@ -5,7 +5,7 @@
   "category": "Technology & Internet",
   "canonical_url": "https://aafnaipatro.com/how-search-engines-rank-pages/",
   "researched_at": "2026-10-21",
-  "status": "research_in_progress",
+  "status": "research_complete",
   "sources": [
     {
       "n": 1,
@@ -80,5 +80,43 @@
       "Original freshness comparison and canonicalization diagram"
     ],
     "license_policy": "Original diagrams must disclose production method and must not mimic official Google trademarks."
-  }
+  },
+  "images": [
+    {
+      "file": "how-search-engines-rank-pages-diagram-01.png",
+      "alt": "Diagram of crawling, indexing and serving as three connected processing stages",
+      "caption": "Three stages of search discovery and serving",
+      "credit": "AafnaiPatro original programmatic illustration",
+      "license": "Original artwork, AafnaiPatro",
+      "width": 900,
+      "height": 500
+    },
+    {
+      "file": "how-search-engines-rank-pages-diagram-02.png",
+      "alt": "Diagram of a network of linked pages representing the historical link-analysis concept",
+      "caption": "A simplified hyperlink network, not a current ranking formula",
+      "credit": "AafnaiPatro original programmatic illustration",
+      "license": "Original artwork, AafnaiPatro",
+      "width": 900,
+      "height": 500
+    },
+    {
+      "file": "how-search-engines-rank-pages-diagram-03.png",
+      "alt": "Diagram of ranked bars showing how query-specific scores can vary",
+      "caption": "Different searches can lead to different result orders",
+      "credit": "AafnaiPatro original programmatic illustration",
+      "license": "Original artwork, AafnaiPatro",
+      "width": 900,
+      "height": 500
+    },
+    {
+      "file": "how-search-engines-rank-pages-hero.png",
+      "alt": "Original monochrome diagram of a search lens, document excerpts and ranked result lines",
+      "caption": "Illustrative representation of retrieval and ranking; not a depiction of a particular search engine interface.",
+      "credit": "AafnaiPatro original programmatic illustration",
+      "license": "Original artwork, AafnaiPatro",
+      "width": 1200,
+      "height": 630
+    }
+  ]
 }

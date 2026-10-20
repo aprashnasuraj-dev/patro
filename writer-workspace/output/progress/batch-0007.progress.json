@@ -1,0 +1,29 @@
+{
+  "batch": 7,
+  "updated": "2026-10-21",
+  "topics": {
+    "how-search-engines-rank-pages": {
+      "stage": "assets_committed_validation_pending",
+      "article": "e90e6fab2af6f24801d492e6529c2292d5923b0a",
+      "research": "a682088adcd8cca6609d450861c986fc0a982f96",
+      "images": [
+        {
+          "path": "writer-workspace/output/images/how-search-engines-rank-pages-hero.png",
+          "sha": "03140b09430a2619f7af2cd437a47a5c3aa5dc84"
+        },
+        {
+          "path": "writer-workspace/output/images/how-search-engines-rank-pages-diagram-01.png",
+          "sha": "f10440c07e932a0ba8a1e49dadc380c0e24b89fa"
+        },
+        {
+          "path": "writer-workspace/output/images/how-search-engines-rank-pages-diagram-02.png",
+          "sha": "f837ee5182f2342d54786a1fcb2e8afb9dce9b50"
+        },
+        {
+          "path": "writer-workspace/output/images/how-search-engines-rank-pages-diagram-03.png",
+          "sha": "071b27fcc257b88124aa32cfb8c72b1f67b392be"
+        }
+      ]
+    }
+  }
+}
