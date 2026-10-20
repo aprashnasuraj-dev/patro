@@ -49,6 +49,17 @@
       "notes": [
         "Used to support the specific explanation and practical limitations cited in the article."
       ]
+    },
+    {
+      "n": 5,
+      "url": "http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magint.html",
+      "title": "Magnetism",
+      "publisher": "HyperPhysics, Georgia State University",
+      "reliability": "Relevant institutional, research or educational reference",
+      "notes": [
+        "Consulted as an additional supporting reference for the article; use alongside the other listed sources."
+      ],
+      "accessed": "2026-10-20"
     }
   ]
 }
