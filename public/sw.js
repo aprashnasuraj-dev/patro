@@ -14,7 +14,7 @@ const PUBLIC_DATA_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 const CORE = [
   "/", "/today", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/samachar", "/fm", "/tv",
-  "/tools/astro", "/tools/nepali-typing", "/tools/preeti-converter",
+  "/tools/astro", "/tools/nepali-typing", "/tools/preeti-converter", "/mytime",
   "/samudaya", "/nepal-sambat/mandala", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png", "/apple-touch-icon.png"
 ];
