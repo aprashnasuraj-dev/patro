@@ -101,7 +101,8 @@
       "publisher": "NASA Earth Observatory",
       "url": "https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/",
       "published_at": "2013-08-12",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NASA Earth Observatory. (2013, August 12). How to Interpret a False-Color Satellite Image. https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "OpenStax Biology",
       "url": "https://openstax.org/books/biology/pages/8-2-the-light-dependent-reactions-of-photosynthesis",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "OpenStax Biology. (n.d.). 8.2 The Light-Dependent Reactions of Photosynthesis. https://openstax.org/books/biology/pages/8-2-the-light-dependent-reactions-of-photosynthesis"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "Washington State University, Ask Dr. Universe",
       "url": "https://askdruniverse.wsu.edu/2020/05/01/inside-blade-grass-green/",
       "published_at": "2020-05-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Washington State University, Ask Dr. Universe. (2020, May 1). What is inside a blade of grass and why is it green?. https://askdruniverse.wsu.edu/2020/05/01/inside-blade-grass-green/"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "NASA Earth Observatory",
       "url": "https://science.nasa.gov/earth/earth-observatory/from-green-to-brown-79332/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NASA Earth Observatory. (n.d.). From Green to Brown. https://science.nasa.gov/earth/earth-observatory/from-green-to-brown-79332/"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "NASA Science",
       "url": "https://science.nasa.gov/ems/08_nearinfraredwaves/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NASA Science. (n.d.). Reflected Near-Infrared Waves. https://science.nasa.gov/ems/08_nearinfraredwaves/"
     }
   ],
   "word_count": 1230,
