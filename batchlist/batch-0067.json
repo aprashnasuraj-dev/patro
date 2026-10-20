@@ -1,0 +1,178 @@
+{
+ "batch": 67,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1473",
+   "slug": "why-dams-are-controversial",
+   "question": "Why dams are controversial",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-dams-are-controversial/",
+   "keywords": [
+    "dams",
+    "controversial",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dams Are Controversial? Facts, Myths and Evidence",
+   "h1": "Why Dams Are Controversial?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1475",
+   "slug": "how-mountain-roads-are-built",
+   "question": "How mountain roads are built",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-mountain-roads-are-built/",
+   "keywords": [
+    "mountain",
+    "roads",
+    "built",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Mountain Roads Are Built? The Real Answer, Explained",
+   "h1": "How Mountain Roads Are Built?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1477",
+   "slug": "how-phewa-lake-supports-pokhara",
+   "question": "How Phewa Lake supports Pokhara",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-phewa-lake-supports-pokhara/",
+   "keywords": [
+    "phewa",
+    "lake",
+    "supports",
+    "pokhara",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Phewa Lake Supports Pokhara? Facts, Myths and Evidence",
+   "h1": "How Phewa Lake Supports Pokhara?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1479",
+   "slug": "why-we-binge-watch-stories",
+   "question": "Why we binge-watch stories",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-we-binge-watch-stories/",
+   "keywords": [
+    "binge-watch",
+    "stories",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Binge-watch Stories? Facts, Myths and Evidence",
+   "h1": "Why We Binge-watch Stories?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1481",
+   "slug": "how-tree-rings-record-history",
+   "question": "How tree rings record history",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-tree-rings-record-history/",
+   "keywords": [
+    "tree",
+    "rings",
+    "record",
+    "history",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Tree Rings Record History? The Real Answer, Explained",
+   "h1": "How Tree Rings Record History?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1483",
+   "slug": "why-mosquitoes-bite-some-people-more",
+   "question": "Why mosquitoes bite some people more",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-mosquitoes-bite-some-people-more/",
+   "keywords": [
+    "mosquitoes",
+    "bite",
+    "some",
+    "people",
+    "more",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Mosquitoes Bite Some People More?",
+   "h1": "Why Mosquitoes Bite Some People More?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1485",
+   "slug": "why-asteroids-are-not-a-movie-style-threat",
+   "question": "Why asteroids are not a movie-style threat",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-asteroids-are-not-a-movie-style-threat/",
+   "keywords": [
+    "asteroids",
+    "not",
+    "movie-style",
+    "threat",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Asteroids Are Not A Movie-style Threat?",
+   "h1": "Why Asteroids Are Not A Movie-style Threat?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1487",
+   "slug": "how-islands-are-born",
+   "question": "How islands are born",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-islands-are-born/",
+   "keywords": [
+    "islands",
+    "born",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Islands Are Born? What Science Actually Says",
+   "h1": "How Islands Are Born?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1491",
+   "slug": "how-the-placebo-mind-works",
+   "question": "How the placebo mind works",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-the-placebo-mind-works/",
+   "keywords": [
+    "placebo",
+    "mind",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Placebo Mind Works? What Science Actually Says",
+   "h1": "How The Placebo Mind Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1493",
+   "slug": "how-chocolate-is-made-from-beans",
+   "question": "How chocolate is made from beans",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-chocolate-is-made-from-beans/",
+   "keywords": [
+    "chocolate",
+    "made",
+    "beans",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Chocolate Is Made From Beans? What Science Actually Says",
+   "h1": "How Chocolate Is Made From Beans?",
+   "ymyl": false
+  }
+ ]
+}

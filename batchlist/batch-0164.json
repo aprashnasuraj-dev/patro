@@ -1,0 +1,165 @@
+{
+ "batch": 164,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0745",
+   "slug": "why-does-oxidation-matter-in-everyday-life",
+   "question": "Why does oxidation matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-oxidation-matter-in-everyday-life/",
+   "keywords": [
+    "oxidation",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does oxidation matter in everyday life?",
+   "h1": "Why does oxidation matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0746",
+   "slug": "where-does-the-word-juggernaut-come-from",
+   "question": "Where does the word \"juggernaut\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-juggernaut-come-from/",
+   "keywords": [
+    "word",
+    "juggernaut",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"juggernaut\" come from?",
+   "h1": "Where does the word \"juggernaut\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0747",
+   "slug": "how-is-black-pepper-made",
+   "question": "How is black pepper made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-black-pepper-made/",
+   "keywords": [
+    "black",
+    "pepper",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is black pepper made? A Clear, Sourced Explanation",
+   "h1": "How is black pepper made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0748",
+   "slug": "what-are-the-main-parts-of-a-bulldozer",
+   "question": "What are the main parts of a bulldozer",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-bulldozer/",
+   "keywords": [
+    "main",
+    "parts",
+    "bulldozer"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a bulldozer?",
+   "h1": "What are the main parts of a bulldozer?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0749",
+   "slug": "what-is-buddha-jayanti-and-why-is-it-celebrated",
+   "question": "What is Buddha Jayanti and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-buddha-jayanti-and-why-is-it-celebrated/",
+   "keywords": [
+    "buddha",
+    "jayanti",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Buddha Jayanti and why is it celebrated?",
+   "h1": "What is Buddha Jayanti and why is it celebrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0750",
+   "slug": "how-does-a-flush-toilet-work",
+   "question": "How does a flush toilet work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-flush-toilet-work/",
+   "keywords": [
+    "flush",
+    "toilet",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a flush toilet work? What Science Actually Says",
+   "h1": "How does a flush toilet work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0751",
+   "slug": "what-is-cryptography",
+   "question": "What is cryptography",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-cryptography/",
+   "keywords": [
+    "cryptography"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is cryptography? Explained With Sources",
+   "h1": "What is cryptography?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0752",
+   "slug": "how-did-origami-start",
+   "question": "How did origami start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-origami-start/",
+   "keywords": [
+    "did",
+    "origami",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did origami start? Facts, Myths and Evidence",
+   "h1": "How did origami start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0753",
+   "slug": "how-do-deserts-form",
+   "question": "How do deserts form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-deserts-form/",
+   "keywords": [
+    "deserts",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do deserts form? The Real Answer, Explained",
+   "h1": "How do deserts form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0754",
+   "slug": "what-is-the-weather-like-on-jupiter",
+   "question": "What is the weather like on Jupiter",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-weather-like-on-jupiter/",
+   "keywords": [
+    "weather",
+    "like",
+    "jupiter"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the weather like on Jupiter?",
+   "h1": "What is the weather like on Jupiter?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "batch": 8,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0159",
+   "slug": "how-guitars-make-sound",
+   "question": "How guitars make sound",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-guitars-make-sound/",
+   "keywords": [
+    "guitars",
+    "sound",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Guitars Make Sound? What Science Actually Says",
+   "h1": "How Guitars Make Sound?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0161",
+   "slug": "why-roses-have-thorns",
+   "question": "Why roses have thorns",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-roses-have-thorns/",
+   "keywords": [
+    "roses",
+    "have",
+    "thorns",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Roses Have Thorns? The Real Answer, Explained",
+   "h1": "Why Roses Have Thorns?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0163",
+   "slug": "how-bees-make-honey",
+   "question": "How bees make honey",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-bees-make-honey/",
+   "keywords": [
+    "bees",
+    "honey",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Bees Make Honey? Explained With Sources",
+   "h1": "How Bees Make Honey?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0165",
+   "slug": "how-stars-are-born",
+   "question": "How stars are born",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-stars-are-born/",
+   "keywords": [
+    "stars",
+    "born",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Stars Are Born? The Real Answer, Explained",
+   "h1": "How Stars Are Born?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0167",
+   "slug": "why-deserts-get-cold-at-night",
+   "question": "Why deserts get cold at night",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-deserts-get-cold-at-night/",
+   "keywords": [
+    "deserts",
+    "cold",
+    "night",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Deserts Get Cold At Night? The Real Answer, Explained",
+   "h1": "Why Deserts Get Cold At Night?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0171",
+   "slug": "why-d-j-vu-happens",
+   "question": "Why déjà vu happens",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-d-j-vu-happens/",
+   "keywords": [
+    "happens",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Déjà Vu Happens? Facts, Myths and Evidence",
+   "h1": "Why Déjà Vu Happens?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0173",
+   "slug": "why-ice-floats-in-drinks",
+   "question": "Why ice floats in drinks",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-ice-floats-in-drinks/",
+   "keywords": [
+    "ice",
+    "floats",
+    "drinks",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Ice Floats In Drinks? A Clear, Sourced Explanation",
+   "h1": "Why Ice Floats In Drinks?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0175",
+   "slug": "why-metal-feels-colder-than-wood",
+   "question": "Why metal feels colder than wood",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-metal-feels-colder-than-wood/",
+   "keywords": [
+    "metal",
+    "feels",
+    "colder",
+    "than",
+    "wood",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Metal Feels Colder Than Wood? Facts, Myths and Evidence",
+   "h1": "Why Metal Feels Colder Than Wood?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0177",
+   "slug": "why-passwords-get-hacked",
+   "question": "Why passwords get hacked",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-passwords-get-hacked/",
+   "keywords": [
+    "passwords",
+    "hacked",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Passwords Get Hacked? Explained With Sources",
+   "h1": "Why Passwords Get Hacked?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0179",
+   "slug": "why-ai-needs-so-much-data",
+   "question": "Why AI needs so much data",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-ai-needs-so-much-data/",
+   "keywords": [
+    "needs",
+    "much",
+    "data",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why AI Needs So Much Data? Facts, Myths and Evidence",
+   "h1": "Why AI Needs So Much Data?",
+   "ymyl": false
+  }
+ ]
+}

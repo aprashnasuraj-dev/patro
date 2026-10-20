@@ -1,0 +1,169 @@
+{
+ "batch": 235,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1457",
+   "slug": "what-is-james-clerk-maxwell-best-known-for",
+   "question": "What is James Clerk Maxwell best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-james-clerk-maxwell-best-known-for/",
+   "keywords": [
+    "james",
+    "clerk",
+    "maxwell",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is James Clerk Maxwell best known for?",
+   "h1": "What is James Clerk Maxwell best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1458",
+   "slug": "what-is-the-economy-of-costa-rica-based-on",
+   "question": "What is the economy of Costa Rica based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-costa-rica-based-on/",
+   "keywords": [
+    "economy",
+    "costa",
+    "rica",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Costa Rica based on? A Clear Overview",
+   "h1": "What is the economy of Costa Rica based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1459",
+   "slug": "what-are-spam-filters",
+   "question": "What are spam filters",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-spam-filters/",
+   "keywords": [
+    "spam",
+    "filters"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are spam filters? Explained With Sources",
+   "h1": "What are spam filters?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1460",
+   "slug": "what-are-semiconductors",
+   "question": "What are semiconductors",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-semiconductors/",
+   "keywords": [
+    "semiconductors"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are semiconductors? The Real Answer, Explained",
+   "h1": "What are semiconductors?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1461",
+   "slug": "where-does-the-phrase-bite-the-bullet-come-from",
+   "question": "Where does the phrase \"bite the bullet\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-bite-the-bullet-come-from/",
+   "keywords": [
+    "phrase",
+    "bite",
+    "bullet",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"bite the bullet\" come from?",
+   "h1": "Where does the phrase \"bite the bullet\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1462",
+   "slug": "why-does-bread-go-stale",
+   "question": "Why does bread go stale",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-does-bread-go-stale/",
+   "keywords": [
+    "bread",
+    "stale"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does bread go stale? A Clear, Sourced Explanation",
+   "h1": "Why does bread go stale?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1463",
+   "slug": "what-are-the-main-parts-of-a-desalination-plant",
+   "question": "What are the main parts of a desalination plant",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-desalination-plant/",
+   "keywords": [
+    "main",
+    "parts",
+    "desalination",
+    "plant"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a desalination plant?",
+   "h1": "What are the main parts of a desalination plant?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1464",
+   "slug": "why-is-kopan-monastery-important",
+   "question": "Why is Kopan Monastery important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-kopan-monastery-important/",
+   "keywords": [
+    "kopan",
+    "monastery",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Kopan Monastery important? Facts, Myths and Evidence",
+   "h1": "Why is Kopan Monastery important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1465",
+   "slug": "how-does-a-ballpoint-pen-work",
+   "question": "How does a ballpoint pen work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-ballpoint-pen-work/",
+   "keywords": [
+    "ballpoint",
+    "pen",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a ballpoint pen work? Facts, Myths and Evidence",
+   "h1": "How does a ballpoint pen work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1466",
+   "slug": "how-is-calculus-used-in-real-life",
+   "question": "How is calculus used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-calculus-used-in-real-life/",
+   "keywords": [
+    "calculus",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is calculus used in real life? Facts, Myths and Evidence",
+   "h1": "How is calculus used in real life?",
+   "ymyl": false
+  }
+ ]
+}

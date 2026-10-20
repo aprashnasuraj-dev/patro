@@ -1,0 +1,165 @@
+{
+ "batch": 316,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2272",
+   "slug": "what-is-new-zealand-known-for",
+   "question": "What is New Zealand known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-new-zealand-known-for/",
+   "keywords": [
+    "new",
+    "zealand",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is New Zealand known for? Key Facts and Context",
+   "h1": "What is New Zealand known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2273",
+   "slug": "how-does-a-cpu-work",
+   "question": "How does a CPU work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-cpu-work/",
+   "keywords": [
+    "cpu",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a CPU work? Facts, Myths and Evidence",
+   "h1": "How does a CPU work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2274",
+   "slug": "why-does-energy-matter-in-everyday-life",
+   "question": "Why does energy matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-energy-matter-in-everyday-life/",
+   "keywords": [
+    "energy",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does energy matter in everyday life?",
+   "h1": "Why does energy matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2275",
+   "slug": "how-do-armadillos-sleep",
+   "question": "How do armadillos sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-armadillos-sleep/",
+   "keywords": [
+    "armadillos",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do armadillos sleep? The Real Answer, Explained",
+   "h1": "How do armadillos sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2276",
+   "slug": "what-caused-the-fall-of-the-aztec-empire",
+   "question": "What caused the fall of the Aztec Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-fall-of-the-aztec-empire/",
+   "keywords": [
+    "caused",
+    "fall",
+    "aztec",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the fall of the Aztec Empire?",
+   "h1": "What caused the fall of the Aztec Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2277",
+   "slug": "what-is-the-history-of-greece",
+   "question": "What is the history of Greece",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-greece/",
+   "keywords": [
+    "history",
+    "greece"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Greece? A Clear Overview",
+   "h1": "What is the history of Greece?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2278",
+   "slug": "how-does-a-webcam-work",
+   "question": "How does a webcam work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-webcam-work/",
+   "keywords": [
+    "webcam",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a webcam work? Explained With Sources",
+   "h1": "How does a webcam work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2279",
+   "slug": "why-does-half-life-matter-in-everyday-life",
+   "question": "Why does half-life matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-half-life-matter-in-everyday-life/",
+   "keywords": [
+    "half-life",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does half-life matter in everyday life?",
+   "h1": "Why does half-life matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2280",
+   "slug": "how-long-do-squids-live",
+   "question": "How long do squids live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-squids-live/",
+   "keywords": [
+    "long",
+    "squids",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do squids live? What Science Actually Says",
+   "h1": "How long do squids live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2281",
+   "slug": "who-was-nikola-tesla",
+   "question": "Who was Nikola Tesla",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-nikola-tesla/",
+   "keywords": [
+    "nikola",
+    "tesla"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Nikola Tesla? Facts and Background",
+   "h1": "Who was Nikola Tesla?",
+   "ymyl": false
+  }
+ ]
+}

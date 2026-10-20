@@ -1,0 +1,171 @@
+{
+ "batch": 261,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1718",
+   "slug": "how-does-a-helicopter-work",
+   "question": "How does a helicopter work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-helicopter-work/",
+   "keywords": [
+    "helicopter",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a helicopter work? A Clear, Sourced Explanation",
+   "h1": "How does a helicopter work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1719",
+   "slug": "what-do-pelicans-eat",
+   "question": "What do pelicans eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-pelicans-eat/",
+   "keywords": [
+    "pelicans",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do pelicans eat? The Real Answer, Explained",
+   "h1": "What do pelicans eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1720",
+   "slug": "what-is-alexander-the-great-best-known-for",
+   "question": "What is Alexander the Great best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-alexander-the-great-best-known-for/",
+   "keywords": [
+    "alexander",
+    "great",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Alexander the Great best known for?",
+   "h1": "What is Alexander the Great best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1721",
+   "slug": "how-did-san-francisco-get-its-name",
+   "question": "How did San Francisco get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-san-francisco-get-its-name/",
+   "keywords": [
+    "did",
+    "san",
+    "francisco",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did San Francisco get its name? Key Facts and Context",
+   "h1": "How did San Francisco get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1722",
+   "slug": "how-does-the-internet-of-things-work",
+   "question": "How does the Internet of Things work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-the-internet-of-things-work/",
+   "keywords": [
+    "internet",
+    "things",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does the Internet of Things work? Explained With Sources",
+   "h1": "How does the Internet of Things work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1723",
+   "slug": "why-does-nuclear-fission-matter-in-everyday-life",
+   "question": "Why does nuclear fission matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-nuclear-fission-matter-in-everyday-life/",
+   "keywords": [
+    "nuclear",
+    "fission",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does nuclear fission matter in everyday life?",
+   "h1": "Why does nuclear fission matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1724",
+   "slug": "where-does-the-phrase-a-blessing-in-disguise-come-from",
+   "question": "Where does the phrase \"a blessing in disguise\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-a-blessing-in-disguise-come-from/",
+   "keywords": [
+    "phrase",
+    "blessing",
+    "disguise",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"a blessing in disguise\" come from?",
+   "h1": "Where does the phrase \"a blessing in disguise\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1725",
+   "slug": "how-is-popcorn-made",
+   "question": "How is popcorn made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-popcorn-made/",
+   "keywords": [
+    "popcorn",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is popcorn made? Explained With Sources",
+   "h1": "How is popcorn made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1726",
+   "slug": "how-do-manatees-sleep",
+   "question": "How do manatees sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-manatees-sleep/",
+   "keywords": [
+    "manatees",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do manatees sleep? Explained With Sources",
+   "h1": "How do manatees sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1727",
+   "slug": "what-is-catherine-the-great-best-known-for",
+   "question": "What is Catherine the Great best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-catherine-the-great-best-known-for/",
+   "keywords": [
+    "catherine",
+    "great",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Catherine the Great best known for? A Clear Overview",
+   "h1": "What is Catherine the Great best known for?",
+   "ymyl": false
+  }
+ ]
+}

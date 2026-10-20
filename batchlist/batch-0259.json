@@ -1,0 +1,167 @@
+{
+ "batch": 259,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1698",
+   "slug": "why-do-some-languages-read-right-to-left",
+   "question": "Why do some languages read right to left",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-do-some-languages-read-right-to-left/",
+   "keywords": [
+    "some",
+    "languages",
+    "read",
+    "right",
+    "left"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do some languages read right to left?",
+   "h1": "Why do some languages read right to left?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1699",
+   "slug": "what-is-the-history-of-paneer",
+   "question": "What is the history of paneer",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-paneer/",
+   "keywords": [
+    "history",
+    "paneer"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of paneer? Facts and Background",
+   "h1": "What is the history of paneer?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1700",
+   "slug": "how-does-a-wind-turbine-work",
+   "question": "How does a wind turbine work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-wind-turbine-work/",
+   "keywords": [
+    "wind",
+    "turbine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a wind turbine work? The Real Answer, Explained",
+   "h1": "How does a wind turbine work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1701",
+   "slug": "where-is-machapuchare-and-how-high-is-it",
+   "question": "Where is Machapuchare and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-machapuchare-and-how-high-is-it/",
+   "keywords": [
+    "machapuchare",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Machapuchare and how high is it?",
+   "h1": "Where is Machapuchare and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1702",
+   "slug": "what-do-leopards-eat",
+   "question": "What do leopards eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-leopards-eat/",
+   "keywords": [
+    "leopards",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do leopards eat? What Science Actually Says",
+   "h1": "What do leopards eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1703",
+   "slug": "who-was-frederick-douglass",
+   "question": "Who was Frederick Douglass",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-frederick-douglass/",
+   "keywords": [
+    "frederick",
+    "douglass"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Frederick Douglass? Facts and Background",
+   "h1": "Who was Frederick Douglass?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1704",
+   "slug": "what-is-the-economy-of-thailand-based-on",
+   "question": "What is the economy of Thailand based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-thailand-based-on/",
+   "keywords": [
+    "economy",
+    "thailand",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Thailand based on? The Story, Sourced",
+   "h1": "What is the economy of Thailand based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1705",
+   "slug": "how-does-open-source-software-work",
+   "question": "How does open source software work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-open-source-software-work/",
+   "keywords": [
+    "open",
+    "source",
+    "software",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does open source software work?",
+   "h1": "How does open source software work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1706",
+   "slug": "how-does-glass-get-made",
+   "question": "How does glass get made",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-does-glass-get-made/",
+   "keywords": [
+    "glass",
+    "get",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does glass get made? Explained With Sources",
+   "h1": "How does glass get made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1707",
+   "slug": "where-does-the-phrase-a-red-herring-come-from",
+   "question": "Where does the phrase \"a red herring\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-a-red-herring-come-from/",
+   "keywords": [
+    "phrase",
+    "red",
+    "herring",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"a red herring\" come from?",
+   "h1": "Where does the phrase \"a red herring\" come from?",
+   "ymyl": false
+  }
+ ]
+}

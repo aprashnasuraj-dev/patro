@@ -1,0 +1,167 @@
+{
+ "batch": 176,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0865",
+   "slug": "what-is-biodiversity",
+   "question": "What is biodiversity",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-biodiversity/",
+   "keywords": [
+    "biodiversity"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is biodiversity? What Science Actually Says",
+   "h1": "What is biodiversity?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0866",
+   "slug": "where-did-the-greek-language-come-from",
+   "question": "Where did the Greek language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-greek-language-come-from/",
+   "keywords": [
+    "did",
+    "greek",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Greek language come from? A Clear Overview",
+   "h1": "Where did the Greek language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0867",
+   "slug": "what-is-the-history-of-cheese",
+   "question": "What is the history of cheese",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-cheese/",
+   "keywords": [
+    "history",
+    "cheese"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of cheese? Facts and Background",
+   "h1": "What is the history of cheese?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0868",
+   "slug": "what-are-the-main-parts-of-a-canal-lock",
+   "question": "What are the main parts of a canal lock",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-canal-lock/",
+   "keywords": [
+    "main",
+    "parts",
+    "canal",
+    "lock"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a canal lock?",
+   "h1": "What are the main parts of a canal lock?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0869",
+   "slug": "why-is-bardia-national-park-important",
+   "question": "Why is Bardia National Park important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-bardia-national-park-important/",
+   "keywords": [
+    "bardia",
+    "national",
+    "park",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Bardia National Park important?",
+   "h1": "Why is Bardia National Park important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0870",
+   "slug": "why-are-manhole-covers-round",
+   "question": "Why are manhole covers round",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-are-manhole-covers-round/",
+   "keywords": [
+    "manhole",
+    "covers",
+    "round"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are manhole covers round? The Real Answer, Explained",
+   "h1": "Why are manhole covers round?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0871",
+   "slug": "what-is-trigonometry",
+   "question": "What is trigonometry",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-trigonometry/",
+   "keywords": [
+    "trigonometry"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is trigonometry? A Clear, Sourced Explanation",
+   "h1": "What is trigonometry?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0872",
+   "slug": "how-did-thangka-painting-start",
+   "question": "How did thangka painting start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-thangka-painting-start/",
+   "keywords": [
+    "did",
+    "thangka",
+    "painting",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did thangka painting start? What Science Actually Says",
+   "h1": "How did thangka painting start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0873",
+   "slug": "what-causes-glacial-lake-outburst-floods",
+   "question": "What causes glacial lake outburst floods",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-glacial-lake-outburst-floods/",
+   "keywords": [
+    "causes",
+    "glacial",
+    "lake",
+    "outburst",
+    "floods"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes glacial lake outburst floods?",
+   "h1": "What causes glacial lake outburst floods?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0874",
+   "slug": "how-do-pulsars-form",
+   "question": "How do pulsars form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-pulsars-form/",
+   "keywords": [
+    "pulsars",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do pulsars form? What Science Actually Says",
+   "h1": "How do pulsars form?",
+   "ymyl": false
+  }
+ ]
+}

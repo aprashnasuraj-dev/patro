@@ -1,0 +1,161 @@
+{
+ "batch": 211,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1216",
+   "slug": "what-is-europa-made-of",
+   "question": "What is Europa made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-europa-made-of/",
+   "keywords": [
+    "europa",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Europa made of? What Science Actually Says",
+   "h1": "What is Europa made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1217",
+   "slug": "how-long-do-woodpeckers-live",
+   "question": "How long do woodpeckers live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-woodpeckers-live/",
+   "keywords": [
+    "long",
+    "woodpeckers",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do woodpeckers live? A Clear, Sourced Explanation",
+   "h1": "How long do woodpeckers live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1218",
+   "slug": "what-caused-the-congress-of-vienna",
+   "question": "What caused the Congress of Vienna",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-congress-of-vienna/",
+   "keywords": [
+    "caused",
+    "congress",
+    "vienna"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Congress of Vienna? The Story, Sourced",
+   "h1": "What caused the Congress of Vienna?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1219",
+   "slug": "what-is-canada-known-for",
+   "question": "What is Canada known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-canada-known-for/",
+   "keywords": [
+    "canada",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Canada known for? A Clear Overview",
+   "h1": "What is Canada known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1220",
+   "slug": "what-is-https",
+   "question": "What is HTTPS",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-https/",
+   "keywords": [
+    "https"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is HTTPS? A Clear, Sourced Explanation",
+   "h1": "What is HTTPS?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1221",
+   "slug": "what-is-half-life",
+   "question": "What is half-life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-half-life/",
+   "keywords": [
+    "half-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is half-life? Explained With Sources",
+   "h1": "What is half-life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1222",
+   "slug": "where-does-the-word-blog-come-from",
+   "question": "Where does the word \"blog\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-blog-come-from/",
+   "keywords": [
+    "word",
+    "blog",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"blog\" come from? A Clear Overview",
+   "h1": "Where does the word \"blog\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1223",
+   "slug": "why-does-wasabi-burn-the-nose",
+   "question": "Why does wasabi burn the nose",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-does-wasabi-burn-the-nose/",
+   "keywords": [
+    "wasabi",
+    "burn",
+    "nose"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does wasabi burn the nose? A Clear, Sourced Explanation",
+   "h1": "Why does wasabi burn the nose?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1224",
+   "slug": "why-do-race-cars-have-spoilers",
+   "question": "Why do race cars have spoilers",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-do-race-cars-have-spoilers/",
+   "keywords": [
+    "race",
+    "cars",
+    "have",
+    "spoilers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do race cars have spoilers? What Science Actually Says",
+   "h1": "Why do race cars have spoilers?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1225",
+   "slug": "what-is-dashain-and-why-is-it-celebrated",
+   "question": "What is Dashain and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-dashain-and-why-is-it-celebrated/",
+   "keywords": [
+    "dashain",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Dashain and why is it celebrated? A Clear Overview",
+   "h1": "What is Dashain and why is it celebrated?",
+   "ymyl": false
+  }
+ ]
+}

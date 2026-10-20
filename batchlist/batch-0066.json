@@ -1,0 +1,179 @@
+{
+ "batch": 66,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1451",
+   "slug": "why-we-blame-others",
+   "question": "Why we blame others",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-blame-others/",
+   "keywords": [
+    "blame",
+    "others",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Blame Others? Explained With Sources",
+   "h1": "Why We Blame Others?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1453",
+   "slug": "why-microwaves-heat-unevenly",
+   "question": "Why microwaves heat unevenly",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-microwaves-heat-unevenly/",
+   "keywords": [
+    "microwaves",
+    "heat",
+    "unevenly",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Microwaves Heat Unevenly? What Science Actually Says",
+   "h1": "Why Microwaves Heat Unevenly?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1455",
+   "slug": "why-steel-floats-as-ships",
+   "question": "Why steel floats as ships",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-steel-floats-as-ships/",
+   "keywords": [
+    "steel",
+    "floats",
+    "ships",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Steel Floats As Ships? What Science Actually Says",
+   "h1": "Why Steel Floats As Ships?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1457",
+   "slug": "why-phone-updates-slow-devices",
+   "question": "Why phone updates slow devices",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-phone-updates-slow-devices/",
+   "keywords": [
+    "phone",
+    "updates",
+    "slow",
+    "devices",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Phone Updates Slow Devices? A Clear, Sourced Explanation",
+   "h1": "Why Phone Updates Slow Devices?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1459",
+   "slug": "why-ai-struggles-with-math",
+   "question": "Why AI struggles with math",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-ai-struggles-with-math/",
+   "keywords": [
+    "struggles",
+    "math",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why AI Struggles With Math? Facts, Myths and Evidence",
+   "h1": "Why AI Struggles With Math?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1461",
+   "slug": "how-ancient-mariners-crossed-the-pacific",
+   "question": "How ancient mariners crossed the Pacific",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-ancient-mariners-crossed-the-pacific/",
+   "keywords": [
+    "ancient",
+    "mariners",
+    "crossed",
+    "pacific",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Ancient Mariners Crossed The Pacific?",
+   "h1": "How Ancient Mariners Crossed The Pacific?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1463",
+   "slug": "why-sri-lanka-is-called-the-pearl-of-the-indian-ocean",
+   "question": "Why Sri Lanka is called the pearl of the Indian Ocean",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-sri-lanka-is-called-the-pearl-of-the-indian-ocean/",
+   "keywords": [
+    "sri",
+    "lanka",
+    "called",
+    "pearl",
+    "indian",
+    "ocean",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Sri Lanka Is Called The Pearl Of The Indian Ocean?",
+   "h1": "Why Sri Lanka Is Called The Pearl Of The Indian Ocean?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1467",
+   "slug": "why-paint-dries",
+   "question": "Why paint dries",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-paint-dries/",
+   "keywords": [
+    "paint",
+    "dries",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Paint Dries? Facts, Myths and Evidence",
+   "h1": "Why Paint Dries?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1469",
+   "slug": "why-grammar-rules-differ",
+   "question": "Why grammar rules differ",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-grammar-rules-differ/",
+   "keywords": [
+    "grammar",
+    "rules",
+    "differ",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Grammar Rules Differ? What Science Actually Says",
+   "h1": "Why Grammar Rules Differ?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1471",
+   "slug": "why-large-numbers-get-names",
+   "question": "Why large numbers get names",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-large-numbers-get-names/",
+   "keywords": [
+    "large",
+    "numbers",
+    "names",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Large Numbers Get Names? A Clear, Sourced Explanation",
+   "h1": "Why Large Numbers Get Names?",
+   "ymyl": false
+  }
+ ]
+}

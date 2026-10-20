@@ -1,0 +1,171 @@
+{
+ "batch": 244,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1547",
+   "slug": "how-does-an-electric-motor-work",
+   "question": "How does an electric motor work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-electric-motor-work/",
+   "keywords": [
+    "electric",
+    "motor",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an electric motor work? The Real Answer, Explained",
+   "h1": "How does an electric motor work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1548",
+   "slug": "what-is-the-history-of-changu-narayan-temple",
+   "question": "What is the history of Changu Narayan Temple",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-changu-narayan-temple/",
+   "keywords": [
+    "history",
+    "changu",
+    "narayan",
+    "temple"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Changu Narayan Temple?",
+   "h1": "What is the history of Changu Narayan Temple?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1549",
+   "slug": "what-are-the-main-parts-of-a-rice-cooker",
+   "question": "What are the main parts of a rice cooker",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-rice-cooker/",
+   "keywords": [
+    "main",
+    "parts",
+    "rice",
+    "cooker"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a rice cooker?",
+   "h1": "What are the main parts of a rice cooker?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1550",
+   "slug": "how-is-imaginary-numbers-used-in-real-life",
+   "question": "How is imaginary numbers used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-imaginary-numbers-used-in-real-life/",
+   "keywords": [
+    "imaginary",
+    "numbers",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is imaginary numbers used in real life?",
+   "h1": "How is imaginary numbers used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1551",
+   "slug": "what-makes-mosaics-unique",
+   "question": "What makes mosaics unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-mosaics-unique/",
+   "keywords": [
+    "makes",
+    "mosaics",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes mosaics unique? Explained With Sources",
+   "h1": "What makes mosaics unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1552",
+   "slug": "what-do-ravens-eat",
+   "question": "What do ravens eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-ravens-eat/",
+   "keywords": [
+    "ravens",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do ravens eat? A Clear, Sourced Explanation",
+   "h1": "What do ravens eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1553",
+   "slug": "who-was-nelson-mandela",
+   "question": "Who was Nelson Mandela",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-nelson-mandela/",
+   "keywords": [
+    "nelson",
+    "mandela"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Nelson Mandela? Key Facts and Context",
+   "h1": "Who was Nelson Mandela?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1554",
+   "slug": "what-is-the-economy-of-vietnam-based-on",
+   "question": "What is the economy of Vietnam based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-vietnam-based-on/",
+   "keywords": [
+    "economy",
+    "vietnam",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Vietnam based on?",
+   "h1": "What is the economy of Vietnam based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1555",
+   "slug": "why-do-websites-ask-for-cookies",
+   "question": "Why do websites ask for cookies",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-do-websites-ask-for-cookies/",
+   "keywords": [
+    "websites",
+    "ask",
+    "cookies"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do websites ask for cookies? Facts, Myths and Evidence",
+   "h1": "Why do websites ask for cookies?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1556",
+   "slug": "why-does-terminal-velocity-matter-in-everyday-life",
+   "question": "Why does terminal velocity matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-terminal-velocity-matter-in-everyday-life/",
+   "keywords": [
+    "terminal",
+    "velocity",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does terminal velocity matter in everyday life?",
+   "h1": "Why does terminal velocity matter in everyday life?",
+   "ymyl": false
+  }
+ ]
+}

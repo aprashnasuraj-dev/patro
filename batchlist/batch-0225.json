@@ -1,0 +1,158 @@
+{
+ "batch": 225,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1357",
+   "slug": "how-do-narwhals-communicate",
+   "question": "How do narwhals communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-narwhals-communicate/",
+   "keywords": [
+    "narwhals",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do narwhals communicate? Facts, Myths and Evidence",
+   "h1": "How do narwhals communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1358",
+   "slug": "who-invented-the-airplane-and-how",
+   "question": "Who invented the airplane and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-airplane-and-how/",
+   "keywords": [
+    "invented",
+    "airplane"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the airplane and how? Facts and Background",
+   "h1": "Who invented the airplane and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1359",
+   "slug": "what-is-switzerland-known-for",
+   "question": "What is Switzerland known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-switzerland-known-for/",
+   "keywords": [
+    "switzerland",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Switzerland known for? Key Facts and Context",
+   "h1": "What is Switzerland known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1360",
+   "slug": "what-are-smart-homes",
+   "question": "What are smart homes",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-smart-homes/",
+   "keywords": [
+    "smart",
+    "homes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are smart homes? What Science Actually Says",
+   "h1": "What are smart homes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1361",
+   "slug": "what-are-molecules",
+   "question": "What are molecules",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-molecules/",
+   "keywords": [
+    "molecules"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are molecules? A Clear, Sourced Explanation",
+   "h1": "What are molecules?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1362",
+   "slug": "where-does-the-word-selfie-come-from",
+   "question": "Where does the word \"selfie\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-selfie-come-from/",
+   "keywords": [
+    "word",
+    "selfie",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"selfie\" come from? The Story, Sourced",
+   "h1": "Where does the word \"selfie\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1363",
+   "slug": "how-is-tofu-made",
+   "question": "How is tofu made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-tofu-made/",
+   "keywords": [
+    "tofu",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is tofu made? Facts, Myths and Evidence",
+   "h1": "How is tofu made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1364",
+   "slug": "how-does-a-differential-work",
+   "question": "How does a differential work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-differential-work/",
+   "keywords": [
+    "differential",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a differential work? Facts, Myths and Evidence",
+   "h1": "How does a differential work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1365",
+   "slug": "what-is-bisket-jatra-and-why-is-it-celebrated",
+   "question": "What is Bisket Jatra and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-bisket-jatra-and-why-is-it-celebrated/",
+   "keywords": [
+    "bisket",
+    "jatra",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Bisket Jatra and why is it celebrated?",
+   "h1": "What is Bisket Jatra and why is it celebrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1366",
+   "slug": "how-does-a-refrigerator-work",
+   "question": "How does a refrigerator work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-refrigerator-work/",
+   "keywords": [
+    "refrigerator",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a refrigerator work? Facts, Myths and Evidence",
+   "h1": "How does a refrigerator work?",
+   "ymyl": false
+  }
+ ]
+}

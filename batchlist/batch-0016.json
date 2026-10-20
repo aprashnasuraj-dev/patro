@@ -1,0 +1,178 @@
+{
+ "batch": 16,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0339",
+   "slug": "why-ai-bias-happens",
+   "question": "Why AI bias happens",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-ai-bias-happens/",
+   "keywords": [
+    "bias",
+    "happens",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why AI Bias Happens? Explained With Sources",
+   "h1": "Why AI Bias Happens?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0341",
+   "slug": "how-the-mongol-empire-grew",
+   "question": "How the Mongol Empire grew",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-mongol-empire-grew/",
+   "keywords": [
+    "mongol",
+    "empire",
+    "grew",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Mongol Empire Grew? The Real Answer, Explained",
+   "h1": "How The Mongol Empire Grew?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0343",
+   "slug": "why-india-has-so-many-languages",
+   "question": "Why India has so many languages",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-india-has-so-many-languages/",
+   "keywords": [
+    "india",
+    "has",
+    "many",
+    "languages",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why India Has So Many Languages? Facts, Myths and Evidence",
+   "h1": "Why India Has So Many Languages?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0347",
+   "slug": "why-we-use-zip-codes",
+   "question": "Why we use zip codes",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-we-use-zip-codes/",
+   "keywords": [
+    "use",
+    "zip",
+    "codes",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Use Zip Codes? Facts, Myths and Evidence",
+   "h1": "Why We Use Zip Codes?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0349",
+   "slug": "why-chinese-uses-characters",
+   "question": "Why Chinese uses characters",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-chinese-uses-characters/",
+   "keywords": [
+    "chinese",
+    "uses",
+    "characters",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Chinese Uses Characters? What Science Actually Says",
+   "h1": "Why Chinese Uses Characters?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0351",
+   "slug": "why-infinity-has-different-sizes",
+   "question": "Why infinity has different sizes",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-infinity-has-different-sizes/",
+   "keywords": [
+    "infinity",
+    "has",
+    "different",
+    "sizes",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Infinity Has Different Sizes? The Real Answer, Explained",
+   "h1": "Why Infinity Has Different Sizes?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0353",
+   "slug": "why-forests-matter-for-climate",
+   "question": "Why forests matter for climate",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-forests-matter-for-climate/",
+   "keywords": [
+    "forests",
+    "matter",
+    "climate",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Forests Matter For Climate? What Science Actually Says",
+   "h1": "Why Forests Matter For Climate?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0355",
+   "slug": "how-electric-motors-work",
+   "question": "How electric motors work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-electric-motors-work/",
+   "keywords": [
+    "electric",
+    "motors",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Electric Motors Work? What Science Actually Says",
+   "h1": "How Electric Motors Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0357",
+   "slug": "how-rhododendron-became-nepals-national-flower",
+   "question": "How rhododendron became Nepal's national flower",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-rhododendron-became-nepals-national-flower/",
+   "keywords": [
+    "rhododendron",
+    "became",
+    "nepal",
+    "national",
+    "flower",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Rhododendron Became Nepal's National Flower?",
+   "h1": "How Rhododendron Became Nepal's National Flower?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0359",
+   "slug": "why-paintings-fade",
+   "question": "Why paintings fade",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-paintings-fade/",
+   "keywords": [
+    "paintings",
+    "fade",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Paintings Fade? The Real Answer, Explained",
+   "h1": "Why Paintings Fade?",
+   "ymyl": false
+  }
+ ]
+}

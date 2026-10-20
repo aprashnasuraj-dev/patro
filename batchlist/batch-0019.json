@@ -1,0 +1,176 @@
+{
+ "batch": 19,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0405",
+   "slug": "how-big-the-observable-universe-is",
+   "question": "How big the observable universe is",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-big-the-observable-universe-is/",
+   "keywords": [
+    "big",
+    "observable",
+    "universe",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Big The Observable Universe Is?",
+   "h1": "How Big The Observable Universe Is?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0407",
+   "slug": "why-volcanoes-erupt",
+   "question": "Why volcanoes erupt",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-volcanoes-erupt/",
+   "keywords": [
+    "volcanoes",
+    "erupt",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Volcanoes Erupt? A Clear, Sourced Explanation",
+   "h1": "Why Volcanoes Erupt?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0411",
+   "slug": "why-colors-change-our-mood",
+   "question": "Why colors change our mood",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-colors-change-our-mood/",
+   "keywords": [
+    "colors",
+    "change",
+    "mood",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Colors Change Our Mood? Facts, Myths and Evidence",
+   "h1": "Why Colors Change Our Mood?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0413",
+   "slug": "why-spicy-food-feels-hot",
+   "question": "Why spicy food feels hot",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-spicy-food-feels-hot/",
+   "keywords": [
+    "spicy",
+    "food",
+    "feels",
+    "hot",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Spicy Food Feels Hot? Explained With Sources",
+   "h1": "Why Spicy Food Feels Hot?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0415",
+   "slug": "why-balloons-stick-to-walls",
+   "question": "Why balloons stick to walls",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-balloons-stick-to-walls/",
+   "keywords": [
+    "balloons",
+    "stick",
+    "walls",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Balloons Stick To Walls? Facts, Myths and Evidence",
+   "h1": "Why Balloons Stick To Walls?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0417",
+   "slug": "why-websites-ask-for-cookies",
+   "question": "Why websites ask for cookies",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-websites-ask-for-cookies/",
+   "keywords": [
+    "websites",
+    "ask",
+    "cookies",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Websites Ask For Cookies? What Science Actually Says",
+   "h1": "Why Websites Ask For Cookies?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0419",
+   "slug": "what-neural-networks-are",
+   "question": "What neural networks are",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-neural-networks-are/",
+   "keywords": [
+    "neural",
+    "networks",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Neural Networks Are? Explained With Sources",
+   "h1": "What Neural Networks Are?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0421",
+   "slug": "how-the-wheel-changed-civilization",
+   "question": "How the wheel changed civilization",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-wheel-changed-civilization/",
+   "keywords": [
+    "wheel",
+    "changed",
+    "civilization",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Wheel Changed Civilization? Explained With Sources",
+   "h1": "How The Wheel Changed Civilization?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0423",
+   "slug": "why-egypt-lives-along-the-nile",
+   "question": "Why Egypt lives along the Nile",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-egypt-lives-along-the-nile/",
+   "keywords": [
+    "egypt",
+    "lives",
+    "along",
+    "nile",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Egypt Lives Along The Nile? Facts, Myths and Evidence",
+   "h1": "Why Egypt Lives Along The Nile?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0427",
+   "slug": "why-we-shake-hands",
+   "question": "Why we shake hands",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-we-shake-hands/",
+   "keywords": [
+    "shake",
+    "hands",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Shake Hands? Explained With Sources",
+   "h1": "Why We Shake Hands?",
+   "ymyl": false
+  }
+ ]
+}

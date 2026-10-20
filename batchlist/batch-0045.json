@@ -1,0 +1,179 @@
+{
+ "batch": 45,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0983",
+   "slug": "why-chile-is-so-long-and-thin",
+   "question": "Why Chile is so long and thin",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-chile-is-so-long-and-thin/",
+   "keywords": [
+    "chile",
+    "long",
+    "thin",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Chile Is So Long And Thin? Explained With Sources",
+   "h1": "Why Chile Is So Long And Thin?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0987",
+   "slug": "why-door-handles-are-germ-spots",
+   "question": "Why door handles are germ spots",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-door-handles-are-germ-spots/",
+   "keywords": [
+    "door",
+    "handles",
+    "germ",
+    "spots",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Door Handles Are Germ Spots? Facts, Myths and Evidence",
+   "h1": "Why Door Handles Are Germ Spots?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0989",
+   "slug": "why-we-have-different-greetings",
+   "question": "Why we have different greetings",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-we-have-different-greetings/",
+   "keywords": [
+    "have",
+    "different",
+    "greetings",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Have Different Greetings? Explained With Sources",
+   "h1": "Why We Have Different Greetings?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0991",
+   "slug": "why-dice-are-fair",
+   "question": "Why dice are fair",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-dice-are-fair/",
+   "keywords": [
+    "dice",
+    "fair",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dice Are Fair? What Science Actually Says",
+   "h1": "Why Dice Are Fair?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0993",
+   "slug": "why-led-bulbs-save-energy",
+   "question": "Why LED bulbs save energy",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-led-bulbs-save-energy/",
+   "keywords": [
+    "led",
+    "bulbs",
+    "save",
+    "energy",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why LED Bulbs Save Energy? A Clear, Sourced Explanation",
+   "h1": "Why LED Bulbs Save Energy?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0995",
+   "slug": "how-gps-guides-ships",
+   "question": "How GPS guides ships",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-gps-guides-ships/",
+   "keywords": [
+    "gps",
+    "guides",
+    "ships",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How GPS Guides Ships? Explained With Sources",
+   "h1": "How GPS Guides Ships?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0997",
+   "slug": "how-nepali-tea-grows-in-ilam",
+   "question": "How Nepali tea grows in Ilam",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-nepali-tea-grows-in-ilam/",
+   "keywords": [
+    "nepali",
+    "tea",
+    "grows",
+    "ilam",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Nepali Tea Grows In Ilam? Facts, Myths and Evidence",
+   "h1": "How Nepali Tea Grows In Ilam?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0999",
+   "slug": "why-we-love-horror-stories",
+   "question": "Why we love horror stories",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-we-love-horror-stories/",
+   "keywords": [
+    "love",
+    "horror",
+    "stories",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Love Horror Stories? The Real Answer, Explained",
+   "h1": "Why We Love Horror Stories?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1001",
+   "slug": "how-seaweed-feeds-the-planet",
+   "question": "How seaweed feeds the planet",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-seaweed-feeds-the-planet/",
+   "keywords": [
+    "seaweed",
+    "feeds",
+    "planet",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Seaweed Feeds The Planet? Explained With Sources",
+   "h1": "How Seaweed Feeds The Planet?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1003",
+   "slug": "why-horses-sleep-standing-up",
+   "question": "Why horses sleep standing up",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-horses-sleep-standing-up/",
+   "keywords": [
+    "horses",
+    "sleep",
+    "standing",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Horses Sleep Standing Up? Facts, Myths and Evidence",
+   "h1": "Why Horses Sleep Standing Up?",
+   "ymyl": false
+  }
+ ]
+}

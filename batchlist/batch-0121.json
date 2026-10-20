@@ -1,0 +1,166 @@
+{
+ "batch": 121,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0311",
+   "slug": "what-are-the-main-parts-of-a-dishwasher",
+   "question": "What are the main parts of a dishwasher",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-dishwasher/",
+   "keywords": [
+    "main",
+    "parts",
+    "dishwasher"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a dishwasher?",
+   "h1": "What are the main parts of a dishwasher?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0312",
+   "slug": "how-are-logarithms-used-in-real-life",
+   "question": "How are logarithms used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-logarithms-used-in-real-life/",
+   "keywords": [
+    "logarithms",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are logarithms used in real life?",
+   "h1": "How are logarithms used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0313",
+   "slug": "how-did-the-sitar-start",
+   "question": "How did the sitar start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-sitar-start/",
+   "keywords": [
+    "did",
+    "sitar",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the sitar start? What Science Actually Says",
+   "h1": "How did the sitar start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0314",
+   "slug": "what-causes-sinkholes",
+   "question": "What causes sinkholes",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-sinkholes/",
+   "keywords": [
+    "causes",
+    "sinkholes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes sinkholes? Explained With Sources",
+   "h1": "What causes sinkholes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0315",
+   "slug": "what-is-the-big-bang",
+   "question": "What is the Big Bang",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-big-bang/",
+   "keywords": [
+    "big",
+    "bang"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Big Bang? What Science Actually Says",
+   "h1": "What is the Big Bang?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0316",
+   "slug": "how-long-do-potatoes-live",
+   "question": "How long do potatoes live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-potatoes-live/",
+   "keywords": [
+    "long",
+    "potatoes",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do potatoes live? A Clear, Sourced Explanation",
+   "h1": "How long do potatoes live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0317",
+   "slug": "how-does-the-brain-learn-a-new-skill",
+   "question": "How does the brain learn a new skill",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-the-brain-learn-a-new-skill/",
+   "keywords": [
+    "brain",
+    "learn",
+    "new",
+    "skill"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does the brain learn a new skill? Explained With Sources",
+   "h1": "How does the brain learn a new skill?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0318",
+   "slug": "what-is-neural-networks",
+   "question": "What is neural networks",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-is-neural-networks/",
+   "keywords": [
+    "neural",
+    "networks"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is neural networks? What Science Actually Says",
+   "h1": "What is neural networks?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0319",
+   "slug": "how-do-bees-communicate",
+   "question": "How do bees communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-bees-communicate/",
+   "keywords": [
+    "bees",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do bees communicate? A Clear, Sourced Explanation",
+   "h1": "How do bees communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0320",
+   "slug": "what-is-florence-nightingale-best-known-for",
+   "question": "What is Florence Nightingale best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-florence-nightingale-best-known-for/",
+   "keywords": [
+    "florence",
+    "nightingale",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Florence Nightingale best known for?",
+   "h1": "What is Florence Nightingale best known for?",
+   "ymyl": false
+  }
+ ]
+}

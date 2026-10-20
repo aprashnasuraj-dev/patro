@@ -1,0 +1,176 @@
+{
+ "batch": 75,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1651",
+   "slug": "how-teamwork-improves-with-trust",
+   "question": "How teamwork improves with trust",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-teamwork-improves-with-trust/",
+   "keywords": [
+    "teamwork",
+    "improves",
+    "trust",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Teamwork Improves With Trust? Facts, Myths and Evidence",
+   "h1": "How Teamwork Improves With Trust?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1653",
+   "slug": "how-spices-traveled-the-silk-road",
+   "question": "How spices traveled the silk road",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-spices-traveled-the-silk-road/",
+   "keywords": [
+    "spices",
+    "traveled",
+    "silk",
+    "road",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Spices Traveled The Silk Road? Facts, Myths and Evidence",
+   "h1": "How Spices Traveled The Silk Road?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1655",
+   "slug": "how-solar-panels-make-electricity",
+   "question": "How solar panels make electricity",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-solar-panels-make-electricity/",
+   "keywords": [
+    "solar",
+    "panels",
+    "electricity",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Solar Panels Make Electricity?",
+   "h1": "How Solar Panels Make Electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1657",
+   "slug": "how-wireless-charging-works",
+   "question": "How wireless charging works",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-wireless-charging-works/",
+   "keywords": [
+    "wireless",
+    "charging",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Wireless Charging Works? The Real Answer, Explained",
+   "h1": "How Wireless Charging Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1659",
+   "slug": "how-ai-summarizes-documents",
+   "question": "How AI summarizes documents",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-summarizes-documents/",
+   "keywords": [
+    "summarizes",
+    "documents",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Summarizes Documents? Facts, Myths and Evidence",
+   "h1": "How AI Summarizes Documents?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1661",
+   "slug": "what-the-dead-sea-scrolls-contain",
+   "question": "What the Dead Sea Scrolls contain",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-the-dead-sea-scrolls-contain/",
+   "keywords": [
+    "dead",
+    "sea",
+    "scrolls",
+    "contain",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What The Dead Sea Scrolls Contain?",
+   "h1": "What The Dead Sea Scrolls Contain?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1663",
+   "slug": "how-taiwan-makes-most-advanced-chips",
+   "question": "How Taiwan makes most advanced chips",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-taiwan-makes-most-advanced-chips/",
+   "keywords": [
+    "taiwan",
+    "most",
+    "advanced",
+    "chips",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Taiwan Makes Most Advanced Chips? Explained With Sources",
+   "h1": "How Taiwan Makes Most Advanced Chips?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1667",
+   "slug": "how-coffee-machines-brew",
+   "question": "How coffee machines brew",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-coffee-machines-brew/",
+   "keywords": [
+    "coffee",
+    "machines",
+    "brew",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Coffee Machines Brew? A Clear, Sourced Explanation",
+   "h1": "How Coffee Machines Brew?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1669",
+   "slug": "how-memes-evolve",
+   "question": "How memes evolve",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-memes-evolve/",
+   "keywords": [
+    "memes",
+    "evolve",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Memes Evolve? Explained With Sources",
+   "h1": "How Memes Evolve?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1671",
+   "slug": "how-lotteries-really-work",
+   "question": "How lotteries really work",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-lotteries-really-work/",
+   "keywords": [
+    "lotteries",
+    "really",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Lotteries Really Work? Explained With Sources",
+   "h1": "How Lotteries Really Work?",
+   "ymyl": false
+  }
+ ]
+}

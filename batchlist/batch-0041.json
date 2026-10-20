@@ -1,0 +1,177 @@
+{
+ "batch": 41,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0895",
+   "slug": "why-static-electricity-shocks-you",
+   "question": "Why static electricity shocks you",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-static-electricity-shocks-you/",
+   "keywords": [
+    "static",
+    "electricity",
+    "shocks",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Static Electricity Shocks You? Explained With Sources",
+   "h1": "Why Static Electricity Shocks You?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0897",
+   "slug": "why-apps-track-your-usage",
+   "question": "Why apps track your usage",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-apps-track-your-usage/",
+   "keywords": [
+    "apps",
+    "track",
+    "usage",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Apps Track Your Usage? The Real Answer, Explained",
+   "h1": "Why Apps Track Your Usage?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0899",
+   "slug": "what-tokens-are-in-ai",
+   "question": "What tokens are in AI",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-tokens-are-in-ai/",
+   "keywords": [
+    "tokens",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Tokens Are In AI? Explained With Sources",
+   "h1": "What Tokens Are In AI?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0901",
+   "slug": "how-the-compass-transformed-navigation",
+   "question": "How the compass transformed navigation",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-compass-transformed-navigation/",
+   "keywords": [
+    "compass",
+    "transformed",
+    "navigation",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Compass Transformed Navigation?",
+   "h1": "How The Compass Transformed Navigation?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0903",
+   "slug": "why-greenland-is-not-green",
+   "question": "Why Greenland is not green",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-greenland-is-not-green/",
+   "keywords": [
+    "greenland",
+    "not",
+    "green",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Greenland Is Not Green? Explained With Sources",
+   "h1": "Why Greenland Is Not Green?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0907",
+   "slug": "why-floors-creak",
+   "question": "Why floors creak",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-floors-creak/",
+   "keywords": [
+    "floors",
+    "creak",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Floors Creak? A Clear, Sourced Explanation",
+   "h1": "Why Floors Creak?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0909",
+   "slug": "why-nepali-uses-devanagari-script",
+   "question": "Why Nepali uses Devanagari script",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-nepali-uses-devanagari-script/",
+   "keywords": [
+    "nepali",
+    "uses",
+    "devanagari",
+    "script",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepali Uses Devanagari Script?",
+   "h1": "Why Nepali Uses Devanagari Script?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0911",
+   "slug": "why-exponential-growth-is-hard-to-grasp",
+   "question": "Why exponential growth is hard to grasp",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-exponential-growth-is-hard-to-grasp/",
+   "keywords": [
+    "exponential",
+    "growth",
+    "hard",
+    "grasp",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Exponential Growth Is Hard To Grasp?",
+   "h1": "Why Exponential Growth Is Hard To Grasp?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0913",
+   "slug": "why-cities-build-green-roofs",
+   "question": "Why cities build green roofs",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-cities-build-green-roofs/",
+   "keywords": [
+    "cities",
+    "build",
+    "green",
+    "roofs",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Cities Build Green Roofs? What Science Actually Says",
+   "h1": "Why Cities Build Green Roofs?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0915",
+   "slug": "how-traffic-lights-are-timed",
+   "question": "How traffic lights are timed",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-traffic-lights-are-timed/",
+   "keywords": [
+    "traffic",
+    "lights",
+    "timed",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Traffic Lights Are Timed? Facts, Myths and Evidence",
+   "h1": "How Traffic Lights Are Timed?",
+   "ymyl": false
+  }
+ ]
+}

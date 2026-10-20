@@ -1,0 +1,168 @@
+{
+ "batch": 317,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2282",
+   "slug": "how-did-angkor-wat-get-its-name",
+   "question": "How did Angkor Wat get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-angkor-wat-get-its-name/",
+   "keywords": [
+    "did",
+    "angkor",
+    "wat",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Angkor Wat get its name? Key Facts and Context",
+   "h1": "How did Angkor Wat get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2283",
+   "slug": "what-is-nfc",
+   "question": "What is NFC",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-nfc/",
+   "keywords": [
+    "nfc"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is NFC? The Real Answer, Explained",
+   "h1": "What is NFC?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2284",
+   "slug": "why-does-metamorphosis-matter-in-everyday-life",
+   "question": "Why does metamorphosis matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-metamorphosis-matter-in-everyday-life/",
+   "keywords": [
+    "metamorphosis",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does metamorphosis matter in everyday life?",
+   "h1": "Why does metamorphosis matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2285",
+   "slug": "how-do-dogs-communicate",
+   "question": "How do dogs communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-dogs-communicate/",
+   "keywords": [
+    "dogs",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do dogs communicate? Facts, Myths and Evidence",
+   "h1": "How do dogs communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2286",
+   "slug": "what-caused-the-meiji-era-modernization",
+   "question": "What caused the Meiji era modernization",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-meiji-era-modernization/",
+   "keywords": [
+    "caused",
+    "meiji",
+    "era",
+    "modernization"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Meiji era modernization?",
+   "h1": "What caused the Meiji era modernization?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2287",
+   "slug": "what-is-the-history-of-seoul",
+   "question": "What is the history of Seoul",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-seoul/",
+   "keywords": [
+    "history",
+    "seoul"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Seoul? The Short, Sourced Answer",
+   "h1": "What is the history of Seoul?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2288",
+   "slug": "what-are-hash-functions",
+   "question": "What are hash functions",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-hash-functions/",
+   "keywords": [
+    "hash",
+    "functions"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are hash functions? Facts, Myths and Evidence",
+   "h1": "What are hash functions?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2289",
+   "slug": "why-does-refraction-matter-in-everyday-life",
+   "question": "Why does refraction matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-refraction-matter-in-everyday-life/",
+   "keywords": [
+    "refraction",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does refraction matter in everyday life?",
+   "h1": "Why does refraction matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2290",
+   "slug": "how-do-pythons-communicate",
+   "question": "How do pythons communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-pythons-communicate/",
+   "keywords": [
+    "pythons",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do pythons communicate? Explained With Sources",
+   "h1": "How do pythons communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2291",
+   "slug": "what-is-ferdinand-magellan-best-known-for",
+   "question": "What is Ferdinand Magellan best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-ferdinand-magellan-best-known-for/",
+   "keywords": [
+    "ferdinand",
+    "magellan",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Ferdinand Magellan best known for? A Clear Overview",
+   "h1": "What is Ferdinand Magellan best known for?",
+   "ymyl": false
+  }
+ ]
+}

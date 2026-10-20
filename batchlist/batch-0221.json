@@ -1,0 +1,167 @@
+{
+ "batch": 221,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1316",
+   "slug": "what-caused-the-industrial-revolution",
+   "question": "What caused the Industrial Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-industrial-revolution/",
+   "keywords": [
+    "caused",
+    "industrial",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Industrial Revolution? A Clear Overview",
+   "h1": "What caused the Industrial Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1317",
+   "slug": "what-is-the-history-of-berlin",
+   "question": "What is the history of Berlin",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-berlin/",
+   "keywords": [
+    "history",
+    "berlin"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Berlin? The Story, Sourced",
+   "h1": "What is the history of Berlin?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1319",
+   "slug": "why-do-magnetic-fields-matter-in-everyday-life",
+   "question": "Why do magnetic fields matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-magnetic-fields-matter-in-everyday-life/",
+   "keywords": [
+    "magnetic",
+    "fields",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do magnetic fields matter in everyday life?",
+   "h1": "Why do magnetic fields matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1320",
+   "slug": "where-does-the-word-algorithm-come-from",
+   "question": "Where does the word \"algorithm\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-algorithm-come-from/",
+   "keywords": [
+    "word",
+    "algorithm",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"algorithm\" come from?",
+   "h1": "Where does the word \"algorithm\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1321",
+   "slug": "what-is-the-history-of-potato-chips",
+   "question": "What is the history of potato chips",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-potato-chips/",
+   "keywords": [
+    "history",
+    "potato",
+    "chips"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of potato chips? The Story, Sourced",
+   "h1": "What is the history of potato chips?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1322",
+   "slug": "what-are-the-main-parts-of-a-steam-engine",
+   "question": "What are the main parts of a steam engine",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-steam-engine/",
+   "keywords": [
+    "main",
+    "parts",
+    "steam",
+    "engine"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a steam engine?",
+   "h1": "What are the main parts of a steam engine?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1323",
+   "slug": "where-is-k2-and-how-high-is-it",
+   "question": "Where is K2 and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-k2-and-how-high-is-it/",
+   "keywords": [
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is K2 and how high is it? Explained With Sources",
+   "h1": "Where is K2 and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1324",
+   "slug": "what-are-the-main-parts-of-a-washing-machine",
+   "question": "What are the main parts of a washing machine",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-washing-machine/",
+   "keywords": [
+    "main",
+    "parts",
+    "washing",
+    "machine"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a washing machine?",
+   "h1": "What are the main parts of a washing machine?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1325",
+   "slug": "what-is-the-number-line",
+   "question": "What is the number line",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-number-line/",
+   "keywords": [
+    "number",
+    "line"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the number line? The Real Answer, Explained",
+   "h1": "What is the number line?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1326",
+   "slug": "what-makes-bollywood-unique",
+   "question": "What makes Bollywood unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-bollywood-unique/",
+   "keywords": [
+    "makes",
+    "bollywood",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Bollywood unique? The Real Answer, Explained",
+   "h1": "What makes Bollywood unique?",
+   "ymyl": false
+  }
+ ]
+}

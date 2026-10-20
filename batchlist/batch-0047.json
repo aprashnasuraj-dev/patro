@@ -1,0 +1,181 @@
+{
+ "batch": 47,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1029",
+   "slug": "how-translation-machines-learned",
+   "question": "How translation machines learned",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-translation-machines-learned/",
+   "keywords": [
+    "translation",
+    "machines",
+    "learned",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Translation Machines Learned? What Science Actually Says",
+   "h1": "How Translation Machines Learned?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1031",
+   "slug": "how-magic-squares-work",
+   "question": "How magic squares work",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-magic-squares-work/",
+   "keywords": [
+    "magic",
+    "squares",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Magic Squares Work? The Real Answer, Explained",
+   "h1": "How Magic Squares Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1033",
+   "slug": "how-carbon-capture-works",
+   "question": "How carbon capture works",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-carbon-capture-works/",
+   "keywords": [
+    "carbon",
+    "capture",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Carbon Capture Works? What Science Actually Says",
+   "h1": "How Carbon Capture Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1035",
+   "slug": "why-ancient-roman-concrete-lasts",
+   "question": "Why ancient Roman concrete lasts",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-ancient-roman-concrete-lasts/",
+   "keywords": [
+    "ancient",
+    "roman",
+    "concrete",
+    "lasts",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Ancient Roman Concrete Lasts? Facts, Myths and Evidence",
+   "h1": "Why Ancient Roman Concrete Lasts?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1037",
+   "slug": "why-the-kali-gandaki-gorge-is-the-deepest-on-earth",
+   "question": "Why the Kali Gandaki gorge is the deepest on Earth",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-the-kali-gandaki-gorge-is-the-deepest-on-earth/",
+   "keywords": [
+    "kali",
+    "gandaki",
+    "gorge",
+    "deepest",
+    "earth",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Kali Gandaki Gorge Is The Deepest On Earth?",
+   "h1": "Why The Kali Gandaki Gorge Is The Deepest On Earth?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1039",
+   "slug": "how-sculptures-were-carved-in-antiquity",
+   "question": "How sculptures were carved in antiquity",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-sculptures-were-carved-in-antiquity/",
+   "keywords": [
+    "sculptures",
+    "were",
+    "carved",
+    "antiquity",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sculptures Were Carved In Antiquity?",
+   "h1": "How Sculptures Were Carved In Antiquity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1041",
+   "slug": "why-wood-floats-and-rocks-sink",
+   "question": "Why wood floats and rocks sink",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-wood-floats-and-rocks-sink/",
+   "keywords": [
+    "wood",
+    "floats",
+    "rocks",
+    "sink",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Wood Floats And Rocks Sink? The Real Answer, Explained",
+   "h1": "Why Wood Floats And Rocks Sink?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1043",
+   "slug": "how-whales-sing-across-oceans",
+   "question": "How whales sing across oceans",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-whales-sing-across-oceans/",
+   "keywords": [
+    "whales",
+    "sing",
+    "across",
+    "oceans",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Whales Sing Across Oceans? Facts, Myths and Evidence",
+   "h1": "How Whales Sing Across Oceans?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1045",
+   "slug": "how-telescopes-look-back-in-time",
+   "question": "How telescopes look back in time",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-telescopes-look-back-in-time/",
+   "keywords": [
+    "telescopes",
+    "look",
+    "back",
+    "time",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Telescopes Look Back In Time? The Real Answer, Explained",
+   "h1": "How Telescopes Look Back In Time?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1047",
+   "slug": "why-clouds-float",
+   "question": "Why clouds float",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-clouds-float/",
+   "keywords": [
+    "clouds",
+    "float",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Clouds Float? The Real Answer, Explained",
+   "h1": "Why Clouds Float?",
+   "ymyl": false
+  }
+ ]
+}

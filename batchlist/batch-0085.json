@@ -1,0 +1,180 @@
+{
+ "batch": 85,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1873",
+   "slug": "why-sand-is-running-short",
+   "question": "Why sand is running short",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-sand-is-running-short/",
+   "keywords": [
+    "sand",
+    "running",
+    "short",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Sand Is Running Short? The Real Answer, Explained",
+   "h1": "Why Sand Is Running Short?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1875",
+   "slug": "how-railway-signals-work",
+   "question": "How railway signals work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-railway-signals-work/",
+   "keywords": [
+    "railway",
+    "signals",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Railway Signals Work? A Clear, Sourced Explanation",
+   "h1": "How Railway Signals Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1877",
+   "slug": "how-himalayan-honey-hunters-work",
+   "question": "How Himalayan honey hunters work",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-himalayan-honey-hunters-work/",
+   "keywords": [
+    "himalayan",
+    "honey",
+    "hunters",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Himalayan Honey Hunters Work? What Science Actually Says",
+   "h1": "How Himalayan Honey Hunters Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1879",
+   "slug": "why-wood-carving-thrives-in-nepal",
+   "question": "Why wood carving thrives in Nepal",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-wood-carving-thrives-in-nepal/",
+   "keywords": [
+    "wood",
+    "carving",
+    "thrives",
+    "nepal",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Wood Carving Thrives In Nepal?",
+   "h1": "Why Wood Carving Thrives In Nepal?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1881",
+   "slug": "how-lotus-flowers-stay-clean",
+   "question": "How lotus flowers stay clean",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-lotus-flowers-stay-clean/",
+   "keywords": [
+    "lotus",
+    "flowers",
+    "stay",
+    "clean",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Lotus Flowers Stay Clean? The Real Answer, Explained",
+   "h1": "How Lotus Flowers Stay Clean?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1883",
+   "slug": "why-starfish-regrow-arms",
+   "question": "Why starfish regrow arms",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-starfish-regrow-arms/",
+   "keywords": [
+    "starfish",
+    "regrow",
+    "arms",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Starfish Regrow Arms? What Science Actually Says",
+   "h1": "Why Starfish Regrow Arms?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1885",
+   "slug": "why-earth-is-not-perfectly-round",
+   "question": "Why Earth is not perfectly round",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-earth-is-not-perfectly-round/",
+   "keywords": [
+    "earth",
+    "not",
+    "perfectly",
+    "round",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Earth Is Not Perfectly Round? What Science Actually Says",
+   "h1": "Why Earth Is Not Perfectly Round?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1887",
+   "slug": "how-wetlands-clean-water",
+   "question": "How wetlands clean water",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-wetlands-clean-water/",
+   "keywords": [
+    "wetlands",
+    "clean",
+    "water",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Wetlands Clean Water? A Clear, Sourced Explanation",
+   "h1": "How Wetlands Clean Water?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1891",
+   "slug": "how-kids-learn-language",
+   "question": "How kids learn language",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-kids-learn-language/",
+   "keywords": [
+    "kids",
+    "learn",
+    "language",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Kids Learn Language? Facts, Myths and Evidence",
+   "h1": "How Kids Learn Language?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1893",
+   "slug": "how-ice-cream-stays-smooth",
+   "question": "How ice cream stays smooth",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-ice-cream-stays-smooth/",
+   "keywords": [
+    "ice",
+    "cream",
+    "stays",
+    "smooth",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Ice Cream Stays Smooth? The Real Answer, Explained",
+   "h1": "How Ice Cream Stays Smooth?",
+   "ymyl": false
+  }
+ ]
+}

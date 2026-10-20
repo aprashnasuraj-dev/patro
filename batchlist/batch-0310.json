@@ -1,0 +1,165 @@
+{
+ "batch": 310,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2212",
+   "slug": "what-is-budapest-famous-for",
+   "question": "What is Budapest famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-budapest-famous-for/",
+   "keywords": [
+    "budapest",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Budapest famous for? Facts and Background",
+   "h1": "What is Budapest famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2213",
+   "slug": "how-do-autonomous-drones-work",
+   "question": "How do autonomous drones work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-autonomous-drones-work/",
+   "keywords": [
+    "autonomous",
+    "drones",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do autonomous drones work? The Real Answer, Explained",
+   "h1": "How do autonomous drones work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2214",
+   "slug": "why-do-acids-and-bases-matter-in-everyday-life",
+   "question": "Why do acids and bases matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-acids-and-bases-matter-in-everyday-life/",
+   "keywords": [
+    "acids",
+    "bases",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do acids and bases matter in everyday life?",
+   "h1": "Why do acids and bases matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2215",
+   "slug": "how-do-moose-communicate",
+   "question": "How do moose communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-moose-communicate/",
+   "keywords": [
+    "moose",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do moose communicate? A Clear, Sourced Explanation",
+   "h1": "How do moose communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2216",
+   "slug": "what-is-claude-monet-best-known-for",
+   "question": "What is Claude Monet best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-claude-monet-best-known-for/",
+   "keywords": [
+    "claude",
+    "monet",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Claude Monet best known for? A Clear Overview",
+   "h1": "What is Claude Monet best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2217",
+   "slug": "what-is-the-united-arab-emirates-known-for",
+   "question": "What is the United Arab Emirates known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-united-arab-emirates-known-for/",
+   "keywords": [
+    "united",
+    "arab",
+    "emirates",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the United Arab Emirates known for?",
+   "h1": "What is the United Arab Emirates known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2218",
+   "slug": "what-are-screen-refresh-rates",
+   "question": "What are screen refresh rates",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-screen-refresh-rates/",
+   "keywords": [
+    "screen",
+    "refresh",
+    "rates"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are screen refresh rates? A Clear, Sourced Explanation",
+   "h1": "What are screen refresh rates?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2219",
+   "slug": "what-is-osmosis",
+   "question": "What is osmosis",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-osmosis/",
+   "keywords": [
+    "osmosis"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is osmosis? The Real Answer, Explained",
+   "h1": "What is osmosis?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2220",
+   "slug": "how-do-hedgehogs-communicate",
+   "question": "How do hedgehogs communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-hedgehogs-communicate/",
+   "keywords": [
+    "hedgehogs",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do hedgehogs communicate? A Clear, Sourced Explanation",
+   "h1": "How do hedgehogs communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2221",
+   "slug": "who-was-michael-faraday",
+   "question": "Who was Michael Faraday",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-michael-faraday/",
+   "keywords": [
+    "michael",
+    "faraday"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Michael Faraday? Key Facts and Context",
+   "h1": "Who was Michael Faraday?",
+   "ymyl": false
+  }
+ ]
+}

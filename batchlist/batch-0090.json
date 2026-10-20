@@ -1,0 +1,174 @@
+{
+ "batch": 90,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1983",
+   "slug": "how-poland-rebuilt-after-1945",
+   "question": "How Poland rebuilt after 1945",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-poland-rebuilt-after-1945/",
+   "keywords": [
+    "poland",
+    "rebuilt",
+    "after",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Poland Rebuilt After 1945? Explained With Sources",
+   "h1": "How Poland Rebuilt After 1945?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1987",
+   "slug": "how-garbage-trucks-route",
+   "question": "How garbage trucks route",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-garbage-trucks-route/",
+   "keywords": [
+    "garbage",
+    "trucks",
+    "route",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Garbage Trucks Route? What Science Actually Says",
+   "h1": "How Garbage Trucks Route?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1989",
+   "slug": "how-puns-work",
+   "question": "How puns work",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-puns-work/",
+   "keywords": [
+    "puns",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Puns Work? The Real Answer, Explained",
+   "h1": "How Puns Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1991",
+   "slug": "how-nepalese-number-words-work",
+   "question": "How Nepalese number words work",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-nepalese-number-words-work/",
+   "keywords": [
+    "nepalese",
+    "number",
+    "words",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Nepalese Number Words Work? A Clear, Sourced Explanation",
+   "h1": "How Nepalese Number Words Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1993",
+   "slug": "how-nations-track-emissions",
+   "question": "How nations track emissions",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-nations-track-emissions/",
+   "keywords": [
+    "nations",
+    "track",
+    "emissions",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Nations Track Emissions? What Science Actually Says",
+   "h1": "How Nations Track Emissions?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1995",
+   "slug": "why-drones-stay-stable",
+   "question": "Why drones stay stable",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-drones-stay-stable/",
+   "keywords": [
+    "drones",
+    "stay",
+    "stable",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Drones Stay Stable? The Real Answer, Explained",
+   "h1": "Why Drones Stay Stable?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1997",
+   "slug": "why-bhaktapurs-pottery-tradition-endures",
+   "question": "Why Bhaktapur's pottery tradition endures",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-bhaktapurs-pottery-tradition-endures/",
+   "keywords": [
+    "bhaktapur",
+    "pottery",
+    "tradition",
+    "endures",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bhaktapur's Pottery Tradition Endures?",
+   "h1": "Why Bhaktapur's Pottery Tradition Endures?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1999",
+   "slug": "how-libraries-preserve-culture",
+   "question": "How libraries preserve culture",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-libraries-preserve-culture/",
+   "keywords": [
+    "libraries",
+    "preserve",
+    "culture",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Libraries Preserve Culture? What Science Actually Says",
+   "h1": "How Libraries Preserve Culture?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0001",
+   "slug": "how-do-goldfish-sleep",
+   "question": "How do goldfish sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-goldfish-sleep/",
+   "keywords": [
+    "goldfish",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do goldfish sleep? A Clear, Sourced Explanation",
+   "h1": "How do goldfish sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0002",
+   "slug": "what-caused-the-rana-regime-in-nepal",
+   "question": "What caused the Rana regime in Nepal",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-rana-regime-in-nepal/",
+   "keywords": [
+    "caused",
+    "rana",
+    "regime",
+    "nepal"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Rana regime in Nepal?",
+   "h1": "What caused the Rana regime in Nepal?",
+   "ymyl": false
+  }
+ ]
+}

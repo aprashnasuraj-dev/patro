@@ -1,0 +1,170 @@
+{
+ "batch": 136,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0464",
+   "slug": "how-does-a-microwave-popcorn-bag-work",
+   "question": "How does a microwave popcorn bag work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-microwave-popcorn-bag-work/",
+   "keywords": [
+    "microwave",
+    "popcorn",
+    "bag",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a microwave popcorn bag work?",
+   "h1": "How does a microwave popcorn bag work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0465",
+   "slug": "what-are-square-roots",
+   "question": "What are square roots",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-square-roots/",
+   "keywords": [
+    "square",
+    "roots"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are square roots? Facts, Myths and Evidence",
+   "h1": "What are square roots?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0466",
+   "slug": "what-makes-hip-hop-unique",
+   "question": "What makes hip hop unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-hip-hop-unique/",
+   "keywords": [
+    "makes",
+    "hip",
+    "hop",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes hip hop unique? What Science Actually Says",
+   "h1": "What makes hip hop unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0467",
+   "slug": "what-causes-landslides",
+   "question": "What causes landslides",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-landslides/",
+   "keywords": [
+    "causes",
+    "landslides"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes landslides? The Real Answer, Explained",
+   "h1": "What causes landslides?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0468",
+   "slug": "how-do-comets-form",
+   "question": "How do comets form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-comets-form/",
+   "keywords": [
+    "comets",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do comets form? The Real Answer, Explained",
+   "h1": "How do comets form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0469",
+   "slug": "how-long-do-rice-plants-live",
+   "question": "How long do rice plants live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-rice-plants-live/",
+   "keywords": [
+    "long",
+    "rice",
+    "plants",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do rice plants live? What Science Actually Says",
+   "h1": "How long do rice plants live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0471",
+   "slug": "what-do-wolverines-eat",
+   "question": "What do wolverines eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-wolverines-eat/",
+   "keywords": [
+    "wolverines",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do wolverines eat? Explained With Sources",
+   "h1": "What do wolverines eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0472",
+   "slug": "what-is-ada-lovelace-best-known-for",
+   "question": "What is Ada Lovelace best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-ada-lovelace-best-known-for/",
+   "keywords": [
+    "ada",
+    "lovelace",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Ada Lovelace best known for? The Story, Sourced",
+   "h1": "What is Ada Lovelace best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0473",
+   "slug": "how-did-santorini-get-its-name",
+   "question": "How did Santorini get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-santorini-get-its-name/",
+   "keywords": [
+    "did",
+    "santorini",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Santorini get its name? The Story, Sourced",
+   "h1": "How did Santorini get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0474",
+   "slug": "why-do-old-computers-slow-down",
+   "question": "Why do old computers slow down",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-do-old-computers-slow-down/",
+   "keywords": [
+    "old",
+    "computers",
+    "slow",
+    "down"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do old computers slow down? Explained With Sources",
+   "h1": "Why do old computers slow down?",
+   "ymyl": false
+  }
+ ]
+}

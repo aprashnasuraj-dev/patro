@@ -1,0 +1,170 @@
+{
+ "batch": 177,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0875",
+   "slug": "how-long-do-oak-trees-live",
+   "question": "How long do oak trees live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-oak-trees-live/",
+   "keywords": [
+    "long",
+    "oak",
+    "trees",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do oak trees live? Facts, Myths and Evidence",
+   "h1": "How long do oak trees live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0876",
+   "slug": "how-long-do-squirrels-live",
+   "question": "How long do squirrels live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-squirrels-live/",
+   "keywords": [
+    "long",
+    "squirrels",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do squirrels live? Facts, Myths and Evidence",
+   "h1": "How long do squirrels live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0877",
+   "slug": "who-was-pythagoras",
+   "question": "Who was Pythagoras",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-pythagoras/",
+   "keywords": [
+    "pythagoras"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Pythagoras? The Short, Sourced Answer",
+   "h1": "Who was Pythagoras?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0878",
+   "slug": "how-did-cape-town-get-its-name",
+   "question": "How did Cape Town get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-cape-town-get-its-name/",
+   "keywords": [
+    "did",
+    "cape",
+    "town",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Cape Town get its name? Key Facts and Context",
+   "h1": "How did Cape Town get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0879",
+   "slug": "how-do-spam-filters-work",
+   "question": "How do spam filters work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-spam-filters-work/",
+   "keywords": [
+    "spam",
+    "filters",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do spam filters work? Explained With Sources",
+   "h1": "How do spam filters work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0880",
+   "slug": "why-does-mutation-matter-in-everyday-life",
+   "question": "Why does mutation matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-mutation-matter-in-everyday-life/",
+   "keywords": [
+    "mutation",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does mutation matter in everyday life?",
+   "h1": "Why does mutation matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0881",
+   "slug": "where-does-the-phrase-under-the-weather-come-from",
+   "question": "Where does the phrase \"under the weather\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-under-the-weather-come-from/",
+   "keywords": [
+    "phrase",
+    "under",
+    "weather",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"under the weather\" come from?",
+   "h1": "Where does the phrase \"under the weather\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0882",
+   "slug": "what-is-the-history-of-pickles",
+   "question": "What is the history of pickles",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-pickles/",
+   "keywords": [
+    "history",
+    "pickles"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of pickles? Facts and Background",
+   "h1": "What is the history of pickles?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0883",
+   "slug": "what-are-the-main-parts-of-a-jet-engine",
+   "question": "What are the main parts of a jet engine",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-jet-engine/",
+   "keywords": [
+    "main",
+    "parts",
+    "jet",
+    "engine"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a jet engine?",
+   "h1": "What are the main parts of a jet engine?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0884",
+   "slug": "what-do-sherpas-do-on-everest",
+   "question": "What do Sherpas do on Everest",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-do-sherpas-do-on-everest/",
+   "keywords": [
+    "sherpas",
+    "everest"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do Sherpas do on Everest? Explained With Sources",
+   "h1": "What do Sherpas do on Everest?",
+   "ymyl": false
+  }
+ ]
+}

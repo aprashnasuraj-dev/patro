@@ -1,0 +1,171 @@
+{
+ "batch": 143,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0535",
+   "slug": "why-do-genes-matter-in-everyday-life",
+   "question": "Why do genes matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-genes-matter-in-everyday-life/",
+   "keywords": [
+    "genes",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do genes matter in everyday life? Explained With Sources",
+   "h1": "Why do genes matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0536",
+   "slug": "where-does-the-word-gerrymander-come-from",
+   "question": "Where does the word \"gerrymander\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-gerrymander-come-from/",
+   "keywords": [
+    "word",
+    "gerrymander",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"gerrymander\" come from?",
+   "h1": "Where does the word \"gerrymander\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0537",
+   "slug": "what-is-the-history-of-soy-sauce",
+   "question": "What is the history of soy sauce",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-soy-sauce/",
+   "keywords": [
+    "history",
+    "soy",
+    "sauce"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of soy sauce? A Clear Overview",
+   "h1": "What is the history of soy sauce?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0538",
+   "slug": "how-does-a-bicycle-gear-system-work",
+   "question": "How does a bicycle gear system work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-bicycle-gear-system-work/",
+   "keywords": [
+    "bicycle",
+    "gear",
+    "system",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a bicycle gear system work?",
+   "h1": "How does a bicycle gear system work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0539",
+   "slug": "what-is-dal-bhat-and-how-is-it-made",
+   "question": "What is dal bhat and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-dal-bhat-and-how-is-it-made/",
+   "keywords": [
+    "dal",
+    "bhat",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is dal bhat and how is it made? The Story, Sourced",
+   "h1": "What is dal bhat and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0540",
+   "slug": "what-are-the-main-parts-of-a-flush-toilet",
+   "question": "What are the main parts of a flush toilet",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-flush-toilet/",
+   "keywords": [
+    "main",
+    "parts",
+    "flush",
+    "toilet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a flush toilet?",
+   "h1": "What are the main parts of a flush toilet?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0541",
+   "slug": "how-is-geometry-used-in-real-life",
+   "question": "How is geometry used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-geometry-used-in-real-life/",
+   "keywords": [
+    "geometry",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is geometry used in real life?",
+   "h1": "How is geometry used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0542",
+   "slug": "how-did-graffiti-start",
+   "question": "How did graffiti start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-graffiti-start/",
+   "keywords": [
+    "did",
+    "graffiti",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did graffiti start? Explained With Sources",
+   "h1": "How did graffiti start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0543",
+   "slug": "how-do-meteorite-craters-form",
+   "question": "How do meteorite craters form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-meteorite-craters-form/",
+   "keywords": [
+    "meteorite",
+    "craters",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do meteorite craters form? Facts, Myths and Evidence",
+   "h1": "How do meteorite craters form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0544",
+   "slug": "how-do-neutron-stars-form",
+   "question": "How do neutron stars form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-neutron-stars-form/",
+   "keywords": [
+    "neutron",
+    "stars",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do neutron stars form? A Clear, Sourced Explanation",
+   "h1": "How do neutron stars form?",
+   "ymyl": false
+  }
+ ]
+}

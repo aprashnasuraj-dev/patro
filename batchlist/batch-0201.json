@@ -1,0 +1,164 @@
+{
+ "batch": 201,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1115",
+   "slug": "how-do-sunflowers-grow",
+   "question": "How do sunflowers grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-sunflowers-grow/",
+   "keywords": [
+    "sunflowers",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do sunflowers grow? Facts, Myths and Evidence",
+   "h1": "How do sunflowers grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1116",
+   "slug": "what-do-dragonflies-eat",
+   "question": "What do dragonflies eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-dragonflies-eat/",
+   "keywords": [
+    "dragonflies",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do dragonflies eat? A Clear, Sourced Explanation",
+   "h1": "What do dragonflies eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1117",
+   "slug": "what-is-orville-wright-best-known-for",
+   "question": "What is Orville Wright best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-orville-wright-best-known-for/",
+   "keywords": [
+    "orville",
+    "wright",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Orville Wright best known for? The Story, Sourced",
+   "h1": "What is Orville Wright best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1118",
+   "slug": "what-is-the-philippines-known-for",
+   "question": "What is the Philippines known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-philippines-known-for/",
+   "keywords": [
+    "philippines",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Philippines known for? Facts and Background",
+   "h1": "What is the Philippines known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1120",
+   "slug": "why-do-capacitors-matter-in-everyday-life",
+   "question": "Why do capacitors matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-capacitors-matter-in-everyday-life/",
+   "keywords": [
+    "capacitors",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do capacitors matter in everyday life?",
+   "h1": "Why do capacitors matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1121",
+   "slug": "where-does-the-word-trivia-come-from",
+   "question": "Where does the word \"trivia\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-trivia-come-from/",
+   "keywords": [
+    "word",
+    "trivia",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"trivia\" come from? The Story, Sourced",
+   "h1": "Where does the word \"trivia\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1122",
+   "slug": "what-is-the-history-of-tea",
+   "question": "What is the history of tea",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-tea/",
+   "keywords": [
+    "history",
+    "tea"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of tea? The Short, Sourced Answer",
+   "h1": "What is the history of tea?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1123",
+   "slug": "what-are-the-main-parts-of-a-container-ship",
+   "question": "What are the main parts of a container ship",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-container-ship/",
+   "keywords": [
+    "main",
+    "parts",
+    "container",
+    "ship"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a container ship?",
+   "h1": "What are the main parts of a container ship?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1124",
+   "slug": "why-is-gosainkunda-important",
+   "question": "Why is Gosainkunda important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-gosainkunda-important/",
+   "keywords": [
+    "gosainkunda",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Gosainkunda important? A Clear, Sourced Explanation",
+   "h1": "Why is Gosainkunda important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1125",
+   "slug": "how-does-a-dehumidifier-work",
+   "question": "How does a dehumidifier work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-dehumidifier-work/",
+   "keywords": [
+    "dehumidifier",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a dehumidifier work? Facts, Myths and Evidence",
+   "h1": "How does a dehumidifier work?",
+   "ymyl": false
+  }
+ ]
+}

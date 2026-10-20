@@ -1,0 +1,181 @@
+{
+ "batch": 44,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0961",
+   "slug": "why-some-plants-glow-in-the-dark",
+   "question": "Why some plants glow in the dark",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-some-plants-glow-in-the-dark/",
+   "keywords": [
+    "some",
+    "plants",
+    "glow",
+    "dark",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Some Plants Glow In The Dark? What Science Actually Says",
+   "h1": "Why Some Plants Glow In The Dark?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0963",
+   "slug": "how-snakes-smell-with-their-tongues",
+   "question": "How snakes smell with their tongues",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-snakes-smell-with-their-tongues/",
+   "keywords": [
+    "snakes",
+    "smell",
+    "their",
+    "tongues",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Snakes Smell With Their Tongues?",
+   "h1": "How Snakes Smell With Their Tongues?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0965",
+   "slug": "how-meteor-showers-happen",
+   "question": "How meteor showers happen",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-meteor-showers-happen/",
+   "keywords": [
+    "meteor",
+    "showers",
+    "happen",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Meteor Showers Happen? The Real Answer, Explained",
+   "h1": "How Meteor Showers Happen?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0967",
+   "slug": "why-the-sahara-was-once-green",
+   "question": "Why the Sahara was once green",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-the-sahara-was-once-green/",
+   "keywords": [
+    "sahara",
+    "once",
+    "green",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Sahara Was Once Green? A Clear, Sourced Explanation",
+   "h1": "Why The Sahara Was Once Green?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0971",
+   "slug": "why-we-get-road-rage",
+   "question": "Why we get road rage",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-get-road-rage/",
+   "keywords": [
+    "road",
+    "rage",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Get Road Rage? Explained With Sources",
+   "h1": "Why We Get Road Rage?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0973",
+   "slug": "why-cast-iron-pans-last-forever",
+   "question": "Why cast iron pans last forever",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-cast-iron-pans-last-forever/",
+   "keywords": [
+    "cast",
+    "iron",
+    "pans",
+    "last",
+    "forever",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Cast Iron Pans Last Forever? What Science Actually Says",
+   "h1": "Why Cast Iron Pans Last Forever?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0975",
+   "slug": "why-boiling-water-cools-slowly",
+   "question": "Why boiling water cools slowly",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-boiling-water-cools-slowly/",
+   "keywords": [
+    "boiling",
+    "water",
+    "cools",
+    "slowly",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Boiling Water Cools Slowly? The Real Answer, Explained",
+   "h1": "Why Boiling Water Cools Slowly?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0977",
+   "slug": "why-computers-use-binary",
+   "question": "Why computers use binary",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-computers-use-binary/",
+   "keywords": [
+    "computers",
+    "use",
+    "binary",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Computers Use Binary? Facts, Myths and Evidence",
+   "h1": "Why Computers Use Binary?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0979",
+   "slug": "why-ai-uses-so-much-electricity",
+   "question": "Why AI uses so much electricity",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-ai-uses-so-much-electricity/",
+   "keywords": [
+    "uses",
+    "much",
+    "electricity",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why AI Uses So Much Electricity? The Real Answer, Explained",
+   "h1": "Why AI Uses So Much Electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0981",
+   "slug": "how-paper-was-invented-in-china",
+   "question": "How paper was invented in China",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-paper-was-invented-in-china/",
+   "keywords": [
+    "paper",
+    "invented",
+    "china",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Paper Was Invented In China? The Real Answer, Explained",
+   "h1": "How Paper Was Invented In China?",
+   "ymyl": false
+  }
+ ]
+}

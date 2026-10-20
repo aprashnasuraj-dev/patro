@@ -1,0 +1,177 @@
+{
+ "batch": 48,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1051",
+   "slug": "why-we-love-stories",
+   "question": "Why we love stories",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-love-stories/",
+   "keywords": [
+    "love",
+    "stories",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Love Stories? The Real Answer, Explained",
+   "h1": "Why We Love Stories?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1053",
+   "slug": "why-rice-is-washed-before-cooking",
+   "question": "Why rice is washed before cooking",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-rice-is-washed-before-cooking/",
+   "keywords": [
+    "rice",
+    "washed",
+    "before",
+    "cooking",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Rice Is Washed Before Cooking? Explained With Sources",
+   "h1": "Why Rice Is Washed Before Cooking?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1055",
+   "slug": "why-paper-cuts-hurt",
+   "question": "Why paper cuts hurt",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-paper-cuts-hurt/",
+   "keywords": [
+    "paper",
+    "cuts",
+    "hurt",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Paper Cuts Hurt? The Real Answer, Explained",
+   "h1": "Why Paper Cuts Hurt?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1057",
+   "slug": "why-storage-space-shows-less-than-advertised",
+   "question": "Why storage space shows less than advertised",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-storage-space-shows-less-than-advertised/",
+   "keywords": [
+    "storage",
+    "space",
+    "shows",
+    "less",
+    "than",
+    "advertised",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Storage Space Shows Less Than Advertised?",
+   "h1": "Why Storage Space Shows Less Than Advertised?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1059",
+   "slug": "what-reinforcement-learning-is",
+   "question": "What reinforcement learning is",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-reinforcement-learning-is/",
+   "keywords": [
+    "reinforcement",
+    "learning",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Reinforcement Learning Is? Explained With Sources",
+   "h1": "What Reinforcement Learning Is?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1061",
+   "slug": "how-ancient-greeks-invented-democracy",
+   "question": "How ancient Greeks invented democracy",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-ancient-greeks-invented-democracy/",
+   "keywords": [
+    "ancient",
+    "greeks",
+    "invented",
+    "democracy",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Ancient Greeks Invented Democracy?",
+   "h1": "How Ancient Greeks Invented Democracy?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1063",
+   "slug": "why-morocco-has-blue-cities",
+   "question": "Why Morocco has blue cities",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-morocco-has-blue-cities/",
+   "keywords": [
+    "morocco",
+    "has",
+    "blue",
+    "cities",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Morocco Has Blue Cities? Facts, Myths and Evidence",
+   "h1": "Why Morocco Has Blue Cities?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1067",
+   "slug": "why-doormats-exist",
+   "question": "Why doormats exist",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-doormats-exist/",
+   "keywords": [
+    "doormats",
+    "exist",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Doormats Exist? Facts, Myths and Evidence",
+   "h1": "Why Doormats Exist?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1069",
+   "slug": "why-handwriting-is-disappearing",
+   "question": "Why handwriting is disappearing",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-handwriting-is-disappearing/",
+   "keywords": [
+    "handwriting",
+    "disappearing",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Handwriting Is Disappearing?",
+   "h1": "Why Handwriting Is Disappearing?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1071",
+   "slug": "why-0-999-equals-1",
+   "question": "Why 0.999 equals 1",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-0-999-equals-1/",
+   "keywords": [
+    "equals",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why 0.999 Equals 1? A Clear, Sourced Explanation",
+   "h1": "Why 0.999 Equals 1?",
+   "ymyl": false
+  }
+ ]
+}

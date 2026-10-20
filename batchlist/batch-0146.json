@@ -1,0 +1,166 @@
+{
+ "batch": 146,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0565",
+   "slug": "why-is-the-ocean-salty",
+   "question": "Why is the ocean salty",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-is-the-ocean-salty/",
+   "keywords": [
+    "ocean",
+    "salty"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is the ocean salty? What Science Actually Says",
+   "h1": "Why is the ocean salty?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0566",
+   "slug": "where-did-the-sanskrit-language-come-from",
+   "question": "Where did the Sanskrit language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-sanskrit-language-come-from/",
+   "keywords": [
+    "did",
+    "sanskrit",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Sanskrit language come from?",
+   "h1": "Where did the Sanskrit language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0567",
+   "slug": "how-are-pretzels-made",
+   "question": "How are pretzels made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-are-pretzels-made/",
+   "keywords": [
+    "pretzels",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are pretzels made? The Real Answer, Explained",
+   "h1": "How are pretzels made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0568",
+   "slug": "how-does-a-crane-work",
+   "question": "How does a crane work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-crane-work/",
+   "keywords": [
+    "crane",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a crane work? The Real Answer, Explained",
+   "h1": "How does a crane work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0569",
+   "slug": "what-is-chatamari-and-how-is-it-made",
+   "question": "What is chatamari and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-chatamari-and-how-is-it-made/",
+   "keywords": [
+    "chatamari",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is chatamari and how is it made? Facts and Background",
+   "h1": "What is chatamari and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0570",
+   "slug": "why-do-buildings-have-flat-roofs-in-some-places-and-slanted",
+   "question": "Why do buildings have flat roofs in some places and slanted roofs in others",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-buildings-have-flat-roofs-in-some-places-and-slanted/",
+   "keywords": [
+    "buildings",
+    "have",
+    "flat",
+    "roofs",
+    "some",
+    "places"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do buildings have flat roofs in some places and slanted ",
+   "h1": "Why do buildings have flat roofs in some places and slanted roofs in others?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0571",
+   "slug": "what-is-the-riemann-hypothesis",
+   "question": "What is the Riemann hypothesis",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-riemann-hypothesis/",
+   "keywords": [
+    "riemann",
+    "hypothesis"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Riemann hypothesis? Explained With Sources",
+   "h1": "What is the Riemann hypothesis?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0572",
+   "slug": "how-did-anime-start",
+   "question": "How did anime start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-anime-start/",
+   "keywords": [
+    "did",
+    "anime",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did anime start? What Science Actually Says",
+   "h1": "How did anime start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0573",
+   "slug": "how-do-oxbow-lakes-form",
+   "question": "How do oxbow lakes form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-oxbow-lakes-form/",
+   "keywords": [
+    "oxbow",
+    "lakes",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do oxbow lakes form? What Science Actually Says",
+   "h1": "How do oxbow lakes form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0574",
+   "slug": "why-do-astronauts-float-in-space",
+   "question": "Why do astronauts float in space",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-do-astronauts-float-in-space/",
+   "keywords": [
+    "astronauts",
+    "float",
+    "space"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do astronauts float in space? The Real Answer, Explained",
+   "h1": "Why do astronauts float in space?",
+   "ymyl": false
+  }
+ ]
+}

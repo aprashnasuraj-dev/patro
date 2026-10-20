@@ -1,0 +1,173 @@
+{
+ "batch": 82,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1805",
+   "slug": "why-time-slows-near-gravity",
+   "question": "Why time slows near gravity",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-time-slows-near-gravity/",
+   "keywords": [
+    "time",
+    "slows",
+    "near",
+    "gravity",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Time Slows Near Gravity? What Science Actually Says",
+   "h1": "Why Time Slows Near Gravity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1807",
+   "slug": "how-wind-is-created",
+   "question": "How wind is created",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-wind-is-created/",
+   "keywords": [
+    "wind",
+    "created",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Wind Is Created? Explained With Sources",
+   "h1": "How Wind Is Created?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1811",
+   "slug": "how-creativity-emerges",
+   "question": "How creativity emerges",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-creativity-emerges/",
+   "keywords": [
+    "creativity",
+    "emerges",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Creativity Emerges? What Science Actually Says",
+   "h1": "How Creativity Emerges?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1813",
+   "slug": "how-saffron-became-expensive",
+   "question": "How saffron became expensive",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-saffron-became-expensive/",
+   "keywords": [
+    "saffron",
+    "became",
+    "expensive",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Saffron Became Expensive? Explained With Sources",
+   "h1": "How Saffron Became Expensive?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1815",
+   "slug": "how-elevators-work",
+   "question": "How elevators work",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-elevators-work/",
+   "keywords": [
+    "elevators",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Elevators Work? A Clear, Sourced Explanation",
+   "h1": "How Elevators Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1817",
+   "slug": "how-3d-printers-build-objects",
+   "question": "How 3D printers build objects",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-3d-printers-build-objects/",
+   "keywords": [
+    "printers",
+    "build",
+    "objects",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How 3D Printers Build Objects? Explained With Sources",
+   "h1": "How 3D Printers Build Objects?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1819",
+   "slug": "how-drones-navigate",
+   "question": "How drones navigate",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-drones-navigate/",
+   "keywords": [
+    "drones",
+    "navigate",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Drones Navigate? A Clear, Sourced Explanation",
+   "h1": "How Drones Navigate?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1821",
+   "slug": "what-life-was-like-in-the-stone-age",
+   "question": "What life was like in the Stone Age",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-life-was-like-in-the-stone-age/",
+   "keywords": [
+    "life",
+    "like",
+    "stone",
+    "age",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Life Was Like In The Stone Age? Explained With Sources",
+   "h1": "What Life Was Like In The Stone Age?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1823",
+   "slug": "how-saudi-arabia-is-diversifying",
+   "question": "How Saudi Arabia is diversifying",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-saudi-arabia-is-diversifying/",
+   "keywords": [
+    "saudi",
+    "arabia",
+    "diversifying",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Saudi Arabia Is Diversifying? Explained With Sources",
+   "h1": "How Saudi Arabia Is Diversifying?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1827",
+   "slug": "how-earthquake-resistant-buildings-work",
+   "question": "How earthquake-resistant buildings work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-earthquake-resistant-buildings-work/",
+   "keywords": [
+    "earthquake-resistant",
+    "buildings",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Earthquake-resistant Buildings Work?",
+   "h1": "How Earthquake-resistant Buildings Work?",
+   "ymyl": false
+  }
+ ]
+}

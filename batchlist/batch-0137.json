@@ -1,0 +1,170 @@
+{
+ "batch": 137,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0475",
+   "slug": "what-is-inertia",
+   "question": "What is inertia",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-inertia/",
+   "keywords": [
+    "inertia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is inertia? What Science Actually Says",
+   "h1": "What is inertia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0476",
+   "slug": "where-does-the-word-yoga-come-from",
+   "question": "Where does the word \"yoga\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-yoga-come-from/",
+   "keywords": [
+    "word",
+    "yoga",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"yoga\" come from?",
+   "h1": "Where does the word \"yoga\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0477",
+   "slug": "what-is-the-history-of-hot-sauce",
+   "question": "What is the history of hot sauce",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-hot-sauce/",
+   "keywords": [
+    "history",
+    "hot",
+    "sauce"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of hot sauce? Facts and Background",
+   "h1": "What is the history of hot sauce?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0478",
+   "slug": "why-do-skyscrapers-have-pointed-tops",
+   "question": "Why do skyscrapers have pointed tops",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-do-skyscrapers-have-pointed-tops/",
+   "keywords": [
+    "skyscrapers",
+    "have",
+    "pointed",
+    "tops"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do skyscrapers have pointed tops?",
+   "h1": "Why do skyscrapers have pointed tops?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0479",
+   "slug": "what-is-gai-jatra-and-why-is-it-celebrated",
+   "question": "What is Gai Jatra and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-gai-jatra-and-why-is-it-celebrated/",
+   "keywords": [
+    "gai",
+    "jatra",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Gai Jatra and why is it celebrated?",
+   "h1": "What is Gai Jatra and why is it celebrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0480",
+   "slug": "what-are-the-main-parts-of-a-lock-and-key",
+   "question": "What are the main parts of a lock and key",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-lock-and-key/",
+   "keywords": [
+    "main",
+    "parts",
+    "lock",
+    "key"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a lock and key?",
+   "h1": "What are the main parts of a lock and key?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0481",
+   "slug": "how-are-permutations-and-combinations-used-in-real-life",
+   "question": "How are permutations and combinations used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-permutations-and-combinations-used-in-real-life/",
+   "keywords": [
+    "permutations",
+    "combinations",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are permutations and combinations used in real life?",
+   "h1": "How are permutations and combinations used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0482",
+   "slug": "how-did-the-madal-drum-start",
+   "question": "How did the madal drum start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-madal-drum-start/",
+   "keywords": [
+    "did",
+    "madal",
+    "drum",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the madal drum start? Explained With Sources",
+   "h1": "How did the madal drum start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0483",
+   "slug": "why-is-it-colder-at-high-altitude",
+   "question": "Why is it colder at high altitude",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-is-it-colder-at-high-altitude/",
+   "keywords": [
+    "colder",
+    "high",
+    "altitude"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is it colder at high altitude? Facts, Myths and Evidence",
+   "h1": "Why is it colder at high altitude?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0484",
+   "slug": "what-is-the-weather-like-on-mercury",
+   "question": "What is the weather like on Mercury",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-weather-like-on-mercury/",
+   "keywords": [
+    "weather",
+    "like",
+    "mercury"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the weather like on Mercury?",
+   "h1": "What is the weather like on Mercury?",
+   "ymyl": false
+  }
+ ]
+}

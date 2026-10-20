@@ -1,0 +1,166 @@
+{
+ "batch": 131,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0411",
+   "slug": "what-are-the-main-parts-of-a-hovercraft",
+   "question": "What are the main parts of a hovercraft",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-hovercraft/",
+   "keywords": [
+    "main",
+    "parts",
+    "hovercraft"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a hovercraft?",
+   "h1": "What are the main parts of a hovercraft?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0412",
+   "slug": "what-is-special-about-annapurna",
+   "question": "What is special about Annapurna",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-annapurna/",
+   "keywords": [
+    "special",
+    "about",
+    "annapurna"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Annapurna?",
+   "h1": "What is special about Annapurna?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0413",
+   "slug": "why-do-windows-fog-up",
+   "question": "Why do windows fog up",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-windows-fog-up/",
+   "keywords": [
+    "windows",
+    "fog"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do windows fog up? What Science Actually Says",
+   "h1": "Why do windows fog up?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0414",
+   "slug": "how-are-prime-numbers-used-in-real-life",
+   "question": "How are prime numbers used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-prime-numbers-used-in-real-life/",
+   "keywords": [
+    "prime",
+    "numbers",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are prime numbers used in real life?",
+   "h1": "How are prime numbers used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0415",
+   "slug": "what-makes-stained-glass-unique",
+   "question": "What makes stained glass unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-stained-glass-unique/",
+   "keywords": [
+    "makes",
+    "stained",
+    "glass",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes stained glass unique? The Real Answer, Explained",
+   "h1": "What makes stained glass unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0416",
+   "slug": "what-causes-la-ni-a",
+   "question": "What causes La Niña",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-la-ni-a/",
+   "keywords": [
+    "causes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes La Niña? A Clear, Sourced Explanation",
+   "h1": "What causes La Niña?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0417",
+   "slug": "what-is-the-international-space-station",
+   "question": "What is the International Space Station",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-international-space-station/",
+   "keywords": [
+    "international",
+    "space",
+    "station"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the International Space Station?",
+   "h1": "What is the International Space Station?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0418",
+   "slug": "how-do-mangroves-grow",
+   "question": "How do mangroves grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-mangroves-grow/",
+   "keywords": [
+    "mangroves",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do mangroves grow? Facts, Myths and Evidence",
+   "h1": "How do mangroves grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0420",
+   "slug": "how-does-neural-networks-work",
+   "question": "How does neural networks work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-does-neural-networks-work/",
+   "keywords": [
+    "neural",
+    "networks",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does neural networks work? The Real Answer, Explained",
+   "h1": "How does neural networks work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0421",
+   "slug": "how-long-do-scorpions-live",
+   "question": "How long do scorpions live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-scorpions-live/",
+   "keywords": [
+    "long",
+    "scorpions",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do scorpions live? The Real Answer, Explained",
+   "h1": "How long do scorpions live?",
+   "ymyl": false
+  }
+ ]
+}

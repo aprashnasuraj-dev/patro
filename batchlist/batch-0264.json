@@ -1,0 +1,168 @@
+{
+ "batch": 264,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1748",
+   "slug": "who-was-rabindranath-tagore",
+   "question": "Who was Rabindranath Tagore",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-rabindranath-tagore/",
+   "keywords": [
+    "rabindranath",
+    "tagore"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Rabindranath Tagore? The Short, Sourced Answer",
+   "h1": "Who was Rabindranath Tagore?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1749",
+   "slug": "what-is-the-economy-of-portugal-based-on",
+   "question": "What is the economy of Portugal based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-portugal-based-on/",
+   "keywords": [
+    "economy",
+    "portugal",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Portugal based on? The Story, Sourced",
+   "h1": "What is the economy of Portugal based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1750",
+   "slug": "how-does-a-security-camera-work",
+   "question": "How does a security camera work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-security-camera-work/",
+   "keywords": [
+    "security",
+    "camera",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a security camera work?",
+   "h1": "How does a security camera work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1751",
+   "slug": "why-do-we-see-lightning-before-we-hear-thunder",
+   "question": "Why do we see lightning before we hear thunder",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-see-lightning-before-we-hear-thunder/",
+   "keywords": [
+    "see",
+    "lightning",
+    "before",
+    "hear",
+    "thunder"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we see lightning before we hear thunder?",
+   "h1": "Why do we see lightning before we hear thunder?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1752",
+   "slug": "where-did-the-irish-gaelic-language-come-from",
+   "question": "Where did the Irish Gaelic language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-irish-gaelic-language-come-from/",
+   "keywords": [
+    "did",
+    "irish",
+    "gaelic",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Irish Gaelic language come from?",
+   "h1": "Where did the Irish Gaelic language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1753",
+   "slug": "how-is-ice-cream-made",
+   "question": "How is ice cream made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-ice-cream-made/",
+   "keywords": [
+    "ice",
+    "cream",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is ice cream made? Explained With Sources",
+   "h1": "How is ice cream made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1754",
+   "slug": "how-do-bengal-tigers-sleep",
+   "question": "How do Bengal tigers sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-bengal-tigers-sleep/",
+   "keywords": [
+    "bengal",
+    "tigers",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do Bengal tigers sleep? A Clear, Sourced Explanation",
+   "h1": "How do Bengal tigers sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1755",
+   "slug": "who-invented-television-and-how",
+   "question": "Who invented television and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-television-and-how/",
+   "keywords": [
+    "invented",
+    "television"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented television and how? The Short, Sourced Answer",
+   "h1": "Who invented television and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1756",
+   "slug": "what-is-the-economy-of-norway-based-on",
+   "question": "What is the economy of Norway based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-norway-based-on/",
+   "keywords": [
+    "economy",
+    "norway",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Norway based on?",
+   "h1": "What is the economy of Norway based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1757",
+   "slug": "how-does-a-touchscreen-work",
+   "question": "How does a touchscreen work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-touchscreen-work/",
+   "keywords": [
+    "touchscreen",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a touchscreen work? A Clear, Sourced Explanation",
+   "h1": "How does a touchscreen work?",
+   "ymyl": false
+  }
+ ]
+}

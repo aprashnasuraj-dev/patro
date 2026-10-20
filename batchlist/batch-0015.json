@@ -1,0 +1,178 @@
+{
+ "batch": 15,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0317",
+   "slug": "why-nepal-has-eight-of-the-worlds-fourteen-highest-peaks",
+   "question": "Why Nepal has eight of the world's fourteen highest peaks",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepal-has-eight-of-the-worlds-fourteen-highest-peaks/",
+   "keywords": [
+    "nepal",
+    "has",
+    "eight",
+    "world",
+    "fourteen",
+    "highest",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal Has Eight Of The World's Fourteen Highest Peaks?",
+   "h1": "Why Nepal Has Eight Of The World's Fourteen Highest Peaks?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0319",
+   "slug": "how-the-violin-got-its-shape",
+   "question": "How the violin got its shape",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-the-violin-got-its-shape/",
+   "keywords": [
+    "violin",
+    "got",
+    "shape",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Violin Got Its Shape? Facts, Myths and Evidence",
+   "h1": "How The Violin Got Its Shape?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0321",
+   "slug": "why-moss-grows-on-one-side-of-trees",
+   "question": "Why moss grows on one side of trees",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-moss-grows-on-one-side-of-trees/",
+   "keywords": [
+    "moss",
+    "grows",
+    "one",
+    "side",
+    "trees",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Moss Grows On One Side Of Trees?",
+   "h1": "Why Moss Grows On One Side Of Trees?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0323",
+   "slug": "how-bats-see-in-the-dark",
+   "question": "How bats see in the dark",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-bats-see-in-the-dark/",
+   "keywords": [
+    "bats",
+    "see",
+    "dark",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Bats See In The Dark? The Real Answer, Explained",
+   "h1": "How Bats See In The Dark?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0325",
+   "slug": "how-astronauts-sleep-in-orbit",
+   "question": "How astronauts sleep in orbit",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-astronauts-sleep-in-orbit/",
+   "keywords": [
+    "astronauts",
+    "sleep",
+    "orbit",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Astronauts Sleep In Orbit? Facts, Myths and Evidence",
+   "h1": "How Astronauts Sleep In Orbit?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0327",
+   "slug": "why-snowflakes-are-unique",
+   "question": "Why snowflakes are unique",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-snowflakes-are-unique/",
+   "keywords": [
+    "snowflakes",
+    "unique",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Snowflakes Are Unique? The Real Answer, Explained",
+   "h1": "Why Snowflakes Are Unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0331",
+   "slug": "why-we-feel-nostalgia",
+   "question": "Why we feel nostalgia",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-feel-nostalgia/",
+   "keywords": [
+    "feel",
+    "nostalgia",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Feel Nostalgia? What Science Actually Says",
+   "h1": "Why We Feel Nostalgia?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0333",
+   "slug": "why-salt-enhances-flavor",
+   "question": "Why salt enhances flavor",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-salt-enhances-flavor/",
+   "keywords": [
+    "salt",
+    "enhances",
+    "flavor",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Salt Enhances Flavor? The Real Answer, Explained",
+   "h1": "Why Salt Enhances Flavor?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0335",
+   "slug": "why-we-see-colors",
+   "question": "Why we see colors",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-we-see-colors/",
+   "keywords": [
+    "see",
+    "colors",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We See Colors? A Clear, Sourced Explanation",
+   "h1": "Why We See Colors?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0337",
+   "slug": "why-batteries-degrade",
+   "question": "Why batteries degrade",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-batteries-degrade/",
+   "keywords": [
+    "batteries",
+    "degrade",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Batteries Degrade? A Clear, Sourced Explanation",
+   "h1": "Why Batteries Degrade?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "batch": 86,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1895",
+   "slug": "how-kettles-switch-off",
+   "question": "How kettles switch off",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-kettles-switch-off/",
+   "keywords": [
+    "kettles",
+    "switch",
+    "off",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Kettles Switch Off? A Clear, Sourced Explanation",
+   "h1": "How Kettles Switch Off?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1897",
+   "slug": "how-electric-cars-charge",
+   "question": "How electric cars charge",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-electric-cars-charge/",
+   "keywords": [
+    "electric",
+    "cars",
+    "charge",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Electric Cars Charge? The Real Answer, Explained",
+   "h1": "How Electric Cars Charge?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1899",
+   "slug": "how-brain-computer-interfaces-work",
+   "question": "How brain-computer interfaces work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-brain-computer-interfaces-work/",
+   "keywords": [
+    "brain-computer",
+    "interfaces",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Brain-computer Interfaces Work?",
+   "h1": "How Brain-computer Interfaces Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1901",
+   "slug": "why-the-gutenberg-bible-matters",
+   "question": "Why the Gutenberg Bible matters",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-gutenberg-bible-matters/",
+   "keywords": [
+    "gutenberg",
+    "bible",
+    "matters",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Gutenberg Bible Matters? Facts, Myths and Evidence",
+   "h1": "Why The Gutenberg Bible Matters?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1903",
+   "slug": "how-malaysia-blends-cultures",
+   "question": "How Malaysia blends cultures",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-malaysia-blends-cultures/",
+   "keywords": [
+    "malaysia",
+    "blends",
+    "cultures",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Malaysia Blends Cultures? Explained With Sources",
+   "h1": "How Malaysia Blends Cultures?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1907",
+   "slug": "how-libraries-organize-books",
+   "question": "How libraries organize books",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-libraries-organize-books/",
+   "keywords": [
+    "libraries",
+    "organize",
+    "books",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Libraries Organize Books? Explained With Sources",
+   "h1": "How Libraries Organize Books?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1909",
+   "slug": "how-flags-get-their-colors",
+   "question": "How flags get their colors",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-flags-get-their-colors/",
+   "keywords": [
+    "flags",
+    "their",
+    "colors",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Flags Get Their Colors? What Science Actually Says",
+   "h1": "How Flags Get Their Colors?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1911",
+   "slug": "how-the-slide-rule-worked",
+   "question": "How the slide rule worked",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-the-slide-rule-worked/",
+   "keywords": [
+    "slide",
+    "rule",
+    "worked",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Slide Rule Worked? The Real Answer, Explained",
+   "h1": "How The Slide Rule Worked?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1913",
+   "slug": "how-smart-grids-work",
+   "question": "How smart grids work",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-smart-grids-work/",
+   "keywords": [
+    "smart",
+    "grids",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Smart Grids Work? Explained With Sources",
+   "h1": "How Smart Grids Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1915",
+   "slug": "why-bridges-collapse",
+   "question": "Why bridges collapse",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-bridges-collapse/",
+   "keywords": [
+    "bridges",
+    "collapse",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bridges Collapse? Facts, Myths and Evidence",
+   "h1": "Why Bridges Collapse?",
+   "ymyl": false
+  }
+ ]
+}

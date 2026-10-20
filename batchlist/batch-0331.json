@@ -1,0 +1,165 @@
+{
+ "batch": 331,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2422",
+   "slug": "how-do-sharks-sleep",
+   "question": "How do sharks sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-sharks-sleep/",
+   "keywords": [
+    "sharks",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do sharks sleep? A Clear, Sourced Explanation",
+   "h1": "How do sharks sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2423",
+   "slug": "how-was-the-thermometer-invented",
+   "question": "How was the thermometer invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-thermometer-invented/",
+   "keywords": [
+    "thermometer",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the thermometer invented? The Real Answer, Explained",
+   "h1": "How was the thermometer invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2424",
+   "slug": "how-did-cairo-get-its-name",
+   "question": "How did Cairo get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-cairo-get-its-name/",
+   "keywords": [
+    "did",
+    "cairo",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Cairo get its name? The Short, Sourced Answer",
+   "h1": "How did Cairo get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2425",
+   "slug": "how-does-bluetooth-work",
+   "question": "How does Bluetooth work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-bluetooth-work/",
+   "keywords": [
+    "bluetooth",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does Bluetooth work? A Clear, Sourced Explanation",
+   "h1": "How does Bluetooth work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2426",
+   "slug": "what-do-gorillas-eat",
+   "question": "What do gorillas eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-gorillas-eat/",
+   "keywords": [
+    "gorillas",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do gorillas eat? Facts, Myths and Evidence",
+   "h1": "What do gorillas eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2427",
+   "slug": "who-was-ferdinand-magellan",
+   "question": "Who was Ferdinand Magellan",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-ferdinand-magellan/",
+   "keywords": [
+    "ferdinand",
+    "magellan"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Ferdinand Magellan? A Clear Overview",
+   "h1": "Who was Ferdinand Magellan?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2428",
+   "slug": "how-did-seoul-get-its-name",
+   "question": "How did Seoul get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-seoul-get-its-name/",
+   "keywords": [
+    "did",
+    "seoul",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Seoul get its name? Key Facts and Context",
+   "h1": "How did Seoul get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2429",
+   "slug": "how-does-git-work",
+   "question": "How does Git work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-git-work/",
+   "keywords": [
+    "git",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does Git work? What Science Actually Says",
+   "h1": "How does Git work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2430",
+   "slug": "where-do-tapirs-live-in-the-wild",
+   "question": "Where do tapirs live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-tapirs-live-in-the-wild/",
+   "keywords": [
+    "tapirs",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do tapirs live in the wild? What Science Actually Says",
+   "h1": "Where do tapirs live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2431",
+   "slug": "what-is-elizabeth-i-best-known-for",
+   "question": "What is Elizabeth I best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-elizabeth-i-best-known-for/",
+   "keywords": [
+    "elizabeth",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Elizabeth I best known for? Facts and Background",
+   "h1": "What is Elizabeth I best known for?",
+   "ymyl": false
+  }
+ ]
+}

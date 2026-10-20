@@ -1,0 +1,181 @@
+{
+ "batch": 71,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1561",
+   "slug": "how-kelp-forests-grow-so-quickly",
+   "question": "How kelp forests grow so quickly",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-kelp-forests-grow-so-quickly/",
+   "keywords": [
+    "kelp",
+    "forests",
+    "grow",
+    "quickly",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Kelp Forests Grow So Quickly?",
+   "h1": "How Kelp Forests Grow So Quickly?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1563",
+   "slug": "why-polar-bears-have-black-skin",
+   "question": "Why polar bears have black skin",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-polar-bears-have-black-skin/",
+   "keywords": [
+    "polar",
+    "bears",
+    "have",
+    "black",
+    "skin",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Polar Bears Have Black Skin? What Science Actually Says",
+   "h1": "Why Polar Bears Have Black Skin?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1565",
+   "slug": "why-neutron-stars-are-so-dense",
+   "question": "Why neutron stars are so dense",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-neutron-stars-are-so-dense/",
+   "keywords": [
+    "neutron",
+    "stars",
+    "dense",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Neutron Stars Are So Dense? Facts, Myths and Evidence",
+   "h1": "Why Neutron Stars Are So Dense?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1567",
+   "slug": "how-sea-level-rise-is-measured",
+   "question": "How sea level rise is measured",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-sea-level-rise-is-measured/",
+   "keywords": [
+    "sea",
+    "level",
+    "rise",
+    "measured",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sea Level Rise Is Measured? Facts, Myths and Evidence",
+   "h1": "How Sea Level Rise Is Measured?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1571",
+   "slug": "how-anxiety-differs-from-fear",
+   "question": "How anxiety differs from fear",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-anxiety-differs-from-fear/",
+   "keywords": [
+    "anxiety",
+    "differs",
+    "fear",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Anxiety Differs From Fear? What Science Actually Says",
+   "h1": "How Anxiety Differs From Fear?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1573",
+   "slug": "how-kimchi-ferments",
+   "question": "How kimchi ferments",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-kimchi-ferments/",
+   "keywords": [
+    "kimchi",
+    "ferments",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Kimchi Ferments? Facts, Myths and Evidence",
+   "h1": "How Kimchi Ferments?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1575",
+   "slug": "how-concrete-hardens-underwater",
+   "question": "How concrete hardens underwater",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-concrete-hardens-underwater/",
+   "keywords": [
+    "concrete",
+    "hardens",
+    "underwater",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Concrete Hardens Underwater?",
+   "h1": "How Concrete Hardens Underwater?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1577",
+   "slug": "how-blockchain-verifies-data",
+   "question": "How blockchain verifies data",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-blockchain-verifies-data/",
+   "keywords": [
+    "blockchain",
+    "verifies",
+    "data",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Blockchain Verifies Data? Facts, Myths and Evidence",
+   "h1": "How Blockchain Verifies Data?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1579",
+   "slug": "how-smart-homes-automate-life",
+   "question": "How smart homes automate life",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-smart-homes-automate-life/",
+   "keywords": [
+    "smart",
+    "homes",
+    "automate",
+    "life",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Smart Homes Automate Life? What Science Actually Says",
+   "h1": "How Smart Homes Automate Life?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1581",
+   "slug": "why-the-mughal-empire-thrived",
+   "question": "Why the Mughal Empire thrived",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-mughal-empire-thrived/",
+   "keywords": [
+    "mughal",
+    "empire",
+    "thrived",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Mughal Empire Thrived? The Real Answer, Explained",
+   "h1": "Why The Mughal Empire Thrived?",
+   "ymyl": false
+  }
+ ]
+}

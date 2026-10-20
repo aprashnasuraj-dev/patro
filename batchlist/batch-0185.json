@@ -1,0 +1,169 @@
+{
+ "batch": 185,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0955",
+   "slug": "why-do-isotopes-matter-in-everyday-life",
+   "question": "Why do isotopes matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-isotopes-matter-in-everyday-life/",
+   "keywords": [
+    "isotopes",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do isotopes matter in everyday life?",
+   "h1": "Why do isotopes matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0956",
+   "slug": "where-does-the-word-quiz-come-from",
+   "question": "Where does the word \"quiz\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-quiz-come-from/",
+   "keywords": [
+    "word",
+    "quiz",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"quiz\" come from? The Story, Sourced",
+   "h1": "Where does the word \"quiz\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0957",
+   "slug": "why-do-some-foods-taste-better-the-next-day",
+   "question": "Why do some foods taste better the next day",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-do-some-foods-taste-better-the-next-day/",
+   "keywords": [
+    "some",
+    "foods",
+    "taste",
+    "better",
+    "next",
+    "day"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do some foods taste better the next day?",
+   "h1": "Why do some foods taste better the next day?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0958",
+   "slug": "what-are-the-main-parts-of-a-helicopter",
+   "question": "What are the main parts of a helicopter",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-helicopter/",
+   "keywords": [
+    "main",
+    "parts",
+    "helicopter"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a helicopter?",
+   "h1": "What are the main parts of a helicopter?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0959",
+   "slug": "what-is-kwati-and-how-is-it-made",
+   "question": "What is kwati and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-kwati-and-how-is-it-made/",
+   "keywords": [
+    "kwati",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is kwati and how is it made? The Story, Sourced",
+   "h1": "What is kwati and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0960",
+   "slug": "how-does-a-thermostat-work",
+   "question": "How does a thermostat work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-thermostat-work/",
+   "keywords": [
+    "thermostat",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a thermostat work? A Clear, Sourced Explanation",
+   "h1": "How does a thermostat work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0961",
+   "slug": "how-is-topology-used-in-real-life",
+   "question": "How is topology used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-topology-used-in-real-life/",
+   "keywords": [
+    "topology",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is topology used in real life?",
+   "h1": "How is topology used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0962",
+   "slug": "what-makes-newar-architecture-unique",
+   "question": "What makes Newar architecture unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-newar-architecture-unique/",
+   "keywords": [
+    "makes",
+    "newar",
+    "architecture",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Newar architecture unique?",
+   "h1": "What makes Newar architecture unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0963",
+   "slug": "what-causes-auroras",
+   "question": "What causes auroras",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-auroras/",
+   "keywords": [
+    "causes",
+    "auroras"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes auroras? Explained With Sources",
+   "h1": "What causes auroras?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0964",
+   "slug": "what-is-lunar-eclipses",
+   "question": "What is lunar eclipses",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-lunar-eclipses/",
+   "keywords": [
+    "lunar",
+    "eclipses"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is lunar eclipses? Explained With Sources",
+   "h1": "What is lunar eclipses?",
+   "ymyl": false
+  }
+ ]
+}

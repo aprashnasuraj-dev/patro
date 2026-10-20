@@ -1,0 +1,168 @@
+{
+ "batch": 285,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1960",
+   "slug": "what-caused-the-age-of-exploration",
+   "question": "What caused the Age of Exploration",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-age-of-exploration/",
+   "keywords": [
+    "caused",
+    "age",
+    "exploration"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Age of Exploration? Key Facts and Context",
+   "h1": "What caused the Age of Exploration?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1961",
+   "slug": "what-is-the-history-of-toronto",
+   "question": "What is the history of Toronto",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-toronto/",
+   "keywords": [
+    "history",
+    "toronto"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Toronto? The Story, Sourced",
+   "h1": "What is the history of Toronto?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1962",
+   "slug": "how-does-a-smartwatch-work",
+   "question": "How does a smartwatch work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-smartwatch-work/",
+   "keywords": [
+    "smartwatch",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a smartwatch work? A Clear, Sourced Explanation",
+   "h1": "How does a smartwatch work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1963",
+   "slug": "why-does-a-rubber-band-snap-back",
+   "question": "Why does a rubber band snap back",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-a-rubber-band-snap-back/",
+   "keywords": [
+    "rubber",
+    "band",
+    "snap",
+    "back"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does a rubber band snap back? The Real Answer, Explained",
+   "h1": "Why does a rubber band snap back?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1964",
+   "slug": "where-did-the-basque-language-come-from",
+   "question": "Where did the Basque language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-basque-language-come-from/",
+   "keywords": [
+    "did",
+    "basque",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Basque language come from?",
+   "h1": "Where did the Basque language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1965",
+   "slug": "how-do-herons-sleep",
+   "question": "How do herons sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-herons-sleep/",
+   "keywords": [
+    "herons",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do herons sleep? Facts, Myths and Evidence",
+   "h1": "How do herons sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1966",
+   "slug": "what-is-bhanubhakta-acharya-best-known-for",
+   "question": "What is Bhanubhakta Acharya best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-bhanubhakta-acharya-best-known-for/",
+   "keywords": [
+    "bhanubhakta",
+    "acharya",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Bhanubhakta Acharya best known for?",
+   "h1": "What is Bhanubhakta Acharya best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1967",
+   "slug": "what-is-argentina-known-for",
+   "question": "What is Argentina known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-argentina-known-for/",
+   "keywords": [
+    "argentina",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Argentina known for? The Story, Sourced",
+   "h1": "What is Argentina known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1968",
+   "slug": "how-does-a-face-recognition-system-work",
+   "question": "How does a face recognition system work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-face-recognition-system-work/",
+   "keywords": [
+    "face",
+    "recognition",
+    "system",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a face recognition system work?",
+   "h1": "How does a face recognition system work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1969",
+   "slug": "why-do-echoes-matter-in-everyday-life",
+   "question": "Why do echoes matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-echoes-matter-in-everyday-life/",
+   "keywords": [
+    "echoes",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do echoes matter in everyday life?",
+   "h1": "Why do echoes matter in everyday life?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "batch": 242,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1527",
+   "slug": "what-makes-mandala-art-unique",
+   "question": "What makes mandala art unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-mandala-art-unique/",
+   "keywords": [
+    "makes",
+    "mandala",
+    "art",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes mandala art unique? Facts, Myths and Evidence",
+   "h1": "What makes mandala art unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1528",
+   "slug": "how-do-eels-communicate",
+   "question": "How do eels communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-eels-communicate/",
+   "keywords": [
+    "eels",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do eels communicate? The Real Answer, Explained",
+   "h1": "How do eels communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1529",
+   "slug": "what-is-johannes-vermeer-best-known-for",
+   "question": "What is Johannes Vermeer best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-johannes-vermeer-best-known-for/",
+   "keywords": [
+    "johannes",
+    "vermeer",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Johannes Vermeer best known for? A Clear Overview",
+   "h1": "What is Johannes Vermeer best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1530",
+   "slug": "what-is-the-economy-of-brazil-based-on",
+   "question": "What is the economy of Brazil based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-brazil-based-on/",
+   "keywords": [
+    "economy",
+    "brazil",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Brazil based on? Facts and Background",
+   "h1": "What is the economy of Brazil based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1531",
+   "slug": "what-are-the-main-parts-of-a-projector",
+   "question": "What are the main parts of a projector",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-projector/",
+   "keywords": [
+    "main",
+    "parts",
+    "projector"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a projector?",
+   "h1": "What are the main parts of a projector?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1532",
+   "slug": "what-is-light",
+   "question": "What is light",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-light/",
+   "keywords": [
+    "light"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is light? Explained With Sources",
+   "h1": "What is light?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1533",
+   "slug": "where-did-the-hindi-language-come-from",
+   "question": "Where did the Hindi language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-hindi-language-come-from/",
+   "keywords": [
+    "did",
+    "hindi",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Hindi language come from? Facts and Background",
+   "h1": "Where did the Hindi language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1534",
+   "slug": "what-is-the-history-of-miso",
+   "question": "What is the history of miso",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-miso/",
+   "keywords": [
+    "history",
+    "miso"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of miso? The Short, Sourced Answer",
+   "h1": "What is the history of miso?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1535",
+   "slug": "what-are-the-main-parts-of-a-crane",
+   "question": "What are the main parts of a crane",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-crane/",
+   "keywords": [
+    "main",
+    "parts",
+    "crane"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a crane?",
+   "h1": "What are the main parts of a crane?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1536",
+   "slug": "what-is-special-about-nanga-parbat",
+   "question": "What is special about Nanga Parbat",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-nanga-parbat/",
+   "keywords": [
+    "special",
+    "about",
+    "nanga",
+    "parbat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Nanga Parbat?",
+   "h1": "What is special about Nanga Parbat?",
+   "ymyl": false
+  }
+ ]
+}

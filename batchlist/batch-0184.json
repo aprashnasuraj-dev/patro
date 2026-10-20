@@ -1,0 +1,163 @@
+{
+ "batch": 184,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0945",
+   "slug": "how-does-a-pencil-work",
+   "question": "How does a pencil work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-pencil-work/",
+   "keywords": [
+    "pencil",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a pencil work? Facts, Myths and Evidence",
+   "h1": "How does a pencil work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0946",
+   "slug": "what-are-exponents",
+   "question": "What are exponents",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-exponents/",
+   "keywords": [
+    "exponents"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are exponents? Facts, Myths and Evidence",
+   "h1": "What are exponents?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0947",
+   "slug": "how-did-the-symphony-orchestra-start",
+   "question": "How did the symphony orchestra start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-symphony-orchestra-start/",
+   "keywords": [
+    "did",
+    "symphony",
+    "orchestra",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the symphony orchestra start?",
+   "h1": "How did the symphony orchestra start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0948",
+   "slug": "what-causes-ball-lightning",
+   "question": "What causes ball lightning",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-ball-lightning/",
+   "keywords": [
+    "causes",
+    "ball",
+    "lightning"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes ball lightning? Explained With Sources",
+   "h1": "What causes ball lightning?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0949",
+   "slug": "how-do-planets-form",
+   "question": "How do planets form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-planets-form/",
+   "keywords": [
+    "planets",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do planets form? What Science Actually Says",
+   "h1": "How do planets form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0950",
+   "slug": "how-do-carnivorous-plants-grow",
+   "question": "How do carnivorous plants grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-carnivorous-plants-grow/",
+   "keywords": [
+    "carnivorous",
+    "plants",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do carnivorous plants grow? What Science Actually Says",
+   "h1": "How do carnivorous plants grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0951",
+   "slug": "how-do-cats-communicate",
+   "question": "How do cats communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-cats-communicate/",
+   "keywords": [
+    "cats",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cats communicate? The Real Answer, Explained",
+   "h1": "How do cats communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0952",
+   "slug": "what-were-the-main-consequences-of-the-meiji-era",
+   "question": "What were the main consequences of the Meiji era modernization",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-meiji-era/",
+   "keywords": [
+    "main",
+    "consequences",
+    "meiji",
+    "era",
+    "modernization"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Meiji era modernizati",
+   "h1": "What were the main consequences of the Meiji era modernization?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0953",
+   "slug": "what-is-the-history-of-amsterdam",
+   "question": "What is the history of Amsterdam",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-amsterdam/",
+   "keywords": [
+    "history",
+    "amsterdam"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Amsterdam? The Short, Sourced Answer",
+   "h1": "What is the history of Amsterdam?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0954",
+   "slug": "how-does-a-periscope-work",
+   "question": "How does a periscope work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-periscope-work/",
+   "keywords": [
+    "periscope",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a periscope work? Facts, Myths and Evidence",
+   "h1": "How does a periscope work?",
+   "ymyl": false
+  }
+ ]
+}

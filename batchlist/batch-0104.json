@@ -1,0 +1,166 @@
+{
+ "batch": 104,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0138",
+   "slug": "how-did-renaissance-art-start",
+   "question": "How did Renaissance art start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-renaissance-art-start/",
+   "keywords": [
+    "did",
+    "renaissance",
+    "art",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Renaissance art start? A Clear, Sourced Explanation",
+   "h1": "How did Renaissance art start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0139",
+   "slug": "how-do-glaciers-form",
+   "question": "How do glaciers form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-glaciers-form/",
+   "keywords": [
+    "glaciers",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do glaciers form? Explained With Sources",
+   "h1": "How do glaciers form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0140",
+   "slug": "how-do-nebulae-form",
+   "question": "How do nebulae form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-nebulae-form/",
+   "keywords": [
+    "nebulae",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do nebulae form? A Clear, Sourced Explanation",
+   "h1": "How do nebulae form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0141",
+   "slug": "how-do-cacti-grow",
+   "question": "How do cacti grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-cacti-grow/",
+   "keywords": [
+    "cacti",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cacti grow? Facts, Myths and Evidence",
+   "h1": "How do cacti grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0142",
+   "slug": "why-do-we-forget-things",
+   "question": "Why do we forget things",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-forget-things/",
+   "keywords": [
+    "forget",
+    "things"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we forget things? A Clear, Sourced Explanation",
+   "h1": "Why do we forget things?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0143",
+   "slug": "what-are-self-driving-cars",
+   "question": "What are self-driving cars",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-are-self-driving-cars/",
+   "keywords": [
+    "self-driving",
+    "cars"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are self-driving cars? Facts, Myths and Evidence",
+   "h1": "What are self-driving cars?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0144",
+   "slug": "why-do-electric-cars-have-regenerative-braking",
+   "question": "Why do electric cars have regenerative braking",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-do-electric-cars-have-regenerative-braking/",
+   "keywords": [
+    "electric",
+    "cars",
+    "have",
+    "regenerative",
+    "braking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do electric cars have regenerative braking?",
+   "h1": "Why do electric cars have regenerative braking?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0145",
+   "slug": "where-do-himalayan-tahrs-live-in-the-wild",
+   "question": "Where do Himalayan tahrs live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-himalayan-tahrs-live-in-the-wild/",
+   "keywords": [
+    "himalayan",
+    "tahrs",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do Himalayan tahrs live in the wild?",
+   "h1": "Where do Himalayan tahrs live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0146",
+   "slug": "what-is-homer-best-known-for",
+   "question": "What is Homer best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-homer-best-known-for/",
+   "keywords": [
+    "homer",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Homer best known for? Key Facts and Context",
+   "h1": "What is Homer best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0147",
+   "slug": "what-is-the-history-of-saint-petersburg",
+   "question": "What is the history of Saint Petersburg",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-saint-petersburg/",
+   "keywords": [
+    "history",
+    "saint",
+    "petersburg"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Saint Petersburg? A Clear Overview",
+   "h1": "What is the history of Saint Petersburg?",
+   "ymyl": false
+  }
+ ]
+}

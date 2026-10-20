@@ -1,0 +1,180 @@
+{
+ "batch": 79,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1739",
+   "slug": "how-ai-moderates-content",
+   "question": "How AI moderates content",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-moderates-content/",
+   "keywords": [
+    "moderates",
+    "content",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Moderates Content? Facts, Myths and Evidence",
+   "h1": "How AI Moderates Content?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1741",
+   "slug": "why-stonehenge-was-built",
+   "question": "Why Stonehenge was built",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-stonehenge-was-built/",
+   "keywords": [
+    "stonehenge",
+    "built",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Stonehenge Was Built? What Science Actually Says",
+   "h1": "Why Stonehenge Was Built?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1743",
+   "slug": "how-mexico-city-is-sinking",
+   "question": "How Mexico City is sinking",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-mexico-city-is-sinking/",
+   "keywords": [
+    "mexico",
+    "city",
+    "sinking",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Mexico City Is Sinking? Explained With Sources",
+   "h1": "How Mexico City Is Sinking?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1747",
+   "slug": "how-smart-meters-read-electricity",
+   "question": "How smart meters read electricity",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-smart-meters-read-electricity/",
+   "keywords": [
+    "smart",
+    "meters",
+    "read",
+    "electricity",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Smart Meters Read Electricity? Explained With Sources",
+   "h1": "How Smart Meters Read Electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1749",
+   "slug": "how-ancient-scripts-were-deciphered",
+   "question": "How ancient scripts were deciphered",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-ancient-scripts-were-deciphered/",
+   "keywords": [
+    "ancient",
+    "scripts",
+    "were",
+    "deciphered",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Ancient Scripts Were Deciphered? Explained With Sources",
+   "h1": "How Ancient Scripts Were Deciphered?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1751",
+   "slug": "how-compound-growth-shapes-populations",
+   "question": "How compound growth shapes populations",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-compound-growth-shapes-populations/",
+   "keywords": [
+    "compound",
+    "growth",
+    "shapes",
+    "populations",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Compound Growth Shapes Populations?",
+   "h1": "How Compound Growth Shapes Populations?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1753",
+   "slug": "how-algae-could-make-fuel",
+   "question": "How algae could make fuel",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-algae-could-make-fuel/",
+   "keywords": [
+    "algae",
+    "could",
+    "fuel",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Algae Could Make Fuel? Explained With Sources",
+   "h1": "How Algae Could Make Fuel?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1755",
+   "slug": "why-trucks-have-long-hoods",
+   "question": "Why trucks have long hoods",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-trucks-have-long-hoods/",
+   "keywords": [
+    "trucks",
+    "have",
+    "long",
+    "hoods",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Trucks Have Long Hoods? A Clear, Sourced Explanation",
+   "h1": "Why Trucks Have Long Hoods?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1757",
+   "slug": "why-the-himalayan-black-bear-is-endangered",
+   "question": "Why the Himalayan black bear is endangered",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-the-himalayan-black-bear-is-endangered/",
+   "keywords": [
+    "himalayan",
+    "black",
+    "bear",
+    "endangered",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Himalayan Black Bear Is Endangered?",
+   "h1": "Why The Himalayan Black Bear Is Endangered?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1759",
+   "slug": "how-the-first-novel-was-written",
+   "question": "How the first novel was written",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-the-first-novel-was-written/",
+   "keywords": [
+    "first",
+    "novel",
+    "written",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The First Novel Was Written? The Real Answer, Explained",
+   "h1": "How The First Novel Was Written?",
+   "ymyl": false
+  }
+ ]
+}

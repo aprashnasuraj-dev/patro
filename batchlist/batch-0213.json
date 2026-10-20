@@ -1,0 +1,166 @@
+{
+ "batch": 213,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1236",
+   "slug": "where-did-the-portuguese-language-come-from",
+   "question": "Where did the Portuguese language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-portuguese-language-come-from/",
+   "keywords": [
+    "did",
+    "portuguese",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Portuguese language come from?",
+   "h1": "Where did the Portuguese language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1237",
+   "slug": "how-is-bread-made",
+   "question": "How is bread made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-bread-made/",
+   "keywords": [
+    "bread",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is bread made? Explained With Sources",
+   "h1": "How is bread made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1238",
+   "slug": "how-does-a-desalination-plant-work",
+   "question": "How does a desalination plant work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-desalination-plant-work/",
+   "keywords": [
+    "desalination",
+    "plant",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a desalination plant work?",
+   "h1": "How does a desalination plant work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1239",
+   "slug": "why-is-muktinath-important",
+   "question": "Why is Muktinath important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-muktinath-important/",
+   "keywords": [
+    "muktinath",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Muktinath important? Explained With Sources",
+   "h1": "Why is Muktinath important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1240",
+   "slug": "what-are-the-main-parts-of-an-induction-cooktop",
+   "question": "What are the main parts of an induction cooktop",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-an-induction-cooktop/",
+   "keywords": [
+    "main",
+    "parts",
+    "induction",
+    "cooktop"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of an induction cooktop?",
+   "h1": "What are the main parts of an induction cooktop?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1241",
+   "slug": "why-can-t-we-divide-by-zero",
+   "question": "Why can't we divide by zero",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-can-t-we-divide-by-zero/",
+   "keywords": [
+    "can",
+    "divide",
+    "zero"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why can't we divide by zero? The Real Answer, Explained",
+   "h1": "Why can't we divide by zero?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1242",
+   "slug": "why-is-the-mona-lisa-so-famous",
+   "question": "Why is the Mona Lisa so famous",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-is-the-mona-lisa-so-famous/",
+   "keywords": [
+    "mona",
+    "lisa",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is the Mona Lisa so famous? A Clear, Sourced Explanation",
+   "h1": "Why is the Mona Lisa so famous?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1243",
+   "slug": "what-causes-permafrost-thaw",
+   "question": "What causes permafrost thaw",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-permafrost-thaw/",
+   "keywords": [
+    "causes",
+    "permafrost",
+    "thaw"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes permafrost thaw? The Real Answer, Explained",
+   "h1": "What causes permafrost thaw?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1244",
+   "slug": "why-do-stars-twinkle",
+   "question": "Why do stars twinkle",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-do-stars-twinkle/",
+   "keywords": [
+    "stars",
+    "twinkle"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do stars twinkle? Facts, Myths and Evidence",
+   "h1": "Why do stars twinkle?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1245",
+   "slug": "where-do-termites-live-in-the-wild",
+   "question": "Where do termites live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-termites-live-in-the-wild/",
+   "keywords": [
+    "termites",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do termites live in the wild?",
+   "h1": "Where do termites live in the wild?",
+   "ymyl": false
+  }
+ ]
+}

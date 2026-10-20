@@ -1,0 +1,184 @@
+{
+ "batch": 89,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1961",
+   "slug": "how-spices-evolved-as-plant-defenses",
+   "question": "How spices evolved as plant defenses",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-spices-evolved-as-plant-defenses/",
+   "keywords": [
+    "spices",
+    "evolved",
+    "plant",
+    "defenses",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Spices Evolved As Plant Defenses?",
+   "h1": "How Spices Evolved As Plant Defenses?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1963",
+   "slug": "why-hens-lay-eggs-daily",
+   "question": "Why hens lay eggs daily",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-hens-lay-eggs-daily/",
+   "keywords": [
+    "hens",
+    "lay",
+    "eggs",
+    "daily",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Hens Lay Eggs Daily? Explained With Sources",
+   "h1": "Why Hens Lay Eggs Daily?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1965",
+   "slug": "why-halleys-comet-returns-every-76-years",
+   "question": "Why Halley's comet returns every 76 years",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-halleys-comet-returns-every-76-years/",
+   "keywords": [
+    "halley",
+    "comet",
+    "returns",
+    "every",
+    "years",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Halley's Comet Returns Every 76 Years?",
+   "h1": "Why Halley's Comet Returns Every 76 Years?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1967",
+   "slug": "how-lakes-disappear",
+   "question": "How lakes disappear",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-lakes-disappear/",
+   "keywords": [
+    "lakes",
+    "disappear",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Lakes Disappear? Facts, Myths and Evidence",
+   "h1": "How Lakes Disappear?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1971",
+   "slug": "how-the-brain-predicts-the-future",
+   "question": "How the brain predicts the future",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-the-brain-predicts-the-future/",
+   "keywords": [
+    "brain",
+    "predicts",
+    "future",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Brain Predicts The Future?",
+   "h1": "How The Brain Predicts The Future?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1973",
+   "slug": "how-momo-became-a-street-food-star",
+   "question": "How momo became a street food star",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-momo-became-a-street-food-star/",
+   "keywords": [
+    "momo",
+    "became",
+    "street",
+    "food",
+    "star",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Momo Became A Street Food Star?",
+   "h1": "How Momo Became A Street Food Star?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1975",
+   "slug": "how-fireworks-get-their-colors",
+   "question": "How fireworks get their colors",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-fireworks-get-their-colors/",
+   "keywords": [
+    "fireworks",
+    "their",
+    "colors",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Fireworks Get Their Colors? A Clear, Sourced Explanation",
+   "h1": "How Fireworks Get Their Colors?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1977",
+   "slug": "how-static-websites-outperform-dynamic-ones",
+   "question": "How static websites outperform dynamic ones",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-static-websites-outperform-dynamic-ones/",
+   "keywords": [
+    "static",
+    "websites",
+    "outperform",
+    "dynamic",
+    "ones",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Static Websites Outperform Dynamic Ones?",
+   "h1": "How Static Websites Outperform Dynamic Ones?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1979",
+   "slug": "how-ai-tutors-personalize-learning",
+   "question": "How AI tutors personalize learning",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-tutors-personalize-learning/",
+   "keywords": [
+    "tutors",
+    "personalize",
+    "learning",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Tutors Personalize Learning?",
+   "h1": "How AI Tutors Personalize Learning?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1981",
+   "slug": "what-the-bronze-age-collapse-was",
+   "question": "What the Bronze Age collapse was",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-the-bronze-age-collapse-was/",
+   "keywords": [
+    "bronze",
+    "age",
+    "collapse",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What The Bronze Age Collapse Was?",
+   "h1": "What The Bronze Age Collapse Was?",
+   "ymyl": false
+  }
+ ]
+}

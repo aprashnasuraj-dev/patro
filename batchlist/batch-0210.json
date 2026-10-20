@@ -1,0 +1,169 @@
+{
+ "batch": 210,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1206",
+   "slug": "what-are-bits-and-bytes",
+   "question": "What are bits and bytes",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-bits-and-bytes/",
+   "keywords": [
+    "bits",
+    "bytes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are bits and bytes? A Clear, Sourced Explanation",
+   "h1": "What are bits and bytes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1207",
+   "slug": "why-does-cellular-respiration-matter-in-everyday-life",
+   "question": "Why does cellular respiration matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-cellular-respiration-matter-in-everyday-life/",
+   "keywords": [
+    "cellular",
+    "respiration",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does cellular respiration matter in everyday life?",
+   "h1": "Why does cellular respiration matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1208",
+   "slug": "where-does-the-phrase-go-the-extra-mile-come-from",
+   "question": "Where does the phrase \"go the extra mile\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-go-the-extra-mile-come-from/",
+   "keywords": [
+    "phrase",
+    "extra",
+    "mile",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"go the extra mile\" come from?",
+   "h1": "Where does the phrase \"go the extra mile\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1209",
+   "slug": "how-are-cornflakes-made",
+   "question": "How are cornflakes made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-are-cornflakes-made/",
+   "keywords": [
+    "cornflakes",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are cornflakes made? A Clear, Sourced Explanation",
+   "h1": "How are cornflakes made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1210",
+   "slug": "what-are-the-main-parts-of-a-petrol-engine",
+   "question": "What are the main parts of a petrol engine",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-petrol-engine/",
+   "keywords": [
+    "main",
+    "parts",
+    "petrol",
+    "engine"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a petrol engine?",
+   "h1": "What are the main parts of a petrol engine?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1211",
+   "slug": "where-is-lhotse-and-how-high-is-it",
+   "question": "Where is Lhotse and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-lhotse-and-how-high-is-it/",
+   "keywords": [
+    "lhotse",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Lhotse and how high is it?",
+   "h1": "Where is Lhotse and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1212",
+   "slug": "why-are-traffic-lights-red-yellow-and-green",
+   "question": "Why are traffic lights red, yellow and green",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-are-traffic-lights-red-yellow-and-green/",
+   "keywords": [
+    "traffic",
+    "lights",
+    "red",
+    "yellow",
+    "green"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are traffic lights red, yellow and green?",
+   "h1": "Why are traffic lights red, yellow and green?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1213",
+   "slug": "how-do-calculators-add-so-fast",
+   "question": "How do calculators add so fast",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-do-calculators-add-so-fast/",
+   "keywords": [
+    "calculators",
+    "add",
+    "fast"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do calculators add so fast? What Science Actually Says",
+   "h1": "How do calculators add so fast?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1214",
+   "slug": "what-makes-reggae-unique",
+   "question": "What makes reggae unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-reggae-unique/",
+   "keywords": [
+    "makes",
+    "reggae",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes reggae unique? A Clear, Sourced Explanation",
+   "h1": "What makes reggae unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1215",
+   "slug": "what-causes-frost",
+   "question": "What causes frost",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-frost/",
+   "keywords": [
+    "causes",
+    "frost"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes frost? What Science Actually Says",
+   "h1": "What causes frost?",
+   "ymyl": false
+  }
+ ]
+}

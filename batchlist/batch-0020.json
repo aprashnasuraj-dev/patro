@@ -1,0 +1,184 @@
+{
+ "batch": 20,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0429",
+   "slug": "why-we-say-bless-you-after-sneezing",
+   "question": "Why we say bless you after sneezing",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-we-say-bless-you-after-sneezing/",
+   "keywords": [
+    "say",
+    "bless",
+    "after",
+    "sneezing",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Say Bless You After Sneezing?",
+   "h1": "Why We Say Bless You After Sneezing?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0431",
+   "slug": "why-the-golden-ratio-is-overrated",
+   "question": "Why the golden ratio is overrated",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-the-golden-ratio-is-overrated/",
+   "keywords": [
+    "golden",
+    "ratio",
+    "overrated",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Golden Ratio Is Overrated?",
+   "h1": "Why The Golden Ratio Is Overrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0433",
+   "slug": "why-coal-is-still-used",
+   "question": "Why coal is still used",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-coal-is-still-used/",
+   "keywords": [
+    "coal",
+    "still",
+    "used",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Coal Is Still Used? What Science Actually Says",
+   "h1": "Why Coal Is Still Used?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0435",
+   "slug": "how-submarines-dive-and-surface",
+   "question": "How submarines dive and surface",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-submarines-dive-and-surface/",
+   "keywords": [
+    "submarines",
+    "dive",
+    "surface",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Submarines Dive And Surface? What Science Actually Says",
+   "h1": "How Submarines Dive And Surface?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0437",
+   "slug": "how-newar-architecture-survived-earthquakes",
+   "question": "How Newar architecture survived earthquakes",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-newar-architecture-survived-earthquakes/",
+   "keywords": [
+    "newar",
+    "architecture",
+    "survived",
+    "earthquakes",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Newar Architecture Survived Earthquakes?",
+   "h1": "How Newar Architecture Survived Earthquakes?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0439",
+   "slug": "why-dance-exists-in-every-culture",
+   "question": "Why dance exists in every culture",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-dance-exists-in-every-culture/",
+   "keywords": [
+    "dance",
+    "exists",
+    "every",
+    "culture",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dance Exists In Every Culture?",
+   "h1": "Why Dance Exists In Every Culture?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0441",
+   "slug": "how-carnivorous-plants-catch-prey",
+   "question": "How carnivorous plants catch prey",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-carnivorous-plants-catch-prey/",
+   "keywords": [
+    "carnivorous",
+    "plants",
+    "catch",
+    "prey",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Carnivorous Plants Catch Prey? Explained With Sources",
+   "h1": "How Carnivorous Plants Catch Prey?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0443",
+   "slug": "why-turtles-live-so-long",
+   "question": "Why turtles live so long",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-turtles-live-so-long/",
+   "keywords": [
+    "turtles",
+    "live",
+    "long",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Turtles Live So Long? A Clear, Sourced Explanation",
+   "h1": "Why Turtles Live So Long?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0445",
+   "slug": "why-the-sun-is-yellow-but-looks-white",
+   "question": "Why the sun is yellow but looks white",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-the-sun-is-yellow-but-looks-white/",
+   "keywords": [
+    "sun",
+    "yellow",
+    "but",
+    "looks",
+    "white",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Sun Is Yellow But Looks White?",
+   "h1": "Why The Sun Is Yellow But Looks White?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0447",
+   "slug": "how-tsunamis-travel-across-oceans",
+   "question": "How tsunamis travel across oceans",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-tsunamis-travel-across-oceans/",
+   "keywords": [
+    "tsunamis",
+    "travel",
+    "across",
+    "oceans",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Tsunamis Travel Across Oceans?",
+   "h1": "How Tsunamis Travel Across Oceans?",
+   "ymyl": false
+  }
+ ]
+}

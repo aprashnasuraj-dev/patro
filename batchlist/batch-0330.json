@@ -1,0 +1,163 @@
+{
+ "batch": 330,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2412",
+   "slug": "what-is-buenos-aires-famous-for",
+   "question": "What is Buenos Aires famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-buenos-aires-famous-for/",
+   "keywords": [
+    "buenos",
+    "aires",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Buenos Aires famous for? A Clear Overview",
+   "h1": "What is Buenos Aires famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2413",
+   "slug": "what-are-the-main-parts-of-a-television",
+   "question": "What are the main parts of a television",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-television/",
+   "keywords": [
+    "main",
+    "parts",
+    "television"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a television?",
+   "h1": "What are the main parts of a television?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2414",
+   "slug": "how-long-do-rhinos-live",
+   "question": "How long do rhinos live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-rhinos-live/",
+   "keywords": [
+    "long",
+    "rhinos",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do rhinos live? Facts, Myths and Evidence",
+   "h1": "How long do rhinos live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2415",
+   "slug": "what-is-pythagoras-best-known-for",
+   "question": "What is Pythagoras best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-pythagoras-best-known-for/",
+   "keywords": [
+    "pythagoras",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Pythagoras best known for? Key Facts and Context",
+   "h1": "What is Pythagoras best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2416",
+   "slug": "what-is-the-economy-of-estonia-based-on",
+   "question": "What is the economy of Estonia based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-estonia-based-on/",
+   "keywords": [
+    "economy",
+    "estonia",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Estonia based on?",
+   "h1": "What is the economy of Estonia based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2417",
+   "slug": "how-does-dns-work",
+   "question": "How does DNS work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-dns-work/",
+   "keywords": [
+    "dns",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does DNS work? Explained With Sources",
+   "h1": "How does DNS work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2418",
+   "slug": "what-do-jellyfish-eat",
+   "question": "What do jellyfish eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-jellyfish-eat/",
+   "keywords": [
+    "jellyfish",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do jellyfish eat? Explained With Sources",
+   "h1": "What do jellyfish eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2419",
+   "slug": "who-was-joan-of-arc",
+   "question": "Who was Joan of Arc",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-joan-of-arc/",
+   "keywords": [
+    "joan",
+    "arc"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Joan of Arc? The Short, Sourced Answer",
+   "h1": "Who was Joan of Arc?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2420",
+   "slug": "what-is-beijing-famous-for",
+   "question": "What is Beijing famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-beijing-famous-for/",
+   "keywords": [
+    "beijing",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Beijing famous for? Key Facts and Context",
+   "h1": "What is Beijing famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2421",
+   "slug": "what-are-the-main-parts-of-a-headphones",
+   "question": "What are the main parts of a headphones",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-headphones/",
+   "keywords": [
+    "main",
+    "parts",
+    "headphones"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a headphones?",
+   "h1": "What are the main parts of a headphones?",
+   "ymyl": false
+  }
+ ]
+}

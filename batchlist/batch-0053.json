@@ -1,0 +1,179 @@
+{
+ "batch": 53,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1161",
+   "slug": "how-venus-flytraps-count-touches",
+   "question": "How venus flytraps count touches",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-venus-flytraps-count-touches/",
+   "keywords": [
+    "venus",
+    "flytraps",
+    "count",
+    "touches",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Venus Flytraps Count Touches? Facts, Myths and Evidence",
+   "h1": "How Venus Flytraps Count Touches?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1163",
+   "slug": "why-frogs-change-from-tadpoles",
+   "question": "Why frogs change from tadpoles",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-frogs-change-from-tadpoles/",
+   "keywords": [
+    "frogs",
+    "change",
+    "tadpoles",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Frogs Change From Tadpoles? A Clear, Sourced Explanation",
+   "h1": "Why Frogs Change From Tadpoles?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1165",
+   "slug": "why-space-is-cold-but-the-sun-is-hot",
+   "question": "Why space is cold but the sun is hot",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-space-is-cold-but-the-sun-is-hot/",
+   "keywords": [
+    "space",
+    "cold",
+    "but",
+    "sun",
+    "hot",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Space Is Cold But The Sun Is Hot?",
+   "h1": "Why Space Is Cold But The Sun Is Hot?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1167",
+   "slug": "how-hailstones-grow",
+   "question": "How hailstones grow",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-hailstones-grow/",
+   "keywords": [
+    "hailstones",
+    "grow",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Hailstones Grow? The Real Answer, Explained",
+   "h1": "How Hailstones Grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1171",
+   "slug": "how-bias-shapes-opinions",
+   "question": "How bias shapes opinions",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-bias-shapes-opinions/",
+   "keywords": [
+    "bias",
+    "shapes",
+    "opinions",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Bias Shapes Opinions? Facts, Myths and Evidence",
+   "h1": "How Bias Shapes Opinions?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1173",
+   "slug": "how-sugar-caramelizes",
+   "question": "How sugar caramelizes",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-sugar-caramelizes/",
+   "keywords": [
+    "sugar",
+    "caramelizes",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sugar Caramelizes? Facts, Myths and Evidence",
+   "h1": "How Sugar Caramelizes?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1175",
+   "slug": "how-salt-melts-ice",
+   "question": "How salt melts ice",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-salt-melts-ice/",
+   "keywords": [
+    "salt",
+    "melts",
+    "ice",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Salt Melts Ice? Explained With Sources",
+   "h1": "How Salt Melts Ice?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1177",
+   "slug": "how-data-centers-cool-servers",
+   "question": "How data centers cool servers",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-data-centers-cool-servers/",
+   "keywords": [
+    "data",
+    "centers",
+    "cool",
+    "servers",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Data Centers Cool Servers? The Real Answer, Explained",
+   "h1": "How Data Centers Cool Servers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1179",
+   "slug": "how-ai-predicts-weather",
+   "question": "How AI predicts weather",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-predicts-weather/",
+   "keywords": [
+    "predicts",
+    "weather",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Predicts Weather? The Real Answer, Explained",
+   "h1": "How AI Predicts Weather?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1181",
+   "slug": "what-life-was-like-in-ancient-rome",
+   "question": "What life was like in ancient Rome",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-life-was-like-in-ancient-rome/",
+   "keywords": [
+    "life",
+    "like",
+    "ancient",
+    "rome",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Life Was Like In Ancient Rome?",
+   "h1": "What Life Was Like In Ancient Rome?",
+   "ymyl": false
+  }
+ ]
+}

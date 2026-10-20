@@ -1,0 +1,166 @@
+{
+ "batch": 274,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1849",
+   "slug": "why-does-light-matter-in-everyday-life",
+   "question": "Why does light matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-light-matter-in-everyday-life/",
+   "keywords": [
+    "light",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does light matter in everyday life?",
+   "h1": "Why does light matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1850",
+   "slug": "how-many-people-speak-newari-and-where",
+   "question": "How many people speak Newari and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-newari-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "newari"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Newari and where? Facts and Background",
+   "h1": "How many people speak Newari and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1851",
+   "slug": "how-do-jellyfish-communicate",
+   "question": "How do jellyfish communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-jellyfish-communicate/",
+   "keywords": [
+    "jellyfish",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do jellyfish communicate? Explained With Sources",
+   "h1": "How do jellyfish communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1852",
+   "slug": "who-was-abraham-lincoln",
+   "question": "Who was Abraham Lincoln",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-abraham-lincoln/",
+   "keywords": [
+    "abraham",
+    "lincoln"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Abraham Lincoln? The Story, Sourced",
+   "h1": "Who was Abraham Lincoln?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1853",
+   "slug": "what-is-the-history-of-nairobi",
+   "question": "What is the history of Nairobi",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-nairobi/",
+   "keywords": [
+    "history",
+    "nairobi"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Nairobi? Facts and Background",
+   "h1": "What is the history of Nairobi?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1854",
+   "slug": "what-are-qr-codes",
+   "question": "What are QR codes",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-qr-codes/",
+   "keywords": [
+    "codes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are QR codes? Facts, Myths and Evidence",
+   "h1": "What are QR codes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1855",
+   "slug": "why-does-fermentation-matter-in-everyday-life",
+   "question": "Why does fermentation matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-fermentation-matter-in-everyday-life/",
+   "keywords": [
+    "fermentation",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does fermentation matter in everyday life?",
+   "h1": "Why does fermentation matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1856",
+   "slug": "where-does-the-word-quarantine-come-from",
+   "question": "Where does the word \"quarantine\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-quarantine-come-from/",
+   "keywords": [
+    "word",
+    "quarantine",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"quarantine\" come from?",
+   "h1": "Where does the word \"quarantine\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1857",
+   "slug": "where-do-scorpions-live-in-the-wild",
+   "question": "Where do scorpions live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-scorpions-live-in-the-wild/",
+   "keywords": [
+    "scorpions",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do scorpions live in the wild? Explained With Sources",
+   "h1": "Where do scorpions live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1858",
+   "slug": "what-is-marco-polo-best-known-for",
+   "question": "What is Marco Polo best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-marco-polo-best-known-for/",
+   "keywords": [
+    "marco",
+    "polo",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Marco Polo best known for? Key Facts and Context",
+   "h1": "What is Marco Polo best known for?",
+   "ymyl": false
+  }
+ ]
+}

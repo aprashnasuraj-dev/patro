@@ -1,0 +1,174 @@
+{
+ "batch": 4,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0071",
+   "slug": "how-zero-was-invented",
+   "question": "How zero was invented",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-zero-was-invented/",
+   "keywords": [
+    "zero",
+    "invented",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Zero Was Invented? A Clear, Sourced Explanation",
+   "h1": "How Zero Was Invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0073",
+   "slug": "how-wind-turbines-make-electricity",
+   "question": "How wind turbines make electricity",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-wind-turbines-make-electricity/",
+   "keywords": [
+    "wind",
+    "turbines",
+    "electricity",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Wind Turbines Make Electricity?",
+   "h1": "How Wind Turbines Make Electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0075",
+   "slug": "why-ships-float",
+   "question": "Why ships float",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-ships-float/",
+   "keywords": [
+    "ships",
+    "float",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Ships Float? A Clear, Sourced Explanation",
+   "h1": "Why Ships Float?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0077",
+   "slug": "why-the-himalayas-are-still-rising",
+   "question": "Why the Himalayas are still rising",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-the-himalayas-are-still-rising/",
+   "keywords": [
+    "himalayas",
+    "still",
+    "rising",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Himalayas Are Still Rising?",
+   "h1": "Why The Himalayas Are Still Rising?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0079",
+   "slug": "how-the-piano-was-invented",
+   "question": "How the piano was invented",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-the-piano-was-invented/",
+   "keywords": [
+    "piano",
+    "invented",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Piano Was Invented? What Science Actually Says",
+   "h1": "How The Piano Was Invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0081",
+   "slug": "why-leaves-change-color-in-autumn",
+   "question": "Why leaves change color in autumn",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-leaves-change-color-in-autumn/",
+   "keywords": [
+    "leaves",
+    "change",
+    "color",
+    "autumn",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Leaves Change Color In Autumn?",
+   "h1": "Why Leaves Change Color In Autumn?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0083",
+   "slug": "how-birds-navigate-thousands-of-miles",
+   "question": "How birds navigate thousands of miles",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-birds-navigate-thousands-of-miles/",
+   "keywords": [
+    "birds",
+    "navigate",
+    "thousands",
+    "miles",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Birds Navigate Thousands Of Miles?",
+   "h1": "How Birds Navigate Thousands Of Miles?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0085",
+   "slug": "how-black-holes-form",
+   "question": "How black holes form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-black-holes-form/",
+   "keywords": [
+    "black",
+    "holes",
+    "form",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Black Holes Form? Facts, Myths and Evidence",
+   "h1": "How Black Holes Form?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0087",
+   "slug": "why-the-ocean-is-salty",
+   "question": "Why the ocean is salty",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-the-ocean-is-salty/",
+   "keywords": [
+    "ocean",
+    "salty",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Ocean Is Salty? A Clear, Sourced Explanation",
+   "h1": "Why The Ocean Is Salty?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0091",
+   "slug": "why-we-forget-names",
+   "question": "Why we forget names",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-forget-names/",
+   "keywords": [
+    "forget",
+    "names",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Forget Names? A Clear, Sourced Explanation",
+   "h1": "Why We Forget Names?",
+   "ymyl": false
+  }
+ ]
+}

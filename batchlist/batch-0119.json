@@ -1,0 +1,164 @@
+{
+ "batch": 119,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0291",
+   "slug": "what-is-the-history-of-beer",
+   "question": "What is the history of beer",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-beer/",
+   "keywords": [
+    "history",
+    "beer"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of beer? The Story, Sourced",
+   "h1": "What is the history of beer?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0292",
+   "slug": "why-is-concrete-poured-with-steel-bars",
+   "question": "Why is concrete poured with steel bars",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-is-concrete-poured-with-steel-bars/",
+   "keywords": [
+    "concrete",
+    "poured",
+    "steel",
+    "bars"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is concrete poured with steel bars?",
+   "h1": "Why is concrete poured with steel bars?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0293",
+   "slug": "what-is-the-history-of-gosainkunda",
+   "question": "What is the history of Gosainkunda",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-gosainkunda/",
+   "keywords": [
+    "history",
+    "gosainkunda"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Gosainkunda? The Story, Sourced",
+   "h1": "What is the history of Gosainkunda?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0294",
+   "slug": "what-are-the-main-parts-of-a-vacuum-cleaner",
+   "question": "What are the main parts of a vacuum cleaner",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-vacuum-cleaner/",
+   "keywords": [
+    "main",
+    "parts",
+    "vacuum",
+    "cleaner"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a vacuum cleaner?",
+   "h1": "What are the main parts of a vacuum cleaner?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0295",
+   "slug": "why-is-zero-important",
+   "question": "Why is zero important",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-is-zero-important/",
+   "keywords": [
+    "zero",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is zero important? What Science Actually Says",
+   "h1": "Why is zero important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0296",
+   "slug": "how-did-newar-architecture-start",
+   "question": "How did Newar architecture start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-newar-architecture-start/",
+   "keywords": [
+    "did",
+    "newar",
+    "architecture",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Newar architecture start?",
+   "h1": "How did Newar architecture start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0297",
+   "slug": "what-causes-dust-storms",
+   "question": "What causes dust storms",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-dust-storms/",
+   "keywords": [
+    "causes",
+    "dust",
+    "storms"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes dust storms? Explained With Sources",
+   "h1": "What causes dust storms?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0298",
+   "slug": "how-do-stars-form",
+   "question": "How do stars form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-stars-form/",
+   "keywords": [
+    "stars",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do stars form? What Science Actually Says",
+   "h1": "How do stars form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0299",
+   "slug": "how-do-redwood-trees-grow",
+   "question": "How do redwood trees grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-redwood-trees-grow/",
+   "keywords": [
+    "redwood",
+    "trees",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do redwood trees grow? What Science Actually Says",
+   "h1": "How do redwood trees grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0300",
+   "slug": "why-do-we-procrastinate",
+   "question": "Why do we procrastinate",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-procrastinate/",
+   "keywords": [
+    "procrastinate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we procrastinate? A Clear, Sourced Explanation",
+   "h1": "Why do we procrastinate?",
+   "ymyl": false
+  }
+ ]
+}

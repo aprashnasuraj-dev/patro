@@ -1,0 +1,182 @@
+{
+ "batch": 56,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1229",
+   "slug": "why-tattoos-have-cultural-meaning",
+   "question": "Why tattoos have cultural meaning",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-tattoos-have-cultural-meaning/",
+   "keywords": [
+    "tattoos",
+    "have",
+    "cultural",
+    "meaning",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Tattoos Have Cultural Meaning?",
+   "h1": "Why Tattoos Have Cultural Meaning?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1231",
+   "slug": "why-the-monty-hall-problem-confuses",
+   "question": "Why the Monty Hall problem confuses",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-the-monty-hall-problem-confuses/",
+   "keywords": [
+    "monty",
+    "hall",
+    "problem",
+    "confuses",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Monty Hall Problem Confuses?",
+   "h1": "Why The Monty Hall Problem Confuses?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1233",
+   "slug": "why-fast-fashion-pollutes",
+   "question": "Why fast fashion pollutes",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-fast-fashion-pollutes/",
+   "keywords": [
+    "fast",
+    "fashion",
+    "pollutes",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Fast Fashion Pollutes? A Clear, Sourced Explanation",
+   "h1": "Why Fast Fashion Pollutes?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1235",
+   "slug": "how-ports-move-containers",
+   "question": "How ports move containers",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-ports-move-containers/",
+   "keywords": [
+    "ports",
+    "move",
+    "containers",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Ports Move Containers? Explained With Sources",
+   "h1": "How Ports Move Containers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1237",
+   "slug": "how-kathmandus-air-quality-changes-by-season",
+   "question": "How Kathmandu's air quality changes by season",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-kathmandus-air-quality-changes-by-season/",
+   "keywords": [
+    "kathmandu",
+    "air",
+    "quality",
+    "changes",
+    "season",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Kathmandu's Air Quality Changes By Season?",
+   "h1": "How Kathmandu's Air Quality Changes By Season?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1239",
+   "slug": "why-old-books-smell",
+   "question": "Why old books smell",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-old-books-smell/",
+   "keywords": [
+    "old",
+    "books",
+    "smell",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Old Books Smell? A Clear, Sourced Explanation",
+   "h1": "Why Old Books Smell?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1241",
+   "slug": "how-plants-sense-gravity",
+   "question": "How plants sense gravity",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-plants-sense-gravity/",
+   "keywords": [
+    "plants",
+    "sense",
+    "gravity",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Plants Sense Gravity? The Real Answer, Explained",
+   "h1": "How Plants Sense Gravity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1243",
+   "slug": "why-pigs-are-smarter-than-dogs",
+   "question": "Why pigs are smarter than dogs",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-pigs-are-smarter-than-dogs/",
+   "keywords": [
+    "pigs",
+    "smarter",
+    "than",
+    "dogs",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Pigs Are Smarter Than Dogs? The Real Answer, Explained",
+   "h1": "Why Pigs Are Smarter Than Dogs?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1245",
+   "slug": "why-the-north-star-stays-still",
+   "question": "Why the North Star stays still",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-the-north-star-stays-still/",
+   "keywords": [
+    "north",
+    "star",
+    "stays",
+    "still",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The North Star Stays Still? A Clear, Sourced Explanation",
+   "h1": "Why The North Star Stays Still?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1247",
+   "slug": "how-geysers-erupt",
+   "question": "How geysers erupt",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-geysers-erupt/",
+   "keywords": [
+    "geysers",
+    "erupt",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Geysers Erupt? A Clear, Sourced Explanation",
+   "h1": "How Geysers Erupt?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "batch": 167,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0775",
+   "slug": "why-do-biomes-matter-in-everyday-life",
+   "question": "Why do biomes matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-biomes-matter-in-everyday-life/",
+   "keywords": [
+    "biomes",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do biomes matter in everyday life?",
+   "h1": "Why do biomes matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0776",
+   "slug": "where-does-the-word-pajamas-come-from",
+   "question": "Where does the word \"pajamas\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-pajamas-come-from/",
+   "keywords": [
+    "word",
+    "pajamas",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"pajamas\" come from?",
+   "h1": "Where does the word \"pajamas\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0777",
+   "slug": "what-is-the-history-of-marshmallows",
+   "question": "What is the history of marshmallows",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-marshmallows/",
+   "keywords": [
+    "history",
+    "marshmallows"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of marshmallows? The Story, Sourced",
+   "h1": "What is the history of marshmallows?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0778",
+   "slug": "how-does-a-watermill-work",
+   "question": "How does a watermill work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-watermill-work/",
+   "keywords": [
+    "watermill",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a watermill work? What Science Actually Says",
+   "h1": "How does a watermill work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0779",
+   "slug": "what-is-special-about-dhaulagiri",
+   "question": "What is special about Dhaulagiri",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-dhaulagiri/",
+   "keywords": [
+    "special",
+    "about",
+    "dhaulagiri"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Dhaulagiri? Explained With Sources",
+   "h1": "What is special about Dhaulagiri?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0780",
+   "slug": "how-does-a-water-purifier-work",
+   "question": "How does a water purifier work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-water-purifier-work/",
+   "keywords": [
+    "water",
+    "purifier",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a water purifier work? Facts, Myths and Evidence",
+   "h1": "How does a water purifier work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0781",
+   "slug": "how-are-sets-in-mathematics-used-in-real-life",
+   "question": "How are sets in mathematics used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-sets-in-mathematics-used-in-real-life/",
+   "keywords": [
+    "sets",
+    "mathematics",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are sets in mathematics used in real life?",
+   "h1": "How are sets in mathematics used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0782",
+   "slug": "how-did-kathak-dance-start",
+   "question": "How did Kathak dance start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-kathak-dance-start/",
+   "keywords": [
+    "did",
+    "kathak",
+    "dance",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Kathak dance start? Explained With Sources",
+   "h1": "How did Kathak dance start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0783",
+   "slug": "what-causes-earthquakes",
+   "question": "What causes earthquakes",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-earthquakes/",
+   "keywords": [
+    "causes",
+    "earthquakes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes earthquakes? Explained With Sources",
+   "h1": "What causes earthquakes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0784",
+   "slug": "what-is-the-artemis-program",
+   "question": "What is the Artemis program",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-artemis-program/",
+   "keywords": [
+    "artemis",
+    "program"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Artemis program? What Science Actually Says",
+   "h1": "What is the Artemis program?",
+   "ymyl": false
+  }
+ ]
+}

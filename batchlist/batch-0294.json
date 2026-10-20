@@ -1,0 +1,163 @@
+{
+ "batch": 294,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2051",
+   "slug": "what-is-oslo-famous-for",
+   "question": "What is Oslo famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-oslo-famous-for/",
+   "keywords": [
+    "oslo",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Oslo famous for? Facts and Background",
+   "h1": "What is Oslo famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2052",
+   "slug": "what-is-encryption",
+   "question": "What is encryption",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-encryption/",
+   "keywords": [
+    "encryption"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is encryption? Explained With Sources",
+   "h1": "What is encryption?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2053",
+   "slug": "what-are-catalysts",
+   "question": "What are catalysts",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-catalysts/",
+   "keywords": [
+    "catalysts"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are catalysts? Explained With Sources",
+   "h1": "What are catalysts?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2054",
+   "slug": "where-does-the-word-avatar-come-from",
+   "question": "Where does the word \"avatar\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-avatar-come-from/",
+   "keywords": [
+    "word",
+    "avatar",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"avatar\" come from? Facts and Background",
+   "h1": "Where does the word \"avatar\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2055",
+   "slug": "where-do-giraffes-live-in-the-wild",
+   "question": "Where do giraffes live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-giraffes-live-in-the-wild/",
+   "keywords": [
+    "giraffes",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do giraffes live in the wild?",
+   "h1": "Where do giraffes live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2056",
+   "slug": "what-were-the-main-consequences-of-the-gold-rush",
+   "question": "What were the main consequences of the Gold Rush",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-gold-rush/",
+   "keywords": [
+    "main",
+    "consequences",
+    "gold",
+    "rush"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Gold Rush?",
+   "h1": "What were the main consequences of the Gold Rush?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2057",
+   "slug": "how-did-mumbai-get-its-name",
+   "question": "How did Mumbai get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-mumbai-get-its-name/",
+   "keywords": [
+    "did",
+    "mumbai",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Mumbai get its name? Facts and Background",
+   "h1": "How did Mumbai get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2058",
+   "slug": "how-does-a-gps-satellite-work",
+   "question": "How does a GPS satellite work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-gps-satellite-work/",
+   "keywords": [
+    "gps",
+    "satellite",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a GPS satellite work? The Real Answer, Explained",
+   "h1": "How does a GPS satellite work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2059",
+   "slug": "what-is-metamorphosis",
+   "question": "What is metamorphosis",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-metamorphosis/",
+   "keywords": [
+    "metamorphosis"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is metamorphosis? A Clear, Sourced Explanation",
+   "h1": "What is metamorphosis?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2060",
+   "slug": "where-does-the-word-hurricane-come-from",
+   "question": "Where does the word \"hurricane\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-hurricane-come-from/",
+   "keywords": [
+    "word",
+    "hurricane",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"hurricane\" come from? A Clear Overview",
+   "h1": "Where does the word \"hurricane\" come from?",
+   "ymyl": false
+  }
+ ]
+}

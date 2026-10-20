@@ -1,0 +1,171 @@
+{
+ "batch": 237,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1477",
+   "slug": "what-are-the-main-parts-of-a-mechanical-watch",
+   "question": "What are the main parts of a mechanical watch",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-mechanical-watch/",
+   "keywords": [
+    "main",
+    "parts",
+    "mechanical",
+    "watch"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a mechanical watch?",
+   "h1": "What are the main parts of a mechanical watch?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1478",
+   "slug": "why-do-we-use-base-ten",
+   "question": "Why do we use base ten",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-use-base-ten/",
+   "keywords": [
+    "use",
+    "base",
+    "ten"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we use base ten? Explained With Sources",
+   "h1": "Why do we use base ten?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1479",
+   "slug": "what-makes-gothic-cathedrals-unique",
+   "question": "What makes Gothic cathedrals unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-gothic-cathedrals-unique/",
+   "keywords": [
+    "makes",
+    "gothic",
+    "cathedrals",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Gothic cathedrals unique? Explained With Sources",
+   "h1": "What makes Gothic cathedrals unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1480",
+   "slug": "where-do-great-white-sharks-live-in-the-wild",
+   "question": "Where do great white sharks live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-great-white-sharks-live-in-the-wild/",
+   "keywords": [
+    "great",
+    "white",
+    "sharks",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do great white sharks live in the wild?",
+   "h1": "Where do great white sharks live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1481",
+   "slug": "what-caused-the-maya-collapse",
+   "question": "What caused the Maya collapse",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-maya-collapse/",
+   "keywords": [
+    "caused",
+    "maya",
+    "collapse"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Maya collapse? The Story, Sourced",
+   "h1": "What caused the Maya collapse?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1482",
+   "slug": "what-is-the-history-of-athens",
+   "question": "What is the history of Athens",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-athens/",
+   "keywords": [
+    "history",
+    "athens"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Athens? The Story, Sourced",
+   "h1": "What is the history of Athens?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1483",
+   "slug": "how-does-a-thermometer-work",
+   "question": "How does a thermometer work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-thermometer-work/",
+   "keywords": [
+    "thermometer",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a thermometer work? The Real Answer, Explained",
+   "h1": "How does a thermometer work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1484",
+   "slug": "why-do-food-chains-matter-in-everyday-life",
+   "question": "Why do food chains matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-food-chains-matter-in-everyday-life/",
+   "keywords": [
+    "food",
+    "chains",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do food chains matter in everyday life?",
+   "h1": "Why do food chains matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1485",
+   "slug": "how-many-people-speak-german-and-where",
+   "question": "How many people speak German and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-german-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "german"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak German and where?",
+   "h1": "How many people speak German and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1486",
+   "slug": "how-is-paneer-made",
+   "question": "How is paneer made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-paneer-made/",
+   "keywords": [
+    "paneer",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is paneer made? The Real Answer, Explained",
+   "h1": "How is paneer made?",
+   "ymyl": false
+  }
+ ]
+}

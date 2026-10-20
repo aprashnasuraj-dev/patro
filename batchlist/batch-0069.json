@@ -1,0 +1,180 @@
+{
+ "batch": 69,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1517",
+   "slug": "why-nepal-celebrates-multiple-new-years",
+   "question": "Why Nepal celebrates multiple new years",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepal-celebrates-multiple-new-years/",
+   "keywords": [
+    "nepal",
+    "celebrates",
+    "multiple",
+    "new",
+    "years",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal Celebrates Multiple New Years?",
+   "h1": "Why Nepal Celebrates Multiple New Years?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1519",
+   "slug": "how-radio-drama-shaped-imagination",
+   "question": "How radio drama shaped imagination",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-radio-drama-shaped-imagination/",
+   "keywords": [
+    "radio",
+    "drama",
+    "shaped",
+    "imagination",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Radio Drama Shaped Imagination?",
+   "h1": "How Radio Drama Shaped Imagination?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1521",
+   "slug": "why-some-trees-live-thousands-of-years",
+   "question": "Why some trees live thousands of years",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-some-trees-live-thousands-of-years/",
+   "keywords": [
+    "some",
+    "trees",
+    "live",
+    "thousands",
+    "years",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Some Trees Live Thousands Of Years?",
+   "h1": "Why Some Trees Live Thousands Of Years?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1523",
+   "slug": "how-vultures-eat-rotten-meat-safely",
+   "question": "How vultures eat rotten meat safely",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-vultures-eat-rotten-meat-safely/",
+   "keywords": [
+    "vultures",
+    "eat",
+    "rotten",
+    "meat",
+    "safely",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Vultures Eat Rotten Meat Safely?",
+   "h1": "How Vultures Eat Rotten Meat Safely?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1525",
+   "slug": "how-the-moon-was-formed",
+   "question": "How the Moon was formed",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-the-moon-was-formed/",
+   "keywords": [
+    "moon",
+    "formed",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Moon Was Formed? A Clear, Sourced Explanation",
+   "h1": "How The Moon Was Formed?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1527",
+   "slug": "why-oceans-have-currents",
+   "question": "Why oceans have currents",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-oceans-have-currents/",
+   "keywords": [
+    "oceans",
+    "have",
+    "currents",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Oceans Have Currents? What Science Actually Says",
+   "h1": "Why Oceans Have Currents?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1531",
+   "slug": "why-we-cannot-tickle-ourselves",
+   "question": "Why we cannot tickle ourselves",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-cannot-tickle-ourselves/",
+   "keywords": [
+    "cannot",
+    "tickle",
+    "ourselves",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Cannot Tickle Ourselves? Facts, Myths and Evidence",
+   "h1": "Why We Cannot Tickle Ourselves?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1533",
+   "slug": "why-turmeric-stains",
+   "question": "Why turmeric stains",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-turmeric-stains/",
+   "keywords": [
+    "turmeric",
+    "stains",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Turmeric Stains? What Science Actually Says",
+   "h1": "Why Turmeric Stains?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1535",
+   "slug": "why-vinegar-cleans",
+   "question": "Why vinegar cleans",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-vinegar-cleans/",
+   "keywords": [
+    "vinegar",
+    "cleans",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Vinegar Cleans? Facts, Myths and Evidence",
+   "h1": "Why Vinegar Cleans?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1537",
+   "slug": "why-404-errors-exist",
+   "question": "Why 404 errors exist",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-404-errors-exist/",
+   "keywords": [
+    "errors",
+    "exist",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why 404 Errors Exist? Explained With Sources",
+   "h1": "Why 404 Errors Exist?",
+   "ymyl": false
+  }
+ ]
+}

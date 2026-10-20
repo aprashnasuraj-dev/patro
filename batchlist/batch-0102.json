@@ -1,0 +1,167 @@
+{
+ "batch": 102,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0118",
+   "slug": "why-does-the-toast-always-land-butter-side-down",
+   "question": "Why does the toast always land butter side down",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-does-the-toast-always-land-butter-side-down/",
+   "keywords": [
+    "toast",
+    "always",
+    "land",
+    "butter",
+    "side",
+    "down"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does the toast always land butter side down?",
+   "h1": "Why does the toast always land butter side down?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0119",
+   "slug": "what-is-statistics",
+   "question": "What is statistics",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-statistics/",
+   "keywords": [
+    "statistics"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is statistics? What Science Actually Says",
+   "h1": "What is statistics?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0120",
+   "slug": "how-did-the-piano-start",
+   "question": "How did the piano start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-piano-start/",
+   "keywords": [
+    "did",
+    "piano",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the piano start? A Clear, Sourced Explanation",
+   "h1": "How did the piano start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0121",
+   "slug": "what-causes-ocean-acidification",
+   "question": "What causes ocean acidification",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-ocean-acidification/",
+   "keywords": [
+    "causes",
+    "ocean",
+    "acidification"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes ocean acidification? Explained With Sources",
+   "h1": "What causes ocean acidification?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0122",
+   "slug": "why-is-space-dark-if-there-are-so-many-stars",
+   "question": "Why is space dark if there are so many stars",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-is-space-dark-if-there-are-so-many-stars/",
+   "keywords": [
+    "space",
+    "dark",
+    "there",
+    "many",
+    "stars"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is space dark if there are so many stars?",
+   "h1": "Why is space dark if there are so many stars?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0123",
+   "slug": "why-do-bamboo-plants-grow-so-fast",
+   "question": "Why do bamboo plants grow so fast",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-do-bamboo-plants-grow-so-fast/",
+   "keywords": [
+    "bamboo",
+    "plants",
+    "grow",
+    "fast"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do bamboo plants grow so fast?",
+   "h1": "Why do bamboo plants grow so fast?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0124",
+   "slug": "why-do-we-blush",
+   "question": "Why do we blush",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-blush/",
+   "keywords": [
+    "blush"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we blush? A Clear, Sourced Explanation",
+   "h1": "Why do we blush?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0125",
+   "slug": "what-is-robotics",
+   "question": "What is robotics",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-is-robotics/",
+   "keywords": [
+    "robotics"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is robotics? Facts, Myths and Evidence",
+   "h1": "What is robotics?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0126",
+   "slug": "why-is-recycling-glass-efficient",
+   "question": "Why is recycling glass efficient",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-is-recycling-glass-efficient/",
+   "keywords": [
+    "recycling",
+    "glass",
+    "efficient"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is recycling glass efficient?",
+   "h1": "Why is recycling glass efficient?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0127",
+   "slug": "where-do-owls-live-in-the-wild",
+   "question": "Where do owls live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-owls-live-in-the-wild/",
+   "keywords": [
+    "owls",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do owls live in the wild? What Science Actually Says",
+   "h1": "Where do owls live in the wild?",
+   "ymyl": false
+  }
+ ]
+}

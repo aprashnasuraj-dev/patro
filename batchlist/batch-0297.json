@@ -1,0 +1,171 @@
+{
+ "batch": 297,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2081",
+   "slug": "what-is-marrakech-famous-for",
+   "question": "What is Marrakech famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-marrakech-famous-for/",
+   "keywords": [
+    "marrakech",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Marrakech famous for? The Short, Sourced Answer",
+   "h1": "What is Marrakech famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2083",
+   "slug": "why-does-the-doppler-effect-matter-in-everyday-life",
+   "question": "Why does the Doppler effect matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-the-doppler-effect-matter-in-everyday-life/",
+   "keywords": [
+    "doppler",
+    "effect",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does the Doppler effect matter in everyday life?",
+   "h1": "Why does the Doppler effect matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2084",
+   "slug": "how-many-people-speak-italian-and-where",
+   "question": "How many people speak Italian and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-italian-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "italian"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Italian and where?",
+   "h1": "How many people speak Italian and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2085",
+   "slug": "how-long-do-red-pandas-live",
+   "question": "How long do red pandas live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-red-pandas-live/",
+   "keywords": [
+    "long",
+    "red",
+    "pandas",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do red pandas live? Facts, Myths and Evidence",
+   "h1": "How long do red pandas live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2086",
+   "slug": "why-did-the-roman-empire-fall",
+   "question": "Why did the Roman Empire fall",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-did-the-roman-empire-fall/",
+   "keywords": [
+    "did",
+    "roman",
+    "empire",
+    "fall"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why did the Roman Empire fall? A Clear, Sourced Explanation",
+   "h1": "Why did the Roman Empire fall?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2087",
+   "slug": "what-is-singapore-known-for",
+   "question": "What is Singapore known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-singapore-known-for/",
+   "keywords": [
+    "singapore",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Singapore known for? Key Facts and Context",
+   "h1": "What is Singapore known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2088",
+   "slug": "how-do-mp3-files-work",
+   "question": "How do MP3 files work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-mp3-files-work/",
+   "keywords": [
+    "files",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do MP3 files work? Explained With Sources",
+   "h1": "How do MP3 files work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2089",
+   "slug": "why-does-camouflage-matter-in-everyday-life",
+   "question": "Why does camouflage matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-camouflage-matter-in-everyday-life/",
+   "keywords": [
+    "camouflage",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does camouflage matter in everyday life?",
+   "h1": "Why does camouflage matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2090",
+   "slug": "how-many-people-speak-hebrew-and-where",
+   "question": "How many people speak Hebrew and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-hebrew-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "hebrew"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Hebrew and where?",
+   "h1": "How many people speak Hebrew and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2091",
+   "slug": "how-long-do-narwhals-live",
+   "question": "How long do narwhals live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-narwhals-live/",
+   "keywords": [
+    "long",
+    "narwhals",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do narwhals live? What Science Actually Says",
+   "h1": "How long do narwhals live?",
+   "ymyl": false
+  }
+ ]
+}

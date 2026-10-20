@@ -1,0 +1,166 @@
+{
+ "batch": 126,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0361",
+   "slug": "what-is-thukpa-and-how-is-it-made",
+   "question": "What is thukpa and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-thukpa-and-how-is-it-made/",
+   "keywords": [
+    "thukpa",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is thukpa and how is it made? The Story, Sourced",
+   "h1": "What is thukpa and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0362",
+   "slug": "what-are-the-main-parts-of-a-pencil",
+   "question": "What are the main parts of a pencil",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-pencil/",
+   "keywords": [
+    "main",
+    "parts",
+    "pencil"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a pencil?",
+   "h1": "What are the main parts of a pencil?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0363",
+   "slug": "how-is-the-metric-system-used-in-real-life",
+   "question": "How is the metric system used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-the-metric-system-used-in-real-life/",
+   "keywords": [
+    "metric",
+    "system",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is the metric system used in real life?",
+   "h1": "How is the metric system used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0364",
+   "slug": "how-did-street-photography-start",
+   "question": "How did street photography start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-street-photography-start/",
+   "keywords": [
+    "did",
+    "street",
+    "photography",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did street photography start? Explained With Sources",
+   "h1": "How did street photography start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0365",
+   "slug": "what-causes-leap-years",
+   "question": "What causes leap years",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-leap-years/",
+   "keywords": [
+    "causes",
+    "leap",
+    "years"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes leap years? What Science Actually Says",
+   "h1": "What causes leap years?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0366",
+   "slug": "what-is-the-weather-like-on-mars",
+   "question": "What is the weather like on Mars",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-weather-like-on-mars/",
+   "keywords": [
+    "weather",
+    "like",
+    "mars"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the weather like on Mars? What Science Actually Says",
+   "h1": "What is the weather like on Mars?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0367",
+   "slug": "how-does-seaweed-grow",
+   "question": "How does seaweed grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-does-seaweed-grow/",
+   "keywords": [
+    "seaweed",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does seaweed grow? Explained With Sources",
+   "h1": "How does seaweed grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0368",
+   "slug": "why-do-we-laugh",
+   "question": "Why do we laugh",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-laugh/",
+   "keywords": [
+    "laugh"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we laugh? Facts, Myths and Evidence",
+   "h1": "Why do we laugh?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0369",
+   "slug": "how-does-speech-recognition-work",
+   "question": "How does speech recognition work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-does-speech-recognition-work/",
+   "keywords": [
+    "speech",
+    "recognition",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does speech recognition work? What Science Actually Says",
+   "h1": "How does speech recognition work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0370",
+   "slug": "how-long-do-salamanders-live",
+   "question": "How long do salamanders live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-salamanders-live/",
+   "keywords": [
+    "long",
+    "salamanders",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do salamanders live? The Real Answer, Explained",
+   "h1": "How long do salamanders live?",
+   "ymyl": false
+  }
+ ]
+}

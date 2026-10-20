@@ -1,0 +1,164 @@
+{
+ "batch": 156,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0665",
+   "slug": "why-are-some-mushrooms-poisonous",
+   "question": "Why are some mushrooms poisonous",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-are-some-mushrooms-poisonous/",
+   "keywords": [
+    "some",
+    "mushrooms",
+    "poisonous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are some mushrooms poisonous? Facts, Myths and Evidence",
+   "h1": "Why are some mushrooms poisonous?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0666",
+   "slug": "what-do-penguins-eat",
+   "question": "What do penguins eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-penguins-eat/",
+   "keywords": [
+    "penguins",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do penguins eat? Explained With Sources",
+   "h1": "What do penguins eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0667",
+   "slug": "why-did-the-vikings-travel-so-far",
+   "question": "Why did the Vikings travel so far",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-did-the-vikings-travel-so-far/",
+   "keywords": [
+    "did",
+    "vikings",
+    "travel",
+    "far"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why did the Vikings travel so far?",
+   "h1": "Why did the Vikings travel so far?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0668",
+   "slug": "what-is-the-history-of-india",
+   "question": "What is the history of India",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-india/",
+   "keywords": [
+    "history",
+    "india"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of India? The Short, Sourced Answer",
+   "h1": "What is the history of India?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0669",
+   "slug": "what-is-firewalls",
+   "question": "What is firewalls",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-firewalls/",
+   "keywords": [
+    "firewalls"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is firewalls? A Clear, Sourced Explanation",
+   "h1": "What is firewalls?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0670",
+   "slug": "why-does-symbiosis-matter-in-everyday-life",
+   "question": "Why does symbiosis matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-symbiosis-matter-in-everyday-life/",
+   "keywords": [
+    "symbiosis",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does symbiosis matter in everyday life?",
+   "h1": "Why does symbiosis matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0671",
+   "slug": "where-does-the-word-zero-come-from",
+   "question": "Where does the word \"zero\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-zero-come-from/",
+   "keywords": [
+    "word",
+    "zero",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"zero\" come from? Key Facts and Context",
+   "h1": "Where does the word \"zero\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0672",
+   "slug": "how-is-sel-roti-made",
+   "question": "How is sel roti made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-sel-roti-made/",
+   "keywords": [
+    "sel",
+    "roti",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is sel roti made? Explained With Sources",
+   "h1": "How is sel roti made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0673",
+   "slug": "how-does-a-bulldozer-work",
+   "question": "How does a bulldozer work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-bulldozer-work/",
+   "keywords": [
+    "bulldozer",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a bulldozer work? The Real Answer, Explained",
+   "h1": "How does a bulldozer work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0674",
+   "slug": "what-is-the-history-of-phewa-lake",
+   "question": "What is the history of Phewa Lake",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-phewa-lake/",
+   "keywords": [
+    "history",
+    "phewa",
+    "lake"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Phewa Lake? The Short, Sourced Answer",
+   "h1": "What is the history of Phewa Lake?",
+   "ymyl": false
+  }
+ ]
+}

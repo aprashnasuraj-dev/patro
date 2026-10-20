@@ -1,0 +1,174 @@
+{
+ "batch": 51,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1117",
+   "slug": "why-nepals-currency-is-the-rupee",
+   "question": "Why Nepal's currency is the rupee",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepals-currency-is-the-rupee/",
+   "keywords": [
+    "nepal",
+    "currency",
+    "rupee",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal's Currency Is The Rupee?",
+   "h1": "Why Nepal's Currency Is The Rupee?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1119",
+   "slug": "how-the-sitar-produces-its-sound",
+   "question": "How the sitar produces its sound",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-the-sitar-produces-its-sound/",
+   "keywords": [
+    "sitar",
+    "produces",
+    "sound",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Sitar Produces Its Sound? Explained With Sources",
+   "h1": "How The Sitar Produces Its Sound?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1121",
+   "slug": "why-tulips-bloom-in-spring-only",
+   "question": "Why tulips bloom in spring only",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-tulips-bloom-in-spring-only/",
+   "keywords": [
+    "tulips",
+    "bloom",
+    "spring",
+    "only",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Tulips Bloom In Spring Only? The Real Answer, Explained",
+   "h1": "Why Tulips Bloom In Spring Only?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1123",
+   "slug": "how-hummingbirds-hover",
+   "question": "How hummingbirds hover",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-hummingbirds-hover/",
+   "keywords": [
+    "hummingbirds",
+    "hover",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Hummingbirds Hover? A Clear, Sourced Explanation",
+   "h1": "How Hummingbirds Hover?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1125",
+   "slug": "how-astronauts-exercise-in-space",
+   "question": "How astronauts exercise in space",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-astronauts-exercise-in-space/",
+   "keywords": [
+    "astronauts",
+    "exercise",
+    "space",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Astronauts Exercise In Space?",
+   "h1": "How Astronauts Exercise In Space?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1127",
+   "slug": "why-dew-forms-on-grass",
+   "question": "Why dew forms on grass",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-dew-forms-on-grass/",
+   "keywords": [
+    "dew",
+    "forms",
+    "grass",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dew Forms On Grass? Explained With Sources",
+   "h1": "Why Dew Forms On Grass?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1131",
+   "slug": "why-we-overthink",
+   "question": "Why we overthink",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-overthink/",
+   "keywords": [
+    "overthink",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Overthink? Facts, Myths and Evidence",
+   "h1": "Why We Overthink?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1133",
+   "slug": "why-milk-spoils",
+   "question": "Why milk spoils",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-milk-spoils/",
+   "keywords": [
+    "milk",
+    "spoils",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Milk Spoils? What Science Actually Says",
+   "h1": "Why Milk Spoils?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1135",
+   "slug": "why-helium-changes-your-voice",
+   "question": "Why helium changes your voice",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-helium-changes-your-voice/",
+   "keywords": [
+    "helium",
+    "changes",
+    "voice",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Helium Changes Your Voice? Explained With Sources",
+   "h1": "Why Helium Changes Your Voice?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1137",
+   "slug": "why-websites-use-https",
+   "question": "Why websites use HTTPS",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-websites-use-https/",
+   "keywords": [
+    "websites",
+    "use",
+    "https",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Websites Use HTTPS? The Real Answer, Explained",
+   "h1": "Why Websites Use HTTPS?",
+   "ymyl": false
+  }
+ ]
+}

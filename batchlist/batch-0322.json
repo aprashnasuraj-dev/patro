@@ -1,0 +1,161 @@
+{
+ "batch": 322,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2332",
+   "slug": "what-is-the-history-of-barcelona",
+   "question": "What is the history of Barcelona",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-barcelona/",
+   "keywords": [
+    "history",
+    "barcelona"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Barcelona? A Clear Overview",
+   "h1": "What is the history of Barcelona?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2333",
+   "slug": "how-does-a-television-work",
+   "question": "How does a television work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-television-work/",
+   "keywords": [
+    "television",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a television work? The Real Answer, Explained",
+   "h1": "How does a television work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2334",
+   "slug": "what-is-quantum-mechanics",
+   "question": "What is quantum mechanics",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-quantum-mechanics/",
+   "keywords": [
+    "quantum",
+    "mechanics"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is quantum mechanics? Facts, Myths and Evidence",
+   "h1": "What is quantum mechanics?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2335",
+   "slug": "what-do-alligators-eat",
+   "question": "What do alligators eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-alligators-eat/",
+   "keywords": [
+    "alligators",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do alligators eat? A Clear, Sourced Explanation",
+   "h1": "What do alligators eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2336",
+   "slug": "what-caused-the-french-revolution",
+   "question": "What caused the French Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-french-revolution/",
+   "keywords": [
+    "caused",
+    "french",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the French Revolution? The Story, Sourced",
+   "h1": "What caused the French Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2337",
+   "slug": "what-is-the-economy-of-china-based-on",
+   "question": "What is the economy of China based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-china-based-on/",
+   "keywords": [
+    "economy",
+    "china",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of China based on?",
+   "h1": "What is the economy of China based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2338",
+   "slug": "how-do-microservices-work",
+   "question": "How do microservices work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-microservices-work/",
+   "keywords": [
+    "microservices",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do microservices work? A Clear, Sourced Explanation",
+   "h1": "How do microservices work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2339",
+   "slug": "what-is-bernoulli-s-principle",
+   "question": "What is Bernoulli's principle",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-bernoulli-s-principle/",
+   "keywords": [
+    "bernoulli",
+    "principle"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Bernoulli's principle? The Real Answer, Explained",
+   "h1": "What is Bernoulli's principle?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2340",
+   "slug": "how-long-do-hummingbirds-live",
+   "question": "How long do hummingbirds live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-hummingbirds-live/",
+   "keywords": [
+    "long",
+    "hummingbirds",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do hummingbirds live? Explained With Sources",
+   "h1": "How long do hummingbirds live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2341",
+   "slug": "who-was-johann-sebastian-bach",
+   "question": "Who was Johann Sebastian Bach",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-johann-sebastian-bach/",
+   "keywords": [
+    "johann",
+    "sebastian",
+    "bach"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Johann Sebastian Bach? The Story, Sourced",
+   "h1": "Who was Johann Sebastian Bach?",
+   "ymyl": false
+  }
+ ]
+}

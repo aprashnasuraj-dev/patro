@@ -1,0 +1,185 @@
+{
+ "batch": 52,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1139",
+   "slug": "why-ai-regulation-is-debated",
+   "question": "Why AI regulation is debated",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-ai-regulation-is-debated/",
+   "keywords": [
+    "regulation",
+    "debated",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why AI Regulation Is Debated? What Science Actually Says",
+   "h1": "Why AI Regulation Is Debated?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1141",
+   "slug": "how-the-inca-built-roads-without-wheels",
+   "question": "How the Inca built roads without wheels",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-inca-built-roads-without-wheels/",
+   "keywords": [
+    "inca",
+    "built",
+    "roads",
+    "without",
+    "wheels",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Inca Built Roads Without Wheels?",
+   "h1": "How The Inca Built Roads Without Wheels?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1143",
+   "slug": "why-turkey-spans-two-continents",
+   "question": "Why Turkey spans two continents",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-turkey-spans-two-continents/",
+   "keywords": [
+    "turkey",
+    "spans",
+    "two",
+    "continents",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Turkey Spans Two Continents? The Real Answer, Explained",
+   "h1": "Why Turkey Spans Two Continents?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1147",
+   "slug": "why-wi-fi-router-placement-matters",
+   "question": "Why wi-fi router placement matters",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-wi-fi-router-placement-matters/",
+   "keywords": [
+    "wi-fi",
+    "router",
+    "placement",
+    "matters",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Wi-fi Router Placement Matters?",
+   "h1": "Why Wi-fi Router Placement Matters?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1149",
+   "slug": "why-thumbs-up-means-different-things",
+   "question": "Why thumbs up means different things",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-thumbs-up-means-different-things/",
+   "keywords": [
+    "thumbs",
+    "means",
+    "different",
+    "things",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Thumbs Up Means Different Things?",
+   "h1": "Why Thumbs Up Means Different Things?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1151",
+   "slug": "why-chess-has-more-games-than-atoms",
+   "question": "Why chess has more games than atoms",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-chess-has-more-games-than-atoms/",
+   "keywords": [
+    "chess",
+    "has",
+    "more",
+    "games",
+    "than",
+    "atoms",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Chess Has More Games Than Atoms?",
+   "h1": "Why Chess Has More Games Than Atoms?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1153",
+   "slug": "why-biodiversity-is-falling",
+   "question": "Why biodiversity is falling",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-biodiversity-is-falling/",
+   "keywords": [
+    "biodiversity",
+    "falling",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Biodiversity Is Falling? What Science Actually Says",
+   "h1": "Why Biodiversity Is Falling?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1155",
+   "slug": "how-hybrid-cars-save-fuel",
+   "question": "How hybrid cars save fuel",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-hybrid-cars-save-fuel/",
+   "keywords": [
+    "hybrid",
+    "cars",
+    "save",
+    "fuel",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Hybrid Cars Save Fuel? Explained With Sources",
+   "h1": "How Hybrid Cars Save Fuel?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1157",
+   "slug": "how-thangka-paintings-are-made",
+   "question": "How Thangka paintings are made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-thangka-paintings-are-made/",
+   "keywords": [
+    "thangka",
+    "paintings",
+    "made",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Thangka Paintings Are Made? What Science Actually Says",
+   "h1": "How Thangka Paintings Are Made?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1159",
+   "slug": "why-museums-store-art-in-the-dark",
+   "question": "Why museums store art in the dark",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-museums-store-art-in-the-dark/",
+   "keywords": [
+    "museums",
+    "store",
+    "art",
+    "dark",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Museums Store Art In The Dark?",
+   "h1": "Why Museums Store Art In The Dark?",
+   "ymyl": false
+  }
+ ]
+}

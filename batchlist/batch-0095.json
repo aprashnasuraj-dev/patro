@@ -1,0 +1,167 @@
+{
+ "batch": 95,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0045",
+   "slug": "what-is-yomari-and-how-is-it-made",
+   "question": "What is yomari and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-yomari-and-how-is-it-made/",
+   "keywords": [
+    "yomari",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is yomari and how is it made? The Short, Sourced Answer",
+   "h1": "What is yomari and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0046",
+   "slug": "what-are-the-main-parts-of-a-microwave-oven",
+   "question": "What are the main parts of a microwave oven",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-microwave-oven/",
+   "keywords": [
+    "main",
+    "parts",
+    "microwave",
+    "oven"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a microwave oven?",
+   "h1": "What are the main parts of a microwave oven?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0047",
+   "slug": "what-is-imaginary-numbers",
+   "question": "What is imaginary numbers",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-imaginary-numbers/",
+   "keywords": [
+    "imaginary",
+    "numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is imaginary numbers? Explained With Sources",
+   "h1": "What is imaginary numbers?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0048",
+   "slug": "what-makes-the-piano-unique",
+   "question": "What makes the piano unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-the-piano-unique/",
+   "keywords": [
+    "makes",
+    "piano",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes the piano unique? Facts, Myths and Evidence",
+   "h1": "What makes the piano unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0049",
+   "slug": "how-do-lakes-form",
+   "question": "How do lakes form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-lakes-form/",
+   "keywords": [
+    "lakes",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do lakes form? What Science Actually Says",
+   "h1": "How do lakes form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0050",
+   "slug": "does-mercury-have-moons-or-rings",
+   "question": "Does Mercury have moons or rings",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/does-mercury-have-moons-or-rings/",
+   "keywords": [
+    "mercury",
+    "have",
+    "moons",
+    "rings"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Does Mercury have moons or rings? Facts, Myths and Evidence",
+   "h1": "Does Mercury have moons or rings?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0051",
+   "slug": "how-long-do-apple-trees-live",
+   "question": "How long do apple trees live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-apple-trees-live/",
+   "keywords": [
+    "long",
+    "apple",
+    "trees",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do apple trees live? Facts, Myths and Evidence",
+   "h1": "How long do apple trees live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0053",
+   "slug": "how-does-large-language-models-work",
+   "question": "How does large language models work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-does-large-language-models-work/",
+   "keywords": [
+    "large",
+    "language",
+    "models",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does large language models work?",
+   "h1": "How does large language models work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0054",
+   "slug": "how-does-composting-work",
+   "question": "How does composting work",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-does-composting-work/",
+   "keywords": [
+    "composting",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does composting work? What Science Actually Says",
+   "h1": "How does composting work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0055",
+   "slug": "how-long-do-snails-live",
+   "question": "How long do snails live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-snails-live/",
+   "keywords": [
+    "long",
+    "snails",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do snails live? What Science Actually Says",
+   "h1": "How long do snails live?",
+   "ymyl": false
+  }
+ ]
+}

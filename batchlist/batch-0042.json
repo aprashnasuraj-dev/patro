@@ -1,0 +1,180 @@
+{
+ "batch": 42,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0917",
+   "slug": "how-gurkha-soldiers-earned-their-reputation",
+   "question": "How Gurkha soldiers earned their reputation",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-gurkha-soldiers-earned-their-reputation/",
+   "keywords": [
+    "gurkha",
+    "soldiers",
+    "earned",
+    "their",
+    "reputation",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Gurkha Soldiers Earned Their Reputation?",
+   "h1": "How Gurkha Soldiers Earned Their Reputation?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0919",
+   "slug": "why-van-gogh-painted-stars",
+   "question": "Why Van Gogh painted stars",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-van-gogh-painted-stars/",
+   "keywords": [
+    "van",
+    "gogh",
+    "painted",
+    "stars",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Van Gogh Painted Stars? What Science Actually Says",
+   "h1": "Why Van Gogh Painted Stars?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0921",
+   "slug": "how-orchids-trick-insects",
+   "question": "How orchids trick insects",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-orchids-trick-insects/",
+   "keywords": [
+    "orchids",
+    "trick",
+    "insects",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Orchids Trick Insects? The Real Answer, Explained",
+   "h1": "How Orchids Trick Insects?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0923",
+   "slug": "why-monarch-butterflies-migrate",
+   "question": "Why monarch butterflies migrate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-monarch-butterflies-migrate/",
+   "keywords": [
+    "monarch",
+    "butterflies",
+    "migrate",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Monarch Butterflies Migrate? What Science Actually Says",
+   "h1": "Why Monarch Butterflies Migrate?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0925",
+   "slug": "why-jupiter-has-a-giant-red-spot",
+   "question": "Why Jupiter has a giant red spot",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-jupiter-has-a-giant-red-spot/",
+   "keywords": [
+    "jupiter",
+    "has",
+    "giant",
+    "red",
+    "spot",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Jupiter Has A Giant Red Spot? Facts, Myths and Evidence",
+   "h1": "Why Jupiter Has A Giant Red Spot?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0927",
+   "slug": "how-waterfalls-erode-rock",
+   "question": "How waterfalls erode rock",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-waterfalls-erode-rock/",
+   "keywords": [
+    "waterfalls",
+    "erode",
+    "rock",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Waterfalls Erode Rock? The Real Answer, Explained",
+   "h1": "How Waterfalls Erode Rock?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0931",
+   "slug": "how-friendships-form",
+   "question": "How friendships form",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-friendships-form/",
+   "keywords": [
+    "friendships",
+    "form",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Friendships Form? What Science Actually Says",
+   "h1": "How Friendships Form?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0933",
+   "slug": "how-vanilla-is-grown",
+   "question": "How vanilla is grown",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-vanilla-is-grown/",
+   "keywords": [
+    "vanilla",
+    "grown",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Vanilla Is Grown? The Real Answer, Explained",
+   "h1": "How Vanilla Is Grown?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0935",
+   "slug": "how-lenses-focus-light",
+   "question": "How lenses focus light",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-lenses-focus-light/",
+   "keywords": [
+    "lenses",
+    "focus",
+    "light",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Lenses Focus Light? A Clear, Sourced Explanation",
+   "h1": "How Lenses Focus Light?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0937",
+   "slug": "how-usb-became-universal",
+   "question": "How USB became universal",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-usb-became-universal/",
+   "keywords": [
+    "usb",
+    "became",
+    "universal",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How USB Became Universal? Facts, Myths and Evidence",
+   "h1": "How USB Became Universal?",
+   "ymyl": false
+  }
+ ]
+}

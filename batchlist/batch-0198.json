@@ -1,0 +1,161 @@
+{
+ "batch": 198,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1085",
+   "slug": "how-do-pine-trees-grow",
+   "question": "How do pine trees grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-pine-trees-grow/",
+   "keywords": [
+    "pine",
+    "trees",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do pine trees grow? A Clear, Sourced Explanation",
+   "h1": "How do pine trees grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1086",
+   "slug": "why-do-wolves-howl",
+   "question": "Why do wolves howl",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-do-wolves-howl/",
+   "keywords": [
+    "wolves",
+    "howl"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do wolves howl? The Real Answer, Explained",
+   "h1": "Why do wolves howl?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1087",
+   "slug": "who-was-dante-alighieri",
+   "question": "Who was Dante Alighieri",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-dante-alighieri/",
+   "keywords": [
+    "dante",
+    "alighieri"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Dante Alighieri? The Story, Sourced",
+   "h1": "Who was Dante Alighieri?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1088",
+   "slug": "what-is-the-history-of-dubai",
+   "question": "What is the history of Dubai",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-dubai/",
+   "keywords": [
+    "history",
+    "dubai"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Dubai? Key Facts and Context",
+   "h1": "What is the history of Dubai?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1089",
+   "slug": "how-do-pixels-work",
+   "question": "How do pixels work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-pixels-work/",
+   "keywords": [
+    "pixels",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do pixels work? A Clear, Sourced Explanation",
+   "h1": "How do pixels work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1090",
+   "slug": "what-is-oxidation",
+   "question": "What is oxidation",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-oxidation/",
+   "keywords": [
+    "oxidation"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is oxidation? A Clear, Sourced Explanation",
+   "h1": "What is oxidation?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1091",
+   "slug": "where-did-the-hebrew-language-come-from",
+   "question": "Where did the Hebrew language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-hebrew-language-come-from/",
+   "keywords": [
+    "did",
+    "hebrew",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Hebrew language come from?",
+   "h1": "Where did the Hebrew language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1092",
+   "slug": "what-is-the-history-of-salt",
+   "question": "What is the history of salt",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-salt/",
+   "keywords": [
+    "history",
+    "salt"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of salt? A Clear Overview",
+   "h1": "What is the history of salt?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1093",
+   "slug": "what-are-the-main-parts-of-a-lighthouse",
+   "question": "What are the main parts of a lighthouse",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-lighthouse/",
+   "keywords": [
+    "main",
+    "parts",
+    "lighthouse"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a lighthouse?",
+   "h1": "What are the main parts of a lighthouse?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1094",
+   "slug": "what-is-the-history-of-upper-mustang",
+   "question": "What is the history of Upper Mustang",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-upper-mustang/",
+   "keywords": [
+    "history",
+    "upper",
+    "mustang"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Upper Mustang?",
+   "h1": "What is the history of Upper Mustang?",
+   "ymyl": false
+  }
+ ]
+}

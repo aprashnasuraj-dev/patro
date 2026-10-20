@@ -1,0 +1,171 @@
+{
+ "batch": 193,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1035",
+   "slug": "why-do-phone-batteries-die-faster-in-the-cold",
+   "question": "Why do phone batteries die faster in the cold",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-phone-batteries-die-faster-in-the-cold/",
+   "keywords": [
+    "phone",
+    "batteries",
+    "die",
+    "faster",
+    "cold"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do phone batteries die faster in the cold?",
+   "h1": "Why do phone batteries die faster in the cold?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1036",
+   "slug": "how-are-venn-diagrams-used-in-real-life",
+   "question": "How are Venn diagrams used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-venn-diagrams-used-in-real-life/",
+   "keywords": [
+    "venn",
+    "diagrams",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are Venn diagrams used in real life?",
+   "h1": "How are Venn diagrams used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1037",
+   "slug": "what-makes-calligraphy-unique",
+   "question": "What makes calligraphy unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-calligraphy-unique/",
+   "keywords": [
+    "makes",
+    "calligraphy",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes calligraphy unique? Facts, Myths and Evidence",
+   "h1": "What makes calligraphy unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1038",
+   "slug": "what-causes-fog",
+   "question": "What causes fog",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-fog/",
+   "keywords": [
+    "causes",
+    "fog"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes fog? The Real Answer, Explained",
+   "h1": "What causes fog?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1039",
+   "slug": "what-is-jupiter-s-great-red-spot-made-of",
+   "question": "What is Jupiter's Great Red Spot made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-jupiter-s-great-red-spot-made-of/",
+   "keywords": [
+    "jupiter",
+    "great",
+    "red",
+    "spot",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Jupiter's Great Red Spot made of?",
+   "h1": "What is Jupiter's Great Red Spot made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1040",
+   "slug": "how-do-coffee-plants-grow",
+   "question": "How do coffee plants grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-coffee-plants-grow/",
+   "keywords": [
+    "coffee",
+    "plants",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do coffee plants grow? Explained With Sources",
+   "h1": "How do coffee plants grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1041",
+   "slug": "where-do-chameleons-live-in-the-wild",
+   "question": "Where do chameleons live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-chameleons-live-in-the-wild/",
+   "keywords": [
+    "chameleons",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do chameleons live in the wild? Explained With Sources",
+   "h1": "Where do chameleons live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1042",
+   "slug": "what-caused-the-berlin-wall",
+   "question": "What caused the Berlin Wall",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-berlin-wall/",
+   "keywords": [
+    "caused",
+    "berlin",
+    "wall"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Berlin Wall? The Story, Sourced",
+   "h1": "What caused the Berlin Wall?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1043",
+   "slug": "what-is-madrid-famous-for",
+   "question": "What is Madrid famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-madrid-famous-for/",
+   "keywords": [
+    "madrid",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Madrid famous for? The Story, Sourced",
+   "h1": "What is Madrid famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1044",
+   "slug": "what-are-the-main-parts-of-a-motherboard",
+   "question": "What are the main parts of a motherboard",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-motherboard/",
+   "keywords": [
+    "main",
+    "parts",
+    "motherboard"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a motherboard?",
+   "h1": "What are the main parts of a motherboard?",
+   "ymyl": false
+  }
+ ]
+}

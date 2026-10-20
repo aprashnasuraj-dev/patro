@@ -1,0 +1,168 @@
+{
+ "batch": 157,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0675",
+   "slug": "what-are-the-main-parts-of-a-safety-pin",
+   "question": "What are the main parts of a safety pin",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-safety-pin/",
+   "keywords": [
+    "main",
+    "parts",
+    "safety",
+    "pin"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a safety pin?",
+   "h1": "What are the main parts of a safety pin?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0676",
+   "slug": "how-is-pascal-s-triangle-used-in-real-life",
+   "question": "How is Pascal's triangle used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-pascal-s-triangle-used-in-real-life/",
+   "keywords": [
+    "pascal",
+    "triangle",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is Pascal's triangle used in real life?",
+   "h1": "How is Pascal's triangle used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0677",
+   "slug": "how-did-nepali-folk-songs-start",
+   "question": "How did Nepali folk songs start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-nepali-folk-songs-start/",
+   "keywords": [
+    "did",
+    "nepali",
+    "folk",
+    "songs",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Nepali folk songs start? The Real Answer, Explained",
+   "h1": "How did Nepali folk songs start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0678",
+   "slug": "how-do-natural-arches-form",
+   "question": "How do natural arches form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-natural-arches-form/",
+   "keywords": [
+    "natural",
+    "arches",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do natural arches form? Explained With Sources",
+   "h1": "How do natural arches form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0679",
+   "slug": "what-is-the-james-webb-space-telescope",
+   "question": "What is the James Webb Space Telescope",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-james-webb-space-telescope/",
+   "keywords": [
+    "james",
+    "webb",
+    "space",
+    "telescope"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the James Webb Space Telescope?",
+   "h1": "What is the James Webb Space Telescope?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0680",
+   "slug": "how-does-wheat-grow",
+   "question": "How does wheat grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-does-wheat-grow/",
+   "keywords": [
+    "wheat",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does wheat grow? What Science Actually Says",
+   "h1": "How does wheat grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0681",
+   "slug": "how-long-do-pigeons-live",
+   "question": "How long do pigeons live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-pigeons-live/",
+   "keywords": [
+    "long",
+    "pigeons",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do pigeons live? The Real Answer, Explained",
+   "h1": "How long do pigeons live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0682",
+   "slug": "who-invented-the-thermometer-and-how",
+   "question": "Who invented the thermometer and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-thermometer-and-how/",
+   "keywords": [
+    "invented",
+    "thermometer"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the thermometer and how? Key Facts and Context",
+   "h1": "Who invented the thermometer and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0683",
+   "slug": "what-is-vienna-famous-for",
+   "question": "What is Vienna famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-vienna-famous-for/",
+   "keywords": [
+    "vienna",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Vienna famous for? Key Facts and Context",
+   "h1": "What is Vienna famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0684",
+   "slug": "what-is-gps",
+   "question": "What is GPS",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-gps/",
+   "keywords": [
+    "gps"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is GPS? What Science Actually Says",
+   "h1": "What is GPS?",
+   "ymyl": false
+  }
+ ]
+}

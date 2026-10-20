@@ -1,0 +1,184 @@
+{
+ "batch": 74,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1629",
+   "slug": "why-some-languages-have-no-future-tense",
+   "question": "Why some languages have no future tense",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-some-languages-have-no-future-tense/",
+   "keywords": [
+    "some",
+    "languages",
+    "have",
+    "future",
+    "tense",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Some Languages Have No Future Tense?",
+   "h1": "Why Some Languages Have No Future Tense?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1631",
+   "slug": "why-the-pythagorean-theorem-is-ancient",
+   "question": "Why the Pythagorean theorem is ancient",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-the-pythagorean-theorem-is-ancient/",
+   "keywords": [
+    "pythagorean",
+    "theorem",
+    "ancient",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Pythagorean Theorem Is Ancient?",
+   "h1": "Why The Pythagorean Theorem Is Ancient?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1633",
+   "slug": "why-renewable-energy-needs-storage",
+   "question": "Why renewable energy needs storage",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-renewable-energy-needs-storage/",
+   "keywords": [
+    "renewable",
+    "energy",
+    "needs",
+    "storage",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Renewable Energy Needs Storage?",
+   "h1": "Why Renewable Energy Needs Storage?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1635",
+   "slug": "how-skyscraper-foundations-work",
+   "question": "How skyscraper foundations work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-skyscraper-foundations-work/",
+   "keywords": [
+    "skyscraper",
+    "foundations",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Skyscraper Foundations Work? Explained With Sources",
+   "h1": "How Skyscraper Foundations Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1637",
+   "slug": "how-remittances-support-nepal",
+   "question": "How remittances support Nepal",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-remittances-support-nepal/",
+   "keywords": [
+    "remittances",
+    "support",
+    "nepal",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Remittances Support Nepal? Facts, Myths and Evidence",
+   "h1": "How Remittances Support Nepal?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1639",
+   "slug": "why-street-art-is-rising",
+   "question": "Why street art is rising",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-street-art-is-rising/",
+   "keywords": [
+    "street",
+    "art",
+    "rising",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Street Art Is Rising? The Real Answer, Explained",
+   "h1": "Why Street Art Is Rising?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1641",
+   "slug": "how-algae-bloom-turns-lakes-green",
+   "question": "How algae bloom turns lakes green",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-algae-bloom-turns-lakes-green/",
+   "keywords": [
+    "algae",
+    "bloom",
+    "turns",
+    "lakes",
+    "green",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Algae Bloom Turns Lakes Green? Facts, Myths and Evidence",
+   "h1": "How Algae Bloom Turns Lakes Green?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1643",
+   "slug": "why-peacocks-have-big-tails",
+   "question": "Why peacocks have big tails",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-peacocks-have-big-tails/",
+   "keywords": [
+    "peacocks",
+    "have",
+    "big",
+    "tails",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Peacocks Have Big Tails? The Real Answer, Explained",
+   "h1": "Why Peacocks Have Big Tails?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1645",
+   "slug": "why-the-sun-will-not-explode",
+   "question": "Why the sun will not explode",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-the-sun-will-not-explode/",
+   "keywords": [
+    "sun",
+    "will",
+    "not",
+    "explode",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Sun Will Not Explode? What Science Actually Says",
+   "h1": "Why The Sun Will Not Explode?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1647",
+   "slug": "how-droughts-affect-food-prices",
+   "question": "How droughts affect food prices",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-droughts-affect-food-prices/",
+   "keywords": [
+    "droughts",
+    "affect",
+    "food",
+    "prices",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Droughts Affect Food Prices? Explained With Sources",
+   "h1": "How Droughts Affect Food Prices?",
+   "ymyl": false
+  }
+ ]
+}

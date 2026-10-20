@@ -1,0 +1,163 @@
+{
+ "batch": 267,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1778",
+   "slug": "how-does-a-smart-speaker-work",
+   "question": "How does a smart speaker work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-smart-speaker-work/",
+   "keywords": [
+    "smart",
+    "speaker",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a smart speaker work? The Real Answer, Explained",
+   "h1": "How does a smart speaker work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1779",
+   "slug": "why-does-radioactivity-matter-in-everyday-life",
+   "question": "Why does radioactivity matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-radioactivity-matter-in-everyday-life/",
+   "keywords": [
+    "radioactivity",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does radioactivity matter in everyday life?",
+   "h1": "Why does radioactivity matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1780",
+   "slug": "where-did-the-swedish-language-come-from",
+   "question": "Where did the Swedish language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-swedish-language-come-from/",
+   "keywords": [
+    "did",
+    "swedish",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Swedish language come from? A Clear Overview",
+   "h1": "Where did the Swedish language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1781",
+   "slug": "how-is-olive-oil-made",
+   "question": "How is olive oil made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-olive-oil-made/",
+   "keywords": [
+    "olive",
+    "oil",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is olive oil made? Facts, Myths and Evidence",
+   "h1": "How is olive oil made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1782",
+   "slug": "how-do-chickens-communicate",
+   "question": "How do chickens communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-chickens-communicate/",
+   "keywords": [
+    "chickens",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do chickens communicate? What Science Actually Says",
+   "h1": "How do chickens communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1783",
+   "slug": "who-invented-x-ray-and-how",
+   "question": "Who invented x-ray and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-x-ray-and-how/",
+   "keywords": [
+    "invented",
+    "x-ray"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented x-ray and how? The Story, Sourced",
+   "h1": "Who invented x-ray and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1784",
+   "slug": "what-is-italy-known-for",
+   "question": "What is Italy known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-italy-known-for/",
+   "keywords": [
+    "italy",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Italy known for? Key Facts and Context",
+   "h1": "What is Italy known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1785",
+   "slug": "what-is-javascript",
+   "question": "What is JavaScript",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-javascript/",
+   "keywords": [
+    "javascript"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is JavaScript? Explained With Sources",
+   "h1": "What is JavaScript?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1786",
+   "slug": "what-are-enzymes",
+   "question": "What are enzymes",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-enzymes/",
+   "keywords": [
+    "enzymes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are enzymes? The Real Answer, Explained",
+   "h1": "What are enzymes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1787",
+   "slug": "how-many-people-speak-french-and-where",
+   "question": "How many people speak French and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-french-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "french"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak French and where?",
+   "h1": "How many people speak French and where?",
+   "ymyl": false
+  }
+ ]
+}

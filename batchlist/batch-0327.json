@@ -1,0 +1,166 @@
+{
+ "batch": 327,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2382",
+   "slug": "what-do-wolves-eat",
+   "question": "What do wolves eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-wolves-eat/",
+   "keywords": [
+    "wolves",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do wolves eat? What Science Actually Says",
+   "h1": "What do wolves eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2383",
+   "slug": "what-were-the-main-consequences-of-the-maurya-empire",
+   "question": "What were the main consequences of the Maurya Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-maurya-empire/",
+   "keywords": [
+    "main",
+    "consequences",
+    "maurya",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Maurya Empire?",
+   "h1": "What were the main consequences of the Maurya Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2384",
+   "slug": "what-is-finland-known-for",
+   "question": "What is Finland known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-finland-known-for/",
+   "keywords": [
+    "finland",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Finland known for? The Short, Sourced Answer",
+   "h1": "What is Finland known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2385",
+   "slug": "how-does-firewalls-work",
+   "question": "How does firewalls work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-firewalls-work/",
+   "keywords": [
+    "firewalls",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does firewalls work? Facts, Myths and Evidence",
+   "h1": "How does firewalls work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2386",
+   "slug": "where-do-praying-mantises-live-in-the-wild",
+   "question": "Where do praying mantises live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-praying-mantises-live-in-the-wild/",
+   "keywords": [
+    "praying",
+    "mantises",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do praying mantises live in the wild?",
+   "h1": "Where do praying mantises live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2387",
+   "slug": "what-caused-the-fall-of-the-roman-empire",
+   "question": "What caused the fall of the Roman Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-fall-of-the-roman-empire/",
+   "keywords": [
+    "caused",
+    "fall",
+    "roman",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the fall of the Roman Empire?",
+   "h1": "What caused the fall of the Roman Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2388",
+   "slug": "what-is-los-angeles-famous-for",
+   "question": "What is Los Angeles famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-los-angeles-famous-for/",
+   "keywords": [
+    "los",
+    "angeles",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Los Angeles famous for? A Clear Overview",
+   "h1": "What is Los Angeles famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2389",
+   "slug": "how-does-a-telescope-work",
+   "question": "How does a telescope work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-telescope-work/",
+   "keywords": [
+    "telescope",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a telescope work? The Real Answer, Explained",
+   "h1": "How does a telescope work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2390",
+   "slug": "how-long-do-anteaters-live",
+   "question": "How long do anteaters live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-anteaters-live/",
+   "keywords": [
+    "long",
+    "anteaters",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do anteaters live? Facts, Myths and Evidence",
+   "h1": "How long do anteaters live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2391",
+   "slug": "how-was-the-pendulum-clock-invented",
+   "question": "How was the pendulum clock invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-pendulum-clock-invented/",
+   "keywords": [
+    "pendulum",
+    "clock",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the pendulum clock invented?",
+   "h1": "How was the pendulum clock invented?",
+   "ymyl": false
+  }
+ ]
+}

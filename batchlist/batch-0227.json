@@ -1,0 +1,164 @@
+{
+ "batch": 227,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1377",
+   "slug": "what-are-the-main-parts-of-an-elevator",
+   "question": "What are the main parts of an elevator",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-an-elevator/",
+   "keywords": [
+    "main",
+    "parts",
+    "elevator"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of an elevator?",
+   "h1": "What are the main parts of an elevator?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1378",
+   "slug": "what-is-the-history-of-swayambhunath",
+   "question": "What is the history of Swayambhunath",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-swayambhunath/",
+   "keywords": [
+    "history",
+    "swayambhunath"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Swayambhunath? Facts and Background",
+   "h1": "What is the history of Swayambhunath?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1379",
+   "slug": "how-does-a-septic-tank-work",
+   "question": "How does a septic tank work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-septic-tank-work/",
+   "keywords": [
+    "septic",
+    "tank",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a septic tank work? What Science Actually Says",
+   "h1": "How does a septic tank work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1380",
+   "slug": "how-are-tessellations-used-in-real-life",
+   "question": "How are tessellations used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-tessellations-used-in-real-life/",
+   "keywords": [
+    "tessellations",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are tessellations used in real life?",
+   "h1": "How are tessellations used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1381",
+   "slug": "why-do-orchestras-tune-to-an-a",
+   "question": "Why do orchestras tune to an A",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-do-orchestras-tune-to-an-a/",
+   "keywords": [
+    "orchestras",
+    "tune"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do orchestras tune to an A? Explained With Sources",
+   "h1": "Why do orchestras tune to an A?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1382",
+   "slug": "how-do-gold-deposits-form",
+   "question": "How do gold deposits form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-gold-deposits-form/",
+   "keywords": [
+    "gold",
+    "deposits",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do gold deposits form? What Science Actually Says",
+   "h1": "How do gold deposits form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1383",
+   "slug": "how-long-do-toads-live",
+   "question": "How long do toads live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-toads-live/",
+   "keywords": [
+    "long",
+    "toads",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do toads live? Explained With Sources",
+   "h1": "How long do toads live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1384",
+   "slug": "what-caused-the-unification-of-germany",
+   "question": "What caused the Unification of Germany",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-unification-of-germany/",
+   "keywords": [
+    "caused",
+    "unification",
+    "germany"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Unification of Germany? Facts and Background",
+   "h1": "What caused the Unification of Germany?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1385",
+   "slug": "what-is-lhasa-famous-for",
+   "question": "What is Lhasa famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-lhasa-famous-for/",
+   "keywords": [
+    "lhasa",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Lhasa famous for? Facts and Background",
+   "h1": "What is Lhasa famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1386",
+   "slug": "how-does-a-projector-work",
+   "question": "How does a projector work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-projector-work/",
+   "keywords": [
+    "projector",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a projector work? Facts, Myths and Evidence",
+   "h1": "How does a projector work?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,160 @@
+{
+ "batch": 334,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2452",
+   "slug": "what-is-the-economy-of-chile-based-on",
+   "question": "What is the economy of Chile based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-chile-based-on/",
+   "keywords": [
+    "economy",
+    "chile",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Chile based on? A Clear Overview",
+   "h1": "What is the economy of Chile based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2453",
+   "slug": "what-is-edge-computing",
+   "question": "What is edge computing",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-edge-computing/",
+   "keywords": [
+    "edge",
+    "computing"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is edge computing? What Science Actually Says",
+   "h1": "What is edge computing?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2454",
+   "slug": "how-do-horses-communicate",
+   "question": "How do horses communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-horses-communicate/",
+   "keywords": [
+    "horses",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do horses communicate? The Real Answer, Explained",
+   "h1": "How do horses communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2455",
+   "slug": "how-were-matches-invented",
+   "question": "How were matches invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-were-matches-invented/",
+   "keywords": [
+    "matches",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How were matches invented? What Science Actually Says",
+   "h1": "How were matches invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2456",
+   "slug": "what-is-the-economy-of-austria-based-on",
+   "question": "What is the economy of Austria based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-austria-based-on/",
+   "keywords": [
+    "economy",
+    "austria",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Austria based on? A Clear Overview",
+   "h1": "What is the economy of Austria based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2457",
+   "slug": "how-does-a-wireless-charger-work",
+   "question": "How does a wireless charger work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-wireless-charger-work/",
+   "keywords": [
+    "wireless",
+    "charger",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a wireless charger work? The Real Answer, Explained",
+   "h1": "How does a wireless charger work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2458",
+   "slug": "how-do-hawks-communicate",
+   "question": "How do hawks communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-hawks-communicate/",
+   "keywords": [
+    "hawks",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do hawks communicate? What Science Actually Says",
+   "h1": "How do hawks communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2459",
+   "slug": "how-was-led-invented",
+   "question": "How was LED invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-led-invented/",
+   "keywords": [
+    "led",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was LED invented? A Clear, Sourced Explanation",
+   "h1": "How was LED invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2460",
+   "slug": "what-is-the-history-of-bangladesh",
+   "question": "What is the history of Bangladesh",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-bangladesh/",
+   "keywords": [
+    "history",
+    "bangladesh"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Bangladesh? The Short, Sourced Answer",
+   "h1": "What is the history of Bangladesh?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2462",
+   "slug": "how-do-sloths-sleep",
+   "question": "How do sloths sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-sloths-sleep/",
+   "keywords": [
+    "sloths",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do sloths sleep? The Real Answer, Explained",
+   "h1": "How do sloths sleep?",
+   "ymyl": false
+  }
+ ]
+}

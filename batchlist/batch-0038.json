@@ -1,0 +1,182 @@
+{
+ "batch": 38,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0829",
+   "slug": "why-color-names-differ-across-languages",
+   "question": "Why color names differ across languages",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-color-names-differ-across-languages/",
+   "keywords": [
+    "color",
+    "names",
+    "differ",
+    "across",
+    "languages",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Color Names Differ Across Languages?",
+   "h1": "Why Color Names Differ Across Languages?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0831",
+   "slug": "why-correlation-is-not-causation",
+   "question": "Why correlation is not causation",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-correlation-is-not-causation/",
+   "keywords": [
+    "correlation",
+    "not",
+    "causation",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Correlation Is Not Causation? Explained With Sources",
+   "h1": "Why Correlation Is Not Causation?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0833",
+   "slug": "why-e-waste-is-a-problem",
+   "question": "Why e-waste is a problem",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-e-waste-is-a-problem/",
+   "keywords": [
+    "e-waste",
+    "problem",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why E-waste Is A Problem? What Science Actually Says",
+   "h1": "Why E-waste Is A Problem?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0835",
+   "slug": "how-cranes-lift-buildings",
+   "question": "How cranes lift buildings",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-cranes-lift-buildings/",
+   "keywords": [
+    "cranes",
+    "lift",
+    "buildings",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Cranes Lift Buildings? What Science Actually Says",
+   "h1": "How Cranes Lift Buildings?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0837",
+   "slug": "how-the-2015-earthquake-reshaped-nepal",
+   "question": "How the 2015 earthquake reshaped Nepal",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-the-2015-earthquake-reshaped-nepal/",
+   "keywords": [
+    "earthquake",
+    "reshaped",
+    "nepal",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The 2015 Earthquake Reshaped Nepal?",
+   "h1": "How The 2015 Earthquake Reshaped Nepal?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0839",
+   "slug": "why-film-scores-affect-emotions",
+   "question": "Why film scores affect emotions",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-film-scores-affect-emotions/",
+   "keywords": [
+    "film",
+    "scores",
+    "affect",
+    "emotions",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Film Scores Affect Emotions? The Real Answer, Explained",
+   "h1": "Why Film Scores Affect Emotions?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0841",
+   "slug": "how-roots-find-water-underground",
+   "question": "How roots find water underground",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-roots-find-water-underground/",
+   "keywords": [
+    "roots",
+    "find",
+    "water",
+    "underground",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Roots Find Water Underground? Facts, Myths and Evidence",
+   "h1": "How Roots Find Water Underground?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0843",
+   "slug": "why-sharks-never-stop-swimming",
+   "question": "Why sharks never stop swimming",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-sharks-never-stop-swimming/",
+   "keywords": [
+    "sharks",
+    "never",
+    "stop",
+    "swimming",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Sharks Never Stop Swimming? The Real Answer, Explained",
+   "h1": "Why Sharks Never Stop Swimming?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0845",
+   "slug": "why-the-milky-way-looks-like-a-band",
+   "question": "Why the Milky Way looks like a band",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-the-milky-way-looks-like-a-band/",
+   "keywords": [
+    "milky",
+    "way",
+    "looks",
+    "like",
+    "band",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Milky Way Looks Like A Band? Explained With Sources",
+   "h1": "Why The Milky Way Looks Like A Band?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0847",
+   "slug": "how-sand-is-made",
+   "question": "How sand is made",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-sand-is-made/",
+   "keywords": [
+    "sand",
+    "made",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sand Is Made? The Real Answer, Explained",
+   "h1": "How Sand Is Made?",
+   "ymyl": false
+  }
+ ]
+}

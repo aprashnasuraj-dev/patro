@@ -1,0 +1,175 @@
+{
+ "batch": 28,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0605",
+   "slug": "why-venus-is-hotter-than-mercury",
+   "question": "Why Venus is hotter than Mercury",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-venus-is-hotter-than-mercury/",
+   "keywords": [
+    "venus",
+    "hotter",
+    "than",
+    "mercury",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Venus Is Hotter Than Mercury?",
+   "h1": "Why Venus Is Hotter Than Mercury?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0607",
+   "slug": "how-caves-form",
+   "question": "How caves form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-caves-form/",
+   "keywords": [
+    "caves",
+    "form",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Caves Form? Facts, Myths and Evidence",
+   "h1": "How Caves Form?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0611",
+   "slug": "how-optical-illusions-fool-the-brain",
+   "question": "How optical illusions fool the brain",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-optical-illusions-fool-the-brain/",
+   "keywords": [
+    "optical",
+    "illusions",
+    "fool",
+    "brain",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Optical Illusions Fool The Brain? Explained With Sources",
+   "h1": "How Optical Illusions Fool The Brain?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0613",
+   "slug": "how-sushi-rice-is-seasoned",
+   "question": "How sushi rice is seasoned",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-sushi-rice-is-seasoned/",
+   "keywords": [
+    "sushi",
+    "rice",
+    "seasoned",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sushi Rice Is Seasoned? Explained With Sources",
+   "h1": "How Sushi Rice Is Seasoned?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0615",
+   "slug": "how-refrigerators-cool",
+   "question": "How refrigerators cool",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-refrigerators-cool/",
+   "keywords": [
+    "refrigerators",
+    "cool",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Refrigerators Cool? The Real Answer, Explained",
+   "h1": "How Refrigerators Cool?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0617",
+   "slug": "how-bitcoin-mining-works",
+   "question": "How bitcoin mining works",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-bitcoin-mining-works/",
+   "keywords": [
+    "bitcoin",
+    "mining",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Bitcoin Mining Works? The Real Answer, Explained",
+   "h1": "How Bitcoin Mining Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0619",
+   "slug": "how-robots-learn-to-walk",
+   "question": "How robots learn to walk",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-robots-learn-to-walk/",
+   "keywords": [
+    "robots",
+    "learn",
+    "walk",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Robots Learn To Walk? The Real Answer, Explained",
+   "h1": "How Robots Learn To Walk?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0621",
+   "slug": "why-the-great-wall-was-built",
+   "question": "Why the Great Wall was built",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-great-wall-was-built/",
+   "keywords": [
+    "great",
+    "wall",
+    "built",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Great Wall Was Built? The Real Answer, Explained",
+   "h1": "Why The Great Wall Was Built?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0623",
+   "slug": "how-indonesia-has-17-000-islands",
+   "question": "How Indonesia has 17,000 islands",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-indonesia-has-17-000-islands/",
+   "keywords": [
+    "indonesia",
+    "has",
+    "islands",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Indonesia Has 17,000 Islands?",
+   "h1": "How Indonesia Has 17,000 Islands?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0627",
+   "slug": "how-locks-and-keys-work",
+   "question": "How locks and keys work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-locks-and-keys-work/",
+   "keywords": [
+    "locks",
+    "keys",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Locks And Keys Work? Facts, Myths and Evidence",
+   "h1": "How Locks And Keys Work?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "batch": 232,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1427",
+   "slug": "why-do-airplanes-have-winglets",
+   "question": "Why do airplanes have winglets",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-do-airplanes-have-winglets/",
+   "keywords": [
+    "airplanes",
+    "have",
+    "winglets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do airplanes have winglets? What Science Actually Says",
+   "h1": "Why do airplanes have winglets?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1428",
+   "slug": "why-is-upper-mustang-important",
+   "question": "Why is Upper Mustang important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-upper-mustang-important/",
+   "keywords": [
+    "upper",
+    "mustang",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Upper Mustang important? A Clear, Sourced Explanation",
+   "h1": "Why is Upper Mustang important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1429",
+   "slug": "how-does-an-electric-blanket-work",
+   "question": "How does an electric blanket work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-electric-blanket-work/",
+   "keywords": [
+    "electric",
+    "blanket",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an electric blanket work? Explained With Sources",
+   "h1": "How does an electric blanket work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1430",
+   "slug": "what-are-prime-numbers",
+   "question": "What are prime numbers",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-prime-numbers/",
+   "keywords": [
+    "prime",
+    "numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are prime numbers? The Real Answer, Explained",
+   "h1": "What are prime numbers?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1431",
+   "slug": "what-makes-the-sarangi-unique",
+   "question": "What makes the sarangi unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-the-sarangi-unique/",
+   "keywords": [
+    "makes",
+    "sarangi",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes the sarangi unique? What Science Actually Says",
+   "h1": "What makes the sarangi unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1432",
+   "slug": "what-do-sea-lions-eat",
+   "question": "What do sea lions eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-sea-lions-eat/",
+   "keywords": [
+    "sea",
+    "lions",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do sea lions eat? Explained With Sources",
+   "h1": "What do sea lions eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1433",
+   "slug": "who-was-pablo-picasso",
+   "question": "Who was Pablo Picasso",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-pablo-picasso/",
+   "keywords": [
+    "pablo",
+    "picasso"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Pablo Picasso? A Clear Overview",
+   "h1": "Who was Pablo Picasso?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1434",
+   "slug": "what-is-the-history-of-madrid",
+   "question": "What is the history of Madrid",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-madrid/",
+   "keywords": [
+    "history",
+    "madrid"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Madrid? The Short, Sourced Answer",
+   "h1": "What is the history of Madrid?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1435",
+   "slug": "how-does-malware-work",
+   "question": "How does malware work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-malware-work/",
+   "keywords": [
+    "malware",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does malware work? What Science Actually Says",
+   "h1": "How does malware work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1436",
+   "slug": "what-is-nuclear-fusion",
+   "question": "What is nuclear fusion",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-nuclear-fusion/",
+   "keywords": [
+    "nuclear",
+    "fusion"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is nuclear fusion? What Science Actually Says",
+   "h1": "What is nuclear fusion?",
+   "ymyl": false
+  }
+ ]
+}

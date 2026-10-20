@@ -1,0 +1,163 @@
+{
+ "batch": 133,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0432",
+   "slug": "how-did-folk-music-start",
+   "question": "How did folk music start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-folk-music-start/",
+   "keywords": [
+    "did",
+    "folk",
+    "music",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did folk music start? Facts, Myths and Evidence",
+   "h1": "How did folk music start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0433",
+   "slug": "what-causes-hail",
+   "question": "What causes hail",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-hail/",
+   "keywords": [
+    "causes",
+    "hail"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes hail? Facts, Myths and Evidence",
+   "h1": "What causes hail?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0434",
+   "slug": "how-do-black-holes-form",
+   "question": "How do black holes form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-black-holes-form/",
+   "keywords": [
+    "black",
+    "holes",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do black holes form? Facts, Myths and Evidence",
+   "h1": "How do black holes form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0435",
+   "slug": "how-do-tea-plants-grow",
+   "question": "How do tea plants grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-tea-plants-grow/",
+   "keywords": [
+    "tea",
+    "plants",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do tea plants grow? Explained With Sources",
+   "h1": "How do tea plants grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0437",
+   "slug": "how-does-quantum-computing-work",
+   "question": "How does quantum computing work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-does-quantum-computing-work/",
+   "keywords": [
+    "quantum",
+    "computing",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does quantum computing work?",
+   "h1": "How does quantum computing work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0438",
+   "slug": "how-long-do-komodo-dragons-live",
+   "question": "How long do komodo dragons live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-komodo-dragons-live/",
+   "keywords": [
+    "long",
+    "komodo",
+    "dragons",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do komodo dragons live? Facts, Myths and Evidence",
+   "h1": "How long do komodo dragons live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0439",
+   "slug": "who-was-plato",
+   "question": "Who was Plato",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-plato/",
+   "keywords": [
+    "plato"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Plato? Facts and Background",
+   "h1": "Who was Plato?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0440",
+   "slug": "what-is-the-history-of-ghana",
+   "question": "What is the history of Ghana",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-ghana/",
+   "keywords": [
+    "history",
+    "ghana"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Ghana? The Short, Sourced Answer",
+   "h1": "What is the history of Ghana?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0441",
+   "slug": "how-does-wi-fi-work",
+   "question": "How does Wi-Fi work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-wi-fi-work/",
+   "keywords": [
+    "wi-fi",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does Wi-Fi work? The Real Answer, Explained",
+   "h1": "How does Wi-Fi work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0442",
+   "slug": "what-is-carbon-dating",
+   "question": "What is carbon dating",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-carbon-dating/",
+   "keywords": [
+    "carbon",
+    "dating"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is carbon dating? A Clear, Sourced Explanation",
+   "h1": "What is carbon dating?",
+   "ymyl": false
+  }
+ ]
+}

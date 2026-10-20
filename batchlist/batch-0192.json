@@ -1,0 +1,167 @@
+{
+ "batch": 192,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1025",
+   "slug": "how-do-willow-trees-grow",
+   "question": "How do willow trees grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-willow-trees-grow/",
+   "keywords": [
+    "willow",
+    "trees",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do willow trees grow? Facts, Myths and Evidence",
+   "h1": "How do willow trees grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1026",
+   "slug": "where-do-sea-urchins-live-in-the-wild",
+   "question": "Where do sea urchins live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-sea-urchins-live-in-the-wild/",
+   "keywords": [
+    "sea",
+    "urchins",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do sea urchins live in the wild?",
+   "h1": "Where do sea urchins live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1027",
+   "slug": "who-invented-the-telephone-and-how",
+   "question": "Who invented the telephone and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-telephone-and-how/",
+   "keywords": [
+    "invented",
+    "telephone"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the telephone and how?",
+   "h1": "Who invented the telephone and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1028",
+   "slug": "what-is-the-economy-of-australia-based-on",
+   "question": "What is the economy of Australia based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-australia-based-on/",
+   "keywords": [
+    "economy",
+    "australia",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Australia based on?",
+   "h1": "What is the economy of Australia based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1029",
+   "slug": "how-does-video-compression-work",
+   "question": "How does video compression work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-video-compression-work/",
+   "keywords": [
+    "video",
+    "compression",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does video compression work? What Science Actually Says",
+   "h1": "How does video compression work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1030",
+   "slug": "what-are-newton-s-laws-of-motion",
+   "question": "What are Newton's laws of motion",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-newton-s-laws-of-motion/",
+   "keywords": [
+    "newton",
+    "laws",
+    "motion"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are Newton's laws of motion? What Science Actually Says",
+   "h1": "What are Newton's laws of motion?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1031",
+   "slug": "where-does-the-word-scuba-come-from",
+   "question": "Where does the word \"scuba\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-scuba-come-from/",
+   "keywords": [
+    "word",
+    "scuba",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"scuba\" come from? Key Facts and Context",
+   "h1": "Where does the word \"scuba\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1032",
+   "slug": "how-is-cheese-made",
+   "question": "How is cheese made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-cheese-made/",
+   "keywords": [
+    "cheese",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is cheese made? The Real Answer, Explained",
+   "h1": "How is cheese made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1033",
+   "slug": "how-does-a-car-brake-system-work",
+   "question": "How does a car brake system work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-car-brake-system-work/",
+   "keywords": [
+    "car",
+    "brake",
+    "system",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a car brake system work? Explained With Sources",
+   "h1": "How does a car brake system work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1034",
+   "slug": "what-is-maha-shivaratri-and-why-is-it-celebrated",
+   "question": "What is Maha Shivaratri and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-maha-shivaratri-and-why-is-it-celebrated/",
+   "keywords": [
+    "maha",
+    "shivaratri",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Maha Shivaratri and why is it celebrated?",
+   "h1": "What is Maha Shivaratri and why is it celebrated?",
+   "ymyl": false
+  }
+ ]
+}

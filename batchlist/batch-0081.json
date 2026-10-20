@@ -1,0 +1,183 @@
+{
+ "batch": 81,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1783",
+   "slug": "why-cuba-has-vintage-cars",
+   "question": "Why Cuba has vintage cars",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-cuba-has-vintage-cars/",
+   "keywords": [
+    "cuba",
+    "has",
+    "vintage",
+    "cars",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Cuba Has Vintage Cars? What Science Actually Says",
+   "h1": "Why Cuba Has Vintage Cars?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1787",
+   "slug": "why-windows-fog-up",
+   "question": "Why windows fog up",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-windows-fog-up/",
+   "keywords": [
+    "windows",
+    "fog",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Windows Fog Up? Facts, Myths and Evidence",
+   "h1": "Why Windows Fog Up?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1789",
+   "slug": "why-every-culture-tells-riddles",
+   "question": "Why every culture tells riddles",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-every-culture-tells-riddles/",
+   "keywords": [
+    "every",
+    "culture",
+    "tells",
+    "riddles",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Every Culture Tells Riddles? What Science Actually Says",
+   "h1": "Why Every Culture Tells Riddles?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1791",
+   "slug": "why-bell-curves-appear-everywhere",
+   "question": "Why bell curves appear everywhere",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-bell-curves-appear-everywhere/",
+   "keywords": [
+    "bell",
+    "curves",
+    "appear",
+    "everywhere",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bell Curves Appear Everywhere? Facts, Myths and Evidence",
+   "h1": "Why Bell Curves Appear Everywhere?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1793",
+   "slug": "why-noise-pollution-harms-health",
+   "question": "Why noise pollution harms health",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-noise-pollution-harms-health/",
+   "keywords": [
+    "noise",
+    "pollution",
+    "harms",
+    "health",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Noise Pollution Harms Health? Facts, Myths and Evidence",
+   "h1": "Why Noise Pollution Harms Health?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1795",
+   "slug": "how-the-channel-tunnel-was-built",
+   "question": "How the Channel Tunnel was built",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-the-channel-tunnel-was-built/",
+   "keywords": [
+    "channel",
+    "tunnel",
+    "built",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Channel Tunnel Was Built? What Science Actually Says",
+   "h1": "How The Channel Tunnel Was Built?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1797",
+   "slug": "how-nepals-mountain-villages-get-electricity",
+   "question": "How Nepal's mountain villages get electricity",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-nepals-mountain-villages-get-electricity/",
+   "keywords": [
+    "nepal",
+    "mountain",
+    "villages",
+    "electricity",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Nepal's Mountain Villages Get Electricity?",
+   "h1": "How Nepal's Mountain Villages Get Electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1799",
+   "slug": "why-masks-matter-in-theater",
+   "question": "Why masks matter in theater",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-masks-matter-in-theater/",
+   "keywords": [
+    "masks",
+    "matter",
+    "theater",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Masks Matter In Theater? The Real Answer, Explained",
+   "h1": "Why Masks Matter In Theater?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1801",
+   "slug": "how-cork-is-harvested-without-killing-trees",
+   "question": "How cork is harvested without killing trees",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-cork-is-harvested-without-killing-trees/",
+   "keywords": [
+    "cork",
+    "harvested",
+    "without",
+    "killing",
+    "trees",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Cork Is Harvested Without Killing Trees?",
+   "h1": "How Cork Is Harvested Without Killing Trees?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1803",
+   "slug": "why-dogs-sniff-everything",
+   "question": "Why dogs sniff everything",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-dogs-sniff-everything/",
+   "keywords": [
+    "dogs",
+    "sniff",
+    "everything",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dogs Sniff Everything? Facts, Myths and Evidence",
+   "h1": "Why Dogs Sniff Everything?",
+   "ymyl": false
+  }
+ ]
+}

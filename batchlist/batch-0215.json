@@ -1,0 +1,169 @@
+{
+ "batch": 215,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1256",
+   "slug": "how-did-k-pop-start",
+   "question": "How did K-pop start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-k-pop-start/",
+   "keywords": [
+    "did",
+    "k-pop",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did K-pop start? The Real Answer, Explained",
+   "h1": "How did K-pop start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1257",
+   "slug": "what-causes-city-heat-islands",
+   "question": "What causes city heat islands",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-city-heat-islands/",
+   "keywords": [
+    "causes",
+    "city",
+    "heat",
+    "islands"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes city heat islands? What Science Actually Says",
+   "h1": "What causes city heat islands?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1258",
+   "slug": "how-long-is-a-day-on-jupiter",
+   "question": "How long is a day on Jupiter",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-long-is-a-day-on-jupiter/",
+   "keywords": [
+    "long",
+    "day",
+    "jupiter"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long is a day on Jupiter? The Real Answer, Explained",
+   "h1": "How long is a day on Jupiter?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1259",
+   "slug": "where-do-beavers-live-in-the-wild",
+   "question": "Where do beavers live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-beavers-live-in-the-wild/",
+   "keywords": [
+    "beavers",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do beavers live in the wild?",
+   "h1": "Where do beavers live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1260",
+   "slug": "what-is-johannes-kepler-best-known-for",
+   "question": "What is Johannes Kepler best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-johannes-kepler-best-known-for/",
+   "keywords": [
+    "johannes",
+    "kepler",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Johannes Kepler best known for?",
+   "h1": "What is Johannes Kepler best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1261",
+   "slug": "how-did-brussels-get-its-name",
+   "question": "How did Brussels get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-brussels-get-its-name/",
+   "keywords": [
+    "did",
+    "brussels",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Brussels get its name? Key Facts and Context",
+   "h1": "How did Brussels get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1262",
+   "slug": "what-are-containers-in-software",
+   "question": "What are containers in software",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-containers-in-software/",
+   "keywords": [
+    "containers",
+    "software"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are containers in software?",
+   "h1": "What are containers in software?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1263",
+   "slug": "what-is-chromatography",
+   "question": "What is chromatography",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-chromatography/",
+   "keywords": [
+    "chromatography"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is chromatography? Facts, Myths and Evidence",
+   "h1": "What is chromatography?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1264",
+   "slug": "how-many-people-speak-maithili-and-where",
+   "question": "How many people speak Maithili and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-maithili-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "maithili"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Maithili and where? A Clear Overview",
+   "h1": "How many people speak Maithili and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1265",
+   "slug": "what-is-the-history-of-instant-noodles",
+   "question": "What is the history of instant noodles",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-instant-noodles/",
+   "keywords": [
+    "history",
+    "instant",
+    "noodles"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of instant noodles?",
+   "h1": "What is the history of instant noodles?",
+   "ymyl": false
+  }
+ ]
+}

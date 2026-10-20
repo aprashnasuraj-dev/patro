@@ -1,0 +1,155 @@
+{
+ "batch": 308,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2192",
+   "slug": "what-is-osaka-famous-for",
+   "question": "What is Osaka famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-osaka-famous-for/",
+   "keywords": [
+    "osaka",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Osaka famous for? Facts and Background",
+   "h1": "What is Osaka famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2193",
+   "slug": "how-does-a-microphone-work",
+   "question": "How does a microphone work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-microphone-work/",
+   "keywords": [
+    "microphone",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a microphone work? The Real Answer, Explained",
+   "h1": "How does a microphone work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2194",
+   "slug": "what-are-polymers",
+   "question": "What are polymers",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-polymers/",
+   "keywords": [
+    "polymers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are polymers? What Science Actually Says",
+   "h1": "What are polymers?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2195",
+   "slug": "what-do-octopuses-eat",
+   "question": "What do octopuses eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-octopuses-eat/",
+   "keywords": [
+    "octopuses",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do octopuses eat? Explained With Sources",
+   "h1": "What do octopuses eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2196",
+   "slug": "who-was-william-shakespeare",
+   "question": "Who was William Shakespeare",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-william-shakespeare/",
+   "keywords": [
+    "william",
+    "shakespeare"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was William Shakespeare? The Short, Sourced Answer",
+   "h1": "Who was William Shakespeare?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2197",
+   "slug": "what-is-portugal-known-for",
+   "question": "What is Portugal known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-portugal-known-for/",
+   "keywords": [
+    "portugal",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Portugal known for? The Short, Sourced Answer",
+   "h1": "What is Portugal known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2198",
+   "slug": "what-is-raid-storage",
+   "question": "What is RAID storage",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-raid-storage/",
+   "keywords": [
+    "raid",
+    "storage"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is RAID storage? What Science Actually Says",
+   "h1": "What is RAID storage?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2199",
+   "slug": "what-are-alloys",
+   "question": "What are alloys",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-alloys/",
+   "keywords": [
+    "alloys"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are alloys? What Science Actually Says",
+   "h1": "What are alloys?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2200",
+   "slug": "what-do-dogs-eat",
+   "question": "What do dogs eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-dogs-eat/",
+   "keywords": [
+    "dogs",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do dogs eat? The Real Answer, Explained",
+   "h1": "What do dogs eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2201",
+   "slug": "how-was-the-telegraph-invented",
+   "question": "How was the telegraph invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-telegraph-invented/",
+   "keywords": [
+    "telegraph",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the telegraph invented? What Science Actually Says",
+   "h1": "How was the telegraph invented?",
+   "ymyl": false
+  }
+ ]
+}

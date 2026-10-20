@@ -1,0 +1,165 @@
+{
+ "batch": 135,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0454",
+   "slug": "what-are-chatbots",
+   "question": "What are chatbots",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-are-chatbots/",
+   "keywords": [
+    "chatbots"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are chatbots? Explained With Sources",
+   "h1": "What are chatbots?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0455",
+   "slug": "where-do-hippos-live-in-the-wild",
+   "question": "Where do hippos live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-hippos-live-in-the-wild/",
+   "keywords": [
+    "hippos",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do hippos live in the wild?",
+   "h1": "Where do hippos live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0456",
+   "slug": "what-caused-the-spanish-flu-pandemic",
+   "question": "What caused the Spanish flu pandemic",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-spanish-flu-pandemic/",
+   "keywords": [
+    "caused",
+    "spanish",
+    "flu",
+    "pandemic"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Spanish flu pandemic? Facts and Background",
+   "h1": "What caused the Spanish flu pandemic?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0457",
+   "slug": "what-is-las-vegas-famous-for",
+   "question": "What is Las Vegas famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-las-vegas-famous-for/",
+   "keywords": [
+    "las",
+    "vegas",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Las Vegas famous for? The Short, Sourced Answer",
+   "h1": "What is Las Vegas famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0458",
+   "slug": "what-are-the-main-parts-of-a-laser-printer",
+   "question": "What are the main parts of a laser printer",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-laser-printer/",
+   "keywords": [
+    "main",
+    "parts",
+    "laser",
+    "printer"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a laser printer?",
+   "h1": "What are the main parts of a laser printer?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0459",
+   "slug": "why-does-reflection-matter-in-everyday-life",
+   "question": "Why does reflection matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-reflection-matter-in-everyday-life/",
+   "keywords": [
+    "reflection",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does reflection matter in everyday life?",
+   "h1": "Why does reflection matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0460",
+   "slug": "where-does-the-word-companion-come-from",
+   "question": "Where does the word \"companion\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-companion-come-from/",
+   "keywords": [
+    "word",
+    "companion",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"companion\" come from?",
+   "h1": "Where does the word \"companion\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0461",
+   "slug": "how-is-honey-made",
+   "question": "How is honey made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-honey-made/",
+   "keywords": [
+    "honey",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is honey made? What Science Actually Says",
+   "h1": "How is honey made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0462",
+   "slug": "how-does-a-roundabout-work",
+   "question": "How does a roundabout work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-roundabout-work/",
+   "keywords": [
+    "roundabout",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a roundabout work? Explained With Sources",
+   "h1": "How does a roundabout work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0463",
+   "slug": "what-is-lhosar-and-why-is-it-celebrated",
+   "question": "What is Lhosar and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-lhosar-and-why-is-it-celebrated/",
+   "keywords": [
+    "lhosar",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Lhosar and why is it celebrated? A Clear Overview",
+   "h1": "What is Lhosar and why is it celebrated?",
+   "ymyl": false
+  }
+ ]
+}

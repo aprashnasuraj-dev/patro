@@ -1,0 +1,180 @@
+{
+ "batch": 58,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1273",
+   "slug": "how-rainwater-harvesting-helps",
+   "question": "How rainwater harvesting helps",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-rainwater-harvesting-helps/",
+   "keywords": [
+    "rainwater",
+    "harvesting",
+    "helps",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Rainwater Harvesting Helps? A Clear, Sourced Explanation",
+   "h1": "How Rainwater Harvesting Helps?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1275",
+   "slug": "why-formula-1-cars-stick-to-roads",
+   "question": "Why Formula 1 cars stick to roads",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-formula-1-cars-stick-to-roads/",
+   "keywords": [
+    "formula",
+    "cars",
+    "stick",
+    "roads",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Formula 1 Cars Stick To Roads? Explained With Sources",
+   "h1": "Why Formula 1 Cars Stick To Roads?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1277",
+   "slug": "why-dashain-is-the-biggest-festival",
+   "question": "Why Dashain is the biggest festival",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-dashain-is-the-biggest-festival/",
+   "keywords": [
+    "dashain",
+    "biggest",
+    "festival",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dashain Is The Biggest Festival?",
+   "h1": "Why Dashain Is The Biggest Festival?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1279",
+   "slug": "how-the-beatles-changed-recording",
+   "question": "How the Beatles changed recording",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-the-beatles-changed-recording/",
+   "keywords": [
+    "beatles",
+    "changed",
+    "recording",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Beatles Changed Recording?",
+   "h1": "How The Beatles Changed Recording?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1281",
+   "slug": "why-forests-need-wildfires",
+   "question": "Why forests need wildfires",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-forests-need-wildfires/",
+   "keywords": [
+    "forests",
+    "need",
+    "wildfires",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Forests Need Wildfires? The Real Answer, Explained",
+   "h1": "Why Forests Need Wildfires?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1283",
+   "slug": "how-termites-build-giant-mounds",
+   "question": "How termites build giant mounds",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-termites-build-giant-mounds/",
+   "keywords": [
+    "termites",
+    "build",
+    "giant",
+    "mounds",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Termites Build Giant Mounds?",
+   "h1": "How Termites Build Giant Mounds?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1285",
+   "slug": "how-the-voyager-probes-are-still-working",
+   "question": "How the Voyager probes are still working",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-the-voyager-probes-are-still-working/",
+   "keywords": [
+    "voyager",
+    "probes",
+    "still",
+    "working",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Voyager Probes Are Still Working?",
+   "h1": "How The Voyager Probes Are Still Working?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1287",
+   "slug": "why-quicksand-traps-people",
+   "question": "Why quicksand traps people",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-quicksand-traps-people/",
+   "keywords": [
+    "quicksand",
+    "traps",
+    "people",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Quicksand Traps People? What Science Actually Says",
+   "h1": "Why Quicksand Traps People?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1291",
+   "slug": "why-gratitude-boosts-wellbeing",
+   "question": "Why gratitude boosts wellbeing",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-gratitude-boosts-wellbeing/",
+   "keywords": [
+    "gratitude",
+    "boosts",
+    "wellbeing",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Gratitude Boosts Wellbeing? What Science Actually Says",
+   "h1": "Why Gratitude Boosts Wellbeing?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1293",
+   "slug": "why-watermelon-is-mostly-water",
+   "question": "Why watermelon is mostly water",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-watermelon-is-mostly-water/",
+   "keywords": [
+    "watermelon",
+    "mostly",
+    "water",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Watermelon Is Mostly Water? The Real Answer, Explained",
+   "h1": "Why Watermelon Is Mostly Water?",
+   "ymyl": false
+  }
+ ]
+}

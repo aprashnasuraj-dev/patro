@@ -1,0 +1,179 @@
+{
+ "batch": 34,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0739",
+   "slug": "what-agi-means",
+   "question": "What AGI means",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-agi-means/",
+   "keywords": [
+    "agi",
+    "means",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What AGI Means? Facts, Myths and Evidence",
+   "h1": "What AGI Means?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0741",
+   "slug": "how-coins-replaced-barter",
+   "question": "How coins replaced barter",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-coins-replaced-barter/",
+   "keywords": [
+    "coins",
+    "replaced",
+    "barter",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Coins Replaced Barter? The Real Answer, Explained",
+   "h1": "How Coins Replaced Barter?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0743",
+   "slug": "why-vatican-city-is-a-country",
+   "question": "Why Vatican City is a country",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-vatican-city-is-a-country/",
+   "keywords": [
+    "vatican",
+    "city",
+    "country",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Vatican City Is A Country? What Science Actually Says",
+   "h1": "Why Vatican City Is A Country?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0747",
+   "slug": "why-public-transport-saves-money",
+   "question": "Why public transport saves money",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-public-transport-saves-money/",
+   "keywords": [
+    "public",
+    "transport",
+    "saves",
+    "money",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Public Transport Saves Money?",
+   "h1": "Why Public Transport Saves Money?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0749",
+   "slug": "why-sanskrit-is-still-studied",
+   "question": "Why Sanskrit is still studied",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-sanskrit-is-still-studied/",
+   "keywords": [
+    "sanskrit",
+    "still",
+    "studied",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Sanskrit Is Still Studied? Explained With Sources",
+   "h1": "Why Sanskrit Is Still Studied?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0751",
+   "slug": "why-roman-numerals-had-no-zero",
+   "question": "Why Roman numerals had no zero",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-roman-numerals-had-no-zero/",
+   "keywords": [
+    "roman",
+    "numerals",
+    "had",
+    "zero",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Roman Numerals Had No Zero? Facts, Myths and Evidence",
+   "h1": "Why Roman Numerals Had No Zero?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0753",
+   "slug": "why-methane-is-a-strong-greenhouse-gas",
+   "question": "Why methane is a strong greenhouse gas",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-methane-is-a-strong-greenhouse-gas/",
+   "keywords": [
+    "methane",
+    "strong",
+    "greenhouse",
+    "gas",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Methane Is A Strong Greenhouse Gas?",
+   "h1": "Why Methane Is A Strong Greenhouse Gas?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0755",
+   "slug": "how-elevators-in-tall-buildings-work",
+   "question": "How elevators in tall buildings work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-elevators-in-tall-buildings-work/",
+   "keywords": [
+    "elevators",
+    "tall",
+    "buildings",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Elevators In Tall Buildings Work?",
+   "h1": "How Elevators In Tall Buildings Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0757",
+   "slug": "how-himalayan-glaciers-feed-rivers",
+   "question": "How Himalayan glaciers feed rivers",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-himalayan-glaciers-feed-rivers/",
+   "keywords": [
+    "himalayan",
+    "glaciers",
+    "feed",
+    "rivers",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Himalayan Glaciers Feed Rivers? Explained With Sources",
+   "h1": "How Himalayan Glaciers Feed Rivers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0759",
+   "slug": "why-we-sing-in-the-shower",
+   "question": "Why we sing in the shower",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-we-sing-in-the-shower/",
+   "keywords": [
+    "sing",
+    "shower",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Sing In The Shower? Facts, Myths and Evidence",
+   "h1": "Why We Sing In The Shower?",
+   "ymyl": false
+  }
+ ]
+}

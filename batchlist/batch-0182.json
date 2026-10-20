@@ -1,0 +1,168 @@
+{
+ "batch": 182,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0925",
+   "slug": "what-is-electricity",
+   "question": "What is electricity",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-electricity/",
+   "keywords": [
+    "electricity"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is electricity? The Real Answer, Explained",
+   "h1": "What is electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0926",
+   "slug": "where-did-the-turkish-language-come-from",
+   "question": "Where did the Turkish language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-turkish-language-come-from/",
+   "keywords": [
+    "did",
+    "turkish",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Turkish language come from? A Clear Overview",
+   "h1": "Where did the Turkish language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0927",
+   "slug": "how-is-ghee-made",
+   "question": "How is ghee made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-ghee-made/",
+   "keywords": [
+    "ghee",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is ghee made? Facts, Myths and Evidence",
+   "h1": "How is ghee made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0928",
+   "slug": "how-does-a-concrete-mixer-work",
+   "question": "How does a concrete mixer work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-concrete-mixer-work/",
+   "keywords": [
+    "concrete",
+    "mixer",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a concrete mixer work? What Science Actually Says",
+   "h1": "How does a concrete mixer work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0929",
+   "slug": "why-is-bhaktapur-durbar-square-important",
+   "question": "Why is Bhaktapur Durbar Square important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-bhaktapur-durbar-square-important/",
+   "keywords": [
+    "bhaktapur",
+    "durbar",
+    "square",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Bhaktapur Durbar Square important?",
+   "h1": "Why is Bhaktapur Durbar Square important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0930",
+   "slug": "why-do-clothes-shrink-in-the-wash",
+   "question": "Why do clothes shrink in the wash",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-clothes-shrink-in-the-wash/",
+   "keywords": [
+    "clothes",
+    "shrink",
+    "wash"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do clothes shrink in the wash? Facts, Myths and Evidence",
+   "h1": "Why do clothes shrink in the wash?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0931",
+   "slug": "how-is-the-pythagorean-theorem-used-in-real-life",
+   "question": "How is the Pythagorean theorem used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-the-pythagorean-theorem-used-in-real-life/",
+   "keywords": [
+    "pythagorean",
+    "theorem",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is the Pythagorean theorem used in real life?",
+   "h1": "How is the Pythagorean theorem used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0932",
+   "slug": "what-makes-kathak-dance-unique",
+   "question": "What makes Kathak dance unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-kathak-dance-unique/",
+   "keywords": [
+    "makes",
+    "kathak",
+    "dance",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Kathak dance unique? What Science Actually Says",
+   "h1": "What makes Kathak dance unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0933",
+   "slug": "how-does-the-carbon-cycle-work",
+   "question": "How does the carbon cycle work",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-does-the-carbon-cycle-work/",
+   "keywords": [
+    "carbon",
+    "cycle",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does the carbon cycle work? The Real Answer, Explained",
+   "h1": "How does the carbon cycle work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0934",
+   "slug": "what-is-nebulae-made-of",
+   "question": "What is nebulae made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-nebulae-made-of/",
+   "keywords": [
+    "nebulae",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is nebulae made of? What Science Actually Says",
+   "h1": "What is nebulae made of?",
+   "ymyl": false
+  }
+ ]
+}

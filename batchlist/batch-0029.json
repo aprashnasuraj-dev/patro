@@ -1,0 +1,183 @@
+{
+ "batch": 29,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0629",
+   "slug": "how-proverbs-travel-across-cultures",
+   "question": "How proverbs travel across cultures",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-proverbs-travel-across-cultures/",
+   "keywords": [
+    "proverbs",
+    "travel",
+    "across",
+    "cultures",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Proverbs Travel Across Cultures? Explained With Sources",
+   "h1": "How Proverbs Travel Across Cultures?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0631",
+   "slug": "how-the-metric-system-was-created",
+   "question": "How the metric system was created",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-the-metric-system-was-created/",
+   "keywords": [
+    "metric",
+    "system",
+    "created",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Metric System Was Created? Facts, Myths and Evidence",
+   "h1": "How The Metric System Was Created?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0633",
+   "slug": "how-smog-forms",
+   "question": "How smog forms",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-smog-forms/",
+   "keywords": [
+    "smog",
+    "forms",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Smog Forms? Explained With Sources",
+   "h1": "How Smog Forms?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0635",
+   "slug": "why-airplane-windows-are-round",
+   "question": "Why airplane windows are round",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-airplane-windows-are-round/",
+   "keywords": [
+    "airplane",
+    "windows",
+    "round",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Airplane Windows Are Round? Facts, Myths and Evidence",
+   "h1": "Why Airplane Windows Are Round?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0637",
+   "slug": "why-nepal-uses-bikram-sambat-calendar",
+   "question": "Why Nepal uses Bikram Sambat calendar",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepal-uses-bikram-sambat-calendar/",
+   "keywords": [
+    "nepal",
+    "uses",
+    "bikram",
+    "sambat",
+    "calendar",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal Uses Bikram Sambat Calendar?",
+   "h1": "Why Nepal Uses Bikram Sambat Calendar?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0639",
+   "slug": "how-the-flute-is-one-of-the-oldest-instruments",
+   "question": "How the flute is one of the oldest instruments",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-the-flute-is-one-of-the-oldest-instruments/",
+   "keywords": [
+    "flute",
+    "one",
+    "oldest",
+    "instruments",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Flute Is One Of The Oldest Instruments?",
+   "h1": "How The Flute Is One Of The Oldest Instruments?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0641",
+   "slug": "why-bananas-are-technically-berries",
+   "question": "Why bananas are technically berries",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-bananas-are-technically-berries/",
+   "keywords": [
+    "bananas",
+    "technically",
+    "berries",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bananas Are Technically Berries? Explained With Sources",
+   "h1": "Why Bananas Are Technically Berries?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0643",
+   "slug": "how-chameleons-catch-insects",
+   "question": "How chameleons catch insects",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-chameleons-catch-insects/",
+   "keywords": [
+    "chameleons",
+    "catch",
+    "insects",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Chameleons Catch Insects? Facts, Myths and Evidence",
+   "h1": "How Chameleons Catch Insects?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0645",
+   "slug": "how-comets-get-their-tails",
+   "question": "How comets get their tails",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-comets-get-their-tails/",
+   "keywords": [
+    "comets",
+    "their",
+    "tails",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Comets Get Their Tails? A Clear, Sourced Explanation",
+   "h1": "How Comets Get Their Tails?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0647",
+   "slug": "why-lightning-never-strikes-the-same-place-twice-is-false",
+   "question": "Why lightning never strikes the same place twice is false",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-lightning-never-strikes-the-same-place-twice-is-false/",
+   "keywords": [
+    "lightning",
+    "never",
+    "strikes",
+    "same",
+    "place",
+    "twice",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Lightning Never Strikes The Same Place Twice Is False?",
+   "h1": "Why Lightning Never Strikes The Same Place Twice Is False?",
+   "ymyl": false
+  }
+ ]
+}
