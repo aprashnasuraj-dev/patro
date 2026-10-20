@@ -136,7 +136,7 @@ export default function MyTimePersonalization(props: Props) {
     if (Notification.permission === "denied") { setNotice(l(language, "ब्राउजर सेटिङमा सूचना अनुमति बन्द छ। त्यहाँबाट अनुमति दिनुहोस्।", "Notifications are blocked by browser settings. Allow them there to continue.")); return; }
     const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
     if (permission !== "granted") { setNotice(l(language, "सूचना अनुमति दिइएन; तपाईंले चाहेको बेला सेटिङबाट फेरि प्रयास गर्न सक्नुहुन्छ।", "Permission was not granted. You can try again in settings whenever you want.")); return; }
-    setNotice(l(language, "सूचना अनुमति सक्रिय छ। चयन गरिएका अलर्टहरू My Time खुला हुँदा चल्छन्।", "Notifications are enabled. Selected alerts run while My Time is open."));
+    setNotice(l(language, "सूचना अनुमति सक्रिय छ। तिथि/नक्षत्र र समय झ्यालका अलर्ट My Time खुला हुँदा चल्छन्; ब्राउजर बन्द हुँदा नियमित पृष्ठभूमि अलर्टको ग्यारेन्टी हुँदैन।", "Notifications are enabled. Tithi/Nakshatra and timing alerts run while My Time is open; reliable background alerts are not guaranteed when the browser is closed."));
   }
   function chooseLens(lens: MyTimeLens) { update(old => ({ ...old, lens })); onLensChange(lens); }
   function toggleInterest(id: MyTimeInterest) {
