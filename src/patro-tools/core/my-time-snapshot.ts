@@ -101,14 +101,17 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const sunEquator = Astronomy.Equator(Astronomy.Body.Sun, evaluatedAt, observer, true, true);
   const solarAltitude = Astronomy.Horizon(evaluatedAt, observer, sunEquator.ra, sunEquator.dec, "normal").altitude;
   const bounds = civilBounds(date, timezone);
-  const twilightAt = (direction: 1 | -1, altitude: number) => {
-    try { return Astronomy.SearchAltitude(Astronomy.Body.Sun, observer, direction, bounds.start, 1, altitude)?.date.toISOString() ?? null; }
+  const duskSearchStart = localDateTimeToUtc(date, timezone, 12);
+  const twilightAt = (direction: 1, altitude: number, start: Date) => {
+    try { return Astronomy.SearchAltitude(Astronomy.Body.Sun, observer, direction, start, 1, altitude)?.date.toISOString() ?? null; }
     catch { return null; }
   };
+  // Dawn searches forward from local midnight; dusk searches forward from local noon.
+  // Searching backward from midnight can silently return yesterday's dusk.
   const twilight = {
-    civil_dawn_utc: twilightAt(1, -6), civil_dusk_utc: twilightAt(-1, -6),
-    nautical_dawn_utc: twilightAt(1, -12), nautical_dusk_utc: twilightAt(-1, -12),
-    astronomical_dawn_utc: twilightAt(1, -18), astronomical_dusk_utc: twilightAt(-1, -18)
+    civil_dawn_utc: twilightAt(1, -6, bounds.start), civil_dusk_utc: twilightAt(1, -6, duskSearchStart),
+    nautical_dawn_utc: twilightAt(1, -12, bounds.start), nautical_dusk_utc: twilightAt(1, -12, duskSearchStart),
+    astronomical_dawn_utc: twilightAt(1, -18, bounds.start), astronomical_dusk_utc: twilightAt(1, -18, duskSearchStart)
   };
   const timeAnchor = daily ? "local sunrise (shared AafnaiPatro Panchang provider)" : "local noon fallback (sunrise/sunset unavailable)";
 
