@@ -38,12 +38,12 @@ export default function MyTimeTemporalLayers({ snapshot, timezone, language, now
   const hora = useMemo(() => horaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc), [snapshot]);
   const currentHora = [...hora.day, ...hora.night].find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
   const eclipseKind = (kind: string) => {
-    const labels: Record<string, [string, string]> = { Total: ["पूर्ण", "Total"], Partial: ["आंशिक", "Partial"], Annular: ["वलयाकार", "Annular"], Hybrid: ["मिश्रित", "Hybrid"], None: ["ग्रहण छैन", "None"] };
-    const pair = labels[kind] || [kind, kind];
+    const labels: Record<string, [string, string]> = { total: ["पूर्ण", "Total"], partial: ["आंशिक", "Partial"], annular: ["वलयाकार", "Annular"], hybrid: ["मिश्रित", "Hybrid"], none: ["ग्रहण छैन", "None"], penumbral: ["उपच्छायात्मक", "Penumbral"] };
+    const pair = labels[kind.toLowerCase()] || [kind, kind];
     return l(language, pair[0], pair[1]);
   };
   const contactName = (name: string) => {
-    const labels: Record<string, [string, string]> = { Maximum: ["अधिकतम", "Maximum"], "Partial begin": ["आंशिक ग्रहण सुरु", "Partial eclipse begins"], "Partial end": ["आंशिक ग्रहण अन्त्य", "Partial eclipse ends"], "Penumbral begin": ["उपच्छाया सुरु", "Penumbral eclipse begins"], "Penumbral end": ["उपच्छाया अन्त्य", "Penumbral eclipse ends"], "Total begin": ["पूर्ण ग्रहण सुरु", "Total eclipse begins"], "Total end": ["पूर्ण ग्रहण अन्त्य", "Total eclipse ends"], "Annular begin": ["वलयाकार ग्रहण सुरु", "Annular eclipse begins"], "Annular end": ["वलयाकार ग्रहण अन्त्य", "Annular eclipse ends"] };
+    const labels: Record<string, [string, string]> = { Maximum: ["अधिकतम", "Maximum"], "Partial start": ["आंशिक ग्रहण सुरु", "Partial eclipse begins"], "Partial end": ["आंशिक ग्रहण अन्त्य", "Partial eclipse ends"], "Penumbral start": ["उपच्छाया सुरु", "Penumbral eclipse begins"], "Penumbral end": ["उपच्छाया अन्त्य", "Penumbral eclipse ends"], "Total start": ["पूर्ण ग्रहण सुरु", "Total eclipse begins"], "Total end": ["पूर्ण ग्रहण अन्त्य", "Total eclipse ends"], "Total/annular start": ["पूर्ण/वलयाकार ग्रहण सुरु", "Total/annular eclipse begins"], "Total/annular end": ["पूर्ण/वलयाकार ग्रहण अन्त्य", "Total/annular eclipse ends"] };
     const pair = labels[name] || [name, name];
     return l(language, pair[0], pair[1]);
   };
