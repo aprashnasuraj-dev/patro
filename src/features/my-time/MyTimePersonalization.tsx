@@ -58,6 +58,14 @@ function clock(value: string, timezone: string, language: UiLanguage) {
   try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); }
   catch { return "—"; }
 }
+function readLastAlertDays() {
+  try {
+    const raw = JSON.parse(localStorage.getItem("aafnaipatro.mytime.alert-days.v1") || "{}");
+    const map = new Map<string, string>();
+    if (raw && typeof raw === "object") for (const [key, value] of Object.entries(raw)) if (typeof value === "string") map.set(key, value);
+    return map;
+  } catch { return new Map<string, string>(); }
+}
 function updateLanguage(language: UiLanguage) {
   try { localStorage.setItem("patro.ui.language", language); } catch {}
   if (typeof document !== "undefined") document.documentElement.lang = language;
@@ -73,7 +81,7 @@ export default function MyTimePersonalization(props: Props) {
   const [notice, setNotice] = useState("");
   const previousRef = useRef<{ tithi: number | null; nakshatra: number | null }>({ tithi: null, nakshatra: null });
   const notifiedWindows = useRef(new Set<string>());
-  const lastNotificationDay = useRef(new Map<string, string>());
+  const lastNotificationDay = useRef(readLastAlertDays());
   const interestLine = settings.interests.map(id => INTERESTS.find(item => item.id === id)).filter(Boolean).map(item => language === "ne" ? item!.ne : item!.en).join(", ");
   const update = (mutate: (old: MyTimePersonalSettings) => MyTimePersonalSettings) => setSettings(old => mutate(old));
   useEffect(() => { saveMyTimePersonalSettings(settings); }, [settings]);
@@ -106,6 +114,7 @@ export default function MyTimePersonalization(props: Props) {
     const day = `${values.year}-${values.month}-${values.day}`;
     if (settings.notifications.frequency === "important" && lastNotificationDay.current.get(category) === day) return;
     lastNotificationDay.current.set(category, day);
+    try { localStorage.setItem("aafnaipatro.mytime.alert-days.v1", JSON.stringify(Object.fromEntries(lastNotificationDay.current))); } catch {}
     try { new Notification(title, { body, tag: "my-time-" + category + (settings.notifications.frequency === "all" ? "-" + now.getTime() : ""), icon: "/aafnai-logo.png" }); } catch {}
   }
   async function enableAlerts() {
@@ -190,7 +199,7 @@ export default function MyTimePersonalization(props: Props) {
           {([["tithiTransitions","तिथि परिवर्तन","Tithi changes"],["nakshatraTransitions","नक्षत्र परिवर्तन","Nakshatra changes"],["timingWindows","चयनित समय झ्याल सुरु हुँदा","Selected timing windows"],["savedEvents","सुरक्षित कार्यक्रम","Saved events"]] as const).map(([key,neLabel,enLabel])=><label key={key}><input type="checkbox" checked={settings.notifications[key]} onChange={event=>update(old=>({...old,notifications:{...old.notifications,[key]:event.target.checked}}))}/>{l(language,neLabel,enLabel)}</label>)}
         </div>
         <div className="mt-quiet-hours"><label>{l(language, "शान्त समय सुरु", "Quiet hours start")}<input type="time" value={settings.notifications.quietStart} onChange={event=>update(old=>({...old,notifications:{...old.notifications,quietStart:event.target.value}}))}/></label><label>{l(language, "शान्त समय अन्त्य", "Quiet hours end")}<input type="time" value={settings.notifications.quietEnd} onChange={event=>update(old=>({...old,notifications:{...old.notifications,quietEnd:event.target.value}}))}/></label><label>{l(language, "अलर्ट आवृत्ति", "Alert frequency")}<select value={settings.notifications.frequency} onChange={event=>update(old=>({...old,notifications:{...old.notifications,frequency:event.target.value as "important"|"all"}}))}><option value="important">{l(language, "महत्त्वपूर्ण मात्र", "Important only")}</option><option value="all">{l(language, "सबै चयनित संक्रमण", "All selected transitions")}</option></select></label></div>
-        <div className="mt-saved-events"><strong><CalendarClock size={16}/>{l(language, "यस उपकरणमा सुरक्षित कार्यक्रम", "Events saved on this device")}</strong><div className="mt-event-form"><input aria-label={l(language,"कार्यक्रमको नाम","Event title")} placeholder={l(language,"जस्तै: बैठक","e.g. Meeting")} maxLength={100} value={eventTitle} onChange={event=>setEventTitle(event.target.value)}/><input aria-label={l(language,"कार्यक्रमको मिति र समय","Event date and time")} type="datetime-local" value={eventAt} onChange={event=>setEventAt(event.target.value)}/><button type="button" className="mt-primary" onClick={addEvent}><Plus size={15}/>{l(language,"सुरक्षित गर्नुहोस्","Save")}</button></div>
+        <div className="mt-saved-events"><strong><CalendarClock size={16}/>{l(language, "यस उपकरणमा सुरक्षित कार्यक्रम", "Events saved on this device")}</strong><small>{l(language, "मिति/समय यस उपकरणको स्थानीय समयअनुसार राखिन्छ।", "Event date/time uses this device’s local time.")}</small><div className="mt-event-form"><input aria-label={l(language,"कार्यक्रमको नाम","Event title")} placeholder={l(language,"जस्तै: बैठक","e.g. Meeting")} maxLength={100} value={eventTitle} onChange={event=>setEventTitle(event.target.value)}/><input aria-label={l(language,"कार्यक्रमको मिति र समय","Event date and time")} type="datetime-local" value={eventAt} onChange={event=>setEventAt(event.target.value)}/><button type="button" className="mt-primary" onClick={addEvent}><Plus size={15}/>{l(language,"सुरक्षित गर्नुहोस्","Save")}</button></div>
           {settings.savedEvents.length===0?<small>{l(language,"अहिलेसम्म कार्यक्रम सुरक्षित गरिएको छैन।", "No events saved yet.")}</small>:<ul>{settings.savedEvents.map(event=><li key={event.id}><span><b>{event.title}</b><small>{new Intl.DateTimeFormat(language==="ne"?"ne-NP":"en",{dateStyle:"medium",timeStyle:"short"}).format(new Date(event.at))}</small></span><button type="button" aria-label={l(language,"कार्यक्रम हटाउनुहोस्","Delete event")} onClick={()=>update(old=>({...old,savedEvents:old.savedEvents.filter(item=>item.id!==event.id)}))}><X size={15}/></button></li>)}</ul>}
           <small>{l(language, "कार्यक्रमहरू खातामा अपलोड हुँदैनन्। समय बितिसकेको कार्यक्रमका लागि अलर्ट आउँदैन।", "Events are not uploaded to an account. Past events do not trigger alerts.")}</small>
         </div>
