@@ -5,7 +5,10 @@
     "how-guitars-make-sound",
     "why-roses-have-thorns",
     "how-bees-make-honey",
-    "how-stars-are-born"
+    "how-stars-are-born",
+    "why-deserts-get-cold-at-night",
+    "why-d-j-vu-happens",
+    "why-ice-floats-in-drinks"
   ],
   "topics": {
     "how-guitars-make-sound": {
@@ -71,12 +74,24 @@
         "remote_head_verification": "passed"
       },
       "commit_sha": "277d70ad8f30665f00ce2982e646dcf5d03ccd28"
+    },
+    "why-ice-floats-in-drinks": {
+      "stage": "committed_pending_remote_verification",
+      "word_count": 2010,
+      "body_words": 1804,
+      "source_count": 5,
+      "image_count": 4,
+      "validation": {
+        "json_parse": "passed",
+        "schema_structural_checks": "passed by structural inspection",
+        "citations": "passed: five opened credible sources all used",
+        "image_metadata": "1200x630 PNG hero plus 3 original SVG diagrams",
+        "remote_asset_existence": "pending"
+      },
+      "commit_sha": null
     }
   },
   "pending": [
-    "why-deserts-get-cold-at-night",
-    "why-d-j-vu-happens",
-    "why-ice-floats-in-drinks",
     "why-metal-feels-colder-than-wood",
     "why-passwords-get-hacked",
     "why-ai-needs-so-much-data"

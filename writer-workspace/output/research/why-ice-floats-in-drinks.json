@@ -1,0 +1,146 @@
+{
+  "id": "mm-0173",
+  "slug": "why-ice-floats-in-drinks",
+  "question": "Why ice floats in drinks",
+  "category": "Food & Cooking",
+  "canonical_url": "https://aafnaipatro.com/why-ice-floats-in-drinks/",
+  "title_suggestion": "Why Ice Floats In Drinks? A Clear, Sourced Explanation",
+  "h1": "Why Ice Floats In Drinks?",
+  "keywords": [
+    "ice",
+    "floats",
+    "drinks",
+    "food-cooking"
+  ],
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "status": "research_complete",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Water Density",
+      "publisher": "USGS Water Science School",
+      "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-density",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened government science education, university-level textbook or established science reference"
+    },
+    {
+      "n": 2,
+      "title": "11.3 Phase Transitions",
+      "publisher": "OpenStax, Chemistry 2e",
+      "url": "https://openstax.org/books/chemistry-2e/pages/11-3-phase-transitions",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened government science education, university-level textbook or established science reference"
+    },
+    {
+      "n": 3,
+      "title": "Why does ice float?",
+      "publisher": "Royal Society of Chemistry",
+      "url": "https://edu.rsc.org/resources/why-does-ice-float/4011538.article",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened government science education, university-level textbook or established science reference"
+    },
+    {
+      "n": 4,
+      "title": "Why Does Ice Float?",
+      "publisher": "NOAA SciJinks",
+      "url": "https://scijinks.gov/ice-floats/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened government science education, university-level textbook or established science reference"
+    },
+    {
+      "n": 5,
+      "title": "Ice",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/science/ice",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened government science education, university-level textbook or established science reference"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Density difference",
+      "evidence": "Ordinary ice is less dense than liquid freshwater near its freezing point, so a floating cube displaces its weight in liquid while remaining partly above the surface.",
+      "sources": [
+        1,
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "claim": "Molecular structure",
+      "evidence": "Hydrogen bonding arranges water molecules into an open crystalline lattice during freezing, increasing volume for the same mass.",
+      "sources": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "claim": "Freshwater density anomaly",
+      "evidence": "Liquid freshwater reaches its maximum density near 4 °C rather than becoming steadily denser as it cools all the way to freezing.",
+      "sources": [
+        1,
+        2
+      ]
+    },
+    {
+      "claim": "Boundary conditions",
+      "evidence": "Floating depends on relative density; the explanation applies to typical water-based drinks and should not be generalized to every possible liquid.",
+      "sources": [
+        1,
+        4
+      ]
+    }
+  ],
+  "editorial_angles": [
+    "Start with density, then explain the molecular reason that ice has lower density.",
+    "Distinguish density from mass: a cube can weigh the same after freezing but occupy more volume.",
+    "Use buoyancy to explain why most of an ice cube remains underwater.",
+    "Clarify the 4 °C maximum-density point for freshwater without suggesting all water behaviour is simple.",
+    "Mention exceptions: floating depends on the surrounding liquid's density, not on ice having a universal tendency to float in every fluid."
+  ],
+  "image_research": {
+    "license": "Original programmatic hero and three original SVG diagrams; no third-party assets used.",
+    "images": [
+      {
+        "file": "why-ice-floats-in-drinks-hero.png",
+        "role": "hero",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original programmatic illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "why-ice-floats-in-drinks-diagram-01.svg",
+        "role": "molecular structure diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "why-ice-floats-in-drinks-diagram-02.svg",
+        "role": "density comparison",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "why-ice-floats-in-drinks-diagram-03.svg",
+        "role": "buoyancy and displacement",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      }
+    ]
+  }
+}
