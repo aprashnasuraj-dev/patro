@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleCounters } from "../src/patro-tools/core/my-time-extended";
-import { myTimeCacheEvictions } from "../src/features/my-time/my-time-cache";
+import { myTimeCacheEvictions, myTimeCacheKey } from "../src/features/my-time/my-time-cache";
 
 describe("My Time extended instruments", () => {
   it("converts a fixed UTC instant into JD, MJD and Unix counters", () => {
@@ -25,6 +25,10 @@ describe("My Time extended instruments", () => {
     expect(Date.parse(result!.end_utc)).toBe(1792477440000);
     expect(abhijitMuhurta(null, null)).toBeNull();
     expect(abhijitMuhurta("bad", "also bad")).toBeNull();
+  });
+
+  it("versions cached snapshots for the expanded My Time payload", () => {
+    expect(myTimeCacheKey("2026-10-20", "Asia/Kathmandu", 27.7172, 85.324)).toMatch(/^v2\\|2026-10-20\\|Asia\\/Kathmandu\\|/);
   });
 
   it("bounds the offline cache to recent unexpired snapshots", () => {
