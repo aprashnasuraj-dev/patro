@@ -143,7 +143,15 @@
   ],
   "word_count": 1206,
   "reading_minutes": 5,
-  "image": null,
+  "image": {
+    "file": "how-large-language-models-learn-hero.png",
+    "alt": "An abstract neural-network brain with connected nodes, illustrating how a language model learns patterns from training data.",
+    "caption": "Original illustration created for this article.",
+    "credit": "Original artwork created for Aafnaipatro.",
+    "license": "CC0 (original illustration)",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "large language models",
     "LLM training",
