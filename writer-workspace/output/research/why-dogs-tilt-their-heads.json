@@ -1,0 +1,61 @@
+{
+  "slug": "why-dogs-tilt-their-heads",
+  "research_question": "What evidence explains why dogs tilt their heads, and when can the behaviour be a sign of a medical problem?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.akc.org/expert-advice/lifestyle/why-do-dogs-tilt-their-heads/",
+      "title": "Why Do Dogs Tilt Their Heads?",
+      "publisher": "American Kennel Club",
+      "reliability": "Canine organization educational article; secondary source",
+      "notes": [
+        "Head tilting may have multiple possible explanations, including attention and sound processing.",
+        "The gesture should be interpreted in context rather than assigned a fixed meaning."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://news.ubc.ca/",
+      "title": "Why do dogs tilt their heads?",
+      "publisher": "University of British Columbia",
+      "reliability": "University news portal; topic-specific article needs verification",
+      "notes": [
+        "University reporting can provide context on canine cognition research; use alongside primary studies."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://link.springer.com/journal/10071",
+      "title": "Dogs' head tilting and word learning",
+      "publisher": "Animal Cognition",
+      "reliability": "Peer-reviewed animal cognition journal",
+      "notes": [
+        "Research on gifted word-learning dogs found more head tilting when they heard names of familiar toys.",
+        "The sample is specialized and does not establish a universal explanation."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.merckvetmanual.com/",
+      "title": "Canine hearing and communication",
+      "publisher": "Merck Veterinary Manual",
+      "reliability": "Veterinary reference",
+      "notes": [
+        "Ear and vestibular disorders can affect balance and head position.",
+        "Persistent abnormal head tilt with additional symptoms warrants veterinary assessment."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.rspca.org.uk/adviceandwelfare/pets/dogs/behaviour",
+      "title": "Dog behaviour and body language",
+      "publisher": "RSPCA",
+      "reliability": "Animal welfare organization behaviour guidance",
+      "notes": [
+        "Dog body language should be read in context and alongside other signals.",
+        "Behaviour and welfare observations should avoid overinterpreting a single gesture."
+      ]
+    }
+  ]
+}
