@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  JANMAPATRO_CONTEXT_STORAGE_KEY, createJanmaPatroContext, findJanmaPatroBirthPlace, saveJanmaPatroContext
+  JANMAPATRO_CONTEXT_STORAGE_KEY, createJanmaPatroContext, findJanmaPatroBirthPlace, readJanmaPatroBirthInput, saveJanmaPatroContext
 } from "../src/jyotish/my-time-bridge";
 import type { ChartResult } from "../src/jyotish/jyotishEngine";
 
@@ -30,6 +30,18 @@ describe("Janmapatro and My Time bridge", () => {
       birth: { name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu" },
       data_quality: { source: "janmapatro-engine" }
     });
+  });
+
+  it("restores the saved birth profile for Janmapatro's editable form", () => {
+    const saved = new Map<string, string>([[JANMAPATRO_CONTEXT_STORAGE_KEY, JSON.stringify({ birth: { name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 } })]]);
+    expect(readJanmaPatroBirthInput({ getItem: key => saved.get(key) ?? null })).toEqual({
+      name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324
+    });
+  });
+
+  it("does not restore malformed or incomplete birth details", () => {
+    const saved = new Map<string, string>([[JANMAPATRO_CONTEXT_STORAGE_KEY, JSON.stringify({ birth: { date: "not-a-date", time: "99:99", location: "unknown" } })]]);
+    expect(readJanmaPatroBirthInput({ getItem: key => saved.get(key) ?? null })).toBeNull();
   });
 
   it("returns false instead of claiming connection when local storage fails", () => {
