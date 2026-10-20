@@ -1,22 +1,22 @@
 # My Time — Implementation Status | कार्यान्वयन स्थिति
 
 **Last updated:** 2026-10-20  
-**Overall:** Foundation exploration in progress | आधारभूत अध्ययन जारी  
-**Feature branch:** `feature/mytime-v1`  
+**Overall:** Integrated foundation + first implementation slice in review | आधारभूत र पहिलो कार्यान्वयन समीक्षामा  
+**Feature branch:** `feature/my-time-v1`  
 **Rollout:** Not enabled; no production behavior changed.
 
 ## At a glance | संक्षिप्त स्थिति
 
 | Workstream / काम | Status / अवस्था | Notes / टिप्पणी |
 |---|---|---|
-| Repository exploration / कोडबेस अध्ययन | In progress / जारी | React + TypeScript + Vite; Cloudflare Worker; existing astronomical Tithi utility found |
+| Repository exploration / कोडबेस अध्ययन | Complete / पूरा | Existing SPA router, main Worker, astronomy-engine, D1/static sources, navigation, and tests inspected |
 | Isolated branch / अलग शाखा | Complete / पूरा | `feature/mytime-v1` created from `main` |
 | Foundation documentation / आधारभूत दस्तावेज | In review / समीक्षामा | This status page and architecture guardrails are proposed |
-| Panchang formula verification / पञ्चाङ्ग सूत्र प्रमाणीकरण | Not started / सुरु नभएको | Must reconcile exact source formulas and reference fixtures |
-| Edge API and cache / एज API तथा क्यास | Not started / सुरु नभएको | No Worker route or binding changes yet |
-| Bilingual dashboard / द्विभाषिक ड्यासबोर्ड | Not started / सुरु नभएको | No UI changes yet |
+| Panchang formula verification / पञ्चाङ्ग सूत्र प्रमाणीकरण | Partial / आंशिक | Initial Tithi snapshot exists; sunrise-based and sidereal formulas still need fixtures |
+| Edge API and cache / एज API तथा क्यास | In progress / जारी | /api/v1/mytime/today dispatched by the existing main Worker; feature flag required; no new binding |
+| Bilingual dashboard / द्विभाषिक ड्यासबोर्ड | Initial slice / पहिलो चरण | /mytime page, polar clock, settings, snapshot panel, navigation placements added |
 | Offline and accessibility / अफलाइन तथा पहुँचयोग्यता | Not started / सुरु नभएको | No service worker or IndexedDB changes yet |
-| CI and regression proof / CI तथा प्रतिगमन परीक्षण | Not started / सुरु नभएको | No new tests run for My Time yet |
+| CI and regression proof / CI तथा प्रतिगमन परीक्षण | Running / चलिरहेको | Added core timezone/API tests to the product test script; latest GitHub CI was pending at last check |
 
 ## Verified today | आज पुष्टि गरिएका तथ्य
 
