@@ -1,0 +1,144 @@
+{
+  "id": "mm-0161",
+  "slug": "why-roses-have-thorns",
+  "question": "Why roses have thorns",
+  "category": "Nature & Plants",
+  "canonical_url": "https://aafnaipatro.com/why-roses-have-thorns/",
+  "title_suggestion": "Why Roses Have Thorns? The Real Answer, Explained",
+  "h1": "Why Roses Have Thorns?",
+  "keywords": [
+    "roses",
+    "have",
+    "thorns",
+    "nature-plants"
+  ],
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "status": "research_complete",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Why do roses have thorns?",
+      "publisher": "INRAE",
+      "url": "https://www.inrae.fr/en/news/why-do-roses-have-thorns",
+      "published_at": "2024-08-02",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened institutional reference or peer-reviewed research"
+    },
+    {
+      "n": 2,
+      "title": "Rose Prickles and Asparagus Spines – Different Hook Structures as Attachment Devices in Climbing Plants",
+      "publisher": "PLOS ONE — Gallenmüller et al.",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143850",
+      "published_at": "2015-12-02",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened institutional reference or peer-reviewed research"
+    },
+    {
+      "n": 3,
+      "title": "Do roses have thorns, spines or prickles?",
+      "publisher": "New York Botanical Garden, LuEsther T. Mertz Library Reference",
+      "url": "https://libanswers.nybg.org/faq/222797",
+      "published_at": "2025-08-12",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened institutional reference or peer-reviewed research"
+    },
+    {
+      "n": 4,
+      "title": "Rosa (Rose, Roses)",
+      "publisher": "North Carolina State Extension Gardener Plant Toolbox",
+      "url": "https://plants.ces.ncsu.edu/plants/rosa/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened institutional reference or peer-reviewed research"
+    },
+    {
+      "n": 5,
+      "title": "Roses",
+      "publisher": "Royal Horticultural Society, RHS Genus Guide",
+      "url": "https://www.rhs.org.uk/plants/roses",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened institutional reference or peer-reviewed research"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Botanical terminology",
+      "evidence": "Rose stem projections are prickles, superficial outgrowths, rather than true thorns (modified branches) or spines (modified leaves).",
+      "sources": [
+        3,
+        4
+      ]
+    },
+    {
+      "claim": "Multiple functions",
+      "evidence": "Institutional summaries describe herbivore deterrence and possible water interactions; a peer-reviewed biomechanics study supports an attachment role in leaning/climbing rose stems.",
+      "sources": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "claim": "Variation",
+      "evidence": "Prickle shape, angle, mechanical behaviour and abundance vary among rose types and cultivated varieties.",
+      "sources": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "claim": "Developmental biology",
+      "evidence": "A 2024 report from INRAE describes LOG-gene involvement in prickle development across plant groups including roses; that does not by itself prove a single evolutionary purpose.",
+      "sources": [
+        1
+      ]
+    }
+  ],
+  "editorial_angles": [
+    "Use precise anatomy while acknowledging common everyday terminology.",
+    "Defence is an important benefit, not a universal single-cause explanation.",
+    "Describe the independently studied mechanical attachment function in leaning rose stems.",
+    "Separate developmental gene findings from ecological explanations of function.",
+    "Explain differences across species and cultivars without a one-size-fits-all rule."
+  ],
+  "image_research": {
+    "license": "Original programmatic illustration and three original SVG diagrams; no third-party assets used.",
+    "images": [
+      {
+        "file": "why-roses-have-thorns-hero.png",
+        "role": "hero",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original programmatic illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "why-roses-have-thorns-diagram-01.svg",
+        "role": "botanical terminology diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "why-roses-have-thorns-diagram-02.svg",
+        "role": "function comparison diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "why-roses-have-thorns-diagram-03.svg",
+        "role": "development and variation diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      }
+    ]
+  }
+}

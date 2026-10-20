@@ -2,7 +2,8 @@
   "batch": 8,
   "updated": "2026-10-21",
   "completed": [
-    "how-guitars-make-sound"
+    "how-guitars-make-sound",
+    "why-roses-have-thorns"
   ],
   "topics": {
     "how-guitars-make-sound": {
@@ -20,10 +21,24 @@
         "word_count": "passed: 1,869 substantive body words; 2,143 total including FAQ"
       },
       "commit_sha": "9fbe8727ae4a52aeab57b9f7b8503bd07120cadc"
+    },
+    "why-roses-have-thorns": {
+      "stage": "committed_pending_remote_verification",
+      "word_count": 2260,
+      "body_words": 2063,
+      "source_count": 5,
+      "image_count": 4,
+      "validation": {
+        "json_parse": "passed",
+        "schema_structural_checks": "passed by structural inspection of repository schema fields",
+        "citations": "passed: five opened institutional/peer-reviewed sources, all referenced",
+        "image_metadata": "1200x630 hero plus 3 original SVG diagrams",
+        "remote_asset_existence": "pending"
+      },
+      "commit_sha": null
     }
   },
   "pending": [
-    "why-roses-have-thorns",
     "how-bees-make-honey",
     "how-stars-are-born",
     "why-deserts-get-cold-at-night",
