@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { JANMAPATRO_CONTEXT_STORAGE_KEY, createJanmaPatroContext, findJanmaPatroBirthPlace, readJanmaPatroBirthInput, saveJanmaPatroContext } from "../src/jyotish/my-time-bridge";
-import type { ChartResult } from "../src/jyotish/jyotishEngine";
+import { calculateChart, normalizeBirthDate, type ChartResult } from "../src/jyotish/jyotishEngine";
+import { panchangAt } from "../src/patro-tools/core/astro";
 import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
 
 const base = {
@@ -170,5 +171,46 @@ describe("Janmapatro and My Time shared birth profile", () => {
 
   it("reports storage failure instead of claiming the profile was saved", () => {
     expect(saveJanmaPatroContext({ birth: {} }, { setItem: () => { throw new Error("blocked"); } })).toBe(false);
+  });
+});
+
+
+describe("birth date normalization and Jyotish engine consistency", () => {
+  it("accepts single-digit month/day, canonicalizes them, and rejects impossible dates", () => {
+    expect(normalizeBirthDate("1992-1-31")).toBe("1992-01-31");
+    expect(normalizeBirthDate("1992-02-29")).toBe("1992-02-29");
+    expect(() => normalizeBirthDate("1992-02-30")).toThrow();
+    expect(() => normalizeBirthDate("1992-02-31")).toThrow();
+    expect(() => normalizeBirthDate("2023-02-29")).toThrow();
+    expect(() => normalizeBirthDate("1992/01/31")).toThrow();
+  });
+
+  it("recalculates the full chart for both reported 1992 dates and stays aligned with My Time's Moon engine", () => {
+    const common = { name: "Regression fixture", time: "00:48", location: "Kathmandu", lat: 27.7172, lng: 85.324 };
+    const jan = calculateChart({ ...common, date: "1992-1-31" });
+    const feb = calculateChart({ ...common, date: "1992-02-29" });
+    const janMoon = jan.planets.find(planet => planet.key === "moon");
+    const febMoon = feb.planets.find(planet => planet.key === "moon");
+    expect(jan.input.date).toBe("1992-01-31");
+    expect(feb.input.date).toBe("1992-02-29");
+    expect(janMoon).toBeDefined();
+    expect(febMoon).toBeDefined();
+    // Both dates can correctly have Dhanu Moon-sign; the rest of the chart must change.
+    expect(janMoon?.signIndex).toBe(8);
+    expect(febMoon?.signIndex).toBe(8);
+    expect(Math.abs((janMoon?.longitude ?? 0) - (febMoon?.longitude ?? 0))).toBeGreaterThan(15);
+    expect(jan.moonNakshatraIndex).not.toBe(feb.moonNakshatraIndex);
+    expect(jan.moonPada).not.toBe(feb.moonPada);
+    expect(jan.ascSignIndex).not.toBe(feb.ascSignIndex);
+    const janPanchang = panchangAt(jan.instant);
+    const febPanchang = panchangAt(feb.instant);
+    expect(janMoon?.signIndex).toBe(janPanchang.moonRashi);
+    expect(febMoon?.signIndex).toBe(febPanchang.moonRashi);
+    expect(jan.moonNakshatraIndex).toBe(janPanchang.nakshatra);
+    expect(feb.moonNakshatraIndex).toBe(febPanchang.nakshatra);
+  });
+
+  it("rejects invalid 24-hour birth times instead of calculating a rollover instant", () => {
+    expect(() => calculateChart({ name: "", date: "1992-01-31", time: "99:99", location: "Kathmandu", lat: 27.7172, lng: 85.324 })).toThrow("Birth time must be HH:MM");
   });
 });
