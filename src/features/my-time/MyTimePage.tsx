@@ -16,7 +16,7 @@ import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
-import { evaluatePersonalTime, type PersonalTimeActivity, type RashifalSignal } from "./personal-time-engine";
+import { evaluatePersonalTime, normalizeJanmaPatroContext, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -43,7 +43,7 @@ function isMyTimeSnapshot(value: unknown): value is Snapshot {
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type LoadedRashifalSignal = { date: string; sign: string; signal: RashifalSignal };
-type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null; birth: { date: string; time: string; location: string } | null; planets: Array<{ key: string; name: string; sign: string; house: number | null }>; dashas: Array<{ lord: string; start: string; end: string }> } | null; rashifalSign: string | null; effectiveSign: string | null };
+type PersonalContext = { birthChart: SavedJanmaPatroContext | null; rashifalSign: string | null; effectiveSign: string | null } lagna: string; nakshatra: string; pada: number | null; birth: { date: string; time: string; location: string } | null; planets: Array<{ key: string; name: string; sign: string; house: number | null }>; dashas: Array<{ lord: string; start: string; end: string }> } | null; rashifalSign: string | null; effectiveSign: string | null };
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
 const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
@@ -51,16 +51,14 @@ const TARA_SCORES = [50,87.5,12.5,75,25,100,0,87.5,100];
 function readPersonalContext(): PersonalContext {
   try {
     const raw = JSON.parse(localStorage.getItem("aafnai.jyotish.china.context.v1") || "null");
-    const birth = raw?.birth && typeof raw.birth === "object" ? { date: String(raw.birth.date || ""), time: String(raw.birth.time || ""), location: String(raw.birth.location || "") } : null;
-    const planets = Array.isArray(raw?.planets) ? raw.planets.filter((p: any) => p && typeof p === "object").map((p: any) => ({ key: String(p.planet_en || p.key || ""), name: String(p.planet_en || p.name || ""), sign: String(p.rashi?.name || p.sign || ""), house: Number.isInteger(p.house) ? p.house : null })).filter((p: any) => p.name).slice(0, 10) : [];
-    const dashas = Array.isArray(raw?.dasha?.periods) ? raw.dasha.periods.filter((d: any) => d && typeof d.lord === "string" && typeof d.start === "string" && typeof d.end === "string" && Number.isFinite(Date.parse(d.start)) && Number.isFinite(Date.parse(d.end))).map((d: any) => ({ lord: String(d.lord), start: d.start, end: d.end })) : [];
-    const birthChart = raw && typeof raw === "object" ? { rashi: String(raw.rashi?.name || ""), lagna: String(raw.lagna?.name || ""), nakshatra: String(raw.nakshatra?.name || ""), pada: Number.isInteger(raw.nakshatra?.pada) ? raw.nakshatra.pada : null, birth, planets, dashas } : null;
+    const birthChart = normalizeJanmaPatroContext(raw);
     const stored = localStorage.getItem("patro.rashifal.sign.v2");
     const rashifalSign = stored && SIGNS.some(sign => sign.id === stored) ? stored : null;
     const birthSign = SIGNS.find(sign => sign.ne === birthChart?.rashi)?.id || null;
-    return { birthChart: birthChart && (birthChart.rashi || birthChart.nakshatra) ? birthChart : null, rashifalSign, effectiveSign: birthSign || rashifalSign };
+    return { birthChart, rashifalSign, effectiveSign: birthSign || rashifalSign };
   } catch { return { birthChart: null, rashifalSign: null, effectiveSign: null }; }
 }
+
 const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
 const TITHI_NE = ["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा","प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","औंसी"];
