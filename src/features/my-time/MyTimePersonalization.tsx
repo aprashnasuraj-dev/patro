@@ -76,6 +76,7 @@ export default function MyTimePersonalization(props: Props) {
   const { language, date, now, timezone, locationLabel, lat, lng, tithiIndex, nakshatraIndex, tithiName, nakshatraName, currentWindow, nextWindow, onLocationChange, onLensChange } = props;
   const [settings, setSettings] = useState<MyTimePersonalSettings>(readMyTimePersonalSettings);
   const [placeId, setPlaceId] = useState(() => PLACES.find(p => p.timezone === timezone && Math.abs(p.lat-lat)<0.02 && Math.abs(p.lng-lng)<0.02)?.id || "custom");
+  useEffect(() => { setPlaceId(PLACES.find(p => p.timezone === timezone && Math.abs(p.lat-lat)<0.02 && Math.abs(p.lng-lng)<0.02)?.id || "custom"); }, [timezone, lat, lng]);
   const [eventTitle, setEventTitle] = useState("");
   const [eventAt, setEventAt] = useState("");
   const [notice, setNotice] = useState("");
