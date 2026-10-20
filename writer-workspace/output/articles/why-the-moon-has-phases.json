@@ -148,5 +148,14 @@
   ],
   "word_count": 1680,
   "reading_minutes": 8,
-  "image": null
+  "image": {
+    "file": "why-the-moon-has-phases-hero.png",
+    "alt": "A crescent moon, star field, and lunar phase markers illustrate moon phases.",
+    "caption": "The Moon's changing appearance depends on the Sun-Earth-Moon geometry.",
+    "credit": "Original project-created illustration; no third-party image assets used.",
+    "license": "Original AI-assisted artwork created for this project; use subject to applicable rights and repository terms.",
+    "source_url": "",
+    "width": 1200,
+    "height": 630
+  }
 }
