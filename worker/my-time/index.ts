@@ -1,4 +1,7 @@
 import * as Astronomy from "astronomy-engine";
+import { placeTiming } from "../../src/place/timing";
+import { panchangAt } from "../../src/patro-tools/core/astro";
+import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../src/patro-tools/core/names";
 
 const DEG = Math.PI / 180;
 const TITHI_NAMES = [
@@ -79,15 +82,24 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   if (!Number.isFinite(lat) || lat < -90 || lat > 90) throw new Error("invalid_latitude");
   if (!Number.isFinite(lng) || lng < -180 || lng > 180) throw new Error("invalid_longitude");
 
-  // The first core snapshot anchors astronomical state at local noon, avoiding a hard-coded
-  // Nepal offset. Sunrise-anchored tithi and sunrise-dependent muhurta are separate next steps.
+  // Reuse AafnaiPatro's existing location-aware Panchang provider first. It uses civilBounds,
+  // shared Lahiri/sidereal conventions, Astronomy Engine and explicit polar-day failure behavior.
+  // If sunrise is unavailable, keep the page useful with an explicitly marked local-noon snapshot.
   const evaluatedAt = localDateTimeToUtc(date, timezone, 12);
+  const location = { lat, lon: lng, tz: timezone, height: 0, name: "My Time" };
+  let daily: ReturnType<typeof placeTiming> | null = null;
+  try { daily = placeTiming(date, location); } catch { daily = null; }
+  const panchang = daily || panchangAt(evaluatedAt);
   const sunLongitude = normalizeLongitude(Astronomy.SunPosition(evaluatedAt).elon);
   const moonLongitude = normalizeLongitude(Astronomy.EclipticGeoMoon(evaluatedAt).lon);
-  const phaseAngle = normalizeLongitude(moonLongitude - sunLongitude);
-  const tithiIndex = Math.floor(phaseAngle / 12) + 1;
+  const phaseAngle = normalizeLongitude(panchang.moonPhaseAngle);
+  const tithiIndex = panchang.tithi;
   const tithiProgress = ((phaseAngle % 12) / 12) * 100;
   const illumination = ((1 - Math.cos(phaseAngle * DEG)) / 2) * 100;
+  const observer = new Astronomy.Observer(lat, lng, 0);
+  const sunEquator = Astronomy.Equator(Astronomy.Body.Sun, evaluatedAt, observer, true, true);
+  const solarAltitude = Astronomy.Horizon(evaluatedAt, observer, sunEquator.ra, sunEquator.dec, "normal").altitude;
+  const timeAnchor = daily ? "local sunrise (shared AafnaiPatro Panchang provider)" : "local noon fallback (sunrise/sunset unavailable)";
 
   return {
     schema_version: 1,
@@ -97,24 +109,41 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     location: { lat, lng },
     panchang: {
       tithi_index: tithiIndex,
-      tithi_name: TITHI_NAMES[tithiIndex - 1][0],
-      tithi_name_ne: TITHI_NAMES[tithiIndex - 1][1],
-      paksha: tithiIndex <= 15 ? "Shukla Paksha" : "Krishna Paksha",
+      tithi_name: ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"][tithiIndex - 1],
+      tithi_name_ne: tithiName(tithiIndex),
+      paksha: panchang.paksha === "shukla" ? "Shukla Paksha" : "Krishna Paksha",
       phase_angle_deg: phaseAngle,
-      tithi_progress_percent: tithiProgress
+      tithi_progress_percent: tithiProgress,
+      nakshatra_index: panchang.nakshatra + 1,
+      nakshatra_name_ne: NAKSHATRAS[panchang.nakshatra],
+      nakshatra_pada: panchang.nakshatraPada,
+      yoga_index: panchang.yoga + 1,
+      yoga_name_ne: YOGAS[panchang.yoga],
+      karana_index: panchang.karana,
+      karana_name_ne: KARANA_NAMES[panchang.karana],
+      moon_rashi_ne: RASHIS[panchang.moonRashi],
+      sun_rashi_ne: RASHIS[panchang.sunRashi],
+      sunrise_utc: daily?.sunrise.toISOString() ?? null,
+      sunset_utc: daily?.sunset.toISOString() ?? null,
+      moonrise_utc: daily?.moonrise?.toISOString() ?? null,
+      tithi_end_utc: daily?.tithiEnds?.toISOString() ?? null
     },
     sky: {
       sun_longitude_tropical_deg: sunLongitude,
       moon_longitude_tropical_deg: moonLongitude,
+      sun_longitude_sidereal_deg: panchang.sunSidereal,
+      moon_longitude_sidereal_deg: panchang.moonSidereal,
+      solar_altitude_deg_at_evaluation: solarAltitude,
       moon_illumination_percent: illumination
     },
     methodology: {
-      engine: "astronomy-engine",
-      time_anchor: "local noon in requested IANA timezone",
-      sidereal_positions: false,
+      engine: "AafnaiPatro shared Panchang provider + astronomy-engine",
+      time_anchor: timeAnchor,
+      sidereal_positions: true,
       limitations: [
-        "This initial core snapshot is not a complete Panchang.",
-        "Nakshatra, Yoga, Karana, sunrise-based daily tithi, muhurta, and sidereal calculations are not included yet.",
+        "The shared Panchang provider calculates Tithi, Nakshatra/Pada, Yoga, Karana, sidereal Sun/Moon signs and local sunrise/sunset where available.",
+        "If sunrise or sunset is unavailable for the selected civil day, the Panchang snapshot falls back to local noon and solar event fields are null.",
+        "Choghadiya, Rahu Kaal, Hora, twilight, eclipse contacts, Tarabalam/Chandrabalam, and personalized Muhurta are not included in this API slice.",
         "Moon illumination is a simplified phase-angle estimate, not a high-precision illuminated fraction."
       ]
     }
