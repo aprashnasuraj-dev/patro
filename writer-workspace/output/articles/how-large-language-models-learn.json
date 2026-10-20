@@ -9,89 +9,89 @@
   "author": "Suraj Dahal",
   "published": "2026-10-20",
   "key_takeaways": [
-    "Large language models process text as tokens and learn statistical patterns by training a neural network to predict likely next tokens. [1][2]",
-    "Training adjusts model parameters based on prediction errors; the model learns distributed representations rather than storing a simple lookup table of every sentence. [1]",
-    "Transformer architectures use attention mechanisms to model relationships among tokens in context. [2]",
-    "Post-training methods can shape instruction following and response style, but they do not make a model infallible or guarantee that generated claims are true. [1][3]"
+    "Large language models process text as tokens and learn statistical patterns by training a neural network to predict likely next tokens. (OpenAI, n.d.; Vaswani et al., 2017)",
+    "Training adjusts model parameters based on prediction errors; the model learns distributed representations rather than storing a simple lookup table of every sentence. (OpenAI, n.d.)",
+    "Transformer architectures use attention mechanisms to model relationships among tokens in context. (Vaswani et al., 2017)",
+    "Post-training methods can shape instruction following and response style, but they do not make a model infallible or guarantee that generated claims are true. (OpenAI, n.d.; Gao et al., 2020)"
   ],
   "sections": [
     {
       "h2": "The short answer",
       "paras": [
-        "Large language models learn by processing enormous collections of training examples and adjusting the parameters of a neural network so its predictions become more useful. A common training task is to predict the next token in a sequence. A token may be a whole word, part of a word or punctuation, so the model learns relationships among these pieces in context rather than memorising only whole sentences. [1][2]",
-        "After this broad training, developers may use additional methods to make a model better at following instructions, responding in a preferred style or handling particular tasks. These stages shape behaviour, but they do not give the system human experience or guarantee that every answer is accurate. The result is a learned statistical model that generates responses from patterns in its parameters and the current prompt. [1][3]"
+        "Large language models learn by processing enormous collections of training examples and adjusting the parameters of a neural network so its predictions become more useful. A common training task is to predict the next token in a sequence. A token may be a whole word, part of a word or punctuation, so the model learns relationships among these pieces in context rather than memorising only whole sentences. (OpenAI, n.d.; Vaswani et al., 2017)",
+        "After this broad training, developers may use additional methods to make a model better at following instructions, responding in a preferred style or handling particular tasks. These stages shape behaviour, but they do not give the system human experience or guarantee that every answer is accurate. The result is a learned statistical model that generates responses from patterns in its parameters and the current prompt. (OpenAI, n.d.; Gao et al., 2020)"
       ]
     },
     {
       "h2": "What a token represents",
       "paras": [
-        "Before text enters a language model, software divides it into tokens. Depending on the tokenizer, a token might represent a word, a word fragment, a number or a punctuation mark. Tokenisation allows text to be converted into numerical identifiers that a neural network can process. It also means that the model’s basic prediction unit is not always the same as a word people would count in ordinary writing. [1]",
-        "The model receives token identifiers and transforms them into numerical representations, often called embeddings. These vectors give the network a mathematical way to represent information about tokens and their relationships in context. The representations are not hand-written dictionary definitions; they are learned during training as the system adjusts parameters to improve its predictions. [1][2]"
+        "Before text enters a language model, software divides it into tokens. Depending on the tokenizer, a token might represent a word, a word fragment, a number or a punctuation mark. Tokenisation allows text to be converted into numerical identifiers that a neural network can process. It also means that the model’s basic prediction unit is not always the same as a word people would count in ordinary writing. (OpenAI, n.d.)",
+        "The model receives token identifiers and transforms them into numerical representations, often called embeddings. These vectors give the network a mathematical way to represent information about tokens and their relationships in context. The representations are not hand-written dictionary definitions; they are learned during training as the system adjusts parameters to improve its predictions. (OpenAI, n.d.; Vaswani et al., 2017)"
       ]
     },
     {
       "h2": "Learning by predicting the next token",
       "paras": [
-        "In next-token training, a model sees part of a sequence and is asked to estimate which token should come next. During early training, its predictions may be poor. The training process compares the prediction with the expected token, calculates an error signal and updates the model’s parameters so that similar predictions can improve in future examples. Repeating this across varied sequences gradually shapes the network’s behaviour. [1][3]",
-        "A simple example is a sentence fragment such as “The kettle is full of hot…”. Several continuations may be possible, but some are more likely in context than others. Training exposes the model to many contexts, teaching patterns of grammar, facts expressed in text, styles and associations. Predicting tokens is the training objective, while many of the useful capabilities that emerge are indirect consequences of learning those patterns at scale. [1][2][4]"
+        "In next-token training, a model sees part of a sequence and is asked to estimate which token should come next. During early training, its predictions may be poor. The training process compares the prediction with the expected token, calculates an error signal and updates the model’s parameters so that similar predictions can improve in future examples. Repeating this across varied sequences gradually shapes the network’s behaviour. (OpenAI, n.d.; Gao et al., 2020)",
+        "A simple example is a sentence fragment such as “The kettle is full of hot…”. Several continuations may be possible, but some are more likely in context than others. Training exposes the model to many contexts, teaching patterns of grammar, facts expressed in text, styles and associations. Predicting tokens is the training objective, while many of the useful capabilities that emerge are indirect consequences of learning those patterns at scale. (OpenAI, n.d.; Vaswani et al., 2017; Bommasani et al., 2021)"
       ]
     },
     {
       "h2": "Why transformer architecture matters",
       "paras": [
-        "Many modern large language models use transformer architectures. The influential paper “Attention Is All You Need” introduced a design based on attention mechanisms rather than recurrence, helping models process relationships among tokens efficiently. Attention allows a representation to incorporate information from other relevant positions in the input, which can help the network track context across a sequence. [2]",
-        "Attention is not the same as human attention or conscious understanding. It is a mathematical operation within the network that weights information when computing representations. Transformers also rely on other components, such as learned parameters and layers of computation. Their architecture makes certain forms of large-scale training practical, but performance still depends on data, training methods, model design and evaluation. [2][3][5]"
+        "Many modern large language models use transformer architectures. The influential paper “Attention Is All You Need” introduced a design based on attention mechanisms rather than recurrence, helping models process relationships among tokens efficiently. Attention allows a representation to incorporate information from other relevant positions in the input, which can help the network track context across a sequence. (Vaswani et al., 2017)",
+        "Attention is not the same as human attention or conscious understanding. It is a mathematical operation within the network that weights information when computing representations. Transformers also rely on other components, such as learned parameters and layers of computation. Their architecture makes certain forms of large-scale training practical, but performance still depends on data, training methods, model design and evaluation. (Vaswani et al., 2017; Gao et al., 2020; Brown et al., 2020)"
       ]
     },
     {
       "h2": "How the model changes its parameters",
       "paras": [
-        "A language model has a large collection of numerical parameters, often called weights. During training, an optimisation algorithm uses gradients from prediction errors to adjust those numbers. Small changes accumulate across many examples, improving the model’s ability to predict token sequences according to the training objective. The learned information is distributed across many parameters rather than stored as a neat database entry for every training sentence. [1][3]",
-        "This is why training requires substantial computation and careful engineering. The model must process batches of examples, calculate errors, update weights and monitor whether progress generalises beyond the examples it has just seen. Data quality, duplication, filtering, training duration and evaluation all influence the result. More data or a larger model does not automatically guarantee better behaviour on every task. [1][2]"
+        "A language model has a large collection of numerical parameters, often called weights. During training, an optimisation algorithm uses gradients from prediction errors to adjust those numbers. Small changes accumulate across many examples, improving the model’s ability to predict token sequences according to the training objective. The learned information is distributed across many parameters rather than stored as a neat database entry for every training sentence. (OpenAI, n.d.; Gao et al., 2020)",
+        "This is why training requires substantial computation and careful engineering. The model must process batches of examples, calculate errors, update weights and monitor whether progress generalises beyond the examples it has just seen. Data quality, duplication, filtering, training duration and evaluation all influence the result. More data or a larger model does not automatically guarantee better behaviour on every task. (OpenAI, n.d.; Vaswani et al., 2017)"
       ]
     },
     {
       "h2": "Pretraining and later training stages",
       "paras": [
-        "Pretraining builds broad language capabilities by learning from large datasets. Afterward, developers can apply supervised examples, preference-based methods or other post-training procedures to make responses more aligned with intended use. These stages may teach the model to follow instructions, format answers, refuse certain requests or prefer responses judged more helpful. Exact methods differ between systems and are not identical across all models. [1][3]",
-        "A model’s final behaviour is therefore not explained by one training step alone. The pretraining objective shapes broad representations, while later training and system design influence how the model responds in conversation. Evaluation, safety testing and deployment controls are additional parts of the process. It is important to distinguish what is publicly described about a general method from what is known about a particular proprietary model. [1][3]"
+        "Pretraining builds broad language capabilities by learning from large datasets. Afterward, developers can apply supervised examples, preference-based methods or other post-training procedures to make responses more aligned with intended use. These stages may teach the model to follow instructions, format answers, refuse certain requests or prefer responses judged more helpful. Exact methods differ between systems and are not identical across all models. (OpenAI, n.d.; Gao et al., 2020)",
+        "A model’s final behaviour is therefore not explained by one training step alone. The pretraining objective shapes broad representations, while later training and system design influence how the model responds in conversation. Evaluation, safety testing and deployment controls are additional parts of the process. It is important to distinguish what is publicly described about a general method from what is known about a particular proprietary model. (OpenAI, n.d.; Gao et al., 2020)"
       ]
     },
     {
       "h2": "Why models can still make mistakes",
       "paras": [
-        "A model trained to generate plausible continuations can produce a confident answer that is incorrect, incomplete or unsupported. The next-token objective rewards fitting patterns in training data, not independently checking every factual statement against the world. Errors can arise from gaps or conflicts in data, ambiguous prompts, reasoning limitations, stale information or the tendency to produce a fluent continuation even when certainty is low. [1][3]",
-        "A language model may also reflect biases in its training examples and can struggle with information that is rare, newly changed or poorly represented. Retrieval tools, citations, external verification and task-specific evaluation can reduce some risks, but each has limitations. For high-stakes decisions, model output should be checked against reliable evidence and qualified judgement rather than treated as a final authority. [1][3]"
+        "A model trained to generate plausible continuations can produce a confident answer that is incorrect, incomplete or unsupported. The next-token objective rewards fitting patterns in training data, not independently checking every factual statement against the world. Errors can arise from gaps or conflicts in data, ambiguous prompts, reasoning limitations, stale information or the tendency to produce a fluent continuation even when certainty is low. (OpenAI, n.d.; Gao et al., 2020)",
+        "A language model may also reflect biases in its training examples and can struggle with information that is rare, newly changed or poorly represented. Retrieval tools, citations, external verification and task-specific evaluation can reduce some risks, but each has limitations. For high-stakes decisions, model output should be checked against reliable evidence and qualified judgement rather than treated as a final authority. (OpenAI, n.d.; Gao et al., 2020)"
       ]
     },
     {
       "h2": "What it means to say a model has learned",
       "paras": [
-        "A useful analogy is learning a complicated set of patterns rather than memorising a book shelf. The model’s parameters encode statistical relationships that help it continue text, translate, summarise or answer questions in familiar forms. It can combine patterns in ways not seen verbatim in a single example, but that flexibility does not imply that its internal representations are identical to human concepts or experience. [1][2]",
-        "Researchers assess learned capabilities through benchmarks, controlled experiments and real-world testing. Scores can reveal strengths and weaknesses, but benchmark performance does not guarantee success on every new prompt. Models can be sensitive to wording, context length, tools and the information available at inference time. “Learning” in this setting refers to changes in a computational system’s parameters through training, not to a claim that the model learns exactly as a person does. [1][3]"
+        "A useful analogy is learning a complicated set of patterns rather than memorising a book shelf. The model’s parameters encode statistical relationships that help it continue text, translate, summarise or answer questions in familiar forms. It can combine patterns in ways not seen verbatim in a single example, but that flexibility does not imply that its internal representations are identical to human concepts or experience. (OpenAI, n.d.; Vaswani et al., 2017)",
+        "Researchers assess learned capabilities through benchmarks, controlled experiments and real-world testing. Scores can reveal strengths and weaknesses, but benchmark performance does not guarantee success on every new prompt. Models can be sensitive to wording, context length, tools and the information available at inference time. “Learning” in this setting refers to changes in a computational system’s parameters through training, not to a claim that the model learns exactly as a person does. (OpenAI, n.d.; Gao et al., 2020)"
       ]
     }
   ],
   "faq": [
     {
       "q": "Do language models memorise everything they read?",
-      "a": "Training adjusts distributed model parameters to learn patterns; it is not simply a database lookup of every sentence. Some memorisation can occur, so this is a useful general description rather than an absolute guarantee. [1]"
+      "a": "Training adjusts distributed model parameters to learn patterns; it is not simply a database lookup of every sentence. Some memorisation can occur, so this is a useful general description rather than an absolute guarantee. (OpenAI, n.d.)"
     },
     {
       "q": "What is a token?",
-      "a": "A token is a unit of text processing that may represent a word, word fragment, number or punctuation. Models predict token sequences rather than always predicting whole words. [1]"
+      "a": "A token is a unit of text processing that may represent a word, word fragment, number or punctuation. Models predict token sequences rather than always predicting whole words. (OpenAI, n.d.)"
     },
     {
       "q": "What is next-token prediction?",
-      "a": "The model estimates a likely next token from the preceding context. Training compares predictions with examples and adjusts parameters to improve the estimates across many sequences. [1][2]"
+      "a": "The model estimates a likely next token from the preceding context. Training compares predictions with examples and adjusts parameters to improve the estimates across many sequences. (OpenAI, n.d.; Vaswani et al., 2017)"
     },
     {
       "q": "Why can an LLM give a wrong answer confidently?",
-      "a": "The training objective teaches patterns for generating likely text, not a guarantee that each statement is verified. Gaps in data and reasoning limitations can produce fluent but incorrect output. [1][3]"
+      "a": "The training objective teaches patterns for generating likely text, not a guarantee that each statement is verified. Gaps in data and reasoning limitations can produce fluent but incorrect output. (OpenAI, n.d.; Gao et al., 2020)"
     },
     {
       "q": "Does a larger model always perform better?",
-      "a": "No. Scale can help some capabilities, but data quality, training methods, architecture, evaluation and the task itself all affect performance. Larger systems can still fail on particular questions. [1][2]"
+      "a": "No. Scale can help some capabilities, but data quality, training methods, architecture, evaluation and the task itself all affect performance. Larger systems can still fail on particular questions. (OpenAI, n.d.; Vaswani et al., 2017)"
     }
   ],
   "sources": [
@@ -101,7 +101,8 @@
       "publisher": "OpenAI",
       "url": "https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
       "published_at": null,
-      "apa": "OpenAI. (n.d.). How ChatGPT and our foundation models are developed. https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/"
+      "apa": "OpenAI. (n.d.). How ChatGPT and our foundation models are developed. https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
+      "citation": "OpenAI, n.d."
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "NeurIPS",
       "url": "https://arxiv.org/abs/1706.03762",
       "published_at": "2017-06-12",
-      "apa": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. Advances in Neural Information Processing Systems, 30. https://arxiv.org/abs/1706.03762"
+      "apa": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. Advances in Neural Information Processing Systems, 30. https://arxiv.org/abs/1706.03762",
+      "citation": "Vaswani et al., 2017"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "arXiv",
       "url": "https://arxiv.org/abs/2101.00027",
       "published_at": "2020-12-31",
-      "apa": "Gao, L., Biderman, S., Black, S., et al. (2020). The Pile: An 800GB dataset of diverse text for language modeling. arXiv. https://arxiv.org/abs/2101.00027"
+      "apa": "Gao, L., Biderman, S., Black, S., et al. (2020). The Pile: An 800GB dataset of diverse text for language modeling. arXiv. https://arxiv.org/abs/2101.00027",
+      "citation": "Gao et al., 2020"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "Stanford Center for Research on Foundation Models",
       "url": "https://arxiv.org/abs/2108.07258",
       "published_at": "2021-08-18",
-      "apa": "Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). On the opportunities and risks of foundation models. arXiv. https://arxiv.org/abs/2108.07258"
+      "apa": "Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). On the opportunities and risks of foundation models. arXiv. https://arxiv.org/abs/2108.07258",
+      "citation": "Bommasani et al., 2021"
     },
     {
       "n": 5,
@@ -133,11 +137,12 @@
       "publisher": "NeurIPS",
       "url": "https://arxiv.org/abs/2005.14165",
       "published_at": "2020-05-28",
-      "apa": "Brown, T. B., Mann, B., Ryder, N., et al. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877–1901. https://arxiv.org/abs/2005.14165"
+      "apa": "Brown, T. B., Mann, B., Ryder, N., et al. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877–1901. https://arxiv.org/abs/2005.14165",
+      "citation": "Brown et al., 2020"
     }
   ],
-  "word_count": 1206,
-  "reading_minutes": 5,
+  "word_count": 1307,
+  "reading_minutes": 6,
   "image": {
     "file": "how-large-language-models-learn-hero.png",
     "alt": "An abstract neural-network brain with connected nodes, illustrating how a language model learns patterns from training data.",
