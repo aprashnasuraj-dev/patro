@@ -8,19 +8,6 @@ const tools = [
 
 const terminalPlaceholder=/coming soon|integration phase|placeholder|under development/i;
 
-// Third-party ad/measurement scripts can throw asynchronously when their own network
-// requests are blocked or return transient 5xx responses in isolated CI browsers.
-// Keep app-origin exceptions release-blocking, but do not attribute vendor runtime
-// failures to the canonical tool page under test.
-function captureApplicationPageError(errors, error) {
-  const detail = error?.stack || String(error);
-  if (/https?:\/\/(?:pagead2\.googlesyndication\.com|[^/]+\.googlesyndication\.com|[^/]+\.doubleclick\.net)\//i.test(detail)) {
-    console.warn("RELEASE_BROWSER_THIRD_PARTY_ERROR_IGNORED:", detail.split("\n")[0]);
-    return;
-  }
-  errors.push(detail);
-}
-
 (async()=>{
   if(tools.length!==29 || new Set(tools).size!==29) throw new Error("canonical tool browser inventory must stay exactly 29 unique tools");
   const rawHome=readFileSync("dist/index.html","utf8");
@@ -33,7 +20,7 @@ function captureApplicationPageError(errors, error) {
   const page=await context.newPage();
 
   const homeErrors=[];
-  const onHomeError=(error)=>captureApplicationPageError(homeErrors,error);
+  const onHomeError=(error)=>homeErrors.push(error?.stack || String(error));
   page.on("pageerror",onHomeError);
   page.on("crash",()=>console.error("RELEASE_BROWSER_CRASH: canonical-tools Chromium target crashed"));
   page.on("console",message=>{if(message.type()==="error")console.error("RELEASE_BROWSER_CONSOLE:",message.text())});
@@ -94,7 +81,7 @@ function captureApplicationPageError(errors, error) {
   for(const slug of tools){
     const route=`/tools/${slug}`;
     const errors=[];
-    const onPageError=(error)=>captureApplicationPageError(errors,error);
+    const onPageError=(error)=>errors.push(error?.stack || String(error));
     page.on("pageerror",onPageError);
     const response=await page.goto("http://127.0.0.1:4173"+route,{waitUntil:"domcontentloaded",timeout:30000});
     if(!response || !response.ok()) throw new Error(`${route} HTTP ${response?.status() ?? "no-response"}`);
