@@ -15,13 +15,13 @@ const PLACES: PlaceOption[] = [
   { id: "london", label: "London, United Kingdom", timezone: "Europe/London", lat: 51.5072, lng: -0.1276 },
   { id: "new-york", label: "New York, USA", timezone: "America/New_York", lat: 40.7128, lng: -74.0060 }
 ];
-const LENSES: { id: MyTimeLens; ne: string; en: string; detail: string }[] = [
-  { id: "universal", ne: "सार्वभौमिक दृश्य", en: "Universal view", detail: "A balanced overview; no birth details needed." },
-  { id: "scientific", ne: "वैज्ञानिक समय", en: "Scientific time", detail: "Clock, solar events and astronomical context." },
-  { id: "panchang", ne: "पञ्चाङ्ग", en: "Panchang", detail: "Tithi, Nakshatra and traditional daily timing." },
-  { id: "jyotish", ne: "ज्योतिष", en: "Jyotish", detail: "Traditional interpretation; birth details remain optional." },
-  { id: "tantra", ne: "तन्त्रविद्या", en: "Tantra Vidya", detail: "The optional traditional chronometry layer." },
-  { id: "combined", ne: "संयुक्त दृश्य", en: "Combined view", detail: "A little of each selected time system." }
+const LENSES: { id: MyTimeLens; ne: string; en: string; detail: string; detailNe: string }[] = [
+  { id: "universal", ne: "सार्वभौमिक दृश्य", en: "Universal view", detail: "A balanced overview; no birth details needed.", detailNe: "सन्तुलित दृश्य; जन्म विवरण आवश्यक छैन।" },
+  { id: "scientific", ne: "वैज्ञानिक समय", en: "Scientific time", detail: "Clock, solar events and astronomical context.", detailNe: "घडी, सौर घटना र खगोलीय सन्दर्भ।" },
+  { id: "panchang", ne: "पञ्चाङ्ग", en: "Panchang", detail: "Tithi, Nakshatra and traditional daily timing.", detailNe: "तिथि, नक्षत्र र परम्परागत दैनिक समय।" },
+  { id: "jyotish", ne: "ज्योतिष", en: "Jyotish", detail: "Traditional interpretation; birth details remain optional.", detailNe: "परम्परागत व्याख्या; जन्म विवरण ऐच्छिक।" },
+  { id: "tantra", ne: "तन्त्रविद्या", en: "Tantra Vidya", detail: "The optional traditional chronometry layer.", detailNe: "ऐच्छिक तन्त्रविद्या कालगणना तह।" },
+  { id: "combined", ne: "संयुक्त दृश्य", en: "Combined view", detail: "A little of each selected time system.", detailNe: "छानिएका समय प्रणालीहरूको संयुक्त दृश्य।" }
 ];
 const INTERESTS: { id: MyTimeInterest; ne: string; en: string }[] = [
   { id: "general", ne: "सामान्य दैनिक जानकारी", en: "General daily overview" },
@@ -187,7 +187,7 @@ export default function MyTimePersonalization(props: Props) {
         <label><span><Globe2 size={15}/>{l(language, "तपाईंको स्थान", "Your location")}</span><select value={placeId} onChange={event=>choosePlace(event.target.value)}><option value="custom">{l(language, "हालको / म्यानुअल स्थान", "Current / manual location")}</option>{PLACES.map(place=><option key={place.id} value={place.id}>{place.label}</option>)}</select><button type="button" className="mt-secondary" onClick={useDeviceLocation}>{l(language, "उपकरणको स्थान प्रयोग गर्नुहोस्", "Use device location")}</button><small>{l(language, "स्थान अनुमति नदिए पनि सुविधा चल्छ।", "Location permission is optional.")}</small></label>
         <label><span><Languages size={15}/>{l(language, "भाषा", "Language")}</span><select value={language} onChange={event=>updateLanguage(event.target.value as UiLanguage)}><option value="ne">नेपाली</option><option value="en">English</option></select><small>{l(language, "यसले AafnaiPatro को भाषा परिवर्तन गर्छ।", "This changes the AafnaiPatro interface language.")}</small></label>
       </div>
-      <div className="mt-setup-options"><strong>{l(language, "तपाईंको समय लेन्स", "Your time lens")}</strong><div>{LENSES.map(item=><button type="button" key={item.id} className={settings.lens===item.id?"is-selected":""} onClick={()=>chooseLens(item.id)}><b>{language==="ne"?item.ne:item.en}</b><small>{item.detail}</small></button>)}</div></div>
+      <div className="mt-setup-options"><strong>{l(language, "तपाईंको समय लेन्स", "Your time lens")}</strong><div>{LENSES.map(item=><button type="button" key={item.id} className={settings.lens===item.id?"is-selected":""} onClick={()=>chooseLens(item.id)}><b>{language==="ne"?item.ne:item.en}</b><small>{language === "ne" ? item.detailNe : item.detail}</small></button>)}</div></div>
       <div className="mt-setup-options"><strong>{l(language, "दैनिक रुचि (एक वा धेरै)", "Daily interests (choose any)")}</strong><div className="mt-interest-options">{INTERESTS.map(item=><label key={item.id}><input type="checkbox" checked={settings.interests.includes(item.id)} onChange={()=>toggleInterest(item.id)}/>{language==="ne"?item.ne:item.en}</label>)}</div></div>
       <p className="mt-privacy-note">{l(language, "गोपनीयता: स्थान, रुचि र दृश्य प्राथमिकता यस उपकरणको ब्राउजरमा सुरक्षित हुन्छन्। जन्म मिति, जन्म समय र जन्मस्थान आवश्यक छैनन्; व्यक्तिगत जन्मकुण्डली चाहिएको बेला मात्र सम्बन्धित सुविधा प्रयोग गर्नुहोस्।", "Privacy: location, interests and view preferences are stored in this browser on this device. Birth date, birth time and birthplace are not required; use a separate birth-chart feature only if you want that functionality.")}</p>
       <div className="mt-personal-actions"><button type="button" className="mt-primary" onClick={()=>update(old=>({...old,setupComplete:true}))}><Check size={16}/>{l(language, "मेरो दृश्य सुरक्षित गर्नुहोस्", "Save my view")}</button><button type="button" className="mt-secondary" onClick={()=>update(old=>({...old,setupComplete:true,lens:"universal",interests:["general"]}))}>{l(language, "सार्वभौमिक दृश्यमा जानुहोस्", "Continue with universal view")}</button></div>
