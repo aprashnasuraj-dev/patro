@@ -149,5 +149,14 @@
   ],
   "word_count": 1387,
   "reading_minutes": 6,
-  "image": null
+  "image": {
+    "file": "how-mount-everest-was-measured-hero.png",
+    "alt": "Layered mountain peaks and a survey marker represent measuring Everest.",
+    "caption": "Modern elevation estimates combine surveying and geodetic measurement.",
+    "credit": "Original project-created illustration; no third-party image assets used.",
+    "license": "Original AI-assisted artwork created for this project; use subject to applicable rights and repository terms.",
+    "source_url": "",
+    "width": 1200,
+    "height": 630
+  }
 }
