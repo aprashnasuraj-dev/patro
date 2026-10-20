@@ -41,6 +41,7 @@ function readPersonalContext(): PersonalContext {
 const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
 const TITHI_NE = ["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा","प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","औंसी"];
+const NAKSHATRAS_EN = ["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha","Magha","Purva Phalguni","Uttara Phalguni","Hasta","Chitra","Swati","Vishakha","Anuradha","Jyeshtha","Mula","Purva Ashadha","Uttara Ashadha","Shravana","Dhanishtha","Shatabhisha","Purva Bhadrapada","Uttara Bhadrapada","Revati"];
 function readPreferences(): Preferences {
   try {
     const saved = JSON.parse(localStorage.getItem(PREF_KEY) || "null");
@@ -311,7 +312,7 @@ export default function MyTimePage() {
   const briefingTithiIndex = currentPanchang?.tithi ?? null;
   const briefingNakshatraIndex = currentPanchang ? currentPanchang.nakshatra + 1 : null;
   const briefingTithiName = briefingTithiIndex ? (ne ? TITHI_NE[briefingTithiIndex - 1] : TITHI_EN[briefingTithiIndex - 1]) : "—";
-  const briefingNakshatraName = briefingNakshatraIndex ? String(NAKSHATRAS[briefingNakshatraIndex - 1] || "—") : "—";
+  const briefingNakshatraName = briefingNakshatraIndex ? String((ne ? NAKSHATRAS[briefingNakshatraIndex - 1] : NAKSHATRAS_EN[briefingNakshatraIndex - 1]) || "—") : "—";
   const applyPersonalLocation = useCallback((place: { timezone: string; lat: number; lng: number; label: string }) => {
     const next = { timezone: place.timezone, lat: place.lat, lng: place.lng, label: place.label };
     const nextDate = localDate(next.timezone, new Date());
