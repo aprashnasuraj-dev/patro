@@ -11,6 +11,8 @@ import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/
 import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
 import { useUiLanguage, l } from "../../useUiLanguage";
+import { calculateChart } from "../../jyotish/jyotishEngine";
+import { RASHIS as NE_SIGNS, NAKSHATRAS as NE_NAKSHATRAS } from "../../patro-tools/core/names";
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
@@ -195,6 +197,26 @@ export default function MyTimePage() {
   const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
   const [nepalCalendarReference, setNepalCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
+  const [birthInput,setBirthInput]=useState({date:"",time:"",location:"",lat:"",lng:""});
+  const [birthError,setBirthError]=useState("");
+  const [birthSuccess,setBirthSuccess]=useState(false);
+  const saveBirthChart=(event: React.FormEvent<HTMLFormElement>)=>{
+    event.preventDefault();setBirthError("");setBirthSuccess(false);
+    const lat=Number(birthInput.lat),lng=Number(birthInput.lng);
+    if(!birthInput.date||!birthInput.time||!birthInput.location.trim()||!birthInput.lat.trim()||!birthInput.lng.trim()||!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>90||Math.abs(lng)>180){
+      setBirthError(l(language,"सही जन्म विवरण र निर्देशाङ्क भर्नुहोस्।","Enter valid birth details and coordinates."));return;
+    }
+    try{
+      const chart=calculateChart({name:"",date:birthInput.date,time:birthInput.time,location:birthInput.location.trim(),lat,lng});
+      const moon=chart.planets.find(p=>p.key==="moon");
+      if(!moon)throw new Error("Moon unavailable");
+      const context={time_known:true,lagna:{name:NE_SIGNS[chart.ascSignIndex],degree:chart.ascendant},rashi:{name:NE_SIGNS[moon.signIndex]},nakshatra:{name:NE_NAKSHATRAS[chart.moonNakshatraIndex],pada:chart.moonPada},birth:{...chart.input},planets:chart.planets.map(p=>({planet_en:p.name,rashi:{name:NE_SIGNS[p.signIndex]},house:p.house,degree:p.longitude})),dasha:{periods:chart.dashas.map(d=>({...d,start:d.start.toISOString(),end:d.end.toISOString()}))},other_important_points:{manglik:chart.manglik},data_quality:{source:"janmapatro-engine",methodology:chart.methodology}};
+      localStorage.setItem("aafnai.jyotish.china.context.v1",JSON.stringify(context));
+      setPersonalContext(readPersonalContext());setBirthSuccess(true);
+      window.dispatchEvent(new CustomEvent("patro:china-updated",{detail:context}));
+    }catch{setBirthError(l(language,"जन्मपत्रो गणना हुन सकेन। विवरण जाँच्नुहोस्।","Could not calculate the birth chart. Check the details."));}
+  };
+
   const [rashifalSummary, setRashifalSummary] = useState("");
   const [rashifalSignal, setRashifalSignal] = useState<LoadedRashifalSignal | null>(null);
   const [rashifalLoading, setRashifalLoading] = useState(false);
@@ -511,6 +533,10 @@ export default function MyTimePage() {
   const interestLabel = selectedInterests.map(item => interestNames[item] || interestNames.general).join(" · ");
 
   return <main className="mt-page">
+    <div className="mt-language-switch" role="group" aria-label="Language / भाषा">
+      <button type="button" aria-pressed={language==="ne"} onClick={()=>{localStorage.setItem("patro.ui.language","ne");document.documentElement.lang="ne";window.dispatchEvent(new Event("patro:language"));}}>नेपाली</button>
+      <button type="button" aria-pressed={language==="en"} onClick={()=>{localStorage.setItem("patro.ui.language","en");document.documentElement.lang="en";window.dispatchEvent(new Event("patro:language"));}}>English</button>
+    </div>
     <header className="mt-heading">
       <div className="mt-eyebrow"><span className="mt-pulse"/> {l(language,"समयलाई आफ्नै दृष्टिले अनुभव गर्नुहोस्","Experience time through your own lens")}</div>
       <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small><div className="mt-apparent-time"><span>{l(language,"स्थानीय सौर समय · अनुमानित","Apparent solar time · approximate")}</span><strong>{solarTime.time}</strong><small>{l(language,"समय समीकरण","Equation of time")}: {solarTime.equationOfTimeMinutes >= 0 ? "+" : ""}{solarTime.equationOfTimeMinutes.toFixed(1)} min</small></div></div></div>
@@ -643,6 +669,20 @@ export default function MyTimePage() {
       <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
     </section>
 
+    <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
+      <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट आफ्नो समय गणना गर्नुहोस्","Calculate your time from birth details")}</h2></div><Moon size={21}/></div>
+      <p>{l(language,"जन्मपत्रोको विद्यमान इन्जिनबाट राशि, लग्न, नक्षत्र र दशा गणना हुन्छ। जन्म समय नेपाल मानक समय (UTC+05:45) मा भर्नुहोस्। विवरण यस उपकरणमा सुरक्षित हुन्छ।","Uses the existing JanmaPatro engine for Moon sign, ascendant, Nakshatra and Dasha. Enter Nepal Standard Time (UTC+05:45). Details stay on this device.")}</p>
+      <form className="mt-birth-form" onSubmit={saveBirthChart}>
+        <label>{l(language,"जन्म मिति (ईस्वी)","Birth date (AD)")}<input type="date" required value={birthInput.date} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/></label>
+        <label>{l(language,"जन्म समय (नेपाल समय)","Birth time (Nepal time)")}<input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
+        <label>{l(language,"जन्म स्थान","Birthplace")}<input required value={birthInput.location} onChange={e=>setBirthInput(v=>({...v,location:e.target.value}))}/></label>
+        <label>{l(language,"अक्षांश","Latitude")}<input type="number" required min="-90" max="90" step="any" value={birthInput.lat} onChange={e=>setBirthInput(v=>({...v,lat:e.target.value}))}/></label>
+        <label>{l(language,"देशान्तर","Longitude")}<input type="number" required min="-180" max="180" step="any" value={birthInput.lng} onChange={e=>setBirthInput(v=>({...v,lng:e.target.value}))}/></label>
+        <button className="mt-primary" type="submit">{l(language,"गणना गरी जोड्नुहोस्","Calculate and connect")}</button>
+      </form>
+      {birthError && <p role="alert">{birthError}</p>}
+      {birthSuccess && <p role="status">{l(language,"जन्मपत्रो जोडियो। व्यक्तिगत समय र राशिफल अद्यावधिक हुन्छ।","Birth chart connected. Personal timing and Rashifal will update.")}</p>}
+    </section>
     <section className="mt-personal">
       <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
       {personalContext.birthChart ? <div className="mt-personal-data"><div><small>{l(language,"जन्म राशि","Natal Moon sign")}</small><strong>{personalContext.birthChart.rashi || "—"}</strong></div><div><small>{l(language,"लग्न","Ascendant")}</small><strong>{personalContext.birthChart.lagna || "—"}</strong></div><div><small>{l(language,"जन्म नक्षत्र","Natal Nakshatra")}</small><strong>{personalContext.birthChart.nakshatra || "—"}{personalContext.birthChart.pada ? ` · ${personalContext.birthChart.pada}` : ""}</strong></div></div> : <p className="mt-personal-muted">{l(language,"अहिलेसम्म यस ब्राउजरमा जन्मपत्रो सन्दर्भ भेटिएन।","No birth-chart context was found in this browser yet.")}</p>}
