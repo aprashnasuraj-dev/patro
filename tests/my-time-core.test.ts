@@ -33,6 +33,9 @@ describe("My Time astronomical core", () => {
     expect(snapshot.panchang.karana_name_ne).toBeTruthy();
     expect(snapshot.panchang.sunrise_utc).toBeTruthy();
     expect(snapshot.panchang.sunset_utc).toBeTruthy();
+    expect(snapshot.twilight.civil_dawn_utc).toBeTruthy();
+    expect(snapshot.twilight.civil_dusk_utc).toBeTruthy();
+    expect(Number.isFinite(snapshot.sky.solar_altitude_deg_at_evaluation)).toBe(true);
     expect(snapshot.sky.moon_illumination_percent).toBeGreaterThanOrEqual(0);
     expect(snapshot.sky.moon_illumination_percent).toBeLessThanOrEqual(100);
   });
