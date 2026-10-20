@@ -119,3 +119,14 @@ The current UI uses HTML/CSS plus inline SVG and subtle CSS motion. It is more d
 - Tantra data is part of the existing snapshot/API response and therefore uses the existing Worker and snapshot object cache; no separate Worker or binding is added.
 - Fixed twilight dusk searches to request a setting-altitude crossing. The previous rising-crossing direction could return the next dawn as the dusk timestamp.
 - Read the current PR head SHA before release and verify the full CI result against that exact commit; earlier successful fast gates do not substitute for the complete build/test gate.
+
+
+## Personal setup, daily briefing and alert preferences (2026-10-20)
+
+- Added `MyTimePersonalization.tsx` to the existing `/mytime` page: optional first-run setup, location presets and user-initiated geolocation, site-language selection, six time lenses, daily-interest selection, and an always-available universal-view path.
+- Lens selections apply a matching preset to the existing dashboard layers. Layer visibility remains independently customizable and is persisted by the existing layer preference mechanism.
+- Added a daily briefing driven by the current instant's Panchang Tithi/Nakshatra, current Choghadiya when the loaded snapshot matches the current local date, and an upcoming recommended timing window when available. The briefing remains live as the clock advances; it does not claim an upcoming transition instant unless the calculation supplies one.
+- Preferences are versioned in local storage and normalized before use. Interests and saved events stay in this browser; no new account sync, backend profile table, or birth-data collection was introduced. Existing birth-chart context is reused only if it was already saved by the user's separate birth-chart experience.
+- Added opt-in browser alerts for Tithi/Nakshatra changes, selected timing-window starts, and saved personal events, with timezone-aware quiet hours and an "important only / all selected transitions" frequency control.
+- **Notification limitation:** these My Time transition/event alerts are checked while the My Time page is open. They are not guaranteed after browser close, OS suspension, or device shutdown. Reliable scheduled push for arbitrary event/astronomical transitions requires a separate server-side scheduling/delivery contract and must not be represented as complete in this slice.
+- Added deterministic tests for defaults, malformed preference normalization, saved-event bounds, storage adapters, and quiet-hour boundaries. The new test file is included in `test:patro-tools`; CI must validate the current head before merge.
