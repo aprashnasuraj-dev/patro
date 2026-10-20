@@ -76,3 +76,24 @@ Normalize coordinates deterministically; handle negative values and grid boundar
 - Exact feature flag source and deployment environment policy.
 - Existing preference/location interfaces to reuse and whether any user sync is already supported.
 - Exact cache-grid rounding/encoding specified by the source plan.
+
+
+## Source document confirmed — Phase gates and calculation cautions (2026-10-20)
+
+The source document defines Phase 1 as Edge Infrastructure & Ephemeris Core, Phase 2 as Frontend UI & Interactive Visualizers, and Phase 3 as Personalization & Offline Resilience. These gates are now the roadmap baseline.
+
+### Calculation conventions
+
+- Compute Tithi from the modulo-360° Moon-minus-Sun longitude difference in 12° bins.
+- Compute Nakshatra and Pada from **sidereal** lunar longitude in 13°20′ and 3°20′ bins respectively; apply Lahiri ayanamsa once, not twice.
+- Divide daylight Choghadiya from actual local sunrise to local sunset; divide nighttime Choghadiya from sunset to the following sunrise. Do not assume 24 hours or equal civil hours.
+- Use the source's Rahu Kaal weekday-to-eighth mapping: Sun 8, Mon 2, Tue 7, Wed 5, Thu 6, Fri 4, Sat 3.
+- Treat the source's Worker code as a conceptual example, not a deployable implementation. The shown cache-key template is malformed/incomplete, fixed +05:45 is invalid for general diaspora timezones, UTC date defaults can select the wrong local day, and input/CORS validation is insufficient.
+
+### Swiss Ephemeris selection is blocked on licensing
+
+Official upstream licensing describes a choice between AGPL and a professional license. Before selecting a wrapper or shipping its WASM binary, confirm the site's licensing/business model can comply. Moshier mode does not by itself remove upstream license obligations. Also verify the specific wrapper's maintenance, bundle size, ephemeris-data needs, Worker compatibility, and reproducible test fixtures.
+
+### Cache design refinement
+
+The 0.1° × 0.1° grid is required by the source but must not be the only key dimensions. Include local date, normalized grid cell, IANA timezone (or a documented timezone resolution policy), calculation profile/ayanamsa, schema version, and engine version. Personal birth data must not be shared through the public location cache. Cache event instants and derive countdowns at render time.
