@@ -132,5 +132,14 @@
   ],
   "word_count": 2702,
   "reading_minutes": 13,
-  "image": null
+  "image": {
+    "file": "why-leaves-change-color-in-autumn-hero.jpg",
+    "alt": "Why Leaves Change Color in Autumn — editorial hero image illustrating the article's main subject",
+    "caption": "Footpath with yellow autumn leaves - Flickr - Matthew Paul Argall.jpg",
+    "credit": "Wikimedia Commons: Matthew Paul  Argall from Australia",
+    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0) — see file page for attribution and terms",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Footpath_with_yellow_autumn_leaves_-_Flickr_-_Matthew_Paul_Argall.jpg",
+    "width": 1200,
+    "height": 630
+  }
 }

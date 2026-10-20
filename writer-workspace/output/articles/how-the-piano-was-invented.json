@@ -132,5 +132,14 @@
   ],
   "word_count": 2755,
   "reading_minutes": 13,
-  "image": null
+  "image": {
+    "file": "how-the-piano-was-invented-hero.jpg",
+    "alt": "How the Piano Was Invented — editorial hero image illustrating the article's main subject",
+    "caption": "Thumb Piano (Sanza), Central Africa, West Africa, Brücke Museum Berlin, 65016, view b.jpg",
+    "credit": "Wikimedia Commons: Nick Ash, Berlin",
+    "license": "CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en) — see file page for attribution and terms",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Thumb_Piano_(Sanza)%2C_Central_Africa%2C_West_Africa%2C_Br%C3%BCcke_Museum_Berlin%2C_65016%2C_view_b.jpg",
+    "width": 1200,
+    "height": 630
+  }
 }
