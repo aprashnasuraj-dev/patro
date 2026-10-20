@@ -1,0 +1,29 @@
+{
+  "batch": 1,
+  "completed": [
+    "why-grass-is-green",
+    "why-cats-purr",
+    "why-the-sky-is-blue",
+    "why-it-rains-more-in-some-places",
+    "why-we-procrastinate",
+    "why-onions-make-you-cry",
+    "why-the-internet-does-not-belong-to-anyone",
+    "how-large-language-models-learn",
+    "how-the-pyramids-were-built",
+    "why-russia-spans-eleven-time-zones"
+  ],
+  "rejected": [],
+  "image_pending": [
+    "why-grass-is-green",
+    "why-cats-purr",
+    "why-the-sky-is-blue",
+    "why-it-rains-more-in-some-places",
+    "why-we-procrastinate",
+    "why-onions-make-you-cry",
+    "why-the-internet-does-not-belong-to-anyone",
+    "how-large-language-models-learn",
+    "how-the-pyramids-were-built",
+    "why-russia-spans-eleven-time-zones"
+  ],
+  "finished": "2026-10-20"
+}
