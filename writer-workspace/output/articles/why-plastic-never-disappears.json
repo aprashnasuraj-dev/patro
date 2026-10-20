@@ -136,7 +136,15 @@
   ],
   "word_count": 1365,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "why-plastic-never-disappears-hero.jpg",
+    "alt": "Original editorial illustration for the article: Why Plastic Never Disappears: The Science Explained.",
+    "caption": "An original visual illustration accompanying Why Plastic Never Disappears: The Science Explained.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "plastic pollution",
     "microplastics",

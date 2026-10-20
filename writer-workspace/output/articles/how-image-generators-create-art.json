@@ -141,7 +141,15 @@
   ],
   "word_count": 1434,
   "reading_minutes": 7,
-  "image": null,
+  "image": {
+    "file": "how-image-generators-create-art-hero.jpg",
+    "alt": "Original editorial illustration for the article: How Image Generators Create Art: Explained.",
+    "caption": "An original visual illustration accompanying How Image Generators Create Art: Explained.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "image generators",
     "AI art",

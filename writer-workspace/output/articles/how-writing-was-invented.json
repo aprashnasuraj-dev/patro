@@ -134,7 +134,15 @@
   ],
   "word_count": 1322,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "how-writing-was-invented-hero.jpg",
+    "alt": "Original editorial illustration for the article: How Writing Was Invented: What the Evidence Says.",
+    "caption": "An original visual illustration accompanying How Writing Was Invented: What the Evidence Says.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "writing",
     "invention of writing",

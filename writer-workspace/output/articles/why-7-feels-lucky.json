@@ -135,9 +135,17 @@
       "retrieved_at": "2026-10-20"
     }
   ],
-  "word_count": 1324,
+  "word_count": 1326,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "why-7-feels-lucky-hero.jpg",
+    "alt": "Original editorial illustration for the article: Why 7 Feels Lucky: History, Culture and Evidence.",
+    "caption": "An original visual illustration accompanying Why 7 Feels Lucky: History, Culture and Evidence.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "number 7",
     "lucky number",

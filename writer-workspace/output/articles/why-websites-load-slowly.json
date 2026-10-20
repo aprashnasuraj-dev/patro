@@ -134,7 +134,15 @@
   ],
   "word_count": 1217,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "why-websites-load-slowly-hero.jpg",
+    "alt": "Original editorial illustration for the article: Why Websites Load Slowly: Facts and Evidence.",
+    "caption": "An original visual illustration accompanying Why Websites Load Slowly: Facts and Evidence.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "websites",
     "load slowly",

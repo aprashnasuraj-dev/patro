@@ -1,0 +1,142 @@
+{
+  "batch": 5,
+  "completed": [
+    "why-chocolate-melts-in-your-mouth",
+    "why-ice-is-slippery",
+    "why-websites-load-slowly",
+    "how-image-generators-create-art",
+    "how-writing-was-invented",
+    "why-switzerland-has-four-languages",
+    "why-we-have-time-zones",
+    "why-we-say-hello",
+    "why-7-feels-lucky",
+    "why-plastic-never-disappears"
+  ],
+  "rejected": [],
+  "images_complete": [
+    "why-chocolate-melts-in-your-mouth",
+    "why-ice-is-slippery",
+    "why-websites-load-slowly",
+    "how-image-generators-create-art",
+    "how-writing-was-invented",
+    "why-switzerland-has-four-languages",
+    "why-we-have-time-zones",
+    "why-we-say-hello",
+    "why-7-feels-lucky",
+    "why-plastic-never-disappears"
+  ],
+  "hero_images": {
+    "why-chocolate-melts-in-your-mouth": {
+      "file": "why-chocolate-melts-in-your-mouth-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 77622,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1446,
+      "sources": 5
+    },
+    "why-ice-is-slippery": {
+      "file": "why-ice-is-slippery-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 94865,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1283,
+      "sources": 5
+    },
+    "why-websites-load-slowly": {
+      "file": "why-websites-load-slowly-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 84648,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1217,
+      "sources": 5
+    },
+    "how-image-generators-create-art": {
+      "file": "how-image-generators-create-art-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 94315,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1434,
+      "sources": 5
+    },
+    "how-writing-was-invented": {
+      "file": "how-writing-was-invented-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 88202,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1322,
+      "sources": 5
+    },
+    "why-switzerland-has-four-languages": {
+      "file": "why-switzerland-has-four-languages-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 72482,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1276,
+      "sources": 5
+    },
+    "why-we-have-time-zones": {
+      "file": "why-we-have-time-zones-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 111811,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1378,
+      "sources": 5
+    },
+    "why-we-say-hello": {
+      "file": "why-we-say-hello-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 78545,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1194,
+      "sources": 5
+    },
+    "why-7-feels-lucky": {
+      "file": "why-7-feels-lucky-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 87354,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1326,
+      "sources": 5
+    },
+    "why-plastic-never-disappears": {
+      "file": "why-plastic-never-disappears-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 84700,
+      "origin": "generated",
+      "credit": "Original programmatic illustration created for Mission Mangal Writer",
+      "license": "Original generated illustration; no third-party asset or licence used",
+      "word_count": 1365,
+      "sources": 5
+    }
+  },
+  "finished": "2026-10-20",
+  "note": "All ten Batch 5 article and research files passed structural, length, inline-citation, unique-source, and image checks. Every topic has a committed 1200x630 original hero illustration with local file metadata. Completion marker written only after the final validation pass."
+}

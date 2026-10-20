@@ -141,7 +141,15 @@
   ],
   "word_count": 1378,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "why-we-have-time-zones-hero.jpg",
+    "alt": "Original editorial illustration for the article: Why We Have Time Zones: The Real Answer.",
+    "caption": "An original visual illustration accompanying Why We Have Time Zones: The Real Answer.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "time zones",
     "standard time",

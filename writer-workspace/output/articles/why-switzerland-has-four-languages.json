@@ -141,7 +141,15 @@
   ],
   "word_count": 1276,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "why-switzerland-has-four-languages-hero.jpg",
+    "alt": "Original editorial illustration for the article: Why Switzerland Has Four Languages.",
+    "caption": "An original visual illustration accompanying Why Switzerland Has Four Languages.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "Switzerland",
     "four languages",

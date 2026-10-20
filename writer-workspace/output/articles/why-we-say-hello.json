@@ -128,9 +128,17 @@
       "retrieved_at": "2026-10-20"
     }
   ],
-  "word_count": 1192,
+  "word_count": 1194,
   "reading_minutes": 5,
-  "image": null,
+  "image": {
+    "file": "why-we-say-hello-hero.jpg",
+    "alt": "Original editorial illustration for the article: Why We Say Hello: Facts and Word History.",
+    "caption": "An original visual illustration accompanying Why We Say Hello: Facts and Word History.",
+    "credit": "Original programmatic illustration created for Mission Mangal Writer",
+    "license": "Original generated illustration; no third-party asset or licence used",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "hello",
     "word origin",
