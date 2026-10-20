@@ -51,8 +51,8 @@ export function readJanmaPatroBirthInput(storage?: Pick<Storage, "getItem">) {
     if (!target) return null;
     const raw = JSON.parse(target.getItem(JANMAPATRO_CONTEXT_STORAGE_KEY) || "null");
     const birth = raw && typeof raw === "object" && raw.birth && typeof raw.birth === "object" ? raw.birth : null;
-    if (!birth || typeof birth.date !== "string" || !/^\\d{4}-\\d{2}-\\d{2}$/.test(birth.date)
-      || typeof birth.time !== "string" || !/^(?:[01]\\d|2[0-3]):[0-5]\\d$/.test(birth.time)
+    if (!birth || typeof birth.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(birth.date)
+      || typeof birth.time !== "string" || !/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(birth.time)
       || typeof birth.location !== "string" || !birth.location.trim()) return null;
     const place = findJanmaPatroBirthPlace(birth.location);
     const lat = typeof birth.lat === "number" && Number.isFinite(birth.lat) ? birth.lat : place?.lat;
