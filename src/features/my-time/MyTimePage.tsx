@@ -785,6 +785,7 @@ export default function MyTimePage() {
             <strong>{taraIndex>=0?(ne?TARA_NE[taraIndex]:TARA_EN[taraIndex]):"—"}</strong>
             <p>{taraIndex>=0?(ne?TARA_GUIDANCE_NE[taraIndex]:TARA_GUIDANCE_EN[taraIndex]):l(language,"जन्म नक्षत्र उपलब्ध भएपछि देखाइनेछ।","Available when the natal Nakshatra is known.")}</p>
             <span>{taraCount!==null?l(language,"जन्म नक्षत्रबाट "+taraCount+"औँ तारा","Tara "+taraCount+" from natal Nakshatra"):l(language,"नक्षत्र नाम मिलाउन सकिएन","Could not match the natal Nakshatra")}</span>
+            <em>{taraIndex>=0?l(language,"परम्परागत सङ्केत स्कोर: "+TARA_SCORES[taraIndex]+"/100","Traditional signal score: "+TARA_SCORES[taraIndex]+"/100"):""}</em>
           </article>
           <article className={chandraHouse===8?"is-caution":""}>
             <small>{l(language,"चन्द्रबलम् · गोचर","CHANDRABALAM · TRANSIT")}</small>
@@ -806,7 +807,6 @@ export default function MyTimePage() {
           </article>}
         </div>
       </section>}
-      {snapshot && personalContext.birthChart && <div className="mt-balance-grid"><div><small>{l(language,"ताराबल","Tarabalam")}</small><strong>{taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}</strong><span>{taraCount !== null ? l(language,`जन्म नक्षत्रबाट ${taraCount}औँ ताराको गणना`,`Tara count ${taraCount} from natal Nakshatra`) : l(language,"नक्षत्र नाम मिलाउन सकिएन","Could not match the saved Nakshatra name")}</span><b>{taraIndex >= 0 ? `${TARA_SCORES[taraIndex]} / 100` : ""}</b></div><div><small>{l(language,"चन्द्रबल","Chandrabalam")}</small><strong>{chandraHouse !== null ? l(language,`चन्द्रमा ${chandraHouse}औँ भावमा`,`Moon is in house ${chandraHouse}`) : "—"}</strong><span>{chandraScore === 100 ? l(language,"परम्परागत रूपमा अनुकूल","Traditionally supportive") : chandraScore === 0 ? l(language,"परम्परागत सावधानी","Traditional caution") : chandraScore === 50 ? l(language,"मिश्रित संकेत","Mixed indication") : l(language,"जन्म राशि आवश्यक","Natal Moon sign needed")}</span><b>{chandraScore !== null ? `${chandraScore} / 100` : ""}</b></div></div>}
       {personalContext.effectiveSign && <div className="mt-rashifal-context"><div><small>{l(language,"जोडिएको राशिफल","Connected Rashifal")}</small><strong>{declaredSign ? l(language,declaredSign.ne,declaredSign.en) : personalContext.effectiveSign}</strong></div>{rashifalLoading ? <span>{l(language,"राशिफल लोड हुँदैछ…","Loading Rashifal…")}</span> : rashifalSummary ? <p>{rashifalSummary}</p> : <span>{l(language,"आजको राशिफल सारांश अहिले उपलब्ध छैन।","Today's Rashifal summary is not available right now.")}</span>}</div>}
       </div>
       <div className="mt-personal-links"><a href="/rashifal"><Moon size={18}/>{l(language,"राशिफल खोल्नुहोस्","Open Rashifal")}<ArrowUpRight size={16}/></a><a href="/janmapatro"><Sun size={18}/>{l(language,"जन्मपत्रो खोल्नुहोस्","Open birth chart")}<ArrowUpRight size={16}/></a></div>
