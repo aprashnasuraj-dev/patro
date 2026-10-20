@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bell, BellOff, CalendarClock, Check, Compass, Globe2, Languages, Plus, Sparkles, X } from "lucide-react";
+import { Bell, CalendarClock, Check, Compass, Globe2, Languages, Plus, Sparkles, X } from "lucide-react";
 import type { UiLanguage } from "../../i18n";
 import { l } from "../../useUiLanguage";
 import { deviceZone } from "../../place/place";
@@ -49,6 +49,11 @@ type Props = {
   onLocationChange: (place: { timezone: string; lat: number; lng: number; label: string }) => void;
   onLensChange: (lens: MyTimeLens) => void;
 };
+function countdown(value: string, now: Date, language: UiLanguage) {
+  const seconds = Math.max(0, Math.floor((Date.parse(value) - now.getTime()) / 1000));
+  const hours = Math.floor(seconds / 3600), minutes = Math.floor((seconds % 3600) / 60), remainder = seconds % 60;
+  return language === "ne" ? `${hours ? hours + " घण्टा " : ""}${minutes} मिनेट ${remainder} सेकेन्ड` : `${hours ? hours + "h " : ""}${minutes}m ${remainder}s`;
+}
 function clock(value: string, timezone: string, language: UiLanguage) {
   try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); }
   catch { return "—"; }
@@ -63,7 +68,6 @@ export default function MyTimePersonalization(props: Props) {
   const { language, date, now, timezone, locationLabel, lat, lng, tithiIndex, nakshatraIndex, tithiName, nakshatraName, currentWindow, nextWindow, onLocationChange, onLensChange } = props;
   const [settings, setSettings] = useState<MyTimePersonalSettings>(readMyTimePersonalSettings);
   const [placeId, setPlaceId] = useState(() => PLACES.find(p => p.timezone === timezone && Math.abs(p.lat-lat)<0.02 && Math.abs(p.lng-lng)<0.02)?.id || "custom");
-  const [customPlace, setCustomPlace] = useState("");
   const [eventTitle, setEventTitle] = useState("");
   const [eventAt, setEventAt] = useState("");
   const [notice, setNotice] = useState("");
@@ -156,8 +160,8 @@ export default function MyTimePersonalization(props: Props) {
       <div className="mt-briefing-grid">
         <article><small>{l(language, "हालको तिथि", "CURRENT TITHI")}</small><strong>{tithiName || "—"}</strong><span>{l(language, "तिथि परिवर्तन हुँदा हालको मान अपडेट हुन्छ।", "Updates as the current Tithi changes.")}</span></article>
         <article><small>{l(language, "हालको नक्षत्र", "CURRENT NAKSHATRA")}</small><strong>{nakshatraName || "—"}</strong><span>{l(language, "खगोलीय गणनामा आधारित", "Based on the current astronomical calculation.")}</span></article>
-        <article><small>{l(language, "हालको समय झ्याल", "CURRENT TIMING WINDOW")}</small><strong>{currentWindow?.name || l(language, "समय गणना भइरहेको छ", "Calculating current window")}</strong><span>{currentWindow ? clock(currentWindow.start_utc, timezone, language) + "–" + clock(currentWindow.end_utc, timezone, language) : l(language, "सूर्योदय/सूर्यास्त उपलब्धतामा निर्भर", "Depends on available solar events.")}</span></article>
-        <article><small>{l(language, "अर्को चयनित झ्याल", "NEXT TIMING WINDOW")}</small><strong>{nextWindow?.name || l(language, "अहिले उपलब्ध छैन", "Not available yet")}</strong><span>{nextWindow ? clock(nextWindow.start_utc, timezone, language) + "–" + clock(nextWindow.end_utc, timezone, language) : l(language, "गणना उपलब्ध भएपछि देखाइन्छ।", "Shown when a valid window is available.")}</span></article>
+        <article><small>{l(language, "हालको समय झ्याल", "CURRENT TIMING WINDOW")}</small><strong>{currentWindow?.name || l(language, "समय गणना भइरहेको छ", "Calculating current window")}</strong><span>{currentWindow ? clock(currentWindow.start_utc, timezone, language) + "–" + clock(currentWindow.end_utc, timezone, language) + " · " + (language === "ne" ? "समाप्ति " : "ends in ") + countdown(currentWindow.end_utc, now, language) : l(language, "सूर्योदय/सूर्यास्त उपलब्धतामा निर्भर", "Depends on available solar events.")}</span></article>
+        <article><small>{l(language, "अर्को चयनित झ्याल", "NEXT TIMING WINDOW")}</small><strong>{nextWindow?.name || l(language, "अहिले उपलब्ध छैन", "Not available yet")}</strong><span>{nextWindow ? clock(nextWindow.start_utc, timezone, language) + "–" + clock(nextWindow.end_utc, timezone, language) + " · " + (language === "ne" ? "सुरु हुन " : "starts in ") + countdown(nextWindow.start_utc, now, language) : l(language, "गणना उपलब्ध भएपछि देखाइन्छ।", "Shown when a valid window is available.")}</span></article>
       </div>
       <p className="mt-briefing-note"><b>{l(language, "आजको ध्यान", "TODAY’S FOCUS")}:</b> {language === "ne" ? interestPrompt[focus][0] : interestPrompt[focus][1]}<br/>{l(language, "तपाईंको रुचि", "Your interests")}: {interestLine}. {l(language, "यो सारांश जानकारी र परम्परागत समय बुझ्नका लागि हो; कुनै परिणामको ग्यारेन्टी होइन।", "This briefing is informational and culturally contextual; it does not guarantee outcomes.")}</p>
     </section>
@@ -178,6 +182,9 @@ export default function MyTimePersonalization(props: Props) {
       <summary><span><Compass size={16}/>{l(language, "व्यक्तिगत प्राथमिकता र सूचना", "Personal preferences & alerts")}</span><small>{l(language, "कुनै पनि बेला परिवर्तन गर्न सकिन्छ", "Change any time")}</small></summary>
       <div className="mt-notification-settings">
         <p>{l(language, "अलर्टहरूका लागि स्पष्ट अनुमति चाहिन्छ। हालका संक्रमण/समय-झ्याल अलर्टहरू My Time खुला हुँदा मात्र जाँचिन्छन्; ब्राउजर बन्द हुँदा वा फोनले एप रोक्दा तिनीहरू पुग्ने ग्यारेन्टी छैन।", "Alerts require explicit permission. Transition and timing-window alerts are checked while My Time is open; delivery is not guaranteed after the browser closes or the device suspends the page.")}</p>
+        <div className="mt-setup-options"><strong>{l(language, "समय लेन्स", "Time lens")}</strong><div>{LENSES.map(item=><button type="button" key={item.id} className={settings.lens===item.id?"is-selected":""} onClick={()=>chooseLens(item.id)}><b>{language==="ne"?item.ne:item.en}</b><small>{item.detail}</small></button>)}</div></div>
+        <div className="mt-setup-options"><strong>{l(language, "दैनिक रुचि", "Daily interests")}</strong><div className="mt-interest-options">{INTERESTS.map(item=><label key={item.id}><input type="checkbox" checked={settings.interests.includes(item.id)} onChange={()=>toggleInterest(item.id)}/>{language==="ne"?item.ne:item.en}</label>)}</div></div>
+        <div className="mt-setup-grid"><label><span><Globe2 size={15}/>{l(language, "स्थान", "Location")}</span><select value={placeId} onChange={event=>choosePlace(event.target.value)}><option value="custom">{l(language, "हालको / म्यानुअल स्थान", "Current / manual location")}</option>{PLACES.map(place=><option key={place.id} value={place.id}>{place.label}</option>)}</select><button type="button" className="mt-secondary" onClick={useDeviceLocation}>{l(language, "उपकरणको स्थान प्रयोग गर्नुहोस्", "Use device location")}</button></label><label><span><Languages size={15}/>{l(language, "भाषा", "Language")}</span><select value={language} onChange={event=>updateLanguage(event.target.value as UiLanguage)}><option value="ne">नेपाली</option><option value="en">English</option></select></label></div>
         <button type="button" className="mt-secondary" onClick={()=>void enableAlerts()}><Bell size={16}/>{l(language, "सूचना अनुमति जाँच्नुहोस्", "Enable/check notification permission")}</button>
         <div className="mt-alert-options">
           {([["tithiTransitions","तिथि परिवर्तन","Tithi changes"],["nakshatraTransitions","नक्षत्र परिवर्तन","Nakshatra changes"],["timingWindows","चयनित समय झ्याल सुरु हुँदा","Selected timing windows"],["savedEvents","सुरक्षित कार्यक्रम","Saved events"]] as const).map(([key,neLabel,enLabel])=><label key={key}><input type="checkbox" checked={settings.notifications[key]} onChange={event=>update(old=>({...old,notifications:{...old.notifications,[key]:event.target.checked}}))}/>{l(language,neLabel,enLabel)}</label>)}
