@@ -97,7 +97,9 @@
       "publisher": "MDN Web Docs",
       "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "MDN Web Docs. (n.d.). Populating the page: how browsers work. https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+      "citation": "MDN Web Docs, n.d."
     },
     {
       "n": 2,
@@ -105,7 +107,9 @@
       "publisher": "web.dev",
       "url": "https://web.dev/articles/optimize-lcp",
       "published_at": "2025-03-31",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "web.dev. (2025). Optimize Largest Contentful Paint. https://web.dev/articles/optimize-lcp",
+      "citation": "web.dev, 2025"
     },
     {
       "n": 3,
@@ -113,7 +117,9 @@
       "publisher": "MDN Web Docs",
       "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "MDN Web Docs. (n.d.). Web performance. https://developer.mozilla.org/en-US/docs/Web/Performance",
+      "citation": "MDN Web Docs, n.d."
     },
     {
       "n": 4,
@@ -121,7 +127,9 @@
       "publisher": "Chrome for Developers",
       "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Chrome for Developers. (n.d.). Lighthouse performance scoring. https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+      "citation": "Chrome for Developers, n.d."
     },
     {
       "n": 5,
@@ -129,7 +137,9 @@
       "publisher": "World Wide Web Consortium",
       "url": "https://www.w3.org/TR/navigation-timing-2/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "World Wide Web Consortium. (n.d.). Navigation Timing Level 2. https://www.w3.org/TR/navigation-timing-2/",
+      "citation": "World Wide Web Consortium, n.d."
     }
   ],
   "word_count": 1217,

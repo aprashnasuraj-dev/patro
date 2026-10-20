@@ -104,7 +104,9 @@
       "publisher": "arXiv",
       "url": "https://arxiv.org/abs/2303.07909",
       "published_at": "2023-03-14",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "arXiv. (2023). Text-to-image Diffusion Models in Generative AI: A Survey. https://arxiv.org/abs/2303.07909",
+      "citation": "arXiv, 2023"
     },
     {
       "n": 2,
@@ -112,7 +114,9 @@
       "publisher": "arXiv",
       "url": "https://arxiv.org/abs/2006.11239",
       "published_at": "2020-06-19",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "arXiv. (2020). Denoising Diffusion Probabilistic Models. https://arxiv.org/abs/2006.11239",
+      "citation": "arXiv, 2020"
     },
     {
       "n": 3,
@@ -120,7 +124,9 @@
       "publisher": "arXiv / CVPR 2022",
       "url": "https://arxiv.org/abs/2112.10752",
       "published_at": "2021-12-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "arXiv / CVPR 2022. (2021). High-Resolution Image Synthesis with Latent Diffusion Models. https://arxiv.org/abs/2112.10752",
+      "citation": "arXiv / CVPR 2022, 2021"
     },
     {
       "n": 4,
@@ -128,7 +134,9 @@
       "publisher": "arXiv",
       "url": "https://arxiv.org/abs/2205.11487",
       "published_at": "2022-05-23",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "arXiv. (2022). Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding. https://arxiv.org/abs/2205.11487",
+      "citation": "arXiv, 2022"
     },
     {
       "n": 5,
@@ -136,7 +144,9 @@
       "publisher": "Google Cloud Blog",
       "url": "https://cloud.google.com/blog/products/ai-machine-learning/guide-to-optimizing-image-generation-pipelines",
       "published_at": "2025-02-21",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Google Cloud Blog. (2025). Optimizing image generation pipelines on Google Cloud. https://cloud.google.com/blog/products/ai-machine-learning/guide-to-optimizing-image-generation-pipelines",
+      "citation": "Google Cloud Blog, 2025"
     }
   ],
   "word_count": 1434,

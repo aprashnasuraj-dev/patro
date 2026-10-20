@@ -14,7 +14,9 @@
         "Navigation includes DNS lookup, connection setup, secure negotiation, request and response.",
         "Extra hostnames can require additional DNS lookups, while network latency and bandwidth affect load time.",
         "Parsing, CSS, JavaScript and rendering all influence when content appears and becomes interactive."
-      ]
+      ],
+      "apa": "MDN Web Docs. (n.d.). Populating the page: how browsers work. https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work",
+      "citation": "MDN Web Docs, n.d."
     },
     {
       "n": 2,
@@ -27,7 +29,9 @@
         "Largest Contentful Paint measures when the main visible content is rendered.",
         "A good LCP target is 2.5 seconds or less for at least 75% of visits.",
         "High time to first byte, redirects, poor networks and render-blocking assets can delay content."
-      ]
+      ],
+      "apa": "web.dev. (2025). Optimize Largest Contentful Paint. https://web.dev/articles/optimize-lcp",
+      "citation": "web.dev, 2025"
     },
     {
       "n": 3,
@@ -40,7 +44,9 @@
         "Performance includes load time, responsiveness, smooth interactions and perceived speed.",
         "Latency is the time for data to travel between endpoints.",
         "Measure actual user experience as well as lab performance."
-      ]
+      ],
+      "apa": "MDN Web Docs. (n.d.). Web performance. https://developer.mozilla.org/en-US/docs/Web/Performance",
+      "citation": "MDN Web Docs, n.d."
     },
     {
       "n": 4,
@@ -53,7 +59,9 @@
         "Lighthouse combines performance metrics into a score; the score is diagnostic, not a complete user-experience description.",
         "Performance metrics have different weights and vary by test conditions.",
         "Use diagnostics to identify bottlenecks rather than optimizing a score in isolation."
-      ]
+      ],
+      "apa": "Chrome for Developers. (n.d.). Lighthouse performance scoring. https://developer.chrome.com/docs/lighthouse/performance/performance-scoring",
+      "citation": "Chrome for Developers, n.d."
     },
     {
       "n": 5,
@@ -66,7 +74,9 @@
         "Navigation Timing defines browser timestamps for navigation and resource loading milestones.",
         "The measurements help separate DNS, connection, request and response delays.",
         "Timing data helps diagnose where a page load spends time."
-      ]
+      ],
+      "apa": "World Wide Web Consortium. (n.d.). Navigation Timing Level 2. https://www.w3.org/TR/navigation-timing-2/",
+      "citation": "World Wide Web Consortium, n.d."
     }
   ]
 }

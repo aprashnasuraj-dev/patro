@@ -14,7 +14,9 @@
         "Reviews text-conditioned image synthesis and the evolution of diffusion methods.",
         "Explains the task as generating images guided by text prompts.",
         "Discusses applications and unresolved challenges in controllability and evaluation."
-      ]
+      ],
+      "apa": "arXiv. (2023). Text-to-image Diffusion Models in Generative AI: A Survey. https://arxiv.org/abs/2303.07909",
+      "citation": "arXiv, 2023"
     },
     {
       "n": 2,
@@ -27,7 +29,9 @@
         "Introduces diffusion probabilistic models for high-quality image synthesis.",
         "The method learns a reverse process that gradually removes noise.",
         "The paper frames generation as a sequence of denoising steps."
-      ]
+      ],
+      "apa": "arXiv. (2020). Denoising Diffusion Probabilistic Models. https://arxiv.org/abs/2006.11239",
+      "citation": "arXiv, 2020"
     },
     {
       "n": 3,
@@ -40,7 +44,9 @@
         "Moves diffusion into a compressed latent representation to reduce computation.",
         "Uses cross-attention to condition generation on text and other inputs.",
         "Reports image synthesis and editing applications with lower computational requirements than pixel-space diffusion."
-      ]
+      ],
+      "apa": "arXiv / CVPR 2022. (2021). High-Resolution Image Synthesis with Latent Diffusion Models. https://arxiv.org/abs/2112.10752",
+      "citation": "arXiv / CVPR 2022, 2021"
     },
     {
       "n": 4,
@@ -53,7 +59,9 @@
         "Describes Imagen, which combines a language model with diffusion image generation.",
         "Shows how text representation and image synthesis jointly affect prompt alignment.",
         "Uses benchmark comparisons to study image quality and text-image alignment."
-      ]
+      ],
+      "apa": "arXiv. (2022). Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding. https://arxiv.org/abs/2205.11487",
+      "citation": "arXiv, 2022"
     },
     {
       "n": 5,
@@ -66,7 +74,9 @@
         "Diffusion image generation can be computationally demanding.",
         "A typical pipeline may run multiple models in sequence, including encoders, denoisers and decoders.",
         "Runtime and quality depend on model architecture, hardware and data movement."
-      ]
+      ],
+      "apa": "Google Cloud Blog. (2025). Optimizing image generation pipelines on Google Cloud. https://cloud.google.com/blog/products/ai-machine-learning/guide-to-optimizing-image-generation-pipelines",
+      "citation": "Google Cloud Blog, 2025"
     }
   ]
 }
