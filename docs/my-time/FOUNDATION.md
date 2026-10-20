@@ -1,6 +1,6 @@
 # My Time — Foundation & Exploration
 
-**Status:** Foundation exploration; no production feature code changed.  
+**Status:** Foundation and implementation reference for `feature/my-time-v1`; implementation is branch-only, not deployed, and the Worker API remains disabled unless `MY_TIME_ENABLED=true` is configured.  
 **Feature branch:** `feature/my-time-v1`  
 **Repository baseline:** `main` at exploration time.  
 **Architecture reference supplied by product owner:** [Architectural Framework and Multidimensional Temporal Engineering for “My Time”](https://docs.google.com/document/d/1j-qzxHczYNxpXO1-B6dPMZSj4jFVLj3ek8gYecEsX_c/edit?usp=drivesdk)
@@ -104,7 +104,7 @@ The product owner's three-phase roadmap remains authoritative; this sequence mus
 - Existing /time-machine and unrelated routes are preserved; My Time is added only at /mytime and /api/v1/mytime/today.
 - No new dependency, D1 schema, KV binding, or separate Worker is added.
 - The new API handler is dispatched through the existing worker/optimized-entry.ts entry point and remains disabled unless MY_TIME_ENABLED=true is configured in the Worker environment.
-- The API reuses the existing `src/place/timing.ts` and `src/patro-tools/core/astro.ts` provider for location-aware sunrise Panchang, sidereal Tithi/Nakshatra/Pada/Yoga/Karana, Sun/Moon signs, sunrise/sunset, moonrise, and tithi end; it falls back to local noon when sunrise/sunset are unavailable. My Time also reuses the existing calendar archive/D1 fallback and location preferences. Choghadiya, Rahu Kaal, Yamaganda, Gulika, Hora, local eclipse contacts, and browser-local Tarabalam/Chandrabalam have initial implementations. Civil/nautical/astronomical twilight and IndexedDB snapshot caching have since been implemented in the feature branch. Smart Muhurta and service-worker offline fallback remain incomplete.
+- The API reuses the existing `src/place/timing.ts` and `src/patro-tools/core/astro.ts` provider for location-aware sunrise Panchang, sidereal Tithi/Nakshatra/Pada/Yoga/Karana, Sun/Moon signs, sunrise/sunset, moonrise, and tithi end; it falls back to local noon when sunrise/sunset are unavailable. My Time also reuses the existing calendar archive/D1 fallback and location preferences. Choghadiya, Rahu Kaal, Yamaganda, Gulika, Hora, local eclipse contacts, and browser-local Tarabalam/Chandrabalam have initial implementations. Civil/nautical/astronomical twilight, IndexedDB snapshot caching, a service-worker app-shell entry for `/mytime`, and an initial explainable Muhurta scorer have since been implemented in the feature branch. Guaranteed first-visit offline use, airplane-mode end-to-end verification, and a complete personalized Jyotish engine remain incomplete.
 - New deterministic tests have been added to the existing product test script; GitHub CI is the validation gate, and results must be checked before merge.
 - No feature code has been deployed or enabled. A corrective PR restored the default branch after accidental file writes; intended implementation remains isolated on `feature/my-time-v1`.
 
