@@ -21,12 +21,22 @@ type Snapshot = MyTimeSnapshot;
 function isMyTimeSnapshot(value: unknown): value is Snapshot {
   if (!value || typeof value !== "object") return false;
   const data = value as Partial<Snapshot>;
-  return data.schema_version === 1 && typeof data.date === "string" && typeof data.timezone === "string"
+  const p = data.panchang;
+  const sky = data.sky;
+  const twilight = data.twilight;
+  const instantOrNull = (value: unknown) => value === null || (typeof value === "string" && Number.isFinite(Date.parse(value)));
+  return data.schema_version === 1 && typeof data.date === "string" && /^\\d{4}-\\d{2}-\\d{2}$/.test(data.date) && typeof data.timezone === "string"
     && !!data.location && Number.isFinite(data.location.lat) && Number.isFinite(data.location.lng)
-    && !!data.panchang && Number.isInteger(data.panchang.tithi_index) && Number.isInteger(data.panchang.nakshatra_index)
-    && Number.isInteger(data.panchang.yoga_index) && Number.isInteger(data.panchang.karana_index)
-    && !!data.sky && typeof data.sky.solar_altitude_deg_at_evaluation === "number"
-    && !!data.twilight && !!data.methodology;
+    && !!p && Number.isInteger(p.tithi_index) && p.tithi_index >= 1 && p.tithi_index <= 30
+    && Number.isInteger(p.nakshatra_index) && p.nakshatra_index >= 1 && p.nakshatra_index <= 27
+    && Number.isInteger(p.yoga_index) && p.yoga_index >= 1 && p.yoga_index <= 27
+    && Number.isInteger(p.karana_index) && p.karana_index >= 0 && p.karana_index <= 10
+    && instantOrNull(p.sunrise_utc) && instantOrNull(p.sunset_utc) && instantOrNull(p.next_sunrise_utc)
+    && !!sky && typeof sky.solar_altitude_deg_at_evaluation === "number"
+    && instantOrNull(twilight?.civil_dawn_utc) && instantOrNull(twilight?.civil_dusk_utc)
+    && instantOrNull(twilight?.nautical_dawn_utc) && instantOrNull(twilight?.nautical_dusk_utc)
+    && instantOrNull(twilight?.astronomical_dawn_utc) && instantOrNull(twilight?.astronomical_dusk_utc)
+    && !!data.methodology && typeof data.evaluated_at_utc === "string";
 }
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
