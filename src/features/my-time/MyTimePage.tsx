@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ArrowUpRight, CalendarClock, CircleAlert, Compass, Globe2, Moon, RefreshCw, Sun, TimerReset } from "lucide-react";
+import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } from "lucide-react";
 import { setPageTitle } from "../../title";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import "./my-time.css";
@@ -38,7 +38,7 @@ function localClock(timezone: string, now: Date) {
   catch { return now.toLocaleTimeString(); }
 }
 function localDateLabel(date: string, timezone: string, language: "ne" | "en") {
-  try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, weekday: "long", year: "numeric", month: "long", day: "numeric" }).format(new Date(date + "T12:00:00Z")); }
+  try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: "UTC", weekday: "long", year: "numeric", month: "long", day: "numeric" }).format(new Date(date + "T12:00:00Z")); }
   catch { return date; }
 }
 function fmt(value: number, digits = 2) { return Number.isFinite(value) ? value.toFixed(digits) : "—"; }
@@ -72,12 +72,12 @@ function PolarClock({ timezone, now, language }: { timezone: string; now: Date; 
 }
 
 const UPCOMING = [
-  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","Solar horizon and twilight"],
-  ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","Sidereal lunar and solar combinations"],
-  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","Local sunrise/sunset-based timing"],
-  ["✦","शुभ मुहूर्त","Smart Muhurta","Explainable personal timing windows"],
-  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","Uses declared birth-chart context"],
-  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","Event contacts and visibility context"]
+  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","सौर क्षितिज र सन्ध्याकाल","Solar horizon and twilight"],
+  ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations"],
+  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing"],
+  ["✦","शुभ मुहूर्त","Smart Muhurta","व्याख्या गर्न मिल्ने व्यक्तिगत समय सिफारिस","Explainable personal timing windows"],
+  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context"],
+  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context"]
 ] as const;
 
 export default function MyTimePage() {
@@ -88,14 +88,13 @@ export default function MyTimePage() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const ne = language === "ne";
 
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
 
   const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences) => {
-    setLoading(true); setError(""); setSubmitted(true);
+    setLoading(true); setError("");
     try {
       const query = new URLSearchParams({
         date: nextDate, timezone: nextPreferences.timezone,
@@ -146,7 +145,7 @@ export default function MyTimePage() {
       <section className="mt-panel mt-panchang-panel">
         <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"आजको खगोलीय आधार","ASTRONOMICAL SNAPSHOT")}</span><h2>{l(language,"पञ्चाङ्ग र चन्द्र अवस्था","Panchang & lunar phase")}</h2></div><Moon size={21}/></div>
         {snapshot ? <>
-          <div className="mt-tithi-hero"><div className="mt-moon-mark"><Moon size={28}/></div><div><small>{l(language,"तिथि","Tithi")} {snapshot.panchang.tithi_index}/30</small><strong>{tithiName}</strong><span>{snapshot.panchang.paksha}</span></div><div className="mt-tithi-progress"><b>{fmt(snapshot.panchang.tithi_progress_percent,0)}%</b><span>{l(language,"प्रगति","progress")}</span></div></div>
+          <div className="mt-tithi-hero"><div className="mt-moon-mark"><Moon size={28}/></div><div><small>{l(language,"तिथि","Tithi")} {snapshot.panchang.tithi_index}/30</small><strong>{tithiName}</strong><span>{snapshot.panchang.paksha === "Shukla Paksha" ? l(language,"शुक्ल पक्ष","Shukla Paksha") : l(language,"कृष्ण पक्ष","Krishna Paksha")}</span></div><div className="mt-tithi-progress"><b>{fmt(snapshot.panchang.tithi_progress_percent,0)}%</b><span>{l(language,"प्रगति","progress")}</span></div></div>
           <div className="mt-progress-track"><span style={{width:`${snapshot.panchang.tithi_progress_percent}%`}}/></div>
           <div className="mt-metrics"><div><span>{l(language,"चन्द्र उज्यालोपन","Moon illumination")}</span><strong>{fmt(snapshot.sky.moon_illumination_percent,1)}%</strong></div><div><span>{l(language,"सूर्य देशान्तर","Sun longitude")}</span><strong>{fmt(snapshot.sky.sun_longitude_tropical_deg)}°</strong></div><div><span>{l(language,"चन्द्र देशान्तर","Moon longitude")}</span><strong>{fmt(snapshot.sky.moon_longitude_tropical_deg)}°</strong></div></div>
         </> : <div className="mt-empty-snapshot"><Moon size={28}/><strong>{l(language,"तपाईंको समयको गणना तयार हुँदैछ","Your time snapshot is waiting")}</strong><span>{l(language,"स्थान, समय क्षेत्र र मिति अनुसार गणना लोड गर्नुहोस्।","Load calculations for your location, timezone and date.")}</span></div>}
@@ -156,7 +155,7 @@ export default function MyTimePage() {
 
     <section className="mt-section">
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह एउटै मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। गणना उपलब्ध नभएका भागलाई स्पष्ट रूपमा चिनाइएको छ।","Every layer shares the same date, location and timezone. Capabilities not yet calculated are explicitly marked.")}</p></div>
-      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,desc])=><article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,desc,desc)}</p></div><span className="mt-layer-status">{l(language,"इन्जिन जडान हुँदै","Engine integration pending")}</span></article>)}</div>
+      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn])=><article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className="mt-layer-status">{l(language,"इन्जिन जडान हुँदै","Engine integration pending")}</span></article>)}</div>
     </section>
 
     <section className="mt-personal">
