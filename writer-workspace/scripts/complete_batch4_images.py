@@ -195,6 +195,7 @@ def git_commit(slugs, label):
     subprocess.run(["git","config","user.email","41898282+github-actions[bot]@users.noreply.github.com"],check=True)
     subprocess.run(["git","add","writer-workspace/output/images"]+[str(ART/f"{s}.json") for s in slugs],check=True)
     subprocess.run(["git","commit","-m",f"Add Batch 4 hero images: {label}"],check=True)
+    subprocess.run(["git","push","origin","missionmangal-writer-batch-production"],check=True)
 
 def main():
     IMG.mkdir(parents=True,exist_ok=True)
@@ -239,6 +240,7 @@ def main():
     DONE.parent.mkdir(parents=True,exist_ok=True); DONE.write_text(json.dumps(done,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     subprocess.run(["git","add",str(DONE)],check=True)
     subprocess.run(["git","commit","-m","Mark Mission Mangal Writer Batch 4 image-complete"],check=True)
+    subprocess.run(["git","push","origin","missionmangal-writer-batch-production"],check=True)
     print("BATCH4_IMAGE_REPORT="+json.dumps({"images":completed,"pending":[]},ensure_ascii=False),flush=True)
 
 if __name__=="__main__": main()
