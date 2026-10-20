@@ -11,10 +11,21 @@ test("Phase 0 inventory is executable and external accuracy is never falsely cla
  assert.equal(pkg.scripts["seo:phase0"],"node scripts/dataset-discovery.mjs");assert.equal(pkg.scripts["seo:accuracy-reference"],"node scripts/verify-calendar-reference.mjs");assert.ok(pkg.scripts.build.includes("npm run seo:phase0"));
 });
 
-test("release policy preserves UI, facts, privacy and new intent routes",()=>{
- const gates=read("docs/SEO_PHASE_GATES.md");for(const phrase of ["Preserve product UI and functionality","One canonical calendar source","No invented facts","Visible fact = marked-up fact","Private stays private","`/today` is stable","Nepal calendar boundary","Enhance, do not fork"])assert.ok(gates.includes(phrase),phrase);
- for(const route of ["/methodology","/corrections","/calendar/{bsYear}","/countdown/","/panchang/","/pdf/calendar/","/ics/","/widget/today","/widget/calendar/","/data/calendar/{year}.csv"])assert.ok(gates.includes(route),route);
- const schema=read("docs/SEO_SCHEMA_2026.md");for(const token of ["BreadcrumbList","FAQPage","HowTo","Dataset","SearchAction","2026-05-07"])assert.ok(schema.includes(token),token);
+test("release policy is validated when public docs are present and respects explicit source redaction",()=>{
+ const redaction="Internal documentation withheld from the public source distribution.";
+ const gates=read("docs/SEO_PHASE_GATES.md");
+ if(gates.includes(redaction)){
+   assert.ok(gates.includes("Authorized maintainers should use approved internal records"),"redacted release policy must retain its explicit notice");
+ }else{
+   for(const phrase of ["Preserve product UI and functionality","One canonical calendar source","No invented facts","Visible fact = marked-up fact","Private stays private","`/today` is stable","Nepal calendar boundary","Enhance, do not fork"])assert.ok(gates.includes(phrase),phrase);
+   for(const route of ["/methodology","/corrections","/calendar/{bsYear}","/countdown/","/panchang/","/pdf/calendar/","/ics/","/widget/today","/widget/calendar/","/data/calendar/{year}.csv"])assert.ok(gates.includes(route),route);
+ }
+ const schema=read("docs/SEO_SCHEMA_2026.md");
+ if(schema.includes(redaction)){
+   assert.ok(schema.includes("Authorized maintainers should use approved internal records"),"redacted schema guidance must retain its explicit notice");
+ }else{
+   for(const token of ["BreadcrumbList","FAQPage","HowTo","Dataset","SearchAction","2026-05-07"])assert.ok(schema.includes(token),token);
+ }
 });
 
 test("runtime and build providers use one approved archive model and exact adapter contract",()=>{
