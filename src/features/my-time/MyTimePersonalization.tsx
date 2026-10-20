@@ -86,7 +86,7 @@ export default function MyTimePersonalization(props: Props) {
   const lastNotificationDay = useRef(readLastAlertDays());
   const interestLine = settings.interests.map(id => INTERESTS.find(item => item.id === id)).filter(Boolean).map(item => language === "ne" ? item!.ne : item!.en).join(", ");
   const update = (mutate: (old: MyTimePersonalSettings) => MyTimePersonalSettings) => setSettings(old => mutate(old));
-  useEffect(() => { saveMyTimePersonalSettings(settings); }, [settings]);
+  useEffect(() => { saveMyTimePersonalSettings(settings); window.dispatchEvent(new CustomEvent("patro:mytime-settings-updated", { detail: settings })); }, [settings]);
   useEffect(() => {
     const previous = previousRef.current;
     if (previous.tithi !== null && tithiIndex !== null && previous.tithi !== tithiIndex && settings.notifications.tithiTransitions) notify(l(language, "तिथि परिवर्तन", "Tithi changed"), l(language, "हालको तिथि: ", "Current Tithi: ") + tithiName, "tithi");
