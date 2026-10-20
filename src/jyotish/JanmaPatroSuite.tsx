@@ -1,7 +1,7 @@
 import { RASHIS as NE_SIGNS, NAKSHATRAS as NE_NAKSHATRAS, toNepaliDigits } from "../patro-tools/core/names";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { calculateChart, calculateGuna, type BirthInput, type ChartResult, type GunaResult, SIGNS } from "./jyotishEngine";
-import { JANMAPATRO_BIRTH_PLACES as DISTRICTS, createJanmaPatroContext, saveJanmaPatroContext } from "./my-time-bridge";
+import { JANMAPATRO_BIRTH_PLACES as DISTRICTS, createJanmaPatroContext, readJanmaPatroBirthInput, saveJanmaPatroContext } from "./my-time-bridge";
 import { calculateNameGuna, nameSyllableFromNakshatra, type NameGunaResult } from "../../packages/engine/src/name-guna.js";
 import { createJanmaPatroShareUrl, readJanmaPatroShareState } from "../../packages/engine/src/share-state.js";
 import { adToBs, bsToAd, daysInBsMonth } from "../../packages/core/src/bsDate";
@@ -127,7 +127,7 @@ function NameGunaReport({result,language}:{result:NameGunaResult;language:Langua
 
 export function JanmaPatroSuite(){
  const[language,setLanguage]=useState<Language>("ne"),[tab,setTabState]=useState<Tab>(routeTab),[matchMode,setMatchMode]=useState<MatchMode>("birth");
- const[a,setA]=useState<ProfileInput>({...DEFAULT}),[b,setB]=useState<ProfileInput>({...DEFAULT,name:"",father:""}),[nameA,setNameA]=useState("राम"),[nameB,setNameB]=useState("सीता");
+ const[a,setA]=useState<ProfileInput>(()=>({...DEFAULT,...(readJanmaPatroBirthInput()||{})})),[b,setB]=useState<ProfileInput>({...DEFAULT,name:"",father:""}),[nameA,setNameA]=useState("राम"),[nameB,setNameB]=useState("सीता");
  const[chart,setChart]=useState<ChartResult|null>(null),[guna,setGuna]=useState<GunaResult|null>(null),[nameGuna,setNameGuna]=useState<NameGunaResult|null>(null);
  const[error,setError]=useState<string|null>(null),[notice,setNotice]=useState(""),[shareUrl,setShareUrl]=useState(""),[pdfBusy,setPdfBusy]=useState(false),[jpgBusy,setJpgBusy]=useState(false);
  const reportRef=useRef<HTMLDivElement|null>(null);
