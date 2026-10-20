@@ -2,8 +2,8 @@
   "id": "mm-0069",
   "slug": "how-languages-die",
   "canonical_url": "https://aafnaipatro.com/how-languages-die/",
-  "title": "How Languages Die: Language Shift, Identity and Revitalization",
-  "meta_description": "An evidence-based guide to how languages die, its underlying causes, common misconceptions and what research or institutions say.",
+  "title": "How Languages Die: Causes and Revival",
+  "meta_description": "Understand how languages become endangered, why children’s language transmission matters, what communities lose, and how revitalization efforts can help.",
   "h1": "How Languages Die?",
   "category": "Language, Words & Culture",
   "author": "Suraj Dahal",
@@ -22,7 +22,7 @@
   ],
   "sections": [
     {
-      "h2": "What it means for a language to die",
+      "h2": "The short answer",
       "paras": [
         "A language is usually described as extinct when no one uses it as a first language and there are no fluent speakers who can keep it in ordinary community use. Language loss is often gradual: a language may be spoken by elders, then used less by parents, and eventually no longer learned naturally by children. There is no single moment that captures every community’s experience. [1][4]",
         "A language does not disappear because its grammar is inherently weak or because its speakers lack sophistication. Every language can express complex ideas. Language shift usually reflects social and political conditions: schooling, employment, migration, discrimination, media access and whether families have practical opportunities to pass the language to children. [2][4]"
@@ -81,7 +81,7 @@
       "h2": "The main lesson",
       "paras": [
         "Languages die most often through sustained shifts in use and transmission, not because the language itself is deficient. Political pressure, discrimination, schooling, employment and media can make a dominant language necessary while shrinking the practical space for another. The process can be reversed or slowed when speakers have resources, respect and opportunities to use their language across generations. [1][2][4]",
-        "The most meaningful measure of success is not only how many languages appear in a catalogue, but whether communities can choose to use and pass on the languages they value. Documentation helps, education matters, and technology can support the work, but everyday relationships and institutional conditions are central. Language diversity survives when speakers have both freedom and real opportunities to keep speaking. [2][4]"
+        "The most meaningful measure of success is not only how many languages appear in a catalogue, but whether communities can choose to use and pass on the languages they value. Documentation helps, education matters, and technology can support the work, but everyday relationships and institutional conditions are central. Language diversity survives when speakers have both freedom and real opportunities to keep speaking. [2][4] [5]"
       ]
     }
   ],
@@ -97,6 +97,14 @@
     {
       "q": "Does speaking a dominant language automatically endanger a local language?",
       "a": "No. Multilingualism can be stable. Risk increases when one language displaces another from home, education, public life and transmission to children, often because of unequal social conditions. [2][4]"
+    },
+    {
+      "q": "Can endangered languages be saved?",
+      "a": "Yes, revitalization can increase use through community-led teaching, family transmission, media and public services. Success depends on sustained opportunities to speak the language, not only on preserving recordings or dictionaries. [2][4][5]"
+    },
+    {
+      "q": "Does bilingualism make a language disappear?",
+      "a": "No. Multilingual communities can maintain several languages. Endangerment grows when a language loses practical domains of use and children stop learning it, often because social institutions favour another language or stigmatize the local one. [2][4][5]"
     }
   ],
   "sources": [
@@ -131,15 +139,24 @@
       "url": "https://unesdoc.unesco.org/ark:/48223/pf0000183699",
       "published_at": null,
       "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "title": "Indigenous Languages Decade (2022–2032)",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/en/decades/indigenous-languages",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
     }
   ],
   "references": [
     "UNESCO. (n.d.). *Towards World Atlas of Languages*. https://www.unesco.org/en/articles/towards-world-atlas-languages",
     "UNESCO. (n.d.). *International Decade of Indigenous Languages 2022–2032*. https://www.unesco.org/en/decades/indigenous-languages",
     "Endangered Languages Project. (n.d.). *Endangered Languages Project*. https://www.endangeredlanguages.com/",
-    "UNESCO. (n.d.). *Language Vitality and Endangerment*. https://unesdoc.unesco.org/ark:/48223/pf0000183699"
+    "UNESCO. (n.d.). *Language Vitality and Endangerment*. https://unesdoc.unesco.org/ark:/48223/pf0000183699",
+    "UNESCO. (n.d.). *Indigenous Languages Decade (2022–2032)*. https://www.unesco.org/en/decades/indigenous-languages"
   ],
-  "word_count": 1219,
+  "word_count": 1292,
   "reading_minutes": 6,
   "image": null
 }
