@@ -64,8 +64,12 @@ function localDateLabel(date: string, timezone: string, language: "ne" | "en") {
 function fmt(value: number, digits = 2) { return Number.isFinite(value) ? value.toFixed(digits) : "—"; }
 function formatInstant(value: string | null, timezone: string, language: "ne" | "en") { if (!value) return "—"; try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); } catch { return "—"; } }
 
+function safeTimeZone(value: string) {
+  try { new Intl.DateTimeFormat("en-US", { timeZone: value }).format(new Date()); return value; }
+  catch { return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; }
+}
 function localMinute(value: string, timezone: string) {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" }).formatToParts(new Date(value)).map(part => [part.type, part.value]));
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimeZone(timezone), hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" }).formatToParts(new Date(value)).map(part => [part.type, part.value]));
   return Number(parts.hour) * 60 + Number(parts.minute) + Number(parts.second) / 60;
 }
 function arcPaths(start: number, end: number, radius: number) {
@@ -81,9 +85,10 @@ function arcPaths(start: number, end: number, radius: number) {
   return end >= start ? [segment(start,end)].filter(Boolean) : [segment(start,1440),segment(0,end)].filter(Boolean);
 }
 function PolarClock({ timezone, now, language, snapshot }: { timezone: string; now: Date; language: "ne" | "en"; snapshot: Snapshot | null }) {
-  const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", hourCycle: "h23" }).format(now));
-  const minutes = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, minute: "2-digit" }).format(now));
-  const seconds = Number(new Intl.DateTimeFormat("en-GB", { timeZone: timezone, second: "2-digit" }).format(now));
+  const safeTimezoneValue = safeTimeZone(timezone);
+  const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, hour: "2-digit", hourCycle: "h23" }).format(now));
+  const minutes = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, minute: "2-digit" }).format(now));
+  const seconds = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, second: "2-digit" }).format(now));
   const dayProgress = (hours + minutes / 60 + seconds / 3600) / 24;
   const angle = dayProgress * Math.PI * 2 - Math.PI / 2;
   const x = 150 + Math.cos(angle) * 92, y = 150 + Math.sin(angle) * 92;
@@ -91,7 +96,7 @@ function PolarClock({ timezone, now, language, snapshot }: { timezone: string; n
   const solarReady = Boolean(snapshot?.panchang.sunrise_utc && snapshot.panchang.sunset_utc && snapshot.panchang.next_sunrise_utc);
   const choghadiya = solarReady ? choghadiyaWindows(snapshot!.weekday,snapshot!.panchang.sunrise_utc,snapshot!.panchang.sunset_utc,snapshot!.panchang.next_sunrise_utc) : {day:[],night:[]};
   const inauspicious = solarReady ? inauspiciousDayWindows(snapshot!.weekday,snapshot!.panchang.sunrise_utc,snapshot!.panchang.sunset_utc) : [];
-  const pathsFor = (start: string,end: string,radius: number) => arcPaths(localMinute(start,timezone),localMinute(end,timezone),radius);
+  const pathsFor = (start: string,end: string,radius: number) => arcPaths(localMinute(start,safeTimezoneValue),localMinute(end,safeTimezoneValue),radius);
   return <div className="mt-polar-wrap">
     <svg className="mt-polar" viewBox="0 0 300 300" role="img" aria-label={l(language, "तपाईंको स्थानीय दिनको २४ घण्टे घडी", "24-hour clock for your selected timezone")}>
       <defs><linearGradient id="mt-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#e8bd70"/><stop offset="100%" stopColor="#4d9d8b"/></linearGradient></defs>
