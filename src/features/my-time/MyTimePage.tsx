@@ -42,6 +42,7 @@ function isMyTimeSnapshot(value: unknown): value is Snapshot {
 }
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
+type LoadedRashifalSignal = { date: string; sign: string; signal: RashifalSignal };
 type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null; birth: { date: string; time: string; location: string } | null; planets: Array<{ key: string; name: string; sign: string; house: number | null }>; dashas: Array<{ lord: string; start: string; end: string }> } | null; rashifalSign: string | null; effectiveSign: string | null };
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
@@ -197,7 +198,7 @@ export default function MyTimePage() {
   const [nepalCalendarReference, setNepalCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
   const [rashifalSummary, setRashifalSummary] = useState("");
-  const [rashifalSignal, setRashifalSignal] = useState<RashifalSignal | null>(null);
+  const [rashifalSignal, setRashifalSignal] = useState<LoadedRashifalSignal | null>(null);
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [personalSettings, setPersonalSettings] = useState(readMyTimePersonalSettings);
@@ -306,7 +307,7 @@ export default function MyTimePage() {
     const query = new URLSearchParams({ period: "daily", system: "vedic", calendar: "gregorian", date, sign });
     fetch(`/api/v1/rashifal/universal?${query}`, { signal: controller.signal, credentials: "same-origin", headers: { accept: "application/json" } })
       .then(response => response.ok ? response.json() : Promise.reject(new Error("rashifal_unavailable")))
-      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || body?.readings?.[0]; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); const domains = reading?.scores?.domains && typeof reading.scores.domains === "object" ? Object.fromEntries(Object.entries(reading.scores.domains).filter(([key,value]) => ["work","resources","relationships","wellbeing","learning"].includes(key) && typeof value === "number" && Number.isFinite(value)).map(([key,value]) => [key,Math.max(0,Math.min(100,Number(value)))])) : {}; const sections = Array.isArray(reading?.narrative?.[language]?.sections) ? reading.narrative[language].sections.filter((item: any) => item && typeof item.domain === "string" && typeof item.score === "number" && Number.isFinite(item.score)).map((item: any) => ({ domain: item.domain, score: Math.max(0,Math.min(100,item.score)), band: typeof item.band === "string" ? item.band : undefined, text: typeof item.text === "string" ? item.text : undefined })) : []; setRashifalSignal({ ...(typeof reading?.scores?.overall === "number" && Number.isFinite(reading.scores.overall) ? { overall: Math.max(0,Math.min(100,reading.scores.overall)) } : {}), domains, sections }); })
+      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || body?.readings?.[0]; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); const domains = reading?.scores?.domains && typeof reading.scores.domains === "object" ? Object.fromEntries(Object.entries(reading.scores.domains).filter(([key,value]) => ["work","resources","relationships","wellbeing","learning"].includes(key) && typeof value === "number" && Number.isFinite(value)).map(([key,value]) => [key,Math.max(0,Math.min(100,Number(value)))])) : {}; const sections = Array.isArray(reading?.narrative?.[language]?.sections) ? reading.narrative[language].sections.filter((item: any) => item && typeof item.domain === "string" && typeof item.score === "number" && Number.isFinite(item.score)).map((item: any) => ({ domain: item.domain, score: Math.max(0,Math.min(100,item.score)), band: typeof item.band === "string" ? item.band : undefined, text: typeof item.text === "string" ? item.text : undefined })) : []; setRashifalSignal({ date, sign, signal: { ...(typeof reading?.scores?.overall === "number" && Number.isFinite(reading.scores.overall) ? { overall: Math.max(0,Math.min(100,reading.scores.overall)) } : {}), domains, sections } }); })
       .catch(() => { if (!controller.signal.aborted) { setRashifalSummary(""); setRashifalSignal(null); } })
       .finally(() => { if (!controller.signal.aborted) setRashifalLoading(false); });
     return () => controller.abort();
@@ -478,7 +479,8 @@ export default function MyTimePage() {
         panchangReasons: window.score >= 75 ? ["supportive_panchang_indications"] : [],
         panchangCautions: window.cautions,
         activity, horaLord: horaName || null, tatwa: tatwaName || null,
-        rashifal: rashifalSignal, dashaLord: activeDashaLord,
+        rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
+        dashaLord: activeDashaLord,
         hasNatalChart: Boolean(personalContext.birthChart)
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
