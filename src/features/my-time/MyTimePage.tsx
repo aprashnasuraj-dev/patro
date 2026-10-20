@@ -83,6 +83,7 @@ function localDateLabel(date: string, timezone: string, language: "ne" | "en") {
 function fmt(value: number, digits = 2) { return Number.isFinite(value) ? value.toFixed(digits) : "—"; }
 function formatInstant(value: string | null, timezone: string, language: "ne" | "en") { if (!value) return "—"; try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); } catch { return "—"; } }
 
+function isValidCoordinate(value: string, min: number, max: number) { const number = Number(value); return value.trim() !== "" && Number.isFinite(number) && number >= min && number <= max; }
 function isValidTimeZone(value: string) {
   try { new Intl.DateTimeFormat("en-US", { timeZone: value }).format(new Date()); return true; }
   catch { return false; }
@@ -173,6 +174,8 @@ const UPCOMING = [
 export default function MyTimePage() {
   const language = useUiLanguage();
   const [preferences, setPreferences] = useState<Preferences>(readPreferences);
+  const [latitudeInput, setLatitudeInput] = useState(() => String(readPreferences().lat));
+  const [longitudeInput, setLongitudeInput] = useState(() => String(readPreferences().lng));
   const [date, setDate] = useState(() => localDate(readPreferences().timezone));
   const [now, setNow] = useState(() => new Date());
   const observedLocalDay = useRef(localDate(readPreferences().timezone));
@@ -343,6 +346,8 @@ export default function MyTimePage() {
     const next = { timezone: place.timezone, lat: place.lat, lng: place.lng, label: place.label };
     const nextDate = localDate(next.timezone, new Date());
     setPreferences(next);
+    setLatitudeInput(String(next.lat));
+    setLongitudeInput(String(next.lng));
     setDate(nextDate);
     void loadSnapshot(nextDate, next, true);
   }, [loadSnapshot]);
@@ -404,9 +409,9 @@ export default function MyTimePage() {
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
       <label><span>{l(language,"मिति","Date")}</span><input type="date" value={date} onChange={event=>setDate(event.target.value)} /></label>
       <label><span>{l(language,"समय क्षेत्र (IANA)","Timezone (IANA)")}</span><input value={preferences.timezone} aria-invalid={!isValidTimeZone(preferences.timezone.trim())} aria-describedby="mt-timezone-help" onChange={event=>setPreferences(old=>({...old,timezone:event.target.value}))} placeholder="Asia/Kathmandu" autoComplete="off"/><small id="mt-timezone-help">{isValidTimeZone(preferences.timezone.trim()) ? l(language,"उदाहरण: Asia/Kathmandu, Asia/Tokyo","Example: Asia/Kathmandu, Asia/Tokyo") : l(language,"मान्य समय क्षेत्र राख्नुहोस्।","Enter a valid IANA timezone.")}</small></label>
-      <label><span>{l(language,"अक्षांश","Latitude")}</span><input type="number" min="-90" max="90" step="0.0001" value={preferences.lat} onChange={event=>{const value=event.target.value;if(value!==""&&Number.isFinite(Number(value))&&Number(value)>=-90&&Number(value)<=90)setPreferences(old=>({...old,lat:Number(value)}));}}/></label>
-      <label><span>{l(language,"देशान्तर","Longitude")}</span><input type="number" min="-180" max="180" step="0.0001" value={preferences.lng} onChange={event=>{const value=event.target.value;if(value!==""&&Number.isFinite(Number(value))&&Number(value)>=-180&&Number(value)<=180)setPreferences(old=>({...old,lng:Number(value)}));}}/></label>
-      <button type="button" className="mt-primary" disabled={loading || !date || !isValidTimeZone(preferences.timezone.trim()) || !Number.isFinite(preferences.lat) || !Number.isFinite(preferences.lng) || preferences.lat < -90 || preferences.lat > 90 || preferences.lng < -180 || preferences.lng > 180} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
+      <label><span>{l(language,"अक्षांश","Latitude")}</span><input type="number" min="-90" max="90" step="0.0001" value={latitudeInput} aria-invalid={!isValidCoordinate(latitudeInput,-90,90)} onChange={event=>{const value=event.target.value;setLatitudeInput(value);if(isValidCoordinate(value,-90,90))setPreferences(old=>({...old,lat:Number(value)}));}}/></label>
+      <label><span>{l(language,"देशान्तर","Longitude")}</span><input type="number" min="-180" max="180" step="0.0001" value={longitudeInput} aria-invalid={!isValidCoordinate(longitudeInput,-180,180)} onChange={event=>{const value=event.target.value;setLongitudeInput(value);if(isValidCoordinate(value,-180,180))setPreferences(old=>({...old,lng:Number(value)}));}}/></label>
+      <button type="button" className="mt-primary" disabled={loading || !date || !isValidTimeZone(preferences.timezone.trim()) || !isValidCoordinate(latitudeInput,-90,90) || !isValidCoordinate(longitudeInput,-180,180)} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
     </section>
 
     <section className="mt-observatory-controls" aria-label={l(language,"समय तह अनुकूलन","Customize time layers")}>
