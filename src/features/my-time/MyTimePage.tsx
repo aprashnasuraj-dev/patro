@@ -202,18 +202,19 @@ export default function MyTimePage() {
   const [error, setError] = useState("");
   const loadSequence = useRef(0);
   const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean; hora: boolean; twilight: boolean; tantra: boolean }>(() => {
-    const defaults = { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: false, hora: false, twilight: false, tantra: false };
+    const defaults = { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true };
     const presets = {
       universal: defaults,
-      scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
-      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: false },
-      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: false },
+      scientific: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
+      panchang: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
+      jyotish: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
       tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
       combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
     };
     try {
-      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v2") || "null");
-      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales === true, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal === true, hora: saved.hora === true, twilight: saved.twilight === true, tantra: saved.tantra === true };
+      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v3") || localStorage.getItem("aafnaipatro.mytime.layers.v2") || "null");
+      const optedOut = localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true";
+      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut };
       const lens = readMyTimePersonalSettings().lens;
       return presets[lens] || defaults;
     } catch { return defaults; }
@@ -278,7 +279,7 @@ export default function MyTimePage() {
         ? l(language, "अर्को " + nextKaal.name_ne + " " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + " मा पर्छ। यो परम्परागत समय-सङ्केत हो।", "Next " + nextKaal.name_en + " is " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + ". This is a traditional timing guide.")
         : l(language, "स्थानीय सूर्योदय/सूर्यास्त उपलब्ध भएपछि समय-सङ्केत देखिनेछ।", "Timing guidance appears when local sunrise and sunset are available.");
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
-  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v2", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
+  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v3", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
   useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
   useEffect(() => { const syncSettings = (event: Event) => { const detail = (event as CustomEvent).detail; setPersonalSettings(detail && typeof detail === "object" ? detail : readMyTimePersonalSettings()); }; window.addEventListener("patro:mytime-settings-updated", syncSettings); window.addEventListener("storage", syncSettings); return () => { window.removeEventListener("patro:mytime-settings-updated", syncSettings); window.removeEventListener("storage", syncSettings); }; }, []);
@@ -410,7 +411,8 @@ export default function MyTimePage() {
       tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
       combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
     };
-    setObservatoryLayers(presets[lens]);
+    const optedOut = (() => { try { return localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true"; } catch { return false; } })();
+    setObservatoryLayers({ ...presets[lens], tantra: !optedOut });
   }, []);
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
@@ -539,7 +541,7 @@ export default function MyTimePage() {
       <label><input type="checkbox" checked={observatoryLayers.kaal} onChange={event=>setObservatoryLayers(old=>({...old,kaal:event.target.checked}))}/>{l(language,"काल घेरा","Inauspicious-time rings")}</label>
       <label><input type="checkbox" checked={observatoryLayers.hora} onChange={event=>setObservatoryLayers(old=>({...old,hora:event.target.checked}))}/>{l(language,"होरा घेरा","Hora ring")}</label>
       <label><input type="checkbox" checked={observatoryLayers.twilight} onChange={event=>setObservatoryLayers(old=>({...old,twilight:event.target.checked}))}/>{l(language,"सन्ध्याकाल घेरा","Twilight ring")}</label>
-      <label className="mt-tantra-toggle"><input type="checkbox" checked={observatoryLayers.tantra} onChange={event=>setObservatoryLayers(old=>({...old,tantra:event.target.checked}))}/>{l(language,"तन्त्रविद्या कालगणना","Tantra Vidya")}</label>
+      <label className="mt-tantra-toggle"><input type="checkbox" checked={observatoryLayers.tantra} onChange={event=>{const enabled=event.target.checked;try{if(enabled)localStorage.removeItem("aafnaipatro.mytime.tantra-optout.v1");else localStorage.setItem("aafnaipatro.mytime.tantra-optout.v1","true");}catch{}setObservatoryLayers(old=>({...old,tantra:enabled}));}}/>{l(language,"तन्त्रविद्या कालगणना","Tantra Vidya")}</label>
     </section>
     {observatoryLayers.clocks && <section className="mt-extra-grid" aria-label={l(language,"नेपाल र स्थानीय समय","Nepal and local time")}>
       <article className="mt-extra-card"><small>{l(language,"नेपाल मानक समय · UTC+05:45","Nepal Standard Time · UTC+05:45")}</small><strong>{nepalTime.time}</strong><span>{nepalTime.date} · NPT</span></article>
