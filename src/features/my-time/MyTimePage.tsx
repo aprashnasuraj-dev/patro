@@ -13,11 +13,12 @@ import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-ti
 import { useUiLanguage, l } from "../../useUiLanguage";
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
+import MyTimePersonalization from "./MyTimePersonalization";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
-type Preferences = { timezone: string; lat: number; lng: number };
+type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null } | null; rashifalSign: string | null; effectiveSign: string | null };
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
@@ -290,7 +291,18 @@ export default function MyTimePage() {
   const dateLabel = useMemo(() => localDateLabel(date, preferences.timezone, language), [date, preferences.timezone, language]);
   const localTime = localClock(preferences.timezone, now);
   const solarTime = apparentSolarTime(now, preferences.lng);
-  const tithiName = snapshot ? (ne ? TITHI_NE[snapshot.panchang.tithi_index - 1] : TITHI_EN[snapshot.panchang.tithi_index - 1]) : "—";
+  const liveTithiIndex = evaluationPanchang?.tithi ?? snapshot?.panchang.tithi_index ?? null;
+  const liveNakshatraIndex = evaluationPanchang?.nakshatra ?? snapshot?.panchang.nakshatra_index ?? null;
+  const tithiName = liveTithiIndex ? (ne ? TITHI_NE[liveTithiIndex - 1] : TITHI_EN[liveTithiIndex - 1]) : "—";
+  const liveNakshatraName = liveNakshatraIndex ? String(NAKSHATRAS[liveNakshatraIndex - 1] || "—") : "—";
+  const nextBriefingWindow = [...recommendedMuhurtaWindows].sort((a, b) => Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] || null;
+  const applyPersonalLocation = useCallback((place: { timezone: string; lat: number; lng: number; label: string }) => {
+    const next = { timezone: place.timezone, lat: place.lat, lng: place.lng, label: place.label };
+    const nextDate = localDate(next.timezone, new Date());
+    setPreferences(next);
+    setDate(nextDate);
+    void loadSnapshot(nextDate, next, true);
+  }, [loadSnapshot]);
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
   const transitStarIndex = snapshot ? snapshot.panchang.nakshatra_index - 1 : -1;
@@ -332,6 +344,8 @@ export default function MyTimePage() {
       <div className="mt-eyebrow"><span className="mt-pulse"/> {l(language,"समयलाई आफ्नै दृष्टिले अनुभव गर्नुहोस्","Experience time through your own lens")}</div>
       <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small><div className="mt-apparent-time"><span>{l(language,"स्थानीय सौर समय · अनुमानित","Apparent solar time · approximate")}</span><strong>{solarTime.time}</strong><small>{l(language,"समय समीकरण","Equation of time")}: {solarTime.equationOfTimeMinutes >= 0 ? "+" : ""}{solarTime.equationOfTimeMinutes.toFixed(1)} min</small></div></div></div>
     </header>
+
+    <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} lat={preferences.lat} lng={preferences.lng} tithiIndex={liveTithiIndex} nakshatraIndex={liveNakshatraIndex} tithiName={tithiName} nakshatraName={liveNakshatraName} currentWindow={currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : (currentChoghadiya as any).name_en || currentChoghadiya.name_ne, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : (nextBriefingWindow as any).name_en || nextBriefingWindow.name_ne, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc, score: nextBriefingWindow.score } : null} onLocationChange={applyPersonalLocation} />
 
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
       <label><span>{l(language,"मिति","Date")}</span><input type="date" value={date} onChange={event=>setDate(event.target.value)} /></label>
