@@ -238,6 +238,7 @@ export default function MyTimePage() {
 
   const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences, persistPreferences = false) => {
     setLoading(true); setError("");
+    observedLocalDay.current = localDate(nextPreferences.timezone, new Date());
     const controller = new AbortController();
     const cacheKey = myTimeCacheKey(nextDate,nextPreferences.timezone,nextPreferences.lat,nextPreferences.lng);
     const cached = await readMyTimeSnapshot(cacheKey);
