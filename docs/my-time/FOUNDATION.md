@@ -7,7 +7,7 @@
 
 ## Scope of this first PR
 
-This PR records initial repository findings and proposes an isolated implementation structure. It does not modify any existing page, API route, data model, worker dispatch, or navigation behavior. The linked architecture document's detailed contents were not available through the connected repository/document tools during this exploration; exact formulas and the three roadmap phase gates must be reconciled against that source before implementation claims are made. Please provide an exported PDF/Markdown or enable a supported document connection for line-by-line verification.
+This PR began as repository exploration and now includes the first integrated implementation slice. The supplied Google Drive PDF was extracted and reconciled against the repository. Current changes add an initial astronomy snapshot API under worker/my-time/, dispatch it through the existing worker/optimized-entry.ts, add the canonical /mytime SPA route and first responsive dashboard, and update tools/mobile/home navigation. This remains an initial slice: the feature is not deployed, the API is hidden unless MY_TIME_ENABLED=true, and the current snapshot is not a complete Panchang.
 
 ## Verified repository findings
 
@@ -101,12 +101,12 @@ The product owner's three-phase roadmap remains authoritative; this sequence mus
 
 ## Safety and non-goals for this PR
 
-- No existing file is modified or deleted.
-- No dependency is added.
-- No D1/KV binding or schema is changed.
-- No Worker route or frontend route is registered yet.
-- No calculation is described as high-precision until verified against an authoritative reference and an independent engine/fixture.
-- No existing branch is force-pushed and `main` is not modified.
+- Existing /time-machine and unrelated routes are preserved; My Time is added only at /mytime and /api/v1/mytime/today.
+- No new dependency, D1 schema, KV binding, or separate Worker is added.
+- The new API handler is dispatched through the existing worker/optimized-entry.ts entry point and remains disabled unless MY_TIME_ENABLED=true is configured in the Worker environment.
+- The first snapshot uses the already-installed astronomy-engine and explicit local-noon/IANA-timezone conversion. It does not yet calculate sunrise-anchored daily Panchang, sidereal Nakshatra/Yoga, Choghadiya, or personalized Muhurta.
+- New deterministic tests have been added to the existing product test script; GitHub CI is the validation gate, and results must be checked before merge.
+- No existing branch is force-pushed and main is not modified.
 
 
 ## Source-document reconciliation — 2026-10-20
@@ -143,3 +143,26 @@ Before adding any Swiss Ephemeris-derived package or WASM binary, make an explic
 - **Reuse before adding:** prefer existing `astronomy-engine`, Tithi implementation, D1 content/calendar sources, locale/time utilities, profile/rashifal/birth-chart interfaces, and app shell. Do not create duplicate engines or data stores where current implementations can be safely reused. WASM/Swiss Ephemeris remains an adapter/precision decision gated by license, compatibility, ephemeris-data, and benchmark evidence.
 - **Navigation placement:** add My Time to the tools list; in the mobile home menu place it immediately after JanmaPatro; in desktop home view place it immediately after “आजको नेपाली मिति” in the bottom section. Keep a single page/dashboard, not multiple subtool routes.
 - **Personalization:** use explicitly declared/available birth-chart and Rashifal context, alongside preferences/location/timezone and the PDF's other personal-time signals. Make recommendations explainable, consent-aware, and convention-labelled. General mode must work without birth data; never place personal birth inputs in shared public cache keys.
+
+
+## Current implementation slice — 2026-10-20
+
+### Phase 1 — existing Worker and engine
+
+- Added worker/my-time/index.ts with a typed, versioned snapshot contract, validated date/timezone/coordinate inputs, local-noon conversion using the requested IANA timezone, Tithi name/index/progress, tropical Sun/Moon longitudes, and a simplified illumination estimate.
+- worker/optimized-entry.ts dispatches only the new /api/v1/mytime/today path to that handler. It does not introduce a second Worker. Existing D1/Assets bindings remain unchanged; no KV namespace is assumed to exist.
+- API rollout is guarded by MY_TIME_ENABLED=true. The deployment flag has not been enabled by this PR.
+
+### Phase 2 — single page and navigation
+
+- Added the /mytime route and one dashboard page at src/features/my-time/MyTimePage.tsx, with bilingual copy, date/timezone/location controls, a live 24-hour polar clock, snapshot cards, method notes, and explicit pending-calculation states.
+- Added My Time to the tools directory and searchable feature launcher, after the birth-chart entry in the mobile menu, and as a desktop home entry immediately after today's Nepali date hero.
+- Existing /time-machine remains unchanged.
+
+### Remaining before claiming Phase 1/2 complete
+
+- Run and fix the complete CI/typecheck/build/test gates; CI was pending at the last check.
+- Reuse and reconcile the existing calendar archive/D1 panchang, solar event, timezone, and birth-chart/Rashifal data contracts before adding overlapping calculations.
+- Add sunrise/sunset and polar-day handling, sidereal ayanamsa conventions, Nakshatra/Pada/Yoga/Karana, Choghadiya/Rahu Kaal/Hora/Muhurta calculations with authoritative fixtures.
+- Replace pending UI states with verified outputs as each calculation lands; add visual/accessibility regression coverage.
+- Phase 3 personalization, local offline persistence, and service-worker fallback remain unimplemented.
