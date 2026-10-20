@@ -101,7 +101,8 @@
       "publisher": "OpenAI",
       "url": "https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
       "published_at": "2025-04-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "OpenAI. (n.d.). How ChatGPT and our foundation models are developed. https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "arXiv / NeurIPS authors",
       "url": "https://arxiv.org/abs/1706.03762",
       "published_at": "2017-06-12",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "arXiv / NeurIPS authors. (n.d.). Attention Is All You Need. https://arxiv.org/abs/1706.03762"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "OpenAI Help Center",
       "url": "https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "OpenAI Help Center. (n.d.). How ChatGPT and our foundation models are developed. https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "Association for Computational Linguistics",
       "url": "https://aclanthology.org/2026.conll-main.32/",
       "published_at": "2026-07-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Association for Computational Linguistics. (n.d.). On the scaling relationship between cloze probabilities and language model next-token prediction. https://aclanthology.org/2026.conll-main.32/"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "Association for Computational Linguistics",
       "url": "https://aclanthology.org/2023.emnlp-main.810/",
       "published_at": "2023-12-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Association for Computational Linguistics. (n.d.). Token Prediction as Implicit Classification to Identify LLM-Generated Text. https://aclanthology.org/2023.emnlp-main.810/"
     }
   ],
   "word_count": 1206,
