@@ -82,6 +82,7 @@ export default function MyTimePersonalization(props: Props) {
   const [notice, setNotice] = useState("");
   const previousRef = useRef<{ tithi: number | null; nakshatra: number | null }>({ tithi: null, nakshatra: null });
   const notifiedWindows = useRef(new Set<string>());
+  const notifiedEvents = useRef(new Set<string>());
   const lastNotificationDay = useRef(readLastAlertDays());
   const interestLine = settings.interests.map(id => INTERESTS.find(item => item.id === id)).filter(Boolean).map(item => language === "ne" ? item!.ne : item!.en).join(", ");
   const update = (mutate: (old: MyTimePersonalSettings) => MyTimePersonalSettings) => setSettings(old => mutate(old));
@@ -95,6 +96,7 @@ export default function MyTimePersonalization(props: Props) {
   useEffect(() => {
     const windowId = nextWindow ? nextWindow.key + "|" + nextWindow.start_utc : "";
     if (!settings.notifications.timingWindows || !nextWindow || notifiedWindows.current.has(windowId)) return;
+    if (!("Notification" in window) || Notification.permission !== "granted") return;
     const ms = Date.parse(nextWindow.start_utc) - now.getTime();
     if (ms >= 0 && ms <= 45_000) {
       notifiedWindows.current.add(windowId);
@@ -102,12 +104,14 @@ export default function MyTimePersonalization(props: Props) {
     }
   }, [now, nextWindow?.key, nextWindow?.start_utc, settings.notifications.timingWindows, settings.notifications.quietStart, settings.notifications.quietEnd, timezone, language]);
   useEffect(() => {
-    if (!settings.notifications.savedEvents) return;
-    const due = settings.savedEvents.find(event => !event.notifiedAt && Date.parse(event.at) <= now.getTime() && now.getTime() - Date.parse(event.at) < 15 * 60_000);
+    if (!settings.notifications.savedEvents || !("Notification" in window) || Notification.permission !== "granted") return;
+    if (isWithinQuietHours(now, timezone, settings.notifications.quietStart, settings.notifications.quietEnd)) return;
+    const due = settings.savedEvents.find(event => !event.notifiedAt && !notifiedEvents.current.has(event.id) && Date.parse(event.at) <= now.getTime() && now.getTime() - Date.parse(event.at) < 15 * 60_000);
     if (!due) return;
+    notifiedEvents.current.add(due.id);
     notify(l(language, "तपाईंको सुरक्षित कार्यक्रम", "Your saved event"), due.title, "event");
     update(old => ({ ...old, savedEvents: old.savedEvents.map(event => event.id === due.id ? { ...event, notifiedAt: now.toISOString() } : event) }));
-  }, [now, settings.notifications.savedEvents, settings.savedEvents]);
+  }, [now, settings.notifications.savedEvents, settings.notifications.quietStart, settings.notifications.quietEnd, settings.savedEvents, timezone, language]);
   function notify(title: string, body: string, category = "event") {
     if (!("Notification" in window) || Notification.permission !== "granted") return;
     if (isWithinQuietHours(now, timezone, settings.notifications.quietStart, settings.notifications.quietEnd)) return;
