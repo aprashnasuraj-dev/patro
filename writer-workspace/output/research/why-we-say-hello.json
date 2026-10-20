@@ -1,0 +1,67 @@
+{
+  "slug": "why-we-say-hello",
+  "research_question": "Why did hello become a common greeting, and how did the telephone influence its popularity?",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Hello: Origin and history",
+      "publisher": "Online Etymology Dictionary",
+      "url": "https://www.etymonline.com/word/hello",
+      "reliability": "Etymological reference",
+      "notes": [
+        "Hello is related to older forms such as hallo, hollo and holla.",
+        "Earlier forms were used to attract attention rather than exclusively greet someone.",
+        "The word rose in popularity as a greeting with the spread of telephones."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Hello, Hello!",
+      "publisher": "Oxford University Press Blog",
+      "url": "https://blog.oup.com/2008/10/hello/",
+      "reliability": "Oxford University Press linguistics blog",
+      "notes": [
+        "The Oxford English Dictionary traces hello through earlier spelling variants.",
+        "Older forms could call attention or signal a stop.",
+        "The earliest evidence is difficult to establish because spoken use predates dictionaries."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Hello",
+      "publisher": "Oxford Advanced Learner's Dictionary",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/hello",
+      "reliability": "Oxford dictionary reference",
+      "notes": [
+        "Hello can greet someone, answer a phone or attract attention.",
+        "Hullo and hallo are recognised variants.",
+        "The word is a late-nineteenth-century variant of older hollo forms."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Did 'Hello' Come From Familiar Phone Greeting?",
+      "publisher": "Deseret News, with Merriam-Webster editors",
+      "url": "https://www.deseret.com/1995/10/8/19197494/did-hello-come-from-familiar-phone-greeting/",
+      "reliability": "Dictionary-editor historical explanation",
+      "notes": [
+        "Thomas Edison is often credited with popularising hello on the telephone, but the claim that he was first is unproven.",
+        "Hello rose in popularity around the spread of telephones.",
+        "Early telephone greeting practices varied by place."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Hello: word history and usage",
+      "publisher": "Online Etymology Dictionary",
+      "url": "https://www.etymonline.com/word/hello",
+      "reliability": "Historical dictionary reference",
+      "notes": [
+        "Hello has several related spelling forms in English.",
+        "Telephone operators were called hello-girls in the late nineteenth century.",
+        "The telephone helped stabilise hello as a familiar opening."
+      ]
+    }
+  ]
+}
