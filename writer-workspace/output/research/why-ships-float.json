@@ -1,0 +1,39 @@
+{
+  "slug": "why-ships-float",
+  "research_question": "Why do heavy steel ships float instead of sinking?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.noaa.gov/office-education/outreach-communication/hands-on-science-activities/build-a-boat",
+      "title": "Build a Boat",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "reliability": "U.S. federal ocean science agency",
+      "notes": [
+        "Buoyancy equals the weight of displaced fluid; hull volume allows a ship to displace enough water to balance its weight."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://oceanservice.noaa.gov/education/dyw-boat-building.html",
+      "title": "Boat Building Challenge",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "reliability": "U.S. federal ocean science agency",
+      "notes": [
+        "Archimedes' principle explains buoyancy; hull shape and displaced volume matter more than whether the material itself is denser than water."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/14-7-archimedes-principle-and-buoyancy",
+      "title": "Archimedes' Principle",
+      "publisher": "OpenStax, University Physics Volume 1",
+      "reliability": "Open educational physics textbook",
+      "notes": [
+        "A submerged body experiences an upward force equal to the weight of displaced fluid; equilibrium requires buoyancy to balance weight."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
