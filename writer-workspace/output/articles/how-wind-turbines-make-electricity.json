@@ -132,5 +132,14 @@
   ],
   "word_count": 2820,
   "reading_minutes": 13,
-  "image": null
+  "image": {
+    "file": "how-wind-turbines-make-electricity-hero.jpg",
+    "alt": "How Wind Turbines Make Electricity — editorial hero image illustrating the article's main subject",
+    "caption": "Wind Turbines and Power Lines, East Sussex, England - April 2009.jpg",
+    "credit": "Wikimedia Commons: Diliff",
+    "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) — see file page for attribution and terms",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wind_Turbines_and_Power_Lines%2C_East_Sussex%2C_England_-_April_2009.jpg",
+    "width": 1200,
+    "height": 630
+  }
 }
