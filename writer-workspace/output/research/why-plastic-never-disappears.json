@@ -1,0 +1,67 @@
+{
+  "slug": "why-plastic-never-disappears",
+  "research_question": "Why does plastic waste persist in the environment, and how does it fragment into microplastics?",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Everything you need to know about plastic pollution",
+      "publisher": "United Nations Environment Programme",
+      "url": "https://www.unep.org/en/news-and-stories/story/everything-you-need-know-about-plastic-pollution",
+      "reliability": "UN environmental agency explainer",
+      "notes": [
+        "Most common plastics do not biodegrade like organic matter; they fragment over time.",
+        "Plastic waste can persist in ecosystems and affect soil, water and wildlife.",
+        "Reducing waste and keeping materials in circulation are central prevention approaches."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Can marine debris degrade on its own in the environment?",
+      "publisher": "NOAA National Ocean Service",
+      "url": "https://oceanservice.noaa.gov/facts/degrade.html/1000",
+      "reliability": "U.S. government marine science reference",
+      "notes": [
+        "Degradation time depends on material, size, thickness and environmental conditions.",
+        "Photodegradable plastics can break into microplastics rather than fully disappear.",
+        "Scientists continue investigating the impacts of microplastics on marine life."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Biodegradable Plastics Are Not the Answer to Reducing Marine Litter, Says UN",
+      "publisher": "United Nations Environment Programme",
+      "url": "https://www.unep.org/en/news-and-stories/story/biodegradable-plastics-are-not-answer-reducing-marine-litter-says-un",
+      "reliability": "UN agency report summary",
+      "notes": [
+        "Some plastics marketed as biodegradable need industrial conditions rarely met in marine environments.",
+        "Fragmentation into microplastics is not the same as complete biodegradation.",
+        "Labels should not be assumed to mean a product will safely disappear in nature."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Plastics in the environment in the context of UV radiation, climate change and the Montreal Protocol: UNEP Environmental Effects Assessment Panel, Update 2023",
+      "publisher": "NOAA Central Library repository",
+      "url": "https://repository.library.noaa.gov/view/noaa/68181",
+      "reliability": "Scientific assessment report hosted by NOAA",
+      "notes": [
+        "Sunlight and weathering can reduce plastic durability and create micro- and nanoplastic particles.",
+        "Plastic debris persists in soils, water bodies and the atmosphere.",
+        "Potential biological risks remain an active area of research."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Pollution to Solution: Accessing marine litter and plastic pollution",
+      "publisher": "United Nations Environment Programme",
+      "url": "https://www.unep.org/interactives/pollution-to-solution/",
+      "reliability": "UN environmental assessment interactive",
+      "notes": [
+        "Plastic fragments into smaller particles rather than biodegrading like organic matter.",
+        "Plastic fragments and nanoplastics can spread through water and ecosystems.",
+        "Prevention and improved waste systems address pollution before fragments become difficult to remove."
+      ]
+    }
+  ]
+}
