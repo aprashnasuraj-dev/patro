@@ -32,6 +32,29 @@ test("report CSS provides explicit A4 page boundaries and mobile layouts", () =>
 test("existing export flow captures the report cover for the single-page JPG and retains PDF page breaks", () => {
   assert.match(suite, /DetailedBirthChartReport/);
   assert.match(suite, /DetailedGunaMilanReport/);
-    assert.match(suite, /querySelector\("\.jpr-page--cover"\)/);
+  assert.match(suite, /querySelector\("\.jpr-page--cover"\)/);
   assert.match(suite, /pagebreak:\{mode:\["css","legacy"\]\}/);
+});
+
+test("birth Panchanga localizes Tithi, Yoga and Karana from shared metadata", () => {
+  assert.match(component, /const yogaNe = YOGAS_NE\[panchang\.yoga\] \|\| "—"/);
+  assert.match(component, /const yogaEn = YOGA_META\[panchang\.yoga\]\?\.en \|\| "—"/);
+  assert.match(component, /const karanaEn = KARANA_META\[panchang\.karana\]\?\.en \|\| "—"/);
+  assert.match(component, /const tithiEn = panchang\.tithi === 15 \? "Purnima" : panchang\.tithi === 30 \? "Amavasya"/);
+  assert.equal(component.includes('YOGAS_NE[panchang.yoga].split("|")'), false);
+});
+
+test("Nepali Nakshatra lord uses the Devanagari planet dictionary", () => {
+  assert.match(component, /grahaName\(\(nak\?\.lord \|\| ""\)\.toLowerCase\(\), language\)/);
+});
+
+test("PDF export applies fixed A4 layout even when responsive mobile CSS is active", () => {
+  assert.ok(suite.includes('target.classList.add("jpr-pdf-export")'));
+  assert.ok(suite.includes('target.classList.remove("jpr-pdf-export")'));
+  assert.ok(style.includes(".jp-report-surface.jpr-pdf-export{display:block!important;width:200mm"));
+});
+
+test("both detailed report components define twelve explicit pages", () => {
+  assert.equal(component.split("{page(").length - 1, 12);
+  assert.equal(component.split("{makePage(").length - 1, 12);
 });

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { adToBs } from "../../packages/core/src/bsDate";
-import { NAKSHATRAS as NAKSHATRA_META } from "../../packages/engine/src/constants.js";
+import { KARANAS as KARANA_META, NAKSHATRAS as NAKSHATRA_META, TITHIS as TITHI_META, YOGAS as YOGA_META } from "../../packages/engine/src/constants.js";
 import { KARANA_NAMES, NAKSHATRAS as NAKSHATRAS_NE, RASHIS as RASHIS_NE, BS_MONTHS, WEEKDAYS, YOGAS as YOGAS_NE, toNepaliDigits, tithiName } from "../patro-tools/core/names";
 import { panchangAt } from "../patro-tools/core/astro";
 import { nameSyllableFromNakshatra } from "../../packages/engine/src/name-guna.js";
@@ -282,7 +282,10 @@ export function DetailedBirthChartReport({ chart, language }: { chart: ChartResu
   const syllable = nameSyllableFromNakshatra(chart.moonNakshatraIndex, chart.moonPada);
   const panchang = panchangAt(chart.instant);
   const tithi = panchang.tithi === 15 ? "पूर्णिमा" : panchang.tithi === 30 ? "औंसी (अमावस्या)" : tithiName(panchang.tithi);
-  const yogaParts = YOGAS_NE[panchang.yoga] ? YOGAS_NE[panchang.yoga].split("|") : ["", "—"];
+  const yogaNe = YOGAS_NE[panchang.yoga] || "—";
+  const yogaEn = YOGA_META[panchang.yoga]?.en || "—";
+  const karanaEn = KARANA_META[panchang.karana]?.en || "—";
+  const tithiEn = panchang.tithi === 15 ? "Purnima" : panchang.tithi === 30 ? "Amavasya" : (TITHI_META[(panchang.tithi - 1) % 15]?.en || "Tithi " + panchang.tithi);
   const weekday = WEEKDAYS[new Date(chart.input.date + "T00:00:00Z").getUTCDay()];
   const currentDasha = chart.dashas.find(d => new Date().getTime() >= d.start.getTime() && new Date().getTime() < d.end.getTime());
   const methodsNe = [
@@ -331,9 +334,9 @@ export function DetailedBirthChartReport({ chart, language }: { chart: ChartResu
       <p>{tx(language, "तलका तिथि, पक्ष, योग र करण सहायक पञ्चाङ्ग गणनाबाट जन्म क्षणका लागि निकालिएका हुन्। चन्द्र राशि तथा जन्म नक्षत्र भने यस प्रतिवेदनको जन्मकुण्डली गणनाबाट देखाइएका छन्।", "Tithi, paksha, yoga and karana below are calculated for the birth instant by the existing supporting Panchanga function. The Moon sign and birth Nakshatra shown elsewhere come from the birth-chart engine.")}</p>
       <div className="jpr-metric-grid">
         <Metric label={tx(language, "वार", "Weekday")} value={language === "ne" ? weekday : new Date(chart.input.date + "T00:00:00Z").toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" })} />
-        <Metric label={tx(language, "तिथि", "Tithi")} value={language === "ne" ? tithi : (panchang.tithi === 15 ? "Purnima" : panchang.tithi === 30 ? "Amavasya" : "Tithi " + panchang.tithi)} note={tx(language, panchang.paksha === "shukla" ? "शुक्ल पक्ष" : "कृष्ण पक्ष", panchang.paksha === "shukla" ? "Waxing fortnight" : "Waning fortnight")} />
-        <Metric label={tx(language, "योग", "Yoga")} value={language === "ne" ? yogaParts[1] : yogaParts[0]} />
-        <Metric label={tx(language, "करण", "Karana")} value={language === "ne" ? (KARANA_NAMES[panchang.karana] || "—") : "Karana " + panchang.karana} />
+        <Metric label={tx(language, "तिथि", "Tithi")} value={language === "ne" ? tithi : tithiEn} note={tx(language, panchang.paksha === "shukla" ? "शुक्ल पक्ष" : "कृष्ण पक्ष", panchang.paksha === "shukla" ? "Waxing fortnight" : "Waning fortnight")} />
+        <Metric label={tx(language, "योग", "Yoga")} value={language === "ne" ? yogaNe : yogaEn} />
+        <Metric label={tx(language, "करण", "Karana")} value={language === "ne" ? (KARANA_NAMES[panchang.karana] || "—") : karanaEn} />
       </div>
       <Panel title={tx(language, "पञ्चाङ्गको परम्परागत उपयोग", "Traditional purpose of Panchanga elements")}>
         <Bullet title={tx(language, "तिथि र पक्ष", "Tithi and paksha")}>{tx(language, "चन्द्र-सूर्य कोणीय दूरीका आधारमा तिथि तथा शुक्ल/कृष्ण पक्ष छुट्याइन्छ।", "Tithi and the waxing/waning fortnight are determined from the angular separation of the Moon and Sun.")}</Bullet>
@@ -351,7 +354,7 @@ export function DetailedBirthChartReport({ chart, language }: { chart: ChartResu
       </div>
       <Panel title={tx(language, "नक्षत्रका परम्परागत परिचायक", "Traditional Nakshatra references")}>
         <dl className="jpr-kv-list">
-          <KeyValue label={tx(language, "नक्षत्र स्वामी", "Nakshatra lord")} value={grahaName(nak?.lord || "", language)} />
+          <KeyValue label={tx(language, "नक्षत्र स्वामी", "Nakshatra lord")} value={grahaName((nak?.lord || "").toLowerCase(), language)} />
           <KeyValue label={tx(language, "नक्षत्र देवता", "Nakshatra deity")} value={language === "ne" ? (nak?.deity.ne || "—") : (nak?.deity.en || "—")} />
           <KeyValue label={tx(language, "गण", "Gana")} value={(language === "ne" ? NE.gana : EN.gana)[nak?.gana ?? 0]} />
           <KeyValue label={tx(language, "योनि वर्ग", "Yoni category")} value={(language === "ne" ? NE.yoni : EN.yoni)[nak?.yoni?.[0] ?? 0]} />

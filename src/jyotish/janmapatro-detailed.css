@@ -29,3 +29,16 @@
   .jpr-panel,.jpr-koota,.jpr-kundali,.jpr-planet-card,.jpr-house-grid article{break-inside:avoid;page-break-inside:avoid}
   @page{size:A4;margin:0}
 }
+
+/* Keep downloaded PDFs in the same A4 layout on narrow/mobile screens. */
+.jp-report-surface.jpr-pdf-export{display:block!important;width:200mm!important;min-width:200mm!important;max-width:none!important;gap:0!important}
+.jp-report-surface.jpr-pdf-export .jpr-report{display:block!important;width:200mm!important;min-width:200mm!important;max-width:none!important;gap:0!important}
+.jp-report-surface.jpr-pdf-export .jpr-page{width:200mm!important;min-height:277mm!important;margin:0!important;padding:13mm 12mm 17mm!important;break-after:page;page-break-after:always}
+.jp-report-surface.jpr-pdf-export .jpr-page:last-child{break-after:auto;page-break-after:auto}
+.jp-report-surface.jpr-pdf-export .jpr-page-foot{left:12mm!important;right:12mm!important;bottom:7mm!important}
+.jp-report-surface.jpr-pdf-export .jpr-metric-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.jp-report-surface.jpr-pdf-export .jpr-kv-list{grid-template-columns:minmax(35mm,.65fr) minmax(0,1.35fr)!important}
+.jp-report-surface.jpr-pdf-export .jpr-planet-cards,.jp-report-surface.jpr-pdf-export .jpr-house-grid,.jp-report-surface.jpr-pdf-export .jpr-two-columns,.jp-report-surface.jpr-pdf-export .jpr-two-charts,.jp-report-surface.jpr-pdf-export .jpr-koota-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.jp-report-surface.jpr-pdf-export .jpr-pair-cover{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important}
+.jp-report-surface.jpr-pdf-export .jpr-count-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.jp-report-surface.jpr-pdf-export .jpr-two-charts .jpr-kundali svg{max-height:85mm!important}
