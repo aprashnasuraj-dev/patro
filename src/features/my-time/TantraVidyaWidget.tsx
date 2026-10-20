@@ -51,5 +51,15 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
       <div><small>{l(language, "महानिशा काल", "Mahanisha window")}</small><strong>{time(mahanishaKaal.start, timezone)}–{time(mahanishaKaal.end, timezone)}</strong><span>{mahanishaKaal.isActive ? l(language, "यो समय खण्ड सक्रिय छ", "This window is active") : l(language, "रातको मध्यबिन्दु वरिपरि ±२४ मिनेट", "±24 minutes around the night midpoint")}</span></div>
     </div>
     <p className="mt-tantra-note">{l(language, "यो परम्परागत समयगणनाको व्याख्यात्मक मोडेल हो। नित्या नक्साङ्कन परम्पराअनुसार फरक हुन सक्छ; योगिनी दिशा एउटा सार्वजनिक परम्पराको हो। २४-मिनेट तत्त्व चक्र AafnaiPatro को सरलीकृत मोडेल हो, श्वासको मापन होइन।", "This is an interpretive model of traditional timing. Nitya mappings vary by convention; the Yogini direction table is one public tradition. The 24-minute Tatwa cycle is a simplified AafnaiPatro model, not a measured breath cycle.")}</p>
+    <details className="mt-tantra-sources">
+      <summary>{l(language, "खुला सन्दर्भ र परम्परागत भिन्नता", "Open references & tradition differences")}</summary>
+      <ul>
+        <li><a href="https://www.sanatanarahasya.com/lineages/sri-vidya/the-sacred-knowing/sv2-c4-the-court/" target="_blank" rel="noreferrer">Nitya names and Sri Vidya sequence</a></li>
+        <li><a href="https://shrifreedom.org/vedic-astrology/tithi/" target="_blank" rel="noreferrer">Alternative Nitya–tithi pairings</a></li>
+        <li><a href="https://swarayoga.org/indian-time" target="_blank" rel="noreferrer">Eight-Yogini Disha and tithi mapping</a></li>
+        <li><a href="https://www.swarodaya.org/svara-tattva/" target="_blank" rel="noreferrer">Svarodaya tattva practice and durations</a></li>
+      </ul>
+      <small>{l(language, "यी खुला वेब सन्दर्भहरू तुलना गर्नका लागि हुन्; कुनै एकलाई सबै परम्पराको अन्तिम निर्णय मानिएको छैन।", "These open references are for comparison; none is treated as the final authority for every lineage.")}</small>
+    </details>
   </section>;
 }
