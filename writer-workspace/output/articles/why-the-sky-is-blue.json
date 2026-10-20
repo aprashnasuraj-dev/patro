@@ -143,7 +143,15 @@
   ],
   "word_count": 1127,
   "reading_minutes": 5,
-  "image": null,
+  "image": {
+    "file": "why-the-sky-is-blue-hero.png",
+    "alt": "A stylized Sun with rays scattering through a clear blue atmosphere, illustrating why the daytime sky appears blue.",
+    "caption": "Original illustration created for this article.",
+    "credit": "Original artwork created for Aafnaipatro.",
+    "license": "CC0 (original illustration)",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "blue sky",
     "Rayleigh scattering",
