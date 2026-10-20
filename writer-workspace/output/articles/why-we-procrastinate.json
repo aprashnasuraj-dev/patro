@@ -101,7 +101,8 @@
       "publisher": "American Psychological Association",
       "url": "https://www.apa.org/news/podcasts/speaking-of-psychology/procrastinate",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "American Psychological Association. (n.d.). Why we procrastinate and what to do about it, with Fuschia Sirois, PhD. https://www.apa.org/news/podcasts/speaking-of-psychology/procrastinate"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "American Psychological Association",
       "url": "https://www.apa.org/gradpsych/2010/01/procrastination",
       "published_at": "2010-01-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "American Psychological Association. (2010, January 1). Procrastination or 'intentional delay'?. https://www.apa.org/gradpsych/2010/01/procrastination"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "University of California, Berkeley Learning Center",
       "url": "https://slc.berkeley.edu/academic-support/time-management",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "University of California, Berkeley Learning Center. (n.d.). Time management and task planning. https://slc.berkeley.edu/academic-support/time-management"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "Durham University",
       "url": "https://www.durham.ac.uk/research/current/thought-leadership/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Durham University. (n.d.). Self-regulation and emotion regulation. https://www.durham.ac.uk/research/current/thought-leadership/"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "University of Minnesota Extension",
       "url": "https://extension.umn.edu/health-and-stress/procrastination",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "University of Minnesota Extension. (n.d.). Procrastination and task planning. https://extension.umn.edu/health-and-stress/procrastination"
     }
   ],
   "word_count": 1163,
