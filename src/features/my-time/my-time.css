@@ -358,3 +358,13 @@
 .mt-dashboard-grid-single .mt-panchang-panel{grid-column:1/-1}
 @media(max-width:800px){.mt-immersive-hero{grid-template-columns:minmax(0,1fr) minmax(220px,.8fr)}.mt-best-alternatives{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.mt-immersive-hero{grid-template-columns:minmax(0,1fr)}.mt-immersive-art{width:min(100%,340px);margin:0 auto}.mt-best-time-main{grid-template-columns:minmax(0,1fr);gap:10px}.mt-best-score strong{font-size:48px}.mt-best-current-grid{grid-template-columns:minmax(0,1fr)}.mt-best-alternatives{grid-template-columns:minmax(0,1fr)}}
+
+
+/* Explainable My Time recommendation factors */
+.mt-personal-score-breakdown{margin-top:1rem;padding:1rem;border:1px solid var(--mt-line);border-radius:14px;background:color-mix(in srgb,var(--mt-card) 92%,var(--mt-accent) 8%)}
+.mt-personal-score-breakdown>strong{display:block;margin-bottom:.35rem;color:var(--mt-ink)}
+.mt-personal-score-breakdown>p{margin:.35rem 0 .75rem;color:var(--mt-muted);font-size:.92rem;line-height:1.55}
+.mt-personal-score-breakdown>div{display:flex;flex-wrap:wrap;gap:.45rem}
+.mt-personal-score-breakdown>div>span{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .6rem;border:1px solid var(--mt-line);border-radius:999px;background:var(--mt-card);font-size:.8rem;color:var(--mt-ink)}
+.mt-personal-score-breakdown ul{margin:.7rem 0 0;padding-left:1.15rem;color:var(--mt-muted);font-size:.85rem;line-height:1.5}
+.mt-personal-score-breakdown li+li{margin-top:.25rem}
