@@ -69,7 +69,7 @@ export default function MyTimeTemporalLayers({ snapshot, timezone, language, now
     return {
       tone: "calm" as const,
       title: l(language,"समय सन्दर्भ तयार हुँदैछ","Timing context is being prepared"),
-      detail: l(language,"स्थानको सूर्योदय/सूर्यास्त उपलब्ध भएपछि मात्र परम्परागत समय खण्ड देखाइन्छ。","Traditional windows appear only when local sunrise and sunset are available.")
+      detail: l(language,"स्थानको सूर्योदय/सूर्यास्त उपलब्ध भएपछि मात्र परम्परागत समय खण्ड देखाइन्छ।","Traditional windows appear only when local sunrise and sunset are available.")
     };
   })();
 
