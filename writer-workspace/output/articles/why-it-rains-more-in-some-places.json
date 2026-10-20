@@ -101,7 +101,8 @@
       "publisher": "NOAA JetStream",
       "url": "https://www.noaa.gov/jetstream/atmosphere/precipitation",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NOAA JetStream. (n.d.). Precipitation. https://www.noaa.gov/jetstream/atmosphere/precipitation"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "NOAA",
       "url": "https://www.noaa.gov/explainers/what-s-difference-between-climate-and-weather",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NOAA. (n.d.). What’s the difference between climate and weather?. https://www.noaa.gov/explainers/what-s-difference-between-climate-and-weather"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "USGS Water Science School",
       "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "USGS Water Science School. (n.d.). The Water Cycle. https://www.usgs.gov/special-topics/water-science-school/science/water-cycle"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "UK Met Office",
       "url": "https://weather.metoffice.gov.uk/learn-about/weather/how-weather-works",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "UK Met Office. (n.d.). How weather works. https://weather.metoffice.gov.uk/learn-about/weather/how-weather-works"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "NOAA JetStream",
       "url": "https://www.noaa.gov/jetstream/atmosphere/precipitation",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NOAA JetStream. (n.d.). Precipitation and atmospheric circulation. https://www.noaa.gov/jetstream/atmosphere/precipitation"
     }
   ],
   "word_count": 1145,
