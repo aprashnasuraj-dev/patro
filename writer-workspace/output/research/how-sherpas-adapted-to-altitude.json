@@ -1,0 +1,136 @@
+{
+  "slug": "how-sherpas-adapted-to-altitude",
+  "researched_at": "2026-10-20",
+  "topic": {
+    "id": "mm-0117",
+    "slug": "how-sherpas-adapted-to-altitude",
+    "question": "How Sherpas adapted to altitude",
+    "category": "Nepal & Himalaya",
+    "canonical_url": "https://aafnaipatro.com/how-sherpas-adapted-to-altitude/",
+    "title_suggestion": "How Sherpas Adapted To Altitude?",
+    "h1": "How Sherpas Adapted To Altitude?",
+    "keywords": [
+      "sherpas",
+      "adapted",
+      "altitude",
+      "nepal-himalaya"
+    ],
+    "ymyl": false,
+    "target_words": 1200
+  },
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5474778/",
+      "title": "Metabolic basis to Sherpa altitude adaptation",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "reliability": "peer-reviewed research",
+      "notes": [
+        "Sherpa-lowlander comparison during exposure to Everest Base Camp conditions found differences in muscle fuel use, oxygen-use efficiency, energetic reserves and oxidative-stress markers.",
+        "The study supports a contribution from tissue metabolism but its participant sample was limited, so results should not be treated as universal individual predictions."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3515610/",
+      "title": "Genetic Variants in EPAS1 Contribute to Adaptation to High-Altitude Hypoxia in Sherpas",
+      "publisher": "PLOS ONE",
+      "reliability": "peer-reviewed research",
+      "notes": [
+        "Reports EPAS1-associated genetic variation in Sherpas in relation to adaptation to high-altitude hypoxia.",
+        "The associations are population-level evidence and do not alone predict any person's endurance or safety."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://academic.oup.com/mbe/article/34/4/818/2918109",
+      "title": "Down-Regulation of EPAS1 Transcription and Genetic Adaptation of Tibetans to High-Altitude Hypoxia",
+      "publisher": "Molecular Biology and Evolution",
+      "reliability": "peer-reviewed research",
+      "notes": [
+        "Functional analysis links Tibetan-enriched EPAS1 variants with down-regulated expression and a comparatively restrained haemoglobin-related response in hypoxia.",
+        "The article discusses Tibetan highlanders; applying every finding identically to all Sherpa individuals requires caution."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+      "title": "High-Altitude Travel and Altitude Illness",
+      "publisher": "Centers for Disease Control and Prevention",
+      "reliability": "government health agency",
+      "notes": [
+        "CDC travel guidance describes physiological stress and illness risk at altitude and the importance of gradual acclimatization.",
+        "Inherited adaptation cannot replace individual ascent planning or attention to symptoms."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5241213/",
+      "title": "Sherpa and Tibetan population genetic variation",
+      "publisher": "National Center for Biotechnology Information, PubMed Central",
+      "reliability": "peer-reviewed research",
+      "notes": [
+        "Population-genetic work examines similarities and differences among Sherpa and Tibetan groups.",
+        "Group-level genetic variation is not a deterministic measure of an individual's climbing ability."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "how-sherpas-adapted-to-altitude-hero.png",
+      "title": "Sherpa climber and Himalayan ridgeline",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; public reuse permitted.",
+      "relevance": "Shows the high-altitude mountain environment without depicting an identifiable person."
+    },
+    {
+      "file": "how-sherpas-adapted-to-altitude-diagram-01.png",
+      "title": "Altitude and oxygen pressure",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; public reuse permitted.",
+      "relevance": "Represents how lower barometric pressure reduces oxygen partial pressure."
+    },
+    {
+      "file": "how-sherpas-adapted-to-altitude-diagram-02.png",
+      "title": "Oxygen delivery and muscle metabolism",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; public reuse permitted.",
+      "relevance": "Highlights that oxygen delivery and cellular oxygen use are separate parts of adaptation."
+    },
+    {
+      "file": "how-sherpas-adapted-to-altitude-diagram-03.png",
+      "title": "Inherited traits and acclimatization",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; public reuse permitted.",
+      "relevance": "Distinguishes inherited adaptation from short-term adjustment and learned mountain skills."
+    }
+  ],
+  "image_research": {
+    "method": "Original diagrammatic illustrations",
+    "notes": "Mountains, anonymous climber silhouettes, lungs/circulation-like motifs and a stylised cellular pathway were drawn programmatically. No third-party photos, identifiable faces, or copied diagrams were included."
+  }
+}
