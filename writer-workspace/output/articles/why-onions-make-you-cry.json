@@ -11,7 +11,7 @@
   "key_takeaways": [
     "Cutting onion cells brings enzymes and sulfur-containing compounds together, leading to formation of the volatile irritant syn-propanethial-S-oxide. [1][2]",
     "The irritant reaches the moist surface of the eye and stimulates sensory nerves, triggering reflex tears that help dilute and wash it away. [1][3]",
-    "A sharp knife, ventilation and chilling the onion can reduce exposure, though no method guarantees a tear-free cut. [2][3]",
+    "A sharp knife, gentle cutting and eye protection can reduce exposure; a 2025 study found chilling may increase the tear-triggering droplets released during cutting. [3][4]",
     "The tear response is a protective reflex, not evidence that the onion is poisonous or that the eyes are being permanently damaged by ordinary kitchen exposure. [1][3]"
   ],
   "sections": [
@@ -46,8 +46,8 @@
     {
       "h2": "How to reduce onion tears",
       "paras": [
-        "A sharp knife can help by cutting rather than crushing the tissue, reducing unnecessary cell damage. Chilling an onion before cutting may slow the movement and release of volatile compounds, although it does not remove the chemistry completely. Good ventilation, such as a fan that moves air away from the face, can also reduce the amount of irritant reaching the eyes. [2][3][4][5]",
-        "Some people use protective glasses or goggles to limit contact between the vapour and the eye surface. Avoid rubbing the eyes with onion-contaminated fingers, because that can add more irritant. Different techniques work differently in different kitchens, and none is guaranteed to eliminate tears. The most reliable approach is to reduce cell crushing and avoid letting the released vapour collect around your face. [2][3]"
+        "A sharp knife and a slower, controlled cutting motion can reduce the spray released as the blade presses through onion layers. A 2025 study reported that the cut can eject tiny droplets at high speed, and that blunt knives and faster chopping released more droplets with greater energy. Cutting gently with a sharpened blade is therefore a practical way to reduce the mist that carries irritants toward the eyes. [3][4]",
+        "Protective goggles or a face shield can limit contact between vapour and the eye surface, while good ventilation can help disperse airborne irritants. Avoid rubbing your eyes with onion-contaminated fingers. Chilling onions is often repeated as a tip, but a 2025 report on experimental work found that refrigerated onions produced more tear-triggering droplets when cut; it should not be presented as a dependable prevention method. [3][4][5]"
       ]
     },
     {
@@ -83,7 +83,7 @@
     },
     {
       "q": "Does chilling an onion prevent tears?",
-      "a": "Chilling may slow the release of volatile compounds, but it does not remove the underlying chemistry and cannot guarantee tear-free chopping. A sharp knife and ventilation can also help. [2][3]"
+      "a": "Not reliably. Although older advice suggests chilling can slow enzyme reactions, a 2025 report on cutting experiments found refrigerated onions produced more tear-triggering droplets. A sharp knife, slow controlled cuts and protective eyewear are better-supported practical choices. [3][4][5]"
     },
     {
       "q": "Are onion tears dangerous?",
@@ -97,46 +97,51 @@
   "sources": [
     {
       "n": 1,
-      "title": "Why does chopping an onion make you cry?",
-      "publisher": "Library of Congress",
-      "url": "https://www.loc.gov/everyday-mysteries/browse-all-questions/item/why-does-chopping-an-onion-make-you-cry/",
-      "published_at": "2019-11-19",
-      "retrieved_at": "2026-10-20"
+      "title": "Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa",
+      "publisher": "American Chemical Society",
+      "url": "https://pubs.acs.org/doi/10.1021/acschembio.7b00336",
+      "published_at": "2017-09-15",
+      "retrieved_at": "2026-10-20",
+      "apa": "Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa. (2017). ACS Chemical Biology, 12(9), 2296–2304. https://doi.org/10.1021/acschembio.7b00336"
     },
     {
       "n": 2,
-      "title": "Plant biochemistry: an onion enzyme that makes the eyes water",
-      "publisher": "Nature",
-      "url": "https://www.nature.com/articles/419685a",
-      "published_at": "2002-10-17",
-      "retrieved_at": "2026-10-20"
+      "title": "Why do onions make you cry when you cut them? And why are they sweet when you fry them?",
+      "publisher": "McGill University, Office for Science and Society",
+      "url": "https://www.mcgill.ca/oss/article/general-science-you-asked/why-do-onions-make-you-cry-when-you-cut-them-and-why-are-they-sweet-when-you-fry-them",
+      "published_at": "2017-02-20",
+      "retrieved_at": "2026-10-20",
+      "apa": "Schwarcz, J. (2017, February 20). Why do onions make you cry when you cut them? And why are they sweet when you fry them? McGill University, Office for Science and Society. https://www.mcgill.ca/oss/article/general-science-you-asked/why-do-onions-make-you-cry-when-you-cut-them-and-why-are-they-sweet-when-you-fry-them"
     },
     {
       "n": 3,
-      "title": "Why Do Onions Make You Cry?",
-      "publisher": "American Chemical Society",
-      "url": "https://www.acs.org/pressroom/reactions/library/why-do-onions-make-you-cry.html",
-      "published_at": "2016-06-07",
-      "retrieved_at": "2026-10-20"
+      "title": "Why does slicing onions make you cry?",
+      "publisher": "Live Science",
+      "url": "https://www.livescience.com/why-slicing-onions-makes-you-cry",
+      "published_at": "2025-10-17",
+      "retrieved_at": "2026-10-20",
+      "apa": "Coffey, D. (2025, October 17). Why does slicing onions make you cry? Live Science. https://www.livescience.com/why-slicing-onions-makes-you-cry"
     },
     {
       "n": 4,
-      "title": "No More Tears: Here's How to Chop Onions Without Crying",
-      "publisher": "American Academy of Ophthalmology",
-      "url": "https://www.aao.org/eye-health/tips-prevention/no-more-tears-how-to-chop-onions-without-crying",
-      "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "title": "‘Mist opportunity’ reveals how onions make cooks cry",
+      "publisher": "Cornell Chronicle",
+      "url": "https://news.cornell.edu/stories/2025/10/mist-opportunity-reveals-how-onions-make-cooks-cry",
+      "published_at": "2025-10-07",
+      "retrieved_at": "2026-10-20",
+      "apa": "Ramanujan, K. (2025, October 7). ‘Mist opportunity’ reveals how onions make cooks cry. Cornell Chronicle. https://news.cornell.edu/stories/2025/10/mist-opportunity-reveals-how-onions-make-cooks-cry"
     },
     {
       "n": 5,
-      "title": "All About Onions",
-      "publisher": "National Onion Association",
-      "url": "https://www.onions-usa.org/all-about-onions/",
-      "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "title": "Why do onions make us cry?",
+      "publisher": "Washington State University, Ask Dr. Universe",
+      "url": "https://askdruniverse.wsu.edu/2016/08/22/onions-make-us-cry/",
+      "published_at": "2016-08-22",
+      "retrieved_at": "2026-10-20",
+      "apa": "Washington State University. (2016, August 22). Why do onions make us cry? Ask Dr. Universe. https://askdruniverse.wsu.edu/2016/08/22/onions-make-us-cry/"
     }
   ],
-  "word_count": 1191,
+  "word_count": 1209,
   "reading_minutes": 5,
   "image": null,
   "keywords": [
