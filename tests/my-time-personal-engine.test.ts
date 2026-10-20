@@ -193,6 +193,8 @@ describe("birth date normalization and Jyotish engine consistency", () => {
     const febMoon = feb.planets.find(planet => planet.key === "moon");
     expect(jan.input.date).toBe("1992-01-31");
     expect(feb.input.date).toBe("1992-02-29");
+    expect(jan.instant.toISOString()).toBe("1992-01-30T19:03:00.000Z");
+    expect(feb.instant.toISOString()).toBe("1992-02-28T19:03:00.000Z");
     expect(janMoon).toBeDefined();
     expect(febMoon).toBeDefined();
     // Both dates can correctly have Dhanu Moon-sign; the rest of the chart must change.
@@ -201,6 +203,7 @@ describe("birth date normalization and Jyotish engine consistency", () => {
     expect(Math.abs((janMoon?.longitude ?? 0) - (febMoon?.longitude ?? 0))).toBeGreaterThan(15);
     expect(jan.moonNakshatraIndex).not.toBe(feb.moonNakshatraIndex);
     expect(jan.moonPada).not.toBe(feb.moonPada);
+    expect(jan.dashas[0].lord).not.toBe(feb.dashas[0].lord);
     expect(jan.ascSignIndex).not.toBe(feb.ascSignIndex);
     const janPanchang = panchangAt(jan.instant);
     const febPanchang = panchangAt(feb.instant);
