@@ -114,7 +114,7 @@ function PolarClock({ timezone, now, language, snapshot }: { timezone: string; n
       <text x="150" y="145" textAnchor="middle" fontSize="23" fontWeight="700" fill="var(--mt-ink)">{localClock(timezone, now).slice(0,5)}</text>
       <text x="150" y="164" textAnchor="middle" fontSize="10" fill="var(--mt-muted)">LOCAL TIME</text>
     </svg>
-    <div className="mt-polar-legend"><span><i className="mt-legend-time"/> {l(language,"स्थानीय समय","Local time")}</span><span><i className="mt-legend-day"/> {l(language,"२४ घण्टे चक्र","24-hour cycle")}</span></div>
+    <div className="mt-polar-legend"><span><i className="mt-legend-time"/> {l(language,"स्थानीय समय","Local time")}</span><span><i className="mt-legend-day"/> {l(language,"२४ घण्टे चक्र","24-hour cycle")}</span>{solarReady&&<><span><i className="mt-legend-choghadiya"/> {l(language,"चौघडिया","Choghadiya")}</span><span><i className="mt-legend-kaal"/> {l(language,"राहु / यमगण्ड / गुलिक","Rahu / Yamaganda / Gulika")}</span><span className="mt-legend-note">{l(language,"सुई = अहिले · रङ्गीन घेरा = चयन गरिएको मिति","Hand = now · colored rings = selected date")}</span></>}</div>
   </div>;
 }
 
