@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { calculateMyTimeSnapshot, localDateTimeToUtc, normalizeLongitude } from "../src/patro-tools/core/my-time-snapshot";
 import { myTimeResponse } from "../worker/my-time";
+import { panchangAt } from "../src/patro-tools/core/astro";
 
 describe("My Time astronomical core", () => {
   it("normalizes negative and over-revolution longitudes", () => {
@@ -58,6 +59,8 @@ describe("My Time astronomical core", () => {
       yogini: { name: expect.any(String), direction: expect.any(String), blockedDirection: expect.any(String) },
       mahanishaKaal: { start: expect.any(String), end: expect.any(String), isActive: expect.any(Boolean) }
     });
+    const evaluatedTithi = panchangAt(new Date(payload.data.evaluated_at_utc)).tithi;
+    expect(payload.data.tantraVidya.nityaDevi.id).toBe(evaluatedTithi <= 15 ? evaluatedTithi : 31 - evaluatedTithi);
     const invalid = await myTimeResponse(new Request("https://aafnaipatro.com/api/v1/mytime/today?lat=91"), { MY_TIME_ENABLED: true });
     expect(invalid?.status).toBe(400);
   });
