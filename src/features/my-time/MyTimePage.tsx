@@ -527,7 +527,6 @@ export default function MyTimePage() {
           <div><small>{l(language,"अहिलेको तिथि","CURRENT TITHI")}</small><strong>{tithiName}</strong></div>
           <div className={currentKaal ? "is-caution" : currentChoghadiya?.favorable ? "is-favorable" : ""}><small>{selectedDateIsToday ? l(language,"अहिलेको समय झ्याल","CURRENT TIME WINDOW") : l(language,"छानिएको मितिको समय झ्याल","SELECTED-DATE TIME WINDOW")}</small><strong>{heroWindowTitle}</strong><p className="mt-hero-window-summary">{heroWindowSummary}</p></div>
           <div><small>{l(language,"सौर उचाइ","SOLAR ALTITUDE")}</small><strong>{snapshot ? fmt(snapshot.sky.solar_altitude_deg_at_evaluation,1)+"°" : "—"}</strong></div>
-          <div><small>{l(language,"नेपाल संवत्","NEPAL SAMBAT")}</small><strong>{calendarReference?.ns || "—"}</strong></div>
         </div>
         <nav className="mt-immersive-nav" aria-label={l(language,"समयका दृश्यमा जानुहोस्","Explore time views")}>
           <a href="#mt-orbit">{l(language,"समय चक्र","Time dial")} <span aria-hidden="true">↗</span></a>
