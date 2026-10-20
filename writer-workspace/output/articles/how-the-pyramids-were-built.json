@@ -143,7 +143,15 @@
   ],
   "word_count": 1253,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "how-the-pyramids-were-built-hero.png",
+    "alt": "A pair of monumental Egyptian pyramids with visible stone courses under a desert sun.",
+    "caption": "Original illustration created for this article.",
+    "credit": "Original artwork created for Aafnaipatro.",
+    "license": "CC0 (original illustration)",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "Egyptian pyramids",
     "Giza",
