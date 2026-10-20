@@ -37,6 +37,7 @@ type Props = {
   date: string;
   now: Date;
   timezone: string;
+  locationLabel: string;
   lat: number;
   lng: number;
   tithiIndex: number | null;
@@ -46,6 +47,7 @@ type Props = {
   currentWindow?: { key: string; name: string; start_utc: string; end_utc: string; favorable?: boolean } | null;
   nextWindow?: { key: string; name: string; start_utc: string; end_utc: string; score?: number } | null;
   onLocationChange: (place: { timezone: string; lat: number; lng: number; label: string }) => void;
+  onLensChange: (lens: MyTimeLens) => void;
 };
 function clock(value: string, timezone: string, language: UiLanguage) {
   try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); }
@@ -58,7 +60,7 @@ function updateLanguage(language: UiLanguage) {
   window.dispatchEvent(new CustomEvent("patro:language"));
 }
 export default function MyTimePersonalization(props: Props) {
-  const { language, date, now, timezone, lat, lng, tithiIndex, nakshatraIndex, tithiName, nakshatraName, currentWindow, nextWindow, onLocationChange } = props;
+  const { language, date, now, timezone, locationLabel, lat, lng, tithiIndex, nakshatraIndex, tithiName, nakshatraName, currentWindow, nextWindow, onLocationChange, onLensChange } = props;
   const [settings, setSettings] = useState<MyTimePersonalSettings>(readMyTimePersonalSettings);
   const [placeId, setPlaceId] = useState(() => PLACES.find(p => p.timezone === timezone && Math.abs(p.lat-lat)<0.02 && Math.abs(p.lng-lng)<0.02)?.id || "custom");
   const [customPlace, setCustomPlace] = useState("");
@@ -100,7 +102,7 @@ export default function MyTimePersonalization(props: Props) {
     const day = `${values.year}-${values.month}-${values.day}`;
     if (settings.notifications.frequency === "important" && lastNotificationDay.current.get(category) === day) return;
     lastNotificationDay.current.set(category, day);
-    try { new Notification(title, { body, tag: "my-time-" + category, icon: "/aafnai-logo.png" }); } catch {}
+    try { new Notification(title, { body, tag: "my-time-" + category + (settings.notifications.frequency === "all" ? "-" + now.getTime() : ""), icon: "/aafnai-logo.png" }); } catch {}
   }
   async function enableAlerts() {
     if (!("Notification" in window)) { setNotice(l(language, "यो ब्राउजरले सूचना समर्थन गर्दैन।", "This browser does not support notifications.")); return; }
@@ -109,7 +111,7 @@ export default function MyTimePersonalization(props: Props) {
     if (permission !== "granted") { setNotice(l(language, "सूचना अनुमति दिइएन; तपाईंले चाहेको बेला सेटिङबाट फेरि प्रयास गर्न सक्नुहुन्छ।", "Permission was not granted. You can try again in settings whenever you want.")); return; }
     setNotice(l(language, "सूचना अनुमति सक्रिय छ। चयन गरिएका अलर्टहरू My Time खुला हुँदा चल्छन्।", "Notifications are enabled. Selected alerts run while My Time is open."));
   }
-  function chooseLens(lens: MyTimeLens) { update(old => ({ ...old, lens, setupComplete: true })); }
+  function chooseLens(lens: MyTimeLens) { update(old => ({ ...old, lens })); onLensChange(lens); }
   function toggleInterest(id: MyTimeInterest) {
     update(old => {
       const next = old.interests.includes(id) ? old.interests.filter(item => item !== id) : [...old.interests.filter(item => item !== "general"), id];
@@ -138,16 +140,26 @@ export default function MyTimePersonalization(props: Props) {
     setEventTitle(""); setEventAt(""); setNotice(l(language, "कार्यक्रम यस उपकरणमा सुरक्षित भयो। अलर्टका लागि सूचना अनुमति र My Time खुला हुनुपर्छ।", "Event saved on this device. Alerts require notification permission and My Time to remain open."));
   }
   const activeLens = LENSES.find(item => item.id === settings.lens) || LENSES[0];
+  const interestPrompt: Record<MyTimeInterest, [string, string]> = {
+    general: ["आजको तिथि र अर्को समय परिवर्तन हेर्नुहोस्।", "Review today’s Tithi and the next timing transition."],
+    work: ["समय सङ्केतलाई सहायक योजना मानेर कामको प्राथमिकता र समयसीमा पहिले राख्नुहोस्।", "Use timing cues as optional planning context; keep work priorities and deadlines primary."],
+    study: ["आफ्नो पात्रोमा केन्द्रित अध्ययन समय सुरक्षित गर्नुहोस्।", "Protect a focused study block in your schedule."],
+    travel: ["यात्राअघि गन्तव्यको समय क्षेत्र र स्थानीय सूर्योदय/सूर्यास्त जाँच्नुहोस्।", "Before travelling, check the destination time zone and local sunrise/sunset."],
+    prayer: ["स्थानीय तिथि र सुरक्षित observance मिति हेर्नुहोस्।", "Review the local Tithi and any saved observance dates."],
+    meditation: ["चाहनुहुन्छ भने स्थानीय प्रभात वा सन्ध्यालाई आत्मचिन्तनको सम्झना बनाउनुहोस्।", "If useful, use local dawn or twilight as a reflection reminder."],
+    family: ["परिवारका सुरक्षित कार्यक्रम र आगामी सम्झनाहरू जाँच्नुहोस्।", "Review saved family events and upcoming reminders."]
+  };
+  const focus = settings.interests.find(item => item !== "general") || "general";
   return <section className="mt-personal-root" aria-label={l(language, "व्यक्तिगत समय अनुभव", "Personal time experience")}>
     <section className="mt-briefing mt-personal-card" aria-labelledby="mt-briefing-title">
-      <div className="mt-personal-card-head"><div><span className="mt-section-kicker"><Sparkles size={14}/>{l(language, "तपाईंको दैनिक सारांश", "YOUR DAILY BRIEFING")}</span><h2 id="mt-briefing-title">{l(language, "आजको समय, तपाईंको दृष्टिमा", "Your day, through your lens")}</h2><p>{date} · {timezone}</p></div><span className="mt-personal-lens">{language === "ne" ? activeLens.ne : activeLens.en}</span></div>
+      <div className="mt-personal-card-head"><div><span className="mt-section-kicker"><Sparkles size={14}/>{l(language, "तपाईंको दैनिक सारांश", "YOUR DAILY BRIEFING")}</span><h2 id="mt-briefing-title">{l(language, "आजको समय, तपाईंको दृष्टिमा", "Your day, through your lens")}</h2><p>{date} · {locationLabel || timezone} · {timezone}</p></div><span className="mt-personal-lens">{language === "ne" ? activeLens.ne : activeLens.en}</span></div>
       <div className="mt-briefing-grid">
         <article><small>{l(language, "हालको तिथि", "CURRENT TITHI")}</small><strong>{tithiName || "—"}</strong><span>{l(language, "तिथि परिवर्तन हुँदा हालको मान अपडेट हुन्छ।", "Updates as the current Tithi changes.")}</span></article>
         <article><small>{l(language, "हालको नक्षत्र", "CURRENT NAKSHATRA")}</small><strong>{nakshatraName || "—"}</strong><span>{l(language, "खगोलीय गणनामा आधारित", "Based on the current astronomical calculation.")}</span></article>
         <article><small>{l(language, "हालको समय झ्याल", "CURRENT TIMING WINDOW")}</small><strong>{currentWindow?.name || l(language, "समय गणना भइरहेको छ", "Calculating current window")}</strong><span>{currentWindow ? clock(currentWindow.start_utc, timezone, language) + "–" + clock(currentWindow.end_utc, timezone, language) : l(language, "सूर्योदय/सूर्यास्त उपलब्धतामा निर्भर", "Depends on available solar events.")}</span></article>
         <article><small>{l(language, "अर्को चयनित झ्याल", "NEXT TIMING WINDOW")}</small><strong>{nextWindow?.name || l(language, "अहिले उपलब्ध छैन", "Not available yet")}</strong><span>{nextWindow ? clock(nextWindow.start_utc, timezone, language) + "–" + clock(nextWindow.end_utc, timezone, language) : l(language, "गणना उपलब्ध भएपछि देखाइन्छ।", "Shown when a valid window is available.")}</span></article>
       </div>
-      <p className="mt-briefing-note">{l(language, "तपाईंको प्राथमिकता", "Your interests")}: {interestLine}. {l(language, "यो सारांश जानकारी र परम्परागत समय बुझ्नका लागि हो; कुनै परिणामको ग्यारेन्टी होइन।", "This briefing is informational and culturally contextual; it does not guarantee outcomes.")}</p>
+      <p className="mt-briefing-note"><b>{l(language, "आजको ध्यान", "TODAY’S FOCUS")}:</b> {language === "ne" ? interestPrompt[focus][0] : interestPrompt[focus][1]}<br/>{l(language, "तपाईंको रुचि", "Your interests")}: {interestLine}. {l(language, "यो सारांश जानकारी र परम्परागत समय बुझ्नका लागि हो; कुनै परिणामको ग्यारेन्टी होइन।", "This briefing is informational and culturally contextual; it does not guarantee outcomes.")}</p>
     </section>
 
     {!settings.setupComplete && <section className="mt-setup-card mt-personal-card" aria-labelledby="mt-setup-title">
@@ -156,7 +168,7 @@ export default function MyTimePersonalization(props: Props) {
         <label><span><Globe2 size={15}/>{l(language, "तपाईंको स्थान", "Your location")}</span><select value={placeId} onChange={event=>choosePlace(event.target.value)}><option value="custom">{l(language, "हालको / म्यानुअल स्थान", "Current / manual location")}</option>{PLACES.map(place=><option key={place.id} value={place.id}>{place.label}</option>)}</select><button type="button" className="mt-secondary" onClick={useDeviceLocation}>{l(language, "उपकरणको स्थान प्रयोग गर्नुहोस्", "Use device location")}</button><small>{l(language, "स्थान अनुमति नदिए पनि सुविधा चल्छ।", "Location permission is optional.")}</small></label>
         <label><span><Languages size={15}/>{l(language, "भाषा", "Language")}</span><select value={language} onChange={event=>updateLanguage(event.target.value as UiLanguage)}><option value="ne">नेपाली</option><option value="en">English</option></select><small>{l(language, "यसले AafnaiPatro को भाषा परिवर्तन गर्छ।", "This changes the AafnaiPatro interface language.")}</small></label>
       </div>
-      <div className="mt-setup-options"><strong>{l(language, "तपाईंको समय लेन्स", "Your time lens")}</strong><div>{LENSES.map(item=><button type="button" key={item.id} className={settings.lens===item.id?"is-selected":""} onClick={()=>update(old=>({...old,lens:item.id}))}><b>{language==="ne"?item.ne:item.en}</b><small>{item.detail}</small></button>)}</div></div>
+      <div className="mt-setup-options"><strong>{l(language, "तपाईंको समय लेन्स", "Your time lens")}</strong><div>{LENSES.map(item=><button type="button" key={item.id} className={settings.lens===item.id?"is-selected":""} onClick={()=>chooseLens(item.id)}><b>{language==="ne"?item.ne:item.en}</b><small>{item.detail}</small></button>)}</div></div>
       <div className="mt-setup-options"><strong>{l(language, "दैनिक रुचि (एक वा धेरै)", "Daily interests (choose any)")}</strong><div className="mt-interest-options">{INTERESTS.map(item=><label key={item.id}><input type="checkbox" checked={settings.interests.includes(item.id)} onChange={()=>toggleInterest(item.id)}/>{language==="ne"?item.ne:item.en}</label>)}</div></div>
       <p className="mt-privacy-note">{l(language, "गोपनीयता: रुचि र दृश्य प्राथमिकता यस उपकरणको ब्राउजरमा सुरक्षित हुन्छन्। जन्म मिति, जन्म समय र जन्मस्थान आवश्यक छैनन्; व्यक्तिगत जन्मकुण्डली चाहिएको बेला मात्र सम्बन्धित सुविधा प्रयोग गर्नुहोस्।", "Privacy: interests and view preferences are stored in this browser on this device. Birth date, birth time and birthplace are not required; use a separate birth-chart feature only if you want that functionality.")}</p>
       <div className="mt-personal-actions"><button type="button" className="mt-primary" onClick={()=>update(old=>({...old,setupComplete:true}))}><Check size={16}/>{l(language, "मेरो दृश्य सुरक्षित गर्नुहोस्", "Save my view")}</button><button type="button" className="mt-secondary" onClick={()=>update(old=>({...old,setupComplete:true,lens:"universal",interests:["general"]}))}>{l(language, "सार्वभौमिक दृश्यमा जानुहोस्", "Continue with universal view")}</button></div>
