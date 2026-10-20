@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { adToBs } from "../../packages/core/src/bsDate";
-import { KARANAS as KARANA_META, NAKSHATRAS as NAKSHATRA_META, TITHIS as TITHI_META, YOGAS as YOGA_META } from "../../packages/engine/src/constants.js";
+import { NAKSHATRAS as NAKSHATRA_META } from "../../packages/engine/src/constants.js";
 import { KARANA_NAMES, NAKSHATRAS as NAKSHATRAS_NE, RASHIS as RASHIS_NE, BS_MONTHS, WEEKDAYS, YOGAS as YOGAS_NE, toNepaliDigits, tithiName } from "../patro-tools/core/names";
 import { panchangAt } from "../patro-tools/core/astro";
 import { nameSyllableFromNakshatra } from "../../packages/engine/src/name-guna.js";
@@ -10,6 +10,10 @@ import "./janmapatro-detailed.css";
 export type ReportLanguage = "ne" | "en";
 export const BIRTH_REPORT_PAGE_COUNT = 12;
 export const GUNA_REPORT_PAGE_COUNT = 12;
+
+const TITHI_NAMES_EN = ["Pratipada", "Dwitiya", "Tritiya", "Chaturthi", "Panchami", "Shashthi", "Saptami", "Ashtami", "Navami", "Dashami", "Ekadashi", "Dwadashi", "Trayodashi", "Chaturdashi"] as const;
+const YOGA_NAMES_EN = ["Vishkambha", "Priti", "Ayushman", "Saubhagya", "Shobhana", "Atiganda", "Sukarma", "Dhriti", "Shula", "Ganda", "Vriddhi", "Dhruva", "Vyaghata", "Harshana", "Vajra", "Siddhi", "Vyatipata", "Variyana", "Parigha", "Shiva", "Siddha", "Sadhya", "Shubha", "Shukla", "Brahma", "Indra", "Vaidhriti"] as const;
+const KARANA_NAMES_EN = ["Bava", "Balava", "Kaulava", "Taitila", "Garaja", "Vanija", "Vishti (Bhadra)", "Shakuni", "Chatushpada", "Naga", "Kimstughna"] as const;
 
 export const BIRTH_REPORT_PAGE_TITLES_NE = [
   "श्रीगणेश वन्दना तथा जन्मपत्रिका",
@@ -283,9 +287,9 @@ export function DetailedBirthChartReport({ chart, language }: { chart: ChartResu
   const panchang = panchangAt(chart.instant);
   const tithi = panchang.tithi === 15 ? "पूर्णिमा" : panchang.tithi === 30 ? "औंसी (अमावस्या)" : tithiName(panchang.tithi);
   const yogaNe = YOGAS_NE[panchang.yoga] || "—";
-  const yogaEn = YOGA_META[panchang.yoga]?.en || "—";
-  const karanaEn = KARANA_META[panchang.karana]?.en || "—";
-  const tithiEn = panchang.tithi === 15 ? "Purnima" : panchang.tithi === 30 ? "Amavasya" : (TITHI_META[(panchang.tithi - 1) % 15]?.en || "Tithi " + panchang.tithi);
+  const yogaEn = YOGA_NAMES_EN[panchang.yoga] || "—";
+  const karanaEn = KARANA_NAMES_EN[panchang.karana] || "—";
+  const tithiEn = panchang.tithi === 15 ? "Purnima" : panchang.tithi === 30 ? "Amavasya" : (TITHI_NAMES_EN[(panchang.tithi - 1) % 15] || "Tithi " + panchang.tithi);
   const weekday = WEEKDAYS[new Date(chart.input.date + "T00:00:00Z").getUTCDay()];
   const currentDasha = chart.dashas.find(d => new Date().getTime() >= d.start.getTime() && new Date().getTime() < d.end.getTime());
   const methodsNe = [

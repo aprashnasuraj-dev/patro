@@ -38,8 +38,8 @@ test("existing export flow captures the report cover for the single-page JPG and
 
 test("birth Panchanga localizes Tithi, Yoga and Karana from shared metadata", () => {
   assert.match(component, /const yogaNe = YOGAS_NE\[panchang\.yoga\] \|\| "—"/);
-  assert.match(component, /const yogaEn = YOGA_META\[panchang\.yoga\]\?\.en \|\| "—"/);
-  assert.match(component, /const karanaEn = KARANA_META\[panchang\.karana\]\?\.en \|\| "—"/);
+  assert.match(component, /const yogaEn = YOGA_NAMES_EN\[panchang\.yoga\] \|\| "—"/);
+  assert.match(component, /const karanaEn = KARANA_NAMES_EN\[panchang\.karana\] \|\| "—"/);
   assert.match(component, /const tithiEn = panchang\.tithi === 15 \? "Purnima" : panchang\.tithi === 30 \? "Amavasya"/);
   assert.equal(component.includes('YOGAS_NE[panchang.yoga].split("|")'), false);
 });
