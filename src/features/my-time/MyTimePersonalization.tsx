@@ -92,10 +92,11 @@ export default function MyTimePersonalization(props: Props) {
     previousRef.current = { tithi: tithiIndex, nakshatra: nakshatraIndex };
   }, [tithiIndex, nakshatraIndex, tithiName, nakshatraName, settings.notifications.tithiTransitions, settings.notifications.nakshatraTransitions, settings.notifications.quietStart, settings.notifications.quietEnd, timezone]);
   useEffect(() => {
-    if (!settings.notifications.timingWindows || !nextWindow || notifiedWindows.current.has(nextWindow.key)) return;
+    const windowId = nextWindow ? nextWindow.key + "|" + nextWindow.start_utc : "";
+    if (!settings.notifications.timingWindows || !nextWindow || notifiedWindows.current.has(windowId)) return;
     const ms = Date.parse(nextWindow.start_utc) - now.getTime();
     if (ms >= 0 && ms <= 45_000) {
-      notifiedWindows.current.add(nextWindow.key);
+      notifiedWindows.current.add(windowId);
       notify(l(language, "समयको झ्याल सुरु हुँदैछ", "Timing window is starting"), nextWindow.name + " · " + clock(nextWindow.start_utc, timezone, language), "window");
     }
   }, [now, nextWindow?.key, nextWindow?.start_utc, settings.notifications.timingWindows, settings.notifications.quietStart, settings.notifications.quietEnd, timezone, language]);
