@@ -147,5 +147,14 @@
   ],
   "word_count": 1383,
   "reading_minutes": 6,
-  "image": null
+  "image": {
+    "file": "why-pi-never-ends-hero.png",
+    "alt": "A circle, radius, and intersecting lines represent the mathematical constant pi.",
+    "caption": "Pi relates a circle's circumference to its diameter.",
+    "credit": "Original project-created illustration; no third-party image assets used.",
+    "license": "Original AI-assisted artwork created for this project; use subject to applicable rights and repository terms.",
+    "source_url": "",
+    "width": 1200,
+    "height": 630
+  }
 }
