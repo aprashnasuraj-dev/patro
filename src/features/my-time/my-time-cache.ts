@@ -33,7 +33,7 @@ export async function readMyTimeSnapshot(key: string): Promise<MyTimeSnapshot | 
     });
     if (!row) return null;
     if (!Number.isFinite(row.savedAt) || Date.now() - row.savedAt > TTL_MS) {
-      void new Promise<void>(resolve => { const tx=db!.transaction(STORE_NAME,"readwrite");tx.objectStore(STORE_NAME).delete(key);tx.oncomplete=()=>resolve();tx.onerror=()=>resolve(); });
+      await new Promise<void>(resolve => { const tx=db!.transaction(STORE_NAME,"readwrite");tx.objectStore(STORE_NAME).delete(key);tx.oncomplete=()=>resolve();tx.onerror=()=>resolve(); });
       return null;
     }
     return row.snapshot;
