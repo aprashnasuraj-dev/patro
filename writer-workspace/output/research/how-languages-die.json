@@ -49,6 +49,17 @@
       "notes": [
         "Supports background and claims cited in the article."
       ]
+    },
+    {
+      "n": 5,
+      "title": "Indigenous Languages Decade (2022–2032)",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/en/decades/indigenous-languages",
+      "reliability": "Relevant institutional reference",
+      "notes": [
+        "Additional institutional source for the article's main topic."
+      ],
+      "accessed": "2026-10-20"
     }
   ]
 }
