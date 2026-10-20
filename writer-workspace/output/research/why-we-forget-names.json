@@ -1,0 +1,39 @@
+{
+  "slug": "why-we-forget-names",
+  "research_question": "Why do people forget names even when they recognize a face?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32514723/",
+      "title": "Strategies to resolve recall failures for proper names: New data",
+      "publisher": "Memory & Cognition, PubMed record",
+      "reliability": "Peer-reviewed research indexed by the U.S. National Library of Medicine",
+      "notes": [
+        "Proper names are particularly vulnerable to retrieval failures; people often search semantic and contextual cues when a name will not come to mind."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9640431/",
+      "title": "Rehabilitation of memory for people's names",
+      "publisher": "PubMed record",
+      "reliability": "Peer-reviewed clinical research indexed by the U.S. National Library of Medicine",
+      "notes": [
+        "Training strategies that make names more meaningful can support learning and retrieval in people with memory impairment."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074848/",
+      "title": "Age-Related Increases in Tip-of-the-tongue are Distinct from Decreases in Remembering Names",
+      "publisher": "PubMed Central",
+      "reliability": "Peer-reviewed research available through the U.S. National Library of Medicine",
+      "notes": [
+        "Tip-of-the-tongue experiences and successful name recall are related but distinguishable processes; name retrieval depends on several brain systems."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
