@@ -97,7 +97,9 @@
       "publisher": "Library of Congress, Everyday Mysteries",
       "url": "https://www.loc.gov/everyday-mysteries/categories/chemistry/item/why-does-chocolate-melt-in-your-hand/",
       "published_at": "2020-06-05",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Library of Congress, Everyday Mysteries. (2020). Why does chocolate melt in your hand?. https://www.loc.gov/everyday-mysteries/categories/chemistry/item/why-does-chocolate-melt-in-your-hand/",
+      "citation": "Library of Congress, Everyday Mysteries, 2020"
     },
     {
       "n": 2,
@@ -105,7 +107,9 @@
       "publisher": "Royal Society of Chemistry Education",
       "url": "https://edu.rsc.org/changes-of-state/the-science-of-melting-chocolate/4013276.article",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Royal Society of Chemistry Education. (n.d.). The science of melting chocolate. https://edu.rsc.org/changes-of-state/the-science-of-melting-chocolate/4013276.article",
+      "citation": "Royal Society of Chemistry Education, n.d."
     },
     {
       "n": 3,
@@ -113,7 +117,9 @@
       "publisher": "Royal Society of Chemistry Education",
       "url": "https://edu.rsc.org/experiments/the-structure-and-properties-of-chocolate/688.article",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Royal Society of Chemistry Education. (n.d.). The structure and properties of chocolate. https://edu.rsc.org/experiments/the-structure-and-properties-of-chocolate/688.article",
+      "citation": "Royal Society of Chemistry Education, n.d."
     },
     {
       "n": 4,
@@ -121,7 +127,9 @@
       "publisher": "Annual Review of Food Science and Technology",
       "url": "https://doi.org/10.1146/annurev-food-070620-022551",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Annual Review of Food Science and Technology. (n.d.). Molecular Origins of Polymorphism in Cocoa Butter. https://doi.org/10.1146/annurev-food-070620-022551",
+      "citation": "Annual Review of Food Science and Technology, n.d."
     },
     {
       "n": 5,
@@ -129,7 +137,9 @@
       "publisher": "Science Museum, London",
       "url": "https://blog.sciencemuseum.org.uk/the-science-behind-your-easter-egg/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Science Museum, London. (n.d.). The Science Behind Your Easter Egg. https://blog.sciencemuseum.org.uk/the-science-behind-your-easter-egg/",
+      "citation": "Science Museum, London, n.d."
     }
   ],
   "word_count": 1446,

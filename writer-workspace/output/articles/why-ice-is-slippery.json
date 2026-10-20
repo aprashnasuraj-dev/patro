@@ -97,7 +97,9 @@
       "publisher": "University of Pennsylvania Almanac",
       "url": "https://almanac.upenn.edu/articles/why-are-icy-surfaces-slippery",
       "published_at": "2026-02-10",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "University of Pennsylvania Almanac. (2026). Why Are Icy Surfaces Slippery?. https://almanac.upenn.edu/articles/why-are-icy-surfaces-slippery",
+      "citation": "University of Pennsylvania Almanac, 2026"
     },
     {
       "n": 2,
@@ -105,7 +107,9 @@
       "publisher": "The Journal of Physical Chemistry Letters / PubMed",
       "url": "https://pubmed.ncbi.nlm.nih.gov/29741089/",
       "published_at": "2018",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "The Journal of Physical Chemistry Letters / PubMed. (2018). Molecular Insight into the Slipperiness of Ice. https://pubmed.ncbi.nlm.nih.gov/29741089/",
+      "citation": "The Journal of Physical Chemistry Letters / PubMed, 2018"
     },
     {
       "n": 3,
@@ -113,7 +117,9 @@
       "publisher": "Physical Review X",
       "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.011025",
       "published_at": "2021-02-08",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Physical Review X. (2021). Friction on Ice: How Temperature, Pressure, and Speed Control the Slipperiness of Ice. https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.011025",
+      "citation": "Physical Review X, 2021"
     },
     {
       "n": 4,
@@ -121,7 +127,9 @@
       "publisher": "West Texas A&M University, Science Questions with Surprising Answers",
       "url": "https://www.wtamu.edu/~cbaird/sq/2013/12/10/why-is-ice-slippery/",
       "published_at": "2013-12-10",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "West Texas A&M University, Science Questions with Surprising Answers. (2013). Why is ice slippery?. https://www.wtamu.edu/~cbaird/sq/2013/12/10/why-is-ice-slippery/",
+      "citation": "West Texas A&M University, Science Questions with Surprising Answers, 2013"
     },
     {
       "n": 5,
@@ -129,7 +137,9 @@
       "publisher": "Friction, Springer Nature",
       "url": "https://link.springer.com/article/10.1007/s40544-022-0715-5",
       "published_at": "2023-01-06",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Friction, Springer Nature. (2023). Rubber-ice friction. https://link.springer.com/article/10.1007/s40544-022-0715-5",
+      "citation": "Friction, Springer Nature, 2023"
     }
   ],
   "word_count": 1283,
