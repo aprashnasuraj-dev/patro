@@ -57,7 +57,7 @@
       "commit_sha": "50b38cca125168e6559cc493ee85e3ad01d5b1f6"
     },
     "how-stars-are-born": {
-      "stage": "committed_pending_remote_verification",
+      "stage": "remote_verified",
       "word_count": 1980,
       "body_words": 1788,
       "source_count": 5,
@@ -67,9 +67,10 @@
         "schema_structural_checks": "passed by structural inspection of schema fields",
         "citations": "passed: five opened institutional sources, all used",
         "image_metadata": "1200x630 hero PNG plus three original SVG diagrams",
-        "remote_asset_existence": "pending"
+        "remote_asset_existence": "passed: remote listing includes 1200x630 hero PNG and three SVGs",
+        "remote_head_verification": "passed"
       },
-      "commit_sha": null
+      "commit_sha": "277d70ad8f30665f00ce2982e646dcf5d03ccd28"
     }
   },
   "pending": [
