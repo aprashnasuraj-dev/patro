@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } from "lucide-react";
 import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
+import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import "./my-time.css";
 
@@ -11,12 +12,30 @@ type Snapshot = {
   timezone: string;
   evaluated_at_utc: string;
   location: { lat: number; lng: number };
-  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number; nakshatra_index: number; nakshatra_name_ne: string; nakshatra_pada: number; yoga_index: number; yoga_name_ne: string; karana_index: number; karana_name_ne: string; moon_rashi_ne: string; sun_rashi_ne: string; sunrise_utc: string | null; sunset_utc: string | null; moonrise_utc: string | null; tithi_end_utc: string | null };
+  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number; nakshatra_index: number; nakshatra_name_ne: string; nakshatra_pada: number; moon_rashi_index: number; sun_rashi_index: number; yoga_index: number; yoga_name_ne: string; karana_index: number; karana_name_ne: string; moon_rashi_ne: string; sun_rashi_ne: string; sunrise_utc: string | null; sunset_utc: string | null; moonrise_utc: string | null; tithi_end_utc: string | null };
   sky: { sun_longitude_tropical_deg: number; moon_longitude_tropical_deg: number; sun_longitude_sidereal_deg: number; moon_longitude_sidereal_deg: number; solar_altitude_deg_at_evaluation: number; moon_illumination_percent: number };
   methodology: { engine: string; time_anchor: string; sidereal_positions: boolean; limitations: string[] };
 };
 type Preferences = { timezone: string; lat: number; lng: number };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
+type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null } | null; rashifalSign: string | null; effectiveSign: string | null };
+const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
+const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
+const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
+const TARA_SCORES = [50,87.5,12.5,75,25,100,0,87.5,100];
+function readPersonalContext(): PersonalContext {
+  try {
+    const raw = JSON.parse(localStorage.getItem("aafnai.jyotish.china.context.v1") || "null");
+    const birthChart = raw && typeof raw === "object" ? {
+      rashi: String(raw.rashi?.name || ""), lagna: String(raw.lagna?.name || ""),
+      nakshatra: String(raw.nakshatra?.name || ""), pada: Number.isInteger(raw.nakshatra?.pada) ? raw.nakshatra.pada : null
+    } : null;
+    const stored = localStorage.getItem("patro.rashifal.sign.v2");
+    const rashifalSign = stored && SIGNS.some(sign => sign.id === stored) ? stored : null;
+    const birthSign = SIGNS.find(sign => sign.ne === birthChart?.rashi)?.id || null;
+    return { birthChart: birthChart && (birthChart.rashi || birthChart.nakshatra) ? birthChart : null, rashifalSign, effectiveSign: rashifalSign || birthSign };
+  } catch { return { birthChart: null, rashifalSign: null, effectiveSign: null }; }
+}
 const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
 const TITHI_NE = ["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा","प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","औंसी"];
@@ -90,12 +109,28 @@ export default function MyTimePage() {
   const [now, setNow] = useState(() => new Date());
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
+  const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
+  const [rashifalSummary, setRashifalSummary] = useState("");
+  const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const ne = language === "ne";
 
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
+  useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
+  useEffect(() => {
+    const sign = personalContext.effectiveSign;
+    if (!sign) { setRashifalSummary(""); setRashifalLoading(false); return; }
+    const controller = new AbortController(); setRashifalLoading(true);
+    const query = new URLSearchParams({ period: "daily", system: "vedic", calendar: "gregorian", date, sign });
+    fetch(`/api/v1/rashifal/universal?${query}`, { signal: controller.signal, credentials: "same-origin", headers: { accept: "application/json" } })
+      .then(response => response.ok ? response.json() : Promise.reject(new Error("rashifal_unavailable")))
+      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || body?.readings?.[0]; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); })
+      .catch(() => { if (!controller.signal.aborted) setRashifalSummary(""); })
+      .finally(() => { if (!controller.signal.aborted) setRashifalLoading(false); });
+    return () => controller.abort();
+  }, [personalContext.effectiveSign, date, language]);
 
   const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences) => {
     setLoading(true); setError("");
@@ -136,6 +171,14 @@ export default function MyTimePage() {
   const dateLabel = useMemo(() => localDateLabel(date, preferences.timezone, language), [date, preferences.timezone, language]);
   const localTime = localClock(preferences.timezone, now);
   const tithiName = snapshot ? (ne ? TITHI_NE[snapshot.panchang.tithi_index - 1] : TITHI_EN[snapshot.panchang.tithi_index - 1]) : "—";
+  const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
+  const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
+  const transitStarIndex = snapshot ? snapshot.panchang.nakshatra_index - 1 : -1;
+  const taraCount = natalStarIndex >= 0 && transitStarIndex >= 0 ? ((transitStarIndex - natalStarIndex + 27) % 27) + 1 : null;
+  const taraIndex = taraCount ? (taraCount - 1) % 9 : -1;
+  const chandraHouse = snapshot && natalMoonSignIndex >= 0 ? ((snapshot.panchang.moon_rashi_index - natalMoonSignIndex + 12) % 12) + 1 : null;
+  const chandraScore = chandraHouse === null ? null : [1,3,6,7,10,11].includes(chandraHouse) ? 100 : [4,8,12].includes(chandraHouse) ? 0 : 50;
+  const declaredSign = SIGNS.find(sign => sign.id === personalContext.effectiveSign);
 
   return <main className="mt-page">
     <header className="mt-heading">
@@ -190,7 +233,11 @@ export default function MyTimePage() {
     </section>
 
     <section className="mt-personal">
-      <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिने समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"तपाईंले घोषणा गर्नुभएको जन्म विवरण र राशिफल प्राथमिकता उपलब्ध हुँदा ताराबल, चन्द्रबल र व्यक्तिगत मुहूर्तका नियमहरू स्पष्ट व्याख्यासहित जोडिनेछन्। जन्म विवरण नदिई सामान्य दैनिक गणना प्रयोग गर्न सकिन्छ।","When your declared birth details and horoscope preferences are available, Tarabalam, Chandrabalam and personalized Muhurta rules can be connected with transparent explanations. General daily calculations will remain available without birth details.")}</p></div>
+      <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
+      {personalContext.birthChart ? <div className="mt-personal-data"><div><small>{l(language,"जन्म राशि","Natal Moon sign")}</small><strong>{personalContext.birthChart.rashi || "—"}</strong></div><div><small>{l(language,"लग्न","Ascendant")}</small><strong>{personalContext.birthChart.lagna || "—"}</strong></div><div><small>{l(language,"जन्म नक्षत्र","Natal Nakshatra")}</small><strong>{personalContext.birthChart.nakshatra || "—"}{personalContext.birthChart.pada ? ` · ${personalContext.birthChart.pada}` : ""}</strong></div></div> : <p className="mt-personal-muted">{l(language,"अहिलेसम्म यस ब्राउजरमा जन्मपत्रो सन्दर्भ भेटिएन।","No birth-chart context was found in this browser yet.")}</p>}
+      {snapshot && personalContext.birthChart && <div className="mt-balance-grid"><div><small>{l(language,"ताराबल","Tarabalam")}</small><strong>{taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}</strong><span>{taraCount !== null ? l(language,`जन्म नक्षत्रबाट ${taraCount}औँ ताराको गणना`,`Tara count ${taraCount} from natal Nakshatra`) : l(language,"नक्षत्र नाम मिलाउन सकिएन","Could not match the saved Nakshatra name")}</span><b>{taraIndex >= 0 ? `${TARA_SCORES[taraIndex]} / 100` : ""}</b></div><div><small>{l(language,"चन्द्रबल","Chandrabalam")}</small><strong>{chandraHouse !== null ? l(language,`चन्द्रमा ${chandraHouse}औँ भावमा`,`Moon is in house ${chandraHouse}`) : "—"}</strong><span>{chandraScore === 100 ? l(language,"परम्परागत रूपमा अनुकूल","Traditionally supportive") : chandraScore === 0 ? l(language,"परम्परागत सावधानी","Traditional caution") : chandraScore === 50 ? l(language,"मिश्रित संकेत","Mixed indication") : l(language,"जन्म राशि आवश्यक","Natal Moon sign needed")}</span><b>{chandraScore !== null ? `${chandraScore} / 100` : ""}</b></div></div>}
+      {personalContext.effectiveSign && <div className="mt-rashifal-context"><div><small>{l(language,"जोडिएको राशिफल","Connected Rashifal")}</small><strong>{declaredSign ? l(language,declaredSign.ne,declaredSign.en) : personalContext.effectiveSign}</strong></div>{rashifalLoading ? <span>{l(language,"राशिफल लोड हुँदैछ…","Loading Rashifal…")}</span> : rashifalSummary ? <p>{rashifalSummary}</p> : <span>{l(language,"आजको राशिफल सारांश अहिले उपलब्ध छैन।","Today's Rashifal summary is not available right now.")}</span>}</div>}
+      </div>
       <div className="mt-personal-links"><a href="/rashifal"><Moon size={18}/>{l(language,"राशिफल खोल्नुहोस्","Open Rashifal")}<ArrowUpRight size={16}/></a><a href="/janmapatro"><Sun size={18}/>{l(language,"जन्मपत्रो खोल्नुहोस्","Open birth chart")}<ArrowUpRight size={16}/></a></div>
     </section>
 
