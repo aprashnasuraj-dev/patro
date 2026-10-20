@@ -1,0 +1,72 @@
+{
+  "slug": "how-image-generators-create-art",
+  "research_question": "How do modern text-to-image generators create images, and what are their limits?",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Text-to-image Diffusion Models in Generative AI: A Survey",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2303.07909",
+      "published_at": "2023-03-14",
+      "reliability": "Research survey",
+      "notes": [
+        "Reviews text-conditioned image synthesis and the evolution of diffusion methods.",
+        "Explains the task as generating images guided by text prompts.",
+        "Discusses applications and unresolved challenges in controllability and evaluation."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Denoising Diffusion Probabilistic Models",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2006.11239",
+      "published_at": "2020-06-19",
+      "reliability": "Primary machine-learning research paper",
+      "notes": [
+        "Introduces diffusion probabilistic models for high-quality image synthesis.",
+        "The method learns a reverse process that gradually removes noise.",
+        "The paper frames generation as a sequence of denoising steps."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+      "publisher": "arXiv / CVPR 2022",
+      "url": "https://arxiv.org/abs/2112.10752",
+      "published_at": "2021-12-20",
+      "reliability": "Peer-reviewed computer-vision research",
+      "notes": [
+        "Moves diffusion into a compressed latent representation to reduce computation.",
+        "Uses cross-attention to condition generation on text and other inputs.",
+        "Reports image synthesis and editing applications with lower computational requirements than pixel-space diffusion."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2205.11487",
+      "published_at": "2022-05-23",
+      "reliability": "Primary research paper",
+      "notes": [
+        "Describes Imagen, which combines a language model with diffusion image generation.",
+        "Shows how text representation and image synthesis jointly affect prompt alignment.",
+        "Uses benchmark comparisons to study image quality and text-image alignment."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Optimizing image generation pipelines on Google Cloud",
+      "publisher": "Google Cloud Blog",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/guide-to-optimizing-image-generation-pipelines",
+      "published_at": "2025-02-21",
+      "reliability": "Engineering documentation from a major cloud provider",
+      "notes": [
+        "Diffusion image generation can be computationally demanding.",
+        "A typical pipeline may run multiple models in sequence, including encoders, denoisers and decoders.",
+        "Runtime and quality depend on model architecture, hardware and data movement."
+      ]
+    }
+  ]
+}
