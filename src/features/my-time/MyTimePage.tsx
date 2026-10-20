@@ -543,7 +543,7 @@ export default function MyTimePage() {
       <div className="mt-best-time-heading">
         <span className="mt-section-kicker">{l(language,"पञ्चाङ्ग + ज्योतिष + तन्त्रविद्या","PANCHANG + JYOTISH + TANTRA VIDYA")}</span>
         <h2 id="mt-best-time-title">{snapshot && snapshot.date !== localDate(preferences.timezone, now) ? l(language,"छानिएको मितिको उत्तम समय","Best window for selected date") : l(language,"आजको तपाईंका लागि उत्तम समय","Your best time window")}</h2>
-        <p>{l(language,"चयन गरिएको मिति, चौघडिया, राहुकाल/यमगण्ड/गुलिक, उपलब्ध ताराबल–चन्द्रबल र तन्त्रको पञ्चतत्त्वलाई मिलाएर क्रमबद्ध गरिएको परम्परागत मार्गदर्शन।","A traditional guide ranked from the selected date, Choghadiya, Rahu Kaal/Yamaganda/Gulika, available Tara/Chandra strength and the Tantra Pancha Tatwa cycle.")}</p>
+        <p>{l(language,"चयन गरिएको मिति, चौघडिया, राहुकाल/यमगण्ड/गुलिक, उपलब्ध ताराबल–चन्द्रबल र तन्त्रको पञ्चतत्त्वलाई मिलाएर क्रमबद्ध गरिएको परम्परागत मार्गदर्शन।","A personal ranking that combines Panchang timing, the matching daily Rashifal domain, saved birth-chart signals, the active Dasha/Hora relationship, activity-specific Hora and Tantra fit when those inputs are available.")}</p>
       </div>
       {bestTimeWindow ? <div className="mt-best-time-content">
         <div className="mt-best-time-main">
