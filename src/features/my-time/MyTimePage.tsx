@@ -142,6 +142,7 @@ export default function MyTimePage() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [offlineSnapshot, setOfflineSnapshot] = useState(false);
   const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
+  const [nepalCalendarReference, setNepalCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
   const [rashifalSummary, setRashifalSummary] = useState("");
   const [rashifalLoading, setRashifalLoading] = useState(false);
@@ -168,6 +169,20 @@ export default function MyTimePage() {
   useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v1", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
   useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
+  useEffect(() => {
+    const controller = new AbortController();
+    homeToday(nepalTime.date, controller.signal).then((body: any) => {
+      if (controller.signal.aborted) return;
+      const bs = body?.calendars?.bikram_sambat_detail || body?.bs || {};
+      const bsLabel = bs?.formatted || [bs?.day, bs?.month_ne, bs?.year].filter(Boolean).join(" ");
+      const p = body?.archive_panchang || body?.panchang || {};
+      const ns = body?.calendars?.nepal_sambat_detail || body?.calendars?.nepal_sambat || body?.nepal_sambat || "";
+      const nsLabel = typeof ns === "string" ? ns : ns?.formatted_ne || ns?.formatted || [ns?.year, ns?.month?.dev || ns?.month?.roman].filter(Boolean).join(" ");
+      const t = body?.tithi || p?.tithi || {};
+      setNepalCalendarReference({ date: nepalTime.date, bs: bsLabel || "—", ns: nsLabel || "—", tithi: t?.ne || t?.name_ne || t?.tithi_name_ne || "—", sunrise: p?.sunrise || "—", sunset: p?.sunset || "—", source: body?.source || "AafnaiPatro calendar archive / D1 fallback" });
+    }).catch(() => { if (!controller.signal.aborted) setNepalCalendarReference(null); });
+    return () => controller.abort();
+  }, [nepalTime.date]);
   useEffect(() => {
     const sign = personalContext.effectiveSign;
     if (!sign) { setRashifalSummary(""); setRashifalLoading(false); return; }
@@ -300,7 +315,7 @@ export default function MyTimePage() {
     {observatoryLayers.clocks && <section className="mt-extra-grid" aria-label={l(language,"नेपाल र स्थानीय समय","Nepal and local time")}>
       <article className="mt-extra-card"><small>{l(language,"नेपाल मानक समय · UTC+05:45","Nepal Standard Time · UTC+05:45")}</small><strong>{nepalTime.time}</strong><span>{nepalTime.date} · NPT</span></article>
       <article className="mt-extra-card"><small>{l(language,"तपाईंको चयन गरिएको समय क्षेत्र","Your selected timezone")}</small><strong>{localTime}</strong><span>{preferences.timezone}</span></article>
-      <article className="mt-extra-card"><small>{l(language,"विक्रम संवत् · चयन गरिएको मिति","Bikram Sambat · selected date")}</small><strong>{calendarReference?.bs || "—"}</strong><span>{l(language,"AafnaiPatro अभिलेखबाट","From the AafnaiPatro calendar archive")}</span></article>
+      <article className="mt-extra-card"><small>{l(language,"विक्रम संवत् · नेपालको आजको मिति","Bikram Sambat · today in Nepal")}</small><strong>{nepalCalendarReference?.bs || "—"}</strong><span>{nepalTime.date} · {l(language,"नेपालको वर्तमान मितिको अभिलेख","Archive for Nepal’s current date")}</span></article>
     </section>}
     {observatoryLayers.scales && <section className="mt-extra-card mt-scales-panel" aria-label={l(language,"समय मापन","Time scales")}>
       <div><span className="mt-section-kicker">{l(language,"एकै क्षणका विभिन्न मापन","ONE INSTANT, MULTIPLE TIME SCALES")}</span><h2>{l(language,"समयका वैज्ञानिक काउन्टरहरू","Time-scale counters")}</h2></div>
