@@ -1,7 +1,7 @@
 {
   "slug": "how-large-language-models-learn",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -11,7 +11,8 @@
       "reliability": "Official technical organisation, research paper or established technical explainer",
       "notes": [
         "Used for the article’s explanation of internet coordination and standards."
-      ]
+      ],
+      "apa": "OpenAI. (n.d.). How ChatGPT and our foundation models are developed. https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/"
     },
     {
       "n": 2,
@@ -21,7 +22,8 @@
       "reliability": "Official technical organisation, research paper or established technical explainer",
       "notes": [
         "Used for the article’s explanation of internet coordination and standards."
-      ]
+      ],
+      "apa": "arXiv / NeurIPS authors. (n.d.). Attention Is All You Need. https://arxiv.org/abs/1706.03762"
     },
     {
       "n": 3,
@@ -31,7 +33,8 @@
       "reliability": "Official technical organisation, research paper or established technical explainer",
       "notes": [
         "Used for the article’s explanation of internet coordination and standards."
-      ]
+      ],
+      "apa": "OpenAI Help Center. (n.d.). How ChatGPT and our foundation models are developed. https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed"
     },
     {
       "n": 4,
@@ -41,7 +44,8 @@
       "reliability": "Official technical organisation, research paper or established technical explainer",
       "notes": [
         "Used for the article’s explanation of internet coordination and standards."
-      ]
+      ],
+      "apa": "Association for Computational Linguistics. (n.d.). On the scaling relationship between cloze probabilities and language model next-token prediction. https://aclanthology.org/2026.conll-main.32/"
     },
     {
       "n": 5,
@@ -51,11 +55,25 @@
       "reliability": "Official technical organisation, research paper or established technical explainer",
       "notes": [
         "Used for the article’s explanation of internet coordination and standards."
-      ]
+      ],
+      "apa": "Association for Computational Linguistics. (n.d.). Token Prediction as Implicit Classification to Identify LLM-Generated Text. https://aclanthology.org/2023.emnlp-main.810/"
     }
   ],
   "notes": [
     "Draft committed; hero image pending.",
-    "Review source citations and schema before final batch completion."
-  ]
+    "Review source citations and schema before final batch completion.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
+  ],
+  "apa_references": [
+    "OpenAI. (n.d.). How ChatGPT and our foundation models are developed. https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
+    "arXiv / NeurIPS authors. (n.d.). Attention Is All You Need. https://arxiv.org/abs/1706.03762",
+    "OpenAI Help Center. (n.d.). How ChatGPT and our foundation models are developed. https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed",
+    "Association for Computational Linguistics. (n.d.). On the scaling relationship between cloze probabilities and language model next-token prediction. https://aclanthology.org/2026.conll-main.32/",
+    "Association for Computational Linguistics. (n.d.). Token Prediction as Implicit Classification to Identify LLM-Generated Text. https://aclanthology.org/2023.emnlp-main.810/"
+  ],
+  "image_file": "how-large-language-models-learn-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
