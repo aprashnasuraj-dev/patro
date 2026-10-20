@@ -1,0 +1,61 @@
+{
+  "slug": "how-large-language-models-learn",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
+      "title": "How ChatGPT and our foundation models are developed",
+      "publisher": "OpenAI",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://arxiv.org/abs/1706.03762",
+      "title": "Attention Is All You Need",
+      "publisher": "arXiv / NeurIPS authors",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed",
+      "title": "How ChatGPT and our foundation models are developed",
+      "publisher": "OpenAI Help Center",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://aclanthology.org/2026.conll-main.32/",
+      "title": "On the scaling relationship between cloze probabilities and language model next-token prediction",
+      "publisher": "Association for Computational Linguistics",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://aclanthology.org/2023.emnlp-main.810/",
+      "title": "Token Prediction as Implicit Classification to Identify LLM-Generated Text",
+      "publisher": "Association for Computational Linguistics",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    }
+  ],
+  "notes": [
+    "Draft committed; hero image pending.",
+    "Review source citations and schema before final batch completion."
+  ]
+}
