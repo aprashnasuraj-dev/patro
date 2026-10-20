@@ -17,6 +17,7 @@ import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
 import { nativeRashifalResponse } from "./rashifal-native";
 import { dictionaryResponse } from "./dictionary";
+import { myTimeResponse } from "./my-time";
 
 /** Canonicalize human-entered dates such as /date/2026-8-06 to /date/2026-08-06. */
 function canonicalDateRedirect(request: Request): Response | null {
@@ -47,6 +48,8 @@ function canonicalDateRedirect(request: Request): Response | null {
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    const myTime = await myTimeResponse(request);
+    if (myTime) return myTime;
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
     // Nepali dictionary owns /tool/nepalidictionary/<word>, /akshar/*, /anupras/<word>, /en/<word> and /api/v1/dictionary/*;
