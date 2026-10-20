@@ -156,5 +156,14 @@
   ],
   "word_count": 1525,
   "reading_minutes": 7,
-  "image": null
+  "image": {
+    "file": "how-trees-talk-through-fungi-hero.png",
+    "alt": "Tree roots linked by branching fungal threads illustrate mycorrhizal networks.",
+    "caption": "Fungi form complex relationships with roots, though claims about forest-wide messaging need care.",
+    "credit": "Original project-created illustration; no third-party image assets used.",
+    "license": "Original AI-assisted artwork created for this project; use subject to applicable rights and repository terms.",
+    "source_url": "",
+    "width": 1200,
+    "height": 630
+  }
 }
