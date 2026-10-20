@@ -41,7 +41,7 @@ function isMyTimeSnapshot(value: unknown): value is Snapshot {
 }
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
-type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null } | null; rashifalSign: string | null; effectiveSign: string | null };
+type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null; birth: { date: string; time: string; location: string } | null; planets: Array<{ key: string; name: string; sign: string; house: number | null }>; dashas: Array<{ lord: string; start: string; end: string }> } | null; rashifalSign: string | null; effectiveSign: string | null };
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
 const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
@@ -49,14 +49,14 @@ const TARA_SCORES = [50,87.5,12.5,75,25,100,0,87.5,100];
 function readPersonalContext(): PersonalContext {
   try {
     const raw = JSON.parse(localStorage.getItem("aafnai.jyotish.china.context.v1") || "null");
-    const birthChart = raw && typeof raw === "object" ? {
-      rashi: String(raw.rashi?.name || ""), lagna: String(raw.lagna?.name || ""),
-      nakshatra: String(raw.nakshatra?.name || ""), pada: Number.isInteger(raw.nakshatra?.pada) ? raw.nakshatra.pada : null
-    } : null;
+    const birth = raw?.birth && typeof raw.birth === "object" ? { date: String(raw.birth.date || ""), time: String(raw.birth.time || ""), location: String(raw.birth.location || "") } : null;
+    const planets = Array.isArray(raw?.planets) ? raw.planets.filter((p: any) => p && typeof p === "object").map((p: any) => ({ key: String(p.planet_en || p.key || ""), name: String(p.planet_en || p.name || ""), sign: String(p.rashi?.name || p.sign || ""), house: Number.isInteger(p.house) ? p.house : null })).filter((p: any) => p.name).slice(0, 10) : [];
+    const dashas = Array.isArray(raw?.dasha?.periods) ? raw.dasha.periods.filter((d: any) => d && typeof d.lord === "string" && typeof d.start === "string" && typeof d.end === "string" && Number.isFinite(Date.parse(d.start)) && Number.isFinite(Date.parse(d.end))).map((d: any) => ({ lord: String(d.lord), start: d.start, end: d.end })) : [];
+    const birthChart = raw && typeof raw === "object" ? { rashi: String(raw.rashi?.name || ""), lagna: String(raw.lagna?.name || ""), nakshatra: String(raw.nakshatra?.name || ""), pada: Number.isInteger(raw.nakshatra?.pada) ? raw.nakshatra.pada : null, birth, planets, dashas } : null;
     const stored = localStorage.getItem("patro.rashifal.sign.v2");
     const rashifalSign = stored && SIGNS.some(sign => sign.id === stored) ? stored : null;
     const birthSign = SIGNS.find(sign => sign.ne === birthChart?.rashi)?.id || null;
-    return { birthChart: birthChart && (birthChart.rashi || birthChart.nakshatra) ? birthChart : null, rashifalSign, effectiveSign: rashifalSign || birthSign };
+    return { birthChart: birthChart && (birthChart.rashi || birthChart.nakshatra) ? birthChart : null, rashifalSign, effectiveSign: birthSign || rashifalSign };
   } catch { return { birthChart: null, rashifalSign: null, effectiveSign: null }; }
 }
 const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
@@ -455,16 +455,23 @@ export default function MyTimePage() {
   const combinedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
     const preferredTatwas: Record<string, string[]> = { general: [], work: ["Prithvi", "Tejas / Agni", "Vayu"], study: ["Vayu", "Akash"], travel: ["Vayu", "Aap / Jala"], prayer: ["Akash", "Vayu"], meditation: ["Akash", "Aap / Jala"], family: ["Aap / Jala", "Prithvi"] };
+    const preferredHoras: Record<string, string[]> = { general: [], work: ["Mercury", "Jupiter", "Sun", "Saturn"], study: ["Mercury", "Jupiter", "Moon"], travel: ["Mercury", "Moon", "Venus"], prayer: ["Jupiter", "Sun", "Moon"], meditation: ["Moon", "Jupiter", "Saturn"], family: ["Venus", "Moon", "Jupiter"] };
     const preferred = [...new Set(selectedInterests.flatMap(item => preferredTatwas[item] || []))];
+    const preferredPlanets = [...new Set(selectedInterests.flatMap(item => preferredHoras[item] || []))];
     const solar = snapshot.panchang;
     if (!solar.sunrise_utc || !solar.sunset_utc || !solar.next_sunrise_utc) return [];
+    const horas = horaWindows(snapshot.weekday, solar.sunrise_utc, solar.sunset_utc, solar.next_sunrise_utc);
+    const horaPeriods = [...horas.day, ...horas.night];
     return recommendedMuhurtaWindows.map(window => {
       const start = Date.parse(window.start_utc), end = Date.parse(window.end_utc);
       const midpoint = new Date(start + (end - start) / 2);
       let tatwaName = "", nityaName = "";
       try { const atMidpoint = panchangAt(midpoint); const tantra = computeTantraTime(atMidpoint?.tithi ?? solar.tithi_index, midpoint, new Date(solar.sunrise_utc!), new Date(solar.sunset_utc!), new Date(solar.next_sunrise_utc!)); tatwaName = tantra.activeTatwa.name; nityaName = tantra.nityaDevi.name; } catch { /* Keep Panchang scoring available without Tantra overlay. */ }
+      const hora = horaPeriods.find(period => midpoint.getTime() >= Date.parse(period.start_utc) && midpoint.getTime() < Date.parse(period.end_utc));
+      const horaName = hora?.name_en || "";
       const tantraFit = !tatwaName ? 50 : selectedInterestKey === "general" ? 75 : preferred.includes(tatwaName) ? 100 : 55;
-      return { ...window, tatwaName, nityaName, tantraFit, combinedScore: Math.round(window.score * 0.7 + tantraFit * 0.3) };
+      const horaFit = !horaName ? 50 : selectedInterestKey === "general" ? 70 : preferredPlanets.includes(horaName) ? 100 : 50;
+      return { ...window, tatwaName, nityaName, horaName, tantraFit, horaFit, combinedScore: Math.round(window.score * 0.6 + tantraFit * 0.2 + horaFit * 0.2) };
     }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
   }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
@@ -512,9 +519,9 @@ export default function MyTimePage() {
           <div className="mt-best-window-copy">
             <span className="mt-best-label">{l(language,"संयुक्त समय सङ्केत","COMBINED TIME GUIDANCE")}</span>
             <h3>{formatInstant(bestTimeWindow.start_utc,preferences.timezone,language)} – {formatInstant(bestTimeWindow.end_utc,preferences.timezone,language)}</h3>
-            <p>{l(language,"तपाईंको रुचि","Your focus")}: {interestLabel} · {bestTimeWindow.tatwaName ? l(language,bestTimeWindow.tatwaName,bestTimeWindow.tatwaName) : l(language,"तन्त्र समय उपलब्ध छैन","Tantra timing unavailable")}</p>
+            <p>{l(language,"तपाईंको रुचि","Your focus")}: {interestLabel} · {bestTimeWindow.tatwaName ? l(language,bestTimeWindow.tatwaName,bestTimeWindow.tatwaName) : l(language,"तन्त्र समय उपलब्ध छैन","Tantra timing unavailable")} · {l(language,"होरा","Hora")}: {bestTimeWindow.horaName || "—"}</p>
             <p>{bestTimeWindow.label==="supportive" ? l(language,"पञ्चाङ्ग/ज्योतिष स्कोर र तत्त्वको मेलका आधारमा उपलब्ध विकल्पमध्ये अगाडि आएको समय।","Top-ranked among available windows by the Panchang/Jyotish score and Tatwa fit.") : bestTimeWindow.label==="mixed" ? l(language,"उपलब्ध विकल्पमध्ये तुलनात्मक रूपमा अगाडि आएको समय; आफ्नो परम्परा र कामसँग मिलाएर रोज्नुहोस्।","A comparatively stronger available window; choose in line with your practice and task.") : l(language,"यो उपलब्ध विकल्पमध्ये सबैभन्दा अगाडि आए पनि सावधानी सङ्केत हुन सक्छ—विवरण हेरेर निर्णय लिनुहोस्।","This ranks highest among available options but may still carry cautions—review details before deciding.")}</p>
-            <small>{l(language,"संयुक्त स्कोर: चौघडिया/काल र उपलब्ध ताराबल–चन्द्रबल ७०% + तत्त्व–रुचि मेल ३०%। यो परम्परागत सङ्केत हो, परिणामको ग्यारेन्टी होइन।","Combined score: Choghadiya/inauspicious periods and available Tara/Chandra strength 70% + Tatwa-interest fit 30%. Traditional guidance, not a guarantee of outcomes.")}</small>
+            <small>{l(language,"संयुक्त स्कोर: पञ्चाङ्ग/ज्योतिष ६०% + तत्त्व–रुचि मेल २०% + ग्रह होरा–रुचि मेल २०%। यो परम्परागत सङ्केत हो, परिणामको ग्यारेन्टी होइन।","Combined score: Choghadiya/inauspicious periods and available Tara/Chandra strength 70% + Tatwa-interest fit 30%. Traditional guidance, not a guarantee of outcomes.")}</small>
           </div>
         </div>
         <div className="mt-best-current-grid">
