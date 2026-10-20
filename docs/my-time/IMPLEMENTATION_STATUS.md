@@ -102,3 +102,20 @@ This section supersedes earlier broad status statements above where they conflic
 ### Additional implementation pass (2026-10-20)\n\n- Added `my-time-extended.ts` with deterministic Julian Day, Modified Julian Day, Unix counters, Nepal Standard Time conversion, Abhijit window calculation, and a transparent weighted traditional timing scorer.\n- Added fixtures in `tests/my-time-extended.test.ts` and included them in `test:patro-tools`.\n- Added bilingual local/Nepal clocks, the archive-backed Bikram Sambat label for the selected date, time-scale counters, Abhijit timing, and ranked upcoming Muhurta windows.\n- Added persisted visibility controls for instrument panels and Choghadiya/inauspicious-time dial rings. Added `/mytime` to the existing service-worker shell list; no new Worker or Cloudflare binding was introduced.\n- These changes move several listed items from “not implemented” to an initial tested implementation. They do not make the entire temporal observatory or personalized Jyotish engine complete; remaining gaps are called out above.\n\n### Visual audit answer
 
 The current UI uses HTML/CSS plus inline SVG and subtle CSS motion. It is more dynamic than a static dashboard, but it should **not** be described as a fully “hypnotising” or immersive HTML5 experience yet. The full-depth multi-layer polar visualizer and accessibility/visual regression pass remain open.
+
+## Tantra Vidya chronometry audit (2026-10-20)
+
+### Open-source cross-checks and selected conventions
+
+- The fifteen Nitya names follow a commonly published Sri Vidya/Tantraraja Tantra sequence: Kameshvari, Bhagamalini, Nityaklinna, Bherunda, Vahnivasini, Mahavajreshvari, Shivaduti, Tvarita, Kulasundari, Nitya, Nilapataka, Vijaya, Sarvamangala, Jwalamalini and Chitra. Public references differ on how these names are assigned across waxing/waning tithis. This feature preserves the requested convention: Shukla tithis 1–15 ascend through the list and Krishna tithis 16–30 reverse it. This is a declared convention, not a claim of universal agreement.
+- The Yogini Nivas widget uses one published eight-Yogini Disha table: Mangala (1, 9/North), Pingala (2, 10/South), Dhanya (3, 11/East), Bhramari (4, 12/West), Bhadrika (5, 13/North-East), Ulka (6, 14/South-East), Siddha (7, 15/South-West), Sankata (8/North-West). The tithi is reduced to its ordinal within the current paksha before lookup. It displays the Yogini name, direction, traditional classification and direction traditionally avoided for travel.
+- Public Svarodaya descriptions do not all use a flat five-times-24-minute schedule: some describe five tattvas inside a one-hour svara cycle with differing durations. AafnaiPatro retains the requested sunrise-anchored 5 × 24-minute model as a clearly labelled visualization convention, not as the only classical method and not as a measured breath/nadi state.
+- Mahanisha remains an approximate ±24-minute window around the midpoint from local sunset to next sunrise. It is not claimed to be the exact apparent solar midnight.
+- Open references consulted: https://www.sanatanarahasya.com/lineages/sri-vidya/the-sacred-knowing/sv2-c4-the-court/ ; https://shrifreedom.org/vedic-astrology/tithi/ ; https://swarayoga.org/indian-time ; https://www.swarodaya.org/svara-tattva/ ; https://www.swarodaya.org/breath/
+- Nitya cardinal directions are deliberately marked lineage-dependent rather than assigning unsupported directions to each Devi.
+
+### Runtime and verification notes
+
+- Tantra data is part of the existing snapshot/API response and therefore uses the existing Worker and snapshot object cache; no separate Worker or binding is added.
+- Fixed twilight dusk searches to request a setting-altitude crossing. The previous rising-crossing direction could return the next dawn as the dusk timestamp.
+- CI must be rerun on the latest branch commit; do not infer a passing result from older runs.
