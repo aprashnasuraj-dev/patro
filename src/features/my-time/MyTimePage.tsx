@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } from "lucide-react";
 import { setPageTitle } from "../../title";
+import { homeToday } from "../../home-calendar-client";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import "./my-time.css";
 
@@ -15,6 +16,7 @@ type Snapshot = {
   methodology: { engine: string; time_anchor: string; sidereal_positions: boolean; limitations: string[] };
 };
 type Preferences = { timezone: string; lat: number; lng: number };
+type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
 const TITHI_NE = ["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा","प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","औंसी"];
@@ -86,6 +88,7 @@ export default function MyTimePage() {
   const [date, setDate] = useState(() => localDate(readPreferences().timezone));
   const [now, setNow] = useState(() => new Date());
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
+  const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const ne = language === "ne";
@@ -95,12 +98,22 @@ export default function MyTimePage() {
 
   const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences) => {
     setLoading(true); setError("");
+    const controller = new AbortController();
+    const referencePromise = homeToday(nextDate, controller.signal).then((body: any) => {
+      const p = body?.archive_panchang || body?.panchang || {};
+      const t = body?.tithi || p?.tithi || {};
+      const bs = body?.calendars?.bikram_sambat_detail || body?.bs || {};
+      const ns = body?.calendars?.nepal_sambat_detail || body?.calendars?.nepal_sambat || body?.nepal_sambat || "";
+      const bsLabel = bs?.formatted || [bs?.day, bs?.month_ne, bs?.year].filter(Boolean).join(" ");
+      const nsLabel = typeof ns === "string" ? ns : ns?.formatted_ne || ns?.formatted || [ns?.year, ns?.month?.dev || ns?.month?.roman].filter(Boolean).join(" ");
+      return { date: nextDate, bs: bsLabel || "—", ns: nsLabel || "—", tithi: t?.ne || t?.name_ne || t?.tithi_name_ne || "—", sunrise: p?.sunrise || "—", sunset: p?.sunset || "—", source: body?.source || "AafnaiPatro calendar archive / D1 fallback" } as CalendarReference;
+    }).catch(() => null);
     try {
       const query = new URLSearchParams({
         date: nextDate, timezone: nextPreferences.timezone,
         lat: String(nextPreferences.lat), lng: String(nextPreferences.lng)
       });
-      const response = await fetch(`/api/v1/mytime/today?${query}`, { headers: { accept: "application/json" }, credentials: "same-origin" });
+      const response = await fetch(`/api/v1/mytime/today?${query}`, { signal: controller.signal, headers: { accept: "application/json" }, credentials: "same-origin" });
       const body = await response.json().catch(() => ({}));
       if (!response.ok || !body?.ok || !body?.data) throw new Error(body?.error || `HTTP ${response.status}`);
       setSnapshot(body.data as Snapshot);
@@ -111,7 +124,11 @@ export default function MyTimePage() {
       setError(message === "feature_disabled"
         ? l(language, "My Time को गणना सेवा अझै सक्रिय गरिएको छैन।", "The My Time calculation service is not enabled yet.")
         : l(language, "गणना लोड हुन सकेन। नेटवर्क र सेटिङ जाँच गरी फेरि प्रयास गर्नुहोस्।", "Could not load calculations. Check the network and settings, then try again."));
-    } finally { setLoading(false); }
+    } finally {
+      const reference = await referencePromise;
+      if (reference) setCalendarReference(reference);
+      setLoading(false);
+    }
   }, [date, preferences, language]);
 
   useEffect(() => { void loadSnapshot(date, preferences); }, []); // Initial load only; edits apply on submit.
@@ -152,6 +169,11 @@ export default function MyTimePage() {
         <div className="mt-method-note"><span>{l(language,"इन्जिन","Engine")}: {snapshot?.methodology.engine || "astronomy-engine"}</span><span>{l(language,"स्थानीय मिति एंकर","Local date anchor")}: {snapshot?.methodology.time_anchor || l(language,"स्थानीय मध्याह्न","Local noon")}</span></div>
       </section>
     </div>
+
+    <section className="mt-reference-panel">
+      <div className="mt-reference-title"><div><span className="mt-section-kicker">{l(language,"आफ्नै पात्रोको विद्यमान स्रोत","EXISTING AAFNAIPATRO SOURCE")}</span><h2>{l(language,"नेपाल पात्रो सन्दर्भ","Nepal calendar reference")}</h2></div><span>{l(language,"स्थिर पात्रो / D1","Archive / D1")}</span></div>
+      {calendarReference ? <><div className="mt-reference-grid"><div><small>{l(language,"विक्रम संवत्","Bikram Sambat")}</small><strong>{calendarReference.bs}</strong></div><div><small>{l(language,"नेपाल संवत्","Nepal Sambat")}</small><strong>{calendarReference.ns}</strong></div><div><small>{l(language,"संग्रहित तिथि","Archived Tithi")}</small><strong>{calendarReference.tithi}</strong></div><div><small>{l(language,"सूर्योदय / सूर्यास्त","Sunrise / sunset")}</small><strong>{calendarReference.sunrise} / {calendarReference.sunset}</strong></div></div><p>{l(language,"यो AafnaiPatro को विद्यमान पात्रो अभिलेख हो; यसलाई तपाईंको चयन गरिएको स्थानका सौर समयसँग नझुक्याउनुहोस्।","This is AafnaiPatro's existing calendar archive reference; it is not a substitute for solar event times at your selected location.")}</p></> : <p className="mt-reference-empty">{l(language,"अभिलेख सन्दर्भ अहिले उपलब्ध छैन।","The archive reference is not available right now.")}</p>}
+    </section>
 
     <section className="mt-section">
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह एउटै मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। गणना उपलब्ध नभएका भागलाई स्पष्ट रूपमा चिनाइएको छ।","Every layer shares the same date, location and timezone. Capabilities not yet calculated are explicitly marked.")}</p></div>
