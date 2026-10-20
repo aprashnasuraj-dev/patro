@@ -35,6 +35,10 @@ describe("My Time astronomical core", () => {
     expect(snapshot.panchang.sunset_utc).toBeTruthy();
     expect(snapshot.twilight.civil_dawn_utc).toBeTruthy();
     expect(snapshot.twilight.civil_dusk_utc).toBeTruthy();
+    expect(Date.parse(snapshot.twilight.civil_dawn_utc!)).toBeLessThan(Date.parse(snapshot.panchang.sunrise_utc!));
+    expect(Date.parse(snapshot.twilight.civil_dusk_utc!)).toBeGreaterThan(Date.parse(snapshot.panchang.sunset_utc!));
+    expect(Date.parse(snapshot.twilight.nautical_dawn_utc!)).toBeLessThan(Date.parse(snapshot.twilight.civil_dawn_utc!));
+    expect(Date.parse(snapshot.twilight.astronomical_dusk_utc!)).toBeGreaterThan(Date.parse(snapshot.twilight.nautical_dusk_utc!));
     expect(Number.isFinite(snapshot.sky.solar_altitude_deg_at_evaluation)).toBe(true);
     expect(snapshot.sky.moon_illumination_percent).toBeGreaterThanOrEqual(0);
     expect(snapshot.sky.moon_illumination_percent).toBeLessThanOrEqual(100);
