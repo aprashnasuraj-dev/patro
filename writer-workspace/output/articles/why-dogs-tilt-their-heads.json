@@ -156,5 +156,14 @@
   ],
   "word_count": 1722,
   "reading_minutes": 8,
-  "image": null
+  "image": {
+    "file": "why-dogs-tilt-their-heads-hero.png",
+    "alt": "A friendly stylized dog's face with tilted ears represents head tilting.",
+    "caption": "Dog head tilting is an observed behavior with several possible explanations.",
+    "credit": "Original project-created illustration; no third-party image assets used.",
+    "license": "Original AI-assisted artwork created for this project; use subject to applicable rights and repository terms.",
+    "source_url": "",
+    "width": 1200,
+    "height": 630
+  }
 }
