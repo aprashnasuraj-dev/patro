@@ -1,0 +1,62 @@
+{
+  "slug": "how-mount-everest-was-measured",
+  "research_question": "How did surveyors establish Mount Everest's height, and why do modern measurements require a reference datum?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://dos.gov.np/",
+      "title": "Mount Everest height confirmed at 8,848.86 metres",
+      "publisher": "Government of Nepal, Department of Survey",
+      "reliability": "Official national surveying agency; source homepage used for the joint height announcement",
+      "notes": [
+        "Nepal and China jointly announced 8,848.86 metres in December 2020.",
+        "The official figure is a defined elevation measurement, not height from the mountain base."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.rgs.org/",
+      "title": "Mount Everest: The First Survey",
+      "publisher": "Royal Geographical Society",
+      "reliability": "Established UK learned society and geographical research institution",
+      "notes": [
+        "Historic Himalayan surveying used triangulation and long-distance observations.",
+        "Peak XV was identified as exceptionally high through nineteenth-century surveying."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://geodesy.noaa.gov/",
+      "title": "Geodetic Surveying",
+      "publisher": "National Geodetic Survey, NOAA",
+      "reliability": "Government geodetic science agency",
+      "notes": [
+        "Geodetic networks and reference systems are required for consistent coordinates and heights.",
+        "Satellite coordinates need datum interpretation before they can be treated as sea-level elevation."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://geodesy.noaa.gov/",
+      "title": "Geodesy and the Earth's shape",
+      "publisher": "National Geodetic Survey, NOAA",
+      "reliability": "Government geodetic science agency",
+      "notes": [
+        "The Earth is not a perfect sphere; reference ellipsoids and geoid models underpin modern height systems.",
+        "Vertical reference systems allow measurements from different locations to be compared."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.britannica.com/place/Mount-Everest",
+      "title": "Mount Everest",
+      "publisher": "Encyclopaedia Britannica",
+      "reliability": "Established encyclopedia",
+      "notes": [
+        "Everest's elevation has been refined over time as surveying methods improved.",
+        "Mountain height is conventionally compared by elevation above sea level."
+      ]
+    }
+  ]
+}
