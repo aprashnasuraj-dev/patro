@@ -308,7 +308,8 @@ export default function MyTimePage() {
   const tithiName = liveTithiIndex ? (ne ? TITHI_NE[liveTithiIndex - 1] : TITHI_EN[liveTithiIndex - 1]) : "—";
   const liveNakshatraName = liveNakshatraIndex ? String(NAKSHATRAS[liveNakshatraIndex - 1] || "—") : "—";
   const briefingUsesCurrentDate = !!snapshot && snapshot.date === localDate(preferences.timezone, now);
-  const nextBriefingWindow = briefingUsesCurrentDate && snapshot ? ([...choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc).day, ...choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc).night].filter(window => Date.parse(window.start_utc) > now.getTime()).sort((a, b) => Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] || null) : null;
+  const briefingWindowSet = useMemo(() => snapshot ? choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc) : null, [snapshot]);
+  const nextBriefingWindow = briefingUsesCurrentDate && briefingWindowSet ? ([...briefingWindowSet.day, ...briefingWindowSet.night].filter(window => Date.parse(window.start_utc) > now.getTime()).sort((a, b) => Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] || null) : null;
   const briefingTithiIndex = currentPanchang?.tithi ?? null;
   const briefingNakshatraIndex = currentPanchang ? currentPanchang.nakshatra + 1 : null;
   const briefingTithiName = briefingTithiIndex ? (ne ? TITHI_NE[briefingTithiIndex - 1] : TITHI_EN[briefingTithiIndex - 1]) : "—";
