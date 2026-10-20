@@ -13,7 +13,7 @@ function time(value: string, timezone: string) {
 }
 
 export default function TantraVidyaWidget({ data, language, timezone }: Props) {
-  const { nityaDevi, activeTatwa, tatwaRemainingMinutes, tatwaElapsedMinutes, tatwaWindow, yoginiDirection, mahanishaKaal } = data;
+  const { nityaDevi, activeTatwa, tatwaRemainingMinutes, tatwaElapsedMinutes, tatwaWindow, yogini, mahanishaKaal } = data;
   const progress = Math.min(100, Math.max(0, (tatwaElapsedMinutes / 24) * 100));
   const attributesNe: Record<string, string> = {
     "Fulfillment of desires & creative impulse": "इच्छापूर्ति र सिर्जनात्मक प्रेरणा", "Attraction & solar radiance": "आकर्षण र सौर तेज", "Compassion & fluidity": "करुणा र सहज प्रवाह", "Protection & inner strength": "संरक्षण र आन्तरिक शक्ति", "Transformative fire energy": "रूपान्तरणकारी अग्नि ऊर्जा", "Indestructible clarity": "अविनाशी स्पष्टता", "Integration of Shiva/Shakti forces": "शिव–शक्ति तत्त्वको समन्वय", "Swift spiritual realization": "शीघ्र आध्यात्मिक अनुभूति", "Harmony in relationships & family": "सम्बन्ध र परिवारमा सामञ्जस्य", "Perpetual movement & rhythm": "निरन्तर गति र लय", "Victory over internal blockages": "आन्तरिक अवरोधमाथि विजय", "Success in Sadhana and work": "साधना र कर्ममा सफलता", "All-pervading auspiciousness": "सर्वव्यापी मङ्गल", "Purification through light": "प्रकाशद्वारा शुद्धीकरण", "Multidimensional expression & art": "बहुआयामिक अभिव्यक्ति र कला"
@@ -47,9 +47,9 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
       <small>{time(tatwaWindow.start, timezone)}–{time(tatwaWindow.end, timezone)} · {l(language, "२४ मिनेटको परम्परागत चक्र", "traditional 24-minute segment")}</small>
     </div>
     <div className="mt-tantra-details">
-      <div><small>{l(language, "योगिनी निवास", "Yogini Nivas")}</small><strong>{direction(yoginiDirection)}</strong><span>{l(language, "तिथि-आधारित परम्परागत दिशा", "Traditional tithi-linked direction")}</span></div>
+      <div><small>{l(language, "योगिनी निवास", "Yogini Nivas")}</small><strong>{yogini.name} · {direction(yogini.direction)}</strong><span>{l(language, "यात्रामा परम्परागत रूपमा टारिने दिशा", "Traditionally avoided travel direction")}: {direction(yogini.blockedDirection)}</span><span>{l(language, "परम्परागत वर्ग", "Traditional classification")}: {l(language, yogini.nature === "Benign" ? "शुभ" : yogini.nature === "Mixed" ? "मिश्रित" : "उग्र", yogini.nature)}</span></div>
       <div><small>{l(language, "महानिशा काल", "Mahanisha window")}</small><strong>{time(mahanishaKaal.start, timezone)}–{time(mahanishaKaal.end, timezone)}</strong><span>{mahanishaKaal.isActive ? l(language, "यो समय खण्ड सक्रिय छ", "This window is active") : l(language, "रातको मध्यबिन्दु वरिपरि ±२४ मिनेट", "±24 minutes around the night midpoint")}</span></div>
     </div>
-    <p className="mt-tantra-note">{l(language, "यो परम्परागत तान्त्रिक कालगणनाको व्याख्यात्मक मोडेल हो; सम्प्रदायअनुसार विधि फरक हुन सक्छ र यसलाई वैज्ञानिक रूपमा प्रमाणित ऊर्जा मापन नमान्नुहोस्।", "This is an interpretive model of traditional Tantric timing. Lineage conventions vary; these labels are not scientifically validated measurements of subtle energy.")}</p>
+    <p className="mt-tantra-note">{l(language, "यो परम्परागत समयगणनाको व्याख्यात्मक मोडेल हो। नित्या नक्साङ्कन परम्पराअनुसार फरक हुन सक्छ; योगिनी दिशा एउटा सार्वजनिक परम्पराको हो। २४-मिनेट तत्त्व चक्र AafnaiPatro को सरलीकृत मोडेल हो, श्वासको मापन होइन।", "This is an interpretive model of traditional timing. Nitya mappings vary by convention; the Yogini direction table is one public tradition. The 24-minute Tatwa cycle is a simplified AafnaiPatro model, not a measured breath cycle.")}</p>
   </section>;
 }
