@@ -379,10 +379,13 @@ export function UtilitySuite() {
   }
 
   useEffect(() => {
+    // Fetch official fuel data only when the visitor opens this tool. UtilitySuite keeps
+    // the other tools mounted for fast switching, so an unconditional effect caused
+    // needless API traffic and console errors on every unrelated tool page.
+    if (selectedTool !== "fuelprice" && selectedTool !== "fuel") return;
     void loadFuelPrices();
-    // Initial refresh only; manual refresh is available and online/offline state is shown separately.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [selectedTool]);
 
   useEffect(() => {
     if (!workerReady) return;
