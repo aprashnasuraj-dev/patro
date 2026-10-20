@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleCounters } from "../src/patro-tools/core/my-time-extended";
+import { myTimeCacheEvictions } from "../src/features/my-time/my-time-cache";
 
 describe("My Time extended instruments", () => {
   it("converts a fixed UTC instant into JD, MJD and Unix counters", () => {
@@ -24,6 +25,20 @@ describe("My Time extended instruments", () => {
     expect(Date.parse(result!.end_utc)).toBe(1792477440000);
     expect(abhijitMuhurta(null, null)).toBeNull();
     expect(abhijitMuhurta("bad", "also bad")).toBeNull();
+  });
+
+  it("bounds the offline cache to recent unexpired snapshots", () => {
+    const now = 2_000_000_000_000;
+    const rows = Array.from({ length: 22 }, (_, index) => ({ key: "row-" + index, savedAt: now - index * 60_000 }));
+    rows.push({ key: "expired", savedAt: now - 25 * 60 * 60 * 1000 });
+    rows.push({ key: "future-clock-skew", savedAt: now + 60_000 });
+    const evictions = myTimeCacheEvictions(rows, now, 20);
+    expect(evictions).toContain("expired");
+    expect(evictions).toContain("future-clock-skew");
+    expect(evictions).toContain("row-20");
+    expect(evictions).toContain("row-21");
+    expect(evictions).not.toContain("row-0");
+    expect(evictions).not.toContain("row-19");
   });
 
   it("provides explainable personalized timing scores and validates factors", () => {
