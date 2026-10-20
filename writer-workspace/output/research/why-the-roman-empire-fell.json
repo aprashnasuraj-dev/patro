@@ -49,6 +49,17 @@
       "notes": [
         "Supports background and claims cited in the article."
       ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.metmuseum.org/essays/the-roman-empire",
+      "title": "The Roman Empire",
+      "publisher": "The Metropolitan Museum of Art",
+      "reliability": "Relevant institutional, research or educational reference",
+      "notes": [
+        "Consulted as an additional supporting reference for the article; use alongside the other listed sources."
+      ],
+      "accessed": "2026-10-20"
     }
   ]
 }
