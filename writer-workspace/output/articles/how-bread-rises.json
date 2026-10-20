@@ -2,8 +2,8 @@
   "id": "mm-0053",
   "slug": "how-bread-rises",
   "canonical_url": "https://aafnaipatro.com/how-bread-rises/",
-  "title": "How Bread Rises: The Science of Yeast, Gas and Heat",
-  "meta_description": "A clear, evidence-based explanation of how bread rises, how it works, common misconceptions, and what the science can and cannot tell us.",
+  "title": "The Science of How Bread Rises",
+  "meta_description": "Learn how yeast, carbon dioxide, gluten, fermentation time and oven heat work together to make bread rise, and why common baking problems happen.",
   "h1": "How Bread Rises?",
   "category": "Food & Cooking",
   "author": "Suraj Dahal",
@@ -22,7 +22,7 @@
   ],
   "sections": [
     {
-      "h2": "The basic idea",
+      "h2": "The short answer",
       "paras": [
         "Bread rises because gas forms inside dough and the dough retains enough of that gas to expand. In most familiar loaves, yeast consumes available sugars and releases carbon dioxide during fermentation. The gas forms bubbles; as the dough stretches around them, its volume grows. Baking then sets this expanded structure into a loaf. [1][2]",
         "Yeast is not the only route. Sourdough cultures contain yeasts and lactic-acid bacteria, while quick breads often use chemical leaveners such as baking powder. These methods share a goal, creating gas and a structure that holds it, but their chemistry, flavour and timing differ. That is why recipes cannot always be swapped one-for-one. [2][4]"
@@ -81,7 +81,7 @@
       "h2": "The main idea",
       "paras": [
         "Bread rises when gas is generated and held in a dough structure that can expand. Yeast fermentation is the main driver in ordinary yeast breads, gluten helps retain gas, and baking turns temporary expanded dough into a stable crumb. Temperature, ingredients, mixing and time all influence the result. [1][2][3]",
-        "Once this mechanism is clear, common baking advice makes sense. Warmth speeds fermentation but can limit flavour development if taken too far; kneading and folds build structure; proofing allows expansion; and baking sets that structure. Good bread is not the result of one magic ingredient, but of balancing gas production with the dough’s ability to keep it. [2][3][4]"
+        "Once this mechanism is clear, common baking advice makes sense. Warmth speeds fermentation but can limit flavour development if taken too far; kneading and folds build structure; proofing allows expansion; and baking sets that structure. Good bread is not the result of one magic ingredient, but of balancing gas production with the dough’s ability to keep it. [5]"
       ]
     }
   ],
@@ -97,6 +97,14 @@
     {
       "q": "What is the difference between proofing and fermentation?",
       "a": "Fermentation is the microbial process producing gas and flavour compounds. Proofing commonly refers to the dough's rise, especially after shaping, before baking. Usage varies among bakers. [2][3]"
+    },
+    {
+      "q": "Can bread rise without yeast?",
+      "a": "Some breads use baking powder or baking soda with an acidic ingredient to create gas chemically rather than relying on yeast fermentation. Flatbreads can also be made with little or no leavening. The method changes the texture and flavour, so these approaches are not interchangeable in every recipe. [2][5]"
+    },
+    {
+      "q": "Why does bread rise again in the oven?",
+      "a": "As the dough heats, gases already in it expand and yeast remains active briefly before heat stops its activity. Steam also contributes to expansion. The loaf’s structure then sets as starches and proteins change, leaving a stable crumb. [2][5]"
     }
   ],
   "sources": [
@@ -131,15 +139,24 @@
       "url": "https://www.kingarthurbaking.com/learn/guides/sourdough/faq",
       "published_at": null,
       "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "title": "Bread: The Science of Baking",
+      "publisher": "Exploratorium",
+      "url": "https://www.exploratorium.edu/food/bread",
+      "published_at": null,
+      "retrieved_at": "2026-10-20"
     }
   ],
   "references": [
     "King Arthur Baking. (n.d.). *Yeast*. https://www.kingarthurbaking.com/pro/reference/yeast",
     "King Arthur Baking. (n.d.). *The comprehensive guide to baking with yeast*. https://www.kingarthurbaking.com/blog/2023/05/10/guide-to-baking-with-yeast",
     "King Arthur Baking. (n.d.). *Bulk fermentation, explained*. https://www.kingarthurbaking.sbs/blog/2019/07/22/bread-dough-bulk-fermentation",
-    "King Arthur Baking. (n.d.). *Sourdough Baking FAQ*. https://www.kingarthurbaking.com/learn/guides/sourdough/faq"
+    "King Arthur Baking. (n.d.). *Sourdough Baking FAQ*. https://www.kingarthurbaking.com/learn/guides/sourdough/faq",
+    "Exploratorium. (n.d.). *Bread: The Science of Baking*. https://www.exploratorium.edu/food/bread"
   ],
-  "word_count": 1155,
-  "reading_minutes": 5,
+  "word_count": 1256,
+  "reading_minutes": 6,
   "image": null
 }
