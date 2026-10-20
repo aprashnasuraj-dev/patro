@@ -154,3 +154,5 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     }
   };
 }
+
+export type MyTimeSnapshot = ReturnType<typeof calculateMyTimeSnapshot>;
