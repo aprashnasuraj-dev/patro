@@ -16,6 +16,7 @@ type Props = {
   tara: { distance: number; taraIndex: number } | null; taraName: string;
   chandraHouse: number | null; luckyNumber: number | null; dashaLord: string | null;
   tatwa: string | null; nitya: string | null; windows: AstrologyWindow[];
+  luckyTime: { start: string; end: string; score: number; confidence: string; activity: string; reasons: string[] } | null;
   onEdit: () => void;
 };
 function clock(value: string, timezone: string, language: UiLanguage) {
@@ -67,6 +68,19 @@ export default function PersonalAstrologyObservatory(p: Props) {
         <article><span>{l(lang,"परम्परागत शुभ अङ्क","Traditional lucky number")}</span><strong>{p.luckyNumber ?? "—"}</strong><small>{l(lang,"नतिजाको ग्यारेन्टी होइन","Not a prediction or guarantee")}</small></article>
       </div>
     </div>
+    <article className="mt-astro-lucky-time" aria-labelledby="mt-astro-lucky-title">
+      <div className="mt-astro-lucky-orbit" aria-hidden="true"><Clock3 size={28}/></div>
+      <div className="mt-astro-lucky-copy">
+        <span className="mt-astro-overline"><Sparkles size={14}/>{l(lang,"तपाईंको व्यक्तिगत शुभ समय","YOUR PERSONAL LUCKY TIME")}</span>
+        <h3 id="mt-astro-lucky-title">{p.luckyTime ? clock(p.luckyTime.start,timezone,lang)+" – "+clock(p.luckyTime.end,timezone,lang) : l(lang,"व्यक्तिगत समय गणना आवश्यक","Personal timing calculation needed")}</h3>
+        <p>{p.luckyTime
+          ? l(lang,"जन्मपत्रो, आजको पञ्चाङ्ग र उपलब्ध व्यक्तिगत सङ्केतबाट छानिएको उत्तम समय झ्याल।","Highest-ranked available window from your natal profile, the selected Panchang and available personal signals.")
+          : l(lang,"जन्म विवरण सुरक्षित गरी पञ्चाङ्ग गणना लोड गर्नुहोस्। सामान्य समय झ्याललाई व्यक्तिगत शुभ समय भनेर देखाइँदैन।","Save your birth profile and load the Panchang. General timing windows are not presented as your personal lucky time.")}</p>
+        {p.luckyTime && <div className="mt-astro-lucky-meta"><strong>{p.luckyTime.score}/100</strong><span>{l(lang,"रुचि","Activity")}: {p.luckyTime.activity}</span><span>{p.luckyTime.confidence==="personalized"?l(lang,"पूर्ण व्यक्तिगत सङ्केत","Personalized signals"):l(lang,"आंशिक व्यक्तिगत सङ्केत","Partially personalized signals")}</span></div>}
+        {p.luckyTime?.reasons?.length ? <details className="mt-astro-lucky-reasons"><summary>{l(lang,"यो समय किन छानियो?","Why this time?")}</summary><ul>{p.luckyTime.reasons.slice(0,5).map((reason,index)=><li key={index}>{reason}</li>)}</ul></details> : null}
+        <small>{l(lang,"परम्परागत ज्योतिषीय सन्दर्भ मात्र; सफलता वा परिणामको ग्यारेन्टी होइन।","Traditional astrological guidance only; not a guarantee of success or outcomes.")}</small>
+      </div>
+    </article>
     {ashtama && <div className="mt-astro-alert" role="status"><CircleAlert size={20}/><div><strong>{l(lang,"अष्टम चन्द्र सचेतना","Ashtama Chandra indication")}</strong><p>{l(lang,"परम्परागत रूपमा सावधानीको संकेत; यो निश्चित हानि वा परिणामको भविष्यवाणी होइन।","A traditional caution indication, not a prediction of harm or a definite outcome.")}</p></div></div>}
     <div className="mt-astro-window-head"><div><span className="mt-astro-overline"><Clock3 size={14}/>{l(lang,"व्यक्तिगत समयको नक्सा","PERSONAL TIMING MAP")}</span><h3>{l(lang,"उपलब्ध समय झ्यालहरू","Available timing windows")}</h3></div><span>{l(lang,"छानिएको मिति","Selected date")}: {p.selectedDate}</span></div>
     {ordered.length ? <><div className="mt-astro-timeline" role="group" aria-label={l(lang,"समय झ्याल छान्नुहोस्","Select a timing window")}>{ordered.map(w=><button type="button" key={w.key} onClick={()=>setSelectedKey(w.key)} aria-pressed={chosen?.key===w.key} className={"mt-astro-window is-"+w.label+(current?.key===w.key?" is-current":"")}><span>{clock(w.start,timezone,lang)}–{clock(w.end,timezone,lang)}</span><strong>{w.score}/100</strong><small>{l(lang,w.label==="supportive"?"अनुकूल":w.label==="caution"?"सावधानी":"मिश्रित",w.label)}</small></button>)}</div><div className="mt-astro-window-detail" aria-live="polite"><div><b>{chosen?clock(chosen.start,timezone,lang)+"–"+clock(chosen.end,timezone,lang):"—"}</b><span>{chosen?.confidence==="personalized"?l(lang,"व्यक्तिगत","Personalized"):chosen?.confidence==="partially-personalized"?l(lang,"आंशिक व्यक्तिगत","Partially personalized"):l(lang,"सामान्य सङ्केत","General guidance")}</span></div><p>{chosen?.reasons.length?chosen.reasons.join(" · "):l(lang,"उपलब्ध समय गणनामा आधारित सङ्केत।","Guidance based on available timing calculations.")}</p>{Boolean(chosen?.cautions.length)&&<p className="mt-astro-window-caution"><CircleAlert size={15}/>{chosen?.cautions.join(" · ")}</p>}</div></> : <p className="mt-astro-empty">{l(lang,"यस मिति वा स्थानका लागि पर्याप्त समय गणना उपलब्ध छैन।","Insufficient timing calculations for this date or location.")}</p>}

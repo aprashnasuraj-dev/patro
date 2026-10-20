@@ -124,14 +124,47 @@ export type SavedJanmaPatroContext = {
   dashas: Array<{ lord: string; start: string; end: string }>;
 };
 
-/** Traditional reference metric; it is not a prediction of real-world outcomes. */
-export function calculatePersonalLuckyNumber(birthDate: string, tithiIndex: number): number | null {
+/**
+ * Explainable traditional reference metric, not a prediction or a guarantee.
+ * Birth date supplies the personal digit root; natal Nakshatra/Pada are calculated
+ * by the existing birth-chart engine from birth time and birthplace; current Tithi
+ * supplies the day-specific input. Missing natal inputs are not fabricated.
+ */
+export function calculatePersonalLuckyNumber(
+  birthDate: string,
+  tithiIndex: number,
+  natalNakshatraIndex?: number | null,
+  natalPada?: number | null
+): number | null {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(birthDate) || !Number.isInteger(tithiIndex) || tithiIndex < 1 || tithiIndex > 30) return null;
   const parsed = new Date(birthDate + "T00:00:00.000Z");
   if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== birthDate) return null;
+  if (natalNakshatraIndex != null && (!Number.isInteger(natalNakshatraIndex) || natalNakshatraIndex < 1 || natalNakshatraIndex > 27)) return null;
+  if (natalPada != null && (!Number.isInteger(natalPada) || natalPada < 1 || natalPada > 4)) return null;
   const sum = birthDate.replace(/\D/g, "").split("").reduce((total, digit) => total + Number(digit), 0);
   const root = ((sum - 1) % 9) + 1;
-  return ((root + tithiIndex - 1) % 9) + 1;
+  const natalContribution = natalNakshatraIndex == null ? 0 : natalNakshatraIndex + (natalPada ?? 1) - 1;
+  return ((root + tithiIndex + natalContribution - 1) % 9) + 1;
+}
+
+/** Selects a dedicated lucky-time recommendation only from valid, birth-personalized scored windows. */
+export function selectPersonalLuckyTime<T extends {
+  start_utc: string;
+  end_utc: string;
+  combinedScore: number;
+  personalizationLevel: "personalized" | "partial" | "general";
+  personalEvaluation: PersonalTimeEvaluation;
+}>(windows: T[], hasBirthProfile: boolean, now: Date, selectedDateIsToday: boolean): T | null {
+  if (!hasBirthProfile || !Number.isFinite(now.getTime())) return null;
+  const candidates = windows.filter(window =>
+    Number.isFinite(Date.parse(window.start_utc)) &&
+    Number.isFinite(Date.parse(window.end_utc)) &&
+    Date.parse(window.end_utc) > Date.parse(window.start_utc) &&
+    Number.isFinite(window.combinedScore) &&
+    window.personalizationLevel !== "general" &&
+    (!selectedDateIsToday || Date.parse(window.end_utc) > now.getTime())
+  );
+  return candidates.sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] ?? null;
 }
 
 /** Normalize the actual localStorage payload written by JanmaPatroSuite. */

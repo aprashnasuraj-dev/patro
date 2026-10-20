@@ -21,7 +21,7 @@ import MyTimePersonalization from "./MyTimePersonalization";
 import PersonalAstrologyObservatory from "./PersonalAstrologyObservatory";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
-import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
+import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, selectPersonalLuckyTime, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -570,7 +570,7 @@ export default function MyTimePage() {
         hasNatalChart: Boolean(personalContext.birthChart)
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
-      const personalizationLevel = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
+      const personalizationLevel: "personalized" | "partial" | "general" = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
       const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
       const aggregateComponents = componentKeys.map(key => {
         const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
@@ -596,7 +596,10 @@ export default function MyTimePage() {
   }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
   const nextCautionWindow = combinedMuhurtaWindows.filter(window => window.label === "caution" && Date.parse(window.end_utc) > now.getTime()).sort((a,b)=>Date.parse(a.start_utc)-Date.parse(b.start_utc))[0] || null;
-  const personalLuckyNumber = snapshot && personalContext.birthChart?.birth?.date ? calculatePersonalLuckyNumber(personalContext.birthChart.birth.date, snapshot.panchang.tithi_index) : null;
+  const personalLuckyNumber = snapshot && personalContext.birthChart?.birth?.date
+    ? calculatePersonalLuckyNumber(personalContext.birthChart.birth.date, snapshot.panchang.tithi_index, natalStarIndex >= 0 ? natalStarIndex + 1 : null, personalContext.birthChart.pada)
+    : null;
+  const personalLuckyTime = selectPersonalLuckyTime(combinedMuhurtaWindows, Boolean(personalContext.birthChart), now, selectedDateIsToday);
   const interestNames: Record<string,string> = { general: l(language,"सामान्य दिनचर्या","general day"), work: l(language,"काम / व्यवसाय","work / business"), study: l(language,"अध्ययन","study"), travel: l(language,"यात्रा","travel"), prayer: l(language,"पूजा / पर्व","prayer / observances"), meditation: l(language,"ध्यान","meditation"), family: l(language,"परिवार / व्यक्तिगत काम","family / personal plans") };
   const interestLabel = selectedInterests.map(item => interestNames[item] || interestNames.general).join(" · ");
 
@@ -769,6 +772,9 @@ export default function MyTimePage() {
         tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
         chandraHouse={chandraHouse} luckyNumber={personalLuckyNumber} dashaLord={activeDashaLord}
         tatwa={tantraTime?.activeTatwa?.name ?? null} nitya={tantraTime?.nityaDevi?.name ?? null}
+        luckyTime={personalLuckyTime ? { start: personalLuckyTime.start_utc, end: personalLuckyTime.end_utc, score: personalLuckyTime.combinedScore,
+          confidence: personalLuckyTime.personalizationLevel === "personalized" ? "personalized" : "partial", activity: interestLabel,
+          reasons: personalLuckyTime.personalEvaluation.reasons } : null}
         windows={combinedMuhurtaWindows.map(w => ({ key:w.key, start:w.start_utc, end:w.end_utc, score:w.combinedScore, label:w.label,
           reasons:w.personalEvaluation.reasons, cautions:w.personalEvaluation.cautions, confidence:w.personalEvaluation.confidence }))}
         onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />
