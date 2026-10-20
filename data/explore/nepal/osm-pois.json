@@ -1,4 +1,4 @@
-{"generated":"2026-10-10","osm_timestamp":"2026-10-09T20:21:04Z","source":"OpenStreetMap via Geofabrik nepal-latest.osm.pbf","licence":"© OpenStreetMap contributors, ODbL 1.0 — https://www.openstreetmap.org/copyright","fields":["category","name","name_ne","lat","lng","ele","palika_id","ward","district_id","sub","osm_id","wikipedia"],"rows":[["airport","Dhorpatan Airport","",28.49293,83.0504,2728,null,null,36,"","n1042092334",""],
+{"generated":"2026-10-11","osm_timestamp":"2026-10-09T20:21:04Z","source":"OpenStreetMap via Geofabrik nepal-latest.osm.pbf","licence":"© OpenStreetMap contributors, ODbL 1.0 — https://www.openstreetmap.org/copyright","fields":["category","name","name_ne","lat","lng","ele","palika_id","ward","district_id","sub","osm_id","wikipedia"],"rows":[["airport","Dhorpatan Airport","",28.49293,83.0504,2728,null,null,36,"","n1042092334",""],
 ["bank","AChautari","",28.08781,82.8278,null,null,null,54,"","n9798021816",""],
 ["bank","Mahatab Bahudesya Sahakari Santha","",28.02224,81.60281,null,null,null,57,"","n5374759895",""],
 ["bus","Lama Chowk","",27.56671,84.61928,null,null,null,24,"","n6894875421",""],
