@@ -182,6 +182,7 @@ export default function MyTimePage() {
     if (!snapshot || !tantraEvaluation) return null;
     try { return panchangAt(tantraEvaluation); } catch { return null; }
   }, [snapshot, tantraEvaluation]);
+  const currentPanchang = useMemo(() => { try { return panchangAt(now); } catch { return null; } }, [now]);
   const tantraTime = useMemo(() => {
     if (!snapshot || !tantraEvaluation) return null;
     const { sunrise_utc, sunset_utc, next_sunrise_utc } = snapshot.panchang;
@@ -295,7 +296,12 @@ export default function MyTimePage() {
   const liveNakshatraIndex = evaluationPanchang?.nakshatra ?? snapshot?.panchang.nakshatra_index ?? null;
   const tithiName = liveTithiIndex ? (ne ? TITHI_NE[liveTithiIndex - 1] : TITHI_EN[liveTithiIndex - 1]) : "—";
   const liveNakshatraName = liveNakshatraIndex ? String(NAKSHATRAS[liveNakshatraIndex - 1] || "—") : "—";
-  const nextBriefingWindow = [...recommendedMuhurtaWindows].sort((a, b) => Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] || null;
+  const briefingUsesCurrentDate = !!snapshot && snapshot.date === localDate(preferences.timezone, now);
+  const nextBriefingWindow = briefingUsesCurrentDate ? ([...recommendedMuhurtaWindows].sort((a, b) => Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] || null) : null;
+  const briefingTithiIndex = currentPanchang?.tithi ?? null;
+  const briefingNakshatraIndex = currentPanchang?.nakshatra ?? null;
+  const briefingTithiName = briefingTithiIndex ? (ne ? TITHI_NE[briefingTithiIndex - 1] : TITHI_EN[briefingTithiIndex - 1]) : "—";
+  const briefingNakshatraName = briefingNakshatraIndex ? String(NAKSHATRAS[briefingNakshatraIndex - 1] || "—") : "—";
   const applyPersonalLocation = useCallback((place: { timezone: string; lat: number; lng: number; label: string }) => {
     const next = { timezone: place.timezone, lat: place.lat, lng: place.lng, label: place.label };
     const nextDate = localDate(next.timezone, new Date());
@@ -345,7 +351,7 @@ export default function MyTimePage() {
       <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small><div className="mt-apparent-time"><span>{l(language,"स्थानीय सौर समय · अनुमानित","Apparent solar time · approximate")}</span><strong>{solarTime.time}</strong><small>{l(language,"समय समीकरण","Equation of time")}: {solarTime.equationOfTimeMinutes >= 0 ? "+" : ""}{solarTime.equationOfTimeMinutes.toFixed(1)} min</small></div></div></div>
     </header>
 
-    <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} lat={preferences.lat} lng={preferences.lng} tithiIndex={liveTithiIndex} nakshatraIndex={liveNakshatraIndex} tithiName={tithiName} nakshatraName={liveNakshatraName} currentWindow={currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : (currentChoghadiya as any).name_en || currentChoghadiya.name_ne, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : (nextBriefingWindow as any).name_en || nextBriefingWindow.name_ne, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc, score: nextBriefingWindow.score } : null} onLocationChange={applyPersonalLocation} />
+    <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} lat={preferences.lat} lng={preferences.lng} tithiIndex={briefingTithiIndex} nakshatraIndex={briefingNakshatraIndex} tithiName={briefingTithiName} nakshatraName={briefingNakshatraName} currentWindow={briefingUsesCurrentDate && currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : (currentChoghadiya as any).name_en || currentChoghadiya.name_ne, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : (nextBriefingWindow as any).name_en || nextBriefingWindow.name_ne, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc, score: nextBriefingWindow.score } : null} onLocationChange={applyPersonalLocation} />
 
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
       <label><span>{l(language,"मिति","Date")}</span><input type="date" value={date} onChange={event=>setDate(event.target.value)} /></label>
