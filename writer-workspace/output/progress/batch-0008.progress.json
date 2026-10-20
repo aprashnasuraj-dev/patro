@@ -40,7 +40,7 @@
       "commit_sha": "f6604955d1cc65399d98cb5e52ec15221c298063"
     },
     "how-bees-make-honey": {
-      "stage": "committed_pending_remote_verification",
+      "stage": "remote_verified",
       "word_count": 2050,
       "body_words": 1866,
       "source_count": 5,
@@ -50,9 +50,10 @@
         "schema_structural_checks": "passed by structural inspection of repository schema fields",
         "citations": "passed: five opened sources, all used",
         "image_metadata": "1200x630 hero PNG plus 3 original SVG diagrams",
-        "remote_asset_existence": "pending"
+        "remote_asset_existence": "passed: remote listing contains 1200x630 PNG hero and three SVG diagrams",
+        "remote_head_verification": "passed"
       },
-      "commit_sha": null
+      "commit_sha": "50b38cca125168e6559cc493ee85e3ad01d5b1f6"
     }
   },
   "pending": [
