@@ -33,6 +33,7 @@ export function AppChrome({children}:{children:ReactNode}){
  const[language,setLanguage]=useState<UiLanguage>(()=>{try{return localStorage.getItem("patro.ui.language")==="en"?"en":"ne"}catch{return"ne"}});
  const[theme,setTheme]=useState<ThemeMode>(()=>{try{return localStorage.getItem("patro.ui.mode")==="dark"?"dark":"light"}catch{return"light"}});
  useEffect(()=>{document.documentElement.lang=language;try{localStorage.setItem("patro.ui.language",language)}catch{}},[language]);
+  useEffect(()=>{const apply=(event:Event)=>{const value=(event as CustomEvent).detail;if(value==="ne"||value==="en")setLanguage(value)};window.addEventListener("patro:set-language",apply);return()=>window.removeEventListener("patro:set-language",apply)},[]);
  useEffect(()=>{document.documentElement.dataset.theme=theme;document.documentElement.dataset.mode=theme;try{localStorage.setItem("patro.ui.mode",theme)}catch{}},[theme]);
  useEffect(()=>{applyRouteSeo(path)},[path]);
   useDetailsMenuDismiss("details.ap-more");
