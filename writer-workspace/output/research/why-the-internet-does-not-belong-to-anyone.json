@@ -1,0 +1,61 @@
+{
+  "slug": "why-the-internet-does-not-belong-to-anyone",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://datatracker.ietf.org/doc/html/rfc9518",
+      "title": "Centralization, Decentralization, and Internet Standards",
+      "publisher": "RFC Editor / IETF independent submission",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.internetsociety.org/internet/who-makes-it-work/",
+      "title": "Who Makes the Internet Work: The Internet Ecosystem",
+      "publisher": "Internet Society",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.icann.org/resources/pages/what-2012-02-25-en",
+      "title": "What Does ICANN Do?",
+      "publisher": "ICANN",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://datatracker.ietf.org/doc/html/rfc1983",
+      "title": "RFC 1983: Internet Users' Glossary",
+      "publisher": "RFC Editor",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.ietf.org/rfc/rfc2500.txt.pdf",
+      "title": "Internet Official Protocol Standards",
+      "publisher": "Internet Engineering Task Force",
+      "reliability": "Official technical organisation, research paper or established technical explainer",
+      "notes": [
+        "Used for the article’s explanation of internet coordination and standards."
+      ]
+    }
+  ],
+  "notes": [
+    "Draft committed; hero image pending.",
+    "Review source citations and schema before final batch completion."
+  ]
+}
