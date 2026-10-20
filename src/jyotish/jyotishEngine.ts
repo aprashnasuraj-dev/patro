@@ -57,6 +57,27 @@ const norm=(x:number)=>((x%360)+360)%360;
 const rad=(x:number)=>x*Math.PI/180;
 const deg=(x:number)=>x*180/Math.PI;
 function addYears(date:Date,years:number){return new Date(date.getTime()+years*365.2422*86400000);}
+/**
+ * Canonicalize a typed Gregorian birth date without letting JavaScript silently
+ * roll impossible dates (for example, 1992-02-31) into the following month.
+ * One-digit month/day values are accepted for the My Time text entry field.
+ */
+export function normalizeBirthDate(value: string): string {
+  const match = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(String(value || "").trim());
+  if (!match) throw new Error("Birth date must be YYYY-MM-DD.");
+  const year = Number(match[1]), month = Number(match[2]), day = Number(match[3]);
+  if (year < 1 || month < 1 || month > 12 || day < 1 || day > 31) {
+    throw new Error("Birth date must be a valid Gregorian calendar date.");
+  }
+  const parsed = new Date(0);
+  parsed.setUTCHours(0, 0, 0, 0);
+  parsed.setUTCFullYear(year, month - 1, day);
+  if (parsed.getUTCFullYear() !== year || parsed.getUTCMonth() !== month - 1 || parsed.getUTCDate() !== day) {
+    throw new Error("Birth date must be a valid Gregorian calendar date.");
+  }
+  return `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
 function localNepalInstant(date:string,time:string){
   const [y,m,d]=date.split("-").map(Number),[hh,mm]=time.split(":").map(Number);
   return new Date(Date.UTC(y,m-1,d,hh,mm)-345*60000);
@@ -111,11 +132,11 @@ function manglik(planets:PlanetPosition[],ascSign:number):ManglikResult{
 }
 
 export function calculateChart(input:BirthInput):ChartResult{
-  if(!/^\d{4}-\d{2}-\d{2}$/.test(input.date))throw new Error("Birth date must be YYYY-MM-DD.");
-  if(!/^\d{2}:\d{2}$/.test(input.time))throw new Error("Birth time must be HH:MM.");
+  const normalizedInput = { ...input, date: normalizeBirthDate(input.date) };
+  if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(input.time))throw new Error("Birth time must be HH:MM in 24-hour format.");
   if(!Number.isFinite(input.lat)||Math.abs(input.lat)>66.5)throw new Error("Latitude must be between -66.5° and 66.5° for this whole-sign chart implementation.");
   if(!Number.isFinite(input.lng)||Math.abs(input.lng)>180)throw new Error("Longitude is invalid.");
-  const instant=localNepalInstant(input.date,input.time), ayanamsa=ayanamsaLahiri(instant);
+  const instant=localNepalInstant(normalizedInput.date,input.time), ayanamsa=ayanamsaLahiri(instant);
   const ascTropical=ascendantLongitude(instant,input.lat,input.lng),ascendant=norm(ascTropical-ayanamsa),ascSignIndex=Math.floor(ascendant/30);
   const planets:PlanetPosition[]=BODY_ROWS.map(([key,name,body])=>{
     const tropical=geoLongitude(body,instant),longitude=norm(tropical-ayanamsa),signIndex=Math.floor(longitude/30);
@@ -129,7 +150,7 @@ export function calculateChart(input:BirthInput):ChartResult{
   const moon=planets.find((p)=>p.key==="moon");
   if(!moon)throw new Error("Moon position unavailable.");
   const span=360/27,moonNakshatraIndex=Math.floor(moon.longitude/span),within=(moon.longitude%span)/span;
-  const result:ChartResult={input,instant,ayanamsa,ascendant,ascSignIndex,planets,moonNakshatraIndex,moonNakshatra:NAKSHATRAS[moonNakshatraIndex],moonPada:Math.min(4,Math.floor(within*4)+1),dashas:dashaSequence(moon.longitude,instant),manglik:{fromLagna:0,fromMoon:0,affectedHouses:[],severity:"None",explanation:""},methodology:[
+  const result:ChartResult={input:normalizedInput,instant,ayanamsa,ascendant,ascSignIndex,planets,moonNakshatraIndex,moonNakshatra:NAKSHATRAS[moonNakshatraIndex],moonPada:Math.min(4,Math.floor(within*4)+1),dashas:dashaSequence(moon.longitude,instant),manglik:{fromLagna:0,fromMoon:0,affectedHouses:[],severity:"None",explanation:""},methodology:[
     "Planet vectors: Astronomy Engine geocentric apparent vectors converted to ecliptic longitude of date.",
     "Sidereal frame: Lahiri-style ayanamsa approximation anchored near J2000; suitable for consumer guidance, not certified ephemeris work.",
     "Houses: whole-sign houses from the computed ascendant.",
