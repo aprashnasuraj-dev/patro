@@ -211,6 +211,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   const todayBs = todayView.bs || localToday;
   return <main id="main-content" className="rh-page">
     <TodayHero language={language} date={today} bsLabel={todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")} adLabel={adLabel(today, language)} ns={todayView.ns} panchang={todayView.panchang || {}} events={(eventMap.get(today) || []).map(event=>({name:festivalName(event,language)}))}/>
+    <a className="rh-my-time-entry" href="/mytime"><span className="rh-my-time-orb">◉</span><span><strong>{l(language, "मेरो समय", "My Time")}</strong><small>{l(language, "तपाईंको स्थान, आकाश र पञ्चाङ्गलाई एउटै जीवित ड्यासबोर्डमा अनुभव गर्नुहोस्।", "Explore your local time, sky and Panchang in one connected dashboard.")}</small></span><b aria-hidden="true">↗</b></a>
     <HomeWeather language={language} today={today} />
 
     <div className="rh-actions" aria-label={l(language, "मुख्य छिटो कार्य", "Quick actions")}>
