@@ -143,7 +143,15 @@
   ],
   "word_count": 1172,
   "reading_minutes": 5,
-  "image": null,
+  "image": {
+    "file": "why-russia-spans-eleven-time-zones-hero.png",
+    "alt": "A stylized map-like silhouette of Russia with meridian divisions and clock markers illustrating its eleven time zones.",
+    "caption": "Original illustration created for this article.",
+    "credit": "Original artwork created for Aafnaipatro.",
+    "license": "CC0 (original illustration)",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "Russia",
     "time zones",
