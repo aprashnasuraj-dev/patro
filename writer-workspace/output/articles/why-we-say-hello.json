@@ -96,28 +96,40 @@
       "publisher": "Online Etymology Dictionary",
       "url": "https://www.etymonline.com/word/hello",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "n": 1,
+      "apa": "Online Etymology Dictionary. (n.d.). Hello: Origin and history. https://www.etymonline.com/word/hello",
+      "citation": "Online Etymology Dictionary, n.d."
     },
     {
       "title": "Hello, Hello!",
       "publisher": "Oxford University Press Blog",
       "url": "https://blog.oup.com/2008/10/hello/",
       "published_at": "2008-10-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "n": 2,
+      "apa": "Oxford University Press Blog. (2008). Hello, Hello!. https://blog.oup.com/2008/10/hello/",
+      "citation": "Oxford University Press Blog, 2008"
     },
     {
       "title": "Hello",
       "publisher": "Oxford Advanced Learner's Dictionary",
       "url": "https://www.oxfordlearnersdictionaries.com/definition/english/hello",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "n": 3,
+      "apa": "Oxford Advanced Learner's Dictionary. (n.d.). Hello. https://www.oxfordlearnersdictionaries.com/definition/english/hello",
+      "citation": "Oxford Advanced Learner's Dictionary, n.d."
     },
     {
       "title": "Did 'Hello' Come From Familiar Phone Greeting?",
       "publisher": "Deseret News, with Merriam-Webster editors",
       "url": "https://www.deseret.com/1995/10/8/19197494/did-hello-come-from-familiar-phone-greeting/",
       "published_at": "1995-10-08",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "n": 4,
+      "apa": "Deseret News, with Merriam-Webster editors. (1995). Did 'Hello' Come From Familiar Phone Greeting?. https://www.deseret.com/1995/10/8/19197494/did-hello-come-from-familiar-phone-greeting/",
+      "citation": "Deseret News, with Merriam-Webster editors, 1995"
     },
     {
       "n": 5,
@@ -125,7 +137,9 @@
       "publisher": "Merriam-Webster Dictionary",
       "url": "https://www.merriam-webster.com/dictionary/hello",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Merriam-Webster Dictionary. (n.d.). Hello. https://www.merriam-webster.com/dictionary/hello",
+      "citation": "Merriam-Webster Dictionary, n.d."
     }
   ],
   "word_count": 1194,

@@ -104,7 +104,9 @@
       "publisher": "Royal Observatory Greenwich",
       "url": "https://www.royalobservatorygreenwich.org/articles.php?article=1087",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Royal Observatory Greenwich. (n.d.). The astronomical basis of timekeeping. https://www.royalobservatorygreenwich.org/articles.php?article=1087",
+      "citation": "Royal Observatory Greenwich, n.d."
     },
     {
       "n": 2,
@@ -112,7 +114,9 @@
       "publisher": "National Oceanic and Atmospheric Administration",
       "url": "https://www.noaa.gov/jetstream/time",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "National Oceanic and Atmospheric Administration. (n.d.). Z-time (Coordinated Universal Time). https://www.noaa.gov/jetstream/time",
+      "citation": "National Oceanic and Atmospheric Administration, n.d."
     },
     {
       "n": 3,
@@ -120,7 +124,9 @@
       "publisher": "National Institute of Standards and Technology",
       "url": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "National Institute of Standards and Technology. (n.d.). A Walk Through Time: World Time Scales. https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales",
+      "citation": "National Institute of Standards and Technology, n.d."
     },
     {
       "n": 4,
@@ -128,7 +134,9 @@
       "publisher": "Library of Congress",
       "url": "https://www.loc.gov/item/today-in-history/november-18",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Library of Congress. (n.d.). Today in History: November 18. https://www.loc.gov/item/today-in-history/november-18",
+      "citation": "Library of Congress, n.d."
     },
     {
       "n": 5,
@@ -136,7 +144,9 @@
       "publisher": "U.S. Department of Transportation",
       "url": "https://www.transportation.gov/regulations/time-act?os=os",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "U.S. Department of Transportation. (n.d.). Uniform Time. https://www.transportation.gov/regulations/time-act?os=os",
+      "citation": "U.S. Department of Transportation, n.d."
     }
   ],
   "word_count": 1378,

@@ -14,7 +14,9 @@
         "Local solar time differs by longitude because the Sun reaches its daily position at different moments.",
         "Railways encouraged standard time because local clocks made timetables confusing.",
         "The 1884 meridian conference adopted Greenwich as the prime meridian, but did not prescribe the modern global zone map."
-      ]
+      ],
+      "apa": "Royal Observatory Greenwich. (n.d.). The astronomical basis of timekeeping. https://www.royalobservatorygreenwich.org/articles.php?article=1087",
+      "citation": "Royal Observatory Greenwich, n.d."
     },
     {
       "n": 2,
@@ -27,7 +29,9 @@
         "Earth rotates 360 degrees in about 24 hours, an average of 15 degrees per hour.",
         "The 1884 conference adopted a prime meridian through Greenwich for longitude and timekeeping.",
         "Modern time-zone boundaries are adjusted for national and regional convenience."
-      ]
+      ],
+      "apa": "National Oceanic and Atmospheric Administration. (n.d.). Z-time (Coordinated Universal Time). https://www.noaa.gov/jetstream/time",
+      "citation": "National Oceanic and Atmospheric Administration, n.d."
     },
     {
       "n": 3,
@@ -40,7 +44,9 @@
         "Twenty-four hours and 360 degrees imply 15 degrees of longitude per hour on average.",
         "Railways adopted standard railway time in North America in 1883.",
         "The U.S. made standard time official later, and time-zone boundaries reflect human decisions."
-      ]
+      ],
+      "apa": "National Institute of Standards and Technology. (n.d.). A Walk Through Time: World Time Scales. https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-world-time-scales",
+      "citation": "National Institute of Standards and Technology, n.d."
     },
     {
       "n": 4,
@@ -53,7 +59,9 @@
         "Railroad companies adopted standard time in 1883 to coordinate schedules.",
         "Astronomers and geophysicists had also advocated uniform time for coordinated observations.",
         "The plan used standard regional times instead of hundreds of local sun times."
-      ]
+      ],
+      "apa": "Library of Congress. (n.d.). Today in History: November 18. https://www.loc.gov/item/today-in-history/november-18",
+      "citation": "Library of Congress, n.d."
     },
     {
       "n": 5,
@@ -66,7 +74,9 @@
         "The U.S. Department of Transportation oversees the country's time zones.",
         "Railroads adopted a four-zone system in 1883 to reduce confusion from many local times.",
         "Current boundaries and daylight-saving rules are defined through law and regulation."
-      ]
+      ],
+      "apa": "U.S. Department of Transportation. (n.d.). Uniform Time. https://www.transportation.gov/regulations/time-act?os=os",
+      "citation": "U.S. Department of Transportation, n.d."
     }
   ]
 }
