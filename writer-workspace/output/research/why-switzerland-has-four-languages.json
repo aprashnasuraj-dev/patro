@@ -1,0 +1,72 @@
+{
+  "slug": "why-switzerland-has-four-languages",
+  "research_question": "Why Switzerland has four languages",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Languages",
+      "publisher": "Swiss Federal Chancellery",
+      "url": "https://www.bk.admin.ch/en/languages",
+      "published_at": null,
+      "reliability": "Official government information",
+      "notes": [
+        "The federal administration serves the public in German, French and Italian, with some material in Romansh and English.",
+        "The German, French and Italian versions of federal laws are legally equivalent.",
+        "Language services reflect the needs of a multilingual population."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Federal Act on the National Languages and Understanding between the Linguistic Communities",
+      "publisher": "Fedlex, Swiss Confederation",
+      "url": "https://www.fedlex.admin.ch/eli/cc/2009/821/en",
+      "published_at": null,
+      "reliability": "Official federal legislation",
+      "notes": [
+        "German, French and Italian are federal official languages; Romansh is official in dealings with Romansh speakers.",
+        "The law aims to strengthen quadrilingualism and cohesion between language communities.",
+        "Federal authorities are directed to account for traditional regional language composition."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "What languages do Swiss people speak?",
+      "publisher": "SWI swissinfo.ch",
+      "url": "https://www.swissinfo.ch/eng/culture/languages-in-switzerland/29177618",
+      "published_at": null,
+      "reliability": "Swiss public-service international broadcaster",
+      "notes": [
+        "Switzerland has four national languages: German, French, Italian and Romansh.",
+        "The country includes German-, French-, Italian- and Romansh-speaking regions.",
+        "Some cantons are bilingual and Graubünden is officially trilingual."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "French, German, Italian, Romansh, English: How do the Swiss talk to each other?",
+      "publisher": "SWI swissinfo.ch",
+      "url": "https://www.swissinfo.ch/eng/culture/french-german-italian-romansh-english-how-do-the-swiss-talk-to-each-other/45809928",
+      "published_at": null,
+      "reliability": "Swiss public-service international broadcaster",
+      "notes": [
+        "Language boundaries are real but everyday language use is more intertwined than a simple map suggests.",
+        "German is the largest language group, followed by French and Italian, while Romansh is spoken by a small minority.",
+        "Migration and multilingualism influence language use."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Switzerland: Country facts",
+      "publisher": "Federal Department of Finance, Swiss Confederation",
+      "url": "https://www.efd.admin.ch/dam/en/sd-web/txwWkgSPXcpj/buku-2024-en.pdf",
+      "published_at": null,
+      "reliability": "Official government publication",
+      "notes": [
+        "Switzerland has four language regions and 26 cantons.",
+        "German, French, Italian and Romansh are national languages.",
+        "Federalism and multilingualism are rooted in the country's history and continue to shape institutions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "how-writing-was-invented",
+  "research_question": "How writing was invented",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Cuneiform tablet: administrative account concerning the distribution of barley and emmer",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/327384",
+      "published_at": null,
+      "reliability": "Museum collection record",
+      "notes": [
+        "Proto-cuneiform appeared in southern Mesopotamia at the end of the fourth millennium BCE.",
+        "Early tablets recorded economic information such as deliveries and distributions of grain.",
+        "Pictograms were pressed into clay with a stylus and gradually developed into wedge-shaped cuneiform."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "From Accounting to Writing",
+      "publisher": "University of Texas at Austin, Denise Schmandt-Besserat",
+      "url": "https://sites.utexas.edu/dsb/tokens/from-accounting-to-writing/",
+      "published_at": null,
+      "reliability": "University research page by an archaeologist",
+      "notes": [
+        "Clay tokens were used in accounting systems to track goods such as grain and livestock.",
+        "The relationship between tokens, seals and writing is a scholarly reconstruction, not a single proven linear path.",
+        "Administrative signs eventually developed into ways of recording language and names."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Origins of Writing: Support notes for tutors",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/sites/default/files/2019-11/Origins-of-writing-support-notes-for-teachers_final.pdf",
+      "published_at": null,
+      "reliability": "Museum educational resource",
+      "notes": [
+        "Writing systems were created independently in multiple regions of the world.",
+        "Early writing was useful for taxes, contracts, rations and administration.",
+        "Literacy was restricted to a relatively small group in many ancient societies."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "3.2 Ancient Mesopotamia",
+      "publisher": "OpenStax World History",
+      "url": "https://openstax.org/books/world-history-volume-1/pages/3-2-ancient-mesopotamia",
+      "published_at": null,
+      "reliability": "Peer-reviewed open educational textbook",
+      "notes": [
+        "The earliest known evidence of writing includes cuneiform from Sumer around 3000 BCE or earlier.",
+        "Researchers have proposed that clay tokens and accounting practices preceded writing.",
+        "The exact pathway from accounting marks to a writing system remains a subject of historical interpretation."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Cuneiform tablets",
+      "publisher": "Museum of Classical Antiquities, University of Ottawa",
+      "url": "https://omeka.uottawa.ca/museumclassicalantiquities/exhibits/show/writing-and-languages/cuneiform",
+      "published_at": null,
+      "reliability": "University museum educational exhibit",
+      "notes": [
+        "Cuneiform was pressed into fresh clay using a wedge-shaped tool.",
+        "Early tablets commonly had practical accounting purposes.",
+        "Cuneiform was later adapted to record multiple languages."
+      ]
+    }
+  ]
+}
