@@ -1,0 +1,34 @@
+{
+  "batch": 8,
+  "updated": "2026-10-21",
+  "completed": [
+    "how-guitars-make-sound"
+  ],
+  "topics": {
+    "how-guitars-make-sound": {
+      "stage": "committed_pending_remote_verification",
+      "word_count": 2143,
+      "source_count": 6,
+      "image_count": 4,
+      "validation": {
+        "json_parse": "passed",
+        "schema_structural_checks": "pending_external_jsonschema",
+        "citations": "passed_source_index_review",
+        "image_metadata": "hero_1200x630_and_3_original_svg",
+        "remote_asset_existence": "pending_commit_verification"
+      },
+      "commit_sha": null
+    }
+  },
+  "pending": [
+    "why-roses-have-thorns",
+    "how-bees-make-honey",
+    "how-stars-are-born",
+    "why-deserts-get-cold-at-night",
+    "why-deja-vu-happens",
+    "why-ice-floats-in-drinks",
+    "why-metal-feels-colder-than-wood",
+    "why-passwords-get-hacked",
+    "why-ai-needs-so-much-data"
+  ]
+}

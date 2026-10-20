@@ -1,0 +1,135 @@
+{
+  "id": "mm-0159",
+  "slug": "how-guitars-make-sound",
+  "question": "How guitars make sound",
+  "category": "Arts, Music & Literature",
+  "canonical_url": "https://aafnaipatro.com/how-guitars-make-sound/",
+  "title_suggestion": "How Guitars Make Sound? What Science Actually Says",
+  "h1": "How Guitars Make Sound?",
+  "keywords": [
+    "guitars",
+    "sound",
+    "arts-music-literature"
+  ],
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "status": "research_complete",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/17-5-sources-of-musical-sound",
+      "title": "17.5 Sources of Musical Sound",
+      "publisher": "OpenStax, University Physics Volume 1",
+      "reliability": "open university-level physics textbook",
+      "notes": [
+        "Instrument timbre depends on the relative mix and intensity of fundamentals and overtones.",
+        "Resonant sounding boxes couple string motion to surrounding air."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/16-3-wave-speed-on-a-stretched-string",
+      "title": "16.3 Wave Speed on a Stretched String",
+      "publisher": "OpenStax, University Physics Volume 1",
+      "reliability": "open university-level physics textbook",
+      "notes": [
+        "Wave speed on a stretched string follows v = square root of tension divided by linear mass density.",
+        "Frequency depends on wave speed and vibrating length."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.phys.unsw.edu.au/jw/strings.html",
+      "title": "Strings, standing waves and harmonics",
+      "publisher": "University of New South Wales, Music Acoustics",
+      "reliability": "university acoustics reference",
+      "notes": [
+        "A plucked string supports standing-wave modes; high-frequency components fade faster after the pluck.",
+        "Harmonics and plucking point influence the spectrum."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://web.physics.ucsb.edu/~lecturedemonstrations/Composer/Pages/44.21.html",
+      "title": "44.21 — Guitar",
+      "publisher": "University of California, Santa Barbara, Physics Lecture Demonstrations",
+      "reliability": "university physics teaching resource",
+      "notes": [
+        "Fretting changes vibrating length and pitch; tuning pegs change tension.",
+        "Plucking near the bridge emphasizes upper harmonics."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://maglabweb.magnet.fsu.edu/magnet-academy/watch-play/interactive-tutorials/guitar-pickup/",
+      "title": "Guitar Pickup",
+      "publisher": "National High Magnetic Field Laboratory, Florida State University",
+      "reliability": "university-backed science museum interactive",
+      "notes": [
+        "Steel-string motion changes a pickup's magnetic field and induces an electrical signal.",
+        "The signal goes to an amplifier and loudspeaker, turning electrical energy back into sound."
+      ]
+    },
+    {
+      "n": 6,
+      "url": "https://www.speech.kth.se/music/5_lectures/wogram/index.html",
+      "title": "The strings and the soundboard",
+      "publisher": "KTH Royal Institute of Technology / Klaus Wogram",
+      "reliability": "technical acoustics lecture",
+      "notes": [
+        "The bridge transfers string vibrations to the soundboard, whose resonances shape radiated sound.",
+        "Excitation position and soundboard resonances affect radiation."
+      ]
+    }
+  ],
+  "editorial_angles": [
+    "The string sets pitch, but the instrument must couple mechanical energy into surrounding air.",
+    "Pitch is governed by vibrating length, tension and mass per unit length.",
+    "Timbre emerges from harmonics, attack, decay and resonances.",
+    "Acoustic guitars radiate sound through a moving soundboard; electric pickups convert string motion into a signal.",
+    "The hollow body is not merely a volume knob; it participates in a coupled mechanical-acoustic system."
+  ],
+  "image_research": {
+    "concepts": [
+      "Hero: original guitar illustration showing string vibration, acoustic body and electric pickup",
+      "Diagram 01: standing-wave modes and harmonics",
+      "Diagram 02: pluck-to-bridge-to-soundboard energy path",
+      "Diagram 03: pickup-to-amplifier-to-speaker signal path"
+    ],
+    "license": "All illustrations are original programmatic drawings created for this article; no third-party asset or licence used.",
+    "images": [
+      {
+        "file": "how-guitars-make-sound-hero.png",
+        "role": "hero",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original programmatic illustration created for Mission Mangal Writer",
+        "license": "Original illustration; no third-party asset or licence used"
+      },
+      {
+        "file": "how-guitars-make-sound-diagram-01.svg",
+        "role": "supporting diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG diagram created for Mission Mangal Writer",
+        "license": "Original illustration; no third-party asset or licence used"
+      },
+      {
+        "file": "how-guitars-make-sound-diagram-02.svg",
+        "role": "supporting diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG diagram created for Mission Mangal Writer",
+        "license": "Original illustration; no third-party asset or licence used"
+      },
+      {
+        "file": "how-guitars-make-sound-diagram-03.svg",
+        "role": "supporting diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG diagram created for Mission Mangal Writer",
+        "license": "Original illustration; no third-party asset or licence used"
+      }
+    ]
+  }
+}
