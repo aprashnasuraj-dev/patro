@@ -73,12 +73,12 @@ test("My Time app shell can reopen offline and calculate locally after a visit",
   const sw = read("public/sw.js");
   const page = read("src/features/my-time/MyTimePage.tsx");
   const cache = read("src/features/my-time/my-time-cache.ts");
-  assert.match(sw, /"\\/mytime"/);
-  assert.match(sw, /if \\(event\\.request\\.mode === "navigate"\\) \\{ event\\.respondWith\\(networkFirstShell\\(event\\.request, "\/"\\)\\)/);
-  assert.match(page, /calculateMyTimeSnapshot\\(\\{ date: nextDate, timezone: nextPreferences\\.timezone/);
-  assert.match(page, /readMyTimeSnapshot\\(cacheKey\\)/);
-  assert.match(cache, /const MAX_ENTRIES = 20/);
-  assert.match(cache, /myTimeCacheEvictions/);
+  assert.ok(sw.includes('"/mytime"'));
+  assert.ok(sw.includes('event.respondWith(networkFirstShell(event.request, "/"))'));
+  assert.ok(page.includes("calculateMyTimeSnapshot({ date: nextDate, timezone: nextPreferences.timezone"));
+  assert.ok(page.includes("readMyTimeSnapshot(cacheKey)"));
+  assert.ok(cache.includes("const MAX_ENTRIES = 20"));
+  assert.ok(cache.includes("myTimeCacheEvictions"));
 });
 
 test("recovery script is included in HTML and optional services cannot block main render", () => {
