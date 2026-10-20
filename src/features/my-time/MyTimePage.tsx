@@ -309,6 +309,17 @@ export default function MyTimePage() {
     setDate(nextDate);
     void loadSnapshot(nextDate, next, true);
   }, [loadSnapshot]);
+  const applyTimeLens = useCallback((lens: "universal" | "scientific" | "panchang" | "jyotish" | "tantra" | "combined") => {
+    const presets = {
+      universal: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: false, hora: false, twilight: false, tantra: false },
+      scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
+      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: false },
+      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: false },
+      tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
+      combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
+    };
+    setObservatoryLayers(presets[lens]);
+  }, []);
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
   const transitStarIndex = snapshot ? snapshot.panchang.nakshatra_index - 1 : -1;
@@ -351,7 +362,7 @@ export default function MyTimePage() {
       <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small><div className="mt-apparent-time"><span>{l(language,"स्थानीय सौर समय · अनुमानित","Apparent solar time · approximate")}</span><strong>{solarTime.time}</strong><small>{l(language,"समय समीकरण","Equation of time")}: {solarTime.equationOfTimeMinutes >= 0 ? "+" : ""}{solarTime.equationOfTimeMinutes.toFixed(1)} min</small></div></div></div>
     </header>
 
-    <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} lat={preferences.lat} lng={preferences.lng} tithiIndex={briefingTithiIndex} nakshatraIndex={briefingNakshatraIndex} tithiName={briefingTithiName} nakshatraName={briefingNakshatraName} currentWindow={briefingUsesCurrentDate && currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : (currentChoghadiya as any).name_en || currentChoghadiya.name_ne, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : (nextBriefingWindow as any).name_en || nextBriefingWindow.name_ne, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc, score: nextBriefingWindow.score } : null} onLocationChange={applyPersonalLocation} />
+    <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} locationLabel={preferences.label || readPlace()?.name || preferences.timezone} lat={preferences.lat} lng={preferences.lng} tithiIndex={briefingTithiIndex} nakshatraIndex={briefingNakshatraIndex} tithiName={briefingTithiName} nakshatraName={briefingNakshatraName} currentWindow={briefingUsesCurrentDate && currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : (currentChoghadiya as any).name_en || currentChoghadiya.name_ne, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : (nextBriefingWindow as any).name_en || nextBriefingWindow.name_ne, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc, score: nextBriefingWindow.score } : null} onLocationChange={applyPersonalLocation} onLensChange={applyTimeLens} />
 
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
       <label><span>{l(language,"मिति","Date")}</span><input type="date" value={date} onChange={event=>setDate(event.target.value)} /></label>
