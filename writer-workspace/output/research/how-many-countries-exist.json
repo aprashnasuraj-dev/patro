@@ -1,0 +1,54 @@
+{
+  "slug": "how-many-countries-exist",
+  "research_question": "What authoritative evidence explains how many countries exist?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Current UN Member States",
+      "publisher": "United Nations Dag Hammarskjöld Library",
+      "url": "https://ask.un.org/faq/14345",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Member States",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/en/about-us/member-states",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Non-Member Observer States",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/en/about-us/non-member-states",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Montevideo Convention on the Rights and Duties of States",
+      "publisher": "Organization of American States",
+      "url": "https://www.oas.org/juridico/english/sigs/a-40.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    }
+  ]
+}
