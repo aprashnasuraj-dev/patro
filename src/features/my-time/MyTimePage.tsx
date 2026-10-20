@@ -8,6 +8,7 @@ import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleC
 import { choghadiyaWindows, horaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
 import { deviceZone, readPlace } from "../../place/place";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
+import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
@@ -177,7 +178,8 @@ export default function MyTimePage() {
     const { sunrise_utc, sunset_utc, next_sunrise_utc } = snapshot.panchang;
     if (!sunrise_utc || !sunset_utc || !next_sunrise_utc) return null;
     const evaluation = localDate(preferences.timezone, now) === snapshot.date ? now : new Date(snapshot.evaluated_at_utc);
-    try { return computeTantraTime(snapshot.panchang.tithi_index, evaluation, new Date(sunrise_utc), new Date(sunset_utc), new Date(next_sunrise_utc)); }
+    const liveTithi = localDate(preferences.timezone, now) === snapshot.date ? panchangAt(evaluation).tithi : snapshot.panchang.tithi_index;
+    try { return computeTantraTime(liveTithi, evaluation, new Date(sunrise_utc), new Date(sunset_utc), new Date(next_sunrise_utc)); }
     catch { return snapshot.tantraVidya ?? null; }
   }, [snapshot, now, preferences.timezone]);
   const timeScales = useMemo(() => timeScaleCounters(now), [now]);
