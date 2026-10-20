@@ -49,6 +49,17 @@
       "notes": [
         "Supports background and claims cited in the article."
       ]
+    },
+    {
+      "n": 5,
+      "title": "Laundry",
+      "publisher": "U.S. Department of Energy, Energy Saver",
+      "url": "https://www.energy.gov/energysaver/laundry",
+      "reliability": "Relevant institutional reference",
+      "notes": [
+        "Additional institutional source for the article's main topic."
+      ],
+      "accessed": "2026-10-20"
     }
   ]
 }
