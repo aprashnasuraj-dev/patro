@@ -1,0 +1,39 @@
+{
+  "slug": "how-zero-was-invented",
+  "research_question": "How did zero develop as a number and place-value symbol?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://mathshistory.st-andrews.ac.uk/HistTopics/Zero/",
+      "title": "Zero",
+      "publisher": "MacTutor History of Mathematics Archive",
+      "reliability": "University of St Andrews mathematics-history reference",
+      "notes": [
+        "Zero developed through several stages: placeholder use, a number in its own right, and rules for arithmetic. Avoid presenting it as a single invention by one person."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Brahmagupta/",
+      "title": "Brahmagupta",
+      "publisher": "MacTutor History of Mathematics Archive",
+      "reliability": "University of St Andrews mathematics-history reference",
+      "notes": [
+        "Brahmagupta's 628 CE work gave arithmetic rules involving zero and negative numbers, while some rules involving division by zero were not correct by modern standards."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://www.bodleian.ox.ac.uk/about/libraries/treasures/bakhshali-manuscript",
+      "title": "The Bakhshali Manuscript",
+      "publisher": "Bodleian Libraries, University of Oxford",
+      "reliability": "University library holding the manuscript",
+      "notes": [
+        "The manuscript contains a dot used as a placeholder; dating its different layers is complex, so it should not be casually called the first modern zero."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
