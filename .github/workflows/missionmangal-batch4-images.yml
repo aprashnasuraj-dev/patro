@@ -1,5 +1,5 @@
 name: Complete Mission Mangal Batch 4 images
-# Re-trigger with the push-enabled image pipeline.
+# Re-trigger with the resumable, rebase-safe image pipeline.
 
 on:
   push:
