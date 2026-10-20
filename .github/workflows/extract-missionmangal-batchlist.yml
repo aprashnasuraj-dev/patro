@@ -38,7 +38,37 @@ jobs:
             jq -e . "$out" >/dev/null
           done
           test "$(find batchlist -maxdepth 1 -name 'batch-*.json' | wc -l)" -eq 339
-      - name: Commit extracted batch list
+      - name: Extract canonical writer resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          schema="MissionMangal-Writer/ARTICLE_SCHEMA.json"
+          protocol="MissionMangal-Writer/PROTOCOL.md"
+          examples_prefix="MissionMangal-Writer/examples/"
+          ziplist="$(unzip -Z1 /tmp/MissionMangal-Writer.zip)"
+          printf "%s\\n" "$ziplist" | grep -Fx "$schema"
+          printf "%s\\n" "$ziplist" | grep -Fx "$protocol"
+          printf "%s\\n" "$ziplist" | grep -E "^${examples_prefix}.+" | head -n 1
+          mkdir -p MissionMangal-Writer/examples
+          unzip -p /tmp/MissionMangal-Writer.zip "$schema" > "$schema"
+          unzip -p /tmp/MissionMangal-Writer.zip "$protocol" > "$protocol"
+          while IFS= read -r entry; do
+            [ -n "$entry" ] || continue
+            case "$entry" in
+              "$examples_prefix"*)
+                [ "${entry%/}" != "$entry" ] && continue
+                mkdir -p "$(dirname "$entry")"
+                unzip -p /tmp/MissionMangal-Writer.zip "$entry" > "$entry"
+                ;;
+            esac
+          done <<EOF_EXAMPLES
+          $ziplist
+          EOF_EXAMPLES
+          test -s "$schema"
+          jq -e . "$schema" >/dev/null
+          test -s "$protocol"
+          test "$(find MissionMangal-Writer/examples -type f | wc -l)" -ge 2
+      - name: Commit extracted batch list and canonical writer resources
         shell: bash
         run: |
           set -euo pipefail
