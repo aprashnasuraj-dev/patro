@@ -152,6 +152,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
       solar_altitude_deg_at_evaluation: solarAltitude,
       moon_illumination_percent: illumination
     },
+    twilight,
     methodology: {
       engine: "AafnaiPatro shared Panchang provider + astronomy-engine",
       time_anchor: timeAnchor,
