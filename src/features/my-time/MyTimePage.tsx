@@ -214,9 +214,9 @@ export default function MyTimePage() {
     try {
       const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v3") || "null");
       const optedOut = localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true";
-      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut && (presets[lens] || defaults).tantra };
+      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut && saved.tantra !== false };
       const lens = readMyTimePersonalSettings().lens;
-      return { ...(presets[lens] || defaults), tantra: !optedOut };
+      return { ...(presets[lens] || defaults), tantra: !optedOut && (presets[lens] || defaults).tantra };
     } catch { return defaults; }
   });
   const ne = language === "ne";
