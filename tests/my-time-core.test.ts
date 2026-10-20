@@ -19,11 +19,19 @@ describe("My Time astronomical core", () => {
       schema_version: 1,
       date: "2026-10-20",
       timezone: "Asia/Kathmandu",
-      methodology: { engine: "astronomy-engine", sidereal_positions: false }
+      methodology: { engine: "AafnaiPatro shared Panchang provider + astronomy-engine", sidereal_positions: true }
     });
     expect(snapshot.panchang.tithi_index).toBeGreaterThanOrEqual(1);
     expect(snapshot.panchang.tithi_index).toBeLessThanOrEqual(30);
     expect(snapshot.panchang.tithi_name_ne).toBeTruthy();
+    expect(snapshot.panchang.nakshatra_index).toBeGreaterThanOrEqual(1);
+    expect(snapshot.panchang.nakshatra_index).toBeLessThanOrEqual(27);
+    expect(snapshot.panchang.nakshatra_pada).toBeGreaterThanOrEqual(1);
+    expect(snapshot.panchang.nakshatra_pada).toBeLessThanOrEqual(4);
+    expect(snapshot.panchang.yoga_name_ne).toBeTruthy();
+    expect(snapshot.panchang.karana_name_ne).toBeTruthy();
+    expect(snapshot.panchang.sunrise_utc).toBeTruthy();
+    expect(snapshot.panchang.sunset_utc).toBeTruthy();
     expect(snapshot.sky.moon_illumination_percent).toBeGreaterThanOrEqual(0);
     expect(snapshot.sky.moon_illumination_percent).toBeLessThanOrEqual(100);
   });
