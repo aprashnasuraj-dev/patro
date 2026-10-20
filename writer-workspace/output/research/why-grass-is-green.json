@@ -1,7 +1,7 @@
 {
   "slug": "why-grass-is-green",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -14,7 +14,7 @@
         "Carotenoids broaden light capture and can protect photosynthetic machinery from excess energy.",
         "Photosystems convert absorbed light into chemical-energy carriers."
       ],
-      "apa": "OpenStax. (n.d.). 8.2 The Light-Dependent Reactions of Photosynthesis. https://openstax.org/books/biology/pages/8-2-the-light-dependent-reactions-of-photosynthesis"
+      "apa": "NASA Earth Observatory. (n.d.). How to Interpret a False-Color Satellite Image. https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/"
     },
     {
       "n": 2,
@@ -26,7 +26,7 @@
         "Plant chlorophyll is embedded in thylakoid membranes inside chloroplasts.",
         "Photosynthesis uses light, water and carbon dioxide to produce carbohydrates and release oxygen."
       ],
-      "apa": "OpenStax. (n.d.). 5.1 Overview of Photosynthesis. https://openstax.org/books/concepts-biology/pages/5-1-overview-of-photosynthesis"
+      "apa": "OpenStax Biology. (n.d.). 8.2 The Light-Dependent Reactions of Photosynthesis. https://openstax.org/books/biology/pages/8-2-the-light-dependent-reactions-of-photosynthesis"
     },
     {
       "n": 3,
@@ -38,7 +38,7 @@
         "Leaf pigments reflect green wavelengths; healthy vegetation also has a distinctive near-infrared response.",
         "Remote sensors can detect visible and near-infrared vegetation signals."
       ],
-      "apa": "NASA. (n.d.). Reflected Near-Infrared Waves. https://science.nasa.gov/ems/08_nearinfraredwaves/"
+      "apa": "Washington State University, Ask Dr. Universe. (n.d.). What is inside a blade of grass and why is it green?. https://askdruniverse.wsu.edu/2020/05/01/inside-blade-grass-green/"
     },
     {
       "n": 4,
@@ -62,20 +62,26 @@
         "Plant chlorophyll has a recognizable spectral signature, absorbing red and blue and reflecting green.",
         "False-color imaging can map vegetation using near-infrared reflection."
       ],
-      "apa": "NASA Earth Observatory. (n.d.). How to Interpret a False-Color Satellite Image. https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/"
+      "apa": "NASA Science. (n.d.). Reflected Near-Infrared Waves. https://science.nasa.gov/ems/08_nearinfraredwaves/"
     }
   ],
   "notes": [
     "Research notes reviewed and used for the first article draft.",
     "Article JSON committed at writer-workspace/output/articles/why-grass-is-green.json.",
     "Image asset and final schema/content verification are still pending; do not mark Batch 0001 complete.",
-    "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata."
+    "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
   ],
   "apa_references": [
-    "OpenStax. (n.d.). 8.2 The Light-Dependent Reactions of Photosynthesis. https://openstax.org/books/biology/pages/8-2-the-light-dependent-reactions-of-photosynthesis",
-    "OpenStax. (n.d.). 5.1 Overview of Photosynthesis. https://openstax.org/books/concepts-biology/pages/5-1-overview-of-photosynthesis",
-    "NASA. (n.d.). Reflected Near-Infrared Waves. https://science.nasa.gov/ems/08_nearinfraredwaves/",
+    "NASA Earth Observatory. (n.d.). How to Interpret a False-Color Satellite Image. https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/",
+    "OpenStax Biology. (n.d.). 8.2 The Light-Dependent Reactions of Photosynthesis. https://openstax.org/books/biology/pages/8-2-the-light-dependent-reactions-of-photosynthesis",
+    "Washington State University, Ask Dr. Universe. (n.d.). What is inside a blade of grass and why is it green?. https://askdruniverse.wsu.edu/2020/05/01/inside-blade-grass-green/",
     "NASA Earth Observatory. (n.d.). From Green to Brown. https://science.nasa.gov/earth/earth-observatory/from-green-to-brown-79332/",
-    "NASA Earth Observatory. (n.d.). How to Interpret a False-Color Satellite Image. https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/"
-  ]
+    "NASA Science. (n.d.). Reflected Near-Infrared Waves. https://science.nasa.gov/ems/08_nearinfraredwaves/"
+  ],
+  "image_file": "why-grass-is-green-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
