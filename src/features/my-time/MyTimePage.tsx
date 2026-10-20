@@ -214,7 +214,7 @@ export default function MyTimePage() {
       localStorage.setItem("aafnai.jyotish.china.context.v1",JSON.stringify(context));
       setPersonalContext(readPersonalContext());setBirthSuccess(true);
       window.dispatchEvent(new CustomEvent("patro:china-updated",{detail:context}));
-    }catch{setBirthError(l(language,"जन्मपत्रो गणना हुन सकेन। विवरण जाँच्नुहोस्।","Could not calculate the birth chart. Check the details."));}
+    }catch{setBirthError(l(language,"व्यक्तिगत समय गणना हुन सकेन। जन्म विवरण जाँच्नुहोस्।","Could not calculate personalized timing. Check your birth details."));}
   };
 
   const [rashifalSummary, setRashifalSummary] = useState("");
@@ -670,18 +670,18 @@ export default function MyTimePage() {
     </section>
 
     <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
-      <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट आफ्नो समय गणना गर्नुहोस्","Calculate your time from birth details")}</h2></div><Moon size={21}/></div>
-      <p>{l(language,"जन्मपत्रोको विद्यमान इन्जिनबाट राशि, लग्न, नक्षत्र र दशा गणना हुन्छ। जन्म समय नेपाल मानक समय (UTC+05:45) मा भर्नुहोस्। विवरण यस उपकरणमा सुरक्षित हुन्छ।","Uses the existing JanmaPatro engine for Moon sign, ascendant, Nakshatra and Dasha. Enter Nepal Standard Time (UTC+05:45). Details stay on this device.")}</p>
+      <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट व्यक्तिगत समय अनुभव मिलाउनुहोस्","Personalize your time experience with birth details")}</h2></div><Moon size={21}/></div>
+      <p>{l(language,"तपाईंको जन्म मिति, समय र स्थानबाट विद्यमान ज्योतिष इन्जिनले व्यक्तिगत समय सिफारिसका लागि आवश्यक जन्म-सन्दर्भ निकाल्छ। यहाँ जन्मकुण्डली देखाइँदैन। समय नेपाल मानक समय (UTC+05:45) मा भर्नुहोस्।","Your birth date, time and place feed the existing astrology engine to personalize time recommendations. This section does not display a birth chart. Enter time in Nepal Standard Time (UTC+05:45).")}</p>
       <form className="mt-birth-form" onSubmit={saveBirthChart}>
         <label>{l(language,"जन्म मिति (ईस्वी)","Birth date (AD)")}<input type="date" required value={birthInput.date} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/></label>
         <label>{l(language,"जन्म समय (नेपाल समय)","Birth time (Nepal time)")}<input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
         <label>{l(language,"जन्म स्थान","Birthplace")}<input required value={birthInput.location} onChange={e=>setBirthInput(v=>({...v,location:e.target.value}))}/></label>
         <label>{l(language,"अक्षांश","Latitude")}<input type="number" required min="-90" max="90" step="any" value={birthInput.lat} onChange={e=>setBirthInput(v=>({...v,lat:e.target.value}))}/></label>
         <label>{l(language,"देशान्तर","Longitude")}<input type="number" required min="-180" max="180" step="any" value={birthInput.lng} onChange={e=>setBirthInput(v=>({...v,lng:e.target.value}))}/></label>
-        <button className="mt-primary" type="submit">{l(language,"गणना गरी जोड्नुहोस्","Calculate and connect")}</button>
+        <button className="mt-primary" type="submit">{l(language,"व्यक्तिगत समय मिलाउनुहोस्","Personalize my time")}</button>
       </form>
       {birthError && <p role="alert">{birthError}</p>}
-      {birthSuccess && <p role="status">{l(language,"जन्मपत्रो जोडियो। व्यक्तिगत समय र राशिफल अद्यावधिक हुन्छ।","Birth chart connected. Personal timing and Rashifal will update.")}</p>}
+      {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>}
     </section>
     <section className="mt-personal">
       <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
