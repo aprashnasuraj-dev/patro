@@ -101,8 +101,8 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
   if (!input.horaLord) missing.push("hora");
   if (!input.tatwa) missing.push("tantra-tatwa");
   const personalizedSignals = components.some(item => item.key === "rashifal" || item.key === "dasha-hora");
-  const confidence = !input.hasNatalChart && !personalizedSignals
-    ? "general"
+  const confidence = !input.hasNatalChart
+    ? personalizedSignals ? "partially-personalized" : "general"
     : missing.length >= 3 ? "partially-personalized" : "personalized";
   const reasons = [...(input.panchangReasons || [])];
   const cautions = [...(input.panchangCautions || [])];
