@@ -53,6 +53,11 @@ export default function PersonalAstrologyObservatory(p: Props) {
       <button className="mt-astro-profile-trigger" type="button" ref={openerRef} onClick={() => setProfileOpen(true)} aria-haspopup="dialog" aria-expanded={profileOpen}><Fingerprint size={18}/>{available ? (birth?.birth?.name || l(lang,"मेरो जन्म विवरण","My birth profile")) : l(lang,"जन्म विवरण जोड्नुहोस्","Connect birth profile")}<ArrowUpRight size={15}/></button>
     </header>
     <div className="mt-astro-status" role="status"><span className={"mt-astro-dot"+(available?" is-connected":"")}/>{available?l(lang,"जन्मपत्रो जोडिएको छ","Janmapatro connected"):l(lang,"सामान्य दृश्य · जन्म विवरण आवश्यक","General view · birth profile needed")}<span>{p.selectedDate} · {currentDay}</span></div>
+    {available && birth?.birth && <div className="mt-astro-profile-evidence" role="note" aria-label={l(lang,"गणनामा प्रयोग गरिएको सुरक्षित जन्म विवरण","Saved birth profile used for calculations")}>
+      <span>{l(lang,"सक्रिय जन्म विवरण","APPLIED BIRTH PROFILE")}</span>
+      <strong>{birth.birth.date} · {birth.birth.time || "—"} NPT · {birth.birth.location || "—"}</strong>
+      <small>{l(lang,"चन्द्र राशि","Moon sign")}: {birth.rashi || "—"} · {l(lang,"नक्षत्र","Nakshatra")}: {p.nakshatra || birth.nakshatra || "—"}{p.pada ? " · "+l(lang,"पाद","Pada")+" "+p.pada : ""} · {l(lang,"लग्न","Ascendant")}: {birth.lagna || "—"}</small>
+    </div>}
     <div className="mt-astro-stage">
       <article className="mt-astro-element">
         <small>{l(lang,"तन्त्र कालगणनाको तत्व","TRADITIONAL ELEMENTAL RHYTHM")}</small>
