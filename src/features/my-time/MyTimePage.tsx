@@ -178,9 +178,10 @@ export default function MyTimePage() {
     const { sunrise_utc, sunset_utc, next_sunrise_utc } = snapshot.panchang;
     if (!sunrise_utc || !sunset_utc || !next_sunrise_utc) return null;
     const evaluation = localDate(preferences.timezone, now) === snapshot.date ? now : new Date(snapshot.evaluated_at_utc);
-    const liveTithi = localDate(preferences.timezone, now) === snapshot.date ? panchangAt(evaluation).tithi : snapshot.panchang.tithi_index;
-    try { return computeTantraTime(liveTithi, evaluation, new Date(sunrise_utc), new Date(sunset_utc), new Date(next_sunrise_utc)); }
-    catch { return snapshot.tantraVidya ?? null; }
+    try {
+      const liveTithi = localDate(preferences.timezone, now) === snapshot.date ? panchangAt(evaluation).tithi : snapshot.panchang.tithi_index;
+      return computeTantraTime(liveTithi, evaluation, new Date(sunrise_utc), new Date(sunset_utc), new Date(next_sunrise_utc));
+    } catch { return snapshot.tantraVidya ?? null; }
   }, [snapshot, now, preferences.timezone]);
   const timeScales = useMemo(() => timeScaleCounters(now), [now]);
   const nepalTime = useMemo(() => nepalStandardTime(now), [now]);
