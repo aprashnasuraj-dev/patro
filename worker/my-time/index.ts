@@ -4,16 +4,7 @@ import { panchangAt } from "../../src/patro-tools/core/astro";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../src/patro-tools/core/names";
 
 const DEG = Math.PI / 180;
-const TITHI_NAMES = [
-  ["Pratipada","प्रतिपदा"],["Dwitiya","द्वितीया"],["Tritiya","तृतीया"],["Chaturthi","चतुर्थी"],
-  ["Panchami","पञ्चमी"],["Shashthi","षष्ठी"],["Saptami","सप्तमी"],["Ashtami","अष्टमी"],
-  ["Navami","नवमी"],["Dashami","दशमी"],["Ekadashi","एकादशी"],["Dwadashi","द्वादशी"],
-  ["Trayodashi","त्रयोदशी"],["Chaturdashi","चतुर्दशी"],["Purnima","पूर्णिमा"],
-  ["Pratipada","प्रतिपदा"],["Dwitiya","द्वितीया"],["Tritiya","तृतीया"],["Chaturthi","चतुर्थी"],
-  ["Panchami","पञ्चमी"],["Shashthi","षष्ठी"],["Saptami","सप्तमी"],["Ashtami","अष्टमी"],
-  ["Navami","नवमी"],["Dashami","दशमी"],["Ekadashi","एकादशी"],["Dwadashi","द्वादशी"],
-  ["Trayodashi","त्रयोदशी"],["Chaturdashi","चतुर्दशी"],["Amavasya","औंसी"]
-] as const;
+const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];;
 
 export interface MyTimeInput {
   date?: string;
@@ -109,7 +100,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     location: { lat, lng },
     panchang: {
       tithi_index: tithiIndex,
-      tithi_name: ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"][tithiIndex - 1],
+      tithi_name: TITHI_EN[tithiIndex - 1],
       tithi_name_ne: tithiName(tithiIndex),
       paksha: panchang.paksha === "shukla" ? "Shukla Paksha" : "Krishna Paksha",
       phase_angle_deg: phaseAngle,
