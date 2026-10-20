@@ -13,17 +13,12 @@
     "why-the-moon-has-phases"
   ],
   "rejected": [],
-  "image_pending": [
-    "why-we-sleep-eight-hours",
-    "why-english-spelling-is-so-strange",
-    "why-pi-never-ends",
-    "why-solar-power-keeps-getting-cheaper",
-    "how-airplanes-fly",
-    "how-mount-everest-was-measured",
-    "why-music-gives-us-chills",
-    "how-trees-talk-through-fungi",
-    "why-dogs-tilt-their-heads",
-    "why-the-moon-has-phases"
-  ],
-  "finished": "2026-10-20"
+  "image_pending": [],
+  "finished": "2026-10-20",
+  "assets": {
+    "directory": "writer-workspace/output/images/",
+    "format": "PNG",
+    "dimensions": "1200x630",
+    "credit": "Original project-created AI-assisted illustrations; no third-party image assets used."
+  }
 }
