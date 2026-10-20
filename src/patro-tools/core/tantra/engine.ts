@@ -1,4 +1,4 @@
-import { NITYA_DEVIS, PANCHA_TATWAS, YOGINI_POSITIONS } from "./constants";
+import { NITYA_DEVIS, PANCHA_TATWAS, yoginiForTithi } from "./constants";
 
 export interface TantraTimeResult {
   nityaDevi: typeof NITYA_DEVIS[number];
@@ -7,13 +7,14 @@ export interface TantraTimeResult {
   tatwaElapsedMinutes: number;
   tatwaRemainingMinutes: number;
   tatwaWindow: { start: string; end: string };
-  yoginiDirection: string;
+  yogini: ReturnType<typeof yoginiForTithi>;
   mahanishaKaal: { start: string; end: string; isActive: boolean };
 }
 
 /**
  * Rule-based traditional chronometry, not a scientific measurement of subtle energy.
- * The Tatwa wave is modelled as five repeating 24-minute segments anchored to sunrise.
+ * Nitya sequence follows the requested convention: Shukla 1–15 forward, Krishna 16–30 reverse.
+ * Tatwa is a transparent sunrise-anchored five-by-24-minute visualization model.
  * Mahanisha is approximated by the midpoint between sunset and the following sunrise.
  */
 export function computeTantraTime(
@@ -33,14 +34,17 @@ export function computeTantraTime(
   const paksha = isShukla ? "Shukla" : "Krishna";
   const nityaIndex = isShukla ? tithiNumber : 31 - tithiNumber;
   const nityaDevi = NITYA_DEVIS[nityaIndex - 1];
+  const tithiWithinPaksha = isShukla ? tithiNumber : tithiNumber - 15;
+  const yogini = yoginiForTithi(tithiWithinPaksha);
+
   const elapsedMinutes = Math.floor((currentDate.getTime() - sunrise.getTime()) / 60_000);
   const normalizedMinutes = ((elapsedMinutes % 120) + 120) % 120;
   const tatwaIndex = Math.floor(normalizedMinutes / 24);
   const activeTatwa = PANCHA_TATWAS[tatwaIndex];
   const tatwaElapsedMinutes = normalizedMinutes % 24;
-  const tatwaRemainingMinutes = 24 - tatwaElapsedMinutes;
+  const tatwaRemainingMinutes = activeTatwa.durationMin - tatwaElapsedMinutes;
   const tatwaStart = new Date(currentDate.getTime() - tatwaElapsedMinutes * 60_000);
-  const tatwaEnd = new Date(tatwaStart.getTime() + 24 * 60_000);
+  const tatwaEnd = new Date(tatwaStart.getTime() + activeTatwa.durationMin * 60_000);
 
   const solarMidnightMs = sunset.getTime() + (nextSunrise.getTime() - sunset.getTime()) / 2;
   const mahanishaStart = new Date(solarMidnightMs - 24 * 60_000);
@@ -54,7 +58,7 @@ export function computeTantraTime(
     tatwaElapsedMinutes,
     tatwaRemainingMinutes,
     tatwaWindow: { start: tatwaStart.toISOString(), end: tatwaEnd.toISOString() },
-    yoginiDirection: YOGINI_POSITIONS[nityaIndex] || "Center",
+    yogini,
     mahanishaKaal: {
       start: mahanishaStart.toISOString(),
       end: mahanishaEnd.toISOString(),
