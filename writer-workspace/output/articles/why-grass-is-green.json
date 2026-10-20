@@ -143,7 +143,15 @@
   ],
   "word_count": 1230,
   "reading_minutes": 6,
-  "image": null,
+  "image": {
+    "file": "why-grass-is-green-hero.png",
+    "alt": "A close-up botanical illustration of green grass blades reaching toward sunlight over a rolling field.",
+    "caption": "Original illustration created for this article.",
+    "credit": "Original artwork created for Aafnaipatro.",
+    "license": "CC0 (original illustration)",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "grass",
     "why grass is green",
