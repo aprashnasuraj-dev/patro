@@ -8,13 +8,13 @@
 
 **Reason:** The repository already uses these technologies. A separate Next.js migration is not required to deliver the requested feature and would expand regression scope.
 
-**Consequences:** Use a new `/my-time` route, lazy-load its UI, and isolate Worker handlers under `worker/my-time/`. Existing route behavior remains the compatibility baseline.
+**Consequences:** Use one canonical `/mytime` page, lazy-load its UI, and isolate its handler/calculation modules under `worker/my-time/` while dispatching them through the existing `worker/optimized-entry.ts`. Do not create a second Worker. Existing route behavior remains the compatibility baseline.
 
 ## ADR-002 — Feature isolation and rollout
 
 **Decision:** Gate the new route and API with `MY_TIME_ENABLED` (default off until explicitly configured) and keep all new modules in `src/features/my-time/` and `worker/my-time/`.
 
-**Acceptance:** When disabled, `/my-time` must not expose the feature and all pre-existing routes must behave as before. The feature must not claim that a frontend-only flag protects an API; the Worker endpoint must enforce its own rollout gate.
+**Acceptance:** When disabled, `/mytime` must not expose the feature and all pre-existing routes must behave as before. The feature must not claim that a frontend-only flag protects an API; the Worker endpoint must enforce its own rollout gate.
 
 ## ADR-003 — Separate astronomical primitives from Vedic rules
 
@@ -97,3 +97,12 @@ Official upstream licensing describes a choice between AGPL and a professional l
 ### Cache design refinement
 
 The 0.1° × 0.1° grid is required by the source but must not be the only key dimensions. Include local date, normalized grid cell, IANA timezone (or a documented timezone resolution policy), calculation profile/ayanamsa, schema version, and engine version. Personal birth data must not be shared through the public location cache. Cache event instants and derive countdowns at render time.
+
+
+## Product-owner decisions (2026-10-20)
+
+- Canonical URL is `/mytime` (not `/my-time`) and all interactive visualizers live on this single page.
+- Route API requests through the existing main Worker `worker/optimized-entry.ts`; new handler modules may be scoped under `worker/my-time/` but are not separate Worker deployments.
+- Reuse current engine, D1/static data, existing birth-chart/Rashifal and locale utilities after inspecting their real contracts. No duplicate worker, database, engine, or profile store without evidence that one is necessary.
+- Navigation insertion is specific: tools list; mobile home menu immediately after JanmaPatro; desktop bottom section immediately after “आजको नेपाली मिति”.
+- Phase 3 personalization is a cross-feature integration, only using birth details users have declared or consented to use. Recommendations expose the rules and conventions that affect them.
