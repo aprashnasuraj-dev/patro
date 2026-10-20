@@ -121,7 +121,15 @@ export default function MyTimePersonalization(props: Props) {
     if (settings.notifications.frequency === "important" && lastNotificationDay.current.get(category) === day) return;
     lastNotificationDay.current.set(category, day);
     try { localStorage.setItem("aafnaipatro.mytime.alert-days.v1", JSON.stringify(Object.fromEntries(lastNotificationDay.current))); } catch {}
-    try { new Notification(title, { body, tag: "my-time-" + category + (settings.notifications.frequency === "all" ? "-" + now.getTime() : ""), icon: "/aafnai-logo.png" }); } catch {}
+    const options: NotificationOptions = { body, tag: "my-time-" + category + (settings.notifications.frequency === "all" ? "-" + now.getTime() : ""), icon: "/aafnai-logo.png" };
+    if ("serviceWorker" in navigator) {
+      void navigator.serviceWorker.ready.then(registration => {
+        if (typeof registration.showNotification === "function") return registration.showNotification(title, options);
+        new Notification(title, options);
+      }).catch(() => { try { new Notification(title, options); } catch {} });
+      return;
+    }
+    try { new Notification(title, options); } catch {}
   }
   async function enableAlerts() {
     if (!("Notification" in window)) { setNotice(l(language, "यो ब्राउजरले सूचना समर्थन गर्दैन।", "This browser does not support notifications.")); return; }
