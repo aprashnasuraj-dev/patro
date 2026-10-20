@@ -1,0 +1,30 @@
+{
+  "batch": 3,
+  "completed": [
+    "how-thunder-and-lightning-form",
+    "how-habits-form",
+    "how-bread-rises",
+    "how-magnets-work",
+    "how-wi-fi-works",
+    "why-ai-sometimes-makes-things-up",
+    "why-the-roman-empire-fell",
+    "how-many-countries-exist",
+    "how-washing-machines-clean-clothes",
+    "how-languages-die"
+  ],
+  "rejected": [],
+  "image_pending": [
+    "how-thunder-and-lightning-form",
+    "how-habits-form",
+    "how-bread-rises",
+    "how-magnets-work",
+    "how-wi-fi-works",
+    "why-ai-sometimes-makes-things-up",
+    "why-the-roman-empire-fell",
+    "how-many-countries-exist",
+    "how-washing-machines-clean-clothes",
+    "how-languages-die"
+  ],
+  "finished": "2026-10-20",
+  "note": "All 10 article and research JSON files are committed and passed structural/citation/word-count checks. Hero image files could not be fetched, verified for licence, and committed in this run; image fields remain null and all slugs are explicitly listed as image_pending."
+}
