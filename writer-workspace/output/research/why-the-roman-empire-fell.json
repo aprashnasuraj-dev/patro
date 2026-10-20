@@ -1,0 +1,54 @@
+{
+  "slug": "why-the-roman-empire-fell",
+  "research_question": "What authoritative evidence explains why the roman empire fell?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "The Fall of Rome",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/fall-of-Rome",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "The Later Roman Empire",
+      "publisher": "Oxford Classical Dictionary",
+      "url": "https://oxfordre.com/classics/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "The Fall of the Roman Empire: A New History",
+      "publisher": "Oxford University Press",
+      "url": "https://global.oup.com/academic/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "The Roman Empire",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-roman-empire",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    }
+  ]
+}
