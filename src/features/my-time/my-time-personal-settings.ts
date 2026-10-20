@@ -36,7 +36,7 @@ export function normalizeMyTimePersonalSettings(value: unknown): MyTimePersonalS
   if (!value || typeof value !== "object") return structuredClone(DEFAULT_MY_TIME_PERSONAL_SETTINGS);
   const raw = value as Partial<MyTimePersonalSettings>;
   const n = raw.notifications && typeof raw.notifications === "object" ? raw.notifications : DEFAULT_MY_TIME_PERSONAL_SETTINGS.notifications;
-  const selected = Array.isArray(raw.interests) ? raw.interests.filter((item): item is MyTimeInterest => typeof item === "string" && interests.has(item as MyTimeInterest)) : ["general"];
+  const selected: MyTimeInterest[] = Array.isArray(raw.interests) ? raw.interests.filter((item): item is MyTimeInterest => typeof item === "string" && interests.has(item as MyTimeInterest)) : ["general"];
   const savedEvents = Array.isArray(raw.savedEvents) ? raw.savedEvents.filter((item): item is MyTimeSavedEvent =>
     !!item && typeof item === "object" && typeof item.id === "string" && typeof item.title === "string" &&
     item.title.trim().length > 0 && item.title.length <= 100 && typeof item.at === "string" && Number.isFinite(Date.parse(item.at))
@@ -44,7 +44,7 @@ export function normalizeMyTimePersonalSettings(value: unknown): MyTimePersonalS
   return {
     setupComplete: raw.setupComplete === true,
     lens: typeof raw.lens === "string" && lenses.has(raw.lens as MyTimeLens) ? raw.lens as MyTimeLens : "universal",
-    interests: [...new Set(selected.length ? selected : ["general" as const])],
+    interests: [...new Set<MyTimeInterest>(selected.length ? selected : ["general"])],
     notifications: {
       tithiTransitions: n.tithiTransitions === true, nakshatraTransitions: n.nakshatraTransitions === true,
       timingWindows: n.timingWindows === true, savedEvents: n.savedEvents === true,
