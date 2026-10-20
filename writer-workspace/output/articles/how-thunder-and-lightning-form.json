@@ -152,5 +152,12 @@
   ],
   "word_count": 1526,
   "reading_minutes": 7,
-  "image": null
+  "image": null,
+  "references": [
+    "National Oceanic and Atmospheric Administration. (n.d.). *How lightning is created*. https://www.noaa.gov/jetstream/lightning/how-lightning-is-created",
+    "NOAA National Environmental Satellite, Data, and Information Service. (2025, August 27). *What causes lightning and thunder?* https://www.nesdis.noaa.gov/about/k-12-education/severe-weather/what-causes-lightning-and-thunder",
+    "National Weather Service. (n.d.). *Understanding lightning science*. https://www.weather.gov/safety/lightning-science-overview",
+    "National Weather Service. (n.d.). *Lightning safety tips and resources*. https://www.weather.gov/safety/lightning",
+    "Centers for Disease Control and Prevention. (2026, July 10). *Lightning and your safety*. https://www.cdc.gov/lightning/about/index.html"
+  ]
 }
