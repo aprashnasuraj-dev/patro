@@ -104,9 +104,9 @@ The product owner's three-phase roadmap remains authoritative; this sequence mus
 - Existing /time-machine and unrelated routes are preserved; My Time is added only at /mytime and /api/v1/mytime/today.
 - No new dependency, D1 schema, KV binding, or separate Worker is added.
 - The new API handler is dispatched through the existing worker/optimized-entry.ts entry point and remains disabled unless MY_TIME_ENABLED=true is configured in the Worker environment.
-- The API reuses the existing `src/place/timing.ts` and `src/patro-tools/core/astro.ts` provider for location-aware sunrise Panchang, sidereal Tithi/Nakshatra/Pada/Yoga/Karana, Sun/Moon signs, sunrise/sunset, moonrise, and tithi end; it falls back to local noon when sunrise/sunset are unavailable. My Time also reuses the existing calendar archive/D1 fallback and location preferences. Choghadiya, Rahu Kaal, Yamaganda, Gulika, Hora, local eclipse contacts, and browser-local Tarabalam/Chandrabalam have initial implementations. Smart Muhurta, twilight detail, IndexedDB, and service-worker offline fallback remain incomplete.
+- The API reuses the existing `src/place/timing.ts` and `src/patro-tools/core/astro.ts` provider for location-aware sunrise Panchang, sidereal Tithi/Nakshatra/Pada/Yoga/Karana, Sun/Moon signs, sunrise/sunset, moonrise, and tithi end; it falls back to local noon when sunrise/sunset are unavailable. My Time also reuses the existing calendar archive/D1 fallback and location preferences. Choghadiya, Rahu Kaal, Yamaganda, Gulika, Hora, local eclipse contacts, and browser-local Tarabalam/Chandrabalam have initial implementations. Civil/nautical/astronomical twilight and IndexedDB snapshot caching have since been implemented in the feature branch. Smart Muhurta and service-worker offline fallback remain incomplete.
 - New deterministic tests have been added to the existing product test script; GitHub CI is the validation gate, and results must be checked before merge.
-- No existing branch is force-pushed and main is not modified.
+- No feature code has been deployed or enabled. A corrective PR restored the default branch after accidental file writes; intended implementation remains isolated on `feature/my-time-v1`.
 
 
 ## Source-document reconciliation — 2026-10-20
@@ -166,3 +166,10 @@ Before adding any Swiss Ephemeris-derived package or WASM binary, make an explic
 - Add sunrise/sunset and polar-day handling, sidereal ayanamsa conventions, Nakshatra/Pada/Yoga/Karana, Choghadiya/Rahu Kaal/Hora/Muhurta calculations with authoritative fixtures.
 - Replace pending UI states with verified outputs as each calculation lands; add visual/accessibility regression coverage.
 - Phase 3 now reads the existing local JanmaPatro chart context and Rashifal sign preference, calculates Tarabalam/Chandrabalam locally when natal data is available, and requests only the declared sign for the published Rashifal summary. More context-aware Muhurta and offline resilience remain incomplete.
+
+
+## Latest UX audit — 2026-10-20
+
+- Added a contextual one-line timing summary for active Rahu Kaal/Yamaganda/Gulika, a favorable Choghadiya window, or the next relevant period. Copy is bilingual and tradition-qualified.
+- Added live 24-hour progress, Choghadiya and inauspicious-window arcs to the SVG polar dial, plus restrained orbit/glow motion and a legend clarifying live time versus selected-date overlays. `prefers-reduced-motion` disables the motion.
+- This remains an initial immersive layer, not a complete HTML5 observatory: Hora/twilight rings, interactive event seeking, drag-to-customize widgets, dual diaspora clock, Julian/MJD/Unix counters and Abhijit Muhurta remain open.
