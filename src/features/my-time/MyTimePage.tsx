@@ -83,10 +83,11 @@ function localDateLabel(date: string, timezone: string, language: "ne" | "en") {
 function fmt(value: number, digits = 2) { return Number.isFinite(value) ? value.toFixed(digits) : "—"; }
 function formatInstant(value: string | null, timezone: string, language: "ne" | "en") { if (!value) return "—"; try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); } catch { return "—"; } }
 
-function safeTimeZone(value: string) {
-  try { new Intl.DateTimeFormat("en-US", { timeZone: value }).format(new Date()); return value; }
-  catch { return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; }
+function isValidTimeZone(value: string) {
+  try { new Intl.DateTimeFormat("en-US", { timeZone: value }).format(new Date()); return true; }
+  catch { return false; }
 }
+function safeTimeZone(value: string) { return isValidTimeZone(value) ? value : Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; }
 function localMinute(value: string, timezone: string) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimeZone(timezone), hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" }).formatToParts(new Date(value)).map(part => [part.type, part.value]));
   return Number(parts.hour) * 60 + Number(parts.minute) + Number(parts.second) / 60;
@@ -402,10 +403,10 @@ export default function MyTimePage() {
 
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
       <label><span>{l(language,"मिति","Date")}</span><input type="date" value={date} onChange={event=>setDate(event.target.value)} /></label>
-      <label><span>{l(language,"समय क्षेत्र (IANA)","Timezone (IANA)")}</span><input value={preferences.timezone} onChange={event=>setPreferences(old=>({...old,timezone:event.target.value}))} placeholder="Asia/Kathmandu" autoComplete="off"/></label>
-      <label><span>{l(language,"अक्षांश","Latitude")}</span><input type="number" min="-90" max="90" step="0.0001" value={preferences.lat} onChange={event=>setPreferences(old=>({...old,lat:Number(event.target.value)}))}/></label>
-      <label><span>{l(language,"देशान्तर","Longitude")}</span><input type="number" min="-180" max="180" step="0.0001" value={preferences.lng} onChange={event=>setPreferences(old=>({...old,lng:Number(event.target.value)}))}/></label>
-      <button type="button" className="mt-primary" disabled={loading || !date || !preferences.timezone.trim()} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
+      <label><span>{l(language,"समय क्षेत्र (IANA)","Timezone (IANA)")}</span><input value={preferences.timezone} aria-invalid={!isValidTimeZone(preferences.timezone.trim())} aria-describedby="mt-timezone-help" onChange={event=>setPreferences(old=>({...old,timezone:event.target.value}))} placeholder="Asia/Kathmandu" autoComplete="off"/><small id="mt-timezone-help">{isValidTimeZone(preferences.timezone.trim()) ? l(language,"उदाहरण: Asia/Kathmandu, Asia/Tokyo","Example: Asia/Kathmandu, Asia/Tokyo") : l(language,"मान्य समय क्षेत्र राख्नुहोस्।","Enter a valid IANA timezone.")}</small></label>
+      <label><span>{l(language,"अक्षांश","Latitude")}</span><input type="number" min="-90" max="90" step="0.0001" value={preferences.lat} onChange={event=>{const value=event.target.value;if(value!==""&&Number.isFinite(Number(value))&&Number(value)>=-90&&Number(value)<=90)setPreferences(old=>({...old,lat:Number(value)});}}/></label>
+      <label><span>{l(language,"देशान्तर","Longitude")}</span><input type="number" min="-180" max="180" step="0.0001" value={preferences.lng} onChange={event=>{const value=event.target.value;if(value!==""&&Number.isFinite(Number(value))&&Number(value)>=-180&&Number(value)<=180)setPreferences(old=>({...old,lng:Number(value)});}}/></label>
+      <button type="button" className="mt-primary" disabled={loading || !date || !isValidTimeZone(preferences.timezone.trim()) || !Number.isFinite(preferences.lat) || !Number.isFinite(preferences.lng) || preferences.lat < -90 || preferences.lat > 90 || preferences.lng < -180 || preferences.lng > 180} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
     </section>
 
     <section className="mt-observatory-controls" aria-label={l(language,"समय तह अनुकूलन","Customize time layers")}>
@@ -472,7 +473,7 @@ export default function MyTimePage() {
     {snapshot && <MyTimeTemporalLayers snapshot={snapshot} timezone={preferences.timezone} language={language} now={now} />}
 
     <section className="mt-section">
-      <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह एउटै मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। गणना उपलब्ध नभएका भागलाई स्पष्ट रूपमा चिनाइएको छ।","Every layer shares the same date, location and timezone. Capabilities not yet calculated are explicitly marked.")}</p></div>
+      <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह तपाईंले छानेको मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। आफूलाई चाहिने समयका तहहरू खोल्नुहोस्।","Each layer follows your selected date, location and timezone. Open the time layers that interest you.")}</p></div>
       <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
     </section>
 
