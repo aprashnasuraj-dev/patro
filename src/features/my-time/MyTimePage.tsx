@@ -184,7 +184,10 @@ export default function MyTimePage() {
     if (!snapshot || !tantraEvaluation) return null;
     try { return panchangAt(tantraEvaluation); } catch { return null; }
   }, [snapshot, tantraEvaluation]);
-  const currentPanchang = useMemo(() => { try { return panchangAt(now); } catch { return null; } }, [now]);
+  const currentPanchang = useMemo(() => {
+    if (snapshot && snapshot.date === localDate(preferences.timezone, now) && evaluationPanchang) return evaluationPanchang;
+    try { return panchangAt(now); } catch { return null; }
+  }, [snapshot, preferences.timezone, now, evaluationPanchang]);
   const tantraTime = useMemo(() => {
     if (!snapshot || !tantraEvaluation) return null;
     const { sunrise_utc, sunset_utc, next_sunrise_utc } = snapshot.panchang;
