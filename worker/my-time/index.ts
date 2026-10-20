@@ -6,6 +6,12 @@ import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../src/pa
 const DEG = Math.PI / 180;
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya";
 
+function addIsoDays(iso: string, days: number): string {
+  const [year, month, day] = iso.split("-").map(Number);
+  const value = new Date(Date.UTC(year, month - 1, day + days));
+  return `${value.getUTCFullYear()}-${String(value.getUTCMonth()+1).padStart(2,"0")}-${String(value.getUTCDate()).padStart(2,"0")}`;
+}
+
 export interface MyTimeInput {
   date?: string;
   timezone?: string;
@@ -81,6 +87,8 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   let daily: ReturnType<typeof placeTiming> | null = null;
   try { daily = placeTiming(date, location); } catch { daily = null; }
   const panchang = daily || panchangAt(evaluatedAt);
+  let nextDay: ReturnType<typeof placeTiming> | null = null;
+  if (daily) { try { nextDay = placeTiming(addIsoDays(date, 1), location); } catch { nextDay = null; } }
   const sunLongitude = normalizeLongitude(Astronomy.SunPosition(evaluatedAt).elon);
   const moonLongitude = normalizeLongitude(Astronomy.EclipticGeoMoon(evaluatedAt).lon);
   const phaseAngle = normalizeLongitude(panchang.moonPhaseAngle);
@@ -98,6 +106,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     timezone,
     evaluated_at_utc: evaluatedAt.toISOString(),
     location: { lat, lng },
+    weekday: new Date(date + "T00:00:00Z").getUTCDay(),
     panchang: {
       tithi_index: tithiIndex,
       tithi_name: TITHI_EN[tithiIndex - 1],
@@ -118,6 +127,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
       sun_rashi_ne: RASHIS[panchang.sunRashi],
       sunrise_utc: daily?.sunrise.toISOString() ?? null,
       sunset_utc: daily?.sunset.toISOString() ?? null,
+      next_sunrise_utc: nextDay?.sunrise.toISOString() ?? null,
       moonrise_utc: daily?.moonrise?.toISOString() ?? null,
       tithi_end_utc: daily?.tithiEnds?.toISOString() ?? null
     },
