@@ -26,8 +26,10 @@ function dateTime(value: Date, timezone: string, language: Language) {
   catch { return value.toISOString(); }
 }
 function localIsoDate(value: Date, timezone: string) {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(value).map(part => [part.type, part.value]));
-  return `${parts.year}-${parts.month}-${parts.day}`;
+  try {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(value).map(part => [part.type, part.value]));
+    return `${parts.year}-${parts.month}-${parts.day}`;
+  } catch { return value.toISOString().slice(0,10); }
 }
 export default function MyTimeTemporalLayers({ snapshot, timezone, language, now }: Props) {
   const [eclipses, setEclipses] = useState<EclipseSummary | null>(null);
