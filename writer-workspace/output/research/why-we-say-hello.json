@@ -53,14 +53,14 @@
     },
     {
       "n": 5,
-      "title": "Hello: word history and usage",
-      "publisher": "Online Etymology Dictionary",
-      "url": "https://www.etymonline.com/word/hello",
-      "reliability": "Historical dictionary reference",
+      "title": "Hello",
+      "publisher": "Merriam-Webster Dictionary",
+      "url": "https://www.merriam-webster.com/dictionary/hello",
+      "reliability": "Major English-language dictionary",
       "notes": [
-        "Hello has several related spelling forms in English.",
-        "Telephone operators were called hello-girls in the late nineteenth century.",
-        "The telephone helped stabilise hello as a familiar opening."
+        "Merriam-Webster defines hello as a greeting and also records telephone and attention-getting uses.",
+        "Its word-history entry identifies hello as an alteration of hollo.",
+        "The dictionary records a first known use in 1834, illustrating that earliest dates can differ by source and sense."
       ]
     }
   ]

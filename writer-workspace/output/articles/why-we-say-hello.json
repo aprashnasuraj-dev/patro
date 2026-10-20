@@ -53,7 +53,7 @@
     {
       "h2": "Spelling variants and pronunciation",
       "paras": [
-        "English kept several related forms: hallo, hullo, hollo and halloo. Some are more common in particular varieties of English or specific uses, and dictionaries note that hello can also express surprise or disbelief. The existence of variants shows how speech changes before spelling conventions settle; different writers can represent a similar call in different ways. [1][3]",
+        "English kept several related forms: hallo, hullo, hollo and halloo. Some are more common in particular varieties of English or specific uses, and dictionaries note that hello can also express surprise or disbelief. The existence of variants shows how speech changes before spelling conventions settle; different writers can represent a similar call in different ways. [1][3][5]",
         "Pronunciation also varies between accents. The word remains short and recognisable, but vowels and stress differ across English-speaking communities. That flexibility helps a greeting travel: speakers adapt the sound to local speech while preserving its social purpose. The standard dictionary form is hello, even though informal messages and regional usage may use related spellings. [3]"
       ]
     },
@@ -83,7 +83,7 @@
     },
     {
       "q": "What is the difference between hello, hallo and hullo?",
-      "a": "They are related forms and spelling variants. Modern dictionaries recognise hello as the standard form, while hallo and hullo appear in particular varieties of English or contexts. [1][3]"
+      "a": "They are related forms and spelling variants. Modern dictionaries recognise hello as the standard form, while hallo and hullo appear in particular varieties of English or contexts. [1][3][5]"
     },
     {
       "q": "When did hello become popular?",
@@ -120,9 +120,10 @@
       "retrieved_at": "2026-10-20"
     },
     {
-      "title": "Hello: word history and usage",
-      "publisher": "Online Etymology Dictionary",
-      "url": "https://www.etymonline.com/word/hello",
+      "n": 5,
+      "title": "Hello",
+      "publisher": "Merriam-Webster Dictionary",
+      "url": "https://www.merriam-webster.com/dictionary/hello",
       "published_at": null,
       "retrieved_at": "2026-10-20"
     }

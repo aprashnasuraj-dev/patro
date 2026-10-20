@@ -1,0 +1,76 @@
+{
+  "slug": "why-chocolate-melts-in-your-mouth",
+  "research_question": "Why does chocolate soften and melt in the mouth, and how do cocoa-butter crystals and processing affect its texture?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Why does chocolate melt in your hand?",
+      "publisher": "Library of Congress, Everyday Mysteries",
+      "url": "https://www.loc.gov/everyday-mysteries/categories/chemistry/item/why-does-chocolate-melt-in-your-hand/",
+      "published_at": "2020-06-05",
+      "retrieved_at": "2026-10-20",
+      "reliability": "U.S. national library science reference",
+      "notes": [
+        "Chocolate's melting range is below typical body temperature, so heat from skin or the mouth transfers energy into it.",
+        "Cocoa butter is a major ingredient and its fat composition influences melting behaviour.",
+        "Six commonly described cocoa-butter crystal forms have different melting temperatures; tempering favours the form associated with gloss, snap, and a useful melt profile."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "The science of melting chocolate",
+      "publisher": "Royal Society of Chemistry Education",
+      "url": "https://edu.rsc.org/changes-of-state/the-science-of-melting-chocolate/4013276.article",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Professional chemical society education resource",
+      "notes": [
+        "Chocolate is a mixture, so it does not have one universal melting point.",
+        "Cocoa butter polymorphs have different melting ranges; the stable Form V is commonly desired for eating quality.",
+        "Tempering uses controlled heating, cooling, and reheating to encourage a suitable crystal population."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "The structure and properties of chocolate",
+      "publisher": "Royal Society of Chemistry Education",
+      "url": "https://edu.rsc.org/experiments/the-structure-and-properties-of-chocolate/688.article",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Professional chemical society educational experiment",
+      "notes": [
+        "Fat crystals can share the same chemical ingredients but arrange into different structures, changing firmness, gloss, snap, and melting behaviour.",
+        "Particle size and processing affect mouthfeel; conching helps adjust flavour and moisture as well as texture.",
+        "The details of cocoa-butter crystallisation are complex and remain an active technical subject."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Molecular Origins of Polymorphism in Cocoa Butter",
+      "publisher": "Annual Review of Food Science and Technology",
+      "url": "https://doi.org/10.1146/annurev-food-070620-022551",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Peer-reviewed scientific review",
+      "notes": [
+        "Cocoa butter exhibits multiple polymorphic crystal forms with distinct melting points and molecular packing.",
+        "The commonly used Form V melts around 33.8 °C in the review's table, while Form VI is listed around 36.3 °C; values depend on the specific material and measurement.",
+        "Crystal structure and transformations help explain why tempering and storage influence chocolate quality."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "The Science Behind Your Easter Egg",
+      "publisher": "Science Museum, London",
+      "url": "https://blog.sciencemuseum.org.uk/the-science-behind-your-easter-egg/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Museum science communication",
+      "notes": [
+        "Cocoa butter's crystal structure helps determine the chocolate's texture, sheen, snap, and melt.",
+        "Tempering is a controlled crystallisation process rather than simply melting and cooling chocolate randomly."
+      ]
+    }
+  ],
+  "research_date": "2026-10-20"
+}
