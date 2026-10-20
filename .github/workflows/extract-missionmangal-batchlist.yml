@@ -1,0 +1,53 @@
+name: Extract MissionMangal batch list
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - missionmangal-writer-batch-production
+    paths:
+      - "batchlist/.trigger-extract"
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout production branch
+        uses: actions/checkout@v4
+        with:
+          ref: missionmangal-writer-batch-production
+          fetch-depth: 0
+      - name: Download and verify authoritative ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 2 --output /tmp/MissionMangal-Writer.zip "https://github.com/aprashnasuraj-dev/patro/raw/missionmangal-v2/MissionMangal-Writer.zip"
+          unzip -t /tmp/MissionMangal-Writer.zip
+          unzip -Z1 /tmp/MissionMangal-Writer.zip | grep -Fx "MissionMangal-Writer/batches/batch-0001.json"
+          unzip -Z1 /tmp/MissionMangal-Writer.zip | grep -Fx "MissionMangal-Writer/batches/batch-0339.json"
+      - name: Extract batches 0001 through 0339
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p batchlist
+          for n in $(seq 1 339); do
+            n4=$(printf "%04d" "$n")
+            entry="MissionMangal-Writer/batches/batch-${n4}.json"
+            out="batchlist/batch-${n4}.json"
+            unzip -p /tmp/MissionMangal-Writer.zip "$entry" > "$out"
+            jq -e . "$out" >/dev/null
+          done
+          test "$(find batchlist -maxdepth 1 -name 'batch-*.json' | wc -l)" -eq 339
+      - name: Commit extracted batch list
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add batchlist/batch-*.json
+          if git diff --cached --quiet; then
+            echo "All 339 batch JSON files are already current."
+          else
+            git commit -m "Extract MissionMangal batch list 0001-0339"
+            git push origin HEAD:missionmangal-writer-batch-production
+          fi
