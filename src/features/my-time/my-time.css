@@ -33,3 +33,9 @@
 .mt-scale-grid .mt-extra-card>strong{font-size:clamp(13px,1.5vw,18px)}
 @media(max-width:760px){.mt-observatory-controls{gap:12px}.mt-observatory-controls>div{width:100%}.mt-extra-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mt-scale-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){.mt-extra-grid{grid-template-columns:minmax(0,1fr)}.mt-scale-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mt-extra-card{padding:14px}}
+
+.mt-recommended-windows{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:6px}
+.mt-recommended-windows>b{font-size:11px;color:var(--mt-muted)}
+.mt-recommended-windows>div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 9px;border-radius:9px;background:color-mix(in srgb,var(--mt-soft) 62%,transparent)}
+.mt-recommended-windows>div>span{font-size:11px;line-height:1.5;color:var(--mt-ink)}
+.mt-recommended-windows>div>strong{flex:none;font-size:12px;font-variant-numeric:tabular-nums;color:var(--mt-accent)}
