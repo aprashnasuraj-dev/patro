@@ -1,0 +1,84 @@
+{
+  "id": "mm-0137",
+  "slug": "how-search-engines-rank-pages",
+  "question": "How search engines rank pages",
+  "category": "Technology & Internet",
+  "canonical_url": "https://aafnaipatro.com/how-search-engines-rank-pages/",
+  "researched_at": "2026-10-21",
+  "status": "research_in_progress",
+  "sources": [
+    {
+      "n": 1,
+      "title": "In-depth guide to how Google Search works",
+      "publisher": "Google Search Central",
+      "url": "https://developers.google.com/search/docs/fundamentals/how-search-works",
+      "reliability": "primary vendor documentation",
+      "notes": [
+        "Discovery, crawling, indexing and serving are separate stages.",
+        "A crawled page is not guaranteed to be indexed or served.",
+        "Google selects canonical representatives from near duplicate pages."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "How Does Google Determine Ranking Results",
+      "publisher": "Google Search",
+      "url": "https://www.google.com/search/howsearchworks/how-search-works/ranking-results/?list_view=true",
+      "reliability": "primary vendor explanation",
+      "notes": [
+        "Intent, relevance, source quality, usability and context influence results.",
+        "Signal weights depend on the query: freshness matters more for news than stable definitions.",
+        "Advertising does not purchase organic position."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "A guide to Google Search ranking systems",
+      "publisher": "Google Search Central",
+      "url": "https://developers.google.com/search/docs/appearance/ranking-systems-guide",
+      "reliability": "primary vendor documentation",
+      "notes": [
+        "PageRank remains part of core ranking but has changed since its initial version.",
+        "Modern systems include BERT, RankBrain, passage-level understanding and deduplication.",
+        "Site-wide signals do not guarantee the ranking of an individual page."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Creating helpful, reliable, people-first content",
+      "publisher": "Google Search Central",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "reliability": "primary vendor documentation",
+      "notes": [
+        "E-E-A-T is not one standalone ranking factor.",
+        "Human quality raters evaluate the systems but do not directly assign individual rankings.",
+        "Trustworthiness is particularly consequential for high-impact queries."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "The Anatomy of a Large-Scale Hypertextual Web Search Engine",
+      "publisher": "Sergey Brin and Lawrence Page, Stanford University",
+      "url": "https://research.google.com/pubs/archive/334.pdf",
+      "reliability": "original historical research",
+      "notes": [
+        "Early Google combined full-text retrieval and hyperlink structure.",
+        "Historical PageRank should not be confused with a modern complete ranking formula."
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Exact current ranking weights and proprietary implementation details are undisclosed.",
+    "Vendor explanations are primary statements of their systems, not independently audited reverse engineering."
+  ],
+  "image_research": {
+    "status": "pending",
+    "concepts": [
+      "Original three-stage crawl-index-rank visual",
+      "Original illustrative query-intent comparison",
+      "Original hyperlink network showing historic PageRank",
+      "Original freshness comparison and canonicalization diagram"
+    ],
+    "license_policy": "Original diagrams must disclose production method and must not mimic official Google trademarks."
+  }
+}
