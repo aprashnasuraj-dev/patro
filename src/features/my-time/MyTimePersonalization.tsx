@@ -53,6 +53,7 @@ function clock(value: string, timezone: string, language: UiLanguage) {
 }
 function updateLanguage(language: UiLanguage) {
   try { localStorage.setItem("patro.ui.language", language); } catch {}
+  if (typeof document !== "undefined") document.documentElement.lang = language;
   window.dispatchEvent(new CustomEvent("patro:set-language", { detail: language }));
   window.dispatchEvent(new CustomEvent("patro:language"));
 }
@@ -66,13 +67,14 @@ export default function MyTimePersonalization(props: Props) {
   const [notice, setNotice] = useState("");
   const previousRef = useRef<{ tithi: number | null; nakshatra: number | null }>({ tithi: null, nakshatra: null });
   const notifiedWindows = useRef(new Set<string>());
+  const lastNotificationDay = useRef(new Map<string, string>());
   const interestLine = settings.interests.map(id => INTERESTS.find(item => item.id === id)).filter(Boolean).map(item => language === "ne" ? item!.ne : item!.en).join(", ");
   const update = (mutate: (old: MyTimePersonalSettings) => MyTimePersonalSettings) => setSettings(old => mutate(old));
   useEffect(() => { saveMyTimePersonalSettings(settings); }, [settings]);
   useEffect(() => {
     const previous = previousRef.current;
-    if (previous.tithi !== null && tithiIndex !== null && previous.tithi !== tithiIndex && settings.notifications.tithiTransitions) notify(l(language, "तिथि परिवर्तन", "Tithi changed"), l(language, "हालको तिथि: ", "Current Tithi: ") + tithiName);
-    if (previous.nakshatra !== null && nakshatraIndex !== null && previous.nakshatra !== nakshatraIndex && settings.notifications.nakshatraTransitions) notify(l(language, "नक्षत्र परिवर्तन", "Nakshatra changed"), l(language, "हालको नक्षत्र: ", "Current Nakshatra: ") + nakshatraName);
+    if (previous.tithi !== null && tithiIndex !== null && previous.tithi !== tithiIndex && settings.notifications.tithiTransitions) notify(l(language, "तिथि परिवर्तन", "Tithi changed"), l(language, "हालको तिथि: ", "Current Tithi: ") + tithiName, "tithi");
+    if (previous.nakshatra !== null && nakshatraIndex !== null && previous.nakshatra !== nakshatraIndex && settings.notifications.nakshatraTransitions) notify(l(language, "नक्षत्र परिवर्तन", "Nakshatra changed"), l(language, "हालको नक्षत्र: ", "Current Nakshatra: ") + nakshatraName, "nakshatra");
     previousRef.current = { tithi: tithiIndex, nakshatra: nakshatraIndex };
   }, [tithiIndex, nakshatraIndex, tithiName, nakshatraName, settings.notifications.tithiTransitions, settings.notifications.nakshatraTransitions, settings.notifications.quietStart, settings.notifications.quietEnd, timezone]);
   useEffect(() => {
@@ -80,20 +82,25 @@ export default function MyTimePersonalization(props: Props) {
     const ms = Date.parse(nextWindow.start_utc) - now.getTime();
     if (ms >= 0 && ms <= 45_000) {
       notifiedWindows.current.add(nextWindow.key);
-      notify(l(language, "समयको झ्याल सुरु हुँदैछ", "Timing window is starting"), nextWindow.name + " · " + clock(nextWindow.start_utc, timezone, language));
+      notify(l(language, "समयको झ्याल सुरु हुँदैछ", "Timing window is starting"), nextWindow.name + " · " + clock(nextWindow.start_utc, timezone, language), "window");
     }
   }, [now, nextWindow?.key, nextWindow?.start_utc, settings.notifications.timingWindows, settings.notifications.quietStart, settings.notifications.quietEnd, timezone, language]);
   useEffect(() => {
     if (!settings.notifications.savedEvents) return;
     const due = settings.savedEvents.find(event => !event.notifiedAt && Date.parse(event.at) <= now.getTime() && now.getTime() - Date.parse(event.at) < 15 * 60_000);
     if (!due) return;
-    notify(l(language, "तपाईंको सुरक्षित कार्यक्रम", "Your saved event"), due.title);
+    notify(l(language, "तपाईंको सुरक्षित कार्यक्रम", "Your saved event"), due.title, "event");
     update(old => ({ ...old, savedEvents: old.savedEvents.map(event => event.id === due.id ? { ...event, notifiedAt: now.toISOString() } : event) }));
   }, [now, settings.notifications.savedEvents, settings.savedEvents]);
-  function notify(title: string, body: string) {
+  function notify(title: string, body: string, category = "event") {
     if (!("Notification" in window) || Notification.permission !== "granted") return;
     if (isWithinQuietHours(now, timezone, settings.notifications.quietStart, settings.notifications.quietEnd)) return;
-    try { new Notification(title, { body, tag: "my-time-" + title, icon: "/aafnai-logo.png" }); } catch {}
+    const parts = new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
+    const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+    const day = `${values.year}-${values.month}-${values.day}`;
+    if (settings.notifications.frequency === "important" && lastNotificationDay.current.get(category) === day) return;
+    lastNotificationDay.current.set(category, day);
+    try { new Notification(title, { body, tag: "my-time-" + category, icon: "/aafnai-logo.png" }); } catch {}
   }
   async function enableAlerts() {
     if (!("Notification" in window)) { setNotice(l(language, "यो ब्राउजरले सूचना समर्थन गर्दैन।", "This browser does not support notifications.")); return; }
