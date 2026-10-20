@@ -171,6 +171,7 @@ export default function MyTimePage() {
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const loadSequence = useRef(0);
   const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean; hora: boolean; twilight: boolean; tantra: boolean }>(() => {
     try { const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null"); return { clocks: saved?.clocks !== false, scales: saved?.scales !== false, muhurta: saved?.muhurta !== false, choghadiya: saved?.choghadiya !== false, kaal: saved?.kaal !== false, hora: saved?.hora !== false, twilight: saved?.twilight !== false, tantra: saved?.tantra === true }; }
     catch { return { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: false }; }
@@ -241,11 +242,13 @@ export default function MyTimePage() {
   }, [personalContext.effectiveSign, date, language]);
 
   const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences, persistPreferences = false) => {
+    const requestId = ++loadSequence.current;
     setLoading(true); setError("");
     observedLocalDay.current = localDate(nextPreferences.timezone, new Date());
     const controller = new AbortController();
     const cacheKey = myTimeCacheKey(nextDate,nextPreferences.timezone,nextPreferences.lat,nextPreferences.lng);
     const cached = await readMyTimeSnapshot(cacheKey);
+    if (requestId !== loadSequence.current) return;
     if (cached) { setSnapshot(cached); setOfflineSnapshot(true); }
     const referencePromise = homeToday(nextDate, controller.signal).then((body: any) => {
       const p = body?.archive_panchang || body?.panchang || {};
@@ -263,12 +266,14 @@ export default function MyTimePage() {
       });
       const response = await fetch(`/api/v1/mytime/today?${query}`, { signal: controller.signal, headers: { accept: "application/json" }, credentials: "same-origin" });
       const body = await response.json().catch(() => ({}));
+      if (requestId !== loadSequence.current) return;
       if (!response.ok || !body?.ok || !body?.data) throw new Error(body?.error || `HTTP ${response.status}`);
       setSnapshot(body.data as Snapshot);
       setOfflineSnapshot(false);
       void writeMyTimeSnapshot(cacheKey,body.data as Snapshot).catch(()=>{});
       if (persistPreferences) try { localStorage.setItem(PREF_KEY, JSON.stringify(nextPreferences)); } catch {}
     } catch (cause) {
+      if (requestId !== loadSequence.current) return;
       const message = cause instanceof Error ? cause.message : "request_failed";
       try {
         const local = calculateMyTimeSnapshot({ date: nextDate, timezone: nextPreferences.timezone, lat: nextPreferences.lat, lng: nextPreferences.lng });
@@ -288,13 +293,17 @@ export default function MyTimePage() {
         }
       }
     } finally {
-      const reference = await referencePromise;
-      if (reference) setCalendarReference(reference);
-      setLoading(false);
+      if (requestId === loadSequence.current) {
+        const reference = await referencePromise;
+        if (requestId === loadSequence.current && reference) setCalendarReference(reference);
+        if (requestId === loadSequence.current) setLoading(false);
+      } else {
+        controller.abort();
+      }
     }
   }, [date, preferences, language]);
 
-  useEffect(() => { void loadSnapshot(date, preferences); }, []); // Initial load only; edits apply on submit.
+  useEffect(() => { void loadSnapshot(date, preferences); return () => { loadSequence.current += 1; }; }, []); // Initial load only; edits apply on submit.
   useEffect(() => {
     const today = localDate(preferences.timezone, now);
     if (today !== observedLocalDay.current) {
