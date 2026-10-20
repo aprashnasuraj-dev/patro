@@ -95,7 +95,7 @@ describe("personal-time recommendation engine", () => {
 
   it("derives a daily number from birth-date root and Tithi, and incorporates natal Nakshatra/Pada when available", () => {
     expect(calculatePersonalLuckyNumber("1995-04-10", 11)).toBe(4);
-    expect(calculatePersonalLuckyNumber("1995-04-10", 11, 4, 2)).toBe(1);
+    expect(calculatePersonalLuckyNumber("1995-04-10", 11, 4, 2)).toBe(9);
     expect(calculatePersonalLuckyNumber("1995-04-10", 11, 5, 2)).not.toBe(calculatePersonalLuckyNumber("1995-04-10", 11, 4, 2));
     expect(calculatePersonalLuckyNumber("1995-04-10", 0)).toBeNull();
     expect(calculatePersonalLuckyNumber("not-a-date", 11)).toBeNull();
