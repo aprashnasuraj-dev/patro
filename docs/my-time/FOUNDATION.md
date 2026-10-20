@@ -107,3 +107,29 @@ The product owner's three-phase roadmap remains authoritative; this sequence mus
 - No Worker route or frontend route is registered yet.
 - No calculation is described as high-precision until verified against an authoritative reference and an independent engine/fixture.
 - No existing branch is force-pushed and `main` is not modified.
+
+
+## Source-document reconciliation — 2026-10-20
+
+The product owner's architecture document is now readable. It defines three phases explicitly:
+
+1. **Phase 1 — Edge Infrastructure & Ephemeris Core:** Cloudflare Worker integration, a WASM Swiss Ephemeris pipeline, and Cloudflare KV caching keyed by 0.1° latitude/longitude grid and local calendar date.
+2. **Phase 2 — Frontend UI & Interactive Visualizers:** responsive dashboard grid and the multi-layer 24-hour polar visualizer.
+3. **Phase 3 — Personalization & Offline Resilience:** Tarabalam/Chandrabalam, IndexedDB persistence, service-worker offline computation.
+
+### Formula requirements captured from the source
+
+- Tithi: floor(mod(lambdaMoon - lambdaSun, 360°) / 12°) + 1 (30 values).
+- Nakshatra: floor(mod(lambdaMoonSidereal, 360°) / (13°20′)) + 1; Pada: floor(mod(lambdaMoonSidereal, 13°20′) / (3°20′)) + 1. If the engine supplies tropical longitude, apply the selected ayanamsa exactly once to obtain sidereal longitude.
+- Choghadiya: divide the actual sunrise-to-sunset interval and sunset-to-next-sunrise interval independently into eight equal segments.
+- Rahu Kaal: source mapping is Sunday 8, Monday 2, Tuesday 7, Wednesday 5, Thursday 6, Friday 4, Saturday 3; apply to the sunrise-to-sunset eighths.
+- Solar apparent time: local apparent noon is the Sun's upper meridian transit, not simply civil noon or longitude-only mean solar time.
+- Solar altitude/twilight, Moon phase/illumination, eclipse contacts, Hora, Yamaganda, Gulika, Abhijit, Tarabalam, Chandrabalam, and epoch counters are named scope requirements; each needs a reference fixture and explicit support/availability semantics.
+
+### Source-snippet issues to correct, not copy
+
+The example Worker in the source is illustrative rather than production-safe: its cache key template appears malformed and omits latitude; it fixes timezone offset to +345 minutes; it defaults a local date from UTC; it does not validate query parameters/date/coordinates; and it returns permissive wildcard CORS. Implementation must use an IANA timezone and date-aware sunrise/sunset, validated inputs, explicit allowed origins/methods, versioned cache identity, and graceful handling of missing KV or ephemeris data.
+
+### Phase 1 licensing gate
+
+Before adding any Swiss Ephemeris-derived package or WASM binary, make an explicit licensing decision. The upstream project documents AGPL and a separate commercial/professional license path; a package's WASM wrapper does not remove the upstream license obligations. This is a release blocker for a proprietary/closed-source service unless legal/product ownership confirms a compatible licensing path. See [official Swiss Ephemeris licensing](https://www.astro.com/swisseph/swephinfo_e.htm) and [Cloudflare Workers WebAssembly documentation](https://developers.cloudflare.com/workers/runtime-apis/webassembly/).
