@@ -101,7 +101,8 @@
       "publisher": "Cats Protection",
       "url": "https://www.cats.org.uk/cats-blog/why-does-my-cat-purr",
       "published_at": "2023-02-22",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Cats Protection. (2023, February 22). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "Current Biology via PubMed",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37794583/",
       "published_at": "2023-10-03",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Current Biology via PubMed. (2023, October 3). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "Current Biology via PubMed",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38052174/",
       "published_at": "2023-12-04",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Current Biology via PubMed. (2023, December 4). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "Journal of Veterinary Science via PubMed",
       "url": "https://pubmed.ncbi.nlm.nih.gov/32017479/",
       "published_at": "2020-02-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Journal of Veterinary Science via PubMed. (2020, February 1). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "Cats Protection",
       "url": "https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Cats Protection. (n.d.). Cat Body Language. https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language"
     }
   ],
   "word_count": 1131,
