@@ -43,7 +43,7 @@ function isMyTimeSnapshot(value: unknown): value is Snapshot {
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type LoadedRashifalSignal = { date: string; sign: string; signal: RashifalSignal };
-type PersonalContext = { birthChart: SavedJanmaPatroContext | null; rashifalSign: string | null; effectiveSign: string | null } lagna: string; nakshatra: string; pada: number | null; birth: { date: string; time: string; location: string } | null; planets: Array<{ key: string; name: string; sign: string; house: number | null }>; dashas: Array<{ lord: string; start: string; end: string }> } | null; rashifalSign: string | null; effectiveSign: string | null };
+type PersonalContext = { birthChart: SavedJanmaPatroContext | null; rashifalSign: string | null; effectiveSign: string | null };
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
 const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
