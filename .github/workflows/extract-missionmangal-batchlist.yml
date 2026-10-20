@@ -48,7 +48,7 @@ jobs:
           ziplist="$(unzip -Z1 /tmp/MissionMangal-Writer.zip)"
           printf "%s\\n" "$ziplist" | grep -Fx "$schema"
           printf "%s\\n" "$ziplist" | grep -Fx "$protocol"
-          printf "%s\\n" "$ziplist" | grep -E "^${examples_prefix}.+" | head -n 1
+          grep -E "^${examples_prefix}.+" <<< "$ziplist" >/dev/null
           mkdir -p MissionMangal-Writer/examples
           unzip -p /tmp/MissionMangal-Writer.zip "$schema" > "$schema"
           unzip -p /tmp/MissionMangal-Writer.zip "$protocol" > "$protocol"
