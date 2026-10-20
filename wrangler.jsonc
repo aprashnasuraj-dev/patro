@@ -91,6 +91,26 @@
       "migrations_dir": "cloudflare/d1/schema-migrations"
     }
   ],
+  "previews": {
+    "vars": {
+      "GOOGLE_CLIENT_ID": "1057768734502-0on6v9gor3in7k09i0b1js1jp2iauk29.apps.googleusercontent.com",
+      "PUBLIC_SITE_URL": "https://patro-pr-preview.invalid",
+      "SUPABASE_COMPAT_ORIGIN": "https://preview-disabled.invalid/router",
+      "CALENDAR_COVERAGE_START": "1826-04-11",
+      "CALENDAR_COVERAGE_END": "2037-04-13",
+      "CALENDAR_SOURCE_VERSION": "patro-archive-v79",
+      "PUBLIC_REFERENCE_CACHE_VERSION": "public-reference-preview-v1"
+    },
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_id": "7ea225f4-9884-492d-9143-1ff5aba87eed"
+      }
+    ],
+    "ai": {
+      "binding": "AI"
+    }
+  },
   "vars": {
     "GOOGLE_CLIENT_ID": "1057768734502-0on6v9gor3in7k09i0b1js1jp2iauk29.apps.googleusercontent.com",
     "PUBLIC_SITE_URL": "https://aafnaipatro.com",
