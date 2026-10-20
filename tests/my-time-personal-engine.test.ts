@@ -51,6 +51,14 @@ describe("personal-time recommendation engine", () => {
     expect(result.components.find(item => item.key === "activity-hora")?.explanation).toContain("treated as neutral");
   });
 
+
+  it("does not call sign-only Rashifal guidance fully birth-personalized", () => {
+    const result = evaluatePersonalTime({
+      ...base, hasNatalChart: false, rashifal: { domains: { work: 80 } },
+      horaLord: "Mercury", tatwa: "Vayu"
+    });
+    expect(result.confidence).toBe("partially-personalized");
+  });
   it("normalizes the real JanmaPatroSuite saved context and rejects invalid periods", () => {
     const context = normalizeJanmaPatroContext({
       time_known: true,
