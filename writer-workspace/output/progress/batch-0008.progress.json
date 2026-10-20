@@ -76,7 +76,7 @@
       "commit_sha": "277d70ad8f30665f00ce2982e646dcf5d03ccd28"
     },
     "why-ice-floats-in-drinks": {
-      "stage": "committed_pending_remote_verification",
+      "stage": "remote_verified",
       "word_count": 2010,
       "body_words": 1804,
       "source_count": 5,
@@ -86,9 +86,10 @@
         "schema_structural_checks": "passed by structural inspection",
         "citations": "passed: five opened credible sources all used",
         "image_metadata": "1200x630 PNG hero plus 3 original SVG diagrams",
-        "remote_asset_existence": "pending"
+        "remote_asset_existence": "passed: 1200x630 hero PNG and three SVG diagrams listed remotely",
+        "remote_head_verification": "passed"
       },
-      "commit_sha": null
+      "commit_sha": "3765726de957cb980438878bb912d4bd249add4a"
     }
   },
   "pending": [
