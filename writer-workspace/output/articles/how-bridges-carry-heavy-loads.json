@@ -21,102 +21,92 @@
     {
       "h2": "The short answer",
       "paras": [
-        "Bridges carry heavy loads by passing forces from the roadway into beams, trusses, arches or cables, then through piers and abutments into the ground. The deck is only the visible top of a continuous load path, and the shape of the bridge determines how its members share tension, compression, bending and shear. The same basic principle applies to a footbridge and a long highway crossing, even though their materials, spans and details can be very different. [2][3][4]",
-        "Picture a loaded shopping cart rolling onto a bridge. The weight presses down on the deck, but the bridge does not simply push back from one point. Deck slabs spread the load to girders, girders deliver it to bearings and supports, and the substructure spreads it into foundations and soil. A reliable design accounts for that whole route, not merely whether the road surface looks thick or solid. [1][5]"
+        "Bridges carry heavy loads by passing forces from the roadway into beams, trusses, arches or cables, then through piers and abutments into the ground. The deck is only the visible top of a continuous load path, and the shape of the bridge determines how its members share tension, compression, bending and shear. The same basic principle applies to a footbridge and a long highway crossing, even though their materials, spans and details can be very different. [1][2][3]",
+        "Picture a loaded shopping cart rolling onto a bridge. The weight presses down on the deck, but the bridge does not simply push back from one point. Deck slabs spread the load to girders, girders deliver it to bearings and supports, and the substructure spreads it into foundations and soil. A reliable design accounts for that whole route, not merely whether the road surface looks thick or solid. [4][5]"
       ]
     },
     {
       "h2": "The load path from tyres to soil",
       "paras": [
-        "Engineers separate loads into categories because not everything acting on a bridge behaves the same way. The structure has its own permanent weight, often called dead load, while vehicles, pedestrians and other changing actions are live loads. Wind, temperature changes, braking, water movement and earthquakes can also affect the structure. The complete bridge system must transfer those actions through connected components without any link being overloaded. [1][5]",
-        "A typical road bridge illustrates the route. Tyres press against the wearing surface, the deck distributes forces to cross-girders or main girders, and those elements deliver reactions through bearings into piers or abutments. Foundations then transmit the reactions into the ground. If one connection, bearing or foundation cannot perform its job, a strong-looking deck alone cannot make the crossing safe. This chain is why bridge inspection considers both the superstructure and the substructure. [1][2]"
+        "Engineers separate loads into categories because not everything acting on a bridge behaves the same way. The structure has its own permanent weight, often called dead load, while vehicles, pedestrians and other changing actions are live loads. Wind, temperature changes, braking, water movement and earthquakes can also affect the structure. The complete bridge system must transfer those actions through connected components without any link being overloaded. [4][5]",
+        "A typical road bridge illustrates the route. Tyres press against the wearing surface, the deck distributes forces to cross-girders or main girders, and those elements deliver reactions through bearings into piers or abutments. Foundations then transmit the reactions into the ground. If one connection, bearing or foundation cannot perform its job, a strong-looking deck alone cannot make the crossing safe. This chain is why bridge inspection considers both the superstructure and the substructure. [4][1]"
       ]
     },
     {
       "h2": "Bending, tension and compression",
       "paras": [
-        "A beam spanning between supports bends when weight pushes down between them. In a simple span under downward loading, the upper part of the beam is generally compressed while the lower part is stretched, or placed in tension. The material must resist both effects at once. Shear also matters, especially near supports, because adjacent parts of the beam tend to slide relative to one another. The balance of these internal forces is one reason a bridge needs carefully chosen dimensions and materials. [2][4]",
-        "Compression squeezes a member, while tension pulls it apart. Concrete is strong in compression but comparatively weak in tension, so reinforced concrete uses steel bars to help resist tensile stresses. Structural steel can resist both forms of stress efficiently, but slender steel members may buckle under compression before the material itself crushes. Shape matters as much as raw material strength: an element designed to carry a force along its length can use material more efficiently than one forced to resist the same load mainly through bending. [2][3]"
+        "A beam spanning between supports bends when weight pushes down between them. In a simple span under downward loading, the upper part of the beam is generally compressed while the lower part is stretched, or placed in tension. The material must resist both effects at once. Shear also matters, especially near supports, because adjacent parts of the beam tend to slide relative to one another. The balance of these internal forces is one reason a bridge needs carefully chosen dimensions and materials. [1][3]",
+        "Compression squeezes a member, while tension pulls it apart. Concrete is strong in compression but comparatively weak in tension, so reinforced concrete uses steel bars to help resist tensile stresses. Structural steel can resist both forms of stress efficiently, but slender steel members may buckle under compression before the material itself crushes. Shape matters as much as raw material strength: an element designed to carry a force along its length can use material more efficiently than one forced to resist the same load mainly through bending. [1][2]"
       ]
     },
     {
       "h2": "Why bridge shapes behave differently",
       "paras": [
-        "A beam or girder bridge offers a direct route: the deck rests on horizontal members, which carry bending and shear to supports. It is often practical for modest spans, repeated highway crossings and sites where piers can be placed economically. An arch works differently. Its curved form redirects much of the load into compression along the arch, but the ends also push outward, so the abutments must resist horizontal thrust. If the foundations cannot restrain that thrust, an arch loses one of its essential supports. [3][4]",
-        "A suspension bridge hangs the deck from vertical hangers attached to large main cables. The cables take tension, while towers carry compression and anchorages resist the pull at the ends. A cable-stayed bridge sends force more directly from the deck to towers through diagonal cables. Truss bridges use connected triangles so loads are resolved into forces along individual members rather than relying on a single deep beam. These are not decorative variations. Each geometry defines a different way to move force through the structure. [2][3][4]"
+        "A beam or girder bridge offers a direct route: the deck rests on horizontal members, which carry bending and shear to supports. It is often practical for modest spans, repeated highway crossings and sites where piers can be placed economically. An arch works differently. Its curved form redirects much of the load into compression along the arch, but the ends also push outward, so the abutments must resist horizontal thrust. If the foundations cannot restrain that thrust, an arch loses one of its essential supports. [2][3]",
+        "A suspension bridge hangs the deck from vertical hangers attached to large main cables. The cables take tension, while towers carry compression and anchorages resist the pull at the ends. A cable-stayed bridge sends force more directly from the deck to towers through diagonal cables. Truss bridges use connected triangles so loads are resolved into forces along individual members rather than relying on a single deep beam. These are not decorative variations. Each geometry defines a different way to move force through the structure. [1][2][3]"
       ]
     },
     {
       "h2": "Why triangles make trusses efficient",
       "paras": [
-        "Triangles are useful in a truss because a pin-jointed triangle keeps its shape when its side lengths stay fixed. A four-sided frame with no diagonal can distort into a parallelogram, while a properly braced triangle resists that change. In a bridge truss, a network of triangles divides a large structural task among many members. Some members become primarily tensile and others primarily compressive, depending on the truss layout and where the loads act. [2][4]",
-        "This does not mean every truss member carries an equal share, nor that a truss is automatically stronger than every beam. Member size, the span, connection details, bracing, material quality and the position of the load all influence performance. A single failed or badly connected member can alter the force pattern in neighbouring members. Triangulation is efficient when the geometry and joints are designed for the expected loading, not a magic shape that removes the need for calculations and inspection. [1][2]"
+        "Triangles are useful in a truss because a pin-jointed triangle keeps its shape when its side lengths stay fixed. A four-sided frame with no diagonal can distort into a parallelogram, while a properly braced triangle resists that change. In a bridge truss, a network of triangles divides a large structural task among many members. Some members become primarily tensile and others primarily compressive, depending on the truss layout and where the loads act. [1][3]",
+        "This does not mean every truss member carries an equal share, nor that a truss is automatically stronger than every beam. Member size, the span, connection details, bracing, material quality and the position of the load all influence performance. A single failed or badly connected member can alter the force pattern in neighbouring members. Triangulation is efficient when the geometry and joints are designed for the expected loading, not a magic shape that removes the need for calculations and inspection. [4][1]"
       ]
     },
     {
       "h2": "Moving loads, fatigue and vibration",
       "paras": [
-        "A truck does not apply the same force at the same location indefinitely. As it crosses a bridge, the load moves, changing the bending moment and shear along the span. Heavy vehicles can also create dynamic effects when wheels strike uneven pavement or when the bridge vibrates. Designers account for these effects through load models and safety provisions rather than assuming that a moving vehicle is identical to a static stack of weights. Bridge evaluation then compares expected effects with the structure's documented capacity. [1]",
-        "Repeated loading introduces another issue: fatigue. Steel details and connections may develop cracks after many cycles even when each individual passage is below the load that would cause immediate failure. Concrete can crack and deteriorate, while repeated vehicle impacts can worsen damage around joints and bearings. Fatigue depends on the stress range, number of cycles, detail shape and material condition. It is therefore possible for a bridge to carry everyday traffic for years while still needing careful checks for damage that accumulates gradually. [1][5]"
+        "A truck does not apply the same force at the same location indefinitely. As it crosses a bridge, the load moves, changing the bending moment and shear along the span. Heavy vehicles can also create dynamic effects when wheels strike uneven pavement or when the bridge vibrates. Designers account for these effects through load models and safety provisions rather than assuming that a moving vehicle is identical to a static stack of weights. Bridge evaluation then compares expected effects with the structure's documented capacity. [4]",
+        "Repeated loading introduces another issue: fatigue. Steel details and connections may develop cracks after many cycles even when each individual passage is below the load that would cause immediate failure. Concrete can crack and deteriorate, while repeated vehicle impacts can worsen damage around joints and bearings. Fatigue depends on the stress range, number of cycles, detail shape and material condition. It is therefore possible for a bridge to carry everyday traffic for years while still needing careful checks for damage that accumulates gradually. [4][5]"
       ]
     },
     {
       "h2": "Wind, water, temperature and the foundations",
       "paras": [
-        "Gravity is only one part of a bridge's environment. Wind can push sideways, excite vibration or create twisting forces; moving water can scour soil away from bridge foundations; and temperature changes make structural materials expand and contract. Earthquakes can impose movements that ordinary vertical-load calculations do not capture. A bridge's location influences which of these actions dominate, so the same design cannot simply be copied unchanged from a sheltered urban street to a deep river valley. [1][5]",
-        "The foundation is a structural component, not an afterthought. A pier can be strong enough to resist the load above it yet settle or rotate if the supporting soil or rock cannot safely carry the reactions. Floods can remove sediment around piles and footings, reducing the support that was present when the bridge opened. Engineers therefore combine structural analysis with geotechnical and hydraulic assessment. A beautiful arch or efficient truss still depends on stable ground and on details that let the bridge move where movement is intended. [1][4]"
+        "Gravity is only one part of a bridge's environment. Wind can push sideways, excite vibration or create twisting forces; moving water can scour soil away from bridge foundations; and temperature changes make structural materials expand and contract. Earthquakes can impose movements that ordinary vertical-load calculations do not capture. A bridge's location influences which of these actions dominate, so the same design cannot simply be copied unchanged from a sheltered urban street to a deep river valley. [4][5]",
+        "The foundation is a structural component, not an afterthought. A pier can be strong enough to resist the load above it yet settle or rotate if the supporting soil or rock cannot safely carry the reactions. Floods can remove sediment around piles and footings, reducing the support that was present when the bridge opened. Engineers therefore combine structural analysis with geotechnical and hydraulic assessment. A beautiful arch or efficient truss still depends on stable ground and on details that let the bridge move where movement is intended. [4][3]"
       ]
     },
     {
       "h2": "What bridge load ratings really tell us",
       "paras": [
-        "A load rating estimates how a particular existing bridge performs under defined vehicle loads and assessment assumptions. Transportation agencies use these evaluations to support decisions about allowed loads, inspections, repairs and restrictions. The rating is not a universal label saying that a bridge can carry any vehicle, at any speed, anywhere on its deck. It is tied to the structure's known geometry, materials, condition and the method used to calculate capacity. [1]",
-        "A posted weight limit also does not mean that an ordinary vehicle is about to make the bridge collapse. It indicates that the agency has set a limit under the applicable rules and evidence. Conversely, the absence of a sign does not mean a driver should ignore posted restrictions or that every conceivable overload is acceptable. Load limits, inspections and maintenance work together. The engineering question is whether anticipated demand can be carried with suitable reliability, including the uncertainties in an aging structure's actual condition. [1]"
+        "A load rating estimates how a particular existing bridge performs under defined vehicle loads and assessment assumptions. Transportation agencies use these evaluations to support decisions about allowed loads, inspections, repairs and restrictions. The rating is not a universal label saying that a bridge can carry any vehicle, at any speed, anywhere on its deck. It is tied to the structure's known geometry, materials, condition and the method used to calculate capacity. [4]",
+        "A posted weight limit also does not mean that an ordinary vehicle is about to make the bridge collapse. It indicates that the agency has set a limit under the applicable rules and evidence. Conversely, the absence of a sign does not mean a driver should ignore posted restrictions or that every conceivable overload is acceptable. Load limits, inspections and maintenance work together. The engineering question is whether anticipated demand can be carried with suitable reliability, including the uncertainties in an aging structure's actual condition. [4]"
       ]
     },
     {
       "h2": "The counterintuitive lesson: strong parts are not enough",
       "paras": [
-        "Bridge capacity is a system property. A very strong girder cannot compensate for a failed bearing, a cracked connection, undermined foundation or missing lateral bracing. Engineers look for continuous load paths and for the ways a structure might redistribute forces if one component weakens. Redundancy can provide alternative paths, but not every bridge has the same degree of redundancy, and no design makes inspection unnecessary. The details at joints and supports can be as important to safety as the large members that dominate photographs. [1][2]",
-        "This also explains why two bridges with similar shapes can have different load capacities. Their span, support conditions, materials, corrosion, cracks, connection details, maintenance history and exposure to floods or impacts may differ. The best bridge is not simply the one that uses the most steel or the thickest concrete. It is the one whose complete structural system is matched to the site, expected loads, durability demands and inspection regime, then maintained as those conditions change. [1][5]"
+        "Bridge capacity is a system property. A very strong girder cannot compensate for a failed bearing, a cracked connection, undermined foundation or missing lateral bracing. Engineers look for continuous load paths and for the ways a structure might redistribute forces if one component weakens. Redundancy can provide alternative paths, but not every bridge has the same degree of redundancy, and no design makes inspection unnecessary. The details at joints and supports can be as important to safety as the large members that dominate photographs. [4][1]",
+        "This also explains why two bridges with similar shapes can have different load capacities. Their span, support conditions, materials, corrosion, cracks, connection details, maintenance history and exposure to floods or impacts may differ. The best bridge is not simply the one that uses the most steel or the thickest concrete. It is the one whose complete structural system is matched to the site, expected loads, durability demands and inspection regime, then maintained as those conditions change. [4][5]"
       ]
     }
   ],
   "faq": [
     {
       "q": "Why does a bridge not collapse under the weight of traffic?",
-      "a": "Traffic loads are spread through the deck and supporting members into piers, abutments and foundations. Engineers size and connect each element so it can carry its share of forces with appropriate safety margins. Condition and maintenance still matter, especially on older bridges. [1][2]"
+      "a": "Traffic loads are spread through the deck and supporting members into piers, abutments and foundations. Engineers size and connect each element so it can carry its share of forces with appropriate safety margins. Condition and maintenance still matter, especially on older bridges. [4][1]"
     },
     {
       "q": "Which bridge type is strongest?",
-      "a": "There is no universally strongest type. Beam, truss, arch, cable-stayed and suspension bridges distribute forces differently, and the best choice depends on span, site geometry, ground conditions, materials, cost and the kinds of loads expected. [2][3][4]"
+      "a": "There is no universally strongest type. Beam, truss, arch, cable-stayed and suspension bridges distribute forces differently, and the best choice depends on span, site geometry, ground conditions, materials, cost and the kinds of loads expected. [1][2][3]"
     },
     {
       "q": "Why are triangles common in truss bridges?",
-      "a": "A properly connected triangle resists shape change because its side lengths constrain the geometry. Trusses use networks of triangular members to carry loads as tension or compression, but their strength still depends on member dimensions, joints, bracing and maintenance. [2][4]"
+      "a": "A properly connected triangle resists shape change because its side lengths constrain the geometry. Trusses use networks of triangular members to carry loads as tension or compression, but their strength still depends on member dimensions, joints, bracing and maintenance. [1][3]"
     },
     {
       "q": "Can a bridge fail even if its deck is strong?",
-      "a": "Yes. Bearings, connections, piers, abutments and foundations are all part of the load path. Scour, corrosion, fatigue cracks or a damaged connection can undermine the system even if the road surface and main girders appear substantial. [1][5]"
+      "a": "Yes. Bearings, connections, piers, abutments and foundations are all part of the load path. Scour, corrosion, fatigue cracks or a damaged connection can undermine the system even if the road surface and main girders appear substantial. [4][5]"
     },
     {
       "q": "What does a bridge weight limit mean?",
-      "a": "It reflects an assessment of a particular bridge under defined vehicle loads and assumptions. It is not a guarantee that all vehicles below one number are safe in every condition, and drivers should follow posted limits and restrictions. [1]"
+      "a": "It reflects an assessment of a particular bridge under defined vehicle loads and assumptions. It is not a guarantee that all vehicles below one number are safe in every condition, and drivers should follow posted limits and restrictions. [4]"
     }
   ],
   "sources": [
     {
       "n": 1,
-      "title": "Load Rating",
-      "publisher": "Federal Highway Administration",
-      "url": "https://www.fhwa.dot.gov/bridge/loadrating/",
-      "published_at": null,
-      "retrieved_at": "2026-10-20",
-      "apa": "Federal Highway Administration. (n.d.). Load rating. U.S. Department of Transportation. https://www.fhwa.dot.gov/bridge/loadrating/",
-      "citation": "Federal Highway Administration, n.d."
-    },
-    {
-      "n": 2,
       "title": "Bridge Types: Tensile & Compressive Forces",
       "publisher": "TeachEngineering, University of Colorado Boulder",
       "url": "https://www.teachengineering.org/activities/cub_brid_lesson01_activity1",
@@ -126,7 +116,7 @@
       "citation": "TeachEngineering, n.d."
     },
     {
-      "n": 3,
+      "n": 2,
       "title": "Building Bridges Activity: Beam, Truss, Arch, and Suspension",
       "publisher": "Center for Architecture, AIA New York",
       "url": "https://www.centerforarchitecture.org/k-12/resources/building-bridges-activity-beam-truss-arch-and-suspension/",
@@ -136,7 +126,7 @@
       "citation": "Center for Architecture, n.d."
     },
     {
-      "n": 4,
+      "n": 3,
       "title": "The Types of Bridges",
       "publisher": "Yale-New Haven Teachers Institute",
       "url": "https://teachersinstitute.yale.edu/curriculum/units/2006/4/06.04.06/7",
@@ -144,6 +134,16 @@
       "retrieved_at": "2026-10-20",
       "apa": "Wade, D. L. (2006). The types of bridges. Yale-New Haven Teachers Institute. https://teachersinstitute.yale.edu/curriculum/units/2006/4/06.04.06/7",
       "citation": "Wade, 2006"
+    },
+    {
+      "n": 4,
+      "title": "Load Rating",
+      "publisher": "Federal Highway Administration",
+      "url": "https://www.fhwa.dot.gov/bridge/loadrating/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "apa": "Federal Highway Administration. (n.d.). Load rating. U.S. Department of Transportation. https://www.fhwa.dot.gov/bridge/loadrating/",
+      "citation": "Federal Highway Administration, n.d."
     },
     {
       "n": 5,

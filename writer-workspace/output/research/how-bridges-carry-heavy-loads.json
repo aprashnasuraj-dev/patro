@@ -22,46 +22,46 @@
   "sources": [
     {
       "n": 1,
-      "url": "https://www.fhwa.dot.gov/bridge/loadrating/",
-      "title": "Load Rating",
-      "publisher": "Federal Highway Administration",
-      "reliability": "government",
-      "notes": [
-        "Federal Highway Administration resources describe bridge load rating as a structured engineering evaluation using defined methods and vehicle loads.",
-        "Specific span examples are illustrative rather than universal design limits."
-      ]
-    },
-    {
-      "n": 2,
       "url": "https://www.teachengineering.org/activities/cub_brid_lesson01_activity1",
       "title": "Bridge Types: Tensile & Compressive Forces",
       "publisher": "TeachEngineering, University of Colorado Boulder",
       "reliability": "university or professional educational institution",
       "notes": [
-        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
-        "Tension and compression are different internal actions; bridge type and geometry determine which members carry them."
+        "Explains how tension and compression act in bridge members and how bridge geometry changes the force path.",
+        "Uses simplified teaching models; real designs also depend on material properties, joints, bracing, loading and support conditions."
       ]
     },
     {
-      "n": 3,
+      "n": 2,
       "url": "https://www.centerforarchitecture.org/k-12/resources/building-bridges-activity-beam-truss-arch-and-suspension/",
       "title": "Building Bridges Activity: Beam, Truss, Arch, and Suspension",
       "publisher": "Center for Architecture, AIA New York",
       "reliability": "university or professional educational institution",
       "notes": [
-        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
-        "Specific span examples are illustrative rather than universal design limits."
+        "Compares beam, truss, arch and suspension bridge concepts and uses structural-force illustrations to explain their behaviour.",
+        "An educational activity that clarifies mechanisms rather than specifying engineering design capacity."
       ]
     },
     {
-      "n": 4,
+      "n": 3,
       "url": "https://teachersinstitute.yale.edu/curriculum/units/2006/4/06.04.06/7",
       "title": "The Types of Bridges",
       "publisher": "Yale-New Haven Teachers Institute",
       "reliability": "university or professional educational institution",
       "notes": [
-        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
-        "Specific span examples are illustrative rather than universal design limits."
+        "Explains arch thrust, compression-dominated action and the way bridge forms span openings.",
+        "Treats bridge forms as distinct force systems; dimensions and site conditions determine real capacity."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.fhwa.dot.gov/bridge/loadrating/",
+      "title": "Load Rating",
+      "publisher": "Federal Highway Administration",
+      "reliability": "government",
+      "notes": [
+        "Describes bridge load rating as an engineering evaluation of existing structures against defined loads and assumptions.",
+        "The rating framework supports decisions on capacity and restrictions; it should not be interpreted as a universal safe weight for every situation."
       ]
     },
     {
@@ -71,8 +71,8 @@
       "publisher": "Yale-New Haven Teachers Institute",
       "reliability": "university or professional educational institution",
       "notes": [
-        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
-        "Specific span examples are illustrative rather than universal design limits."
+        "Provides teaching material on bridge types, including permanent and changing loads and the role of foundations and supports.",
+        "Conceptual teaching examples illustrate force transfer; site-specific analysis is needed for actual design."
       ]
     }
   ],
