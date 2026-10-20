@@ -15,7 +15,7 @@
 | Panchang formula verification / पञ्चाङ्ग सूत्र प्रमाणीकरण | Partial / आंशिक | Shared location-aware Panchang now supplies sunrise Tithi, Nakshatra/Pada, Yoga, Karana and sidereal signs; additional fixtures and convention review remain |
 | Edge API and cache / एज API तथा क्यास | In progress / जारी | /api/v1/mytime/today dispatched by the existing main Worker; feature flag required; no new binding |
 | Bilingual dashboard / द्विभाषिक ड्यासबोर्ड | Initial slice / पहिलो चरण | /mytime, bilingual panels, live SVG polar dial, Choghadiya/inauspicious overlays, quick timing insight, twilight and Hora/eclipses panels; visual regression remains |
-| Offline and accessibility / अफलाइन तथा पहुँचयोग्यता | Partial / आंशिक | IndexedDB 24-hour cache and best-effort client calculation fallback exist; service-worker offline fallback and full accessibility review remain |
+| Offline and accessibility / अफलाइन तथा पहुँचयोग्यता | Partial / आंशिक | IndexedDB 24-hour cache, best-effort local calculation, and service-worker app-shell caching exist; guaranteed first-visit offline use, airplane-mode E2E, and full accessibility review remain |
 | CI and regression proof / CI तथा प्रतिगमन परीक्षण | Running / चलिरहेको | Added timezone/API and temporal-window tests to the product test script; latest GitHub CI must still be confirmed |
 
 ## Verified today | आज पुष्टि गरिएका तथ्य
@@ -30,7 +30,7 @@
 
 - Added opt-in bilingual `/mytime` widget and a color-coded outer Tatwa segment on the existing polar dial; no new route or Worker.
 - `src/patro-tools/core/tantra/constants.ts` contains the supplied Nitya Devi, Pancha Tatwa and Yogini direction maps; `engine.ts` validates tithi and solar-event ordering before computing the traditional sequence.
-- The snapshot/API now includes `tantraVidya` when sunrise, sunset and next sunrise are available. The browser recomputes the active Tatwa and Mahanisha state against the live clock for today; historical/future selected dates use the snapshot evaluation instant.
+- The snapshot/API now includes `tantraVidya` when sunrise, sunset and next sunrise are available. The browser recalculates the live Tithi from the shared `panchangAt` astronomy primitive before computing today's Nitya/Tatwa/Yogini/Mahanisha view; historical/future selected dates use the snapshot evaluation instant.
 - Existing IndexedDB stores the expanded snapshot object without a schema migration; the cache key is versioned to `v2` to avoid reusing old entries. The service worker still uses the existing `/mytime` shell route.
 - Method note: Tatwa timing is a rule-based 24-minute sequence anchored to sunrise; Mahanisha is approximated as ±24 minutes around the midpoint between sunset and next sunrise. These are traditional interpretations, not scientifically validated energy measurements. CI and integration verification are pending.
 
@@ -118,4 +118,4 @@ The current UI uses HTML/CSS plus inline SVG and subtle CSS motion. It is more d
 
 - Tantra data is part of the existing snapshot/API response and therefore uses the existing Worker and snapshot object cache; no separate Worker or binding is added.
 - Fixed twilight dusk searches to request a setting-altitude crossing. The previous rising-crossing direction could return the next dawn as the dusk timestamp.
-- CI must be rerun on the latest branch commit; do not infer a passing result from older runs.
+- The latest commit is `2bc5f34091af5bf58da2b2d4e7235c205ed34c82`; Janma/Rashifal fast gates and full PR CI are running/queued for that exact SHA. Do not infer a passing result from older runs.
