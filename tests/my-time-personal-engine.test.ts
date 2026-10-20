@@ -22,6 +22,14 @@ describe("personal-time recommendation engine", () => {
     expect(result.confidence).toBe("personalized");
     expect(result.reasons.some(reason => reason.includes("published work domain score"))).toBe(true);
   });
+
+  it("changes the recommendation when the matching Rashifal domain changes", () => {
+    const high = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 95 } }, horaLord: "Mercury", tatwa: "Vayu" });
+    const low = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 20 } }, horaLord: "Mercury", tatwa: "Vayu" });
+    expect(high.score).toBeGreaterThan(low.score);
+    expect(high.components.find(item => item.key === "rashifal")?.score).toBe(95);
+    expect(low.components.find(item => item.key === "rashifal")?.score).toBe(20);
+  });
   it("supports Rashifal section scores when domain map is absent", () => {
     const result = evaluatePersonalTime({ ...base, rashifal: { sections: [{ domain: "work", score: 81 }] } });
     expect(result.components.find(item => item.key === "rashifal")?.score).toBe(81);
