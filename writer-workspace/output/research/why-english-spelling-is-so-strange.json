@@ -1,0 +1,67 @@
+{
+  "slug": "why-english-spelling-is-so-strange",
+  "research_question": "Explain historical causes of irregular English spelling, including sound change, borrowing, scribal conventions, printing, and standardization.",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://journals.uc.edu/index.php/vl/article/view/5215",
+      "title": "Notes on the History of English Spelling",
+      "publisher": "Visible Language",
+      "reliability": "Peer-reviewed scholarly journal article by Richard L. Venezky",
+      "notes": [
+        "English spelling reflects multiple historical influences rather than one consistent reform.",
+        "Spelling conventions were shaped by scribal practices and contact with Old French and Latin.",
+        "The history of letter use and sound change helps explain apparent irregularities."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://academic.oup.com/book/41217/chapter-abstract/350687942",
+      "title": "Blame the Printing Press",
+      "publisher": "Oxford University Press",
+      "reliability": "Academic book chapter from Oxford University Press",
+      "notes": [
+        "Printing in England expanded while spoken English vowels were undergoing major changes.",
+        "Printing helped stabilize some spellings even as pronunciation continued to evolve.",
+        "Earlier written standards and printers' choices contributed to modern conventions."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://oed.hertford.ox.ac.uk/historical-background/johnson/",
+      "title": "Johnson's dictionary (1755)",
+      "publisher": "Examining the OED, University of Oxford",
+      "reliability": "University-hosted historical lexicography resource",
+      "notes": [
+        "Samuel Johnson's 1755 dictionary became highly influential in English lexicography.",
+        "The dictionary used quotations to document and illustrate meanings and word history.",
+        "Dictionaries helped codify usage, but they did not erase the historical diversity of spelling."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/784CDEA50FF1770A765A6837D1FE909B/9781108477321c1_11-47.pdf/history_of_english.pdf",
+      "title": "History of English",
+      "publisher": "Cambridge University Press",
+      "reliability": "Academic university-press reference chapter",
+      "notes": [
+        "The Great Vowel Shift reorganized long vowels in English during the late Middle and early Modern English periods.",
+        "Sound change created mismatches between established spellings and later pronunciations.",
+        "The vowel shift involved several linked changes rather than a single uniform event."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://academic.oup.com/book/26554",
+      "title": "The Making of the Oxford English Dictionary",
+      "publisher": "Oxford University Press",
+      "reliability": "Academic historical study by an Oxford English Dictionary associate editor",
+      "notes": [
+        "The OED developed from nineteenth-century efforts to collect historical evidence for English words.",
+        "Its first printed fascicle appeared in 1884 and the first edition was completed in 1928.",
+        "Historical dictionaries record variation and development rather than imposing a fully phonetic spelling system."
+      ]
+    }
+  ]
+}
