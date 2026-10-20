@@ -40,7 +40,7 @@ export function normalizeMyTimePersonalSettings(value: unknown): MyTimePersonalS
   const savedEvents = Array.isArray(raw.savedEvents) ? raw.savedEvents.filter((item): item is MyTimeSavedEvent =>
     !!item && typeof item === "object" && typeof item.id === "string" && typeof item.title === "string" &&
     item.title.trim().length > 0 && item.title.length <= 100 && typeof item.at === "string" && Number.isFinite(Date.parse(item.at))
-  ).slice(0, 50).map(item => ({ id: item.id, title: item.title.trim(), at: new Date(item.at).toISOString(), ...(typeof item.notifiedAt === "string" ? { notifiedAt: item.notifiedAt } : {}) })) : [];
+  ).slice(-50).map(item => ({ id: item.id, title: item.title.trim(), at: new Date(item.at).toISOString(), ...(typeof item.notifiedAt === "string" ? { notifiedAt: item.notifiedAt } : {}) })) : [];
   return {
     setupComplete: raw.setupComplete === true,
     lens: typeof raw.lens === "string" && lenses.has(raw.lens as MyTimeLens) ? raw.lens as MyTimeLens : "universal",
