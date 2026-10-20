@@ -1,0 +1,33 @@
+{
+ "slug": "why-hurricanes-spin",
+ "researched_at": "2026-10-20",
+ "sources": [
+  {
+   "n": 1,
+   "url": "https://nesdis.noaa.gov/content/noaa-20-sees-low-pressure-system-spinning-coast-south-america",
+   "title": "NOAA-20 Sees Low-Pressure System Spinning Off the Coast of South America",
+   "publisher": "NOAA NESDIS",
+   "reliability": "government",
+   "notes": [
+    "Low-pressure systems rotate counterclockwise in the Northern Hemisphere and clockwise in the Southern Hemisphere because of the Coriolis effect.",
+    "Converging air is deflected to one side as it moves toward the centre."
+   ]
+  },
+  {
+   "n": 3,
+   "url": "https://www.pbs.org/wgbh/nova/earth/coriolis-effect.html",
+   "title": "The Coriolis Effect",
+   "publisher": "PBS NOVA",
+   "reliability": "educational",
+   "notes": [
+    "Air rushing toward the low-pressure eye is deflected, so the whole system spins.",
+    "The equator moves faster than the poles because Earth is widest in the middle."
+   ]
+  }
+ ],
+ "image": {
+  "method": "generated",
+  "prompt": "Simple gradient illustration with the title text",
+  "note": "Replace with a topical image in real runs."
+ }
+}
