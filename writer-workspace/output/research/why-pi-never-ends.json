@@ -1,0 +1,62 @@
+{
+  "slug": "why-pi-never-ends",
+  "research_question": "Why does pi have an infinite, non-repeating decimal expansion, and how is that fact different from calculating digits?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://mathworld.wolfram.com/Pi.html",
+      "title": "Pi",
+      "publisher": "Wolfram MathWorld",
+      "reliability": "Mathematical reference maintained by Wolfram Research",
+      "notes": [
+        "Pi is the ratio of a circle's circumference to its diameter in Euclidean geometry.",
+        "Pi is irrational and has a non-terminating, non-repeating decimal expansion.",
+        "Pi occurs in many areas of mathematics beyond elementary circle measurements."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/",
+      "title": "Pi through the ages",
+      "publisher": "MacTutor History of Mathematics Archive, University of St Andrews",
+      "reliability": "University mathematics history archive",
+      "notes": [
+        "Mathematicians have developed increasingly accurate approximations of pi over millennia.",
+        "Computing more digits is distinct from proving properties of the number itself."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://openstax.org/books/contemporary-mathematics/pages/5-1-rational-and-irrational-numbers",
+      "title": "Rational and Irrational Numbers",
+      "publisher": "OpenStax, Rice University",
+      "reliability": "University-level open textbook",
+      "notes": [
+        "Rational numbers can be written as ratios of integers with nonzero denominators.",
+        "Rational decimals terminate or eventually repeat; irrational decimals do neither."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.britannica.com/science/pi-mathematics",
+      "title": "Pi",
+      "publisher": "Encyclopaedia Britannica",
+      "reliability": "Established encyclopedia",
+      "notes": [
+        "Pi has important uses in geometry and mathematical analysis.",
+        "Finite decimal values are approximations rather than the complete exact value."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.nist.gov/si-redefinition/metric-si/si-units",
+      "title": "SI Units",
+      "publisher": "National Institute of Standards and Technology",
+      "reliability": "Government measurement standards agency",
+      "notes": [
+        "Measurement precision and uncertainty determine how many digits are useful in applied calculations."
+      ]
+    }
+  ]
+}
