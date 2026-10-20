@@ -4,6 +4,7 @@ import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { apparentSolarTime } from "../../patro-tools/core/apparent-solar-time";
+import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleCounters } from "../../patro-tools/core/my-time-extended";
 import { choghadiyaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
 import { deviceZone, readPlace } from "../../place/place";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
@@ -146,9 +147,31 @@ export default function MyTimePage() {
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean }>(() => {
+    try { const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null"); return { clocks: saved?.clocks !== false, scales: saved?.scales !== false, muhurta: saved?.muhurta !== false }; }
+    catch { return { clocks: true, scales: true, muhurta: true }; }
+  });
   const ne = language === "ne";
+  const timeScales = useMemo(() => timeScaleCounters(now), [now]);
+  const nepalTime = useMemo(() => nepalStandardTime(now), [now]);
+  const abhijit = useMemo(() => snapshot ? abhijitMuhurta(snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc) : null, [snapshot]);
+  const currentChoghadiya = useMemo(() => {
+    if (!snapshot) return undefined;
+    const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
+    return [...windows.day, ...windows.night].find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
+  }, [snapshot, now]);
+  const currentKaal = useMemo(() => {
+    if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
+    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
+  }, [snapshot, now, preferences.timezone]);
+  const personalizedMuhurta = useMemo(() => {
+    if (!snapshot) return null;
+    try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
+    catch { return null; }
+  }, [snapshot, now, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
 
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
+  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v1", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
   useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
   useEffect(() => {
@@ -244,6 +267,27 @@ export default function MyTimePage() {
       <label><span>{l(language,"देशान्तर","Longitude")}</span><input type="number" min="-180" max="180" step="0.0001" value={preferences.lng} onChange={event=>setPreferences(old=>({...old,lng:Number(event.target.value)}))}/></label>
       <button type="button" className="mt-primary" disabled={loading || !date || !preferences.timezone.trim()} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
     </section>
+
+    <section className="mt-observatory-controls" aria-label={l(language,"समय तह अनुकूलन","Customize time layers")}>
+      <div><span className="mt-section-kicker">{l(language,"आफ्नो दृश्य बनाउनुहोस्","MAKE THIS VIEW YOURS")}</span><strong>{l(language,"देखाउने समय तहहरू","Visible time layers")}</strong></div>
+      <label><input type="checkbox" checked={observatoryLayers.clocks} onChange={event=>setObservatoryLayers(old=>({...old,clocks:event.target.checked}))}/>{l(language,"नेपाल/स्थानीय घडी","Nepal + local clocks")}</label>
+      <label><input type="checkbox" checked={observatoryLayers.scales} onChange={event=>setObservatoryLayers(old=>({...old,scales:event.target.checked}))}/>{l(language,"JD / MJD / Unix","JD / MJD / Unix")}</label>
+      <label><input type="checkbox" checked={observatoryLayers.muhurta} onChange={event=>setObservatoryLayers(old=>({...old,muhurta:event.target.checked}))}/>{l(language,"शुभ समय तह","Muhurta layer")}</label>
+    </section>
+    {observatoryLayers.clocks && <section className="mt-extra-grid" aria-label={l(language,"नेपाल र स्थानीय समय","Nepal and local time")}>
+      <article className="mt-extra-card"><small>{l(language,"नेपाल मानक समय · UTC+05:45","Nepal Standard Time · UTC+05:45")}</small><strong>{nepalTime.time}</strong><span>{nepalTime.date} · NPT</span></article>
+      <article className="mt-extra-card"><small>{l(language,"तपाईंको चयन गरिएको समय क्षेत्र","Your selected timezone")}</small><strong>{localTime}</strong><span>{preferences.timezone}</span></article>
+      <article className="mt-extra-card"><small>{l(language,"विक्रम संवत् · चयन गरिएको मिति","Bikram Sambat · selected date")}</small><strong>{calendarReference?.bs || "—"}</strong><span>{l(language,"AafnaiPatro अभिलेखबाट","From the AafnaiPatro calendar archive")}</span></article>
+    </section>}
+    {observatoryLayers.scales && <section className="mt-extra-card mt-scales-panel" aria-label={l(language,"समय मापन","Time scales")}>
+      <div><span className="mt-section-kicker">{l(language,"एकै क्षणका विभिन्न मापन","ONE INSTANT, MULTIPLE TIME SCALES")}</span><h2>{l(language,"समयका वैज्ञानिक काउन्टरहरू","Time-scale counters")}</h2></div>
+      <div className="mt-extra-grid mt-scale-grid"><article><small>Julian Day (JD)</small><strong>{timeScales.julian_day.toFixed(6)}</strong></article><article><small>Modified Julian Day (MJD)</small><strong>{timeScales.modified_julian_day.toFixed(6)}</strong></article><article><small>Unix seconds</small><strong>{timeScales.unix_seconds}</strong></article><article><small>Unix milliseconds</small><strong>{timeScales.unix_milliseconds}</strong></article></div>
+      <p>{timeScales.utc_iso} UTC · {l(language,"JD/MJD UTC instant बाट निकालिएका हुन्; Unix काउन्टर epoch-based हुन्।","JD/MJD are derived from the UTC instant; Unix counters are epoch-based.")}</p>
+    </section>}
+    {observatoryLayers.muhurta && <section className="mt-extra-grid" aria-label={l(language,"मुहूर्त र व्यक्तिगत समय","Muhurta and personalized timing")}>
+      <article className="mt-extra-card"><small>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</small><strong>{abhijit ? formatInstant(abhijit.start_utc,preferences.timezone,language)+" – "+formatInstant(abhijit.end_utc,preferences.timezone,language) : "—"}</strong><span>{abhijit ? l(language,"स्थानीय दिनको उज्यालो अवधि र मध्यबिन्दुबाट परम्परागत रूपमा निकालिएको।","Derived traditionally from the daylight span and its midpoint.") : l(language,"सूर्योदय र सूर्यास्त उपलब्ध भएपछि देखाइन्छ।","Shown when sunrise and sunset are available.")}</span></article>
+      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"व्यक्तिगत आधार प्रतीक्षामा","Awaiting personal context")}</strong><span>{personalizedMuhurta ? l(language,"पारदर्शी नियम-आधारित स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Transparent rule-based score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span></article>
+    </section>}
 
     {error && <div className="mt-notice" role="status"><CircleAlert size={19}/><div><strong>{l(language,"गणना सेवा","Calculation service")}</strong><p>{error}</p>{error.includes("not enabled") || error.includes("सक्रिय") ? <small>{l(language,"यो पृष्ठ र API feature flag सक्रिय भएपछि परिणाम देखिनेछ।","Results appear when the page and API rollout are enabled.")}</small> : null}</div></div>}
 
