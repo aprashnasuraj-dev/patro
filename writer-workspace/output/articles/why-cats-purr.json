@@ -143,7 +143,15 @@
   ],
   "word_count": 1131,
   "reading_minutes": 5,
-  "image": null,
+  "image": {
+    "file": "why-cats-purr-hero.png",
+    "alt": "A calm domestic cat with relaxed posture, soft eyes and a gentle expression, illustrating feline purring and communication.",
+    "caption": "Original illustration created for this article.",
+    "credit": "Original artwork created for Aafnaipatro.",
+    "license": "CC0 (original illustration)",
+    "width": 1200,
+    "height": 630
+  },
   "keywords": [
     "cats",
     "cat purring",
