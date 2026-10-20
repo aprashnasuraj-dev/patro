@@ -44,6 +44,28 @@ export function createJanmaPatroContext(chart: ChartResult) {
   };
 }
 
+/** Read the saved birth details back into Janmapatro's editable form. */
+export function readJanmaPatroBirthInput(storage?: Pick<Storage, "getItem">) {
+  try {
+    const target = storage ?? (typeof localStorage === "undefined" ? undefined : localStorage);
+    if (!target) return null;
+    const raw = JSON.parse(target.getItem(JANMAPATRO_CONTEXT_STORAGE_KEY) || "null");
+    const birth = raw && typeof raw === "object" && raw.birth && typeof raw.birth === "object" ? raw.birth : null;
+    if (!birth || typeof birth.date !== "string" || !/^\\d{4}-\\d{2}-\\d{2}$/.test(birth.date)
+      || typeof birth.time !== "string" || !/^(?:[01]\\d|2[0-3]):[0-5]\\d$/.test(birth.time)
+      || typeof birth.location !== "string" || !birth.location.trim()) return null;
+    const place = findJanmaPatroBirthPlace(birth.location);
+    const lat = typeof birth.lat === "number" && Number.isFinite(birth.lat) ? birth.lat : place?.lat;
+    const lng = typeof birth.lng === "number" && Number.isFinite(birth.lng) ? birth.lng : place?.lng;
+    if (lat === undefined || lng === undefined || Math.abs(lat) > 66.5 || Math.abs(lng) > 180) return null;
+    return {
+      name: typeof birth.name === "string" ? birth.name.slice(0, 100) : "",
+      date: birth.date, time: birth.time, location: birth.location,
+      lat, lng
+    };
+  } catch { return null; }
+}
+
 /** Persist birth context locally only; birth details are never sent to a new service. */
 export function saveJanmaPatroContext(context: unknown, storage?: Pick<Storage, "setItem">): boolean {
   try {
