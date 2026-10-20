@@ -118,4 +118,4 @@ The current UI uses HTML/CSS plus inline SVG and subtle CSS motion. It is more d
 
 - Tantra data is part of the existing snapshot/API response and therefore uses the existing Worker and snapshot object cache; no separate Worker or binding is added.
 - Fixed twilight dusk searches to request a setting-altitude crossing. The previous rising-crossing direction could return the next dawn as the dusk timestamp.
-- The latest commit is `2bc5f34091af5bf58da2b2d4e7235c205ed34c82`; Janma/Rashifal fast gates and full PR CI are running/queued for that exact SHA. Do not infer a passing result from older runs.
+- Read the current PR head SHA before release and verify the full CI result against that exact commit; earlier successful fast gates do not substitute for the complete build/test gate.
