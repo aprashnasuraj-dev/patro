@@ -20,7 +20,7 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   const page=await context.newPage();
 
   const homeErrors=[];
-  const onHomeError=(error)=>homeErrors.push(String(error));
+  const onHomeError=(error)=>homeErrors.push(error?.stack || String(error));
   page.on("pageerror",onHomeError);
   page.on("crash",()=>console.error("RELEASE_BROWSER_CRASH: canonical-tools Chromium target crashed"));
   page.on("console",message=>{if(message.type()==="error")console.error("RELEASE_BROWSER_CONSOLE:",message.text())});
@@ -81,7 +81,7 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   for(const slug of tools){
     const route=`/tools/${slug}`;
     const errors=[];
-    const onPageError=(error)=>errors.push(String(error));
+    const onPageError=(error)=>errors.push(error?.stack || String(error));
     page.on("pageerror",onPageError);
     const response=await page.goto("http://127.0.0.1:4173"+route,{waitUntil:"domcontentloaded",timeout:30000});
     if(!response || !response.ok()) throw new Error(`${route} HTTP ${response?.status() ?? "no-response"}`);
