@@ -46,7 +46,7 @@ describe("My Time personal settings", () => {
   });
 
   it("respects quiet hours including ranges that cross midnight in the chosen timezone", () => {
-    expect(isWithinQuietHours(new Date("2026-10-20T16:00:00.000Z"), "Asia/Kathmandu", "22:00", "07:00")).toBe(true);
+    expect(isWithinQuietHours(new Date("2026-10-20T16:30:00.000Z"), "Asia/Kathmandu", "22:00", "07:00")).toBe(true);
     expect(isWithinQuietHours(new Date("2026-10-20T05:00:00.000Z"), "Asia/Kathmandu", "22:00", "07:00")).toBe(false);
     expect(isWithinQuietHours(new Date("2026-10-20T12:00:00.000Z"), "Asia/Kathmandu", "22:00", "07:00")).toBe(false);
   });
