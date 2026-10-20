@@ -1,0 +1,61 @@
+{
+  "slug": "why-cats-purr",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cats.org.uk/cats-blog/why-does-my-cat-purr",
+      "title": "Why does my cat purr?",
+      "publisher": "Cats Protection",
+      "reliability": "Established animal welfare organisation",
+      "notes": [
+        "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37794583/",
+      "title": "Domestic cat larynges can produce purring frequencies without neural input",
+      "publisher": "Current Biology via PubMed",
+      "reliability": "Peer-reviewed research indexed by PubMed",
+      "notes": [
+        "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38052174/",
+      "title": "Vocal communication: The enigmatic production of low-frequency purrs in cats",
+      "publisher": "Current Biology via PubMed",
+      "reliability": "Peer-reviewed research indexed by PubMed",
+      "notes": [
+        "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32017479/",
+      "title": "Feline vocal communication",
+      "publisher": "Journal of Veterinary Science via PubMed",
+      "reliability": "Peer-reviewed research indexed by PubMed",
+      "notes": [
+        "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language",
+      "title": "Cat Body Language",
+      "publisher": "Cats Protection",
+      "reliability": "Established animal welfare organisation",
+      "notes": [
+        "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
+      ]
+    }
+  ],
+  "notes": [
+    "Article draft committed; hero image remains pending because image upload is unavailable through the current text-file workflow.",
+    "Validate word count and schema again before batch completion."
+  ]
+}
