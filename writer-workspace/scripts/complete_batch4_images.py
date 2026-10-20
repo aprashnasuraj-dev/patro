@@ -191,6 +191,8 @@ def hero(im):
     return im.resize((1200,630),Image.Resampling.LANCZOS)
 
 def git_commit(slugs, label):
+    subprocess.run(["git","config","user.name","github-actions[bot]"],check=True)
+    subprocess.run(["git","config","user.email","41898282+github-actions[bot]@users.noreply.github.com"],check=True)
     subprocess.run(["git","add","writer-workspace/output/images"]+[str(ART/f"{s}.json") for s in slugs],check=True)
     subprocess.run(["git","commit","-m",f"Add Batch 4 hero images: {label}"],check=True)
 
