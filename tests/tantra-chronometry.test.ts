@@ -29,7 +29,7 @@ describe("Tantra Vidya chronometry", () => {
     expect(result.mahanishaKaal.start).toBe(at(696).toISOString());
     expect(result.mahanishaKaal.end).toBe(at(744).toISOString());
     expect(result.mahanishaKaal.isActive).toBe(false);
-    expect(computeTantraTime(8, at(720), at(0), at(720), at(1440)).mahanishaKaal.isActive).toBe(false);
+    expect(computeTantraTime(8, at(720), at(0), at(720), at(1440)).mahanishaKaal.isActive).toBe(true);
     expect(computeTantraTime(8, at(720), at(0), at(720), at(1440)).yoginiDirection).toBe(YOGINI_POSITIONS[8]);
   });
 
