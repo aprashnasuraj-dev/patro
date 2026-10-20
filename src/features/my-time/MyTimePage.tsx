@@ -155,7 +155,7 @@ export default function MyTimePage() {
       if (!response.ok || !body?.ok || !body?.data) throw new Error(body?.error || `HTTP ${response.status}`);
       setSnapshot(body.data as Snapshot);
       setOfflineSnapshot(false);
-      void writeMyTimeSnapshot(cacheKey,body.data as Snapshot);
+      void writeMyTimeSnapshot(cacheKey,body.data as Snapshot).catch(()=>{});
       if (persistPreferences) try { localStorage.setItem(PREF_KEY, JSON.stringify(nextPreferences)); } catch {}
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "request_failed";
@@ -163,7 +163,7 @@ export default function MyTimePage() {
         const local = calculateMyTimeSnapshot({ date: nextDate, timezone: nextPreferences.timezone, lat: nextPreferences.lat, lng: nextPreferences.lng });
         setSnapshot(local);
         setOfflineSnapshot(true);
-        void writeMyTimeSnapshot(cacheKey,local);
+        void writeMyTimeSnapshot(cacheKey,local).catch(()=>{});
         setError(l(language,"सर्भर उपलब्ध नभएकाले साझा खगोलीय इन्जिनबाट स्थानीय गणना प्रयोग भइरहेको छ।","Server calculation is unavailable; the shared local astronomy engine is being used."));
       } catch {
         if (cached) {
