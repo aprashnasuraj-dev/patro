@@ -20,8 +20,8 @@ describe("My Time extended instruments", () => {
   it("centers the traditional Abhijit window on local solar noon", () => {
     const result = abhijitMuhurta("2026-10-20T00:00:00.000Z", "2026-10-20T12:00:00.000Z");
     expect(result).not.toBeNull();
-    expect(Date.parse(result!.start_utc)).toBe(1792472400000);
-    expect(Date.parse(result!.end_utc)).toBe(1792475280000);
+    expect(Date.parse(result!.start_utc)).toBe(1792474560000);
+    expect(Date.parse(result!.end_utc)).toBe(1792477440000);
     expect(abhijitMuhurta(null, null)).toBeNull();
     expect(abhijitMuhurta("bad", "also bad")).toBeNull();
   });
