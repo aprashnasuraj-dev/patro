@@ -92,9 +92,10 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const sunLongitude = normalizeLongitude(Astronomy.SunPosition(evaluatedAt).elon);
   const moonLongitude = normalizeLongitude(Astronomy.EclipticGeoMoon(evaluatedAt).lon);
   const phaseAngle = normalizeLongitude(panchang.moonPhaseAngle);
+  const skyPhaseAngle = normalizeLongitude(Astronomy.MoonPhase(evaluatedAt));
   const tithiIndex = panchang.tithi;
   const tithiProgress = ((phaseAngle % 12) / 12) * 100;
-  const illumination = ((1 - Math.cos(phaseAngle * DEG)) / 2) * 100;
+  const illumination = ((1 - Math.cos(skyPhaseAngle * DEG)) / 2) * 100;
   const observer = new Astronomy.Observer(lat, lng, 0);
   const sunEquator = Astronomy.Equator(Astronomy.Body.Sun, evaluatedAt, observer, true, true);
   const solarAltitude = Astronomy.Horizon(evaluatedAt, observer, sunEquator.ra, sunEquator.dec, "normal").altitude;
@@ -105,6 +106,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     date,
     timezone,
     evaluated_at_utc: evaluatedAt.toISOString(),
+    panchang_evaluated_at_utc: panchang.instant.toISOString(),
     location: { lat, lng },
     weekday: new Date(date + "T00:00:00Z").getUTCDay(),
     panchang: {
