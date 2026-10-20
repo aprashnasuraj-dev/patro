@@ -101,7 +101,8 @@
       "publisher": "timeanddate.com",
       "url": "https://www.timeanddate.com/time/zone/russia",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "timeanddate.com. (n.d.). Time Zones in Russia. https://www.timeanddate.com/time/zone/russia"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "timeanddate.com",
       "url": "https://www.timeanddate.com/worldclock/russia",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "timeanddate.com. (n.d.). Time in Russia. https://www.timeanddate.com/worldclock/russia"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "CIA World Factbook",
       "url": "https://www.cia.gov/the-world-factbook/field/time-difference/",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "CIA World Factbook. (n.d.). Time Zones. https://www.cia.gov/the-world-factbook/field/time-difference/"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "Encyclopaedia Britannica",
       "url": "https://www.britannica.com/science/time-zone",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Encyclopaedia Britannica. (n.d.). Time zone. https://www.britannica.com/science/time-zone"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "Internet Assigned Numbers Authority (IANA)",
       "url": "https://www.iana.org/time-zones",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Internet Assigned Numbers Authority (IANA). (n.d.). Time Zone Database. https://www.iana.org/time-zones"
     }
   ],
   "word_count": 1172,
