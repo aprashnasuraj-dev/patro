@@ -252,6 +252,27 @@ export default function MyTimePage() {
     try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
     catch { return null; }
   }, [snapshot, now, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
+  const recommendedMuhurtaWindows = useMemo(() => {
+    if (!snapshot) return [];
+    const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
+    const kaal = inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc);
+    const todaySelected = localDate(preferences.timezone, now) === snapshot.date;
+    return [...windows.day, ...windows.night]
+      .filter(window => !todaySelected || Date.parse(window.end_utc) > now.getTime())
+      .map(window => {
+        const overlaps = kaal.filter(period => Date.parse(window.start_utc) < Date.parse(period.end_utc) && Date.parse(window.end_utc) > Date.parse(period.start_utc));
+        const result = scorePersonalizedMuhurta({
+          startUtc: window.start_utc, endUtc: window.end_utc, favorableChoghadiya: window.favorable,
+          rahuKaal: overlaps.some(period => period.key === "rahu"),
+          yamaganda: overlaps.some(period => period.key === "yamaganda"),
+          gulika: overlaps.some(period => period.key === "gulika"),
+          taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse
+        });
+        return { ...window, score: result.score, label: result.label, cautions: result.cautions };
+      })
+      .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc))
+      .slice(0, 3);
+  }, [snapshot, now, preferences.timezone, taraIndex, chandraHouse]);
 
 
   return <main className="mt-page">
@@ -288,7 +309,7 @@ export default function MyTimePage() {
     </section>}
     {observatoryLayers.muhurta && <section className="mt-extra-grid" aria-label={l(language,"मुहूर्त र व्यक्तिगत समय","Muhurta and personalized timing")}>
       <article className="mt-extra-card"><small>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</small><strong>{abhijit ? formatInstant(abhijit.start_utc,preferences.timezone,language)+" – "+formatInstant(abhijit.end_utc,preferences.timezone,language) : "—"}</strong><span>{abhijit ? l(language,"स्थानीय दिनको उज्यालो अवधि र मध्यबिन्दुबाट परम्परागत रूपमा निकालिएको।","Derived traditionally from the daylight span and its midpoint.") : l(language,"सूर्योदय र सूर्यास्त उपलब्ध भएपछि देखाइन्छ।","Shown when sunrise and sunset are available.")}</span></article>
-      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"व्यक्तिगत आधार प्रतीक्षामा","Awaiting personal context")}</strong><span>{personalizedMuhurta ? l(language,"पारदर्शी नियम-आधारित स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Transparent rule-based score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span></article>
+      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"व्यक्तिगत आधार प्रतीक्षामा","Awaiting personal context")}</strong><span>{personalizedMuhurta ? l(language,"पारदर्शी नियम-आधारित स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Transparent rule-based score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{recommendedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्को सुझाइएका समय","Next suggested windows")}</b>{recommendedMuhurtaWindows.map(window=><div key={window.key}><span>{window.name_ne} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.score}/100</strong></div>)}</div>}</article>
     </section>}
 
     {error && <div className="mt-notice" role="status"><CircleAlert size={19}/><div><strong>{l(language,"गणना सेवा","Calculation service")}</strong><p>{error}</p>{error.includes("not enabled") || error.includes("सक्रिय") ? <small>{l(language,"यो पृष्ठ र API feature flag सक्रिय भएपछि परिणाम देखिनेछ।","Results appear when the page and API rollout are enabled.")}</small> : null}</div></div>}
