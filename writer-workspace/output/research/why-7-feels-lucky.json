@@ -1,0 +1,67 @@
+{
+  "slug": "why-7-feels-lucky",
+  "research_question": "Why is seven often considered lucky, and what can culture and psychology actually explain?",
+  "research_date": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Why 7 is the luckiest number",
+      "publisher": "Newcastle University",
+      "url": "https://www.ncl.ac.uk/press/articles/archive/2016/03/luckiestnumber/",
+      "reliability": "University commentary by mathematics educator",
+      "notes": [
+        "Seven appears in calendars, religious traditions, games and popular culture.",
+        "The seven-day week and classical astronomical traditions helped make seven familiar.",
+        "The article treats explanations for preference as possibilities rather than proof of a universal law."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "The Magical Number Seven, Plus or Minus Two",
+      "publisher": "George A. Miller, York University Classics in Psychology",
+      "url": "https://psychclassics.yorku.ca/Miller/",
+      "reliability": "Classic peer-reviewed psychology paper hosted by a university",
+      "notes": [
+        "Miller examined limits in absolute judgement and immediate memory, not a supernatural property of seven.",
+        "The paper cautions against assuming several different cognitive limits are one process.",
+        "Miller suspected the many cultural sevens might be coincidence rather than a hidden universal rule."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "George Miller’s Magical Number of Immediate Memory in Retrospect",
+      "publisher": "Nelson Cowan, Psychological Review / PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4486516/",
+      "reliability": "Peer-reviewed psychology commentary hosted by NIH",
+      "notes": [
+        "Miller's 1956 paper is often simplified in popular explanations.",
+        "Modern research distinguishes immediate memory capacity from other processing limits.",
+        "Historical context matters when interpreting the phrase 'magical number seven'."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information",
+      "publisher": "George A. Miller, Psychological Review PDF",
+      "url": "https://stanford.edu/~knutson/jdm/miller56.pdf",
+      "reliability": "Original academic article copy",
+      "notes": [
+        "The 1956 article examined information-processing limits in several laboratory tasks.",
+        "Miller discussed chunking and strategies that change how much information can be handled.",
+        "The paper did not claim that seven is inherently lucky or supernatural."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Why seven feels special: number symbolism and cultural repetition",
+      "publisher": "Newcastle University",
+      "url": "https://www.ncl.ac.uk/press/articles/archive/2016/03/luckiestnumber/",
+      "reliability": "University explanation of cultural symbolism",
+      "notes": [
+        "Seven's prominence reflects repeated appearances in calendars, traditions and cultural expressions.",
+        "The popularity of a number can be shaped by familiarity and reinforcement.",
+        "There is no scientific evidence that seven itself causes good fortune."
+      ]
+    }
+  ]
+}
