@@ -48,7 +48,7 @@ function canonicalDateRedirect(request: Request): Response | null {
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
-    const myTime = await myTimeResponse(request);
+    const myTime = await myTimeResponse(request, env);
     if (myTime) return myTime;
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
