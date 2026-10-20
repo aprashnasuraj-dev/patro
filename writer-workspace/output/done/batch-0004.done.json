@@ -1,0 +1,30 @@
+{
+  "batch": 4,
+  "completed": [
+    "how-zero-was-invented",
+    "how-wind-turbines-make-electricity",
+    "why-ships-float",
+    "why-the-himalayas-are-still-rising",
+    "how-the-piano-was-invented",
+    "why-leaves-change-color-in-autumn",
+    "how-birds-navigate-thousands-of-miles",
+    "how-black-holes-form",
+    "why-the-ocean-is-salty",
+    "why-we-forget-names"
+  ],
+  "rejected": [],
+  "image_pending": [
+    "how-zero-was-invented",
+    "how-wind-turbines-make-electricity",
+    "why-ships-float",
+    "why-the-himalayas-are-still-rising",
+    "how-the-piano-was-invented",
+    "why-leaves-change-color-in-autumn",
+    "how-birds-navigate-thousands-of-miles",
+    "how-black-holes-form",
+    "why-the-ocean-is-salty",
+    "why-we-forget-names"
+  ],
+  "finished": "2026-10-20",
+  "note": "All 10 article JSON files and all 10 research JSON files were committed to the missionmangal-writer-batch-production branch. Article JSON parsing, minimum word-count metadata (all exceed 1,000), nine-section structure, four FAQs, inline citation-to-reference matching, and citation presence in all body/FAQ paragraphs were checked. Hero images are not committed: each article image field is null and all slugs are listed in image_pending. Therefore this marker records the content batch state per PROTOCOL.md and does not claim image-complete publication readiness."
+}
