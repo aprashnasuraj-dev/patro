@@ -153,7 +153,7 @@ export function JanmaPatroSuite(){
     if(!saveJanmaPatroContext(context))setNotice(tx(language,"जन्म विवरण स्थानीय रूपमा सुरक्षित हुन सकेन।","Birth chart calculated, but local profile storage failed."));
    }
    if(activeTab==="match"){const cb=calculateChart(bb);setGuna(calculateGuna(ca,cb));}else setGuna(null);
-  }catch(err){setError(err instanceof Error?err.message:tx(language,"गणना हुन सकेन। विवरण जाँचेर फेरि प्रयास गर्नुहोस्।","Calculation failed. Check the details and try again."));}
+  }catch(err){setChart(null);setGuna(null);setNameGuna(null);setError(err instanceof Error?err.message:tx(language,"गणना हुन सकेन। विवरण जाँचेर फेरि प्रयास गर्नुहोस्।","Calculation failed. Check the details and try again."));}
  };
 
  useEffect(()=>{
@@ -177,10 +177,11 @@ export function JanmaPatroSuite(){
   try{
    const calculated=calculateChart(a);
    const context=createJanmaPatroContext(calculated);
+   setChart(calculated);setGuna(null);setNameGuna(null);
    if(!saveJanmaPatroContext(context)){setError(tx(language,"जन्म विवरण यस ब्राउजरमा सुरक्षित हुन सकेन। स्थानीय भण्डारण अनुमति जाँच्नुहोस्।","Birth details could not be saved in this browser. Check local storage permissions."));return;}
    window.history.pushState(window.history.state,"","/mytime");
    window.dispatchEvent(new Event("patro:navigation"));
-  }catch(err){setError(err instanceof Error?err.message:tx(language,"मेरो समयसँग जोड्न सकिएन। जन्म विवरण जाँच्नुहोस्।","Could not connect to My Time. Check the birth details."));}
+  }catch(err){setChart(null);setGuna(null);setNameGuna(null);setError(err instanceof Error?err.message:tx(language,"मेरो समयसँग जोड्न सकिएन। जन्म विवरण जाँच्नुहोस्।","Could not connect to My Time. Check the birth details."));}
  };
  const buildShare=async()=>{
   try{
