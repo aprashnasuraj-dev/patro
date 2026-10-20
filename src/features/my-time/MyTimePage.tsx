@@ -4,15 +4,17 @@ import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { useUiLanguage, l } from "../../useUiLanguage";
+import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import "./my-time.css";
 
 type Snapshot = {
   schema_version: number;
   date: string;
   timezone: string;
+  weekday: number;
   evaluated_at_utc: string;
   location: { lat: number; lng: number };
-  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number; nakshatra_index: number; nakshatra_name_ne: string; nakshatra_pada: number; moon_rashi_index: number; sun_rashi_index: number; yoga_index: number; yoga_name_ne: string; karana_index: number; karana_name_ne: string; moon_rashi_ne: string; sun_rashi_ne: string; sunrise_utc: string | null; sunset_utc: string | null; moonrise_utc: string | null; tithi_end_utc: string | null };
+  panchang: { tithi_index: number; tithi_name: string; tithi_name_ne: string; paksha: string; phase_angle_deg: number; tithi_progress_percent: number; nakshatra_index: number; nakshatra_name_ne: string; nakshatra_pada: number; moon_rashi_index: number; sun_rashi_index: number; yoga_index: number; yoga_name_ne: string; karana_index: number; karana_name_ne: string; moon_rashi_ne: string; sun_rashi_ne: string; sunrise_utc: string | null; sunset_utc: string | null; next_sunrise_utc: string | null; moonrise_utc: string | null; tithi_end_utc: string | null };
   sky: { sun_longitude_tropical_deg: number; moon_longitude_tropical_deg: number; sun_longitude_sidereal_deg: number; moon_longitude_sidereal_deg: number; solar_altitude_deg_at_evaluation: number; moon_illumination_percent: number };
   methodology: { engine: string; time_anchor: string; sidereal_positions: boolean; limitations: string[] };
 };
@@ -94,12 +96,12 @@ function PolarClock({ timezone, now, language }: { timezone: string; now: Date; 
 }
 
 const UPCOMING = [
-  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","स्थानअनुसार सौर घटना गणना","Location-specific solar events","ready"],
+  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","स्थानअनुसार सौर घटना गणना","Location-specific solar events","solar"],
   ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations","ready"],
-  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing","pending"],
+  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing","solar"],
   ["✦","शुभ मुहूर्त","Smart Muhurta","व्याख्या गर्न मिल्ने व्यक्तिगत समय सिफारिस","Explainable personal timing windows","pending"],
-  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context","pending"],
-  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context","pending"]
+  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context","personal"],
+  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context","sky"]
 ] as const;
 
 export default function MyTimePage() {
@@ -227,9 +229,11 @@ export default function MyTimePage() {
       {calendarReference ? <><div className="mt-reference-grid"><div><small>{l(language,"विक्रम संवत्","Bikram Sambat")}</small><strong>{calendarReference.bs}</strong></div><div><small>{l(language,"नेपाल संवत्","Nepal Sambat")}</small><strong>{calendarReference.ns}</strong></div><div><small>{l(language,"संग्रहित तिथि","Archived Tithi")}</small><strong>{calendarReference.tithi}</strong></div><div><small>{l(language,"सूर्योदय / सूर्यास्त","Sunrise / sunset")}</small><strong>{calendarReference.sunrise} / {calendarReference.sunset}</strong></div></div><p>{l(language,"यो AafnaiPatro को विद्यमान पात्रो अभिलेख हो; यसलाई तपाईंको चयन गरिएको स्थानका सौर समयसँग नझुक्याउनुहोस्।","This is AafnaiPatro's existing calendar archive reference; it is not a substitute for solar event times at your selected location.")}</p></> : <p className="mt-reference-empty">{l(language,"अभिलेख सन्दर्भ अहिले उपलब्ध छैन।","The archive reference is not available right now.")}</p>}
     </section>
 
+    {snapshot && <MyTimeTemporalLayers snapshot={snapshot} timezone={preferences.timezone} language={language} now={now} />}
+
     <section className="mt-section">
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह एउटै मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। गणना उपलब्ध नभएका भागलाई स्पष्ट रूपमा चिनाइएको छ।","Every layer shares the same date, location and timezone. Capabilities not yet calculated are explicitly marked.")}</p></div>
-      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=><article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(status==="ready"?"is-ready":"")}>{status==="ready"?l(language,"गणना उपलब्ध","Calculation available"):l(language,"इन्जिन जडान हुँदै","Engine integration pending")}</span></article>)}</div>
+      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="solar"&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"इन्जिन जडान हुँदै","Engine integration pending");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
     </section>
 
     <section className="mt-personal">
