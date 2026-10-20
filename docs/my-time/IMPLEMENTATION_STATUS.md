@@ -45,3 +45,18 @@
 ## Release policy | रिलिज नीति
 
 No existing calendar, festival, Panchang, API, database, or navigation behavior should change as a side effect of My Time. Do not enable the feature in production until the feature flag, regression suite, calculation fixtures, accessibility checks, and rollback path are verified.
+
+
+## Source architecture document now available | मूल आर्किटेक्चर दस्तावेज उपलब्ध
+
+The supplied Google Drive PDF was successfully extracted on 2026-10-20. The three required phases are confirmed:
+
+1. **Phase 1 — Edge Infrastructure & Ephemeris Core / एज पूर्वाधार तथा इफेमेरिस कोर:** Worker + WASM ephemeris + 0.1° grid/date KV cache.
+2. **Phase 2 — Frontend UI & Interactive Visualizers / फ्रन्टएन्ड UI तथा अन्तरक्रियात्मक दृश्य:** responsive dashboard and multi-layer 24-hour polar visualizer.
+3. **Phase 3 — Personalization & Offline Resilience / व्यक्तिगतकरण तथा अफलाइन विश्वसनीयता:** Tarabalam/Chandrabalam, IndexedDB, service-worker computation fallback.
+
+The requirements include Panchang essentials, Choghadiya, Rahu Kaal/Yamaganda/Gulika, Hora, Abhijit, Tarabalam/Chandrabalam, local apparent solar time, solar altitude and twilight, lunar phase/illumination, eclipse contacts, diaspora dual clocks, calendar eras, Julian/MJD/Unix counters, and offline use.
+
+**New release blocker:** upstream Swiss Ephemeris has an AGPL/professional dual-license model. The selected WASM package must be reviewed for both upstream and wrapper licenses before use in production. See [official licensing details](https://www.astro.com/swisseph/swephinfo_e.htm). Cloudflare supports precompiled WebAssembly modules, but bundle/startup/CPU characteristics must be measured; see [Cloudflare Workers Wasm docs](https://developers.cloudflare.com/workers/runtime-apis/webassembly/).
+
+No functional code has been merged or deployed yet. Next work is formula/reference-fixture design and licensing/package verification before Phase 1 implementation.
