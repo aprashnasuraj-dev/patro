@@ -1,0 +1,39 @@
+{
+  "slug": "how-the-piano-was-invented",
+  "research_question": "How did Bartolomeo Cristofori invent the piano?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.metmuseum.org/essays/the-piano-the-pianofortes-of-bartolomeo-cristofori-1655-1731",
+      "title": "The Piano: The Pianofortes of Bartolomeo Cristofori (1655–1731)",
+      "publisher": "The Metropolitan Museum of Art",
+      "reliability": "Museum research essay by Wendy Powers",
+      "notes": [
+        "Cristofori developed a hammer-action keyboard instrument around 1700, allowing players to control loudness by touch unlike the harpsichord."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://www.metmuseum.org/art/collection/search/501788",
+      "title": "Grand Piano, Bartolomeo Cristofori, 1720",
+      "publisher": "The Metropolitan Museum of Art",
+      "reliability": "Museum collection record",
+      "notes": [
+        "The 1720 instrument is among the oldest surviving pianos and has 54 keys, showing how early pianos differed from modern instruments."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://archived.metmuseum.org/art/online-features/metkids/explore/501788/Bartolomeo-Cristofori-Grand-Piano",
+      "title": "Grand Piano",
+      "publisher": "The Metropolitan Museum of Art, MetKids",
+      "reliability": "Museum educational resource",
+      "notes": [
+        "The piano's name derives from pianoforte, referring to the ability to play soft and loud; its invention built on existing keyboard and string technologies."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
