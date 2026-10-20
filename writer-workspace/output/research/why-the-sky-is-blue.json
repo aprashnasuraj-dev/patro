@@ -1,0 +1,61 @@
+{
+  "slug": "why-the-sky-is-blue",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://spaceplace.nasa.gov/blue-sky/en/",
+      "title": "Why Is the Sky Blue?",
+      "publisher": "NASA Space Place",
+      "reliability": "Government science education or agency source",
+      "notes": [
+        "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://science.nasa.gov/resource/rayleigh-scattering-in-exoplanet-atmospheres/",
+      "title": "Rayleigh scattering in exoplanet atmospheres",
+      "publisher": "NASA Science",
+      "reliability": "Government science education or agency source",
+      "notes": [
+        "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://scijinks.gov/blue-sky/",
+      "title": "Why Is the Sky Blue?",
+      "publisher": "NOAA SciJinks",
+      "reliability": "Government science education or agency source",
+      "notes": [
+        "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://spaceplace.nasa.gov/blue-sky/en/",
+      "title": "Mars atmosphere and sky colour",
+      "publisher": "NASA Space Place",
+      "reliability": "Government science education or agency source",
+      "notes": [
+        "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/",
+      "title": "How to Interpret a False-Color Satellite Image",
+      "publisher": "NASA Earth Observatory",
+      "reliability": "Government science education or agency source",
+      "notes": [
+        "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
+      ]
+    }
+  ],
+  "notes": [
+    "Draft saved. Hero image pending because binary image upload is unavailable through the current text-file workflow.",
+    "NOAA SciJinks URL was not independently retrievable during this pass; replace or verify source 3 before final content approval."
+  ]
+}
