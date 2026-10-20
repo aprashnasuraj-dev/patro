@@ -104,7 +104,7 @@ The product owner's three-phase roadmap remains authoritative; this sequence mus
 - Existing /time-machine and unrelated routes are preserved; My Time is added only at /mytime and /api/v1/mytime/today.
 - No new dependency, D1 schema, KV binding, or separate Worker is added.
 - The new API handler is dispatched through the existing worker/optimized-entry.ts entry point and remains disabled unless MY_TIME_ENABLED=true is configured in the Worker environment.
-- The first snapshot uses the already-installed astronomy-engine and explicit local-noon/IANA-timezone conversion. It does not yet calculate sunrise-anchored daily Panchang, sidereal Nakshatra/Yoga, Choghadiya, or personalized Muhurta.
+- The API reuses the existing `src/place/timing.ts` and `src/patro-tools/core/astro.ts` provider for location-aware sunrise Panchang, sidereal Tithi/Nakshatra/Pada/Yoga/Karana, Sun/Moon signs, sunrise/sunset, moonrise, and tithi end; it falls back to local noon when sunrise/sunset are unavailable. My Time also reuses the existing calendar archive/D1 fallback and location preferences. Choghadiya, Rahu Kaal, Yamaganda, Gulika, Hora, local eclipse contacts, and browser-local Tarabalam/Chandrabalam have initial implementations. Smart Muhurta, twilight detail, IndexedDB, and service-worker offline fallback remain incomplete.
 - New deterministic tests have been added to the existing product test script; GitHub CI is the validation gate, and results must be checked before merge.
 - No existing branch is force-pushed and main is not modified.
 
@@ -165,4 +165,4 @@ Before adding any Swiss Ephemeris-derived package or WASM binary, make an explic
 - Reuse and reconcile the existing calendar archive/D1 panchang, solar event, timezone, and birth-chart/Rashifal data contracts before adding overlapping calculations.
 - Add sunrise/sunset and polar-day handling, sidereal ayanamsa conventions, Nakshatra/Pada/Yoga/Karana, Choghadiya/Rahu Kaal/Hora/Muhurta calculations with authoritative fixtures.
 - Replace pending UI states with verified outputs as each calculation lands; add visual/accessibility regression coverage.
-- Phase 3 personalization, local offline persistence, and service-worker fallback remain unimplemented.
+- Phase 3 now reads the existing local JanmaPatro chart context and Rashifal sign preference, calculates Tarabalam/Chandrabalam locally when natal data is available, and requests only the declared sign for the published Rashifal summary. More context-aware Muhurta and offline resilience remain incomplete.
