@@ -47,7 +47,7 @@
       "h2": "What UTC offsets mean",
       "paras": [
         "UTC, or Coordinated Universal Time, is the reference used to express offsets for civil time. A place at UTC+3 keeps its clock three hours ahead of UTC; UTC+12 is twelve hours ahead. These offsets let people convert between cities using a common reference, even when their wall clocks show different local times. They are especially useful for aviation, computing, international calls and transport schedules. [1][3]",
-        "For example, to compare a meeting in Moscow with one in Vladivostok, first identify each city’s current offset and then calculate the difference. Do not assume that every part of Russia uses Moscow time. Digital calendars usually manage this when the correct city or time zone is selected, while manually written schedules should include the city or UTC offset to avoid confusion. [1][3]"
+        "For example, to compare a meeting in Moscow with one in Vladivostok, first identify each city’s current offset and then calculate the difference. Do not assume that every part of Russia uses Moscow time. Digital calendars usually manage this when the correct city or time zone is selected, while manually written schedules should include the city or UTC offset to avoid confusion. [1][3][5]"
       ]
     },
     {
@@ -129,14 +129,14 @@
     },
     {
       "n": 5,
-      "title": "Time Zones in Russia",
-      "publisher": "timeanddate.com",
-      "url": "https://www.timeanddate.com/time/zone/russia",
-      "published_at": "2026-10-20",
+      "title": "Time Zone Database",
+      "publisher": "Internet Assigned Numbers Authority (IANA)",
+      "url": "https://www.iana.org/time-zones",
+      "published_at": null,
       "retrieved_at": "2026-10-20"
     }
   ],
-  "word_count": 1171,
+  "word_count": 1172,
   "reading_minutes": 5,
   "image": null,
   "keywords": [
