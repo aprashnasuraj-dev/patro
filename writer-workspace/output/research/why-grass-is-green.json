@@ -70,7 +70,8 @@
     "Article JSON committed at writer-workspace/output/articles/why-grass-is-green.json.",
     "Image asset and final schema/content verification are still pending; do not mark Batch 0001 complete.",
     "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata.",
-    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending.",
+    "Hero PNG verified: correct PNG signature and 1200×630 dimensions; article image metadata matches the filename. APA references included; final citation-to-claim and schema validation remains."
   ],
   "apa_references": [
     "NASA Earth Observatory. (n.d.). How to Interpret a False-Color Satellite Image. https://science.nasa.gov/earth/earth-observatory/how-to-interpret-a-false-color-satellite-image/",
