@@ -302,7 +302,7 @@ export default function MyTimePage() {
   useEffect(() => {
     const sign = personalContext.effectiveSign;
     if (!sign) { setRashifalSummary(""); setRashifalSignal(null); setRashifalLoading(false); return; }
-    const controller = new AbortController(); setRashifalLoading(true);
+    const controller = new AbortController(); setRashifalLoading(true); setRashifalSignal(null);
     const query = new URLSearchParams({ period: "daily", system: "vedic", calendar: "gregorian", date, sign });
     fetch(`/api/v1/rashifal/universal?${query}`, { signal: controller.signal, credentials: "same-origin", headers: { accept: "application/json" } })
       .then(response => response.ok ? response.json() : Promise.reject(new Error("rashifal_unavailable")))
@@ -539,7 +539,13 @@ export default function MyTimePage() {
             <h3>{formatInstant(bestTimeWindow.start_utc,preferences.timezone,language)} – {formatInstant(bestTimeWindow.end_utc,preferences.timezone,language)}</h3>
             <p>{l(language,"तपाईंको रुचि","Your focus")}: {interestLabel} · {bestTimeWindow.tatwaName ? l(language,bestTimeWindow.tatwaName,bestTimeWindow.tatwaName) : l(language,"तन्त्र समय उपलब्ध छैन","Tantra timing unavailable")} · {l(language,"होरा","Hora")}: {bestTimeWindow.horaName || "—"}</p>
             <p>{bestTimeWindow.label==="supportive" ? l(language,"पञ्चाङ्ग/ज्योतिष स्कोर र तत्त्वको मेलका आधारमा उपलब्ध विकल्पमध्ये अगाडि आएको समय।","Top-ranked among available windows by the Panchang/Jyotish score and Tatwa fit.") : bestTimeWindow.label==="mixed" ? l(language,"उपलब्ध विकल्पमध्ये तुलनात्मक रूपमा अगाडि आएको समय; आफ्नो परम्परा र कामसँग मिलाएर रोज्नुहोस्।","A comparatively stronger available window; choose in line with your practice and task.") : l(language,"यो उपलब्ध विकल्पमध्ये सबैभन्दा अगाडि आए पनि सावधानी सङ्केत हुन सक्छ—विवरण हेरेर निर्णय लिनुहोस्।","This ranks highest among available options but may still carry cautions—review details before deciding.")}</p>
-            <small>{l(language,"संयुक्त स्कोर: पञ्चाङ्ग/ज्योतिष ६०% + तत्त्व–रुचि मेल २०% + ग्रह होरा–रुचि मेल २०%। यो परम्परागत सङ्केत हो, परिणामको ग्यारेन्टी होइन।","Combined score: Choghadiya/inauspicious periods and available Tara/Chandra strength 70% + Tatwa-interest fit 30%. Traditional guidance, not a guarantee of outcomes.")}</small>
+            <small>{l(language,"स्कोर उपलब्ध इनपुटअनुसार भार मिलाएर निकालिन्छ: पञ्चाङ्ग ४५%, मिल्दो राशिफल डोमेन २५%, सक्रिय दशा–होरा सम्बन्ध १५%, गतिविधि–होरा १०%, तत्त्व मेल ५%। अनुपलब्ध डेटा बनावटी रूपमा थपिँदैन; यो परम्परागत मार्गदर्शन हो, परिणामको ग्यारेन्टी होइन।","Weights are normalized over available inputs: Panchang 45%, matching Rashifal domain 25%, active Dasha–Hora relation 15%, activity–Hora fit 10%, Tatwa fit 5%. Missing data is not invented; this is traditional guidance, not a guarantee.")}</small>
+            <div className="mt-personal-score-breakdown" aria-label={l(language,"समय सिफारिसका कारणहरू","Recommendation factors")}>
+              <strong>{l(language,"यो समय किन छानियो","Why this window ranked here")}</strong>
+              <p>{l(language,bestTimeWindow.personalizationLevel==="personalized"?"जन्मपत्रो र दैनिक राशिफलका उपलब्ध संकेत पनि गणनामा समावेश छन्।":bestTimeWindow.personalizationLevel==="partial"?"केही व्यक्तिगत संकेत उपलब्ध छन्; बाँकी स्कोर पञ्चाङ्ग र समय तहबाट निकालिएको छ।":"जन्मपत्रो वा मिल्दो राशिफल डोमेन उपलब्ध नभएकाले यो मुख्यतः सामान्य समय मार्गदर्शन हो।",bestTimeWindow.personalizationLevel==="personalized"?"Available birth-chart and daily Rashifal signals are included.":bestTimeWindow.personalizationLevel==="partial"?"Some personal signals are available; the remaining score comes from Panchang and timing layers.":"No birth-chart or matching Rashifal domain is available, so this is primarily general timing guidance.")}</p>
+              <div>{bestTimeWindow.personalEvaluation.components.map(component=><span key={component.key}><b>{component.key==="panchang"?l(language,"पञ्चाङ्ग","Panchang"):component.key==="rashifal"?l(language,"राशिफल","Rashifal"):component.key==="dasha-hora"?l(language,"दशा–होरा","Dasha–Hora"):component.key==="activity-hora"?l(language,"काम–होरा","Activity–Hora"):l(language,"तत्त्व मेल","Tatwa fit")}</b> {component.score}/100</span>)}</div>
+              {bestTimeWindow.personalEvaluation.reasons.length>0&&<ul>{bestTimeWindow.personalEvaluation.reasons.slice(0,4).map((reason,index)=><li key={index}>{reason.replaceAll("_"," ")}</li>)}</ul>}
+            </div>
           </div>
         </div>
         <div className="mt-best-current-grid">
