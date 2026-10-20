@@ -15,6 +15,7 @@ import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
+import { readMyTimePersonalSettings } from "./my-time-personal-settings";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -200,8 +201,21 @@ export default function MyTimePage() {
   const [error, setError] = useState("");
   const loadSequence = useRef(0);
   const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean; hora: boolean; twilight: boolean; tantra: boolean }>(() => {
-    try { const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null"); return { clocks: saved?.clocks !== false, scales: saved?.scales !== false, muhurta: saved?.muhurta !== false, choghadiya: saved?.choghadiya !== false, kaal: saved?.kaal !== false, hora: saved?.hora !== false, twilight: saved?.twilight !== false, tantra: saved?.tantra !== false }; }
-    catch { return { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }; }
+    const defaults = { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: false, hora: false, twilight: false, tantra: false };
+    const presets = {
+      universal: defaults,
+      scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
+      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: false },
+      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: false },
+      tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
+      combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
+    };
+    try {
+      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null");
+      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales === true, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal === true, hora: saved.hora === true, twilight: saved.twilight === true, tantra: saved.tantra === true };
+      const lens = readMyTimePersonalSettings().lens;
+      return presets[lens] || defaults;
+    } catch { return defaults; }
   });
   const ne = language === "ne";
   const tantraEvaluation = useMemo(() => {
@@ -238,6 +252,27 @@ export default function MyTimePage() {
     if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
     return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
   }, [snapshot, now, preferences.timezone]);
+  const selectedDateIsToday = Boolean(snapshot) && localDate(preferences.timezone, now) === snapshot?.date;
+  const nextKaal = useMemo(() => {
+    if (!snapshot) return undefined;
+    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc)
+      .filter(window => !selectedDateIsToday || Date.parse(window.start_utc) > now.getTime())
+      .sort((a,b) => Date.parse(a.start_utc)-Date.parse(b.start_utc))[0];
+  }, [snapshot, selectedDateIsToday, now]);
+  const heroWindowTitle = currentKaal
+    ? l(language, currentKaal.name_ne, currentKaal.name_en)
+    : selectedDateIsToday && currentChoghadiya
+      ? l(language, currentChoghadiya.name_ne, currentChoghadiya.name_en)
+      : nextKaal ? l(language, "अर्को " + nextKaal.name_ne, "Next " + nextKaal.name_en)
+        : l(language, "समय गणना हुँदैछ", "Timing is loading");
+  const heroWindowSummary = currentKaal
+    ? l(language, "यो राहुकाल/काल खण्ड अहिले चलिरहेको छ। परम्परा मान्नुहुन्छ भने नयाँ शुभकार्य अर्को समयका लागि राख्नुहोस्; सामान्य काम रोक्नुपर्ने होइन।", "This traditional caution period is active. If you observe it, defer starting auspicious activities until it ends; routine work does not need to stop.")
+    : selectedDateIsToday && currentChoghadiya
+      ? currentChoghadiya.favorable
+        ? l(language, "अमृतलाई परम्परागत रूपमा अनुकूल समय मानिन्छ—नयाँ काम सुरु गर्न रोज्न सक्नुहुन्छ, तर यो सफलताको ग्यारेन्टी होइन।", "Amrit is traditionally considered favorable—a time you may choose to begin something, not a guarantee of success.")
+        : l(language, "यो चौघडिया परम्परागत रूपमा तटस्थ वा कम अनुकूल मानिन सक्छ। आफ्नो काम र परम्पराअनुसार निर्णय लिनुहोस्।", "This Choghadiya may be considered neutral or less favorable in tradition. Decide according to your practice and the task.")
+      : nextKaal
+        ? l(language, "अर्को " + nextKaal.name_ne + " " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + " मा पर्छ। यो परम्परागत समय-सङ्केत हो।", "Next " + nextKaal.name_en + " is " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + ". This is a traditional timing guide.");
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
   useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v1", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
@@ -422,7 +457,7 @@ export default function MyTimePage() {
         <div className="mt-immersive-now"><strong>{localTime}</strong><span>{dateLabel}</span><small><Globe2 size={14}/>{locationLabel}</small></div>
         <div className="mt-immersive-facts">
           <div><small>{l(language,"अहिलेको तिथि","CURRENT TITHI")}</small><strong>{tithiName}</strong></div>
-          <div><small>{l(language,"समयको सङ्केत","TIME WINDOW")}</small><strong>{currentChoghadiya ? l(language,currentChoghadiya.name_ne,currentChoghadiya.name_en) : "—"}</strong></div>
+          <div className={currentKaal ? "is-caution" : currentChoghadiya?.favorable ? "is-favorable" : ""}><small>{l(language,"अहिलेको समय झ्याल","CURRENT TIME WINDOW")}</small><strong>{heroWindowTitle}</strong><p className="mt-hero-window-summary">{heroWindowSummary}</p></div>
           <div><small>{l(language,"सौर उचाइ","SOLAR ALTITUDE")}</small><strong>{snapshot ? fmt(snapshot.sky.solar_altitude_deg_at_evaluation,1)+"°" : "—"}</strong></div>
         </div>
         <nav className="mt-immersive-nav" aria-label={l(language,"समयका दृश्यमा जानुहोस्","Explore time views")}>
