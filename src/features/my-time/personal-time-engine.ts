@@ -112,3 +112,49 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
     confidence, components, reasons, cautions, missing
   };
 }
+
+
+export type SavedJanmaPatroContext = {
+  rashi: string;
+  lagna: string;
+  nakshatra: string;
+  pada: number | null;
+  birth: { date: string; time: string; location: string } | null;
+  planets: Array<{ key: string; name: string; sign: string; house: number | null }>;
+  dashas: Array<{ lord: string; start: string; end: string }>;
+};
+
+/** Normalize the actual localStorage payload written by JanmaPatroSuite. */
+export function normalizeJanmaPatroContext(value: unknown): SavedJanmaPatroContext | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const raw = value as Record<string, any>;
+  const birth = raw.birth && typeof raw.birth === "object" && !Array.isArray(raw.birth)
+    ? { date: String(raw.birth.date || ""), time: String(raw.birth.time || ""), location: String(raw.birth.location || "") }
+    : null;
+  const planets = Array.isArray(raw.planets)
+    ? raw.planets.filter((planet: unknown) => !!planet && typeof planet === "object" && !Array.isArray(planet))
+      .map((planet: any) => ({
+        key: String(planet.planet_en || planet.key || ""),
+        name: String(planet.planet_en || planet.name || ""),
+        sign: String(planet.rashi?.name || planet.sign || ""),
+        house: Number.isInteger(planet.house) && planet.house >= 1 && planet.house <= 12 ? planet.house : null
+      })).filter((planet: { name: string }) => planet.name.length > 0).slice(0, 10)
+    : [];
+  const dashas = Array.isArray(raw.dasha?.periods)
+    ? raw.dasha.periods.filter((period: unknown) => {
+        if (!period || typeof period !== "object" || Array.isArray(period)) return false;
+        const item = period as Record<string, unknown>;
+        return typeof item.lord === "string" && item.lord.length > 0
+          && typeof item.start === "string" && Number.isFinite(Date.parse(item.start))
+          && typeof item.end === "string" && Number.isFinite(Date.parse(item.end))
+          && Date.parse(item.end) > Date.parse(item.start);
+      }).map((period: any) => ({ lord: period.lord, start: period.start, end: period.end }))
+    : [];
+  const context: SavedJanmaPatroContext = {
+    rashi: String(raw.rashi?.name || ""), lagna: String(raw.lagna?.name || ""),
+    nakshatra: String(raw.nakshatra?.name || ""),
+    pada: Number.isInteger(raw.nakshatra?.pada) && raw.nakshatra.pada >= 1 && raw.nakshatra.pada <= 4 ? raw.nakshatra.pada : null,
+    birth, planets, dashas
+  };
+  return context.rashi || context.nakshatra ? context : null;
+}
