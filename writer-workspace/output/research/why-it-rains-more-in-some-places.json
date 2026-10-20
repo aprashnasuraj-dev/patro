@@ -1,7 +1,7 @@
 {
   "slug": "why-it-rains-more-in-some-places",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -11,7 +11,8 @@
       "reliability": "Government science agency",
       "notes": [
         "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
-      ]
+      ],
+      "apa": "NOAA JetStream. (n.d.). Precipitation. https://www.noaa.gov/jetstream/atmosphere/precipitation"
     },
     {
       "n": 2,
@@ -21,7 +22,8 @@
       "reliability": "Government science agency",
       "notes": [
         "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
-      ]
+      ],
+      "apa": "NOAA. (n.d.). What’s the difference between climate and weather?. https://www.noaa.gov/explainers/what-s-difference-between-climate-and-weather"
     },
     {
       "n": 3,
@@ -31,7 +33,8 @@
       "reliability": "Government science agency",
       "notes": [
         "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
-      ]
+      ],
+      "apa": "USGS Water Science School. (n.d.). The Water Cycle. https://www.usgs.gov/special-topics/water-science-school/science/water-cycle"
     },
     {
       "n": 4,
@@ -41,7 +44,8 @@
       "reliability": "National meteorological service",
       "notes": [
         "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
-      ]
+      ],
+      "apa": "UK Met Office. (n.d.). How weather works. https://weather.metoffice.gov.uk/learn-about/weather/how-weather-works"
     },
     {
       "n": 5,
@@ -51,11 +55,25 @@
       "reliability": "Government science agency",
       "notes": [
         "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
-      ]
+      ],
+      "apa": "NOAA JetStream. (n.d.). Precipitation and atmospheric circulation. https://www.noaa.gov/jetstream/atmosphere/precipitation"
     }
   ],
   "notes": [
     "Draft committed; hero image remains pending.",
-    "The USGS water-cycle URL timed out during retrieval; verify that source before final approval. NOAA precipitation and Met Office weather pages were opened."
-  ]
+    "The USGS water-cycle URL timed out during retrieval; verify that source before final approval. NOAA precipitation and Met Office weather pages were opened.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
+  ],
+  "apa_references": [
+    "NOAA JetStream. (n.d.). Precipitation. https://www.noaa.gov/jetstream/atmosphere/precipitation",
+    "NOAA. (n.d.). What’s the difference between climate and weather?. https://www.noaa.gov/explainers/what-s-difference-between-climate-and-weather",
+    "USGS Water Science School. (n.d.). The Water Cycle. https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
+    "UK Met Office. (n.d.). How weather works. https://weather.metoffice.gov.uk/learn-about/weather/how-weather-works",
+    "NOAA JetStream. (n.d.). Precipitation and atmospheric circulation. https://www.noaa.gov/jetstream/atmosphere/precipitation"
+  ],
+  "image_file": "why-it-rains-more-in-some-places-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
