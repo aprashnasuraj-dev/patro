@@ -35,6 +35,35 @@ function json(res, status, body, cacheControl = "public, max-age=60") {
   res.end(JSON.stringify(body));
 }
 async function serveAuditApi(url, res) {
+  // These two endpoints are consumed by the shared utility shell even in the static
+  // browser suite. Return deterministic local fixtures so unrelated routes do not
+  // emit false 503 errors; this server never proxies or changes production responses.
+  if (url.pathname === "/api/v1/tools/catalog") {
+    json(res, 200, { items: [] });
+    return true;
+  }
+  if (url.pathname === "/api/v1/noc/fuel-prices") {
+    json(res, 200, {
+      ok: true,
+      source: "Nepal Oil Corporation",
+      sourceUrl: "https://noc.org.np/retailprice",
+      fetchedAt: "2026-10-20T00:00:00.000Z",
+      effectiveDate: "2083.04.17 (2026-08-02)",
+      freshness: "official-snapshot",
+      stale: true,
+      note: "Static audit fixture only; live NOC data is not available in this server.",
+      zones: [{
+        depots: ["Kathmandu", "Pokhara", "Dipayal"],
+        petrol: 200,
+        diesel: 200,
+        kerosene: 200,
+        atfDutyFreeUsdPerKl: 1697,
+        atfDomesticNprPerL: 249,
+        lpgNprPerCylinder: 2060
+      }]
+    });
+    return true;
+  }
   if (!auditApi) return false;
   const fixture = await calendarFixture().catch(() => null);
   if (!fixture) return false;
