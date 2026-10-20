@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { calculateMyTimeSnapshot, localDateTimeToUtc, myTimeResponse, normalizeLongitude } from "../worker/my-time";
+import { calculateMyTimeSnapshot, localDateTimeToUtc, normalizeLongitude } from "../src/patro-tools/core/my-time-snapshot";
+import { myTimeResponse } from "../worker/my-time";
 
 describe("My Time astronomical core", () => {
   it("normalizes negative and over-revolution longitudes", () => {
