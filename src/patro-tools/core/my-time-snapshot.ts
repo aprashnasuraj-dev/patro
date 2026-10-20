@@ -96,8 +96,9 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const phaseAngle = normalizeLongitude(panchang.moonPhaseAngle);
   const skyPhaseAngle = normalizeLongitude(Astronomy.MoonPhase(evaluatedAt));
   const tithiIndex = panchang.tithi;
+  const tantraTithiIndex = panchangAt(evaluatedAt).tithi;
   const tantraVidya = daily && nextDay && daily.sunset.getTime() > daily.sunrise.getTime() && nextDay.sunrise.getTime() > daily.sunset.getTime()
-    ? computeTantraTime(tithiIndex, evaluatedAt, daily.sunrise, daily.sunset, nextDay.sunrise)
+    ? computeTantraTime(tantraTithiIndex, evaluatedAt, daily.sunrise, daily.sunset, nextDay.sunrise)
     : null;
   const tithiProgress = ((phaseAngle % 12) / 12) * 100;
   const illumination = ((1 - Math.cos(skyPhaseAngle * DEG)) / 2) * 100;
