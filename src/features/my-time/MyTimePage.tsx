@@ -269,7 +269,9 @@ export default function MyTimePage() {
     ? l(language, "यो राहुकाल/काल खण्ड अहिले चलिरहेको छ। परम्परा मान्नुहुन्छ भने नयाँ शुभकार्य अर्को समयका लागि राख्नुहोस्; सामान्य काम रोक्नुपर्ने होइन।", "This traditional caution period is active. If you observe it, defer starting auspicious activities until it ends; routine work does not need to stop.")
     : selectedDateIsToday && currentChoghadiya
       ? currentChoghadiya.favorable
-        ? l(language, "अमृतलाई परम्परागत रूपमा अनुकूल समय मानिन्छ—नयाँ काम सुरु गर्न रोज्न सक्नुहुन्छ, तर यो सफलताको ग्यारेन्टी होइन।", "Amrit is traditionally considered favorable—a time you may choose to begin something, not a guarantee of success.")
+        ? currentChoghadiya.name_ne === "अमृत"
+          ? l(language, "अमृतलाई परम्परागत रूपमा अनुकूल समय मानिन्छ—नयाँ काम सुरु गर्न रोज्न सक्नुहुन्छ, तर यो सफलताको ग्यारेन्टी होइन।", "Amrit is traditionally considered favorable—a time you may choose to begin something, not a guarantee of success.")
+          : l(language, currentChoghadiya.name_ne + " चौघडिया परम्परागत रूपमा अनुकूल मानिन्छ। आफ्नो कामअनुसार समय रोज्नुहोस्; परिणामको ग्यारेन्टी होइन।", currentChoghadiya.name_en + " Choghadiya is traditionally considered favorable. Choose according to your task; it is not a guarantee.")
         : l(language, "यो चौघडिया परम्परागत रूपमा तटस्थ वा कम अनुकूल मानिन सक्छ। आफ्नो काम र परम्पराअनुसार निर्णय लिनुहोस्।", "This Choghadiya may be considered neutral or less favorable in tradition. Decide according to your practice and the task.")
       : nextKaal
         ? l(language, "अर्को " + nextKaal.name_ne + " " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + " मा पर्छ। यो परम्परागत समय-सङ्केत हो।", "Next " + nextKaal.name_en + " is " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + ". This is a traditional timing guide.");
