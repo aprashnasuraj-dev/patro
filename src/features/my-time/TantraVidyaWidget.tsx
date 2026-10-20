@@ -35,7 +35,7 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
       <div className="mt-tantra-devi-copy">
         <div className="mt-tantra-name"><strong>{nityaDevi.name}</strong><span>{nityaDevi.sanskritName}</span></div>
         <small>{l(language, "पक्ष", "Paksha")}: {data.paksha === "Shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")} · {l(language, "नित्यादेवी", "Nitya Devi")} {nityaDevi.id}/15</small>
-        <p className="mt-tantra-mantra">{nityaDevi.mantra}</p>
+        <small>{l(language, "सरल नाम-मन्त्र; रूपान्तर हुन सक्छ", "Simple nama mantra; variants exist")}</small><p className="mt-tantra-mantra">{nityaDevi.mantra}</p>
         <p>{l(language, attributesNe[nityaDevi.attribute] || nityaDevi.attribute, nityaDevi.attribute)}</p>
       </div>
     </div>
