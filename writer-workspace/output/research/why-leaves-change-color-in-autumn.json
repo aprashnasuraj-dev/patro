@@ -1,0 +1,39 @@
+{
+  "slug": "why-leaves-change-color-in-autumn",
+  "research_question": "Why do leaves change color in autumn?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.nps.gov/articles/why-do-leaves-change-in-the-fall.htm",
+      "title": "Why Do Leaves Change Colors in the Fall",
+      "publisher": "National Park Service",
+      "reliability": "U.S. government parks and natural science agency",
+      "notes": [
+        "Shorter days and changing temperatures lead to chlorophyll breakdown; yellow and orange pigments become visible as green fades."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://www.fs.usda.gov/wildflowers/beauty/fallcolors/",
+      "title": "Fall Colors",
+      "publisher": "U.S. Forest Service",
+      "reliability": "U.S. government forestry agency",
+      "notes": [
+        "Carotenoids contribute yellows and oranges, while anthocyanins can create reds and purples; weather and species influence intensity."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://arboretum.wisc.edu/news/arboretum-news/why-do-leaves-change-color-in-fall/",
+      "title": "Autumn leaf color",
+      "publisher": "University of Wisconsin-Madison Arboretum",
+      "reliability": "University research and public education resource",
+      "notes": [
+        "Leaf color depends on pigment chemistry, species and environmental conditions; not all trees show the same colors or timing."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
