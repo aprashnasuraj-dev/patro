@@ -14,3 +14,22 @@
 
 .mt-legend-choghadiya,.mt-legend-kaal{display:inline-block;width:15px;height:4px;border-radius:5px;background:#69a988}.mt-legend-kaal{background:#c58b37}.mt-temporal-orbits path{pointer-events:none}
 .mt-legend-note{flex-basis:100%;justify-content:center!important;font-size:10px;color:var(--mt-muted);opacity:.85}
+
+/* My Time: supplemental observatory instruments */
+.mt-observatory-controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 16px;padding:13px 16px;border:1px solid var(--mt-line);border-radius:16px;background:var(--mt-card)}
+.mt-observatory-controls>div{display:flex;flex-direction:column;gap:4px;margin-right:auto}
+.mt-observatory-controls>div>strong{font-size:14px}
+.mt-observatory-controls>label{display:flex;align-items:center;gap:7px;color:var(--mt-muted);font-size:12px;font-weight:700;cursor:pointer}
+.mt-observatory-controls input{accent-color:var(--mt-accent);width:16px;height:16px}
+.mt-extra-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.mt-extra-card{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0;padding:17px;border:1px solid var(--mt-line);border-radius:17px;background:var(--mt-card)}
+.mt-extra-card>small{color:var(--mt-muted);font-size:11px;font-weight:750;line-height:1.5}
+.mt-extra-card>strong{font-size:clamp(18px,2vw,25px);line-height:1.25;letter-spacing:-.025em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.mt-extra-card>span,.mt-extra-card>p{color:var(--mt-muted);font-size:11px;line-height:1.65;margin:0;overflow-wrap:anywhere}
+.mt-scales-panel{margin-bottom:16px}
+.mt-scales-panel h2{font-size:20px;margin:5px 0 0}
+.mt-scale-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin:14px 0 8px}
+.mt-scale-grid .mt-extra-card{padding:12px}
+.mt-scale-grid .mt-extra-card>strong{font-size:clamp(13px,1.5vw,18px)}
+@media(max-width:760px){.mt-observatory-controls{gap:12px}.mt-observatory-controls>div{width:100%}.mt-extra-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mt-scale-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.mt-extra-grid{grid-template-columns:minmax(0,1fr)}.mt-scale-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mt-extra-card{padding:14px}}
