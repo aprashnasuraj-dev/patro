@@ -16,6 +16,7 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
   const { nityaDevi, activeTatwa, tatwaRemainingMinutes, tatwaElapsedMinutes, tatwaWindow, yogini, mahanishaKaal } = data;
   const progress = Math.min(100, Math.max(0, (tatwaElapsedMinutes / 24) * 100));
   const nityaNamesNe: Record<string, string> = { Kameshvari: "कामेश्वरी", Bhagamalini: "भगमालिनी", Nityaklinna: "नित्यक्लिन्ना", Bherunda: "भेरुण्डा", Vahnivasini: "वह्निवासिनी", Mahavajreshvari: "महावज्रेश्वरी", Shivaduti: "शिवदूती", Tvarita: "त्वरिता", Kulasundari: "कुलसुन्दरी", Nitya: "नित्या", Nilapataka: "नीलपताका", Vijaya: "विजया", Sarvamangala: "सर्वमङ्गला", Jwalamalini: "ज्वालामालिनी", Chitra: "चित्रा" };
+  const nityaCycle = ["Kameshvari", "Bhagamalini", "Nityaklinna", "Bherunda", "Vahnivasini", "Mahavajreshvari", "Shivaduti", "Tvarita", "Kulasundari", "Nitya", "Nilapataka", "Vijaya", "Sarvamangala", "Jwalamalini", "Chitra"];
   const mantrasNe: Record<string, string> = { Kameshvari: "ॐ कामेश्वर्यै नमः", Bhagamalini: "ॐ भगमालिन्यै नमः", Nityaklinna: "ॐ नित्यक्लिन्नायै नमः", Bherunda: "ॐ भेरुण्डायै नमः", Vahnivasini: "ॐ वह्निवासिन्यै नमः", Mahavajreshvari: "ॐ महावज्रेश्वर्यै नमः", Shivaduti: "ॐ शिवदूत्यै नमः", Tvarita: "ॐ त्वरितायै नमः", Kulasundari: "ॐ कुलसुन्दर्यै नमः", Nitya: "ॐ नित्यायै नमः", Nilapataka: "ॐ नीलपताकायै नमः", Vijaya: "ॐ विजयायै नमः", Sarvamangala: "ॐ सर्वमङ्गलायै नमः", Jwalamalini: "ॐ ज्वालामालिन्यै नमः", Chitra: "ॐ चित्रायै नमः" };
   const tatwaNamesNe: Record<string, string> = { Prithvi: "पृथ्वी", "Aap / Jala": "आप / जल", "Tejas / Agni": "तेज / अग्नि", Vayu: "वायु", Akash: "आकाश" };
   const elementNamesNe: Record<string, string> = { Earth: "पृथ्वी", Water: "जल", Fire: "अग्नि", Air: "वायु", "Ether / Space": "आकाश" };
@@ -30,7 +31,7 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
     const ne: Record<string, string> = { East: "पूर्व", "South-East": "आग्नेय", South: "दक्षिण", "South-West": "नैऋत्य", West: "पश्चिम", "North-West": "वायव्य", North: "उत्तर", "North-East": "ईशान", Center: "केन्द्र", Above: "माथि", Below: "तल", "Center / Sky": "केन्द्र / आकाश" };
     return language === "ne" ? (ne[value] || value) : value;
   };
-  return <section className="mt-panel mt-tantra-panel" aria-label={l(language, "तन्त्रविद्या कालचक्र", "Tantra Vidya Chronometry")}>
+  return <section id="mt-tantra" className="mt-panel mt-tantra-panel" aria-label={l(language, "तन्त्रविद्या कालचक्र", "Tantra Vidya Chronometry")}>
     <div className="mt-panel-head">
       <div><span className="mt-section-kicker">{l(language, "परम्परागत कालगणना", "TRADITIONAL CHRONOMETRY")}</span><h2>{l(language, "तन्त्रविद्या र सूक्ष्म समय", "Tantra Vidya & Subtle Time")}</h2></div>
       {mahanishaKaal.isActive && <span className="mt-tantra-active" role="status">{l(language, "महानिशा सक्रिय", "Mahanisha active")}</span>}
@@ -44,12 +45,28 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
         <p>{l(language, attributesNe[nityaDevi.attribute] || nityaDevi.attribute, nityaDevi.attribute)}</p>
       </div>
     </div>
+    <div className="mt-nitya-cycle">
+      <div className="mt-tantra-subhead"><strong>{l(language,"१५ नित्या देवी चक्र","The 15 Nitya Devi cycle")}</strong><span>{l(language,"हाल सक्रिय देवी उज्यालो देखिन्छ","The active Nitya is highlighted")}</span></div>
+      <div className="mt-nitya-grid">{nityaCycle.map((name,index)=><div key={name} className={"mt-nitya-step"+(name===nityaDevi.name?" is-current":"")} aria-current={name===nityaDevi.name?"step":undefined}><span>{String(index+1).padStart(2,"0")}</span><strong>{language==="ne"?(nityaNamesNe[name]||name):name}</strong></div>)}</div>
+    </div>
     <div className="mt-tatwa-card">
       <div className="mt-tatwa-top"><span>{l(language, "सक्रिय पञ्चतत्त्व तरङ्ग", "Active Pancha Tatwa wave")}</span><strong>{tatwaRemainingMinutes}{l(language, " मिनेट बाँकी", "m remaining")}</strong></div>
       <div className="mt-tatwa-name"><i style={{ backgroundColor: activeTatwa.color }} /><strong>{language === "ne" ? (tatwaNamesNe[activeTatwa.name] || activeTatwa.name) : activeTatwa.name}</strong><span>{language === "ne" ? (elementNamesNe[activeTatwa.element] || activeTatwa.element) : activeTatwa.element}</span></div>
       <div className="mt-tatwa-track" role="progressbar" aria-label={l(language, "तत्त्व चक्रको प्रगति", "Tatwa cycle progress")} aria-valuemin={0} aria-valuemax={24} aria-valuenow={tatwaElapsedMinutes}><span style={{ width: progress + "%", backgroundColor: activeTatwa.color }} /></div>
       <p>{l(language, recommendationsNe[activeTatwa.recommended] || activeTatwa.recommended, activeTatwa.recommended)}</p>
       <small>{time(tatwaWindow.start, timezone, language)}–{time(tatwaWindow.end, timezone, language)} · {l(language, "२४ मिनेटको परम्परागत चक्र", "traditional 24-minute segment")}</small>
+    </div>
+    <div className="mt-tatwa-cycle">
+      <div className="mt-tantra-subhead"><strong>{l(language,"पञ्चतत्त्वको पूरा चक्र","The five-element cycle")}</strong><span>{l(language,"परम्परागत अर्थ","Traditional associations")}</span></div>
+      <div className="mt-tatwa-steps">
+        {[
+          {name:"Prithvi",en:"Earth",ne:"पृथ्वी",meaningNe:"स्थिरता र आधार",meaningEn:"Stability and grounding"},
+          {name:"Aap / Jala",en:"Water",ne:"जल",meaningNe:"प्रवाह र सम्बन्ध",meaningEn:"Flow and connection"},
+          {name:"Tejas / Agni",en:"Fire",ne:"अग्नि",meaningNe:"ऊर्जा र रूपान्तरण",meaningEn:"Energy and transformation"},
+          {name:"Vayu",en:"Air",ne:"वायु",meaningNe:"गति र विचार",meaningEn:"Movement and ideas"},
+          {name:"Akash",en:"Ether / Space",ne:"आकाश",meaningNe:"मौन र अवकाश",meaningEn:"Stillness and space"}
+        ].map((item,index)=><div key={item.name} className={"mt-tatwa-step"+(item.name===activeTatwa.name?" is-current":"")}><span>{String(index+1).padStart(2,"0")}</span><div><strong>{language==="ne"?item.ne:item.en}</strong><small>{language==="ne"?item.meaningNe:item.meaningEn}</small></div></div>)}
+      </div>
     </div>
     <div className="mt-tantra-details">
       <div><small>{l(language, "योगिनी निवास", "Yogini Nivas")}</small><strong>{language === "ne" ? (yoginiNamesNe[yogini.name] || yogini.name) : yogini.name} · {direction(yogini.direction)}</strong><span>{l(language, "यात्रामा परम्परागत रूपमा टारिने दिशा", "Traditionally avoided travel direction")}: {direction(yogini.blockedDirection)}</span><span>{l(language, "परम्परागत वर्ग", "Traditional classification")}: {l(language, yogini.nature === "Benign" ? "शुभ" : yogini.nature === "Mixed" ? "मिश्रित" : "उग्र", yogini.nature)}</span></div>

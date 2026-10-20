@@ -15,6 +15,8 @@ import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
+import { readMyTimePersonalSettings } from "./my-time-personal-settings";
+import { evaluatePersonalTime, normalizeJanmaPatroContext, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -40,7 +42,8 @@ function isMyTimeSnapshot(value: unknown): value is Snapshot {
 }
 type Preferences = { timezone: string; lat: number; lng: number; label?: string };
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
-type PersonalContext = { birthChart: { rashi: string; lagna: string; nakshatra: string; pada: number | null } | null; rashifalSign: string | null; effectiveSign: string | null };
+type LoadedRashifalSignal = { date: string; sign: string; signal: RashifalSignal };
+type PersonalContext = { birthChart: SavedJanmaPatroContext | null; rashifalSign: string | null; effectiveSign: string | null };
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
 const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
@@ -48,16 +51,14 @@ const TARA_SCORES = [50,87.5,12.5,75,25,100,0,87.5,100];
 function readPersonalContext(): PersonalContext {
   try {
     const raw = JSON.parse(localStorage.getItem("aafnai.jyotish.china.context.v1") || "null");
-    const birthChart = raw && typeof raw === "object" ? {
-      rashi: String(raw.rashi?.name || ""), lagna: String(raw.lagna?.name || ""),
-      nakshatra: String(raw.nakshatra?.name || ""), pada: Number.isInteger(raw.nakshatra?.pada) ? raw.nakshatra.pada : null
-    } : null;
+    const birthChart = normalizeJanmaPatroContext(raw);
     const stored = localStorage.getItem("patro.rashifal.sign.v2");
     const rashifalSign = stored && SIGNS.some(sign => sign.id === stored) ? stored : null;
     const birthSign = SIGNS.find(sign => sign.ne === birthChart?.rashi)?.id || null;
-    return { birthChart: birthChart && (birthChart.rashi || birthChart.nakshatra) ? birthChart : null, rashifalSign, effectiveSign: rashifalSign || birthSign };
+    return { birthChart, rashifalSign, effectiveSign: birthSign || rashifalSign };
   } catch { return { birthChart: null, rashifalSign: null, effectiveSign: null }; }
 }
+
 const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
 const TITHI_NE = ["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा","प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","औंसी"];
@@ -195,13 +196,29 @@ export default function MyTimePage() {
   const [nepalCalendarReference, setNepalCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
   const [rashifalSummary, setRashifalSummary] = useState("");
+  const [rashifalSignal, setRashifalSignal] = useState<LoadedRashifalSignal | null>(null);
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [personalSettings, setPersonalSettings] = useState(readMyTimePersonalSettings);
   const [error, setError] = useState("");
   const loadSequence = useRef(0);
   const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean; hora: boolean; twilight: boolean; tantra: boolean }>(() => {
-    try { const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null"); return { clocks: saved?.clocks !== false, scales: saved?.scales !== false, muhurta: saved?.muhurta !== false, choghadiya: saved?.choghadiya !== false, kaal: saved?.kaal !== false, hora: saved?.hora !== false, twilight: saved?.twilight !== false, tantra: saved?.tantra === true }; }
-    catch { return { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: false }; }
+    const defaults = { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true };
+    const presets = {
+      universal: defaults,
+      scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
+      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: true },
+      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: true },
+      tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
+      combined: defaults
+    };
+    try {
+      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v3") || "null");
+      const optedOut = localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true";
+      if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut && saved.tantra !== false };
+      const lens = readMyTimePersonalSettings().lens;
+      return { ...(presets[lens] || defaults), tantra: !optedOut && (presets[lens] || defaults).tantra };
+    } catch { return defaults; }
   });
   const ne = language === "ne";
   const tantraEvaluation = useMemo(() => {
@@ -230,18 +247,43 @@ export default function MyTimePage() {
   const nepalTime = useMemo(() => nepalStandardTime(now), [now]);
   const abhijit = useMemo(() => snapshot ? abhijitMuhurta(snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc) : null, [snapshot]);
   const currentChoghadiya = useMemo(() => {
-    if (!snapshot) return undefined;
-    const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
-    return [...windows.day, ...windows.night].find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
-  }, [snapshot, now]);
-  const currentKaal = useMemo(() => {
     if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
-    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
-  }, [snapshot, now, preferences.timezone]);
+    const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
+    return [...windows.day, ...windows.night].find(window => minuteNow.getTime() >= Date.parse(window.start_utc) && minuteNow.getTime() < Date.parse(window.end_utc));
+  }, [snapshot, minuteNow, preferences.timezone]);
+  const currentKaal = useMemo(() => {
+    if (!snapshot || localDate(preferences.timezone, minuteNow) !== snapshot.date) return undefined;
+    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => minuteNow.getTime() >= Date.parse(window.start_utc) && minuteNow.getTime() < Date.parse(window.end_utc));
+  }, [snapshot, minuteNow, preferences.timezone]);
+  const selectedDateIsToday = Boolean(snapshot) && localDate(preferences.timezone, minuteNow) === snapshot?.date;
+  const nextKaal = useMemo(() => {
+    if (!snapshot) return undefined;
+    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc)
+      .filter(window => !selectedDateIsToday || Date.parse(window.start_utc) > minuteNow.getTime())
+      .sort((a,b) => Date.parse(a.start_utc)-Date.parse(b.start_utc))[0];
+  }, [snapshot, selectedDateIsToday, minuteNow]);
+  const heroWindowTitle = currentKaal
+    ? l(language, currentKaal.name_ne, currentKaal.name_en)
+    : selectedDateIsToday && currentChoghadiya
+      ? l(language, currentChoghadiya.name_ne, currentChoghadiya.name_en)
+      : nextKaal ? l(language, "अर्को " + nextKaal.name_ne, "Next " + nextKaal.name_en)
+        : l(language, "समय गणना हुँदैछ", "Timing is loading");
+  const heroWindowSummary = currentKaal
+    ? l(language, "यो राहुकाल/काल खण्ड अहिले चलिरहेको छ। परम्परा मान्नुहुन्छ भने नयाँ शुभकार्य अर्को समयका लागि राख्नुहोस्; सामान्य काम रोक्नुपर्ने होइन।", "This traditional caution period is active. If you observe it, defer starting auspicious activities until it ends; routine work does not need to stop.")
+    : selectedDateIsToday && currentChoghadiya
+      ? currentChoghadiya.favorable
+        ? currentChoghadiya.name_ne === "अमृत"
+          ? l(language, "अमृतलाई परम्परागत रूपमा अनुकूल समय मानिन्छ—नयाँ काम सुरु गर्न रोज्न सक्नुहुन्छ, तर यो सफलताको ग्यारेन्टी होइन।", "Amrit is traditionally considered favorable—a time you may choose to begin something, not a guarantee of success.")
+          : l(language, currentChoghadiya.name_ne + " चौघडिया परम्परागत रूपमा अनुकूल मानिन्छ। आफ्नो कामअनुसार समय रोज्नुहोस्; परिणामको ग्यारेन्टी होइन।", currentChoghadiya.name_en + " Choghadiya is traditionally considered favorable. Choose according to your task; it is not a guarantee.")
+        : l(language, "यो चौघडिया परम्परागत रूपमा तटस्थ वा कम अनुकूल मानिन सक्छ। आफ्नो काम र परम्पराअनुसार निर्णय लिनुहोस्।", "This Choghadiya may be considered neutral or less favorable in tradition. Decide according to your practice and the task.")
+      : nextKaal
+        ? l(language, "अर्को " + nextKaal.name_ne + " " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + " मा पर्छ। यो परम्परागत समय-सङ्केत हो।", "Next " + nextKaal.name_en + " is " + formatInstant(nextKaal.start_utc, preferences.timezone, language) + "–" + formatInstant(nextKaal.end_utc, preferences.timezone, language) + ". This is a traditional timing guide.")
+        : l(language, "स्थानीय सूर्योदय/सूर्यास्त उपलब्ध भएपछि समय-सङ्केत देखिनेछ।", "Timing guidance appears when local sunrise and sunset are available.");
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
-  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v1", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
+  useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v3", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
   useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
+  useEffect(() => { const syncSettings = (event: Event) => { const detail = (event as CustomEvent).detail; setPersonalSettings(detail && typeof detail === "object" ? detail : readMyTimePersonalSettings()); }; window.addEventListener("patro:mytime-settings-updated", syncSettings); window.addEventListener("storage", syncSettings); return () => { window.removeEventListener("patro:mytime-settings-updated", syncSettings); window.removeEventListener("storage", syncSettings); }; }, []);
   useEffect(() => {
     const controller = new AbortController();
     homeToday(nepalTime.date, controller.signal).then((body: any) => {
@@ -258,13 +300,13 @@ export default function MyTimePage() {
   }, [nepalTime.date]);
   useEffect(() => {
     const sign = personalContext.effectiveSign;
-    if (!sign) { setRashifalSummary(""); setRashifalLoading(false); return; }
-    const controller = new AbortController(); setRashifalLoading(true);
+    if (!sign) { setRashifalSummary(""); setRashifalSignal(null); setRashifalLoading(false); return; }
+    const controller = new AbortController(); setRashifalLoading(true); setRashifalSignal(null);
     const query = new URLSearchParams({ period: "daily", system: "vedic", calendar: "gregorian", date, sign });
     fetch(`/api/v1/rashifal/universal?${query}`, { signal: controller.signal, credentials: "same-origin", headers: { accept: "application/json" } })
       .then(response => response.ok ? response.json() : Promise.reject(new Error("rashifal_unavailable")))
-      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || body?.readings?.[0]; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); })
-      .catch(() => { if (!controller.signal.aborted) setRashifalSummary(""); })
+      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || null; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); const domains = reading?.scores?.domains && typeof reading.scores.domains === "object" ? Object.fromEntries(Object.entries(reading.scores.domains).filter(([key,value]) => ["work","resources","relationships","wellbeing","learning"].includes(key) && typeof value === "number" && Number.isFinite(value)).map(([key,value]) => [key,Math.max(0,Math.min(100,Number(value)))])) : {}; const sections = Array.isArray(reading?.narrative?.[language]?.sections) ? reading.narrative[language].sections.filter((item: any) => item && typeof item.domain === "string" && typeof item.score === "number" && Number.isFinite(item.score)).map((item: any) => ({ domain: item.domain, score: Math.max(0,Math.min(100,item.score)), band: typeof item.band === "string" ? item.band : undefined, text: typeof item.text === "string" ? item.text : undefined })) : []; setRashifalSignal({ date, sign, signal: { ...(typeof reading?.scores?.overall === "number" && Number.isFinite(reading.scores.overall) ? { overall: Math.max(0,Math.min(100,reading.scores.overall)) } : {}), domains, sections } }); })
+      .catch(() => { if (!controller.signal.aborted) { setRashifalSummary(""); setRashifalSignal(null); } })
       .finally(() => { if (!controller.signal.aborted) setRashifalLoading(false); });
     return () => controller.abort();
   }, [personalContext.effectiveSign, date, language]);
@@ -362,15 +404,17 @@ export default function MyTimePage() {
     void loadSnapshot(nextDate, next, true);
   }, [loadSnapshot]);
   const applyTimeLens = useCallback((lens: "universal" | "scientific" | "panchang" | "jyotish" | "tantra" | "combined") => {
+    const allLayers = { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true };
     const presets = {
-      universal: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: false, hora: false, twilight: false, tantra: false },
+      universal: allLayers,
       scientific: { clocks: true, scales: true, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: true, tantra: false },
-      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: false },
-      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: false },
+      panchang: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: false, tantra: true },
+      jyotish: { clocks: true, scales: false, muhurta: true, choghadiya: true, kaal: true, hora: false, twilight: false, tantra: true },
       tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
-      combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
+      combined: allLayers
     };
-    setObservatoryLayers(presets[lens]);
+    const optedOut = (() => { try { return localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true"; } catch { return false; } })();
+    setObservatoryLayers({ ...presets[lens], tantra: !optedOut && presets[lens].tantra });
   }, []);
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
@@ -381,17 +425,17 @@ export default function MyTimePage() {
   const chandraScore = chandraHouse === null ? null : [1,3,6,7,10,11].includes(chandraHouse) ? 100 : [4,8,12].includes(chandraHouse) ? 0 : 50;
   const declaredSign = SIGNS.find(sign => sign.id === personalContext.effectiveSign);
   const personalizedMuhurta = useMemo(() => {
-    if (!snapshot) return null;
+    if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return null;
     try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
     catch { return null; }
-  }, [snapshot, now, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
+  }, [snapshot, now, preferences.timezone, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
   const recommendedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
     const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
     const kaal = inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc);
-    const todaySelected = localDate(preferences.timezone, now) === snapshot.date;
+    const todaySelected = localDate(preferences.timezone, minuteNow) === snapshot.date;
     return [...windows.day, ...windows.night]
-      .filter(window => !todaySelected || Date.parse(window.end_utc) > now.getTime())
+      .filter(window => !todaySelected || Date.parse(window.end_utc) > minuteNow.getTime())
       .map(window => {
         const overlaps = kaal.filter(period => Date.parse(window.start_utc) < Date.parse(period.end_utc) && Date.parse(window.end_utc) > Date.parse(period.start_utc));
         const result = scorePersonalizedMuhurta({
@@ -403,16 +447,128 @@ export default function MyTimePage() {
         });
         return { ...window, score: result.score, label: result.label, cautions: result.cautions };
       })
-      .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc))
-      .slice(0, 3);
-  }, [snapshot, now, preferences.timezone, taraIndex, chandraHouse]);
+      .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc));
+  }, [snapshot, minuteNow, preferences.timezone, taraIndex, chandraHouse]);
 
+
+  const selectedInterestKey = personalSettings.interests.filter(item => item !== "general").join("|") || "general";
+  const selectedInterests = selectedInterestKey.split("|") as PersonalTimeActivity[];
+  const activeDashaLord = useMemo(() => { const selectedDay = (snapshot?.date || date) + "T12:00:00Z"; return personalContext.birthChart?.dashas.find(period => Date.parse(period.start) <= Date.parse(selectedDay) && Date.parse(period.end) > Date.parse(selectedDay))?.lord || null; }, [personalContext.birthChart, snapshot?.date, date]);
+  const combinedMuhurtaWindows = useMemo(() => {
+    if (!snapshot) return [];
+    const solar = snapshot.panchang;
+    if (!solar.sunrise_utc || !solar.sunset_utc || !solar.next_sunrise_utc) return [];
+    const horas = horaWindows(snapshot.weekday, solar.sunrise_utc, solar.sunset_utc, solar.next_sunrise_utc);
+    const horaPeriods = [...horas.day, ...horas.night];
+    return recommendedMuhurtaWindows.map(window => {
+      const start = Date.parse(window.start_utc), end = Date.parse(window.end_utc);
+      const midpoint = new Date(start + (end - start) / 2);
+      let tatwaName = "", nityaName = "";
+      try {
+        const atMidpoint = panchangAt(midpoint);
+        const tantra = computeTantraTime(atMidpoint?.tithi ?? solar.tithi_index, midpoint, new Date(solar.sunrise_utc!), new Date(solar.sunset_utc!), new Date(solar.next_sunrise_utc!));
+        tatwaName = tantra.activeTatwa.name; nityaName = tantra.nityaDevi.name;
+      } catch { /* Keep the Panchang recommendation available without the Tantra overlay. */ }
+      const hora = horaPeriods.find(period => midpoint.getTime() >= Date.parse(period.start_utc) && midpoint.getTime() < Date.parse(period.end_utc));
+      const horaName = hora?.name_en || "";
+      const activities = selectedInterests.length ? selectedInterests : ["general" as PersonalTimeActivity];
+      const evaluations = activities.map(activity => evaluatePersonalTime({
+        startUtc: window.start_utc, endUtc: window.end_utc, panchangScore: window.score,
+        panchangReasons: window.score >= 75 ? ["supportive_panchang_indications"] : [],
+        panchangCautions: window.cautions,
+        activity, horaLord: horaName || null, tatwa: tatwaName || null,
+        rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
+        dashaLord: activeDashaLord,
+        hasNatalChart: Boolean(personalContext.birthChart)
+      }));
+      const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
+      const personalizationLevel = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
+      const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
+      const aggregateComponents = componentKeys.map(key => {
+        const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
+        return { ...present[0], score: Math.round(present.reduce((sum, item) => sum + item.score, 0) / present.length) };
+      });
+      const personalEvaluation = {
+        ...evaluations[0], score: combinedScore,
+        label: (combinedScore >= 75 ? "supportive" : combinedScore >= 45 ? "mixed" : "caution") as "supportive" | "mixed" | "caution",
+        confidence: personalizationLevel === "personalized" ? "personalized" as const : personalizationLevel === "partial" ? "partially-personalized" as const : "general" as const,
+        components: aggregateComponents,
+        reasons: [...new Set(evaluations.flatMap(item => item.reasons))],
+        cautions: [...new Set(evaluations.flatMap(item => item.cautions))],
+        missing: [...new Set(evaluations.flatMap(item => item.missing))]
+      };
+      return {
+        ...window, tatwaName, nityaName, horaName,
+        label: personalEvaluation.label,
+        tantraFit: aggregateComponents.find(item => item.key === "activity-tatwa")?.score ?? null,
+        horaFit: aggregateComponents.find(item => item.key === "activity-hora")?.score ?? null,
+        combinedScore, personalEvaluation, personalizationLevel
+      };
+    }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
+  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
+  const bestTimeWindow = combinedMuhurtaWindows[0] || null;
+  const interestNames: Record<string,string> = { general: l(language,"सामान्य दिनचर्या","general day"), work: l(language,"काम / व्यवसाय","work / business"), study: l(language,"अध्ययन","study"), travel: l(language,"यात्रा","travel"), prayer: l(language,"पूजा / पर्व","prayer / observances"), meditation: l(language,"ध्यान","meditation"), family: l(language,"परिवार / व्यक्तिगत काम","family / personal plans") };
+  const interestLabel = selectedInterests.map(item => interestNames[item] || interestNames.general).join(" · ");
 
   return <main className="mt-page">
     <header className="mt-heading">
       <div className="mt-eyebrow"><span className="mt-pulse"/> {l(language,"समयलाई आफ्नै दृष्टिले अनुभव गर्नुहोस्","Experience time through your own lens")}</div>
       <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small><div className="mt-apparent-time"><span>{l(language,"स्थानीय सौर समय · अनुमानित","Apparent solar time · approximate")}</span><strong>{solarTime.time}</strong><small>{l(language,"समय समीकरण","Equation of time")}: {solarTime.equationOfTimeMinutes >= 0 ? "+" : ""}{solarTime.equationOfTimeMinutes.toFixed(1)} min</small></div></div></div>
     </header>
+
+    <section className="mt-immersive-hero" aria-labelledby="mt-immersive-title">
+      <div className="mt-immersive-copy">
+        <span className="mt-immersive-eyebrow"><i aria-hidden="true" />{l(language,"समयको जीवित नक्सा","YOUR LIVING MAP OF TIME")}</span>
+        <h2 id="mt-immersive-title">{l(language,"बहुआयामिक समय","Multidimensional Time")}</h2>
+        <p className="mt-immersive-subtitle">{l(language,"२४ घण्टे समय चक्र","24-hour time cycle")}</p>
+        <p>{l(language,"अहिलेको पञ्चाङ्ग, मुहूर्त र तन्त्र समयलाई एउटै जीवित चक्रमा अनुभव गर्नुहोस्।","Experience the current Panchang, Muhurta and Tantra timing in one living cycle.")}</p>
+        <div className="mt-immersive-now"><strong>{localTime}</strong><span>{dateLabel}</span><small><Globe2 size={14}/>{locationLabel}</small></div>
+        <div className="mt-immersive-facts">
+          <div><small>{l(language,"अहिलेको तिथि","CURRENT TITHI")}</small><strong>{tithiName}</strong></div>
+          <div className={currentKaal ? "is-caution" : currentChoghadiya?.favorable ? "is-favorable" : ""}><small>{selectedDateIsToday ? l(language,"अहिलेको समय झ्याल","CURRENT TIME WINDOW") : l(language,"छानिएको मितिको समय झ्याल","SELECTED-DATE TIME WINDOW")}</small><strong>{heroWindowTitle}</strong><p className="mt-hero-window-summary">{heroWindowSummary}</p></div>
+          <div><small>{l(language,"सौर उचाइ","SOLAR ALTITUDE")}</small><strong>{snapshot ? fmt(snapshot.sky.solar_altitude_deg_at_evaluation,1)+"°" : "—"}</strong></div>
+        </div>
+        <nav className="mt-immersive-nav" aria-label={l(language,"समयका दृश्यमा जानुहोस्","Explore time views")}>
+          <a href="#mt-orbit">{l(language,"समय चक्र","Time dial")} <span aria-hidden="true">↗</span></a>
+          <a href="#mt-panchang">{l(language,"पञ्चाङ्ग","Panchang")} <span aria-hidden="true">↗</span></a>
+          <a href="#mt-tantra">{l(language,"तन्त्रविद्या","Tantra Vidya")} <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <div id="mt-orbit" className="mt-immersive-art" aria-label={l(language,"२४ घण्टे समय चक्र","24-hour time cycle")}>
+        <PolarClock timezone={preferences.timezone} now={now} language={language} snapshot={snapshot} showChoghadiya={observatoryLayers.choghadiya} showKaal={observatoryLayers.kaal} showHora={observatoryLayers.hora} showTwilight={observatoryLayers.twilight} showTantra={observatoryLayers.tantra} tantraTime={tantraTime}/>
+      </div>
+    </section>
+
+    <section className="mt-best-time" aria-labelledby="mt-best-time-title">
+      <div className="mt-best-time-heading">
+        <span className="mt-section-kicker">{l(language,"पञ्चाङ्ग + ज्योतिष + तन्त्रविद्या","PANCHANG + JYOTISH + TANTRA VIDYA")}</span>
+        <h2 id="mt-best-time-title">{snapshot && snapshot.date !== localDate(preferences.timezone, now) ? l(language,"छानिएको मितिको उत्तम समय","Best window for selected date") : l(language,"आजको तपाईंका लागि उत्तम समय","Your best time window")}</h2>
+        <p>{l(language,"चयन गरिएको मिति, चौघडिया, राहुकाल/यमगण्ड/गुलिक, उपलब्ध ताराबल–चन्द्रबल र तन्त्रको पञ्चतत्त्वलाई मिलाएर क्रमबद्ध गरिएको परम्परागत मार्गदर्शन।","A personal ranking that combines Panchang timing, the matching daily Rashifal domain, saved birth-chart signals, the active Dasha/Hora relationship, activity-specific Hora and Tantra fit when those inputs are available.")}</p>
+      </div>
+      {bestTimeWindow ? <div className="mt-best-time-content">
+        <div className="mt-best-time-main">
+          <div className="mt-best-score"><strong>{bestTimeWindow.combinedScore}</strong><span>/100</span></div>
+          <div className="mt-best-window-copy">
+            <span className="mt-best-label">{l(language,"संयुक्त समय सङ्केत","COMBINED TIME GUIDANCE")}</span>
+            <h3>{formatInstant(bestTimeWindow.start_utc,preferences.timezone,language)} – {formatInstant(bestTimeWindow.end_utc,preferences.timezone,language)}</h3>
+            <p>{l(language,"तपाईंको रुचि","Your focus")}: {interestLabel} · {bestTimeWindow.tatwaName ? l(language,bestTimeWindow.tatwaName,bestTimeWindow.tatwaName) : l(language,"तन्त्र समय उपलब्ध छैन","Tantra timing unavailable")} · {l(language,"होरा","Hora")}: {bestTimeWindow.horaName || "—"}</p>
+            <p>{bestTimeWindow.label==="supportive" ? l(language,"पञ्चाङ्ग/ज्योतिष स्कोर र तत्त्वको मेलका आधारमा उपलब्ध विकल्पमध्ये अगाडि आएको समय।","Top-ranked among available windows by the Panchang/Jyotish score and Tatwa fit.") : bestTimeWindow.label==="mixed" ? l(language,"उपलब्ध विकल्पमध्ये तुलनात्मक रूपमा अगाडि आएको समय; आफ्नो परम्परा र कामसँग मिलाएर रोज्नुहोस्।","A comparatively stronger available window; choose in line with your practice and task.") : l(language,"यो उपलब्ध विकल्पमध्ये सबैभन्दा अगाडि आए पनि सावधानी सङ्केत हुन सक्छ—विवरण हेरेर निर्णय लिनुहोस्।","This ranks highest among available options but may still carry cautions—review details before deciding.")}</p>
+            <small>{l(language,"स्कोर उपलब्ध इनपुटअनुसार भार मिलाएर निकालिन्छ: पञ्चाङ्ग ४५%, मिल्दो राशिफल डोमेन २५%, सक्रिय दशा–होरा सम्बन्ध १५%, गतिविधि–होरा १०%, तत्त्व मेल ५%। अनुपलब्ध डेटा बनावटी रूपमा थपिँदैन; यो परम्परागत मार्गदर्शन हो, परिणामको ग्यारेन्टी होइन।","Weights are normalized over available inputs: Panchang 45%, matching Rashifal domain 25%, active Dasha–Hora relation 15%, activity–Hora fit 10%, Tatwa fit 5%. Missing data is not invented; this is traditional guidance, not a guarantee.")}</small>
+            <div className="mt-personal-score-breakdown" aria-label={l(language,"समय सिफारिसका कारणहरू","Recommendation factors")}>
+              <strong>{l(language,"यो समय किन छानियो","Why this window ranked here")}</strong>
+              <p>{l(language,bestTimeWindow.personalizationLevel==="personalized"?"जन्मपत्रो र दैनिक राशिफलका उपलब्ध संकेत पनि गणनामा समावेश छन्।":bestTimeWindow.personalizationLevel==="partial"?"केही व्यक्तिगत संकेत उपलब्ध छन्; बाँकी स्कोर पञ्चाङ्ग र समय तहबाट निकालिएको छ।":"जन्मपत्रो वा मिल्दो राशिफल डोमेन उपलब्ध नभएकाले यो मुख्यतः सामान्य समय मार्गदर्शन हो।",bestTimeWindow.personalizationLevel==="personalized"?"Available birth-chart and daily Rashifal signals are included.":bestTimeWindow.personalizationLevel==="partial"?"Some personal signals are available; the remaining score comes from Panchang and timing layers.":"No birth-chart or matching Rashifal domain is available, so this is primarily general timing guidance.")}</p>
+              <div>{bestTimeWindow.personalEvaluation.components.map(component=><span key={component.key}><b>{component.key==="panchang"?l(language,"पञ्चाङ्ग","Panchang"):component.key==="rashifal"?l(language,"राशिफल","Rashifal"):component.key==="dasha-hora"?l(language,"दशा–होरा","Dasha–Hora"):component.key==="activity-hora"?l(language,"काम–होरा","Activity–Hora"):l(language,"तत्त्व मेल","Tatwa fit")}</b> {component.score}/100</span>)}</div>
+              <ul>{bestTimeWindow.personalEvaluation.components.map(component=><li key={component.key}>{l(language,component.key==="panchang"?"चौघडिया, सावधानीका समय र उपलब्ध ताराबल/चन्द्रबलबाट पञ्चाङ्ग स्कोर निकालिएको छ।":component.key==="rashifal"?"छानिएको गतिविधिसँग मिल्ने दैनिक राशिफल क्षेत्रको प्रकाशित स्कोर जोडिएको छ।":component.key==="dasha-hora"?"छानिएको मितिको सक्रिय विम्शोत्तरी दशा र होराको स्वामी तुलना गरिएको छ।":component.key==="activity-hora"?"गतिविधिसँग मिल्ने होरा प्राथमिकता तुलना गरिएको छ; नमिलेमा तटस्थ स्कोर दिइन्छ।":"छानिएको गतिविधिसँग तन्त्रको पञ्चतत्त्व मेल तुलना गरिएको छ।",component.explanation)}</li>)}</ul>
+            </div>
+          </div>
+        </div>
+        <div className="mt-best-current-grid">
+          <article><small>{l(language,"अहिलेको मुहूर्त","CURRENT MUHURTA")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label) : l(language,"गणना हुँदैछ","Calculating")}</strong><span>{personalizedMuhurta ? String(personalizedMuhurta.score)+"/100" : "—"} · {currentChoghadiya ? l(language,currentChoghadiya.name_ne,currentChoghadiya.name_en) : snapshot && snapshot.date !== localDate(preferences.timezone, now) ? l(language,"छानिएको मिति आज होइन","Selected date is not today") : l(language,"समय खण्ड उपलब्ध छैन","No active window")}</span><p>{currentKaal ? l(language,"अहिले "+currentKaal.name_ne+" चलिरहेको छ; नयाँ शुभकार्य अर्को समयका लागि राख्न सक्नुहुन्छ。",currentKaal.name_en+" is active; you may defer a new auspicious start.") : l(language,"हाल सक्रिय राहुकाल/यमगण्ड/गुलिक भेटिएन।","No active Rahu Kaal/Yamaganda/Gulika window was found.")}</p></article>
+          <article><small>{selectedDateIsToday ? l(language,"अहिलेको तन्त्र समय","CURRENT TANTRA TIMING") : l(language,"छानिएको मितिको तन्त्र समय","TANTRA TIMING FOR SELECTED DATE")}</small><strong>{tantraTime ? l(language,tantraTime.activeTatwa.name,tantraTime.activeTatwa.name) : l(language,"उपलब्ध छैन","Unavailable")}</strong><span>{tantraTime ? String(tantraTime.tatwaRemainingMinutes)+" "+l(language,"मिनेट बाँकी","minutes left")+" · "+l(language,tantraTime.nityaDevi.name,tantraTime.nityaDevi.name) : l(language,"सौर घटना आवश्यक","Solar events required")}</span><p>{tantraTime ? l(language,tantraTime.activeTatwa.recommended,tantraTime.activeTatwa.recommended) : l(language,"स्थान र सूर्योदय/सूर्यास्त जाँच्नुहोस्।","Check location and solar events.")}</p></article>
+        </div>
+        <div className="mt-best-alternatives"><strong>{l(language,"अर्का राम्रा विकल्प","Next best windows")}</strong>{combinedMuhurtaWindows.slice(1,3).map((window,index)=><div key={window.key+"-"+window.start_utc}><span>{index+2}</span><strong>{formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</strong><small>{window.combinedScore}/100 · {window.tatwaName ? l(language,window.tatwaName,window.tatwaName) : "—"}</small></div>)}</div>
+      </div> : <div className="mt-best-empty"><strong>{l(language,"उत्तम समय गणना गर्न सौर घटना आवश्यक छ","Solar events are needed to rank a time window")}</strong><p>{l(language,"स्थान र मिति मिलाउनुहोस्; सूर्योदय/सूर्यास्त उपलब्ध भएपछि पञ्चाङ्ग र तन्त्र समय जोडिन्छ।","Check location and date; Panchang and Tantra timing combine once sunrise and sunset are available.")}</p></div>}
+    </section>
 
     <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} locationLabel={locationLabel} lat={preferences.lat} lng={preferences.lng} tithiIndex={briefingTithiIndex} nakshatraIndex={briefingNakshatraIndex} tithiName={briefingTithiName} nakshatraName={briefingNakshatraName} currentWindow={briefingUsesCurrentDate && currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : currentChoghadiya.name_en, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : nextBriefingWindow.name_en, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc } : null} onLocationChange={applyPersonalLocation} onLensChange={applyTimeLens} />
 
@@ -433,7 +589,7 @@ export default function MyTimePage() {
       <label><input type="checkbox" checked={observatoryLayers.kaal} onChange={event=>setObservatoryLayers(old=>({...old,kaal:event.target.checked}))}/>{l(language,"काल घेरा","Inauspicious-time rings")}</label>
       <label><input type="checkbox" checked={observatoryLayers.hora} onChange={event=>setObservatoryLayers(old=>({...old,hora:event.target.checked}))}/>{l(language,"होरा घेरा","Hora ring")}</label>
       <label><input type="checkbox" checked={observatoryLayers.twilight} onChange={event=>setObservatoryLayers(old=>({...old,twilight:event.target.checked}))}/>{l(language,"सन्ध्याकाल घेरा","Twilight ring")}</label>
-      <label className="mt-tantra-toggle"><input type="checkbox" checked={observatoryLayers.tantra} onChange={event=>setObservatoryLayers(old=>({...old,tantra:event.target.checked}))}/>{l(language,"तन्त्रविद्या कालगणना","Tantra Vidya")}</label>
+      <label className="mt-tantra-toggle"><input type="checkbox" checked={observatoryLayers.tantra} onChange={event=>{const enabled=event.target.checked;try{if(enabled)localStorage.removeItem("aafnaipatro.mytime.tantra-optout.v1");else localStorage.setItem("aafnaipatro.mytime.tantra-optout.v1","true");}catch{}setObservatoryLayers(old=>({...old,tantra:enabled}));}}/>{l(language,"तन्त्रविद्या कालगणना","Tantra Vidya")}</label>
     </section>
     {observatoryLayers.clocks && <section className="mt-extra-grid" aria-label={l(language,"नेपाल र स्थानीय समय","Nepal and local time")}>
       <article className="mt-extra-card"><small>{l(language,"नेपाल मानक समय · UTC+05:45","Nepal Standard Time · UTC+05:45")}</small><strong>{nepalTime.time}</strong><span>{nepalTime.date} · NPT</span></article>
@@ -447,19 +603,13 @@ export default function MyTimePage() {
     </section>}
     {observatoryLayers.muhurta && <section className="mt-extra-grid" aria-label={l(language,"मुहूर्त र व्यक्तिगत समय","Muhurta and personalized timing")}>
       <article className="mt-extra-card"><small>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</small><strong>{abhijit ? formatInstant(abhijit.start_utc,preferences.timezone,language)+" – "+formatInstant(abhijit.end_utc,preferences.timezone,language) : "—"}</strong><span>{abhijit ? l(language,"स्थानीय दिनको उज्यालो अवधि र मध्यबिन्दुबाट परम्परागत रूपमा निकालिएको।","Derived traditionally from the daylight span and its midpoint.") : l(language,"सूर्योदय र सूर्यास्त उपलब्ध भएपछि देखाइन्छ।","Shown when sunrise and sunset are available.")}</span></article>
-      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first")}</strong><span>{personalizedMuhurta ? l(language,"समय सङ्केत स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Timing guidance score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{recommendedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्को सुझाइएका समय","Next suggested windows")}</b>{recommendedMuhurtaWindows.map(window=><div key={window.key}><span>{ne ? window.name_ne : window.name_en} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.score}/100</strong></div>)}</div>}</article>
+      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first")}</strong><span>{personalizedMuhurta ? l(language,"समय सङ्केत स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Timing guidance score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{recommendedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्को सुझाइएका समय","Next suggested windows")}</b>{recommendedMuhurtaWindows.slice(0,3).map(window=><div key={window.key}><span>{ne ? window.name_ne : window.name_en} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.score}/100</strong></div>)}</div>}</article>
     </section>}
 
     {error && <div className="mt-notice" role="status"><CircleAlert size={19}/><div><strong>{l(language,"गणना सेवा","Calculation service")}</strong><p>{error}</p>{error.includes("not enabled") || error.includes("सक्रिय") ? <small>{l(language,"यो पृष्ठ र API feature flag सक्रिय भएपछि परिणाम देखिनेछ।","Results appear when the page and API rollout are enabled.")}</small> : null}</div></div>}
 
-    <div className="mt-dashboard-grid">
-      <section className="mt-panel mt-polar-panel">
-        <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"बहुआयामिक समय","MULTIDIMENSIONAL TIME")}</span><h2>{l(language,"२४ घण्टे समय चक्र","24-hour temporal dial")}</h2></div><span className="mt-live"><i/> LIVE</span></div>
-        <PolarClock timezone={preferences.timezone} now={now} language={language} snapshot={snapshot} showChoghadiya={observatoryLayers.choghadiya} showKaal={observatoryLayers.kaal} showHora={observatoryLayers.hora} showTwilight={observatoryLayers.twilight} showTantra={observatoryLayers.tantra} tantraTime={tantraTime}/>
-        <div className="mt-polar-foot"><Globe2 size={16}/><span>{preferences.timezone}</span><span className="mt-dot-sep">·</span><span>{fmt(preferences.lat,4)}, {fmt(preferences.lng,4)}</span></div>
-      </section>
-
-      <section className="mt-panel mt-panchang-panel">
+    <div className="mt-dashboard-grid mt-dashboard-grid-single">
+      <section id="mt-panchang" className="mt-panel mt-panchang-panel">
         <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"आजको खगोलीय आधार","ASTRONOMICAL SNAPSHOT")}</span><h2>{l(language,"पञ्चाङ्ग र चन्द्र अवस्था","Panchang & lunar phase")}</h2></div><Moon size={21}/></div>
         {snapshot ? <>
           <div className="mt-tithi-hero"><div className="mt-moon-mark"><Moon size={28}/></div><div><small>{l(language,"तिथि","Tithi")} {(evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index)}/30</small><strong>{ne ? (TITHI_NE[(evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index)-1] || tithiName) : (TITHI_EN[(evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index)-1] || tithiName)}</strong><span>{((evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index) <= 15) ? l(language,"शुक्ल पक्ष","Shukla Paksha") : l(language,"कृष्ण पक्ष","Krishna Paksha")}</span></div><div className="mt-tithi-progress"><b>{fmt(evaluationPanchang ? ((evaluationPanchang.moonPhaseAngle % 12) / 12) * 100 : snapshot.panchang.tithi_progress_percent,0)}%</b><span>{l(language,"प्रगति","progress")}</span></div></div>
@@ -487,7 +637,7 @@ export default function MyTimePage() {
     {observatoryLayers.tantra && !tantraTime && <div className="mt-tantra-unavailable" role="status">{l(language,"चयन गरिएको स्थानमा सूर्योदय/सूर्यास्त उपलब्ध नभएकाले तन्त्रविद्या समय तह देखाउन सकिएन।","Tantra Vidya timing is unavailable because solar events could not be calculated for this location and date.")}</div>}
     {snapshot && <MyTimeTemporalLayers snapshot={snapshot} timezone={preferences.timezone} language={language} now={now} />}
 
-    <section className="mt-section">
+    <section id="mt-layers" className="mt-section">
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह तपाईंले छानेको मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। आफूलाई चाहिने समयका तहहरू खोल्नुहोस्।","Each layer follows your selected date, location and timezone. Open the time layers that interest you.")}</p></div>
       <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
     </section>
@@ -495,6 +645,11 @@ export default function MyTimePage() {
     <section className="mt-personal">
       <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
       {personalContext.birthChart ? <div className="mt-personal-data"><div><small>{l(language,"जन्म राशि","Natal Moon sign")}</small><strong>{personalContext.birthChart.rashi || "—"}</strong></div><div><small>{l(language,"लग्न","Ascendant")}</small><strong>{personalContext.birthChart.lagna || "—"}</strong></div><div><small>{l(language,"जन्म नक्षत्र","Natal Nakshatra")}</small><strong>{personalContext.birthChart.nakshatra || "—"}{personalContext.birthChart.pada ? ` · ${personalContext.birthChart.pada}` : ""}</strong></div></div> : <p className="mt-personal-muted">{l(language,"अहिलेसम्म यस ब्राउजरमा जन्मपत्रो सन्दर्भ भेटिएन।","No birth-chart context was found in this browser yet.")}</p>}
+      {personalContext.birthChart && (personalContext.birthChart.birth || personalContext.birthChart.planets.length > 0 || personalContext.birthChart.dashas.length > 0) && <div className="mt-personal-chart-details">
+        {personalContext.birthChart.birth && <p><strong>{l(language,"जन्म विवरण","Birth details")}:</strong> {personalContext.birthChart.birth.date} · {personalContext.birthChart.birth.time || "—"} · {personalContext.birthChart.birth.location || "—"}</p>}
+        {personalContext.birthChart.dashas.length > 0 && <p><strong>{l(language,"छानिएको मितिको विम्शोत्तरी महादशा","Vimshottari period for selected date")}:</strong> {personalContext.birthChart.dashas.find(period => Date.parse(period.start) <= Date.parse((snapshot?.date || localDate(preferences.timezone, now)) + "T12:00:00Z") && Date.parse(period.end) > Date.parse((snapshot?.date || localDate(preferences.timezone, now)) + "T12:00:00Z"))?.lord || l(language,"अवधि उपलब्ध छैन","Period unavailable")}</p>}
+        {personalContext.birthChart.planets.length > 0 && <div><strong>{l(language,"जन्मकुण्डलीका ग्रहस्थिति","Natal planetary placements")}</strong><div className="mt-personal-planet-list">{personalContext.birthChart.planets.map(planet => <span key={planet.key}>{planet.name}: {planet.sign || "—"}{planet.house ? " · " + l(language,"भाव","House") + " " + planet.house : ""}</span>)}</div></div>}
+      </div>}
       {snapshot && personalContext.birthChart && <div className="mt-balance-grid"><div><small>{l(language,"ताराबल","Tarabalam")}</small><strong>{taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}</strong><span>{taraCount !== null ? l(language,`जन्म नक्षत्रबाट ${taraCount}औँ ताराको गणना`,`Tara count ${taraCount} from natal Nakshatra`) : l(language,"नक्षत्र नाम मिलाउन सकिएन","Could not match the saved Nakshatra name")}</span><b>{taraIndex >= 0 ? `${TARA_SCORES[taraIndex]} / 100` : ""}</b></div><div><small>{l(language,"चन्द्रबल","Chandrabalam")}</small><strong>{chandraHouse !== null ? l(language,`चन्द्रमा ${chandraHouse}औँ भावमा`,`Moon is in house ${chandraHouse}`) : "—"}</strong><span>{chandraScore === 100 ? l(language,"परम्परागत रूपमा अनुकूल","Traditionally supportive") : chandraScore === 0 ? l(language,"परम्परागत सावधानी","Traditional caution") : chandraScore === 50 ? l(language,"मिश्रित संकेत","Mixed indication") : l(language,"जन्म राशि आवश्यक","Natal Moon sign needed")}</span><b>{chandraScore !== null ? `${chandraScore} / 100` : ""}</b></div></div>}
       {personalContext.effectiveSign && <div className="mt-rashifal-context"><div><small>{l(language,"जोडिएको राशिफल","Connected Rashifal")}</small><strong>{declaredSign ? l(language,declaredSign.ne,declaredSign.en) : personalContext.effectiveSign}</strong></div>{rashifalLoading ? <span>{l(language,"राशिफल लोड हुँदैछ…","Loading Rashifal…")}</span> : rashifalSummary ? <p>{rashifalSummary}</p> : <span>{l(language,"आजको राशिफल सारांश अहिले उपलब्ध छैन।","Today's Rashifal summary is not available right now.")}</span>}</div>}
       </div>
