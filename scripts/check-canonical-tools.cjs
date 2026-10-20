@@ -15,7 +15,7 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
 function captureApplicationPageError(errors, error) {
   const detail = error?.stack || String(error);
   if (/https?:\/\/(?:pagead2\.googlesyndication\.com|[^/]+\.googlesyndication\.com|[^/]+\.doubleclick\.net)\//i.test(detail)) {
-    console.warn("RELEASE_BROWSER_THIRD_PARTY_ERROR_IGNORED:", detail.split("\\n")[0]);
+    console.warn("RELEASE_BROWSER_THIRD_PARTY_ERROR_IGNORED:", detail.split("\n")[0]);
     return;
   }
   errors.push(detail);
