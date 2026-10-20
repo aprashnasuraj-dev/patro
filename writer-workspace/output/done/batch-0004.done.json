@@ -13,7 +13,7 @@
     "why-we-forget-names"
   ],
   "rejected": [],
-  "image_pending": [
+  "images_complete": [
     "how-zero-was-invented",
     "how-wind-turbines-make-electricity",
     "why-ships-float",
@@ -25,6 +25,68 @@
     "why-the-ocean-is-salty",
     "why-we-forget-names"
   ],
+  "hero_images": {
+    "how-zero-was-invented": {
+      "file": "how-zero-was-invented-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "generated"
+    },
+    "how-wind-turbines-make-electricity": {
+      "file": "how-wind-turbines-make-electricity-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "why-ships-float": {
+      "file": "why-ships-float-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "why-the-himalayas-are-still-rising": {
+      "file": "why-the-himalayas-are-still-rising-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "how-the-piano-was-invented": {
+      "file": "how-the-piano-was-invented-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "why-leaves-change-color-in-autumn": {
+      "file": "why-leaves-change-color-in-autumn-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "how-birds-navigate-thousands-of-miles": {
+      "file": "how-birds-navigate-thousands-of-miles-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "how-black-holes-form": {
+      "file": "how-black-holes-form-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "why-the-ocean-is-salty": {
+      "file": "why-the-ocean-is-salty-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    },
+    "why-we-forget-names": {
+      "file": "why-we-forget-names-hero.jpg",
+      "width": 1200,
+      "height": 630,
+      "origin": "Wikimedia Commons reusable image"
+    }
+  },
   "finished": "2026-10-20",
-  "note": "All 10 article JSON files and all 10 research JSON files were committed to the missionmangal-writer-batch-production branch. Article JSON parsing, minimum word-count metadata (all exceed 1,000), nine-section structure, four FAQs, inline citation-to-reference matching, and citation presence in all body/FAQ paragraphs were checked. Hero images are not committed: each article image field is null and all slugs are listed in image_pending. Therefore this marker records the content batch state per PROTOCOL.md and does not claim image-complete publication readiness."
+  "note": "All ten Batch 4 article and research files are present. All ten articles have non-null image metadata and committed 1200x630 hero files. Each image records a credit, source URL, and licence/source note. The pipeline validated local file existence, dimensions, and required metadata; no image-pending statuses remain."
 }
