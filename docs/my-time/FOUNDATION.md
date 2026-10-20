@@ -14,8 +14,8 @@ This PR records initial repository findings and proposes an isolated implementat
 - The repository is `aprashnasuraj-dev/patro`; its default branch is `main`.
 - A long-lived branch, `feature/my-time-v1`, was created from `main`.
 - The frontend is React 19 + TypeScript, built with Vite 6. It uses a custom pathname router in `src/PatroRouter.tsx`, rather than a conventional file-based Next.js router.
-- The deployed edge runtime is Cloudflare Workers with Pages assets. `wrangler.jsonc` declares `worker/optimized-entry.ts` as the entry point, uses `nodejs_compat`, and binds static assets and D1.
-- `astronomy-engine` is already a production dependency. `worker/tithi.ts` contains an astronomical Tithi implementation based on Sun/Moon ecliptic longitudes, Tithi progress, approximate illumination, and a binary search for the next transition.
+- The deployed edge runtime is Cloudflare Workers with Pages assets. `wrangler.jsonc` declares `worker/optimized-entry.ts` as the single main entry point, uses `nodejs_compat`, and binds static assets and D1. My Time must be dispatched through this existing Worker; no second Worker/service is to be created.
+- `astronomy-engine` is already a production dependency. `worker/tithi.ts` contains an astronomical Tithi implementation based on Sun/Moon ecliptic longitudes, Tithi progress, approximate illumination, and a binary search for the next transition. Reuse and factor existing engine/data utilities before adding dependencies or duplicating calculations; inspect existing D1/static datasets first. `wrangler.jsonc` currently shows D1 and Assets bindings, but no KV namespace was found, so do not assume KV exists or silently add a new binding.
 - The app already has a localized calendar/home experience and a bespoke SPA router. `/time-machine` is an existing route for the historical Time Machine; **do not reuse or replace it** for My Time.
 - Existing worker dispatch is composed from multiple isolated handlers in `worker/optimized-entry.ts`; new API handling must use a new path and a carefully scoped handler so existing dispatch order and fallback behavior remain unchanged.
 - `package.json` defines TypeScript checks, Vitest and Node test suites, build/release gates, Cloudflare configuration validation, and static URL-preservation checks. The full build is a long pipeline with many generated assets and verification steps.
@@ -27,7 +27,7 @@ This PR records initial repository findings and proposes an isolated implementat
 2. **Do not assume the current Tithi routine is a complete Panchang engine.** It is a useful existing primitive, but the required calendar conventions, ayanamsa, sunrise rules, boundary behavior, and high-precision ephemeris must be verified separately.
 3. **Keep astronomy, tradition-specific rules, and presentation separate.** Calculation modules should return typed, unit-labelled results; UI must not duplicate formula logic.
 4. **Treat location, timezone, and calendar date as explicit inputs.** A date-only cache key is not sufficient for location-dependent solar events or personal settings.
-5. **Preserve current routing.** Add `/my-time` as a new route behind `MY_TIME_ENABLED`; preserve `/time-machine`, all current calendar routes, redirects, SEO handlers, and API contracts.
+5. **Preserve current routing.** Add `/mytime` as a new route behind `MY_TIME_ENABLED`; preserve `/time-machine`, all current calendar routes, redirects, SEO handlers, and API contracts.
 6. **Do not promise sub-100 ms uncached calculations.** Measure warm KV/cache hits separately from cold ephemeris calculations and report p50/p95 by response class.
 7. **Do not invent personal auspiciousness.** Tarabalam/Chandrabalam and personalized recommendations need explicit birth inputs, tradition/convention selection, privacy controls, and a transparent explanation of the rules used.
 
@@ -133,3 +133,13 @@ The example Worker in the source is illustrative rather than production-safe: it
 ### Phase 1 licensing gate
 
 Before adding any Swiss Ephemeris-derived package or WASM binary, make an explicit licensing decision. The upstream project documents AGPL and a separate commercial/professional license path; a package's WASM wrapper does not remove the upstream license obligations. This is a release blocker for a proprietary/closed-source service unless legal/product ownership confirms a compatible licensing path. See [official Swiss Ephemeris licensing](https://www.astro.com/swisseph/swephinfo_e.htm) and [Cloudflare Workers WebAssembly documentation](https://developers.cloudflare.com/workers/runtime-apis/webassembly/).
+
+
+## Product-owner refinements (2026-10-20)
+
+- My Time is a deep feature integrated into the existing AafnaiPatro application, not a standalone tool/site/service.
+- **One canonical page:** `/mytime`. Keep the existing `/time-machine` historical archive untouched.
+- **One Worker:** use `worker/optimized-entry.ts` and its existing dispatch composition. A focused `worker/my-time/` module/handler is allowed, but it must be imported and dispatched by the existing main Worker; do not configure or deploy a second Worker.
+- **Reuse before adding:** prefer existing `astronomy-engine`, Tithi implementation, D1 content/calendar sources, locale/time utilities, profile/rashifal/birth-chart interfaces, and app shell. Do not create duplicate engines or data stores where current implementations can be safely reused. WASM/Swiss Ephemeris remains an adapter/precision decision gated by license, compatibility, ephemeris-data, and benchmark evidence.
+- **Navigation placement:** add My Time to the tools list; in the mobile home menu place it immediately after JanmaPatro; in desktop home view place it immediately after “आजको नेपाली मिति” in the bottom section. Keep a single page/dashboard, not multiple subtool routes.
+- **Personalization:** use explicitly declared/available birth-chart and Rashifal context, alongside preferences/location/timezone and the PDF's other personal-time signals. Make recommendations explainable, consent-aware, and convention-labelled. General mode must work without birth data; never place personal birth inputs in shared public cache keys.
