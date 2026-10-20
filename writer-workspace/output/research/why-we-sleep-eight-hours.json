@@ -1,0 +1,68 @@
+{
+  "slug": "why-we-sleep-eight-hours",
+  "research_question": "Why do people commonly recommend eight hours of sleep, and what does sleep science actually establish about duration, biological function, and individual variation?",
+  "retrieved_at": "2026-10-20",
+  "method": "Authoritative-source synthesis. The connected Elicit API returned an account-plan access denial, so no Elicit report is claimed.",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4434546/",
+      "title": "Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society",
+      "publisher": "Journal of Clinical Sleep Medicine / AASM and Sleep Research Society",
+      "reliability": "Professional-society consensus statement",
+      "notes": [
+        "The consensus recommends adults sleep at least seven hours regularly for optimal health.",
+        "Regular sleep below seven hours is associated with multiple adverse health and performance outcomes.",
+        "The statement notes that more than nine hours may be appropriate for some groups, including young adults and people recovering from sleep debt or illness."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.cdc.gov/sleep/about/index.html",
+      "title": "About Sleep",
+      "publisher": "Centers for Disease Control and Prevention",
+      "reliability": "Government public-health agency",
+      "notes": [
+        "Sleep needs vary by age and person; adult recommendations are not identical to recommendations for children and teenagers.",
+        "Sleep supports health, emotional well-being, attention, and memory.",
+        "Sleep quality and regularity matter alongside duration."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation",
+      "title": "Sleep Deprivation and Deficiency",
+      "publisher": "National Heart, Lung, and Blood Institute, NIH",
+      "reliability": "Government medical research institute",
+      "notes": [
+        "Sleep deficiency can involve too little sleep, poor-quality sleep, sleeping at the wrong time, or a sleep disorder.",
+        "Sleep deficiency can affect learning, focus, reaction time, decision-making, and emotional regulation.",
+        "Chronic insufficient sleep is linked with a range of health problems."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-understanding-sleep",
+      "title": "Brain Basics: Understanding Sleep",
+      "publisher": "National Institute of Neurological Disorders and Stroke, NIH",
+      "reliability": "Government medical research institute",
+      "notes": [
+        "Sleep is an active biological process, not simply inactivity.",
+        "Sleep cycles through non-REM and REM stages; patterns change across the night.",
+        "Researchers continue to investigate the full set of functions sleep serves."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need",
+      "title": "How Much Sleep Do We Really Need?",
+      "publisher": "Sleep Foundation",
+      "reliability": "Sleep-health educational publisher summarizing expert recommendations",
+      "notes": [
+        "Eight hours is a useful public shorthand, not a universal biological quota for every adult.",
+        "Recommended duration ranges reflect population evidence and individual variation.",
+        "Sleep duration should be interpreted together with daytime alertness and sleep quality."
+      ]
+    }
+  ]
+}
