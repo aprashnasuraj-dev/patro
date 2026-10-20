@@ -3,6 +3,7 @@ import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } f
 import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
+import { deviceZone, readPlace } from "../../place/place";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import "./my-time.css";
@@ -42,12 +43,14 @@ const PREF_KEY = "aafnaipatro.mytime.preferences.v1";
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
 const TITHI_NE = ["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा","प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","औंसी"];
 function readPreferences(): Preferences {
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Asia/Kathmandu";
   try {
     const saved = JSON.parse(localStorage.getItem(PREF_KEY) || "null");
     if (saved && typeof saved.timezone === "string" && Number.isFinite(saved.lat) && Number.isFinite(saved.lng)) return saved;
   } catch {}
-  return { timezone, lat: 27.7172, lng: 85.324 };
+  const place = readPlace();
+  return place
+    ? { timezone: place.tz, lat: place.lat, lng: place.lon }
+    : { timezone: deviceZone() || "Asia/Kathmandu", lat: 27.7172, lng: 85.324 };
 }
 function localDate(timezone: string, now = new Date()) {
   try {
@@ -134,7 +137,7 @@ export default function MyTimePage() {
     return () => controller.abort();
   }, [personalContext.effectiveSign, date, language]);
 
-  const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences) => {
+  const loadSnapshot = useCallback(async (nextDate = date, nextPreferences = preferences, persistPreferences = false) => {
     setLoading(true); setError("");
     const controller = new AbortController();
     const referencePromise = homeToday(nextDate, controller.signal).then((body: any) => {
@@ -155,7 +158,7 @@ export default function MyTimePage() {
       const body = await response.json().catch(() => ({}));
       if (!response.ok || !body?.ok || !body?.data) throw new Error(body?.error || `HTTP ${response.status}`);
       setSnapshot(body.data as Snapshot);
-      try { localStorage.setItem(PREF_KEY, JSON.stringify(nextPreferences)); } catch {}
+      if (persistPreferences) try { localStorage.setItem(PREF_KEY, JSON.stringify(nextPreferences)); } catch {}
     } catch (cause) {
       setSnapshot(null);
       const message = cause instanceof Error ? cause.message : "request_failed";
@@ -193,7 +196,7 @@ export default function MyTimePage() {
       <label><span>{l(language,"समय क्षेत्र (IANA)","Timezone (IANA)")}</span><input value={preferences.timezone} onChange={event=>setPreferences(old=>({...old,timezone:event.target.value}))} placeholder="Asia/Kathmandu" autoComplete="off"/></label>
       <label><span>{l(language,"अक्षांश","Latitude")}</span><input type="number" min="-90" max="90" step="0.0001" value={preferences.lat} onChange={event=>setPreferences(old=>({...old,lat:Number(event.target.value)}))}/></label>
       <label><span>{l(language,"देशान्तर","Longitude")}</span><input type="number" min="-180" max="180" step="0.0001" value={preferences.lng} onChange={event=>setPreferences(old=>({...old,lng:Number(event.target.value)}))}/></label>
-      <button type="button" className="mt-primary" disabled={loading || !date || !preferences.timezone.trim()} onClick={()=>void loadSnapshot(date,preferences)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
+      <button type="button" className="mt-primary" disabled={loading || !date || !preferences.timezone.trim()} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
     </section>
 
     {error && <div className="mt-notice" role="status"><CircleAlert size={19}/><div><strong>{l(language,"गणना सेवा","Calculation service")}</strong><p>{error}</p>{error.includes("not enabled") || error.includes("सक्रिय") ? <small>{l(language,"यो पृष्ठ र API feature flag सक्रिय भएपछि परिणाम देखिनेछ।","Results appear when the page and API rollout are enabled.")}</small> : null}</div></div>}
