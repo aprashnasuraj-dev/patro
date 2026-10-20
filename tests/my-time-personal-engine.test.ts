@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { JANMAPATRO_CONTEXT_STORAGE_KEY, createJanmaPatroContext, findJanmaPatroBirthPlace, readJanmaPatroBirthInput, saveJanmaPatroContext } from "../src/jyotish/my-time-bridge";
+import type { ChartResult } from "../src/jyotish/jyotishEngine";
 import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
 
 const base = {
@@ -105,5 +107,51 @@ describe("personal-time recommendation engine", () => {
   it("rejects invalid windows and scores", () => {
     expect(() => evaluatePersonalTime({ ...base, startUtc: "bad" })).toThrow("invalid_window");
     expect(() => evaluatePersonalTime({ ...base, panchangScore: 101 })).toThrow("invalid_panchang_score");
+  });
+});
+
+
+describe("Janmapatro and My Time shared birth profile", () => {
+  it("resolves known cities and leaves unknown places unresolved", () => {
+    expect(findJanmaPatroBirthPlace("Kathmandu")).toEqual({ name: "Kathmandu", lat: 27.7172, lng: 85.324 });
+    expect(findJanmaPatroBirthPlace("Tokyo, Japan")).toEqual({ name: "Tokyo, Japan", lat: 35.6762, lng: 139.6503 });
+    expect(findJanmaPatroBirthPlace("unknown village")).toBeNull();
+  });
+
+  it("saves the canonical profile produced by the existing Janmapatro engine", () => {
+    const data = new Map<string, string>();
+    const storage = { setItem: (key: string, value: string) => { data.set(key, value); } };
+    const chart = {
+      ascSignIndex: 3, ascendant: 15.25,
+      input: { name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 },
+      planets: [{ key: "moon", name: "Moon", signIndex: 1, house: 9, longitude: 42.5 }],
+      moonNakshatraIndex: 3, moonPada: 2,
+      dashas: [{ lord: "Venus", start: new Date("2020-01-01T00:00:00.000Z"), end: new Date("2030-01-01T00:00:00.000Z"), years: 20 }],
+      manglik: { fromLagna: 1, fromMoon: 2, affectedHouses: [], severity: "None", explanation: "test" },
+      methodology: ["test methodology"]
+    } as unknown as ChartResult;
+    const context = createJanmaPatroContext(chart);
+    expect(context.birth).toMatchObject({ name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu" });
+    expect(saveJanmaPatroContext(context, storage)).toBe(true);
+    expect(JSON.parse(data.get(JANMAPATRO_CONTEXT_STORAGE_KEY) || "null")).toMatchObject({
+      birth: { name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu" },
+      data_quality: { source: "janmapatro-engine" }
+    });
+  });
+
+  it("restores a valid saved birth profile into Janmapatro's editable form", () => {
+    const saved = new Map<string, string>([[JANMAPATRO_CONTEXT_STORAGE_KEY, JSON.stringify({ birth: { name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 } })]]);
+    expect(readJanmaPatroBirthInput({ getItem: key => saved.get(key) ?? null })).toEqual({
+      name: "Test User", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324
+    });
+  });
+
+  it("does not restore malformed or incomplete birth details", () => {
+    const saved = new Map<string, string>([[JANMAPATRO_CONTEXT_STORAGE_KEY, JSON.stringify({ birth: { date: "not-a-date", time: "99:99", location: "unknown" } })]]);
+    expect(readJanmaPatroBirthInput({ getItem: key => saved.get(key) ?? null })).toBeNull();
+  });
+
+  it("reports storage failure instead of claiming the profile was saved", () => {
+    expect(saveJanmaPatroContext({ birth: {} }, { setItem: () => { throw new Error("blocked"); } })).toBe(false);
   });
 });
