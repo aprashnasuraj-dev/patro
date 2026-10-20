@@ -1,0 +1,39 @@
+{
+  "slug": "how-wind-turbines-make-electricity",
+  "research_question": "How does a wind turbine convert wind energy into electrical energy?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.energy.gov/cmei/systems/how-do-wind-turbines-work",
+      "title": "How Do Wind Turbines Work?",
+      "publisher": "U.S. Department of Energy",
+      "reliability": "U.S. government energy agency",
+      "notes": [
+        "Wind creates lift on blades; the rotor turns a shaft that drives a generator directly or through a gearbox."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://www.energy.gov/cmei/systems/explore-wind-turbine-text-version",
+      "title": "Explore a Wind Turbine: Text Version",
+      "publisher": "U.S. Department of Energy",
+      "reliability": "U.S. government energy agency",
+      "notes": [
+        "Generated electricity goes through power electronics or electrical equipment, transformers, substations and transmission lines before distribution."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://www.energy.gov/cmei/systems/wind-energy-basics",
+      "title": "Wind Energy Basics",
+      "publisher": "U.S. Department of Energy",
+      "reliability": "U.S. government energy agency",
+      "notes": [
+        "Wind originates from uneven solar heating, surface differences and Earth's rotation; siting, wind variability and grid connection shape output."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
