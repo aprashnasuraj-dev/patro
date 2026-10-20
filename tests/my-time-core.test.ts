@@ -52,7 +52,12 @@ describe("My Time astronomical core", () => {
     expect(enabled?.status).toBe(200);
     const payload = await enabled!.json();
     expect(payload).toMatchObject({ ok: true, data: { date: "2026-10-20", timezone: "Asia/Kathmandu" } });
-    expect(payload.data).toHaveProperty("tantraVidya");
+    expect(payload.data.tantraVidya).toMatchObject({
+      nityaDevi: { id: expect.any(Number), name: expect.any(String) },
+      activeTatwa: { durationMin: 24, color: expect.any(String) },
+      yogini: { name: expect.any(String), direction: expect.any(String), blockedDirection: expect.any(String) },
+      mahanishaKaal: { start: expect.any(String), end: expect.any(String), isActive: expect.any(Boolean) }
+    });
     const invalid = await myTimeResponse(new Request("https://aafnaipatro.com/api/v1/mytime/today?lat=91"), { MY_TIME_ENABLED: true });
     expect(invalid?.status).toBe(400);
   });
