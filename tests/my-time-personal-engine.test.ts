@@ -93,10 +93,27 @@ describe("personal-time recommendation engine", () => {
     expect(context?.birth).toEqual({ name: "Suraj", date: "1995-04-10", time: "08:30", location: "Kathmandu", lat: 27.7172, lng: 85.324 });
   });
 
-  it("derives the traditional daily lucky number from birth-date digit root and Tithi", () => {
+  it("derives a daily number from birth-date root and Tithi, and incorporates natal Nakshatra/Pada when available", () => {
     expect(calculatePersonalLuckyNumber("1995-04-10", 11)).toBe(4);
+    expect(calculatePersonalLuckyNumber("1995-04-10", 11, 4, 2)).toBe(1);
+    expect(calculatePersonalLuckyNumber("1995-04-10", 11, 5, 2)).not.toBe(calculatePersonalLuckyNumber("1995-04-10", 11, 4, 2));
     expect(calculatePersonalLuckyNumber("1995-04-10", 0)).toBeNull();
     expect(calculatePersonalLuckyNumber("not-a-date", 11)).toBeNull();
+    expect(calculatePersonalLuckyNumber("1995-04-10", 11, 28, 2)).toBeNull();
+    expect(calculatePersonalLuckyNumber("1995-04-10", 11, 4, 5)).toBeNull();
+  });
+
+  it("selects a dedicated lucky time from the highest-ranked future personal window only", async () => {
+    const { selectPersonalLuckyTime } = await import("../src/features/my-time/personal-time-engine");
+    const make = (start_utc: string, combinedScore: number, personalizationLevel: "personalized" | "partial" | "general" = "personalized") => ({
+      start_utc, end_utc: new Date(Date.parse(start_utc) + 30 * 60_000).toISOString(), combinedScore, personalizationLevel,
+      personalEvaluation: { score: combinedScore, label: "supportive" as const, confidence: "personalized" as const, components: [], reasons: [], cautions: [], missing: [] }
+    });
+    const now = new Date("2026-10-20T08:00:00Z");
+    const windows = [make("2026-10-20T10:00:00Z", 82), make("2026-10-20T09:00:00Z", 94), make("2026-10-20T11:00:00Z", 99, "general")];
+    expect(selectPersonalLuckyTime(windows, true, now, true)?.combinedScore).toBe(94);
+    expect(selectPersonalLuckyTime(windows, false, now, true)).toBeNull();
+    expect(selectPersonalLuckyTime([make("2026-10-20T07:00:00Z", 99)], true, now, true)).toBeNull();
   });
 
   it("rejects invalid coordinates instead of exposing them as reusable birth data", () => {
