@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-10",
- "osm_timestamp": "2026-10-09T20:21:04Z",
+ "generated": "2026-10-12",
+ "osm_timestamp": "2026-10-11T20:21:06Z",
  "level_counts": {
   "4": 7,
   "6": 77,
@@ -516,16 +516,16 @@
   }
  },
  "pois": {
-  "total": 54822,
+  "total": 54830,
   "by_category": {
    "bus": 290,
-   "stay": 4942,
+   "stay": 4947,
    "peak": 565,
    "worship": 7713,
-   "school": 24915,
+   "school": 24916,
    "market": 300,
-   "bank": 5871,
-   "sight": 855,
+   "bank": 5872,
+   "sight": 856,
    "police": 625,
    "office": 2832,
    "waterfall": 32,
