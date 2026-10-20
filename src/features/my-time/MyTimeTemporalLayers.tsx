@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { CircleAlert, Compass, Sparkles } from "lucide-react";
+import { CircleAlert } from "lucide-react";
 import { choghadiyaWindows, horaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
 import { zonedInstant } from "../../place/civil";
 import { localLunarEclipse, localSolarEclipse } from "../../place/eclipse";
@@ -25,71 +25,14 @@ function dateTime(value: Date, timezone: string, language: Language) {
   try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(value); }
   catch { return value.toISOString(); }
 }
-function localIsoDate(value: Date, timezone: string) {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(value).map(part => [part.type, part.value]));
-  return `${parts.year}-${parts.month}-${parts.day}`;
-}
 export default function MyTimeTemporalLayers({ snapshot, timezone, language, now }: Props) {
   const [eclipses, setEclipses] = useState<EclipseSummary | null>(null);
   const dayNight = useMemo(() => choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc), [snapshot]);
   const kaal = useMemo(() => inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc), [snapshot]);
   const hora = useMemo(() => horaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc), [snapshot]);
   const currentHora = [...hora.day, ...hora.night].find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
-  const selectedIsToday = localIsoDate(now, timezone) === snapshot.date;
-  const nowMs = now.getTime();
-  const activeKaal = selectedIsToday ? kaal.find(window => nowMs >= Date.parse(window.start_utc) && nowMs < Date.parse(window.end_utc)) : undefined;
-  const nextKaal = kaal.filter(window => Date.parse(window.start_utc) > (selectedIsToday ? nowMs : Number.NEGATIVE_INFINITY)).sort((a,b)=>Date.parse(a.start_utc)-Date.parse(b.start_utc))[0];
-  const currentChoghadiya = [...dayNight.day,...dayNight.night].find(window => selectedIsToday && nowMs >= Date.parse(window.start_utc) && nowMs < Date.parse(window.end_utc));
-  const insight = (() => {
-    if (activeKaal) return {
-      tone: "caution" as const,
-      title: l(language, `${activeKaal.name_ne} अहिले चलिरहेको छ`, `${activeKaal.name_en} is active now`),
-      detail: l(language, `${clock(activeKaal.end_utc,timezone,language)} सम्म। यो परम्परा मान्नुहुन्छ भने नयाँ शुभकार्य सुरु गर्न अर्को समय रोज्नुहोस्; नियमित काम र योजना जारी राख्न सक्नुहुन्छ।`, `Until ${clock(activeKaal.end_utc,timezone,language)}. If you follow this tradition, schedule new auspicious starts outside this window; routine work and planning can continue.`)
-    };
-    if (selectedIsToday && nextKaal) return {
-      tone: "calm" as const,
-      title: l(language, `${nextKaal.name_ne} अर्को समय`, `Next: ${nextKaal.name_en}`),
-      detail: l(language, `${clock(nextKaal.start_utc,timezone,language)}–${clock(nextKaal.end_utc,timezone,language)}। शुभकार्यको समय रोज्दा यो परम्परागत समयलाई ध्यानमा राख्न सक्नुहुन्छ।`, `${clock(nextKaal.start_utc,timezone,language)}–${clock(nextKaal.end_utc,timezone,language)}. If you observe this tradition, you may plan new auspicious starts outside this window.`)
-    };
-    if (selectedIsToday && currentChoghadiya?.favorable) return {
-      tone: "good" as const,
-      title: l(language, `अहिले ${currentChoghadiya.name_ne} चौघडिया`, `${currentChoghadiya.name_en} Choghadiya now`),
-      detail: l(language,"परम्परागत रूपमा अनुकूल मानिन्छ। आफ्नो परम्परा र कामको सन्दर्भअनुसार निर्णय लिनुहोस्।","Traditionally considered favorable. Use your own tradition and the context of the task when deciding.")
-    };
-    if (!selectedIsToday && nextKaal) return {
-      tone: "calm" as const,
-      title: l(language, `${nextKaal.name_ne} · चयन गरिएको मिति`, `${nextKaal.name_en} · selected date`),
-      detail: l(language, `${clock(nextKaal.start_utc,timezone,language)}–${clock(nextKaal.end_utc,timezone,language)}। यो परम्परा मान्नुहुन्छ भने त्यस अवधिबाहिर नयाँ शुभकार्य योजना गर्नुहोस्।`, `${clock(nextKaal.start_utc,timezone,language)}–${clock(nextKaal.end_utc,timezone,language)}. If you follow this tradition, plan new auspicious starts outside this period.`)
-    };
-    if (selectedIsToday) return {
-      tone: "good" as const,
-      title: l(language,"मुख्य काल खण्डहरू बितिसके","Listed inauspicious windows have passed"),
-      detail: l(language,"आजका राहुकाल, यमगण्ड र गुलिक काल बितिसकेका छन्। चाहनुहुन्छ भने अब आफ्नो परम्परा अनुसार बाँकी समय हेर्नुहोस्।","Today's listed Rahu Kaal, Yamaganda and Gulika windows have passed. Check other tradition-specific timings if you use them.")
-    };
-    return {
-      tone: "calm" as const,
-      title: l(language,"समय सन्दर्भ तयार हुँदैछ","Timing context is being prepared"),
-      detail: l(language,"स्थानको सूर्योदय/सूर्यास्त उपलब्ध भएपछि मात्र परम्परागत समय खण्ड देखाइन्छ।","Traditional windows appear only when local sunrise and sunset are available.")
-    };
-  })();
-
-  useEffect(() => {
-    let active = true;
-    try {
-      const place = { lat: snapshot.location.lat, lon: snapshot.location.lng, tz: timezone, height: 0 };
-      const from = zonedInstant(snapshot.date, "12:00", timezone).instant;
-      setEclipses({ solar: localSolarEclipse(from, place), lunar: localLunarEclipse(from, place) });
-    } catch { if (active) setEclipses(null); }
-    return () => { active = false; };
-  }, [snapshot.date, snapshot.location.lat, snapshot.location.lng, timezone]);
-
   const hasSolarDay = Boolean(snapshot.panchang.sunrise_utc && snapshot.panchang.sunset_utc && snapshot.panchang.next_sunrise_utc);
   return <section className="mt-temporal-section">
-    <aside className={`mt-time-insight is-${insight.tone}`} aria-live="polite">
-      <div className="mt-insight-icon">{insight.tone==="caution" ? <CircleAlert size={20}/> : insight.tone==="good" ? <Sparkles size={20}/> : <Compass size={20}/>}</div>
-      <div className="mt-insight-copy"><span>{l(language,selectedIsToday ? "अहिलेको छोटो समय-सङ्केत" : "चयन गरिएको मितिको समय-सङ्केत",selectedIsToday ? "YOUR QUICK TIME GUIDE" : "SELECTED DATE GUIDE")}</span><strong>{insight.title}</strong><p>{insight.detail}</p></div>
-      <small>{l(language,"परम्परागत मार्गदर्शन · वैज्ञानिक ग्यारेन्टी होइन","Traditional guidance · not a scientific guarantee")}</small>
-    </aside>
     <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"सूर्योदयमा आधारित समय","SUNRISE-BASED TIMING")}</span><h2>{l(language,"दिन र रातका समय खण्ड","Day and night windows")}</h2></div><p>{l(language,"वास्तविक स्थानीय सूर्योदय, सूर्यास्त र अर्को सूर्योदयबीचको अवधि आठ/बाह्र बराबर भागमा विभाजन गरिएको छ। सौर घटना उपलब्ध नभए समय खण्ड बनाइँदैन।","Actual local sunrise, sunset and next sunrise define the day/night spans. Missing solar events never get replaced with guessed 06:00/18:00 times.")}</p></div>
     {kaal.length ? <div className="mt-kaal-grid">{kaal.map(window => <article key={window.key}><small>{l(language,window.name_ne,window.name_en)}</small><strong>{clock(window.start_utc,timezone,language)} – {clock(window.end_utc,timezone,language)}</strong><span>{l(language,"दिनको "+window.eighth+"औँ भाग","Day segment "+window.eighth+" of 8")}</span></article>)}</div> : <div className="mt-notice"><CircleAlert size={18}/><span>{l(language,"यस स्थानीय दिनमा सूर्योदय/सूर्यास्त उपलब्ध नभएकाले चौघडिया र काल खण्ड गणना गर्न सकिएन।","Sunrise or sunset is unavailable for this local day, so traditional timing windows are not calculated.")}</span></div>}
     {hasSolarDay && <div className="mt-window-panel"><div className="mt-window-heading"><h3>{l(language,"चौघडिया","Choghadiya")}</h3><div><span className="mt-good-key"/>{l(language,"परम्परागत रूपमा अनुकूल","Traditionally favorable")} <span className="mt-night-key"/>{l(language,"रात","Night")}</div></div><div className="mt-window-grid">{[...dayNight.day,...dayNight.night].map(window => <div className={"mt-window "+(window.favorable?"is-favorable":"")+(window.key.startsWith("night")?" is-night":"")} key={window.key}><strong>{l(language,window.name_ne,window.name_en)}</strong><small>{clock(window.start_utc,timezone,language)} – {clock(window.end_utc,timezone,language)}</small></div>)}</div></div>}
