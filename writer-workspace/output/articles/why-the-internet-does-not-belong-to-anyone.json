@@ -1,0 +1,149 @@
+{
+  "id": "mm-0017",
+  "slug": "why-the-internet-does-not-belong-to-anyone",
+  "canonical_url": "https://aafnaipatro.com/why-the-internet-does-not-belong-to-anyone/",
+  "title": "Why the Internet Does Not Belong to Anyone",
+  "meta_description": "Learn why the internet is a network of networks, how standards and organisations coordinate it, and why no single owner controls the whole system.",
+  "h1": "Why The Internet Does Not Belong To Anyone?",
+  "category": "Technology & Internet",
+  "author": "Suraj Dahal",
+  "published": "2026-10-20",
+  "key_takeaways": [
+    "The internet is a global network of independently operated networks that interconnect using shared technical protocols. [1][2]",
+    "No single company or government owns the whole internet, though organisations and providers control specific networks, services and resources. [1][2]",
+    "ICANN coordinates key global identifiers such as domain names and IP address allocation policy; it does not control online content or provide internet access. [3]",
+    "Open standards and coordination make interoperability possible, but centralisation can still emerge in popular platforms and infrastructure. [1][2]"
+  ],
+  "sections": [
+    {
+      "h2": "The short answer",
+      "paras": [
+        "The internet does not belong to one owner because it is a network of networks: thousands of separately operated networks connect and exchange traffic using shared technical standards. Internet service providers, universities, companies, governments and individuals may own or operate pieces of the infrastructure, but no one entity owns every cable, router, server, protocol and service that together make up the global system. [1][2]",
+        "This does not mean the internet is unmanaged or that every part is equally decentralised. Organisations coordinate domain names, address allocation policies and technical standards, while providers control their own networks and online platforms set rules for their services. The important distinction is between coordinating shared systems and owning or controlling the entire internet. [2][3]"
+      ]
+    },
+    {
+      "h2": "A network made of networks",
+      "paras": [
+        "A message travelling online usually passes through several networks rather than a single centrally owned machine. Your device connects through a local network or mobile operator, traffic may cross one or more backbone providers, and it eventually reaches a network hosting the destination service. Routers use common protocols to forward data between these independent systems. [1][2]",
+        "Each operator makes decisions about its own equipment, capacity, routes and business relationships. Networks exchange traffic through arrangements such as peering and transit, allowing separate organisations to cooperate without merging into one company. This distributed structure supports global reach, but it also means the quality and availability of access can depend on local providers and the links they use. [1][2]"
+      ]
+    },
+    {
+      "h2": "Why shared standards matter",
+      "paras": [
+        "Independent networks can communicate because they follow interoperable protocols. Standards specify how systems address devices, exchange packets, establish secure connections and interpret information. The Internet Engineering Task Force develops many of the technical specifications used across the internet through an open standards process. Shared rules let equipment and software from different makers work together without asking one central owner for permission for every connection. [2][4]",
+        "Standards do not own the infrastructure or force every organisation to offer the same service. They provide common technical expectations that independent implementers can adopt. This is one reason the internet can support new applications: a developer can build on established protocols and reach users across many networks, provided the service follows the rules needed for compatibility and security. [2][4]"
+      ]
+    },
+    {
+      "h2": "What ICANN does—and does not do",
+      "paras": [
+        "ICANN coordinates the global system of unique identifiers that helps computers find one another, including the domain-name system and aspects of IP address allocation and protocol parameters. Domain names such as example.com are easier for people to remember than numeric IP addresses, so the DNS connects human-friendly names with the information needed to route traffic. [3]",
+        "ICANN does not own all websites, sell every domain directly, provide local internet access or control what people publish online. Registrars, registries, internet service providers, hosting companies and site owners have distinct responsibilities. ICANN’s role is important because shared identifiers must remain globally consistent, but it is only one part of the larger internet ecosystem. [3][5]"
+      ]
+    },
+    {
+      "h2": "Who owns the physical infrastructure?",
+      "paras": [
+        "Physical infrastructure has many owners. Telecom companies and internet service providers may own fibre routes, routers and access equipment; data-centre operators own or manage facilities; companies and public institutions operate servers; and submarine cable consortia connect continents. In other cases, infrastructure is leased, shared or jointly funded. The ownership picture therefore changes from one link and facility to another. [1][2]",
+        "A user generally reaches the internet through a provider that operates or leases the local connection. That provider can influence the service available in a particular place, but it cannot automatically dictate how every other network operates. Some links are critical or have few alternatives, so outages, commercial disputes and government decisions can still affect access across regions. [1][2]"
+      ]
+    },
+    {
+      "h2": "Why some parts feel centrally controlled",
+      "paras": [
+        "Many people experience the internet through a small number of large search engines, social networks, app stores or cloud providers. These platforms can be privately owned and centrally managed even though the underlying internet is not. Their scale, network effects, data advantages and switching costs can make them feel like gateways to the whole online world. [1]",
+        "Technical decentralisation alone does not guarantee that power is widely distributed. An open protocol may allow multiple providers, yet users may gravitate toward one service because it is convenient or widely used. An Internet Engineering Task Force informational report discusses how centralisation can arise through market and operational factors even when the underlying standards support interoperability. [1][2]"
+      ]
+    },
+    {
+      "h2": "How governance works across borders",
+      "paras": [
+        "Internet governance is spread across technical organisations, network operators, governments, civil society, businesses and users. Different groups handle different layers: standards bodies focus on protocols, identifier organisations coordinate naming and numbering, providers manage connectivity, and governments set laws within their jurisdictions. These roles overlap, but no single meeting or organisation manages every decision about the internet. [2][3]",
+        "Coordination is necessary because a globally useful network depends on shared identifiers and compatible systems. At the same time, governance involves trade-offs over security, privacy, competition, openness and accountability. Different communities may disagree about the right balance, and an organisation’s influence is limited by its formal role, technical remit and the cooperation of others. [1][3]"
+      ]
+    },
+    {
+      "h2": "Why the distinction matters",
+      "paras": [
+        "Knowing that the internet has no single owner helps explain both its resilience and its vulnerabilities. Multiple routes and independent networks can keep traffic moving when one link fails, but concentrated services or major providers can still create large points of failure. Resilience depends not just on architecture but also on redundancy, operational practices, competition and the ability to switch providers. [1][2]",
+        "The practical takeaway is that “nobody owns the internet” does not mean “nobody has power online.” Specific organisations own infrastructure, operate services and coordinate essential shared resources. The global system works because these distinct actors use common protocols and cooperate enough to maintain interoperability. Its openness is a continuing design and governance challenge, not a guarantee that every service is decentralised. [1][2][3]"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does ICANN own the internet?",
+      "a": "No. ICANN coordinates global identifiers such as domain names and aspects of IP address allocation, but it does not own every network or control online content. [3]"
+    },
+    {
+      "q": "Who owns internet cables?",
+      "a": "Cables and network equipment may be owned by telecom companies, consortia, governments or other operators. Ownership depends on the specific route and facility. [1][2]"
+    },
+    {
+      "q": "Can a government control the whole internet?",
+      "a": "Governments can regulate access and services within their jurisdictions, but the global network consists of many independently operated networks and organisations. Their powers and reach vary. [1][2]"
+    },
+    {
+      "q": "What does the IETF do?",
+      "a": "The IETF develops technical specifications and standards that help independent systems interoperate. It does not operate the entire internet or own the networks using its standards. [2][4]"
+    },
+    {
+      "q": "Why do some online platforms feel like the internet itself?",
+      "a": "Large platforms can become central points of access because of network effects and user habits, even though they are services running on top of the broader internet. [1]"
+    }
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "title": "Centralization, Decentralization, and Internet Standards",
+      "publisher": "RFC Editor / IETF independent submission",
+      "url": "https://datatracker.ietf.org/doc/html/rfc9518",
+      "published_at": "2023-12-01",
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "title": "Who Makes the Internet Work: The Internet Ecosystem",
+      "publisher": "Internet Society",
+      "url": "https://www.internetsociety.org/internet/who-makes-it-work/",
+      "published_at": "2013-10-01",
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "title": "What Does ICANN Do?",
+      "publisher": "ICANN",
+      "url": "https://www.icann.org/resources/pages/what-2012-02-25-en",
+      "published_at": "2012-02-25",
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 4,
+      "title": "RFC 1983: Internet Users' Glossary",
+      "publisher": "RFC Editor",
+      "url": "https://datatracker.ietf.org/doc/html/rfc1983",
+      "published_at": "1996-08-01",
+      "retrieved_at": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "title": "Internet Official Protocol Standards",
+      "publisher": "Internet Engineering Task Force",
+      "url": "https://www.ietf.org/rfc/rfc2500.txt.pdf",
+      "published_at": "1999-06-01",
+      "retrieved_at": "2026-10-20"
+    }
+  ],
+  "word_count": 1093,
+  "reading_minutes": 5,
+  "image": null,
+  "keywords": [
+    "internet",
+    "network of networks",
+    "ICANN",
+    "IETF",
+    "internet governance"
+  ]
+}
