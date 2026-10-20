@@ -1,0 +1,52 @@
+{
+  "slug": "why-the-moon-has-phases",
+  "research_question": "Explain lunar phases from the Sun-Earth-Moon geometry, distinguish phases from Earth's shadow, and describe the cycle and common misconceptions.",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://science.nasa.gov/moon/moon-phases/",
+      "title": "Moon Phases",
+      "publisher": "NASA Science",
+      "reliability": "Government space agency primary educational source",
+      "notes": [
+        "The Moon reflects sunlight rather than producing its own visible light.",
+        "The Sun illuminates half the Moon at a time; the visible fraction changes as the Moon orbits Earth.",
+        "The eight named phases repeat over a cycle of about 29.5 days."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://spaceplace.nasa.gov/moon-phases/en/",
+      "title": "What Are the Moon’s Phases?",
+      "publisher": "NASA Space Place",
+      "reliability": "Government space agency educational source",
+      "notes": [
+        "Moon phases arise from changing viewing geometry, not from the Moon changing shape.",
+        "The new Moon occurs when the illuminated half is turned mostly away from Earth; full Moon occurs when the near side is largely illuminated from our viewpoint."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://solarsystem.nasa.gov/moons/earths-moon/overview/",
+      "title": "Earth's Moon",
+      "publisher": "NASA Solar System Exploration",
+      "reliability": "Government space agency reference",
+      "notes": [
+        "The Moon orbits Earth and its changing position relative to the Sun determines the phase observed from Earth.",
+        "The Moon's orbit and viewing geometry also explain why it can sometimes be seen in daytime."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.rmg.co.uk/stories/topics/what-are-moon-phases",
+      "title": "What are the phases of the Moon?",
+      "publisher": "Royal Museums Greenwich",
+      "reliability": "Established astronomy museum",
+      "notes": [
+        "The lunar phase cycle is a synodic month, measured between repeated alignments with the Sun as seen from Earth.",
+        "The cycle lasts roughly 29.5 days, longer than the Moon's sidereal orbit around Earth."
+      ]
+    }
+  ]
+}
