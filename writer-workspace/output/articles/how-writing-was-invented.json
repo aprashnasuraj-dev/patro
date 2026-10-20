@@ -97,7 +97,9 @@
       "publisher": "The Metropolitan Museum of Art",
       "url": "https://www.metmuseum.org/art/collection/search/327384",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "The Metropolitan Museum of Art. (n.d.). Cuneiform tablet: administrative account concerning the distribution of barley and emmer. https://www.metmuseum.org/art/collection/search/327384",
+      "citation": "The Metropolitan Museum of Art, n.d."
     },
     {
       "n": 2,
@@ -105,7 +107,9 @@
       "publisher": "University of Texas at Austin, Denise Schmandt-Besserat",
       "url": "https://sites.utexas.edu/dsb/tokens/from-accounting-to-writing/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "University of Texas at Austin, Denise Schmandt-Besserat. (n.d.). From Accounting to Writing. https://sites.utexas.edu/dsb/tokens/from-accounting-to-writing/",
+      "citation": "University of Texas at Austin, Denise Schmandt-Besserat, n.d."
     },
     {
       "n": 3,
@@ -113,7 +117,9 @@
       "publisher": "The British Museum",
       "url": "https://www.britishmuseum.org/sites/default/files/2019-11/Origins-of-writing-support-notes-for-teachers_final.pdf",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "The British Museum. (n.d.). Origins of Writing: Support notes for tutors. https://www.britishmuseum.org/sites/default/files/2019-11/Origins-of-writing-support-notes-for-teachers_final.pdf",
+      "citation": "The British Museum, n.d."
     },
     {
       "n": 4,
@@ -121,7 +127,9 @@
       "publisher": "OpenStax World History",
       "url": "https://openstax.org/books/world-history-volume-1/pages/3-2-ancient-mesopotamia",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "OpenStax World History. (n.d.). 3.2 Ancient Mesopotamia. https://openstax.org/books/world-history-volume-1/pages/3-2-ancient-mesopotamia",
+      "citation": "OpenStax World History, n.d."
     },
     {
       "n": 5,
@@ -129,7 +137,9 @@
       "publisher": "Museum of Classical Antiquities, University of Ottawa",
       "url": "https://omeka.uottawa.ca/museumclassicalantiquities/exhibits/show/writing-and-languages/cuneiform",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Museum of Classical Antiquities, University of Ottawa. (n.d.). Cuneiform tablets. https://omeka.uottawa.ca/museumclassicalantiquities/exhibits/show/writing-and-languages/cuneiform",
+      "citation": "Museum of Classical Antiquities, University of Ottawa, n.d."
     }
   ],
   "word_count": 1322,

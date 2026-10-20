@@ -104,7 +104,9 @@
       "publisher": "Swiss Federal Chancellery",
       "url": "https://www.bk.admin.ch/en/languages",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Swiss Federal Chancellery. (n.d.). Languages. https://www.bk.admin.ch/en/languages",
+      "citation": "Swiss Federal Chancellery, n.d."
     },
     {
       "n": 2,
@@ -112,7 +114,9 @@
       "publisher": "Fedlex, Swiss Confederation",
       "url": "https://www.fedlex.admin.ch/eli/cc/2009/821/en",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Fedlex, Swiss Confederation. (n.d.). Federal Act on the National Languages and Understanding between the Linguistic Communities. https://www.fedlex.admin.ch/eli/cc/2009/821/en",
+      "citation": "Fedlex, Swiss Confederation, n.d."
     },
     {
       "n": 3,
@@ -120,7 +124,9 @@
       "publisher": "SWI swissinfo.ch",
       "url": "https://www.swissinfo.ch/eng/culture/languages-in-switzerland/29177618",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "SWI swissinfo.ch. (n.d.). What languages do Swiss people speak?. https://www.swissinfo.ch/eng/culture/languages-in-switzerland/29177618",
+      "citation": "SWI swissinfo.ch, n.d."
     },
     {
       "n": 4,
@@ -128,7 +134,9 @@
       "publisher": "SWI swissinfo.ch",
       "url": "https://www.swissinfo.ch/eng/culture/french-german-italian-romansh-english-how-do-the-swiss-talk-to-each-other/45809928",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "SWI swissinfo.ch. (n.d.). French, German, Italian, Romansh, English: How do the Swiss talk to each other?. https://www.swissinfo.ch/eng/culture/french-german-italian-romansh-english-how-do-the-swiss-talk-to-each-other/45809928",
+      "citation": "SWI swissinfo.ch, n.d."
     },
     {
       "n": 5,
@@ -136,7 +144,9 @@
       "publisher": "Federal Department of Finance, Swiss Confederation",
       "url": "https://www.efd.admin.ch/dam/en/sd-web/txwWkgSPXcpj/buku-2024-en.pdf",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Federal Department of Finance, Swiss Confederation. (n.d.). Switzerland: Country facts. https://www.efd.admin.ch/dam/en/sd-web/txwWkgSPXcpj/buku-2024-en.pdf",
+      "citation": "Federal Department of Finance, Swiss Confederation, n.d."
     }
   ],
   "word_count": 1276,
