@@ -1,0 +1,63 @@
+{
+  "slug": "how-airplanes-fly",
+  "research_question": "How do airplane wings generate lift, how do the four forces interact, and how do angle of attack and air density affect flight?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/phak/07_phak_ch5.pdf",
+      "title": "Aerodynamics of Flight, Pilot’s Handbook of Aeronautical Knowledge, Chapter 5",
+      "publisher": "Federal Aviation Administration",
+      "reliability": "Primary government aviation handbook",
+      "notes": [
+        "Lift, weight, thrust, and drag describe the main forces acting on aircraft.",
+        "Angle of attack is the angle between the wing chord and relative wind.",
+        "In steady level unaccelerated flight, opposing force components balance."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoulli-and-newton/",
+      "title": "Bernoulli and Newton",
+      "publisher": "NASA Glenn Research Center",
+      "reliability": "NASA aeronautics educational resource",
+      "notes": [
+        "Pressure distributions and airflow momentum changes are compatible descriptions of lift.",
+        "The equal-transit-time explanation is incorrect.",
+        "Bernoulli's principle and Newton's laws are often oversimplified in popular explanations."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/05_afh_ch4.pdf",
+      "title": "Airplane Flying Handbook, Chapter 4",
+      "publisher": "Federal Aviation Administration",
+      "reliability": "Primary government aviation handbook",
+      "notes": [
+        "Thrust and drag influence aircraft energy; altitude and airspeed can be exchanged over short periods.",
+        "Pilot controls manage flight path, energy, and configuration."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.faa.gov/lessons_learned/small_airplane/accidents/N773C",
+      "title": "Stinson 108-3: Lessons Learned",
+      "publisher": "Federal Aviation Administration",
+      "reliability": "Government aviation safety case resource",
+      "notes": [
+        "A wing can stall when it reaches critical angle of attack.",
+        "Lift and drag depend on air density and operating conditions."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/",
+      "title": "Beginner's Guide to Aeronautics",
+      "publisher": "NASA Glenn Research Center",
+      "reliability": "NASA educational aeronautics reference",
+      "notes": [
+        "Aerodynamics explains the forces and airflow governing aircraft flight."
+      ]
+    }
+  ]
+}
