@@ -1,7 +1,7 @@
 {
   "slug": "why-the-sky-is-blue",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -11,7 +11,8 @@
       "reliability": "Government science education or agency source",
       "notes": [
         "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
-      ]
+      ],
+      "apa": "NASA Space Place. (2022, August 29). Why Is the Sky Blue?. https://spaceplace.nasa.gov/blue-sky/en/"
     },
     {
       "n": 2,
@@ -21,7 +22,8 @@
       "reliability": "Government science education or agency source",
       "notes": [
         "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
-      ]
+      ],
+      "apa": "NASA Science. (2013, September 2). Rayleigh scattering in exoplanet atmospheres. https://science.nasa.gov/resource/rayleigh-scattering-in-exoplanet-atmospheres/"
     },
     {
       "n": 3,
@@ -31,7 +33,8 @@
       "reliability": "Government science education or agency source",
       "notes": [
         "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
-      ]
+      ],
+      "apa": "NOAA SciJinks. (n.d.). Why Is the Sky Blue?. https://scijinks.gov/blue-sky/"
     },
     {
       "n": 4,
@@ -41,7 +44,8 @@
       "reliability": "Government science education or agency source",
       "notes": [
         "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
-      ]
+      ],
+      "apa": "NASA Space Place. (2022, August 29). Mars atmosphere and sky colour. https://spaceplace.nasa.gov/blue-sky/en/"
     },
     {
       "n": 5,
@@ -51,11 +55,25 @@
       "reliability": "Government science education or agency source",
       "notes": [
         "Used for the explanation of atmospheric scattering, wavelength-dependent colour and planetary atmospheres."
-      ]
+      ],
+      "apa": "NOAA SciJinks. (n.d.). Why Is the Sky Blue?. https://scijinks.gov/blue-sky/"
     }
   ],
   "notes": [
     "Draft saved. Hero image pending because binary image upload is unavailable through the current text-file workflow.",
-    "NOAA SciJinks URL was not independently retrievable during this pass; replace or verify source 3 before final content approval."
-  ]
+    "NOAA SciJinks URL was not independently retrievable during this pass; replace or verify source 3 before final content approval.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
+  ],
+  "apa_references": [
+    "NASA Space Place. (2022, August 29). Why Is the Sky Blue?. https://spaceplace.nasa.gov/blue-sky/en/",
+    "NASA Science. (2013, September 2). Rayleigh scattering in exoplanet atmospheres. https://science.nasa.gov/resource/rayleigh-scattering-in-exoplanet-atmospheres/",
+    "NOAA SciJinks. (n.d.). Why Is the Sky Blue?. https://scijinks.gov/blue-sky/",
+    "NASA Space Place. (2022, August 29). Mars atmosphere and sky colour. https://spaceplace.nasa.gov/blue-sky/en/",
+    "NOAA SciJinks. (n.d.). Why Is the Sky Blue?. https://scijinks.gov/blue-sky/"
+  ],
+  "image_file": "why-the-sky-is-blue-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
