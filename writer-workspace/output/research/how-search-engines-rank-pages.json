@@ -5,7 +5,7 @@
   "category": "Technology & Internet",
   "canonical_url": "https://aafnaipatro.com/how-search-engines-rank-pages/",
   "researched_at": "2026-10-21",
-  "status": "research_complete",
+  "status": "complete",
   "sources": [
     {
       "n": 1,
@@ -59,7 +59,7 @@
       "n": 5,
       "title": "The Anatomy of a Large-Scale Hypertextual Web Search Engine",
       "publisher": "Sergey Brin and Lawrence Page, Stanford University",
-      "url": "https://research.google.com/pubs/archive/334.pdf",
+      "url": "https://research.google/pubs/the-anatomy-of-a-large-scale-hypertextual-web-search-engine/",
       "reliability": "original historical research",
       "notes": [
         "Early Google combined full-text retrieval and hyperlink structure.",
@@ -118,5 +118,6 @@
       "width": 1200,
       "height": 630
     }
-  ]
+  ],
+  "validated_at": "2026-10-21"
 }
