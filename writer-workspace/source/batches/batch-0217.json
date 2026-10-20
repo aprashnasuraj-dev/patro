@@ -1,0 +1,164 @@
+{
+ "batch": 217,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1276",
+   "slug": "how-do-bits-and-bytes-work",
+   "question": "How do bits and bytes work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-bits-and-bytes-work/",
+   "keywords": [
+    "bits",
+    "bytes",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do bits and bytes work? Explained With Sources",
+   "h1": "How do bits and bytes work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1277",
+   "slug": "why-does-evolution-matter-in-everyday-life",
+   "question": "Why does evolution matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-evolution-matter-in-everyday-life/",
+   "keywords": [
+    "evolution",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does evolution matter in everyday life?",
+   "h1": "Why does evolution matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1278",
+   "slug": "where-does-the-word-salary-come-from",
+   "question": "Where does the word \"salary\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-salary-come-from/",
+   "keywords": [
+    "word",
+    "salary",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"salary\" come from? A Clear Overview",
+   "h1": "Where does the word \"salary\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1279",
+   "slug": "why-do-onions-caramelize",
+   "question": "Why do onions caramelize",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-do-onions-caramelize/",
+   "keywords": [
+    "onions",
+    "caramelize"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do onions caramelize? Explained With Sources",
+   "h1": "Why do onions caramelize?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1280",
+   "slug": "how-does-a-railway-signal-work",
+   "question": "How does a railway signal work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-railway-signal-work/",
+   "keywords": [
+    "railway",
+    "signal",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a railway signal work? A Clear, Sourced Explanation",
+   "h1": "How does a railway signal work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1281",
+   "slug": "what-is-fagu-purnima-and-why-is-it-celebrated",
+   "question": "What is Fagu Purnima and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-fagu-purnima-and-why-is-it-celebrated/",
+   "keywords": [
+    "fagu",
+    "purnima",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Fagu Purnima and why is it celebrated?",
+   "h1": "What is Fagu Purnima and why is it celebrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1282",
+   "slug": "how-does-a-blender-work",
+   "question": "How does a blender work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-blender-work/",
+   "keywords": [
+    "blender",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a blender work? What Science Actually Says",
+   "h1": "How does a blender work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1283",
+   "slug": "what-are-venn-diagrams",
+   "question": "What are Venn diagrams",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-venn-diagrams/",
+   "keywords": [
+    "venn",
+    "diagrams"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are Venn diagrams? The Real Answer, Explained",
+   "h1": "What are Venn diagrams?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1284",
+   "slug": "what-makes-haiku-unique",
+   "question": "What makes haiku unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-haiku-unique/",
+   "keywords": [
+    "makes",
+    "haiku",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes haiku unique? Facts, Myths and Evidence",
+   "h1": "What makes haiku unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1285",
+   "slug": "what-causes-avalanches",
+   "question": "What causes avalanches",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-avalanches/",
+   "keywords": [
+    "causes",
+    "avalanches"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes avalanches? What Science Actually Says",
+   "h1": "What causes avalanches?",
+   "ymyl": false
+  }
+ ]
+}

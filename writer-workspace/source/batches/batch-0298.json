@@ -1,0 +1,164 @@
+{
+ "batch": 298,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2092",
+   "slug": "who-was-hypatia",
+   "question": "Who was Hypatia",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-hypatia/",
+   "keywords": [
+    "hypatia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Hypatia? A Clear Overview",
+   "h1": "Who was Hypatia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2093",
+   "slug": "what-is-chile-known-for",
+   "question": "What is Chile known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-chile-known-for/",
+   "keywords": [
+    "chile",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Chile known for? A Clear Overview",
+   "h1": "What is Chile known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2094",
+   "slug": "how-does-a-speaker-work",
+   "question": "How does a speaker work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-speaker-work/",
+   "keywords": [
+    "speaker",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a speaker work? The Real Answer, Explained",
+   "h1": "How does a speaker work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2095",
+   "slug": "why-do-enzymes-matter-in-everyday-life",
+   "question": "Why do enzymes matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-enzymes-matter-in-everyday-life/",
+   "keywords": [
+    "enzymes",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do enzymes matter in everyday life?",
+   "h1": "Why do enzymes matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2096",
+   "slug": "where-does-the-phrase-saved-by-the-bell-come-from",
+   "question": "Where does the phrase \"saved by the bell\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-saved-by-the-bell-come-from/",
+   "keywords": [
+    "phrase",
+    "saved",
+    "bell",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"saved by the bell\" come from?",
+   "h1": "Where does the phrase \"saved by the bell\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2097",
+   "slug": "how-long-do-hawks-live",
+   "question": "How long do hawks live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-hawks-live/",
+   "keywords": [
+    "long",
+    "hawks",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do hawks live? What Science Actually Says",
+   "h1": "How long do hawks live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2098",
+   "slug": "what-caused-the-peloponnesian-war",
+   "question": "What caused the Peloponnesian War",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-peloponnesian-war/",
+   "keywords": [
+    "caused",
+    "peloponnesian",
+    "war"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Peloponnesian War? The Story, Sourced",
+   "h1": "What caused the Peloponnesian War?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2099",
+   "slug": "what-is-the-economy-of-madagascar-based-on",
+   "question": "What is the economy of Madagascar based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-madagascar-based-on/",
+   "keywords": [
+    "economy",
+    "madagascar",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Madagascar based on?",
+   "h1": "What is the economy of Madagascar based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2100",
+   "slug": "how-do-search-engines-work",
+   "question": "How do search engines work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-search-engines-work/",
+   "keywords": [
+    "search",
+    "engines",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do search engines work? A Clear, Sourced Explanation",
+   "h1": "How do search engines work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2101",
+   "slug": "how-do-clouds-form",
+   "question": "How do clouds form",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-do-clouds-form/",
+   "keywords": [
+    "clouds",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do clouds form? The Real Answer, Explained",
+   "h1": "How do clouds form?",
+   "ymyl": false
+  }
+ ]
+}

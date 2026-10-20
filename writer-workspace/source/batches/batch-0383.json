@@ -1,0 +1,162 @@
+{
+ "batch": 383,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2943",
+   "slug": "how-do-moths-communicate",
+   "question": "How do moths communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-moths-communicate/",
+   "keywords": [
+    "moths",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do moths communicate? Facts, Myths and Evidence",
+   "h1": "How do moths communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2944",
+   "slug": "who-was-george-washington",
+   "question": "Who was George Washington",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-george-washington/",
+   "keywords": [
+    "george",
+    "washington"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was George Washington? Key Facts and Context",
+   "h1": "Who was George Washington?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2945",
+   "slug": "what-is-the-history-of-south-africa",
+   "question": "What is the history of South Africa",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-south-africa/",
+   "keywords": [
+    "history",
+    "south",
+    "africa"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of South Africa? The Story, Sourced",
+   "h1": "What is the history of South Africa?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2946",
+   "slug": "what-do-lemurs-eat",
+   "question": "What do lemurs eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-lemurs-eat/",
+   "keywords": [
+    "lemurs",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do lemurs eat? The Real Answer, Explained",
+   "h1": "What do lemurs eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2947",
+   "slug": "who-was-rani-lakshmibai",
+   "question": "Who was Rani Lakshmibai",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-rani-lakshmibai/",
+   "keywords": [
+    "rani",
+    "lakshmibai"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Rani Lakshmibai? The Short, Sourced Answer",
+   "h1": "Who was Rani Lakshmibai?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2948",
+   "slug": "what-is-the-history-of-hungary",
+   "question": "What is the history of Hungary",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-hungary/",
+   "keywords": [
+    "history",
+    "hungary"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Hungary? Key Facts and Context",
+   "h1": "What is the history of Hungary?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2949",
+   "slug": "where-do-sharks-live-in-the-wild",
+   "question": "Where do sharks live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-sharks-live-in-the-wild/",
+   "keywords": [
+    "sharks",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do sharks live in the wild? The Real Answer, Explained",
+   "h1": "Where do sharks live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2950",
+   "slug": "what-is-niels-bohr-best-known-for",
+   "question": "What is Niels Bohr best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-niels-bohr-best-known-for/",
+   "keywords": [
+    "niels",
+    "bohr",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Niels Bohr best known for? Facts and Background",
+   "h1": "What is Niels Bohr best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2951",
+   "slug": "what-is-estonia-known-for",
+   "question": "What is Estonia known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-estonia-known-for/",
+   "keywords": [
+    "estonia",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Estonia known for? Facts and Background",
+   "h1": "What is Estonia known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2952",
+   "slug": "why-do-ants-march-in-lines",
+   "question": "Why do ants march in lines",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-do-ants-march-in-lines/",
+   "keywords": [
+    "ants",
+    "march",
+    "lines"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do ants march in lines? A Clear, Sourced Explanation",
+   "h1": "Why do ants march in lines?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "batch": 171,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0815",
+   "slug": "how-do-mosses-grow",
+   "question": "How do mosses grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-mosses-grow/",
+   "keywords": [
+    "mosses",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do mosses grow? Explained With Sources",
+   "h1": "How do mosses grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0816",
+   "slug": "how-do-beavers-communicate",
+   "question": "How do beavers communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-beavers-communicate/",
+   "keywords": [
+    "beavers",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do beavers communicate? The Real Answer, Explained",
+   "h1": "How do beavers communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0817",
+   "slug": "what-were-the-main-consequences-of-the-mongol-conquests",
+   "question": "What were the main consequences of the Mongol conquests",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-mongol-conquests/",
+   "keywords": [
+    "main",
+    "consequences",
+    "mongol",
+    "conquests"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Mongol conquests?",
+   "h1": "What were the main consequences of the Mongol conquests?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0818",
+   "slug": "what-is-the-history-of-denmark",
+   "question": "What is the history of Denmark",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-denmark/",
+   "keywords": [
+    "history",
+    "denmark"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Denmark? The Short, Sourced Answer",
+   "h1": "What is the history of Denmark?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0819",
+   "slug": "how-does-a-barcode-scanner-work",
+   "question": "How does a barcode scanner work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-barcode-scanner-work/",
+   "keywords": [
+    "barcode",
+    "scanner",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a barcode scanner work? Facts, Myths and Evidence",
+   "h1": "How does a barcode scanner work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0820",
+   "slug": "why-does-hibernation-matter-in-everyday-life",
+   "question": "Why does hibernation matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-hibernation-matter-in-everyday-life/",
+   "keywords": [
+    "hibernation",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does hibernation matter in everyday life?",
+   "h1": "Why does hibernation matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0821",
+   "slug": "where-does-the-word-cash-come-from",
+   "question": "Where does the word \"cash\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-cash-come-from/",
+   "keywords": [
+    "word",
+    "cash",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"cash\" come from? A Clear Overview",
+   "h1": "Where does the word \"cash\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0822",
+   "slug": "how-is-saffron-made",
+   "question": "How is saffron made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-saffron-made/",
+   "keywords": [
+    "saffron",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is saffron made? Facts, Myths and Evidence",
+   "h1": "How is saffron made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0823",
+   "slug": "how-does-a-tunnel-boring-machine-work",
+   "question": "How does a tunnel boring machine work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-tunnel-boring-machine-work/",
+   "keywords": [
+    "tunnel",
+    "boring",
+    "machine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a tunnel boring machine work?",
+   "h1": "How does a tunnel boring machine work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0824",
+   "slug": "what-is-the-kumari-tradition",
+   "question": "What is the Kumari tradition",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-kumari-tradition/",
+   "keywords": [
+    "kumari",
+    "tradition"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Kumari tradition? What Science Actually Says",
+   "h1": "What is the Kumari tradition?",
+   "ymyl": false
+  }
+ ]
+}

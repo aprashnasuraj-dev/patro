@@ -1,0 +1,167 @@
+{
+ "batch": 138,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0485",
+   "slug": "how-do-rhododendrons-grow",
+   "question": "How do rhododendrons grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-rhododendrons-grow/",
+   "keywords": [
+    "rhododendrons",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do rhododendrons grow? A Clear, Sourced Explanation",
+   "h1": "How do rhododendrons grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0486",
+   "slug": "how-do-crows-sleep",
+   "question": "How do crows sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-crows-sleep/",
+   "keywords": [
+    "crows",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do crows sleep? Explained With Sources",
+   "h1": "How do crows sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0487",
+   "slug": "what-caused-world-war-ii",
+   "question": "What caused World War II",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-world-war-ii/",
+   "keywords": [
+    "caused",
+    "world",
+    "war"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused World War II? Facts and Background",
+   "h1": "What caused World War II?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0488",
+   "slug": "what-is-the-history-of-malaysia",
+   "question": "What is the history of Malaysia",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-malaysia/",
+   "keywords": [
+    "history",
+    "malaysia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Malaysia? The Short, Sourced Answer",
+   "h1": "What is the history of Malaysia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0489",
+   "slug": "why-do-computers-use-binary",
+   "question": "Why do computers use binary",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-do-computers-use-binary/",
+   "keywords": [
+    "computers",
+    "use",
+    "binary"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do computers use binary? Facts, Myths and Evidence",
+   "h1": "Why do computers use binary?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0490",
+   "slug": "why-does-magnetism-matter-in-everyday-life",
+   "question": "Why does magnetism matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-magnetism-matter-in-everyday-life/",
+   "keywords": [
+    "magnetism",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does magnetism matter in everyday life?",
+   "h1": "Why does magnetism matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0491",
+   "slug": "where-did-the-german-language-come-from",
+   "question": "Where did the German language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-german-language-come-from/",
+   "keywords": [
+    "did",
+    "german",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the German language come from?",
+   "h1": "Where did the German language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0492",
+   "slug": "how-is-coffee-made",
+   "question": "How is coffee made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-coffee-made/",
+   "keywords": [
+    "coffee",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is coffee made? Facts, Myths and Evidence",
+   "h1": "How is coffee made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0493",
+   "slug": "what-are-the-main-parts-of-an-electric-car",
+   "question": "What are the main parts of an electric car",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-an-electric-car/",
+   "keywords": [
+    "main",
+    "parts",
+    "electric",
+    "car"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of an electric car?",
+   "h1": "What are the main parts of an electric car?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0494",
+   "slug": "what-is-rato-machhindranath-jatra-and-why-is-it-celebrated",
+   "question": "What is Rato Machhindranath Jatra and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-rato-machhindranath-jatra-and-why-is-it-celebrated/",
+   "keywords": [
+    "rato",
+    "machhindranath",
+    "jatra",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Rato Machhindranath Jatra and why is it celebrated?",
+   "h1": "What is Rato Machhindranath Jatra and why is it celebrated?",
+   "ymyl": false
+  }
+ ]
+}

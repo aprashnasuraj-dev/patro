@@ -1,0 +1,167 @@
+{
+ "batch": 99,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0086",
+   "slug": "does-mars-have-moons-or-rings",
+   "question": "Does Mars have moons or rings",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/does-mars-have-moons-or-rings/",
+   "keywords": [
+    "mars",
+    "have",
+    "moons",
+    "rings"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Does Mars have moons or rings? What Science Actually Says",
+   "h1": "Does Mars have moons or rings?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0087",
+   "slug": "why-do-trees-lose-leaves",
+   "question": "Why do trees lose leaves",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-do-trees-lose-leaves/",
+   "keywords": [
+    "trees",
+    "lose",
+    "leaves"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do trees lose leaves? The Real Answer, Explained",
+   "h1": "Why do trees lose leaves?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0089",
+   "slug": "how-do-recommendation-systems-work",
+   "question": "How do recommendation systems work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-do-recommendation-systems-work/",
+   "keywords": [
+    "recommendation",
+    "systems",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do recommendation systems work? Explained With Sources",
+   "h1": "How do recommendation systems work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0090",
+   "slug": "how-do-wetlands-clean-water",
+   "question": "How do wetlands clean water",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-do-wetlands-clean-water/",
+   "keywords": [
+    "wetlands",
+    "clean",
+    "water"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do wetlands clean water? The Real Answer, Explained",
+   "h1": "How do wetlands clean water?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0091",
+   "slug": "what-do-whales-eat",
+   "question": "What do whales eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-whales-eat/",
+   "keywords": [
+    "whales",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do whales eat? The Real Answer, Explained",
+   "h1": "What do whales eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0092",
+   "slug": "who-invented-the-mechanical-clock-and-how",
+   "question": "Who invented the mechanical clock and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-mechanical-clock-and-how/",
+   "keywords": [
+    "invented",
+    "mechanical",
+    "clock"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the mechanical clock and how?",
+   "h1": "Who invented the mechanical clock and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0093",
+   "slug": "what-is-the-history-of-prague",
+   "question": "What is the history of Prague",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-prague/",
+   "keywords": [
+    "history",
+    "prague"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Prague? A Clear Overview",
+   "h1": "What is the history of Prague?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0094",
+   "slug": "how-do-undersea-internet-cables-work",
+   "question": "How do undersea internet cables work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-undersea-internet-cables-work/",
+   "keywords": [
+    "undersea",
+    "internet",
+    "cables",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do undersea internet cables work?",
+   "h1": "How do undersea internet cables work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0095",
+   "slug": "what-is-cellular-respiration",
+   "question": "What is cellular respiration",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-cellular-respiration/",
+   "keywords": [
+    "cellular",
+    "respiration"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is cellular respiration? The Real Answer, Explained",
+   "h1": "What is cellular respiration?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0096",
+   "slug": "where-does-the-phrase-a-white-elephant-come-from",
+   "question": "Where does the phrase \"a white elephant\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-a-white-elephant-come-from/",
+   "keywords": [
+    "phrase",
+    "white",
+    "elephant",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"a white elephant\" come from?",
+   "h1": "Where does the phrase \"a white elephant\" come from?",
+   "ymyl": false
+  }
+ ]
+}

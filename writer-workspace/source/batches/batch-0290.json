@@ -1,0 +1,162 @@
+{
+ "batch": 290,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2011",
+   "slug": "what-are-genes",
+   "question": "What are genes",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-genes/",
+   "keywords": [
+    "genes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are genes? The Real Answer, Explained",
+   "h1": "What are genes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2012",
+   "slug": "where-did-the-maithili-language-come-from",
+   "question": "Where did the Maithili language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-maithili-language-come-from/",
+   "keywords": [
+    "did",
+    "maithili",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Maithili language come from? A Clear Overview",
+   "h1": "Where did the Maithili language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2013",
+   "slug": "how-do-salmon-sleep",
+   "question": "How do salmon sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-salmon-sleep/",
+   "keywords": [
+    "salmon",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do salmon sleep? Facts, Myths and Evidence",
+   "h1": "How do salmon sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2014",
+   "slug": "who-was-emperor-ashoka",
+   "question": "Who was Emperor Ashoka",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-emperor-ashoka/",
+   "keywords": [
+    "emperor",
+    "ashoka"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Emperor Ashoka? Key Facts and Context",
+   "h1": "Who was Emperor Ashoka?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2015",
+   "slug": "how-did-bruges-get-its-name",
+   "question": "How did Bruges get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-bruges-get-its-name/",
+   "keywords": [
+    "did",
+    "bruges",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Bruges get its name? The Short, Sourced Answer",
+   "h1": "How did Bruges get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2016",
+   "slug": "what-are-digital-twins",
+   "question": "What are digital twins",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-digital-twins/",
+   "keywords": [
+    "digital",
+    "twins"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are digital twins? Explained With Sources",
+   "h1": "What are digital twins?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2017",
+   "slug": "why-does-bread-rise",
+   "question": "Why does bread rise",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-bread-rise/",
+   "keywords": [
+    "bread",
+    "rise"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does bread rise? A Clear, Sourced Explanation",
+   "h1": "Why does bread rise?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2018",
+   "slug": "where-does-the-word-podcast-come-from",
+   "question": "Where does the word \"podcast\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-podcast-come-from/",
+   "keywords": [
+    "word",
+    "podcast",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"podcast\" come from?",
+   "h1": "Where does the word \"podcast\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2019",
+   "slug": "what-do-puffins-eat",
+   "question": "What do puffins eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-puffins-eat/",
+   "keywords": [
+    "puffins",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do puffins eat? Explained With Sources",
+   "h1": "What do puffins eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2020",
+   "slug": "how-was-photography-invented",
+   "question": "How was photography invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-photography-invented/",
+   "keywords": [
+    "photography",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was photography invented? The Real Answer, Explained",
+   "h1": "How was photography invented?",
+   "ymyl": false
+  }
+ ]
+}

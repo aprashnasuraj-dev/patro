@@ -1,0 +1,171 @@
+{
+ "batch": 266,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1768",
+   "slug": "how-long-do-reindeer-live",
+   "question": "How long do reindeer live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-reindeer-live/",
+   "keywords": [
+    "long",
+    "reindeer",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do reindeer live? Explained With Sources",
+   "h1": "How long do reindeer live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1769",
+   "slug": "what-is-amelia-earhart-best-known-for",
+   "question": "What is Amelia Earhart best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-amelia-earhart-best-known-for/",
+   "keywords": [
+    "amelia",
+    "earhart",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Amelia Earhart best known for? A Clear Overview",
+   "h1": "What is Amelia Earhart best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1770",
+   "slug": "how-did-hong-kong-get-its-name",
+   "question": "How did Hong Kong get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-hong-kong-get-its-name/",
+   "keywords": [
+    "did",
+    "hong",
+    "kong",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Hong Kong get its name? Facts and Background",
+   "h1": "How did Hong Kong get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1771",
+   "slug": "how-does-a-binoculars-work",
+   "question": "How does a binoculars work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-binoculars-work/",
+   "keywords": [
+    "binoculars",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a binoculars work? Facts, Myths and Evidence",
+   "h1": "How does a binoculars work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1772",
+   "slug": "why-does-carbon-dating-matter-in-everyday-life",
+   "question": "Why does carbon dating matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-carbon-dating-matter-in-everyday-life/",
+   "keywords": [
+    "carbon",
+    "dating",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does carbon dating matter in everyday life?",
+   "h1": "Why does carbon dating matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1773",
+   "slug": "where-does-the-word-chocolate-come-from",
+   "question": "Where does the word \"chocolate\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-chocolate-come-from/",
+   "keywords": [
+    "word",
+    "chocolate",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"chocolate\" come from?",
+   "h1": "Where does the word \"chocolate\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1774",
+   "slug": "what-is-the-history-of-popcorn",
+   "question": "What is the history of popcorn",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-popcorn/",
+   "keywords": [
+    "history",
+    "popcorn"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of popcorn? Facts and Background",
+   "h1": "What is the history of popcorn?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1775",
+   "slug": "how-do-polar-bears-communicate",
+   "question": "How do polar bears communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-polar-bears-communicate/",
+   "keywords": [
+    "polar",
+    "bears",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do polar bears communicate? The Real Answer, Explained",
+   "h1": "How do polar bears communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1776",
+   "slug": "what-is-marie-curie-best-known-for",
+   "question": "What is Marie Curie best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-marie-curie-best-known-for/",
+   "keywords": [
+    "marie",
+    "curie",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Marie Curie best known for?",
+   "h1": "What is Marie Curie best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1777",
+   "slug": "what-is-kazakhstan-known-for",
+   "question": "What is Kazakhstan known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-kazakhstan-known-for/",
+   "keywords": [
+    "kazakhstan",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Kazakhstan known for? Facts and Background",
+   "h1": "What is Kazakhstan known for?",
+   "ymyl": false
+  }
+ ]
+}

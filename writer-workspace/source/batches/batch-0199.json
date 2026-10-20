@@ -1,0 +1,167 @@
+{
+ "batch": 199,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1095",
+   "slug": "what-are-the-main-parts-of-a-toaster",
+   "question": "What are the main parts of a toaster",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-toaster/",
+   "keywords": [
+    "main",
+    "parts",
+    "toaster"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a toaster?",
+   "h1": "What are the main parts of a toaster?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1096",
+   "slug": "how-are-decimals-used-in-real-life",
+   "question": "How are decimals used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-decimals-used-in-real-life/",
+   "keywords": [
+    "decimals",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are decimals used in real life?",
+   "h1": "How are decimals used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1097",
+   "slug": "what-makes-the-flute-unique",
+   "question": "What makes the flute unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-the-flute-unique/",
+   "keywords": [
+    "makes",
+    "flute",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes the flute unique? Explained With Sources",
+   "h1": "What makes the flute unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1098",
+   "slug": "what-causes-desertification",
+   "question": "What causes desertification",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-desertification/",
+   "keywords": [
+    "causes",
+    "desertification"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes desertification? What Science Actually Says",
+   "h1": "What causes desertification?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1099",
+   "slug": "why-do-planets-orbit-the-sun",
+   "question": "Why do planets orbit the Sun",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-do-planets-orbit-the-sun/",
+   "keywords": [
+    "planets",
+    "orbit",
+    "sun"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do planets orbit the Sun? What Science Actually Says",
+   "h1": "Why do planets orbit the Sun?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1100",
+   "slug": "how-do-roses-grow",
+   "question": "How do roses grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-roses-grow/",
+   "keywords": [
+    "roses",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do roses grow? A Clear, Sourced Explanation",
+   "h1": "How do roses grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1101",
+   "slug": "what-do-tigers-eat",
+   "question": "What do tigers eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-tigers-eat/",
+   "keywords": [
+    "tigers",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do tigers eat? The Real Answer, Explained",
+   "h1": "What do tigers eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1102",
+   "slug": "what-caused-the-gupta-empire",
+   "question": "What caused the Gupta Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-gupta-empire/",
+   "keywords": [
+    "caused",
+    "gupta",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Gupta Empire? The Story, Sourced",
+   "h1": "What caused the Gupta Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1103",
+   "slug": "how-did-copenhagen-get-its-name",
+   "question": "How did Copenhagen get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-copenhagen-get-its-name/",
+   "keywords": [
+    "did",
+    "copenhagen",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Copenhagen get its name? The Short, Sourced Answer",
+   "h1": "How did Copenhagen get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1104",
+   "slug": "why-is-the-internet-sometimes-slow",
+   "question": "Why is the internet sometimes slow",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-is-the-internet-sometimes-slow/",
+   "keywords": [
+    "internet",
+    "sometimes",
+    "slow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is the internet sometimes slow?",
+   "h1": "Why is the internet sometimes slow?",
+   "ymyl": false
+  }
+ ]
+}

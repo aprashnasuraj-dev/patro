@@ -1,0 +1,165 @@
+{
+ "batch": 335,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2463",
+   "slug": "who-invented-paper-and-how",
+   "question": "Who invented paper and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-paper-and-how/",
+   "keywords": [
+    "invented",
+    "paper"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented paper and how? The Short, Sourced Answer",
+   "h1": "Who invented paper and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2464",
+   "slug": "what-is-barcelona-famous-for",
+   "question": "What is Barcelona famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-barcelona-famous-for/",
+   "keywords": [
+    "barcelona",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Barcelona famous for? Key Facts and Context",
+   "h1": "What is Barcelona famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2465",
+   "slug": "what-are-the-main-parts-of-a-radio",
+   "question": "What are the main parts of a radio",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-radio/",
+   "keywords": [
+    "main",
+    "parts",
+    "radio"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a radio?",
+   "h1": "What are the main parts of a radio?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2466",
+   "slug": "how-do-horses-sleep",
+   "question": "How do horses sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-horses-sleep/",
+   "keywords": [
+    "horses",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do horses sleep? A Clear, Sourced Explanation",
+   "h1": "How do horses sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2467",
+   "slug": "what-were-the-main-consequences-of-the-peloponnesian-war",
+   "question": "What were the main consequences of the Peloponnesian War",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-peloponnesian-war/",
+   "keywords": [
+    "main",
+    "consequences",
+    "peloponnesian",
+    "war"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Peloponnesian War?",
+   "h1": "What were the main consequences of the Peloponnesian War?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2468",
+   "slug": "how-did-dublin-get-its-name",
+   "question": "How did Dublin get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-dublin-get-its-name/",
+   "keywords": [
+    "did",
+    "dublin",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Dublin get its name? Key Facts and Context",
+   "h1": "How did Dublin get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2469",
+   "slug": "how-do-databases-work",
+   "question": "How do databases work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-databases-work/",
+   "keywords": [
+    "databases",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do databases work? Facts, Myths and Evidence",
+   "h1": "How do databases work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2470",
+   "slug": "how-long-do-storks-live",
+   "question": "How long do storks live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-storks-live/",
+   "keywords": [
+    "long",
+    "storks",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do storks live? The Real Answer, Explained",
+   "h1": "How long do storks live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2471",
+   "slug": "who-was-isaac-newton",
+   "question": "Who was Isaac Newton",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-isaac-newton/",
+   "keywords": [
+    "isaac",
+    "newton"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Isaac Newton? Key Facts and Context",
+   "h1": "Who was Isaac Newton?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2472",
+   "slug": "what-is-the-economy-of-hungary-based-on",
+   "question": "What is the economy of Hungary based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-hungary-based-on/",
+   "keywords": [
+    "economy",
+    "hungary",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Hungary based on? The Story, Sourced",
+   "h1": "What is the economy of Hungary based on?",
+   "ymyl": false
+  }
+ ]
+}

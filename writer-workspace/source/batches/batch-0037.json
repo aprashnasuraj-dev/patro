@@ -1,0 +1,176 @@
+{
+ "batch": 37,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0805",
+   "slug": "how-to-spot-the-international-space-station",
+   "question": "How to spot the International Space Station",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-to-spot-the-international-space-station/",
+   "keywords": [
+    "spot",
+    "international",
+    "space",
+    "station",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How To Spot The International Space Station?",
+   "h1": "How To Spot The International Space Station?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0807",
+   "slug": "why-mountains-are-cold-at-the-top",
+   "question": "Why mountains are cold at the top",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-mountains-are-cold-at-the-top/",
+   "keywords": [
+    "mountains",
+    "cold",
+    "top",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Mountains Are Cold At The Top? Facts, Myths and Evidence",
+   "h1": "Why Mountains Are Cold At The Top?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0811",
+   "slug": "why-we-believe-conspiracy-theories",
+   "question": "Why we believe conspiracy theories",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-believe-conspiracy-theories/",
+   "keywords": [
+    "believe",
+    "conspiracy",
+    "theories",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Believe Conspiracy Theories?",
+   "h1": "Why We Believe Conspiracy Theories?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0813",
+   "slug": "why-bananas-ripen-faster-in-bags",
+   "question": "Why bananas ripen faster in bags",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-bananas-ripen-faster-in-bags/",
+   "keywords": [
+    "bananas",
+    "ripen",
+    "faster",
+    "bags",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bananas Ripen Faster In Bags? The Real Answer, Explained",
+   "h1": "Why Bananas Ripen Faster In Bags?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0815",
+   "slug": "why-bubbles-are-round",
+   "question": "Why bubbles are round",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-bubbles-are-round/",
+   "keywords": [
+    "bubbles",
+    "round",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bubbles Are Round? Facts, Myths and Evidence",
+   "h1": "Why Bubbles Are Round?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0817",
+   "slug": "why-clocks-drift-on-computers",
+   "question": "Why clocks drift on computers",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-clocks-drift-on-computers/",
+   "keywords": [
+    "clocks",
+    "drift",
+    "computers",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Clocks Drift On Computers? The Real Answer, Explained",
+   "h1": "Why Clocks Drift On Computers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0819",
+   "slug": "why-open-source-ai-matters",
+   "question": "Why open-source AI matters",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-open-source-ai-matters/",
+   "keywords": [
+    "open-source",
+    "matters",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Open-source AI Matters? What Science Actually Says",
+   "h1": "Why Open-source AI Matters?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0821",
+   "slug": "how-the-telephone-was-invented",
+   "question": "How the telephone was invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-telephone-was-invented/",
+   "keywords": [
+    "telephone",
+    "invented",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Telephone Was Invented? What Science Actually Says",
+   "h1": "How The Telephone Was Invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0823",
+   "slug": "why-the-maldives-may-disappear",
+   "question": "Why the Maldives may disappear",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-the-maldives-may-disappear/",
+   "keywords": [
+    "maldives",
+    "may",
+    "disappear",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Maldives May Disappear? What Science Actually Says",
+   "h1": "Why The Maldives May Disappear?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0827",
+   "slug": "why-trash-piles-grow",
+   "question": "Why trash piles grow",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-trash-piles-grow/",
+   "keywords": [
+    "trash",
+    "piles",
+    "grow",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Trash Piles Grow? A Clear, Sourced Explanation",
+   "h1": "Why Trash Piles Grow?",
+   "ymyl": false
+  }
+ ]
+}

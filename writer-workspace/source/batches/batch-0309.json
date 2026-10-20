@@ -1,0 +1,170 @@
+{
+ "batch": 309,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2202",
+   "slug": "how-did-istanbul-get-its-name",
+   "question": "How did Istanbul get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-istanbul-get-its-name/",
+   "keywords": [
+    "did",
+    "istanbul",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Istanbul get its name? The Story, Sourced",
+   "h1": "How did Istanbul get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2203",
+   "slug": "what-are-the-main-parts-of-a-robot-vacuum",
+   "question": "What are the main parts of a robot vacuum",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-robot-vacuum/",
+   "keywords": [
+    "main",
+    "parts",
+    "robot",
+    "vacuum"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a robot vacuum?",
+   "h1": "What are the main parts of a robot vacuum?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2204",
+   "slug": "why-does-osmosis-matter-in-everyday-life",
+   "question": "Why does osmosis matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-osmosis-matter-in-everyday-life/",
+   "keywords": [
+    "osmosis",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does osmosis matter in everyday life?",
+   "h1": "Why does osmosis matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2205",
+   "slug": "what-do-cheetahs-eat",
+   "question": "What do cheetahs eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-cheetahs-eat/",
+   "keywords": [
+    "cheetahs",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do cheetahs eat? What Science Actually Says",
+   "h1": "What do cheetahs eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2206",
+   "slug": "what-is-pablo-picasso-best-known-for",
+   "question": "What is Pablo Picasso best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-pablo-picasso-best-known-for/",
+   "keywords": [
+    "pablo",
+    "picasso",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Pablo Picasso best known for? The Story, Sourced",
+   "h1": "What is Pablo Picasso best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2207",
+   "slug": "how-did-lima-get-its-name",
+   "question": "How did Lima get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-lima-get-its-name/",
+   "keywords": [
+    "did",
+    "lima",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Lima get its name? Facts and Background",
+   "h1": "How did Lima get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2208",
+   "slug": "how-do-apis-work",
+   "question": "How do APIs work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-apis-work/",
+   "keywords": [
+    "apis",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do APIs work? A Clear, Sourced Explanation",
+   "h1": "How do APIs work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2209",
+   "slug": "why-does-salt-melt-ice",
+   "question": "Why does salt melt ice",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-salt-melt-ice/",
+   "keywords": [
+    "salt",
+    "melt",
+    "ice"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does salt melt ice? A Clear, Sourced Explanation",
+   "h1": "Why does salt melt ice?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2210",
+   "slug": "how-do-seahorses-sleep",
+   "question": "How do seahorses sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-seahorses-sleep/",
+   "keywords": [
+    "seahorses",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do seahorses sleep? Facts, Myths and Evidence",
+   "h1": "How do seahorses sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2211",
+   "slug": "who-was-ada-lovelace",
+   "question": "Who was Ada Lovelace",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-ada-lovelace/",
+   "keywords": [
+    "ada",
+    "lovelace"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Ada Lovelace? The Short, Sourced Answer",
+   "h1": "Who was Ada Lovelace?",
+   "ymyl": false
+  }
+ ]
+}

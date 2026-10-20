@@ -1,0 +1,163 @@
+{
+ "batch": 367,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2783",
+   "slug": "what-is-the-history-of-australia",
+   "question": "What is the history of Australia",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-australia/",
+   "keywords": [
+    "history",
+    "australia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Australia? The Story, Sourced",
+   "h1": "What is the history of Australia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2784",
+   "slug": "how-long-do-jellyfish-live",
+   "question": "How long do jellyfish live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-jellyfish-live/",
+   "keywords": [
+    "long",
+    "jellyfish",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do jellyfish live? What Science Actually Says",
+   "h1": "How long do jellyfish live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2785",
+   "slug": "what-is-alan-turing-best-known-for",
+   "question": "What is Alan Turing best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-alan-turing-best-known-for/",
+   "keywords": [
+    "alan",
+    "turing",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Alan Turing best known for? Facts and Background",
+   "h1": "What is Alan Turing best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2786",
+   "slug": "what-is-the-history-of-rwanda",
+   "question": "What is the history of Rwanda",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-rwanda/",
+   "keywords": [
+    "history",
+    "rwanda"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Rwanda? The Short, Sourced Answer",
+   "h1": "What is the history of Rwanda?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2787",
+   "slug": "how-do-falcons-sleep",
+   "question": "How do falcons sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-falcons-sleep/",
+   "keywords": [
+    "falcons",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do falcons sleep? What Science Actually Says",
+   "h1": "How do falcons sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2788",
+   "slug": "what-is-thomas-edison-best-known-for",
+   "question": "What is Thomas Edison best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-thomas-edison-best-known-for/",
+   "keywords": [
+    "thomas",
+    "edison",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Thomas Edison best known for? Facts and Background",
+   "h1": "What is Thomas Edison best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2789",
+   "slug": "what-is-the-history-of-kyoto",
+   "question": "What is the history of Kyoto",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-kyoto/",
+   "keywords": [
+    "history",
+    "kyoto"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Kyoto? Facts and Background",
+   "h1": "What is the history of Kyoto?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2790",
+   "slug": "how-do-camels-communicate",
+   "question": "How do camels communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-camels-communicate/",
+   "keywords": [
+    "camels",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do camels communicate? Facts, Myths and Evidence",
+   "h1": "How do camels communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2791",
+   "slug": "what-caused-the-fall-of-constantinople",
+   "question": "What caused the fall of Constantinople",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-fall-of-constantinople/",
+   "keywords": [
+    "caused",
+    "fall",
+    "constantinople"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the fall of Constantinople? The Story, Sourced",
+   "h1": "What caused the fall of Constantinople?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2792",
+   "slug": "what-is-geneva-famous-for",
+   "question": "What is Geneva famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-geneva-famous-for/",
+   "keywords": [
+    "geneva",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Geneva famous for? The Short, Sourced Answer",
+   "h1": "What is Geneva famous for?",
+   "ymyl": false
+  }
+ ]
+}

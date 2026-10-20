@@ -1,0 +1,165 @@
+{
+ "batch": 172,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0825",
+   "slug": "what-are-the-main-parts-of-a-zipper",
+   "question": "What are the main parts of a zipper",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-zipper/",
+   "keywords": [
+    "main",
+    "parts",
+    "zipper"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a zipper?",
+   "h1": "What are the main parts of a zipper?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0826",
+   "slug": "what-is-the-pythagorean-theorem",
+   "question": "What is the Pythagorean theorem",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-pythagorean-theorem/",
+   "keywords": [
+    "pythagorean",
+    "theorem"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Pythagorean theorem? What Science Actually Says",
+   "h1": "What is the Pythagorean theorem?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0827",
+   "slug": "what-makes-ballet-unique",
+   "question": "What makes ballet unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-ballet-unique/",
+   "keywords": [
+    "makes",
+    "ballet",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes ballet unique? Facts, Myths and Evidence",
+   "h1": "What makes ballet unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0828",
+   "slug": "what-causes-halos-around-the-moon",
+   "question": "What causes halos around the Moon",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-halos-around-the-moon/",
+   "keywords": [
+    "causes",
+    "halos",
+    "around",
+    "moon"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes halos around the Moon? Facts, Myths and Evidence",
+   "h1": "What causes halos around the Moon?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0829",
+   "slug": "how-do-supernovae-form",
+   "question": "How do supernovae form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-supernovae-form/",
+   "keywords": [
+    "supernovae",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do supernovae form? The Real Answer, Explained",
+   "h1": "How do supernovae form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0830",
+   "slug": "how-do-cinnamon-trees-grow",
+   "question": "How do cinnamon trees grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-cinnamon-trees-grow/",
+   "keywords": [
+    "cinnamon",
+    "trees",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cinnamon trees grow? A Clear, Sourced Explanation",
+   "h1": "How do cinnamon trees grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0831",
+   "slug": "where-do-dolphins-live-in-the-wild",
+   "question": "Where do dolphins live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-dolphins-live-in-the-wild/",
+   "keywords": [
+    "dolphins",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do dolphins live in the wild?",
+   "h1": "Where do dolphins live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0832",
+   "slug": "what-is-michael-faraday-best-known-for",
+   "question": "What is Michael Faraday best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-michael-faraday-best-known-for/",
+   "keywords": [
+    "michael",
+    "faraday",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Michael Faraday best known for? Facts and Background",
+   "h1": "What is Michael Faraday best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0833",
+   "slug": "what-is-toronto-famous-for",
+   "question": "What is Toronto famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-toronto-famous-for/",
+   "keywords": [
+    "toronto",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Toronto famous for? Key Facts and Context",
+   "h1": "What is Toronto famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0834",
+   "slug": "what-is-augmented-reality",
+   "question": "What is augmented reality",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-augmented-reality/",
+   "keywords": [
+    "augmented",
+    "reality"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is augmented reality? The Real Answer, Explained",
+   "h1": "What is augmented reality?",
+   "ymyl": false
+  }
+ ]
+}

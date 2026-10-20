@@ -1,0 +1,167 @@
+{
+ "batch": 241,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1517",
+   "slug": "what-caused-the-silk-road",
+   "question": "What caused the Silk Road",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-silk-road/",
+   "keywords": [
+    "caused",
+    "silk",
+    "road"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Silk Road? Key Facts and Context",
+   "h1": "What caused the Silk Road?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1518",
+   "slug": "what-is-the-history-of-indonesia",
+   "question": "What is the history of Indonesia",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-indonesia/",
+   "keywords": [
+    "history",
+    "indonesia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Indonesia? Key Facts and Context",
+   "h1": "What is the history of Indonesia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1519",
+   "slug": "how-does-email-work",
+   "question": "How does email work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-email-work/",
+   "keywords": [
+    "email",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does email work? The Real Answer, Explained",
+   "h1": "How does email work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1520",
+   "slug": "why-does-resonance-matter-in-everyday-life",
+   "question": "Why does resonance matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-resonance-matter-in-everyday-life/",
+   "keywords": [
+    "resonance",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does resonance matter in everyday life?",
+   "h1": "Why does resonance matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1521",
+   "slug": "where-does-the-word-guru-come-from",
+   "question": "Where does the word \"guru\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-guru-come-from/",
+   "keywords": [
+    "word",
+    "guru",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"guru\" come from? The Story, Sourced",
+   "h1": "Where does the word \"guru\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1522",
+   "slug": "what-is-the-history-of-peanut-butter",
+   "question": "What is the history of peanut butter",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-peanut-butter/",
+   "keywords": [
+    "history",
+    "peanut",
+    "butter"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of peanut butter? A Clear Overview",
+   "h1": "What is the history of peanut butter?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1523",
+   "slug": "how-does-a-fuel-cell-work",
+   "question": "How does a fuel cell work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-fuel-cell-work/",
+   "keywords": [
+    "fuel",
+    "cell",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a fuel cell work? A Clear, Sourced Explanation",
+   "h1": "How does a fuel cell work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1524",
+   "slug": "where-is-langtang-lirung-and-how-high-is-it",
+   "question": "Where is Langtang Lirung and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-langtang-lirung-and-how-high-is-it/",
+   "keywords": [
+    "langtang",
+    "lirung",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Langtang Lirung and how high is it?",
+   "h1": "Where is Langtang Lirung and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1525",
+   "slug": "what-are-the-main-parts-of-a-garage-door-opener",
+   "question": "What are the main parts of a garage door opener",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-garage-door-opener/",
+   "keywords": [
+    "main",
+    "parts",
+    "garage",
+    "door",
+    "opener"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a garage door opener?",
+   "h1": "What are the main parts of a garage door opener?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1526",
+   "slug": "what-is-the-golden-ratio",
+   "question": "What is the golden ratio",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-golden-ratio/",
+   "keywords": [
+    "golden",
+    "ratio"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the golden ratio? A Clear, Sourced Explanation",
+   "h1": "What is the golden ratio?",
+   "ymyl": false
+  }
+ ]
+}

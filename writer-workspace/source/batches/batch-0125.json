@@ -1,0 +1,172 @@
+{
+ "batch": 125,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0351",
+   "slug": "why-do-we-yawn-when-others-yawn",
+   "question": "Why do we yawn when others yawn",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-yawn-when-others-yawn/",
+   "keywords": [
+    "yawn",
+    "others",
+    "yawn"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we yawn when others yawn? The Real Answer, Explained",
+   "h1": "Why do we yawn when others yawn?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0352",
+   "slug": "what-is-large-language-models",
+   "question": "What is large language models",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-is-large-language-models/",
+   "keywords": [
+    "large",
+    "language",
+    "models"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is large language models? Facts, Myths and Evidence",
+   "h1": "What is large language models?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0353",
+   "slug": "where-do-sea-lions-live-in-the-wild",
+   "question": "Where do sea lions live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-sea-lions-live-in-the-wild/",
+   "keywords": [
+    "sea",
+    "lions",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do sea lions live in the wild? Explained With Sources",
+   "h1": "Where do sea lions live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0354",
+   "slug": "what-were-the-main-consequences-of-the-bronze-age-collapse",
+   "question": "What were the main consequences of the Bronze Age collapse",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-bronze-age-collapse/",
+   "keywords": [
+    "main",
+    "consequences",
+    "bronze",
+    "age",
+    "collapse"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Bronze Age collapse?",
+   "h1": "What were the main consequences of the Bronze Age collapse?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0355",
+   "slug": "how-did-auckland-get-its-name",
+   "question": "How did Auckland get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-auckland-get-its-name/",
+   "keywords": [
+    "did",
+    "auckland",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Auckland get its name? A Clear Overview",
+   "h1": "How did Auckland get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0356",
+   "slug": "what-are-the-main-parts-of-a-dslr-camera",
+   "question": "What are the main parts of a DSLR camera",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-dslr-camera/",
+   "keywords": [
+    "main",
+    "parts",
+    "dslr",
+    "camera"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a DSLR camera?",
+   "h1": "What are the main parts of a DSLR camera?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0357",
+   "slug": "what-is-gravity",
+   "question": "What is gravity",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-gravity/",
+   "keywords": [
+    "gravity"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is gravity? What Science Actually Says",
+   "h1": "What is gravity?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0358",
+   "slug": "where-does-the-phrase-barking-up-the-wrong-tree-come-from",
+   "question": "Where does the phrase \"barking up the wrong tree\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-barking-up-the-wrong-tree-come-from/",
+   "keywords": [
+    "phrase",
+    "barking",
+    "wrong",
+    "tree",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"barking up the wrong tree\" come from?",
+   "h1": "Where does the phrase \"barking up the wrong tree\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0359",
+   "slug": "what-is-the-history-of-tempeh",
+   "question": "What is the history of tempeh",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-tempeh/",
+   "keywords": [
+    "history",
+    "tempeh"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of tempeh? The Short, Sourced Answer",
+   "h1": "What is the history of tempeh?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0360",
+   "slug": "how-does-a-suspension-bridge-work",
+   "question": "How does a suspension bridge work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-suspension-bridge-work/",
+   "keywords": [
+    "suspension",
+    "bridge",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a suspension bridge work?",
+   "h1": "How does a suspension bridge work?",
+   "ymyl": false
+  }
+ ]
+}

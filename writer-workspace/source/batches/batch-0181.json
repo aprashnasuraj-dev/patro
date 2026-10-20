@@ -1,0 +1,170 @@
+{
+ "batch": 181,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0915",
+   "slug": "how-does-a-reverse-osmosis-filter-work",
+   "question": "How does a reverse osmosis filter work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-reverse-osmosis-filter-work/",
+   "keywords": [
+    "reverse",
+    "osmosis",
+    "filter",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a reverse osmosis filter work?",
+   "h1": "How does a reverse osmosis filter work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0916",
+   "slug": "why-are-triangles-strong",
+   "question": "Why are triangles strong",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-are-triangles-strong/",
+   "keywords": [
+    "triangles",
+    "strong"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are triangles strong? The Real Answer, Explained",
+   "h1": "Why are triangles strong?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0917",
+   "slug": "what-makes-film-noir-unique",
+   "question": "What makes film noir unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-film-noir-unique/",
+   "keywords": [
+    "makes",
+    "film",
+    "noir",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes film noir unique? The Real Answer, Explained",
+   "h1": "What makes film noir unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0918",
+   "slug": "what-causes-the-green-flash",
+   "question": "What causes the green flash",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-the-green-flash/",
+   "keywords": [
+    "causes",
+    "green",
+    "flash"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes the green flash? A Clear, Sourced Explanation",
+   "h1": "What causes the green flash?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0919",
+   "slug": "does-jupiter-have-moons-or-rings",
+   "question": "Does Jupiter have moons or rings",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/does-jupiter-have-moons-or-rings/",
+   "keywords": [
+    "jupiter",
+    "have",
+    "moons",
+    "rings"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Does Jupiter have moons or rings?",
+   "h1": "Does Jupiter have moons or rings?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0920",
+   "slug": "how-long-do-cacti-live",
+   "question": "How long do cacti live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-cacti-live/",
+   "keywords": [
+    "long",
+    "cacti",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do cacti live? Facts, Myths and Evidence",
+   "h1": "How long do cacti live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0921",
+   "slug": "how-long-do-alligators-live",
+   "question": "How long do alligators live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-alligators-live/",
+   "keywords": [
+    "long",
+    "alligators",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do alligators live? Facts, Myths and Evidence",
+   "h1": "How long do alligators live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0922",
+   "slug": "what-caused-the-building-of-the-great-wall-of-china",
+   "question": "What caused the building of the Great Wall of China",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-building-of-the-great-wall-of-china/",
+   "keywords": [
+    "caused",
+    "building",
+    "great",
+    "wall",
+    "china"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the building of the Great Wall of China?",
+   "h1": "What caused the building of the Great Wall of China?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0923",
+   "slug": "what-is-the-history-of-new-zealand",
+   "question": "What is the history of New Zealand",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-new-zealand/",
+   "keywords": [
+    "history",
+    "new",
+    "zealand"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of New Zealand?",
+   "h1": "What is the history of New Zealand?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0924",
+   "slug": "what-are-data-backups",
+   "question": "What are data backups",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-data-backups/",
+   "keywords": [
+    "data",
+    "backups"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are data backups? Facts, Myths and Evidence",
+   "h1": "What are data backups?",
+   "ymyl": false
+  }
+ ]
+}

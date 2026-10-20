@@ -1,0 +1,165 @@
+{
+ "batch": 163,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0735",
+   "slug": "how-does-a-smart-thermostat-work",
+   "question": "How does a smart thermostat work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-smart-thermostat-work/",
+   "keywords": [
+    "smart",
+    "thermostat",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a smart thermostat work?",
+   "h1": "How does a smart thermostat work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0736",
+   "slug": "what-are-vectors",
+   "question": "What are vectors",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-vectors/",
+   "keywords": [
+    "vectors"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are vectors? What Science Actually Says",
+   "h1": "What are vectors?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0737",
+   "slug": "why-does-music-give-us-chills",
+   "question": "Why does music give us chills",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-does-music-give-us-chills/",
+   "keywords": [
+    "music",
+    "give",
+    "chills"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does music give us chills? What Science Actually Says",
+   "h1": "Why does music give us chills?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0738",
+   "slug": "how-do-coral-reefs-form",
+   "question": "How do coral reefs form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-coral-reefs-form/",
+   "keywords": [
+    "coral",
+    "reefs",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do coral reefs form? A Clear, Sourced Explanation",
+   "h1": "How do coral reefs form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0739",
+   "slug": "what-is-gravitational-waves",
+   "question": "What is gravitational waves",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-gravitational-waves/",
+   "keywords": [
+    "gravitational",
+    "waves"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is gravitational waves? A Clear, Sourced Explanation",
+   "h1": "What is gravitational waves?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0740",
+   "slug": "how-long-do-coffee-plants-live",
+   "question": "How long do coffee plants live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-coffee-plants-live/",
+   "keywords": [
+    "long",
+    "coffee",
+    "plants",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do coffee plants live? Facts, Myths and Evidence",
+   "h1": "How long do coffee plants live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0741",
+   "slug": "where-do-storks-live-in-the-wild",
+   "question": "Where do storks live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-storks-live-in-the-wild/",
+   "keywords": [
+    "storks",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do storks live in the wild? The Real Answer, Explained",
+   "h1": "Where do storks live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0742",
+   "slug": "what-were-the-main-consequences-of-the-agricultural",
+   "question": "What were the main consequences of the Agricultural Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-agricultural/",
+   "keywords": [
+    "main",
+    "consequences",
+    "agricultural",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Agricultural Revoluti",
+   "h1": "What were the main consequences of the Agricultural Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0743",
+   "slug": "what-is-saint-petersburg-famous-for",
+   "question": "What is Saint Petersburg famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-saint-petersburg-famous-for/",
+   "keywords": [
+    "saint",
+    "petersburg",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Saint Petersburg famous for? Facts and Background",
+   "h1": "What is Saint Petersburg famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0744",
+   "slug": "how-does-vpns-work",
+   "question": "How does VPNs work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-vpns-work/",
+   "keywords": [
+    "vpns",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does VPNs work? What Science Actually Says",
+   "h1": "How does VPNs work?",
+   "ymyl": false
+  }
+ ]
+}

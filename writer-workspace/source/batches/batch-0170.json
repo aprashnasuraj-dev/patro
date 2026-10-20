@@ -1,0 +1,172 @@
+{
+ "batch": 170,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0805",
+   "slug": "why-does-electrolysis-matter-in-everyday-life",
+   "question": "Why does electrolysis matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-electrolysis-matter-in-everyday-life/",
+   "keywords": [
+    "electrolysis",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does electrolysis matter in everyday life?",
+   "h1": "Why does electrolysis matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0806",
+   "slug": "how-many-people-speak-hindi-and-where",
+   "question": "How many people speak Hindi and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-hindi-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "hindi"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Hindi and where?",
+   "h1": "How many people speak Hindi and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0807",
+   "slug": "how-is-sugar-made",
+   "question": "How is sugar made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-sugar-made/",
+   "keywords": [
+    "sugar",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is sugar made? Facts, Myths and Evidence",
+   "h1": "How is sugar made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0808",
+   "slug": "why-do-planes-leave-white-trails",
+   "question": "Why do planes leave white trails",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-do-planes-leave-white-trails/",
+   "keywords": [
+    "planes",
+    "leave",
+    "white",
+    "trails"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do planes leave white trails?",
+   "h1": "Why do planes leave white trails?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0809",
+   "slug": "what-is-special-about-langtang-lirung",
+   "question": "What is special about Langtang Lirung",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-langtang-lirung/",
+   "keywords": [
+    "special",
+    "about",
+    "langtang",
+    "lirung"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Langtang Lirung?",
+   "h1": "What is special about Langtang Lirung?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0810",
+   "slug": "why-do-cities-have-rush-hours",
+   "question": "Why do cities have rush hours",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-cities-have-rush-hours/",
+   "keywords": [
+    "cities",
+    "have",
+    "rush",
+    "hours"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do cities have rush hours? The Real Answer, Explained",
+   "h1": "Why do cities have rush hours?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0811",
+   "slug": "why-is-a-circle-360-degrees",
+   "question": "Why is a circle 360 degrees",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-is-a-circle-360-degrees/",
+   "keywords": [
+    "circle",
+    "degrees"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is a circle 360 degrees? The Real Answer, Explained",
+   "h1": "Why is a circle 360 degrees?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0812",
+   "slug": "what-makes-nepali-folk-songs-unique",
+   "question": "What makes Nepali folk songs unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-nepali-folk-songs-unique/",
+   "keywords": [
+    "makes",
+    "nepali",
+    "folk",
+    "songs",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Nepali folk songs unique?",
+   "h1": "What makes Nepali folk songs unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0813",
+   "slug": "how-do-islands-form",
+   "question": "How do islands form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-islands-form/",
+   "keywords": [
+    "islands",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do islands form? The Real Answer, Explained",
+   "h1": "How do islands form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0814",
+   "slug": "does-saturn-have-moons-or-rings",
+   "question": "Does Saturn have moons or rings",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/does-saturn-have-moons-or-rings/",
+   "keywords": [
+    "saturn",
+    "have",
+    "moons",
+    "rings"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Does Saturn have moons or rings? Facts, Myths and Evidence",
+   "h1": "Does Saturn have moons or rings?",
+   "ymyl": false
+  }
+ ]
+}

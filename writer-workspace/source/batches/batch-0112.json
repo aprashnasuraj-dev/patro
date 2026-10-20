@@ -1,0 +1,163 @@
+{
+ "batch": 112,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0221",
+   "slug": "what-is-sound",
+   "question": "What is sound",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-sound/",
+   "keywords": [
+    "sound"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is sound? Facts, Myths and Evidence",
+   "h1": "What is sound?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0222",
+   "slug": "where-did-the-swahili-language-come-from",
+   "question": "Where did the Swahili language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-swahili-language-come-from/",
+   "keywords": [
+    "did",
+    "swahili",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Swahili language come from?",
+   "h1": "Where did the Swahili language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0223",
+   "slug": "how-are-marshmallows-made",
+   "question": "How are marshmallows made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-are-marshmallows-made/",
+   "keywords": [
+    "marshmallows",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are marshmallows made? The Real Answer, Explained",
+   "h1": "How are marshmallows made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0224",
+   "slug": "how-does-a-steam-locomotive-work",
+   "question": "How does a steam locomotive work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-steam-locomotive-work/",
+   "keywords": [
+    "steam",
+    "locomotive",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a steam locomotive work? What Science Actually Says",
+   "h1": "How does a steam locomotive work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0225",
+   "slug": "what-is-sukuti-and-how-is-it-made",
+   "question": "What is sukuti and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-sukuti-and-how-is-it-made/",
+   "keywords": [
+    "sukuti",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is sukuti and how is it made? The Short, Sourced Answer",
+   "h1": "What is sukuti and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0226",
+   "slug": "what-are-the-main-parts-of-a-gas-stove",
+   "question": "What are the main parts of a gas stove",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-gas-stove/",
+   "keywords": [
+    "main",
+    "parts",
+    "gas",
+    "stove"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a gas stove?",
+   "h1": "What are the main parts of a gas stove?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0227",
+   "slug": "what-are-magic-squares",
+   "question": "What are magic squares",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-magic-squares/",
+   "keywords": [
+    "magic",
+    "squares"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are magic squares? The Real Answer, Explained",
+   "h1": "What are magic squares?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0228",
+   "slug": "how-did-jazz-start",
+   "question": "How did jazz start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-jazz-start/",
+   "keywords": [
+    "did",
+    "jazz",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did jazz start? Facts, Myths and Evidence",
+   "h1": "How did jazz start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0229",
+   "slug": "how-do-diamonds-form",
+   "question": "How do diamonds form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-diamonds-form/",
+   "keywords": [
+    "diamonds",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do diamonds form? Explained With Sources",
+   "h1": "How do diamonds form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0230",
+   "slug": "what-is-the-kuiper-belt-made-of",
+   "question": "What is the Kuiper Belt made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-kuiper-belt-made-of/",
+   "keywords": [
+    "kuiper",
+    "belt",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Kuiper Belt made of? What Science Actually Says",
+   "h1": "What is the Kuiper Belt made of?",
+   "ymyl": false
+  }
+ ]
+}

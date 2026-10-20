@@ -1,0 +1,167 @@
+{
+ "batch": 161,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0715",
+   "slug": "why-does-animal-migration-matter-in-everyday-life",
+   "question": "Why does animal migration matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-animal-migration-matter-in-everyday-life/",
+   "keywords": [
+    "animal",
+    "migration",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does animal migration matter in everyday life?",
+   "h1": "Why does animal migration matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0716",
+   "slug": "where-does-the-word-banana-come-from",
+   "question": "Where does the word \"banana\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-banana-come-from/",
+   "keywords": [
+    "word",
+    "banana",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"banana\" come from? The Story, Sourced",
+   "h1": "Where does the word \"banana\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0717",
+   "slug": "what-is-the-history-of-olive-oil",
+   "question": "What is the history of olive oil",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-olive-oil/",
+   "keywords": [
+    "history",
+    "olive",
+    "oil"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of olive oil? The Story, Sourced",
+   "h1": "What is the history of olive oil?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0718",
+   "slug": "how-does-a-steam-engine-work",
+   "question": "How does a steam engine work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-steam-engine-work/",
+   "keywords": [
+    "steam",
+    "engine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a steam engine work? Explained With Sources",
+   "h1": "How does a steam engine work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0719",
+   "slug": "why-are-the-himalayas-still-growing",
+   "question": "Why are the Himalayas still growing",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-are-the-himalayas-still-growing/",
+   "keywords": [
+    "himalayas",
+    "still",
+    "growing"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are the Himalayas still growing?",
+   "h1": "Why are the Himalayas still growing?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0720",
+   "slug": "what-are-the-main-parts-of-a-smart-thermostat",
+   "question": "What are the main parts of a smart thermostat",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-smart-thermostat/",
+   "keywords": [
+    "main",
+    "parts",
+    "smart",
+    "thermostat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a smart thermostat?",
+   "h1": "What are the main parts of a smart thermostat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0721",
+   "slug": "what-are-ratios",
+   "question": "What are ratios",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-ratios/",
+   "keywords": [
+    "ratios"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are ratios? Explained With Sources",
+   "h1": "What are ratios?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0722",
+   "slug": "how-did-the-flute-start",
+   "question": "How did the flute start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-flute-start/",
+   "keywords": [
+    "did",
+    "flute",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the flute start? Explained With Sources",
+   "h1": "How did the flute start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0723",
+   "slug": "what-causes-day-and-night",
+   "question": "What causes day and night",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-day-and-night/",
+   "keywords": [
+    "causes",
+    "day",
+    "night"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes day and night? The Real Answer, Explained",
+   "h1": "What causes day and night?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0724",
+   "slug": "how-do-quasars-form",
+   "question": "How do quasars form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-quasars-form/",
+   "keywords": [
+    "quasars",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do quasars form? The Real Answer, Explained",
+   "h1": "How do quasars form?",
+   "ymyl": false
+  }
+ ]
+}

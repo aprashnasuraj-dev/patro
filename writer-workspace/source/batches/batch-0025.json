@@ -1,0 +1,179 @@
+{
+ "batch": 25,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0539",
+   "slug": "how-ai-detects-diseases",
+   "question": "How AI detects diseases",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-detects-diseases/",
+   "keywords": [
+    "detects",
+    "diseases",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Detects Diseases? A Clear, Sourced Explanation",
+   "h1": "How AI Detects Diseases?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0541",
+   "slug": "what-daily-life-in-medieval-europe-was-like",
+   "question": "What daily life in medieval Europe was like",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-daily-life-in-medieval-europe-was-like/",
+   "keywords": [
+    "daily",
+    "life",
+    "medieval",
+    "europe",
+    "like",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Daily Life In Medieval Europe Was Like?",
+   "h1": "What Daily Life In Medieval Europe Was Like?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0543",
+   "slug": "how-the-netherlands-lives-below-sea-level",
+   "question": "How the Netherlands lives below sea level",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-the-netherlands-lives-below-sea-level/",
+   "keywords": [
+    "netherlands",
+    "lives",
+    "below",
+    "sea",
+    "level",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Netherlands Lives Below Sea Level?",
+   "h1": "How The Netherlands Lives Below Sea Level?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0547",
+   "slug": "how-tap-water-is-purified",
+   "question": "How tap water is purified",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-tap-water-is-purified/",
+   "keywords": [
+    "tap",
+    "water",
+    "purified",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Tap Water Is Purified? Explained With Sources",
+   "h1": "How Tap Water Is Purified?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0549",
+   "slug": "how-babies-pick-up-accents",
+   "question": "How babies pick up accents",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-babies-pick-up-accents/",
+   "keywords": [
+    "babies",
+    "pick",
+    "accents",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Babies Pick Up Accents? A Clear, Sourced Explanation",
+   "h1": "How Babies Pick Up Accents?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0551",
+   "slug": "how-geometry-measured-the-earth",
+   "question": "How geometry measured the Earth",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-geometry-measured-the-earth/",
+   "keywords": [
+    "geometry",
+    "measured",
+    "earth",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Geometry Measured The Earth? What Science Actually Says",
+   "h1": "How Geometry Measured The Earth?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0553",
+   "slug": "how-biogas-works-in-villages",
+   "question": "How biogas works in villages",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-biogas-works-in-villages/",
+   "keywords": [
+    "biogas",
+    "villages",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Biogas Works In Villages? Explained With Sources",
+   "h1": "How Biogas Works In Villages?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0555",
+   "slug": "why-helicopters-can-hover",
+   "question": "Why helicopters can hover",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-helicopters-can-hover/",
+   "keywords": [
+    "helicopters",
+    "hover",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Helicopters Can Hover? What Science Actually Says",
+   "h1": "Why Helicopters Can Hover?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0557",
+   "slug": "why-nepal-has-many-ethnic-groups",
+   "question": "Why Nepal has many ethnic groups",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepal-has-many-ethnic-groups/",
+   "keywords": [
+    "nepal",
+    "has",
+    "many",
+    "ethnic",
+    "groups",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal Has Many Ethnic Groups? Explained With Sources",
+   "h1": "Why Nepal Has Many Ethnic Groups?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0559",
+   "slug": "how-cinema-started",
+   "question": "How cinema started",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-cinema-started/",
+   "keywords": [
+    "cinema",
+    "started",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Cinema Started? Facts, Myths and Evidence",
+   "h1": "How Cinema Started?",
+   "ymyl": false
+  }
+ ]
+}

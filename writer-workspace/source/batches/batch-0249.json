@@ -1,0 +1,165 @@
+{
+ "batch": 249,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1597",
+   "slug": "what-are-the-main-parts-of-a-refrigerator",
+   "question": "What are the main parts of a refrigerator",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-refrigerator/",
+   "keywords": [
+    "main",
+    "parts",
+    "refrigerator"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a refrigerator?",
+   "h1": "What are the main parts of a refrigerator?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1598",
+   "slug": "how-are-square-roots-used-in-real-life",
+   "question": "How are square roots used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-square-roots-used-in-real-life/",
+   "keywords": [
+    "square",
+    "roots",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are square roots used in real life?",
+   "h1": "How are square roots used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1599",
+   "slug": "how-did-techno-start",
+   "question": "How did techno start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-techno-start/",
+   "keywords": [
+    "did",
+    "techno",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did techno start? What Science Actually Says",
+   "h1": "How did techno start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1600",
+   "slug": "how-do-crocodiles-sleep",
+   "question": "How do crocodiles sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-crocodiles-sleep/",
+   "keywords": [
+    "crocodiles",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do crocodiles sleep? A Clear, Sourced Explanation",
+   "h1": "How do crocodiles sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1601",
+   "slug": "what-were-the-main-consequences-of-the-boston-tea-party",
+   "question": "What were the main consequences of the Boston Tea Party",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-boston-tea-party/",
+   "keywords": [
+    "main",
+    "consequences",
+    "boston",
+    "tea",
+    "party"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Boston Tea Party?",
+   "h1": "What were the main consequences of the Boston Tea Party?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1602",
+   "slug": "what-is-morocco-known-for",
+   "question": "What is Morocco known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-morocco-known-for/",
+   "keywords": [
+    "morocco",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Morocco known for? The Short, Sourced Answer",
+   "h1": "What is Morocco known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1603",
+   "slug": "what-is-linux",
+   "question": "What is Linux",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-linux/",
+   "keywords": [
+    "linux"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Linux? Explained With Sources",
+   "h1": "What is Linux?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1604",
+   "slug": "what-is-entropy",
+   "question": "What is entropy",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-entropy/",
+   "keywords": [
+    "entropy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is entropy? Explained With Sources",
+   "h1": "What is entropy?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1605",
+   "slug": "where-did-the-tibetan-language-come-from",
+   "question": "Where did the Tibetan language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-tibetan-language-come-from/",
+   "keywords": [
+    "did",
+    "tibetan",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Tibetan language come from?",
+   "h1": "Where did the Tibetan language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1606",
+   "slug": "what-is-the-history-of-chai",
+   "question": "What is the history of chai",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-chai/",
+   "keywords": [
+    "history",
+    "chai"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of chai? Key Facts and Context",
+   "h1": "What is the history of chai?",
+   "ymyl": false
+  }
+ ]
+}

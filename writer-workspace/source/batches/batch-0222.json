@@ -1,0 +1,166 @@
+{
+ "batch": 222,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1327",
+   "slug": "what-causes-wildfires",
+   "question": "What causes wildfires",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-wildfires/",
+   "keywords": [
+    "causes",
+    "wildfires"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes wildfires? Facts, Myths and Evidence",
+   "h1": "What causes wildfires?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1328",
+   "slug": "why-is-pluto-no-longer-a-planet",
+   "question": "Why is Pluto no longer a planet",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-is-pluto-no-longer-a-planet/",
+   "keywords": [
+    "pluto",
+    "longer",
+    "planet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Pluto no longer a planet?",
+   "h1": "Why is Pluto no longer a planet?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1329",
+   "slug": "how-long-do-ostriches-live",
+   "question": "How long do ostriches live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-ostriches-live/",
+   "keywords": [
+    "long",
+    "ostriches",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do ostriches live? What Science Actually Says",
+   "h1": "How long do ostriches live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1330",
+   "slug": "what-caused-the-irish-potato-famine",
+   "question": "What caused the Irish Potato Famine",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-irish-potato-famine/",
+   "keywords": [
+    "caused",
+    "irish",
+    "potato",
+    "famine"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Irish Potato Famine? The Story, Sourced",
+   "h1": "What caused the Irish Potato Famine?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1331",
+   "slug": "what-is-dubai-famous-for",
+   "question": "What is Dubai famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-dubai-famous-for/",
+   "keywords": [
+    "dubai",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Dubai famous for? A Clear Overview",
+   "h1": "What is Dubai famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1332",
+   "slug": "how-does-a-game-controller-work",
+   "question": "How does a game controller work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-game-controller-work/",
+   "keywords": [
+    "game",
+    "controller",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a game controller work?",
+   "h1": "How does a game controller work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1333",
+   "slug": "why-does-momentum-matter-in-everyday-life",
+   "question": "Why does momentum matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-momentum-matter-in-everyday-life/",
+   "keywords": [
+    "momentum",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does momentum matter in everyday life?",
+   "h1": "Why does momentum matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1334",
+   "slug": "where-does-the-word-tweet-come-from",
+   "question": "Where does the word \"tweet\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-tweet-come-from/",
+   "keywords": [
+    "word",
+    "tweet",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"tweet\" come from? Facts and Background",
+   "h1": "Where does the word \"tweet\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1335",
+   "slug": "how-is-kimchi-made",
+   "question": "How is kimchi made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-kimchi-made/",
+   "keywords": [
+    "kimchi",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is kimchi made? A Clear, Sourced Explanation",
+   "h1": "How is kimchi made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1336",
+   "slug": "what-are-the-main-parts-of-a-turbocharger",
+   "question": "What are the main parts of a turbocharger",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-turbocharger/",
+   "keywords": [
+    "main",
+    "parts",
+    "turbocharger"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a turbocharger?",
+   "h1": "What are the main parts of a turbocharger?",
+   "ymyl": false
+  }
+ ]
+}

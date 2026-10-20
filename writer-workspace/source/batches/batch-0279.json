@@ -1,0 +1,159 @@
+{
+ "batch": 279,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1899",
+   "slug": "where-do-pythons-live-in-the-wild",
+   "question": "Where do pythons live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-pythons-live-in-the-wild/",
+   "keywords": [
+    "pythons",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do pythons live in the wild?",
+   "h1": "Where do pythons live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1900",
+   "slug": "who-was-winston-churchill",
+   "question": "Who was Winston Churchill",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-winston-churchill/",
+   "keywords": [
+    "winston",
+    "churchill"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Winston Churchill? The Story, Sourced",
+   "h1": "Who was Winston Churchill?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1901",
+   "slug": "what-is-the-history-of-brazil",
+   "question": "What is the history of Brazil",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-brazil/",
+   "keywords": [
+    "history",
+    "brazil"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Brazil? Key Facts and Context",
+   "h1": "What is the history of Brazil?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1902",
+   "slug": "how-does-a-synthesizer-work",
+   "question": "How does a synthesizer work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-synthesizer-work/",
+   "keywords": [
+    "synthesizer",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a synthesizer work? Facts, Myths and Evidence",
+   "h1": "How does a synthesizer work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1903",
+   "slug": "what-are-atoms",
+   "question": "What are atoms",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-atoms/",
+   "keywords": [
+    "atoms"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are atoms? What Science Actually Says",
+   "h1": "What are atoms?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1904",
+   "slug": "where-does-the-word-loot-come-from",
+   "question": "Where does the word \"loot\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-loot-come-from/",
+   "keywords": [
+    "word",
+    "loot",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"loot\" come from? Key Facts and Context",
+   "h1": "Where does the word \"loot\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1905",
+   "slug": "how-do-ostriches-sleep",
+   "question": "How do ostriches sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-ostriches-sleep/",
+   "keywords": [
+    "ostriches",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do ostriches sleep? The Real Answer, Explained",
+   "h1": "How do ostriches sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1906",
+   "slug": "who-invented-the-hot-air-balloon-and-how",
+   "question": "Who invented the hot air balloon and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-hot-air-balloon-and-how/",
+   "keywords": [
+    "invented",
+    "hot",
+    "air",
+    "balloon"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the hot air balloon and how? The Story, Sourced",
+   "h1": "Who invented the hot air balloon and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1907",
+   "slug": "what-is-bangladesh-known-for",
+   "question": "What is Bangladesh known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-bangladesh-known-for/",
+   "keywords": [
+    "bangladesh",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Bangladesh known for? The Short, Sourced Answer",
+   "h1": "What is Bangladesh known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1908",
+   "slug": "what-is-cybersecurity",
+   "question": "What is cybersecurity",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-cybersecurity/",
+   "keywords": [
+    "cybersecurity"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is cybersecurity? Explained With Sources",
+   "h1": "What is cybersecurity?",
+   "ymyl": false
+  }
+ ]
+}

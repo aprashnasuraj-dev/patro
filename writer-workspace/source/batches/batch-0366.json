@@ -1,0 +1,167 @@
+{
+ "batch": 366,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2773",
+   "slug": "what-caused-the-protestant-reformation",
+   "question": "What caused the Protestant Reformation",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-protestant-reformation/",
+   "keywords": [
+    "caused",
+    "protestant",
+    "reformation"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Protestant Reformation? Facts and Background",
+   "h1": "What caused the Protestant Reformation?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2774",
+   "slug": "how-did-amsterdam-get-its-name",
+   "question": "How did Amsterdam get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-amsterdam-get-its-name/",
+   "keywords": [
+    "did",
+    "amsterdam",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Amsterdam get its name? The Short, Sourced Answer",
+   "h1": "How did Amsterdam get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2775",
+   "slug": "how-long-do-manatees-live",
+   "question": "How long do manatees live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-manatees-live/",
+   "keywords": [
+    "long",
+    "manatees",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do manatees live? What Science Actually Says",
+   "h1": "How long do manatees live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2776",
+   "slug": "what-caused-the-gold-rush",
+   "question": "What caused the Gold Rush",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-gold-rush/",
+   "keywords": [
+    "caused",
+    "gold",
+    "rush"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Gold Rush? Facts and Background",
+   "h1": "What caused the Gold Rush?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2777",
+   "slug": "what-is-melbourne-famous-for",
+   "question": "What is Melbourne famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-melbourne-famous-for/",
+   "keywords": [
+    "melbourne",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Melbourne famous for? Key Facts and Context",
+   "h1": "What is Melbourne famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2778",
+   "slug": "how-do-zebras-communicate",
+   "question": "How do zebras communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-zebras-communicate/",
+   "keywords": [
+    "zebras",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do zebras communicate? Explained With Sources",
+   "h1": "How do zebras communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2779",
+   "slug": "what-is-saladin-best-known-for",
+   "question": "What is Saladin best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-saladin-best-known-for/",
+   "keywords": [
+    "saladin",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Saladin best known for? Facts and Background",
+   "h1": "What is Saladin best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2780",
+   "slug": "what-is-the-economy-of-cambodia-based-on",
+   "question": "What is the economy of Cambodia based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-cambodia-based-on/",
+   "keywords": [
+    "economy",
+    "cambodia",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Cambodia based on? The Story, Sourced",
+   "h1": "What is the economy of Cambodia based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2781",
+   "slug": "where-do-orcas-live-in-the-wild",
+   "question": "Where do orcas live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-orcas-live-in-the-wild/",
+   "keywords": [
+    "orcas",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do orcas live in the wild? What Science Actually Says",
+   "h1": "Where do orcas live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2782",
+   "slug": "who-was-laxmi-prasad-devkota",
+   "question": "Who was Laxmi Prasad Devkota",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-laxmi-prasad-devkota/",
+   "keywords": [
+    "laxmi",
+    "prasad",
+    "devkota"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Laxmi Prasad Devkota? Facts and Background",
+   "h1": "Who was Laxmi Prasad Devkota?",
+   "ymyl": false
+  }
+ ]
+}

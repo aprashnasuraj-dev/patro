@@ -1,0 +1,168 @@
+{
+ "batch": 144,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0545",
+   "slug": "how-long-do-pine-trees-live",
+   "question": "How long do pine trees live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-pine-trees-live/",
+   "keywords": [
+    "long",
+    "pine",
+    "trees",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do pine trees live? Explained With Sources",
+   "h1": "How long do pine trees live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0546",
+   "slug": "how-long-do-fireflies-live",
+   "question": "How long do fireflies live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-fireflies-live/",
+   "keywords": [
+    "long",
+    "fireflies",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do fireflies live? What Science Actually Says",
+   "h1": "How long do fireflies live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0547",
+   "slug": "what-is-cleopatra-best-known-for",
+   "question": "What is Cleopatra best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-cleopatra-best-known-for/",
+   "keywords": [
+    "cleopatra",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Cleopatra best known for? The Short, Sourced Answer",
+   "h1": "What is Cleopatra best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0548",
+   "slug": "what-is-bangkok-famous-for",
+   "question": "What is Bangkok famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-bangkok-famous-for/",
+   "keywords": [
+    "bangkok",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Bangkok famous for? The Story, Sourced",
+   "h1": "What is Bangkok famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0549",
+   "slug": "how-does-an-inkjet-printer-work",
+   "question": "How does an inkjet printer work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-inkjet-printer-work/",
+   "keywords": [
+    "inkjet",
+    "printer",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an inkjet printer work? Facts, Myths and Evidence",
+   "h1": "How does an inkjet printer work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0550",
+   "slug": "what-is-mutation",
+   "question": "What is mutation",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-mutation/",
+   "keywords": [
+    "mutation"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is mutation? A Clear, Sourced Explanation",
+   "h1": "What is mutation?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0551",
+   "slug": "where-does-the-phrase-add-insult-to-injury-come-from",
+   "question": "Where does the phrase \"add insult to injury\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-add-insult-to-injury-come-from/",
+   "keywords": [
+    "phrase",
+    "add",
+    "insult",
+    "injury",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"add insult to injury\" come from?",
+   "h1": "Where does the phrase \"add insult to injury\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0552",
+   "slug": "what-is-the-history-of-whisky",
+   "question": "What is the history of whisky",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-whisky/",
+   "keywords": [
+    "history",
+    "whisky"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of whisky? The Short, Sourced Answer",
+   "h1": "What is the history of whisky?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0553",
+   "slug": "what-are-the-main-parts-of-a-drawbridge",
+   "question": "What are the main parts of a drawbridge",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-drawbridge/",
+   "keywords": [
+    "main",
+    "parts",
+    "drawbridge"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a drawbridge?",
+   "h1": "What are the main parts of a drawbridge?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0554",
+   "slug": "what-is-nepali-new-year-baisakh-1-and-why-is-it-celebrated",
+   "question": "What is Nepali New Year Baisakh 1 and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-nepali-new-year-baisakh-1-and-why-is-it-celebrated/",
+   "keywords": [
+    "nepali",
+    "new",
+    "year",
+    "baisakh",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Nepali New Year Baisakh 1 and why is it celebrated?",
+   "h1": "What is Nepali New Year Baisakh 1 and why is it celebrated?",
+   "ymyl": false
+  }
+ ]
+}

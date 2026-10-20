@@ -1,0 +1,167 @@
+{
+ "batch": 350,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2613",
+   "slug": "how-do-platypuses-communicate",
+   "question": "How do platypuses communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-platypuses-communicate/",
+   "keywords": [
+    "platypuses",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do platypuses communicate? What Science Actually Says",
+   "h1": "How do platypuses communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2614",
+   "slug": "what-were-the-main-consequences-of-the-haitian-revolution",
+   "question": "What were the main consequences of the Haitian Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-haitian-revolution/",
+   "keywords": [
+    "main",
+    "consequences",
+    "haitian",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Haitian Revolution?",
+   "h1": "What were the main consequences of the Haitian Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2615",
+   "slug": "what-is-tokyo-famous-for",
+   "question": "What is Tokyo famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-tokyo-famous-for/",
+   "keywords": [
+    "tokyo",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Tokyo famous for? The Short, Sourced Answer",
+   "h1": "What is Tokyo famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2616",
+   "slug": "what-do-bears-eat",
+   "question": "What do bears eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-bears-eat/",
+   "keywords": [
+    "bears",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do bears eat? Explained With Sources",
+   "h1": "What do bears eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2617",
+   "slug": "how-was-the-battery-invented",
+   "question": "How was the battery invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-battery-invented/",
+   "keywords": [
+    "battery",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the battery invented? A Clear, Sourced Explanation",
+   "h1": "How was the battery invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2618",
+   "slug": "how-did-kyoto-get-its-name",
+   "question": "How did Kyoto get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-kyoto-get-its-name/",
+   "keywords": [
+    "did",
+    "kyoto",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Kyoto get its name? Key Facts and Context",
+   "h1": "How did Kyoto get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2619",
+   "slug": "how-do-whales-communicate",
+   "question": "How do whales communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-whales-communicate/",
+   "keywords": [
+    "whales",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do whales communicate? Facts, Myths and Evidence",
+   "h1": "How do whales communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2620",
+   "slug": "what-were-the-main-consequences-of-the-boxer-rebellion",
+   "question": "What were the main consequences of the Boxer Rebellion",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-boxer-rebellion/",
+   "keywords": [
+    "main",
+    "consequences",
+    "boxer",
+    "rebellion"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Boxer Rebellion?",
+   "h1": "What were the main consequences of the Boxer Rebellion?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2621",
+   "slug": "how-did-barcelona-get-its-name",
+   "question": "How did Barcelona get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-barcelona-get-its-name/",
+   "keywords": [
+    "did",
+    "barcelona",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Barcelona get its name? A Clear Overview",
+   "h1": "How did Barcelona get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2622",
+   "slug": "how-do-vultures-sleep",
+   "question": "How do vultures sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-vultures-sleep/",
+   "keywords": [
+    "vultures",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do vultures sleep? Explained With Sources",
+   "h1": "How do vultures sleep?",
+   "ymyl": false
+  }
+ ]
+}

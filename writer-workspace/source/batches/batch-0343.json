@@ -1,0 +1,166 @@
+{
+ "batch": 343,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2543",
+   "slug": "what-is-the-history-of-marrakech",
+   "question": "What is the history of Marrakech",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-marrakech/",
+   "keywords": [
+    "history",
+    "marrakech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Marrakech? The Story, Sourced",
+   "h1": "What is the history of Marrakech?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2544",
+   "slug": "how-do-scorpions-sleep",
+   "question": "How do scorpions sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-scorpions-sleep/",
+   "keywords": [
+    "scorpions",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do scorpions sleep? What Science Actually Says",
+   "h1": "How do scorpions sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2545",
+   "slug": "what-is-rachel-carson-best-known-for",
+   "question": "What is Rachel Carson best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-rachel-carson-best-known-for/",
+   "keywords": [
+    "rachel",
+    "carson",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Rachel Carson best known for? Facts and Background",
+   "h1": "What is Rachel Carson best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2546",
+   "slug": "what-is-the-economy-of-denmark-based-on",
+   "question": "What is the economy of Denmark based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-denmark-based-on/",
+   "keywords": [
+    "economy",
+    "denmark",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Denmark based on?",
+   "h1": "What is the economy of Denmark based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2547",
+   "slug": "where-did-dogs-come-from",
+   "question": "Where did dogs come from",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-did-dogs-come-from/",
+   "keywords": [
+    "did",
+    "dogs",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did dogs come from? The Story, Sourced",
+   "h1": "Where did dogs come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2548",
+   "slug": "what-caused-the-haitian-revolution",
+   "question": "What caused the Haitian Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-haitian-revolution/",
+   "keywords": [
+    "caused",
+    "haitian",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Haitian Revolution? Key Facts and Context",
+   "h1": "What caused the Haitian Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2549",
+   "slug": "what-is-the-history-of-pokhara",
+   "question": "What is the history of Pokhara",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-pokhara/",
+   "keywords": [
+    "history",
+    "pokhara"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Pokhara? Key Facts and Context",
+   "h1": "What is the history of Pokhara?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2550",
+   "slug": "where-do-narwhals-live-in-the-wild",
+   "question": "Where do narwhals live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-narwhals-live-in-the-wild/",
+   "keywords": [
+    "narwhals",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do narwhals live in the wild?",
+   "h1": "Where do narwhals live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2551",
+   "slug": "what-caused-the-boxer-rebellion",
+   "question": "What caused the Boxer Rebellion",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-boxer-rebellion/",
+   "keywords": [
+    "caused",
+    "boxer",
+    "rebellion"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Boxer Rebellion? Key Facts and Context",
+   "h1": "What caused the Boxer Rebellion?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2552",
+   "slug": "what-is-new-york-city-famous-for",
+   "question": "What is New York City famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-new-york-city-famous-for/",
+   "keywords": [
+    "new",
+    "york",
+    "city",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is New York City famous for? The Short, Sourced Answer",
+   "h1": "What is New York City famous for?",
+   "ymyl": false
+  }
+ ]
+}

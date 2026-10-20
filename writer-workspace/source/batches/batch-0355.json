@@ -1,0 +1,165 @@
+{
+ "batch": 355,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2663",
+   "slug": "how-did-havana-get-its-name",
+   "question": "How did Havana get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-havana-get-its-name/",
+   "keywords": [
+    "did",
+    "havana",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Havana get its name? The Short, Sourced Answer",
+   "h1": "How did Havana get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2664",
+   "slug": "how-do-squids-communicate",
+   "question": "How do squids communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-squids-communicate/",
+   "keywords": [
+    "squids",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do squids communicate? What Science Actually Says",
+   "h1": "How do squids communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2665",
+   "slug": "what-is-leo-tolstoy-best-known-for",
+   "question": "What is Leo Tolstoy best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-leo-tolstoy-best-known-for/",
+   "keywords": [
+    "leo",
+    "tolstoy",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Leo Tolstoy best known for? The Story, Sourced",
+   "h1": "What is Leo Tolstoy best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2666",
+   "slug": "what-is-ireland-known-for",
+   "question": "What is Ireland known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-ireland-known-for/",
+   "keywords": [
+    "ireland",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Ireland known for? The Story, Sourced",
+   "h1": "What is Ireland known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2667",
+   "slug": "how-do-lobsters-sleep",
+   "question": "How do lobsters sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-lobsters-sleep/",
+   "keywords": [
+    "lobsters",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do lobsters sleep? Explained With Sources",
+   "h1": "How do lobsters sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2668",
+   "slug": "what-were-the-main-consequences-of-the-russian-revolution",
+   "question": "What were the main consequences of the Russian Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-russian-revolution/",
+   "keywords": [
+    "main",
+    "consequences",
+    "russian",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Russian Revolution?",
+   "h1": "What were the main consequences of the Russian Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2669",
+   "slug": "what-is-madagascar-known-for",
+   "question": "What is Madagascar known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-madagascar-known-for/",
+   "keywords": [
+    "madagascar",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Madagascar known for? The Story, Sourced",
+   "h1": "What is Madagascar known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2670",
+   "slug": "how-do-crabs-communicate",
+   "question": "How do crabs communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-crabs-communicate/",
+   "keywords": [
+    "crabs",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do crabs communicate? A Clear, Sourced Explanation",
+   "h1": "How do crabs communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2671",
+   "slug": "who-invented-the-microwave-oven-and-how",
+   "question": "Who invented the microwave oven and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-microwave-oven-and-how/",
+   "keywords": [
+    "invented",
+    "microwave",
+    "oven"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the microwave oven and how?",
+   "h1": "Who invented the microwave oven and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2672",
+   "slug": "what-is-kathmandu-famous-for",
+   "question": "What is Kathmandu famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-kathmandu-famous-for/",
+   "keywords": [
+    "kathmandu",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Kathmandu famous for? A Clear Overview",
+   "h1": "What is Kathmandu famous for?",
+   "ymyl": false
+  }
+ ]
+}

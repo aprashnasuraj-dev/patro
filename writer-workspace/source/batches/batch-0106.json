@@ -1,0 +1,161 @@
+{
+ "batch": 106,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0158",
+   "slug": "what-is-retrograde-motion",
+   "question": "What is retrograde motion",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-retrograde-motion/",
+   "keywords": [
+    "retrograde",
+    "motion"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is retrograde motion? What Science Actually Says",
+   "h1": "What is retrograde motion?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0159",
+   "slug": "why-do-seeds-need-water-to-sprout",
+   "question": "Why do seeds need water to sprout",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-do-seeds-need-water-to-sprout/",
+   "keywords": [
+    "seeds",
+    "need",
+    "water",
+    "sprout"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do seeds need water to sprout?",
+   "h1": "Why do seeds need water to sprout?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0160",
+   "slug": "why-do-first-impressions-stick",
+   "question": "Why do first impressions stick",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-first-impressions-stick/",
+   "keywords": [
+    "first",
+    "impressions",
+    "stick"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do first impressions stick? What Science Actually Says",
+   "h1": "Why do first impressions stick?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0161",
+   "slug": "how-do-self-driving-cars-work",
+   "question": "How do self-driving cars work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-do-self-driving-cars-work/",
+   "keywords": [
+    "self-driving",
+    "cars",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do self-driving cars work? Explained With Sources",
+   "h1": "How do self-driving cars work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0162",
+   "slug": "how-do-heat-pumps-work",
+   "question": "How do heat pumps work",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-do-heat-pumps-work/",
+   "keywords": [
+    "heat",
+    "pumps",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do heat pumps work? A Clear, Sourced Explanation",
+   "h1": "How do heat pumps work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0163",
+   "slug": "where-do-mosquitoes-live-in-the-wild",
+   "question": "Where do mosquitoes live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-mosquitoes-live-in-the-wild/",
+   "keywords": [
+    "mosquitoes",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do mosquitoes live in the wild? Explained With Sources",
+   "h1": "Where do mosquitoes live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0164",
+   "slug": "who-was-aristotle",
+   "question": "Who was Aristotle",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-aristotle/",
+   "keywords": [
+    "aristotle"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Aristotle? The Short, Sourced Answer",
+   "h1": "Who was Aristotle?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0165",
+   "slug": "what-is-the-history-of-peru",
+   "question": "What is the history of Peru",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-peru/",
+   "keywords": [
+    "history",
+    "peru"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Peru? A Clear Overview",
+   "h1": "What is the history of Peru?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0166",
+   "slug": "what-are-pixels",
+   "question": "What are pixels",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-pixels/",
+   "keywords": [
+    "pixels"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are pixels? Explained With Sources",
+   "h1": "What are pixels?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0167",
+   "slug": "what-are-sound-waves",
+   "question": "What are sound waves",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-sound-waves/",
+   "keywords": [
+    "sound",
+    "waves"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are sound waves? The Real Answer, Explained",
+   "h1": "What are sound waves?",
+   "ymyl": false
+  }
+ ]
+}

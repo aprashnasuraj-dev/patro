@@ -1,0 +1,165 @@
+{
+ "batch": 162,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0725",
+   "slug": "how-do-cherry-blossoms-grow",
+   "question": "How do cherry blossoms grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-cherry-blossoms-grow/",
+   "keywords": [
+    "cherry",
+    "blossoms",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cherry blossoms grow? Facts, Myths and Evidence",
+   "h1": "How do cherry blossoms grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0726",
+   "slug": "how-long-do-lions-live",
+   "question": "How long do lions live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-lions-live/",
+   "keywords": [
+    "long",
+    "lions",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do lions live? The Real Answer, Explained",
+   "h1": "How long do lions live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0727",
+   "slug": "what-caused-the-sinking-of-the-titanic",
+   "question": "What caused the sinking of the Titanic",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-sinking-of-the-titanic/",
+   "keywords": [
+    "caused",
+    "sinking",
+    "titanic"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the sinking of the Titanic?",
+   "h1": "What caused the sinking of the Titanic?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0728",
+   "slug": "what-is-nigeria-known-for",
+   "question": "What is Nigeria known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-nigeria-known-for/",
+   "keywords": [
+    "nigeria",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Nigeria known for? The Short, Sourced Answer",
+   "h1": "What is Nigeria known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0729",
+   "slug": "how-does-a-smartphone-work",
+   "question": "How does a smartphone work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-smartphone-work/",
+   "keywords": [
+    "smartphone",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a smartphone work? Facts, Myths and Evidence",
+   "h1": "How does a smartphone work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0730",
+   "slug": "why-does-bernoulli-s-principle-matter-in-everyday-life",
+   "question": "Why does Bernoulli's principle matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-bernoulli-s-principle-matter-in-everyday-life/",
+   "keywords": [
+    "bernoulli",
+    "principle",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does Bernoulli's principle matter in everyday life?",
+   "h1": "Why does Bernoulli's principle matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0731",
+   "slug": "where-does-the-word-laser-come-from",
+   "question": "Where does the word \"laser\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-laser-come-from/",
+   "keywords": [
+    "word",
+    "laser",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"laser\" come from?",
+   "h1": "Where does the word \"laser\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0732",
+   "slug": "what-is-the-history-of-saffron",
+   "question": "What is the history of saffron",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-saffron/",
+   "keywords": [
+    "history",
+    "saffron"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of saffron? Key Facts and Context",
+   "h1": "What is the history of saffron?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0733",
+   "slug": "how-does-an-electric-car-work",
+   "question": "How does an electric car work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-electric-car-work/",
+   "keywords": [
+    "electric",
+    "car",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an electric car work? Explained With Sources",
+   "h1": "How does an electric car work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0734",
+   "slug": "where-is-dhaulagiri-and-how-high-is-it",
+   "question": "Where is Dhaulagiri and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-dhaulagiri-and-how-high-is-it/",
+   "keywords": [
+    "dhaulagiri",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Dhaulagiri and how high is it?",
+   "h1": "Where is Dhaulagiri and how high is it?",
+   "ymyl": false
+  }
+ ]
+}

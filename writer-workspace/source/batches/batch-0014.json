@@ -1,0 +1,179 @@
+{
+ "batch": 14,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0295",
+   "slug": "how-microwaves-heat-food",
+   "question": "How microwaves heat food",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-microwaves-heat-food/",
+   "keywords": [
+    "microwaves",
+    "heat",
+    "food",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Microwaves Heat Food? A Clear, Sourced Explanation",
+   "h1": "How Microwaves Heat Food?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0297",
+   "slug": "how-gps-knows-your-location",
+   "question": "How GPS knows your location",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-gps-knows-your-location/",
+   "keywords": [
+    "gps",
+    "knows",
+    "location",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How GPS Knows Your Location? Facts, Myths and Evidence",
+   "h1": "How GPS Knows Your Location?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0299",
+   "slug": "how-chatbots-understand-language",
+   "question": "How chatbots understand language",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-chatbots-understand-language/",
+   "keywords": [
+    "chatbots",
+    "understand",
+    "language",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Chatbots Understand Language? The Real Answer, Explained",
+   "h1": "How Chatbots Understand Language?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0301",
+   "slug": "why-the-black-death-spread-so-fast",
+   "question": "Why the Black Death spread so fast",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-black-death-spread-so-fast/",
+   "keywords": [
+    "black",
+    "death",
+    "spread",
+    "fast",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Black Death Spread So Fast?",
+   "h1": "Why The Black Death Spread So Fast?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0303",
+   "slug": "how-canada-has-the-longest-coastline",
+   "question": "How Canada has the longest coastline",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-canada-has-the-longest-coastline/",
+   "keywords": [
+    "canada",
+    "has",
+    "longest",
+    "coastline",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Canada Has The Longest Coastline? Explained With Sources",
+   "h1": "How Canada Has The Longest Coastline?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0307",
+   "slug": "how-refrigerators-changed-diets",
+   "question": "How refrigerators changed diets",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-refrigerators-changed-diets/",
+   "keywords": [
+    "refrigerators",
+    "changed",
+    "diets",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Refrigerators Changed Diets? What Science Actually Says",
+   "h1": "How Refrigerators Changed Diets?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0309",
+   "slug": "how-alphabets-were-invented",
+   "question": "How alphabets were invented",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-alphabets-were-invented/",
+   "keywords": [
+    "alphabets",
+    "were",
+    "invented",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Alphabets Were Invented? Explained With Sources",
+   "h1": "How Alphabets Were Invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0311",
+   "slug": "how-logarithms-simplify-big-numbers",
+   "question": "How logarithms simplify big numbers",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-logarithms-simplify-big-numbers/",
+   "keywords": [
+    "logarithms",
+    "simplify",
+    "big",
+    "numbers",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Logarithms Simplify Big Numbers? Explained With Sources",
+   "h1": "How Logarithms Simplify Big Numbers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0313",
+   "slug": "how-nuclear-power-works",
+   "question": "How nuclear power works",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-nuclear-power-works/",
+   "keywords": [
+    "nuclear",
+    "power",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Nuclear Power Works? What Science Actually Says",
+   "h1": "How Nuclear Power Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0315",
+   "slug": "why-bicycles-stay-upright",
+   "question": "Why bicycles stay upright",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-bicycles-stay-upright/",
+   "keywords": [
+    "bicycles",
+    "stay",
+    "upright",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bicycles Stay Upright? Facts, Myths and Evidence",
+   "h1": "Why Bicycles Stay Upright?",
+   "ymyl": false
+  }
+ ]
+}

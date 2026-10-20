@@ -1,0 +1,160 @@
+{
+ "batch": 212,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1226",
+   "slug": "why-do-we-get-goosebumps",
+   "question": "Why do we get goosebumps",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-get-goosebumps/",
+   "keywords": [
+    "get",
+    "goosebumps"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we get goosebumps? The Real Answer, Explained",
+   "h1": "Why do we get goosebumps?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1227",
+   "slug": "what-are-percentages",
+   "question": "What are percentages",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-percentages/",
+   "keywords": [
+    "percentages"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are percentages? A Clear, Sourced Explanation",
+   "h1": "What are percentages?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1228",
+   "slug": "what-makes-pottery-unique",
+   "question": "What makes pottery unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-pottery-unique/",
+   "keywords": [
+    "makes",
+    "pottery",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes pottery unique? Facts, Myths and Evidence",
+   "h1": "What makes pottery unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1229",
+   "slug": "what-causes-ocean-tides",
+   "question": "What causes ocean tides",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-ocean-tides/",
+   "keywords": [
+    "causes",
+    "ocean",
+    "tides"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes ocean tides? Facts, Myths and Evidence",
+   "h1": "What causes ocean tides?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1230",
+   "slug": "how-do-asteroids-form",
+   "question": "How do asteroids form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-asteroids-form/",
+   "keywords": [
+    "asteroids",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do asteroids form? The Real Answer, Explained",
+   "h1": "How do asteroids form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1231",
+   "slug": "where-did-pigs-come-from",
+   "question": "Where did pigs come from",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-did-pigs-come-from/",
+   "keywords": [
+    "did",
+    "pigs",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did pigs come from? Facts and Background",
+   "h1": "Where did pigs come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1232",
+   "slug": "what-is-frida-kahlo-best-known-for",
+   "question": "What is Frida Kahlo best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-frida-kahlo-best-known-for/",
+   "keywords": [
+    "frida",
+    "kahlo",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Frida Kahlo best known for? Key Facts and Context",
+   "h1": "What is Frida Kahlo best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1233",
+   "slug": "what-is-the-history-of-dublin",
+   "question": "What is the history of Dublin",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-dublin/",
+   "keywords": [
+    "history",
+    "dublin"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Dublin? Facts and Background",
+   "h1": "What is the history of Dublin?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1234",
+   "slug": "what-is-version-control",
+   "question": "What is version control",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-version-control/",
+   "keywords": [
+    "version",
+    "control"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is version control? A Clear, Sourced Explanation",
+   "h1": "What is version control?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1235",
+   "slug": "what-is-friction",
+   "question": "What is friction",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-friction/",
+   "keywords": [
+    "friction"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is friction? Explained With Sources",
+   "h1": "What is friction?",
+   "ymyl": false
+  }
+ ]
+}

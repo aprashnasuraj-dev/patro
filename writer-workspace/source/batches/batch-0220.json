@@ -1,0 +1,165 @@
+{
+ "batch": 220,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1306",
+   "slug": "how-many-people-speak-nepali-and-where",
+   "question": "How many people speak Nepali and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-nepali-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "nepali"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Nepali and where? The Story, Sourced",
+   "h1": "How many people speak Nepali and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1307",
+   "slug": "how-is-curd-made",
+   "question": "How is curd made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-curd-made/",
+   "keywords": [
+    "curd",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is curd made? Explained With Sources",
+   "h1": "How is curd made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1308",
+   "slug": "how-does-a-geothermal-power-plant-work",
+   "question": "How does a geothermal power plant work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-geothermal-power-plant-work/",
+   "keywords": [
+    "geothermal",
+    "power",
+    "plant",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a geothermal power plant work?",
+   "h1": "How does a geothermal power plant work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1309",
+   "slug": "why-is-sagarmatha-national-park-important",
+   "question": "Why is Sagarmatha National Park important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-sagarmatha-national-park-important/",
+   "keywords": [
+    "sagarmatha",
+    "national",
+    "park",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Sagarmatha National Park important?",
+   "h1": "Why is Sagarmatha National Park important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1310",
+   "slug": "why-do-refrigerators-hum",
+   "question": "Why do refrigerators hum",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-do-refrigerators-hum/",
+   "keywords": [
+    "refrigerators",
+    "hum"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do refrigerators hum? Facts, Myths and Evidence",
+   "h1": "Why do refrigerators hum?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1311",
+   "slug": "why-are-there-60-minutes-in-an-hour",
+   "question": "Why are there 60 minutes in an hour",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-are-there-60-minutes-in-an-hour/",
+   "keywords": [
+    "there",
+    "minutes",
+    "hour"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are there 60 minutes in an hour?",
+   "h1": "Why are there 60 minutes in an hour?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1312",
+   "slug": "how-did-reggae-start",
+   "question": "How did reggae start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-reggae-start/",
+   "keywords": [
+    "did",
+    "reggae",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did reggae start? Explained With Sources",
+   "h1": "How did reggae start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1313",
+   "slug": "what-causes-tornadoes",
+   "question": "What causes tornadoes",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-tornadoes/",
+   "keywords": [
+    "causes",
+    "tornadoes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes tornadoes? Facts, Myths and Evidence",
+   "h1": "What causes tornadoes?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1314",
+   "slug": "what-is-light-years",
+   "question": "What is light years",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-light-years/",
+   "keywords": [
+    "light",
+    "years"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is light years? Explained With Sources",
+   "h1": "What is light years?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1315",
+   "slug": "how-do-frogs-communicate",
+   "question": "How do frogs communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-frogs-communicate/",
+   "keywords": [
+    "frogs",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do frogs communicate? Facts, Myths and Evidence",
+   "h1": "How do frogs communicate?",
+   "ymyl": false
+  }
+ ]
+}

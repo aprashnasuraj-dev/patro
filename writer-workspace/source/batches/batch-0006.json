@@ -1,0 +1,176 @@
+{
+ "batch": 6,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0115",
+   "slug": "how-bridges-carry-heavy-loads",
+   "question": "How bridges carry heavy loads",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-bridges-carry-heavy-loads/",
+   "keywords": [
+    "bridges",
+    "carry",
+    "heavy",
+    "loads",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Bridges Carry Heavy Loads? Facts, Myths and Evidence",
+   "h1": "How Bridges Carry Heavy Loads?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0117",
+   "slug": "how-sherpas-adapted-to-altitude",
+   "question": "How Sherpas adapted to altitude",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-sherpas-adapted-to-altitude/",
+   "keywords": [
+    "sherpas",
+    "adapted",
+    "altitude",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sherpas Adapted To Altitude?",
+   "h1": "How Sherpas Adapted To Altitude?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0119",
+   "slug": "why-the-mona-lisa-is-famous",
+   "question": "Why the Mona Lisa is famous",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-the-mona-lisa-is-famous/",
+   "keywords": [
+    "mona",
+    "lisa",
+    "famous",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Mona Lisa Is Famous? Facts, Myths and Evidence",
+   "h1": "Why The Mona Lisa Is Famous?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0121",
+   "slug": "how-seeds-know-when-to-sprout",
+   "question": "How seeds know when to sprout",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-seeds-know-when-to-sprout/",
+   "keywords": [
+    "seeds",
+    "know",
+    "when",
+    "sprout",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Seeds Know When To Sprout? The Real Answer, Explained",
+   "h1": "How Seeds Know When To Sprout?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0123",
+   "slug": "why-elephants-never-forget",
+   "question": "Why elephants never forget",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-elephants-never-forget/",
+   "keywords": [
+    "elephants",
+    "never",
+    "forget",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Elephants Never Forget? Explained With Sources",
+   "h1": "Why Elephants Never Forget?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0125",
+   "slug": "why-mars-is-red",
+   "question": "Why Mars is red",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-mars-is-red/",
+   "keywords": [
+    "mars",
+    "red",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Mars Is Red? The Real Answer, Explained",
+   "h1": "Why Mars Is Red?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0127",
+   "slug": "how-tornadoes-form",
+   "question": "How tornadoes form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-tornadoes-form/",
+   "keywords": [
+    "tornadoes",
+    "form",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Tornadoes Form? What Science Actually Says",
+   "h1": "How Tornadoes Form?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0131",
+   "slug": "how-first-impressions-are-made",
+   "question": "How first impressions are made",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-first-impressions-are-made/",
+   "keywords": [
+    "first",
+    "impressions",
+    "made",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How First Impressions Are Made? Facts, Myths and Evidence",
+   "h1": "How First Impressions Are Made?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0133",
+   "slug": "how-coffee-wakes-you-up",
+   "question": "How coffee wakes you up",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-coffee-wakes-you-up/",
+   "keywords": [
+    "coffee",
+    "wakes",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Coffee Wakes You Up? What Science Actually Says",
+   "h1": "How Coffee Wakes You Up?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0135",
+   "slug": "how-soap-kills-germs",
+   "question": "How soap kills germs",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-soap-kills-germs/",
+   "keywords": [
+    "soap",
+    "kills",
+    "germs",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Soap Kills Germs? Explained With Sources",
+   "h1": "How Soap Kills Germs?",
+   "ymyl": false
+  }
+ ]
+}

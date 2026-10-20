@@ -1,0 +1,168 @@
+{
+ "batch": 113,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0231",
+   "slug": "how-long-do-carnivorous-plants-live",
+   "question": "How long do carnivorous plants live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-carnivorous-plants-live/",
+   "keywords": [
+    "long",
+    "carnivorous",
+    "plants",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do carnivorous plants live?",
+   "h1": "How long do carnivorous plants live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0232",
+   "slug": "why-do-songs-get-stuck-in-our-heads",
+   "question": "Why do songs get stuck in our heads",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-songs-get-stuck-in-our-heads/",
+   "keywords": [
+    "songs",
+    "get",
+    "stuck",
+    "our",
+    "heads"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do songs get stuck in our heads?",
+   "h1": "Why do songs get stuck in our heads?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0233",
+   "slug": "what-is-text-to-speech",
+   "question": "What is text-to-speech",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-is-text-to-speech/",
+   "keywords": [
+    "text-to-speech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is text-to-speech? Explained With Sources",
+   "h1": "What is text-to-speech?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0234",
+   "slug": "what-do-foxes-eat",
+   "question": "What do foxes eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-foxes-eat/",
+   "keywords": [
+    "foxes",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do foxes eat? Facts, Myths and Evidence",
+   "h1": "What do foxes eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0235",
+   "slug": "what-were-the-main-consequences-of-the-reign-of-terror",
+   "question": "What were the main consequences of the Reign of Terror",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-reign-of-terror/",
+   "keywords": [
+    "main",
+    "consequences",
+    "reign",
+    "terror"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Reign of Terror?",
+   "h1": "What were the main consequences of the Reign of Terror?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0236",
+   "slug": "what-is-zurich-famous-for",
+   "question": "What is Zurich famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-zurich-famous-for/",
+   "keywords": [
+    "zurich",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Zurich famous for? Facts and Background",
+   "h1": "What is Zurich famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0237",
+   "slug": "how-does-phishing-work",
+   "question": "How does phishing work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-phishing-work/",
+   "keywords": [
+    "phishing",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does phishing work? Facts, Myths and Evidence",
+   "h1": "How does phishing work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0238",
+   "slug": "why-does-inertia-matter-in-everyday-life",
+   "question": "Why does inertia matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-inertia-matter-in-everyday-life/",
+   "keywords": [
+    "inertia",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does inertia matter in everyday life?",
+   "h1": "Why does inertia matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0239",
+   "slug": "how-many-people-speak-polish-and-where",
+   "question": "How many people speak Polish and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-polish-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "polish"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Polish and where?",
+   "h1": "How many people speak Polish and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0240",
+   "slug": "what-is-the-history-of-yak-cheese",
+   "question": "What is the history of yak cheese",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-yak-cheese/",
+   "keywords": [
+    "history",
+    "yak",
+    "cheese"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of yak cheese? Facts and Background",
+   "h1": "What is the history of yak cheese?",
+   "ymyl": false
+  }
+ ]
+}

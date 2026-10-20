@@ -1,0 +1,162 @@
+{
+ "batch": 315,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2262",
+   "slug": "what-is-the-economy-of-the-netherlands-based-on",
+   "question": "What is the economy of the Netherlands based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-the-netherlands-based-on/",
+   "keywords": [
+    "economy",
+    "netherlands",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of the Netherlands based on?",
+   "h1": "What is the economy of the Netherlands based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2263",
+   "slug": "how-do-captchas-work",
+   "question": "How do CAPTCHAs work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-captchas-work/",
+   "keywords": [
+    "captchas",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do CAPTCHAs work? Facts, Myths and Evidence",
+   "h1": "How do CAPTCHAs work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2264",
+   "slug": "what-is-centripetal-force",
+   "question": "What is centripetal force",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-centripetal-force/",
+   "keywords": [
+    "centripetal",
+    "force"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is centripetal force? A Clear, Sourced Explanation",
+   "h1": "What is centripetal force?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2265",
+   "slug": "what-do-ants-eat",
+   "question": "What do ants eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-ants-eat/",
+   "keywords": [
+    "ants",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do ants eat? What Science Actually Says",
+   "h1": "What do ants eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2266",
+   "slug": "how-was-gps-invented",
+   "question": "How was GPS invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-gps-invented/",
+   "keywords": [
+    "gps",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was GPS invented? A Clear, Sourced Explanation",
+   "h1": "How was GPS invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2267",
+   "slug": "what-is-costa-rica-known-for",
+   "question": "What is Costa Rica known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-costa-rica-known-for/",
+   "keywords": [
+    "costa",
+    "rica",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Costa Rica known for? A Clear Overview",
+   "h1": "What is Costa Rica known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2268",
+   "slug": "what-are-compression-algorithms",
+   "question": "What are compression algorithms",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-compression-algorithms/",
+   "keywords": [
+    "compression",
+    "algorithms"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are compression algorithms? Facts, Myths and Evidence",
+   "h1": "What are compression algorithms?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2269",
+   "slug": "why-does-friction-matter-in-everyday-life",
+   "question": "Why does friction matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-friction-matter-in-everyday-life/",
+   "keywords": [
+    "friction",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does friction matter in everyday life?",
+   "h1": "Why does friction matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2270",
+   "slug": "how-do-praying-mantises-communicate",
+   "question": "How do praying mantises communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-praying-mantises-communicate/",
+   "keywords": [
+    "praying",
+    "mantises",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do praying mantises communicate? Explained With Sources",
+   "h1": "How do praying mantises communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2271",
+   "slug": "who-was-florence-nightingale",
+   "question": "Who was Florence Nightingale",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-florence-nightingale/",
+   "keywords": [
+    "florence",
+    "nightingale"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Florence Nightingale? Facts and Background",
+   "h1": "Who was Florence Nightingale?",
+   "ymyl": false
+  }
+ ]
+}

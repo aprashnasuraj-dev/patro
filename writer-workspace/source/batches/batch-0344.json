@@ -1,0 +1,159 @@
+{
+ "batch": 344,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2553",
+   "slug": "how-long-do-salmon-live",
+   "question": "How long do salmon live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-salmon-live/",
+   "keywords": [
+    "long",
+    "salmon",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do salmon live? Facts, Myths and Evidence",
+   "h1": "How long do salmon live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2554",
+   "slug": "how-was-the-airplane-invented",
+   "question": "How was the airplane invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-airplane-invented/",
+   "keywords": [
+    "airplane",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the airplane invented? Explained With Sources",
+   "h1": "How was the airplane invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2555",
+   "slug": "what-is-jordan-known-for",
+   "question": "What is Jordan known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-jordan-known-for/",
+   "keywords": [
+    "jordan",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Jordan known for? Facts and Background",
+   "h1": "What is Jordan known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2556",
+   "slug": "where-do-clownfish-live-in-the-wild",
+   "question": "Where do clownfish live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-clownfish-live-in-the-wild/",
+   "keywords": [
+    "clownfish",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do clownfish live in the wild?",
+   "h1": "Where do clownfish live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2557",
+   "slug": "who-invented-the-microscope-and-how",
+   "question": "Who invented the microscope and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-microscope-and-how/",
+   "keywords": [
+    "invented",
+    "microscope"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the microscope and how? The Story, Sourced",
+   "h1": "Who invented the microscope and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2558",
+   "slug": "what-is-the-history-of-morocco",
+   "question": "What is the history of Morocco",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-morocco/",
+   "keywords": [
+    "history",
+    "morocco"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Morocco? A Clear Overview",
+   "h1": "What is the history of Morocco?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2559",
+   "slug": "what-do-cows-eat",
+   "question": "What do cows eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-cows-eat/",
+   "keywords": [
+    "cows",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do cows eat? What Science Actually Says",
+   "h1": "What do cows eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2560",
+   "slug": "who-was-catherine-the-great",
+   "question": "Who was Catherine the Great",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-catherine-the-great/",
+   "keywords": [
+    "catherine",
+    "great"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Catherine the Great? The Story, Sourced",
+   "h1": "Who was Catherine the Great?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2561",
+   "slug": "what-is-hanoi-famous-for",
+   "question": "What is Hanoi famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-hanoi-famous-for/",
+   "keywords": [
+    "hanoi",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Hanoi famous for? The Story, Sourced",
+   "h1": "What is Hanoi famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2562",
+   "slug": "how-do-butterflies-sleep",
+   "question": "How do butterflies sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-butterflies-sleep/",
+   "keywords": [
+    "butterflies",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do butterflies sleep? A Clear, Sourced Explanation",
+   "h1": "How do butterflies sleep?",
+   "ymyl": false
+  }
+ ]
+}

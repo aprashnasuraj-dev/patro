@@ -1,0 +1,166 @@
+{
+ "batch": 263,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1738",
+   "slug": "where-does-the-phrase-let-the-cat-out-of-the-bag-come-from",
+   "question": "Where does the phrase \"let the cat out of the bag\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-let-the-cat-out-of-the-bag-come-from/",
+   "keywords": [
+    "phrase",
+    "let",
+    "cat",
+    "out",
+    "bag",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"let the cat out of the bag\" come from",
+   "h1": "Where does the phrase \"let the cat out of the bag\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1739",
+   "slug": "how-are-pasta-made",
+   "question": "How are pasta made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-are-pasta-made/",
+   "keywords": [
+    "pasta",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are pasta made? What Science Actually Says",
+   "h1": "How are pasta made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1740",
+   "slug": "what-do-hyenas-eat",
+   "question": "What do hyenas eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-hyenas-eat/",
+   "keywords": [
+    "hyenas",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do hyenas eat? The Real Answer, Explained",
+   "h1": "What do hyenas eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1741",
+   "slug": "what-is-mahatma-gandhi-best-known-for",
+   "question": "What is Mahatma Gandhi best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-mahatma-gandhi-best-known-for/",
+   "keywords": [
+    "mahatma",
+    "gandhi",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Mahatma Gandhi best known for?",
+   "h1": "What is Mahatma Gandhi best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1742",
+   "slug": "what-is-the-history-of-ethiopia",
+   "question": "What is the history of Ethiopia",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-ethiopia/",
+   "keywords": [
+    "history",
+    "ethiopia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Ethiopia? The Short, Sourced Answer",
+   "h1": "What is the history of Ethiopia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1743",
+   "slug": "how-does-the-internet-work",
+   "question": "How does the internet work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-the-internet-work/",
+   "keywords": [
+    "internet",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does the internet work? A Clear, Sourced Explanation",
+   "h1": "How does the internet work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1744",
+   "slug": "what-are-simple-machines",
+   "question": "What are simple machines",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-simple-machines/",
+   "keywords": [
+    "simple",
+    "machines"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are simple machines? A Clear, Sourced Explanation",
+   "h1": "What are simple machines?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1745",
+   "slug": "where-did-the-icelandic-language-come-from",
+   "question": "Where did the Icelandic language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-icelandic-language-come-from/",
+   "keywords": [
+    "did",
+    "icelandic",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Icelandic language come from? A Clear Overview",
+   "h1": "Where did the Icelandic language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1746",
+   "slug": "how-is-yak-cheese-made",
+   "question": "How is yak cheese made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-yak-cheese-made/",
+   "keywords": [
+    "yak",
+    "cheese",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is yak cheese made? The Real Answer, Explained",
+   "h1": "How is yak cheese made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1747",
+   "slug": "how-do-salamanders-communicate",
+   "question": "How do salamanders communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-salamanders-communicate/",
+   "keywords": [
+    "salamanders",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do salamanders communicate? A Clear, Sourced Explanation",
+   "h1": "How do salamanders communicate?",
+   "ymyl": false
+  }
+ ]
+}

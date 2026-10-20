@@ -1,0 +1,160 @@
+{
+ "batch": 359,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2703",
+   "slug": "what-do-armadillos-eat",
+   "question": "What do armadillos eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-armadillos-eat/",
+   "keywords": [
+    "armadillos",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do armadillos eat? What Science Actually Says",
+   "h1": "What do armadillos eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2704",
+   "slug": "what-caused-the-abolition-of-slavery",
+   "question": "What caused the Abolition of slavery",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-abolition-of-slavery/",
+   "keywords": [
+    "caused",
+    "abolition",
+    "slavery"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Abolition of slavery? The Story, Sourced",
+   "h1": "What caused the Abolition of slavery?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2705",
+   "slug": "what-is-the-history-of-beijing",
+   "question": "What is the history of Beijing",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-beijing/",
+   "keywords": [
+    "history",
+    "beijing"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Beijing? Key Facts and Context",
+   "h1": "What is the history of Beijing?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2706",
+   "slug": "how-do-ostriches-communicate",
+   "question": "How do ostriches communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-ostriches-communicate/",
+   "keywords": [
+    "ostriches",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do ostriches communicate? Explained With Sources",
+   "h1": "How do ostriches communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2707",
+   "slug": "who-was-edmund-hillary",
+   "question": "Who was Edmund Hillary",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-edmund-hillary/",
+   "keywords": [
+    "edmund",
+    "hillary"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Edmund Hillary? Key Facts and Context",
+   "h1": "Who was Edmund Hillary?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2708",
+   "slug": "what-is-the-economy-of-rwanda-based-on",
+   "question": "What is the economy of Rwanda based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-rwanda-based-on/",
+   "keywords": [
+    "economy",
+    "rwanda",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Rwanda based on? A Clear Overview",
+   "h1": "What is the economy of Rwanda based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2709",
+   "slug": "how-long-do-chimpanzees-live",
+   "question": "How long do chimpanzees live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-chimpanzees-live/",
+   "keywords": [
+    "long",
+    "chimpanzees",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do chimpanzees live? What Science Actually Says",
+   "h1": "How long do chimpanzees live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2710",
+   "slug": "who-was-sun-tzu",
+   "question": "Who was Sun Tzu",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-sun-tzu/",
+   "keywords": [
+    "sun",
+    "tzu"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Sun Tzu? A Clear Overview",
+   "h1": "Who was Sun Tzu?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2711",
+   "slug": "what-is-amsterdam-famous-for",
+   "question": "What is Amsterdam famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-amsterdam-famous-for/",
+   "keywords": [
+    "amsterdam",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Amsterdam famous for? A Clear Overview",
+   "h1": "What is Amsterdam famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2712",
+   "slug": "what-do-hedgehogs-eat",
+   "question": "What do hedgehogs eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-hedgehogs-eat/",
+   "keywords": [
+    "hedgehogs",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do hedgehogs eat? A Clear, Sourced Explanation",
+   "h1": "What do hedgehogs eat?",
+   "ymyl": false
+  }
+ ]
+}

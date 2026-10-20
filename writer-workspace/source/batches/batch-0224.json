@@ -1,0 +1,175 @@
+{
+ "batch": 224,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1347",
+   "slug": "why-does-voltage-matter-in-everyday-life",
+   "question": "Why does voltage matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-voltage-matter-in-everyday-life/",
+   "keywords": [
+    "voltage",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does voltage matter in everyday life?",
+   "h1": "Why does voltage matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1348",
+   "slug": "where-does-the-word-emoji-come-from",
+   "question": "Where does the word \"emoji\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-emoji-come-from/",
+   "keywords": [
+    "word",
+    "emoji",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"emoji\" come from?",
+   "h1": "Where does the word \"emoji\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1349",
+   "slug": "why-does-meat-brown-when-cooked",
+   "question": "Why does meat brown when cooked",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-does-meat-brown-when-cooked/",
+   "keywords": [
+    "meat",
+    "brown",
+    "cooked"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does meat brown when cooked? The Real Answer, Explained",
+   "h1": "Why does meat brown when cooked?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1350",
+   "slug": "how-does-a-nuclear-reactor-work",
+   "question": "How does a nuclear reactor work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-nuclear-reactor-work/",
+   "keywords": [
+    "nuclear",
+    "reactor",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a nuclear reactor work?",
+   "h1": "How does a nuclear reactor work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1351",
+   "slug": "why-does-nepal-have-eight-of-the-world-s-fourteen-highest",
+   "question": "Why does Nepal have eight of the world's fourteen highest peaks",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-does-nepal-have-eight-of-the-world-s-fourteen-highest/",
+   "keywords": [
+    "nepal",
+    "have",
+    "eight",
+    "world",
+    "fourteen",
+    "highest"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does Nepal have eight of the world's fourteen highest pe",
+   "h1": "Why does Nepal have eight of the world's fourteen highest peaks?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1352",
+   "slug": "what-are-the-main-parts-of-a-coffee-maker",
+   "question": "What are the main parts of a coffee maker",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-coffee-maker/",
+   "keywords": [
+    "main",
+    "parts",
+    "coffee",
+    "maker"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a coffee maker?",
+   "h1": "What are the main parts of a coffee maker?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1353",
+   "slug": "why-does-a-negative-times-a-negative-make-a-positive",
+   "question": "Why does a negative times a negative make a positive",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-does-a-negative-times-a-negative-make-a-positive/",
+   "keywords": [
+    "negative",
+    "times",
+    "negative",
+    "make",
+    "positive"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does a negative times a negative make a positive?",
+   "h1": "Why does a negative times a negative make a positive?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1354",
+   "slug": "what-makes-street-photography-unique",
+   "question": "What makes street photography unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-street-photography-unique/",
+   "keywords": [
+    "makes",
+    "street",
+    "photography",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes street photography unique?",
+   "h1": "What makes street photography unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1355",
+   "slug": "why-does-snow-squeak-underfoot",
+   "question": "Why does snow squeak underfoot",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-does-snow-squeak-underfoot/",
+   "keywords": [
+    "snow",
+    "squeak",
+    "underfoot"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does snow squeak underfoot? Facts, Myths and Evidence",
+   "h1": "Why does snow squeak underfoot?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1356",
+   "slug": "why-are-there-seasons-on-earth",
+   "question": "Why are there seasons on Earth",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-are-there-seasons-on-earth/",
+   "keywords": [
+    "there",
+    "seasons",
+    "earth"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why are there seasons on Earth? The Real Answer, Explained",
+   "h1": "Why are there seasons on Earth?",
+   "ymyl": false
+  }
+ ]
+}

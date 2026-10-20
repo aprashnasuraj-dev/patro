@@ -1,0 +1,170 @@
+{
+ "batch": 149,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0595",
+   "slug": "why-does-relativity-matter-in-everyday-life",
+   "question": "Why does relativity matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-relativity-matter-in-everyday-life/",
+   "keywords": [
+    "relativity",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does relativity matter in everyday life?",
+   "h1": "Why does relativity matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0596",
+   "slug": "how-many-people-speak-persian-and-where",
+   "question": "How many people speak Persian and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-persian-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "persian"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Persian and where?",
+   "h1": "How many people speak Persian and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0597",
+   "slug": "what-is-the-history-of-coffee",
+   "question": "What is the history of coffee",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-coffee/",
+   "keywords": [
+    "history",
+    "coffee"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of coffee? Key Facts and Context",
+   "h1": "What is the history of coffee?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0598",
+   "slug": "what-are-the-main-parts-of-a-bicycle-gear-system",
+   "question": "What are the main parts of a bicycle gear system",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-bicycle-gear-system/",
+   "keywords": [
+    "main",
+    "parts",
+    "bicycle",
+    "gear",
+    "system"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a bicycle gear system?",
+   "h1": "What are the main parts of a bicycle gear system?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0599",
+   "slug": "what-is-choila-and-how-is-it-made",
+   "question": "What is choila and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-choila-and-how-is-it-made/",
+   "keywords": [
+    "choila",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is choila and how is it made? The Short, Sourced Answer",
+   "h1": "What is choila and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0600",
+   "slug": "what-are-the-main-parts-of-an-electric-blanket",
+   "question": "What are the main parts of an electric blanket",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-an-electric-blanket/",
+   "keywords": [
+    "main",
+    "parts",
+    "electric",
+    "blanket"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of an electric blanket?",
+   "h1": "What are the main parts of an electric blanket?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0601",
+   "slug": "how-are-factorials-used-in-real-life",
+   "question": "How are factorials used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-factorials-used-in-real-life/",
+   "keywords": [
+    "factorials",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are factorials used in real life?",
+   "h1": "How are factorials used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0602",
+   "slug": "how-did-batik-start",
+   "question": "How did batik start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-batik-start/",
+   "keywords": [
+    "did",
+    "batik",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did batik start? The Real Answer, Explained",
+   "h1": "How did batik start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0603",
+   "slug": "how-do-atolls-form",
+   "question": "How do atolls form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-atolls-form/",
+   "keywords": [
+    "atolls",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do atolls form? What Science Actually Says",
+   "h1": "How do atolls form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0604",
+   "slug": "what-is-the-cosmic-microwave-background",
+   "question": "What is the cosmic microwave background",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-cosmic-microwave-background/",
+   "keywords": [
+    "cosmic",
+    "microwave",
+    "background"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the cosmic microwave background?",
+   "h1": "What is the cosmic microwave background?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+ "batch": 346,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2573",
+   "slug": "what-is-the-history-of-china",
+   "question": "What is the history of China",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-china/",
+   "keywords": [
+    "history",
+    "china"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of China? The Story, Sourced",
+   "h1": "What is the history of China?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2574",
+   "slug": "how-do-turtles-sleep",
+   "question": "How do turtles sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-turtles-sleep/",
+   "keywords": [
+    "turtles",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do turtles sleep? The Real Answer, Explained",
+   "h1": "How do turtles sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2575",
+   "slug": "what-were-the-main-consequences-of-the-fall-of-the-roman",
+   "question": "What were the main consequences of the fall of the Roman Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-fall-of-the-roman/",
+   "keywords": [
+    "main",
+    "consequences",
+    "fall",
+    "roman",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the fall of the Roman Emp",
+   "h1": "What were the main consequences of the fall of the Roman Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2576",
+   "slug": "what-is-nepal-known-for",
+   "question": "What is Nepal known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-nepal-known-for/",
+   "keywords": [
+    "nepal",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Nepal known for? The Short, Sourced Answer",
+   "h1": "What is Nepal known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2577",
+   "slug": "how-do-cicadas-communicate",
+   "question": "How do cicadas communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-cicadas-communicate/",
+   "keywords": [
+    "cicadas",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cicadas communicate? What Science Actually Says",
+   "h1": "How do cicadas communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2578",
+   "slug": "what-were-the-main-consequences-of-the-punic-wars",
+   "question": "What were the main consequences of the Punic Wars",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-punic-wars/",
+   "keywords": [
+    "main",
+    "consequences",
+    "punic",
+    "wars"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Punic Wars?",
+   "h1": "What were the main consequences of the Punic Wars?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2579",
+   "slug": "what-is-the-history-of-cape-town",
+   "question": "What is the history of Cape Town",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-cape-town/",
+   "keywords": [
+    "history",
+    "cape",
+    "town"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Cape Town? The Story, Sourced",
+   "h1": "What is the history of Cape Town?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2580",
+   "slug": "how-do-anteaters-sleep",
+   "question": "How do anteaters sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-anteaters-sleep/",
+   "keywords": [
+    "anteaters",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do anteaters sleep? Facts, Myths and Evidence",
+   "h1": "How do anteaters sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2581",
+   "slug": "what-caused-the-magna-carta",
+   "question": "What caused the Magna Carta",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-magna-carta/",
+   "keywords": [
+    "caused",
+    "magna",
+    "carta"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Magna Carta? Key Facts and Context",
+   "h1": "What caused the Magna Carta?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2582",
+   "slug": "what-is-bolivia-known-for",
+   "question": "What is Bolivia known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-bolivia-known-for/",
+   "keywords": [
+    "bolivia",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Bolivia known for? A Clear Overview",
+   "h1": "What is Bolivia known for?",
+   "ymyl": false
+  }
+ ]
+}

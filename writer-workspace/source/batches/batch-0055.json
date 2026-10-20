@@ -1,0 +1,177 @@
+{
+ "batch": 55,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1205",
+   "slug": "how-dark-matter-is-detected",
+   "question": "How dark matter is detected",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-dark-matter-is-detected/",
+   "keywords": [
+    "dark",
+    "matter",
+    "detected",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Dark Matter Is Detected? Explained With Sources",
+   "h1": "How Dark Matter Is Detected?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1207",
+   "slug": "why-sunsets-are-red",
+   "question": "Why sunsets are red",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-sunsets-are-red/",
+   "keywords": [
+    "sunsets",
+    "red",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Sunsets Are Red? Facts, Myths and Evidence",
+   "h1": "Why Sunsets Are Red?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1211",
+   "slug": "why-we-crave-sugar",
+   "question": "Why we crave sugar",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-crave-sugar/",
+   "keywords": [
+    "crave",
+    "sugar",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Crave Sugar? Facts, Myths and Evidence",
+   "h1": "Why We Crave Sugar?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1213",
+   "slug": "why-salt-is-added-to-pasta-water",
+   "question": "Why salt is added to pasta water",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-salt-is-added-to-pasta-water/",
+   "keywords": [
+    "salt",
+    "added",
+    "pasta",
+    "water",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Salt Is Added To Pasta Water? Explained With Sources",
+   "h1": "Why Salt Is Added To Pasta Water?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1215",
+   "slug": "why-diamonds-are-hard",
+   "question": "Why diamonds are hard",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-diamonds-are-hard/",
+   "keywords": [
+    "diamonds",
+    "hard",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Diamonds Are Hard? A Clear, Sourced Explanation",
+   "h1": "Why Diamonds Are Hard?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1217",
+   "slug": "why-old-games-run-on-emulators",
+   "question": "Why old games run on emulators",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-old-games-run-on-emulators/",
+   "keywords": [
+    "old",
+    "games",
+    "run",
+    "emulators",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Old Games Run On Emulators? A Clear, Sourced Explanation",
+   "h1": "Why Old Games Run On Emulators?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1219",
+   "slug": "what-the-turing-test-measures",
+   "question": "What the Turing test measures",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-the-turing-test-measures/",
+   "keywords": [
+    "turing",
+    "test",
+    "measures",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What The Turing Test Measures? A Clear, Sourced Explanation",
+   "h1": "What The Turing Test Measures?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1221",
+   "slug": "how-the-first-cities-appeared",
+   "question": "How the first cities appeared",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-first-cities-appeared/",
+   "keywords": [
+    "first",
+    "cities",
+    "appeared",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The First Cities Appeared? Facts, Myths and Evidence",
+   "h1": "How The First Cities Appeared?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1223",
+   "slug": "why-nepals-flag-is-not-rectangular",
+   "question": "Why Nepal's flag is not rectangular",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-nepals-flag-is-not-rectangular/",
+   "keywords": [
+    "nepal",
+    "flag",
+    "not",
+    "rectangular",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal's Flag Is Not Rectangular? Explained With Sources",
+   "h1": "Why Nepal's Flag Is Not Rectangular?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1227",
+   "slug": "why-houseplants-help-or-not",
+   "question": "Why houseplants help or not",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-houseplants-help-or-not/",
+   "keywords": [
+    "houseplants",
+    "help",
+    "not",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Houseplants Help Or Not? A Clear, Sourced Explanation",
+   "h1": "Why Houseplants Help Or Not?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,170 @@
+{
+ "batch": 354,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2653",
+   "slug": "who-was-confucius",
+   "question": "Who was Confucius",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-confucius/",
+   "keywords": [
+    "confucius"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Confucius? Facts and Background",
+   "h1": "Who was Confucius?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2654",
+   "slug": "how-did-rio-de-janeiro-get-its-name",
+   "question": "How did Rio de Janeiro get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-rio-de-janeiro-get-its-name/",
+   "keywords": [
+    "did",
+    "rio",
+    "janeiro",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Rio de Janeiro get its name? A Clear Overview",
+   "h1": "How did Rio de Janeiro get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2655",
+   "slug": "what-do-locusts-eat",
+   "question": "What do locusts eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-locusts-eat/",
+   "keywords": [
+    "locusts",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do locusts eat? Explained With Sources",
+   "h1": "What do locusts eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2656",
+   "slug": "how-was-the-safety-razor-invented",
+   "question": "How was the safety razor invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-safety-razor-invented/",
+   "keywords": [
+    "safety",
+    "razor",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the safety razor invented?",
+   "h1": "How was the safety razor invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2657",
+   "slug": "what-is-the-history-of-cusco",
+   "question": "What is the history of Cusco",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-cusco/",
+   "keywords": [
+    "history",
+    "cusco"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Cusco? The Short, Sourced Answer",
+   "h1": "What is the history of Cusco?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2658",
+   "slug": "what-do-pigeons-eat",
+   "question": "What do pigeons eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-pigeons-eat/",
+   "keywords": [
+    "pigeons",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do pigeons eat? Facts, Myths and Evidence",
+   "h1": "What do pigeons eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2659",
+   "slug": "what-were-the-main-consequences-of-the-french-revolution",
+   "question": "What were the main consequences of the French Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-french-revolution/",
+   "keywords": [
+    "main",
+    "consequences",
+    "french",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the French Revolution?",
+   "h1": "What were the main consequences of the French Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2660",
+   "slug": "how-did-petra-get-its-name",
+   "question": "How did Petra get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-petra-get-its-name/",
+   "keywords": [
+    "did",
+    "petra",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Petra get its name? Key Facts and Context",
+   "h1": "How did Petra get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2661",
+   "slug": "how-long-do-whales-live",
+   "question": "How long do whales live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-whales-live/",
+   "keywords": [
+    "long",
+    "whales",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do whales live? What Science Actually Says",
+   "h1": "How long do whales live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2662",
+   "slug": "what-were-the-main-consequences-of-the-fall-of-the-inca",
+   "question": "What were the main consequences of the fall of the Inca Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-fall-of-the-inca/",
+   "keywords": [
+    "main",
+    "consequences",
+    "fall",
+    "inca",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the fall of the Inca Empi",
+   "h1": "What were the main consequences of the fall of the Inca Empire?",
+   "ymyl": false
+  }
+ ]
+}

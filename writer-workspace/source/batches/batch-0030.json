@@ -1,0 +1,178 @@
+{
+ "batch": 30,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0651",
+   "slug": "why-we-conform-to-groups",
+   "question": "Why we conform to groups",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-conform-to-groups/",
+   "keywords": [
+    "conform",
+    "groups",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Conform To Groups? What Science Actually Says",
+   "h1": "Why We Conform To Groups?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0653",
+   "slug": "why-garlic-breath-lingers",
+   "question": "Why garlic breath lingers",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-garlic-breath-lingers/",
+   "keywords": [
+    "garlic",
+    "breath",
+    "lingers",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Garlic Breath Lingers? Explained With Sources",
+   "h1": "Why Garlic Breath Lingers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0655",
+   "slug": "why-rust-forms",
+   "question": "Why rust forms",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-rust-forms/",
+   "keywords": [
+    "rust",
+    "forms",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Rust Forms? A Clear, Sourced Explanation",
+   "h1": "Why Rust Forms?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0657",
+   "slug": "why-your-phone-camera-has-multiple-lenses",
+   "question": "Why your phone camera has multiple lenses",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-your-phone-camera-has-multiple-lenses/",
+   "keywords": [
+    "phone",
+    "camera",
+    "has",
+    "multiple",
+    "lenses",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Your Phone Camera Has Multiple Lenses?",
+   "h1": "Why Your Phone Camera Has Multiple Lenses?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0659",
+   "slug": "why-deepfakes-are-hard-to-spot",
+   "question": "Why deepfakes are hard to spot",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-deepfakes-are-hard-to-spot/",
+   "keywords": [
+    "deepfakes",
+    "hard",
+    "spot",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Deepfakes Are Hard To Spot? What Science Actually Says",
+   "h1": "Why Deepfakes Are Hard To Spot?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0661",
+   "slug": "how-the-maya-predicted-eclipses",
+   "question": "How the Maya predicted eclipses",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-maya-predicted-eclipses/",
+   "keywords": [
+    "maya",
+    "predicted",
+    "eclipses",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Maya Predicted Eclipses? Explained With Sources",
+   "h1": "How The Maya Predicted Eclipses?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0663",
+   "slug": "why-mongolia-is-so-sparsely-populated",
+   "question": "Why Mongolia is so sparsely populated",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-mongolia-is-so-sparsely-populated/",
+   "keywords": [
+    "mongolia",
+    "sparsely",
+    "populated",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Mongolia Is So Sparsely Populated?",
+   "h1": "Why Mongolia Is So Sparsely Populated?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0667",
+   "slug": "why-cats-and-dogs-shed",
+   "question": "Why cats and dogs shed",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-cats-and-dogs-shed/",
+   "keywords": [
+    "cats",
+    "dogs",
+    "shed",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Cats And Dogs Shed? The Real Answer, Explained",
+   "h1": "Why Cats And Dogs Shed?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0669",
+   "slug": "why-palindromes-fascinate-us",
+   "question": "Why palindromes fascinate us",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-palindromes-fascinate-us/",
+   "keywords": [
+    "palindromes",
+    "fascinate",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Palindromes Fascinate Us? What Science Actually Says",
+   "h1": "Why Palindromes Fascinate Us?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0671",
+   "slug": "why-negative-numbers-were-once-rejected",
+   "question": "Why negative numbers were once rejected",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-negative-numbers-were-once-rejected/",
+   "keywords": [
+    "negative",
+    "numbers",
+    "were",
+    "once",
+    "rejected",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Negative Numbers Were Once Rejected?",
+   "h1": "Why Negative Numbers Were Once Rejected?",
+   "ymyl": false
+  }
+ ]
+}

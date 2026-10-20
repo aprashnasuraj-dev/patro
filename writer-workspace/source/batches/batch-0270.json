@@ -1,0 +1,165 @@
+{
+ "batch": 270,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1808",
+   "slug": "how-many-people-speak-spanish-and-where",
+   "question": "How many people speak Spanish and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-spanish-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "spanish"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Spanish and where?",
+   "h1": "How many people speak Spanish and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1809",
+   "slug": "what-is-the-history-of-black-pepper",
+   "question": "What is the history of black pepper",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-black-pepper/",
+   "keywords": [
+    "history",
+    "black",
+    "pepper"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of black pepper?",
+   "h1": "What is the history of black pepper?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1810",
+   "slug": "what-do-polar-bears-eat",
+   "question": "What do polar bears eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-polar-bears-eat/",
+   "keywords": [
+    "polar",
+    "bears",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do polar bears eat? Explained With Sources",
+   "h1": "What do polar bears eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1811",
+   "slug": "how-was-dynamite-invented",
+   "question": "How was dynamite invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-dynamite-invented/",
+   "keywords": [
+    "dynamite",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was dynamite invented? What Science Actually Says",
+   "h1": "How was dynamite invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1812",
+   "slug": "what-is-machu-picchu-famous-for",
+   "question": "What is Machu Picchu famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-machu-picchu-famous-for/",
+   "keywords": [
+    "machu",
+    "picchu",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Machu Picchu famous for? The Short, Sourced Answer",
+   "h1": "What is Machu Picchu famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1813",
+   "slug": "what-are-microservices",
+   "question": "What are microservices",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-microservices/",
+   "keywords": [
+    "microservices"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are microservices? What Science Actually Says",
+   "h1": "What are microservices?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1814",
+   "slug": "why-does-photosynthesis-matter-in-everyday-life",
+   "question": "Why does photosynthesis matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-photosynthesis-matter-in-everyday-life/",
+   "keywords": [
+    "photosynthesis",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does photosynthesis matter in everyday life?",
+   "h1": "Why does photosynthesis matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1815",
+   "slug": "where-does-the-word-bungalow-come-from",
+   "question": "Where does the word \"bungalow\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-bungalow-come-from/",
+   "keywords": [
+    "word",
+    "bungalow",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"bungalow\" come from? A Clear Overview",
+   "h1": "Where does the word \"bungalow\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1816",
+   "slug": "what-is-the-history-of-chocolate",
+   "question": "What is the history of chocolate",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-chocolate/",
+   "keywords": [
+    "history",
+    "chocolate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of chocolate? The Short, Sourced Answer",
+   "h1": "What is the history of chocolate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1817",
+   "slug": "where-do-armadillos-live-in-the-wild",
+   "question": "Where do armadillos live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-armadillos-live-in-the-wild/",
+   "keywords": [
+    "armadillos",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do armadillos live in the wild?",
+   "h1": "Where do armadillos live in the wild?",
+   "ymyl": false
+  }
+ ]
+}

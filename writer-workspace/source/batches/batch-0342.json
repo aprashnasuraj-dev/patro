@@ -1,0 +1,170 @@
+{
+ "batch": 342,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2533",
+   "slug": "what-were-the-main-consequences-of-the-silk-road",
+   "question": "What were the main consequences of the Silk Road",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-silk-road/",
+   "keywords": [
+    "main",
+    "consequences",
+    "silk",
+    "road"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Silk Road?",
+   "h1": "What were the main consequences of the Silk Road?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2534",
+   "slug": "what-is-the-history-of-new-orleans",
+   "question": "What is the history of New Orleans",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-new-orleans/",
+   "keywords": [
+    "history",
+    "new",
+    "orleans"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of New Orleans? Key Facts and Context",
+   "h1": "What is the history of New Orleans?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2535",
+   "slug": "how-do-cicadas-sleep",
+   "question": "How do cicadas sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-cicadas-sleep/",
+   "keywords": [
+    "cicadas",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cicadas sleep? The Real Answer, Explained",
+   "h1": "How do cicadas sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2536",
+   "slug": "what-were-the-main-consequences-of-the-taiping-rebellion",
+   "question": "What were the main consequences of the Taiping Rebellion",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-taiping-rebellion/",
+   "keywords": [
+    "main",
+    "consequences",
+    "taiping",
+    "rebellion"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Taiping Rebellion?",
+   "h1": "What were the main consequences of the Taiping Rebellion?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2537",
+   "slug": "what-is-the-economy-of-jordan-based-on",
+   "question": "What is the economy of Jordan based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-jordan-based-on/",
+   "keywords": [
+    "economy",
+    "jordan",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Jordan based on?",
+   "h1": "What is the economy of Jordan based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2538",
+   "slug": "how-do-pigeons-communicate",
+   "question": "How do pigeons communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-pigeons-communicate/",
+   "keywords": [
+    "pigeons",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do pigeons communicate? The Real Answer, Explained",
+   "h1": "How do pigeons communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2539",
+   "slug": "what-is-sun-tzu-best-known-for",
+   "question": "What is Sun Tzu best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-sun-tzu-best-known-for/",
+   "keywords": [
+    "sun",
+    "tzu",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Sun Tzu best known for? Key Facts and Context",
+   "h1": "What is Sun Tzu best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2540",
+   "slug": "how-did-budapest-get-its-name",
+   "question": "How did Budapest get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-budapest-get-its-name/",
+   "keywords": [
+    "did",
+    "budapest",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Budapest get its name? Key Facts and Context",
+   "h1": "How did Budapest get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2541",
+   "slug": "what-do-pandas-eat",
+   "question": "What do pandas eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-pandas-eat/",
+   "keywords": [
+    "pandas",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do pandas eat? Explained With Sources",
+   "h1": "What do pandas eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2542",
+   "slug": "what-were-the-main-consequences-of-the-chernobyl-disaster",
+   "question": "What were the main consequences of the Chernobyl disaster",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-chernobyl-disaster/",
+   "keywords": [
+    "main",
+    "consequences",
+    "chernobyl",
+    "disaster"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Chernobyl disaster?",
+   "h1": "What were the main consequences of the Chernobyl disaster?",
+   "ymyl": false
+  }
+ ]
+}

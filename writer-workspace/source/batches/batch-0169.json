@@ -1,0 +1,163 @@
+{
+ "batch": 169,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0795",
+   "slug": "how-does-a-safety-pin-work",
+   "question": "How does a safety pin work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-safety-pin-work/",
+   "keywords": [
+    "safety",
+    "pin",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a safety pin work? What Science Actually Says",
+   "h1": "How does a safety pin work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0796",
+   "slug": "how-is-trigonometry-used-in-real-life",
+   "question": "How is trigonometry used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-trigonometry-used-in-real-life/",
+   "keywords": [
+    "trigonometry",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is trigonometry used in real life?",
+   "h1": "How is trigonometry used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0797",
+   "slug": "what-makes-rock-and-roll-unique",
+   "question": "What makes rock and roll unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-rock-and-roll-unique/",
+   "keywords": [
+    "makes",
+    "rock",
+    "roll",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes rock and roll unique?",
+   "h1": "What makes rock and roll unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0798",
+   "slug": "what-causes-dew",
+   "question": "What causes dew",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-dew/",
+   "keywords": [
+    "causes",
+    "dew"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes dew? What Science Actually Says",
+   "h1": "What causes dew?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0799",
+   "slug": "what-is-the-fermi-paradox",
+   "question": "What is the Fermi paradox",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-fermi-paradox/",
+   "keywords": [
+    "fermi",
+    "paradox"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Fermi paradox? A Clear, Sourced Explanation",
+   "h1": "What is the Fermi paradox?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0800",
+   "slug": "how-do-mushrooms-grow",
+   "question": "How do mushrooms grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-mushrooms-grow/",
+   "keywords": [
+    "mushrooms",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do mushrooms grow? The Real Answer, Explained",
+   "h1": "How do mushrooms grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0801",
+   "slug": "how-do-humpback-whales-sleep",
+   "question": "How do humpback whales sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-humpback-whales-sleep/",
+   "keywords": [
+    "humpback",
+    "whales",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do humpback whales sleep? Facts, Myths and Evidence",
+   "h1": "How do humpback whales sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0802",
+   "slug": "who-was-nicolaus-copernicus",
+   "question": "Who was Nicolaus Copernicus",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-nicolaus-copernicus/",
+   "keywords": [
+    "nicolaus",
+    "copernicus"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Nicolaus Copernicus? Facts and Background",
+   "h1": "Who was Nicolaus Copernicus?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0803",
+   "slug": "what-is-chicago-famous-for",
+   "question": "What is Chicago famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-chicago-famous-for/",
+   "keywords": [
+    "chicago",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Chicago famous for? A Clear Overview",
+   "h1": "What is Chicago famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0804",
+   "slug": "how-does-nfc-work",
+   "question": "How does NFC work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-nfc-work/",
+   "keywords": [
+    "nfc",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does NFC work? A Clear, Sourced Explanation",
+   "h1": "How does NFC work?",
+   "ymyl": false
+  }
+ ]
+}

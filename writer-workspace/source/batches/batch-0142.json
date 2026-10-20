@@ -1,0 +1,170 @@
+{
+ "batch": 142,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0525",
+   "slug": "what-are-the-main-parts-of-a-gas-cylinder-regulator",
+   "question": "What are the main parts of a gas cylinder regulator",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-gas-cylinder-regulator/",
+   "keywords": [
+    "main",
+    "parts",
+    "gas",
+    "cylinder",
+    "regulator"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a gas cylinder regulator?",
+   "h1": "What are the main parts of a gas cylinder regulator?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0526",
+   "slug": "how-is-boolean-logic-used-in-real-life",
+   "question": "How is Boolean logic used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-boolean-logic-used-in-real-life/",
+   "keywords": [
+    "boolean",
+    "logic",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is Boolean logic used in real life?",
+   "h1": "How is Boolean logic used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0527",
+   "slug": "what-makes-comic-books-unique",
+   "question": "What makes comic books unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-comic-books-unique/",
+   "keywords": [
+    "makes",
+    "comic",
+    "books",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes comic books unique? What Science Actually Says",
+   "h1": "What makes comic books unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0528",
+   "slug": "how-do-salt-flats-form",
+   "question": "How do salt flats form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-salt-flats-form/",
+   "keywords": [
+    "salt",
+    "flats",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do salt flats form? What Science Actually Says",
+   "h1": "How do salt flats form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0529",
+   "slug": "what-is-the-sun-made-of",
+   "question": "What is the Sun made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-sun-made-of/",
+   "keywords": [
+    "sun",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Sun made of? Explained With Sources",
+   "h1": "What is the Sun made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0530",
+   "slug": "how-do-ferns-grow",
+   "question": "How do ferns grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-ferns-grow/",
+   "keywords": [
+    "ferns",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do ferns grow? Facts, Myths and Evidence",
+   "h1": "How do ferns grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0531",
+   "slug": "how-long-do-tortoises-live",
+   "question": "How long do tortoises live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-tortoises-live/",
+   "keywords": [
+    "long",
+    "tortoises",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do tortoises live? The Real Answer, Explained",
+   "h1": "How long do tortoises live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0532",
+   "slug": "what-caused-the-american-revolution",
+   "question": "What caused the American Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-american-revolution/",
+   "keywords": [
+    "caused",
+    "american",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the American Revolution? Key Facts and Context",
+   "h1": "What caused the American Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0533",
+   "slug": "what-is-the-history-of-hanoi",
+   "question": "What is the history of Hanoi",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-hanoi/",
+   "keywords": [
+    "history",
+    "hanoi"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Hanoi? A Clear Overview",
+   "h1": "What is the history of Hanoi?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0534",
+   "slug": "what-are-the-main-parts-of-a-fingerprint-scanner",
+   "question": "What are the main parts of a fingerprint scanner",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-fingerprint-scanner/",
+   "keywords": [
+    "main",
+    "parts",
+    "fingerprint",
+    "scanner"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a fingerprint scanner?",
+   "h1": "What are the main parts of a fingerprint scanner?",
+   "ymyl": false
+  }
+ ]
+}

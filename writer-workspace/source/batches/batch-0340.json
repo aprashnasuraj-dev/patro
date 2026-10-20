@@ -1,0 +1,162 @@
+{
+ "batch": 340,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2513",
+   "slug": "what-is-the-history-of-brussels",
+   "question": "What is the history of Brussels",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-brussels/",
+   "keywords": [
+    "history",
+    "brussels"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Brussels? The Short, Sourced Answer",
+   "h1": "What is the history of Brussels?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2514",
+   "slug": "how-do-cheetahs-sleep",
+   "question": "How do cheetahs sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-cheetahs-sleep/",
+   "keywords": [
+    "cheetahs",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cheetahs sleep? Facts, Myths and Evidence",
+   "h1": "How do cheetahs sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2515",
+   "slug": "how-was-the-zipper-invented",
+   "question": "How was the zipper invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-zipper-invented/",
+   "keywords": [
+    "zipper",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the zipper invented? Facts, Myths and Evidence",
+   "h1": "How was the zipper invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2516",
+   "slug": "what-is-the-history-of-south-korea",
+   "question": "What is the history of South Korea",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-south-korea/",
+   "keywords": [
+    "history",
+    "south",
+    "korea"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of South Korea?",
+   "h1": "What is the history of South Korea?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2517",
+   "slug": "what-do-rabbits-eat",
+   "question": "What do rabbits eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-rabbits-eat/",
+   "keywords": [
+    "rabbits",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do rabbits eat? What Science Actually Says",
+   "h1": "What do rabbits eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2518",
+   "slug": "what-is-isaac-newton-best-known-for",
+   "question": "What is Isaac Newton best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-isaac-newton-best-known-for/",
+   "keywords": [
+    "isaac",
+    "newton",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Isaac Newton best known for? Facts and Background",
+   "h1": "What is Isaac Newton best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2519",
+   "slug": "what-is-timbuktu-famous-for",
+   "question": "What is Timbuktu famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-timbuktu-famous-for/",
+   "keywords": [
+    "timbuktu",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Timbuktu famous for? Facts and Background",
+   "h1": "What is Timbuktu famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2520",
+   "slug": "how-do-ravens-communicate",
+   "question": "How do ravens communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-ravens-communicate/",
+   "keywords": [
+    "ravens",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do ravens communicate? A Clear, Sourced Explanation",
+   "h1": "How do ravens communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2521",
+   "slug": "who-was-martin-luther-king-jr",
+   "question": "Who was Martin Luther King Jr.",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-martin-luther-king-jr/",
+   "keywords": [
+    "martin",
+    "luther",
+    "king"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Martin Luther King Jr.? Facts and Background",
+   "h1": "Who was Martin Luther King Jr.?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2522",
+   "slug": "what-is-the-history-of-buenos-aires",
+   "question": "What is the history of Buenos Aires",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-buenos-aires/",
+   "keywords": [
+    "history",
+    "buenos",
+    "aires"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Buenos Aires? A Clear Overview",
+   "h1": "What is the history of Buenos Aires?",
+   "ymyl": false
+  }
+ ]
+}

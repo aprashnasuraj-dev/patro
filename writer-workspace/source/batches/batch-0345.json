@@ -1,0 +1,165 @@
+{
+ "batch": 345,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2563",
+   "slug": "who-was-bhanubhakta-acharya",
+   "question": "Who was Bhanubhakta Acharya",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-bhanubhakta-acharya/",
+   "keywords": [
+    "bhanubhakta",
+    "acharya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Bhanubhakta Acharya? Key Facts and Context",
+   "h1": "Who was Bhanubhakta Acharya?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2564",
+   "slug": "what-is-the-history-of-darjeeling",
+   "question": "What is the history of Darjeeling",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-darjeeling/",
+   "keywords": [
+    "history",
+    "darjeeling"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Darjeeling? The Short, Sourced Answer",
+   "h1": "What is the history of Darjeeling?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2565",
+   "slug": "how-do-geese-sleep",
+   "question": "How do geese sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-geese-sleep/",
+   "keywords": [
+    "geese",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do geese sleep? A Clear, Sourced Explanation",
+   "h1": "How do geese sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2566",
+   "slug": "what-were-the-main-consequences-of-the-scramble-for-africa",
+   "question": "What were the main consequences of the Scramble for Africa",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-scramble-for-africa/",
+   "keywords": [
+    "main",
+    "consequences",
+    "scramble",
+    "africa"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Scramble for Africa?",
+   "h1": "What were the main consequences of the Scramble for Africa?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2567",
+   "slug": "what-is-the-history-of-san-francisco",
+   "question": "What is the history of San Francisco",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-san-francisco/",
+   "keywords": [
+    "history",
+    "san",
+    "francisco"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of San Francisco? A Clear Overview",
+   "h1": "What is the history of San Francisco?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2568",
+   "slug": "how-long-do-ravens-live",
+   "question": "How long do ravens live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-ravens-live/",
+   "keywords": [
+    "long",
+    "ravens",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do ravens live? A Clear, Sourced Explanation",
+   "h1": "How long do ravens live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2569",
+   "slug": "what-is-dmitri-mendeleev-best-known-for",
+   "question": "What is Dmitri Mendeleev best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-dmitri-mendeleev-best-known-for/",
+   "keywords": [
+    "dmitri",
+    "mendeleev",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Dmitri Mendeleev best known for? A Clear Overview",
+   "h1": "What is Dmitri Mendeleev best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2570",
+   "slug": "what-is-the-economy-of-saudi-arabia-based-on",
+   "question": "What is the economy of Saudi Arabia based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-saudi-arabia-based-on/",
+   "keywords": [
+    "economy",
+    "saudi",
+    "arabia",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Saudi Arabia based on?",
+   "h1": "What is the economy of Saudi Arabia based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2571",
+   "slug": "how-do-hippos-sleep",
+   "question": "How do hippos sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-hippos-sleep/",
+   "keywords": [
+    "hippos",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do hippos sleep? Explained With Sources",
+   "h1": "How do hippos sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2572",
+   "slug": "who-was-johannes-vermeer",
+   "question": "Who was Johannes Vermeer",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-johannes-vermeer/",
+   "keywords": [
+    "johannes",
+    "vermeer"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Johannes Vermeer? The Story, Sourced",
+   "h1": "Who was Johannes Vermeer?",
+   "ymyl": false
+  }
+ ]
+}

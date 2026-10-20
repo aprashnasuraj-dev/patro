@@ -1,0 +1,169 @@
+{
+ "batch": 134,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0443",
+   "slug": "where-does-the-word-safari-come-from",
+   "question": "Where does the word \"safari\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-safari-come-from/",
+   "keywords": [
+    "word",
+    "safari",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"safari\" come from?",
+   "h1": "Where does the word \"safari\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0444",
+   "slug": "how-is-whisky-made",
+   "question": "How is whisky made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-whisky-made/",
+   "keywords": [
+    "whisky",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is whisky made? The Real Answer, Explained",
+   "h1": "How is whisky made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0445",
+   "slug": "what-are-the-main-parts-of-an-escalator",
+   "question": "What are the main parts of an escalator",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-an-escalator/",
+   "keywords": [
+    "main",
+    "parts",
+    "escalator"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of an escalator?",
+   "h1": "What are the main parts of an escalator?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0446",
+   "slug": "what-is-the-history-of-sagarmatha-national-park",
+   "question": "What is the history of Sagarmatha National Park",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-sagarmatha-national-park/",
+   "keywords": [
+    "history",
+    "sagarmatha",
+    "national",
+    "park"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Sagarmatha National Park?",
+   "h1": "What is the history of Sagarmatha National Park?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0447",
+   "slug": "how-does-a-water-heater-work",
+   "question": "How does a water heater work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-water-heater-work/",
+   "keywords": [
+    "water",
+    "heater",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a water heater work? A Clear, Sourced Explanation",
+   "h1": "How does a water heater work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0448",
+   "slug": "how-are-binary-numbers-used-in-real-life",
+   "question": "How are binary numbers used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-binary-numbers-used-in-real-life/",
+   "keywords": [
+    "binary",
+    "numbers",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are binary numbers used in real life?",
+   "h1": "How are binary numbers used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0449",
+   "slug": "how-did-the-tabla-start",
+   "question": "How did the tabla start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-tabla-start/",
+   "keywords": [
+    "did",
+    "tabla",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the tabla start? Explained With Sources",
+   "h1": "How did the tabla start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0450",
+   "slug": "how-does-the-water-cycle-work",
+   "question": "How does the water cycle work",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-does-the-water-cycle-work/",
+   "keywords": [
+    "water",
+    "cycle",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does the water cycle work? Explained With Sources",
+   "h1": "How does the water cycle work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0451",
+   "slug": "what-is-halley-s-comet-made-of",
+   "question": "What is Halley's Comet made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-halley-s-comet-made-of/",
+   "keywords": [
+    "halley",
+    "comet",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Halley's Comet made of? What Science Actually Says",
+   "h1": "What is Halley's Comet made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0452",
+   "slug": "how-do-banyan-trees-grow",
+   "question": "How do banyan trees grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-banyan-trees-grow/",
+   "keywords": [
+    "banyan",
+    "trees",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do banyan trees grow? The Real Answer, Explained",
+   "h1": "How do banyan trees grow?",
+   "ymyl": false
+  }
+ ]
+}

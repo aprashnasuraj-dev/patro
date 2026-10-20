@@ -1,0 +1,164 @@
+{
+ "batch": 388,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2993",
+   "slug": "what-is-the-economy-of-ireland-based-on",
+   "question": "What is the economy of Ireland based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-ireland-based-on/",
+   "keywords": [
+    "economy",
+    "ireland",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Ireland based on? A Clear Overview",
+   "h1": "What is the economy of Ireland based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2994",
+   "slug": "how-do-anteaters-communicate",
+   "question": "How do anteaters communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-anteaters-communicate/",
+   "keywords": [
+    "anteaters",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do anteaters communicate? Explained With Sources",
+   "h1": "How do anteaters communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2995",
+   "slug": "who-invented-the-stethoscope-and-how",
+   "question": "Who invented the stethoscope and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-stethoscope-and-how/",
+   "keywords": [
+    "invented",
+    "stethoscope"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the stethoscope and how? The Story, Sourced",
+   "h1": "Who invented the stethoscope and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2996",
+   "slug": "what-is-the-history-of-bolivia",
+   "question": "What is the history of Bolivia",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-bolivia/",
+   "keywords": [
+    "history",
+    "bolivia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Bolivia? The Story, Sourced",
+   "h1": "What is the history of Bolivia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2997",
+   "slug": "how-long-do-leopards-live",
+   "question": "How long do leopards live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-leopards-live/",
+   "keywords": [
+    "long",
+    "leopards",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do leopards live? Explained With Sources",
+   "h1": "How long do leopards live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2998",
+   "slug": "what-is-vincent-van-gogh-best-known-for",
+   "question": "What is Vincent van Gogh best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-vincent-van-gogh-best-known-for/",
+   "keywords": [
+    "vincent",
+    "van",
+    "gogh",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Vincent van Gogh best known for?",
+   "h1": "What is Vincent van Gogh best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2999",
+   "slug": "what-is-the-economy-of-kenya-based-on",
+   "question": "What is the economy of Kenya based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-kenya-based-on/",
+   "keywords": [
+    "economy",
+    "kenya",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Kenya based on? Facts and Background",
+   "h1": "What is the economy of Kenya based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-3000",
+   "slug": "what-do-fireflies-eat",
+   "question": "What do fireflies eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-fireflies-eat/",
+   "keywords": [
+    "fireflies",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do fireflies eat? Facts, Myths and Evidence",
+   "h1": "What do fireflies eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0016",
+   "slug": "how-does-an-ultrasound-scanner-work",
+   "question": "How does an ultrasound scanner work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-ultrasound-scanner-work/",
+   "keywords": [
+    "ultrasound",
+    "scanner",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an ultrasound scanner work?",
+   "h1": "How does an ultrasound scanner work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0034",
+   "slug": "how-does-a-ct-scanner-work",
+   "question": "How does a CT scanner work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-ct-scanner-work/",
+   "keywords": [
+    "scanner",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a CT scanner work? The Real Answer, Explained",
+   "h1": "How does a CT scanner work?",
+   "ymyl": true
+  }
+ ]
+}

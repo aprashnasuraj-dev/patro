@@ -1,0 +1,164 @@
+{
+ "batch": 158,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0685",
+   "slug": "what-is-the-periodic-table",
+   "question": "What is the periodic table",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-periodic-table/",
+   "keywords": [
+    "periodic",
+    "table"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the periodic table? A Clear, Sourced Explanation",
+   "h1": "What is the periodic table?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0686",
+   "slug": "where-did-the-finnish-language-come-from",
+   "question": "Where did the Finnish language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-finnish-language-come-from/",
+   "keywords": [
+    "did",
+    "finnish",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Finnish language come from?",
+   "h1": "Where did the Finnish language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0687",
+   "slug": "what-is-the-history-of-cocoa-powder",
+   "question": "What is the history of cocoa powder",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-cocoa-powder/",
+   "keywords": [
+    "history",
+    "cocoa",
+    "powder"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of cocoa powder? A Clear Overview",
+   "h1": "What is the history of cocoa powder?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0688",
+   "slug": "how-does-a-lighthouse-work",
+   "question": "How does a lighthouse work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-lighthouse-work/",
+   "keywords": [
+    "lighthouse",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a lighthouse work? Explained With Sources",
+   "h1": "How does a lighthouse work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0689",
+   "slug": "where-is-nanga-parbat-and-how-high-is-it",
+   "question": "Where is Nanga Parbat and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-nanga-parbat-and-how-high-is-it/",
+   "keywords": [
+    "nanga",
+    "parbat",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Nanga Parbat and how high is it?",
+   "h1": "Where is Nanga Parbat and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0690",
+   "slug": "how-does-an-electric-razor-work",
+   "question": "How does an electric razor work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-electric-razor-work/",
+   "keywords": [
+    "electric",
+    "razor",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an electric razor work? Explained With Sources",
+   "h1": "How does an electric razor work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0691",
+   "slug": "how-is-pi-used-in-real-life",
+   "question": "How is pi used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-pi-used-in-real-life/",
+   "keywords": [
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is pi used in real life? The Real Answer, Explained",
+   "h1": "How is pi used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0692",
+   "slug": "how-did-cubism-start",
+   "question": "How did Cubism start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-cubism-start/",
+   "keywords": [
+    "did",
+    "cubism",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Cubism start? A Clear, Sourced Explanation",
+   "h1": "How did Cubism start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0693",
+   "slug": "what-causes-thunder",
+   "question": "What causes thunder",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-thunder/",
+   "keywords": [
+    "causes",
+    "thunder"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes thunder? A Clear, Sourced Explanation",
+   "h1": "What causes thunder?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0694",
+   "slug": "what-is-the-mars-rovers",
+   "question": "What is the Mars rovers",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-mars-rovers/",
+   "keywords": [
+    "mars",
+    "rovers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Mars rovers? A Clear, Sourced Explanation",
+   "h1": "What is the Mars rovers?",
+   "ymyl": false
+  }
+ ]
+}

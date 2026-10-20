@@ -1,0 +1,164 @@
+{
+ "batch": 373,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2843",
+   "slug": "what-is-ethiopia-known-for",
+   "question": "What is Ethiopia known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-ethiopia-known-for/",
+   "keywords": [
+    "ethiopia",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Ethiopia known for? Facts and Background",
+   "h1": "What is Ethiopia known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2844",
+   "slug": "how-long-do-ducks-live",
+   "question": "How long do ducks live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-ducks-live/",
+   "keywords": [
+    "long",
+    "ducks",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do ducks live? Explained With Sources",
+   "h1": "How long do ducks live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2845",
+   "slug": "who-was-johannes-kepler",
+   "question": "Who was Johannes Kepler",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-johannes-kepler/",
+   "keywords": [
+    "johannes",
+    "kepler"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Johannes Kepler? Facts and Background",
+   "h1": "Who was Johannes Kepler?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2846",
+   "slug": "what-is-the-history-of-oman",
+   "question": "What is the history of Oman",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-oman/",
+   "keywords": [
+    "history",
+    "oman"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Oman? The Short, Sourced Answer",
+   "h1": "What is the history of Oman?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2847",
+   "slug": "how-do-stingrays-communicate",
+   "question": "How do stingrays communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-stingrays-communicate/",
+   "keywords": [
+    "stingrays",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do stingrays communicate? A Clear, Sourced Explanation",
+   "h1": "How do stingrays communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2848",
+   "slug": "what-were-the-main-consequences-of-the-cold-war",
+   "question": "What were the main consequences of the Cold War",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-cold-war/",
+   "keywords": [
+    "main",
+    "consequences",
+    "cold",
+    "war"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Cold War?",
+   "h1": "What were the main consequences of the Cold War?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2849",
+   "slug": "what-is-the-economy-of-malaysia-based-on",
+   "question": "What is the economy of Malaysia based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-malaysia-based-on/",
+   "keywords": [
+    "economy",
+    "malaysia",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Malaysia based on?",
+   "h1": "What is the economy of Malaysia based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2850",
+   "slug": "where-do-koalas-live-in-the-wild",
+   "question": "Where do koalas live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-koalas-live-in-the-wild/",
+   "keywords": [
+    "koalas",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do koalas live in the wild? Explained With Sources",
+   "h1": "Where do koalas live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2851",
+   "slug": "what-is-akbar-the-great-best-known-for",
+   "question": "What is Akbar the Great best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-akbar-the-great-best-known-for/",
+   "keywords": [
+    "akbar",
+    "great",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Akbar the Great best known for?",
+   "h1": "What is Akbar the Great best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2852",
+   "slug": "what-is-the-history-of-mumbai",
+   "question": "What is the history of Mumbai",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-mumbai/",
+   "keywords": [
+    "history",
+    "mumbai"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Mumbai? The Story, Sourced",
+   "h1": "What is the history of Mumbai?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "batch": 76,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1673",
+   "slug": "how-energy-labels-work",
+   "question": "How energy labels work",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-energy-labels-work/",
+   "keywords": [
+    "energy",
+    "labels",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Energy Labels Work? The Real Answer, Explained",
+   "h1": "How Energy Labels Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1675",
+   "slug": "why-engines-overheat",
+   "question": "Why engines overheat",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-engines-overheat/",
+   "keywords": [
+    "engines",
+    "overheat",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Engines Overheat? What Science Actually Says",
+   "h1": "Why Engines Overheat?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1677",
+   "slug": "why-rara-lake-is-called-the-queen-of-lakes",
+   "question": "Why Rara Lake is called the queen of lakes",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-rara-lake-is-called-the-queen-of-lakes/",
+   "keywords": [
+    "rara",
+    "lake",
+    "called",
+    "queen",
+    "lakes",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Rara Lake Is Called The Queen Of Lakes?",
+   "h1": "Why Rara Lake Is Called The Queen Of Lakes?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1679",
+   "slug": "how-mosaics-are-made",
+   "question": "How mosaics are made",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-mosaics-are-made/",
+   "keywords": [
+    "mosaics",
+    "made",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Mosaics Are Made? A Clear, Sourced Explanation",
+   "h1": "How Mosaics Are Made?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1681",
+   "slug": "why-potatoes-turn-green",
+   "question": "Why potatoes turn green",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-potatoes-turn-green/",
+   "keywords": [
+    "potatoes",
+    "turn",
+    "green",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Potatoes Turn Green? Facts, Myths and Evidence",
+   "h1": "Why Potatoes Turn Green?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1683",
+   "slug": "how-hibernation-works-in-bears",
+   "question": "How hibernation works in bears",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-hibernation-works-in-bears/",
+   "keywords": [
+    "hibernation",
+    "bears",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Hibernation Works In Bears? Facts, Myths and Evidence",
+   "h1": "How Hibernation Works In Bears?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1685",
+   "slug": "how-gps-depends-on-relativity",
+   "question": "How GPS depends on relativity",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-gps-depends-on-relativity/",
+   "keywords": [
+    "gps",
+    "depends",
+    "relativity",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How GPS Depends On Relativity? Explained With Sources",
+   "h1": "How GPS Depends On Relativity?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1687",
+   "slug": "why-the-poles-are-shifting",
+   "question": "Why the poles are shifting",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-the-poles-are-shifting/",
+   "keywords": [
+    "poles",
+    "shifting",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Poles Are Shifting? What Science Actually Says",
+   "h1": "Why The Poles Are Shifting?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1691",
+   "slug": "why-we-compare-ourselves-to-others",
+   "question": "Why we compare ourselves to others",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-compare-ourselves-to-others/",
+   "keywords": [
+    "compare",
+    "ourselves",
+    "others",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Compare Ourselves To Others?",
+   "h1": "Why We Compare Ourselves To Others?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1693",
+   "slug": "why-carbonated-drinks-fizz",
+   "question": "Why carbonated drinks fizz",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-carbonated-drinks-fizz/",
+   "keywords": [
+    "carbonated",
+    "drinks",
+    "fizz",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Carbonated Drinks Fizz? The Real Answer, Explained",
+   "h1": "Why Carbonated Drinks Fizz?",
+   "ymyl": false
+  }
+ ]
+}

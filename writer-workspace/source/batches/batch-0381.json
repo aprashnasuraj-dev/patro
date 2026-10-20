@@ -1,0 +1,168 @@
+{
+ "batch": 381,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2923",
+   "slug": "how-was-the-spectacles-invented",
+   "question": "How was the spectacles invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-spectacles-invented/",
+   "keywords": [
+    "spectacles",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the spectacles invented? What Science Actually Says",
+   "h1": "How was the spectacles invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2924",
+   "slug": "what-is-the-history-of-tanzania",
+   "question": "What is the history of Tanzania",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-tanzania/",
+   "keywords": [
+    "history",
+    "tanzania"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Tanzania? The Story, Sourced",
+   "h1": "What is the history of Tanzania?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2925",
+   "slug": "where-do-kingfishers-live-in-the-wild",
+   "question": "Where do kingfishers live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-kingfishers-live-in-the-wild/",
+   "keywords": [
+    "kingfishers",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do kingfishers live in the wild?",
+   "h1": "Where do kingfishers live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2926",
+   "slug": "what-is-avicenna-best-known-for",
+   "question": "What is Avicenna best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-avicenna-best-known-for/",
+   "keywords": [
+    "avicenna",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Avicenna best known for? The Short, Sourced Answer",
+   "h1": "What is Avicenna best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2927",
+   "slug": "what-is-mongolia-known-for",
+   "question": "What is Mongolia known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-mongolia-known-for/",
+   "keywords": [
+    "mongolia",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Mongolia known for? The Short, Sourced Answer",
+   "h1": "What is Mongolia known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2928",
+   "slug": "how-long-do-ants-live",
+   "question": "How long do ants live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-ants-live/",
+   "keywords": [
+    "long",
+    "ants",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do ants live? A Clear, Sourced Explanation",
+   "h1": "How long do ants live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2929",
+   "slug": "what-is-martin-luther-king-jr-best-known-for",
+   "question": "What is Martin Luther King Jr. best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-martin-luther-king-jr-best-known-for/",
+   "keywords": [
+    "martin",
+    "luther",
+    "king",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Martin Luther King Jr. best known for?",
+   "h1": "What is Martin Luther King Jr. best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2930",
+   "slug": "how-did-beijing-get-its-name",
+   "question": "How did Beijing get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-beijing-get-its-name/",
+   "keywords": [
+    "did",
+    "beijing",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Beijing get its name? Facts and Background",
+   "h1": "How did Beijing get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2931",
+   "slug": "how-do-walruses-sleep",
+   "question": "How do walruses sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-walruses-sleep/",
+   "keywords": [
+    "walruses",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do walruses sleep? Facts, Myths and Evidence",
+   "h1": "How do walruses sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2932",
+   "slug": "what-were-the-main-consequences-of-the-unification-of-nepal",
+   "question": "What were the main consequences of the Unification of Nepal",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-unification-of-nepal/",
+   "keywords": [
+    "main",
+    "consequences",
+    "unification",
+    "nepal"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Unification of Nepal?",
+   "h1": "What were the main consequences of the Unification of Nepal?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+ "batch": 98,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0076",
+   "slug": "what-are-the-main-parts-of-a-gpu",
+   "question": "What are the main parts of a GPU",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-gpu/",
+   "keywords": [
+    "main",
+    "parts",
+    "gpu"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a GPU? What Science Actually Says",
+   "h1": "What are the main parts of a GPU?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0077",
+   "slug": "why-does-static-electricity-matter-in-everyday-life",
+   "question": "Why does static electricity matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-static-electricity-matter-in-everyday-life/",
+   "keywords": [
+    "static",
+    "electricity",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does static electricity matter in everyday life?",
+   "h1": "Why does static electricity matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0078",
+   "slug": "where-does-the-word-karaoke-come-from",
+   "question": "Where does the word \"karaoke\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-karaoke-come-from/",
+   "keywords": [
+    "word",
+    "karaoke",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"karaoke\" come from? The Story, Sourced",
+   "h1": "Where does the word \"karaoke\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0079",
+   "slug": "what-is-the-history-of-pretzels",
+   "question": "What is the history of pretzels",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-pretzels/",
+   "keywords": [
+    "history",
+    "pretzels"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of pretzels? Key Facts and Context",
+   "h1": "What is the history of pretzels?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0080",
+   "slug": "how-does-a-lever-work",
+   "question": "How does a lever work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-lever-work/",
+   "keywords": [
+    "lever",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a lever work? Facts, Myths and Evidence",
+   "h1": "How does a lever work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0081",
+   "slug": "what-is-special-about-machapuchare",
+   "question": "What is special about Machapuchare",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-machapuchare/",
+   "keywords": [
+    "special",
+    "about",
+    "machapuchare"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Machapuchare?",
+   "h1": "What is special about Machapuchare?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0082",
+   "slug": "how-does-a-toaster-work",
+   "question": "How does a toaster work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-toaster-work/",
+   "keywords": [
+    "toaster",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a toaster work? The Real Answer, Explained",
+   "h1": "How does a toaster work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0083",
+   "slug": "what-is-probability",
+   "question": "What is probability",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-probability/",
+   "keywords": [
+    "probability"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is probability? What Science Actually Says",
+   "h1": "What is probability?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0084",
+   "slug": "what-makes-stop-motion-animation-unique",
+   "question": "What makes stop-motion animation unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-stop-motion-animation-unique/",
+   "keywords": [
+    "makes",
+    "stop-motion",
+    "animation",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes stop-motion animation unique?",
+   "h1": "What makes stop-motion animation unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0085",
+   "slug": "what-causes-monsoons",
+   "question": "What causes monsoons",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-monsoons/",
+   "keywords": [
+    "causes",
+    "monsoons"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes monsoons? The Real Answer, Explained",
+   "h1": "What causes monsoons?",
+   "ymyl": false
+  }
+ ]
+}

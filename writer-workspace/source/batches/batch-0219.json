@@ -1,0 +1,164 @@
+{
+ "batch": 219,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1296",
+   "slug": "how-does-a-solar-water-heater-work",
+   "question": "How does a solar water heater work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-solar-water-heater-work/",
+   "keywords": [
+    "solar",
+    "water",
+    "heater",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a solar water heater work?",
+   "h1": "How does a solar water heater work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1297",
+   "slug": "how-are-exponents-used-in-real-life",
+   "question": "How are exponents used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-exponents-used-in-real-life/",
+   "keywords": [
+    "exponents",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are exponents used in real life?",
+   "h1": "How are exponents used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1298",
+   "slug": "how-did-ballet-start",
+   "question": "How did ballet start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-ballet-start/",
+   "keywords": [
+    "did",
+    "ballet",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did ballet start? The Real Answer, Explained",
+   "h1": "How did ballet start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1299",
+   "slug": "what-causes-monsoon-floods-in-nepal",
+   "question": "What causes monsoon floods in Nepal",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-monsoon-floods-in-nepal/",
+   "keywords": [
+    "causes",
+    "monsoon",
+    "floods",
+    "nepal"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes monsoon floods in Nepal?",
+   "h1": "What causes monsoon floods in Nepal?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1300",
+   "slug": "what-is-the-andromeda-galaxy-made-of",
+   "question": "What is the Andromeda galaxy made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-andromeda-galaxy-made-of/",
+   "keywords": [
+    "andromeda",
+    "galaxy",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Andromeda galaxy made of?",
+   "h1": "What is the Andromeda galaxy made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1301",
+   "slug": "what-do-geckos-eat",
+   "question": "What do geckos eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-geckos-eat/",
+   "keywords": [
+    "geckos",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do geckos eat? Facts, Myths and Evidence",
+   "h1": "What do geckos eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1302",
+   "slug": "who-was-neil-armstrong",
+   "question": "Who was Neil Armstrong",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-neil-armstrong/",
+   "keywords": [
+    "neil",
+    "armstrong"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Neil Armstrong? The Story, Sourced",
+   "h1": "Who was Neil Armstrong?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1303",
+   "slug": "what-is-lima-famous-for",
+   "question": "What is Lima famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-lima-famous-for/",
+   "keywords": [
+    "lima",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Lima famous for? The Story, Sourced",
+   "h1": "What is Lima famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1304",
+   "slug": "why-do-emails-go-to-spam",
+   "question": "Why do emails go to spam",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-do-emails-go-to-spam/",
+   "keywords": [
+    "emails",
+    "spam"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do emails go to spam? A Clear, Sourced Explanation",
+   "h1": "Why do emails go to spam?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1305",
+   "slug": "what-are-biomes",
+   "question": "What are biomes",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-biomes/",
+   "keywords": [
+    "biomes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are biomes? Facts, Myths and Evidence",
+   "h1": "What are biomes?",
+   "ymyl": false
+  }
+ ]
+}

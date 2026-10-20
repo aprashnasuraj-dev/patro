@@ -1,0 +1,165 @@
+{
+ "batch": 283,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1939",
+   "slug": "why-does-color-matter-in-everyday-life",
+   "question": "Why does color matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-color-matter-in-everyday-life/",
+   "keywords": [
+    "color",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does color matter in everyday life?",
+   "h1": "Why does color matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1940",
+   "slug": "where-does-the-word-sugar-come-from",
+   "question": "Where does the word \"sugar\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-sugar-come-from/",
+   "keywords": [
+    "word",
+    "sugar",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"sugar\" come from?",
+   "h1": "Where does the word \"sugar\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1941",
+   "slug": "how-long-do-lemurs-live",
+   "question": "How long do lemurs live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-lemurs-live/",
+   "keywords": [
+    "long",
+    "lemurs",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do lemurs live? A Clear, Sourced Explanation",
+   "h1": "How long do lemurs live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1942",
+   "slug": "who-was-euclid",
+   "question": "Who was Euclid",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-euclid/",
+   "keywords": [
+    "euclid"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Euclid? The Story, Sourced",
+   "h1": "Who was Euclid?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1943",
+   "slug": "what-is-the-history-of-kolkata",
+   "question": "What is the history of Kolkata",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-kolkata/",
+   "keywords": [
+    "history",
+    "kolkata"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Kolkata? Facts and Background",
+   "h1": "What is the history of Kolkata?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1944",
+   "slug": "what-are-the-main-parts-of-a-speaker",
+   "question": "What are the main parts of a speaker",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-speaker/",
+   "keywords": [
+    "main",
+    "parts",
+    "speaker"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a speaker?",
+   "h1": "What are the main parts of a speaker?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1945",
+   "slug": "why-does-biodiversity-matter-in-everyday-life",
+   "question": "Why does biodiversity matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-biodiversity-matter-in-everyday-life/",
+   "keywords": [
+    "biodiversity",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does biodiversity matter in everyday life?",
+   "h1": "Why does biodiversity matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1946",
+   "slug": "why-do-we-have-different-alphabets",
+   "question": "Why do we have different alphabets",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-have-different-alphabets/",
+   "keywords": [
+    "have",
+    "different",
+    "alphabets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we have different alphabets?",
+   "h1": "Why do we have different alphabets?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1947",
+   "slug": "how-do-cheetahs-communicate",
+   "question": "How do cheetahs communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-cheetahs-communicate/",
+   "keywords": [
+    "cheetahs",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do cheetahs communicate? What Science Actually Says",
+   "h1": "How do cheetahs communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1948",
+   "slug": "what-caused-the-viking-age",
+   "question": "What caused the Viking Age",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-viking-age/",
+   "keywords": [
+    "caused",
+    "viking",
+    "age"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Viking Age? The Story, Sourced",
+   "h1": "What caused the Viking Age?",
+   "ymyl": false
+  }
+ ]
+}

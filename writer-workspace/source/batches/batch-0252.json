@@ -1,0 +1,168 @@
+{
+ "batch": 252,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1628",
+   "slug": "what-is-the-doppler-effect",
+   "question": "What is the Doppler effect",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-doppler-effect/",
+   "keywords": [
+    "doppler",
+    "effect"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Doppler effect? The Real Answer, Explained",
+   "h1": "What is the Doppler effect?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1629",
+   "slug": "where-does-the-phrase-the-ball-is-in-your-court-come-from",
+   "question": "Where does the phrase \"the ball is in your court\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-the-ball-is-in-your-court-come-from/",
+   "keywords": [
+    "phrase",
+    "ball",
+    "your",
+    "court",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"the ball is in your court\" come from?",
+   "h1": "Where does the phrase \"the ball is in your court\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1630",
+   "slug": "what-is-the-history-of-gundruk",
+   "question": "What is the history of gundruk",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-gundruk/",
+   "keywords": [
+    "history",
+    "gundruk"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of gundruk? A Clear Overview",
+   "h1": "What is the history of gundruk?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1631",
+   "slug": "what-are-the-main-parts-of-a-parachute",
+   "question": "What are the main parts of a parachute",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-parachute/",
+   "keywords": [
+    "main",
+    "parts",
+    "parachute"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a parachute?",
+   "h1": "What are the main parts of a parachute?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1632",
+   "slug": "why-is-phewa-lake-important",
+   "question": "Why is Phewa Lake important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-phewa-lake-important/",
+   "keywords": [
+    "phewa",
+    "lake",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Phewa Lake important? Facts, Myths and Evidence",
+   "h1": "Why is Phewa Lake important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1633",
+   "slug": "how-does-a-mechanical-watch-work",
+   "question": "How does a mechanical watch work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-mechanical-watch-work/",
+   "keywords": [
+    "mechanical",
+    "watch",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a mechanical watch work? What Science Actually Says",
+   "h1": "How does a mechanical watch work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1634",
+   "slug": "how-long-do-kingfishers-live",
+   "question": "How long do kingfishers live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-kingfishers-live/",
+   "keywords": [
+    "long",
+    "kingfishers",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do kingfishers live? Facts, Myths and Evidence",
+   "h1": "How long do kingfishers live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1635",
+   "slug": "how-was-the-phonograph-invented",
+   "question": "How was the phonograph invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-phonograph-invented/",
+   "keywords": [
+    "phonograph",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the phonograph invented? What Science Actually Says",
+   "h1": "How was the phonograph invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1636",
+   "slug": "what-is-the-economy-of-sri-lanka-based-on",
+   "question": "What is the economy of Sri Lanka based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-sri-lanka-based-on/",
+   "keywords": [
+    "economy",
+    "sri",
+    "lanka",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Sri Lanka based on? A Clear Overview",
+   "h1": "What is the economy of Sri Lanka based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1637",
+   "slug": "how-does-a-fiber-optic-cable-work",
+   "question": "How does a fiber optic cable work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-fiber-optic-cable-work/",
+   "keywords": [
+    "fiber",
+    "optic",
+    "cable",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a fiber optic cable work?",
+   "h1": "How does a fiber optic cable work?",
+   "ymyl": false
+  }
+ ]
+}

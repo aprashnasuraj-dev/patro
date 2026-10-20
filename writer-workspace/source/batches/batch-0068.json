@@ -1,0 +1,176 @@
+{
+ "batch": 68,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1495",
+   "slug": "how-lasers-work",
+   "question": "How lasers work",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-lasers-work/",
+   "keywords": [
+    "lasers",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Lasers Work? The Real Answer, Explained",
+   "h1": "How Lasers Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1497",
+   "slug": "how-undersea-cables-connect-continents",
+   "question": "How undersea cables connect continents",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-undersea-cables-connect-continents/",
+   "keywords": [
+    "undersea",
+    "cables",
+    "connect",
+    "continents",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Undersea Cables Connect Continents?",
+   "h1": "How Undersea Cables Connect Continents?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1499",
+   "slug": "how-ai-chips-differ-from-cpus",
+   "question": "How AI chips differ from CPUs",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-chips-differ-from-cpus/",
+   "keywords": [
+    "chips",
+    "differ",
+    "cpus",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Chips Differ From Cpus? A Clear, Sourced Explanation",
+   "h1": "How AI Chips Differ From Cpus?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1501",
+   "slug": "what-the-terracotta-army-reveals",
+   "question": "What the Terracotta Army reveals",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-the-terracotta-army-reveals/",
+   "keywords": [
+    "terracotta",
+    "army",
+    "reveals",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What The Terracotta Army Reveals? Facts, Myths and Evidence",
+   "h1": "What The Terracotta Army Reveals?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1503",
+   "slug": "how-uzbekistan-sits-on-the-silk-road",
+   "question": "How Uzbekistan sits on the silk road",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-uzbekistan-sits-on-the-silk-road/",
+   "keywords": [
+    "uzbekistan",
+    "sits",
+    "silk",
+    "road",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Uzbekistan Sits On The Silk Road?",
+   "h1": "How Uzbekistan Sits On The Silk Road?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1507",
+   "slug": "how-air-purifiers-work",
+   "question": "How air purifiers work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-air-purifiers-work/",
+   "keywords": [
+    "air",
+    "purifiers",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Air Purifiers Work? Explained With Sources",
+   "h1": "How Air Purifiers Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1509",
+   "slug": "how-folk-music-preserves-history",
+   "question": "How folk music preserves history",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-folk-music-preserves-history/",
+   "keywords": [
+    "folk",
+    "music",
+    "preserves",
+    "history",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Folk Music Preserves History?",
+   "h1": "How Folk Music Preserves History?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1511",
+   "slug": "how-trigonometry-measures-mountains",
+   "question": "How trigonometry measures mountains",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-trigonometry-measures-mountains/",
+   "keywords": [
+    "trigonometry",
+    "measures",
+    "mountains",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Trigonometry Measures Mountains?",
+   "h1": "How Trigonometry Measures Mountains?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1513",
+   "slug": "how-heat-pumps-work",
+   "question": "How heat pumps work",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-heat-pumps-work/",
+   "keywords": [
+    "heat",
+    "pumps",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Heat Pumps Work? Explained With Sources",
+   "h1": "How Heat Pumps Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1515",
+   "slug": "why-pipelines-move-oil",
+   "question": "Why pipelines move oil",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-pipelines-move-oil/",
+   "keywords": [
+    "pipelines",
+    "move",
+    "oil",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Pipelines Move Oil? Facts, Myths and Evidence",
+   "h1": "Why Pipelines Move Oil?",
+   "ymyl": false
+  }
+ ]
+}

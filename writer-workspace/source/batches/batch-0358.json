@@ -1,0 +1,163 @@
+{
+ "batch": 358,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2693",
+   "slug": "what-is-the-economy-of-bhutan-based-on",
+   "question": "What is the economy of Bhutan based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-bhutan-based-on/",
+   "keywords": [
+    "economy",
+    "bhutan",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Bhutan based on? A Clear Overview",
+   "h1": "What is the economy of Bhutan based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2694",
+   "slug": "what-do-pigs-eat",
+   "question": "What do pigs eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-pigs-eat/",
+   "keywords": [
+    "pigs",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do pigs eat? A Clear, Sourced Explanation",
+   "h1": "What do pigs eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2695",
+   "slug": "why-did-the-silk-road-matter",
+   "question": "Why did the Silk Road matter",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-did-the-silk-road-matter/",
+   "keywords": [
+    "did",
+    "silk",
+    "road",
+    "matter"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why did the Silk Road matter? A Clear, Sourced Explanation",
+   "h1": "Why did the Silk Road matter?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2696",
+   "slug": "what-is-the-netherlands-known-for",
+   "question": "What is the Netherlands known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-netherlands-known-for/",
+   "keywords": [
+    "netherlands",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Netherlands known for? The Story, Sourced",
+   "h1": "What is the Netherlands known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2697",
+   "slug": "how-do-otters-sleep",
+   "question": "How do otters sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-otters-sleep/",
+   "keywords": [
+    "otters",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do otters sleep? A Clear, Sourced Explanation",
+   "h1": "How do otters sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2698",
+   "slug": "who-was-claude-monet",
+   "question": "Who was Claude Monet",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-claude-monet/",
+   "keywords": [
+    "claude",
+    "monet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Claude Monet? The Story, Sourced",
+   "h1": "Who was Claude Monet?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2699",
+   "slug": "what-is-the-economy-of-ethiopia-based-on",
+   "question": "What is the economy of Ethiopia based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-ethiopia-based-on/",
+   "keywords": [
+    "economy",
+    "ethiopia",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Ethiopia based on?",
+   "h1": "What is the economy of Ethiopia based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2700",
+   "slug": "how-do-eagles-sleep",
+   "question": "How do eagles sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-eagles-sleep/",
+   "keywords": [
+    "eagles",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do eagles sleep? A Clear, Sourced Explanation",
+   "h1": "How do eagles sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2701",
+   "slug": "what-is-peter-the-great-best-known-for",
+   "question": "What is Peter the Great best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-peter-the-great-best-known-for/",
+   "keywords": [
+    "peter",
+    "great",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Peter the Great best known for? A Clear Overview",
+   "h1": "What is Peter the Great best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2702",
+   "slug": "what-is-ecuador-known-for",
+   "question": "What is Ecuador known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-ecuador-known-for/",
+   "keywords": [
+    "ecuador",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Ecuador known for? The Short, Sourced Answer",
+   "h1": "What is Ecuador known for?",
+   "ymyl": false
+  }
+ ]
+}

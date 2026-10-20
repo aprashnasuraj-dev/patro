@@ -1,0 +1,170 @@
+{
+ "batch": 91,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0003",
+   "slug": "how-did-osaka-get-its-name",
+   "question": "How did Osaka get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-osaka-get-its-name/",
+   "keywords": [
+    "did",
+    "osaka",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Osaka get its name? A Clear Overview",
+   "h1": "How did Osaka get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0004",
+   "slug": "how-does-the-world-wide-web-work",
+   "question": "How does the World Wide Web work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-the-world-wide-web-work/",
+   "keywords": [
+    "world",
+    "wide",
+    "web",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does the World Wide Web work?",
+   "h1": "How does the World Wide Web work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0005",
+   "slug": "what-are-crystals",
+   "question": "What are crystals",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-are-crystals/",
+   "keywords": [
+    "crystals"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are crystals? A Clear, Sourced Explanation",
+   "h1": "What are crystals?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0006",
+   "slug": "where-does-the-phrase-kick-the-bucket-come-from",
+   "question": "Where does the phrase \"kick the bucket\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-kick-the-bucket-come-from/",
+   "keywords": [
+    "phrase",
+    "kick",
+    "bucket",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"kick the bucket\" come from?",
+   "h1": "Where does the phrase \"kick the bucket\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0007",
+   "slug": "how-is-pizza-made",
+   "question": "How is pizza made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-pizza-made/",
+   "keywords": [
+    "pizza",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is pizza made? Facts, Myths and Evidence",
+   "h1": "How is pizza made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0008",
+   "slug": "how-does-a-gas-turbine-work",
+   "question": "How does a gas turbine work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-gas-turbine-work/",
+   "keywords": [
+    "gas",
+    "turbine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a gas turbine work? A Clear, Sourced Explanation",
+   "h1": "How does a gas turbine work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0009",
+   "slug": "what-is-nepali-tea-and-how-is-it-made",
+   "question": "What is Nepali tea and how is it made",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-nepali-tea-and-how-is-it-made/",
+   "keywords": [
+    "nepali",
+    "tea",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Nepali tea and how is it made? Key Facts and Context",
+   "h1": "What is Nepali tea and how is it made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0010",
+   "slug": "how-does-a-gas-cylinder-regulator-work",
+   "question": "How does a gas cylinder regulator work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-gas-cylinder-regulator-work/",
+   "keywords": [
+    "gas",
+    "cylinder",
+    "regulator",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a gas cylinder regulator work?",
+   "h1": "How does a gas cylinder regulator work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0011",
+   "slug": "how-is-symmetry-used-in-real-life",
+   "question": "How is symmetry used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-symmetry-used-in-real-life/",
+   "keywords": [
+    "symmetry",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is symmetry used in real life? Facts, Myths and Evidence",
+   "h1": "How is symmetry used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0012",
+   "slug": "what-makes-jazz-unique",
+   "question": "What makes jazz unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-jazz-unique/",
+   "keywords": [
+    "makes",
+    "jazz",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes jazz unique? A Clear, Sourced Explanation",
+   "h1": "What makes jazz unique?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "batch": 101,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0108",
+   "slug": "why-do-solar-panels-need-sunlight-not-heat",
+   "question": "Why do solar panels need sunlight, not heat",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-do-solar-panels-need-sunlight-not-heat/",
+   "keywords": [
+    "solar",
+    "panels",
+    "need",
+    "sunlight",
+    "not",
+    "heat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do solar panels need sunlight, not heat?",
+   "h1": "Why do solar panels need sunlight, not heat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0109",
+   "slug": "how-do-puffins-sleep",
+   "question": "How do puffins sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-puffins-sleep/",
+   "keywords": [
+    "puffins",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do puffins sleep? What Science Actually Says",
+   "h1": "How do puffins sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0110",
+   "slug": "who-invented-the-radio-and-how",
+   "question": "Who invented the radio and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-radio-and-how/",
+   "keywords": [
+    "invented",
+    "radio"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the radio and how? The Story, Sourced",
+   "h1": "Who invented the radio and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0111",
+   "slug": "what-is-lagos-famous-for",
+   "question": "What is Lagos famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-lagos-famous-for/",
+   "keywords": [
+    "lagos",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Lagos famous for? A Clear Overview",
+   "h1": "What is Lagos famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0112",
+   "slug": "how-does-a-touchpad-work",
+   "question": "How does a touchpad work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-touchpad-work/",
+   "keywords": [
+    "touchpad",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a touchpad work? Explained With Sources",
+   "h1": "How does a touchpad work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0113",
+   "slug": "what-is-radioactivity",
+   "question": "What is radioactivity",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-radioactivity/",
+   "keywords": [
+    "radioactivity"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is radioactivity? What Science Actually Says",
+   "h1": "What is radioactivity?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0114",
+   "slug": "how-many-people-speak-vietnamese-and-where",
+   "question": "How many people speak Vietnamese and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-vietnamese-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "vietnamese"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Vietnamese and where?",
+   "h1": "How many people speak Vietnamese and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0115",
+   "slug": "how-is-salami-made",
+   "question": "How is salami made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-salami-made/",
+   "keywords": [
+    "salami",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is salami made? What Science Actually Says",
+   "h1": "How is salami made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0116",
+   "slug": "how-does-a-glider-work",
+   "question": "How does a glider work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-glider-work/",
+   "keywords": [
+    "glider",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a glider work? Facts, Myths and Evidence",
+   "h1": "How does a glider work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0117",
+   "slug": "what-is-janai-purnima-and-why-is-it-celebrated",
+   "question": "What is Janai Purnima and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-janai-purnima-and-why-is-it-celebrated/",
+   "keywords": [
+    "janai",
+    "purnima",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Janai Purnima and why is it celebrated?",
+   "h1": "What is Janai Purnima and why is it celebrated?",
+   "ymyl": false
+  }
+ ]
+}

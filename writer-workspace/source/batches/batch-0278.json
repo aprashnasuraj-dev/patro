@@ -1,0 +1,170 @@
+{
+ "batch": 278,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1889",
+   "slug": "what-is-petra-famous-for",
+   "question": "What is Petra famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-petra-famous-for/",
+   "keywords": [
+    "petra",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Petra famous for? The Story, Sourced",
+   "h1": "What is Petra famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1890",
+   "slug": "how-does-a-noise-cancelling-headphones-work",
+   "question": "How does a noise-cancelling headphones work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-noise-cancelling-headphones-work/",
+   "keywords": [
+    "noise-cancelling",
+    "headphones",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a noise-cancelling headphones work?",
+   "h1": "How does a noise-cancelling headphones work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1891",
+   "slug": "why-does-electricity-matter-in-everyday-life",
+   "question": "Why does electricity matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-electricity-matter-in-everyday-life/",
+   "keywords": [
+    "electricity",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does electricity matter in everyday life?",
+   "h1": "Why does electricity matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1892",
+   "slug": "how-many-people-speak-portuguese-and-where",
+   "question": "How many people speak Portuguese and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-portuguese-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "portuguese"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Portuguese and where?",
+   "h1": "How many people speak Portuguese and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1893",
+   "slug": "how-do-woodpeckers-sleep",
+   "question": "How do woodpeckers sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-woodpeckers-sleep/",
+   "keywords": [
+    "woodpeckers",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do woodpeckers sleep? The Real Answer, Explained",
+   "h1": "How do woodpeckers sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1894",
+   "slug": "what-is-nelson-mandela-best-known-for",
+   "question": "What is Nelson Mandela best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-nelson-mandela-best-known-for/",
+   "keywords": [
+    "nelson",
+    "mandela",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Nelson Mandela best known for? The Story, Sourced",
+   "h1": "What is Nelson Mandela best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1895",
+   "slug": "what-is-the-economy-of-poland-based-on",
+   "question": "What is the economy of Poland based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-poland-based-on/",
+   "keywords": [
+    "economy",
+    "poland",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Poland based on? Facts and Background",
+   "h1": "What is the economy of Poland based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1896",
+   "slug": "how-does-gps-work",
+   "question": "How does GPS work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-gps-work/",
+   "keywords": [
+    "gps",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does GPS work? A Clear, Sourced Explanation",
+   "h1": "How does GPS work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1897",
+   "slug": "why-does-ultraviolet-light-matter-in-everyday-life",
+   "question": "Why does ultraviolet light matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-ultraviolet-light-matter-in-everyday-life/",
+   "keywords": [
+    "ultraviolet",
+    "light",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does ultraviolet light matter in everyday life?",
+   "h1": "Why does ultraviolet light matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1898",
+   "slug": "how-many-people-speak-thai-and-where",
+   "question": "How many people speak Thai and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-thai-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "thai"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Thai and where? A Clear Overview",
+   "h1": "How many people speak Thai and where?",
+   "ymyl": false
+  }
+ ]
+}

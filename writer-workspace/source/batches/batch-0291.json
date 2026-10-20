@@ -1,0 +1,167 @@
+{
+ "batch": 291,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2021",
+   "slug": "what-is-the-economy-of-greece-based-on",
+   "question": "What is the economy of Greece based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-greece-based-on/",
+   "keywords": [
+    "economy",
+    "greece",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Greece based on?",
+   "h1": "What is the economy of Greece based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2022",
+   "slug": "what-is-the-internet-of-things",
+   "question": "What is the Internet of Things",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-internet-of-things/",
+   "keywords": [
+    "internet",
+    "things"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the Internet of Things? Facts, Myths and Evidence",
+   "h1": "What is the Internet of Things?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2023",
+   "slug": "how-does-sound-travel-through-air",
+   "question": "How does sound travel through air",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-does-sound-travel-through-air/",
+   "keywords": [
+    "sound",
+    "travel",
+    "through",
+    "air"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does sound travel through air? Facts, Myths and Evidence",
+   "h1": "How does sound travel through air?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2024",
+   "slug": "where-did-the-latin-language-come-from",
+   "question": "Where did the Latin language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-latin-language-come-from/",
+   "keywords": [
+    "did",
+    "latin",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Latin language come from? Facts and Background",
+   "h1": "Where did the Latin language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2025",
+   "slug": "where-do-herons-live-in-the-wild",
+   "question": "Where do herons live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-herons-live-in-the-wild/",
+   "keywords": [
+    "herons",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do herons live in the wild?",
+   "h1": "Where do herons live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2026",
+   "slug": "what-caused-the-reign-of-terror",
+   "question": "What caused the Reign of Terror",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-reign-of-terror/",
+   "keywords": [
+    "caused",
+    "reign",
+    "terror"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Reign of Terror? The Short, Sourced Answer",
+   "h1": "What caused the Reign of Terror?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2027",
+   "slug": "how-did-darjeeling-get-its-name",
+   "question": "How did Darjeeling get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-darjeeling-get-its-name/",
+   "keywords": [
+    "did",
+    "darjeeling",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Darjeeling get its name? A Clear Overview",
+   "h1": "How did Darjeeling get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2028",
+   "slug": "what-is-wi-fi",
+   "question": "What is Wi-Fi",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-wi-fi/",
+   "keywords": [
+    "wi-fi"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Wi-Fi? Facts, Myths and Evidence",
+   "h1": "What is Wi-Fi?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2029",
+   "slug": "what-is-dna",
+   "question": "What is DNA",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-dna/",
+   "keywords": [
+    "dna"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is DNA? A Clear, Sourced Explanation",
+   "h1": "What is DNA?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2030",
+   "slug": "how-many-people-speak-arabic-and-where",
+   "question": "How many people speak Arabic and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-arabic-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "arabic"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Arabic and where? Facts and Background",
+   "h1": "How many people speak Arabic and where?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,178 @@
+{
+ "batch": 57,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1251",
+   "slug": "how-loneliness-affects-health",
+   "question": "How loneliness affects health",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-loneliness-affects-health/",
+   "keywords": [
+    "loneliness",
+    "affects",
+    "health",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Loneliness Affects Health? Facts, Myths and Evidence",
+   "h1": "How Loneliness Affects Health?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1253",
+   "slug": "how-instant-noodles-were-invented",
+   "question": "How instant noodles were invented",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-instant-noodles-were-invented/",
+   "keywords": [
+    "instant",
+    "noodles",
+    "were",
+    "invented",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Instant Noodles Were Invented?",
+   "h1": "How Instant Noodles Were Invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1255",
+   "slug": "how-superglue-sticks",
+   "question": "How superglue sticks",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-superglue-sticks/",
+   "keywords": [
+    "superglue",
+    "sticks",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Superglue Sticks? The Real Answer, Explained",
+   "h1": "How Superglue Sticks?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1257",
+   "slug": "how-a-cpu-executes-instructions",
+   "question": "How a CPU executes instructions",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-a-cpu-executes-instructions/",
+   "keywords": [
+    "cpu",
+    "executes",
+    "instructions",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How A CPU Executes Instructions? What Science Actually Says",
+   "h1": "How A CPU Executes Instructions?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1259",
+   "slug": "how-fine-tuning-customizes-models",
+   "question": "How fine-tuning customizes models",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-fine-tuning-customizes-models/",
+   "keywords": [
+    "fine-tuning",
+    "customizes",
+    "models",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Fine-tuning Customizes Models? Facts, Myths and Evidence",
+   "h1": "How Fine-tuning Customizes Models?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1261",
+   "slug": "why-the-berlin-wall-fell",
+   "question": "Why the Berlin Wall fell",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-berlin-wall-fell/",
+   "keywords": [
+    "berlin",
+    "wall",
+    "fell",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Berlin Wall Fell? A Clear, Sourced Explanation",
+   "h1": "Why The Berlin Wall Fell?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1263",
+   "slug": "how-new-zealand-handles-remote-location",
+   "question": "How New Zealand handles remote location",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-new-zealand-handles-remote-location/",
+   "keywords": [
+    "new",
+    "zealand",
+    "handles",
+    "remote",
+    "location",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How New Zealand Handles Remote Location?",
+   "h1": "How New Zealand Handles Remote Location?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1267",
+   "slug": "how-laundry-detergent-works",
+   "question": "How laundry detergent works",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-laundry-detergent-works/",
+   "keywords": [
+    "laundry",
+    "detergent",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Laundry Detergent Works? Facts, Myths and Evidence",
+   "h1": "How Laundry Detergent Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1269",
+   "slug": "how-wedding-customs-differ",
+   "question": "How wedding customs differ",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-wedding-customs-differ/",
+   "keywords": [
+    "wedding",
+    "customs",
+    "differ",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Wedding Customs Differ? The Real Answer, Explained",
+   "h1": "How Wedding Customs Differ?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1271",
+   "slug": "how-algebra-got-its-name",
+   "question": "How algebra got its name",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-algebra-got-its-name/",
+   "keywords": [
+    "algebra",
+    "got",
+    "name",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Algebra Got Its Name? The Real Answer, Explained",
+   "h1": "How Algebra Got Its Name?",
+   "ymyl": false
+  }
+ ]
+}

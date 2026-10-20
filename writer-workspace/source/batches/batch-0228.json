@@ -1,0 +1,167 @@
+{
+ "batch": 228,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1387",
+   "slug": "why-do-sound-waves-matter-in-everyday-life",
+   "question": "Why do sound waves matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-sound-waves-matter-in-everyday-life/",
+   "keywords": [
+    "sound",
+    "waves",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do sound waves matter in everyday life?",
+   "h1": "Why do sound waves matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1388",
+   "slug": "where-does-the-word-clue-come-from",
+   "question": "Where does the word \"clue\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-clue-come-from/",
+   "keywords": [
+    "word",
+    "clue",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"clue\" come from? Key Facts and Context",
+   "h1": "Where does the word \"clue\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1389",
+   "slug": "what-is-the-history-of-sugar",
+   "question": "What is the history of sugar",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-sugar/",
+   "keywords": [
+    "history",
+    "sugar"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of sugar? Key Facts and Context",
+   "h1": "What is the history of sugar?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1390",
+   "slug": "what-are-the-main-parts-of-a-sewage-treatment-plant",
+   "question": "What are the main parts of a sewage treatment plant",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-sewage-treatment-plant/",
+   "keywords": [
+    "main",
+    "parts",
+    "sewage",
+    "treatment",
+    "plant"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a sewage treatment plant?",
+   "h1": "What are the main parts of a sewage treatment plant?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1391",
+   "slug": "what-is-tihar-and-why-is-it-celebrated",
+   "question": "What is Tihar and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-tihar-and-why-is-it-celebrated/",
+   "keywords": [
+    "tihar",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Tihar and why is it celebrated? A Clear Overview",
+   "h1": "What is Tihar and why is it celebrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1392",
+   "slug": "how-does-a-washing-machine-work",
+   "question": "How does a washing machine work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-washing-machine-work/",
+   "keywords": [
+    "washing",
+    "machine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a washing machine work? Explained With Sources",
+   "h1": "How does a washing machine work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1393",
+   "slug": "what-are-sets-in-mathematics",
+   "question": "What are sets in mathematics",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-sets-in-mathematics/",
+   "keywords": [
+    "sets",
+    "mathematics"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are sets in mathematics? Explained With Sources",
+   "h1": "What are sets in mathematics?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1394",
+   "slug": "how-did-sonnets-start",
+   "question": "How did sonnets start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-sonnets-start/",
+   "keywords": [
+    "did",
+    "sonnets",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did sonnets start? The Real Answer, Explained",
+   "h1": "How did sonnets start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1395",
+   "slug": "why-do-clouds-float",
+   "question": "Why do clouds float",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-do-clouds-float/",
+   "keywords": [
+    "clouds",
+    "float"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do clouds float? Facts, Myths and Evidence",
+   "h1": "Why do clouds float?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1396",
+   "slug": "where-do-eels-live-in-the-wild",
+   "question": "Where do eels live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-eels-live-in-the-wild/",
+   "keywords": [
+    "eels",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do eels live in the wild? The Real Answer, Explained",
+   "h1": "Where do eels live in the wild?",
+   "ymyl": false
+  }
+ ]
+}

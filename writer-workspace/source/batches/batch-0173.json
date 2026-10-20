@@ -1,0 +1,173 @@
+{
+ "batch": 173,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0835",
+   "slug": "why-does-resistance-matter-in-everyday-life",
+   "question": "Why does resistance matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-resistance-matter-in-everyday-life/",
+   "keywords": [
+    "resistance",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does resistance matter in everyday life?",
+   "h1": "Why does resistance matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0836",
+   "slug": "where-does-the-word-tsunami-come-from",
+   "question": "Where does the word \"tsunami\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-tsunami-come-from/",
+   "keywords": [
+    "word",
+    "tsunami",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"tsunami\" come from?",
+   "h1": "Where does the word \"tsunami\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0837",
+   "slug": "why-does-lemon-juice-stop-fruit-from-browning",
+   "question": "Why does lemon juice stop fruit from browning",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-does-lemon-juice-stop-fruit-from-browning/",
+   "keywords": [
+    "lemon",
+    "juice",
+    "stop",
+    "fruit",
+    "browning"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does lemon juice stop fruit from browning?",
+   "h1": "Why does lemon juice stop fruit from browning?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0838",
+   "slug": "how-does-a-car-battery-work",
+   "question": "How does a car battery work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-car-battery-work/",
+   "keywords": [
+    "car",
+    "battery",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a car battery work? Facts, Myths and Evidence",
+   "h1": "How does a car battery work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0839",
+   "slug": "what-is-special-about-cho-oyu",
+   "question": "What is special about Cho Oyu",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-cho-oyu/",
+   "keywords": [
+    "special",
+    "about",
+    "cho",
+    "oyu"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Cho Oyu? Facts, Myths and Evidence",
+   "h1": "What is special about Cho Oyu?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0840",
+   "slug": "what-are-the-main-parts-of-a-reverse-osmosis-filter",
+   "question": "What are the main parts of a reverse osmosis filter",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-reverse-osmosis-filter/",
+   "keywords": [
+    "main",
+    "parts",
+    "reverse",
+    "osmosis",
+    "filter"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a reverse osmosis filter?",
+   "h1": "What are the main parts of a reverse osmosis filter?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0841",
+   "slug": "why-do-we-have-leap-years",
+   "question": "Why do we have leap years",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-have-leap-years/",
+   "keywords": [
+    "have",
+    "leap",
+    "years"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we have leap years? Facts, Myths and Evidence",
+   "h1": "Why do we have leap years?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0842",
+   "slug": "what-makes-thangka-painting-unique",
+   "question": "What makes thangka painting unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-thangka-painting-unique/",
+   "keywords": [
+    "makes",
+    "thangka",
+    "painting",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes thangka painting unique?",
+   "h1": "What makes thangka painting unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0843",
+   "slug": "what-causes-smog",
+   "question": "What causes smog",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-smog/",
+   "keywords": [
+    "causes",
+    "smog"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes smog? The Real Answer, Explained",
+   "h1": "What causes smog?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0844",
+   "slug": "how-long-is-a-day-on-mercury",
+   "question": "How long is a day on Mercury",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-long-is-a-day-on-mercury/",
+   "keywords": [
+    "long",
+    "day",
+    "mercury"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long is a day on Mercury? A Clear, Sourced Explanation",
+   "h1": "How long is a day on Mercury?",
+   "ymyl": false
+  }
+ ]
+}

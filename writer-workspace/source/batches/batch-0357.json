@@ -1,0 +1,168 @@
+{
+ "batch": 357,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2683",
+   "slug": "what-caused-the-building-of-the-pyramids",
+   "question": "What caused the building of the pyramids",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-building-of-the-pyramids/",
+   "keywords": [
+    "caused",
+    "building",
+    "pyramids"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the building of the pyramids?",
+   "h1": "What caused the building of the pyramids?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2684",
+   "slug": "what-is-cuba-known-for",
+   "question": "What is Cuba known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-cuba-known-for/",
+   "keywords": [
+    "cuba",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Cuba known for? The Short, Sourced Answer",
+   "h1": "What is Cuba known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2685",
+   "slug": "how-do-snow-leopards-communicate",
+   "question": "How do snow leopards communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-snow-leopards-communicate/",
+   "keywords": [
+    "snow",
+    "leopards",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do snow leopards communicate?",
+   "h1": "How do snow leopards communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2686",
+   "slug": "what-were-the-main-consequences-of-world-war-ii",
+   "question": "What were the main consequences of World War II",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-world-war-ii/",
+   "keywords": [
+    "main",
+    "consequences",
+    "world",
+    "war"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of World War II?",
+   "h1": "What were the main consequences of World War II?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2687",
+   "slug": "what-is-auckland-famous-for",
+   "question": "What is Auckland famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-auckland-famous-for/",
+   "keywords": [
+    "auckland",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Auckland famous for? A Clear Overview",
+   "h1": "What is Auckland famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2688",
+   "slug": "where-did-yaks-come-from",
+   "question": "Where did yaks come from",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-did-yaks-come-from/",
+   "keywords": [
+    "did",
+    "yaks",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did yaks come from? The Short, Sourced Answer",
+   "h1": "Where did yaks come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2689",
+   "slug": "what-caused-the-ottoman-empire-s-rise",
+   "question": "What caused the Ottoman Empire's rise",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-ottoman-empire-s-rise/",
+   "keywords": [
+    "caused",
+    "ottoman",
+    "empire",
+    "rise"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Ottoman Empire's rise? The Story, Sourced",
+   "h1": "What caused the Ottoman Empire's rise?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2690",
+   "slug": "how-did-chicago-get-its-name",
+   "question": "How did Chicago get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-chicago-get-its-name/",
+   "keywords": [
+    "did",
+    "chicago",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Chicago get its name? The Short, Sourced Answer",
+   "h1": "How did Chicago get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2691",
+   "slug": "how-do-pangolins-communicate",
+   "question": "How do pangolins communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-pangolins-communicate/",
+   "keywords": [
+    "pangolins",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do pangolins communicate? The Real Answer, Explained",
+   "h1": "How do pangolins communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2692",
+   "slug": "what-is-euclid-best-known-for",
+   "question": "What is Euclid best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-euclid-best-known-for/",
+   "keywords": [
+    "euclid",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Euclid best known for? A Clear Overview",
+   "h1": "What is Euclid best known for?",
+   "ymyl": false
+  }
+ ]
+}

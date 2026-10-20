@@ -1,0 +1,168 @@
+{
+ "batch": 191,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1015",
+   "slug": "what-is-absolute-zero",
+   "question": "What is absolute zero",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-absolute-zero/",
+   "keywords": [
+    "absolute",
+    "zero"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is absolute zero? What Science Actually Says",
+   "h1": "What is absolute zero?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1016",
+   "slug": "where-does-the-word-orange-come-from",
+   "question": "Where does the word \"orange\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-orange-come-from/",
+   "keywords": [
+    "word",
+    "orange",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"orange\" come from? Facts and Background",
+   "h1": "Where does the word \"orange\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1017",
+   "slug": "how-are-bagels-made",
+   "question": "How are bagels made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-are-bagels-made/",
+   "keywords": [
+    "bagels",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are bagels made? The Real Answer, Explained",
+   "h1": "How are bagels made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1018",
+   "slug": "how-does-a-rocket-engine-work",
+   "question": "How does a rocket engine work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-rocket-engine-work/",
+   "keywords": [
+    "rocket",
+    "engine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a rocket engine work? A Clear, Sourced Explanation",
+   "h1": "How does a rocket engine work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1019",
+   "slug": "what-is-indra-jatra-and-why-is-it-celebrated",
+   "question": "What is Indra Jatra and why is it celebrated",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-indra-jatra-and-why-is-it-celebrated/",
+   "keywords": [
+    "indra",
+    "jatra",
+    "celebrated"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Indra Jatra and why is it celebrated?",
+   "h1": "What is Indra Jatra and why is it celebrated?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1020",
+   "slug": "what-are-the-main-parts-of-a-solar-water-heater",
+   "question": "What are the main parts of a solar water heater",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-solar-water-heater/",
+   "keywords": [
+    "main",
+    "parts",
+    "solar",
+    "water",
+    "heater"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a solar water heater?",
+   "h1": "What are the main parts of a solar water heater?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1021",
+   "slug": "how-are-roman-numerals-used-in-real-life",
+   "question": "How are Roman numerals used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-are-roman-numerals-used-in-real-life/",
+   "keywords": [
+    "roman",
+    "numerals",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are Roman numerals used in real life?",
+   "h1": "How are Roman numerals used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1022",
+   "slug": "what-makes-the-guitar-unique",
+   "question": "What makes the guitar unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-the-guitar-unique/",
+   "keywords": [
+    "makes",
+    "guitar",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes the guitar unique? What Science Actually Says",
+   "h1": "What makes the guitar unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1023",
+   "slug": "what-causes-heat-waves",
+   "question": "What causes heat waves",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-heat-waves/",
+   "keywords": [
+    "causes",
+    "heat",
+    "waves"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes heat waves? Explained With Sources",
+   "h1": "What causes heat waves?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1024",
+   "slug": "what-is-the-observable-universe",
+   "question": "What is the observable universe",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-observable-universe/",
+   "keywords": [
+    "observable",
+    "universe"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the observable universe? Explained With Sources",
+   "h1": "What is the observable universe?",
+   "ymyl": false
+  }
+ ]
+}

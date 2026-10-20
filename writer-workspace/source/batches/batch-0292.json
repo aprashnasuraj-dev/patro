@@ -1,0 +1,165 @@
+{
+ "batch": 292,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2031",
+   "slug": "how-do-squirrels-sleep",
+   "question": "How do squirrels sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-squirrels-sleep/",
+   "keywords": [
+    "squirrels",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do squirrels sleep? Facts, Myths and Evidence",
+   "h1": "How do squirrels sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2032",
+   "slug": "what-is-hypatia-best-known-for",
+   "question": "What is Hypatia best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-hypatia-best-known-for/",
+   "keywords": [
+    "hypatia",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Hypatia best known for? Facts and Background",
+   "h1": "What is Hypatia best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2033",
+   "slug": "what-is-seoul-famous-for",
+   "question": "What is Seoul famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-seoul-famous-for/",
+   "keywords": [
+    "seoul",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Seoul famous for? Facts and Background",
+   "h1": "What is Seoul famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2034",
+   "slug": "what-are-algorithms",
+   "question": "What are algorithms",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-algorithms/",
+   "keywords": [
+    "algorithms"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are algorithms? Facts, Myths and Evidence",
+   "h1": "What are algorithms?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2035",
+   "slug": "why-does-peer-review-matter-in-everyday-life",
+   "question": "Why does peer review matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-peer-review-matter-in-everyday-life/",
+   "keywords": [
+    "peer",
+    "review",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does peer review matter in everyday life?",
+   "h1": "Why does peer review matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2036",
+   "slug": "how-many-people-speak-japanese-and-where",
+   "question": "How many people speak Japanese and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-japanese-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "japanese"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Japanese and where? The Story, Sourced",
+   "h1": "How many people speak Japanese and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2037",
+   "slug": "how-long-do-llamas-live",
+   "question": "How long do llamas live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-llamas-live/",
+   "keywords": [
+    "long",
+    "llamas",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do llamas live? A Clear, Sourced Explanation",
+   "h1": "How long do llamas live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2038",
+   "slug": "what-is-nikola-tesla-best-known-for",
+   "question": "What is Nikola Tesla best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-nikola-tesla-best-known-for/",
+   "keywords": [
+    "nikola",
+    "tesla",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Nikola Tesla best known for? Key Facts and Context",
+   "h1": "What is Nikola Tesla best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2039",
+   "slug": "what-is-kenya-known-for",
+   "question": "What is Kenya known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-kenya-known-for/",
+   "keywords": [
+    "kenya",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Kenya known for? Key Facts and Context",
+   "h1": "What is Kenya known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2040",
+   "slug": "what-are-operating-systems",
+   "question": "What are operating systems",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-operating-systems/",
+   "keywords": [
+    "operating",
+    "systems"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are operating systems? Explained With Sources",
+   "h1": "What are operating systems?",
+   "ymyl": false
+  }
+ ]
+}

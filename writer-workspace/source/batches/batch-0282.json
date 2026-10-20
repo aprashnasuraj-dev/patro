@@ -1,0 +1,166 @@
+{
+ "batch": 282,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1929",
+   "slug": "how-do-blue-whales-communicate",
+   "question": "How do blue whales communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-blue-whales-communicate/",
+   "keywords": [
+    "blue",
+    "whales",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do blue whales communicate? Explained With Sources",
+   "h1": "How do blue whales communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1930",
+   "slug": "what-caused-the-eruption-of-vesuvius",
+   "question": "What caused the eruption of Vesuvius",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-eruption-of-vesuvius/",
+   "keywords": [
+    "caused",
+    "eruption",
+    "vesuvius"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the eruption of Vesuvius?",
+   "h1": "What caused the eruption of Vesuvius?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1931",
+   "slug": "what-is-the-history-of-france",
+   "question": "What is the history of France",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-france/",
+   "keywords": [
+    "history",
+    "france"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of France? The Story, Sourced",
+   "h1": "What is the history of France?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1932",
+   "slug": "how-do-biometrics-work",
+   "question": "How do biometrics work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-biometrics-work/",
+   "keywords": [
+    "biometrics",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do biometrics work? The Real Answer, Explained",
+   "h1": "How do biometrics work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1933",
+   "slug": "why-does-dna-matter-in-everyday-life",
+   "question": "Why does DNA matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-dna-matter-in-everyday-life/",
+   "keywords": [
+    "dna",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does DNA matter in everyday life? Explained With Sources",
+   "h1": "Why does DNA matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1934",
+   "slug": "where-does-the-phrase-a-piece-of-cake-come-from",
+   "question": "Where does the phrase \"a piece of cake\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-phrase-a-piece-of-cake-come-from/",
+   "keywords": [
+    "phrase",
+    "piece",
+    "cake",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the phrase \"a piece of cake\" come from?",
+   "h1": "Where does the phrase \"a piece of cake\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1935",
+   "slug": "where-do-alligators-live-in-the-wild",
+   "question": "Where do alligators live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-alligators-live-in-the-wild/",
+   "keywords": [
+    "alligators",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do alligators live in the wild? Explained With Sources",
+   "h1": "Where do alligators live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1936",
+   "slug": "who-invented-the-pendulum-clock-and-how",
+   "question": "Who invented the pendulum clock and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-the-pendulum-clock-and-how/",
+   "keywords": [
+    "invented",
+    "pendulum",
+    "clock"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented the pendulum clock and how?",
+   "h1": "Who invented the pendulum clock and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1937",
+   "slug": "what-is-belgium-known-for",
+   "question": "What is Belgium known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-belgium-known-for/",
+   "keywords": [
+    "belgium",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Belgium known for? Facts and Background",
+   "h1": "What is Belgium known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1938",
+   "slug": "how-does-a-geiger-counter-work",
+   "question": "How does a Geiger counter work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-geiger-counter-work/",
+   "keywords": [
+    "geiger",
+    "counter",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a Geiger counter work? A Clear, Sourced Explanation",
+   "h1": "How does a Geiger counter work?",
+   "ymyl": false
+  }
+ ]
+}

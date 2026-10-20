@@ -1,0 +1,178 @@
+{
+ "batch": 12,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0251",
+   "slug": "why-we-love-music",
+   "question": "Why we love music",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-love-music/",
+   "keywords": [
+    "love",
+    "music",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Love Music? Facts, Myths and Evidence",
+   "h1": "Why We Love Music?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0253",
+   "slug": "why-popcorn-pops",
+   "question": "Why popcorn pops",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-popcorn-pops/",
+   "keywords": [
+    "popcorn",
+    "pops",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Popcorn Pops? What Science Actually Says",
+   "h1": "Why Popcorn Pops?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0255",
+   "slug": "why-the-sky-turns-orange-at-sunset",
+   "question": "Why the sky turns orange at sunset",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-the-sky-turns-orange-at-sunset/",
+   "keywords": [
+    "sky",
+    "turns",
+    "orange",
+    "sunset",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Sky Turns Orange At Sunset?",
+   "h1": "Why The Sky Turns Orange At Sunset?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0257",
+   "slug": "why-phones-get-hot",
+   "question": "Why phones get hot",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-phones-get-hot/",
+   "keywords": [
+    "phones",
+    "hot",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Phones Get Hot? What Science Actually Says",
+   "h1": "Why Phones Get Hot?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0259",
+   "slug": "what-prompt-engineering-is",
+   "question": "What prompt engineering is",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-prompt-engineering-is/",
+   "keywords": [
+    "prompt",
+    "engineering",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What Prompt Engineering Is? What Science Actually Says",
+   "h1": "What Prompt Engineering Is?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0261",
+   "slug": "how-the-printing-press-changed-the-world",
+   "question": "How the printing press changed the world",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-printing-press-changed-the-world/",
+   "keywords": [
+    "printing",
+    "press",
+    "changed",
+    "world",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Printing Press Changed The World?",
+   "h1": "How The Printing Press Changed The World?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0263",
+   "slug": "why-brazil-speaks-portuguese",
+   "question": "Why Brazil speaks Portuguese",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-brazil-speaks-portuguese/",
+   "keywords": [
+    "brazil",
+    "speaks",
+    "portuguese",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Brazil Speaks Portuguese? Explained With Sources",
+   "h1": "Why Brazil Speaks Portuguese?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0267",
+   "slug": "why-traffic-jams-happen-without-accidents",
+   "question": "Why traffic jams happen without accidents",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-traffic-jams-happen-without-accidents/",
+   "keywords": [
+    "traffic",
+    "jams",
+    "happen",
+    "without",
+    "accidents",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Traffic Jams Happen Without Accidents?",
+   "h1": "Why Traffic Jams Happen Without Accidents?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0269",
+   "slug": "why-some-words-have-no-translation",
+   "question": "Why some words have no translation",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-some-words-have-no-translation/",
+   "keywords": [
+    "some",
+    "words",
+    "have",
+    "translation",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Some Words Have No Translation?",
+   "h1": "Why Some Words Have No Translation?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0271",
+   "slug": "why-the-birthday-paradox-surprises",
+   "question": "Why the birthday paradox surprises",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-the-birthday-paradox-surprises/",
+   "keywords": [
+    "birthday",
+    "paradox",
+    "surprises",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Birthday Paradox Surprises? Explained With Sources",
+   "h1": "Why The Birthday Paradox Surprises?",
+   "ymyl": false
+  }
+ ]
+}

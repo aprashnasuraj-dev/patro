@@ -1,0 +1,175 @@
+{
+ "batch": 40,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0873",
+   "slug": "how-green-hydrogen-works",
+   "question": "How green hydrogen works",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-green-hydrogen-works/",
+   "keywords": [
+    "green",
+    "hydrogen",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Green Hydrogen Works? Facts, Myths and Evidence",
+   "h1": "How Green Hydrogen Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0875",
+   "slug": "why-runways-are-so-long",
+   "question": "Why runways are so long",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-runways-are-so-long/",
+   "keywords": [
+    "runways",
+    "long",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Runways Are So Long? The Real Answer, Explained",
+   "h1": "Why Runways Are So Long?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0877",
+   "slug": "why-one-horned-rhinos-thrive-in-chitwan",
+   "question": "Why one-horned rhinos thrive in Chitwan",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-one-horned-rhinos-thrive-in-chitwan/",
+   "keywords": [
+    "one-horned",
+    "rhinos",
+    "thrive",
+    "chitwan",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why One-horned Rhinos Thrive In Chitwan?",
+   "h1": "Why One-horned Rhinos Thrive In Chitwan?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0879",
+   "slug": "how-drums-communicated-across-distances",
+   "question": "How drums communicated across distances",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-drums-communicated-across-distances/",
+   "keywords": [
+    "drums",
+    "communicated",
+    "across",
+    "distances",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Drums Communicated Across Distances?",
+   "h1": "How Drums Communicated Across Distances?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0881",
+   "slug": "why-dandelions-are-so-hard-to-kill",
+   "question": "Why dandelions are so hard to kill",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-dandelions-are-so-hard-to-kill/",
+   "keywords": [
+    "dandelions",
+    "hard",
+    "kill",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dandelions Are So Hard To Kill?",
+   "h1": "Why Dandelions Are So Hard To Kill?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0883",
+   "slug": "how-fireflies-glow",
+   "question": "How fireflies glow",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-fireflies-glow/",
+   "keywords": [
+    "fireflies",
+    "glow",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Fireflies Glow? Explained With Sources",
+   "h1": "How Fireflies Glow?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0885",
+   "slug": "how-exoplanets-are-discovered",
+   "question": "How exoplanets are discovered",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-exoplanets-are-discovered/",
+   "keywords": [
+    "exoplanets",
+    "discovered",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Exoplanets Are Discovered? Facts, Myths and Evidence",
+   "h1": "How Exoplanets Are Discovered?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0887",
+   "slug": "why-rivers-meander",
+   "question": "Why rivers meander",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-rivers-meander/",
+   "keywords": [
+    "rivers",
+    "meander",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Rivers Meander? Facts, Myths and Evidence",
+   "h1": "Why Rivers Meander?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0891",
+   "slug": "why-money-affects-happiness",
+   "question": "Why money affects happiness",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-money-affects-happiness/",
+   "keywords": [
+    "money",
+    "affects",
+    "happiness",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Money Affects Happiness? Facts, Myths and Evidence",
+   "h1": "Why Money Affects Happiness?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0893",
+   "slug": "why-chili-peppers-evolved-heat",
+   "question": "Why chili peppers evolved heat",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-chili-peppers-evolved-heat/",
+   "keywords": [
+    "chili",
+    "peppers",
+    "evolved",
+    "heat",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Chili Peppers Evolved Heat? Facts, Myths and Evidence",
+   "h1": "Why Chili Peppers Evolved Heat?",
+   "ymyl": false
+  }
+ ]
+}

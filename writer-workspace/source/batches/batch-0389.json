@@ -1,0 +1,165 @@
+{
+ "batch": 389,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0052",
+   "slug": "how-does-a-pacemaker-work",
+   "question": "How does a pacemaker work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-pacemaker-work/",
+   "keywords": [
+    "pacemaker",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a pacemaker work? Facts, Myths and Evidence",
+   "h1": "How does a pacemaker work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0088",
+   "slug": "how-does-an-mri-machine-work",
+   "question": "How does an MRI machine work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-mri-machine-work/",
+   "keywords": [
+    "mri",
+    "machine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an MRI machine work? A Clear, Sourced Explanation",
+   "h1": "How does an MRI machine work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0106",
+   "slug": "how-does-a-blood-pressure-monitor-work",
+   "question": "How does a blood pressure monitor work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-blood-pressure-monitor-work/",
+   "keywords": [
+    "blood",
+    "pressure",
+    "monitor",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a blood pressure monitor work?",
+   "h1": "How does a blood pressure monitor work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0178",
+   "slug": "how-does-a-hearing-aid-work",
+   "question": "How does a hearing aid work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-hearing-aid-work/",
+   "keywords": [
+    "hearing",
+    "aid",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a hearing aid work? Facts, Myths and Evidence",
+   "h1": "How does a hearing aid work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0196",
+   "slug": "how-does-an-x-ray-machine-work",
+   "question": "How does an X-ray machine work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-x-ray-machine-work/",
+   "keywords": [
+    "x-ray",
+    "machine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an X-ray machine work? What Science Actually Says",
+   "h1": "How does an X-ray machine work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0214",
+   "slug": "how-does-an-insulin-pump-work",
+   "question": "How does an insulin pump work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-insulin-pump-work/",
+   "keywords": [
+    "insulin",
+    "pump",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an insulin pump work? Explained With Sources",
+   "h1": "How does an insulin pump work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0419",
+   "slug": "how-does-a-pulse-oximeter-work",
+   "question": "How does a pulse oximeter work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-pulse-oximeter-work/",
+   "keywords": [
+    "pulse",
+    "oximeter",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a pulse oximeter work? Explained With Sources",
+   "h1": "How does a pulse oximeter work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0436",
+   "slug": "how-does-a-stethoscope-work",
+   "question": "How does a stethoscope work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-stethoscope-work/",
+   "keywords": [
+    "stethoscope",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a stethoscope work? What Science Actually Says",
+   "h1": "How does a stethoscope work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0453",
+   "slug": "how-does-an-electrocardiogram-machine-work",
+   "question": "How does an electrocardiogram machine work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-electrocardiogram-machine-work/",
+   "keywords": [
+    "electrocardiogram",
+    "machine",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an electrocardiogram machine work?",
+   "h1": "How does an electrocardiogram machine work?",
+   "ymyl": true
+  },
+  {
+   "id": "mn-0470",
+   "slug": "how-does-a-defibrillator-work",
+   "question": "How does a defibrillator work",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-defibrillator-work/",
+   "keywords": [
+    "defibrillator",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a defibrillator work? Facts, Myths and Evidence",
+   "h1": "How does a defibrillator work?",
+   "ymyl": true
+  }
+ ]
+}

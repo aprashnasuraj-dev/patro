@@ -1,0 +1,165 @@
+{
+ "batch": 206,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1166",
+   "slug": "where-did-the-dutch-language-come-from",
+   "question": "Where did the Dutch language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-dutch-language-come-from/",
+   "keywords": [
+    "did",
+    "dutch",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Dutch language come from? Facts and Background",
+   "h1": "Where did the Dutch language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1167",
+   "slug": "how-is-peanut-butter-made",
+   "question": "How is peanut butter made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-peanut-butter-made/",
+   "keywords": [
+    "peanut",
+    "butter",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is peanut butter made? A Clear, Sourced Explanation",
+   "h1": "How is peanut butter made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1168",
+   "slug": "what-are-the-main-parts-of-a-lithium-ion-battery",
+   "question": "What are the main parts of a lithium-ion battery",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-lithium-ion-battery/",
+   "keywords": [
+    "main",
+    "parts",
+    "lithium-ion",
+    "battery"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a lithium-ion battery?",
+   "h1": "What are the main parts of a lithium-ion battery?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1169",
+   "slug": "where-is-annapurna-and-how-high-is-it",
+   "question": "Where is Annapurna and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-annapurna-and-how-high-is-it/",
+   "keywords": [
+    "annapurna",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Annapurna and how high is it?",
+   "h1": "Where is Annapurna and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1170",
+   "slug": "what-are-the-main-parts-of-a-blender",
+   "question": "What are the main parts of a blender",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-blender/",
+   "keywords": [
+    "main",
+    "parts",
+    "blender"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a blender?",
+   "h1": "What are the main parts of a blender?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1171",
+   "slug": "what-are-logarithms",
+   "question": "What are logarithms",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-are-logarithms/",
+   "keywords": [
+    "logarithms"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are logarithms? What Science Actually Says",
+   "h1": "What are logarithms?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1172",
+   "slug": "what-makes-opera-unique",
+   "question": "What makes opera unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-opera-unique/",
+   "keywords": [
+    "makes",
+    "opera",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes opera unique? Explained With Sources",
+   "h1": "What makes opera unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1173",
+   "slug": "how-do-rivers-form",
+   "question": "How do rivers form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-rivers-form/",
+   "keywords": [
+    "rivers",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do rivers form? What Science Actually Says",
+   "h1": "How do rivers form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1174",
+   "slug": "why-does-the-moon-have-phases",
+   "question": "Why does the Moon have phases",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-does-the-moon-have-phases/",
+   "keywords": [
+    "moon",
+    "have",
+    "phases"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does the Moon have phases? A Clear, Sourced Explanation",
+   "h1": "Why does the Moon have phases?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1175",
+   "slug": "why-do-dogs-howl-at-sirens",
+   "question": "Why do dogs howl at sirens",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-do-dogs-howl-at-sirens/",
+   "keywords": [
+    "dogs",
+    "howl",
+    "sirens"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do dogs howl at sirens? Facts, Myths and Evidence",
+   "h1": "Why do dogs howl at sirens?",
+   "ymyl": false
+  }
+ ]
+}

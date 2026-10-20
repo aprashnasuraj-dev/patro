@@ -1,0 +1,180 @@
+{
+ "batch": 87,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1917",
+   "slug": "why-nepals-cuisine-uses-timur-pepper",
+   "question": "Why Nepal's cuisine uses timur pepper",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepals-cuisine-uses-timur-pepper/",
+   "keywords": [
+    "nepal",
+    "cuisine",
+    "uses",
+    "timur",
+    "pepper",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal's Cuisine Uses Timur Pepper?",
+   "h1": "Why Nepal's Cuisine Uses Timur Pepper?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1919",
+   "slug": "how-tabla-rhythms-are-structured",
+   "question": "How tabla rhythms are structured",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-tabla-rhythms-are-structured/",
+   "keywords": [
+    "tabla",
+    "rhythms",
+    "structured",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Tabla Rhythms Are Structured? The Real Answer, Explained",
+   "h1": "How Tabla Rhythms Are Structured?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1921",
+   "slug": "why-peppers-burn-your-tongue",
+   "question": "Why peppers burn your tongue",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-peppers-burn-your-tongue/",
+   "keywords": [
+    "peppers",
+    "burn",
+    "tongue",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Peppers Burn Your Tongue? A Clear, Sourced Explanation",
+   "h1": "Why Peppers Burn Your Tongue?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1923",
+   "slug": "how-jellyfish-survive-without-brains",
+   "question": "How jellyfish survive without brains",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-jellyfish-survive-without-brains/",
+   "keywords": [
+    "jellyfish",
+    "survive",
+    "without",
+    "brains",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Jellyfish Survive Without Brains?",
+   "h1": "How Jellyfish Survive Without Brains?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1925",
+   "slug": "how-mars-rovers-drive-themselves",
+   "question": "How Mars rovers drive themselves",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-mars-rovers-drive-themselves/",
+   "keywords": [
+    "mars",
+    "rovers",
+    "drive",
+    "themselves",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Mars Rovers Drive Themselves? The Real Answer, Explained",
+   "h1": "How Mars Rovers Drive Themselves?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1927",
+   "slug": "why-the-himalayas-keep-growing",
+   "question": "Why the Himalayas keep growing",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/why-the-himalayas-keep-growing/",
+   "keywords": [
+    "himalayas",
+    "growing",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Himalayas Keep Growing? A Clear, Sourced Explanation",
+   "h1": "Why The Himalayas Keep Growing?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1931",
+   "slug": "why-we-get-writers-block",
+   "question": "Why we get writer's block",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-we-get-writers-block/",
+   "keywords": [
+    "writer",
+    "block",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why We Get Writer's Block? What Science Actually Says",
+   "h1": "Why We Get Writer's Block?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1933",
+   "slug": "why-dumplings-exist-in-every-culture",
+   "question": "Why dumplings exist in every culture",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-dumplings-exist-in-every-culture/",
+   "keywords": [
+    "dumplings",
+    "exist",
+    "every",
+    "culture",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Dumplings Exist In Every Culture?",
+   "h1": "Why Dumplings Exist In Every Culture?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1935",
+   "slug": "why-wind-makes-you-feel-colder",
+   "question": "Why wind makes you feel colder",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-wind-makes-you-feel-colder/",
+   "keywords": [
+    "wind",
+    "feel",
+    "colder",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Wind Makes You Feel Colder? A Clear, Sourced Explanation",
+   "h1": "Why Wind Makes You Feel Colder?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1937",
+   "slug": "why-github-changed-software",
+   "question": "Why GitHub changed software",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/why-github-changed-software/",
+   "keywords": [
+    "github",
+    "changed",
+    "software",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Github Changed Software? A Clear, Sourced Explanation",
+   "h1": "Why Github Changed Software?",
+   "ymyl": false
+  }
+ ]
+}

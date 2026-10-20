@@ -1,0 +1,169 @@
+{
+ "batch": 139,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0495",
+   "slug": "what-are-the-main-parts-of-a-humidifier",
+   "question": "What are the main parts of a humidifier",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-humidifier/",
+   "keywords": [
+    "main",
+    "parts",
+    "humidifier"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a humidifier?",
+   "h1": "What are the main parts of a humidifier?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0496",
+   "slug": "how-is-the-collatz-conjecture-used-in-real-life",
+   "question": "How is the Collatz conjecture used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-the-collatz-conjecture-used-in-real-life/",
+   "keywords": [
+    "collatz",
+    "conjecture",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is the Collatz conjecture used in real life?",
+   "h1": "How is the Collatz conjecture used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0497",
+   "slug": "what-makes-cubism-unique",
+   "question": "What makes Cubism unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-cubism-unique/",
+   "keywords": [
+    "makes",
+    "cubism",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Cubism unique? Facts, Myths and Evidence",
+   "h1": "What makes Cubism unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0498",
+   "slug": "how-do-deltas-form",
+   "question": "How do deltas form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-deltas-form/",
+   "keywords": [
+    "deltas",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do deltas form? Explained With Sources",
+   "h1": "How do deltas form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0499",
+   "slug": "how-do-meteor-showers-form",
+   "question": "How do meteor showers form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-meteor-showers-form/",
+   "keywords": [
+    "meteor",
+    "showers",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do meteor showers form? Explained With Sources",
+   "h1": "How do meteor showers form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0500",
+   "slug": "why-do-cactus-plants-have-spines",
+   "question": "Why do cactus plants have spines",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-do-cactus-plants-have-spines/",
+   "keywords": [
+    "cactus",
+    "plants",
+    "have",
+    "spines"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do cactus plants have spines? The Real Answer, Explained",
+   "h1": "Why do cactus plants have spines?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0501",
+   "slug": "why-do-dogs-wag-their-tails",
+   "question": "Why do dogs wag their tails",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-do-dogs-wag-their-tails/",
+   "keywords": [
+    "dogs",
+    "wag",
+    "their",
+    "tails"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do dogs wag their tails? What Science Actually Says",
+   "h1": "Why do dogs wag their tails?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0502",
+   "slug": "what-caused-the-hundred-years-war",
+   "question": "What caused the Hundred Years' War",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-hundred-years-war/",
+   "keywords": [
+    "caused",
+    "hundred",
+    "years",
+    "war"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Hundred Years' War? Key Facts and Context",
+   "h1": "What caused the Hundred Years' War?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0503",
+   "slug": "what-is-dublin-famous-for",
+   "question": "What is Dublin famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-dublin-famous-for/",
+   "keywords": [
+    "dublin",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Dublin famous for? The Story, Sourced",
+   "h1": "What is Dublin famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0504",
+   "slug": "what-are-jpeg-images",
+   "question": "What are JPEG images",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-jpeg-images/",
+   "keywords": [
+    "jpeg",
+    "images"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are JPEG images? What Science Actually Says",
+   "h1": "What are JPEG images?",
+   "ymyl": false
+  }
+ ]
+}

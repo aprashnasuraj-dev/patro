@@ -1,0 +1,163 @@
+{
+ "batch": 333,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2442",
+   "slug": "how-long-do-goats-live",
+   "question": "How long do goats live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-goats-live/",
+   "keywords": [
+    "long",
+    "goats",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do goats live? What Science Actually Says",
+   "h1": "How long do goats live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2443",
+   "slug": "who-invented-dynamite-and-how",
+   "question": "Who invented dynamite and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-dynamite-and-how/",
+   "keywords": [
+    "invented",
+    "dynamite"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented dynamite and how? The Story, Sourced",
+   "h1": "Who invented dynamite and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2444",
+   "slug": "what-is-the-history-of-canada",
+   "question": "What is the history of Canada",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-canada/",
+   "keywords": [
+    "history",
+    "canada"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Canada? The Short, Sourced Answer",
+   "h1": "What is the history of Canada?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2445",
+   "slug": "how-does-a-remote-control-work",
+   "question": "How does a remote control work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-remote-control-work/",
+   "keywords": [
+    "remote",
+    "control",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a remote control work? What Science Actually Says",
+   "h1": "How does a remote control work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2446",
+   "slug": "how-do-sheep-sleep",
+   "question": "How do sheep sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-sheep-sleep/",
+   "keywords": [
+    "sheep",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do sheep sleep? Facts, Myths and Evidence",
+   "h1": "How do sheep sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2447",
+   "slug": "what-were-the-main-consequences-of-the-decline-of-the-mughal",
+   "question": "What were the main consequences of the decline of the Mughal Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-decline-of-the-mughal/",
+   "keywords": [
+    "main",
+    "consequences",
+    "decline",
+    "mughal",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the decline of the Mughal",
+   "h1": "What were the main consequences of the decline of the Mughal Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2448",
+   "slug": "what-is-santorini-famous-for",
+   "question": "What is Santorini famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-santorini-famous-for/",
+   "keywords": [
+    "santorini",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Santorini famous for? A Clear Overview",
+   "h1": "What is Santorini famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2449",
+   "slug": "what-are-the-main-parts-of-an-atm",
+   "question": "What are the main parts of an ATM",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-an-atm/",
+   "keywords": [
+    "main",
+    "parts",
+    "atm"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of an ATM?",
+   "h1": "What are the main parts of an ATM?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2450",
+   "slug": "how-do-dragonflies-communicate",
+   "question": "How do dragonflies communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-dragonflies-communicate/",
+   "keywords": [
+    "dragonflies",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do dragonflies communicate? The Real Answer, Explained",
+   "h1": "How do dragonflies communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2451",
+   "slug": "who-was-amelia-earhart",
+   "question": "Who was Amelia Earhart",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-amelia-earhart/",
+   "keywords": [
+    "amelia",
+    "earhart"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Amelia Earhart? Facts and Background",
+   "h1": "Who was Amelia Earhart?",
+   "ymyl": false
+  }
+ ]
+}

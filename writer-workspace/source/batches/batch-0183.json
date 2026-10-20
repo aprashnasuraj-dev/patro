@@ -1,0 +1,162 @@
+{
+ "batch": 183,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0935",
+   "slug": "how-do-tulips-grow",
+   "question": "How do tulips grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-tulips-grow/",
+   "keywords": [
+    "tulips",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do tulips grow? Explained With Sources",
+   "h1": "How do tulips grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0936",
+   "slug": "how-do-shrimp-sleep",
+   "question": "How do shrimp sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-shrimp-sleep/",
+   "keywords": [
+    "shrimp",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do shrimp sleep? A Clear, Sourced Explanation",
+   "h1": "How do shrimp sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0937",
+   "slug": "who-invented-email-and-how",
+   "question": "Who invented email and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-email-and-how/",
+   "keywords": [
+    "invented",
+    "email"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented email and how? Key Facts and Context",
+   "h1": "Who invented email and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0938",
+   "slug": "what-is-the-economy-of-turkey-based-on",
+   "question": "What is the economy of Turkey based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-turkey-based-on/",
+   "keywords": [
+    "economy",
+    "turkey",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Turkey based on? Facts and Background",
+   "h1": "What is the economy of Turkey based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0939",
+   "slug": "how-does-version-control-work",
+   "question": "How does version control work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-version-control-work/",
+   "keywords": [
+    "version",
+    "control",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does version control work? Explained With Sources",
+   "h1": "How does version control work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0940",
+   "slug": "what-is-nuclear-fission",
+   "question": "What is nuclear fission",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-nuclear-fission/",
+   "keywords": [
+    "nuclear",
+    "fission"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is nuclear fission? A Clear, Sourced Explanation",
+   "h1": "What is nuclear fission?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0941",
+   "slug": "why-do-languages-change-over-time",
+   "question": "Why do languages change over time",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-do-languages-change-over-time/",
+   "keywords": [
+    "languages",
+    "change",
+    "over",
+    "time"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do languages change over time? Explained With Sources",
+   "h1": "Why do languages change over time?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0942",
+   "slug": "what-is-the-history-of-pasta",
+   "question": "What is the history of pasta",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-pasta/",
+   "keywords": [
+    "history",
+    "pasta"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of pasta? Facts and Background",
+   "h1": "What is the history of pasta?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0943",
+   "slug": "how-does-a-hovercraft-work",
+   "question": "How does a hovercraft work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-hovercraft-work/",
+   "keywords": [
+    "hovercraft",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a hovercraft work? What Science Actually Says",
+   "h1": "How does a hovercraft work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0944",
+   "slug": "how-did-the-himalayas-form",
+   "question": "How did the Himalayas form",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-did-the-himalayas-form/",
+   "keywords": [
+    "did",
+    "himalayas",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did the Himalayas form? The Real Answer, Explained",
+   "h1": "How did the Himalayas form?",
+   "ymyl": false
+  }
+ ]
+}

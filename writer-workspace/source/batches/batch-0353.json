@@ -1,0 +1,174 @@
+{
+ "batch": 353,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2643",
+   "slug": "where-do-seals-live-in-the-wild",
+   "question": "Where do seals live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-seals-live-in-the-wild/",
+   "keywords": [
+    "seals",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do seals live in the wild? Explained With Sources",
+   "h1": "Where do seals live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2644",
+   "slug": "why-did-the-mayans-build-step-pyramids",
+   "question": "Why did the Mayans build step pyramids",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-did-the-mayans-build-step-pyramids/",
+   "keywords": [
+    "did",
+    "mayans",
+    "build",
+    "step",
+    "pyramids"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why did the Mayans build step pyramids?",
+   "h1": "Why did the Mayans build step pyramids?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2645",
+   "slug": "how-did-vancouver-get-its-name",
+   "question": "How did Vancouver get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-vancouver-get-its-name/",
+   "keywords": [
+    "did",
+    "vancouver",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Vancouver get its name? Key Facts and Context",
+   "h1": "How did Vancouver get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2646",
+   "slug": "how-do-hamsters-sleep",
+   "question": "How do hamsters sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-hamsters-sleep/",
+   "keywords": [
+    "hamsters",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do hamsters sleep? Facts, Myths and Evidence",
+   "h1": "How do hamsters sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2647",
+   "slug": "what-were-the-main-consequences-of-the-building-of-the-great",
+   "question": "What were the main consequences of the building of the Great Wall of China",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-building-of-the-great/",
+   "keywords": [
+    "main",
+    "consequences",
+    "building",
+    "great",
+    "wall",
+    "china"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the building of the Great",
+   "h1": "What were the main consequences of the building of the Great Wall of China?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2648",
+   "slug": "what-is-the-history-of-colombia",
+   "question": "What is the history of Colombia",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-colombia/",
+   "keywords": [
+    "history",
+    "colombia"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Colombia? Key Facts and Context",
+   "h1": "What is the history of Colombia?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2649",
+   "slug": "why-do-owls-turn-their-heads-so-far",
+   "question": "Why do owls turn their heads so far",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-do-owls-turn-their-heads-so-far/",
+   "keywords": [
+    "owls",
+    "turn",
+    "their",
+    "heads",
+    "far"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do owls turn their heads so far?",
+   "h1": "Why do owls turn their heads so far?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2650",
+   "slug": "how-was-the-steam-locomotive-invented",
+   "question": "How was the steam locomotive invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-steam-locomotive-invented/",
+   "keywords": [
+    "steam",
+    "locomotive",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the steam locomotive invented?",
+   "h1": "How was the steam locomotive invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2651",
+   "slug": "what-is-saudi-arabia-known-for",
+   "question": "What is Saudi Arabia known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-saudi-arabia-known-for/",
+   "keywords": [
+    "saudi",
+    "arabia",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Saudi Arabia known for? Facts and Background",
+   "h1": "What is Saudi Arabia known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2652",
+   "slug": "how-long-do-bison-live",
+   "question": "How long do bison live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-bison-live/",
+   "keywords": [
+    "long",
+    "bison",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do bison live? What Science Actually Says",
+   "h1": "How long do bison live?",
+   "ymyl": false
+  }
+ ]
+}

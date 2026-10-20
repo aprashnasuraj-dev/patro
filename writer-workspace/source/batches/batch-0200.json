@@ -1,0 +1,171 @@
+{
+ "batch": 200,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1105",
+   "slug": "what-is-static-electricity",
+   "question": "What is static electricity",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-static-electricity/",
+   "keywords": [
+    "static",
+    "electricity"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is static electricity? Explained With Sources",
+   "h1": "What is static electricity?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1106",
+   "slug": "how-many-people-speak-welsh-and-where",
+   "question": "How many people speak Welsh and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-welsh-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "welsh"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Welsh and where? The Story, Sourced",
+   "h1": "How many people speak Welsh and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1107",
+   "slug": "why-does-caramel-turn-brown",
+   "question": "Why does caramel turn brown",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-does-caramel-turn-brown/",
+   "keywords": [
+    "caramel",
+    "turn",
+    "brown"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does caramel turn brown? Explained With Sources",
+   "h1": "Why does caramel turn brown?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1108",
+   "slug": "how-does-a-sewage-treatment-plant-work",
+   "question": "How does a sewage treatment plant work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-sewage-treatment-plant-work/",
+   "keywords": [
+    "sewage",
+    "treatment",
+    "plant",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a sewage treatment plant work?",
+   "h1": "How does a sewage treatment plant work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1109",
+   "slug": "what-is-the-history-of-muktinath",
+   "question": "What is the history of Muktinath",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-muktinath/",
+   "keywords": [
+    "history",
+    "muktinath"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Muktinath? The Short, Sourced Answer",
+   "h1": "What is the history of Muktinath?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1110",
+   "slug": "what-are-the-main-parts-of-a-microwave-popcorn-bag",
+   "question": "What are the main parts of a microwave popcorn bag",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-microwave-popcorn-bag/",
+   "keywords": [
+    "main",
+    "parts",
+    "microwave",
+    "popcorn",
+    "bag"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a microwave popcorn bag?",
+   "h1": "What are the main parts of a microwave popcorn bag?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1111",
+   "slug": "how-is-the-monty-hall-problem-used-in-real-life",
+   "question": "How is the Monty Hall problem used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-the-monty-hall-problem-used-in-real-life/",
+   "keywords": [
+    "monty",
+    "hall",
+    "problem",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is the Monty Hall problem used in real life?",
+   "h1": "How is the Monty Hall problem used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1112",
+   "slug": "what-makes-the-tabla-unique",
+   "question": "What makes the tabla unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-the-tabla-unique/",
+   "keywords": [
+    "makes",
+    "tabla",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes the tabla unique? Facts, Myths and Evidence",
+   "h1": "What makes the tabla unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1113",
+   "slug": "what-causes-the-greenhouse-effect",
+   "question": "What causes the greenhouse effect",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-the-greenhouse-effect/",
+   "keywords": [
+    "causes",
+    "greenhouse",
+    "effect"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes the greenhouse effect? Explained With Sources",
+   "h1": "What causes the greenhouse effect?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1114",
+   "slug": "how-do-moons-form",
+   "question": "How do moons form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-moons-form/",
+   "keywords": [
+    "moons",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do moons form? Explained With Sources",
+   "h1": "How do moons form?",
+   "ymyl": false
+  }
+ ]
+}

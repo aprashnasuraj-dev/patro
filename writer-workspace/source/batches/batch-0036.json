@@ -1,0 +1,178 @@
+{
+ "batch": 36,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0783",
+   "slug": "how-finland-builds-its-education-system",
+   "question": "How Finland builds its education system",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-finland-builds-its-education-system/",
+   "keywords": [
+    "finland",
+    "builds",
+    "education",
+    "system",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Finland Builds Its Education System?",
+   "h1": "How Finland Builds Its Education System?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0787",
+   "slug": "how-recycling-actually-works",
+   "question": "How recycling actually works",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-recycling-actually-works/",
+   "keywords": [
+    "recycling",
+    "actually",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Recycling Actually Works? Facts, Myths and Evidence",
+   "h1": "How Recycling Actually Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0789",
+   "slug": "how-festivals-began",
+   "question": "How festivals began",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-festivals-began/",
+   "keywords": [
+    "festivals",
+    "began",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Festivals Began? A Clear, Sourced Explanation",
+   "h1": "How Festivals Began?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0791",
+   "slug": "how-graphs-reveal-patterns",
+   "question": "How graphs reveal patterns",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-graphs-reveal-patterns/",
+   "keywords": [
+    "graphs",
+    "reveal",
+    "patterns",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Graphs Reveal Patterns? What Science Actually Says",
+   "h1": "How Graphs Reveal Patterns?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0793",
+   "slug": "how-desalination-works",
+   "question": "How desalination works",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/how-desalination-works/",
+   "keywords": [
+    "desalination",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Desalination Works? A Clear, Sourced Explanation",
+   "h1": "How Desalination Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0795",
+   "slug": "why-the-eiffel-tower-grows-in-summer",
+   "question": "Why the Eiffel Tower grows in summer",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/why-the-eiffel-tower-grows-in-summer/",
+   "keywords": [
+    "eiffel",
+    "tower",
+    "grows",
+    "summer",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Eiffel Tower Grows In Summer?",
+   "h1": "Why The Eiffel Tower Grows In Summer?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0797",
+   "slug": "why-nepals-rivers-have-hydropower-potential",
+   "question": "Why Nepal's rivers have hydropower potential",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-nepals-rivers-have-hydropower-potential/",
+   "keywords": [
+    "nepal",
+    "rivers",
+    "have",
+    "hydropower",
+    "potential",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Nepal's Rivers Have Hydropower Potential?",
+   "h1": "Why Nepal's Rivers Have Hydropower Potential?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0799",
+   "slug": "how-printing-led-to-novels",
+   "question": "How printing led to novels",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-printing-led-to-novels/",
+   "keywords": [
+    "printing",
+    "led",
+    "novels",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Printing Led To Novels? The Real Answer, Explained",
+   "h1": "How Printing Led To Novels?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0801",
+   "slug": "why-ferns-reproduce-without-flowers",
+   "question": "Why ferns reproduce without flowers",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/why-ferns-reproduce-without-flowers/",
+   "keywords": [
+    "ferns",
+    "reproduce",
+    "without",
+    "flowers",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Ferns Reproduce Without Flowers?",
+   "h1": "Why Ferns Reproduce Without Flowers?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0803",
+   "slug": "how-penguins-stay-warm",
+   "question": "How penguins stay warm",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-penguins-stay-warm/",
+   "keywords": [
+    "penguins",
+    "stay",
+    "warm",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Penguins Stay Warm? A Clear, Sourced Explanation",
+   "h1": "How Penguins Stay Warm?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "batch": 88,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1939",
+   "slug": "why-ai-detectors-are-unreliable",
+   "question": "Why AI detectors are unreliable",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/why-ai-detectors-are-unreliable/",
+   "keywords": [
+    "detectors",
+    "unreliable",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why AI Detectors Are Unreliable? Facts, Myths and Evidence",
+   "h1": "Why AI Detectors Are Unreliable?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1941",
+   "slug": "how-the-panama-canal-was-built",
+   "question": "How the Panama Canal was built",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-the-panama-canal-was-built/",
+   "keywords": [
+    "panama",
+    "canal",
+    "built",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How The Panama Canal Was Built? Facts, Myths and Evidence",
+   "h1": "How The Panama Canal Was Built?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1943",
+   "slug": "why-portugal-led-the-age-of-exploration",
+   "question": "Why Portugal led the age of exploration",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/why-portugal-led-the-age-of-exploration/",
+   "keywords": [
+    "portugal",
+    "led",
+    "age",
+    "exploration",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Portugal Led The Age Of Exploration?",
+   "h1": "Why Portugal Led The Age Of Exploration?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1947",
+   "slug": "why-bridges-have-expansion-joints",
+   "question": "Why bridges have expansion joints",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/why-bridges-have-expansion-joints/",
+   "keywords": [
+    "bridges",
+    "have",
+    "expansion",
+    "joints",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bridges Have Expansion Joints?",
+   "h1": "Why Bridges Have Expansion Joints?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1949",
+   "slug": "why-holidays-move-each-year",
+   "question": "Why holidays move each year",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/why-holidays-move-each-year/",
+   "keywords": [
+    "holidays",
+    "move",
+    "each",
+    "year",
+    "language-words-culture"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Holidays Move Each Year? Explained With Sources",
+   "h1": "Why Holidays Move Each Year?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1951",
+   "slug": "why-ratios-define-music",
+   "question": "Why ratios define music",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/why-ratios-define-music/",
+   "keywords": [
+    "ratios",
+    "define",
+    "music",
+    "math-numbers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Ratios Define Music? The Real Answer, Explained",
+   "h1": "Why Ratios Define Music?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1953",
+   "slug": "why-lakes-are-shrinking",
+   "question": "Why lakes are shrinking",
+   "category": "Energy & Environment",
+   "canonical_url": "https://aafnaipatro.com/why-lakes-are-shrinking/",
+   "keywords": [
+    "lakes",
+    "shrinking",
+    "energy-environment"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Lakes Are Shrinking? Facts, Myths and Evidence",
+   "h1": "Why Lakes Are Shrinking?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1955",
+   "slug": "how-windmills-grind-grain",
+   "question": "How windmills grind grain",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-windmills-grind-grain/",
+   "keywords": [
+    "windmills",
+    "grind",
+    "grain",
+    "transport-engineering"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Windmills Grind Grain? What Science Actually Says",
+   "h1": "How Windmills Grind Grain?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1957",
+   "slug": "how-nepals-geography-shapes-its-climate-zones",
+   "question": "How Nepal's geography shapes its climate zones",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-nepals-geography-shapes-its-climate-zones/",
+   "keywords": [
+    "nepal",
+    "geography",
+    "shapes",
+    "climate",
+    "zones",
+    "nepal-himalaya"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Nepal's Geography Shapes Its Climate Zones?",
+   "h1": "How Nepal's Geography Shapes Its Climate Zones?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1959",
+   "slug": "why-bedtime-stories-calm-children",
+   "question": "Why bedtime stories calm children",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/why-bedtime-stories-calm-children/",
+   "keywords": [
+    "bedtime",
+    "stories",
+    "calm",
+    "children",
+    "arts-music-literature"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Bedtime Stories Calm Children? Explained With Sources",
+   "h1": "Why Bedtime Stories Calm Children?",
+   "ymyl": false
+  }
+ ]
+}

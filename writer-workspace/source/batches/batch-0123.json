@@ -1,0 +1,157 @@
+{
+ "batch": 123,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0331",
+   "slug": "what-causes-tsunamis",
+   "question": "What causes tsunamis",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/what-causes-tsunamis/",
+   "keywords": [
+    "causes",
+    "tsunamis"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What causes tsunamis? Explained With Sources",
+   "h1": "What causes tsunamis?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0332",
+   "slug": "what-is-io-made-of",
+   "question": "What is Io made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-io-made-of/",
+   "keywords": [
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Io made of? A Clear, Sourced Explanation",
+   "h1": "What is Io made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0333",
+   "slug": "how-does-aloe-vera-grow",
+   "question": "How does aloe vera grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-does-aloe-vera-grow/",
+   "keywords": [
+    "aloe",
+    "vera",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does aloe vera grow? Facts, Myths and Evidence",
+   "h1": "How does aloe vera grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0334",
+   "slug": "why-do-we-dream",
+   "question": "Why do we dream",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-dream/",
+   "keywords": [
+    "dream"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we dream? Explained With Sources",
+   "h1": "Why do we dream?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0335",
+   "slug": "what-is-machine-learning",
+   "question": "What is machine learning",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/what-is-machine-learning/",
+   "keywords": [
+    "machine",
+    "learning"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is machine learning? Explained With Sources",
+   "h1": "What is machine learning?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0336",
+   "slug": "how-long-do-parrots-live",
+   "question": "How long do parrots live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-parrots-live/",
+   "keywords": [
+    "long",
+    "parrots",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do parrots live? The Real Answer, Explained",
+   "h1": "How long do parrots live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0337",
+   "slug": "who-was-jane-goodall",
+   "question": "Who was Jane Goodall",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-jane-goodall/",
+   "keywords": [
+    "jane",
+    "goodall"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Jane Goodall? Facts and Background",
+   "h1": "Who was Jane Goodall?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0338",
+   "slug": "what-is-jamaica-known-for",
+   "question": "What is Jamaica known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-jamaica-known-for/",
+   "keywords": [
+    "jamaica",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Jamaica known for? The Short, Sourced Answer",
+   "h1": "What is Jamaica known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0339",
+   "slug": "how-does-cybersecurity-work",
+   "question": "How does cybersecurity work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-cybersecurity-work/",
+   "keywords": [
+    "cybersecurity",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does cybersecurity work? Facts, Myths and Evidence",
+   "h1": "How does cybersecurity work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0340",
+   "slug": "why-do-we-have-fingerprints",
+   "question": "Why do we have fingerprints",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-we-have-fingerprints/",
+   "keywords": [
+    "have",
+    "fingerprints"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do we have fingerprints? What Science Actually Says",
+   "h1": "Why do we have fingerprints?",
+   "ymyl": false
+  }
+ ]
+}

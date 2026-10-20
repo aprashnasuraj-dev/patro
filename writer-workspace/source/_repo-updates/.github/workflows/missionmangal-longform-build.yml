@@ -1,0 +1,50 @@
+name: Mission Mangal long-form build (no LLM, no secrets)
+run-name: build + publish gate
+
+on:
+  push:
+    paths:
+      - "missionmangal/longform/articles/**"
+      - "missionmangal/longform/render.mjs"
+      - "missionmangal/longform/build.mjs"
+      - "missionmangal/longform/images/**"
+      - "missionmangal/longform/research/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mm-longform-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Writer, verifier and router tests
+        run: node --test missionmangal/tests/longform.test.mjs missionmangal/tests/llm-tokens.test.mjs
+      - name: Render pages and enforce the publish gate
+        working-directory: missionmangal/longform
+        env:
+          STRICT: "1"
+          REQUIRE_IMAGE: "1"
+        run: |
+          node build.mjs | tee build.log
+          {
+            echo "### Long-form build"
+            echo "- articles: $(ls articles | wc -l)"
+            echo "- words: $(node -e 'const fs=require("fs");console.log(fs.readdirSync("articles").reduce((n,f)=>n+JSON.parse(fs.readFileSync("articles/"+f)).word_count,0))')"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: longform-site
+          path: |
+            missionmangal/longform/site
+            missionmangal/longform/playbox.html
+          retention-days: 30

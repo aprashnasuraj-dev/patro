@@ -1,0 +1,169 @@
+{
+ "batch": 351,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2623",
+   "slug": "what-caused-the-byzantine-empire",
+   "question": "What caused the Byzantine Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-byzantine-empire/",
+   "keywords": [
+    "caused",
+    "byzantine",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Byzantine Empire? Facts and Background",
+   "h1": "What caused the Byzantine Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2624",
+   "slug": "what-is-the-history-of-geneva",
+   "question": "What is the history of Geneva",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-geneva/",
+   "keywords": [
+    "history",
+    "geneva"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Geneva? A Clear Overview",
+   "h1": "What is the history of Geneva?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2625",
+   "slug": "what-do-geese-eat",
+   "question": "What do geese eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-geese-eat/",
+   "keywords": [
+    "geese",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do geese eat? A Clear, Sourced Explanation",
+   "h1": "What do geese eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2626",
+   "slug": "what-were-the-main-consequences-of-the-gupta-empire",
+   "question": "What were the main consequences of the Gupta Empire",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-gupta-empire/",
+   "keywords": [
+    "main",
+    "consequences",
+    "gupta",
+    "empire"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Gupta Empire?",
+   "h1": "What were the main consequences of the Gupta Empire?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2627",
+   "slug": "what-is-the-history-of-lagos",
+   "question": "What is the history of Lagos",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-lagos/",
+   "keywords": [
+    "history",
+    "lagos"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Lagos? Key Facts and Context",
+   "h1": "What is the history of Lagos?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2628",
+   "slug": "where-do-seahorses-live-in-the-wild",
+   "question": "Where do seahorses live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-seahorses-live-in-the-wild/",
+   "keywords": [
+    "seahorses",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do seahorses live in the wild?",
+   "h1": "Where do seahorses live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2629",
+   "slug": "what-were-the-main-consequences-of-the-salem-witch-trials",
+   "question": "What were the main consequences of the Salem witch trials",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-salem-witch-trials/",
+   "keywords": [
+    "main",
+    "consequences",
+    "salem",
+    "witch",
+    "trials"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Salem witch trials?",
+   "h1": "What were the main consequences of the Salem witch trials?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2630",
+   "slug": "what-is-the-economy-of-uganda-based-on",
+   "question": "What is the economy of Uganda based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-uganda-based-on/",
+   "keywords": [
+    "economy",
+    "uganda",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Uganda based on?",
+   "h1": "What is the economy of Uganda based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2631",
+   "slug": "where-do-humpback-whales-live-in-the-wild",
+   "question": "Where do humpback whales live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-humpback-whales-live-in-the-wild/",
+   "keywords": [
+    "humpback",
+    "whales",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do humpback whales live in the wild?",
+   "h1": "Where do humpback whales live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2632",
+   "slug": "what-is-george-washington-best-known-for",
+   "question": "What is George Washington best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-george-washington-best-known-for/",
+   "keywords": [
+    "george",
+    "washington",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is George Washington best known for? The Story, Sourced",
+   "h1": "What is George Washington best known for?",
+   "ymyl": false
+  }
+ ]
+}

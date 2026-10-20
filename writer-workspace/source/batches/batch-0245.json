@@ -1,0 +1,165 @@
+{
+ "batch": 245,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1557",
+   "slug": "where-does-the-word-radar-come-from",
+   "question": "Where does the word \"radar\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-radar-come-from/",
+   "keywords": [
+    "word",
+    "radar",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"radar\" come from? Facts and Background",
+   "h1": "Where does the word \"radar\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1558",
+   "slug": "how-is-jam-made",
+   "question": "How is jam made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-jam-made/",
+   "keywords": [
+    "jam",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is jam made? What Science Actually Says",
+   "h1": "How is jam made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1559",
+   "slug": "how-does-a-windmill-work",
+   "question": "How does a windmill work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-windmill-work/",
+   "keywords": [
+    "windmill",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a windmill work? What Science Actually Says",
+   "h1": "How does a windmill work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1560",
+   "slug": "what-is-special-about-gauri-shankar",
+   "question": "What is special about Gauri Shankar",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/what-is-special-about-gauri-shankar/",
+   "keywords": [
+    "special",
+    "about",
+    "gauri",
+    "shankar"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is special about Gauri Shankar?",
+   "h1": "What is special about Gauri Shankar?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1561",
+   "slug": "what-are-the-main-parts-of-a-ballpoint-pen",
+   "question": "What are the main parts of a ballpoint pen",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-ballpoint-pen/",
+   "keywords": [
+    "main",
+    "parts",
+    "ballpoint",
+    "pen"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a ballpoint pen?",
+   "h1": "What are the main parts of a ballpoint pen?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1562",
+   "slug": "what-is-euler-s-number",
+   "question": "What is Euler's number",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-euler-s-number/",
+   "keywords": [
+    "euler",
+    "number"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Euler's number? Facts, Myths and Evidence",
+   "h1": "What is Euler's number?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1563",
+   "slug": "what-makes-baroque-art-unique",
+   "question": "What makes Baroque art unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-baroque-art-unique/",
+   "keywords": [
+    "makes",
+    "baroque",
+    "art",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Baroque art unique? Facts, Myths and Evidence",
+   "h1": "What makes Baroque art unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1564",
+   "slug": "how-long-do-tapirs-live",
+   "question": "How long do tapirs live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-tapirs-live/",
+   "keywords": [
+    "long",
+    "tapirs",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do tapirs live? A Clear, Sourced Explanation",
+   "h1": "How long do tapirs live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1565",
+   "slug": "how-was-braille-invented",
+   "question": "How was Braille invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-braille-invented/",
+   "keywords": [
+    "braille",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was Braille invented? Explained With Sources",
+   "h1": "How was Braille invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1566",
+   "slug": "what-is-varanasi-famous-for",
+   "question": "What is Varanasi famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-varanasi-famous-for/",
+   "keywords": [
+    "varanasi",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Varanasi famous for? The Story, Sourced",
+   "h1": "What is Varanasi famous for?",
+   "ymyl": false
+  }
+ ]
+}

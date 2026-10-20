@@ -1,0 +1,160 @@
+{
+ "batch": 160,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0705",
+   "slug": "what-are-the-main-parts-of-a-smoke-detector",
+   "question": "What are the main parts of a smoke detector",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-smoke-detector/",
+   "keywords": [
+    "main",
+    "parts",
+    "smoke",
+    "detector"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a smoke detector?",
+   "h1": "What are the main parts of a smoke detector?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0706",
+   "slug": "what-is-pi",
+   "question": "What is pi",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-pi/",
+   "keywords": [],
+   "target_words": 1200,
+   "title_suggestion": "What is pi? What Science Actually Says",
+   "h1": "What is pi?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0707",
+   "slug": "what-makes-renaissance-art-unique",
+   "question": "What makes Renaissance art unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-renaissance-art-unique/",
+   "keywords": [
+    "makes",
+    "renaissance",
+    "art",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes Renaissance art unique?",
+   "h1": "What makes Renaissance art unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0708",
+   "slug": "how-do-waterfalls-form",
+   "question": "How do waterfalls form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-waterfalls-form/",
+   "keywords": [
+    "waterfalls",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do waterfalls form? Explained With Sources",
+   "h1": "How do waterfalls form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0709",
+   "slug": "what-is-comets-made-of",
+   "question": "What is comets made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-comets-made-of/",
+   "keywords": [
+    "comets",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is comets made of? Facts, Myths and Evidence",
+   "h1": "What is comets made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0710",
+   "slug": "how-long-do-mosses-live",
+   "question": "How long do mosses live",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-mosses-live/",
+   "keywords": [
+    "long",
+    "mosses",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do mosses live? Explained With Sources",
+   "h1": "How long do mosses live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0711",
+   "slug": "how-do-whales-sleep",
+   "question": "How do whales sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-whales-sleep/",
+   "keywords": [
+    "whales",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do whales sleep? What Science Actually Says",
+   "h1": "How do whales sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0712",
+   "slug": "what-is-christopher-columbus-best-known-for",
+   "question": "What is Christopher Columbus best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-christopher-columbus-best-known-for/",
+   "keywords": [
+    "christopher",
+    "columbus",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Christopher Columbus best known for?",
+   "h1": "What is Christopher Columbus best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0713",
+   "slug": "what-is-lumbini-famous-for",
+   "question": "What is Lumbini famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-lumbini-famous-for/",
+   "keywords": [
+    "lumbini",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Lumbini famous for? Facts and Background",
+   "h1": "What is Lumbini famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0714",
+   "slug": "what-is-git",
+   "question": "What is Git",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-is-git/",
+   "keywords": [
+    "git"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Git? What Science Actually Says",
+   "h1": "What is Git?",
+   "ymyl": false
+  }
+ ]
+}

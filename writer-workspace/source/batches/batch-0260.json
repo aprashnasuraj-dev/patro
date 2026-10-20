@@ -1,0 +1,163 @@
+{
+ "batch": 260,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1708",
+   "slug": "what-is-the-history-of-ice-cream",
+   "question": "What is the history of ice cream",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-ice-cream/",
+   "keywords": [
+    "history",
+    "ice",
+    "cream"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of ice cream? The Story, Sourced",
+   "h1": "What is the history of ice cream?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1709",
+   "slug": "how-does-a-gearbox-work",
+   "question": "How does a gearbox work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-gearbox-work/",
+   "keywords": [
+    "gearbox",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a gearbox work? A Clear, Sourced Explanation",
+   "h1": "How does a gearbox work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1710",
+   "slug": "why-is-boudhanath-stupa-important",
+   "question": "Why is Boudhanath Stupa important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-boudhanath-stupa-important/",
+   "keywords": [
+    "boudhanath",
+    "stupa",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Boudhanath Stupa important?",
+   "h1": "Why is Boudhanath Stupa important?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1711",
+   "slug": "how-do-great-white-sharks-sleep",
+   "question": "How do great white sharks sleep",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-great-white-sharks-sleep/",
+   "keywords": [
+    "great",
+    "white",
+    "sharks",
+    "sleep"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do great white sharks sleep? What Science Actually Says",
+   "h1": "How do great white sharks sleep?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1712",
+   "slug": "what-were-the-main-consequences-of-the-printing-revolution",
+   "question": "What were the main consequences of the Printing Revolution",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-were-the-main-consequences-of-the-printing-revolution/",
+   "keywords": [
+    "main",
+    "consequences",
+    "printing",
+    "revolution"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What were the main consequences of the Printing Revolution?",
+   "h1": "What were the main consequences of the Printing Revolution?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1713",
+   "slug": "what-is-the-history-of-singapore",
+   "question": "What is the history of Singapore",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-singapore/",
+   "keywords": [
+    "history",
+    "singapore"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Singapore? Key Facts and Context",
+   "h1": "What is the history of Singapore?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1714",
+   "slug": "what-are-cookies",
+   "question": "What are cookies",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-cookies/",
+   "keywords": [
+    "cookies"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are cookies? Facts, Myths and Evidence",
+   "h1": "What are cookies?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1715",
+   "slug": "what-is-buoyancy",
+   "question": "What is buoyancy",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-buoyancy/",
+   "keywords": [
+    "buoyancy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is buoyancy? The Real Answer, Explained",
+   "h1": "What is buoyancy?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1716",
+   "slug": "where-does-the-word-ketchup-come-from",
+   "question": "Where does the word \"ketchup\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-ketchup-come-from/",
+   "keywords": [
+    "word",
+    "ketchup",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"ketchup\" come from?",
+   "h1": "Where does the word \"ketchup\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1717",
+   "slug": "what-is-the-history-of-chewing-gum",
+   "question": "What is the history of chewing gum",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-chewing-gum/",
+   "keywords": [
+    "history",
+    "chewing",
+    "gum"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of chewing gum?",
+   "h1": "What is the history of chewing gum?",
+   "ymyl": false
+  }
+ ]
+}

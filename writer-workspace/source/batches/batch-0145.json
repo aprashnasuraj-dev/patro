@@ -1,0 +1,172 @@
+{
+ "batch": 145,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0555",
+   "slug": "what-are-the-main-parts-of-a-septic-tank",
+   "question": "What are the main parts of a septic tank",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-septic-tank/",
+   "keywords": [
+    "main",
+    "parts",
+    "septic",
+    "tank"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a septic tank?",
+   "h1": "What are the main parts of a septic tank?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0556",
+   "slug": "how-is-algebra-used-in-real-life",
+   "question": "How is algebra used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-algebra-used-in-real-life/",
+   "keywords": [
+    "algebra",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is algebra used in real life?",
+   "h1": "How is algebra used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0557",
+   "slug": "what-makes-folk-music-unique",
+   "question": "What makes folk music unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-folk-music-unique/",
+   "keywords": [
+    "makes",
+    "folk",
+    "music",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes folk music unique? A Clear, Sourced Explanation",
+   "h1": "What makes folk music unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0558",
+   "slug": "how-do-sand-dunes-form",
+   "question": "How do sand dunes form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-sand-dunes-form/",
+   "keywords": [
+    "sand",
+    "dunes",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do sand dunes form? What Science Actually Says",
+   "h1": "How do sand dunes form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0559",
+   "slug": "what-is-exoplanets-made-of",
+   "question": "What is exoplanets made of",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/what-is-exoplanets-made-of/",
+   "keywords": [
+    "exoplanets",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is exoplanets made of? Facts, Myths and Evidence",
+   "h1": "What is exoplanets made of?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0560",
+   "slug": "how-do-orchids-grow",
+   "question": "How do orchids grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-orchids-grow/",
+   "keywords": [
+    "orchids",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do orchids grow? What Science Actually Says",
+   "h1": "How do orchids grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0561",
+   "slug": "how-do-hummingbirds-communicate",
+   "question": "How do hummingbirds communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-hummingbirds-communicate/",
+   "keywords": [
+    "hummingbirds",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do hummingbirds communicate? What Science Actually Says",
+   "h1": "How do hummingbirds communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0562",
+   "slug": "what-is-johann-sebastian-bach-best-known-for",
+   "question": "What is Johann Sebastian Bach best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-johann-sebastian-bach-best-known-for/",
+   "keywords": [
+    "johann",
+    "sebastian",
+    "bach",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Johann Sebastian Bach best known for?",
+   "h1": "What is Johann Sebastian Bach best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0563",
+   "slug": "how-did-reykjavik-get-its-name",
+   "question": "How did Reykjavik get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-reykjavik-get-its-name/",
+   "keywords": [
+    "did",
+    "reykjavik",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Reykjavik get its name? Key Facts and Context",
+   "h1": "How did Reykjavik get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0564",
+   "slug": "how-does-an-electric-guitar-pickup-work",
+   "question": "How does an electric guitar pickup work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-electric-guitar-pickup-work/",
+   "keywords": [
+    "electric",
+    "guitar",
+    "pickup",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an electric guitar pickup work?",
+   "h1": "How does an electric guitar pickup work?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "batch": 168,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0785",
+   "slug": "how-does-maize-grow",
+   "question": "How does maize grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-does-maize-grow/",
+   "keywords": [
+    "maize",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does maize grow? The Real Answer, Explained",
+   "h1": "How does maize grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0786",
+   "slug": "how-long-do-crocodiles-live",
+   "question": "How long do crocodiles live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-crocodiles-live/",
+   "keywords": [
+    "long",
+    "crocodiles",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do crocodiles live? The Real Answer, Explained",
+   "h1": "How long do crocodiles live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0787",
+   "slug": "who-invented-post-it-notes-and-how",
+   "question": "Who invented Post-it notes and how",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-invented-post-it-notes-and-how/",
+   "keywords": [
+    "invented",
+    "post-it",
+    "notes"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who invented Post-it notes and how? A Clear Overview",
+   "h1": "Who invented Post-it notes and how?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0788",
+   "slug": "how-did-timbuktu-get-its-name",
+   "question": "How did Timbuktu get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-timbuktu-get-its-name/",
+   "keywords": [
+    "did",
+    "timbuktu",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Timbuktu get its name? A Clear Overview",
+   "h1": "How did Timbuktu get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0789",
+   "slug": "how-do-data-centers-work",
+   "question": "How do data centers work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-data-centers-work/",
+   "keywords": [
+    "data",
+    "centers",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do data centers work? Facts, Myths and Evidence",
+   "h1": "How do data centers work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0790",
+   "slug": "what-is-animal-migration",
+   "question": "What is animal migration",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/what-is-animal-migration/",
+   "keywords": [
+    "animal",
+    "migration"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is animal migration? Facts, Myths and Evidence",
+   "h1": "What is animal migration?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0791",
+   "slug": "where-did-the-urdu-language-come-from",
+   "question": "Where did the Urdu language come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-did-the-urdu-language-come-from/",
+   "keywords": [
+    "did",
+    "urdu",
+    "language",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where did the Urdu language come from?",
+   "h1": "Where did the Urdu language come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0792",
+   "slug": "why-does-milk-curdle",
+   "question": "Why does milk curdle",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/why-does-milk-curdle/",
+   "keywords": [
+    "milk",
+    "curdle"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does milk curdle? A Clear, Sourced Explanation",
+   "h1": "Why does milk curdle?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0793",
+   "slug": "how-does-a-hydroelectric-dam-work",
+   "question": "How does a hydroelectric dam work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-hydroelectric-dam-work/",
+   "keywords": [
+    "hydroelectric",
+    "dam",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a hydroelectric dam work? Explained With Sources",
+   "h1": "How does a hydroelectric dam work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0794",
+   "slug": "why-is-swayambhunath-important",
+   "question": "Why is Swayambhunath important",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-swayambhunath-important/",
+   "keywords": [
+    "swayambhunath",
+    "important"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Swayambhunath important? Explained With Sources",
+   "h1": "Why is Swayambhunath important?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,170 @@
+{
+ "batch": 320,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2312",
+   "slug": "what-is-the-economy-of-jamaica-based-on",
+   "question": "What is the economy of Jamaica based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-jamaica-based-on/",
+   "keywords": [
+    "economy",
+    "jamaica",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Jamaica based on?",
+   "h1": "What is the economy of Jamaica based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2313",
+   "slug": "what-are-the-main-parts-of-a-smartphone",
+   "question": "What are the main parts of a smartphone",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-smartphone/",
+   "keywords": [
+    "main",
+    "parts",
+    "smartphone"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a smartphone?",
+   "h1": "What are the main parts of a smartphone?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2314",
+   "slug": "how-does-soap-kill-germs",
+   "question": "How does soap kill germs",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-does-soap-kill-germs/",
+   "keywords": [
+    "soap",
+    "kill",
+    "germs"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does soap kill germs? The Real Answer, Explained",
+   "h1": "How does soap kill germs?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2315",
+   "slug": "what-do-squids-eat",
+   "question": "What do squids eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-squids-eat/",
+   "keywords": [
+    "squids",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do squids eat? The Real Answer, Explained",
+   "h1": "What do squids eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2316",
+   "slug": "what-is-sim-n-bol-var-best-known-for",
+   "question": "What is Simón Bolívar best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-sim-n-bol-var-best-known-for/",
+   "keywords": [
+    "sim",
+    "bol",
+    "var",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Simón Bolívar best known for? A Clear Overview",
+   "h1": "What is Simón Bolívar best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2317",
+   "slug": "what-is-the-economy-of-the-czech-republic-based-on",
+   "question": "What is the economy of the Czech Republic based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-the-czech-republic-based-on/",
+   "keywords": [
+    "economy",
+    "czech",
+    "republic",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of the Czech Republic based on?",
+   "h1": "What is the economy of the Czech Republic based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2318",
+   "slug": "how-do-operating-systems-work",
+   "question": "How do operating systems work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-do-operating-systems-work/",
+   "keywords": [
+    "operating",
+    "systems",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do operating systems work? A Clear, Sourced Explanation",
+   "h1": "How do operating systems work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2319",
+   "slug": "why-does-centripetal-force-matter-in-everyday-life",
+   "question": "Why does centripetal force matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-does-centripetal-force-matter-in-everyday-life/",
+   "keywords": [
+    "centripetal",
+    "force",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why does centripetal force matter in everyday life?",
+   "h1": "Why does centripetal force matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2320",
+   "slug": "where-do-earthworms-live-in-the-wild",
+   "question": "Where do earthworms live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-earthworms-live-in-the-wild/",
+   "keywords": [
+    "earthworms",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do earthworms live in the wild? Explained With Sources",
+   "h1": "Where do earthworms live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2321",
+   "slug": "how-was-the-transistor-invented",
+   "question": "How was the transistor invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-transistor-invented/",
+   "keywords": [
+    "transistor",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the transistor invented? Explained With Sources",
+   "h1": "How was the transistor invented?",
+   "ymyl": false
+  }
+ ]
+}

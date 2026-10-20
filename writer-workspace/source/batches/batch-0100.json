@@ -1,0 +1,165 @@
+{
+ "batch": 100,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0097",
+   "slug": "how-is-tempeh-made",
+   "question": "How is tempeh made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-tempeh-made/",
+   "keywords": [
+    "tempeh",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is tempeh made? A Clear, Sourced Explanation",
+   "h1": "How is tempeh made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0098",
+   "slug": "how-does-a-lithium-ion-battery-work",
+   "question": "How does a lithium-ion battery work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-lithium-ion-battery-work/",
+   "keywords": [
+    "lithium-ion",
+    "battery",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a lithium-ion battery work?",
+   "h1": "How does a lithium-ion battery work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0099",
+   "slug": "where-is-ama-dablam-and-how-high-is-it",
+   "question": "Where is Ama Dablam and how high is it",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/where-is-ama-dablam-and-how-high-is-it/",
+   "keywords": [
+    "ama",
+    "dablam",
+    "high"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where is Ama Dablam and how high is it?",
+   "h1": "Where is Ama Dablam and how high is it?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0100",
+   "slug": "how-does-a-rice-cooker-work",
+   "question": "How does a rice cooker work",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-rice-cooker-work/",
+   "keywords": [
+    "rice",
+    "cooker",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a rice cooker work? Facts, Myths and Evidence",
+   "h1": "How does a rice cooker work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0101",
+   "slug": "how-is-statistics-used-in-real-life",
+   "question": "How is statistics used in real life",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/how-is-statistics-used-in-real-life/",
+   "keywords": [
+    "statistics",
+    "used",
+    "real",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is statistics used in real life?",
+   "h1": "How is statistics used in real life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0102",
+   "slug": "how-did-mosaics-start",
+   "question": "How did mosaics start",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/how-did-mosaics-start/",
+   "keywords": [
+    "did",
+    "mosaics",
+    "start"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did mosaics start? What Science Actually Says",
+   "h1": "How did mosaics start?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0103",
+   "slug": "how-do-minerals-form",
+   "question": "How do minerals form",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-do-minerals-form/",
+   "keywords": [
+    "minerals",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do minerals form? The Real Answer, Explained",
+   "h1": "How do minerals form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0104",
+   "slug": "how-do-auroras-on-other-planets-form",
+   "question": "How do auroras on other planets form",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/how-do-auroras-on-other-planets-form/",
+   "keywords": [
+    "auroras",
+    "other",
+    "planets",
+    "form"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do auroras on other planets form? Explained With Sources",
+   "h1": "How do auroras on other planets form?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0105",
+   "slug": "how-do-lichens-grow",
+   "question": "How do lichens grow",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-do-lichens-grow/",
+   "keywords": [
+    "lichens",
+    "grow"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do lichens grow? Facts, Myths and Evidence",
+   "h1": "How do lichens grow?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0107",
+   "slug": "how-do-chatbots-work",
+   "question": "How do chatbots work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-do-chatbots-work/",
+   "keywords": [
+    "chatbots",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do chatbots work? The Real Answer, Explained",
+   "h1": "How do chatbots work?",
+   "ymyl": false
+  }
+ ]
+}

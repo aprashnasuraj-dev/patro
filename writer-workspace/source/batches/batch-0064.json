@@ -1,0 +1,179 @@
+{
+ "batch": 64,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-1405",
+   "slug": "why-a-day-on-venus-is-longer-than-its-year",
+   "question": "Why a day on Venus is longer than its year",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-a-day-on-venus-is-longer-than-its-year/",
+   "keywords": [
+    "day",
+    "venus",
+    "longer",
+    "than",
+    "year",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why A Day On Venus Is Longer Than Its Year?",
+   "h1": "Why A Day On Venus Is Longer Than Its Year?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1407",
+   "slug": "how-permafrost-thaw-releases-carbon",
+   "question": "How permafrost thaw releases carbon",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-permafrost-thaw-releases-carbon/",
+   "keywords": [
+    "permafrost",
+    "thaw",
+    "releases",
+    "carbon",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Permafrost Thaw Releases Carbon?",
+   "h1": "How Permafrost Thaw Releases Carbon?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1411",
+   "slug": "how-learning-styles-are-a-myth",
+   "question": "How learning styles are a myth",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-learning-styles-are-a-myth/",
+   "keywords": [
+    "learning",
+    "styles",
+    "myth",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Learning Styles Are A Myth? The Real Answer, Explained",
+   "h1": "How Learning Styles Are A Myth?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1413",
+   "slug": "how-olive-oil-is-graded",
+   "question": "How olive oil is graded",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-olive-oil-is-graded/",
+   "keywords": [
+    "olive",
+    "oil",
+    "graded",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Olive Oil Is Graded? A Clear, Sourced Explanation",
+   "h1": "How Olive Oil Is Graded?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1415",
+   "slug": "how-radios-catch-signals",
+   "question": "How radios catch signals",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-radios-catch-signals/",
+   "keywords": [
+    "radios",
+    "catch",
+    "signals",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Radios Catch Signals? A Clear, Sourced Explanation",
+   "h1": "How Radios Catch Signals?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1417",
+   "slug": "how-touch-id-recognizes-fingerprints",
+   "question": "How touch ID recognizes fingerprints",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-touch-id-recognizes-fingerprints/",
+   "keywords": [
+    "touch",
+    "recognizes",
+    "fingerprints",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Touch ID Recognizes Fingerprints?",
+   "h1": "How Touch ID Recognizes Fingerprints?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1419",
+   "slug": "how-ai-music-is-created",
+   "question": "How AI music is created",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-music-is-created/",
+   "keywords": [
+    "music",
+    "created",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Music Is Created? What Science Actually Says",
+   "h1": "How AI Music Is Created?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1421",
+   "slug": "why-the-aztec-capital-was-built-on-a-lake",
+   "question": "Why the Aztec capital was built on a lake",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-aztec-capital-was-built-on-a-lake/",
+   "keywords": [
+    "aztec",
+    "capital",
+    "built",
+    "lake",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Aztec Capital Was Built On A Lake?",
+   "h1": "Why The Aztec Capital Was Built On A Lake?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1423",
+   "slug": "how-estonia-became-digital",
+   "question": "How Estonia became digital",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-estonia-became-digital/",
+   "keywords": [
+    "estonia",
+    "became",
+    "digital",
+    "geography-countries"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Estonia Became Digital? Facts, Myths and Evidence",
+   "h1": "How Estonia Became Digital?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-1427",
+   "slug": "how-apartments-are-priced",
+   "question": "How apartments are priced",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/how-apartments-are-priced/",
+   "keywords": [
+    "apartments",
+    "priced",
+    "home-cities-daily-life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Apartments Are Priced? Facts, Myths and Evidence",
+   "h1": "How Apartments Are Priced?",
+   "ymyl": false
+  }
+ ]
+}

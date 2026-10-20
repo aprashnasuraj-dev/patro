@@ -1,0 +1,171 @@
+{
+ "batch": 120,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-0301",
+   "slug": "how-does-robotics-work",
+   "question": "How does robotics work",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-does-robotics-work/",
+   "keywords": [
+    "robotics",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does robotics work? Facts, Myths and Evidence",
+   "h1": "How does robotics work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0302",
+   "slug": "how-long-do-pelicans-live",
+   "question": "How long do pelicans live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-pelicans-live/",
+   "keywords": [
+    "long",
+    "pelicans",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do pelicans live? What Science Actually Says",
+   "h1": "How long do pelicans live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0303",
+   "slug": "who-was-valentina-tereshkova",
+   "question": "Who was Valentina Tereshkova",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-valentina-tereshkova/",
+   "keywords": [
+    "valentina",
+    "tereshkova"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Valentina Tereshkova? The Story, Sourced",
+   "h1": "Who was Valentina Tereshkova?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0304",
+   "slug": "how-did-rome-get-its-name",
+   "question": "How did Rome get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-rome-get-its-name/",
+   "keywords": [
+    "did",
+    "rome",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Rome get its name? The Short, Sourced Answer",
+   "h1": "How did Rome get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0305",
+   "slug": "how-does-an-oled-display-work",
+   "question": "How does an OLED display work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-an-oled-display-work/",
+   "keywords": [
+    "oled",
+    "display",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does an OLED display work? A Clear, Sourced Explanation",
+   "h1": "How does an OLED display work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0306",
+   "slug": "why-do-semiconductors-matter-in-everyday-life",
+   "question": "Why do semiconductors matter in everyday life",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/why-do-semiconductors-matter-in-everyday-life/",
+   "keywords": [
+    "semiconductors",
+    "matter",
+    "everyday",
+    "life"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do semiconductors matter in everyday life?",
+   "h1": "Why do semiconductors matter in everyday life?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0307",
+   "slug": "where-does-the-word-thug-come-from",
+   "question": "Where does the word \"thug\" come from",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/where-does-the-word-thug-come-from/",
+   "keywords": [
+    "word",
+    "thug",
+    "come"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where does the word \"thug\" come from?",
+   "h1": "Where does the word \"thug\" come from?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0308",
+   "slug": "how-is-cotton-candy-made",
+   "question": "How is cotton candy made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-is-cotton-candy-made/",
+   "keywords": [
+    "cotton",
+    "candy",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How is cotton candy made? What Science Actually Says",
+   "h1": "How is cotton candy made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0309",
+   "slug": "how-does-a-cruise-control-work",
+   "question": "How does a cruise control work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-cruise-control-work/",
+   "keywords": [
+    "cruise",
+    "control",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a cruise control work? A Clear, Sourced Explanation",
+   "h1": "How does a cruise control work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-0310",
+   "slug": "how-do-glaciers-in-the-himalayas-feed-south-asia-s-rivers",
+   "question": "How do glaciers in the Himalayas feed South Asia's rivers",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/how-do-glaciers-in-the-himalayas-feed-south-asia-s-rivers/",
+   "keywords": [
+    "glaciers",
+    "himalayas",
+    "feed",
+    "south",
+    "asia",
+    "rivers"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do glaciers in the Himalayas feed South Asia's rivers?",
+   "h1": "How do glaciers in the Himalayas feed South Asia's rivers?",
+   "ymyl": false
+  }
+ ]
+}

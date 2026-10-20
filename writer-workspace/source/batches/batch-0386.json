@@ -1,0 +1,166 @@
+{
+ "batch": 386,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2973",
+   "slug": "how-long-do-lizards-live",
+   "question": "How long do lizards live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-lizards-live/",
+   "keywords": [
+    "long",
+    "lizards",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do lizards live? A Clear, Sourced Explanation",
+   "h1": "How long do lizards live?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2974",
+   "slug": "what-caused-the-cuban-missile-crisis",
+   "question": "What caused the Cuban Missile Crisis",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-cuban-missile-crisis/",
+   "keywords": [
+    "caused",
+    "cuban",
+    "missile",
+    "crisis"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Cuban Missile Crisis? Facts and Background",
+   "h1": "What caused the Cuban Missile Crisis?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2975",
+   "slug": "what-is-darjeeling-famous-for",
+   "question": "What is Darjeeling famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-darjeeling-famous-for/",
+   "keywords": [
+    "darjeeling",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Darjeeling famous for? Key Facts and Context",
+   "h1": "What is Darjeeling famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2976",
+   "slug": "why-do-cats-knead-blankets",
+   "question": "Why do cats knead blankets",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-do-cats-knead-blankets/",
+   "keywords": [
+    "cats",
+    "knead",
+    "blankets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why do cats knead blankets? Facts, Myths and Evidence",
+   "h1": "Why do cats knead blankets?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2977",
+   "slug": "what-is-siddhartha-gautama-best-known-for",
+   "question": "What is Siddhartha Gautama best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-siddhartha-gautama-best-known-for/",
+   "keywords": [
+    "siddhartha",
+    "gautama",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Siddhartha Gautama best known for? A Clear Overview",
+   "h1": "What is Siddhartha Gautama best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2978",
+   "slug": "how-did-edinburgh-get-its-name",
+   "question": "How did Edinburgh get its name",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/how-did-edinburgh-get-its-name/",
+   "keywords": [
+    "did",
+    "edinburgh",
+    "get",
+    "its",
+    "name"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How did Edinburgh get its name? Facts and Background",
+   "h1": "How did Edinburgh get its name?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2979",
+   "slug": "what-do-zebras-eat",
+   "question": "What do zebras eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-zebras-eat/",
+   "keywords": [
+    "zebras",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do zebras eat? The Real Answer, Explained",
+   "h1": "What do zebras eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2980",
+   "slug": "what-caused-the-crusades",
+   "question": "What caused the Crusades",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-caused-the-crusades/",
+   "keywords": [
+    "caused",
+    "crusades"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What caused the Crusades? The Story, Sourced",
+   "h1": "What caused the Crusades?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2981",
+   "slug": "what-is-munich-famous-for",
+   "question": "What is Munich famous for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-munich-famous-for/",
+   "keywords": [
+    "munich",
+    "famous"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Munich famous for? The Short, Sourced Answer",
+   "h1": "What is Munich famous for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2982",
+   "slug": "what-do-dolphins-eat",
+   "question": "What do dolphins eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-dolphins-eat/",
+   "keywords": [
+    "dolphins",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do dolphins eat? The Real Answer, Explained",
+   "h1": "What do dolphins eat?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "batch": 35,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mm-0761",
+   "slug": "how-lichens-survive-anywhere",
+   "question": "How lichens survive anywhere",
+   "category": "Nature & Plants",
+   "canonical_url": "https://aafnaipatro.com/how-lichens-survive-anywhere/",
+   "keywords": [
+    "lichens",
+    "survive",
+    "anywhere",
+    "nature-plants"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Lichens Survive Anywhere? The Real Answer, Explained",
+   "h1": "How Lichens Survive Anywhere?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0763",
+   "slug": "why-flamingos-are-pink",
+   "question": "Why flamingos are pink",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/why-flamingos-are-pink/",
+   "keywords": [
+    "flamingos",
+    "pink",
+    "animals-pets"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Flamingos Are Pink? The Real Answer, Explained",
+   "h1": "Why Flamingos Are Pink?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0765",
+   "slug": "why-stars-twinkle",
+   "question": "Why stars twinkle",
+   "category": "Space & Astronomy",
+   "canonical_url": "https://aafnaipatro.com/why-stars-twinkle/",
+   "keywords": [
+    "stars",
+    "twinkle",
+    "space-astronomy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why Stars Twinkle? Explained With Sources",
+   "h1": "Why Stars Twinkle?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0767",
+   "slug": "how-el-nino-changes-global-weather",
+   "question": "How El Nino changes global weather",
+   "category": "Earth, Weather & Climate",
+   "canonical_url": "https://aafnaipatro.com/how-el-nino-changes-global-weather/",
+   "keywords": [
+    "nino",
+    "changes",
+    "global",
+    "weather",
+    "earth-weather-climate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How El Nino Changes Global Weather?",
+   "h1": "How El Nino Changes Global Weather?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0771",
+   "slug": "how-sleep-deprivation-affects-judgment",
+   "question": "How sleep deprivation affects judgment",
+   "category": "Mind & Psychology",
+   "canonical_url": "https://aafnaipatro.com/how-sleep-deprivation-affects-judgment/",
+   "keywords": [
+    "sleep",
+    "deprivation",
+    "affects",
+    "judgment",
+    "mind-psychology"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Sleep Deprivation Affects Judgment?",
+   "h1": "How Sleep Deprivation Affects Judgment?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0773",
+   "slug": "how-pressure-cookers-cook-faster",
+   "question": "How pressure cookers cook faster",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-pressure-cookers-cook-faster/",
+   "keywords": [
+    "pressure",
+    "cookers",
+    "cook",
+    "faster",
+    "food-cooking"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Pressure Cookers Cook Faster? What Science Actually Says",
+   "h1": "How Pressure Cookers Cook Faster?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0775",
+   "slug": "how-thermometers-work",
+   "question": "How thermometers work",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-thermometers-work/",
+   "keywords": [
+    "thermometers",
+    "everyday-science"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Thermometers Work? Explained With Sources",
+   "h1": "How Thermometers Work?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0777",
+   "slug": "how-cloud-storage-works",
+   "question": "How cloud storage works",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-cloud-storage-works/",
+   "keywords": [
+    "cloud",
+    "storage",
+    "technology-internet"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How Cloud Storage Works? A Clear, Sourced Explanation",
+   "h1": "How Cloud Storage Works?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0779",
+   "slug": "how-ai-is-changing-jobs",
+   "question": "How AI is changing jobs",
+   "category": "AI & Future Tech",
+   "canonical_url": "https://aafnaipatro.com/how-ai-is-changing-jobs/",
+   "keywords": [
+    "changing",
+    "jobs",
+    "ai-future-tech"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How AI Is Changing Jobs? Facts, Myths and Evidence",
+   "h1": "How AI Is Changing Jobs?",
+   "ymyl": false
+  },
+  {
+   "id": "mm-0781",
+   "slug": "why-the-titanic-sank",
+   "question": "Why the Titanic sank",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/why-the-titanic-sank/",
+   "keywords": [
+    "titanic",
+    "sank",
+    "history-civilizations"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why The Titanic Sank? A Clear, Sourced Explanation",
+   "h1": "Why The Titanic Sank?",
+   "ymyl": false
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "batch": 234,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-1447",
+   "slug": "how-does-a-robot-vacuum-work",
+   "question": "How does a robot vacuum work",
+   "category": "Technology & Internet",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-robot-vacuum-work/",
+   "keywords": [
+    "robot",
+    "vacuum",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a robot vacuum work? Explained With Sources",
+   "h1": "How does a robot vacuum work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1448",
+   "slug": "how-does-a-battery-store-energy",
+   "question": "How does a battery store energy",
+   "category": "Everyday Science",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-battery-store-energy/",
+   "keywords": [
+    "battery",
+    "store",
+    "energy"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a battery store energy? The Real Answer, Explained",
+   "h1": "How does a battery store energy?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1449",
+   "slug": "how-many-people-speak-icelandic-and-where",
+   "question": "How many people speak Icelandic and where",
+   "category": "Language, Words & Culture",
+   "canonical_url": "https://aafnaipatro.com/how-many-people-speak-icelandic-and-where/",
+   "keywords": [
+    "many",
+    "people",
+    "speak",
+    "icelandic"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How many people speak Icelandic and where?",
+   "h1": "How many people speak Icelandic and where?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1450",
+   "slug": "how-are-sausages-made",
+   "question": "How are sausages made",
+   "category": "Food & Cooking",
+   "canonical_url": "https://aafnaipatro.com/how-are-sausages-made/",
+   "keywords": [
+    "sausages",
+    "made"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How are sausages made? Facts, Myths and Evidence",
+   "h1": "How are sausages made?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1451",
+   "slug": "how-does-a-pile-driver-work",
+   "question": "How does a pile driver work",
+   "category": "Transport & Engineering",
+   "canonical_url": "https://aafnaipatro.com/how-does-a-pile-driver-work/",
+   "keywords": [
+    "pile",
+    "driver",
+    "work"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How does a pile driver work? A Clear, Sourced Explanation",
+   "h1": "How does a pile driver work?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1452",
+   "slug": "why-is-nepal-s-flag-not-rectangular",
+   "question": "Why is Nepal's flag not rectangular",
+   "category": "Nepal & Himalaya",
+   "canonical_url": "https://aafnaipatro.com/why-is-nepal-s-flag-not-rectangular/",
+   "keywords": [
+    "nepal",
+    "flag",
+    "not",
+    "rectangular"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Why is Nepal's flag not rectangular?",
+   "h1": "Why is Nepal's flag not rectangular?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1453",
+   "slug": "what-are-the-main-parts-of-a-pressure-cooker",
+   "question": "What are the main parts of a pressure cooker",
+   "category": "Home, Cities & Daily Life",
+   "canonical_url": "https://aafnaipatro.com/what-are-the-main-parts-of-a-pressure-cooker/",
+   "keywords": [
+    "main",
+    "parts",
+    "pressure",
+    "cooker"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What are the main parts of a pressure cooker?",
+   "h1": "What are the main parts of a pressure cooker?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1454",
+   "slug": "what-is-geometry",
+   "question": "What is geometry",
+   "category": "Math & Numbers",
+   "canonical_url": "https://aafnaipatro.com/what-is-geometry/",
+   "keywords": [
+    "geometry"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is geometry? Facts, Myths and Evidence",
+   "h1": "What is geometry?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1455",
+   "slug": "what-makes-blues-unique",
+   "question": "What makes blues unique",
+   "category": "Arts, Music & Literature",
+   "canonical_url": "https://aafnaipatro.com/what-makes-blues-unique/",
+   "keywords": [
+    "makes",
+    "blues",
+    "unique"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What makes blues unique? The Real Answer, Explained",
+   "h1": "What makes blues unique?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-1456",
+   "slug": "how-long-do-hyenas-live",
+   "question": "How long do hyenas live",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-long-do-hyenas-live/",
+   "keywords": [
+    "long",
+    "hyenas",
+    "live"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How long do hyenas live? Explained With Sources",
+   "h1": "How long do hyenas live?",
+   "ymyl": false
+  }
+ ]
+}

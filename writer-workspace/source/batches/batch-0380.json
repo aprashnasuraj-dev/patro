@@ -1,0 +1,163 @@
+{
+ "batch": 380,
+ "of": 390,
+ "instructions": "Follow PROTOCOL.md for every topic in this batch, in order.",
+ "topics": [
+  {
+   "id": "mn-2913",
+   "slug": "how-do-walruses-communicate",
+   "question": "How do walruses communicate",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/how-do-walruses-communicate/",
+   "keywords": [
+    "walruses",
+    "communicate"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How do walruses communicate? What Science Actually Says",
+   "h1": "How do walruses communicate?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2914",
+   "slug": "who-was-prithvi-narayan-shah",
+   "question": "Who was Prithvi Narayan Shah",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/who-was-prithvi-narayan-shah/",
+   "keywords": [
+    "prithvi",
+    "narayan",
+    "shah"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Who was Prithvi Narayan Shah? Facts and Background",
+   "h1": "Who was Prithvi Narayan Shah?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2915",
+   "slug": "what-is-the-history-of-uganda",
+   "question": "What is the history of Uganda",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-history-of-uganda/",
+   "keywords": [
+    "history",
+    "uganda"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the history of Uganda? The Story, Sourced",
+   "h1": "What is the history of Uganda?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2916",
+   "slug": "what-do-salamanders-eat",
+   "question": "What do salamanders eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-salamanders-eat/",
+   "keywords": [
+    "salamanders",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do salamanders eat? A Clear, Sourced Explanation",
+   "h1": "What do salamanders eat?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2917",
+   "slug": "how-was-the-calculator-invented",
+   "question": "How was the calculator invented",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/how-was-the-calculator-invented/",
+   "keywords": [
+    "calculator",
+    "invented"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "How was the calculator invented? Facts, Myths and Evidence",
+   "h1": "How was the calculator invented?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2918",
+   "slug": "what-is-hungary-known-for",
+   "question": "What is Hungary known for",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-hungary-known-for/",
+   "keywords": [
+    "hungary",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Hungary known for? The Short, Sourced Answer",
+   "h1": "What is Hungary known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2919",
+   "slug": "where-do-blue-whales-live-in-the-wild",
+   "question": "Where do blue whales live in the wild",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/where-do-blue-whales-live-in-the-wild/",
+   "keywords": [
+    "blue",
+    "whales",
+    "live",
+    "wild"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "Where do blue whales live in the wild?",
+   "h1": "Where do blue whales live in the wild?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2920",
+   "slug": "what-is-tycho-brahe-best-known-for",
+   "question": "What is Tycho Brahe best known for",
+   "category": "History & Civilizations",
+   "canonical_url": "https://aafnaipatro.com/what-is-tycho-brahe-best-known-for/",
+   "keywords": [
+    "tycho",
+    "brahe",
+    "best",
+    "known"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is Tycho Brahe best known for? Facts and Background",
+   "h1": "What is Tycho Brahe best known for?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2921",
+   "slug": "what-is-the-economy-of-tanzania-based-on",
+   "question": "What is the economy of Tanzania based on",
+   "category": "Geography & Countries",
+   "canonical_url": "https://aafnaipatro.com/what-is-the-economy-of-tanzania-based-on/",
+   "keywords": [
+    "economy",
+    "tanzania",
+    "based"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What is the economy of Tanzania based on? A Clear Overview",
+   "h1": "What is the economy of Tanzania based on?",
+   "ymyl": false
+  },
+  {
+   "id": "mn-2922",
+   "slug": "what-do-flamingos-eat",
+   "question": "What do flamingos eat",
+   "category": "Animals & Pets",
+   "canonical_url": "https://aafnaipatro.com/what-do-flamingos-eat/",
+   "keywords": [
+    "flamingos",
+    "eat"
+   ],
+   "target_words": 1200,
+   "title_suggestion": "What do flamingos eat? The Real Answer, Explained",
+   "h1": "What do flamingos eat?",
+   "ymyl": false
+  }
+ ]
+}
