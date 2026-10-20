@@ -10,13 +10,13 @@
 | Workstream / काम | Status / अवस्था | Notes / टिप्पणी |
 |---|---|---|
 | Repository exploration / कोडबेस अध्ययन | Complete / पूरा | Existing SPA router, main Worker, astronomy-engine, D1/static sources, navigation, and tests inspected |
-| Isolated branch / अलग शाखा | Complete / पूरा | `feature/mytime-v1` created from `main` |
+| Isolated branch / अलग शाखा | Complete / पूरा | `feature/my-time-v1` created from `main` |
 | Foundation documentation / आधारभूत दस्तावेज | In review / समीक्षामा | This status page and architecture guardrails are proposed |
-| Panchang formula verification / पञ्चाङ्ग सूत्र प्रमाणीकरण | Partial / आंशिक | Initial Tithi snapshot exists; sunrise-based and sidereal formulas still need fixtures |
+| Panchang formula verification / पञ्चाङ्ग सूत्र प्रमाणीकरण | Partial / आंशिक | Shared location-aware Panchang now supplies sunrise Tithi, Nakshatra/Pada, Yoga, Karana and sidereal signs; additional fixtures and convention review remain |
 | Edge API and cache / एज API तथा क्यास | In progress / जारी | /api/v1/mytime/today dispatched by the existing main Worker; feature flag required; no new binding |
 | Bilingual dashboard / द्विभाषिक ड्यासबोर्ड | Initial slice / पहिलो चरण | /mytime page, polar clock, settings, snapshot panel, navigation placements added |
 | Offline and accessibility / अफलाइन तथा पहुँचयोग्यता | Not started / सुरु नभएको | No service worker or IndexedDB changes yet |
-| CI and regression proof / CI तथा प्रतिगमन परीक्षण | Running / चलिरहेको | Added core timezone/API tests to the product test script; latest GitHub CI was pending at last check |
+| CI and regression proof / CI तथा प्रतिगमन परीक्षण | Running / चलिरहेको | Added timezone/API and temporal-window tests to the product test script; latest GitHub CI must still be confirmed |
 
 ## Verified today | आज पुष्टि गरिएका तथ्य
 
@@ -67,4 +67,4 @@ No functional code has been merged or deployed yet. Next work is formula/referen
 - Architecture is one integrated feature and one canonical page at `/mytime`; not a separate tool service or Worker.
 - Phase 1 must dispatch through `worker/optimized-entry.ts` and reuse current astronomy, Tithi, D1/static datasets, and existing profile-related sources where contracts support it. No KV binding is assumed present.
 - Phase 2 navigation order is explicit: tools list; mobile home menu immediately after JanmaPatro; desktop bottom section immediately after “आजको नेपाली मिति”. Preserve `/time-machine`.
-- Phase 3 must connect declared birth-chart/Rashifal context and the rest of the PDF personalization signals with clear consent, transparent rules, and privacy-safe cache boundaries.
+- Phase 3 reads the existing declared birth-chart/Rashifal context locally and computes initial Tarabalam/Chandrabalam; smart Muhurta, additional preferences and offline resilience remain to be completed with transparent rules and privacy-safe cache boundaries.
