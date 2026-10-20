@@ -69,6 +69,18 @@ test("healthy React UI stays untouched, failed startup shows a user-controlled r
   assert.equal(simulatedBoot(false, false).added.length, 0);
 });
 
+test("My Time app shell can reopen offline and calculate locally after a visit", () => {
+  const sw = read("public/sw.js");
+  const page = read("src/features/my-time/MyTimePage.tsx");
+  const cache = read("src/features/my-time/my-time-cache.ts");
+  assert.match(sw, /"\\/mytime"/);
+  assert.match(sw, /if \\(event\\.request\\.mode === "navigate"\\) \\{ event\\.respondWith\\(networkFirstShell\\(event\\.request, "\/"\\)\\)/);
+  assert.match(page, /calculateMyTimeSnapshot\\(\\{ date: nextDate, timezone: nextPreferences\\.timezone/);
+  assert.match(page, /readMyTimeSnapshot\\(cacheKey\\)/);
+  assert.match(cache, /const MAX_ENTRIES = 20/);
+  assert.match(cache, /myTimeCacheEvictions/);
+});
+
 test("recovery script is included in HTML and optional services cannot block main render", () => {
   assert.match(read("index.html"), /<script defer src="\/patro-boot-recovery\.js"><\/script>/);
   const main = read("src/main.tsx");
