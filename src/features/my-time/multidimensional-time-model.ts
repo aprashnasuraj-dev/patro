@@ -19,31 +19,12 @@ import {
 
 export type ExplorerLanguage = "ne" | "en";
 
-export type PersonalWindow = {
-  key: string;
-  start: string;
-  end: string;
-  score: number;
-  label: string;
-  confidence: string;
-  reasons: string[];
-  cautions: string[];
-  missing: string[];
-  components: Array<{
-    key: string;
-    score: number;
-    weight: number;
-    explanation: string;
-  }>;
-};
-
 export type ExplorerLayerId =
   | "daylight"
   | "choghadiya"
   | "hora"
   | "caution"
-  | "twilight"
-  | "personal";
+  | "twilight";
 
 export type ExplorerSegment = {
   id: string;
@@ -55,9 +36,8 @@ export type ExplorerSegment = {
   startMinute: number;
   endMinute: number;
   favorable?: boolean;
-  score?: number;
   tone?: "supportive" | "mixed" | "caution" | "neutral";
-  source: "solar" | "traditional" | "personal";
+  source: "solar" | "traditional";
   explanationNe: string;
   explanationEn: string;
 };
@@ -105,7 +85,6 @@ type RawSegment = {
   startUtc: string;
   endUtc: string;
   favorable?: boolean;
-  score?: number;
   tone?: ExplorerSegment["tone"];
   source: ExplorerSegment["source"];
   explanationNe: string;
@@ -157,15 +136,6 @@ const LAYER_META: Record<ExplorerLayerId, Omit<ExplorerLayer, "segments" | "mark
     shortEn: "Twilight",
     descriptionNe: "सूर्यको केन्द्र क्षितिजभन्दा −६°, −१२° र −१८° मा हुँदा गणना गरिएका सन्ध्या सङ्केत।",
     descriptionEn: "Twilight markers based on the Sun's center at −6°, −12° and −18° altitude.",
-  },
-  personal: {
-    id: "personal",
-    titleNe: "व्यक्तिगत समय सङ्केत",
-    titleEn: "Personal timing",
-    shortNe: "व्यक्तिगत",
-    shortEn: "Personal",
-    descriptionNe: "उपलब्ध पञ्चाङ्ग र ऐच्छिक जन्मपत्रो सन्दर्भबाट क्रमबद्ध गरिएका समयका विकल्प।",
-    descriptionEn: "Ranked timing options derived from available Panchang and optional natal context.",
   },
 };
 
@@ -276,7 +246,6 @@ function clipRawSegment(
     startMinute,
     endMinute,
     favorable: raw.favorable,
-    score: raw.score,
     tone: raw.tone,
     source: raw.source,
     explanationNe: raw.explanationNe,
@@ -330,27 +299,6 @@ function asRawTraditional(
   };
 }
 
-function asRawPersonal(value: PersonalWindow): RawSegment {
-  const label = value.label.toLowerCase();
-  const tone: ExplorerSegment["tone"] =
-    label === "supportive" ? "supportive" :
-      label === "caution" ? "caution" :
-        label === "mixed" ? "mixed" : "neutral";
-  return {
-    id: "personal-" + value.key,
-    layer: "personal",
-    titleNe: "व्यक्तिगत समय",
-    titleEn: "Personal window",
-    startUtc: value.start,
-    endUtc: value.end,
-    score: value.score,
-    tone,
-    source: "personal",
-    explanationNe: value.reasons.join(" · ") || "उपलब्ध नियमहरूबाट निकालिएको क्रमबद्ध सङ्केत।",
-    explanationEn: value.reasons.join(" · ") || "A ranked indication derived from available rules.",
-  };
-}
-
 function pushSegment(
   layers: Map<ExplorerLayerId, ExplorerSegment[]>,
   raw: RawSegment,
@@ -371,13 +319,11 @@ function emptyLayerSegments(): Map<ExplorerLayerId, ExplorerSegment[]> {
     ["hora", []],
     ["caution", []],
     ["twilight", []],
-    ["personal", []],
   ]);
 }
 
 export function buildMultidimensionalLayers(
   snapshot: MyTimeSnapshot,
-  windows: PersonalWindow[],
   timezone: string,
 ): ExplorerBuildResult {
   const date = snapshot.date;
@@ -458,9 +404,6 @@ export function buildMultidimensionalLayers(
     });
   }
 
-  windows.forEach((window) =>
-    pushSegment(layerSegments, asRawPersonal(window), selectedTimezone, date, startMs, endMs),
-  );
 
   const markerRaw: ExplorerMarker[] = [];
   if (isValidInstant(solar.sunrise_utc)) {
@@ -530,7 +473,6 @@ export function buildMultidimensionalLayers(
       "Intervals are represented as half-open UTC intervals [start, end).",
       "The visual axis is local wall-clock time, even when the selected civil day is not exactly 24 elapsed hours because of a time-zone transition.",
       "Solar-based periods are only generated when sunrise, sunset and next sunrise are all available.",
-      "Personal windows display the existing My Time ranking; this visual layer does not recalculate the scoring model.",
     ],
   };
 }
@@ -674,6 +616,3 @@ export function svgArcPath(
   ].join(" ");
 }
 
-export function formatScore(score: number): string {
-  return Number.isFinite(score) ? String(Math.round(score)) : "—";
-}
