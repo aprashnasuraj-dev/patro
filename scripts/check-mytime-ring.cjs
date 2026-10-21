@@ -25,11 +25,16 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     await page.locator(".mt-polar-wrap").waitFor({ state: "visible", timeout: 30000 });
     await page.waitForFunction(() => document.querySelectorAll(".mt-polar-hit-target").length > 0, null, { timeout: 30000 });
 
+    const rings = page.locator(".mt-polar-wrap");
+    assert.equal(await rings.count(), 1, "My Time must render only the primary time ring, not a secondary explorer ring");
+    assert.equal(await page.getByText("Your Living Map of Time", { exact: true }).count(), 0, "secondary time explorer must not be rendered");
+
     const targets = page.locator(".mt-polar-hit-target");
     const count = await targets.count();
     assert(count >= 2, `expected at least two selectable main-ring intervals, found ${count}`);
 
     const first = targets.nth(0);
+    await first.scrollIntoViewIfNeeded();
     const targetMetrics = await first.evaluate((element) => ({
       role: element.getAttribute("role"),
       tabIndex: element.getAttribute("tabindex"),
