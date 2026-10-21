@@ -180,6 +180,9 @@ jobs:
           set -euo pipefail
           npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
           npx playwright install chromium >/dev/null
+          mkdir -p .lighthouseci
+          openssl req -x509 -newkey rsa:2048 -nodes -keyout .lighthouseci/localhost.key -out .lighthouseci/localhost.crt -days 1 -subj "/CN=127.0.0.1" -addext "subjectAltName=IP:127.0.0.1"
+
       - name: Homepage first-paint, API-failure and offline PWA checks
         id: home_pwa_checks
         if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
@@ -219,7 +222,16 @@ jobs:
         id: lighthouse
         if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success'
         continue-on-error: true
-        run: npm run seo:audit
+        shell: bash
+        run: |
+          set +e
+          npm run seo:audit
+          audit_status=$?
+          set -e
+          if [[ "$audit_status" -ne 0 ]]; then
+            node scripts/report-lighthouse-failures.mjs
+          fi
+          exit "$audit_status"
       - name: Release verdict
         if: always()
         shell: bash
