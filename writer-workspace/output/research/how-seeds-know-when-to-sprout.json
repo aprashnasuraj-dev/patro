@@ -1,0 +1,41 @@
+{
+  "id": "mm-0121",
+  "slug": "how-seeds-know-when-to-sprout",
+  "researched_at": "2026-10-21",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Seed and Seedling Biology",
+      "publisher": "Penn State Extension",
+      "url": "https://extension.psu.edu/seed-and-seedling-biology",
+      "reliability": "university extension guidance",
+      "notes": [
+        "A seed packages an embryo, stored reserves and protective tissues. Although a dry seed looks inactive, it may remain viable while its metabolic processes operate at a greatly reduced level. Reserves support initial development before the se"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Starting seeds indoors",
+      "publisher": "University of Minnesota Extension",
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/starting-seeds-indoors",
+      "reliability": "university extension guidance",
+      "notes": [
+        "Penn State Extension describes imbibition as the first stage in which a seed absorbs water, swelling and softening its covering. A subsequent phase activates respiration, protein production and use of stored food, eventually leading to emer"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Starting Seeds",
+      "publisher": "Penn State Extension",
+      "url": "https://extension.psu.edu/programs/master-gardener/counties/adams/news/starting-seeds",
+      "reliability": "university extension guidance",
+      "notes": [
+        "Temperature affects the pace of biochemical activity. University of Minnesota Extension recommends consistently suitable soil warmth when starting many garden seeds indoors, noting that growing-medium temperature can differ from nearby air "
+      ]
+    }
+  ],
+  "image_research": {
+    "status": "pending",
+    "third_party_assets_approved": []
+  }
+}
