@@ -100,11 +100,11 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,310px),1fr))", gap: 22, alignItems: "center", marginBlock: 20 }}>
         <div style={{ display: "flex", justifyContent: "center", minWidth: 0 }}>
-          <svg viewBox="0 0 300 300" role="img" aria-label={l(language, "रङ्गीन वृत्तहरूले समयका तह देखाउने २४ घण्टाको घडी", "24-hour clock with colored rings for timing layers")} style={{ width: "min(100%,360px)", height: "auto", overflow: "visible" }}>
+          <svg viewBox="0 0 300 300" role="group" aria-label={l(language, "रङ्गीन वृत्तहरूले समयका तह देखाउने २४ घण्टाको घडी", "24-hour clock with colored rings for timing layers")} style={{ width: "min(100%,360px)", height: "auto", overflow: "visible" }}>
             <circle cx="150" cy="150" r="132" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.12" />
             {radii.map((radius, index) => <circle key={radius} cx="150" cy="150" r={radius} fill="none" stroke="currentColor" strokeWidth="9" opacity="0.09" />)}
             {timedLayers.map((layer, index) => layer.segments.map((segment) => (
-              <path key={segment.id} d={svgArcPath(150, 150, radii[index], segment.startMinute, segment.endMinute)} fill="none" stroke={colorFor(layer, segment)} strokeWidth="9" strokeLinecap="round">
+              <path key={segment.id} d={svgArcPath(150, 150, radii[index], segment.startMinute, segment.endMinute)} fill="none" stroke={colorFor(layer, segment)} strokeWidth="9" strokeLinecap="round" role="button" tabIndex={0} aria-label={labelFor(layer, segment, language) + ", " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)} style={{ cursor: "pointer", outline: "none" }} onClick={(event) => { const rect = event.currentTarget.ownerSVGElement?.getBoundingClientRect(); if (!rect || rect.width <= 0 || rect.height <= 0) return; const x = (event.clientX - rect.left) * 300 / rect.width - 150; const y = (event.clientY - rect.top) * 300 / rect.height - 150; const angle = (Math.atan2(x, -y) + Math.PI * 2) % (Math.PI * 2); chooseMinute(Math.min(1439, Math.floor(angle / (Math.PI * 2) * 1440))); }} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); chooseSegment(segment); } }}>
                 <title>{labelFor(layer, segment, language) + " · " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)}</title>
               </path>
             )))}
