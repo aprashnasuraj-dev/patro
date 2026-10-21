@@ -1,0 +1,61 @@
+{
+  "id": "mm-0127",
+  "slug": "how-tornadoes-form",
+  "researched_at": "2026-10-21",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Severe Weather 101: Tornado Basics",
+      "publisher": "NOAA National Severe Storms Laboratory",
+      "url": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
+      "reliability": "NOAA or NWS primary meteorological guidance",
+      "notes": [
+        "NOAA identifies moisture, atmospheric instability and a lifting mechanism as fundamental requirements for thunderstorm development [3]. Rising air supports condensation and cloud growth, while surrounding conditions influence the storm"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Severe Weather 101: Tornado FAQ",
+      "publisher": "NOAA National Severe Storms Laboratory",
+      "url": "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/faq/",
+      "reliability": "NOAA or NWS primary meteorological guidance",
+      "notes": [
+        "Wind shear refers to differences in wind speed, direction or both at different heights. The National Weather Service explains that shear can establish a rolling horizontal motion in the atmosphere. A strong thunderstorm updraft can til"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Ingredients for a Thunderstorm",
+      "publisher": "NOAA JetStream",
+      "url": "https://prod-01-alb-www-noaa.woc.noaa.gov/jetstream/thunderstorms/ingredients-for-thunderstorm",
+      "reliability": "NOAA or NWS primary meteorological guidance",
+      "notes": [
+        "A supercell has a persistent rotating updraft, often identified through radar circulation called a mesocyclone. NOAA associates many destructive tornadoes with these organized storms, while also noting that supercells can generate seve"
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Spotter's Field Guide: The Supercell, Pt. 1",
+      "publisher": "National Weather Service",
+      "url": "https://www.weather.gov/spotterguide/supercell1",
+      "reliability": "NOAA or NWS primary meteorological guidance",
+      "notes": [
+        "Supercells contain descending air as well as powerful updrafts. The National Weather Service describes a rear-flank downdraft wrapping around the main rotating updraft and influencing the development of circulation near the storm's bas"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Spotter's Field Guide: The Supercell, Pt. 2",
+      "publisher": "National Weather Service",
+      "url": "https://www.weather.gov/spotterguide/supercell2",
+      "reliability": "NOAA or NWS primary meteorological guidance",
+      "notes": [
+        "A tornado involves violent rotation associated with a cloud and in contact with the surface. Importantly, a condensation funnel does not always appear to reach the ground even when the rotating air does [2]. Visibility depends on humid"
+      ]
+    }
+  ],
+  "image_research": {
+    "status": "pending",
+    "third_party_assets_approved": []
+  }
+}
