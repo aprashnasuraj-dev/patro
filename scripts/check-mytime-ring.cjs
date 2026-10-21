@@ -49,7 +49,28 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
       const screen = new DOMPoint(local.x, local.y).matrixTransform(path.ownerSVGElement.getScreenCTM());
       return { x: screen.x, y: screen.y };
     });
+    await first.evaluate((element) => {
+      window.__myTimeRingPointer = { pointerdown: 0, click: 0 };
+      element.addEventListener("pointerdown", () => { window.__myTimeRingPointer.pointerdown += 1; }, true);
+      element.addEventListener("click", () => { window.__myTimeRingPointer.click += 1; }, true);
+    });
+    const hitTest = await page.evaluate(({ x, y }) => {
+      const hit = document.elementFromPoint(x, y);
+      return {
+        tag: hit?.tagName ?? null,
+        className: hit?.getAttribute("class") ?? null,
+        role: hit?.getAttribute("role") ?? null,
+        label: hit?.getAttribute("aria-label") ?? null,
+        isRingTarget: hit?.classList?.contains("mt-polar-hit-target") ?? false,
+        point: { x, y },
+        viewport: { width: innerWidth, height: innerHeight, scrollY },
+        rect: hit ? (() => { const r = hit.getBoundingClientRect(); return { left: r.left, top: r.top, right: r.right, bottom: r.bottom }; })() : null
+      };
+    }, point);
+    console.log("MYTIME_RING_TAP_DIAGNOSTIC=" + JSON.stringify({ point, targetMetrics, hitTest }));
     await page.mouse.click(point.x, point.y);
+    const observedPointer = await page.evaluate(() => window.__myTimeRingPointer);
+    console.log("MYTIME_RING_POINTER_EVENTS=" + JSON.stringify(observedPointer));
     const panel = page.locator(".mt-selected-event");
     await panel.waitFor({ state: "visible", timeout: 5000 });
     const clickDetails = await page.locator(".mt-selected-event-copy").innerText();
