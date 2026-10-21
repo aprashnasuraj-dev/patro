@@ -161,7 +161,8 @@ function arcPaths(start: number, end: number, radius: number) {
   return end >= start ? [segment(start,end)].filter(Boolean) : [segment(start,1440),segment(0,end)].filter(Boolean);
 }
 function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaal, showHora, showTwilight, showTantra, tantraTime }: { timezone: string; now: Date; language: "ne" | "en"; snapshot: Snapshot | null; showChoghadiya: boolean; showKaal: boolean; showHora: boolean; showTwilight: boolean; showTantra: boolean; tantraTime: ReturnType<typeof computeTantraTime> | null }) {
-  const [selectedEvent, setSelectedEvent] = useState("");
+  const [selectedEvent, setSelectedEvent] = useState<{ key: string; label: string; start: string; end: string; explanation: string } | null>(null);
+  const [focusedEventKey, setFocusedEventKey] = useState<string | null>(null);
   const safeTimezoneValue = safeTimeZone(timezone);
   const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, hour: "2-digit", hourCycle: "h23" }).format(now));
   const minutes = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, minute: "2-digit" }).format(now));
@@ -183,8 +184,32 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
     {key:"astronomical-dusk",label:l(language,"खगोलीय साँझ","Astronomical dusk"),start:snapshot.panchang.sunset_utc,end:snapshot.twilight.astronomical_dusk_utc}
   ].filter((window): window is {key:string;label:string;start:string;end:string} => Boolean(window.start && window.end && Date.parse(window.end)>Date.parse(window.start))) : [];
   const pathsFor = (start: string,end: string,radius: number) => arcPaths(localMinute(start,safeTimezoneValue),localMinute(end,safeTimezoneValue),radius);
-  const selectEvent = (label: string,start: string,end: string) => setSelectedEvent(label+" · "+localClock(safeTimezoneValue,new Date(start))+"–"+localClock(safeTimezoneValue,new Date(end)));
-  const selectablePath = (key: string,d: string,label: string,start: string,end: string,stroke: string,width: number,opacity: number) => <path key={key} d={d} fill="none" stroke={stroke} strokeWidth={width} strokeLinecap="round" opacity={opacity} role="button" tabIndex={0} aria-label={`${label}, ${localClock(safeTimezoneValue,new Date(start))}–${localClock(safeTimezoneValue,new Date(end))}`} onClick={()=>selectEvent(label,start,end)} onKeyDown={event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();selectEvent(label,start,end);}}}><title>{label}: {localClock(safeTimezoneValue,new Date(start))}–{localClock(safeTimezoneValue,new Date(end))}</title></path>;
+  const selectEvent = (key: string, label: string, start: string, end: string, explanation: string) => setSelectedEvent({ key, label, start, end, explanation });
+  const durationText = (start: string, end: string) => {
+    const totalMinutes = Math.max(0, Math.round((Date.parse(end) - Date.parse(start)) / 60000));
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return language === "ne"
+      ? [hours ? `${hours} घण्टा` : "", minutes ? `${minutes} मिनेट` : ""].filter(Boolean).join(" ") || "० मिनेट"
+      : [hours ? `${hours} h` : "", minutes ? `${minutes} min` : ""].filter(Boolean).join(" ") || "0 min";
+  };
+  const selectablePath = (key: string,d: string,label: string,start: string,end: string,stroke: string,width: number,opacity: number,explanation: string) => {
+    const selected = selectedEvent?.key === key;
+    const focused = focusedEventKey === key;
+    const intervalLabel = `${label}, ${localClock(safeTimezoneValue,new Date(start))}–${localClock(safeTimezoneValue,new Date(end))}`;
+    return <g key={key}>
+      {selected && <path d={d} fill="none" stroke={stroke} strokeWidth={width + 11} strokeLinecap="round" opacity={0.34} pointerEvents="none" />}
+      <path d={d} fill="none" stroke={stroke} strokeWidth={width} strokeLinecap="round" opacity={selected ? 1 : opacity} pointerEvents="none" aria-hidden="true" />
+      <path className="mt-polar-hit-target" d={d} fill="none" stroke="transparent" strokeWidth={Math.max(22, width + 16)} strokeLinecap="round" pointerEvents="stroke" role="button" tabIndex={0}
+        aria-label={intervalLabel} aria-pressed={selected} style={{ cursor: "pointer", touchAction: "manipulation" }}
+        onFocus={() => setFocusedEventKey(key)} onBlur={() => setFocusedEventKey(current => current === key ? null : current)}
+        onClick={() => selectEvent(key, label, start, end, explanation)}
+        onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectEvent(key, label, start, end, explanation); } }}>
+        <title>{intervalLabel}</title>
+      </path>
+      {focused && <path d={d} fill="none" stroke="var(--mt-ink)" strokeWidth={width + 9} strokeLinecap="round" strokeDasharray="2 3" opacity={0.72} pointerEvents="none" />}
+    </g>;
+  };
   return <div className="mt-polar-wrap">
     <svg className="mt-polar" viewBox="0 0 300 300" role="group" aria-label={l(language, "तपाईंको स्थानीय दिनको २४ घण्टे घडी र चयन गर्न मिल्ने समय खण्डहरू", "24-hour local clock with selectable time segments")}>
       <defs><linearGradient id="mt-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#e8bd70"/><stop offset="100%" stopColor="#4d9d8b"/></linearGradient></defs>
@@ -193,11 +218,11 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
       <circle className="mt-polar-progress" cx="150" cy="150" r="100" fill="none" stroke="url(#mt-ring)" strokeWidth="10" strokeDasharray={`${progressLength} 628.32`} transform="rotate(-90 150 150)" strokeLinecap="round"/>
       <circle cx="150" cy="150" r="78" fill="none" stroke="var(--mt-line)" strokeDasharray="2 6"/>
       <g className="mt-temporal-orbits" aria-label={l(language,"चयन गरिएको दिनका परम्परागत र खगोलीय समय खण्ड","Traditional and astronomical timing layers")}>
-        {showChoghadiya && [...choghadiya.day,...choghadiya.night].map(window=>pathsFor(window.start_utc,window.end_utc,69).map((d,index)=>selectablePath(window.key+"-"+index,d,(language === "ne" ? window.name_ne : window.name_en),window.start_utc,window.end_utc,window.favorable?"#69a988":window.key.startsWith("night")?"#8986c5":"#c6a4a0",4,window.favorable?0.88:0.62)))}
-        {showKaal && inauspicious.map((window,index)=>pathsFor(window.start_utc,window.end_utc,84+index*5).map((d,part)=>selectablePath(window.key+"-"+part,d,(language === "ne" ? window.name_ne : window.name_en),window.start_utc,window.end_utc,["#c58b37","#b96e7b","#8377bb"][index],3.5,0.9)))}
-        {showHora && [...hora.day,...hora.night].map(window=>pathsFor(window.start_utc,window.end_utc,57).map((d,index)=>selectablePath(window.key+"-"+index,d,(language === "ne" ? window.name_ne : window.name_en),window.start_utc,window.end_utc,"#5795b0",2.3,0.82)))}
-        {showTantra && tantraTime && pathsFor(tantraTime.tatwaWindow.start,tantraTime.tatwaWindow.end,122).map((d,index)=>selectablePath("tantra-tatwa-"+index,d,`${tantraTime.activeTatwa.name} Tatwa wave`,tantraTime.tatwaWindow.start,tantraTime.tatwaWindow.end,tantraTime.activeTatwa.color,5,0.95))}
-        {showTwilight && twilightWindows.map(window=>pathsFor(window.start,window.end,48).map((d,index)=>selectablePath(window.key+"-"+index,d,window.label,window.start,window.end,"#d4a653",2.2,0.8)))}
+        {showChoghadiya && [...choghadiya.day,...choghadiya.night].map(window=>pathsFor(window.start_utc,window.end_utc,69).map((d,index)=>selectablePath(window.key+"-"+index,d,(language === "ne" ? window.name_ne : window.name_en),window.start_utc,window.end_utc,window.favorable?"#69a988":window.key.startsWith("night")?"#8986c5":"#c6a4a0",4,window.favorable?0.88:0.62,window.favorable ? l(language,"यो चौघडिया परम्परागत रूपमा अनुकूल मानिन्छ; यो परिणामको ग्यारेन्टी होइन।","Traditionally considered favorable; this is not a guarantee of outcomes.") : l(language,"यो चौघडिया परम्पराअनुसार तटस्थ वा कम अनुकूल मानिन सक्छ।","Traditionally classified as neutral or less favorable; this is guidance, not a prediction."))))}
+        {showKaal && inauspicious.map((window,index)=>pathsFor(window.start_utc,window.end_utc,84+index*5).map((d,part)=>selectablePath(window.key+"-"+part,d,(language === "ne" ? window.name_ne : window.name_en),window.start_utc,window.end_utc,["#c58b37","#b96e7b","#8377bb"][index],3.5,0.9,l(language,"परम्परागत रूपमा सावधानीको अवधि; यसले नियमित काम निषेध गर्दैन।","A traditional caution window; it does not mean routine activity must stop."))))}
+        {showHora && [...hora.day,...hora.night].map(window=>pathsFor(window.start_utc,window.end_utc,57).map((d,index)=>selectablePath(window.key+"-"+index,d,(language === "ne" ? window.name_ne : window.name_en),window.start_utc,window.end_utc,"#5795b0",2.3,0.82,l(language,"होरा परम्परागत ग्रह-घण्टाको क्रमअनुसार देखाइएको छ।","Hora is shown according to the traditional planetary-hour sequence."))))}
+        {showTantra && tantraTime && pathsFor(tantraTime.tatwaWindow.start,tantraTime.tatwaWindow.end,122).map((d,index)=>selectablePath("tantra-tatwa-"+index,d,`${tantraTime.activeTatwa.name} Tatwa wave`,tantraTime.tatwaWindow.start,tantraTime.tatwaWindow.end,tantraTime.activeTatwa.color,5,0.95,l(language,"पञ्चतत्त्व गणनाबाट निकालिएको समय खण्ड।","A timing interval from the Pancha Tatwa calculation.")))}
+        {showTwilight && twilightWindows.map(window=>pathsFor(window.start,window.end,48).map((d,index)=>selectablePath(window.key+"-"+index,d,window.label,window.start,window.end,"#d4a653",2.2,0.8,l(language,"सौर उचाइमा आधारित सन्ध्याकालको अन्तराल।","A twilight interval derived from solar altitude."))))}
       </g>
       {Array.from({ length: 24 }, (_, hour) => {
         const a = (hour / 24) * Math.PI * 2 - Math.PI / 2;
@@ -211,7 +236,7 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
       <text x="150" y="164" textAnchor="middle" fontSize="10" fill="var(--mt-muted)">{l(language,"स्थानीय समय","LOCAL TIME")}</text>
     </svg>
     <div className="mt-polar-legend"><span><i className="mt-legend-time"/> {l(language,"स्थानीय समय","Local time")}</span><span><i className="mt-legend-day"/> {l(language,"२४ घण्टे चक्र","24-hour cycle")}</span>{solarReady&&<>{showChoghadiya&&<span><i className="mt-legend-choghadiya"/> {l(language,"चौघडिया","Choghadiya")}</span>}{showKaal&&<span><i className="mt-legend-kaal"/> {l(language,"राहु / यमगण्ड / गुलिक","Rahu / Yamaganda / Gulika")}</span>}{showHora&&<span><i className="mt-legend-hora"/> {l(language,"होरा","Hora")}</span>}{showTwilight&&<span><i className="mt-legend-twilight"/> {l(language,"सन्ध्याकाल","Twilight")}</span>}{showTantra&&tantraTime&&<span><i className="mt-legend-tatwa" style={{backgroundColor:tantraTime.activeTatwa.color}}/> {l(language,"पञ्चतत्त्व","Pancha Tatwa")}</span>}<span className="mt-legend-note">{l(language,"घेरा छान्नुहोस् · सुई = अहिले · घेरा = चयन गरिएको मिति","Select a ring · hand = now · rings = selected date")}</span></>}</div>
-    {selectedEvent && <div className="mt-selected-event" role="status" aria-live="polite"><span>{l(language,"चयन गरिएको समय","Selected time")}</span><strong>{selectedEvent}</strong><button type="button" onClick={()=>setSelectedEvent("")}>{l(language,"बन्द","Clear")}</button></div>}
+    {selectedEvent && <section className="mt-selected-event" role="region" aria-label={l(language,"चयन गरिएको समय खण्डको विवरण","Selected time-window details")} aria-live="polite"><div className="mt-selected-event-copy"><span>{l(language,"चयन गरिएको समय खण्ड","SELECTED TIME WINDOW")}</span><strong>{selectedEvent.label}</strong><p>{formatInstant(selectedEvent.start,timezone,language)}–{formatInstant(selectedEvent.end,timezone,language)} · {durationText(selectedEvent.start,selectedEvent.end)}</p><p>{selectedEvent.explanation}</p></div><button type="button" aria-label={l(language,"चयन हटाउनुहोस्","Clear selection")} onClick={()=>setSelectedEvent(null)}>{l(language,"बन्द","Clear")}</button></section>}
   </div>;
 }
 
