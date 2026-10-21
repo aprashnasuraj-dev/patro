@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { createSecureServer } from "node:http2";
 import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 
@@ -6,6 +7,12 @@ const root = resolve(process.cwd(), "dist");
 const repoRoot = process.cwd();
 const port = Number(process.env.PORT || 4173);
 const auditApi = process.env.PATRO_AUDIT_API === "1";
+const tlsKeyPath = process.env.PATRO_TLS_KEY;
+const tlsCertPath = process.env.PATRO_TLS_CERT;
+const tlsEnabled = Boolean(tlsKeyPath && tlsCertPath);
+if (Boolean(tlsKeyPath) !== Boolean(tlsCertPath)) {
+  throw new Error("PATRO_TLS_KEY and PATRO_TLS_CERT must be supplied together.");
+}
 const types = {
   ".html": "text/html; charset=utf-8",
   ".js": "application/javascript; charset=utf-8",
@@ -18,6 +25,69 @@ const types = {
   ".xml": "application/xml; charset=utf-8",
   ".txt": "text/plain; charset=utf-8"
 };
+
+
+function parseStaticHeaderRules(source) {
+  const rules = [];
+  let current = null;
+  for (const line of source.split(/\\r?\\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    if (!/^\\s/.test(line)) {
+      current = { pattern: trimmed, headers: [] };
+      rules.push(current);
+      continue;
+    }
+    if (!current) continue;
+    const removal = trimmed.match(/^!\\s+([^:]+)$/);
+    if (removal) {
+      current.headers.push({ name: removal[1].trim(), remove: true });
+      continue;
+    }
+    const separator = trimmed.indexOf(":");
+    if (separator <= 0) continue;
+    current.headers.push({
+      name: trimmed.slice(0, separator).trim(),
+      value: trimmed.slice(separator + 1).trim(),
+      remove: false
+    });
+  }
+  return rules;
+}
+
+function pathMatchesHeaderRule(pattern, pathname) {
+  const parts = pattern.split("*");
+  if (parts.length === 1) return pathname === pattern;
+  let offset = 0;
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    if (i === 0 && !pathname.startsWith(part)) return false;
+    if (i > 0 && part) {
+      const found = pathname.indexOf(part, offset);
+      if (found < 0) return false;
+      offset = found + part.length;
+    }
+    if (i === parts.length - 1 && !pathname.endsWith(part)) return false;
+  }
+  return true;
+}
+
+function headersForPath(pathname) {
+  const resolved = new Map();
+  for (const rule of headerRules) {
+    if (!pathMatchesHeaderRule(rule.pattern, pathname)) continue;
+    for (const header of rule.headers) {
+      const key = header.name.toLowerCase();
+      if (header.remove) resolved.delete(key);
+      else resolved.set(key, { name: header.name, value: header.value });
+    }
+  }
+  return Object.fromEntries([...resolved.values()].map(({ name, value }) => [name, value]));
+}
+
+const headerRules = await readFile(join(root, "_headers"), "utf8")
+  .then(parseStaticHeaderRules)
+  .catch(() => []);
 
 async function existing(path) {
   try { return (await stat(path)).isFile(); } catch { return false; }
@@ -108,7 +178,7 @@ async function serveAuditApi(url, res) {
   return false;
 }
 
-createServer(async (req, res) => {
+const handler = async (req, res) => {
   const url = new URL(req.url || "/", "http://127.0.0.1");
   if (url.pathname.startsWith("/api/")) {
     if (await serveAuditApi(url, res)) return;
@@ -129,6 +199,17 @@ createServer(async (req, res) => {
   const body = await readFile(file);
   res.writeHead(200, { "content-type": types[extname(file)] || "application/octet-stream" });
   res.end(body);
-}).listen(port, "127.0.0.1", () => {
-  console.log(`PATRO_STATIC_READY http://127.0.0.1:${port}${auditApi ? " audit-api=bounded" : ""}`);
+};
+
+const server = tlsEnabled
+  ? createSecureServer({
+      key: await readFile(tlsKeyPath),
+      cert: await readFile(tlsCertPath),
+      allowHTTP1: true
+    }, handler)
+  : createServer(handler);
+
+server.listen(port, "127.0.0.1", () => {
+  const scheme = tlsEnabled ? "https" : "http";
+  console.log(`PATRO_STATIC_READY ${scheme}://127.0.0.1:${port}${auditApi ? " audit-api=bounded" : ""}${tlsEnabled ? " http2=tls" : ""}`);
 });
