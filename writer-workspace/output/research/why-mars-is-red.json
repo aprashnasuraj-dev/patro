@@ -1,0 +1,61 @@
+{
+  "id": "mm-0125",
+  "slug": "why-mars-is-red",
+  "researched_at": "2026-10-21",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Mars: Facts",
+      "publisher": "NASA Science",
+      "url": "https://science.nasa.gov/mars/facts/",
+      "reliability": "NASA primary research or education",
+      "notes": [
+        "Mars is a terrestrial rocky planet whose crust includes iron along with other abundant elements [1]. Iron occurs in minerals throughout natural rock rather than in a continuous sheet of exposed metal. As some of these components u"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "What Do Sunrises and Sunsets Look Like on Mars?",
+      "publisher": "NASA Science",
+      "url": "https://science.nasa.gov/solar-system/planets/mars/what-does-a-sunrise-sunset-look-like-on-mars/",
+      "reliability": "NASA primary research or education",
+      "notes": [
+        "Oxidation involves changes in the electronic state of a substance through chemical reactions. The familiar example of iron corrosion creates material whose interaction with visible light differs from the original starting material"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "NASA: New Study on Why Mars is Red Supports Potentially Habitable Past",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/solar-system/nasa-new-study-on-why-mars-is-red-supports-potentially-habitable-past/",
+      "reliability": "NASA primary research or education",
+      "notes": [
+        "Fine material can coat large regions and travel in Martian winds. NASA describes dust rising into the planet's thin atmosphere and contributing to the reddish appearance seen from far away [1]. A widely distributed layer of small "
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Exploring the Colors of Mars",
+      "publisher": "NASA JPL",
+      "url": "https://www.jpl.nasa.gov/edu/resources/lesson-plan/exploring-the-colors-of-mars/",
+      "reliability": "NASA primary research or education",
+      "notes": [
+        "Research publicized by NASA in February 2025 suggests that ferrihydrite may be a major ingredient behind Mars's distinctive reddish dust. The investigators compared simulated samples and data from multiple spacecraft, using measur"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Mars in a Minute: Is Mars Really Red?",
+      "publisher": "NASA JPL",
+      "url": "https://www.jpl.nasa.gov/videos/mars-in-a-minute-is-mars-really-red/",
+      "reliability": "NASA primary research or education",
+      "notes": [
+        "NASA educational resources depict the surface with shades including brown, gold, tan and rusty red. JPL similarly explains that an orbiter or rover reveals more variety than a distant night-sky view [4][5]. Different rock types, e"
+      ]
+    }
+  ],
+  "image_research": {
+    "status": "pending",
+    "third_party_assets_approved": []
+  }
+}
