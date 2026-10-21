@@ -19,6 +19,7 @@ import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import PersonalAstrologyObservatory from "./PersonalAstrologyObservatory";
+import PersonalCombinedExplorer from "./PersonalCombinedExplorer";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
 import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, selectPersonalLuckyTime, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
@@ -278,6 +279,7 @@ export default function MyTimePage() {
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [personalSettings, setPersonalSettings] = useState(readMyTimePersonalSettings);
+  const [exploredInstant,setExploredInstant] = useState<Date|null>(null);
   const [error, setError] = useState("");
   const loadSequence = useRef(0);
   const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean; hora: boolean; twilight: boolean; tantra: boolean }>(() => {
@@ -770,6 +772,7 @@ export default function MyTimePage() {
       </form>
       {birthError && <p role="alert">{birthError}</p>}
       {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>}
+      {snapshot && (personalSettings.lens === "jyotish" || personalSettings.lens === "combined") && <PersonalCombinedExplorer language={language} timezone={preferences.timezone} selectedInstant={tantraEvaluation ?? now} onSelect={instant => { setExploredInstant(instant); }} windows={combinedMuhurtaWindows.map(w=>({key:w.key,start:w.start_utc,end:w.end_utc,score:w.combinedScore,label:w.label,confidence:w.personalEvaluation.confidence,reasons:w.personalEvaluation.reasons,cautions:w.personalEvaluation.cautions,missing:w.personalEvaluation.missing,components:w.personalEvaluation.components}))} />}
       <PersonalAstrologyObservatory language={language} timezone={preferences.timezone} selectedDate={snapshot?.date || date} now={now}
         birth={personalContext.birthChart} nakshatra={personalContext.birthChart?.nakshatra || ""} pada={personalContext.birthChart?.pada ?? null}
         tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
