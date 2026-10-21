@@ -772,7 +772,7 @@ export default function MyTimePage() {
       </form>
       {birthError && <p role="alert">{birthError}</p>}
       {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>}
-      {snapshot && personalSettings.lens === "combined" && <PersonalCombinedExplorer language={language} timezone={preferences.timezone} snapshot={snapshot} selectedInstant={exploredInstant && localDate(preferences.timezone, exploredInstant) === snapshot.date ? exploredInstant : (tantraEvaluation ?? now)} onSelect={setExploredInstant} />}
+      {snapshot && <PersonalCombinedExplorer language={language} timezone={preferences.timezone} snapshot={snapshot} selectedInstant={exploredInstant && localDate(preferences.timezone, exploredInstant) === snapshot.date ? exploredInstant : (tantraEvaluation ?? now)} onSelect={setExploredInstant} />}
       <PersonalAstrologyObservatory language={language} timezone={preferences.timezone} selectedDate={snapshot?.date || date} now={now}
         birth={personalContext.birthChart} nakshatra={personalContext.birthChart?.nakshatra || ""} pada={personalContext.birthChart?.pada ?? null}
         tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
