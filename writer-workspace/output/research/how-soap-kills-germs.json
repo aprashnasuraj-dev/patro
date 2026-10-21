@@ -1,0 +1,71 @@
+{
+  "id": "mm-0135",
+  "slug": "how-soap-kills-germs",
+  "researched_at": "2026-10-21",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Hand Hygiene Frequently Asked Questions",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/clean-hands/faq/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "CDC public-health guidance",
+      "notes": [
+        "Soap molecules can interact with water and oily material, helping the latter disperse rather than clinging to skin. The CDC explains that working soap into lather creates structures called micelles that can trap and remo"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "About Handwashing",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/handwashing",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "CDC public-health guidance",
+      "notes": [
+        "Hands are not smooth, uniform surfaces. Creases and fingertips can retain material after an abbreviated wash. CDC recommends rubbing palms, backs of hands, spaces between fingers and areas under nails for at least 20 sec"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Hand Sanitizer Facts",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/clean-hands/data-research/facts-stats/hand-sanitizer-facts.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "CDC public-health guidance",
+      "notes": [
+        "After soap has loosened contamination, the water must carry the mixture away. CDC explains that rinsing under clean running water removes soap, dirt and germs, while also reducing residual soap that may irritate skin [5]"
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Cleaning and Disinfecting",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/hygiene/cleaning-disinfecting/index.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "CDC public-health guidance",
+      "notes": [
+        "The CDC distinguishes cleaning from disinfection. Soap, water and scrubbing remove germs and impurities from surfaces; a disinfectant aims to kill or inactivate germs that remain, when used according to its directions [4"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Handwashing Facts",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/clean-hands/data-research/facts-stats/index.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "CDC public-health guidance",
+      "notes": [
+        "Germs differ in structure and environmental resistance. Some viruses have a fatty outer envelope that soap can disturb, whereas other organisms do not possess that same vulnerable structure. No honest explanation should "
+      ]
+    }
+  ],
+  "image_research": {
+    "status": "pending",
+    "third_party_assets_approved": []
+  }
+}
