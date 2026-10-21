@@ -76,7 +76,7 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
     .sort((a, b) => Date.parse(a.marker.instantUtc) - Date.parse(b.marker.instantUtc))[0];
   const commonOverlap = activeSegments.length > 1
     ? activeSegments.slice(1).reduce<TimedWindow | null>(
-      (current, item) => current ? intersectWindows(current, item.segment) : null,
+      (current, item) => current ? intersectWindows(current, { start: item.segment.startUtc, end: item.segment.endUtc }) : null,
       { start: activeSegments[0].segment.startUtc, end: activeSegments[0].segment.endUtc },
     )
     : null;
