@@ -57,6 +57,9 @@ function labelFor(layer: ExplorerLayer, segment: ExplorerSegment, language: "ne"
 
 export default function PersonalCombinedExplorer({ language, timezone, snapshot, selectedInstant, onSelect }: Props) {
   const [view, setView] = useState<"cycle" | "overlaps">("cycle");
+  const [hiddenLayers, setHiddenLayers] = useState<string[]>([]);
+  const [focusedSegment, setFocusedSegment] = useState<string | null>(null);
+  const [detailSegment, setDetailSegment] = useState<string | null>(null);
   const model = useMemo(() => buildMultidimensionalLayers(snapshot, timezone), [snapshot, timezone]);
   const displayInstant = useMemo(() => {
     const candidate = Number.isFinite(selectedInstant?.getTime?.()) ? selectedInstant : new Date(model.civilStartUtc);
@@ -66,7 +69,8 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
   const minute = Math.max(0, Math.min(1439, Math.floor(localMinuteForDate(displayInstant, model.timezone))));
   const isLiveDate = localDateKey(new Date(), model.timezone) === model.date;
   const timedLayers = model.layers.filter((layer) => layer.id !== "twilight");
-  const activeSegments = timedLayers.flatMap((layer) => {
+  const visibleLayers = timedLayers.filter((layer) => !hiddenLayers.includes(layer.id));
+  const activeSegments = visibleLayers.flatMap((layer) => {
     const segment = findActiveSegment(layer.segments, displayInstant);
     return segment ? [{ layer, segment }] : [];
   });
@@ -81,7 +85,8 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
     )
     : null;
   const chooseMinute = (value: number) => onSelect(instantForLocalMinute(model.date, value, model.timezone));
-  const chooseSegment = (segment: ExplorerSegment) => chooseMinute((segment.startMinute + segment.endMinute) / 2);
+  const chooseSegment = (segment: ExplorerSegment) => { setDetailSegment(segment.id); chooseMinute((segment.startMinute + segment.endMinute) / 2); };
+  const detail = visibleLayers.flatMap((layer) => layer.segments.map((segment) => ({ layer, segment }))).find(({ segment }) => segment.id === detailSegment);
   const radii = [119, 101, 83, 65];
 
   return (
@@ -103,15 +108,41 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
           <svg viewBox="0 0 300 300" role="group" aria-label={l(language, "रङ्गीन वृत्तहरूले समयका तह देखाउने २४ घण्टाको घडी", "24-hour clock with colored rings for timing layers")} style={{ width: "min(100%,360px)", height: "auto", overflow: "visible" }}>
             <circle cx="150" cy="150" r="132" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.12" />
             {radii.map((radius, index) => <circle key={radius} cx="150" cy="150" r={radius} fill="none" stroke="currentColor" strokeWidth="9" opacity="0.09" />)}
-            {timedLayers.map((layer, index) => layer.segments.map((segment) => (
-              <path key={segment.id} d={svgArcPath(150, 150, radii[index], segment.startMinute, segment.endMinute)} fill="none" stroke={colorFor(layer, segment)} strokeWidth="9" strokeLinecap="round" role="button" tabIndex={0} aria-label={labelFor(layer, segment, language) + ", " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)} style={{ cursor: "pointer", outline: "none" }} onClick={(event) => { const rect = event.currentTarget.ownerSVGElement?.getBoundingClientRect(); if (!rect || rect.width <= 0 || rect.height <= 0) return; const x = (event.clientX - rect.left) * 300 / rect.width - 150; const y = (event.clientY - rect.top) * 300 / rect.height - 150; const angle = (Math.atan2(x, -y) + Math.PI * 2) % (Math.PI * 2); chooseMinute(Math.min(1439, Math.floor(angle / (Math.PI * 2) * 1440))); }} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); chooseSegment(segment); } }}>
-                <title>{labelFor(layer, segment, language) + " · " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)}</title>
-              </path>
-            )))}
+            {timedLayers.map((layer, index) => hiddenLayers.includes(layer.id) ? null : layer.segments.map((segment) => {
+              const active = findActiveSegment(layer.segments, displayInstant)?.id === segment.id;
+              const focused = focusedSegment === segment.id;
+              const path = svgArcPath(150, 150, radii[index], segment.startMinute, segment.endMinute);
+              const selectAtPointer = (event: React.MouseEvent<SVGPathElement>) => {
+                const svg = event.currentTarget.ownerSVGElement;
+                if (!svg) return;
+                const point = svg.createSVGPoint();
+                point.x = event.clientX; point.y = event.clientY;
+                const matrix = svg.getScreenCTM()?.inverse();
+                if (!matrix) { chooseSegment(segment); return; }
+                const local = point.matrixTransform(matrix);
+                const angle = (Math.atan2(local.x - 150, 150 - local.y) + Math.PI * 2) % (Math.PI * 2);
+                const selectedMinute = Math.min(1439, Math.floor(angle / (Math.PI * 2) * 1440));
+                setDetailSegment(segment.id);
+                chooseMinute(selectedMinute >= segment.startMinute && selectedMinute < segment.endMinute ? selectedMinute : (segment.startMinute + segment.endMinute) / 2);
+              };
+              return <g key={segment.id}>
+                {active && <path d={path} fill="none" stroke={colorFor(layer, segment)} strokeWidth="17" opacity="0.3" strokeLinecap="round" pointerEvents="none" />}
+                <path d={path} fill="none" stroke={colorFor(layer, segment)} strokeWidth={active ? 11 : 9} strokeLinecap="round" opacity={active ? 1 : 0.9} pointerEvents="none" />
+                {focused && <path d={path} fill="none" stroke="currentColor" strokeWidth="20" opacity="0.65" strokeLinecap="round" pointerEvents="none" />}
+                <path d={path} fill="none" stroke="transparent" strokeWidth="24" strokeLinecap="round" role="button" tabIndex={0}
+                  aria-label={labelFor(layer, segment, language) + ", " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)}
+                  aria-pressed={active} style={{ cursor: "pointer" }}
+                  onFocus={() => setFocusedSegment(segment.id)} onBlur={() => setFocusedSegment(null)}
+                  onClick={selectAtPointer}
+                  onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); chooseSegment(segment); } }}>
+                  <title>{labelFor(layer, segment, language) + " · " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)}</title>
+                </path>
+              </g>;
+            }))}
             {markers.map(({ marker }) => {
               const start = polarPoint(150, 150, 125, marker.minute);
               const end = polarPoint(150, 150, 139, marker.minute);
-              return <g key={marker.id}><line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke={COLORS[marker.kind === "twilight" ? "twilight" : "daylight"]} strokeWidth="2.5" strokeLinecap="round" /><title>{(language === "ne" ? marker.titleNe : marker.titleEn) + " · " + formatLocalClock(marker.instantUtc, model.timezone, language)}</title></g>;
+              return <g key={marker.id}><line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke={COLORS[marker.kind === "twilight" ? "twilight" : "daylight"]} strokeWidth="2.5" strokeLinecap="round" /><text x={end.x} y={end.y} fontSize="10" textAnchor="middle" dominantBaseline="central" aria-hidden="true">{/sunrise/i.test(marker.titleEn) ? "☀" : /sunset/i.test(marker.titleEn) ? "☾" : "✦"}</text><title>{(language === "ne" ? marker.titleNe : marker.titleEn) + " · " + formatLocalClock(marker.instantUtc, model.timezone, language)}</title></g>;
             })}
             {[0, 360, 720, 1080].map((value) => {
               const point = polarPoint(150, 150, 148, value);
@@ -120,7 +151,7 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
             {(() => {
               const start = polarPoint(150, 150, 48, minute);
               const end = polarPoint(150, 150, 139, minute);
-              return <g><line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke="#2563EB" strokeWidth="1.5" strokeDasharray="3 3" /><circle cx={end.x} cy={end.y} r="5" fill="#2563EB" stroke="white" strokeWidth="2" /></g>;
+              return <g><line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke="#2563EB" strokeWidth="1.5" strokeDasharray="3 3" style={{ transition: "x1 180ms ease, y1 180ms ease, x2 180ms ease, y2 180ms ease" }} /><circle cx={end.x} cy={end.y} r="5" fill="#2563EB" stroke="white" strokeWidth="2" style={{ transition: "cx 180ms ease, cy 180ms ease" }} /></g>;
             })()}
             <circle cx="150" cy="150" r="43" fill="var(--surface,#ffffff)" stroke="currentColor" strokeOpacity="0.12" />
             <text x="150" y="143" textAnchor="middle" fontSize="19" fontWeight="700" fill="currentColor">{formatLocalClock(displayInstant, model.timezone, language)}</text>
@@ -140,6 +171,22 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
         </div>
       </div>
 
+      <div role="group" aria-label={l(language, "देखिने समय तहहरू", "Visible timing layers")} style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBlock: 14 }}>
+        {timedLayers.map((layer) => <button key={layer.id} type="button" className="mt-secondary" aria-pressed={!hiddenLayers.includes(layer.id)}
+          onClick={() => { setHiddenLayers((previous) => previous.includes(layer.id) ? previous.filter((id) => id !== layer.id) : [...previous, layer.id]); setDetailSegment(null); }}
+          style={{ opacity: hiddenLayers.includes(layer.id) ? 0.55 : 1, borderColor: hiddenLayers.includes(layer.id) || !layer.segments.length ? undefined : colorFor(layer, layer.segments[0]) }}>
+          {hiddenLayers.includes(layer.id) ? "○ " : "● "}{language === "ne" ? layer.titleNe : layer.titleEn}
+        </button>)}
+      </div>
+      {detail && <aside role="region" aria-label={l(language, "चयन गरिएको खण्डको विवरण", "Selected segment details")} style={{ padding: 16, border: "1px solid var(--border-color,rgba(100,116,139,0.28))", borderLeft: "4px solid " + colorFor(detail.layer, detail.segment), borderRadius: 12, marginBlock: 14 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+          <strong>{language === "ne" ? detail.layer.titleNe : detail.layer.titleEn}: {labelFor(detail.layer, detail.segment, language)}</strong>
+          <button type="button" className="mt-secondary" onClick={() => setDetailSegment(null)} aria-label={l(language, "विवरण बन्द गर्नुहोस्", "Close details")}>×</button>
+        </div>
+        <p>{formatLocalClock(detail.segment.startUtc, model.timezone, language)}–{formatLocalClock(detail.segment.endUtc, model.timezone, language)} · {formatDuration(detail.segment.startUtc, detail.segment.endUtc)}</p>
+        <p style={{ marginBottom: 0 }}>{language === "ne" ? detail.segment.explanationNe : detail.segment.explanationEn}</p>
+        <p style={{ marginBottom: 0, fontSize: 12, opacity: 0.8 }}>{l(language, "यस क्षणमा देखिने सक्रिय तहहरू: ", "Visible layers active at this moment: ")}{activeSegments.map(({ segment }) => labelFor({} as ExplorerLayer, segment, language)).join(" · ") || "—"}</p>
+      </aside>}
       {model.warnings.map((warning) => <p key={warning.id} role="status">{language === "ne" ? warning.ne : warning.en}</p>)}
 
       <div style={{ marginBlock: 18 }}>
