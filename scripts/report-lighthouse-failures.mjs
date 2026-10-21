@@ -22,7 +22,7 @@ for (const file of files) {
   if (!lhr?.categories || !lhr?.audits) continue;
   reports++;
   const best = lhr.categories["best-practices"];
-  console.log(`\\nLighthouse diagnostics: ${lhr.finalDisplayedUrl ?? lhr.requestedUrl ?? file}`);
+  console.log(`\nLighthouse diagnostics: ${lhr.finalDisplayedUrl ?? lhr.requestedUrl ?? file}`);
   console.log(`Best Practices score: ${best?.score == null ? "n/a" : Math.round(best.score * 100)}`);
   for (const ref of best?.auditRefs ?? []) {
     if (!Number.isFinite(ref.weight) || ref.weight <= 0) continue;
@@ -30,7 +30,7 @@ for (const file of files) {
     if (!audit || audit.score === 1 || audit.score === null) continue;
     console.log(`FAILED ${ref.id} | score=${audit.score} | ${audit.title ?? "Untitled audit"}`);
     if (audit.displayValue) console.log(`  value: ${audit.displayValue}`);
-    if (audit.description) console.log(`  guidance: ${audit.description.replace(/\\s+/g, " ").slice(0, 600)}`);
+    if (audit.description) console.log(`  guidance: ${audit.description.replace(/\s+/g, " ").slice(0, 600)}`);
     const items = audit.details?.items;
     if (Array.isArray(items) && items.length) {
       console.log(`  details: ${JSON.stringify(items.slice(0, 5)).slice(0, 1800)}`);
