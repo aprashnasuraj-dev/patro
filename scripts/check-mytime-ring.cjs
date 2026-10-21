@@ -58,7 +58,9 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
 
     // Verify keyboard operation independently, and ensure the focused segment becomes selected.
     const second = targets.nth(1);
-    await second.focus();
+    await first.focus();
+    await page.keyboard.press("Tab");
+    assert.equal(await second.evaluate((element) => element === document.activeElement), true, "Tab must move keyboard focus to the next ring segment");
     const focusStroke = await second.evaluate((element) => getComputedStyle(element).stroke);
     assert.notEqual(focusStroke, "rgba(0, 0, 0, 0)", "keyboard focus must be visible on the ring");
     await page.keyboard.press("Enter");
