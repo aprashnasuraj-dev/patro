@@ -406,3 +406,15 @@
 .mt-personal-guidance-grid article.is-caution>small,.mt-personal-guidance-grid .mt-personal-warning{color:#f0a39a}
 .mt-personal-guidance-grid .mt-personal-warning{display:inline-block;padding:5px 8px;border:1px solid #b87972;border-radius:9px;font-size:11px;font-weight:800}
 @media(max-width:520px){.mt-birth-date-controls,.mt-birth-coordinate-grid,.mt-personal-guidance-grid{grid-template-columns:1fr}.mt-personal-guidance-heading{flex-direction:column}.mt-birth-connect-row{align-items:flex-start}}
+
+/* Accessible hit areas for the primary My Time ring. The visible arcs remain decorative; these wider paths handle pointer and keyboard interaction. */
+.mt-polar-hit-target{fill:none;stroke:transparent;pointer-events:stroke;touch-action:manipulation;cursor:pointer}
+.mt-polar-hit-target:focus{outline:none;stroke:var(--mt-accent)!important;stroke-width:20px;stroke-dasharray:2 3;opacity:.95}
+.mt-polar-hit-target:focus-visible{stroke:var(--mt-accent)!important;stroke-width:20px;stroke-dasharray:2 3;opacity:.95}
+.mt-selected-event{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;width:min(100%,520px);box-sizing:border-box;margin:14px auto 0;padding:14px 16px;border:1px solid var(--mt-line);border-left:4px solid var(--mt-accent);border-radius:14px;background:color-mix(in srgb,var(--mt-soft) 60%,var(--mt-card));color:var(--mt-ink)}
+.mt-selected-event-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+.mt-selected-event-copy>span{font-size:10px;font-weight:800;color:var(--mt-accent);letter-spacing:.05em}
+.mt-selected-event-copy>strong{font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+.mt-selected-event-copy>p{font-size:12px;line-height:1.65;color:var(--mt-muted);margin:0}
+.mt-selected-event>button{flex:none;border:1px solid var(--mt-line);border-radius:9px;padding:7px 10px;background:var(--mt-card);color:var(--mt-ink);font:inherit;font-size:11px;font-weight:700;cursor:pointer;min-height:36px}
+@media(max-width:420px){.mt-selected-event{padding:12px;gap:8px}.mt-selected-event>button{padding-inline:8px}}
