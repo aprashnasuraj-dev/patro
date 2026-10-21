@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { l } from "../../useUiLanguage";
 import type { MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
-import { intersectWindows } from "./temporal-overlap";
+import { intersectWindows, type TimedWindow } from "./temporal-overlap";
 import {
   buildMultidimensionalLayers,
   findActiveSegment,
@@ -74,7 +74,7 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
   const nextMarker = markers.filter((item) => Date.parse(item.marker.instantUtc) > displayInstant.getTime())
     .sort((a, b) => Date.parse(a.marker.instantUtc) - Date.parse(b.marker.instantUtc))[0];
   const commonOverlap = activeSegments.length > 1
-    ? activeSegments.slice(1).reduce(
+    ? activeSegments.slice(1).reduce<TimedWindow | null>(
       (current, item) => current ? intersectWindows(current, item.segment) : null,
       { start: activeSegments[0].segment.startUtc, end: activeSegments[0].segment.endUtc },
     )
