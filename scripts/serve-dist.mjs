@@ -30,16 +30,16 @@ const types = {
 function parseStaticHeaderRules(source) {
   const rules = [];
   let current = null;
-  for (const line of source.split(/\\r?\\n/)) {
+  for (const line of source.split(/\r?\n/)) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith("#")) continue;
-    if (!/^\\s/.test(line)) {
+    if (!/^\s/.test(line)) {
       current = { pattern: trimmed, headers: [] };
       rules.push(current);
       continue;
     }
     if (!current) continue;
-    const removal = trimmed.match(/^!\\s+([^:]+)$/);
+    const removal = trimmed.match(/^!\s+([^:]+)$/);
     if (removal) {
       current.headers.push({ name: removal[1].trim(), remove: true });
       continue;
@@ -197,7 +197,7 @@ const handler = async (req, res) => {
     res.writeHead(404); res.end("Not found"); return;
   }
   const body = await readFile(file);
-  res.writeHead(200, { "content-type": types[extname(file)] || "application/octet-stream" });
+  res.writeHead(200, { "content-type": types[extname(file)] || "application/octet-stream", ...headersForPath(url.pathname) });
   res.end(body);
 };
 
