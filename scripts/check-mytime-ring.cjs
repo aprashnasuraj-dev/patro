@@ -23,7 +23,7 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     const response = await page.goto(BASE + "/mytime", { waitUntil: "domcontentloaded", timeout: 30000 });
     assert(response && response.ok(), `My Time route failed: HTTP ${response?.status() ?? "no-response"}`);
     await page.locator(".mt-polar-wrap").waitFor({ state: "visible", timeout: 30000 });
-    await page.waitForFunction(() => document.querySelectorAll(".mt-polar-hit-target").length > 0, { timeout: 30000 });
+    await page.waitForFunction(() => document.querySelectorAll(".mt-polar-hit-target").length > 0, null, { timeout: 30000 });
 
     const targets = page.locator(".mt-polar-hit-target");
     const count = await targets.count();
@@ -62,7 +62,7 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     const focusStroke = await second.evaluate((element) => getComputedStyle(element).stroke);
     assert.notEqual(focusStroke, "rgba(0, 0, 0, 0)", "keyboard focus must be visible on the ring");
     await page.keyboard.press("Enter");
-    await page.waitForFunction((el) => el.getAttribute("aria-pressed") === "true", second, { timeout: 5000 });
+    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-pressed") === "true", null, { timeout: 5000 });
     const keyboardDetails = await page.locator(".mt-selected-event-copy").innerText();
     assert(keyboardDetails.trim().length > 20, "keyboard activation must update the selected-period details");
 
