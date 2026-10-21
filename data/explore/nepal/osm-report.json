@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-10",
- "osm_timestamp": "2026-10-09T20:21:04Z",
+ "generated": "2026-10-20",
+ "osm_timestamp": "2026-10-19T20:21:11Z",
  "level_counts": {
   "4": 7,
   "6": 77,
@@ -497,12 +497,12 @@
   }
  },
  "settlements": {
-  "total": 19299,
+  "total": 19300,
   "by_place": {
    "city": 28,
    "neighbourhood": 1127,
    "locality": 1111,
-   "village": 3370,
+   "village": 3371,
    "hamlet": 12483,
    "suburb": 447,
    "town": 259,
@@ -510,24 +510,24 @@
    "quarter": 6
   },
   "assigned": {
-   "ward": 19172,
+   "ward": 19173,
    "palika": 95,
    "district": 32
   }
  },
  "pois": {
-  "total": 54822,
+  "total": 54873,
   "by_category": {
    "bus": 290,
-   "stay": 4942,
-   "peak": 565,
-   "worship": 7713,
-   "school": 24915,
+   "stay": 4969,
+   "peak": 575,
+   "worship": 7718,
+   "school": 24916,
    "market": 300,
-   "bank": 5871,
-   "sight": 855,
+   "bank": 5872,
+   "sight": 861,
    "police": 625,
-   "office": 2832,
+   "office": 2833,
    "waterfall": 32,
    "health": 4481,
    "post": 93,
