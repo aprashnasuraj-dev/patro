@@ -202,6 +202,7 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
       <path className="mt-polar-hit-target" d={d} fill="none" stroke="transparent" strokeWidth={Math.max(22, width + 16)} strokeLinecap="round" pointerEvents="stroke" role="button" tabIndex={0}
         aria-label={intervalLabel} aria-pressed={selected} style={{ cursor: "pointer", touchAction: "manipulation" }}
         onFocus={() => setFocusedEventKey(key)} onBlur={() => setFocusedEventKey(current => current === key ? null : current)}
+        onPointerDown={() => selectEvent(key, label, start, end, explanation)}
         onClick={() => selectEvent(key, label, start, end, explanation)}
         onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectEvent(key, label, start, end, explanation); } }}>
         <title>{intervalLabel}</title>
