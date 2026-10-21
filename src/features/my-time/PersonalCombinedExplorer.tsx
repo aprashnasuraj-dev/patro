@@ -64,6 +64,7 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
     return instantForLocalMinute(model.date, localMinuteForDate(candidate, model.timezone), model.timezone);
   }, [selectedInstant, model.civilStartUtc, model.date, model.timezone]);
   const minute = Math.max(0, Math.min(1439, Math.floor(localMinuteForDate(displayInstant, model.timezone))));
+  const isLiveDate = localDateKey(new Date(), model.timezone) === model.date;
   const timedLayers = model.layers.filter((layer) => layer.id !== "twilight");
   const activeSegments = timedLayers.flatMap((layer) => {
     const segment = findActiveSegment(layer.segments, displayInstant);
@@ -134,7 +135,7 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
           <label htmlFor="mytime-cycle-minute" style={{ display: "block", fontWeight: 650, marginBottom: 6 }}>{l(language, "२४ घण्टाभित्र समय सार्नुहोस्", "Scrub through the 24-hour cycle")}</label>
           <input id="mytime-cycle-minute" type="range" min={0} max={1439} step={1} value={minute} onChange={(event) => chooseMinute(Number(event.target.value))} style={{ width: "100%", accentColor: "#2563EB" }} />
           <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, opacity: 0.75 }}><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
-          <button type="button" className="mt-secondary" style={{ marginTop: 12 }} onClick={() => onSelect(new Date())}>{l(language, "अहिलेको समयमा फर्कनुहोस्", "Return to live time")}</button>
+          <button type="button" className="mt-secondary" style={{ marginTop: 12 }} onClick={() => isLiveDate ? onSelect(new Date()) : chooseMinute(localMinuteForDate(new Date(), model.timezone))}>{isLiveDate ? l(language, "अहिलेको समयमा फर्कनुहोस्", "Return to live time") : l(language, "आजको घडी-समयको स्थानमा जानुहोस्", "Use the current clock-time position on this date")}</button>
           {nextMarker && <p role="status"><strong>{l(language, "अर्को सौर/सन्ध्या सङ्केत: ", "Next solar/twilight marker: ")}</strong>{(language === "ne" ? nextMarker.marker.titleNe : nextMarker.marker.titleEn) + " · " + formatLocalClock(nextMarker.marker.instantUtc, model.timezone, language)}</p>}
         </div>
       </div>
