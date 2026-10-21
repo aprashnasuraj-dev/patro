@@ -1,14 +1,15 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "PATRO_AUDIT_API=1 node scripts/serve-dist.mjs",
+      "startServerCommand": "PATRO_AUDIT_API=1 PATRO_TLS_KEY=.lighthouseci/localhost.key PATRO_TLS_CERT=.lighthouseci/localhost.crt node scripts/serve-dist.mjs",
       "startServerReadyPattern": "PATRO_STATIC_READY",
       "url": [
-        "http://127.0.0.1:4173/",
-        "http://127.0.0.1:4173/tools",
-        "http://127.0.0.1:4173/fm"
+        "https://127.0.0.1:4173/",
+        "https://127.0.0.1:4173/tools",
+        "https://127.0.0.1:4173/fm"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 1,
+      "settings": { "chromeFlags": ["--ignore-certificate-errors"] }
     },
     "assert": {
       "assertions": {
