@@ -341,6 +341,18 @@ export function buildMultidimensionalLayers(
 
   if (solarAvailable) {
     pushSegment(layerSegments, {
+      id: "daylight-before-sunrise",
+      layer: "daylight",
+      titleNe: "सूर्योदयअघिको रात",
+      titleEn: "Pre-sunrise night",
+      startUtc: civilStart.toISOString(),
+      endUtc: solar.sunrise_utc!,
+      source: "solar",
+      tone: "neutral",
+      explanationNe: "स्थानीय मध्यरातदेखि सूर्योदयसम्मको अवधि।",
+      explanationEn: "The local midnight-to-sunrise portion of the night.",
+    }, selectedTimezone, date, startMs, endMs);
+    pushSegment(layerSegments, {
       id: "daylight-day",
       layer: "daylight",
       titleNe: "स्थानीय दिनको प्रकाश",
@@ -447,7 +459,7 @@ export function buildMultidimensionalLayers(
   });
 
   const layerMarkers = new Map<ExplorerLayerId, ExplorerMarker[]>(
-    [["daylight", []], ["choghadiya", []], ["hora", []], ["caution", []], ["twilight", []], ["personal", []]],
+    [["daylight", []], ["choghadiya", []], ["hora", []], ["caution", []], ["twilight", []]],
   );
   markerRaw.forEach((marker) => {
     const clipped = clipRawMarker(marker, selectedTimezone, date, startMs, endMs);
