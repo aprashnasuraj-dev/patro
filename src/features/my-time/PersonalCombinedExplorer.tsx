@@ -138,7 +138,7 @@ export default function PersonalCombinedExplorer({ language, timezone, snapshot,
                   <title>{labelFor(layer, segment, language) + " · " + formatLocalClock(segment.startUtc, model.timezone, language) + "–" + formatLocalClock(segment.endUtc, model.timezone, language)}</title>
                 </path>
               </g>;
-            })}
+            }))}
             {markers.map(({ marker }) => {
               const start = polarPoint(150, 150, 125, marker.minute);
               const end = polarPoint(150, 150, 139, marker.minute);
