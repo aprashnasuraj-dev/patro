@@ -1,0 +1,61 @@
+{
+  "id": "mm-0153",
+  "slug": "how-hydropower-works",
+  "researched_at": "2026-10-21",
+  "sources": [
+    {
+      "n": 1,
+      "title": "How Hydropower Works",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/cmei/water/how-hydropower-works",
+      "reliability": "US federal primary energy or hydrology guidance",
+      "notes": [
+        "The U.S. Department of Energy identifies two central ingredients for hydropower output: the volume of water passing through a system and the change in height through which it moves [1]. More water carries greater available power under "
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Types of Hydropower Plants",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/cmei/water/types-hydropower-plants",
+      "reliability": "US federal primary energy or hydrology guidance",
+      "notes": [
+        "In a common conventional layout, an intake directs water toward a penstock, a pipe or conduit carrying it to the turbine [1]. Gates or valves regulate flow, and the moving water transfers energy to turbine blades. The turbine shaft the"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Pumped Storage Hydropower",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/cmei/water/pumped-storage-hydropower",
+      "reliability": "US federal primary energy or hydrology guidance",
+      "notes": [
+        "Some hydropower facilities use impoundment: a dam forms a reservoir that can release stored water when generation is needed. The Department of Energy also describes diversion plants, sometimes called run-of-river systems, that route a "
+      ]
+    },
+    {
+      "n": 4,
+      "title": "How Pumped Storage Hydropower Works",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/cmei/water/how-pumped-storage-hydropower-works",
+      "reliability": "US federal primary energy or hydrology guidance",
+      "notes": [
+        "Pumped-storage hydropower moves water between an upper and a lower reservoir. When electricity is available for storage, pumps lift water uphill; when power is needed, water moves down through turbines and generators [3]. This arrangem"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Hydroelectric Power Water Use",
+      "publisher": "U.S. Geological Survey",
+      "url": "https://www.usgs.gov/water-science-school/science/hydroelectric-power-water-use",
+      "reliability": "US federal primary energy or hydrology guidance",
+      "notes": [
+        "Theoretical water energy and delivered electricity are not identical. Flow resistance, turbine performance, generator losses and operating conditions affect conversion. The Department of Energy explains that greater head and flow provi"
+      ]
+    }
+  ],
+  "image_research": {
+    "status": "pending",
+    "third_party_assets_approved": []
+  }
+}
