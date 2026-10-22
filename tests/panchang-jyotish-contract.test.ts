@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { FEATURE_GROUPS, PATRO_FEATURES, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
+import { FEATURE_GROUPS, PATRO_FEATURES, validateFeatureCatalog, getFeatureAvailability } from "../src/panchang-jyotish/catalog";
 import { fromCalculatedDay, mergeVerifiedArchive, PANCHANG_CONTRACT_VERSION } from "../src/panchang-jyotish/contract";
 import { KATHMANDU, type DayPanchang } from "../src/patro-tools/core/types";
 
@@ -19,6 +19,15 @@ describe("five-group Panchang feature catalog", () => {
       expect(feature.href.startsWith("/")).toBe(true);
       expect(feature.href.includes("?")).toBe(false);
     }
+  });
+  it("does not silently classify unreviewed cards as completed calculators", () => {
+    const count = (state: ReturnType<typeof getFeatureAvailability>) => PATRO_FEATURES.filter(item => getFeatureAvailability(item) === state).length;
+    expect(count("existing")).toBe(17);
+    expect(count("browser-preview")).toBe(45);
+    expect(count("reference")).toBe(29);
+    expect(count("existing") + count("browser-preview") + count("reference")).toBe(91);
+    expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F058")!)).toBe("reference");
+    expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F067")!)).toBe("existing");
   });
   it("does not create a second My Time tool route or duplicate canonical chart route", () => {
     expect(PATRO_FEATURES.filter((feature) => feature.href === "/mytime").length).toBeGreaterThan(0);
