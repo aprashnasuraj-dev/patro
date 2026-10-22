@@ -38,7 +38,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const group = FEATURE_GROUPS.find((item) => item.id === groupId) ?? FEATURE_GROUPS[0];
   const [query, setQuery] = useState("");
   const [announcement, setAnnouncement] = useState("");
-  const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview" | "reference">("all");
+  const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview">("all");
   const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
   const features = useMemo(() => getFeaturesForGroup(groupId), [groupId]);
@@ -127,9 +127,9 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
             <Workspace language={language} selectedFeatureId={activeFeature} />
           </Suspense></WorkspaceErrorBoundary> : <div className="ap-pj-launch-panel">
             <span aria-hidden="true" className="ap-pj-launch-emblem"><FeatureGlyph featureId={group.iconFeatureId} size="card" /></span>
-            <div><h3>{selectedAvailability === "existing" ? l(language, "पहिलेकै उपकरण सुरक्षित छ", "Your existing tool is preserved") : selectedAvailability === "reference" ? l(language, "स्रोतमा आधारित जानकारी", "Source-based reference") : l(language, "आफ्नो गणक सुरु गर्नुहोस्", "Start your calculator")}</h3>
-            <p>{selectedAvailability === "existing" ? l(language, "सम्बन्धित मूल पेजमा जाँदा पुरानै कार्यप्रणाली प्रयोग हुन्छ।", "The original destination retains its own functionality.") : selectedAvailability === "reference" ? l(language, "नियम वा स्रोत पुष्टि नहुँदा निश्चित व्यक्तिगत वा पर्व-सम्बन्धी गणना यहाँ देखाइँदैन।", "Definitive personal or observance results remain unavailable until the relevant rules or sources are verified.") : l(language, "उपकरण खोलेपछि मात्र आवश्यक गणना कोड डाउनलोड र चल्छ।", "Calculation code is downloaded and executed only after you open the tool.")}</p></div>
-            {selectedAvailability === "existing" && selected ? <a className="ap-pjw-primary" href={selected.href}>{l(language, "मूल उपकरण खोल्नुहोस्", "Open original tool")} ↗</a> : selectedAvailability === "reference" ? <a className="ap-pjw-secondary" href="/sources">{l(language, "स्रोतहरू हेर्नुहोस्", "View sources")} ↗</a> : <button type="button" className="ap-pjw-primary" onClick={() => setWorkspaceRequested(true)}>{l(language, "गणक खोल्नुहोस्", "Open calculator")} →</button>}
+            <div><h3>{selectedAvailability === "existing" ? l(language, "पहिलेकै उपकरण सुरक्षित छ", "Your existing tool is preserved") : l(language, "आफ्नो गणक सुरु गर्नुहोस्", "Start your calculator")}</h3>
+            <p>{selectedAvailability === "existing" ? l(language, "सम्बन्धित मूल पेजमा जाँदा पुरानै कार्यप्रणाली प्रयोग हुन्छ।", "The original destination retains its own functionality.") : l(language, "उपकरण खोलेपछि मात्र आवश्यक गणना कोड डाउनलोड र चल्छ।", "Calculation code is downloaded and executed only after you open the tool.")}</p></div>
+            {selectedAvailability === "existing" && selected ? <a className="ap-pjw-primary" href={selected.href}>{l(language, "मूल उपकरण खोल्नुहोस्", "Open original tool")} ↗</a> : <button type="button" className="ap-pjw-primary" onClick={() => setWorkspaceRequested(true)}>{l(language, "गणक खोल्नुहोस्", "Open calculator")} →</button>}
           </div>}
         </div>
       </section>
@@ -150,7 +150,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
           {query && <button type="button" onClick={() => setQuery("")} aria-label={l(language, "खोज हटाउनुहोस्", "Clear search")}>×</button>}
         </label>
         <div className="ap-pj-filters" role="group" aria-label={l(language, "सुविधाको अवस्था अनुसार छान्नुहोस्", "Filter features by availability")}>
-          {(["all", "existing", "browser-preview", "reference"] as const).map(state => <button type="button" key={state} aria-pressed={availabilityFilter === state} className={availabilityFilter === state ? "is-selected" : ""} onClick={() => setAvailabilityFilter(state)}>{state === "all" ? l(language, "सबै", "All") : state === "existing" ? l(language, "विद्यमान", "Existing") : state === "browser-preview" ? l(language, "ब्राउजर गणक", "Browser tools") : l(language, "सन्दर्भ", "References")} <span>{state === "all" ? features.length : features.filter(item => getFeatureAvailability(item) === state).length}</span></button>)}
+          {(["all", "existing", "browser-preview"] as const).map(state => <button type="button" key={state} aria-pressed={availabilityFilter === state} className={availabilityFilter === state ? "is-selected" : ""} onClick={() => setAvailabilityFilter(state)}>{state === "all" ? l(language, "सबै", "All") : state === "existing" ? l(language, "विद्यमान", "Existing") : l(language, "ब्राउजर गणक", "Browser tools")} <span>{state === "all" ? features.length : features.filter(item => getFeatureAvailability(item) === state).length}</span></button>)}
         </div>
         {matches.length ? <div className="ap-pj-grid">
           {matches.map((item) => {
@@ -165,7 +165,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
               <span className="ap-pj-feature-mark" aria-hidden="true"><FeatureGlyph featureId={item.id} size="card" /></span>
               <span className="ap-pj-feature-copy">
                 <strong>{l(language, item.titleNe, item.titleEn)}</strong>
-                <small>{l(language, item.descriptionNe, item.descriptionEn)}</small><small className="ap-pj-feature-status">{getFeatureAvailability(item) === "existing" ? l(language, "विद्यमान सुविधा", "Existing feature") : getFeatureAvailability(item) === "browser-preview" ? l(language, "ब्राउजरमै गणना · स्रोत जाँच आवश्यक", "Browser calculation · source checking required") : l(language, "परम्परागत नियम र स्रोत समीक्षा आवश्यक", "Traditional rules and source review required")}</small>
+                <small>{l(language, item.descriptionNe, item.descriptionEn)}</small><small className="ap-pj-feature-status">{getFeatureAvailability(item) === "existing" ? l(language, "विद्यमान सुविधा", "Existing feature") : l(language, "ब्राउजर गणना · नतिजा पुष्टि बाँकी", "Browser calculator · output verification pending")}</small>
               </span>
               <span className="ap-pj-feature-arrow" aria-hidden="true">{local ? "↓" : "↗"}</span>
             </a>;

@@ -196,7 +196,7 @@ export const PATRO_FEATURES: PatroFeature[] = [
  * into promises of a result that has not passed engineering and Nepal-rule review.
  */
 const FUNCTIONAL_BROWSER_ENTRIES = new Set([
-  "F001","F002","F003","F004","F005","F006","F007","F008","F009","F011","F012","F013",
+  "F001","F002","F003","F004","F005","F006","F007","F008","F009","F010","F011","F012","F013",
   "F015","F016","F017","F018","F019","F023","F025",
   "F028","F032","F033","F034","F035","F036","F037","F038","F041","F042","F044","F045",
   "F046","F047","F048","F049","F050","F051","F053","F054","F072","F073","F074","F075","F076","F078"
@@ -215,7 +215,7 @@ export const FEATURE_COUNT = PATRO_FEATURES.length;
 export const EXPECTED_FEATURE_COUNT = 91;
 
 export function getFeaturesForGroup(group: FeatureGroupId) {
-  return PATRO_FEATURES.filter((item) => item.group === group);
+  return PATRO_FEATURES.filter((item) => item.group === group && getFeatureAvailability(item) !== "reference");
 }
 
 export function getFeatureById(id: string) {
