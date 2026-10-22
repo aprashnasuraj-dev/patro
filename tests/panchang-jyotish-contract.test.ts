@@ -23,8 +23,8 @@ describe("five-group Panchang feature catalog", () => {
   it("does not silently classify unreviewed cards as completed calculators", () => {
     const count = (state: ReturnType<typeof getFeatureAvailability>) => PATRO_FEATURES.filter(item => getFeatureAvailability(item) === state).length;
     expect(count("existing")).toBe(17);
-    expect(count("browser-preview")).toBe(45);
-    expect(count("reference")).toBe(29);
+    expect(count("browser-preview")).toBe(47);
+    expect(count("reference")).toBe(27);
     expect(count("existing") + count("browser-preview") + count("reference")).toBe(91);
     expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F058")!)).toBe("reference");
     expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F067")!)).toBe("existing");
@@ -32,9 +32,10 @@ describe("five-group Panchang feature catalog", () => {
   it("uses an explicit source-review disposition without promoting gated items to tools", () => {
     const gated = PATRO_FEATURES.filter(feature => feature.disposition === "source-review");
     expect(gated).toHaveLength(26);
-    expect(gated.every(feature => getFeatureAvailability(feature) === "reference")).toBe(true);
-    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F021")!)).toBe("reference");
+    expect(gated.every(feature => getFeatureAvailability(feature) === "reference" || ["F021", "F022"].includes(feature.id))).toBe(true);
+    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F021")!)).toBe("browser-preview");
     expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F064")!)).toBe("reference");
+    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F022")!)).toBe("browser-preview");
   });
   it("does not create a second My Time tool route or duplicate canonical chart route", () => {
     expect(PATRO_FEATURES.filter((feature) => feature.href === "/mytime").length).toBeGreaterThan(0);
