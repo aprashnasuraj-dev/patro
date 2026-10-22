@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
-import { FEATURE_SYMBOL } from "../src/panchang-jyotish/FeatureExperience";
+import { FEATURE_ICON_BY_ID, FEATURE_ICON_SYMBOLS } from "../src/panchang-jyotish/FeatureGlyph";
 import { FEATURE_REFERENCE_GUIDES } from "../src/panchang-jyotish/feature-reference-guides";
 
 function source(path: string) { return readFileSync(new URL("../" + path, import.meta.url), "utf8"); }
@@ -10,7 +10,20 @@ describe("bilingual feature-first visual obligations", () => {
   it("keeps 91 entries and exactly five authored visual categories", () => {
     expect(validateFeatureCatalog().valid).toBe(true);
     expect(FEATURE_GROUPS).toHaveLength(5);
-    expect(Object.keys(FEATURE_SYMBOL)).toHaveLength(91);
+    expect(Object.keys(FEATURE_ICON_BY_ID)).toHaveLength(91);
+
+    const iconSprite = source("public/icons/panchang-jyotish.svg");
+    const iconComponent = source("src/panchang-jyotish/FeatureGlyph.tsx");
+    const featureIds = PATRO_FEATURES.map(feature => feature.id).sort();
+    expect(Object.keys(FEATURE_ICON_BY_ID).sort()).toEqual(featureIds);
+    const spriteSymbols = [...iconSprite.matchAll(/<symbol id="([^"]+)"/g)].map(match => match[1]);
+    expect(new Set(spriteSymbols).size).toBe(spriteSymbols.length);
+    expect(FEATURE_ICON_SYMBOLS.every(symbol => spriteSymbols.includes(symbol))).toBe(true);
+    expect(Object.values(FEATURE_ICON_BY_ID).every(symbol => FEATURE_ICON_SYMBOLS.includes(symbol as typeof FEATURE_ICON_SYMBOLS[number]))).toBe(true);
+    expect(iconComponent).toContain('href={"/icons/panchang-jyotish.svg#"+icon}');
+    expect(iconComponent).not.toContain("https://");
+    expect(source("src/panchang-jyotish/FeatureGroupHub.tsx")).toContain('<FeatureGlyph featureId={item.id} size="card"');
+    expect(source("src/panchang-jyotish/FeatureExperience.tsx")).toContain('<FeatureGlyph featureId={feature.id} size="hero"');
     expect(Object.keys(FEATURE_REFERENCE_GUIDES)).toHaveLength(29);
     for (const item of PATRO_FEATURES.filter(feature => getFeatureAvailability(feature) === "reference")) {
       const guide = FEATURE_REFERENCE_GUIDES[item.id];
@@ -20,7 +33,7 @@ describe("bilingual feature-first visual obligations", () => {
       expect(guide.nextNe.length).toBeGreaterThan(35);
       expect(guide.nextEn.length).toBeGreaterThan(35);
     }
-    for (const feature of PATRO_FEATURES) expect(FEATURE_SYMBOL[feature.id]).toBeTruthy();
+    for (const feature of PATRO_FEATURES) expect(FEATURE_ICON_BY_ID[feature.id]).toBeTruthy();
     const css = source("src/panchang-jyotish/feature-experience.css");
     for (const group of FEATURE_GROUPS) {
       expect(css).toContain(".ap-pj-experience--" + group.id);
