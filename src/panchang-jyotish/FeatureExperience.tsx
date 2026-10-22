@@ -137,7 +137,6 @@ export const FEATURE_SYMBOL: Record<string,string> = {
 };
 function stateCopy(feature:PatroFeature, language:Lang) {
   const state=getFeatureAvailability(feature);
-  const guide=state==="reference" ? FEATURE_REFERENCE_GUIDES[feature.id] : undefined;
   if(state==="existing")return {
     label:l(language,"विद्यमान सुविधा","Existing AafnaiPatro tool"),
     title:l(language,"उही भरपर्दो उपकरण, नयाँ प्रवेशमार्ग","The same tool, easier to find"),
@@ -162,6 +161,7 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
   const theme=DESIGN[group];
   const copy=stateCopy(feature,language);
   const state=getFeatureAvailability(feature);
+  const guide=state==="reference" ? FEATURE_REFERENCE_GUIDES[feature.id] : undefined;
   const next=getFeaturesForGroup(group).filter(item=>item.id!==feature.id).slice(0,3);
   const label=l(language,feature.titleNe,feature.titleEn);
   return <section className={"ap-pj-experience ap-pj-experience--"+group} aria-label={label} data-feature-id={feature.id}>
