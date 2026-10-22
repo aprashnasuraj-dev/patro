@@ -523,7 +523,7 @@ export default function MyTimePage() {
 
     }
   }, [now, preferences, loadSnapshot]); // Refresh the briefing after the selected timezone crosses midnight.
-  const dateLabel = useMemo(() => localDateLabel(date, preferences.timezone, language), [date, preferences.timezone, language]);
+  const dateLabel = useMemo(() => localDateLabel(localDate(preferences.timezone,now), preferences.timezone, language), [localDate(preferences.timezone,now), preferences.timezone, language]);
   const localTime = localClock(preferences.timezone, now);
   const savedPlace = readPlace();
   const locationLabel = preferences.label || (savedPlace && savedPlace.tz === preferences.timezone && Math.abs(savedPlace.lat - preferences.lat) < 0.01 && Math.abs(savedPlace.lon - preferences.lng) < 0.01 ? savedPlace.name : preferences.timezone);
