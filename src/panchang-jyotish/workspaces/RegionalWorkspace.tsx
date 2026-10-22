@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useUiLanguage, l } from "../../useUiLanguage";
+import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
 import "./workspace.css";
 
