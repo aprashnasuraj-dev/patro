@@ -1,6 +1,7 @@
 /**
  * Source-audited *candidate classification*, not an observance or personalized verdict.
- * Nakshatra numbers are one-based (Ashwini = 1, Revati = 27).
+ * Nakshatra numbers are one-based (Ashwini = 1, Revati = 27). Panchak is NOT the whole
+ * Dhanishtha Nakshatra: its candidate window starts at 300° sidereal Moon longitude (Pada 3).
  * Source references and limitations: docs/panchang-jyotish-integration/08_RULE_SOURCE_AUDIT.md
  */
 export const SOURCE_REVIEWED_NAKSHATRA_RULES = Object.freeze({
@@ -9,9 +10,14 @@ export const SOURCE_REVIEWED_NAKSHATRA_RULES = Object.freeze({
   pushya: 8
 } as const);
 export type CandidateNakshatraRule = "panchak" | "gandaMoola" | "raviPushya" | "guruPushya";
-export function classifyNakshatraCandidate(rule: CandidateNakshatraRule, nakshatraOneBased: number, weekday: number): boolean {
+export function classifyNakshatraCandidate(rule: CandidateNakshatraRule, nakshatraOneBased: number, weekday: number, moonSiderealLongitude?: number): boolean {
   if (!Number.isInteger(nakshatraOneBased) || nakshatraOneBased < 1 || nakshatraOneBased > 27 || !Number.isInteger(weekday) || weekday < 0 || weekday > 6) return false;
-  if (rule === "panchak") return SOURCE_REVIEWED_NAKSHATRA_RULES.panchak.includes(nakshatraOneBased as 23);
+  if (rule === "panchak") {
+    // Star name alone is insufficient: Dhanishtha is only Panchak from 300° (Pada 3).
+    if (!Number.isFinite(moonSiderealLongitude) || moonSiderealLongitude! < 0 || moonSiderealLongitude! >= 360) return false;
+    const longitudeStar = Math.floor(moonSiderealLongitude! / (360 / 27)) + 1;
+    return longitudeStar === nakshatraOneBased && moonSiderealLongitude! >= 300 && moonSiderealLongitude! < 360;
+  }
   if (rule === "gandaMoola") return SOURCE_REVIEWED_NAKSHATRA_RULES.gandaMoola.includes(nakshatraOneBased as 1);
   if (rule === "raviPushya") return weekday === 0 && nakshatraOneBased === SOURCE_REVIEWED_NAKSHATRA_RULES.pushya;
   return weekday === 4 && nakshatraOneBased === SOURCE_REVIEWED_NAKSHATRA_RULES.pushya;
@@ -43,9 +49,10 @@ function validIsoDate(value:string):boolean {
   return candidate.getUTCFullYear()===year&&candidate.getUTCMonth()===month-1&&candidate.getUTCDate()===day;
 }
 function nakshatraRuleMember(rule:"panchak"|"gandaMoola",at:Date):boolean {
-  const oneBased=panchangAt(at).nakshatra+1;
+  const state=panchangAt(at);
+  const oneBased=state.nakshatra+1;
   return rule==="panchak"
-    ? SOURCE_REVIEWED_NAKSHATRA_RULES.panchak.includes(oneBased as 23)
+    ? state.moonSidereal>=300 && state.moonSidereal<360
     : SOURCE_REVIEWED_NAKSHATRA_RULES.gandaMoola.includes(oneBased as 1);
 }
 function firstMembershipChange(rule:"panchak"|"gandaMoola",leftMs:number,rightMs:number,leftMember:boolean):number {
@@ -79,10 +86,11 @@ export async function findNakshatraRuleWindows(
   let intervalStart:number|null=null;
   let entryNakshatra=0;
   const found:NakshatraRuleWindow[]=[];
-  const steps=Math.ceil((rangeEnd-scanStart)/SIX_HOURS_MS);
+  const scanLimit=rangeEnd+7*DAY_MS; // complete any interval that starts near the requested range end
+  const steps=Math.ceil((scanLimit-scanStart)/SIX_HOURS_MS);
   for(let step=1;step<=steps;step++){
     if(cancelled())return null;
-    const currentMs=Math.min(scanStart+step*SIX_HOURS_MS,rangeEnd);
+    const currentMs=Math.min(scanStart+step*SIX_HOURS_MS,scanLimit);
     const currentMember=nakshatraRuleMember(rule,new Date(currentMs));
     if(currentMember!==previousMember){
       const boundary=firstMembershipChange(rule,previousMs,currentMs,previousMember);
