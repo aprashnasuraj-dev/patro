@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
+import { FeatureGlyph } from "../FeatureGlyph";
 import "./workspace.css";
 
 type Props={language:"ne"|"en";selectedFeatureId?:string|null};
@@ -16,14 +17,14 @@ const SYSTEMS=[
 {id:"F091",ne:"भक्तिगीत र सांस्कृतिक सामग्री",en:"Devotional & cultural library",descriptionNe:"सांस्कृतिक सामग्रीलाई पात्रो-गणना तथ्यबाट अलग राखी स्रोत र भाषासहित व्यवस्थित गरिन्छ।",descriptionEn:"Cultural content is organized separately from calendar calculations, with source and language metadata."}
 ] as const;
 const CALENDAR_LINKS=[
-{href:"/",ne:"बिक्रम संवत् पात्रो",en:"Bikram Sambat Calendar",descNe:"दैनिक नेपाली मिति, चाडपर्व र बिदा।",descEn:"Daily Nepali dates, festivals and holidays."},
-{href:"/nepal-sambat/mandala",ne:"नेपाल संवत्",en:"Nepal Sambat",descNe:"नेपाल संवत् र समुदायका पर्वको विद्यमान पात्रो।",descEn:"Existing Nepal Sambat calendar and community observances."},
-{href:"/samudaya",ne:"समुदाय पात्रो",en:"Community calendars",descNe:"समुदायअनुसारका पात्रो र पर्व।",descEn:"Calendars and observances by community."},
-{href:"/samudaya/lhosar",ne:"ल्होसार",en:"Lhosar",descNe:"समुदायको परम्परासँग सम्बन्धित ल्होसार पात्रो।",descEn:"Lhosar calendar linked to community traditions."},
-{href:"/samudaya/tharu",ne:"थारु पात्रो",en:"Tharu calendar",descNe:"थारु समुदायको विद्यमान पात्रो।",descEn:"Existing Tharu community calendar."},
-{href:"/samudaya/mithila",ne:"मिथिला पात्रो",en:"Mithila calendar",descNe:"मिथिला/मैथिली समुदायका मिति र पर्व।",descEn:"Mithila/Maithili dates and observances."},
-{href:"/samudaya/kirat",ne:"किरात पात्रो",en:"Kirat calendar",descNe:"किरात समुदायका पर्व र चक्र।",descEn:"Kirat community observances and cycles."},
-{href:"/samudaya/hijri",ne:"हिजरी पात्रो",en:"Hijri calendar",descNe:"हिजरी मिति र चन्द्र-दर्शनसँग सम्बन्धित अनिश्चितता।",descEn:"Hijri dates and moon-sighting uncertainty."}
+{href:"/",featureId:"F080",ne:"बिक्रम संवत् पात्रो",en:"Bikram Sambat Calendar",descNe:"दैनिक नेपाली मिति, चाडपर्व र बिदा।",descEn:"Daily Nepali dates, festivals and holidays."},
+{href:"/nepal-sambat/mandala",featureId:"F081",ne:"नेपाल संवत्",en:"Nepal Sambat",descNe:"नेपाल संवत् र समुदायका पर्वको विद्यमान पात्रो।",descEn:"Existing Nepal Sambat calendar and community observances."},
+{href:"/samudaya",featureId:"F090",ne:"समुदाय पात्रो",en:"Community calendars",descNe:"समुदायअनुसारका पात्रो र पर्व।",descEn:"Calendars and observances by community."},
+{href:"/samudaya/lhosar",featureId:"F090",ne:"ल्होसार",en:"Lhosar",descNe:"समुदायको परम्परासँग सम्बन्धित ल्होसार पात्रो।",descEn:"Lhosar calendar linked to community traditions."},
+{href:"/samudaya/tharu",featureId:"F090",ne:"थारु पात्रो",en:"Tharu calendar",descNe:"थारु समुदायको विद्यमान पात्रो।",descEn:"Existing Tharu community calendar."},
+{href:"/samudaya/mithila",featureId:"F090",ne:"मिथिला पात्रो",en:"Mithila calendar",descNe:"मिथिला/मैथिली समुदायका मिति र पर्व।",descEn:"Mithila/Maithili dates and observances."},
+{href:"/samudaya/kirat",featureId:"F090",ne:"किरात पात्रो",en:"Kirat calendar",descNe:"किरात समुदायका पर्व र चक्र।",descEn:"Kirat community observances and cycles."},
+{href:"/samudaya/hijri",featureId:"F090",ne:"हिजरी पात्रो",en:"Hijri calendar",descNe:"हिजरी मिति र चन्द्र-दर्शनसँग सम्बन्धित अनिश्चितता।",descEn:"Hijri dates and moon-sighting uncertainty."}
 ] as const;
 
 export function RegionalWorkspace({language,selectedFeatureId}:Props){
@@ -35,16 +36,16 @@ export function RegionalWorkspace({language,selectedFeatureId}:Props){
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"नेपालका मुख्य पात्रो","Core calendars for Nepal")}</h3><small>{l(language,"विद्यमान पात्रो जोडिएको","Existing calendar routes")}</small></div>
       <p className="ap-pjw-section-note">{l(language,"आफ्नै पात्रोमा वि.सं. र नेपाल संवत् प्राथमिक छन्। क्षेत्रीय पात्रोहरू आ-आफ्नो परम्परा र नियमअनुसार देखाइन्छन्; सबै प्रणालीलाई एउटै तिथि वा महिनाको गणनामा मिसाइँदैन।","Aafnai Patro keeps Bikram Sambat and Nepal Sambat prominent. Regional calendars are represented under their own traditions and rules rather than merged into a single Tithi or month calculation.")}</p>
-      <div className="ap-pjw-link-grid">{CALENDAR_LINKS.map(item=><a className="ap-pjw-link-card" href={item.href} key={item.href}><strong>{l(language,item.ne,item.en)}</strong><small>{l(language,item.descNe,item.descEn)}</small><span>{l(language,"पात्रो खोल्नुहोस्","Open calendar")} ↗</span></a>)}</div>
+      <div className="ap-pjw-link-grid">{CALENDAR_LINKS.map(item=><a className="ap-pjw-link-card" href={item.href} key={item.href}><strong className="ap-pjw-icon-label"><FeatureGlyph featureId={item.featureId} size="inline"/>{l(language,item.ne,item.en)}</strong><small>{l(language,item.descNe,item.descEn)}</small><span>{l(language,"पात्रो खोल्नुहोस्","Open calendar")} ↗</span></a>)}</div>
     </section>
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"क्षेत्रीय पात्रो र सांस्कृतिक सन्दर्भ","Regional calendars and cultural references")}</h3><small>{l(language,"स्रोत-पुष्टि आवश्यक","Source verification required")}</small></div>
       <label className="ap-pj-search"><span aria-hidden="true">⌕</span><span className="ap-pj-sr-only">{l(language,"क्षेत्रीय पात्रो खोज्नुहोस्","Search regional calendars")}</span><input value={query} onChange={event=>setQuery(event.target.value)} placeholder={l(language,"तमिल, बंगाली, मलयालम, कुम्भ…","Tamil, Bengali, Malayalam, Kumbha…")}/>{query&&<button type="button" onClick={()=>setQuery("")} aria-label={l(language,"खोज हटाउनुहोस्","Clear search")}>×</button>}</label>
-      <div className="ap-pjw-link-grid">{visible.map(item=><article className="ap-pjw-link-card" key={item.id}><strong>{l(language,item.ne,item.en)}</strong><small>{l(language,item.descriptionNe,item.descriptionEn)}</small><span>{l(language,"नियम र मिति पुष्टि आवश्यक","Rule/date verification required")}</span></article>)}</div>
+      <div className="ap-pjw-link-grid">{visible.map(item=><article className="ap-pjw-link-card" key={item.id}><strong className="ap-pjw-icon-label"><FeatureGlyph featureId={item.id} size="inline"/>{l(language,item.ne,item.en)}</strong><small>{l(language,item.descriptionNe,item.descriptionEn)}</small><span className="ap-pjw-icon-label"><FeatureGlyph featureId={item.id} symbol="shield" size="inline"/>{l(language,"नियम र मिति पुष्टि आवश्यक","Rule/date verification required")}</span></article>)}</div>
       {selected&&<p className="ap-pjw-method">{l(language,selected.descriptionNe,selected.descriptionEn)}</p>}
     </section>
     <section className="ap-pjw-card">
-      <div className="ap-pjw-subhead"><h3>{l(language,"पात्रो गणना विधि","Calendar calculation methods")}</h3><button type="button" className="ap-pjw-secondary" onClick={()=>setShowMethods(value=>!value)}>{showMethods?l(language,"लुकाउनुहोस्","Hide"):l(language,"विधि हेर्नुहोस्","Show methods")}</button></div>
+      <div className="ap-pjw-subhead"><h3 className="ap-pjw-icon-label"><FeatureGlyph featureId="F080" size="inline"/>{l(language,"पात्रो गणना विधि","Calendar calculation methods")}</h3><button type="button" className="ap-pjw-secondary" onClick={()=>setShowMethods(value=>!value)}>{showMethods?l(language,"लुकाउनुहोस्","Hide"):l(language,"विधि हेर्नुहोस्","Show methods")}</button></div>
       {showMethods&&<div className="ap-pjw-root">
         <p className="ap-pjw-section-note">{l(language,"वि.सं. मितिका लागि विद्यमान नेपाली मिति रूपान्तरण र प्रमाणित अभिलेख प्रयोग हुन्छ। नेपाल संवत्का लागि विद्यमान समुदाय-पात्रो स्रोत प्रयोग हुन्छ। क्षेत्रीय प्रणालीमा आधिकारिक प्रकाशन, नियम-संस्करण र परम्परागत स्थानीय समयक्षेत्र अलगसँग अभिलेख हुनुपर्छ।", "Bikram Sambat uses the existing Nepali date-conversion/archive layer. Nepal Sambat uses the existing community-calendar sources. Regional systems require their own official publications, rule versions and local timezone records.")}</p>
         <a className="ap-pjw-secondary" href="/sources">{l(language,"स्रोत र पात्रो विधि","Sources and calendar methods")} ↗</a>
