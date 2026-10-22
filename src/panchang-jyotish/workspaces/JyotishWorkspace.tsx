@@ -1,0 +1,109 @@
+import { useEffect, useMemo, useState } from "react";
+import { calculateChart, type ChartResult } from "../../jyotish/jyotishEngine";
+import { findJanmaPatroBirthTimezone, readJanmaPatroBirthInput } from "../../jyotish/my-time-bridge";
+import { useUiLanguage, l } from "../../useUiLanguage";
+import { getFeatureById } from "../catalog";
+import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../patro-tools/core/names";
+import { NAKSHATRA_EN, RASHI_EN } from "./shared";
+import "./workspace.css";
+
+type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
+type ExistingChart = { chart: ChartResult; error?: string };
+
+const PLANET_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द्र",Mars:"मङ्गल",Mercury:"बुध",Jupiter:"बृहस्पति",Venus:"शुक्र",Saturn:"शनि",Rahu:"राहु",Ketu:"केतु"};
+const DASHAS=["केतु","शुक्र","सूर्य","चन्द्र","मङ्गल","राहु","बृहस्पति","शनि","बुध"];
+const REVIEW_CARDS=[
+  {id:"F029",ne:"पञ्चपक्षी",en:"Pancha Pakshi",bodyNe:"पञ्चपक्षी तालिका परम्परा र जन्मसम्बन्धी नियमअनुसार फरक पर्न सक्छ। स्रोत र नियम पुष्टि भएपछि मात्र व्यक्तिगत नतिजा निकालिन्छ।",bodyEn:"Pancha Pakshi tables and birth-context rules vary by tradition. A personal result requires a source-verified rule set."},
+  {id:"F030",ne:"रत्नसम्बन्धी जानकारी",en:"Gemstone traditions",bodyNe:"रत्नसम्बन्धी परम्परागत मत जानकारीका रूपमा प्रस्तुत गरिन्छ; यसलाई किनमेल वा स्वास्थ्य उपचारको निर्देशन मान्नु हुँदैन।",bodyEn:"Gemstone traditions are presented as cultural information, not purchase pressure or medical advice."},
+  {id:"F031",ne:"रुद्राक्ष",en:"Rudraksha",bodyNe:"रुद्राक्षको वर्गीकरणका लागि परम्परागत स्रोत र क्षेत्रअनुसारको सन्दर्भ आवश्यक छ।",bodyEn:"Rudraksha classifications require source and regional context."}
+];
+
+function signName(index:number,language:"ne"|"en"){return language==="ne"?RASHIS[index]??"—":RASHI_EN[index]??"—";}
+function degree(value:number){return value.toFixed(2)+"°";}
+function angleForward(from:number,to:number){return (to-from+360)%360;}
+
+export function JyotishWorkspace({language,selectedFeatureId}:Props){
+  const [saved,setSaved]=useState<ExistingChart|null>(null);
+  const [loading,setLoading]=useState(true);
+  const [vedicGhati,setVedicGhati]=useState("1");
+  const [vedicPala,setVedicPala]=useState("0");
+  const focus=selectedFeatureId?getFeatureById(selectedFeatureId):null;
+
+  useEffect(()=>{
+    let active=true;
+    try{
+      const birth=readJanmaPatroBirthInput();
+      if(!birth){if(active){setSaved(null);setLoading(false);}return;}
+      const timezone=findJanmaPatroBirthTimezone(birth.location)||"Asia/Kathmandu";
+      const chart=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});
+      if(active)setSaved({chart});
+    }catch(error){
+      if(active)setSaved({chart:null as never,error:String((error as Error)?.message||error)});
+    }finally{if(active)setLoading(false);}
+    return()=>{active=false;};
+  },[]);
+
+  const chart=saved?.chart;
+  const moon=chart?.planets.find((item)=>item.key==="moon");
+  const mars=chart?.planets.find((item)=>item.key==="mars");
+  const rahu=chart?.planets.find((item)=>item.key==="rahu");
+  const ketu=chart?.planets.find((item)=>item.key==="ketu");
+  const axisSummary=useMemo(()=>{
+    if(!chart||!rahu||!ketu)return null;
+    const core=chart.planets.filter(item=>!["rahu","ketu"].includes(item.key));
+    const offsets=core.map(item=>angleForward(rahu.longitude,item.longitude));
+    const allFirst=offsets.every(item=>item<=180),allSecond=offsets.every(item=>item>=180);
+    return {candidate:allFirst||allSecond,offsets};
+  },[chart,rahu,ketu]);
+  const ghatiMinutes=useMemo(()=>Math.max(0,Number(vedicGhati)||0)*24+Math.max(0,Number(vedicPala)||0)*0.4,[vedicGhati,vedicPala]);
+
+  return <div className="ap-pjw-root">
+    <section className="ap-pjw-card">
+      <div className="ap-pjw-subhead"><h3>{l(language,"विद्यमान जन्मपत्रोको सारांश","Existing birth-chart summary")}</h3><small>{l(language,"पहिल्यै सुरक्षित जन्मपत्रो मात्र","Uses the existing saved birth chart")}</small></div>
+      {loading?<div className="ap-pjw-empty" role="status">{l(language,"जन्मपत्रो सन्दर्भ लोड हुँदैछ…","Loading birth-chart context…")}</div>:!chart?<div className="ap-pjw-empty"><p>{l(language,"यस ब्राउजरमा प्रयोग गर्न मिल्ने विद्यमान जन्मपत्रो भेटिएन। नयाँ जन्म विवरण यहाँ थपिँदैन; जन्मपत्रो पेजबाट पहिले आफ्नो चिना तयार गर्नुहोस्।","No usable saved birth chart was found in this browser. This page does not create another birth profile; first prepare your chart in the existing JanmaPatro page.")}</p><a className="ap-pjw-primary" href="/janmapatro">{l(language,"जन्मपत्रो खोल्नुहोस्","Open JanmaPatro")} ↗</a>{saved?.error&&<p className="ap-pjw-inline-error">{l(language,"जन्मपत्रो गणना पूरा हुन सकेन। जन्म समय, स्थान र समयक्षेत्र जाँच्नुहोस्।","The chart could not be calculated. Check the birth time, location and timezone.")}</p>}</div>:<>
+        <div className="ap-pjw-date-heading"><div><span>{l(language,"चन्द्र राशि","Moon sign")}</span><h3>{signName(moon?.signIndex??-1,language)}</h3></div><div className="ap-pjw-meta"><strong>{chart.input.location}</strong><small>{chart.input.date} · {chart.input.time} · {chart.input.timezone||"Asia/Kathmandu"}</small></div></div>
+        <div className="ap-pjw-stats">
+          <article><span>{l(language,"जन्म नक्षत्र","Birth Nakshatra")}</span><strong>{l(language,NAKSHATRAS[chart.moonNakshatraIndex]??"—",NAKSHATRA_EN[chart.moonNakshatraIndex]??"—")}</strong><small>{l(language,"पाद","Pada")} {chart.moonPada}</small></article>
+          <article><span>{l(language,"जन्म लग्न","Ascendant")}</span><strong>{signName(chart.ascSignIndex,language)}</strong><small>{degree(chart.ascendant)}</small></article>
+          <article><span>{l(language,"मङ्गल दोष","Mangal Dosha")}</span><strong>{l(language,chart.manglik.severity==="None"?"प्रमुख सङ्केत छैन":chart.manglik.severity==="Mild"?"सामान्य":chart.manglik.severity==="Moderate"?"मध्यम":"प्रबल",chart.manglik.severity)}</strong><small>{l(language,"परम्परागत घर-आधारित नियम","Traditional house-based rule")}</small></article>
+          <article><span>{l(language,"अयनांश","Ayanamsha")}</span><strong>{degree(chart.ayanamsa)}</strong><small>{l(language,"चिना गणकमा प्रयोग गरिएको","Used by the chart engine")}</small></article>
+          <article><span>{l(language,"जन्म सूर्य राशि","Natal Sun sign")}</span><strong>{signName(chart.planets.find(p=>p.key==="sun")?.signIndex??-1,language)}</strong><small>{l(language,"जन्म क्षण","Birth instant")}</small></article>
+          <article><span>{l(language,"गणना समय","Evaluated time")}</span><strong>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:chart.input.timezone||"Asia/Kathmandu",hour:"2-digit",minute:"2-digit"}).format(chart.instant)}</strong><small>{l(language,"स्थानीय जन्म समय","Local birth time")}</small></article>
+        </div>
+        <p className="ap-pjw-section-note">{l(language,"यो सारांश विद्यमान चिना गणकबाट आएको हो। अज्ञात जन्म समय वा अपुष्ट स्थान हुँदा लग्न, भाव र सम्बन्धित व्याख्या निश्चित मान्नु हुँदैन।","This summary uses the existing natal-chart engine. If birth time or location is uncertain, Lagna, houses and related interpretations should not be treated as certain.")}</p>
+      </>}
+    </section>
+
+    {chart&&<section className="ap-pjw-card">
+      <div className="ap-pjw-subhead"><h3>{l(language,"जन्मपत्रो ग्रहस्थिति","Natal planetary positions")}</h3><small>{l(language,"राशि, अंश र भाव","Sign, degree and house")}</small></div>
+      <div className="ap-pjw-position-wrap"><table className="ap-pjw-position-table"><thead><tr><th>{l(language,"ग्रह","Graha")}</th><th>{l(language,"राशि","Sign")}</th><th>{l(language,"अंश","Degree")}</th><th>{l(language,"भाव","House")}</th></tr></thead><tbody>{chart.planets.map((planet)=><tr key={planet.key}><td>{l(language,PLANET_NE[planet.name]||planet.name,planet.name)}</td><td>{signName(planet.signIndex,language)}</td><td>{degree(planet.degreeInSign)}</td><td>{planet.house===0?"—":l(language,planet.house+"औँ",String(planet.house))}</td></tr>)}</tbody></table></div>
+    </section>}
+
+    {chart&&selectedFeatureId==="F032"&&<section className="ap-pjw-feature-focus"><h3>{l(language,"कालसर्प योगका सामान्य मापदण्ड","Basic Kalasarpa Yoga check")}</h3><strong>{axisSummary?.candidate?l(language,"राहु–केतु अक्षभित्र ग्रहहरू पर्ने सम्भावित ढाँचा","A possible Rahu–Ketu axis pattern"):l(language,"यो सरल अक्ष-जाँचमा सबै ग्रह एउटै अर्धवृत्तमा परेनन्","The simple axis check did not place all planets in the same half-circle")}</strong><p>{l(language,"यो प्रारम्भिक ज्यामितीय जाँच हो, परम्परागत अन्तिम निर्णय होइन। विभिन्न ज्योतिष परम्परामा ग्रह अपवाद, सीमा र नियम फरक हुन्छन्।","This is a preliminary geometric check, not a definitive traditional judgment. Different Jyotish traditions use different exceptions and boundary rules.")}</p></section>}
+
+    {chart&&selectedFeatureId==="F033"&&<section className="ap-pjw-feature-focus"><h3>{l(language,"शनि साढेसाती","Shani Sadesati")}</h3><p>{l(language,"साढेसातीको सही वर्तमान स्थिति निकाल्न हालको शनि निरयण राशि र जन्म चन्द्र राशिको समान पद्धतिको गोचर तुलना आवश्यक छ। यो गणक हाल त्यस तुलना गर्ने अलग्गै नियमलाई स्रोत-पुष्टि बिना निष्कर्षका रूपमा देखाउँदैन।","A reliable current Sadesati result requires comparing the current sidereal Saturn sign with the natal Moon sign under the same method. This page does not present a conclusion without the transit calculation and reviewed rule.")}</p><a className="ap-pjw-secondary" href="/planets">{l(language,"ग्रह गोचर हेर्नुहोस्","Explore planetary transits")} ↗</a></section>}
+
+    {chart&&<section className="ap-pjw-card">
+      <div className="ap-pjw-subhead"><h3>{l(language,"विंशोत्तरी दशा","Vimshottari Dasha")}</h3><small>{l(language,"विद्यमान जन्मपत्रोबाट","From the existing birth chart")}</small></div>
+      <div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"दशा स्वामी","Lord")}</th><th>{l(language,"सुरु","Start")}</th><th>{l(language,"समाप्त","End")}</th><th>{l(language,"वर्ष","Years")}</th></tr></thead><tbody>{chart.dashas.map((item,index)=><tr key={item.lord+"-"+index}><td>{l(language,DASHAS[["Ketu","Venus","Sun","Moon","Mars","Rahu","Jupiter","Saturn","Mercury"].indexOf(item.lord)]||item.lord,item.lord)}</td><td>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:"Asia/Kathmandu",dateStyle:"medium"}).format(item.start)}</td><td>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:"Asia/Kathmandu",dateStyle:"medium"}).format(item.end)}</td><td>{item.years.toFixed(2)}</td></tr>)}</tbody></table></div>
+    </section>}
+
+    {selectedFeatureId==="F042"&&<section className="ap-pjw-card">
+      <div className="ap-pjw-subhead"><h3>{l(language,"घटी र पला रूपान्तरण","Ghati and Pala converter")}</h3></div>
+      <div className="ap-pjw-filter-row"><label>{l(language,"घटी","Ghati")}<input className="ap-pjw-textinput" inputMode="decimal" type="number" min="0" step="any" value={vedicGhati} onChange={(event)=>setVedicGhati(event.target.value)}/></label><label>{l(language,"पला","Pala")}<input className="ap-pjw-textinput" inputMode="decimal" type="number" min="0" step="any" value={vedicPala} onChange={(event)=>setVedicPala(event.target.value)}/></label></div>
+      <div className="ap-pjw-feature-focus"><h3>{l(language,"आधुनिक समयमा","Modern duration")}</h3><strong>{l(language,Math.floor(ghatiMinutes/60)+" घण्टा "+Math.round(ghatiMinutes%60)+" मिनेट",Math.floor(ghatiMinutes/60)+" h "+Math.round(ghatiMinutes%60)+" min")}</strong><p>{l(language,"यहाँ १ घटी = २४ मिनेट र १ पला = २४ सेकेन्डको परम्परागत अनुपात प्रयोग हुन्छ। कुनै स्थानीय घटीका फरक प्रयोगलाई अलग नियमका रूपमा चिनाउनुपर्छ।","This converter uses the traditional ratio of 1 Ghati = 24 minutes and 1 Pala = 24 seconds. Local variants should be treated as separate rules.")}</p></div>
+    </section>}
+
+    <section className="ap-pjw-card">
+      <div className="ap-pjw-subhead"><h3>{l(language,"ज्योतिषका अन्य उपकरण","More Jyotish tools")}</h3></div>
+      <div className="ap-pjw-link-grid">
+        <a className="ap-pjw-link-card" href="/janmapatro/milan.html"><strong>{l(language,"गुण मिलान","Guna Milan")}</strong><small>{l(language,"विद्यमान विवाह/जन्मपत्रो मिलान गणक।","Existing horoscope matching calculator.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/rashifal"><strong>{l(language,"राशिफल","Rashifal")}</strong><small>{l(language,"दैनिक वैदिक राशिफल।","Daily Vedic horoscope.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/tools/baby-names"><strong>{l(language,"नक्षत्र अनुसार नाम","Nakshatra baby names")}</strong><small>{l(language,"जन्म नक्षत्र तथा अक्षरका आधारमा नाम।","Names from birth Nakshatra and syllables.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/panchang"><strong>{l(language,"दैनिक पञ्चाङ्ग","Daily Panchang")}</strong><small>{l(language,"तिथि, नक्षत्र र दिनका समयखण्ड।","Tithi, Nakshatra and daily windows.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
+      </div>
+    </section>
+    {REVIEW_CARDS.map((card)=><section className="ap-pjw-card" key={card.id}><div className="ap-pjw-subhead"><h3>{l(language,card.ne,card.en)}</h3><small>{l(language,"परम्परागत सन्दर्भ","Traditional reference")}</small></div><p className="ap-pjw-section-note">{l(language,card.bodyNe,card.bodyEn)}</p></section>)}
+    {focus?.disposition==="reviewed"&&<p className="ap-pjw-method">{l(language,"यो सुविधा स्रोत-पुष्टि भएको परम्परागत नियमबिना निश्चित व्यक्तिगत निर्णयका रूपमा प्रस्तुत हुँदैन।","This feature is not presented as a definitive personal judgment without a source-verified traditional rule.")}</p>}
+  </div>;
+}
