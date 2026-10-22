@@ -50,7 +50,7 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
     expect(hub).not.toContain("setLanguage");
     for(const name of ["Panchang","Muhurat","Jyotish","Planets","Regional"]){
       const workspace=source("src/panchang-jyotish/workspaces/"+name+"Workspace.tsx");
-      expect(workspace, name+" workspace language prop").toContain('language: "ne" | "en"');
+      expect(workspace, name+" workspace language prop").toMatch(/language\s*:\s*"ne"\s*\|\s*"en"/);
       expect(workspace, name+" localized copy").toContain("l(language,");
       expect(workspace).not.toContain("setLanguage");
       expect(workspace).not.toContain("patro.ui.language");
