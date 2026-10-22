@@ -90,10 +90,10 @@ function localNepalInstant(date:string,time:string){
  */
 export function birthInstant(input: Pick<BirthInput,"date"|"time"|"timezone">): Date {
   const date=normalizeBirthDate(input.date),time=input.time;
-  if(!/^(?:[01]\\d|2[0-3]):[0-5]\\d$/.test(time))throw new Error("invalid_birth_time");
+  if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time))throw new Error("invalid_birth_time");
   if(!input.timezone) return localNepalInstant(date,time);
   const zone=input.timezone;
-  try { new Intl.DateTimeFormat("en-US",{timeZone:zone}); } catch { throw new Error("invalid_birth_timezone"); }
+  if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time))throw new Error("invalid_birth_time");
   const [y,m,d]=date.split("-").map(Number),[hh,mm]=time.split(":").map(Number);
   const target=Date.UTC(y,m-1,d,hh,mm);
   const formatter=new Intl.DateTimeFormat("en-GB",{timeZone:zone,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
