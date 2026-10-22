@@ -23,6 +23,8 @@
 .ap-pj-feature-card{display:flex;align-items:flex-start;gap:12px;min-width:0;padding:15px 15px 14px;border:1px solid rgba(127,127,127,.18);border-radius:17px;color:inherit;text-decoration:none;background:color-mix(in srgb,currentColor 2%,transparent);transition:transform .16s ease,border-color .16s ease,background .16s ease}
 .ap-pj-feature-card:hover,.ap-pj-feature-card:focus-visible,.ap-pj-feature-card.is-active{transform:translateY(-1px);border-color:rgba(23,111,59,.42);background:rgba(23,111,59,.06);outline:none}
 .ap-pj-feature-mark{display:grid;place-items:center;flex:0 0 33px;height:33px;border-radius:11px;background:rgba(23,111,59,.1);color:#176f3b;font-size:.72rem;font-weight:900}
+.ap-pj-feature-mark .ap-pj-icon{display:block;width:23px;height:23px;color:currentColor;stroke:currentColor;fill:none;flex:none}
+.ap-pj-icon{overflow:visible}
 .ap-pj-feature-copy{display:grid;gap:6px;min-width:0;flex:1}.ap-pj-feature-copy strong{font-size:.98rem;line-height:1.35}.ap-pj-feature-copy small{font-size:.86rem;line-height:1.55;opacity:.72}
 .ap-pj-feature-arrow{flex:0 0 auto;align-self:center;opacity:.58;font-size:1.1rem;font-weight:850}
 .ap-pj-related{padding:20px;border-radius:22px;background:linear-gradient(135deg,rgba(23,111,59,.07),rgba(199,157,68,.06));border:1px solid rgba(23,111,59,.12)}
