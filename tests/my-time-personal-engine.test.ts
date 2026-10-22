@@ -9,7 +9,8 @@ const base = {
   endUtc: "2026-10-20T09:00:00Z",
   panchangScore: 70,
   activity: "work" as const,
-  hasNatalChart: true
+  hasNatalChart: true,
+  natalFactorsApplied: true
 };
 
 describe("personal-time recommendation engine", () => {
@@ -67,6 +68,11 @@ describe("personal-time recommendation engine", () => {
   });
 
 
+  it("does not call a saved chart fully personalized if natal comparisons are unavailable", () => {
+    const result = evaluatePersonalTime({ ...base, natalFactorsApplied: false, horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
+    expect(result.confidence).toBe("partially-personalized");
+    expect(result.missing).toContain("natal-compatibility");
+  });
   it("does not call sign-only Rashifal guidance fully birth-personalized", () => {
     const result = evaluatePersonalTime({
       ...base, hasNatalChart: false, rashifal: { domains: { work: 80 } },
