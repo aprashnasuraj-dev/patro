@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
+import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, getFeaturesForGroup, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
 import { FEATURE_ICON_BY_ID, FEATURE_ICON_SYMBOLS } from "../src/panchang-jyotish/FeatureGlyph";
 import { FEATURE_REFERENCE_GUIDES } from "../src/panchang-jyotish/feature-reference-guides";
 
@@ -58,7 +58,8 @@ describe("bilingual feature-first visual obligations", () => {
     expect(ribbon).toContain('FeatureGlyph featureId={item.key');
     expect(ribbon).toContain('icon: "sun-star"');
     const muhurat = source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx");
-    expect(muhurat).toContain('FeatureGlyph featureId={rule.id}');
+    expect(muhurat).toContain("calculateLocalDay(date)");
+    expect(muhurat).not.toContain("REVIEW_RULES");
     expect(muhurat).toContain('symbol="personal-time"');
     const planets = source("src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx");
     expect(planets).toContain("function planetIcon(key:string)");
@@ -73,10 +74,10 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).toContain('symbol={planetIcon(planet.key)}');
     const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
     expect(regional).toContain('FeatureGlyph featureId={item.featureId}');
-    expect(regional).toContain('FeatureGlyph featureId={item.id}');
-    expect(regional).toContain('symbol="search"');
-    expect(regional).toContain('featureId="F090" size="inline"');
-    expect(regional).not.toContain("⌕");
+    expect(regional).toContain('href:"/nepal-sambat/mandala"');
+    expect(regional).toContain('aria-expanded={showMethods}');
+    expect(regional).not.toContain("SYSTEMS");
+    expect(regional).not.toContain("Rule/date verification required");
     expect(planets).toContain('symbol={planetIcon(item.planet.key)}');
     expect(planets).toContain('symbol={planetIcon(item.a.key)}');
     expect(planets).toContain('symbol={planetIcon(item.b.key)}');
@@ -135,17 +136,25 @@ describe("bilingual feature-first visual obligations", () => {
     expect(hub).not.toMatch(/setLanguage\(|localStorage\.setItem\(/);
   });
 
-  it("defers calculator mounting, offers a real action, and preserves source review", () => {
+  it("lists functioning tools and hides reference-only placeholders from public hubs", () => {
     const hub = source("src/panchang-jyotish/FeatureGroupHub.tsx");
+    const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
+    const publicFeatures = FEATURE_GROUPS.flatMap(group => getFeaturesForGroup(group.id));
+    expect(publicFeatures).toHaveLength(65);
+    expect(publicFeatures.every(feature => getFeatureAvailability(feature) !== "reference")).toBe(true);
+    expect(publicFeatures.some(feature => feature.id === "F010")).toBe(true);
+    expect(publicFeatures.some(feature => feature.id === "F021")).toBe(true);
+    expect(publicFeatures.some(feature => feature.id === "F022")).toBe(true);
+    expect(["F029","F030","F031","F058","F060","F061","F062","F063","F064","F065","F066","F068","F052","F077","F082","F083","F084","F085","F086","F087","F088","F089","F091"].every(id => !publicFeatures.some(feature => feature.id === id))).toBe(true);
+    expect(PATRO_FEATURES).toHaveLength(91);
     expect(hub).toContain("const showWorkspace = workspaceRequested");
     expect(hub).toContain("setWorkspaceRequested(true)");
-    expect(hub).toContain("selectedAvailability === \"reference\"");
-    expect(hub).toContain("availabilityFilter");
-    const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
-    expect(experience).toContain('state==="reference"');
-    expect(experience).toContain('href="/sources"');
+    expect(hub).not.toContain("Traditional rules and source review required");
+    expect(hub).not.toContain('"reference"] as const');
     expect(experience).toContain('state==="existing"');
     expect(experience).toContain('href={feature.href}');
+    expect(source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx")).not.toContain("REVIEW_CARDS");
+    expect(source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx")).not.toContain("REVIEW_RULES");
   });
 
   it("does not request remote images or silently add a second profile to the presentation", () => {
@@ -199,12 +208,14 @@ describe("bilingual feature-first visual obligations", () => {
     expect(daylight).toContain("toNepaliDigits");
     expect(daylight).toContain("valueLabel");
   });
-  it("improves regional search recovery and live daylight rendering", () => {
+  it("keeps real regional navigation and live daylight rendering without fake calendars", () => {
     const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
     const daylight = source("src/panchang-jyotish/workspaces/DaylightArc.tsx");
-    expect(regional).toContain('type="search"');
+    expect(regional).toContain("CALENDAR_LINKS.map");
     expect(regional).toContain('aria-expanded={showMethods}');
-    expect(regional).toContain("Show all calendars");
+    expect(regional).toContain("Show methods");
+    expect(regional).not.toContain("SYSTEMS");
+    expect(regional).not.toContain("Source verification required");
     expect(daylight).toContain("setInterval(() => setNow(Date.now()), 60_000)");
     expect(daylight).toContain('useId().replace(/:/g, "")');
   });

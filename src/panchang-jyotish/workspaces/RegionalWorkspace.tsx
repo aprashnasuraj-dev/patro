@@ -4,7 +4,6 @@ import { FeatureGlyph } from "../FeatureGlyph";
 import "./workspace.css";
 
 type Props={language:"ne"|"en";selectedFeatureId?:string|null};
-] as const;
 const CALENDAR_LINKS=[
 {href:"/",featureId:"F080",ne:"बिक्रम संवत् पात्रो",en:"Bikram Sambat Calendar",descNe:"दैनिक नेपाली मिति, चाडपर्व र बिदा।",descEn:"Daily Nepali dates, festivals and holidays."},
 {href:"/nepal-sambat/mandala",featureId:"F081",ne:"नेपाल संवत्",en:"Nepal Sambat",descNe:"नेपाल संवत् र समुदायका पर्वको विद्यमान पात्रो।",descEn:"Existing Nepal Sambat calendar and community observances."},

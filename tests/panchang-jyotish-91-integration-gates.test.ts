@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
+import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, getFeaturesForGroup, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
 const source=(path:string)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 function parseCsvLine(line:string):string[]{
   const out:string[]=[];let value="";let quoted=false;
@@ -106,8 +106,16 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
       }
     }
     expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="existing")).toHaveLength(17);
-    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="browser-preview")).toHaveLength(47);
-    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="reference")).toHaveLength(27);
+    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="browser-preview")).toHaveLength(48);
+    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="reference")).toHaveLength(26);
+    const publicFeatures=FEATURE_GROUPS.flatMap(group=>getFeaturesForGroup(group.id));
+    expect(publicFeatures).toHaveLength(65);
+    expect(publicFeatures.every(feature=>getFeatureAvailability(feature)!=="reference")).toBe(true);
+    expect(publicFeatures.some(feature=>feature.id==="F010")).toBe(true);
+    expect(publicFeatures.some(feature=>feature.id==="F021")).toBe(true);
+    expect(publicFeatures.some(feature=>feature.id==="F022")).toBe(true);
+    expect(["F029","F030","F031","F058","F060","F061","F062","F063","F064","F065","F066","F068","F052","F077","F079","F082","F083","F084","F085","F086","F087","F088","F089","F091"].every(id=>!publicFeatures.some(feature=>feature.id===id))).toBe(true);
+    expect(PATRO_FEATURES).toHaveLength(91);
     expect(getFeatureAvailability(PATRO_FEATURES.find(x=>x.id==="F021")!)).toBe("browser-preview");
     expect(getFeatureAvailability(PATRO_FEATURES.find(x=>x.id==="F022")!)).toBe("browser-preview");
   });

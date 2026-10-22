@@ -10,7 +10,7 @@ type MuhuratWindow = { date: string; sunrise: Date; sunset: Date; abhijit: { sta
 
 
 
-export function MuhuratWorkspace({language,selectedFeatureId}:Props){
+export function MuhuratWorkspace({language}:Props){
   const [start,setStart]=useState(()=>{const from=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("date"):null;return from&&validIsoDate(from)?from:todayInNepal()});
   const [days,setDays]=useState(7);
   const [showCautions,setShowCautions]=useState(true);
