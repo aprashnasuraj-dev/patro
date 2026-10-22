@@ -56,7 +56,16 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   const [ruleWindows, setRuleWindows] = useState<NakshatraRuleWindow[]>([]);
   const [ruleWindowState, setRuleWindowState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [resolved, setResolved] = useState<{ date: string; value: PanchangDayContractV1; archive: "loaded" | "unavailable" } | null>(null);
-  useEffect(() => { const controller = new AbortController(); setResolved(null); resolveNepalPanchangDay(date, controller.signal).then(result => { if (!controller.signal.aborted) setResolved({ date, value: result.value, archive: result.archive }); }).catch(() => {}); return () => controller.abort(); }, [date]);
+  const [archiveErrorDate, setArchiveErrorDate] = useState<string | null>(null);
+  useEffect(() => {
+    const controller = new AbortController();
+    setResolved(null);
+    setArchiveErrorDate(null);
+    resolveNepalPanchangDay(date, controller.signal)
+      .then(result => { if (!controller.signal.aborted) setResolved({ date, value: result.value, archive: result.archive }); })
+      .catch(() => { if (!controller.signal.aborted) setArchiveErrorDate(date); });
+    return () => controller.abort();
+  }, [date]);
   useEffect(() => {
     if (selectedFeatureId !== "F021" && selectedFeatureId !== "F022") {
       setRuleWindows([]);
@@ -90,6 +99,8 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   const p = computed?.day;
   const contract = resolved?.date === date ? resolved.value : (p ? fromCalculatedDay(p, KATHMANDU) : null);
   const archiveLoaded = resolved?.date === date && resolved.archive === "loaded";
+  const archiveUnavailable = (resolved?.date === date && resolved.archive === "unavailable") || archiveErrorDate === date;
+  const archivePending = resolved?.date !== date && archiveErrorDate !== date;
   // Keep existing archive sunrise/sunset distinct from the local astronomical fallback.
   const archivedSunrise = archiveLoaded && contract?.sun.sunrise?.source === "archive" && contract.sun.sunrise.instantUtc
     ? new Date(contract.sun.sunrise.instantUtc) : null;
@@ -146,7 +157,13 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, 1)); }} aria-label={l(language, "अर्को दिन", "Next day")}>›</button>
     </div>
     {!computed || !p || !at || !windows ? <div className="ap-pjw-empty">{l(language, "यो मितिका लागि स्थानीय सूर्योदय उपलब्ध छैन। फरक मिति वा स्थान छान्नुहोस्।", "Local sunrise is unavailable for this date. Choose another date or location.")}</div> : <>
-      <p className="ap-pjw-method" role="status">{archiveLoaded ? l(language, "मौजुदा पात्रो अभिलेख उपलब्ध छ। अभिलेखमा नभएका समयहरू अलग गणनात्मक अनुमान हुन्।", "Existing calendar archive loaded. Times not supplied by the archive remain separately calculated estimates.") : l(language, "यो दृश्य स्थानीय गणनाबाट बनेको हो; अभिलेख लोड नभएसम्म प्रकाशित मिति वा समयको आधिकारिक पुष्टि मान्नु हुँदैन।", "This view is calculated locally. Do not treat dates or times as officially verified while the archive is unavailable or loading.")}</p>
+      <p className="ap-pjw-method" role="status" aria-live="polite">{archiveLoaded
+         ? l(language, "मौजुदा पात्रो अभिलेख उपलब्ध छ। अभिलेखमा नभएका समयहरू अलग गणनात्मक अनुमान हुन्।", "Existing calendar archive loaded. Times not supplied by the archive remain separately calculated estimates.")
+         : archiveUnavailable
+           ? l(language, "पात्रो अभिलेख खुल्न सकेन। तलको मान स्थानीय गणना हो; यसलाई आधिकारिक प्रकाशित मिति वा समय नमान्नुहोस्।", "The calendar archive could not be loaded. Values below use the local calculation and must not be treated as official published dates or times.")
+           : archivePending
+             ? l(language, "पात्रो अभिलेख जाँचिँदैछ। हाल देखिएको गणना अस्थायी हो।", "Checking the calendar archive. The currently displayed calculation is provisional.")
+             : l(language, "यो दृश्य स्थानीय गणनाबाट बनेको हो; अभिलेख पुष्टि नभएसम्म प्रकाशित मिति वा समयको आधिकारिक पुष्टि मान्नु हुँदैन।", "This view is calculated locally; do not treat dates or times as officially verified until the archive status is known.")}</p>
       {solarArchiveDiffers && <p className="ap-pjw-note" role="status">{l(language, "अभिलेख र स्थानीय सूर्य-समय गणनामा २ मिनेटभन्दा बढी फरक छ। सूर्य-समयमा अभिलेखको मान छुट्टै देखाइएको छ; दिनका परम्परागत खण्ड भने स्थानीय गणनाबाट निकालिएका हुन्।", "Archived and locally calculated solar times differ by more than two minutes. The archive value is shown for the solar-time fields; traditional day windows still use the local calculation.")}</p>}
       <div className="ap-pjw-date-heading">
         <div><span>{l(language, "नेपालको स्थानीय मिति", "Nepal local date")}</span><h3>{localDateLabel(date, language)}</h3></div>

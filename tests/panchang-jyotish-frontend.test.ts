@@ -183,6 +183,15 @@ describe("bilingual feature-first visual obligations", () => {
     expect(daylight).toContain("setInterval(() => setNow(Date.now()), 60_000)");
     expect(daylight).toContain('useId().replace(/:/g, "")');
   });
+  it("makes question-chart timezone explicit and distinguishes archive loading from failure", () => {
+    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
+    const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
+    expect(jyotish).toContain('Time zone (IANA)');
+    expect(jyotish).toContain("timezone:prashnaTimezone.trim()");
+    expect(jyotish).toContain("disabled={fullMoonRunning}");
+    expect(panchang).toContain("archiveUnavailable");
+    expect(panchang).toContain("archivePending");
+  });
   it("keeps archive provenance bilingual and makes long workspace work cancellable", () => {
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     expect(panchang).toContain("contract.calendars.nepalSambatEn");
