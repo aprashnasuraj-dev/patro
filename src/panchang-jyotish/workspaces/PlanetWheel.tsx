@@ -31,8 +31,8 @@ export function PlanetWheel({positions,language}:Props) {
           const meta=PLANET[item.key as keyof typeof PLANET];
           return <g key={item.key}>
             <line x1="180" y1="180" x2={p.x} y2={p.y} stroke="currentColor" strokeOpacity=".12" strokeWidth="1"/>
-            <circle cx={p.x} cy={p.y} r="10" fill="currentColor" fillOpacity=".87" stroke="var(--pj-wheel-bg,#faf8f2)" strokeWidth="1.8"/>
-            <text x={p.x} y={p.y} fill="var(--pj-wheel-bg,#faf8f2)" dominantBaseline="middle" textAnchor="middle" fontSize="12" fontWeight="800">{meta?.[2] ?? "•"}</text>
+            <circle cx={p.x} cy={p.y} r="10" fill="#247344" stroke="currentColor" strokeOpacity=".2" strokeWidth="1.8"/>
+            <text x={p.x} y={p.y} fill="#ffffff" dominantBaseline="middle" textAnchor="middle" fontSize="12" fontWeight="800">{meta?.[2] ?? "•"}</text>
           </g>;
         })}
         <circle cx="180" cy="180" r="42" fill="currentColor" fillOpacity=".045" stroke="currentColor" strokeOpacity=".12"/>
@@ -41,6 +41,6 @@ export function PlanetWheel({positions,language}:Props) {
       </svg>
     </div>
     <figcaption><div className="ap-pjw-wheel-key">{positions.map(item=>{const meta=PLANET[item.key as keyof typeof PLANET];return <span key={item.key}><b>{meta?.[2]??"•"}</b>{meta ? meta[language==="ne"?0:1] : item.name}<small>{(item.longitude%30).toFixed(1)}°</small></span>})}</div>
-    <p>{l(language,"यो ग्रहीय दीर्घांशको दृष्टान्त हो, जन्मपत्रोका भाव वा लग्नको नक्सा होइन। स्रोत पद्धति तलको तालिकामा प्रयोग भएको पद्धतिसँग एउटै छ।","This depicts sidereal longitudes, not houses or the ascendant in a birth chart. It uses the same position method as the table below.")}</p></figcaption>
+    <div className="ap-pjw-wheel-signs">{(language==="ne"?NE:EN).map((name,index)=><span key={name}><b>{index+1}</b> {name}</span>)}</div><p>{l(language,"यो ग्रहीय दीर्घांशको दृष्टान्त हो, जन्मपत्रोका भाव वा लग्नको नक्सा होइन। स्रोत पद्धति तलको तालिकामा प्रयोग भएको पद्धतिसँग एउटै छ।","This depicts sidereal longitudes, not houses or the ascendant in a birth chart. It uses the same position method as the table below.")}</p></figcaption>
   </figure>;
 }
