@@ -9,7 +9,7 @@ import { NAKSHATRA_EN, RASHI_EN, todayInNepal, validIsoDate } from "./shared";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
-type ExistingChart = { chart: ChartResult; error?: string };
+type ExistingChart = { chart: ChartResult | null; error?: string };
 
 const PLANET_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द्र",Mars:"मङ्गल",Mercury:"बुध",Jupiter:"बृहस्पति",Venus:"शुक्र",Saturn:"शनि",Rahu:"राहु",Ketu:"केतु"};
 const DASHAS=["केतु","शुक्र","सूर्य","चन्द्र","मङ्गल","राहु","बृहस्पति","शनि","बुध"];
@@ -29,6 +29,7 @@ function yieldToBrowser(){return new Promise<void>(resolve=>setTimeout(resolve,0
 export function JyotishWorkspace({language,selectedFeatureId}:Props){
   const [saved,setSaved]=useState<ExistingChart|null>(null);
   const [loading,setLoading]=useState(true);
+  const [currentInstant,setCurrentInstant]=useState(()=>new Date());
   const [vedicGhati,setVedicGhati]=useState("1");
   const [vedicPala,setVedicPala]=useState("0");
   const [prashnaDate,setPrashnaDate]=useState(()=>todayInNepal());
@@ -53,16 +54,23 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
       const chart=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});
       if(active)setSaved({chart});
     }catch(error){
-      if(active)setSaved({chart:null as never,error:String((error as Error)?.message||error)});
+      if(active)setSaved({chart:null,error:String((error as Error)?.message||error)});
     }finally{if(active)setLoading(false);}
     return()=>{active=false;};
+  },[]);
+
+  useEffect(()=>{
+    const refresh=()=>setCurrentInstant(new Date());
+    const timer=window.setInterval(refresh,60_000);
+    window.addEventListener("focus",refresh);
+    return()=>{window.clearInterval(timer);window.removeEventListener("focus",refresh);};
   },[]);
 
   const chart=saved?.chart;
   const moon=chart?.planets.find((item)=>item.key==="moon");
   const rahu=chart?.planets.find((item)=>item.key==="rahu");
   const ketu=chart?.planets.find((item)=>item.key==="ketu");
-  const currentSaturn=useMemo(()=>calculateSiderealPlanetPositions(new Date()).find((item)=>item.key==="saturn")||null,[]);
+  const currentSaturn=useMemo(()=>calculateSiderealPlanetPositions(currentInstant).find((item)=>item.key==="saturn")||null,[currentInstant]);
   const sadesatiOffset=moon&&currentSaturn?(currentSaturn.signIndex-moon.signIndex+12)%12:null;
   const sadesatiActive=sadesatiOffset!==null&&[11,0,1].includes(sadesatiOffset);
   const axisSummary=useMemo(()=>{
