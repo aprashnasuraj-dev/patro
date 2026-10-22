@@ -10,6 +10,7 @@ import { readPlace } from "../../place/place";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
 import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
+import { splitTimingWindowAtBoundaries } from "./timing-window-segments";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { calculateChart, normalizeBirthDate } from "../../jyotish/jyotishEngine";
 import { calculateTara } from "./tarabalam";
@@ -557,12 +558,10 @@ export default function MyTimePage() {
       .flatMap(window => {
         // Split at every applicable caution transition: a partial Rahu Kaal overlap
         // must not incorrectly classify the entire Choghadiya as unfavorable.
-        const begin = Date.parse(window.start_utc), finish = Date.parse(window.end_utc);
-        const boundaries = [...new Set([begin, finish, ...kaal.flatMap(period => [Date.parse(period.start_utc), Date.parse(period.end_utc)].filter(t => Number.isFinite(t) && t > begin && t < finish))])].sort((a,b)=>a-b);
-        return boundaries.slice(0,-1).map((start,index) => {
-          const end = boundaries[index+1];
+        return splitTimingWindowAtBoundaries(window, kaal).map((segment,index) => {
+          const start = Date.parse(segment.start_utc), end = Date.parse(segment.end_utc);
           const overlaps = kaal.filter(period => start < Date.parse(period.end_utc) && end > Date.parse(period.start_utc));
-          const startUtc = new Date(start).toISOString(), endUtc = new Date(end).toISOString();
+          const startUtc = segment.start_utc, endUtc = segment.end_utc;
           const result = scorePersonalizedMuhurta({
             startUtc, endUtc, favorableChoghadiya: window.favorable,
             rahuKaal: overlaps.some(period => period.key === "rahu"),
