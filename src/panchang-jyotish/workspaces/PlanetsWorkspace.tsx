@@ -25,14 +25,28 @@ type IngressEvent={key:string;name:string;fromSign:number;toSign:number;instant:
 type StationEvent={key:string;name:string;direction:"direct"|"retrograde";instant:Date};
 type NakshatraEvent={key:string;name:string;fromNakshatra:number;toNakshatra:number;instant:Date};
 
-function scanIngresses(startDate:string,days:number,bodyFilter:string):IngressEvent[]{
+type ScanCancelled = () => boolean;
+type PlanetEventScan = {
+  ingresses: IngressEvent[];
+  nakshatras: NakshatraEvent[];
+  stations: StationEvent[];
+  seasons: Array<{degree:number;instant:Date}>;
+};
+const EMPTY_SCAN: PlanetEventScan = {ingresses:[],nakshatras:[],stations:[],seasons:[]};
+
+// Long searches cooperate with rendering/input rather than monopolising the main thread.
+function yieldToBrowser():Promise<void>{return new Promise(resolve=>setTimeout(resolve,0));}
+
+async function scanIngresses(startDate:string,days:number,bodyFilter:string,cancelled:ScanCancelled):Promise<IngressEvent[]|null>{
   const output:IngressEvent[]=[];
   let previousDate=midnightForNptDate(startDate);
   let previous=calculateSiderealPlanetPositions(previousDate);
   for(let day=1;day<=days;day++){
+    if(cancelled())return null;
     const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=calculateSiderealPlanetPositions(date);
     for(const before of previous){
+      if(cancelled())return null;
       if(bodyFilter!=="all"&&before.key!==bodyFilter)continue;
       const after=current.find(item=>item.key===before.key);
       if(!after||after.signIndex===before.signIndex)continue;
@@ -45,18 +59,21 @@ function scanIngresses(startDate:string,days:number,bodyFilter:string):IngressEv
       output.push({key:before.key,name:before.name,fromSign:before.signIndex,toSign:after.signIndex,instant:new Date(hi)});
     }
     previousDate=date;previous=current;
+    if(day%2===0)await yieldToBrowser();
   }
   return output;
 }
 
-function scanStations(startDate:string,days:number):StationEvent[]{
+async function scanStations(startDate:string,days:number,cancelled:ScanCancelled):Promise<StationEvent[]|null>{
   const output:StationEvent[]=[];
   let previousDate=midnightForNptDate(startDate);
   let previous=calculateSiderealPlanetPositions(previousDate).filter(item=>RETROGRADE_KEYS.has(item.key));
   for(let day=1;day<=days;day++){
+    if(cancelled())return null;
     const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=calculateSiderealPlanetPositions(date).filter(item=>RETROGRADE_KEYS.has(item.key));
     for(const before of previous){
+      if(cancelled())return null;
       const after=current.find(item=>item.key===before.key);
       if(!after||after.isRetrograde===before.isRetrograde)continue;
       let lo=previousDate.getTime(),hi=date.getTime();
@@ -68,18 +85,21 @@ function scanStations(startDate:string,days:number):StationEvent[]{
       output.push({key:before.key,name:before.name,direction:after.isRetrograde?"retrograde":"direct",instant:new Date(hi)});
     }
     previousDate=date;previous=current;
+    if(day%2===0)await yieldToBrowser();
   }
   return output;
 }
 
-function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:string):NakshatraEvent[]{
+async function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:string,cancelled:ScanCancelled):Promise<NakshatraEvent[]|null>{
   const output:NakshatraEvent[]=[];
   let previousDate=midnightForNptDate(startDate);
   let previous=calculateSiderealPlanetPositions(previousDate);
   for(let day=1;day<=days;day++){
+    if(cancelled())return null;
     const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=calculateSiderealPlanetPositions(date);
     for(const before of previous){
+      if(cancelled())return null;
       if(bodyFilter!=="all"&&before.key!==bodyFilter)continue;
       const after=current.find(item=>item.key===before.key);
       if(!after||nakshatraIndex(after)===nakshatraIndex(before))continue;
@@ -91,20 +111,23 @@ function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:string):
       output.push({key:before.key,name:before.name,fromNakshatra:nakshatraIndex(before),toNakshatra:nakshatraIndex(after),instant:new Date(hi)});
     }
     previousDate=date;previous=current;
+    if(day%2===0)await yieldToBrowser();
   }
   return output;
 }
 
-function tropicalSeasonCrossings(startDate:string,days:number):Array<{degree:number;instant:Date}>{
+async function tropicalSeasonCrossings(startDate:string,days:number,cancelled:ScanCancelled):Promise<Array<{degree:number;instant:Date}>|null>{
   const output:Array<{degree:number;instant:Date}>=[];
   const targets=[0,90,180,270];
   let previousDate=midnightForNptDate(startDate);
   let previous=planetAt(previousDate,"sun");
   for(let day=1;day<=days;day++){
+    if(cancelled())return null;
     const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=planetAt(date,"sun");
-    if(!previous||!current){previousDate=date;previous=current;continue;}
+    if(!previous||!current){previousDate=date;previous=current;if(day%2===0)await yieldToBrowser();continue;}
     for(const target of targets){
+      if(cancelled())return null;
       const a=signedAngle(previous.tropicalLongitude-target);
       const b=signedAngle(current.tropicalLongitude-target);
       if((a<=0&&b>0)||(a>0&&b<=0)){
@@ -119,6 +142,7 @@ function tropicalSeasonCrossings(startDate:string,days:number):Array<{degree:num
       }
     }
     previousDate=date;previous=current;
+    if(day%2===0)await yieldToBrowser();
   }
   return output;
 }
@@ -129,7 +153,11 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const [body,setBody]=useState("all");
   const [searchMode,setSearchMode]=useState<"ingress"|"nakshatra"|"station"|"season">(()=>selectedFeatureId==="F048"?"nakshatra":selectedFeatureId==="F051"||selectedFeatureId==="F078"?"station":selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075"?"season":"ingress");
   const [runScan,setRunScan]=useState(false);
-  useEffect(()=>{if(selectedFeatureId==="F048")setSearchMode("nakshatra");else if(selectedFeatureId==="F051"||selectedFeatureId==="F078")setSearchMode("station");else if(selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075")setSearchMode("season");else if(selectedFeatureId==="F047")setSearchMode("ingress");setRunScan(false);},[selectedFeatureId]);
+  const [scanRequest,setScanRequest]=useState(0);
+  const [scanState,setScanState]=useState<"idle"|"running"|"done"|"error">("idle");
+  const [scanError,setScanError]=useState("");
+  const [events,setEvents]=useState<PlanetEventScan>(EMPTY_SCAN);
+  useEffect(()=>{if(selectedFeatureId==="F048")setSearchMode("nakshatra");else if(selectedFeatureId==="F051"||selectedFeatureId==="F078")setSearchMode("station");else if(selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075")setSearchMode("season");else if(selectedFeatureId==="F047")setSearchMode("ingress");setRunScan(false);setScanState("idle");setEvents(EMPTY_SCAN);setScanError("");},[selectedFeatureId]);
   const [natalChart,setNatalChart]=useState<ChartResult|null>(null);
   const [natalContextChecked,setNatalContextChecked]=useState(false);
   useEffect(()=>{let active=true;try{const birth=readExistingJanmaPatroBirth();if(!birth){if(active)setNatalChart(null);return;}const timezone=birth.timezone||"Asia/Kathmandu";const result=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});if(active)setNatalChart(result);}catch{if(active)setNatalChart(null);}finally{if(active)setNatalContextChecked(true);}return()=>{active=false;}},[]);
@@ -144,13 +172,35 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
     }
     return results.sort((a,b)=>a.orb-b.orb).slice(0,20);
   },[positions]);
-  const events=useMemo(()=>{
-    if(!runScan||!validIsoDate(date))return {ingresses:[] as IngressEvent[],nakshatras:[] as NakshatraEvent[],stations:[] as StationEvent[],seasons:[] as Array<{degree:number;instant:Date}>};
-    if(searchMode==="ingress")return {ingresses:scanIngresses(date,range,body),nakshatras:[] as NakshatraEvent[],stations:[] as StationEvent[],seasons:[] as Array<{degree:number;instant:Date}>};
-    if(searchMode==="nakshatra")return {ingresses:[] as IngressEvent[],nakshatras:scanNakshatraIngresses(date,range,body),stations:[] as StationEvent[],seasons:[] as Array<{degree:number;instant:Date}>};
-    if(searchMode==="station")return {ingresses:[] as IngressEvent[],nakshatras:[] as NakshatraEvent[],stations:scanStations(date,range),seasons:[] as Array<{degree:number;instant:Date}>};
-    return {ingresses:[] as IngressEvent[],nakshatras:[] as NakshatraEvent[],stations:[] as StationEvent[],seasons:tropicalSeasonCrossings(date,range)};
-  },[date,range,body,searchMode,runScan]);
+  useEffect(()=>{
+    if(!runScan||!validIsoDate(date)){setEvents(EMPTY_SCAN);setScanState("idle");setScanError("");return;}
+    let active=true;
+    const cancelled=()=>!active;
+    setEvents(EMPTY_SCAN);
+    setScanError("");
+    setScanState("running");
+    (async()=>{
+      try{
+        if(searchMode==="ingress"){
+          const rows=await scanIngresses(date,range,body,cancelled);
+          if(active&&rows)setEvents({...EMPTY_SCAN,ingresses:rows});
+        }else if(searchMode==="nakshatra"){
+          const rows=await scanNakshatraIngresses(date,range,body,cancelled);
+          if(active&&rows)setEvents({...EMPTY_SCAN,nakshatras:rows});
+        }else if(searchMode==="station"){
+          const rows=await scanStations(date,range,cancelled);
+          if(active&&rows)setEvents({...EMPTY_SCAN,stations:rows});
+        }else{
+          const rows=await tropicalSeasonCrossings(date,range,cancelled);
+          if(active&&rows)setEvents({...EMPTY_SCAN,seasons:rows});
+        }
+        if(active)setScanState("done");
+      }catch{
+        if(active){setScanError(l(language,"ग्रह घटना खोज्दा त्रुटि भयो। मिति वा अवधि परिवर्तन गरी पुनः प्रयास गर्नुहोस्।","The planetary event search failed. Change the date or range and try again."));setScanState("error");}
+      }
+    })();
+    return()=>{active=false;};
+  },[date,range,body,searchMode,runScan,scanRequest,language]);
   const natalMoonSign=natalChart?.planets.find(item=>item.key==="moon")?.signIndex??null;
   const natalLagnaSign=natalChart?.ascSignIndex??null;
   const transitSummary=useMemo(()=>positions.filter(item=>["Jupiter","Saturn","Mars"].includes(item.name)).map(item=>({planet:item,fromMoon:natalMoonSign===null?null:((item.signIndex-natalMoonSign+12)%12)+1,fromLagna:natalLagnaSign===null?null:((item.signIndex-natalLagnaSign+12)%12)+1})),[positions,natalMoonSign,natalLagnaSign]);
@@ -175,9 +225,9 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
         <label>{l(language,"घटनाको प्रकार","Event type")}<select className="ap-pjw-select" value={searchMode} onChange={event=>{setSearchMode(event.target.value as typeof searchMode);setRunScan(false)}}><option value="ingress">{l(language,"राशि प्रवेश","Sign ingress")}</option><option value="nakshatra">{l(language,"नक्षत्र प्रवेश","Nakshatra ingress")}</option><option value="station">{l(language,"वक्री / मार्गी स्टेशन","Retrograde/direct station")}</option><option value="season">{l(language,"विषुव / अयनान्त","Equinox / solstice")}</option></select></label>
         <label>{l(language,"खोज अवधि","Search duration")}<select className="ap-pjw-select" value={range} onChange={event=>{setRange(Number(event.target.value));setRunScan(false)}}>{[7,14,30,60,90,180].map(n=><option value={n} key={n}>{l(language,n+" दिन",n+" days")}</option>)}</select></label>
         {(searchMode==="ingress"||searchMode==="nakshatra")&&<label>{l(language,"ग्रह","Planet")}<select className="ap-pjw-select" value={body} onChange={event=>{setBody(event.target.value);setRunScan(false)}}><option value="all">{l(language,"सबै ग्रह","All planets")}</option>{positions.map(item=><option value={item.key} key={item.key}>{l(language,PLANET_NE[item.name]||item.name,item.name)}</option>)}</select></label>}
-        <button type="button" className="ap-pjw-primary" onClick={()=>setRunScan(true)}>{l(language,"घटना खोज्नुहोस्","Find events")}</button>
+        <button type="button" className="ap-pjw-primary" disabled={scanState==="running"} onClick={()=>{if(!validIsoDate(date)){setScanError(l(language,"मान्य मिति छान्नुहोस्।","Choose a valid date."));setScanState("error");return;}setRunScan(true);setScanRequest(value=>value+1);}}>{scanState==="running"?l(language,"गणना हुँदैछ…","Scanning…"):l(language,"घटना खोज्नुहोस्","Find events")}</button>
       </div>
-      {!runScan?<p className="ap-pjw-section-note">{l(language,"मिति र अवधि छानेपछि मात्र ब्राउजरले घटना खोज्छ। ठूलो अवधि खोज्दा उपकरण केही समय गणना गर्न सक्छ।","The browser scans only after you select a date and duration. Longer windows may take a little time to calculate.")}</p>:events.ingresses.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"राशिबाट","From sign")}</th><th>{l(language,"राशिमा","Into sign")}</th><th>{l(language,"प्रवेश समय","Ingress time")}</th></tr></thead><tbody>{events.ingresses.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,SIGNS_NE[item.fromSign],SIGNS_EN[item.fromSign])}</td><td>{l(language,SIGNS_NE[item.toSign],SIGNS_EN[item.toSign])}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.nakshatras.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"नक्षत्रबाट","From Nakshatra")}</th><th>{l(language,"नक्षत्रमा","Into Nakshatra")}</th><th>{l(language,"प्रवेश समय","Ingress time")}</th></tr></thead><tbody>{events.nakshatras.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,NAKSHATRAS[item.fromNakshatra]||"नक्षत्र",NAKSHATRA_EN[item.fromNakshatra]||"Nakshatra")}</td><td>{l(language,NAKSHATRAS[item.toNakshatra]||"नक्षत्र",NAKSHATRA_EN[item.toNakshatra]||"Nakshatra")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.stations.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"गति परिवर्तन","Motion change")}</th><th>{l(language,"समय","Time")}</th></tr></thead><tbody>{events.stations.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{item.direction==="retrograde"?l(language,"वक्री सुरु","Retrograde station"):l(language,"मार्गी सुरु","Direct station")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.seasons.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"घटना","Event")}</th><th>{l(language,"समय","Time")}</th></tr></thead><tbody>{events.seasons.map(item=><tr key={item.degree}><td>{l(language,item.degree===0?"वसन्त विषुव":item.degree===90?"ग्रीष्म अयनान्त":item.degree===180?"शरद विषुव":"शीत अयनान्त",item.degree===0?"Vernal equinox":item.degree===90?"Summer solstice":item.degree===180?"Autumnal equinox":"Winter solstice")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:<div className="ap-pjw-empty">{l(language,"यो खोज अवधिमा घटना फेला परेन।","No event was found in this search window.")}</div>}
+      {scanState==="running"?<p className="ap-pjw-section-note" role="status">{l(language,"ग्रहका दिनगत अवस्थाहरू जाँचिँदैछन्। खोज जारी रहँदा पृष्ठ प्रयोग गर्न सक्नुहुन्छ।","Checking daily planetary states. You can continue using the page while the search runs.")}</p>:scanError?<p className="ap-pjw-error" role="alert">{scanError}</p>:!runScan?<p className="ap-pjw-section-note">{l(language,"मिति र अवधि छानेपछि मात्र ब्राउजरले घटना खोज्छ। लामो खोज पृष्ठलाई प्रतिक्रियाशील राख्दै चल्छ।","The browser scans only after you select a date and duration; longer searches yield to keep the page responsive.")}</p>:events.ingresses.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"राशिबाट","From sign")}</th><th>{l(language,"राशिमा","Into sign")}</th><th>{l(language,"प्रवेश समय","Ingress time")}</th></tr></thead><tbody>{events.ingresses.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,SIGNS_NE[item.fromSign],SIGNS_EN[item.fromSign])}</td><td>{l(language,SIGNS_NE[item.toSign],SIGNS_EN[item.toSign])}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.nakshatras.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"नक्षत्रबाट","From Nakshatra")}</th><th>{l(language,"नक्षत्रमा","Into Nakshatra")}</th><th>{l(language,"प्रवेश समय","Ingress time")}</th></tr></thead><tbody>{events.nakshatras.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,NAKSHATRAS[item.fromNakshatra]||"नक्षत्र",NAKSHATRA_EN[item.fromNakshatra]||"Nakshatra")}</td><td>{l(language,NAKSHATRAS[item.toNakshatra]||"नक्षत्र",NAKSHATRA_EN[item.toNakshatra]||"Nakshatra")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.stations.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"गति परिवर्तन","Motion change")}</th><th>{l(language,"समय","Time")}</th></tr></thead><tbody>{events.stations.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{item.direction==="retrograde"?l(language,"वक्री सुरु","Retrograde station"):l(language,"मार्गी सुरु","Direct station")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.seasons.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"घटना","Event")}</th><th>{l(language,"समय","Time")}</th></tr></thead><tbody>{events.seasons.map(item=><tr key={item.degree}><td>{l(language,item.degree===0?"वसन्त विषुव":item.degree===90?"ग्रीष्म अयनान्त":item.degree===180?"शरद विषुव":"शीत अयनान्त",item.degree===0?"Vernal equinox":item.degree===90?"Summer solstice":item.degree===180?"Autumnal equinox":"Winter solstice")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:<div className="ap-pjw-empty">{l(language,"यो खोज अवधिमा घटना फेला परेन।","No event was found in this search window.")}</div>}
     </section>
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"जन्म चन्द्र/लग्नबाट गोचर","Transits from natal Moon/Lagna")}</h3><small>{l(language,"विद्यमान जन्मपत्रो प्रयोग हुन्छ","Uses the existing birth chart")}</small></div>
