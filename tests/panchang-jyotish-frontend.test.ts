@@ -29,6 +29,8 @@ describe("bilingual feature-first visual obligations", () => {
     }
     expect(PATRO_FEATURES.every(feature => feature.titleNe && feature.titleEn && feature.descriptionNe && feature.descriptionEn)).toBe(true);
     expect(PATRO_FEATURES.filter(feature => getFeatureAvailability(feature) === "reference").length).toBeGreaterThan(0);
+    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F021")!)).toBe("browser-preview");
+    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F022")!)).toBe("browser-preview");
   });
 
   it("uses the homepage language state and does not expose internal identifiers in the spotlight", () => {
@@ -92,5 +94,21 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).toContain("setInterval(refresh,60_000)");
     expect(jyotish).toContain('addEventListener("focus",refresh)');
     expect(jyotish).not.toContain("calculateSiderealPlanetPositions(new Date()).find((item)=>item.key===\"saturn\")||null,[]");
+  });
+
+  it("exposes Panchak/Ganda Moola only as caveated candidate calculators", () => {
+    const hub = source("src/panchang-jyotish/FeatureGroupHub.tsx");
+    const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
+    const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
+    const ruleEngine = source("src/panchang-jyotish/reviewed-candidate-rules.ts");
+    expect(hub).toContain("CANDIDATE_ONLY_SOURCE_REVIEW_PREVIEWS");
+    expect(experience).toContain("const guide=FEATURE_REFERENCE_GUIDES[feature.id]");
+    expect(experience).toContain("नक्षत्र प्रवेश र समाप्ति");
+    expect(panchang).toContain("findNakshatraRuleWindows(date, ruleWindowDays, rule");
+    expect(panchang).toContain("candidate-unverified");
+    expect(panchang).toContain("is not an official Muhurat");
+    expect(panchang).toContain("is not equated with the narrower Gandanta concept");
+    expect(ruleEngine).toContain("SIX_HOURS_MS");
+    expect(ruleEngine).toContain("candidate-unverified");
   });
 });
