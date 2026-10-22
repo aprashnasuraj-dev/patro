@@ -54,10 +54,19 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   }, [features, query, availabilityFilter]);
 
   useEffect(() => {
-    const sync = () => { const id = featureFromHash(groupId); setActiveFeature(id); setWorkspaceRequested(Boolean(id && getFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview"))); };
+    const sync = () => {
+      const id = featureFromHash(groupId);
+      setActiveFeature(id);
+      setWorkspaceRequested(Boolean(id && getFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview")));
+    };
     sync();
+    // pushState does not emit hashchange; popstate is needed for Back/Forward.
     window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
+    return () => {
+      window.removeEventListener("hashchange", sync);
+      window.removeEventListener("popstate", sync);
+    };
   }, [groupId]);
 
   useEffect(() => {
@@ -68,7 +77,9 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
     if (!isLocalFeature(item, groupId)) return;
     const hash = item.href.split("#")[1];
     if (hash) {
-      if (window.location.hash !== "#" + hash) window.history.replaceState(null, "", window.location.pathname + window.location.search + "#" + hash);
+      if (window.location.hash !== "#" + hash) {
+        window.history.pushState(null, "", window.location.pathname + window.location.search + "#" + hash);
+      }
       setActiveFeature(item.id);
       setWorkspaceRequested(getFeatureAvailability(item) === "browser-preview");
       window.setTimeout(() => document.getElementById("ap-pj-workspace")?.scrollIntoView({ behavior: "smooth", block: "start" }), 20);
