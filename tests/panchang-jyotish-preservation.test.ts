@@ -42,6 +42,13 @@ describe("five-group release preservation contracts", () => {
     const hub = read("src/panchang-jyotish/catalog.ts");
     expect(hub).toContain('"/mytime", "reuse"');
   });
+  it("guards all My Time source and test paths in the read-only pre-PR audit", () => {
+    const audit = read("scripts/panchang-prepr-audit.mjs");
+    expect(audit).toContain("tests\\/my-time-");
+    expect(audit).toContain("src\\/features\\/my-time\\/");
+    expect(audit).toContain('BASE + "...HEAD"');
+    expect(audit).not.toMatch(/wrangler\\s+(?:deploy|publish)|cloudflare\\s+deploy/);
+  });
   it("does not introduce a production deployment command or a new database binding", () => {
     const paths = ["src/panchang-jyotish/catalog.ts", "src/panchang-jyotish/contract.ts", "src/panchang-jyotish/FeatureGroupHub.tsx"];
     for (const path of paths) {

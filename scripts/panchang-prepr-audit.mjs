@@ -14,6 +14,7 @@ const requireGate = (condition, reason) => { if (!condition) failures.push(reaso
 const diff = execFileSync("git", ["diff", "--name-only", BASE + "...HEAD"], { encoding: "utf8" }).split(/\r?\n/).filter(Boolean);
 const forbidden = [
  /^src\/features\/my-time\//, /^worker\/my-time\//, /^src\/patro-tools\/core\/my-time-/,
+ /^tests\/my-time-/, /^src\/features\/my-time\/MyTimePage\.tsx$/,
  /^src\/jyotish\/my-time-bridge\.ts$/, /^wrangler/, /^cloudflare\//, /^supabase\//,
  /^scripts\/cloudflare\//, /^\.github\/workflows\//, /^migration\//, /^db\//,
  /^worker\/optimized-entry\.ts$/
