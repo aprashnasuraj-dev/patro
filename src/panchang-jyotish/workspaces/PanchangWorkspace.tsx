@@ -6,7 +6,7 @@ import { getFeatureById } from "../catalog";
 import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 import { resolveNepalPanchangDay } from "../archive-adapter";
 import { KATHMANDU } from "../../patro-tools/core/types";
-import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
+import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, localSunriseTithiPattern, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
@@ -89,6 +89,10 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     { labelNe: "करण", labelEn: "Karana", value: l(language, contract?.elements.karana.nameNe ?? KARANA_NAMES[contract?.elements.karana.index ?? p.karana], contract?.elements.karana.nameEn ?? KARANA_EN[contract?.elements.karana.index ?? p.karana]), start: contract?.elements.karana.starts?.instantUtc ? new Date(contract.elements.karana.starts.instantUtc) : conflicts.karana ? null : previousFieldTransition(p.sunrise, "karana"), end: contract?.elements.karana.ends?.instantUtc ? new Date(contract.elements.karana.ends.instantUtc) : conflicts.karana ? null : karanaEnd }
   ] : [];
 
+  const tithiPattern = useMemo(() => {
+    if (selectedFeatureId !== "F010" || !validIsoDate(date)) return null;
+    try { return localSunriseTithiPattern(date); } catch { return null; }
+  }, [date, selectedFeatureId]);
   const panchak = !!p && (p.nakshatra > 22 || (p.nakshatra === 22 && p.nakshatraPada >= 3));
   const gandaMoola = !!p && [0, 8, 9, 17, 18, 26].includes(p.nakshatra);
   const vishti = !!p && (contract?.elements.karana.index ?? p.karana) === 6;
@@ -120,6 +124,15 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       </div>
 
       {Object.values(conflicts).some(Boolean) && <p className="ap-pjw-note" role="status">{l(language, "अभिलेख र स्थानीय गणनाको कुनै तत्व नमिलेकाले त्यस्तो तत्वको अपुष्ट परिवर्तन समय लुकाइएको छ। सम्बन्धित अभिलेखको मिति/स्रोत जाँच्नुहोस्।", "An archived element differs from the local calculation, so its unverified fallback transition time has been withheld. Check the corresponding archive date and source.")}</p>}
+      {selectedFeatureId === "F010" && tithiPattern && <section className="ap-pjw-card">
+        <div className="ap-pjw-subhead"><h3>{l(language, "सूर्योदय र तिथिको निरन्तरता", "Tithi across successive sunrises")}</h3><small>{l(language, "स्थानीय गणनात्मक सङ्केत", "Local calculated indication")}</small></div>
+        <div className="ap-pjw-stats">
+          <article><span>{l(language, "अघिल्लो सूर्योदय", "Previous sunrise")}</span><strong>{l(language, tithiName(tithiPattern.previous), TITHI_EN[tithiPattern.previous - 1])}</strong></article>
+          <article><span>{l(language, "यस सूर्योदय", "Today's sunrise")}</span><strong>{l(language, tithiName(tithiPattern.current), TITHI_EN[tithiPattern.current - 1])}</strong></article>
+          <article><span>{l(language, "अर्को सूर्योदय", "Next sunrise")}</span><strong>{l(language, tithiName(tithiPattern.next), TITHI_EN[tithiPattern.next - 1])}</strong></article>
+        </div>
+        <p className="ap-pjw-method">{tithiPattern.entering.status === "vriddhi" ? l(language, "अघिल्लो र आजको सूर्योदयमा एउटै तिथि: वृद्धि तिथिको सम्भावित सङ्केत।", "The same Tithi occurs at yesterday's and today's sunrise: a possible Vriddhi Tithi indication.") : tithiPattern.entering.status === "kshaya" ? l(language, "दुई सूर्योदयबीच एउटा तिथि छुटेको गणनात्मक सङ्केत।", "The calculated sunrise sequence indicates one Tithi skipped between the two sunrises.") : l(language, "यस सूर्योदयमा तिथि सामान्य क्रमले अगाडि बढेको छ।", "The Tithi advances normally at this sunrise.")} {l(language, "व्रत वा पर्व निर्णयका लागि प्रचलित अनुष्ठान-समय र प्रकाशित पात्रो अलग जाँच्नुपर्छ।", "Festival and fasting decisions still require the applicable observance window and published Panchang.")}</p>
+      </section>}
       <section className="ap-pjw-card">
         <div className="ap-pjw-subhead"><h3>{l(language, "चन्द्र महिनाको प्रणाली", "Lunar month convention")}</h3><small>{l(language, "नेपालमा प्रचलित पूर्णिमान्त नामकरण", "Purnimanta naming used in Nepal")}</small></div>
         <div className="ap-pjw-stats">
