@@ -1,6 +1,7 @@
 import { formatNeDate } from "./nepaliDate";
 import { useEffect, useMemo, useState } from "react";
 import { BS_MONTHS, calendarTitle, pageTitle, setPageTitle, toNepaliDigits } from "./title";
+import { l, useUiLanguage } from "./useUiLanguage";
 
 const NE_DAYS=["आइत","सोम","मंगल","बुध","बिही","शुक्र","शनि"];
 const FULL_NE_DAYS=["आइतबार","सोमबार","मंगलबार","बुधबार","बिहीबार","शुक्रबार","शनिबार"];
@@ -76,6 +77,54 @@ export function HomePage({calendarYear,calendarMonth}:{calendarYear?:number;cale
  return <main className="ap-page ap-home"><section className="ap-home-top"><article className="ap-today-card"><div><span className="ap-eyebrow">आज</span><h1>{bs?`${toNepaliDigits(bs.day)} ${bs.month_ne||BS_MONTHS[bs.month-1]} ${toNepaliDigits(bs.year)}`:"आजको नेपाली पात्रो"}</h1><p>{neDate(today)} · {toNepaliDigits(today)}</p>{todayError&&<small className="ap-inline-error">{todayError}</small>}</div><div className="ap-today-facts"><div><b>{todayData?.tithi||"तिथि"}</b><small>{todayData?.tithiNext||"आजको तिथि"}</small></div><div><b>{todayData?.ns||"नेपाल संवत्"}</b><small>नेपाल संवत्</small></div><div><b>{todayData?.sunrise||"—"}</b><small>सूर्योदय</small></div><div><b>{todayData?.sunset||"—"}</b><small>सूर्यास्त</small></div></div></article>{next&&<a className="ap-next-festival ap-next-card" href={`/date/${festivalDate(next)}`}><span>आगामी चाडपर्व</span><strong>{festivalName(next)}</strong><small>{neDate(festivalDate(next))}</small><b>{toNepaliDigits(daysUntil(today,festivalDate(next)))} दिन बाँकी</b></a>}</section>{cursor?<section className="ap-calendar-card"><header className="ap-section-head"><div><h2>{BS_MONTHS[cursor.month-1]} {toNepaliDigits(cursor.year)}</h2><p>वि.सं. महिनाको पात्रो · तिथि, चाडपर्व र बिदा</p></div><div className="ap-month-actions"><button onClick={()=>shift(-1)} aria-label="अघिल्लो महिना">‹</button><a href="/">आज</a><button onClick={()=>shift(1)} aria-label="अर्को महिना">›</button></div></header><MonthGrid year={cursor.year} month={cursor.month}/></section>:<section className="ap-calendar-card"><div className="ap-state">आजको पात्रो तयार हुँदैछ…</div></section>}</main>
 }
 
+const HUB_COPY:Record<string,{titleNe:string;titleEn:string;descriptionNe:string;descriptionEn:string;icon:string}> = {
+ "/panchang": {titleNe:"दैनिक पञ्चाङ्ग",titleEn:"Daily Panchang",descriptionNe:"तिथि, नक्षत्र, योग, करण र स्थानीय दिनका समयखण्ड।",descriptionEn:"Tithi, Nakshatra, Yoga, Karana and local daily time windows.",icon:"☾"},
+ "/muhurat": {titleNe:"शुभ साइत र मुहूर्त",titleEn:"Auspicious Timing",descriptionNe:"परम्परागत समयखण्ड र स्रोत-पुष्टि भएका साइत नियम।",descriptionEn:"Traditional time windows and source-verified Sait rules.",icon:"✦"},
+ "/jyotish": {titleNe:"ज्योतिष गणक",titleEn:"Jyotish Calculators",descriptionNe:"जन्मपत्रो, राशि, नक्षत्र, लग्न र परम्परागत गणना।",descriptionEn:"Birth chart, Rashi, Nakshatra, Lagna and traditional calculations.",icon:"✧"},
+ "/planets": {titleNe:"ग्रह र खगोलीय घटना",titleEn:"Planets & Astronomy",descriptionNe:"ग्रहस्थिति, राशि प्रवेश, गोचर र खगोलीय घटना।",descriptionEn:"Planet positions, sign ingresses, transits and sky events.",icon:"◎"},
+ "/nepal-calendar": {titleNe:"नेपाली संवत् र परम्परा",titleEn:"Nepal Calendars & Traditions",descriptionNe:"वि.सं., नेपाल संवत्, समुदाय पात्रो र क्षेत्रीय परम्परा।",descriptionEn:"Bikram Sambat, Nepal Sambat, community calendars and regional traditions.",icon:"▦"}
+};
+const TOOL_EN:Record<string,{title:string;desc:string}> = {
+ "/convert":{title:"BS ↔ AD date converter",desc:"Convert Nepali Bikram Sambat and Gregorian dates in either direction."},
+ "/tools/bstoad":{title:"BS to AD converter",desc:"Convert a Bikram Sambat date to a Gregorian date."},
+ "/tools/adtobs":{title:"AD to BS converter",desc:"Convert a Gregorian date to Bikram Sambat."},
+ "/tools/calc":{title:"Date calculator",desc:"Count days between two dates or add/subtract days."},
+ "/tools/age":{title:"Age calculator",desc:"Calculate age in years, months and days."},
+ "/tools/tithi-reminder":{title:"Tithi reminders",desc:"Find upcoming Tithi, Shraddha and lunar-birthday reminders."},
+ "/time-machine":{title:"Time Machine",desc:"Explore Nepal's historical timeline."},
+ "/on-this-day":{title:"On This Day",desc:"Browse sourced historical events for a selected date."},
+ "/tools/clock":{title:"World clock",desc:"Compare local time in Nepal and major cities."},
+ "/mytime":{title:"My Time",desc:"Open the existing personal time dashboard."},
+ "/tools/nepali-typing":{title:"Nepali typing",desc:"Type Unicode Nepali from Roman letters."},
+ "/tools/preeti-converter":{title:"Preeti converter",desc:"Convert Preeti and Unicode text in both directions."},
+ "/tool/nepalidictionary":{title:"Nepali dictionary",desc:"Look up Nepali words, English meanings and pronunciation."},
+ "/tools/spell-check":{title:"Nepali spell check",desc:"Check Nepali spelling and review suggested corrections."},
+ "/tools/voice-typing":{title:"Voice typing",desc:"Turn speech into editable Nepali text where supported."},
+ "/tools/ocr":{title:"Nepali OCR",desc:"Extract Nepali text from an image in the browser."},
+ "/tools/read-aloud":{title:"Read aloud",desc:"Listen to Nepali text with available browser voices."},
+ "/tools/words":{title:"Amount in words",desc:"Write amounts in Nepali or English lakh/crore wording."},
+ "/rashifal":{title:"Rashifal",desc:"Open the existing daily Vedic horoscope."},
+ "/jyotish/china":{title:"JanmaPatro birth chart",desc:"Use birth date, time and place to calculate the existing natal chart."},
+ "/tools/sait":{title:"Sait · Auspicious timing",desc:"Explore current Sait rules and published-date references."},
+ "/tools/baby-names":{title:"Nakshatra baby names",desc:"Explore name suggestions based on Nakshatra and Pada."},
+ "/tools/name-check":{title:"Name check",desc:"Compare name spelling and starting-syllable conventions."},
+ "/tools/forex":{title:"Foreign exchange rates",desc:"Review Nepal Rastra Bank exchange rates."},
+ "/tools/gold":{title:"Gold and silver calculator",desc:"Estimate jewellery value from weight and a rate you enter."},
+ "/tools/emi":{title:"Loan EMI calculator",desc:"Calculate monthly instalments and total interest."},
+ "/tools/vat":{title:"VAT and percentage",desc:"Calculate VAT, percentages and price changes."},
+ "/tools/incometax":{title:"Income tax estimate",desc:"Estimate personal salary tax for the supported fiscal year."},
+ "/tools/landconverter":{title:"Nepali land converter",desc:"Convert Ropani–Aana and Bigha–Kattha measurements."},
+ "/tools/units":{title:"Traditional Nepali units",desc:"Convert traditional Nepali units of measurement."},
+ "/tools/fuelprice":{title:"Fuel prices",desc:"Review Nepal Oil Corporation fuel-price references."},
+ "/tools/nepaliqr":{title:"Nepali QR generator",desc:"Create a private QR code from Nepali or English text."},
+ "/tools/janmadin-akhbar":{title:"Birthday newspaper",desc:"Create a share card from a birthday, calendar and history."},
+ "/tools/future-letter":{title:"Future letter",desc:"Write a private letter to open on a selected date or Tithi."},
+ "/tools/patro-bot":{title:"Patro Bot",desc:"Ask short questions about dates, Tithi and the calendar."}
+};
+const HUB_GROUP_TITLE:Record<string,string> = {
+ "मिति र पात्रो":"Dates & Calendars","भाषा र लेखन":"Language & Writing","ज्योतिष र संस्कार":"Jyotish & Rituals",
+ "हिसाब, वित्त र दैनिक उपयोग":"Finance & Everyday Tools","सिर्जना र सहायक":"Create & Assist"
+};
 const toolGroups:{name:string;items:Tool[]}[]=[
  {name:"मिति र पात्रो",items:[
   {icon:"↔",title:"मिति रूपान्तरण",desc:"वि.सं. र ई.सं. मिति दुवैतर्फ रूपान्तरण",href:"/convert"},
@@ -123,7 +172,16 @@ const toolGroups:{name:string;items:Tool[]}[]=[
   {icon:"Bot",title:"पात्रो बोट",desc:"मिति, तिथि र पात्रोका छोटा प्रश्नको सहायक",href:"/tools/patro-bot"}
  ]}
 ];
-export function ToolsPage(){useEffect(()=>setPageTitle("उपकरण"),[]);return <main className="ap-page ap-tools-page"><header className="ap-page-title"><span className="ap-eyebrow">उपकरण</span><h1>दैनिक कामका उपयोगी उपकरण</h1><p>मिति, भाषा, ज्योतिष, हिसाब र सामग्री निर्माणका काम एकै ठाउँमा।</p></header><a className="ap-astro-feature" href="/tools/astro"><span className="ap-astro-orb" aria-hidden="true"/><span><strong>खगोलीय पात्रो</strong><small>तिथि, चन्द्र अवस्था र आकाशीय घटनासहितको विस्तृत पात्रो</small></span><b>खोल्नुहोस् →</b></a>{toolGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{group.name}</h2><div className="ap-tool-grid">{group.items.map(item=><a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{item.title}</strong><small>{item.desc}</small></div><span aria-hidden="true">›</span></a>)}</div></section>)}</main>}
+export function ToolsPage(){
+ const language=useUiLanguage();
+ useEffect(()=>setPageTitle(l(language,"उपकरण","Tools")),[language]);
+ return <main className="ap-page ap-tools-page">
+  <header className="ap-page-title"><span className="ap-eyebrow">{l(language,"आफ्नै पात्रो · उपकरण","Aafnai Patro · Tools")}</span><h1>{l(language,"दैनिक कामका उपयोगी उपकरण","Useful tools for everyday life")}</h1><p>{l(language,"नेपाली पात्रो, समय, ज्योतिष, हिसाब र सामग्रीका उपयोगी सुविधा एकै ठाउँमा।","Calendar, time, Jyotish, calculations and creative utilities in one place.")}</p></header>
+  <section className="ap-tool-section ap-pj-tool-hubs"><h2>{l(language,"पञ्चाङ्ग र विशेष गणक","Panchang and specialist tools")}</h2><div className="ap-tool-grid">{Object.entries(HUB_COPY).map(([href,item])=><a className="ap-tool-card ap-pj-hub-card" href={href} key={href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{l(language,item.titleNe,item.titleEn)}</strong><small>{l(language,item.descriptionNe,item.descriptionEn)}</small></div><span aria-hidden="true">›</span></a>)}</div></section>
+  <a className="ap-astro-feature" href="/tools/astro"><span className="ap-astro-orb" aria-hidden="true"/><span><strong>{l(language,"खगोलीय पात्रो","Astronomical calendar")}</strong><small>{l(language,"तिथि, चन्द्र अवस्था र आकाशीय घटनासहितको विस्तृत पात्रो","Detailed calendar with Tithi, Moon phases and sky events")}</small></span><b>{l(language,"खोल्नुहोस्","Open")} →</b></a>
+  {toolGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{l(language,group.name,HUB_GROUP_TITLE[group.name]||group.name)}</h2><div className="ap-tool-grid">{group.items.map(item=>{const translated=TOOL_EN[item.href];return <a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{language==="en"?(translated?.title||item.title):item.title}</strong><small>{language==="en"?(translated?.desc||item.desc):item.desc}</small></div><span aria-hidden="true">›</span></a>})}</div></section>)}
+ </main>
+}
 
 const personalGroups:{name:string;items:Tool[]}[]=[
  {name:"लेखन",items:[{icon:"✎",title:"डायरी",desc:"निजी दैनिक लेख र सम्झना",href:"/me/diary"},{icon:"▤",title:"नोट",desc:"छोटो नोट र सूची",href:"/me/notes"},{icon:"✓",title:"योजना",desc:"काम र दिनको योजना",href:"/me/planner"}]},
