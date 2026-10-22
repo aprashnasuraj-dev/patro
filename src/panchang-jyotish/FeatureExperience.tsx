@@ -2,6 +2,7 @@ import type { PatroFeature, FeatureGroupId } from "./catalog";
 import { getFeatureAvailability, getFeaturesForGroup } from "./catalog";
 import { l } from "../useUiLanguage";
 import { FEATURE_REFERENCE_GUIDES } from "./feature-reference-guides";
+import { FeatureGlyph } from "./FeatureGlyph";
 
 type Lang = "ne" | "en";
 type Props = {
@@ -42,99 +43,6 @@ const DESIGN: Record<FeatureGroupId,{symbol:string;captionNe:string;captionEn:st
     metricNe:"परम्परा अलग, स्रोत स्पष्ट",metricEn:"Distinct traditions, clear sources"
   }
 };
-export const FEATURE_SYMBOL: Record<string,string> = {
-  F001:"☾",
-  F002:"◐",
-  F003:"◷",
-  F004:"✧",
-  F005:"✺",
-  F006:"◇",
-  F007:"☉",
-  F008:"◒",
-  F009:"◉",
-  F010:"⌁",
-  F011:"≋",
-  F012:"◷",
-  F013:"☀",
-  F014:"☽",
-  F015:"◴",
-  F016:"◶",
-  F017:"◵",
-  F018:"✦",
-  F019:"✳",
-  F020:"◐",
-  F021:"✴",
-  F022:"✧",
-  F023:"◇",
-  F024:"✴",
-  F025:"☼",
-  F026:"☾",
-  F027:"✧",
-  F028:"✦",
-  F029:"✳",
-  F030:"◇",
-  F031:"◉",
-  F032:"◎",
-  F033:"♄",
-  F034:"☽",
-  F035:"✧",
-  F036:"△",
-  F037:"☉",
-  F038:"♂",
-  F039:"◇",
-  F040:"☾",
-  F041:"◯",
-  F042:"◷",
-  F043:"✿",
-  F044:"◎",
-  F045:"✺",
-  F046:"◎",
-  F047:"↗",
-  F048:"✧",
-  F049:"⊙",
-  F050:"◇",
-  F051:"↺",
-  F052:"☉",
-  F053:"◎",
-  F054:"✴",
-  F069:"☽",
-  F070:"◉",
-  F071:"◐",
-  F072:"☼",
-  F073:"☀",
-  F074:"☼",
-  F075:"☾",
-  F076:"◎",
-  F077:"☉",
-  F078:"↺",
-  F079:"✿",
-  F055:"✦",
-  F056:"⌂",
-  F057:"◇",
-  F058:"▦",
-  F059:"✴",
-  F060:"✧",
-  F061:"✷",
-  F062:"◇",
-  F063:"✳",
-  F064:"☀",
-  F065:"✴",
-  F066:"☼",
-  F067:"◷",
-  F068:"☾",
-  F080:"▦",
-  F081:"✺",
-  F082:"☀",
-  F083:"◷",
-  F084:"✴",
-  F085:"✿",
-  F086:"◒",
-  F087:"▤",
-  F088:"◐",
-  F089:"✧",
-  F090:"⌂",
-  F091:"♫"
-};
 function stateCopy(feature:PatroFeature, language:Lang) {
   const state=getFeatureAvailability(feature);
   if(state==="existing")return {
@@ -169,7 +77,7 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
       <div className="ap-pj-experience-art" aria-hidden="true">
         <div className="ap-pj-experience-orbit ap-pj-experience-orbit--outer"/>
         <div className="ap-pj-experience-orbit ap-pj-experience-orbit--inner"/>
-        <div className="ap-pj-experience-orbit ap-pj-experience-orbit--center">{FEATURE_SYMBOL[feature.id]||theme.symbol}</div>
+        <div className="ap-pj-experience-orbit ap-pj-experience-orbit--center"><FeatureGlyph featureId={feature.id} size="hero" className="ap-pj-experience-glyph" /></div>
         <span className="ap-pj-experience-dot ap-pj-experience-dot--one"/>
         <span className="ap-pj-experience-dot ap-pj-experience-dot--two"/>
         <span className="ap-pj-experience-axis ap-pj-experience-axis--first"/>
