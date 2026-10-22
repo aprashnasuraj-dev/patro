@@ -81,7 +81,7 @@ export function nextFieldTransition(start: Date, field: PanchangField, searchHou
 export type LocalWindow = { start: Date; end: Date; segment?: number };
 export type DayWindows = { rahu: LocalWindow; yamaganda: LocalWindow; gulika: LocalWindow; abhijit: LocalWindow; brahma: LocalWindow };
 
-export function dayWindows(day: DayPanchang, previousSunset: Date, nextSunrise: Date): DayWindows {
+export function dayWindows(day: DayPanchang, previousSunset: Date): DayWindows {
   const weekday = new Date(day.date + "T12:00:00Z").getUTCDay();
   // Sunday=0 through Saturday=6. Segments are counted from local sunrise.
   const rahuSegment = [8, 2, 7, 5, 6, 4, 3][weekday];
@@ -119,6 +119,6 @@ export function calculateLocalDay(date: string): { day: DayPanchang; previousSun
     day,
     previousSunset: previous.sunset,
     nextSunrise: next.sunrise,
-    windows: dayWindows(day, previous.sunset, next.sunrise)
+    windows: dayWindows(day, previous.sunset)
   };
 }
