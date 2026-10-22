@@ -56,3 +56,12 @@
 .ap-pjw-action-row button:disabled{opacity:.6;cursor:wait}
 .ap-pjw-feature-focus .ap-pjw-stats{margin-top:12px}
 @media(max-width:480px){.ap-pjw-action-row>*{max-width:100%}.ap-pjw-action-row .ap-pjw-primary,.ap-pjw-action-row .ap-pjw-secondary{white-space:normal}}
+
+/* Solar visualization uses the actual local sunrise/sunset in the selected day payload. */
+.ap-pjw-daylight{display:grid;gap:7px;justify-items:center;margin:0;padding:13px 15px 10px;border-radius:18px;border:1px solid rgba(23,111,59,.18);background:radial-gradient(ellipse at 50% 85%,rgba(203,158,75,.13),transparent 58%),linear-gradient(135deg,rgba(23,111,59,.045),transparent)}
+.ap-pjw-daylight-art{width:min(100%,430px)}.ap-pjw-daylight-art svg{display:block;width:100%;height:auto;overflow:visible}
+.ap-pjw-daylight-caption{display:flex;align-items:end;justify-content:space-between;gap:10px;width:min(100%,430px);font-size:.76rem;text-align:center;line-height:1.4}
+.ap-pjw-daylight-caption>span:first-child,.ap-pjw-daylight-caption>span:last-child{display:grid;gap:3px;flex:0 0 auto}
+.ap-pjw-daylight-caption>span:nth-child(2){opacity:.64;max-width:140px}
+.ap-pjw-daylight-caption strong{font-variant-numeric:tabular-nums;font-size:.98rem}
+@media(max-width:480px){.ap-pjw-daylight{padding:9px}.ap-pjw-daylight-caption>span:nth-child(2){font-size:.66rem}.ap-pjw-daylight-caption strong{font-size:.85rem}}
