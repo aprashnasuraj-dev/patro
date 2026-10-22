@@ -20,6 +20,18 @@ export interface PlanetPosition {
   degreeInSign: number;
   house: number;
 }
+export interface SiderealPlanetPosition {
+  key: string;
+  name: string;
+  longitude: number;
+  tropicalLongitude: number;
+  signIndex: number;
+  sign: string;
+  degreeInSign: number;
+  longitudeSpeedDegPerDay: number;
+  isRetrograde: boolean;
+}
+
 export interface DashaPeriod { lord:string; start:Date; end:Date; years:number; }
 export interface ManglikResult {
   fromLagna: number;
@@ -125,6 +137,35 @@ function ascendantLongitude(date:Date,lat:number,lng:number){
 function meanRahu(date:Date){
   const d=julianDay(date)-2451545.0;
   return norm(125.04455501-0.05295376276*d);
+}
+
+/**
+ * Browser-only geocentric sidereal sky snapshot for the planetary tools.
+ * Uses the same longitude and ayanamsa functions as the existing natal-chart engine.
+ * It deliberately returns no houses: a transit snapshot must not invent an ascendant.
+ */
+export function calculateSiderealPlanetPositions(instant:Date):SiderealPlanetPosition[]{
+  if(!(instant instanceof Date)||!Number.isFinite(instant.getTime()))throw new Error("invalid_planetary_instant");
+  const step=6*60*60*1000;
+  const before=new Date(instant.getTime()-step),after=new Date(instant.getTime()+step);
+  const speed=(longitudeAt:(at:Date)=>number)=>{
+    const a=norm(longitudeAt(before)),b=norm(longitudeAt(after));
+    const signed=((b-a+540)%360)-180;
+    return signed/0.5; // twelve-hour separation, expressed per day
+  };
+  const output:SiderealPlanetPosition[]=BODY_ROWS.map(([key,name,body])=>{
+    const tropical=geoLongitude(body,instant),longitude=norm(tropical-ayanamsaLahiri(instant));
+    const velocity=speed((at)=>geoLongitude(body,at)-ayanamsaLahiri(at));
+    const signIndex=Math.floor(longitude/30);
+    return {key,name,longitude,tropicalLongitude:tropical,signIndex,sign:SIGNS[signIndex],degreeInSign:longitude%30,longitudeSpeedDegPerDay:velocity,isRetrograde:velocity<0};
+  });
+  const rahuLongitude=(at:Date)=>norm(meanRahu(at)-ayanamsaLahiri(at));
+  const rahu=rahuLongitude(instant),rahuSpeed=speed(rahuLongitude),ketu=norm(rahu+180),nodeSign=Math.floor(rahu/30),ketuSign=Math.floor(ketu/30);
+  output.push(
+    {key:"rahu",name:"Rahu",longitude:rahu,tropicalLongitude:meanRahu(instant),signIndex:nodeSign,sign:SIGNS[nodeSign],degreeInSign:rahu%30,longitudeSpeedDegPerDay:rahuSpeed,isRetrograde:true},
+    {key:"ketu",name:"Ketu",longitude:ketu,tropicalLongitude:norm(meanRahu(instant)+180),signIndex:ketuSign,sign:SIGNS[ketuSign],degreeInSign:ketu%30,longitudeSpeedDegPerDay:rahuSpeed,isRetrograde:true}
+  );
+  return output;
 }
 function houseFor(longitude:number,ascSign:number){
   const sign=Math.floor(norm(longitude)/30);
