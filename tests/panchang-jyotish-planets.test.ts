@@ -31,6 +31,10 @@ describe("Panchang planetary event key invariants", () => {
     expect(workspace).toContain("await yieldToBrowser()");
     expect(workspace).toContain("if(cancelled())return null");
     expect(workspace).toContain("return()=>{active=false;}");
+    expect(workspace).toContain("const stepMs=6*60*60_000");
+    expect(workspace).toContain("const steps=days*4");
+    expect(workspace).toContain("previousDate=date;previous=current");
+    expect(workspace).toContain("return output.sort((a,b)=>a.instant.getTime()-b.instant.getTime())");
     expect(workspace).toContain('scanState==="running"');
     expect(workspace).toContain('role="status"');
     expect(workspace).toContain('role="alert"');
