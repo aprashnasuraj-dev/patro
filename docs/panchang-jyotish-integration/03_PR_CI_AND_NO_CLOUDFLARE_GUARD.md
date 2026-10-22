@@ -26,7 +26,8 @@ The current repository has a main-branch Release Gate, PR CI, and several specif
 The source repo has `production_branch: main` and `preview_urls: false` in its Wrangler config. That is supporting repo-side evidence but is not a substitute for checking any external dashboard integration. All changes in this feature branch are sent only to GitHub's feature branch; no tool/API action is made against Cloudflare.
 
 Final branch audit must show:
-- [ ] no changes under `worker/**`, `cloudflare/**`, `supabase/**`, `wrangler*.jsonc`, `scripts/cloudflare/**`, `migration/**`, `db/**` or any deployment workflow;
+- [ ] the only permitted `worker/**` source modifications are static SPA route allowlisting in `worker/connected-entry.ts` and non-executable SEO copy in `worker/connected-seo.ts`; no new request handler, API, storage access, router ownership change, or deployment behavior is introduced;
+- [ ] no changes under `cloudflare/**`, `supabase/**`, `wrangler*.jsonc`, `scripts/cloudflare/**`, `migration/**`, `db/**`, `worker/optimized-entry.ts`, `worker/my-time/**` or any deployment workflow;
 - [ ] no new SQL or schema files;
 - [ ] no deploy/migrate/import/upload/cache-purge command in a changed script;
 - [ ] no D1/R2/KV/Worker writes or calls added by the new tools;
