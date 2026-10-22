@@ -52,3 +52,17 @@
 .ap-pj-launch-panel .ap-pjw-primary,.ap-pj-launch-panel .ap-pjw-secondary{white-space:nowrap}
 .ap-pj-feature-card.is-active{box-shadow:inset 3px 0 #247344}
 @media(max-width:650px){.ap-pj-launch-panel{grid-template-columns:42px 1fr;padding:14px;gap:10px}.ap-pj-launch-emblem{width:42px;height:42px;border-radius:13px}.ap-pj-launch-emblem .ap-pj-icon{width:24px;height:24px}.ap-pj-launch-panel .ap-pjw-primary,.ap-pj-launch-panel .ap-pjw-secondary{grid-column:1/-1;justify-self:start}.ap-pj-filters{gap:6px}.ap-pj-filters button{padding:7px 10px;font-size:.77rem}}
+
+/* Shared HTML5 interaction and keyboard polish across all five feature hubs. */
+.ap-pj-page :is(a,button,input,select,summary):focus-visible{outline:3px solid #a97821;outline-offset:3px}
+.ap-pj-search:focus-within{border-color:#287749;box-shadow:0 0 0 3px rgba(40,119,73,.14)}
+.ap-pj-search input[type="search"]{width:100%;appearance:none}
+.ap-pj-search input[type="search"]::-webkit-search-cancel-button{cursor:pointer}
+.ap-pj-empty{display:grid;justify-items:center;gap:12px}
+.ap-pj-empty p{margin:0}.ap-pj-empty .ap-pj-clear{min-height:40px}
+.ap-pj-feature-copy small{overflow-wrap:anywhere}
+.ap-pj-feature-card:focus-visible{outline:3px solid #a97821;outline-offset:3px}
+.ap-pj-feature-card:active{transform:none}
+@media (hover:hover){.ap-pj-related a:hover,.ap-pj-back:hover{border-color:rgba(23,111,59,.48);background:rgba(23,111,59,.08)}}
+@media(max-width:380px){.ap-pj-hero{grid-template-columns:1fr}.ap-pj-orb{width:44px;height:44px}.ap-pj-back{grid-column:1}.ap-pj-related>div{grid-template-columns:1fr}.ap-pj-filters button{flex:1 1 auto;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.ap-pj-page :is(*,*::before,*::after){scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}

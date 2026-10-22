@@ -160,6 +160,20 @@ describe("bilingual feature-first visual obligations", () => {
     expect(wheel).toContain("item.longitude");
   });
 
+  it("keeps the shared five-hub search, focus and internal related navigation accessible", () => {
+    const hub = source("src/panchang-jyotish/FeatureGroupHub.tsx");
+    const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
+    const style = source("src/panchang-jyotish/feature-group-hub.css");
+    const workspace = source("src/panchang-jyotish/workspaces/workspace.css");
+    expect(hub).toContain('type="search"');
+    expect(hub).toContain('aria-live="polite"');
+    expect(hub).toContain("Show all features");
+    expect(experience).toContain("event.preventDefault();onNavigate(item)");
+    expect(experience).toContain("!event.metaKey");
+    expect(style).toContain(":focus-visible");
+    expect(style).toContain("prefers-reduced-motion");
+    expect(workspace).toContain("overscroll-behavior-x:contain");
+  });
   it("keeps archive provenance bilingual and makes long workspace work cancellable", () => {
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     expect(panchang).toContain("contract.calendars.nepalSambatEn");

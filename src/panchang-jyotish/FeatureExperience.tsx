@@ -109,7 +109,7 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
     </div>}
     <div className="ap-pj-experience-next">
       <span>{l(language,"योसँग सम्बन्धित","You may also explore")}</span>
-      <div>{next.map(item=><a key={item.id} href={item.href} onClick={()=>onNavigate(item)}><FeatureGlyph featureId={item.id} size="inline" />{l(language,item.titleNe,item.titleEn)} <span aria-hidden="true">↗</span></a>)}</div>
+      <div>{next.map(item=><a key={item.id} href={item.href} onClick={(event)=>{ const local=item.href.split("#")[0]===feature.href.split("#")[0]; if(local && !event.defaultPrevented && event.button===0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey){event.preventDefault();onNavigate(item);} }}><FeatureGlyph featureId={item.id} size="inline" />{l(language,item.titleNe,item.titleEn)} <span aria-hidden="true">↗</span></a>)}</div>
     </div>
   </section>;
 }

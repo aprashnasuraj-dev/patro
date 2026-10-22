@@ -104,3 +104,13 @@
 .ap-pjw-planet-figure figcaption>p{margin:12px 0 0;font-size:.8rem;line-height:1.55;opacity:.71}
 @media(max-width:760px){.ap-pjw-planet-figure{grid-template-columns:1fr;justify-items:center;padding:12px;gap:10px}.ap-pjw-wheel-stage{width:min(100%,340px)}.ap-pjw-planet-figure figcaption{width:100%}}
 @media(max-width:420px){.ap-pjw-wheel-key{grid-template-columns:repeat(2,minmax(0,1fr))}.ap-pjw-wheel-signs>span{font-size:.64rem}}
+
+/* Keep interactive calculators legible on phones and for keyboard-only visitors. */
+.ap-pjw-root :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #a97821;outline-offset:3px}
+.ap-pjw-root :is(button,input,select,textarea){font:inherit}
+.ap-pjw-root :is(.ap-pjw-position-wrap,.ap-pjw-event-table-wrap){overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.ap-pjw-root :is(.ap-pjw-position-table,.ap-pjw-event-table) th{font-weight:800}
+.ap-pjw-root :is(.ap-pjw-primary,.ap-pjw-secondary,.ap-pjw-link-card,.ap-pjw-footer-links a):hover{filter:brightness(.95)}
+.ap-pjw-root :is(.ap-pjw-primary,.ap-pjw-secondary):disabled{opacity:.6;cursor:not-allowed}
+@media(max-width:380px){.ap-pjw-stats,.ap-pjw-window-grid,.ap-pjw-indicator-grid,.ap-pjw-link-grid{grid-template-columns:1fr}.ap-pjw-datebar>*{min-width:0}}
+@media(forced-colors:active){.ap-pjw-root :is(.ap-pjw-primary,.ap-pjw-secondary,.ap-pjw-chip,.ap-pjw-note,.ap-pjw-card){border:1px solid CanvasText}}

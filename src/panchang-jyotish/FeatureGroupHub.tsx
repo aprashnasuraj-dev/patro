@@ -37,6 +37,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const language = useUiLanguage();
   const group = FEATURE_GROUPS.find((item) => item.id === groupId) ?? FEATURE_GROUPS[0];
   const [query, setQuery] = useState("");
+  const [announcement, setAnnouncement] = useState("");
   const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview" | "reference">("all");
   const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
@@ -77,6 +78,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   function openFeature(item: PatroFeature) {
     if (!isLocalFeature(item, groupId)) return;
     const hash = item.href.split("#")[1];
+    setAnnouncement(l(language, item.titleNe, item.titleEn));
     if (hash) {
       if (window.location.hash !== "#" + hash) {
         window.history.pushState(null, "", window.location.pathname + window.location.search + "#" + hash);
@@ -110,13 +112,12 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
         <a className="ap-pj-back" href="/tools">{l(language, "सबै उपकरण", "All tools")} ↗</a>
       </section>
 
+      <p className="ap-pj-sr-only" role="status" aria-live="polite" aria-atomic="true">{announcement}</p>
       <section className="ap-pj-workspace" id="ap-pj-workspace" aria-label={l(language, "गणना कार्यक्षेत्र", "Calculation workspace")}>
         <header className="ap-pj-section-head">
           <div>
             <span className="ap-pj-eyebrow">{l(language, "छानिएको समूह", "Selected group")}</span>
-            <h2>{activeFeature ? (features.find((item) => item.id === activeFeature)?.titleNe && language === "ne"
-              ? features.find((item) => item.id === activeFeature)!.titleNe
-              : features.find((item) => item.id === activeFeature)?.titleEn) : l(language, "आजबाट सुरु गर्नुहोस्", "Start with today")}</h2>
+            <h2>{selected ? l(language, selected.titleNe, selected.titleEn) : l(language, "आजबाट सुरु गर्नुहोस्", "Start with today")}</h2>
           </div>
           {activeFeature && <button type="button" className="ap-pj-clear" onClick={() => { setActiveFeature(null); setWorkspaceRequested(false); if (window.location.hash) window.history.replaceState(null, "", window.location.pathname + window.location.search); }}>{l(language, "सारांश", "Overview")}</button>}
         </header>
@@ -140,12 +141,12 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
             <h2>{l(language, "गणक र जानकारी", "Calculators and guides")}</h2>
             <p>{l(language, "आफूलाई चाहिएको सुविधा खोज्नुहोस्। उपलब्ध गणना ब्राउजरमै चल्छ; प्रमाणित प्रकाशन र परम्परागत नियम छुट्टै चिनाइन्छ।", "Find the feature you need. Available calculations run in your browser; published dates and tradition-specific rules are identified separately.")}</p>
           </div>
-          <div className="ap-pj-count">{matches.length} / {features.length}</div>
+          <output className="ap-pj-count" aria-live="polite" aria-atomic="true" aria-label={l(language, "मिलेका सुविधा", "Matching features")}>{matches.length} / {features.length}</output>
         </div>
         <label className="ap-pj-search">
           <span aria-hidden="true" className="ap-pj-search-glyph"><FeatureGlyph featureId={group.iconFeatureId} symbol="search" size="inline" /></span>
           <span className="ap-pj-sr-only">{l(language, "सुविधा खोज्नुहोस्", "Search features")}</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={l(language, "तिथि, नक्षत्र, साइत, ग्रह… खोज्नुहोस्", "Search Tithi, Nakshatra, Muhurat, planets…")} />
+          <input type="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={l(language, "तिथि, नक्षत्र, साइत, ग्रह… खोज्नुहोस्", "Search Tithi, Nakshatra, Muhurat, planets…")} />
           {query && <button type="button" onClick={() => setQuery("")} aria-label={l(language, "खोज हटाउनुहोस्", "Clear search")}>×</button>}
         </label>
         <div className="ap-pj-filters" role="group" aria-label={l(language, "सुविधाको अवस्था अनुसार छान्नुहोस्", "Filter features by availability")}>
@@ -169,7 +170,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
               <span className="ap-pj-feature-arrow" aria-hidden="true">{local ? "↓" : "↗"}</span>
             </a>;
           })}
-        </div> : <div className="ap-pj-empty">{l(language, "यस खोजसँग मिल्ने सुविधा भेटिएन।", "No features match this search.")}</div>}
+        </div> : <div className="ap-pj-empty" role="status"><p>{l(language, "यस खोजसँग मिल्ने सुविधा भेटिएन।", "No features match this search.")}</p><button type="button" className="ap-pj-clear" onClick={() => { setQuery(""); setAvailabilityFilter("all"); }}>{l(language, "सबै सुविधा देखाउनुहोस्", "Show all features")}</button></div>}
       </section>
 
       <section className="ap-pj-related">
