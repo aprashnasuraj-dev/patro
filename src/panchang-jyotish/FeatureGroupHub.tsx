@@ -2,6 +2,8 @@ import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import type { FeatureGroupId, PatroFeature } from "./catalog";
 import { FEATURE_GROUPS, getFeaturesForGroup, getFeatureAvailability } from "./catalog";
 import { useUiLanguage, l } from "../useUiLanguage";
+import { FeatureExperience } from "./FeatureExperience";
+import "./feature-experience.css";
 import "./feature-group-hub.css";
 
 const PanchangWorkspace = lazy(() => import("./workspaces/PanchangWorkspace").then((m) => ({ default: m.PanchangWorkspace })));
@@ -35,6 +37,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const [query, setQuery] = useState("");
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
   const features = useMemo(() => getFeaturesForGroup(groupId), [groupId]);
+  const selected = features.find(item => item.id === activeFeature) ?? null;
   const Workspace = WORKSPACES[groupId];
   const matches = useMemo(() => {
     const q = query.trim().toLocaleLowerCase();
@@ -98,9 +101,12 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
           </div>
           {activeFeature && <button type="button" className="ap-pj-clear" onClick={() => { setActiveFeature(null); if (window.location.hash) window.history.replaceState(null, "", window.location.pathname + window.location.search); }}>{l(language, "सारांश", "Overview")}</button>}
         </header>
-        <Suspense fallback={<div className="ap-pj-loading" role="status">{l(language, "गणक तयार हुँदैछ…", "Preparing calculator…")}</div>}>
-          <Workspace language={language} selectedFeatureId={activeFeature} />
-        </Suspense>
+        {selected && <FeatureExperience feature={selected} group={groupId} language={language} onNavigate={openFeature} />}
+        <div className="ap-pj-calculator" id="ap-pj-calculator">
+          <Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
+            <Workspace language={language} selectedFeatureId={activeFeature} />
+          </Suspense>
+        </div>
       </section>
 
       <section className="ap-pj-directory">
