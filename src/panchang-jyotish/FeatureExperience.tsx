@@ -84,9 +84,11 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
         <div className="ap-pj-experience-orbit ap-pj-experience-orbit--center">{FEATURE_SYMBOL[feature.id]||theme.symbol}</div>
         <span className="ap-pj-experience-dot ap-pj-experience-dot--one"/>
         <span className="ap-pj-experience-dot ap-pj-experience-dot--two"/>
+        <span className="ap-pj-experience-axis ap-pj-experience-axis--first"/>
+        <span className="ap-pj-experience-axis ap-pj-experience-axis--second"/>
       </div>
       <div className="ap-pj-experience-intro">
-        <div className="ap-pj-experience-topline"><span>{feature.id}</span><span>{copy.label}</span></div>
+        <div className="ap-pj-experience-topline"><span>{l(language, "आफ्नै पात्रो", "Aafnai Patro")}</span><span>{copy.label}</span></div>
         <p className="ap-pj-experience-kicker">{l(language,theme.captionNe,theme.captionEn)}</p>
         <h3>{label}</h3>
         <p>{l(language,feature.descriptionNe,feature.descriptionEn)}</p>
