@@ -83,7 +83,8 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
 
   const panchak = !!p && (p.nakshatra > 22 || (p.nakshatra === 22 && p.nakshatraPada >= 3));
   const gandaMoola = !!p && [0, 8, 9, 17, 18, 26].includes(p.nakshatra);
-  const vishti = !!p && p.karana === 6;
+  const vishti = !!p && (contract?.elements.karana.index ?? p.karana) === 6;
+  const displayedPaksha = (contract?.elements.tithi.index ?? p?.tithi ?? 1) <= 15 ? "shukla" : "krishna";
 
   return <div className="ap-pjw-root">
     <div className="ap-pjw-datebar">
@@ -102,10 +103,10 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
         <div className="ap-pjw-meta"><strong>{contract?.calendars.bs ? l(language, "वि.सं. " + toNepaliDigits(contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day), "BS " + contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day) : l(language, "वि.सं. अभिलेख खुल्दैछ", "BS archive loading")}</strong><small>{contract?.calendars.nepalSambat ?? l(language, "नेपाल संवत्: अभिलेखमा उपलब्ध भएमा", "Nepal Sambat: when available in archive")}</small></div>
       </div>
       <div className="ap-pjw-stats">
-        <article><span>{l(language, "तिथि / पक्ष", "Tithi / Paksha")}</span><strong>{l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1])}</strong><small>{p.paksha === "shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")}</small></article>
-        <article><span>{l(language, "नक्षत्र / पाद", "Nakshatra / Pada")}</span><strong>{l(language, NAKSHATRAS[p.nakshatra], NAKSHATRA_EN[p.nakshatra])}</strong><small>{l(language, "पाद", "Pada")} {p.nakshatraPada}</small></article>
-        <article><span>{l(language, "योग", "Yoga")}</span><strong>{l(language, YOGAS[p.yoga], YOGA_EN[p.yoga])}</strong><small>{l(language, "स्थानीय सूर्योदयमा", "At local sunrise")}</small></article>
-        <article><span>{l(language, "करण", "Karana")}</span><strong>{l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana])}</strong><small>{vishti ? l(language, "विष्टि / भद्रा", "Vishti / Bhadra") : l(language, "आधा तिथि", "Half-Tithi segment")}</small></article>
+        <article><span>{l(language, "तिथि / पक्ष", "Tithi / Paksha")}</span><strong>{(rows[0]?.value ?? l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1]))}</strong><small>{displayedPaksha === "shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")}</small></article>
+        <article><span>{l(language, "नक्षत्र / पाद", "Nakshatra / Pada")}</span><strong>{(rows[1]?.value ?? l(language, NAKSHATRAS[p.nakshatra], NAKSHATRA_EN[p.nakshatra]))}</strong><small>{l(language, "पाद", "Pada")} {contract?.elements.nakshatra.pada ?? p.nakshatraPada}</small></article>
+        <article><span>{l(language, "योग", "Yoga")}</span><strong>{(rows[2]?.value ?? l(language, YOGAS[p.yoga], YOGA_EN[p.yoga]))}</strong><small>{l(language, "स्थानीय सूर्योदयमा", "At local sunrise")}</small></article>
+        <article><span>{l(language, "करण", "Karana")}</span><strong>{(rows[3]?.value ?? l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana]))}</strong><small>{vishti ? l(language, "विष्टि / भद्रा", "Vishti / Bhadra") : l(language, "आधा तिथि", "Half-Tithi segment")}</small></article>
         <article><span>{l(language, "चन्द्र राशि", "Moon Rashi")}</span><strong>{l(language, RASHIS[p.moonRashi], RASHI_EN[p.moonRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
         <article><span>{l(language, "सूर्य राशि", "Sun Rashi")}</span><strong>{l(language, RASHIS[p.sunRashi], RASHI_EN[p.sunRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
       </div>
