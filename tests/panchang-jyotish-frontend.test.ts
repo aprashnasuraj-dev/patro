@@ -114,6 +114,15 @@ describe("bilingual feature-first visual obligations", () => {
     expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F022")!)).toBe("browser-preview");
   });
 
+  it("keeps the main calendar ahead of the discovery panel for mobile calendar-first layout", () => {
+    const homepage = source("src/HomePageCurrent.tsx");
+    const calendarIndex = homepage.indexOf('<section className="rh-card rh-calendar">');
+    const discoveryIndex = homepage.indexOf('<section className="rh-card rh-pj-discovery"');
+    expect(calendarIndex).toBeGreaterThanOrEqual(0);
+    expect(discoveryIndex).toBeGreaterThan(calendarIndex);
+    expect(homepage).toContain('className="rh-pj-hub-card"');
+  });
+
   it("uses the homepage language state and does not expose internal identifiers in the spotlight", () => {
     const hub = source("src/panchang-jyotish/FeatureGroupHub.tsx");
     const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
