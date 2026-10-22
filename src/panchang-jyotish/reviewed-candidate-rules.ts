@@ -1,4 +1,4 @@
-import { panchangAt } from "../../patro-tools/core/astro";
+import { panchangAt } from "../patro-tools/core/astro";
 
 /**
  * Source-traced *candidate classification*, not an observance or personalized verdict.
