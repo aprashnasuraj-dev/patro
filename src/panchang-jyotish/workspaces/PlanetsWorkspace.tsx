@@ -11,7 +11,7 @@ const PLANET_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द�
 const SIGNS_NE=["मेष","वृष","मिथुन","कर्कट","सिंह","कन्या","तुला","वृश्चिक","धनु","मकर","कुम्भ","मीन"];
 const SIGNS_EN=["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
 const ASPECTS=[{angle:0,ne:"युति",en:"Conjunction"},{angle:60,ne:"षडाष्टक कोण (६०°)",en:"Sextile"},{angle:90,ne:"चतुर्थ कोण (९०°)",en:"Square"},{angle:120,ne:"त्रिकोण (१२०°)",en:"Trine"},{angle:180,ne:"प्रतियुति (१८०°)",en:"Opposition"}];
-const RETROGRADE_KEYS=new Set(["Mercury","Venus","Mars","Jupiter","Saturn"]);
+const RETROGRADE_KEYS=new Set(["mercury","venus","mars","jupiter","saturn"]);
 function angleDistance(a:number,b:number){const d=Math.abs((a-b+540)%360-180);return Math.min(d,360-d);}
 function signedAngle(value:number){return ((value%360)+540)%360-180;}
 function instantForNptDate(date:string){return new Date(date+"T06:15:00Z");}
@@ -53,7 +53,7 @@ function scanStations(startDate:string,days:number):StationEvent[]{
   let previousDate=midnightForNptDate(startDate);
   let previous=calculateSiderealPlanetPositions(previousDate).filter(item=>RETROGRADE_KEYS.has(item.key));
   for(let day=1;day<=days;day++){
-    const date=instantForNptDate(addIsoDays(startDate,day));
+    const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=calculateSiderealPlanetPositions(date).filter(item=>RETROGRADE_KEYS.has(item.key));
     for(const before of previous){
       const after=current.find(item=>item.key===before.key);
@@ -126,13 +126,14 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const [date,setDate]=useState(()=>{const value=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("date"):null;return value&&validIsoDate(value)?value:todayInNepal()});
   const [range,setRange]=useState(30);
   const [body,setBody]=useState("all");
-  const [searchMode,setSearchMode]=useState<"ingress"|"nakshatra"|"station"|"season">("ingress");
+  const [searchMode,setSearchMode]=useState<"ingress"|"nakshatra"|"station"|"season">(()=>selectedFeatureId==="F048"?"nakshatra":selectedFeatureId==="F051"||selectedFeatureId==="F078"?"station":selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075"?"season":"ingress");
   const [runScan,setRunScan]=useState(false);
   const [natalChart,setNatalChart]=useState<ChartResult|null>(null);
   const [natalContextChecked,setNatalContextChecked]=useState(false);
   useEffect(()=>{let active=true;try{const birth=readJanmaPatroBirthInput();if(!birth){if(active)setNatalChart(null);return;}const timezone=findJanmaPatroBirthTimezone(birth.location)||"Asia/Kathmandu";const result=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});if(active)setNatalChart(result);}catch{if(active)setNatalChart(null);}finally{if(active)setNatalContextChecked(true);}return()=>{active=false;}},[]);
   const instant=useMemo(()=>instantForNptDate(date),[date]);
   const positions=useMemo(()=>calculateSiderealPlanetPositions(instant),[instant]);
+  const sunPosition=positions.find(item=>item.key==="sun");
   const aspects=useMemo(()=>{
     const results:Array<{a:SiderealPlanetPosition;b:SiderealPlanetPosition;target:number;orb:number}>=[];
     for(let i=0;i<positions.length;i++)for(let j=i+1;j<positions.length;j++){
