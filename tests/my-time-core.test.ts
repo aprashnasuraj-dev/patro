@@ -23,6 +23,8 @@ describe("My Time astronomical core", () => {
       timezone: "Asia/Kathmandu",
       methodology: { engine: "AafnaiPatro shared Panchang provider + astronomy-engine", sidereal_positions: true }
     });
+    expect(snapshot.methodology.source_status).toBe("shared-provider");
+    expect(snapshot.methodology.fallback_used).toBe(false);
     expect(snapshot.panchang.tithi_index).toBeGreaterThanOrEqual(1);
     expect(snapshot.panchang.tithi_index).toBeLessThanOrEqual(30);
     expect(snapshot.panchang.tithi_name_ne).toBeTruthy();
