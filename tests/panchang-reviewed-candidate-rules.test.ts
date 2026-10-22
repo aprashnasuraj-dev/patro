@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { classifyNakshatraCandidate, kathmanduCivilWeekday, SOURCE_REVIEWED_NAKSHATRA_RULES } from "../src/panchang-jyotish/reviewed-candidate-rules";
+import { panchangAt } from "../src/patro-tools/core/astro";
+import { classifyNakshatraCandidate, findNakshatraRuleWindows, kathmanduCivilWeekday, SOURCE_REVIEWED_NAKSHATRA_RULES } from "../src/panchang-jyotish/reviewed-candidate-rules";
 
 describe("source-audited candidate membership, not a definitive observance", () => {
   it("uses one-based Nakshatra positions for Panchak", () => {
@@ -25,5 +26,33 @@ describe("source-audited candidate membership, not a definitive observance", () 
     expect(kathmanduCivilWeekday(new Date("2026-11-01T00:00:00Z"))).toBe(0);
     expect(kathmanduCivilWeekday(new Date("2026-10-31T19:00:00Z"))).toBe(0);
     expect(kathmanduCivilWeekday(new Date("2026-10-31T17:00:00Z"))).toBe(6);
+  });
+
+  it("finds complete candidate intervals over a range and preserves their unverified status", async () => {
+    const startDate = "2026-10-22";
+    const startMs = new Date(startDate + "T00:00:00+05:45").getTime();
+    const endMs = startMs + 60 * 86_400_000;
+    const panchak = await findNakshatraRuleWindows(startDate, 60, "panchak");
+    const ganda = await findNakshatraRuleWindows(startDate, 60, "gandaMoola");
+    expect(panchak).not.toBeNull();
+    expect(ganda).not.toBeNull();
+    expect(panchak!.length).toBeGreaterThanOrEqual(2);
+    expect(ganda!.length).toBeGreaterThanOrEqual(2);
+    for (const row of [...panchak!, ...ganda!]) {
+      expect(row.start.getTime()).toBeLessThan(row.end.getTime());
+      expect(row.end.getTime()).toBeGreaterThan(startMs);
+      expect(row.start.getTime()).toBeLessThan(endMs);
+      expect(row.confidence).toBe("candidate-unverified");
+      expect(row.timezone).toBe("Asia/Kathmandu");
+      expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(row.entryNakshatra as never)).toBe(true);
+      expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(row.lastNakshatra as never)).toBe(true);
+      const midpoint = new Date((row.start.getTime() + row.end.getTime()) / 2);
+      expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(panchangAt(midpoint).nakshatra + 1 as never)).toBe(true);
+    }
+  });
+  it("rejects invalid ranges and returns promptly when a candidate scan is cancelled", async () => {
+    await expect(findNakshatraRuleWindows("2026-02-30", 30, "panchak")).rejects.toThrow("invalid_nakshatra_rule_window_range");
+    await expect(findNakshatraRuleWindows("2026-10-22", 91, "panchak")).rejects.toThrow("invalid_nakshatra_rule_window_range");
+    await expect(findNakshatraRuleWindows("2026-10-22", 30, "panchak", () => true)).resolves.toBeNull();
   });
 });
