@@ -73,4 +73,24 @@ describe("bilingual feature-first visual obligations", () => {
     const wheel = source("src/panchang-jyotish/workspaces/PlanetWheel.tsx");
     expect(wheel).toContain("item.longitude");
   });
+
+  it("keeps archive provenance bilingual and makes long workspace work cancellable", () => {
+    const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
+    expect(panchang).toContain("contract.calendars.nepalSambatEn");
+    expect(panchang).toContain("Archive · independent audit pending");
+    expect(panchang).toContain("solarArchiveDiffers");
+    expect(panchang).toContain("formatDuration(displaySunrise, displaySunset, language)");
+
+    const muhurat = source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx");
+    expect(muhurat).toContain("setWindowsLoading(true)");
+    expect(muhurat).toContain("if(!active)return");
+    expect(muhurat).toContain("if((i+1)%2===0)await");
+    expect(muhurat).toContain('role="status"');
+    expect(muhurat).toContain('role="alert"');
+
+    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
+    expect(jyotish).toContain("setInterval(refresh,60_000)");
+    expect(jyotish).toContain('addEventListener("focus",refresh)');
+    expect(jyotish).not.toContain("calculateSiderealPlanetPositions(new Date()).find((item)=>item.key===\"saturn\")||null,[]");
+  });
 });
