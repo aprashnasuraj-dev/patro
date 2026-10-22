@@ -605,7 +605,8 @@ export default function MyTimePage() {
         activity, horaLord: horaName || null, tatwa: tatwaName || null,
         rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
         dashaLord: activeDashaLord,
-        hasNatalChart: Boolean(personalContext.birthChart)
+        hasNatalChart: Boolean(personalContext.birthChart),
+        natalFactorsApplied: Boolean(personalContext.birthChart) && taraIndex >= 0 && chandraHouse != null
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
       const personalizationLevel: "personalized" | "partial" | "general" = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
