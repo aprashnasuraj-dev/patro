@@ -16,7 +16,7 @@ describe("Nepal Panchang clock modes", () => {
     expect(formatPanchangClock(new Date("2026-10-22T19:30:00.000Z"), "2026-13-99", "24plus", "en")).toBe("—");
   });
   it("formats the Nepal civil date explicitly and never accepts impossible ISO dates", () => {
-    expect(todayInNepal()).toMatch(/^\\d{4}-\\d{2}-\\d{2}$/);
+    expect(todayInNepal()).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(validIsoDate(todayInNepal())).toBe(true);
     expect(validIsoDate("0000-01-01")).toBe(false);
     expect(validIsoDate("2026-02-30")).toBe(false);
