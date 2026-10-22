@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { l } from "../../useUiLanguage";
 import { addIsoDays, calculateLocalDay, formatLocalTime, todayInNepal, validIsoDate } from "./shared";
+import { MuhuratDayRibbon } from "./MuhuratDayRibbon";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
@@ -42,6 +43,7 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"स्थानीय दिनमानबाट निकालिएका समयखण्ड","Local daylight-based windows")}</h3><small>{l(language,"काठमाडौं · नेपाल समय","Kathmandu · Nepal time")}</small></div>
       <p className="ap-pjw-section-note">{l(language,"यो खोजले स्थानीय सूर्योदय र सूर्यास्तबाट अभिजित मुहूर्त तथा पारम्परिक सावधानी समयखण्ड निकाल्छ। यसले विवाह वा अन्य अनुष्ठानको आधिकारिक साइत आफैं घोषणा गर्दैन।", "This finder calculates Abhijit Muhurta and traditional caution intervals from local sunrise and sunset. It does not independently declare an official marriage or ritual date.")}</p>
+      {windows[0] && <MuhuratDayRibbon day={windows[0]} language={language} showCautions={showCautions}/>}
       {windows.length===0?<div className="ap-pjw-empty">{l(language,"यस मितिमा सूर्योदय गणना उपलब्ध छैन।","No sunrise calculation is available for this date.")}</div>:<div className="ap-pjw-event-table-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"मिति","Date")}</th><th>{l(language,"सूर्योदय","Sunrise")}</th><th>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</th>{showCautions&&<><th>{l(language,"राहुकाल","Rahu Kalam")}</th><th>{l(language,"यमगण्ड","Yamaganda")}</th><th>{l(language,"गुलिक","Gulika")}</th></>}</tr></thead><tbody>{windows.map((item)=><tr key={item.date}><td><a href={"/date/"+item.date}>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:"Asia/Kathmandu",day:"2-digit",month:"short",weekday:"short"}).format(new Date(item.date+"T12:00:00Z"))}</a></td><td>{formatLocalTime(item.sunrise,language)}</td><td><strong>{formatLocalTime(item.abhijit.start,language)} – {formatLocalTime(item.abhijit.end,language)}</strong></td>{showCautions&&<><td>{formatLocalTime(item.rahu.start,language)} – {formatLocalTime(item.rahu.end,language)}</td><td>{formatLocalTime(item.yama.start,language)} – {formatLocalTime(item.yama.end,language)}</td><td>{formatLocalTime(item.gulika.start,language)} – {formatLocalTime(item.gulika.end,language)}</td></>}</tr>)}</tbody></table></div>}
       <div className="ap-pjw-action-row"><label className="ap-pjw-check"><input type="checkbox" checked={showCautions} onChange={(event)=>setShowCautions(event.target.checked)}/><span>{l(language,"सावधानी समय पनि देखाउनुहोस्","Include caution intervals")}</span></label><a className="ap-pjw-primary" href="/tools/sait">{l(language,"साइत गणक खोल्नुहोस्","Open Sait finder")} ↗</a></div>
     </section>
