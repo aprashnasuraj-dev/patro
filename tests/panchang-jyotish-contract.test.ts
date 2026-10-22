@@ -23,8 +23,8 @@ describe("five-group Panchang feature catalog", () => {
   it("does not silently classify unreviewed cards as completed calculators", () => {
     const count = (state: ReturnType<typeof getFeatureAvailability>) => PATRO_FEATURES.filter(item => getFeatureAvailability(item) === state).length;
     expect(count("existing")).toBe(17);
-    expect(count("browser-preview")).toBe(47);
-    expect(count("reference")).toBe(27);
+    expect(count("browser-preview")).toBe(48);
+    expect(count("reference")).toBe(26);
     expect(count("existing") + count("browser-preview") + count("reference")).toBe(91);
     expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F058")!)).toBe("reference");
     expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F067")!)).toBe("existing");
