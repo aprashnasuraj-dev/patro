@@ -78,7 +78,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     { labelNe: "करण", labelEn: "Karana", value: l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana]), end: karanaEnd }
   ] : [];
 
-  const panchak = !!p && (p.nakshatra >= 22 || (p.nakshatra === 21 && p.nakshatraPada >= 3));
+  const panchak = !!p && (p.nakshatra > 22 || (p.nakshatra === 22 && p.nakshatraPada >= 3));
   const gandaMoola = !!p && [0, 8, 9, 17, 18, 26].includes(p.nakshatra);
   const vishti = !!p && p.karana === 6;
 
