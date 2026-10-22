@@ -19,6 +19,8 @@ export type PersonalTimeWindowInput = {
   rashifal?: RashifalSignal | null;
   dashaLord?: string | null;
   hasNatalChart?: boolean;
+  /** True only when both natal Tara and Moon-sign comparisons were actually calculated. */
+  natalFactorsApplied?: boolean;
 };
 export type PersonalTimeComponent = { key: string; score: number; weight: number; explanation: string };
 export type PersonalTimeEvaluation = {
@@ -103,6 +105,7 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
     : weightedScore;
   const missing: string[] = [];
   if (!input.hasNatalChart) missing.push("birth-chart");
+  else if (!input.natalFactorsApplied) missing.push("natal-compatibility");
   if (readingScore === null) missing.push("matching-rashifal-domain");
   if (!input.dashaLord) missing.push("active-dasha");
   if (!input.horaLord) missing.push("hora");
@@ -110,7 +113,7 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
   const personalizedSignals = components.some(item => item.key === "rashifal" || item.key === "dasha-hora");
   const confidence = !input.hasNatalChart
     ? personalizedSignals ? "partially-personalized" : "general"
-    : missing.length >= 3 ? "partially-personalized" : "personalized";
+    : !input.natalFactorsApplied || missing.length >= 3 ? "partially-personalized" : "personalized";
   const reasons = [...(input.panchangReasons || [])];
   const cautions = [...(input.panchangCautions || [])];
   if (score !== weightedScore) cautions.push("traditional_caution_caps_overall_rank");
