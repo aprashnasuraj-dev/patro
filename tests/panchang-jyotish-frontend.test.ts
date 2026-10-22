@@ -174,6 +174,15 @@ describe("bilingual feature-first visual obligations", () => {
     expect(style).toContain("prefers-reduced-motion");
     expect(workspace).toContain("overscroll-behavior-x:contain");
   });
+  it("improves regional search recovery and live daylight rendering", () => {
+    const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
+    const daylight = source("src/panchang-jyotish/workspaces/DaylightArc.tsx");
+    expect(regional).toContain('type="search"');
+    expect(regional).toContain('aria-expanded={showMethods}');
+    expect(regional).toContain("Show all calendars");
+    expect(daylight).toContain("setInterval(() => setNow(Date.now()), 60_000)");
+    expect(daylight).toContain('useId().replace(/:/g, "")');
+  });
   it("keeps archive provenance bilingual and makes long workspace work cancellable", () => {
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     expect(panchang).toContain("contract.calendars.nepalSambatEn");

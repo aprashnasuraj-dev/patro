@@ -26,17 +26,32 @@ export const TITHI_EN = [
 ] as const;
 
 export function todayInNepal(): string {
-  return new Intl.DateTimeFormat("en-CA", { timeZone: NPT, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  // Use numeric parts rather than relying on a locale's presentation order in each browser.
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: NPT, year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const value = (type: string) => parts.find((part) => part.type === type)?.value ?? "";
+  return `${value("year")}-${value("month")}-${value("day")}`;
 }
 export function addIsoDays(value: string, offset: number): string {
-  const [year, month, day] = value.split("-").map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day + offset, 12));
-  return date.toISOString().slice(0, 10);
+  // Date inputs can temporarily be empty while a user edits them. Avoid NaN dates in routes.
+  const base = validIsoDate(value) ? value : todayInNepal();
+  if (!Number.isInteger(offset) || Math.abs(offset) > 36_600) return base;
+  const [year, month, day] = base.split("-").map(Number);
+  const date = new Date(0);
+  date.setUTCHours(12, 0, 0, 0);
+  date.setUTCFullYear(year, month - 1, day + offset);
+  const result = date.toISOString().slice(0, 10);
+  return validIsoDate(result) ? result : base;
 }
 export function validIsoDate(value: string): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
   const [y,m,d] = value.split("-").map(Number);
-  const date = new Date(Date.UTC(y, m - 1, d, 12));
+  if (y < 1 || m < 1 || m > 12 || d < 1 || d > 31) return false;
+  // setUTCFullYear avoids Date.UTC's special 1900 offset for years 0001–0099.
+  const date = new Date(0);
+  date.setUTCHours(12, 0, 0, 0);
+  date.setUTCFullYear(y, m - 1, d);
   return date.getUTCFullYear() === y && date.getUTCMonth() === m - 1 && date.getUTCDate() === d;
 }
 export function formatLocalTime(value: Date | null | undefined, language: "ne" | "en"): string {
