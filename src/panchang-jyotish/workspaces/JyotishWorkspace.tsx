@@ -3,7 +3,7 @@ import { calculateChart, type ChartResult } from "../../jyotish/jyotishEngine";
 import { findJanmaPatroBirthTimezone, readJanmaPatroBirthInput } from "../../jyotish/my-time-bridge";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
-import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../patro-tools/core/names";
+import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { NAKSHATRA_EN, RASHI_EN } from "./shared";
 import "./workspace.css";
 
@@ -45,7 +45,6 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
 
   const chart=saved?.chart;
   const moon=chart?.planets.find((item)=>item.key==="moon");
-  const mars=chart?.planets.find((item)=>item.key==="mars");
   const rahu=chart?.planets.find((item)=>item.key==="rahu");
   const ketu=chart?.planets.find((item)=>item.key==="ketu");
   const axisSummary=useMemo(()=>{
