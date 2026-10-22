@@ -554,16 +554,24 @@ export default function MyTimePage() {
     const todaySelected = localDate(preferences.timezone, minuteNow) === snapshot.date;
     return [...windows.day, ...windows.night]
       .filter(window => !todaySelected || Date.parse(window.end_utc) > minuteNow.getTime())
-      .map(window => {
-        const overlaps = kaal.filter(period => Date.parse(window.start_utc) < Date.parse(period.end_utc) && Date.parse(window.end_utc) > Date.parse(period.start_utc));
-        const result = scorePersonalizedMuhurta({
-          startUtc: window.start_utc, endUtc: window.end_utc, favorableChoghadiya: window.favorable,
-          rahuKaal: overlaps.some(period => period.key === "rahu"),
-          yamaganda: overlaps.some(period => period.key === "yamaganda"),
-          gulika: overlaps.some(period => period.key === "gulika"),
-          taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse
+      .flatMap(window => {
+        // Split at every applicable caution transition: a partial Rahu Kaal overlap
+        // must not incorrectly classify the entire Choghadiya as unfavorable.
+        const begin = Date.parse(window.start_utc), finish = Date.parse(window.end_utc);
+        const boundaries = [...new Set([begin, finish, ...kaal.flatMap(period => [Date.parse(period.start_utc), Date.parse(period.end_utc)].filter(t => Number.isFinite(t) && t > begin && t < finish))])].sort((a,b)=>a-b);
+        return boundaries.slice(0,-1).map((start,index) => {
+          const end = boundaries[index+1];
+          const overlaps = kaal.filter(period => start < Date.parse(period.end_utc) && end > Date.parse(period.start_utc));
+          const startUtc = new Date(start).toISOString(), endUtc = new Date(end).toISOString();
+          const result = scorePersonalizedMuhurta({
+            startUtc, endUtc, favorableChoghadiya: window.favorable,
+            rahuKaal: overlaps.some(period => period.key === "rahu"),
+            yamaganda: overlaps.some(period => period.key === "yamaganda"),
+            gulika: overlaps.some(period => period.key === "gulika"),
+            taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse
+          });
+          return { ...window, key: window.key + "-" + index, start_utc: startUtc, end_utc: endUtc, score: result.score, label: result.label, cautions: result.cautions };
         });
-        return { ...window, score: result.score, label: result.label, cautions: result.cautions };
       })
       .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc));
   }, [snapshot, minuteNow, preferences.timezone, taraIndex, chandraHouse]);
