@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 export const FEATURE_ICON_BY_ID: Record<string, string> = {
   F001:"calendar", F002:"moon", F003:"clock", F004:"nakshatra", F005:"yoga", F006:"karana",
   F007:"sun-moon", F008:"lunar-calendar", F009:"calendar-cycle", F010:"sunrise", F011:"timeline",
