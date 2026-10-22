@@ -1,8 +1,10 @@
 import type { SiderealPlanetPosition } from "../../jyotish/jyotishEngine";
 import { l } from "../../useUiLanguage";
+import { FeatureGlyph } from "../FeatureGlyph";
 
 const NE = ["मेष","वृष","मिथुन","कर्कट","सिंह","कन्या","तुला","वृश्चिक","धनु","मकर","कुम्भ","मीन"];
 const EN = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
+const PLANET_ICON:Record<string,"sun"|"moon"|"saturn"|"node-axis"|"planet">={sun:"sun",moon:"moon",mars:"planet",mercury:"planet",jupiter:"planet",venus:"planet",saturn:"saturn",rahu:"node-axis",ketu:"node-axis"};
 const PLANET = {sun:["सूर्य","Sun","☉"],moon:["चन्द्र","Moon","☽"],mars:["मङ्गल","Mars","♂"],mercury:["बुध","Mercury","☿"],jupiter:["बृहस्पति","Jupiter","♃"],venus:["शुक्र","Venus","♀"],saturn:["शनि","Saturn","♄"],rahu:["राहु","Rahu","☊"],ketu:["केतु","Ketu","☋"]} as const;
 type Props = { positions: SiderealPlanetPosition[]; language: "ne" | "en"; };
 const point = (angle: number, radius: number) => {
@@ -40,7 +42,7 @@ export function PlanetWheel({positions,language}:Props) {
         <text x="180" y="193" dominantBaseline="middle" textAnchor="middle" fill="currentColor" opacity=".7" fontSize="9">{l(language,"१२ राशि","12 SIGNS")}</text>
       </svg>
     </div>
-    <figcaption><div className="ap-pjw-wheel-key">{positions.map(item=>{const meta=PLANET[item.key as keyof typeof PLANET];return <span key={item.key}><b>{meta?.[2]??"•"}</b>{meta ? meta[language==="ne"?0:1] : item.name}<small>{(item.longitude%30).toFixed(1)}°</small></span>})}</div>
+    <figcaption><div className="ap-pjw-wheel-key">{positions.map(item=>{const meta=PLANET[item.key as keyof typeof PLANET];return <span key={item.key}><b><FeatureGlyph featureId="F046" symbol={PLANET_ICON[item.key]??"planet"} size="inline"/></b>{meta ? meta[language==="ne"?0:1] : item.name}<small>{(item.longitude%30).toFixed(1)}°</small></span>})}</div>
     <div className="ap-pjw-wheel-signs">{(language==="ne"?NE:EN).map((name,index)=><span key={name}><b>{index+1}</b> {name}</span>)}</div><p>{l(language,"यो ग्रहीय दीर्घांशको दृष्टान्त हो, जन्मपत्रोका भाव वा लग्नको नक्सा होइन। स्रोत पद्धति तलको तालिकामा प्रयोग भएको पद्धतिसँग एउटै छ।","This depicts sidereal longitudes, not houses or the ascendant in a birth chart. It uses the same position method as the table below.")}</p></figcaption>
   </figure>;
 }
