@@ -251,7 +251,7 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
     return <g key={key}>
       {selected && <path d={d} fill="none" stroke={stroke} strokeWidth={width + 11} strokeLinecap="round" opacity={0.34} pointerEvents="none" />}
       <path d={d} fill="none" stroke={stroke} strokeWidth={width} strokeLinecap="round" opacity={selected ? 1 : opacity} pointerEvents="none" aria-hidden="true" />
-      <path className="mt-polar-hit-target" d={d} fill="none" stroke="transparent" strokeWidth={Math.max(22, width + 16)} strokeLinecap="round" pointerEvents="stroke" role="button" tabIndex={0}
+      <path className="mt-polar-hit-target" d={d} fill="none" stroke={focused ? "var(--mt-accent)" : "transparent"} strokeWidth={focused ? 20 : Math.max(22, width + 16)} strokeLinecap="round" pointerEvents="stroke" role="button" tabIndex={0}
         aria-label={intervalLabel} aria-pressed={selected} style={{ cursor: "pointer", touchAction: "manipulation" }}
         onFocus={() => setFocusedEventKey(key)} onBlur={() => setFocusedEventKey(current => current === key ? null : current)}
         onPointerDown={() => selectEvent(key, label, start, end, explanation)}
