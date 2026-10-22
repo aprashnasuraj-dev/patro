@@ -72,7 +72,7 @@ function archiveNptClock(dateAd: string, value: unknown, confidence: "high" | "u
   if (typeof value === "number") {
     // Some existing archive shapes store wall-clock minutes after midnight.
     if (!Number.isInteger(value) || value < 0 || value >= 24 * 60) return null;
-    const match = dateAd.match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);
+    const match = dateAd.match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!match) return null;
     const year=Number(match[1]), month=Number(match[2]), day=Number(match[3]);
     if (!validCivilDate(year,month,day)) return null;
@@ -85,8 +85,8 @@ function archiveNptClock(dateAd: string, value: unknown, confidence: "high" | "u
   if (typeof value !== "string") return null;
   const instant = archiveInstant(value, confidence);
   if (instant) return instant;
-  const clock = value.match(/^(\\d{1,2}):(\\d{2})(?::(\\d{2})(?:\\.(\\d+))?)?$/);
-  const date = dateAd.match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);
+  const clock = value.match(/^(\d{1,2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?$/);
+  const date = dateAd.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!clock || !date) return null;
   const year=Number(date[1]), month=Number(date[2]), day=Number(date[3]);
   const hour=Number(clock[1]), minute=Number(clock[2]), second=Number(clock[3] ?? 0);

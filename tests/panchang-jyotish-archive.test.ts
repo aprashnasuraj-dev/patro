@@ -84,6 +84,19 @@ describe("existing static archive adapter", () => {
       expect(overlay.elements?.tithi?.ends).toBeUndefined();
     }
   });
+  it("converts archive numeric-minute boundaries without browser timezone dependence", () => {
+    const date = "2026-10-22";
+    const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
+    const overlay = overlayFromStaticArchive(date, {
+      ad: date, bs: { year: 2083, month: 7, day: 5 },
+      panchang: {
+        location: "Kathmandu, Nepal",
+        tithi: { number: 11, paksha: "Shukla Paksha" },
+        tithi_transition: { minutes: 904 }
+      }
+    }, fallback);
+    expect(overlay.elements?.tithi?.ends?.instantUtc).toBe("2026-10-22T09:19:00.000Z");
+  });
   it("normalizes the established static archive transition/daylight shape using Nepal time", () => {
     const date = "2037-02-03";
     const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
