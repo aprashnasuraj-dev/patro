@@ -28,5 +28,12 @@ jobs:
         run: npm run typecheck
       - name: My Time regression suite
         run: npm run test:patro-tools
+      - name: Build production assets
+        run: npm run build
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
       - name: Browser smoke script
-        run: node scripts/check-mytime-ring.cjs
+        run: |
+          npx vite preview --host 127.0.0.1 --port 4173 > /tmp/mytime-vite.log 2>&1 &
+          for i in $(seq 1 60); do if curl -fsS http://127.0.0.1:4173/mytime >/dev/null; then break; fi; sleep 1; done
+          node scripts/check-mytime-ring.cjs
