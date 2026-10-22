@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import * as Astronomy from "astronomy-engine";
 import { calculateChart, calculateSiderealPlanetPositions, type ChartResult } from "../../jyotish/jyotishEngine";
 import { findJanmaPatroBirthTimezone, readJanmaPatroBirthInput } from "../../jyotish/my-time-bridge";
-import { useUiLanguage, l } from "../../useUiLanguage";
+import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { NAKSHATRA_EN, RASHI_EN, todayInNepal, validIsoDate } from "./shared";
@@ -63,7 +63,7 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
   const rahu=chart?.planets.find((item)=>item.key==="rahu");
   const ketu=chart?.planets.find((item)=>item.key==="ketu");
   const currentSaturn=useMemo(()=>calculateSiderealPlanetPositions(new Date()).find((item)=>item.key==="saturn")||null,[]);
-  const sadesatiOffset=moon&&currentSaturn?angleForward(moon.signIndex,currentSaturn.signIndex):null;
+  const sadesatiOffset=moon&&currentSaturn?(currentSaturn.signIndex-moon.signIndex+12)%12:null;
   const sadesatiActive=sadesatiOffset!==null&&[11,0,1].includes(sadesatiOffset);
   const axisSummary=useMemo(()=>{
     if(!chart||!rahu||!ketu)return null;
