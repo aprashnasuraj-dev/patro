@@ -25,6 +25,8 @@ export interface PanchangDayContractV1 {
   calendars: {
     bs: { year: number; month: number; day: number } | null;
     nepalSambat: string | null;
+    /** Optional English/transliterated representation for the same archived NS value. */
+    nepalSambatEn?: string | null;
   };
   calculatedAtUtc: string | null;
   method: { ayanamsha: string; referenceInstant: "sunrise" | "selected"; engineVersion: string };
@@ -54,7 +56,7 @@ export function fromCalculatedDay(day: DayPanchang, location: GeoLocation, engin
     dateAd: day.date,
     timezone: location.tz,
     location: { latitude: location.lat, longitude: location.lon, altitudeM: location.height, label: location.name },
-    calendars: { bs: null, nepalSambat: null },
+    calendars: { bs: null, nepalSambat: null, nepalSambatEn: null },
     calculatedAtUtc: day.sunrise.toISOString(),
     method: { ayanamsha: "existing-linear-Lahiri-approximation", referenceInstant: "sunrise", engineVersion },
     elements: {
@@ -77,6 +79,7 @@ export type VerifiedArchiveOverlay = {
   timezone: string;
   bs?: { year: number; month: number; day: number } | null;
   nepalSambat?: string | null;
+  nepalSambatEn?: string | null;
   elements?: Partial<Record<keyof PanchangDayContractV1["elements"], Partial<PanchangElement> & { pada?: number | null }>>;
   sun?: Partial<PanchangDayContractV1["sun"]>;
   moon?: Partial<PanchangDayContractV1["moon"]>;
@@ -105,7 +108,11 @@ export function mergeVerifiedArchive(calculated: PanchangDayContractV1, archive:
   }
   return {
     ...calculated,
-    calendars: { bs: archive.bs ?? calculated.calendars.bs, nepalSambat: archive.nepalSambat ?? calculated.calendars.nepalSambat },
+    calendars: {
+      bs: archive.bs ?? calculated.calendars.bs,
+      nepalSambat: archive.nepalSambat ?? calculated.calendars.nepalSambat,
+      nepalSambatEn: archive.nepalSambatEn ?? calculated.calendars.nepalSambatEn ?? null
+    },
     elements,
     sun: { ...calculated.sun, ...archive.sun },
     moon: { ...calculated.moon, ...archive.moon },
