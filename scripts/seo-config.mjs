@@ -60,6 +60,7 @@ export const PRERENDER_FUTURE_YEARS = 2;
 
 const RAW_CORE_INDEX_ROUTES = [
   "/", "/today", "/methodology", "/corrections", "/samudaya", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/festivals", "/fm", "/tv",
+  "/panchang", "/muhurat", "/jyotish", "/planets", "/nepal-calendar",
   "/janmapatro", "/janmapatro/milan.html", "/janmadin", "/about", "/sources", "/privacy", "/terms", "/contact",
   ...DIASPORA_TODAY_ROUTES
 ];
