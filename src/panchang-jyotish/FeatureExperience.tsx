@@ -161,7 +161,7 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
   const theme=DESIGN[group];
   const copy=stateCopy(feature,language);
   const state=getFeatureAvailability(feature);
-  const guide=state==="reference" ? FEATURE_REFERENCE_GUIDES[feature.id] : undefined;
+  const guide=FEATURE_REFERENCE_GUIDES[feature.id];
   const next=getFeaturesForGroup(group).filter(item=>item.id!==feature.id).slice(0,3);
   const label=l(language,feature.titleNe,feature.titleEn);
   return <section className={"ap-pj-experience ap-pj-experience--"+group} aria-label={label} data-feature-id={feature.id}>
