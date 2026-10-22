@@ -130,7 +130,7 @@ export type SavedJanmaPatroContext = {
   lagna: string;
   nakshatra: string;
   pada: number | null;
-  birth: { name: string; date: string; time: string; location: string; lat: number | null; lng: number | null } | null;
+  birth: { name: string; date: string; time: string; location: string; lat: number | null; lng: number | null; timezone?: string } | null;
   planets: Array<{ key: string; name: string; sign: string; house: number | null }>;
   dashas: Array<{ lord: string; start: string; end: string }>;
 };
@@ -189,7 +189,8 @@ export function normalizeJanmaPatroContext(value: unknown): SavedJanmaPatroConte
         time: String(raw.birth.time || ""),
         location: String(raw.birth.location || ""),
         lat: typeof raw.birth.lat === "number" && Number.isFinite(raw.birth.lat) && Math.abs(raw.birth.lat) <= 90 ? raw.birth.lat : null,
-        lng: typeof raw.birth.lng === "number" && Number.isFinite(raw.birth.lng) && Math.abs(raw.birth.lng) <= 180 ? raw.birth.lng : null
+        lng: typeof raw.birth.lng === "number" && Number.isFinite(raw.birth.lng) && Math.abs(raw.birth.lng) <= 180 ? raw.birth.lng : null,
+        ...(typeof raw.birth.timezone === "string" && raw.birth.timezone.trim() ? { timezone: raw.birth.timezone.trim() } : {})
       }
     : null;
   const planets = Array.isArray(raw.planets)
