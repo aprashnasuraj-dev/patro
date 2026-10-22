@@ -26,6 +26,18 @@ describe("personal-time recommendation engine", () => {
     expect(result.reasons.some(reason => reason.includes("published work domain score"))).toBe(true);
   });
 
+  it("keeps a strong Rahu Kaal caution from being overridden by high supplementary signals", () => {
+    const result = evaluatePersonalTime({ ...base, panchangScore: 40, panchangCautions: ["rahu_kaal"],
+      rashifal: { domains: { work: 100 } }, horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
+    expect(result.score).toBeLessThanOrEqual(44);
+    expect(result.label).toBe("caution");
+    expect(result.cautions).toContain("traditional_caution_caps_overall_rank");
+  });
+  it("does not apply a caution cap when no caution is supplied", () => {
+    const result = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 100 } },
+      horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
+    expect(result.score).toBeGreaterThan(70);
+  });
   it("changes the recommendation when the matching Rashifal domain changes", () => {
     const high = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 95 } }, horaLord: "Mercury", tatwa: "Vayu" });
     const low = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 20 } }, horaLord: "Mercury", tatwa: "Vayu" });
