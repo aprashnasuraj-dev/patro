@@ -8,17 +8,9 @@ import "./workspace.css";
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
 type MuhuratWindow = { date: string; sunrise: Date; sunset: Date; abhijit: { start: Date; end: Date }; rahu: { start: Date; end: Date }; yama: { start: Date; end: Date }; gulika: { start: Date; end: Date } };
 
-const REVIEW_RULES = [
-  {id:"F060", icon:"star", titleNe:"सर्वार्थसिद्धि योग", titleEn:"Sarvarthasiddhi Yoga", descNe:"नक्षत्र–वारका प्रचलित नियमलाई नेपालका प्रकाशित पञ्चाङ्गसँग तुलना गरेर मात्र मिति निश्चित गर्नुपर्छ।", descEn:"Candidate dates require a reviewed Nakshatra–weekday rule set and comparison with a published Nepal Panchang."},
-  {id:"F061", icon:"double-star", titleNe:"अमृतसिद्धि योग", titleEn:"Amritsiddhi Yoga", descNe:"परम्परागत वार–नक्षत्र तालिका स्रोत र नियम-पुस्तिका पुष्टि भएपछि मात्र खोजी सक्रिय हुन्छ।", descEn:"Date search is enabled only after the tradition's weekday–Nakshatra table and rule notes are reviewed."},
-  {id:"F062", icon:"double-star", titleNe:"द्विपुष्कर योग", titleEn:"Dwipushkar Yoga", descNe:"तिथि, वार र नक्षत्रसम्बन्धी नियमको स्रोत पुष्टि आवश्यक छ।", descEn:"The rule source for Tithi, weekday and Nakshatra combination needs review."},
-  {id:"F063", icon:"triple-star", titleNe:"त्रिपुष्कर योग", titleEn:"Tripushkar Yoga", descNe:"मिति प्रकाशित गर्नु अघि योगको संयोजन र अपवाद पुष्टि गर्नुपर्छ।", descEn:"The exact combination and exceptions must be verified before publishing dates."},
-  {id:"F064", icon:"sun-star", titleNe:"रवि पुष्य योग", titleEn:"Ravi Pushya Yoga", descNe:"रविबार–पुष्य संयोजनलाई स्थानीय समयक्षेत्र र प्रकाशित पञ्चाङ्गसँग जाँच्नुपर्छ।", descEn:"The Sunday–Pushya combination must be checked against local time and a published Panchang."},
-  {id:"F065", icon:"star", titleNe:"गुरु पुष्य योग", titleEn:"Guru Pushya Yoga", descNe:"बिहीबार–पुष्य संयोजन र परम्परागत सीमा पुष्टि हुन बाँकी छ।", descEn:"The Thursday–Pushya combination and traditional boundary rules need review."},
-  {id:"F066", icon:"sun-star", titleNe:"रवि योग", titleEn:"Ravi Yoga", descNe:"प्रचलित नियम स्रोतसहित पुष्टि भएपछि मात्र मिति देखाइनेछ।", descEn:"Dates should appear only after the applicable rule set is source-verified."}
-] as const;
 
-export function MuhuratWorkspace({language,selectedFeatureId}:Props){
+
+export function MuhuratWorkspace({language}:Props){
   const [start,setStart]=useState(()=>{const from=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("date"):null;return from&&validIsoDate(from)?from:todayInNepal()});
   const [days,setDays]=useState(7);
   const [showCautions,setShowCautions]=useState(true);
@@ -60,7 +52,6 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
     })();
     return()=>{active=false;};
   },[start,days]);
-  const selectedRule=REVIEW_RULES.find((item)=>item.id===selectedFeatureId);
 
   return <div className="ap-pjw-root">
     <div className="ap-pjw-datebar">
@@ -74,12 +65,6 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
       {windows[0] && <MuhuratDayRibbon day={windows[0]} language={language} showCautions={showCautions}/>}
       {windowsLoading?<p className="ap-pjw-section-note" role="status">{l(language,"स्थानीय समयखण्ड गणना हुँदैछन्…","Calculating local timing windows…")}</p>:windowsError?<p className="ap-pjw-error" role="alert">{l(language,"यो मिति गणना गर्न सकिएन। मान्य मिति छानेर पुनः प्रयास गर्नुहोस्।","This date could not be calculated. Choose a valid date and try again.")}</p>:windows.length===0?<div className="ap-pjw-empty">{l(language,"यस मितिमा सूर्योदय गणना उपलब्ध छैन।","No sunrise calculation is available for this date.")}</div>:<div className="ap-pjw-event-table-wrap"><table className="ap-pjw-event-table"><thead><tr><th scope="col">{l(language,"मिति","Date")}</th><th scope="col">{l(language,"सूर्योदय","Sunrise")}</th><th scope="col">{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</th>{showCautions&&<><th scope="col">{l(language,"राहुकाल","Rahu Kalam")}</th><th scope="col">{l(language,"यमगण्ड","Yamaganda")}</th><th scope="col">{l(language,"गुलिक","Gulika")}</th></>}</tr></thead><tbody>{windows.map((item)=><tr key={item.date}><td><a href={"/date/"+item.date}>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:"Asia/Kathmandu",day:"2-digit",month:"short",weekday:"short"}).format(new Date(item.date+"T12:00:00Z"))}</a></td><td>{formatLocalTime(item.sunrise,language)}</td><td><strong>{formatLocalTime(item.abhijit.start,language)} – {formatLocalTime(item.abhijit.end,language)}</strong></td>{showCautions&&<><td>{formatLocalTime(item.rahu.start,language)} – {formatLocalTime(item.rahu.end,language)}</td><td>{formatLocalTime(item.yama.start,language)} – {formatLocalTime(item.yama.end,language)}</td><td>{formatLocalTime(item.gulika.start,language)} – {formatLocalTime(item.gulika.end,language)}</td></>}</tr>)}</tbody></table></div>}
       <div className="ap-pjw-action-row"><label className="ap-pjw-check"><input type="checkbox" checked={showCautions} onChange={(event)=>setShowCautions(event.target.checked)}/><span>{l(language,"सावधानी समय पनि देखाउनुहोस्","Include caution intervals")}</span></label><a className="ap-pjw-primary" href="/tools/sait">{l(language,"साइत गणक खोल्नुहोस्","Open Sait finder")} ↗</a></div>
-    </section>
-    <section className="ap-pjw-card">
-      <div className="ap-pjw-subhead"><h3>{l(language,"प्रकाशित तथा परम्परागत साइत","Published and traditional Muhurat")}</h3><small>{l(language,"स्रोत पुष्टि आवश्यक","Source review required")}</small></div>
-      <p className="ap-pjw-section-note">{l(language,"अधिकृत रूपमा प्रकाशित मिति र खगोलीय हिसाबबाट निस्केको सम्भावित समय फरक कुरा हुन्। सम्बन्धित पञ्चाङ्ग, अनुष्ठानको नियम र स्थानको आधार पुष्टि नभएसम्म तलका संयोजनलाई निश्चित मिति भनेर देखाइँदैन।","Published dates and astronomical candidate times are different. Until the relevant Panchang, observance rule and location basis are confirmed, the combinations below are not presented as definitive dates.")}</p>
-      <div className="ap-pjw-link-grid">{REVIEW_RULES.map((rule)=><article className="ap-pjw-link-card" key={rule.id}><strong className="ap-pjw-icon-label"><FeatureGlyph featureId={rule.id} symbol={rule.icon} size="inline"/>{l(language,rule.titleNe,rule.titleEn)}</strong><small>{l(language,rule.descNe,rule.descEn)}</small><span className="ap-pjw-icon-label"><FeatureGlyph featureId={rule.id} symbol="shield" size="inline"/>{l(language,"नियम पुष्टि आवश्यक","Rule verification required")}</span></article>)}</div>
-      {selectedRule&&<p className="ap-pjw-note">{l(language,selectedRule.descNe,selectedRule.descEn)}</p>}
     </section>
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"जीवनका मुख्य साइत","Major life-event timing")}</h3></div>

@@ -13,6 +13,34 @@ const intentCatalog = JSON.parse(await readFile(resolve(root, "seo/search-intent
 const INTENT_META = { ...intentCatalog.core, ...intentCatalog.tools };
 const featureEditorial = JSON.parse(await readFile(resolve(root, "seo/panchang-feature-editorial.json"), "utf8")).features;
 if (featureEditorial.length !== 91 || new Set(featureEditorial.map(item => item.id)).size !== 91) throw new Error("91 unique feature editorial entries required");
+
+// The acceptance ledger remains the full internal audit inventory. Only entries
+// with an existing working destination or an actual browser calculation are emitted
+// into public hub prerender HTML; reference-only placeholders stay off the page.
+function parseCsvLine(line) {
+  const values = [];
+  let value = "", quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    if (char === '"' && quoted && line[i + 1] === '"') { value += '"'; i++; }
+    else if (char === '"') quoted = !quoted;
+    else if (char === "," && !quoted) { values.push(value); value = ""; }
+    else value += char;
+  }
+  values.push(value);
+  return values;
+}
+const acceptanceCsv = (await readFile(resolve(root, "docs/panchang-jyotish-integration/05_FEATURE_ACCEPTANCE_91.csv"), "utf8")).trim().split(/\r?\n/);
+const acceptanceHeaders = parseCsvLine(acceptanceCsv[0]);
+const acceptanceRows = acceptanceCsv.slice(1).filter(Boolean).map(line => {
+  const values = parseCsvLine(line);
+  return Object.fromEntries(acceptanceHeaders.map((header, index) => [header, values[index]]));
+});
+if (acceptanceRows.length !== 91 || new Set(acceptanceRows.map(row => row.id)).size !== 91) throw new Error("91 acceptance-ledger rows are required for public visibility filtering");
+const PUBLIC_FEATURE_IDS = new Set(acceptanceRows
+  .filter(row => row.implementation_class === "existing-link" || row.implementation_class === "browser-preview")
+  .map(row => row.id));
+if (PUBLIC_FEATURE_IDS.size !== 65) throw new Error(`Expected 65 functioning public features, found ${PUBLIC_FEATURE_IDS.size}`);
 const FEATURE_HUB_ROUTES = new Set(["/panchang", "/muhurat", "/jyotish", "/planets", "/nepal-calendar"]);
 for (const item of featureEditorial) if (!FEATURE_HUB_ROUTES.has("/" + item.group) || !item.href.startsWith("/")) throw new Error("Invalid feature editorial route: " + item.id);
 for (const route of TOOL_ROUTES) if (!INTENT_META[route]) throw new Error(`Missing canonical SEO intent metadata for ${route}`);
@@ -91,7 +119,7 @@ function intentGuide(meta) {
 }
 function featureDirectory(path) {
   if (!FEATURE_HUB_ROUTES.has(path)) return "";
-  const features = featureEditorial.filter(item => "/" + item.group === path);
+  const features = featureEditorial.filter(item => "/" + item.group === path && PUBLIC_FEATURE_IDS.has(item.id));
   return `<section class="seo-feature-directory" aria-label="Feature guide"><h2>यस समूहका विषय र उपकरण · Explore these tools</h2><p>प्रत्येक विषयको उद्देश्य र उपलब्धता बुझेर सम्बन्धित सुविधा खोल्नुहोस्। · Choose a topic and read what it offers before opening its tool.</p>${features.map(item => `<article><h3><a href="${esc(item.href)}">${esc(item.titleNe)} · ${esc(item.titleEn)}</a></h3><p lang="ne">${esc(item.descriptionNe)}</p><p lang="en">${esc(item.descriptionEn)}</p></article>`).join("")}</section>`;
 }
 function bodyFor(path, meta, indexed) {

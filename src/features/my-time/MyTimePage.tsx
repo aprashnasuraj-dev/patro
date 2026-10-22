@@ -251,7 +251,7 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
     return <g key={key}>
       {selected && <path d={d} fill="none" stroke={stroke} strokeWidth={width + 11} strokeLinecap="round" opacity={0.34} pointerEvents="none" />}
       <path d={d} fill="none" stroke={stroke} strokeWidth={width} strokeLinecap="round" opacity={selected ? 1 : opacity} pointerEvents="none" aria-hidden="true" />
-      <path className="mt-polar-hit-target" d={d} fill="none" stroke="transparent" strokeWidth={Math.max(22, width + 16)} strokeLinecap="round" pointerEvents="stroke" role="button" tabIndex={0}
+      <path className="mt-polar-hit-target" d={d} fill="none" stroke={focused ? "var(--mt-accent)" : "transparent"} strokeWidth={focused ? 20 : Math.max(22, width + 16)} strokeLinecap="round" pointerEvents="stroke" role="button" tabIndex={0}
         aria-label={intervalLabel} aria-pressed={selected} style={{ cursor: "pointer", touchAction: "manipulation" }}
         onFocus={() => setFocusedEventKey(key)} onBlur={() => setFocusedEventKey(current => current === key ? null : current)}
         onPointerDown={() => selectEvent(key, label, start, end, explanation)}
@@ -259,7 +259,7 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
         onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectEvent(key, label, start, end, explanation); } }}>
         <title>{intervalLabel}</title>
       </path>
-      {focused && <path d={d} fill="none" stroke="var(--mt-ink)" strokeWidth={width + 9} strokeLinecap="round" strokeDasharray="2 3" opacity={0.72} pointerEvents="none" />}
+      {focused && <path className="mt-polar-focus-ring" d={d} fill="none" stroke="var(--mt-ink)" strokeWidth={width + 9} strokeLinecap="round" strokeDasharray="2 3" opacity={0.72} pointerEvents="none" aria-hidden="true" />}
     </g>;
   };
   return <div className="mt-polar-wrap">

@@ -101,8 +101,24 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     await first.focus();
     await page.keyboard.press("Tab");
     assert.equal(await second.evaluate((element) => element === document.activeElement), true, "Tab must move keyboard focus to the next ring segment");
-    const focusStroke = await second.evaluate((element) => getComputedStyle(element).stroke);
-    assert.notEqual(focusStroke, "rgba(0, 0, 0, 0)", "keyboard focus must be visible on the ring");
+    const focusRing = await second.evaluate((element) => {
+      const ring = element.parentElement?.querySelector(".mt-polar-focus-ring");
+      if (!ring) return null;
+      const style = getComputedStyle(ring);
+      return {
+        stroke: style.stroke,
+        strokeWidth: parseFloat(style.strokeWidth) || 0,
+        opacity: parseFloat(style.opacity) || 0
+      };
+    });
+    assert(
+      focusRing &&
+      focusRing.stroke !== "rgba(0, 0, 0, 0)" &&
+      focusRing.stroke !== "transparent" &&
+      focusRing.strokeWidth >= 1 &&
+      focusRing.opacity > 0,
+      "keyboard focus must render a visible dashed overlay on the ring"
+    );
     await page.keyboard.press("Enter");
     await page.waitForFunction(() => document.activeElement?.getAttribute("aria-pressed") === "true", null, { timeout: 5000 });
     const keyboardDetails = await page.locator(".mt-selected-event-copy").innerText();
