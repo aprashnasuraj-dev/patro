@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
-import { useUiLanguage, l } from "../../useUiLanguage";
+import { l } from "../../useUiLanguage";
 import { addIsoDays, calculateLocalDay, formatLocalTime, todayInNepal, validIsoDate } from "./shared";
-import { getFeatureById } from "../catalog";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
