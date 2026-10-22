@@ -6,11 +6,11 @@ import { getFeatureById } from "../catalog";
 import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 import { resolveNepalPanchangDay } from "../archive-adapter";
 import { KATHMANDU } from "../../patro-tools/core/types";
-import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
+import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
-type BoundaryRow = { labelNe: string; labelEn: string; value: string; end: Date | null };
+type BoundaryRow = { labelNe: string; labelEn: string; value: string; start: Date | null; end: Date | null };
 
 function localDateLabel(date: string, language: "ne" | "en") {
   const value = new Date(date + "T12:00:00Z");
@@ -75,10 +75,10 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   }, [p, selectedFeatureId]);
 
   const rows: BoundaryRow[] = p && at ? [
-    { labelNe: "तिथि", labelEn: "Tithi", value: l(language, contract?.elements.tithi.nameNe ?? tithiName(contract?.elements.tithi.index ?? p.tithi), contract?.elements.tithi.nameEn ?? TITHI_EN[(contract?.elements.tithi.index ?? p.tithi) - 1]), end: contract?.elements.tithi.ends?.instantUtc ? new Date(contract.elements.tithi.ends.instantUtc) : p.tithiEnds },
-    { labelNe: "नक्षत्र", labelEn: "Nakshatra", value: l(language, contract?.elements.nakshatra.nameNe ?? NAKSHATRAS[contract?.elements.nakshatra.index ?? p.nakshatra], contract?.elements.nakshatra.nameEn ?? NAKSHATRA_EN[contract?.elements.nakshatra.index ?? p.nakshatra]), end: nakEnd },
-    { labelNe: "योग", labelEn: "Yoga", value: l(language, contract?.elements.yoga.nameNe ?? YOGAS[contract?.elements.yoga.index ?? p.yoga], contract?.elements.yoga.nameEn ?? YOGA_EN[contract?.elements.yoga.index ?? p.yoga]), end: yogaEnd },
-    { labelNe: "करण", labelEn: "Karana", value: l(language, contract?.elements.karana.nameNe ?? KARANA_NAMES[contract?.elements.karana.index ?? p.karana], contract?.elements.karana.nameEn ?? KARANA_EN[contract?.elements.karana.index ?? p.karana]), end: karanaEnd }
+    { labelNe: "तिथि", labelEn: "Tithi", value: l(language, contract?.elements.tithi.nameNe ?? tithiName(contract?.elements.tithi.index ?? p.tithi), contract?.elements.tithi.nameEn ?? TITHI_EN[(contract?.elements.tithi.index ?? p.tithi) - 1]), start: contract?.elements.tithi.starts?.instantUtc ? new Date(contract.elements.tithi.starts.instantUtc) : previousFieldTransition(p.sunrise, "tithi"), end: contract?.elements.tithi.ends?.instantUtc ? new Date(contract.elements.tithi.ends.instantUtc) : p.tithiEnds },
+    { labelNe: "नक्षत्र", labelEn: "Nakshatra", value: l(language, contract?.elements.nakshatra.nameNe ?? NAKSHATRAS[contract?.elements.nakshatra.index ?? p.nakshatra], contract?.elements.nakshatra.nameEn ?? NAKSHATRA_EN[contract?.elements.nakshatra.index ?? p.nakshatra]), start: contract?.elements.nakshatra.starts?.instantUtc ? new Date(contract.elements.nakshatra.starts.instantUtc) : previousFieldTransition(p.sunrise, "nakshatra"), end: contract?.elements.nakshatra.ends?.instantUtc ? new Date(contract.elements.nakshatra.ends.instantUtc) : nakEnd },
+    { labelNe: "योग", labelEn: "Yoga", value: l(language, contract?.elements.yoga.nameNe ?? YOGAS[contract?.elements.yoga.index ?? p.yoga], contract?.elements.yoga.nameEn ?? YOGA_EN[contract?.elements.yoga.index ?? p.yoga]), start: contract?.elements.yoga.starts?.instantUtc ? new Date(contract.elements.yoga.starts.instantUtc) : previousFieldTransition(p.sunrise, "yoga"), end: contract?.elements.yoga.ends?.instantUtc ? new Date(contract.elements.yoga.ends.instantUtc) : yogaEnd },
+    { labelNe: "करण", labelEn: "Karana", value: l(language, contract?.elements.karana.nameNe ?? KARANA_NAMES[contract?.elements.karana.index ?? p.karana], contract?.elements.karana.nameEn ?? KARANA_EN[contract?.elements.karana.index ?? p.karana]), start: contract?.elements.karana.starts?.instantUtc ? new Date(contract.elements.karana.starts.instantUtc) : previousFieldTransition(p.sunrise, "karana"), end: contract?.elements.karana.ends?.instantUtc ? new Date(contract.elements.karana.ends.instantUtc) : karanaEnd }
   ] : [];
 
   const panchak = !!p && (p.nakshatra > 22 || (p.nakshatra === 22 && p.nakshatraPada >= 3));
@@ -132,7 +132,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
           {(["12h", "24h", "24plus"] as const).map(mode => <button key={mode} type="button" className={clockMode === mode ? "ap-pjw-primary" : "ap-pjw-secondary"} aria-pressed={clockMode === mode} onClick={() => setClockMode(mode)}>{mode === "24plus" ? l(language, "२४+ घण्टा", "24+ hours") : mode === "12h" ? l(language, "१२ घण्टा", "12 hours") : l(language, "२४ घण्टा", "24 hours")}</button>)}
         </div>
         <p className="ap-pjw-section-note">{l(language, "२४+ विकल्पले अर्को नागरिक मितिको समयलाई २४:०० पछि निरन्तर देखाउँछ; मूल क्षण परिवर्तन हुँदैन।", "The 24+ option continues past 24:00 on the next civil date; the underlying instant is unchanged.")}</p>
-        <div className="ap-pjw-boundaries">{rows.map((row) => <div key={row.labelEn}><span>{l(language, row.labelNe, row.labelEn)}</span><strong>{row.value}</strong><small>{l(language, "समाप्ति", "Ends")}: {row.end ? clockMode === "24plus" ? formatPanchangClock(row.end, date, clockMode, language) : (formatPanchangClock(row.end, date, clockMode, language) + " · " + formatLocalDateTime(row.end, language)) : "—"}</small></div>)}</div>
+        <div className="ap-pjw-boundaries">{rows.map((row) => <div key={row.labelEn}><span>{l(language, row.labelNe, row.labelEn)}</span><strong>{row.value}</strong><small>{l(language, "सुरु", "Starts")}: {row.start ? formatPanchangClock(row.start, date, clockMode, language) : "—"} · {l(language, "समाप्ति", "Ends")}: {row.end ? formatPanchangClock(row.end, date, clockMode, language) : "—"}</small><small>{row.end ? formatLocalDateTime(row.end, language) : "—"} {l(language, "नेपाल समय", "Nepal time")}</small></div>)}</div>
       </section>
 
       <section className="ap-pjw-card">
