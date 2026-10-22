@@ -19,7 +19,7 @@ export const FEATURE_GROUPS: Array<{
   descriptionNe: string;
   descriptionEn: string;
   href: string;
-  icon: string;
+  iconFeatureId: string;
 }> = [
   {
     id: "panchang",
@@ -28,7 +28,7 @@ export const FEATURE_GROUPS: Array<{
     descriptionNe: "तिथि, नक्षत्र, योग, करण, सूर्योदय र दिनका परम्परागत समयखण्ड।",
     descriptionEn: "Tithi, Nakshatra, Yoga, Karana, sunrise and traditional daily windows.",
     href: "/panchang",
-    icon: "☾"
+    iconFeatureId: "F001"
   },
   {
     id: "muhurat",
@@ -37,7 +37,7 @@ export const FEATURE_GROUPS: Array<{
     descriptionNe: "विवाह, गृह प्रवेश, व्रत, पर्व र शुभ समयका परम्परागत नियम।",
     descriptionEn: "Traditional timing for marriage, home entry, observances and auspicious windows.",
     href: "/muhurat",
-    icon: "✦"
+    iconFeatureId: "F060"
   },
   {
     id: "jyotish",
@@ -46,7 +46,7 @@ export const FEATURE_GROUPS: Array<{
     descriptionNe: "जन्मपत्रो, राशि, नक्षत्र, लग्न र परम्परागत ज्योतिष गणना।",
     descriptionEn: "Birth chart, Rashi, Nakshatra, Lagna and traditional Jyotish calculations.",
     href: "/jyotish",
-    icon: "✧"
+    iconFeatureId: "F036"
   },
   {
     id: "planets",
@@ -55,7 +55,7 @@ export const FEATURE_GROUPS: Array<{
     descriptionNe: "ग्रहस्थिति, गोचर, चन्द्र अवस्था, ग्रहण र खगोलीय चक्र।",
     descriptionEn: "Planetary positions, transits, lunar phases, eclipses and astronomical cycles.",
     href: "/planets",
-    icon: "◎"
+    iconFeatureId: "F044"
   },
   {
     id: "nepal-calendar",
@@ -64,7 +64,7 @@ export const FEATURE_GROUPS: Array<{
     descriptionNe: "वि.सं., नेपाल संवत्, समुदाय पात्रो र क्षेत्रअनुसारका सांस्कृतिक परम्परा।",
     descriptionEn: "Bikram Sambat, Nepal Sambat, community calendars and regional traditions.",
     href: "/nepal-calendar",
-    icon: "▦"
+    iconFeatureId: "F080"
   }
 ];
 
