@@ -7,6 +7,8 @@ export interface BirthInput {
   lat: number;
   lng: number;
   location: string;
+  /** IANA zone of the stated birth wall-clock time; omitted legacy profiles mean Nepal Standard Time. */
+  timezone?: string;
 }
 export interface PlanetPosition {
   key: string;
@@ -82,6 +84,29 @@ function localNepalInstant(date:string,time:string){
   const [y,m,d]=date.split("-").map(Number),[hh,mm]=time.split(":").map(Number);
   return new Date(Date.UTC(y,m-1,d,hh,mm)-345*60000);
 }
+/** Resolve the stated birthplace wall-clock time with historical IANA timezone rules.
+ * Reject DST gaps and duplicated clock instants rather than silently inventing a birth instant.
+ * Legacy charts with no timezone still retain their historical Nepal Standard Time semantics.
+ */
+export function birthInstant(input: Pick<BirthInput,"date"|"time"|"timezone">): Date {
+  const date=normalizeBirthDate(input.date),time=input.time;
+  if(!/^(?:[01]\\d|2[0-3]):[0-5]\\d$/.test(time))throw new Error("invalid_birth_time");
+  if(!input.timezone) return localNepalInstant(date,time);
+  const zone=input.timezone;
+  try { new Intl.DateTimeFormat("en-US",{timeZone:zone}); } catch { throw new Error("invalid_birth_timezone"); }
+  const [y,m,d]=date.split("-").map(Number),[hh,mm]=time.split(":").map(Number);
+  const target=Date.UTC(y,m-1,d,hh,mm);
+  const formatter=new Intl.DateTimeFormat("en-GB",{timeZone:zone,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+  const fields=(ms:number)=>{const p=Object.fromEntries(formatter.formatToParts(new Date(ms)).map(v=>[v.type,v.value]));return Date.UTC(Number(p.year),Number(p.month)-1,Number(p.day),Number(p.hour),Number(p.minute));};
+  let guess=target;
+  for(let i=0;i<8;i++){const correction=target-fields(guess);guess+=correction;if(correction===0)break;}
+  if(fields(guess)!==target)throw new Error("nonexistent_birth_wall_time");
+  // Most historical DST folds repeat a clock reading 30 or 60 minutes apart.
+  for(const delta of [-3600000,-1800000,1800000,3600000]){
+    if(fields(guess+delta)===target)throw new Error("ambiguous_birth_wall_time");
+  }
+  return new Date(guess);
+}
 function julianDay(date:Date){return date.getTime()/86400000+2440587.5;}
 function ayanamsaLahiri(date:Date){
   const years=(julianDay(date)-2451545.0)/365.2422;
@@ -136,7 +161,7 @@ export function calculateChart(input:BirthInput):ChartResult{
   if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(input.time))throw new Error("Birth time must be HH:MM in 24-hour format.");
   if(!Number.isFinite(input.lat)||Math.abs(input.lat)>66.5)throw new Error("Latitude must be between -66.5° and 66.5° for this whole-sign chart implementation.");
   if(!Number.isFinite(input.lng)||Math.abs(input.lng)>180)throw new Error("Longitude is invalid.");
-  const instant=localNepalInstant(normalizedInput.date,input.time), ayanamsa=ayanamsaLahiri(instant);
+  const instant=birthInstant(normalizedInput), ayanamsa=ayanamsaLahiri(instant);
   const ascTropical=ascendantLongitude(instant,input.lat,input.lng),ascendant=norm(ascTropical-ayanamsa),ascSignIndex=Math.floor(ascendant/30);
   const planets:PlanetPosition[]=BODY_ROWS.map(([key,name,body])=>{
     const tropical=geoLongitude(body,instant),longitude=norm(tropical-ayanamsa),signIndex=Math.floor(longitude/30);
