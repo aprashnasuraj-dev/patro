@@ -23,7 +23,7 @@ import MyTimePersonalization from "./MyTimePersonalization";
 import PersonalAstrologyObservatory from "./PersonalAstrologyObservatory";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
-import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, selectPersonalLuckyTime, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
+import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, selectPersonalLuckyTime, type PersonalChartSnapshot, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -132,6 +132,38 @@ function localClock(timezone: string, now: Date) {
   try { return new Intl.DateTimeFormat(undefined, { timeZone: timezone, hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" }).format(now); }
   catch { return now.toLocaleTimeString(); }
 }
+
+/** Build a candidate-time chart using the established Jyotish engine, observation
+ * place coordinates and the selected IANA timezone. Invalid/DST-ambiguous candidate
+ * wall times gracefully omit chart-only signals rather than fabricating a chart. */
+function candidateChartAt(instant: Date, preferences: Preferences): PersonalChartSnapshot | null {
+  try {
+    if (!Number.isFinite(instant.getTime()) || Math.abs(preferences.lat) > 66.5) return null;
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: preferences.timezone, year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).formatToParts(instant);
+    const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+    const date = values.year + "-" + values.month + "-" + values.day;
+    const time = values.hour + ":" + values.minute;
+    if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(date) || !/^\\d{2}:\\d{2}$/.test(time)) return null;
+    const chart = calculateChart({
+      name: "My Time candidate", date, time,
+      location: preferences.label || "Selected observation place",
+      lat: preferences.lat, lng: preferences.lng, timezone: preferences.timezone
+    });
+    return {
+      lagnaSignIndex: chart.ascSignIndex,
+      planets: chart.planets.map(planet => ({
+        key: planet.key, name: planet.name, signIndex: planet.signIndex,
+        sign: planet.sign, house: planet.house
+      }))
+    };
+  } catch {
+    return null;
+  }
+}
+
 function localDateLabel(date: string, timezone: string, language: "ne" | "en") {
   try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: "UTC", weekday: "long", year: "numeric", month: "long", day: "numeric" }).format(new Date(date + "T12:00:00Z")); }
   catch { return date; }
@@ -588,14 +620,21 @@ export default function MyTimePage() {
           const start = Date.parse(segment.start_utc), end = Date.parse(segment.end_utc);
           const overlaps = kaal.filter(period => start < Date.parse(period.end_utc) && end > Date.parse(period.start_utc));
           const startUtc = segment.start_utc, endUtc = segment.end_utc;
-          const result = scorePersonalizedMuhurta({
+          const cautionInputs = {
             startUtc, endUtc, favorableChoghadiya: window.favorable,
             rahuKaal: overlaps.some(period => period.key === "rahu"),
             yamaganda: overlaps.some(period => period.key === "yamaganda"),
-            gulika: overlaps.some(period => period.key === "gulika"),
-            taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse
+            gulika: overlaps.some(period => period.key === "gulika")
+          };
+          const result = scorePersonalizedMuhurta({
+            ...cautionInputs, taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse
           });
-          return { ...window, key: window.key + "-" + index, start_utc: startUtc, end_utc: endUtc, score: result.score, label: result.label, cautions: result.cautions };
+          const baseResult = scorePersonalizedMuhurta(cautionInputs);
+          return {
+            ...window, key: window.key + "-" + index, start_utc: startUtc, end_utc: endUtc,
+            score: result.score, baseScore: baseResult.score, baseReasons: baseResult.reasons,
+            label: result.label, cautions: result.cautions
+          };
         });
       })
       .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc));
@@ -623,22 +662,47 @@ export default function MyTimePage() {
       const hora = horaPeriods.find(period => midpoint.getTime() >= Date.parse(period.start_utc) && midpoint.getTime() < Date.parse(period.end_utc));
       const horaName = hora?.name_en || "";
       const activities = selectedInterests.length ? selectedInterests : ["general" as PersonalTimeActivity];
+      let candidateTaraIndex: number | null = null, candidateChandraHouse: number | null = null;
+      const candidatePanchangReasons = window.baseReasons || [];
+      let candidateEventChart: PersonalChartSnapshot | null = null;
+      if (personalContext.birthChart) {
+        try {
+          const atMidpoint = panchangAt(midpoint);
+          if (natalStarIndex >= 0 && atMidpoint && Number.isInteger(atMidpoint.nakshatra)) {
+            const candidateTara = calculateTara(natalStarIndex + 1, atMidpoint.nakshatra + 1);
+            candidateTaraIndex = candidateTara ? candidateTara.taraIndex - 1 : null;
+          }
+          const transitMoonSign = atMidpoint?.moonRashi;
+          if (natalMoonSignIndex >= 0 && typeof transitMoonSign === "number" && Number.isInteger(transitMoonSign)) {
+            candidateChandraHouse = ((transitMoonSign - natalMoonSignIndex + 12) % 12) + 1;
+          }
+        } catch { /* Optional Bala is omitted if the candidate Panchang cannot be evaluated. */ }
+        candidateEventChart = candidateChartAt(midpoint, preferences);
+      }
       const evaluations = activities.map(activity => evaluatePersonalTime({
-        startUtc: segment.start_utc, endUtc: segment.end_utc, panchangScore: segment.score,
-        panchangReasons: segment.score >= 75 ? ["supportive_panchang_indications"] : [],
-        panchangCautions: segment.cautions,
+        startUtc: segment.start_utc, endUtc: segment.end_utc,
+        panchangScore: typeof segment.baseScore === "number" ? segment.baseScore : segment.score,
+        panchangReasons: candidatePanchangReasons,
+        panchangCautions: [...(segment.cautions || []).filter(value => ["rahu_kaal", "yamaganda", "gulika"].includes(value)), ...(candidateChandraHouse != null && [4, 8, 12].includes(candidateChandraHouse) ? ["traditional_chandrabalam_caution"] : [])],
         activity, horaLord: horaName || null, tatwa: tatwaName || null,
         rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
         dashaLord: personalContext.birthChart?.dashas.find(period => Date.parse(period.start) <= midpoint.getTime() && Date.parse(period.end) > midpoint.getTime())?.lord || null,
         hasNatalChart: Boolean(personalContext.birthChart),
-        natalFactorsApplied: Boolean(personalContext.birthChart) && taraIndex >= 0 && chandraHouse != null
+        natalFactorsApplied: Boolean(personalContext.birthChart) && candidateTaraIndex != null && candidateChandraHouse != null,
+        taraIndex: candidateTaraIndex, chandraHouse: candidateChandraHouse,
+        natalChart: personalContext.birthChart, eventChart: candidateEventChart
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
       const personalizationLevel: "personalized" | "partial" | "general" = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
       const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
       const aggregateComponents = componentKeys.map(key => {
         const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
-        return { ...present[0], score: Math.round(present.reduce((sum, item) => sum + item.score, 0) / present.length) };
+        const totalWeight = present.reduce((sum, item) => sum + item.weight, 0);
+        return {
+          ...present[0],
+          score: totalWeight ? Math.round(present.reduce((sum, item) => sum + item.score * item.weight, 0) / totalWeight) : present[0].score,
+          weight: Math.round((present.reduce((sum, item) => sum + item.weight, 0) / evaluations.length) * 10) / 10
+        };
       });
       const personalEvaluation = {
         ...evaluations[0], score: combinedScore,
@@ -657,7 +721,7 @@ export default function MyTimePage() {
         combinedScore, personalEvaluation, personalizationLevel
       };
     })).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
-  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
+  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart, preferences.timezone, preferences.lat, preferences.lng, preferences.label, natalStarIndex, natalMoonSignIndex]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
   const nextCautionWindow = combinedMuhurtaWindows.filter(window => window.label === "caution" && Date.parse(window.end_utc) > now.getTime()).sort((a,b)=>Date.parse(a.start_utc)-Date.parse(b.start_utc))[0] || null;
   const personalLuckyNumber = snapshot && personalContext.birthChart?.birth?.date
@@ -838,9 +902,12 @@ export default function MyTimePage() {
         tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
         chandraHouse={chandraHouse} luckyNumber={personalLuckyNumber} dashaLord={activeDashaLord}
         tatwa={tantraTime?.activeTatwa?.name ?? null} nitya={tantraTime?.nityaDevi?.name ?? null}
-        luckyTime={personalLuckyTime ? { start: personalLuckyTime.start_utc, end: personalLuckyTime.end_utc, score: personalLuckyTime.combinedScore,
-          confidence: personalLuckyTime.personalizationLevel === "personalized" ? "personalized" : "partial", activity: interestLabel,
-          reasons: personalLuckyTime.personalEvaluation.reasons } : null}
+        luckyTime={personalLuckyTime ? {
+          start: personalLuckyTime.start_utc, end: personalLuckyTime.end_utc, score: personalLuckyTime.combinedScore,
+          confidence: personalLuckyTime.personalizationLevel === "personalized" ? "personalized" : "partial",
+          activity: interestLabel, reasons: personalLuckyTime.personalEvaluation.reasons,
+          components: personalLuckyTime.personalEvaluation.components, cautions: personalLuckyTime.personalEvaluation.cautions
+        } : null}
         windows={combinedMuhurtaWindows.map(w => ({ key:w.key, start:w.start_utc, end:w.end_utc, score:w.combinedScore, label:w.label,
           reasons:w.personalEvaluation.reasons, cautions:w.personalEvaluation.cautions, confidence:w.personalEvaluation.confidence }))}
         onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />
