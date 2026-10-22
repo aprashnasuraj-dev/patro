@@ -10,7 +10,7 @@ vi.mock("../src/patro-tools-integration/staticCalendar", () => ({
     bs: { year: 2083, month: 7, day: 5 },
     ns: { formatted_ne: "नेपाल संवत् ११४७" },
     panchang: {
-      tithi: { number: 11, ne: "एकादशी", en: "Ekadashi" },
+      tithi: { number: 11, paksha: "shukla", ne: "एकादशी", en: "Ekadashi" },
       nakshatra: { ne: "शतभिषा", en: "Shatabhisha" }
     }
   }))
@@ -33,7 +33,7 @@ describe("existing static archive adapter", () => {
     const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
     const overlay = overlayFromStaticArchive(date, {
       ad: date, bs: { year: 2083, month: 7, day: 5 },
-      panchang: { tithi: { number: 11, end_npt: "14:45" } }
+      panchang: { tithi: { number: 11, paksha: "shukla", end_npt: "14:45" } }
     }, fallback);
     expect(overlay.elements?.tithi?.ends).toBeUndefined();
   });
@@ -41,7 +41,7 @@ describe("existing static archive adapter", () => {
     const date = "2026-10-22";
     const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
     expect(() => overlayFromStaticArchive(date, {
-      ad: "2026-10-23", bs: { year: 2083, month: 7, day: 6 }, panchang: { tithi: { number: 11 } }
+      ad: "2026-10-23", bs: { year: 2083, month: 7, day: 6 }, panchang: { tithi: { number: 11, paksha: "shukla" } }
     }, fallback)).toThrow("archive_row_incomplete");
   });
 });
