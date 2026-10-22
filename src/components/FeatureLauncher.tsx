@@ -1,7 +1,7 @@
 import { useDismiss } from "../useDismiss";
 import { useEffect, useMemo, useState } from "react";
 
-type LaunchItem={href:string;ne:string;en:string;group:string;keywords:string;/panchangstring};
+type LaunchItem={href:string;ne:string;en:string;group:string;keywords:string;mark:string};
 
 export const ITEMS:LaunchItem[]=[
  {href:"/",ne:"आजको पात्रो",en:"Today · Calendar",group:"पात्रो · Calendar",keywords:"today calendar nepali date bs ad आज पात्रो मिति",mark:"आज"},
@@ -14,7 +14,7 @@ export const ITEMS:LaunchItem[]=[
  {href:"/mytime",ne:"मेरो समय",en:"My Time",group:"समय · Time",keywords:"my time temporal dashboard time zone local solar time panchang muhurta मेरो समय समय क्षेत्र पञ्चाङ्ग",mark:"◉"},
  {href:"/janmapatro/milan.html",ne:"गुण मिलान",en:"Matchmaking",group:"ज्योतिष · Astrology",keywords:"matchmaking guna विवाह मिलान",mark:"♡"},
  {href:"/tools/astro",ne:"खगोलीय पात्रो",en:"Astronomy calendar",group:"खगोल · Astronomy",keywords:"astronomy moon nasa tithi ग्रह चन्द्र खगोल",mark:"◐"},
- {href:"/panchang",ne:"दैनिक पञ्चाङ्ग",en:"Daily Panchang",group:"पात्रो · Panchang",keywords:"daily panchang tithi nakshatra yoga karana sunrise sunset तिथि नक्षत्र योग करण सूर्योदय"},
+ {href:"/panchang",ne:"दैनिक पञ्चाङ्ग",en:"Daily Panchang",group:"पात्रो · Panchang",keywords:"daily panchang tithi nakshatra yoga karana sunrise sunset तिथि नक्षत्र योग करण सूर्योदय",mark:"पञ्च"},
  {href:"/muhurat",ne:"शुभ साइत र मुहूर्त",en:"Auspicious timing",group:"साइत · Muhurat",keywords:"muhurat sait auspicious timing abhijit rahu kalam विवाह साइत शुभ समय",mark:"शु"},
  {href:"/jyotish",ne:"ज्योतिष गणक",en:"Jyotish calculators",group:"ज्योतिष · Jyotish",keywords:"kundali birth chart lagna rashi nakshatra guna milan जन्मपत्रो लग्न राशि नक्षत्र",mark:"ज्यो"},
  {href:"/planets",ne:"ग्रह र खगोलीय घटना",en:"Planets & astronomy",group:"खगोल · Astronomy",keywords:"planetary positions ingress retrograde eclipse moon ग्रहस्थिति गोचर वक्री ग्रहण",mark:"ग्रह"},
