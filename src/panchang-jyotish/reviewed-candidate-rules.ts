@@ -43,7 +43,7 @@ export type NakshatraRuleWindow = {
 const DAY_MS = 86_400_000;
 const SIX_HOURS_MS = 6 * 60 * 60_000;
 function validIsoDate(value:string):boolean {
-  if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(value))return false;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;
   const [year,month,day]=value.split("-").map(Number);
   const candidate=new Date(Date.UTC(year,month-1,day,12));
   return candidate.getUTCFullYear()===year&&candidate.getUTCMonth()===month-1&&candidate.getUTCDate()===day;
