@@ -65,6 +65,18 @@ describe("bilingual feature-first visual obligations", () => {
     expect(planets).toContain('symbol={item.degree===0||item.degree===180?"seasons":"sun"}');
     expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-wheel-key b .ap-pj-icon");
     expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-icon-label .ap-pj-icon");
+
+    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
+    expect(jyotish).toContain('symbol="moon"');
+    expect(jyotish).toContain('symbol="nakshatra"');
+    expect(jyotish).toContain('symbol="ascendant"');
+    expect(jyotish).toContain('symbol="shield"');
+    expect(jyotish).toContain('symbol={planetIcon(planet.key)}');
+    expect(jyotish).toContain('symbol="orbit"');
+    const glyphSource = source("src/panchang-jyotish/FeatureGlyph.tsx");
+    expect(glyphSource).toContain('aria-hidden={decorative}');
+    expect(glyphSource).toContain('title={decorative ? undefined : title}');
+    expect(glyphSource).toContain('href={"/icons/panchang-jyotish.svg#"+icon}');
     expect(Object.keys(FEATURE_REFERENCE_GUIDES)).toHaveLength(29);
     for (const item of PATRO_FEATURES.filter(feature => getFeatureAvailability(feature) === "reference")) {
       const guide = FEATURE_REFERENCE_GUIDES[item.id];
