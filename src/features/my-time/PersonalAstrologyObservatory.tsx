@@ -4,7 +4,7 @@ import type { UiLanguage } from "../../i18n";
 import { l } from "../../useUiLanguage";
 import { choghadiyaWindows, type TemporalWindow } from "../../patro-tools/core/temporal-windows";
 import "./choghadiya-summary.css";
-import type { SavedJanmaPatroContext } from "./personal-time-engine";
+import type { PersonalTimeComponent, SavedJanmaPatroContext } from "./personal-time-engine";
 import "./personal-astrology-observatory.css";
 
 export type AstrologyWindow = {
@@ -18,10 +18,85 @@ type Props = {
   tara: { distance: number; taraIndex: number } | null; taraName: string;
   chandraHouse: number | null; luckyNumber: number | null; dashaLord: string | null;
   tatwa: string | null; nitya: string | null; windows: AstrologyWindow[];
-  luckyTime: { start: string; end: string; score: number; confidence: string; activity: string; reasons: string[] } | null;
+  luckyTime: { start: string; end: string; score: number; confidence: string; activity: string; reasons: string[]; components: PersonalTimeComponent[]; cautions: string[] } | null;
   choghadiyaSource: { weekday: number; sunrise: string | null; sunset: string | null; nextSunrise: string | null } | null;
   onEdit: () => void;
 };
+
+function personalActivityLabel(activity: string, language: UiLanguage) {
+  const values: Record<string, [string, string]> = {
+    general: ["सामान्य", "General"], work: ["काम / व्यवसाय", "Work / business"], study: ["अध्ययन", "Study"],
+    travel: ["यात्रा", "Travel"], prayer: ["पूजा / आध्यात्मिक अभ्यास", "Prayer / spiritual practice"],
+    meditation: ["ध्यान", "Meditation"], family: ["परिवार / व्यक्तिगत काम", "Family / personal plans"]
+  };
+  const value = values[activity] || [activity, activity];
+  return value[language === "ne" ? 0 : 1];
+}
+function personalComponentLabel(key: string, language: UiLanguage) {
+  const labels: Record<string, [string, string]> = {
+    panchang: ["पञ्चाङ्ग र शुभ समय", "Panchang & timing"],
+    rashifal: ["सम्बन्धित राशिफल", "Matching Rashifal"],
+    "dasha-hora": ["दशा–होरा अनुकूलता", "Dasha–Hora compatibility"],
+    "natal-bala": ["तारा बल र चन्द्र बल", "Tara Bala & Chandra Bala"],
+    "chart-lords": ["लग्न तथा कार्य-सम्बन्धित भावका स्वामी", "Lagna & activity-house lords"],
+    gochara: ["बृहस्पति–शनि गोचर", "Jupiter–Saturn Gochara"],
+    "activity-hora": ["कार्यअनुसार होरा", "Activity–Hora fit"],
+    "activity-tatwa": ["कार्यअनुसार तत्त्व", "Activity–Tatwa fit"]
+  };
+  const value = labels[key] || [key, key];
+  return value[language === "ne" ? 0 : 1];
+}
+function personalComponentExplanation(component: PersonalTimeComponent, language: UiLanguage) {
+  if (language !== "ne") return component.explanation;
+  const original = component.explanation;
+  if (component.key === "panchang") return "पञ्चाङ्ग, चोघडिया र सावधानी समयको संयुक्त मूल्याङ्कन। राहुकाल, यमगण्ड र गुलिकाका परम्परागत सावधानीले अङ्कमा अधिकतम सीमा लगाउँछन्।";
+  if (component.key === "rashifal") return "उपलब्ध दैनिक राशिफलको सम्बन्धित क्षेत्रको अङ्क मात्र प्रयोग गरिएको छ; मिल्ने क्षेत्र नभए यो अंश भारमा समावेश हुँदैन।";
+  if (component.key === "dasha-hora") {
+    const match = original.match(/^(.+?) Dasha with (.+?) Hora: (.+?) graded at (\d+)\/100(.*)$/);
+    if (!match) return "चलिरहेको विम्शोत्तरी दशा स्वामी र उम्मेदवार समयको होरा स्वामीलाई प्राकृतिक मित्रता, तटस्थता वा शत्रुताका आधारमा तुलना गरिएको छ।";
+    const relation = match[3] === "same planet" ? "एउटै ग्रह" : match[3] === "natural friend" ? "प्राकृतिक मित्र" : match[3] === "natural enemy" ? "प्राकृतिक शत्रु" : "तटस्थ सम्बन्ध";
+    const penalty = match[5].includes("reduced") ? " जन्मपत्रोका भाव, नीच राशि वा युति-सावधानीका कारण अतिरिक्त कटौती गरिएको छ।" : "";
+    return match[1] + " दशा र " + match[2] + " होरा: " + relation + " (" + match[4] + "/100)।" + penalty + " यो परम्परागत ज्योतिषीय नियम हो, वैज्ञानिक मापन होइन।";
+  }
+  if (component.key === "natal-bala") {
+    const parts = [];
+    const tara = original.match(/(Janma|Sampat|Vipat|Kshema|Pratyari|Sadhaka|Naidhana|Mitra|Atimitra) Tara Bala/);
+    const moon = original.match(/house (\d+)/);
+    if (tara) parts.push(({ Janma: "जन्म", Sampat: "सम्पत्", Vipat: "विपत्", Kshema: "क्षेम", Pratyari: "प्रत्यरि", Sadhaka: "साधक", Naidhana: "नैधन", Mitra: "मित्र", Atimitra: "अतिमित्र" } as Record<string, string>)[tara[1]] + " तारा बल");
+    if (moon) parts.push("जन्म चन्द्रबाट " + moon[1] + "औँ भावको चन्द्र बल");
+    return parts.length ? parts.join(" र ") + " को परम्परागत सापेक्ष सङ्केत हो।" : "उपलब्ध तारा बल र चन्द्र बलको परम्परागत तुलना।";
+  }
+  if (component.key === "chart-lords") {
+    const match = original.match(/\(([\d, ]+)\)/);
+    return "तपाईंको जन्म लग्न र यस उम्मेदवार समयको लग्नबाट सम्बन्धित कार्यका भाव स्वामी, तिनको भावस्थिति र राशि बल हेरिन्छ" +
+      (match ? " (भाव " + match[1].replace(/, /g, ", ") + ")" : "") + "। यो पारम्परिक नियममा आधारित सूचक हो।";
+  }
+  if (component.key === "gochara") {
+    const match = original.match(/Jupiter transits (\d+)th and Saturn (\d+)th from natal Moon/);
+    return match ? "जन्म चन्द्र राशिबाट बृहस्पति " + match[1] + "औँ र शनि " + match[2] + "औँ भावमा पर्ने गोचरको परम्परागत तुलना। यो भविष्यवाणी होइन।"
+      : "जन्म चन्द्र राशिबाट बृहस्पति र शनिको गोचरको परम्परागत तुलना; उपलब्ध तथ्य नभए यो अंश हटाइन्छ।";
+  }
+  if (component.key === "activity-hora") return "छानिएको " + personalActivityLabel((original.match(/for ([a-z]+)\./)?.[1] || "general"), "ne") + " कामका लागि होराको परम्परागत उपयुक्तता; नमिल्दा पनि यसलाई निषेध वा हानि मानिँदैन।";
+  if (component.key === "activity-tatwa") return "छानिएको गतिविधिसँग तत्त्वको परम्परागत मेल हेरिन्छ। यो कमजोर सन्दर्भ सङ्केत हो, निषेध होइन।";
+  return original;
+}
+function personalCautionLabel(value: string, language: UiLanguage) {
+  const labels: Record<string, [string, string]> = {
+    rahu_kaal: ["राहुकालको परम्परागत सावधानी", "Traditional Rahu Kaal caution"],
+    yamaganda: ["यमगण्डको परम्परागत सावधानी", "Traditional Yamaganda caution"],
+    gulika: ["गुलिकाको परम्परागत सावधानी", "Traditional Gulika caution"],
+    traditional_chandrabalam_caution: ["चन्द्र बलको परम्परागत सावधानी", "Traditional Chandra Bala caution"],
+    traditional_caution_caps_overall_rank: ["सावधानीका कारण कुल अङ्कमा अधिकतम सीमा लागू भयो", "A traditional caution cap limited the overall score"]
+  };
+  const label = labels[value];
+  return label ? label[language === "ne" ? 0 : 1] : (language === "ne" ? "परम्परागत सावधानी" : value.replace(/_/g, " "));
+}
+function personalReasonLabel(value: string, language: UiLanguage) {
+  if (value === "favorable_choghadiya" || value === "supportive_panchang_indications") return language === "ne" ? "पञ्चाङ्गमा अनुकूल सङ्केत" : "Supportive Panchang indication";
+  if (value.startsWith("tara:")) return (language === "ne" ? "तारा बल समूह: " : "Tara Bala group: ") + value.slice(5);
+  if (value === "supportive_chandrabalam") return language === "ne" ? "अनुकूल चन्द्र बल" : "Supportive Chandra Bala";
+  return value.replace(/_/g, " ");
+}
 function clock(value: string, timezone: string, language: UiLanguage) {
   try { return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en-GB", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value)); }
   catch { return "—"; }
@@ -107,14 +182,25 @@ export default function PersonalAstrologyObservatory(p: Props) {
     <article className="mt-astro-lucky-time" aria-labelledby="mt-astro-lucky-title">
       <div className="mt-astro-lucky-orbit" aria-hidden="true"><Clock3 size={28}/></div>
       <div className="mt-astro-lucky-copy">
-        <span className="mt-astro-overline"><Sparkles size={14}/>{l(lang,"तपाईंको व्यक्तिगत शुभ समय","YOUR PERSONAL LUCKY TIME")}</span>
-        <h3 id="mt-astro-lucky-title">{p.luckyTime ? clock(p.luckyTime.start,timezone,lang)+" – "+clock(p.luckyTime.end,timezone,lang) : l(lang,"व्यक्तिगत समय गणना आवश्यक","Personal timing calculation needed")}</h3>
+        <span className="mt-astro-overline"><Sparkles size={14}/>{l(lang,"तपाईंको व्यक्तिगत शुभ समय","LIVE PERSONAL TIME · YOUR LUCKY TIME")}</span>
+        <h3 id="mt-astro-lucky-title">{p.luckyTime ? clock(p.luckyTime.start,timezone,lang)+" – "+clock(p.luckyTime.end,timezone,lang) : p.birth ? l(lang,"यस मितिका लागि उपयुक्त समय झ्याल उपलब्ध छैन","No eligible personal time window for this date") : l(lang,"व्यक्तिगत समय गणना आवश्यक","Personal timing calculation needed")}</h3>
         <p>{p.luckyTime
-          ? l(lang,"जन्मपत्रो, आजको पञ्चाङ्ग र उपलब्ध व्यक्तिगत सङ्केतबाट छानिएको उत्तम समय झ्याल।","Highest-ranked available window from your natal profile, the selected Panchang and available personal signals.")
-          : l(lang,"जन्म विवरण सुरक्षित गरी पञ्चाङ्ग गणना लोड गर्नुहोस्। सामान्य समय झ्याललाई व्यक्तिगत शुभ समय भनेर देखाइँदैन।","Save your birth profile and load the Panchang. General timing windows are not presented as your personal lucky time.")}</p>
-        {p.luckyTime && <div className="mt-astro-lucky-meta"><strong>{p.luckyTime.score}/100</strong><span>{l(lang,"रुचि","Activity")}: {p.luckyTime.activity}</span><span>{p.luckyTime.confidence==="personalized"?l(lang,"पूर्ण व्यक्तिगत सङ्केत","Personalized signals"):l(lang,"आंशिक व्यक्तिगत सङ्केत","Partially personalized signals")}</span></div>}
-        {p.luckyTime?.reasons?.length ? <details className="mt-astro-lucky-reasons"><summary>{l(lang,"यो समय किन छानियो?","Why this time?")}</summary><ul>{p.luckyTime.reasons.slice(0,5).map((reason,index)=><li key={index}>{reason}</li>)}</ul></details> : null}
-        <small>{l(lang,"परम्परागत ज्योतिषीय सन्दर्भ मात्र; सफलता वा परिणामको ग्यारेन्टी होइन।","Traditional astrological guidance only; not a guarantee of success or outcomes.")}</small>
+          ? l(lang,"तपाईंको विद्यमान जन्मपत्रो, उम्मेदवार समयको कुण्डली, पञ्चाङ्ग र उपलब्ध व्यक्तिगत सङ्केतको संयुक्त परम्परागत मूल्याङ्कन।","A traditional ranking using your existing birth chart, candidate-time chart, Panchang and available personal signals.")
+          : p.birth
+            ? l(lang,"जन्म विवरण जडान छ। यो मितिमा गणना गर्न मिल्ने व्यक्तिगत समय झ्याल भेटिएन; अर्को मिति वा पञ्चाङ्ग अद्यावधिक जाँच्नुहोस्।","Your birth chart is connected. No eligible personal window was found for this date; try another date or refresh the Panchang.")
+            : l(lang,"जन्मपत्रो जोडेर पञ्चाङ्ग गणना लोड गर्नुहोस्। सामान्य समय झ्याललाई व्यक्तिगत शुभ समय भनेर देखाइँदैन।","Connect your existing birth chart and load the Panchang. General windows are never labelled as personal lucky time.")}</p>
+        {p.luckyTime && <div className="mt-astro-lucky-meta"><strong>{p.luckyTime.score}/100</strong><span>{l(lang,"रुचि","Activity")}: {p.luckyTime.activity}</span><span>{p.birth ? l(lang,"जन्मपत्रोमा आधारित","Birth-chart personalized") : p.luckyTime.confidence==="personalized"?l(lang,"व्यक्तिगत सङ्केत","Personalized"):l(lang,"व्यक्तिगत सन्दर्भ","Personal context")}</span></div>}
+        {p.luckyTime && <section className="mt-astro-score-breakdown" aria-label={l(lang,"अङ्कको विवरण","Score breakdown")}>
+          <div className="mt-astro-score-heading"><strong>{l(lang,"अङ्कको विवरण","Score breakdown")}</strong><span>{l(lang,"भार उपलब्ध सङ्केतअनुसार समायोजित गरिएको छ","Weights are normalized to the signals available for this result")}</span></div>
+          {p.luckyTime.components.map(component => <article className="mt-astro-score-component" key={component.key}>
+            <div className="mt-astro-score-component-head"><strong>{personalComponentLabel(component.key,lang)}</strong><span>{component.score}/100 · {component.weight.toFixed(1)}%</span></div>
+            <div className="mt-astro-score-track" aria-hidden="true"><span style={{width: Math.max(0,Math.min(100,component.score))+"%"}}/></div>
+            <p>{personalComponentExplanation(component,lang)}</p>
+          </article>)}
+          {p.luckyTime.cautions.length > 0 && <div className="mt-astro-score-cautions" role="note"><strong>{l(lang,"सावधानी सङ्केत","Caution signals")}</strong><ul>{[...new Set(p.luckyTime.cautions)].map(value=><li key={value}>{personalCautionLabel(value,lang)}</li>)}</ul></div>}
+        </section>}
+        {p.luckyTime?.reasons?.some(reason => ["favorable_choghadiya", "supportive_panchang_indications", "supportive_chandrabalam"].includes(reason) || reason.startsWith("tara:")) ? <details className="mt-astro-lucky-reasons"><summary>{l(lang,"पञ्चाङ्गका सहायक सङ्केत","Additional Panchang signals")}</summary><ul>{p.luckyTime.reasons.filter(reason => ["favorable_choghadiya", "supportive_panchang_indications", "supportive_chandrabalam"].includes(reason) || reason.startsWith("tara:")).slice(0,5).map((reason,index)=><li key={index}>{personalReasonLabel(reason,lang)}</li>)}</ul></details> : null}
+        <small>{l(lang,"अङ्क परम्परागत ज्योतिषीय सङ्केतको सापेक्ष क्रम हो, सफलताको सम्भाव्यता वा ग्यारेन्टी होइन।","The score is a relative ranking of traditional astrological signals, not a probability or guarantee of success.")}</small>
       </div>
     </article>
     {ashtama && <div className="mt-astro-alert" role="status"><CircleAlert size={20}/><div><strong>{l(lang,"अष्टम चन्द्र सचेतना","Ashtama Chandra indication")}</strong><p>{l(lang,"परम्परागत रूपमा सावधानीको संकेत; यो निश्चित हानि वा परिणामको भविष्यवाणी होइन।","A traditional caution indication, not a prediction of harm or a definite outcome.")}</p></div></div>}
