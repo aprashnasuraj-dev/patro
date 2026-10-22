@@ -19,9 +19,11 @@ function archiveInstant(value: unknown, confidence: "high" | "unverified" = "unv
   const parsed = new Date(value);
   return Number.isFinite(parsed.getTime()) ? { instantUtc: parsed.toISOString(), source: "archive", confidence } : null;
 }
-function namedElement(value: unknown, confidence: "high" | "unverified"): Partial<PanchangElement> {
+function namedElement(value: unknown, confidence: "high" | "unverified", kind: "tithi" | "other"): Partial<PanchangElement> {
   const item = asObject(value) as Named;
-  const index = numberOrNull(item.number) ?? numberOrNull(item.index);
+  // The static schema documents Tithi number (1..30); other numeric conventions are not assumed.
+  const candidate = kind === "tithi" ? numberOrNull(item.number) : numberOrNull(item.index);
+  const index = candidate !== null && (kind === "tithi" ? candidate >= 1 && candidate <= 30 : candidate >= 0 && candidate <= 26) ? candidate : null;
   return {
     ...(index !== null ? { index } : {}),
     ...(stringOrNull(item.ne) ?? stringOrNull(item.name_ne) ? { nameNe: stringOrNull(item.ne) ?? stringOrNull(item.name_ne) } : {}),
@@ -39,8 +41,8 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
   if (row.ad !== dateAd || !row.bs || !row.panchang?.tithi) throw new Error("archive_row_incomplete");
   const p = asObject(row.panchang);
   const confidence = "unverified" as const; // Packaged archive has no per-field audited confidence guarantee.
-  const tithi = namedElement(p.tithi, confidence);
-  const nk = namedElement(p.nakshatra, confidence);
+  const tithi = namedElement(p.tithi, confidence, "tithi");
+  const nk = namedElement(p.nakshatra, confidence, "other");
   const nak = asObject(p.nakshatra);
   const pada = numberOrNull(nak.pada) ?? numberOrNull(p.nakshatra_pada);
   return {
@@ -50,8 +52,8 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
     elements: {
       tithi,
       nakshatra: { ...nk, pada: pada !== null && pada >= 1 && pada <= 4 ? pada : calculated.elements.nakshatra.pada },
-      yoga: namedElement(p.yoga, confidence),
-      karana: namedElement(p.karana, confidence)
+      yoga: namedElement(p.yoga, confidence, "other"),
+      karana: namedElement(p.karana, confidence, "other")
     }
   };
 }
