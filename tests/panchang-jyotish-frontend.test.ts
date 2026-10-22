@@ -49,6 +49,21 @@ describe("bilingual feature-first visual obligations", () => {
     expect(planets).toContain("symbol={planetIcon(item.a.key)}");
     const wheel = source("src/panchang-jyotish/workspaces/PlanetWheel.tsx");
     expect(wheel).toContain("<FeatureGlyph featureId=\"F046\"");
+    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
+    expect(jyotish).toContain('symbol="moon"');
+    expect(jyotish).toContain('symbol="nakshatra"');
+    expect(jyotish).toContain('symbol="ascendant"');
+    expect(jyotish).toContain('symbol={planetIcon(planet.key)}');
+    const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
+    expect(regional).toContain('FeatureGlyph featureId={item.featureId}');
+    expect(regional).toContain('FeatureGlyph featureId={item.id}');
+    const planets = source("src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx");
+    expect(planets).toContain('symbol={planetIcon(item.key)}');
+    expect(planets).toContain('symbol={planetIcon(item.planet.key)}');
+    expect(planets).toContain('symbol={planetIcon(item.a.key)}');
+    expect(planets).toContain('symbol={planetIcon(item.b.key)}');
+    expect(planets).toContain('symbol={item.degree===0||item.degree===180?"seasons":"sun"}');
+    expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-wheel-key b .ap-pj-icon");
     expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-icon-label .ap-pj-icon");
     expect(Object.keys(FEATURE_REFERENCE_GUIDES)).toHaveLength(29);
     for (const item of PATRO_FEATURES.filter(feature => getFeatureAvailability(feature) === "reference")) {
