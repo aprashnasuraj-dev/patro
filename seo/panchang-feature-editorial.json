@@ -187,8 +187,8 @@
       "group": "panchang",
       "titleNe": "पञ्चक",
       "titleEn": "Panchak",
-      "descriptionNe": "धनिष्ठादेखि रेवतीसम्मको परम्परागत नक्षत्र अवधि।",
-      "descriptionEn": "Traditional Nakshatra period from Dhanishtha through Revati.",
+      "descriptionNe": "धनिष्ठाको तेस्रो पाद (निरयण चन्द्र ३००°) देखि रेवतीको अन्त्यसम्मको सम्भावित पञ्चक अवधि।",
+      "descriptionEn": "Candidate Panchak interval from Dhanishtha Pada 3 (300° sidereal Moon longitude) through the end of Revati.",
       "href": "/panchang#panchak"
     },
     {
@@ -196,8 +196,8 @@
       "group": "panchang",
       "titleNe": "गण्डमूल",
       "titleEn": "Ganda Moola",
-      "descriptionNe": "परम्परागत गण्डमूल नक्षत्र र यसको समय।",
-      "descriptionEn": "Traditional Ganda Moola Nakshatra intervals.",
+      "descriptionNe": "छ नक्षत्रहरूको सम्भावित गण्डमूल अवधि; गण्डान्तसँग अलग।",
+      "descriptionEn": "Candidate Ganda Moola intervals for six Nakshatras, distinct from Gandanta.",
       "href": "/panchang#ganda-moola"
     },
     {
