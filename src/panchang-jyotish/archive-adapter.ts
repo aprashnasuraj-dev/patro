@@ -3,7 +3,12 @@ import { KATHMANDU } from "../patro-tools/core/types";
 import { defaultPanchang } from "../patro-tools/core/provider";
 import { fromCalculatedDay, mergeVerifiedArchive, type PanchangDayContractV1, type PanchangElement, type PanchangInstant, type VerifiedArchiveOverlay } from "./contract";
 
-type Named = { number?: unknown; index?: unknown; ne?: unknown; en?: unknown; name_ne?: unknown; name_en?: unknown; name?: unknown; end_npt?: unknown; start_npt?: unknown; ends_npt?: unknown; starts_npt?: unknown };
+type Named = {
+  number?: unknown; index?: unknown; ne?: unknown; en?: unknown;
+  name_ne?: unknown; name_en?: unknown; name?: unknown;
+  tithi_name_ne?: unknown; tithi_name_en?: unknown; tithi_ne?: unknown; tithi_en?: unknown;
+  end_npt?: unknown; start_npt?: unknown; ends_npt?: unknown; starts_npt?: unknown;
+};
 const asObject = (value: unknown): Record<string, unknown> => value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
 const numberOrNull = (value: unknown) => typeof value === "number" && Number.isInteger(value) ? value : null;
 const stringOrNull = (value: unknown) => typeof value === "string" && value.trim() ? value.trim() : null;
@@ -89,23 +94,61 @@ function archiveNptClock(dateAd: string, value: unknown, confidence: "high" | "u
 function archiveNptBoundary(value: unknown, dateAd: string, confidence: "high" | "unverified"): PanchangInstant | null {
   return archiveNptClock(dateAd, value, confidence);
 }
-function archivedTithiTransition(value: unknown, dateAd: string, confidence: "high" | "unverified"): PanchangInstant | null {
+/**
+ * The generated static calendar uses Kathmandu wall-clock values for its clock/minute
+ * fields. Require that location/timezone contract before anchoring a clock to the row's
+ * civil date; explicit-offset ISO instants remain unambiguous independently.
+ */
+function archiveLocalTimezone(panchang: Record<string, unknown>): string | null {
+  const explicit = stringOrNull(panchang.timezone);
+  if (explicit) return explicit;
+  const location = stringOrNull(panchang.location)?.toLocaleLowerCase("en") ?? "";
+  return location.includes("kathmandu") ? "Asia/Kathmandu" : null;
+}
+function archiveTransitionValue(value: unknown, dateAd: string, timezone: string | null, confidence: "high" | "unverified"): PanchangInstant | null {
+  const absolute = archiveInstant(value, confidence);
+  if (absolute) return absolute;
+  return timezone === "Asia/Kathmandu" ? archiveNptClock(dateAd, value, confidence) : null;
+}
+function archivedTithiTransition(value: unknown, dateAd: string, timezone: string | null, confidence: "high" | "unverified"): PanchangInstant | null {
   const transition = asObject(value);
-  const byTime = archiveNptClock(dateAd, transition.time, confidence);
-  const byMinutes = archiveNptClock(dateAd, transition.minutes, confidence);
-  if (byTime && byMinutes && byTime.instantUtc !== byMinutes.instantUtc) return null;
-  return byTime ?? byMinutes;
+  // Current records use snake_case + {time, minutes}; legacy records may use camelCase
+  // and absolute aliases. Available representations must agree before one is accepted.
+  const explicitValues = [transition.at, transition.iso, typeof transition.timestamp === "string" ? transition.timestamp : null]
+    .filter((candidate): candidate is string => typeof candidate === "string");
+  const candidates: PanchangInstant[] = [];
+  for (const candidate of explicitValues) {
+    const parsed = archiveInstant(candidate, confidence);
+    if (parsed) candidates.push(parsed);
+  }
+  const byTime = archiveTransitionValue(transition.time, dateAd, timezone, confidence);
+  const byMinutes = archiveTransitionValue(transition.minutes, dateAd, timezone, confidence);
+  if (byTime) candidates.push(byTime);
+  if (byMinutes) candidates.push(byMinutes);
+  if (!candidates.length) return null;
+  if (new Set(candidates.map((candidate) => candidate.instantUtc)).size !== 1) return null;
+  return candidates[0];
 }
 
-function namedElement(value: unknown, dateAd: string, confidence: "high" | "unverified", kind: "tithi" | "other"): Partial<PanchangElement> {
+function namedElement(value: unknown, dateAd: string, confidence: "high" | "unverified", kind: "tithi" | "nakshatra" | "other"): Partial<PanchangElement> {
   const item = asObject(value) as Named;
-  // The static schema documents Tithi number (1..30); other numeric conventions are not assumed.
-  const candidate = kind === "tithi" ? numberOrNull(item.number) : numberOrNull(item.index);
-  const index = candidate !== null && (kind === "tithi" ? candidate >= 1 && candidate <= 30 : candidate >= 0 && candidate <= 26) ? candidate : null;
-  const nameNe=stringOrNull(item.ne) ?? stringOrNull(item.name_ne);
-  const nameEn=stringOrNull(item.en) ?? stringOrNull(item.name_en);
-  const starts=archiveNptBoundary(item.starts_npt ?? item.start_npt, dateAd, confidence);
-  const ends=archiveNptBoundary(item.ends_npt ?? item.end_npt, dateAd, confidence);
+  let index: number | null = null;
+  if (kind === "tithi") {
+    const number = numberOrNull(item.number);
+    if (number !== null && number >= 1 && number <= 30) index = number;
+  } else if (kind === "nakshatra") {
+    const number = numberOrNull(item.number);
+    const directIndex = numberOrNull(item.index);
+    if (number !== null && number >= 1 && number <= 27) index = number - 1;
+    else if (directIndex !== null && directIndex >= 0 && directIndex <= 26) index = directIndex;
+  } else {
+    const candidate = numberOrNull(item.index);
+    if (candidate !== null && candidate >= 0 && candidate <= 26) index = candidate;
+  }
+  const nameNe = stringOrNull(item.ne) ?? stringOrNull(item.name_ne) ?? stringOrNull(item.tithi_name_ne) ?? stringOrNull(item.tithi_ne);
+  const nameEn = stringOrNull(item.en) ?? stringOrNull(item.name_en) ?? stringOrNull(item.tithi_name_en) ?? stringOrNull(item.tithi_en);
+  const starts = archiveNptBoundary(item.starts_npt ?? item.start_npt, dateAd, confidence);
+  const ends = archiveNptBoundary(item.ends_npt ?? item.end_npt, dateAd, confidence);
   return {
     ...(index !== null ? { index } : {}),
     ...(nameNe ? { nameNe } : {}),
@@ -128,11 +171,12 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
   if (row.ad !== dateAd || !row.bs || !row.panchang?.tithi) throw new Error("archive_row_incomplete");
   const p = asObject(row.panchang);
   const confidence = "unverified" as const; // Packaged archive has no per-field audited confidence guarantee.
+  const localTimezone = archiveLocalTimezone(p);
   const tithi = namedElement(p.tithi, dateAd, confidence, "tithi");
-  const transitionEnd = archivedTithiTransition(p.tithi_transition, dateAd, confidence);
+  const transitionEnd = archivedTithiTransition(p.tithi_transition ?? p.tithiTransition, dateAd, localTimezone, confidence);
   const tithiWithBoundary = tithi.ends || !transitionEnd ? tithi : { ...tithi, ends: transitionEnd };
   const nak = asObject(p.nakshatra);
-  const nk = namedElement(p.nakshatra, dateAd, confidence, "other");
+  const nk = namedElement(p.nakshatra, dateAd, confidence, "nakshatra");
   const pada = numberOrNull(nak.pada) ?? numberOrNull(p.nakshatra_pada);
   const elements: VerifiedArchiveOverlay["elements"] = {
     ...(Object.keys(tithiWithBoundary).length ? { tithi: tithiWithBoundary } : {}),
@@ -142,13 +186,16 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
     ...(Object.keys(namedElement(p.yoga, dateAd, confidence, "other")).length ? { yoga: namedElement(p.yoga, dateAd, confidence, "other") } : {}),
     ...(Object.keys(namedElement(p.karana, dateAd, confidence, "other")).length ? { karana: namedElement(p.karana, dateAd, confidence, "other") } : {})
   };
-  const location = stringOrNull(p.location)?.toLocaleLowerCase("en") ?? "";
-  const archiveIsKathmandu = location.includes("kathmandu");
+  const archiveIsKathmandu = localTimezone === "Asia/Kathmandu";
   const sunrise = archiveIsKathmandu ? archiveNptClock(dateAd, p.sunrise, confidence) : null;
   const sunset = archiveIsKathmandu ? archiveNptClock(dateAd, p.sunset, confidence) : null;
   const ns = nsValues(row.ns ?? row.nepal_sambat);
+  const archiveSource = stringOrNull(p.source) ?? stringOrNull(row.source);
+  const sourceId = archiveSource ? "static-calendar-archive:" + archiveSource : "existing-calendar-year-archive";
   return {
-    dateAd, timezone: "Asia/Kathmandu", sourceId: "existing-calendar-year-archive",
+    dateAd, timezone: "Asia/Kathmandu", sourceId,
+    reportedSource: archiveSource,
+    reportedVerifiedAt: stringOrNull(row.verified_at) ?? stringOrNull(p.verified_at),
     confidence, bs: { year: row.bs.year, month: row.bs.month, day: row.bs.day },
     nepalSambat: ns.ne,
     nepalSambatEn: ns.en,

@@ -10,8 +10,8 @@
 | Five HTML5 group hubs | FeatureGroupHub and feature-group-hub.css | Breadcrumbs, concise group hero, bilingual feature search, availability filters, navigation, selected-feature details and related groups |
 | Feature-specific editorial experience | FeatureExperience, feature-experience.css and FEATURE_SYMBOL | Ninety-one addressed spotlight states; meaningful, AafnaiPatro-branded symbols; five visually distinct CSS themes; accessible headings, focus styles and reduced motion |
 | Existing experience (17) | catalog disposition reuse | Direct canonical navigation; no copy of an existing engine, route or user profile |
-| Browser preview (45) | five lazy workspaces and reusable components | A calculated or exploratory module loaded only when requested or directly linked; not described as independently validated |
-| Reference/source-review (29) | feature-reference-guides.ts | Individual bilingual explanation and exact outstanding source/rule condition for each feature; no manufactured festival date or prediction |
+| Browser preview (47) | five lazy workspaces and reusable components | A calculated or exploratory module loaded only when requested or directly linked; not described as independently validated |
+| Reference/source-review (27) | feature-reference-guides.ts | Individual bilingual explanation and exact outstanding source/rule condition for each feature; no manufactured festival date or prediction |
 | Daily Panchang | PanchangWorkspace, DaylightArc, static archive adapter, versioned contract | Daylight arc, BS/NS where archived, Tithi/Paksha/Nakshatra/Yoga/Karana, local day windows, 12/24/24+ timeline with archive-vs-calculation disclaimer |
 | Muhurat | MuhuratWorkspace and MuhuratDayRibbon | Actual sunrise-scaled interval visualization, date-range table, existing Sait entry and explicit official-publication distinction |
 | Jyotish | JyotishWorkspace and read-existing-birth | Existing birth-chart context, natal table and opt-in additional calculator surfaces; no new birth profile |
@@ -45,3 +45,15 @@
 ## Remaining release blockers
 
 The crosswalk remains 91/91 **presented** but not 91/91 fully implemented/verified. The 29 reference features have specific copy, not production rule algorithms. Exact archive transitions, Nepal observance precedence, independent comparison tolerances, performance profiling and mobile screenshots remain unverified. No UI-source change should be equated with passing these release gates.
+
+
+## Acceptance status ledger — branch snapshot 2026-10-22
+
+The per-feature CSV now includes an explicit `release_status` field. The current classifications are **17 partial**, **47 implemented-but-unverified**, **27 blocked**, and **0 verified**.
+
+- **Partial (17):** the existing canonical destination is identified and reused; route-level and bilingual browser smoke checks have not been run.
+- **Implemented-but-unverified (47):** a browser workspace is implemented and addressable, but TypeScript, numerical fixtures, regression tests and bilingual visual review remain unexecuted.
+- **Blocked (27):** source/rule validation or substantive implementation remains incomplete. These must stay explanatory/reference-only and must not present a date-specific ritual result as authoritative.
+- **Verified (0):** no runtime or test result is marked verified because this continuation has not run the local toolchain or a browser session.
+
+**Release blocker:** TypeScript, focused archive/catalog tests, the full regression suite, production build and Nepali/English browser checks remain pending. Test columns remain `NOT_RUN`, and every pre-PR gate remains `BLOCKED`.

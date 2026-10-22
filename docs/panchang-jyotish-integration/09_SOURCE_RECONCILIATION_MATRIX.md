@@ -59,3 +59,12 @@ F021 (Panchak) and F022 (Ganda Moola) are the two moves from reference-only to c
 4. Run existing calendar/JanmaPatro/My Time regression suites and verify protected-path bytes.
 5. Build, prerender, measure output and run the 320/375/768/1024/1440px Nepali/English keyboard/light/dark route matrix.
 6. Only after results are real, update each CSV/checklist status. Do not change a gate to PASS based on source inspection alone.
+
+
+## Archive payload inspection — 2026-10-22 branch follow-up
+
+The generated static payload was traced through `scripts/build-client-calendar.mjs` to `lib/patro.mjs` and the source row in `migration/data/public/astronomy_calendar_map/part-074.json` for AD **2026-10-22**. The observed row uses `ad`, `bs`, `ns.formatted/formatted_ne`, and `panchang.tithi` with one-based `number`, bilingual `ne/en`, and `paksha`; the transition fields are `panchang.tithi_transition.time` and `.minutes`, while daylight is `panchang.sunrise/sunset` as NPT wall clocks and `panchang.location = "Kathmandu, Nepal"`. That sample has no Nakshatra row.
+
+The adapter mirrors that observed shape: it normalizes one-based `nakshatra.number` only when that field exists, accepts both transition key casings and explicit-offset transition aliases, rejects contradictory representations of the same boundary, and refuses to attach archive-local clocks if an explicit timezone conflicts with Kathmandu. Archive metadata is preserved separately as reported source/timestamp; it does not increase the confidence tier. The observed generated row has no independent per-field audit evidence, so archive-provided facts remain `confidence: "unverified"`. Missing elements remain calculated/unavailable rather than being relabelled as archived.
+
+Regression tests were added for the real 2026 payload shape, the 2037 `time + minutes` boundary, Nakshatra's one-based number convention, camelCase/offset timestamps, conflicting boundaries, unqualified clocks and a conflicting timezone. **These tests have been authored but not executed.**

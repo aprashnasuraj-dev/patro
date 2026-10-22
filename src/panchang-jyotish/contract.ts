@@ -29,6 +29,13 @@ export interface PanchangDayContractV1 {
     nepalSambatEn?: string | null;
   };
   calculatedAtUtc: string | null;
+  /** Reported archive metadata is preserved separately from independent verification. */
+  archiveProvenance: null | {
+    sourceId: string;
+    reportedSource: string | null;
+    reportedVerifiedAt: string | null;
+    confidence: PanchangConfidence;
+  };
   method: { ayanamsha: string; referenceInstant: "sunrise" | "selected"; engineVersion: string };
   elements: {
     tithi: PanchangElement;
@@ -58,6 +65,7 @@ export function fromCalculatedDay(day: DayPanchang, location: GeoLocation, engin
     location: { latitude: location.lat, longitude: location.lon, altitudeM: location.height, label: location.name },
     calendars: { bs: null, nepalSambat: null, nepalSambatEn: null },
     calculatedAtUtc: day.sunrise.toISOString(),
+    archiveProvenance: null,
     method: { ayanamsha: "existing-linear-Lahiri-approximation", referenceInstant: "sunrise", engineVersion },
     elements: {
       tithi: { ...element(day.tithi, "calculated"), ends: instant(day.tithiEnds, "calculated") },
@@ -84,6 +92,9 @@ export type VerifiedArchiveOverlay = {
   sun?: Partial<PanchangDayContractV1["sun"]>;
   moon?: Partial<PanchangDayContractV1["moon"]>;
   sourceId: string;
+  /** Values reported by the archive do not themselves establish accuracy. */
+  reportedSource?: string | null;
+  reportedVerifiedAt?: string | null;
   confidence: PanchangConfidence;
 };
 export function mergeVerifiedArchive(calculated: PanchangDayContractV1, archive: VerifiedArchiveOverlay): PanchangDayContractV1 {
@@ -114,6 +125,12 @@ export function mergeVerifiedArchive(calculated: PanchangDayContractV1, archive:
       nepalSambatEn: archive.nepalSambatEn ?? calculated.calendars.nepalSambatEn ?? null
     },
     elements,
+    archiveProvenance: {
+      sourceId: archive.sourceId,
+      reportedSource: archive.reportedSource ?? null,
+      reportedVerifiedAt: archive.reportedVerifiedAt ?? null,
+      confidence: archive.confidence
+    },
     sun: { ...calculated.sun, ...archive.sun },
     moon: { ...calculated.moon, ...archive.moon },
     discrepancies
