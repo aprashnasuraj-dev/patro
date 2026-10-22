@@ -3,6 +3,7 @@ import type { FeatureGroupId, PatroFeature } from "./catalog";
 import { FEATURE_GROUPS, getFeaturesForGroup, getFeatureAvailability } from "./catalog";
 import { useUiLanguage, l } from "../useUiLanguage";
 import { FeatureExperience } from "./FeatureExperience";
+import { WorkspaceErrorBoundary } from "./WorkspaceErrorBoundary";
 import "./feature-experience.css";
 import "./feature-group-hub.css";
 
@@ -54,6 +55,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
 
   useEffect(() => {
     const sync = () => { const id = featureFromHash(groupId); setActiveFeature(id); setWorkspaceRequested(Boolean(id && getFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview"))); };
+    sync();
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, [groupId]);
@@ -108,9 +110,9 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
         </header>
         {selected && <FeatureExperience feature={selected} group={groupId} language={language} onNavigate={openFeature} />}
         <div className="ap-pj-calculator" id="ap-pj-calculator">
-          {showWorkspace ? <Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
+          {showWorkspace ? <WorkspaceErrorBoundary language={language} resetKey={groupId + ":" + (activeFeature ?? "overview")}><Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
             <Workspace language={language} selectedFeatureId={activeFeature} />
-          </Suspense> : <div className="ap-pj-launch-panel">
+          </Suspense></WorkspaceErrorBoundary> : <div className="ap-pj-launch-panel">
             <span aria-hidden="true" className="ap-pj-launch-emblem">{group.icon}</span>
             <div><h3>{selectedAvailability === "existing" ? l(language, "पहिलेकै उपकरण सुरक्षित छ", "Your existing tool is preserved") : selectedAvailability === "reference" ? l(language, "स्रोतमा आधारित जानकारी", "Source-based reference") : l(language, "आफ्नो गणक सुरु गर्नुहोस्", "Start your calculator")}</h3>
             <p>{selectedAvailability === "existing" ? l(language, "सम्बन्धित मूल पेजमा जाँदा पुरानै कार्यप्रणाली प्रयोग हुन्छ।", "The original destination retains its own functionality.") : selectedAvailability === "reference" ? l(language, "नियम वा स्रोत पुष्टि नहुँदा निश्चित व्यक्तिगत वा पर्व-सम्बन्धी गणना यहाँ देखाइँदैन।", "Definitive personal or observance results remain unavailable until the relevant rules or sources are verified.") : l(language, "उपकरण खोलेपछि मात्र आवश्यक गणना कोड डाउनलोड र चल्छ।", "Calculation code is downloaded and executed only after you open the tool.")}</p></div>
