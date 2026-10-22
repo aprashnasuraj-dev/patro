@@ -60,6 +60,13 @@ function archiveInstant(value: unknown, confidence: "high" | "unverified" = "unv
   const parsed = new Date(value);
   return Number.isFinite(parsed.getTime()) ? { instantUtc: parsed.toISOString(), source: "archive", confidence } : null;
 }
+/** Accept absolute instants only when an explicit UTC offset is present. */
+function archiveExplicitInstant(value: unknown, confidence: "high" | "unverified" = "unverified"): PanchangInstant | null {
+  if (typeof value !== "string") return null;
+  if (!/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d+)?)?(?:Z|[+-]\\d{2}:\\d{2})$/.test(value)) return null;
+  return archiveInstant(value, confidence);
+}
+
 /** Interpret a row-scoped HH:mm value only when the field's contract says it is NPT. */
 function archiveNptClock(dateAd: string, value: unknown, confidence: "high" | "unverified" = "unverified"): PanchangInstant | null {
   if (typeof value === "number") {
@@ -106,7 +113,9 @@ function archiveLocalTimezone(panchang: Record<string, unknown>): string | null 
   return location.includes("kathmandu") ? "Asia/Kathmandu" : null;
 }
 function archiveTransitionValue(value: unknown, dateAd: string, timezone: string | null, confidence: "high" | "unverified"): PanchangInstant | null {
-  const absolute = archiveInstant(value, confidence);
+  // A generic transition field is not *_npt: do not interpret an unzoned date-time
+  // as Nepal time unless the row's location/timezone contract establishes Kathmandu.
+  const absolute = archiveExplicitInstant(value, confidence);
   if (absolute) return absolute;
   return timezone === "Asia/Kathmandu" ? archiveNptClock(dateAd, value, confidence) : null;
 }
@@ -118,7 +127,7 @@ function archivedTithiTransition(value: unknown, dateAd: string, timezone: strin
     .filter((candidate): candidate is string => typeof candidate === "string");
   const candidates: PanchangInstant[] = [];
   for (const candidate of explicitValues) {
-    const parsed = archiveInstant(candidate, confidence);
+    const parsed = archiveExplicitInstant(candidate, confidence);
     if (parsed) candidates.push(parsed);
   }
   const byTime = archiveTransitionValue(transition.time, dateAd, timezone, confidence);

@@ -153,7 +153,20 @@ describe("existing static archive adapter", () => {
     }, fallback);
     expect(overlay.elements?.tithi?.ends?.instantUtc).toBe("2037-02-03T03:20:00.000Z");
   });
-  it("does not interpret local wall clocks under a conflicting timezone", () => {
+  it("accepts an unzoned date-time transition only when Kathmandu timezone is established", () => {
+    const date = "2037-02-03";
+    const fallback = fromCalculatedDay(defaultPanchang.day(date), KATHMANDU);
+    const overlay = overlayFromStaticArchive(date, {
+      ad: date, bs: { year: 2093, month: 10, day: 21 },
+      panchang: {
+        location: "Kathmandu, Nepal",
+        tithi: { number: 18, paksha: "Krishna Paksha" },
+        tithi_transition: { time: "2037-02-03 09:05:00", minutes: 545 }
+      }
+    }, fallback);
+    expect(overlay.elements?.tithi?.ends?.instantUtc).toBe("2037-02-03T03:20:00.000Z");
+  });
+  it("does not interpret unzoned date-time aliases or local clocks under a conflicting timezone", () => {
     const date = "2037-02-03";
     const fallback = fromCalculatedDay(defaultPanchang.day(date), KATHMANDU);
     const overlay = overlayFromStaticArchive(date, {
@@ -161,7 +174,7 @@ describe("existing static archive adapter", () => {
       panchang: {
         timezone: "Europe/London", location: "Kathmandu, Nepal",
         tithi: { number: 18, paksha: "Krishna Paksha" },
-        tithi_transition: { time: "09:05", minutes: 545 },
+        tithiTransition: { at: "2037-02-03T09:05:00", time: "2037-02-03 09:05:00", minutes: 545 },
         sunrise: "06:49", sunset: "17:45"
       }
     }, fallback);
