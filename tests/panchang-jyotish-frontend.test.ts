@@ -22,8 +22,16 @@ describe("bilingual feature-first visual obligations", () => {
     expect(Object.values(FEATURE_ICON_BY_ID).every(symbol => FEATURE_ICON_SYMBOLS.includes(symbol as typeof FEATURE_ICON_SYMBOLS[number]))).toBe(true);
     expect(iconComponent).toContain('href={"/icons/panchang-jyotish.svg#"+icon}');
     expect(iconComponent).not.toContain("https://");
+    expect(iconSprite).toContain('<symbol id="search"');
+    expect(FEATURE_GROUPS.every(group => FEATURE_ICON_BY_ID[group.iconFeatureId])).toBe(true);
     expect(source("src/panchang-jyotish/FeatureGroupHub.tsx")).toContain('<FeatureGlyph featureId={item.id} size="card"');
     expect(source("src/panchang-jyotish/FeatureExperience.tsx")).toContain('<FeatureGlyph featureId={feature.id} size="hero"');
+    const hubSource = source("src/panchang-jyotish/FeatureGroupHub.tsx");
+    expect(hubSource).toContain("featureId={group.iconFeatureId} size=\"hero\"");
+    expect(hubSource).toContain("featureId={item.iconFeatureId} size=\"card\"");
+    expect(hubSource).toContain('symbol="search"');
+    expect(hubSource).not.toContain("{group.icon}");
+    expect(hubSource).not.toContain("{item.icon}");
 
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     expect(panchang).toContain('symbol="sun"');
@@ -57,8 +65,9 @@ describe("bilingual feature-first visual obligations", () => {
     const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
     expect(regional).toContain('FeatureGlyph featureId={item.featureId}');
     expect(regional).toContain('FeatureGlyph featureId={item.id}');
-    const planets = source("src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx");
-    expect(planets).toContain('symbol={planetIcon(item.key)}');
+    expect(regional).toContain('symbol="search"');
+    expect(regional).toContain('featureId="F090" size="inline"');
+    expect(regional).not.toContain("⌕");
     expect(planets).toContain('symbol={planetIcon(item.planet.key)}');
     expect(planets).toContain('symbol={planetIcon(item.a.key)}');
     expect(planets).toContain('symbol={planetIcon(item.b.key)}');
@@ -66,16 +75,13 @@ describe("bilingual feature-first visual obligations", () => {
     expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-wheel-key b .ap-pj-icon");
     expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-icon-label .ap-pj-icon");
 
-    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
-    expect(jyotish).toContain('symbol="moon"');
-    expect(jyotish).toContain('symbol="nakshatra"');
-    expect(jyotish).toContain('symbol="ascendant"');
     expect(jyotish).toContain('symbol="shield"');
     expect(jyotish).toContain('symbol={planetIcon(planet.key)}');
     expect(jyotish).toContain('symbol="orbit"');
     const glyphSource = source("src/panchang-jyotish/FeatureGlyph.tsx");
     expect(glyphSource).toContain('aria-hidden={decorative}');
-    expect(glyphSource).toContain('title={decorative ? undefined : title}');
+    expect(glyphSource).toContain('aria-label={decorative ? undefined : label}');
+    expect(glyphSource).toContain("<title>{label}</title>");
     expect(glyphSource).toContain('href={"/icons/panchang-jyotish.svg#"+icon}');
     expect(Object.keys(FEATURE_REFERENCE_GUIDES)).toHaveLength(29);
     for (const item of PATRO_FEATURES.filter(feature => getFeatureAvailability(feature) === "reference")) {
@@ -105,6 +111,9 @@ describe("bilingual feature-first visual obligations", () => {
     expect(hub).toContain("useUiLanguage()");
     expect(experience).toContain("l(language,feature.titleNe,feature.titleEn)");
     expect(experience).not.toContain("{feature.id}</span>");
+    expect(experience).toContain('symbol="document"');
+    expect(experience).toContain('symbol="shield"');
+    expect(experience).toContain('<FeatureGlyph featureId={item.id} size="inline" />');
     expect(hub).not.toMatch(/setLanguage\(|localStorage\.setItem\(/);
   });
 
