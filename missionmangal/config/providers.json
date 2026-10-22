@@ -1,0 +1,35 @@
+{
+  "note": "User-reported GitHub secret keys; existence, limits and actual values cannot be read by this connector. Names with spaces require exact secret lookup and normalized environment mapping. disabled until officially vetted.",
+  "providers": [
+    {
+      "id": "siliconflow",
+      "github_secret": "siliconflow_api",
+      "enabled": false
+    },
+    {
+      "id": "groq",
+      "github_secret": "groq_api",
+      "enabled": false
+    },
+    {
+      "id": "openrouter",
+      "github_secret": "openrouter",
+      "enabled": false
+    },
+    {
+      "id": "gemini",
+      "github_secret": "Gemini API Key",
+      "enabled": false
+    },
+    {
+      "id": "pollinations",
+      "github_secret": "pollinations",
+      "enabled": false
+    },
+    {
+      "id": "healthy-crab",
+      "github_secret": "healthy-crab api",
+      "enabled": false
+    }
+  ]
+}

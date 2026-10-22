@@ -1,0 +1,10 @@
+name: Mission Mangal deploy (disabled manual template)
+on: workflow_dispatch
+permissions: {contents: read}
+jobs:
+  deploy:
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Disabled until explicitly approved integration with existing Worker and routes"
+# No root Cloudflare/Vite deployment changes.

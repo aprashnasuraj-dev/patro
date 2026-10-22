@@ -1,0 +1,10 @@
+{
+  "id": "sample-hold",
+  "title": "Placeholder evidence package — NOT PUBLISHABLE",
+  "intent": "Demonstrate package validator without representing factual research",
+  "status": "blocked",
+  "original_contribution": "This example is deliberately incomplete and must fail all publication checks.",
+  "sources": [],
+  "claims": [],
+  "media": []
+}
