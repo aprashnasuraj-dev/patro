@@ -239,6 +239,21 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).not.toContain("calculateSiderealPlanetPositions(new Date()).find((item)=>item.key===\"saturn\")||null,[]");
   });
 
+  it("makes Pancha Pakshi, gemstone and Rudraksha reference cards open their specific guide", () => {
+    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
+    expect(jyotish).toContain('const reference=getFeatureById(card.id)');
+    expect(jyotish).toContain('href={reference.href}');
+    expect(jyotish).toContain('className="ap-pjw-secondary"');
+    expect(jyotish).toContain("actionNe");
+    expect(jyotish).toContain("actionEn");
+    for (const [id, hash] of [["F029", "pancha-pakshi"], ["F030", "gemstone"], ["F031", "rudraksha"]]) {
+      const feature = PATRO_FEATURES.find(item => item.id === id);
+      expect(feature && getFeatureAvailability(feature)).toBe("reference");
+      expect(feature?.href).toBe("/jyotish#" + hash);
+    }
+    expect(jyotish).toContain("Reference only · source review pending");
+  });
+
   it("exposes Panchak/Ganda Moola only as caveated candidate calculators", () => {
     const catalog = source("src/panchang-jyotish/catalog.ts");
     const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
