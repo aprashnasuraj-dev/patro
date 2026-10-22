@@ -215,24 +215,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
     <a className="rh-my-time-entry" href="/mytime"><span className="rh-my-time-orb">◉</span><span><strong>{l(language, "मेरो समय", "My Time")}</strong><small>{l(language, "तपाईंको स्थान, आकाश र पञ्चाङ्गलाई एउटै जीवित ड्यासबोर्डमा अनुभव गर्नुहोस्।", "Explore your local time, sky and Panchang in one connected dashboard.")}</small></span><b aria-hidden="true">↗</b></a>
     <HomeWeather language={language} today={today} />
 
-    <section className="rh-card rh-pj-discovery" aria-labelledby="rh-pj-discovery-title">
-      <header className="rh-pj-discovery-head">
-        <div><span className="rh-kicker">{l(language,"आजको पञ्चाङ्ग र उपयोगी गणक","Today's Panchang & useful tools")}</span><h2 id="rh-pj-discovery-title">{l(language,"पात्रोबाट आफ्नो आवश्यक गणकमा जानुहोस्","Go from the calendar to the tool you need")}</h2><p>{l(language,"तिथि, नक्षत्र, शुभ समय, जन्मपत्रो र ग्रहस्थिति एउटै ठाउँबाट खोल्नुहोस्।","Open Tithi, Nakshatra, auspicious timing, birth-chart and planetary tools from one place.")}</p></div>
-        <a href={`/panchang?date=${today}`} className="rh-pj-primary-link">{l(language,"आजको पञ्चाङ्ग","Today's Panchang")} ↗</a>
-      </header>
-      <div className="rh-pj-hub-grid">
-        {[
-          ["/panchang","☾","दैनिक पञ्चाङ्ग","Daily Panchang","तिथि, नक्षत्र र दिनका समयखण्ड।","Tithi, Nakshatra and daily windows."],
-          ["/muhurat","✦","शुभ साइत","Auspicious timing","स्थानीय समयखण्ड र साइत नियम।","Local time windows and Sait rules."],
-          ["/jyotish","✧","ज्योतिष गणक","Jyotish calculators","जन्मपत्रो, राशि र नक्षत्र।","Birth chart, Rashi and Nakshatra."],
-          ["/planets","◎","ग्रह र खगोल","Planets & astronomy","ग्रहस्थिति र आकाशीय घटना।","Planet positions and sky events."],
-          ["/nepal-calendar","▦","नेपाली संवत्","Nepal calendars","वि.सं., नेपाल संवत् र समुदाय पात्रो।","BS, Nepal Sambat and community calendars."]
-        ].map(([href,icon,ne,en,descNe,descEn])=><a className="rh-pj-hub-card" href={href==="/panchang"?`/panchang?date=${today}`:href} key={href}>
-          <span className="rh-pj-hub-icon" aria-hidden="true">{icon}</span><span className="rh-pj-hub-copy"><strong>{l(language,ne,en)}</strong><small>{l(language,descNe,descEn)}</small></span><span className="rh-pj-hub-arrow" aria-hidden="true">↗</span>
-        </a>)}
-      </div>
-      <div className="rh-pj-discovery-foot"><span>{l(language,"सबै ९१ सुविधा पाँच समूहमा व्यवस्थित छन्।","All 91 features are organized into five groups.")}</span><a href="/tools">{l(language,"सबै उपकरण हेर्नुहोस्","Browse all tools")} →</a></div>
-    </section>
+
 
     <div className="rh-actions" aria-label={l(language, "मुख्य छिटो कार्य", "Quick actions")}>
       <a href="/rashifal"><b>१२</b><span>{l(language, "राशिफल", "Rashifal")}</span></a>
@@ -294,5 +277,24 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
         <DeferredHomeSkyFact language={language} />
       </aside>
     </div>
+
+    <section className="rh-card rh-pj-discovery" aria-labelledby="rh-pj-discovery-title">
+      <header className="rh-pj-discovery-head">
+        <div><span className="rh-kicker">{l(language,"आजको पञ्चाङ्ग र उपयोगी गणक","Today's Panchang & useful tools")}</span><h2 id="rh-pj-discovery-title">{l(language,"पात्रोबाट आफ्नो आवश्यक गणकमा जानुहोस्","Go from the calendar to the tool you need")}</h2><p>{l(language,"तिथि, नक्षत्र, शुभ समय, जन्मपत्रो र ग्रहस्थिति एउटै ठाउँबाट खोल्नुहोस्।","Open Tithi, Nakshatra, auspicious timing, birth-chart and planetary tools from one place.")}</p></div>
+        <a href={`/panchang?date=${today}`} className="rh-pj-primary-link">{l(language,"आजको पञ्चाङ्ग","Today's Panchang")} ↗</a>
+      </header>
+      <div className="rh-pj-hub-grid">
+        {[
+          ["/panchang","☾","दैनिक पञ्चाङ्ग","Daily Panchang","तिथि, नक्षत्र र दिनका समयखण्ड।","Tithi, Nakshatra and daily windows."],
+          ["/muhurat","✦","शुभ साइत","Auspicious timing","स्थानीय समयखण्ड र साइत नियम।","Local time windows and Sait rules."],
+          ["/jyotish","✧","ज्योतिष गणक","Jyotish calculators","जन्मपत्रो, राशि र नक्षत्र।","Birth chart, Rashi and Nakshatra."],
+          ["/planets","◎","ग्रह र खगोल","Planets & astronomy","ग्रहस्थिति र आकाशीय घटना।","Planet positions and sky events."],
+          ["/nepal-calendar","▦","नेपाली संवत्","Nepal calendars","वि.सं., नेपाल संवत् र समुदाय पात्रो।","BS, Nepal Sambat and community calendars."]
+        ].map(([href,icon,ne,en,descNe,descEn])=><a className="rh-pj-hub-card" href={href==="/panchang"?`/panchang?date=${today}`:href} key={href}>
+          <span className="rh-pj-hub-icon" aria-hidden="true">{icon}</span><span className="rh-pj-hub-copy"><strong>{l(language,ne,en)}</strong><small>{l(language,descNe,descEn)}</small></span><span className="rh-pj-hub-arrow" aria-hidden="true">↗</span>
+        </a>)}
+      </div>
+      <div className="rh-pj-discovery-foot"><span>{l(language,"सबै ९१ सुविधा पाँच समूहमा व्यवस्थित छन्।","All 91 features are organized into five groups.")}</span><a href="/tools">{l(language,"सबै उपकरण हेर्नुहोस्","Browse all tools")} →</a></div>
+    </section>
   </main>;
 }
