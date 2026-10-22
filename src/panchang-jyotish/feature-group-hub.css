@@ -35,3 +35,17 @@
 @media(prefers-reduced-motion:reduce){.ap-pj-feature-card{transition:none}.ap-pj-feature-card:hover{transform:none}}
 
 .ap-pj-feature-status{display:block;margin-top:2px;font-size:.73rem!important;font-weight:750;letter-spacing:.005em;opacity:.75;color:#176f3b}
+
+/* Feature-first exploration: all controls remain keyboard operable and do not prefetch computation. */
+.ap-pj-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.ap-pj-filters button{appearance:none;display:inline-flex;align-items:center;gap:8px;min-height:40px;border-radius:999px;border:1px solid rgba(127,127,127,.24);padding:8px 13px;background:color-mix(in srgb,currentColor 2%,transparent);font:inherit;font-size:.84rem;font-weight:760;color:inherit;cursor:pointer}
+.ap-pj-filters button span{display:inline-grid;place-items:center;min-width:23px;padding:2px 5px;border-radius:999px;font-variant-numeric:tabular-nums;background:rgba(127,127,127,.12);font-size:.72rem}
+.ap-pj-filters button.is-selected{background:rgba(23,111,59,.12);border-color:rgba(23,111,59,.48)}
+.ap-pj-filters button:hover{border-color:rgba(23,111,59,.45)}
+.ap-pj-filters button:focus-visible,.ap-pj-launch-panel button:focus-visible,.ap-pj-launch-panel a:focus-visible{outline:3px solid #bb8d3a;outline-offset:3px}
+.ap-pj-launch-panel{display:grid;grid-template-columns:55px minmax(0,1fr) auto;align-items:center;gap:16px;padding:19px;border:1px dashed rgba(23,111,59,.28);border-radius:19px;background:linear-gradient(125deg,rgba(23,111,59,.065),rgba(199,157,68,.04))}
+.ap-pj-launch-emblem{display:grid;place-items:center;width:52px;height:52px;border-radius:17px;background:rgba(23,111,59,.09);color:#247344;font-size:1.7rem}
+.ap-pj-launch-panel h3{margin:0 0 5px;font-size:1.06rem}.ap-pj-launch-panel p{margin:0;max-width:620px;line-height:1.58;font-size:.88rem;opacity:.74}
+.ap-pj-launch-panel .ap-pjw-primary,.ap-pj-launch-panel .ap-pjw-secondary{white-space:nowrap}
+.ap-pj-feature-card.is-active{box-shadow:inset 3px 0 #247344}
+@media(max-width:650px){.ap-pj-launch-panel{grid-template-columns:42px 1fr;padding:14px;gap:10px}.ap-pj-launch-emblem{width:42px;height:42px;border-radius:13px}.ap-pj-launch-panel .ap-pjw-primary,.ap-pj-launch-panel .ap-pjw-secondary{grid-column:1/-1;justify-self:start}.ap-pj-filters{gap:6px}.ap-pj-filters button{padding:7px 10px;font-size:.77rem}}
