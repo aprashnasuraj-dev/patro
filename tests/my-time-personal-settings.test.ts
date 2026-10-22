@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DEFAULT_MY_TIME_PERSONAL_SETTINGS, MY_TIME_PERSONAL_KEY, normalizeMyTimePersonalSettings, readMyTimePersonalSettings, saveMyTimePersonalSettings } from "../src/features/my-time/my-time-personal-settings";
+import { DEFAULT_MY_TIME_PERSONAL_SETTINGS, MY_TIME_PERSONAL_KEY, RETIRED_MY_TIME_EVENTS_BACKUP_KEY, normalizeMyTimePersonalSettings, readMyTimePersonalSettings, saveMyTimePersonalSettings } from "../src/features/my-time/my-time-personal-settings";
 
 describe("My Time view preferences migration", () => {
   it("keeps only working view settings, never dead alerts", () => {
@@ -21,5 +21,6 @@ describe("My Time view preferences migration", () => {
     const view = readMyTimePersonalSettings(storage);
     saveMyTimePersonalSettings(view,storage);
     expect(JSON.parse(data.get(MY_TIME_PERSONAL_KEY)!)).toEqual({setupComplete:true,lens:"panchang",interests:["work"]});
+    expect(JSON.parse(data.get(RETIRED_MY_TIME_EVENTS_BACKUP_KEY)!)).toEqual([{title:"legacy"}]);
   });
 });
