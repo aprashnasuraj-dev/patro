@@ -65,3 +65,19 @@
 .ap-pjw-daylight-caption>span:nth-child(2){opacity:.64;max-width:140px}
 .ap-pjw-daylight-caption strong{font-variant-numeric:tabular-nums;font-size:.98rem}
 @media(max-width:480px){.ap-pjw-daylight{padding:9px}.ap-pjw-daylight-caption>span:nth-child(2){font-size:.66rem}.ap-pjw-daylight-caption strong{font-size:.85rem}}
+
+/* Muhurat daylight timeline: widths/positions come from calculated sunrise-based intervals. */
+.ap-pjw-muhurat-ribbon{margin:14px 0;padding:15px;border-radius:18px;border:1px solid rgba(188,128,37,.24);background:linear-gradient(145deg,rgba(199,157,68,.09),rgba(23,111,59,.025));min-width:0}
+.ap-pjw-muhurat-ribbon figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.ap-pjw-muhurat-ribbon figcaption strong{font-size:.98rem}.ap-pjw-muhurat-ribbon figcaption small{opacity:.65}
+.ap-pjw-ribbon-axis{display:flex;justify-content:space-between;gap:12px;font-size:.76rem;font-weight:750;font-variant-numeric:tabular-nums}
+.ap-pjw-ribbon-axis span:nth-child(2){opacity:.55}
+.ap-pjw-ribbon-track{position:relative;height:10px;margin:8px 0 13px;border-radius:999px;background:linear-gradient(90deg,#9b7940,#e3be75 46%,#528967)}
+.ap-pjw-ribbon-track i{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.5)}
+.ap-pjw-ribbon-lanes{display:grid;gap:11px}.ap-pjw-ribbon-lane{display:grid;grid-template-columns:minmax(90px,125px) minmax(0,1fr) minmax(90px,145px);align-items:center;gap:10px}
+.ap-pjw-ribbon-lane>span{font-size:.83rem;font-weight:800}.ap-pjw-ribbon-lane>small{text-align:right;font-size:.76rem;font-variant-numeric:tabular-nums;opacity:.8}
+.ap-pjw-ribbon-lane-track{position:relative;height:17px;border-radius:999px;background:rgba(127,127,127,.1);overflow:hidden}
+.ap-pjw-ribbon-lane-track::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(12.5% - 1px),rgba(127,127,127,.17) calc(12.5% - 1px),rgba(127,127,127,.17) 12.5%)}
+.ap-pjw-ribbon-span{position:absolute;top:2px;bottom:2px;z-index:1;border-radius:999px;min-width:2px}
+.ap-pjw-ribbon-span.is-auspicious{background:#27794c}.ap-pjw-ribbon-span.is-caution{background:#b47634}.ap-pjw-ribbon-span.is-yama{background:#8e6598}.ap-pjw-ribbon-span.is-gulika{background:#557f94}
+.ap-pjw-muhurat-ribbon>p{margin:13px 0 0;font-size:.77rem;line-height:1.55;opacity:.66}
+@media(max-width:640px){.ap-pjw-muhurat-ribbon{padding:11px}.ap-pjw-ribbon-lane{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ap-pjw-ribbon-lane-track{grid-column:1/-1;grid-row:2}.ap-pjw-ribbon-lane>small{grid-column:2;grid-row:1}.ap-pjw-ribbon-lane>span{grid-column:1;grid-row:1}.ap-pjw-muhurat-ribbon figcaption{align-items:flex-start;flex-direction:column;gap:3px}}
