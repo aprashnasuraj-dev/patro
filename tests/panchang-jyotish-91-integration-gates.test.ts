@@ -56,6 +56,39 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
       expect(workspace).not.toContain("patro.ui.language");
     }
   });
+  it("preserves original destinations by confirming their current route owners",()=>{
+    const optimized=source("worker/optimized-entry.ts");
+    const growth=source("worker/growth/index.ts");
+    const moon=source("worker/growth/moon-pages.ts");
+    const eclipse=source("worker/growth/eclipse-pages.ts");
+    const prerender=source("scripts/prerender-growth.mjs");
+    const connected=source("worker/connected-entry.ts");
+    const entry=source("worker/entry.ts");
+    const byId=(id:string)=>PATRO_FEATURES.find(feature=>feature.id===id)!;
+
+    // Keep the catalog's original destinations; these pages belong to the existing growth route owner.
+    expect(byId("F014").href).toBe("/moon");
+    expect(byId("F069").href).toBe("/moon");
+    expect(byId("F070").href).toBe("/eclipse");
+    expect(byId("F071").href).toBe("/eclipse");
+    expect(optimized).toContain('import { growthPageResponse } from "./growth"');
+    expect(growth).toContain("moonPageResponse");
+    expect(growth).toContain("eclipsePageResponse");
+    expect(moon).toContain('url: siteOrigin(env) + "/moon"');
+    expect(eclipse).toContain('eclipseHub: "/eclipse"');
+    expect(prerender).toContain("growthStaticPages");
+    expect(prerender).toContain("await mod.growthStaticPages");
+
+    // Other reused routes remain owned by their existing SPA/tool destinations.
+    expect(connected).toContain('"/mytime"');
+    expect(connected).toContain('"/janmapatro"');
+    expect(connected).toContain('"/janmapatro/milan.html"');
+    expect(connected).toContain('"/rashifal"');
+    expect(connected).toContain('"/nepal-sambat/mandala"');
+    expect(connected).toContain('"/samudaya"');
+    expect(entry).toContain('"sait"');
+    expect(entry).toContain('"baby-names"');
+  });
   it("keeps all features addressable, unique and in their canonical group or existing route",()=>{
     expect(validateFeatureCatalog().valid).toBe(true);
     const hashes=new Set<string>();
