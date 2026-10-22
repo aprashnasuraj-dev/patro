@@ -61,7 +61,7 @@ async function scanIngresses(startDate:string,days:number,bodyFilter:string,canc
     previousDate=date;previous=current;
     if(day%2===0)await yieldToBrowser();
   }
-  return output;
+  return output.sort((a,b)=>a.instant.getTime()-b.instant.getTime());
 }
 
 async function scanStations(startDate:string,days:number,cancelled:ScanCancelled):Promise<StationEvent[]|null>{
@@ -87,7 +87,7 @@ async function scanStations(startDate:string,days:number,cancelled:ScanCancelled
     previousDate=date;previous=current;
     if(day%2===0)await yieldToBrowser();
   }
-  return output;
+  return output.sort((a,b)=>a.instant.getTime()-b.instant.getTime());
 }
 
 async function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:string,cancelled:ScanCancelled):Promise<NakshatraEvent[]|null>{
