@@ -202,8 +202,12 @@ const FUNCTIONAL_BROWSER_ENTRIES = new Set([
   "F046","F047","F048","F049","F050","F051","F053","F054","F072","F073","F074","F075","F076","F078"
 ]);
 export type FeatureAvailability = "existing" | "browser-preview" | "reference";
+// These two features can compute Nakshatra membership intervals, but their output
+// remains explicitly a candidate until Nepal-specific source/observance review passes.
+const CANDIDATE_ONLY_SOURCE_REVIEW_PREVIEWS = new Set(["F021", "F022"]);
 export function getFeatureAvailability(feature: PatroFeature): FeatureAvailability {
   if (feature.disposition === "reuse") return "existing";
+  if (CANDIDATE_ONLY_SOURCE_REVIEW_PREVIEWS.has(feature.id)) return "browser-preview";
   if (feature.disposition === "source-review" || !FUNCTIONAL_BROWSER_ENTRIES.has(feature.id)) return "reference";
   return "browser-preview";
 }
