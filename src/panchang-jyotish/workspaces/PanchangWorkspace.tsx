@@ -65,6 +65,17 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   const p = computed?.day;
   const contract = resolved?.date === date ? resolved.value : (p ? fromCalculatedDay(p, KATHMANDU) : null);
   const archiveLoaded = resolved?.date === date && resolved.archive === "loaded";
+  // Keep existing archive sunrise/sunset distinct from the local astronomical fallback.
+  const archivedSunrise = archiveLoaded && contract?.sun.sunrise?.source === "archive" && contract.sun.sunrise.instantUtc
+    ? new Date(contract.sun.sunrise.instantUtc) : null;
+  const archivedSunset = archiveLoaded && contract?.sun.sunset?.source === "archive" && contract.sun.sunset.instantUtc
+    ? new Date(contract.sun.sunset.instantUtc) : null;
+  const displaySunrise = archivedSunrise ?? p?.sunrise ?? null;
+  const displaySunset = archivedSunset ?? p?.sunset ?? null;
+  const solarArchiveDiffers = Boolean(p && (
+    (archivedSunrise && Math.abs(archivedSunrise.getTime() - p.sunrise.getTime()) > 120_000) ||
+    (archivedSunset && Math.abs(archivedSunset.getTime() - p.sunset.getTime()) > 120_000)
+  ));
   const at = p ? panchangAt(p.sunrise) : null;
   const windows = computed?.windows;
   const nakEnd = p ? nextFieldTransition(p.sunrise, "nakshatra") : null;
@@ -111,6 +122,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     </div>
     {!computed || !p || !at || !windows ? <div className="ap-pjw-empty">{l(language, "यो मितिका लागि स्थानीय सूर्योदय उपलब्ध छैन। फरक मिति वा स्थान छान्नुहोस्।", "Local sunrise is unavailable for this date. Choose another date or location.")}</div> : <>
       <p className="ap-pjw-method" role="status">{archiveLoaded ? l(language, "मौजुदा पात्रो अभिलेख उपलब्ध छ। अभिलेखमा नभएका समयहरू अलग गणनात्मक अनुमान हुन्।", "Existing calendar archive loaded. Times not supplied by the archive remain separately calculated estimates.") : l(language, "यो दृश्य स्थानीय गणनाबाट बनेको हो; अभिलेख लोड नभएसम्म प्रकाशित मिति वा समयको आधिकारिक पुष्टि मान्नु हुँदैन।", "This view is calculated locally. Do not treat dates or times as officially verified while the archive is unavailable or loading.")}</p>
+      {solarArchiveDiffers && <p className="ap-pjw-note" role="status">{l(language, "अभिलेख र स्थानीय सूर्य-समय गणनामा २ मिनेटभन्दा बढी फरक छ। सूर्य-समयमा अभिलेखको मान छुट्टै देखाइएको छ; दिनका परम्परागत खण्ड भने स्थानीय गणनाबाट निकालिएका हुन्।", "Archived and locally calculated solar times differ by more than two minutes. The archive value is shown for the solar-time fields; traditional day windows still use the local calculation.")}</p>}
       <div className="ap-pjw-date-heading">
         <div><span>{l(language, "नेपालको स्थानीय मिति", "Nepal local date")}</span><h3>{localDateLabel(date, language)}</h3></div>
         <div className="ap-pjw-meta"><strong>{contract?.calendars.bs ? l(language, "वि.सं. " + toNepaliDigits(contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day), "BS " + contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day) : l(language, "वि.सं. अभिलेख खुल्दैछ", "BS archive loading")}</strong><small>{contract?.calendars.nepalSambat ? l(language, contract.calendars.nepalSambat, contract.calendars.nepalSambatEn ?? contract.calendars.nepalSambat) : l(language, "नेपाल संवत्: अभिलेखमा उपलब्ध भएमा", "Nepal Sambat: when available in archive")}</small></div>
@@ -145,9 +157,9 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       </section>
       <DaylightArc day={p} language={language}/>
       <div className="ap-pjw-solar">
-        <article><span>☀ {l(language, "सूर्योदय", "Sunrise")}</span><strong>{formatLocalTime(p.sunrise, language)}</strong></article>
-        <article><span>☀ {l(language, "सूर्यास्त", "Sunset")}</span><strong>{formatLocalTime(p.sunset, language)}</strong></article>
-        <article><span>◷ {l(language, "दिनमान", "Daylight")}</span><strong>{formatDuration(p.sunrise, p.sunset, language)}</strong></article>
+        <article><span>☀ {l(language, "सूर्योदय", "Sunrise")}</span><strong>{formatLocalTime(displaySunrise, language)}</strong><small>{archivedSunrise ? l(language, "अभिलेख · स्वतन्त्र अडिट बाँकी", "Archive · independent audit pending") : l(language, "गणनात्मक अनुमान", "Calculated estimate")}</small></article>
+        <article><span>☀ {l(language, "सूर्यास्त", "Sunset")}</span><strong>{formatLocalTime(displaySunset, language)}</strong><small>{archivedSunset ? l(language, "अभिलेख · स्वतन्त्र अडिट बाँकी", "Archive · independent audit pending") : l(language, "गणनात्मक अनुमान", "Calculated estimate")}</small></article>
+        <article><span>◷ {l(language, "दिनमान", "Daylight")}</span><strong>{displaySunrise && displaySunset ? formatDuration(displaySunrise, displaySunset, language) : "—"}</strong><small>{archivedSunrise && archivedSunset ? l(language, "अभिलेखका समयबाट", "From archived times") : l(language, "गणनात्मक समयबाट", "From calculated times")}</small></article>
       </div>
 
       <section className="ap-pjw-card">
