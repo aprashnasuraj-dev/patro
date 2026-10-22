@@ -37,6 +37,31 @@ describe("existing static archive adapter", () => {
     }, fallback);
     expect(overlay.elements?.tithi?.ends).toBeUndefined();
   });
+  it("converts explicitly NPT-qualified archive transition wall clocks to UTC", () => {
+    const date = "2026-10-22";
+    const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
+    const overlay = overlayFromStaticArchive(date, {
+      ad: date, bs: { year: 2083, month: 7, day: 5 },
+      panchang: {
+        tithi: { number: 11, paksha: "shukla", start_npt: "2026-10-21 14:27:24", end_npt: "2026-10-22 15:03:36" },
+        nakshatra: { index: 21, end_npt: "2026-10-22T21:04:15+05:45" }
+      }
+    }, fallback);
+    expect(overlay.elements?.tithi?.starts?.instantUtc).toBe("2026-10-21T08:42:24.000Z");
+    expect(overlay.elements?.tithi?.ends?.instantUtc).toBe("2026-10-22T09:18:36.000Z");
+    expect(overlay.elements?.nakshatra?.ends?.instantUtc).toBe("2026-10-22T15:19:15.000Z");
+  });
+  it("rejects ambiguous clocks and impossible civil dates without inventing timestamps", () => {
+    const date = "2026-10-22";
+    const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
+    for (const end_npt of ["14:45", "2026-02-30 10:00:00", "2026-10-22T25:00:00Z"]) {
+      const overlay = overlayFromStaticArchive(date, {
+        ad: date, bs: { year: 2083, month: 7, day: 5 },
+        panchang: { tithi: { number: 11, paksha: "shukla", end_npt } }
+      }, fallback);
+      expect(overlay.elements?.tithi?.ends).toBeUndefined();
+    }
+  });
   it("rejects a row for the wrong civil date before merge", () => {
     const date = "2026-10-22";
     const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
