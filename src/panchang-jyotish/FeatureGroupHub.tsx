@@ -36,7 +36,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const group = FEATURE_GROUPS.find((item) => item.id === groupId) ?? FEATURE_GROUPS[0];
   const [query, setQuery] = useState("");
   const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview" | "reference">("all");
-  const [workspaceRequested, setWorkspaceRequested] = useState(false);
+  const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
   const features = useMemo(() => getFeaturesForGroup(groupId), [groupId]);
   const selected = features.find(item => item.id === activeFeature) ?? null;
@@ -45,7 +45,6 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const showWorkspace = workspaceRequested && (!selected || selectedAvailability === "browser-preview");
   const matches = useMemo(() => {
     const q = query.trim().toLocaleLowerCase();
-    if (!q) return features;
     return features.filter((item) =>
       (availabilityFilter === "all" || getFeatureAvailability(item) === availabilityFilter) &&
       [item.titleNe, item.titleEn, item.descriptionNe, item.descriptionEn, item.id]
@@ -54,7 +53,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   }, [features, query, availabilityFilter]);
 
   useEffect(() => {
-    const sync = () => { const id = featureFromHash(groupId); setActiveFeature(id); setWorkspaceRequested(Boolean(id && getFeatureAvailability(getFeaturesForGroup(groupId).find(item => item.id === id)!) === "browser-preview")); };
+    const sync = () => { const id = featureFromHash(groupId); setActiveFeature(id); setWorkspaceRequested(Boolean(id && getFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview"))); };
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, [groupId]);
