@@ -11,7 +11,7 @@ type Props={language:"ne"|"en";selectedFeatureId?:string|null};
 const PLANET_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द्र",Mars:"मङ्गल",Mercury:"बुध",Jupiter:"बृहस्पति",Venus:"शुक्र",Saturn:"शनि",Rahu:"राहु",Ketu:"केतु"};
 const SIGNS_NE=["मेष","वृष","मिथुन","कर्कट","सिंह","कन्या","तुला","वृश्चिक","धनु","मकर","कुम्भ","मीन"];
 const SIGNS_EN=["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
-const ASPECTS=[{angle:0,ne:"युति",en:"Conjunction"},{angle:60,ne:"षडाष्टक कोण (६०°)",en:"Sextile"},{angle:90,ne:"चतुर्थ कोण (९०°)",en:"Square"},{angle:120,ne:"त्रिकोण (१२०°)",en:"Trine"},{angle:180,ne:"प्रतियुति (१८०°)",en:"Opposition"}];
+const ASPECTS=[{angle:0,ne:"युति (०°)",en:"Conjunction (0°)"},{angle:30,ne:"अर्धषडाष्टक कोण (३०°)",en:"Semi-sextile (30°)"},{angle:45,ne:"अर्धचतुर्थ कोण (४५°)",en:"Semi-square (45°)"},{angle:60,ne:"षडाष्टक कोण (६०°)",en:"Sextile (60°)"},{angle:90,ne:"चतुर्थ कोण (९०°)",en:"Square (90°)"},{angle:120,ne:"त्रिकोण (१२०°)",en:"Trine (120°)"},{angle:135,ne:"डेढचतुर्थ कोण (१३५°)",en:"Sesquiquadrate (135°)"},{angle:150,ne:"क्विन्कन्क्स कोण (१५०°)",en:"Quincunx (150°)"},{angle:180,ne:"प्रतियुति (१८०°)",en:"Opposition (180°)"}];
 const RETROGRADE_KEYS=new Set(["mercury","venus","mars","jupiter","saturn"]);
 function angleDistance(a:number,b:number){const d=Math.abs((a-b+540)%360-180);return Math.min(d,360-d);}
 function signedAngle(value:number){return ((value%360)+540)%360-180;}
@@ -160,11 +160,14 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const [body,setBody]=useState("all");
   const [searchMode,setSearchMode]=useState<"ingress"|"nakshatra"|"station"|"season">(()=>selectedFeatureId==="F048"?"nakshatra":selectedFeatureId==="F051"||selectedFeatureId==="F078"?"station":selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075"?"season":"ingress");
   const [runScan,setRunScan]=useState(false);
+  const [aspectTarget,setAspectTarget]=useState(()=>selectedFeatureId==="F049"?"0":"all");
+  const [aspectOrb,setAspectOrb]=useState("2.5");
   const [scanRequest,setScanRequest]=useState(0);
   const [scanState,setScanState]=useState<"idle"|"running"|"done"|"error">("idle");
   const [scanError,setScanError]=useState("");
   const [events,setEvents]=useState<PlanetEventScan>(EMPTY_SCAN);
   useEffect(()=>{if(selectedFeatureId==="F048")setSearchMode("nakshatra");else if(selectedFeatureId==="F051"||selectedFeatureId==="F078")setSearchMode("station");else if(selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075")setSearchMode("season");else if(selectedFeatureId==="F047")setSearchMode("ingress");setRunScan(false);setScanState("idle");setEvents(EMPTY_SCAN);setScanError("");},[selectedFeatureId]);
+  useEffect(()=>{if(selectedFeatureId==="F049")setAspectTarget("0");else if(selectedFeatureId==="F050")setAspectTarget("all");},[selectedFeatureId]);
   const [natalChart,setNatalChart]=useState<ChartResult|null>(null);
   const [natalContextChecked,setNatalContextChecked]=useState(false);
   useEffect(()=>{let active=true;try{const birth=readExistingJanmaPatroBirth();if(!birth){if(active)setNatalChart(null);return;}const timezone=birth.timezone||"Asia/Kathmandu";const result=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});if(active)setNatalChart(result);}catch{if(active)setNatalChart(null);}finally{if(active)setNatalContextChecked(true);}return()=>{active=false;}},[]);
@@ -173,12 +176,17 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const sunPosition=positions.find(item=>item.key==="sun");
   const aspects=useMemo(()=>{
     const results:Array<{a:SiderealPlanetPosition;b:SiderealPlanetPosition;target:number;orb:number}>=[];
+    const tolerance=Number(aspectOrb);
     for(let i=0;i<positions.length;i++)for(let j=i+1;j<positions.length;j++){
       const a=positions[i],b=positions[j],separation=angleDistance(a.longitude,b.longitude);
-      for(const aspect of ASPECTS){const orb=Math.abs(separation-aspect.angle);if(orb<=2.5)results.push({a,b,target:aspect.angle,orb});}
+      for(const aspect of ASPECTS){
+        if(aspectTarget!=="all"&&String(aspect.angle)!==aspectTarget)continue;
+        const orb=Math.abs(separation-aspect.angle);
+        if(orb<=tolerance)results.push({a,b,target:aspect.angle,orb});
+      }
     }
-    return results.sort((a,b)=>a.orb-b.orb).slice(0,20);
-  },[positions]);
+    return results.sort((a,b)=>a.orb-b.orb).slice(0,50);
+  },[positions,aspectTarget,aspectOrb]);
   useEffect(()=>{
     if(!runScan||!validIsoDate(date)){setEvents(EMPTY_SCAN);setScanState("idle");setScanError("");return;}
     let active=true;
@@ -245,6 +253,20 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
     </section>
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"निकट कोणीय सम्बन्ध","Nearby angular aspects")}</h3><small>{l(language,"अधिकतम २.५° ओर्ब","Maximum 2.5° orb")}</small></div>
+      <div className="ap-pjw-filter-row">
+        <label>{l(language,"कोण छान्नुहोस्","Aspect angle")}
+          <select className="ap-pjw-select" value={aspectTarget} onChange={event=>setAspectTarget(event.target.value)}>
+            <option value="all">{l(language,"सूचीका सबै कोण","All listed angles")}</option>
+            {ASPECTS.map(aspect=><option value={String(aspect.angle)} key={aspect.angle}>{l(language,aspect.ne,aspect.en)}</option>)}
+          </select>
+        </label>
+        <label>{l(language,"सहनशीलता / ओर्ब","Tolerance / orb")}
+          <select className="ap-pjw-select" value={aspectOrb} onChange={event=>setAspectOrb(event.target.value)}>
+            {[0.5,1,2.5,3,5,8].map(value=><option value={String(value)} key={value}>{l(language,value.toLocaleString("ne-NP")+"°",value+"°")}</option>)}
+          </select>
+        </label>
+      </div>
+      <p className="ap-pjw-section-note">{l(language,"यी कोणहरू ज्यामितीय दीर्घांश तुलना हुन्; कुनै कोण आफैंमा शुभ/अशुभ भविष्यवाणी होइन। सीमा र परम्परा फरक हुन सक्छन्।","These are geometric longitude comparisons, not auspicious/inauspicious predictions. Astrological aspect conventions can vary.")}</p>
       {aspects.length?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"पहिलो ग्रह","Planet A")}</th><th>{l(language,"सम्बन्ध","Aspect")}</th><th>{l(language,"दोस्रो ग्रह","Planet B")}</th><th>{l(language,"ओर्ब","Orb")}</th></tr></thead><tbody>{aspects.map((item,index)=><tr key={item.a.key+item.b.key+item.target+index}><td>{l(language,PLANET_NE[item.a.name]||item.a.name,item.a.name)}</td><td>{l(language,ASPECTS.find(aspect=>aspect.angle===item.target)?.ne||"कोण",ASPECTS.find(aspect=>aspect.angle===item.target)?.en||"Aspect")}</td><td>{l(language,PLANET_NE[item.b.name]||item.b.name,item.b.name)}</td><td>{deg(item.orb)}</td></tr>)}</tbody></table></div>:<div className="ap-pjw-empty">{l(language,"यो समयमा २.५° भित्रको मानक कोणीय सम्बन्ध फेला परेन।","No standard aspect within a 2.5° orb was found at this instant.")}</div>}
     </section>
     {focusText&&<p className="ap-pjw-note">{l(language,"ग्रह अस्तको परम्परागत सीमा ग्रहअनुसार फरक हुन्छ। यहाँ सूर्यबाट कोणीय दूरीको आधार उपलब्ध भए पनि कुनै सीमा स्रोत-पुष्टि नगरी निश्चित धार्मिक निर्णयका रूपमा देखाइँदैन।","Traditional combustion limits vary by planet. Angular distances from the Sun can be calculated, but no religious conclusion is presented without a source-reviewed threshold.")}</p>}
