@@ -94,7 +94,6 @@ export function dayWindows(day: DayPanchang, previousSunset: Date, nextSunrise: 
     end: new Date(day.sunrise.getTime() + segment * eighth),
     segment
   });
-  const night = nextSunrise.getTime() - day.sunset.getTime();
   const previousNight = day.sunrise.getTime() - previousSunset.getTime();
   return {
     rahu: window(rahuSegment),
