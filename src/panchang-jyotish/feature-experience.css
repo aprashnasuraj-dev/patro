@@ -32,7 +32,7 @@
 .ap-pj-experience-next{display:grid;gap:10px;padding:13px clamp(16px,3vw,28px) 17px;border-top:1px solid rgba(127,127,127,.14)}
 .ap-pj-experience-next>span{font-size:.76rem;font-weight:850;opacity:.7}.ap-pj-experience-next>div{display:flex;flex-wrap:wrap;gap:8px}
 .ap-pj-experience-next a{display:inline-flex;gap:8px;align-items:center;color:inherit;text-decoration:none;font-size:.81rem;font-weight:800;padding:8px 11px;border-radius:11px;border:1px solid rgba(127,127,127,.2);background:color-mix(in srgb,currentColor 2%,transparent)}
-.ap-pj-experience-next a:hover{border-color:var(--pj-accent)}.ap-pj-experience-next a span{color:var(--pj-accent)}
+.ap-pj-experience-next a:hover{border-color:var(--pj-accent)}.ap-pj-experience-next a span{color:var(--pj-accent)}.ap-pj-experience-next a>.ap-pj-icon{display:block;flex:0 0 16px;width:16px;height:16px;color:var(--pj-accent);stroke:currentColor;fill:none}
 .ap-pj-calculator{scroll-margin-top:24px}
 @media(max-width:680px){.ap-pj-experience-top{grid-template-columns:90px minmax(0,1fr);align-items:start;gap:11px}.ap-pj-experience-art{height:115px}.ap-pj-experience-orbit--center{width:50px;height:50px;font-size:1.9rem}.ap-pj-experience-glyph{width:30px;height:30px}.ap-pj-experience-topline{gap:5px}.ap-pj-experience-topline span{padding:4px 7px;font-size:.67rem}.ap-pj-experience-kicker{margin-top:9px!important}.ap-pj-experience-intro h3{font-size:1.24rem}.ap-pj-experience-intro>p:not(.ap-pj-experience-kicker){font-size:.85rem}.ap-pj-experience-bottom{grid-template-columns:1fr}.ap-pj-experience-journey,.ap-pj-experience-trust{padding:13px}}
 @media(max-width:400px){.ap-pj-experience-top{grid-template-columns:1fr}.ap-pj-experience-art{height:80px;max-width:150px;justify-self:center}.ap-pj-experience-orbit--outer{height:79px}.ap-pj-experience-orbit--inner{height:58px}.ap-pj-experience-orbit--center{width:42px;height:42px;font-size:1.6rem}.ap-pj-experience-glyph{width:25px;height:25px}}
@@ -64,6 +64,6 @@
 /* Topic-specific references are editorial notes, never simulated prediction cards. */
 .ap-pj-experience-reference{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 clamp(16px,3vw,28px) 17px}
 .ap-pj-experience-reference>div{min-width:0;padding:15px;border:1px solid color-mix(in srgb,var(--pj-accent) 21%,transparent);border-radius:15px;background:color-mix(in srgb,var(--pj-accent) 5%,transparent)}
-.ap-pj-experience-reference h4{font-size:.86rem;line-height:1.45;color:var(--pj-accent);margin:0 0 7px}
+.ap-pj-experience-reference h4{font-size:.86rem;line-height:1.45;color:var(--pj-accent);margin:0 0 7px}.ap-pj-experience-reference .ap-pj-reference-heading{display:flex;align-items:flex-start;gap:8px}.ap-pj-reference-heading .ap-pj-icon{display:block;flex:0 0 17px;width:17px;height:17px;margin-top:1px;color:var(--pj-accent);stroke:currentColor;fill:none}
 .ap-pj-experience-reference p{font-size:.85rem;line-height:1.65;margin:0;opacity:.78}
 @media(max-width:680px){.ap-pj-experience-reference{grid-template-columns:1fr}.ap-pj-experience-reference>div{padding:13px}}
