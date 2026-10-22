@@ -22,7 +22,7 @@ The release registry now uses the explicit `source-review` disposition for 26 en
 | ID | Root cause | Validated rule or exact remaining task | Release evidence required |
 |---|---|---|---|
 | F010 | astronomy-boundary | compare Tithi at 3 successive Nepal sunrises; verify kshaya/vriddhi and observance precedence | archive sunrise and transition fixtures |
-| F021 | astronomy-rule | Browser implementation now finds continuous intervals for one-based Nakshatra membership 23–27, refined from 6-hour brackets; candidate output only | Independent Nepal-local published interval comparison, exception/ritual policy, start/end fixtures and source review still required; not a definitive Muhurat |
+| F021 | astronomy-rule | Browser implementation finds candidate intervals from 300° sidereal lunar longitude (Dhanishtha Pada 3) through 360°/end of Revati, refined from 6-hour brackets; candidate output only | Independent Nepal-local published interval comparison, exception/ritual policy, start/end fixtures and source review still required; not a definitive Muhurat |
 | F022 | astronomy-rule | Browser implementation now finds continuous intervals for the six one-based Nakshatra memberships 1, 9, 10, 18, 19, 27; candidate output only and does not infer natal consequences | Independent Nepal-local published interval comparison, exact boundaries, region/ritual rules and source review still required; Gandanta remains distinct |
 | F024 | source-variant | 28th Abhijit Nakshatra requires a separate 28-division convention; do not infer from 27-star Muhurta | classical text and exact longitude convention |
 | F026 | observance | Shraddha needs ritual-window and Tithi overlap rules rather than sunrise-only Tithi | Nepal published observance calendar |
