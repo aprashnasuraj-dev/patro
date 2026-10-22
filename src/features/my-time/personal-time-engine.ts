@@ -93,7 +93,14 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
     });
   }
   const weightTotal = components.reduce((sum, item) => sum + item.weight, 0);
-  const score = Math.round(components.reduce((sum, item) => sum + item.score * item.weight, 0) / weightTotal);
+  const weightedScore = Math.round(components.reduce((sum, item) => sum + item.score * item.weight, 0) / weightTotal);
+  // A strong traditional caution is a ranking constraint, not a small penalty
+  // that unrelated Rashifal/Hora components may cancel out.
+  const cautionSet = new Set(input.panchangCautions || []);
+  const score = cautionSet.has("rahu_kaal") ? Math.min(weightedScore, 44)
+    : cautionSet.has("yamaganda") ? Math.min(weightedScore, 54)
+    : cautionSet.has("gulika") ? Math.min(weightedScore, 59)
+    : weightedScore;
   const missing: string[] = [];
   if (!input.hasNatalChart) missing.push("birth-chart");
   if (readingScore === null) missing.push("matching-rashifal-domain");
@@ -106,6 +113,7 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
     : missing.length >= 3 ? "partially-personalized" : "personalized";
   const reasons = [...(input.panchangReasons || [])];
   const cautions = [...(input.panchangCautions || [])];
+  if (score !== weightedScore) cautions.push("traditional_caution_caps_overall_rank");
   for (const component of components.slice(1)) reasons.push(component.explanation);
   return {
     score, label: score >= 75 ? "supportive" : score >= 45 ? "mixed" : "caution",
