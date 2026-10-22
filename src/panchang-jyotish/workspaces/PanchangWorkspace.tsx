@@ -7,6 +7,7 @@ import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 import { resolveNepalPanchangDay } from "../archive-adapter";
 import { KATHMANDU } from "../../patro-tools/core/types";
 import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, localSunriseTithiPattern, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
+import { DaylightArc } from "./DaylightArc";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
@@ -142,6 +143,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
         </div>
         <p className="ap-pjw-section-note">{l(language, "यी गणनात्मक महिना-नाम तथा विशेष अवस्था स्थानीय प्रकाशित पात्रोको समीक्षा बिना आधिकारिक पर्व-मिति होइनन्।", "These calculated lunar-month names and special states are not official festival dates without review against the local published calendar.")}</p>
       </section>
+      <DaylightArc day={p} language={language}/>
       <div className="ap-pjw-solar">
         <article><span>☀ {l(language, "सूर्योदय", "Sunrise")}</span><strong>{formatLocalTime(p.sunrise, language)}</strong></article>
         <article><span>☀ {l(language, "सूर्यास्त", "Sunset")}</span><strong>{formatLocalTime(p.sunset, language)}</strong></article>
