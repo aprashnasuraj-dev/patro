@@ -1,6 +1,7 @@
 import type { DayPanchang } from "../../patro-tools/core/types";
 import { formatLocalTime, todayInNepal } from "./shared";
 import { l } from "../../useUiLanguage";
+import { FeatureGlyph } from "../FeatureGlyph";
 
 type Props = { day: DayPanchang; language: "ne" | "en" };
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
@@ -32,6 +33,6 @@ export function DaylightArc({ day, language }: Props) {
         <text x="160" y="139" textAnchor="middle" fill="currentColor" fontSize="16" fontWeight="800">{Math.floor(duration / 3_600_000)}h {Math.floor(duration % 3_600_000 / 60_000)}m</text>
       </svg>
     </div>
-    <figcaption className="ap-pjw-daylight-caption"><span><b>{l(language, "सूर्योदय", "Sunrise")}</b><strong>{formatLocalTime(day.sunrise, language)}</strong></span><span>{progress === null ? l(language, "छानिएको मितिको सूर्यचक्र", "Solar cycle for selected date") : l(language, "आजको वास्तविक घडीबाट", "Based on current local time")}</span><span><b>{l(language, "सूर्यास्त", "Sunset")}</b><strong>{formatLocalTime(day.sunset, language)}</strong></span></figcaption>
+    <figcaption className="ap-pjw-daylight-caption"><span><b className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunrise" size="inline"/>{l(language, "सूर्योदय", "Sunrise")}</b><strong>{formatLocalTime(day.sunrise, language)}</strong></span><span>{progress === null ? l(language, "छानिएको मितिको सूर्यचक्र", "Solar cycle for selected date") : l(language, "आजको वास्तविक घडीबाट", "Based on current local time")}</span><span><b className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunset" size="inline"/>{l(language, "सूर्यास्त", "Sunset")}</b><strong>{formatLocalTime(day.sunset, language)}</strong></span></figcaption>
   </figure>;
 }
