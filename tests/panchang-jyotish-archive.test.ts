@@ -8,7 +8,7 @@ vi.mock("../src/patro-tools-integration/staticCalendar", () => ({
   archiveDay: vi.fn(async (date: string) => ({
     ad: date,
     bs: { year: 2083, month: 7, day: 5 },
-    ns: { formatted_ne: "नेपाल संवत् ११४७" },
+    ns: { formatted: "NS 1147 Kachhalā", formatted_ne: "ने.सं. ११४७ कछला" },
     panchang: {
       tithi: { number: 11, paksha: "shukla", ne: "एकादशी", en: "Ekadashi" },
       nakshatra: { ne: "शतभिषा", en: "Shatabhisha" }
@@ -23,6 +23,8 @@ describe("existing static archive adapter", () => {
     expect(result.archive).toBe("loaded");
     expect(result.value.version).toBe("1.0.0");
     expect(result.value.calendars.bs).toEqual({ year: 2083, month: 7, day: 5 });
+    expect(result.value.calendars.nepalSambat).toBe("ने.सं. ११४७ कछला");
+    expect(result.value.calendars.nepalSambatEn).toBe("NS 1147 Kachhalā");
     expect(result.value.elements.tithi.nameNe).toBe("एकादशी");
     expect(result.value.elements.tithi.source).toBe("archive");
     expect(result.value.elements.nakshatra.nameEn).toBe("Shatabhisha");
