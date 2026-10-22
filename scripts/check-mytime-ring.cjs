@@ -17,6 +17,19 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
       body: '{"error":"forced_mytime_ring_test_failure"}'
     }));
 
+    // Synthetic fixture only: verify that an existing JanmaPatro connection is
+    // recognized in both language views without creating a separate profile.
+    await context.addInitScript(() => {
+      localStorage.setItem("aafnai.jyotish.china.context.v1", JSON.stringify({
+        rashi: { name: "वृष" }, lagna: { name: "कन्या" },
+        nakshatra: { name: "रोहिणी", pada: 2 },
+        birth: { name: "Test fixture", date: "1995-04-10", time: "08:30",
+          location: "Kathmandu", lat: 27.7172, lng: 85.324, timezone: "Asia/Kathmandu" },
+        planets: [{ planet_en: "Moon", rashi: { name: "वृष" }, house: 9 }],
+        dasha: { periods: [{ lord: "Venus", start: "2020-01-01T00:00:00.000Z", end: "2030-01-01T00:00:00.000Z" }] }
+      }));
+    });
+
     const page = await context.newPage();
     const pageErrors = [];
     page.on("pageerror", (error) => pageErrors.push(String(error)));
@@ -98,7 +111,23 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     assert.equal(overflow, false, "mobile My Time page must not introduce horizontal overflow");
     assert.deepEqual(pageErrors, [], `My Time JavaScript errors: ${pageErrors.join(" | ")}`);
 
-    console.log(`My Time main-ring browser checks passed: ${count} selectable segments, mobile tap, keyboard Enter, visible focus, selected-period explanation, and no mobile overflow.`);
+    // Verify both language branches with a connected birth-chart fixture.
+    const luckyCard = page.locator(".mt-astro-lucky-time");
+    await luckyCard.waitFor({ state: "visible", timeout: 15000 });
+    await page.locator(".mt-language-switch button").filter({ hasText: "नेपाली" }).click();
+    await page.waitForFunction(() => document.documentElement.lang === "ne");
+    assert.match(await luckyCard.innerText(), /तपाईंको व्यक्तिगत शुभ समय/, "Nepali lucky-time heading must render");
+    assert.doesNotMatch(await luckyCard.innerText(), /limited signal|score unavailable/i, "connected chart must not show a limited-score label in Nepali");
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, "Nepali mobile view must not overflow");
+
+    await page.locator(".mt-language-switch button").filter({ hasText: "English" }).click();
+    await page.waitForFunction(() => document.documentElement.lang === "en");
+    assert.match(await luckyCard.innerText(), /LIVE PERSONAL TIME.*YOUR LUCKY TIME/, "English lucky-time heading must render");
+    assert.doesNotMatch(await luckyCard.innerText(), /limited signal|score unavailable/i, "connected chart must not show a limited-score label in English");
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, "English mobile view must not overflow");
+    assert.deepEqual(pageErrors, [], `My Time bilingual JavaScript errors: ${pageErrors.join(" | ")}`);
+
+    console.log(`My Time main-ring browser checks passed: ${count} selectable segments, mobile tap, keyboard Enter, visible focus, selected-period explanation, and no mobile overflow, and bilingual connected-chart views.`);
     await context.close();
   } finally {
     await browser.close();
