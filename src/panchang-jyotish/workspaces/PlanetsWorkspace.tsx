@@ -98,10 +98,10 @@ function tropicalSeasonCrossings(startDate:string,days:number):Array<{degree:num
   const output:Array<{degree:number;instant:Date}>=[];
   const targets=[0,90,180,270];
   let previousDate=midnightForNptDate(startDate);
-  let previous=planetAt(previousDate,"Sun");
+  let previous=planetAt(previousDate,"sun");
   for(let day=1;day<=days;day++){
     const date=midnightForNptDate(addIsoDays(startDate,day));
-    const current=planetAt(date,"Sun");
+    const current=planetAt(date,"sun");
     if(!previous||!current){previousDate=date;previous=current;continue;}
     for(const target of targets){
       const a=signedAngle(previous.tropicalLongitude-target);
@@ -110,7 +110,7 @@ function tropicalSeasonCrossings(startDate:string,days:number):Array<{degree:num
         let lo=previousDate.getTime(),hi=date.getTime();
         const startValue=signedAngle(previous.tropicalLongitude-target);
         for(let iteration=0;iteration<26&&hi-lo>60_000;iteration++){
-          const mid=new Date((lo+hi)/2),sun=planetAt(mid,"Sun");
+          const mid=new Date((lo+hi)/2),sun=planetAt(mid,"sun");
           const value=signedAngle((sun?.tropicalLongitude??0)-target);
           if((startValue<=0&&value<=0)||(startValue>0&&value>0))lo=mid.getTime();else hi=mid.getTime();
         }
