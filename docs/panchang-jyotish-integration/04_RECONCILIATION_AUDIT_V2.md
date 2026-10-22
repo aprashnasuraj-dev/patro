@@ -65,11 +65,20 @@ Important incomplete rows:
 - **New Cloudflare D1 tables/migrations: 0. New Worker calculation APIs: 0. New R2/KV writes: 0.**
 - Existing archive-backed `/date/*`, calendar, Moon/Eclipse and community pages remain unchanged in route ownership; existing public static assets can still incur normal static-asset requests. “Browser-only calculation” does not mean zero bytes served over the network.
 
-## Unresolved technical decision: exact archive transitions
+## Partially addressed archive-boundary integration — release gate remains open
 
-The master-day database payload contains more transition fields than the public static year shard exposed through `archiveDay`. Adding a new database query solely for the new Panchang UI would violate the preferred browser/static budget. Before marking F002–F006/F011 complete, decide whether to add an immutable, bundled/partitioned **build-time** public boundary shard from the approved archive, or to extend an existing archive projection through its established release process. Until the source and exact civil-date parsing are verified, do not fabricate those fields.
+The public static year shard exposed through `archiveDay` uses the existing `panchang.tithi_transition` shape (`time` plus `minutes`), and on some records includes `sunrise`, `sunset`, and `location`. The feature-branch adapter now normalizes these NPT wall clocks explicitly, validates civil dates/clocks, cross-checks `time` against `minutes`, maps Kathmandu solar values with provenance, and keeps archive fields labelled `unverified` until independently audited. It does not silently fabricate a boundary when these fields disagree or are absent.
+
+This closes the earlier parser-shape mismatch in code, but **not the release validation gate**: the new tests have been authored but not run here; the adapter’s field coverage still needs comparison against actual static archive rows over representative dates. Nakshatra/Yoga/Karana exact transitions and additional master-day-only fields remain calculated fallback unless the public archive supplies an unambiguous value. Do not add a new D1 request or Worker arithmetic endpoint to fill these gaps. If representative-row verification proves a materially necessary field is absent, propose a build-time immutable projection or a separately approved existing archive projection—never a production database read added just for this UI.
 
 ## Follow-up implementation batch recorded after this audit
+
+- Browser feature-topic navigation now records history entries and syncs selection on both `hashchange` and `popstate`; source guard added, browser execution still pending.
+- Planetary event scans yield control, cancel stale searches, expose localized running/error states, and sample Nakshatra boundaries every six hours so a fast-moving Moon does not collapse two same-day crossings into a false direct jump; regression guards authored, not yet executed.
+- Muhurat date ranges calculate progressively with cancellation and localized loading/error states rather than synchronously building all days during render.
+- The existing JanmaPatro summary still reads its prior context only; the live Saturn sign now refreshes on focus and once per minute instead of freezing at mount time.
+- Nepal Sambat retains separate Devanagari and English/transliterated archive labels; the UI selects the correct representation from the single homepage language state.
+
 
 - Static-calendar year asset reader integrated into the browser Panchang via a versioned DTO; missing source values are not invented, and UTC-offset-qualified transition instants are preserved as UTC.
 - All four core elements have browser-calculated start and end transition solvers. If an archive label disagrees with its calculated fallback, unverified fallback boundary times are withheld rather than shown beside a potentially different element.
