@@ -22,7 +22,7 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
   if(clock()>deadlineMs){stats.stopped_for_deadline=mine.length-i;break;}
   i++;const r=byId.get(row.id);if(!r)continue;
   const meta=r.meta||{},title=meta.title||r.intent.replace(/^Answer:\s*/,''),question=meta.question||title,policyCfg=config.routes[row.route];
-  const policy={min_sources:policyCfg.min_sources,min_words:policyCfg.min_words};const need=policy.min_sources;
+  const policy={min_sources:policyCfg.min_sources,candidate_sources:policyCfg.candidate_sources||policyCfg.min_sources,min_words:policyCfg.min_words};const need=policy.min_sources,candidateNeed=Math.min(need,policy.candidate_sources);
   try{
    let evidence=(evidenceByTopic.get(r.id)||[]).map(e=>({...e}));let changed=false;
    const addAll=items=>{const urls=new Set(evidence.map(e=>e.url));for(const it of items){if(!it?.url||urls.has(it.url)||!(it.excerpts||[]).length)continue;urls.add(it.url);evidence.push({...it,id:'s'+(evidence.length+1)});changed=true;stats.discovered_sources++;}};
@@ -34,7 +34,7 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
    }
    if(evidence.length<need){addAll(await discoverEvidence({evidence,topic:question,disc:config.discovery,need,fetchImpl,extract,scriptPath,render,now,log}));}
    if(changed)await writeFile(join(out,'evidence',r.id+'.json'),JSON.stringify({id:r.id,evidence},null,2));
-   if(evidence.length<need){await note(r.id,'blocked',{route:row.route,reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources (<'+need+') after cache + discovery'});continue;}
+   if(evidence.length<candidateNeed){await note(r.id,'blocked',{route:row.route,reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources (< candidate floor '+candidateNeed+') after cache + discovery'});continue;}
    if(!llm.available()){await note(r.id,'retry_later',{route:row.route,reason:'NO_PROVIDER: no healthy LLM at preflight; evidence_sources='+evidence.length});continue;}
    const use=pickEvidence(evidence);
    const w=await writeCompact({llm,meta,title,evidence:use,need:Math.min(need,use.length),targetWords:policyCfg.target_words});
@@ -44,7 +44,7 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
     sources:usedEv.map(e=>({id:e.id,url:e.url,title:e.title,publisher:e.publisher,author:e.author||undefined,published_at:e.published_at||undefined,retrieved_at:e.retrieved_at,sha256:e.sha256,verified:false,claim_ids:w.claims.filter(c=>c.source_id===e.id).map(c=>c.id)})),
     media:[],provenance:{sources_n:usedEv.length,first_retrieved:when[0],last_retrieved:when[when.length-1],hosts:[...new Set(usedEv.map(e=>new URL(e.url).host))],scraped:usedEv.some(e=>e.scraped),route:row.route,engine:'v2'},voice:{residual:w.voice_problems_after},generation:{engine:'v2',writer:'compact',llm:w.provider,at:now().toISOString()}};
    const v=decideV2(article,{route:row.route,policy,allowYmyl,seen,now});let status='review',extra={};
-   if(v.ok){Object.assign(article,v.article);status='approved';seen.push({id:r.id,body:article.body_md});}else extra={held:v.why};
+   if(v.ok){Object.assign(article,v.article);status='approved';seen.push({id:r.id,body:article.body_md});}else if(v.candidate){article.status='release_candidate';article.review={mode:'automated-screen',policy:'v2-release-candidate-not-publishable',route:row.route,at:now().toISOString(),required_followup:v.why};status='release_candidate';extra={held:v.why};}else extra={held:v.why};
    await writeFile(join(out,'content',r.id+'.json'),JSON.stringify(article,null,2));await note(r.id,status,{route:row.route,...extra});
   }catch(e){
    if(e.code==='NO_BUDGET'){stats.stopped_for_budget=mine.length-i+1;log('Provider budget spent; remaining topics stay queued for the next run.');break;}
@@ -61,6 +61,7 @@ if(process.argv[1]?.endsWith('run-v2.mjs')){
  const health=JSON.parse(await readFile(arg('health',join(root,'v2-work','health.json')),'utf8').catch(()=>'{"providers":[]}'));
  const adapters=await loadAdapters(join(root,'config','adapter-allowlist.json'));
  const workers=+arg('workers',1),state=await loadState(join(root,'state'));
+ if(!state.latest.size&&!state.evidence.size)throw Error('SAFETY_STOP: no imported v1 shard/rescue state found; refusing to spend provider quota on an empty cache.');
  const llm=makeLlmV2({adapters,health,config,workers});
  const render=process.env.CF_ACCOUNT_ID&&process.env.CF_BROWSER_TOKEN?cloudflareRenderer({accountId:process.env.CF_ACCOUNT_ID,token:process.env.CF_BROWSER_TOKEN}):null;
  const stats=await runV2({root,worker:+arg('worker',0),workers,deadlineMs:Date.now()+(+arg('deadline-minutes',335))*60_000,limit:+arg('limit',Infinity),llm,config,plan,evidenceByTopic:state.evidence,registry,allowYmyl:process.argv.includes('--allow-ymyl'),render});

@@ -1,0 +1,262 @@
+name: Mission Mangal v2 combined v1 rescue
+run-name: batch-${{ inputs.batch_number || '001' }}
+on:
+  push:
+    branches: [missionmangal-v2-rescue-combined]
+    paths:
+      - ".github/workflows/missionmangal-v2-combined-rescue.yml"
+      - "missionmangal/v2/**"
+      - "missionmangal/tests/**"
+  workflow_dispatch:
+    inputs:
+      batch_number:
+        description: "One-based three-digit batch identifier"
+        default: "001"
+        required: true
+      previous_run:
+        description: "Prior completed combined run ID for durable state restoration (0 for initial run)"
+        default: "0"
+        required: true
+      batch_index:
+        description: "Zero-based batch index (50 topics each)"
+        default: "0"
+        required: true
+      workers:
+        description: "Parallel v2 workers"
+        default: "20"
+        required: true
+      deadline_minutes:
+        description: "Maximum per-worker processing window"
+        default: "330"
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: missionmangal-v2-combined-rescue
+  cancel-in-progress: false
+
+env:
+  GROQ_API_KEY: ${{ secrets.GROQ_API }}
+  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER }}
+  SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_HEALTHY_CRAB }}
+  CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      workers: ${{ steps.cfg.outputs.workers }}
+      list: ${{ steps.cfg.outputs.list }}
+      deadline: ${{ steps.cfg.outputs.deadline }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install polite extraction dependency
+        run: python -m pip install --disable-pip-version-check scrapling
+      - name: Import the existing v1 shard artifacts (read-only source)
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 39137761297
+          github-token: ${{ github.token }}
+          pattern: shard-*
+          path: missionmangal/state-in
+      - name: Import completed v1 rescue artifacts when available
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          run-id: 39137761297
+          github-token: ${{ github.token }}
+          pattern: rescue-*
+          path: missionmangal/rescue-in
+      - name: Restore shards and rescue artifacts without mutating v1
+        run: |
+          mkdir -p missionmangal/state
+          for d in missionmangal/state-in/shard-*; do
+            [ -d "$d" ] && cp -r "$d" "missionmangal/state/$(basename "$d")"
+          done
+          for d in missionmangal/rescue-in/rescue-*; do
+            [ -d "$d" ] && cp -r "$d" "missionmangal/state/$(basename "$d")"
+          done
+          echo "Imported state directories:"
+          find missionmangal/state -mindepth 1 -maxdepth 1 -type d | sort
+      - name: Restore prior v2 output across workflow runs
+        env:
+          PREVIOUS_RUN: ${{ inputs.previous_run }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${PREVIOUS_RUN:-0}" =~ ^[0-9]+$ ]] && [ "${PREVIOUS_RUN:-0}" -gt 0 ]; then
+            mkdir -p /tmp/mm-previous /tmp/mm-prior-plan
+            gh run download "$PREVIOUS_RUN" --repo "$GITHUB_REPOSITORY" --pattern "missionmangal-v2-plan-and-preflight" --dir /tmp/mm-prior-plan
+            if [ -d /tmp/mm-prior-plan/missionmangal-v2-plan-and-preflight/state ]; then
+              cp -a /tmp/mm-prior-plan/missionmangal-v2-plan-and-preflight/state/. missionmangal/state/
+            fi
+            gh run download "$PREVIOUS_RUN" --repo "$GITHUB_REPOSITORY" --pattern "missionmangal-v2-worker-*" --dir /tmp/mm-previous
+            for d in /tmp/mm-previous/missionmangal-v2-worker-*; do
+              [ -d "$d" ] || continue
+              name="${d##*/missionmangal-v2-worker-}"
+              if [ -f "$d/ledger.jsonl" ] || [ -d "$d/content" ] || [ -d "$d/evidence" ]; then
+                mkdir -p "missionmangal/state/v2-$name"
+                cp -a "$d/." "missionmangal/state/v2-$name/"
+              else
+                for s in "$d"/v2-*; do
+                  [ -d "$s" ] && cp -a "$s" missionmangal/state/
+                done
+              fi
+            done
+          fi
+      - name: Reconcile every reserved topic and cached evidence
+        run: node missionmangal/v2/plan.mjs
+      - name: Select stable 50-topic batch after v1 reconciliation
+        env:
+          BATCH_INDEX: ${{ inputs.batch_index }}
+        run: node missionmangal/v2/batch.mjs --index "${BATCH_INDEX:-0}"
+      - name: Provider preflight (fail over without burning topic attempts)
+        run: node missionmangal/v2/preflight.mjs
+      - id: cfg
+        env:
+          INPUT_WORKERS: ${{ inputs.workers }}
+          INPUT_DEADLINE: ${{ inputs.deadline_minutes }}
+        run: |
+          workers="${INPUT_WORKERS:-20}"
+          deadline="${INPUT_DEADLINE:-330}"
+          [[ "$workers" =~ ^[0-9]+$ ]] && [ "$workers" -ge 1 ] && [ "$workers" -le 20 ]
+          [[ "$deadline" =~ ^[0-9]+$ ]] && [ "$deadline" -ge 10 ] && [ "$deadline" -le 330 ]
+          echo "workers=$workers" >> "$GITHUB_OUTPUT"
+          echo "deadline=$deadline" >> "$GITHUB_OUTPUT"
+          echo "list=$(node -e 'console.log(JSON.stringify(Array.from({length:Number(process.argv[1])},(_,i)=>i)))' "$workers")" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: missionmangal-v2-plan-and-preflight
+          path: |
+            missionmangal/state
+            missionmangal/v2-work/plan.json
+            missionmangal/v2-work/full-plan.json
+            missionmangal/v2-work/batch-manifest.json
+            missionmangal/v2-work/health.json
+          retention-days: 14
+          if-no-files-found: warn
+
+  work:
+    needs: prepare
+    if: needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        worker: ${{ fromJson(needs.prepare.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check scrapling
+      - name: Restore plan and provider preflight
+        uses: actions/download-artifact@v4
+        with:
+          name: missionmangal-v2-plan-and-preflight
+          path: missionmangal
+      - name: Checkpoint loop (maximum 15-minute work loss)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          ( while true; do sleep 900; bash missionmangal/v2/checkpoint.sh ${{ matrix.worker }} || true; done ) &
+      - name: Research and write v1 unfinished topics with v2
+        id: v2_writer
+        continue-on-error: true
+        run: >
+          node missionmangal/v2/run-v2.mjs
+          --worker ${{ matrix.worker }}
+          --workers ${{ needs.prepare.outputs.workers }}
+          --deadline-minutes ${{ needs.prepare.outputs.deadline }}
+      - name: Deterministic no-LLM evidence fallback
+        if: always()
+        continue-on-error: true
+        run: >
+          node missionmangal/v2/fallback.mjs
+          --worker ${{ matrix.worker }}
+          --workers ${{ needs.prepare.outputs.workers }}
+      - name: Final checkpoint
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash missionmangal/v2/checkpoint.sh ${{ matrix.worker }} || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: missionmangal-v2-worker-${{ matrix.worker }}
+          path: missionmangal/state/v2-${{ matrix.worker }}
+          retention-days: 14
+          if-no-files-found: warn
+
+  collect:
+    needs: [prepare, work]
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: missionmangal-v2-worker-*
+          path: missionmangal/v2-results
+          merge-multiple: false
+      - name: Build combined run report and candidate inventory
+        run: |
+          node --input-type=module <<'NODE'
+          import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
+          import { join } from 'node:path';
+          const root='missionmangal/v2-results';
+          const dirs=await readdir(root).catch(()=>[]);
+          const report={engine:'v2',source_run_id:39137761297,workers:[],totals:{},release_candidates:[],generated_at:new Date().toISOString()};
+          for(const d of dirs){
+            const base=join(root,d);
+            try{
+              const summary=JSON.parse(await readFile(join(base,'summary.json'),'utf8'));
+              report.workers.push(summary);
+              for(const [k,v] of Object.entries(summary)) if(typeof v==='number') report.totals[k]=(report.totals[k]||0)+v;
+              for(const f of await readdir(join(base,'content')).catch(()=>[])){
+                if(!f.endsWith('.json'))continue;
+                const a=JSON.parse(await readFile(join(base,'content',f),'utf8'));
+                if(a.status==='release_candidate')report.release_candidates.push({id:a.id,title:a.title,route:a.provenance?.route,sources:a.sources?.length||0,words:(a.body_md||'').trim().split(/\s+/).filter(Boolean).length,file:d+'/content/'+f});
+              }
+            }catch{}
+          }
+          await mkdir('missionmangal/v2-work',{recursive:true});
+          report.release_candidates.sort((a,b)=>a.id.localeCompare(b.id));
+          await writeFile('missionmangal/v2-work/combined-report.json',JSON.stringify(report,null,2));
+          await writeFile('missionmangal/v2-work/release-candidates.json',JSON.stringify(report.release_candidates,null,2));
+          console.log(JSON.stringify({workers:report.workers.length,totals:report.totals,release_candidates:report.release_candidates.length},null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: missionmangal-v2-combined-results
+          path: |
+            missionmangal/v2-results
+            missionmangal/v2-work/combined-report.json
+            missionmangal/v2-work/release-candidates.json
+            missionmangal/v2-work/plan.json
+            missionmangal/v2-work/health.json
+          retention-days: 14
+          if-no-files-found: warn
