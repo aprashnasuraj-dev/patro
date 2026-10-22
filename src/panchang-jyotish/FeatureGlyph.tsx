@@ -20,7 +20,7 @@ export const FEATURE_ICON_BY_ID: Record<string, string> = {
 
 export const FEATURE_ICON_SYMBOLS = [
   "calendar","moon","clock","nakshatra","yoga","karana","sun-moon","lunar-calendar","calendar-cycle",
-  "timeline","sunrise","moonrise","day-segment","day-cycle","star","orbit","sun-star","dawn","segments",
+  "timeline","sunrise","sunset","moonrise","day-segment","day-cycle","star","orbit","sun-star","dawn","segments",
   "gandamoola","star-compass","ingress","ritual","chart","question-chart","bird","gem","beads","node-axis",
   "saturn","ascendant","sun","shield","rings","scroll","full-moon-series","baby-name","planet","retrograde",
   "conjunction","aspect","telescope","house","vehicle","document","festival","double-star","triple-star",
@@ -34,12 +34,13 @@ type Props = {
   className?: string;
   decorative?: boolean;
   size?: "card" | "hero" | "inline";
+  symbol?: IconSymbol;
   title?: string;
 };
 
 /** A local same-origin SVG sprite; all 91 features resolve to a pictogram without remote requests. */
-export function FeatureGlyph({featureId,className="",decorative=true,size="card",title}:Props) {
-  const requested = FEATURE_ICON_BY_ID[featureId] as IconSymbol | undefined;
+export function FeatureGlyph({featureId,className="",decorative=true,size="card",title,symbol}:Props) {
+  const requested = symbol ?? FEATURE_ICON_BY_ID[featureId] as IconSymbol | undefined;
   const icon = requested && (FEATURE_ICON_SYMBOLS as readonly string[]).includes(requested) ? requested : "calendar";
   const classes = ["ap-pj-icon", "ap-pj-icon--"+size, className].filter(Boolean).join(" ");
   const label = title || featureId;
