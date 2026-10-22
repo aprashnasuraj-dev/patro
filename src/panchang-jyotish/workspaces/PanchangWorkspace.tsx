@@ -1,9 +1,10 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../patro-tools/core/names";
 import { panchangAt, sunSidereal } from "../../patro-tools/core/astro";
 import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
-import { fromCalculatedDay } from "../contract";
+import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
+import { resolveNepalPanchangDay } from "../archive-adapter";
 import { KATHMANDU } from "../../patro-tools/core/types";
 import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, nextFieldTransition, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import "./workspace.css";
@@ -49,6 +50,8 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   });
   const [showMore, setShowMore] = useState(false);
   const [error, setError] = useState("");
+  const [resolved, setResolved] = useState<{ date: string; value: PanchangDayContractV1; archive: "loaded" | "unavailable" } | null>(null);
+  useEffect(() => { const controller = new AbortController(); setResolved(null); resolveNepalPanchangDay(date, controller.signal).then(result => { if (!controller.signal.aborted) setResolved({ date, value: result.value, archive: result.archive }); }).catch(() => {}); return () => controller.abort(); }, [date]);
   const computed = useMemo(() => {
     try { return calculateLocalDay(date); }
     catch { return null; }
@@ -60,7 +63,8 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   );
 
   const p = computed?.day;
-  const contract = useMemo(() => p ? fromCalculatedDay(p, KATHMANDU) : null, [p]);
+  const contract = resolved?.date === date ? resolved.value : (p ? fromCalculatedDay(p, KATHMANDU) : null);
+  const archiveLoaded = resolved?.date === date && resolved.archive === "loaded";
   const at = p ? panchangAt(p.sunrise) : null;
   const windows = computed?.windows;
   const nakEnd = p ? nextFieldTransition(p.sunrise, "nakshatra") : null;
@@ -72,10 +76,10 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   }, [p, selectedFeatureId]);
 
   const rows: BoundaryRow[] = p && at ? [
-    { labelNe: "तिथि", labelEn: "Tithi", value: l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1]), end: p.tithiEnds },
-    { labelNe: "नक्षत्र", labelEn: "Nakshatra", value: l(language, NAKSHATRAS[p.nakshatra], NAKSHATRA_EN[p.nakshatra]), end: nakEnd },
-    { labelNe: "योग", labelEn: "Yoga", value: l(language, YOGAS[p.yoga], YOGA_EN[p.yoga]), end: yogaEnd },
-    { labelNe: "करण", labelEn: "Karana", value: l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana]), end: karanaEnd }
+    { labelNe: "तिथि", labelEn: "Tithi", value: l(language, contract?.elements.tithi.nameNe ?? tithiName(contract?.elements.tithi.index ?? p.tithi), contract?.elements.tithi.nameEn ?? TITHI_EN[(contract?.elements.tithi.index ?? p.tithi) - 1]), end: contract?.elements.tithi.ends?.instantUtc ? new Date(contract.elements.tithi.ends.instantUtc) : p.tithiEnds },
+    { labelNe: "नक्षत्र", labelEn: "Nakshatra", value: l(language, contract?.elements.nakshatra.nameNe ?? NAKSHATRAS[contract?.elements.nakshatra.index ?? p.nakshatra], contract?.elements.nakshatra.nameEn ?? NAKSHATRA_EN[contract?.elements.nakshatra.index ?? p.nakshatra]), end: nakEnd },
+    { labelNe: "योग", labelEn: "Yoga", value: l(language, contract?.elements.yoga.nameNe ?? YOGAS[contract?.elements.yoga.index ?? p.yoga], contract?.elements.yoga.nameEn ?? YOGA_EN[contract?.elements.yoga.index ?? p.yoga]), end: yogaEnd },
+    { labelNe: "करण", labelEn: "Karana", value: l(language, contract?.elements.karana.nameNe ?? KARANA_NAMES[contract?.elements.karana.index ?? p.karana], contract?.elements.karana.nameEn ?? KARANA_EN[contract?.elements.karana.index ?? p.karana]), end: karanaEnd }
   ] : [];
 
   const panchak = !!p && (p.nakshatra > 22 || (p.nakshatra === 22 && p.nakshatraPada >= 3));
@@ -94,6 +98,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     </div>
     {error && <p className="ap-pjw-error" role="alert">{error}</p>}
     {!computed || !p || !at || !windows ? <div className="ap-pjw-empty">{l(language, "यो मितिका लागि स्थानीय सूर्योदय उपलब्ध छैन। फरक मिति वा स्थान छान्नुहोस्।", "Local sunrise is unavailable for this date. Choose another date or location.")}</div> : <>
+      <p className="ap-pjw-method" role="status">{archiveLoaded ? l(language, "मौजुदा पात्रो अभिलेख उपलब्ध छ। अभिलेखमा नभएका समयहरू अलग गणनात्मक अनुमान हुन्।", "Existing calendar archive loaded. Times not supplied by the archive remain separately calculated estimates.") : l(language, "यो दृश्य स्थानीय गणनाबाट बनेको हो; अभिलेख लोड नभएसम्म प्रकाशित मिति वा समयको आधिकारिक पुष्टि मान्नु हुँदैन।", "This view is calculated locally. Do not treat dates or times as officially verified while the archive is unavailable or loading.")}</p>
       <div className="ap-pjw-date-heading">
         <div><span>{l(language, "नेपालको स्थानीय मिति", "Nepal local date")}</span><h3>{localDateLabel(date, language)}</h3></div>
         <div className="ap-pjw-meta"><strong>{l(language, "वि.सं. / नेपाल संवत्", "BS / Nepal Sambat")}</strong><small>{l(language, "तिथि गणना: सूर्योदय", "Daily Panchang anchor: sunrise")}</small></div>
