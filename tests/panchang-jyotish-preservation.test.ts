@@ -32,7 +32,11 @@ describe("five-group release preservation contracts", () => {
   });
   it("does not duplicate or edit My Time and keeps original profile bridge as read-only", () => {
     const jyotish = read("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
-    expect(jyotish).toContain("readJanmaPatroBirthInput");
+    expect(jyotish).toContain("readExistingJanmaPatroBirth");
+    const bridge = read("src/panchang-jyotish/read-existing-birth.ts");
+    expect(bridge).toContain("readJanmaPatroBirthInput");
+    expect(bridge).toContain("JANMAPATRO_CONTEXT_STORAGE_KEY");
+    expect(bridge).not.toContain("setItem(");
     expect(jyotish).not.toContain("saveJanmaPatroContext");
     expect(jyotish).not.toContain("JANMAPATRO_CONTEXT_STORAGE_KEY");
     const hub = read("src/panchang-jyotish/catalog.ts");
