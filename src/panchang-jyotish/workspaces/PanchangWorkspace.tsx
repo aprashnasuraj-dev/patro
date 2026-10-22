@@ -3,7 +3,7 @@ import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../patro-
 import { panchangAt, sunSidereal } from "../../patro-tools/core/astro";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
-import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
+import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, nextFieldTransition, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
@@ -62,21 +62,14 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
 
   const p = computed?.day;
   const at = p ? panchangAt(p.sunrise) : null;
-  const previousSunset = computed?.previousSunset;
-  const nextSunrise = computed?.nextSunrise;
   const windows = computed?.windows;
-  const nakEnd = p ? importBoundary(p.sunrise, "nakshatra") : null;
-  const yogaEnd = p ? importBoundary(p.sunrise, "yoga") : null;
-  const karanaEnd = p ? importBoundary(p.sunrise, "karana") : null;
+  const nakEnd = p ? nextFieldTransition(p.sunrise, "nakshatra") : null;
+  const yogaEnd = p ? nextFieldTransition(p.sunrise, "yoga") : null;
+  const karanaEnd = p ? nextFieldTransition(p.sunrise, "karana") : null;
   const nextIngress = useMemo(() => {
     if (!p || selectedFeatureId !== "F025") return null;
     try { return solarIngressAfter(p.sunrise); } catch { return null; }
   }, [p, selectedFeatureId]);
-
-  function importBoundary(start: Date, field: "nakshatra" | "yoga" | "karana") {
-    // The boundary solver is shared with the other local browser tools; no request is sent.
-    return importTransition(start, field);
-  }
 
   const rows: BoundaryRow[] = p && at ? [
     { labelNe: "तिथि", labelEn: "Tithi", value: l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1]), end: p.tithiEnds },
@@ -85,7 +78,6 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     { labelNe: "करण", labelEn: "Karana", value: l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana]), end: karanaEnd }
   ] : [];
 
-  const weekday = p ? new Date(date + "T12:00:00Z").getUTCDay() : 0;
   const panchak = !!p && (p.nakshatra >= 22 || (p.nakshatra === 21 && p.nakshatraPada >= 3));
   const gandaMoola = !!p && [0, 8, 9, 17, 18, 26].includes(p.nakshatra);
   const vishti = !!p && p.karana === 6;
