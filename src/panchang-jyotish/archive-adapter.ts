@@ -63,7 +63,7 @@ function archiveInstant(value: unknown, confidence: "high" | "unverified" = "unv
 /** Accept absolute instants only when an explicit UTC offset is present. */
 function archiveExplicitInstant(value: unknown, confidence: "high" | "unverified" = "unverified"): PanchangInstant | null {
   if (typeof value !== "string") return null;
-  if (!/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d+)?)?(?:Z|[+-]\\d{2}:\\d{2})$/.test(value)) return null;
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)) return null;
   return archiveInstant(value, confidence);
 }
 
