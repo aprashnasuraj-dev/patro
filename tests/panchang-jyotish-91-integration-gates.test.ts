@@ -20,8 +20,10 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
       }
     }
     expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="existing")).toHaveLength(17);
-    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="browser-preview")).toHaveLength(45);
-    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="reference")).toHaveLength(29);
+    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="browser-preview")).toHaveLength(47);
+    expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="reference")).toHaveLength(27);
+    expect(getFeatureAvailability(PATRO_FEATURES.find(x=>x.id==="F021")!)).toBe("browser-preview");
+    expect(getFeatureAvailability(PATRO_FEATURES.find(x=>x.id==="F022")!)).toBe("browser-preview");
   });
   it("keeps calculator bundles deferred and restores direct-link selection",()=>{
     const hub=source("src/panchang-jyotish/FeatureGroupHub.tsx");
