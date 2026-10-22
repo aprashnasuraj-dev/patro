@@ -91,9 +91,9 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
         <span>{l(language, "मिति छान्नुहोस्", "Choose date")}</span>
         <input type="date" value={date} max="2100-12-31" min="1900-01-01" onChange={(event) => { setDate(event.target.value); }} />
       </label>
-      <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(todayInNepal()); setError(""); }}>{l(language, "आज", "Today")}</button>
-      <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, -1)); setError(""); }} aria-label={l(language, "अघिल्लो दिन", "Previous day")}>‹</button>
-      <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, 1)); setError(""); }} aria-label={l(language, "अर्को दिन", "Next day")}>›</button>
+      <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(todayInNepal()); }}>{l(language, "आज", "Today")}</button>
+      <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, -1)); }} aria-label={l(language, "अघिल्लो दिन", "Previous day")}>‹</button>
+      <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, 1)); }} aria-label={l(language, "अर्को दिन", "Next day")}>›</button>
     </div>
     {!computed || !p || !at || !windows ? <div className="ap-pjw-empty">{l(language, "यो मितिका लागि स्थानीय सूर्योदय उपलब्ध छैन। फरक मिति वा स्थान छान्नुहोस्।", "Local sunrise is unavailable for this date. Choose another date or location.")}</div> : <>
       <p className="ap-pjw-method" role="status">{archiveLoaded ? l(language, "मौजुदा पात्रो अभिलेख उपलब्ध छ। अभिलेखमा नभएका समयहरू अलग गणनात्मक अनुमान हुन्।", "Existing calendar archive loaded. Times not supplied by the archive remain separately calculated estimates.") : l(language, "यो दृश्य स्थानीय गणनाबाट बनेको हो; अभिलेख लोड नभएसम्म प्रकाशित मिति वा समयको आधिकारिक पुष्टि मान्नु हुँदैन।", "This view is calculated locally. Do not treat dates or times as officially verified while the archive is unavailable or loading.")}</p>
