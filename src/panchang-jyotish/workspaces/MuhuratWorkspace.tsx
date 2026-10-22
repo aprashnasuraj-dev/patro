@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { l } from "../../useUiLanguage";
 import { addIsoDays, calculateLocalDay, formatLocalTime, todayInNepal, validIsoDate } from "./shared";
 import { MuhuratDayRibbon } from "./MuhuratDayRibbon";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
+type MuhuratWindow = { date: string; sunrise: Date; sunset: Date; abhijit: { start: Date; end: Date }; rahu: { start: Date; end: Date }; yama: { start: Date; end: Date }; gulika: { start: Date; end: Date } };
 
 const REVIEW_RULES = [
   {id:"F060", titleNe:"सर्वार्थसिद्धि योग", titleEn:"Sarvarthasiddhi Yoga", descNe:"नक्षत्र–वारका प्रचलित नियमलाई नेपालका प्रकाशित पञ्चाङ्गसँग तुलना गरेर मात्र मिति निश्चित गर्नुपर्छ।", descEn:"Candidate dates require a reviewed Nakshatra–weekday rule set and comparison with a published Nepal Panchang."},
@@ -20,17 +21,43 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
   const [start,setStart]=useState(()=>{const from=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("date"):null;return from&&validIsoDate(from)?from:todayInNepal()});
   const [days,setDays]=useState(7);
   const [showCautions,setShowCautions]=useState(true);
-  const windows=useMemo(()=>{
-    const out:Array<{date:string;sunrise:Date;sunset:Date;abhijit:{start:Date;end:Date};rahu:{start:Date;end:Date};yama:{start:Date;end:Date};gulika:{start:Date;end:Date}}=[];
-    if(!validIsoDate(start))return out;
-    for(let i=0;i<days;i++){
-      const date=addIsoDays(start,i);
-      try {
-        const r=calculateLocalDay(date);
-        out.push({date,sunrise:r.day.sunrise,sunset:r.day.sunset,abhijit:r.windows.abhijit,rahu:r.windows.rahu,yama:r.windows.yamaganda,gulika:r.windows.gulika});
-      } catch { /* A day without local sunrise remains unavailable; never synthesize a time. */ }
+  const [windows,setWindows]=useState<MuhuratWindow[]>([]);
+  const [windowsLoading,setWindowsLoading]=useState(false);
+  const [windowsError,setWindowsError]=useState(false);
+  useEffect(()=>{
+    let active=true;
+    if(!validIsoDate(start)){
+      setWindows([]);
+      setWindowsError(true);
+      setWindowsLoading(false);
+      return()=>{active=false;};
     }
-    return out;
+    setWindows([]);
+    setWindowsError(false);
+    setWindowsLoading(true);
+    (async()=>{
+      try{
+        const out:MuhuratWindow[]=[];
+        for(let i=0;i<days;i++){
+          if(!active)return;
+          const date=addIsoDays(start,i);
+          try{
+            const r=calculateLocalDay(date);
+            out.push({date,sunrise:r.day.sunrise,sunset:r.day.sunset,abhijit:r.windows.abhijit,rahu:r.windows.rahu,yama:r.windows.yamaganda,gulika:r.windows.gulika});
+          }catch{
+            // A day without local sunrise stays unavailable; never synthesize a time.
+          }
+          // Yield on mobile before calculating the next pair of civil days.
+          if((i+1)%2===0)await new Promise<void>(resolve=>setTimeout(resolve,0));
+        }
+        if(active)setWindows(out);
+      }catch{
+        if(active)setWindowsError(true);
+      }finally{
+        if(active)setWindowsLoading(false);
+      }
+    })();
+    return()=>{active=false;};
   },[start,days]);
   const selectedRule=REVIEW_RULES.find((item)=>item.id===selectedFeatureId);
 
@@ -44,7 +71,7 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
       <div className="ap-pjw-subhead"><h3>{l(language,"स्थानीय दिनमानबाट निकालिएका समयखण्ड","Local daylight-based windows")}</h3><small>{l(language,"काठमाडौं · नेपाल समय","Kathmandu · Nepal time")}</small></div>
       <p className="ap-pjw-section-note">{l(language,"यो खोजले स्थानीय सूर्योदय र सूर्यास्तबाट अभिजित मुहूर्त तथा पारम्परिक सावधानी समयखण्ड निकाल्छ। यसले विवाह वा अन्य अनुष्ठानको आधिकारिक साइत आफैं घोषणा गर्दैन।", "This finder calculates Abhijit Muhurta and traditional caution intervals from local sunrise and sunset. It does not independently declare an official marriage or ritual date.")}</p>
       {windows[0] && <MuhuratDayRibbon day={windows[0]} language={language} showCautions={showCautions}/>}
-      {windows.length===0?<div className="ap-pjw-empty">{l(language,"यस मितिमा सूर्योदय गणना उपलब्ध छैन।","No sunrise calculation is available for this date.")}</div>:<div className="ap-pjw-event-table-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"मिति","Date")}</th><th>{l(language,"सूर्योदय","Sunrise")}</th><th>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</th>{showCautions&&<><th>{l(language,"राहुकाल","Rahu Kalam")}</th><th>{l(language,"यमगण्ड","Yamaganda")}</th><th>{l(language,"गुलिक","Gulika")}</th></>}</tr></thead><tbody>{windows.map((item)=><tr key={item.date}><td><a href={"/date/"+item.date}>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:"Asia/Kathmandu",day:"2-digit",month:"short",weekday:"short"}).format(new Date(item.date+"T12:00:00Z"))}</a></td><td>{formatLocalTime(item.sunrise,language)}</td><td><strong>{formatLocalTime(item.abhijit.start,language)} – {formatLocalTime(item.abhijit.end,language)}</strong></td>{showCautions&&<><td>{formatLocalTime(item.rahu.start,language)} – {formatLocalTime(item.rahu.end,language)}</td><td>{formatLocalTime(item.yama.start,language)} – {formatLocalTime(item.yama.end,language)}</td><td>{formatLocalTime(item.gulika.start,language)} – {formatLocalTime(item.gulika.end,language)}</td></>}</tr>)}</tbody></table></div>}
+      {windowsLoading?<p className="ap-pjw-section-note" role="status">{l(language,"स्थानीय समयखण्ड गणना हुँदैछन्…","Calculating local timing windows…")}</p>:windowsError?<p className="ap-pjw-error" role="alert">{l(language,"यो मिति गणना गर्न सकिएन। मान्य मिति छानेर पुनः प्रयास गर्नुहोस्।","This date could not be calculated. Choose a valid date and try again.")}</p>:windows.length===0?<div className="ap-pjw-empty">{l(language,"यस मितिमा सूर्योदय गणना उपलब्ध छैन।","No sunrise calculation is available for this date.")}</div>:<div className="ap-pjw-event-table-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"मिति","Date")}</th><th>{l(language,"सूर्योदय","Sunrise")}</th><th>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</th>{showCautions&&<><th>{l(language,"राहुकाल","Rahu Kalam")}</th><th>{l(language,"यमगण्ड","Yamaganda")}</th><th>{l(language,"गुलिक","Gulika")}</th></>}</tr></thead><tbody>{windows.map((item)=><tr key={item.date}><td><a href={"/date/"+item.date}>{new Intl.DateTimeFormat(language==="ne"?"ne-NP-u-nu-deva":"en-GB",{timeZone:"Asia/Kathmandu",day:"2-digit",month:"short",weekday:"short"}).format(new Date(item.date+"T12:00:00Z"))}</a></td><td>{formatLocalTime(item.sunrise,language)}</td><td><strong>{formatLocalTime(item.abhijit.start,language)} – {formatLocalTime(item.abhijit.end,language)}</strong></td>{showCautions&&<><td>{formatLocalTime(item.rahu.start,language)} – {formatLocalTime(item.rahu.end,language)}</td><td>{formatLocalTime(item.yama.start,language)} – {formatLocalTime(item.yama.end,language)}</td><td>{formatLocalTime(item.gulika.start,language)} – {formatLocalTime(item.gulika.end,language)}</td></>}</tr>)}</tbody></table></div>}
       <div className="ap-pjw-action-row"><label className="ap-pjw-check"><input type="checkbox" checked={showCautions} onChange={(event)=>setShowCautions(event.target.checked)}/><span>{l(language,"सावधानी समय पनि देखाउनुहोस्","Include caution intervals")}</span></label><a className="ap-pjw-primary" href="/tools/sait">{l(language,"साइत गणक खोल्नुहोस्","Open Sait finder")} ↗</a></div>
     </section>
     <section className="ap-pjw-card">
