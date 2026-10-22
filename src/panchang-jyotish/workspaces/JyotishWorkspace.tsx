@@ -196,6 +196,5 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
         <a className="ap-pjw-link-card" href="/panchang"><strong>{l(language,"दैनिक पञ्चाङ्ग","Daily Panchang")}</strong><small>{l(language,"तिथि, नक्षत्र र दिनका समयखण्ड।","Tithi, Nakshatra and daily windows.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
       </div>
     </section>
-}
   </div>;
 }
