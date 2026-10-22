@@ -49,8 +49,10 @@ describe("My Time astronomical core", () => {
     const request = new Request("https://aafnaipatro.com/api/v1/mytime/today?date=2026-10-20&timezone=Asia%2FKathmandu");
     const disabled = await myTimeResponse(request, {});
     expect(disabled?.status).toBe(404);
+    expect(disabled?.headers.get("cache-control")).toBe("no-store");
     const enabled = await myTimeResponse(request, { MY_TIME_ENABLED: "true" });
     expect(enabled?.status).toBe(200);
+    expect(enabled?.headers.get("cache-control")).toContain("s-maxage=300");
     const payload = await enabled!.json();
     expect(payload).toMatchObject({ ok: true, data: { date: "2026-10-20", timezone: "Asia/Kathmandu" } });
     expect(payload.data.tantraVidya).toMatchObject({
@@ -63,6 +65,9 @@ describe("My Time astronomical core", () => {
     expect(payload.data.tantraVidya.nityaDevi.id).toBe(evaluatedTithi <= 15 ? evaluatedTithi : 31 - evaluatedTithi);
     const invalid = await myTimeResponse(new Request("https://aafnaipatro.com/api/v1/mytime/today?lat=91"), { MY_TIME_ENABLED: true });
     expect(invalid?.status).toBe(400);
+    expect(invalid?.headers.get("cache-control")).toBe("no-store");
+    const disallowed = await myTimeResponse(new Request(request.url, { method: "POST" }), { MY_TIME_ENABLED: true });
+    expect(disallowed?.headers.get("cache-control")).toBe("no-store");
   });
 
   it("rejects invalid dates, timezones, and coordinates", () => {
