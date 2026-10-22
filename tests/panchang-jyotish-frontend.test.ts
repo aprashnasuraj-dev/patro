@@ -88,7 +88,7 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).toContain('symbol={planetIcon(planet.key)}');
     expect(jyotish).toContain('symbol="orbit"');
     const glyphSource = source("src/panchang-jyotish/FeatureGlyph.tsx");
-    expect(glyphSource).toContain('aria-hidden={decorative}');
+    expect(glyphSource).toContain('aria-hidden={decorative ? true : undefined}');
     expect(glyphSource).toContain('aria-label={decorative ? undefined : label}');
     expect(glyphSource).toContain("<title>{label}</title>");
     expect(glyphSource).toContain('href={"/icons/panchang-jyotish.svg#"+icon}');

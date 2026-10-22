@@ -684,7 +684,7 @@
       "titleEn": "Planet Position Table",
       "descriptionNe": "वर्तमान ग्रहका राशि, अंश र गणना समय।",
       "descriptionEn": "Current planet signs, degrees and evaluation time.",
-      "href": "/planets#positions"
+      "href": "/planets#position-table"
     },
     {
       "id": "F077",
@@ -693,7 +693,7 @@
       "titleEn": "Graha Asta / Uday",
       "descriptionNe": "ग्रहअनुसार अस्त र उदय सीमा तथा विधि।",
       "descriptionEn": "Planet-specific combustion/rising thresholds and methodology.",
-      "href": "/planets#combustion"
+      "href": "/planets#combustion-method"
     },
     {
       "id": "F078",
@@ -702,7 +702,7 @@
       "titleEn": "Retrograde / Direct Calendar",
       "descriptionNe": "ग्रहको गति परिवर्तनका घटनाको सूची।",
       "descriptionEn": "A listing of planetary direction-change events.",
-      "href": "/planets#stations"
+      "href": "/planets#retrograde-calendar"
     },
     {
       "id": "F079",
