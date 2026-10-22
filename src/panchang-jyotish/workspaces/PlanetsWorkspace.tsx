@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { calculateSiderealPlanetPositions, type SiderealPlanetPosition } from "../../jyotish/jyotishEngine";
 import { useUiLanguage, l } from "../../useUiLanguage";
-import { getFeatureById } from "../catalog";
 import { addIsoDays, formatLocalDateTime, todayInNepal, validIsoDate } from "./shared";
 import "./workspace.css";
 
@@ -102,7 +101,6 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const [body,setBody]=useState("all");
   const [searchMode,setSearchMode]=useState<"ingress"|"station"|"season">("ingress");
   const [runScan,setRunScan]=useState(false);
-  const selected=selectedFeatureId?getFeatureById(selectedFeatureId):null;
   const instant=useMemo(()=>instantForNptDate(date),[date]);
   const positions=useMemo(()=>calculateSiderealPlanetPositions(instant),[instant]);
   const aspects=useMemo(()=>{
