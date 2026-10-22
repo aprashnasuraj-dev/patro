@@ -122,6 +122,8 @@ describe("bilingual feature-first visual obligations", () => {
     expect(calendarIndex).toBeGreaterThanOrEqual(0);
     expect(discoveryIndex).toBeGreaterThan(calendarIndex);
     expect(homepage).toContain('className="rh-pj-hub-card"');
+    expect(homepage).not.toContain("All 91 features are organized into five groups.");
+    expect(homepage).toContain("Available tools are organized into five groups.");
   });
 
   it("uses the homepage language state and does not expose internal identifiers in the spotlight", () => {
