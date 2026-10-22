@@ -30,7 +30,7 @@ export interface PanchangDayContractV1 {
   };
   calculatedAtUtc: string | null;
   /** Reported archive metadata is preserved separately from independent verification. */
-  archiveProvenance: null | {
+  archiveProvenance?: null | {
     sourceId: string;
     reportedSource: string | null;
     reportedVerifiedAt: string | null;
