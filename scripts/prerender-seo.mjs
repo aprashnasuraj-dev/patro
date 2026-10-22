@@ -11,6 +11,10 @@ const shell = await readFile(shellPath, "utf8");
 if (!shell.includes('id="root"')) throw new Error("SEO prerender requires the Vite root shell");
 const intentCatalog = JSON.parse(await readFile(resolve(root, "seo/search-intents.json"), "utf8"));
 const INTENT_META = { ...intentCatalog.core, ...intentCatalog.tools };
+const featureEditorial = JSON.parse(await readFile(resolve(root, "seo/panchang-feature-editorial.json"), "utf8")).features;
+if (featureEditorial.length !== 91 || new Set(featureEditorial.map(item => item.id)).size !== 91) throw new Error("91 unique feature editorial entries required");
+const FEATURE_HUB_ROUTES = new Set(["/panchang", "/muhurat", "/jyotish", "/planets", "/nepal-calendar"]);
+for (const item of featureEditorial) if (!FEATURE_HUB_ROUTES.has("/" + item.group) || !item.href.startsWith("/")) throw new Error("Invalid feature editorial route: " + item.id);
 for (const route of TOOL_ROUTES) if (!INTENT_META[route]) throw new Error(`Missing canonical SEO intent metadata for ${route}`);
 
 const CORE_COPY = {
@@ -85,6 +89,11 @@ function intentGuide(meta) {
   const faq = meta.faqs?.length ? `<section class="seo-faq"><h2>धेरै सोधिने प्रश्न</h2>${meta.faqs.map((item) => `<h3>${esc(item.q)}</h3><p>${esc(item.a)}</p>`).join("")}</section>` : "";
   return `${steps}${faq}`;
 }
+function featureDirectory(path) {
+  if (!FEATURE_HUB_ROUTES.has(path)) return "";
+  const features = featureEditorial.filter(item => "/" + item.group === path);
+  return `<section class="seo-feature-directory" aria-label="Feature guide"><h2>यस समूहका विषय र उपकरण · Explore these tools</h2><p>प्रत्येक विषयको उद्देश्य र उपलब्धता बुझेर सम्बन्धित सुविधा खोल्नुहोस्। · Choose a topic and read what it offers before opening its tool.</p>${features.map(item => `<article><h3><a href="${esc(item.href)}">${esc(item.titleNe)} · ${esc(item.titleEn)}</a></h3><p lang="ne">${esc(item.descriptionNe)}</p><p lang="en">${esc(item.descriptionEn)}</p></article>`).join("")}</section>`;
+}
 function bodyFor(path, meta, indexed) {
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   let extra = "";
@@ -104,7 +113,7 @@ function bodyFor(path, meta, indexed) {
   } else if (path === "/convert" || path === "/tools/bstoad" || path === "/tools/adtobs") {
     extra = `<p>नेपाली मिति (Bikram Sambat/BS) र Gregorian/AD बीच दुवैतर्फ मिति रूपान्तरण गर्नुहोस्। परिणाम आफ्नै पात्रोको पात्रो अभिलेखअनुसार देखाइन्छ।</p>`;
   }
-  return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(meta.title)}</h1><p>${esc(meta.description)}</p>${extra}${intentGuide(meta)}<nav aria-label="सम्बन्धित पात्रो पृष्ठहरू">${relatedLinks(path)}</nav>${indexed ? "" : "<p>यो पुरानो पात्रो पृष्ठ सन्दर्भ र navigation का लागि उपलब्ध छ।</p>"}</article></main>`;
+  return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(meta.title)}</h1><p>${esc(meta.description)}</p>${extra}${intentGuide(meta)}${featureDirectory(path)}<nav aria-label="सम्बन्धित पात्रो पृष्ठहरू">${relatedLinks(path)}</nav>${indexed ? "" : "<p>यो पुरानो पात्रो पृष्ठ सन्दर्भ र navigation का लागि उपलब्ध छ।</p>"}</article></main>`;
 }
 function schemaFor(path, meta) {
   const graph = [
