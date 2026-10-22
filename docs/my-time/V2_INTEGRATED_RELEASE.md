@@ -16,7 +16,23 @@ The retired `व्यक्तिगत प्राथमिकता र स�
 - API: only HTTP 200 responses may advertise public caching; errors use no-store.
 - The clock uses selected timezone civil bounds, including 23/25-hour DST days; previous solar-night windows fill the selected civil date before sunrise where available. A live hand is hidden when viewing a different date.
 - Candidate Shubh windows are split at exact UTC Rahu/Yamaganda/Gulika and Hora boundaries. Positive secondary signals cannot cancel the explicit Rahu Kaal caution cap.
-- A result may be called fully personalized only when an actual natal chart and both Tara and Moon-sign comparisons are available, plus sufficient other inputs.
+- A connected existing JanmaPatro birth chart is always labelled birth-chart personalized. Optional unavailable factors are omitted and remaining weights are normalized; do not show "limited signal" or "score unavailable" just because an optional comparison is absent.
+- Candidate-time charts reuse the existing `calculateChart` engine with the selected observation place and IANA timezone. Candidate Tara/Chandra Bala are recalculated at each candidate midpoint rather than copied from the current clock.
+- Activity profiles assign different relative weights for general use, work, study, travel, prayer, meditation and family plans. The UI reports each included factor's effective normalized weight, so the breakdown remains accurate when some signals are absent.
+
+  Configured coefficients (each profile totals 100 before unavailable signals are normalized):
+
+  | Profile | Panchang | Rashifal | Dasha–Hora | Tara/Chandra | House lords | Activity Hora | Activity Tatwa | Gochara |
+  |---|---:|---:|---:|---:|---:|---:|---:|---:|
+  | General | 35 | 18 | 12 | 15 | 15 | 0 | 0 | 5 |
+  | Work | 31 | 15 | 10 | 10 | 20 | 9 | 2 | 3 |
+  | Study | 31 | 16 | 8 | 13 | 15 | 9 | 4 | 4 |
+  | Travel | 32 | 13 | 8 | 10 | 14 | 10 | 6 | 7 |
+  | Prayer | 30 | 13 | 8 | 12 | 11 | 6 | 12 | 8 |
+  | Meditation | 30 | 12 | 8 | 12 | 10 | 6 | 13 | 9 |
+  | Family | 32 | 15 | 8 | 11 | 14 | 8 | 5 | 7 |
+- Dasha–Hora is graded for same-planet, natural-friend, neutral and natural-enemy relationships; a cautious natal Dasha placement/dignity/conjunction can reduce that signal. Activity-relevant house lords use natal and candidate-time placements/dignity. Jupiter/Saturn Gochara is assessed from the natal Moon sign when event-chart data is available.
+- Scores remain traditional heuristic rankings, not empirical probability estimates, objective measures of efficacy, or outcome guarantees. Do not claim Ashtakavarga or other unimplemented factors are part of this score.
 - The relevant Vimshottari lord is evaluated at each candidate instant, not merely once at noon.
 - Birth times are explicitly tied to a selected IANA timezone. Existing charts without a timezone retain legacy Nepal Standard Time meaning. DST gaps and ambiguous folds are rejected rather than guessed.
 - Relative score is NOT the probability of success. The inputs and rules are traditional interpretations; astronomical timestamps are separately verifiable.
