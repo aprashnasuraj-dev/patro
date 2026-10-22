@@ -45,7 +45,7 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   "/nepal-sambat": "/nepal-sambat/mandala",
 };
 const SPA_EXACT = new Set(["/janmadin",
-  "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
+  "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/panchang", "/muhurat", "/jyotish", "/planets", "/nepal-calendar", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
   "/time-machine", "/mytime", "/on-this-day", "/festivals", "/janmapatro", "/janmapatro/milan.html", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
   "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",
   "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
