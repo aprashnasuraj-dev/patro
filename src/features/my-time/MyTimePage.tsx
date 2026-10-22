@@ -6,7 +6,7 @@ import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { apparentSolarTime } from "../../patro-tools/core/apparent-solar-time";
 import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleCounters } from "../../patro-tools/core/my-time-extended";
 import { choghadiyaWindows, horaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
-import { deviceZone, readPlace } from "../../place/place";
+import { readPlace } from "../../place/place";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
 import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
