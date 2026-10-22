@@ -112,12 +112,12 @@ const RASHIS_EN = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Sco
 function readPreferences(): Preferences {
   try {
     const saved = JSON.parse(localStorage.getItem(PREF_KEY) || "null");
-    if (saved && typeof saved.timezone === "string" && Number.isFinite(saved.lat) && Number.isFinite(saved.lng)) return saved;
+    if (saved && typeof saved.timezone === "string" && isValidTimeZone(saved.timezone) && Number.isFinite(saved.lat) && Math.abs(saved.lat) <= 90 && Number.isFinite(saved.lng) && Math.abs(saved.lng) <= 180) return saved;
   } catch {}
   const place = readPlace();
-  return place
-    ? { timezone: place.tz, lat: place.lat, lng: place.lon }
-    : { timezone: deviceZone() || "Asia/Kathmandu", lat: 27.7172, lng: 85.324 };
+  return place && isValidTimeZone(place.tz) && Number.isFinite(place.lat) && Math.abs(place.lat) <= 90 && Number.isFinite(place.lon) && Math.abs(place.lon) <= 180
+    ? { timezone: place.tz, lat: place.lat, lng: place.lon, label: place.name }
+    : { timezone: "Asia/Kathmandu", lat: 27.7172, lng: 85.324, label: "Kathmandu, Nepal" }; // Coordinates must never be paired with an unrelated device timezone.
 }
 function localDate(timezone: string, now = new Date()) {
   try {
@@ -491,8 +491,9 @@ export default function MyTimePage() {
     const today = localDate(preferences.timezone, now);
     if (today !== observedLocalDay.current) {
       observedLocalDay.current = today;
-      setDate(today);
-      void loadSnapshot(today, preferences);
+      // Preserve a deliberately selected historical/future date across midnight.
+      if (date === observedLocalDay.current || date === today) void loadSnapshot(today, preferences);
+
     }
   }, [now, preferences, loadSnapshot]); // Refresh the briefing after the selected timezone crosses midnight.
   const dateLabel = useMemo(() => localDateLabel(date, preferences.timezone, language), [date, preferences.timezone, language]);
@@ -675,7 +676,7 @@ export default function MyTimePage() {
       <button type="button" className="mt-primary" disabled={loading || !date || !isValidTimeZone(preferences.timezone.trim()) || !isValidCoordinate(latitudeInput,-90,90) || !isValidCoordinate(longitudeInput,-180,180)} onClick={()=>void loadSnapshot(date,preferences,true)}><RefreshCw size={16} className={loading?"mt-spinning":""}/>{l(language,"गणना अपडेट","Update calculations")}</button>
     </section>
 
-    <section className="mt-observatory-controls" aria-label={l(language,"समय तह अनुकूलन","Customize time layers")}>
+    <details className="mt-observatory-details"><summary>{l(language,"उन्नत दृश्य र समय तहहरू","Advanced view and time layers")}</summary><section className="mt-observatory-controls" aria-label={l(language,"समय तह अनुकूलन","Customize time layers")}>
       <div><span className="mt-section-kicker">{l(language,"आफ्नो दृश्य बनाउनुहोस्","MAKE THIS VIEW YOURS")}</span><strong>{l(language,"देखाउने समय तहहरू","Visible time layers")}</strong></div>
       <label><input type="checkbox" checked={observatoryLayers.clocks} onChange={event=>setObservatoryLayers(old=>({...old,clocks:event.target.checked}))}/>{l(language,"नेपाल/स्थानीय घडी","Nepal + local clocks")}</label>
       <label><input type="checkbox" checked={observatoryLayers.scales} onChange={event=>setObservatoryLayers(old=>({...old,scales:event.target.checked}))}/>{l(language,"JD / MJD / Unix","JD / MJD / Unix")}</label>
@@ -685,7 +686,7 @@ export default function MyTimePage() {
       <label><input type="checkbox" checked={observatoryLayers.hora} onChange={event=>setObservatoryLayers(old=>({...old,hora:event.target.checked}))}/>{l(language,"होरा घेरा","Hora ring")}</label>
       <label><input type="checkbox" checked={observatoryLayers.twilight} onChange={event=>setObservatoryLayers(old=>({...old,twilight:event.target.checked}))}/>{l(language,"सन्ध्याकाल घेरा","Twilight ring")}</label>
       <label className="mt-tantra-toggle"><input type="checkbox" checked={observatoryLayers.tantra} onChange={event=>{const enabled=event.target.checked;try{if(enabled)localStorage.removeItem("aafnaipatro.mytime.tantra-optout.v1");else localStorage.setItem("aafnaipatro.mytime.tantra-optout.v1","true");}catch{}setObservatoryLayers(old=>({...old,tantra:enabled}));}}/>{l(language,"तन्त्रविद्या कालगणना","Tantra Vidya")}</label>
-    </section>
+    </section></details>
     {observatoryLayers.clocks && <section className="mt-extra-grid" aria-label={l(language,"नेपाल र स्थानीय समय","Nepal and local time")}>
       <article className="mt-extra-card"><small>{l(language,"नेपाल मानक समय · UTC+05:45","Nepal Standard Time · UTC+05:45")}</small><strong>{nepalTime.time}</strong><span>{nepalTime.date} · NPT</span></article>
       <article className="mt-extra-card"><small>{l(language,"तपाईंको चयन गरिएको समय क्षेत्र","Your selected timezone")}</small><strong>{localTime}</strong><span>{preferences.timezone}</span></article>
@@ -764,10 +765,10 @@ export default function MyTimePage() {
     </section>
 
 
-    <section id="mt-layers" className="mt-section">
+    <details id="mt-layers" className="mt-section mt-advanced-details"><summary>{l(language,"थप समय तहहरू अन्वेषण गर्नुहोस्","Explore additional time layers")}</summary>
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह तपाईंले छानेको मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। आफूलाई चाहिने समयका तहहरू खोल्नुहोस्।","Each layer follows your selected date, location and timezone. Open the time layers that interest you.")}</p></div>
       <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
-    </section>
+    </details>
 
     <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
       <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट व्यक्तिगत समय अनुभव मिलाउनुहोस्","Personalize your time experience with birth details")}</h2></div><Moon size={21}/></div>
