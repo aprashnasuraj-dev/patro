@@ -11,33 +11,33 @@ type Props = {
   group: FeatureGroupId;
   onNavigate: (feature: PatroFeature) => void;
 };
-const DESIGN: Record<FeatureGroupId,{symbol:string;captionNe:string;captionEn:string;stepsNe:[string,string,string];stepsEn:[string,string,string];metricNe:string;metricEn:string}> = {
+const DESIGN: Record<FeatureGroupId,{captionNe:string;captionEn:string;stepsNe:[string,string,string];stepsEn:[string,string,string];metricNe:string;metricEn:string}> = {
   panchang: {
-    symbol:"☀",captionNe:"सूर्योदयबाट सुरु हुने नेपालको दिन",captionEn:"A Nepal day beginning at sunrise",
+    captionNe:"सूर्योदयबाट सुरु हुने नेपालको दिन",captionEn:"A Nepal day beginning at sunrise",
     stepsNe:["मिति छान्नुहोस्","तिथि तथा समय हेर्नुहोस्","स्रोत र गणना छुट्याउनुहोस्"],
     stepsEn:["Choose your date","Explore the elements and timings","Distinguish source from calculation"],
     metricNe:"नेपाल समय · NPT",metricEn:"Nepal Standard Time · NPT"
   },
   muhurat: {
-    symbol:"✺",captionNe:"दिनमानका आधारमा समय-अन्वेषण",captionEn:"An exploration of daylight-based time",
+    captionNe:"दिनमानका आधारमा समय-अन्वेषण",captionEn:"An exploration of daylight-based time",
     stepsNe:["मिति र अवधि छान्नुहोस्","स्थानीय समयखण्ड हेर्नुहोस्","प्रकाशित साइत पुष्टि गर्नुहोस्"],
     stepsEn:["Choose date and range","Explore local time windows","Verify published Muhurat"],
     metricNe:"स्थान · काठमाडौं",metricEn:"Location · Kathmandu"
   },
   jyotish: {
-    symbol:"✧",captionNe:"आफ्नो विद्यमान जन्मपत्रोबाट",captionEn:"From your existing birth chart",
+    captionNe:"आफ्नो विद्यमान जन्मपत्रोबाट",captionEn:"From your existing birth chart",
     stepsNe:["विद्यमान चिना खोल्नुहोस्","समय तथा स्थान जाँच्नुहोस्","सम्बन्धित गणना बुझ्नुहोस्"],
     stepsEn:["Open your existing chart","Verify birth time and place","Explore the calculation"],
     metricNe:"अर्को प्रोफाइल चाहिँदैन",metricEn:"No additional profile"
   },
   planets: {
-    symbol:"◎",captionNe:"आकाशीय गति, ग्रह र समय",captionEn:"Celestial motion, planets and time",
+    captionNe:"आकाशीय गति, ग्रह र समय",captionEn:"Celestial motion, planets and time",
     stepsNe:["गणना मिति छान्नुहोस्","चाहिएको घटना खोज्नुहोस्","पद्धति र सीमाहरू पढ्नुहोस्"],
     stepsEn:["Choose an evaluation date","Find your selected event","Read the method and limits"],
     metricNe:"उपकरणमा स्थानीय गणना",metricEn:"Locally calculated in your browser"
   },
   "nepal-calendar": {
-    symbol:"▦",captionNe:"नेपालका संवत् र समुदाय",captionEn:"Nepal's calendar traditions",
+    captionNe:"नेपालका संवत् र समुदाय",captionEn:"Nepal's calendar traditions",
     stepsNe:["संवत् वा समुदाय छान्नुहोस्","विद्यमान पात्रो खोल्नुहोस्","स्थानीय स्रोत हेर्नुहोस्"],
     stepsEn:["Choose a calendar or community","Open the existing calendar","Review local sources"],
     metricNe:"परम्परा अलग, स्रोत स्पष्ट",metricEn:"Distinct traditions, clear sources"
@@ -104,12 +104,12 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
       </div>
     </div>
     {guide && <div className="ap-pj-experience-reference" aria-label={l(language,"यस विषयबारे जानकारी","About this topic")}>
-      <div><h4>{l(language,"यो किन फरक छ?","What makes this distinct?")}</h4><p>{l(language,guide.contextNe,guide.contextEn)}</p></div>
-      <div><h4>{l(language,"मिति वा नतिजा देखाउनुअघि","Before dates or results can be published")}</h4><p>{l(language,guide.nextNe,guide.nextEn)}</p></div>
+      <div><h4 className="ap-pj-reference-heading"><FeatureGlyph featureId={feature.id} symbol="document" size="inline" />{l(language,"यो किन फरक छ?","What makes this distinct?")}</h4><p>{l(language,guide.contextNe,guide.contextEn)}</p></div>
+      <div><h4 className="ap-pj-reference-heading"><FeatureGlyph featureId={feature.id} symbol="shield" size="inline" />{l(language,"मिति वा नतिजा देखाउनुअघि","Before dates or results can be published")}</h4><p>{l(language,guide.nextNe,guide.nextEn)}</p></div>
     </div>}
     <div className="ap-pj-experience-next">
       <span>{l(language,"योसँग सम्बन्धित","You may also explore")}</span>
-      <div>{next.map(item=><a key={item.id} href={item.href} onClick={()=>onNavigate(item)}>{l(language,item.titleNe,item.titleEn)} <span aria-hidden="true">↗</span></a>)}</div>
+      <div>{next.map(item=><a key={item.id} href={item.href} onClick={()=>onNavigate(item)}><FeatureGlyph featureId={item.id} size="inline" />{l(language,item.titleNe,item.titleEn)} <span aria-hidden="true">↗</span></a>)}</div>
     </div>
   </section>;
 }
