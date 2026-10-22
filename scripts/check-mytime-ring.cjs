@@ -20,6 +20,7 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     // Synthetic fixture only: verify that an existing JanmaPatro connection is
     // recognized in both language views without creating a separate profile.
     await context.addInitScript(() => {
+      if (!/^https?:$/.test(location.protocol)) return;
       localStorage.setItem("aafnai.jyotish.china.context.v1", JSON.stringify({
         rashi: { name: "वृष" }, lagna: { name: "कन्या" },
         nakshatra: { name: "रोहिणी", pada: 2 },
