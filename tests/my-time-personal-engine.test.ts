@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { JANMAPATRO_CONTEXT_STORAGE_KEY, createJanmaPatroContext, findJanmaPatroBirthPlace, readJanmaPatroBirthInput, saveJanmaPatroContext } from "../src/jyotish/my-time-bridge";
-import { calculateChart, normalizeBirthDate, type ChartResult } from "../src/jyotish/jyotishEngine";
+import { birthInstant, calculateChart, normalizeBirthDate, type ChartResult } from "../src/jyotish/jyotishEngine";
 import { panchangAt } from "../src/patro-tools/core/astro";
 import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
 
@@ -146,6 +146,23 @@ describe("personal-time recommendation engine", () => {
   });
 });
 
+
+describe("birthplace historical timezone integrity", () => {
+  it("preserves the Nepal Standard Time behavior of existing records", () => {
+    expect(birthInstant({date:"1995-04-10",time:"08:30"}).toISOString()).toBe("1995-04-10T02:45:00.000Z");
+    expect(birthInstant({date:"1995-04-10",time:"08:30",timezone:"Asia/Kathmandu"}).toISOString()).toBe("1995-04-10T02:45:00.000Z");
+  });
+  it("converts Tokyo and winter/summer London correctly", () => {
+    expect(birthInstant({date:"2026-01-10",time:"09:00",timezone:"Asia/Tokyo"}).toISOString()).toBe("2026-01-10T00:00:00.000Z");
+    expect(birthInstant({date:"2026-01-10",time:"09:00",timezone:"Europe/London"}).toISOString()).toBe("2026-01-10T09:00:00.000Z");
+    expect(birthInstant({date:"2026-07-10",time:"09:00",timezone:"Europe/London"}).toISOString()).toBe("2026-07-10T08:00:00.000Z");
+  });
+  it("rejects DST gaps and duplicated birth times rather than guessing", () => {
+    expect(()=>birthInstant({date:"2026-03-29",time:"01:30",timezone:"Europe/London"})).toThrow("nonexistent_birth_wall_time");
+    expect(()=>birthInstant({date:"2026-10-25",time:"01:30",timezone:"Europe/London"})).toThrow("ambiguous_birth_wall_time");
+    expect(()=>birthInstant({date:"2026-01-10",time:"09:00",timezone:"Mars/Olympus"})).toThrow("invalid_birth_timezone");
+  });
+});
 
 describe("Janmapatro and My Time shared birth profile", () => {
   it("resolves known cities and leaves unknown places unresolved", () => {
