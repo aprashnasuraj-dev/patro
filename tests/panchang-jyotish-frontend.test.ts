@@ -174,6 +174,22 @@ describe("bilingual feature-first visual obligations", () => {
     expect(style).toContain("prefers-reduced-motion");
     expect(workspace).toContain("overscroll-behavior-x:contain");
   });
+  it("uses explicit column scopes and localized current-daylight labels", () => {
+    for (const path of [
+      "src/panchang-jyotish/workspaces/PanchangWorkspace.tsx",
+      "src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx",
+      "src/panchang-jyotish/workspaces/JyotishWorkspace.tsx",
+      "src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx"
+    ]) {
+      const content = source(path);
+      expect(content).toContain('<th scope="col">');
+      expect(content).not.toContain("<th>");
+    }
+    const daylight = source("src/panchang-jyotish/workspaces/DaylightArc.tsx");
+    expect(daylight).toContain("daylightLabel");
+    expect(daylight).toContain("toNepaliDigits");
+    expect(daylight).toContain("valueLabel");
+  });
   it("improves regional search recovery and live daylight rendering", () => {
     const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
     const daylight = source("src/panchang-jyotish/workspaces/DaylightArc.tsx");

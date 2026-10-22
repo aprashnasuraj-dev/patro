@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from "react";
 import type { DayPanchang } from "../../patro-tools/core/types";
+import { toNepaliDigits } from "../../patro-tools/core/names";
 import { formatLocalTime, todayInNepal } from "./shared";
 import { l } from "../../useUiLanguage";
 import { FeatureGlyph } from "../FeatureGlyph";
@@ -27,9 +28,15 @@ export function DaylightArc({ day, language }: Props) {
     y: 154 - 117 * Math.sin(Math.PI * progress)
   };
   const value = progress === null ? null : Math.round(progress * 100);
+  const valueLabel = value === null ? null : language === "ne" ? toNepaliDigits(value) : String(value);
+  const daylightHours = Math.floor(duration / 3_600_000);
+  const daylightMinutes = Math.floor(duration % 3_600_000 / 60_000);
+  const daylightLabel = language === "ne"
+    ? `${toNepaliDigits(daylightHours)} घण्टा ${toNepaliDigits(daylightMinutes)} मिनेट`
+    : `${daylightHours}h ${daylightMinutes}m`;
   return <figure className="ap-pjw-daylight" aria-label={l(language, "स्थानीय सूर्यको दिनमान", "Local solar daylight")}>
     <div className="ap-pjw-daylight-art">
-      <svg viewBox="0 0 320 180" role="img" aria-label={progress === null ? l(language, "सूर्योदयदेखि सूर्यास्तसम्मको दिनमान", "Daylight arc from sunrise to sunset") : l(language, "आजको दिनमान प्रगति " + value + " प्रतिशत", "Today's daylight progress " + value + " percent")}>
+      <svg viewBox="0 0 320 180" role="img" aria-label={progress === null ? l(language, "सूर्योदयदेखि सूर्यास्तसम्मको दिनमान", "Daylight arc from sunrise to sunset") : l(language, "आजको दिनमान प्रगति " + valueLabel + " प्रतिशत", "Today's daylight progress " + valueLabel + " percent")}>
         <defs><linearGradient id={gradientId}><stop offset="0%" stopColor="#bc8435"/><stop offset="50%" stopColor="#dcb569"/><stop offset="100%" stopColor="#337b53"/></linearGradient></defs>
         <path d="M43 154 A117 117 0 0 1 277 154" fill="none" stroke="currentColor" strokeOpacity=".12" strokeWidth="13" strokeLinecap="round"/>
         <path d="M43 154 A117 117 0 0 1 277 154" fill="none" stroke={`url(#${gradientId})`} strokeWidth="9" strokeLinecap="round"/>
@@ -37,7 +44,7 @@ export function DaylightArc({ day, language }: Props) {
         <circle cx="43" cy="154" r="6" fill="#337b53"/><circle cx="277" cy="154" r="6" fill="#bc8435"/>
         {point && <g><circle cx={point.x} cy={point.y} r="12" fill="#d7a24c" opacity=".22"/><circle cx={point.x} cy={point.y} r="6" fill="#bc8435" stroke="currentColor" strokeWidth="1"/></g>}
         <text x="160" y="113" textAnchor="middle" fill="currentColor" fontSize="12" fontWeight="700">{l(language, "स्थानीय दिनमान", "LOCAL DAYLIGHT")}</text>
-        <text x="160" y="139" textAnchor="middle" fill="currentColor" fontSize="16" fontWeight="800">{Math.floor(duration / 3_600_000)}h {Math.floor(duration % 3_600_000 / 60_000)}m</text>
+        <text x="160" y="139" textAnchor="middle" fill="currentColor" fontSize="16" fontWeight="800">{daylightLabel}</text>
       </svg>
     </div>
     <figcaption className="ap-pjw-daylight-caption"><span><b className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunrise" size="inline"/>{l(language, "सूर्योदय", "Sunrise")}</b><strong>{formatLocalTime(day.sunrise, language)}</strong></span><span>{progress === null ? l(language, "छानिएको मितिको सूर्यचक्र", "Solar cycle for selected date") : l(language, "आजको वास्तविक घडीबाट", "Based on current local time")}</span><span><b className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunset" size="inline"/>{l(language, "सूर्यास्त", "Sunset")}</b><strong>{formatLocalTime(day.sunset, language)}</strong></span></figcaption>
