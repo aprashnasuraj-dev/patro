@@ -75,7 +75,7 @@ export function formatPanchangClock(value: Date | null | undefined, anchorDateAd
   const date = [get("year"), get("month"), get("day")].join("-");
   const dayDelta = Math.round((Date.parse(date + "T00:00:00Z") - Date.parse(anchorDateAd + "T00:00:00Z")) / 86_400_000);
   const hours = Number(get("hour")) + dayDelta * 24;
-  const output = String(hours).padStart(2, hours < 0 ? 3 : 2) + ":" + get("minute");
+  const output = String(hours).padStart(hours < 0 ? 3 : 2, "0") + ":" + get("minute");
   return language === "ne" ? toNepaliDigits(output) : output;
 }
 export function formatLocalDateTime(value: Date | null | undefined, language: "ne" | "en"): string {

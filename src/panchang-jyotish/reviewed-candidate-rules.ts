@@ -1,3 +1,5 @@
+import { panchangAt } from "../../patro-tools/core/astro";
+
 /**
  * Source-traced *candidate classification*, not an observance or personalized verdict.
  * Nakshatra numbers are one-based (Ashwini = 1, Revati = 27). Panchak is NOT the whole

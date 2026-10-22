@@ -8,8 +8,8 @@ export class WorkspaceErrorBoundary extends Component<Props, State> {
   state: State = { failed: false };
   static getDerivedStateFromError(): State { return { failed: true }; }
   componentDidCatch(error: Error, info: ErrorInfo) {
-    // Do not log saved birth-chart inputs or chart content.
-    if (import.meta.env.DEV) console.error("Panchang workspace render failed", error.name, info.componentStack);
+    // Do not log saved birth-chart inputs or chart content; log only the safe error label and component stack.
+    console.error("Panchang workspace render failed", error.name, info.componentStack);
   }
   componentDidUpdate(previous: Props) {
     if (previous.resetKey !== this.props.resetKey && this.state.failed) this.setState({ failed: false });

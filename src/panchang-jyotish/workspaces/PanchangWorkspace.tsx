@@ -7,7 +7,7 @@ import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 import { resolveNepalPanchangDay } from "../archive-adapter";
 import { findNakshatraRuleWindows, type NakshatraRuleWindow } from "../reviewed-candidate-rules";
 import { KATHMANDU } from "../../patro-tools/core/types";
-import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, localSunriseTithiPattern, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
+import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, localSunriseTithiPattern, type PanchangClockMode, KARANA_EN, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import { DaylightArc } from "./DaylightArc";
 import { FeatureGlyph } from "../FeatureGlyph";
 import "./workspace.css";
@@ -266,7 +266,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       </section>
 
       {selectedFeatureId === "F025" && <section className="ap-pjw-feature-focus"><h3>{l(language, "आगामी सूर्य राशि प्रवेश", "Next solar sign ingress")}</h3><strong>{nextIngress ? formatLocalDateTime(nextIngress, language) : l(language, "यस समयसीमामा परिवर्तन फेला परेन।", "No ingress found in the search window.")}</strong><p>{l(language, "समय सूर्यको निरयण दीर्घांशको राशि सीमा खोजेर निकालिएको हो।", "Calculated by searching the sign boundary of the Sun's sidereal longitude.")}</p></section>}
-      {focus && focus.disposition === "reviewed" && <p className="ap-pjw-note">{l(language, "यो परम्पराको ठ्याक्कै मिति वा अनुष्ठान समय स्थानीय पञ्चाङ्ग र प्रकाशित स्रोतसँग पुष्टि गरेर मात्र निश्चित गर्नुपर्छ। यहाँ देखिएका खगोलीय तथ्यलाई आधिकारिक पर्व निर्णय नमान्नुहोस्।", "The exact date or observance time for this tradition should be confirmed against a local Panchang and published source. Astronomical facts shown here are not an official festival determination.")}</p>}
+      {focus && focus.disposition === "source-review" && <p className="ap-pjw-note">{l(language, "यो परम्पराको ठ्याक्कै मिति वा अनुष्ठान समय स्थानीय पञ्चाङ्ग र प्रकाशित स्रोतसँग पुष्टि गरेर मात्र निश्चित गर्नुपर्छ। यहाँ देखिएका खगोलीय तथ्यलाई आधिकारिक पर्व निर्णय नमान्नुहोस्।", "The exact date or observance time for this tradition should be confirmed against a local Panchang and published source. Astronomical facts shown here are not an official festival determination.")}</p>}
       <p className="ap-pjw-method">{languageNote} {contract && l(language, "यो ब्राउजरमा चल्ने गणनात्मक दृश्य हो; अभिलेख वा आधिकारिक प्रकाशित पर्वको विकल्प होइन।", "This is a browser-calculated view, not a replacement for verified archive facts or officially published observance dates.")}</p>
       <div className="ap-pjw-footer-links">
         <a href={"/date/" + date}>{l(language, "यस दिनको पूरा विवरण", "Full day details")} ↗</a>

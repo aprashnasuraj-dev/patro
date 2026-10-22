@@ -201,6 +201,6 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
       </div>
     </section>
     {REVIEW_CARDS.map((card)=><section className="ap-pjw-card" key={card.id}><div className="ap-pjw-subhead"><h3>{l(language,card.ne,card.en)}</h3><small>{l(language,"परम्परागत सन्दर्भ","Traditional reference")}</small></div><p className="ap-pjw-section-note">{l(language,card.bodyNe,card.bodyEn)}</p></section>)}
-    {focus?.disposition==="reviewed"&&<p className="ap-pjw-method">{l(language,"यो सुविधा स्रोत-पुष्टि भएको परम्परागत नियमबिना निश्चित व्यक्तिगत निर्णयका रूपमा प्रस्तुत हुँदैन।","This feature is not presented as a definitive personal judgment without a source-verified traditional rule.")}</p>}
+    {focus?.disposition==="source-review"&&<p className="ap-pjw-method">{l(language,"यो सुविधा स्रोत-पुष्टि भएको परम्परागत नियमबिना निश्चित व्यक्तिगत निर्णयका रूपमा प्रस्तुत हुँदैन।","This feature is not presented as a definitive personal judgment without a source-verified traditional rule.")}</p>}
   </div>;
 }
