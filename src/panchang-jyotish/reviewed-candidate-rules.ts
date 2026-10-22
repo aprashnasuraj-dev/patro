@@ -1,10 +1,10 @@
 /**
- * Source-audited *candidate classification*, not an observance or personalized verdict.
+ * Source-traced *candidate classification*, not an observance or personalized verdict.
  * Nakshatra numbers are one-based (Ashwini = 1, Revati = 27). Panchak is NOT the whole
  * Dhanishtha Nakshatra: its candidate window starts at 300° sidereal Moon longitude (Pada 3).
  * Source references and limitations: docs/panchang-jyotish-integration/08_RULE_SOURCE_AUDIT.md
  */
-export const SOURCE_REVIEWED_NAKSHATRA_RULES = Object.freeze({
+export const NAKSHATRA_CANDIDATE_RULES = Object.freeze({
   panchak: [23,24,25,26,27],
   gandaMoola: [1,9,10,18,19,27],
   pushya: 8
@@ -18,9 +18,9 @@ export function classifyNakshatraCandidate(rule: CandidateNakshatraRule, nakshat
     const longitudeStar = Math.floor(moonSiderealLongitude! / (360 / 27)) + 1;
     return longitudeStar === nakshatraOneBased && moonSiderealLongitude! >= 300 && moonSiderealLongitude! < 360;
   }
-  if (rule === "gandaMoola") return SOURCE_REVIEWED_NAKSHATRA_RULES.gandaMoola.includes(nakshatraOneBased as 1);
-  if (rule === "raviPushya") return weekday === 0 && nakshatraOneBased === SOURCE_REVIEWED_NAKSHATRA_RULES.pushya;
-  return weekday === 4 && nakshatraOneBased === SOURCE_REVIEWED_NAKSHATRA_RULES.pushya;
+  if (rule === "gandaMoola") return NAKSHATRA_CANDIDATE_RULES.gandaMoola.includes(nakshatraOneBased as 1);
+  if (rule === "raviPushya") return weekday === 0 && nakshatraOneBased === NAKSHATRA_CANDIDATE_RULES.pushya;
+  return weekday === 4 && nakshatraOneBased === NAKSHATRA_CANDIDATE_RULES.pushya;
 }
 /** Convert a UTC instant to the Kathmandu civil weekday (Sunday=0). This is not a sunrise-to-sunrise Vara. */
 export function kathmanduCivilWeekday(instant: Date): number {
@@ -53,7 +53,7 @@ function nakshatraRuleMember(rule:"panchak"|"gandaMoola",at:Date):boolean {
   const oneBased=state.nakshatra+1;
   return rule==="panchak"
     ? state.moonSidereal>=300 && state.moonSidereal<360
-    : SOURCE_REVIEWED_NAKSHATRA_RULES.gandaMoola.includes(oneBased as 1);
+    : NAKSHATRA_CANDIDATE_RULES.gandaMoola.includes(oneBased as 1);
 }
 function firstMembershipChange(rule:"panchak"|"gandaMoola",leftMs:number,rightMs:number,leftMember:boolean):number {
   let lo=leftMs,hi=rightMs;
