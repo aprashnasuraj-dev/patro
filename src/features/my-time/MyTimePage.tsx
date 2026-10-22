@@ -14,7 +14,7 @@ import { splitTimingWindowAtBoundaries } from "./timing-window-segments";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { calculateChart, normalizeBirthDate } from "../../jyotish/jyotishEngine";
 import { calculateTara } from "./tarabalam";
-import { JANMAPATRO_BIRTH_PLACES, createJanmaPatroContext, findJanmaPatroBirthPlace, saveJanmaPatroContext } from "../../jyotish/my-time-bridge";
+import { JANMAPATRO_BIRTH_PLACES, createJanmaPatroContext, findJanmaPatroBirthPlace, findJanmaPatroBirthTimezone, saveJanmaPatroContext } from "../../jyotish/my-time-bridge";
 
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
@@ -50,12 +50,12 @@ type Preferences = { timezone: string; lat: number; lng: number; label?: string 
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type LoadedRashifalSignal = { date: string; sign: string; signal: RashifalSignal };
 type PersonalContext = { birthChart: SavedJanmaPatroContext | null; rashifalSign: string | null; effectiveSign: string | null };
-type BirthInputDraft = { name: string; date: string; time: string; location: string; lat: string; lng: string };
+type BirthInputDraft = { name: string; date: string; time: string; timezone: string; location: string; lat: string; lng: string };
 function birthInputFromContext(chart: SavedJanmaPatroContext | null): BirthInputDraft {
   const birth = chart?.birth;
   const place = findJanmaPatroBirthPlace(birth?.location || "");
   return {
-    name: birth?.name || "", date: birth?.date || "", time: birth?.time || "", location: birth?.location || "",
+    name: birth?.name || "", date: birth?.date || "", time: birth?.time || "", timezone: birth?.timezone || findJanmaPatroBirthTimezone(birth?.location || "") || "Asia/Kathmandu", location: birth?.location || "",
     lat: birth?.lat != null ? String(birth.lat) : place ? String(place.lat) : "",
     lng: birth?.lng != null ? String(birth.lng) : place ? String(place.lng) : ""
   };
@@ -278,25 +278,27 @@ export default function MyTimePage() {
     const latText=birthInput.lat.trim()||(matchedPlace?String(matchedPlace.lat):"");
     const lngText=birthInput.lng.trim()||(matchedPlace?String(matchedPlace.lng):"");
     const lat=Number(latText),lng=Number(lngText);
-    if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time)){setBirthError(l(language,"जन्म समय छान्नुहोस्। समय नेपाल मानक समय (UTC+05:45) मा हुनुपर्छ।","Enter a valid birth time in Nepal Standard Time (UTC+05:45)."));return;}
+    if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time)){setBirthError(l(language,"जन्म समय छान्नुहोस्। जन्मस्थानको स्थानीय २४-घण्टे समय हुनुपर्छ।","Enter a valid birth time in the birthplace’s local timezone."));return;}
     if(!location||!latText||!lngText||!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>66.5||Math.abs(lng)>180){
       setBirthError(l(language,"जन्मस्थान छान्नुहोस् वा निर्देशाङ्कमा अक्षांश −६६.५° देखि ६६.५° र देशान्तर −१८०° देखि १८०° भित्र भर्नुहोस्।","Choose a birthplace or enter coordinates within latitude −66.5° to 66.5° and longitude −180° to 180°."));return;
     }
     try{
-      const chart=calculateChart({name:birthInput.name.trim().slice(0,100),date,time,location,lat,lng});
+      const chart=calculateChart({name:birthInput.name.trim().slice(0,100),date,time,timezone:birthInput.timezone.trim(),location,lat,lng});
       const context=createJanmaPatroContext(chart);
       if(!saveJanmaPatroContext(context))throw new Error("birth_profile_storage_unavailable");
       const refreshed=readPersonalContext();
       setPersonalContext(refreshed);setBirthInput(birthInputFromContext(refreshed.birthChart));setBirthSuccess(true);
     }catch(error){
-      setBirthError(error instanceof Error&&error.message==="birth_profile_storage_unavailable"
+      setBirthError(error instanceof Error&&["ambiguous_birth_wall_time","nonexistent_birth_wall_time","invalid_birth_timezone"].includes(error.message)
+        ? l(language,"जन्मस्थानको समय क्षेत्र वा जन्म समय अस्पष्ट/अमान्य छ। सही IANA समय क्षेत्र र DST परिवर्तनभन्दा बाहिरको प्रमाणित जन्म समय प्रयोग गर्नुहोस्।","The birthplace timezone or birth wall-clock time is invalid/ambiguous at a daylight-saving transition. Verify the original birth time and IANA timezone.")
+        : error instanceof Error&&error.message==="birth_profile_storage_unavailable"
         ? l(language,"जन्म विवरण यस ब्राउजरमा सुरक्षित हुन सकेन। स्थानीय भण्डारण अनुमति जाँच्नुहोस्।","Birth details could not be saved in this browser. Check local storage permissions.")
         : l(language,"व्यक्तिगत समय गणना हुन सकेन। जन्म विवरण र स्थानका निर्देशाङ्क जाँच्नुहोस्।","Could not calculate personalized timing. Check the birth details and coordinates."));
     }
   };
   const changeBirthLocation=(location:string)=>{
     const place=findJanmaPatroBirthPlace(location);
-    setBirthInput(old=>({...old,location,lat:place?String(place.lat):old.location===location?old.lat:"",lng:place?String(place.lng):old.location===location?old.lng:""}));
+    setBirthInput(old=>({...old,location,timezone:findJanmaPatroBirthTimezone(location) || old.timezone,lat:place?String(place.lat):old.location===location?old.lat:"",lng:place?String(place.lng):old.location===location?old.lng:""}));
     setBirthSuccess(false);
   };
 
@@ -782,7 +784,7 @@ export default function MyTimePage() {
 
     <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
       <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट व्यक्तिगत समय अनुभव मिलाउनुहोस्","Personalize your time experience with birth details")}</h2></div><Moon size={21}/></div>
-      <p>{l(language,"तपाईंको जन्म मिति, समय र स्थानबाट विद्यमान ज्योतिष इन्जिनले व्यक्तिगत समय सिफारिसका लागि आवश्यक जन्म-सन्दर्भ निकाल्छ। यहाँ जन्मकुण्डली देखाइँदैन। समय नेपाल मानक समय (UTC+05:45) मा भर्नुहोस्।","Your birth date, time and place feed the existing astrology engine to personalize time recommendations. This section does not display a birth chart. Enter time in Nepal Standard Time (UTC+05:45).")}</p>
+      <p>{l(language,"तपाईंको जन्म मिति, समय र स्थानबाट विद्यमान ज्योतिष इन्जिनले व्यक्तिगत समय सिफारिसका लागि आवश्यक जन्म-सन्दर्भ निकाल्छ। यहाँ जन्मकुण्डली देखाइँदैन। जन्मस्थानको सही स्थानीय समय र समय क्षेत्र भर्नुहोस्।","Your birth date, time and place feed the existing astrology engine to personalize time recommendations. This section does not display a birth chart. Enter the verified local birth time and birthplace timezone.")}</p>
       <div className="mt-birth-connect-row">
         <span>{l(language,"जन्मपत्रोमा विवरण भरिसक्नुभएको छ?","Already entered your birth details in Janmapatro?")}</span>
         <a href="/jyotish/china"><Sun size={15}/>{l(language,"जन्मपत्रो जोड्नुहोस्","Connect Janmapatro")}<ArrowUpRight size={14}/></a>
@@ -793,7 +795,8 @@ export default function MyTimePage() {
           <input type="text" required inputMode="numeric" autoComplete="bday" value={birthInput.date} placeholder="YYYY-MM-DD" aria-label={l(language,"जन्म मिति टाइप गर्नुहोस्","Type birth date")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
           <input type="date" value={normalizedBirthDateOrEmpty(birthInput.date)} aria-label={l(language,"पात्रोबाट जन्म मिति छान्नुहोस्","Choose birth date from calendar")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
         </div><small>{l(language,"YYYY-MM-DD टाइप गर्नुहोस् वा पात्रोबाट छान्नुहोस्।","Type YYYY-MM-DD or choose from the calendar.")}</small></label>
-        <label><span>{l(language,"जन्म समय (नेपाल समय)","Birth time (Nepal time)")}</span><input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
+        <label><span>{l(language,"जन्म समय (स्थानीय)","Birth time (local at birthplace)")}</span><input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
+        <label><span>{l(language,"जन्मस्थानको समय क्षेत्र (IANA)","Birthplace timezone (IANA)")}</span><input required value={birthInput.timezone} aria-invalid={!isValidTimeZone(birthInput.timezone)} placeholder="Asia/Kathmandu" onChange={e=>setBirthInput(v=>({...v,timezone:e.target.value}))}/><small>{l(language,"ऐतिहासिक समय र DST नियमअनुसार जन्म क्षण गणना गरिन्छ।","Historical timezone and DST rules determine the birth instant.")}</small></label>
         <label><span>{l(language,"नाम (ऐच्छिक)","Name (optional)")}</span><input maxLength={100} autoComplete="name" value={birthInput.name} placeholder={l(language,"तपाईंको नाम","Your name")} onChange={e=>setBirthInput(v=>({...v,name:e.target.value}))}/></label>
         <label><span>{l(language,"जन्मस्थान / सहर","Birthplace / city")}</span><input list="mt-birthplace-options" required maxLength={120} autoComplete="address-level2" value={birthInput.location} placeholder={l(language,"सहर खोज्नुहोस् वा टाइप गर्नुहोस्","Search or type a city")} onChange={e=>changeBirthLocation(e.target.value)}/><datalist id="mt-birthplace-options">{JANMAPATRO_BIRTH_PLACES.map(([name])=><option key={name} value={name}/>)}</datalist></label>
         <details className="mt-birth-manual-coordinates"><summary>{l(language,"स्थान सूचीमा छैन? निर्देशाङ्क भर्नुहोस्","Location not listed? Enter coordinates manually")}</summary>
