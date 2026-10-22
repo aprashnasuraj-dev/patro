@@ -1,6 +1,7 @@
 import type { PatroFeature, FeatureGroupId } from "./catalog";
 import { getFeatureAvailability, getFeaturesForGroup } from "./catalog";
 import { l } from "../useUiLanguage";
+import { FEATURE_REFERENCE_GUIDES } from "./feature-reference-guides";
 
 type Lang = "ne" | "en";
 type Props = {
@@ -136,6 +137,7 @@ export const FEATURE_SYMBOL: Record<string,string> = {
 };
 function stateCopy(feature:PatroFeature, language:Lang) {
   const state=getFeatureAvailability(feature);
+  const guide=state==="reference" ? FEATURE_REFERENCE_GUIDES[feature.id] : undefined;
   if(state==="existing")return {
     label:l(language,"विद्यमान सुविधा","Existing AafnaiPatro tool"),
     title:l(language,"उही भरपर्दो उपकरण, नयाँ प्रवेशमार्ग","The same tool, easier to find"),
@@ -193,6 +195,10 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
         <a className="ap-pj-experience-action" href="#ap-pj-calculator">{copy.action}<span aria-hidden="true">↓</span></a>}
       </div>
     </div>
+    {guide && <div className="ap-pj-experience-reference" aria-label={l(language,"यस विषयबारे जानकारी","About this topic")}>
+      <div><h4>{l(language,"यो किन फरक छ?","What makes this distinct?")}</h4><p>{l(language,guide.contextNe,guide.contextEn)}</p></div>
+      <div><h4>{l(language,"मिति वा नतिजा देखाउनुअघि","Before dates or results can be published")}</h4><p>{l(language,guide.nextNe,guide.nextEn)}</p></div>
+    </div>}
     <div className="ap-pj-experience-next">
       <span>{l(language,"योसँग सम्बन्धित","You may also explore")}</span>
       <div>{next.map(item=><a key={item.id} href={item.href} onClick={()=>onNavigate(item)}>{l(language,item.titleNe,item.titleEn)} <span aria-hidden="true">↗</span></a>)}</div>
