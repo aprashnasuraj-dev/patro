@@ -114,10 +114,15 @@ function namedElement(value: unknown, dateAd: string, confidence: "high" | "unve
     ...(ends ? { ends } : {})
   };
 }
-function nsText(value: unknown): string | null {
-  if (typeof value === "string") return stringOrNull(value);
+function nsValues(value: unknown): { ne: string | null; en: string | null } {
+  if (typeof value === "string") {
+    const text = stringOrNull(value);
+    return { ne: text, en: text };
+  }
   const item = asObject(value);
-  return stringOrNull(item.formatted_ne) ?? stringOrNull(item.formatted) ?? null;
+  const formattedNe = stringOrNull(item.formatted_ne);
+  const formattedEn = stringOrNull(item.formatted) ?? stringOrNull(item.formatted_en) ?? formattedNe;
+  return { ne: formattedNe ?? stringOrNull(item.formatted) ?? formattedEn, en: formattedEn };
 }
 export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calculated: PanchangDayContractV1): VerifiedArchiveOverlay {
   if (row.ad !== dateAd || !row.bs || !row.panchang?.tithi) throw new Error("archive_row_incomplete");
@@ -141,10 +146,12 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
   const archiveIsKathmandu = location.includes("kathmandu");
   const sunrise = archiveIsKathmandu ? archiveNptClock(dateAd, p.sunrise, confidence) : null;
   const sunset = archiveIsKathmandu ? archiveNptClock(dateAd, p.sunset, confidence) : null;
+  const ns = nsValues(row.ns ?? row.nepal_sambat);
   return {
     dateAd, timezone: "Asia/Kathmandu", sourceId: "existing-calendar-year-archive",
     confidence, bs: { year: row.bs.year, month: row.bs.month, day: row.bs.day },
-    nepalSambat: nsText(row.ns ?? row.nepal_sambat),
+    nepalSambat: ns.ne,
+    nepalSambatEn: ns.en,
     ...(Object.keys(elements).length ? { elements } : {}),
     ...(sunrise || sunset ? { sun: { ...(sunrise ? { sunrise } : {}), ...(sunset ? { sunset } : {}) } } : {})
   };
