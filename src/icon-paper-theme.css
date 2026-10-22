@@ -1,0 +1,92 @@
+/*
+ * Aafnai Patro iconography system.
+ * CSS-only lokta-paper grain keeps icons light, responsive and available offline.
+ */
+:root {
+  --ap-icon-paper: #f4ead4;
+  --ap-icon-paper-light: #fff9eb;
+  --ap-icon-paper-edge: #d9c49b;
+  --ap-icon-ink: #2e654f;
+  --ap-icon-grain: rgba(113, 86, 45, .085);
+}
+
+.ap-tool-icon,
+.ap-launcher-orb,
+.ap-launcher-search > span,
+.ap-feature-launcher-button > span,
+.mp-feature-icon,
+.mt-layer-icon,
+.mt-moon-mark,
+.mt-insight-icon,
+.mt-astro-lucky-orbit {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  flex: none;
+  overflow: hidden;
+  color: var(--ap-icon-ink) !important;
+  border: 1px solid color-mix(in srgb, var(--ap-icon-paper-edge) 74%, #fff) !important;
+  background-color: var(--ap-icon-paper) !important;
+  background-image:
+    radial-gradient(circle at 17% 21%, var(--ap-icon-grain) 0 .55px, transparent .9px),
+    radial-gradient(circle at 73% 67%, rgba(113, 86, 45, .065) 0 .6px, transparent 1px),
+    repeating-linear-gradient(17deg, rgba(160, 126, 72, .045) 0 1px, transparent 1px 5px),
+    linear-gradient(145deg, var(--ap-icon-paper-light), var(--ap-icon-paper)) !important;
+  background-size: 13px 11px, 17px 19px, auto, auto;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .88), 0 4px 12px rgba(91, 72, 41, .075);
+}
+.ap-tool-icon { border-radius: 13px !important; }
+.ap-launcher-orb { border-radius: 14px !important; }
+.ap-launcher-search > span { border-radius: 12px !important; }
+.ap-feature-launcher-button > span { border-radius: 50% !important; }
+.mp-feature-icon { width: 44px; height: 44px; border-radius: 14px !important; }
+.mt-layer-icon { border-radius: 13px !important; }
+.mt-moon-mark { border-radius: 17px !important; }
+.mt-insight-icon { border-radius: 13px !important; }
+
+.ap-tool-icon svg,
+.ap-launcher-orb svg,
+.ap-launcher-search > span svg,
+.ap-feature-launcher-button > span svg,
+.mp-feature-icon svg,
+.mt-layer-icon svg {
+  display: block;
+  flex: none;
+  color: currentColor;
+}
+.ap-tool-card:hover .ap-tool-icon,
+.ap-launcher-item:hover .ap-launcher-orb,
+.ap-feature-launcher-button:hover > span {
+  box-shadow: inset 0 1px rgba(255, 255, 255, .88), 0 7px 16px rgba(91, 72, 41, .14);
+}
+
+/* The feature directory uses the same icon container as the tools list. */
+.mp-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.mp-feature-card {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center; gap: 12px; min-width: 0;
+  padding: 13px; border: 1px solid var(--ap-line, #dce6de); border-radius: 16px;
+  color: var(--ap-ink, #18352b); text-decoration: none;
+  background: var(--ap-surface, #fff);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.mp-feature-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--ap-icon-ink) 28%, var(--ap-line, #dce6de)); box-shadow: 0 10px 24px rgba(34, 62, 45, .08); }
+.mp-feature-card > span:nth-child(2) { display: grid; gap: 3px; min-width: 0; }
+.mp-feature-card strong { font-size: .94rem; line-height: 1.35; }
+.mp-feature-card small { color: var(--ap-muted, #63756c); line-height: 1.5; }
+.mp-feature-card > b { color: var(--ap-icon-ink); }
+@media (max-width: 620px) {
+  .mp-feature-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Focus remains visible without relying on color alone. */
+.ap-tool-card:focus-visible .ap-tool-icon,
+.ap-launcher-item:focus-visible .ap-launcher-orb,
+.mp-feature-card:focus-visible .mp-feature-icon {
+  outline: 2px solid var(--ap-icon-ink);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ap-tool-card, .ap-launcher-item, .mp-feature-card, .ap-feature-launcher-button > span { transition: none !important; }
+}

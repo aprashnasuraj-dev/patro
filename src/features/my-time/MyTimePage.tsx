@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } from "lucide-react";
+import { ArrowUpRight, CircleAlert, Clock3, Globe2, Moon, MoonStar, Orbit, RefreshCw, Sparkles, Sun, Sunrise, Sunset, Telescope, TimerReset } from "lucide-react";
 import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
@@ -298,14 +298,14 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
 }
 
 const UPCOMING = [
-  ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","स्थानअनुसार सौर घटना गणना","Location-specific solar events","solar"],
-  ["◐","सन्ध्याकाल","Twilight","नागरिक, नौचालन र खगोलीय सन्ध्या","Civil, nautical and astronomical twilight","ready"],
-  ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations","ready"],
-  ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing","solar"],
-  ["☼","अभिजित मुहूर्त","Abhijit Muhurta","दिनको उज्यालो अवधिमा आधारित परम्परागत समय","Traditional window derived from the daylight span","abhijit"],
-  ["✦","शुभ मुहूर्त","Smart Muhurta","परम्परागत समय नियममा आधारित व्याख्यायोग्य सिफारिस","Explainable recommendations from traditional timing rules","muhurta"],
-  ["☾","ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context","personal"],
-  ["◎","ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context","sky"]
+  [Sunrise,"सूर्योदय र सूर्यास्त","Sunrise & sunset","स्थानअनुसार सौर घटना गणना","Location-specific solar events","solar"],
+  [Sunset,"सन्ध्याकाल","Twilight","नागरिक, नौचालन र खगोलीय सन्ध्या","Civil, nautical and astronomical twilight","ready"],
+  [Orbit,"नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations","ready"],
+  [Clock3,"चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing","solar"],
+  [Sun,"अभिजित मुहूर्त","Abhijit Muhurta","दिनको उज्यालो अवधिमा आधारित परम्परागत समय","Traditional window derived from the daylight span","abhijit"],
+  [Sparkles,"शुभ मुहूर्त","Smart Muhurta","परम्परागत समय नियममा आधारित व्याख्यायोग्य सिफारिस","Explainable recommendations from traditional timing rules","muhurta"],
+  [MoonStar,"ताराबल र चन्द्रबल","Tarabalam & Chandrabalam","घोषित जन्मपत्रो सन्दर्भ प्रयोग गर्छ","Uses declared birth-chart context","personal"],
+  [Telescope,"ग्रहण र आकाशीय घटना","Eclipses & sky events","ग्रहण सम्पर्क समय र दृश्यता","Event contacts and visibility context","sky"]
 ] as const;
 
 export default function MyTimePage() {
@@ -866,7 +866,7 @@ export default function MyTimePage() {
 
     <details id="mt-layers" className="mt-section mt-advanced-details"><summary>{l(language,"थप समय तहहरू अन्वेषण गर्नुहोस्","Explore additional time layers")}</summary>
       <div className="mt-section-title"><div><span className="mt-section-kicker">{l(language,"एउटै ठाउँमा","ONE CONNECTED EXPERIENCE")}</span><h2>{l(language,"समयका तहहरू","Layers of time")}</h2></div><p>{l(language,"हरेक तह तपाईंले छानेको मिति, स्थान र समय क्षेत्रसँग जोडिन्छ। आफूलाई चाहिने समयका तहहरू खोल्नुहोस्।","Each layer follows your selected date, location and timezone. Open the time layers that interest you.")}</p></div>
-      <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
+      <div className="mt-layer-grid">{UPCOMING.map(([Icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon"><Icon size={21} strokeWidth={1.8} aria-hidden="true"/></span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
     </details>
 
     <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
