@@ -2,19 +2,20 @@ import { useEffect, useState } from "react";
 import { l } from "../../useUiLanguage";
 import { addIsoDays, calculateLocalDay, formatLocalTime, todayInNepal, validIsoDate } from "./shared";
 import { MuhuratDayRibbon } from "./MuhuratDayRibbon";
+import { FeatureGlyph } from "../FeatureGlyph";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
 type MuhuratWindow = { date: string; sunrise: Date; sunset: Date; abhijit: { start: Date; end: Date }; rahu: { start: Date; end: Date }; yama: { start: Date; end: Date }; gulika: { start: Date; end: Date } };
 
 const REVIEW_RULES = [
-  {id:"F060", titleNe:"सर्वार्थसिद्धि योग", titleEn:"Sarvarthasiddhi Yoga", descNe:"नक्षत्र–वारका प्रचलित नियमलाई नेपालका प्रकाशित पञ्चाङ्गसँग तुलना गरेर मात्र मिति निश्चित गर्नुपर्छ।", descEn:"Candidate dates require a reviewed Nakshatra–weekday rule set and comparison with a published Nepal Panchang."},
-  {id:"F061", titleNe:"अमृतसिद्धि योग", titleEn:"Amritsiddhi Yoga", descNe:"परम्परागत वार–नक्षत्र तालिका स्रोत र नियम-पुस्तिका पुष्टि भएपछि मात्र खोजी सक्रिय हुन्छ।", descEn:"Date search is enabled only after the tradition's weekday–Nakshatra table and rule notes are reviewed."},
-  {id:"F062", titleNe:"द्विपुष्कर योग", titleEn:"Dwipushkar Yoga", descNe:"तिथि, वार र नक्षत्रसम्बन्धी नियमको स्रोत पुष्टि आवश्यक छ।", descEn:"The rule source for Tithi, weekday and Nakshatra combination needs review."},
-  {id:"F063", titleNe:"त्रिपुष्कर योग", titleEn:"Tripushkar Yoga", descNe:"मिति प्रकाशित गर्नु अघि योगको संयोजन र अपवाद पुष्टि गर्नुपर्छ।", descEn:"The exact combination and exceptions must be verified before publishing dates."},
-  {id:"F064", titleNe:"रवि पुष्य योग", titleEn:"Ravi Pushya Yoga", descNe:"रविबार–पुष्य संयोजनलाई स्थानीय समयक्षेत्र र प्रकाशित पञ्चाङ्गसँग जाँच्नुपर्छ।", descEn:"The Sunday–Pushya combination must be checked against local time and a published Panchang."},
-  {id:"F065", titleNe:"गुरु पुष्य योग", titleEn:"Guru Pushya Yoga", descNe:"बिहीबार–पुष्य संयोजन र परम्परागत सीमा पुष्टि हुन बाँकी छ।", descEn:"The Thursday–Pushya combination and traditional boundary rules need review."},
-  {id:"F066", titleNe:"रवि योग", titleEn:"Ravi Yoga", descNe:"प्रचलित नियम स्रोतसहित पुष्टि भएपछि मात्र मिति देखाइनेछ।", descEn:"Dates should appear only after the applicable rule set is source-verified."}
+  {id:"F060", icon:"star", titleNe:"सर्वार्थसिद्धि योग", titleEn:"Sarvarthasiddhi Yoga", descNe:"नक्षत्र–वारका प्रचलित नियमलाई नेपालका प्रकाशित पञ्चाङ्गसँग तुलना गरेर मात्र मिति निश्चित गर्नुपर्छ।", descEn:"Candidate dates require a reviewed Nakshatra–weekday rule set and comparison with a published Nepal Panchang."},
+  {id:"F061", icon:"double-star", titleNe:"अमृतसिद्धि योग", titleEn:"Amritsiddhi Yoga", descNe:"परम्परागत वार–नक्षत्र तालिका स्रोत र नियम-पुस्तिका पुष्टि भएपछि मात्र खोजी सक्रिय हुन्छ।", descEn:"Date search is enabled only after the tradition's weekday–Nakshatra table and rule notes are reviewed."},
+  {id:"F062", icon:"double-star", titleNe:"द्विपुष्कर योग", titleEn:"Dwipushkar Yoga", descNe:"तिथि, वार र नक्षत्रसम्बन्धी नियमको स्रोत पुष्टि आवश्यक छ।", descEn:"The rule source for Tithi, weekday and Nakshatra combination needs review."},
+  {id:"F063", icon:"triple-star", titleNe:"त्रिपुष्कर योग", titleEn:"Tripushkar Yoga", descNe:"मिति प्रकाशित गर्नु अघि योगको संयोजन र अपवाद पुष्टि गर्नुपर्छ।", descEn:"The exact combination and exceptions must be verified before publishing dates."},
+  {id:"F064", icon:"sun-star", titleNe:"रवि पुष्य योग", titleEn:"Ravi Pushya Yoga", descNe:"रविबार–पुष्य संयोजनलाई स्थानीय समयक्षेत्र र प्रकाशित पञ्चाङ्गसँग जाँच्नुपर्छ।", descEn:"The Sunday–Pushya combination must be checked against local time and a published Panchang."},
+  {id:"F065", icon:"star", titleNe:"गुरु पुष्य योग", titleEn:"Guru Pushya Yoga", descNe:"बिहीबार–पुष्य संयोजन र परम्परागत सीमा पुष्टि हुन बाँकी छ।", descEn:"The Thursday–Pushya combination and traditional boundary rules need review."},
+  {id:"F066", icon:"sun-star", titleNe:"रवि योग", titleEn:"Ravi Yoga", descNe:"प्रचलित नियम स्रोतसहित पुष्टि भएपछि मात्र मिति देखाइनेछ।", descEn:"Dates should appear only after the applicable rule set is source-verified."}
 ] as const;
 
 export function MuhuratWorkspace({language,selectedFeatureId}:Props){
@@ -77,17 +78,17 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"प्रकाशित तथा परम्परागत साइत","Published and traditional Muhurat")}</h3><small>{l(language,"स्रोत पुष्टि आवश्यक","Source review required")}</small></div>
       <p className="ap-pjw-section-note">{l(language,"अधिकृत रूपमा प्रकाशित मिति र खगोलीय हिसाबबाट निस्केको सम्भावित समय फरक कुरा हुन्। सम्बन्धित पञ्चाङ्ग, अनुष्ठानको नियम र स्थानको आधार पुष्टि नभएसम्म तलका संयोजनलाई निश्चित मिति भनेर देखाइँदैन।","Published dates and astronomical candidate times are different. Until the relevant Panchang, observance rule and location basis are confirmed, the combinations below are not presented as definitive dates.")}</p>
-      <div className="ap-pjw-link-grid">{REVIEW_RULES.map((rule)=><article className="ap-pjw-link-card" key={rule.id}><strong>{l(language,rule.titleNe,rule.titleEn)}</strong><small>{l(language,rule.descNe,rule.descEn)}</small><span>{l(language,"नियम पुष्टि आवश्यक","Rule verification required")}</span></article>)}</div>
+      <div className="ap-pjw-link-grid">{REVIEW_RULES.map((rule)=><article className="ap-pjw-link-card" key={rule.id}><strong className="ap-pjw-icon-label"><FeatureGlyph featureId={rule.id} symbol={rule.icon} size="inline"/>{l(language,rule.titleNe,rule.titleEn)}</strong><small>{l(language,rule.descNe,rule.descEn)}</small><span className="ap-pjw-icon-label"><FeatureGlyph featureId={rule.id} symbol="shield" size="inline"/>{l(language,"नियम पुष्टि आवश्यक","Rule verification required")}</span></article>)}</div>
       {selectedRule&&<p className="ap-pjw-note">{l(language,selectedRule.descNe,selectedRule.descEn)}</p>}
     </section>
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"जीवनका मुख्य साइत","Major life-event timing")}</h3></div>
       <p className="ap-pjw-section-note">{l(language,"उपलब्ध प्रकाशित मिति वा हालको साइत नियम जाँच्न विद्यमान उपकरण प्रयोग गर्नुहोस्। नयाँ पेजले पुरानो नियम वा जन्मपत्रो प्रतिस्थापन गर्दैन।","Use the existing tool to review published dates and currently supported Sait rules. This page does not replace the existing rules or birth chart.")}</p>
       <div className="ap-pjw-link-grid">
-        <a className="ap-pjw-link-card" href="/tools/sait"><strong>{l(language,"विवाह, गृह प्रवेश र सवारी साधन","Marriage, home entry and vehicle purchase")}</strong><small>{l(language,"उपलब्ध साइत नियम र स्रोतसहितको हालको उपकरण।","Existing Sait tool with supported categories and sources.")}</small><span>{l(language,"साइत खोल्नुहोस्","Open Sait")} ↗</span></a>
-        <a className="ap-pjw-link-card" href="/tools/tithi-reminder"><strong>{l(language,"एकादशी र पारण रिमाइन्डर","Ekadashi and Parana reminders")}</strong><small>{l(language,"तिथि-आधारित रिमाइन्डरका लागि विद्यमान सुविधा।","Existing feature for Tithi-based reminders.")}</small><span>{l(language,"रिमाइन्डर खोल्नुहोस्","Open reminders")} ↗</span></a>
-        <a className="ap-pjw-link-card" href="/janmapatro"><strong>{l(language,"जन्मपत्रो","Birth chart")}</strong><small>{l(language,"जन्म समय र स्थानमा आधारित विद्यमान जन्मपत्रो।","Existing natal chart based on birth time and place.")}</small><span>{l(language,"जन्मपत्रो खोल्नुहोस्","Open birth chart")} ↗</span></a>
-        <a className="ap-pjw-link-card" href="/mytime"><strong>{l(language,"मेरो समय","My Time")}</strong><small>{l(language,"विद्यमान व्यक्तिगत समय अनुभव।","Existing personalized time experience.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/tools/sait"><strong className="ap-pjw-icon-label"><FeatureGlyph featureId="F055" symbol="rings" size="inline"/>{l(language,"विवाह, गृह प्रवेश र सवारी साधन","Marriage, home entry and vehicle purchase")}</strong><small>{l(language,"उपलब्ध साइत नियम र स्रोतसहितको हालको उपकरण।","Existing Sait tool with supported categories and sources.")}</small><span>{l(language,"साइत खोल्नुहोस्","Open Sait")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/tools/tithi-reminder"><strong className="ap-pjw-icon-label"><FeatureGlyph featureId="F068" symbol="moon-calendar" size="inline"/>{l(language,"एकादशी र पारण रिमाइन्डर","Ekadashi and Parana reminders")}</strong><small>{l(language,"तिथि-आधारित रिमाइन्डरका लागि विद्यमान सुविधा।","Existing feature for Tithi-based reminders.")}</small><span>{l(language,"रिमाइन्डर खोल्नुहोस्","Open reminders")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/janmapatro"><strong className="ap-pjw-icon-label"><FeatureGlyph featureId="F027" symbol="chart" size="inline"/>{l(language,"जन्मपत्रो","Birth chart")}</strong><small>{l(language,"जन्म समय र स्थानमा आधारित विद्यमान जन्मपत्रो।","Existing natal chart based on birth time and place.")}</small><span>{l(language,"जन्मपत्रो खोल्नुहोस्","Open birth chart")} ↗</span></a>
+        <a className="ap-pjw-link-card" href="/mytime"><strong className="ap-pjw-icon-label"><FeatureGlyph featureId="F067" symbol="personal-time" size="inline"/>{l(language,"मेरो समय","My Time")}</strong><small>{l(language,"विद्यमान व्यक्तिगत समय अनुभव।","Existing personalized time experience.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
       </div>
     </section>
     <p className="ap-pjw-method">{l(language,"यहाँ देखिएका घडी-समयहरू स्थानीय सूर्योदय र सूर्यास्तबाट ब्राउजरमै गणना हुन्छन्। परम्परागत नियमका लागि स्रोत र स्थानअनुसार पुष्टि आवश्यक रहन्छ।","The displayed windows are calculated in your browser from local sunrise and sunset. Tradition-specific dates still require source- and location-based verification.")}</p>
