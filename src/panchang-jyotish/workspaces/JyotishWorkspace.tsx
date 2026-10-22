@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import * as Astronomy from "astronomy-engine";
 import { calculateChart, calculateSiderealPlanetPositions, type ChartResult } from "../../jyotish/jyotishEngine";
-import { findJanmaPatroBirthTimezone, readJanmaPatroBirthInput } from "../../jyotish/my-time-bridge";
+import { readExistingJanmaPatroBirth } from "../read-existing-birth";
 import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
@@ -47,9 +47,9 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
   useEffect(()=>{
     let active=true;
     try{
-      const birth=readJanmaPatroBirthInput();
+      const birth=readExistingJanmaPatroBirth();
       if(!birth){if(active){setSaved(null);setLoading(false);}return;}
-      const timezone=findJanmaPatroBirthTimezone(birth.location)||"Asia/Kathmandu";
+      const timezone=birth.timezone||"Asia/Kathmandu";
       const chart=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});
       if(active)setSaved({chart});
     }catch(error){
