@@ -13,9 +13,45 @@ const stringOrNull = (value: unknown) => typeof value === "string" && value.trim
  * or a civil-date+clock pair explicitly marked NPT. Unqualified clock strings alone
  * must not silently become an invented event date.
  */
+function validCivilDate(year:number,month:number,day:number):boolean {
+  const value = new Date(0);
+  value.setUTCFullYear(year, month - 1, day);
+  value.setUTCHours(0, 0, 0, 0);
+  return value.getUTCFullYear() === year && value.getUTCMonth() === month - 1 && value.getUTCDate() === day;
+}
+function validClock(hour:number,minute:number,second:number):boolean {
+  return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 && second <= 59;
+}
 function archiveInstant(value: unknown, confidence: "high" | "unverified" = "unverified"): PanchangInstant | null {
   if (typeof value !== "string") return null;
-  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)) return null;
+
+  // These *_npt fields carry their civil-date/clock timezone in the field name.
+  // Convert their wall clock explicitly rather than relying on the browser's timezone.
+  const npt = value.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?$/);
+  if (npt) {
+    const year=Number(npt[1]), month=Number(npt[2]), day=Number(npt[3]);
+    const hour=Number(npt[4]), minute=Number(npt[5]), second=Number(npt[6] ?? 0);
+    const fraction=npt[7] ?? "";
+    const millisecond=Number((fraction+"000").slice(0,3));
+    if (!validCivilDate(year,month,day) || !validClock(hour,minute,second)) return null;
+    const local = new Date(0);
+    local.setUTCFullYear(year,month-1,day);
+    local.setUTCHours(hour,minute,second,millisecond);
+    // Nepal Standard Time is UTC+05:45 year-round; archive wall clock -> UTC instant.
+    const parsed = new Date(local.getTime() - 345 * 60_000);
+    return Number.isFinite(parsed.getTime()) ? { instantUtc: parsed.toISOString(), source: "archive", confidence } : null;
+  }
+
+  // Other timestamps must state their UTC offset. Date-only values and clock-only strings are ambiguous.
+  const explicit = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|([+-])(\d{2}):(\d{2}))$/);
+  if (!explicit) return null;
+  const year=Number(explicit[1]), month=Number(explicit[2]), day=Number(explicit[3]);
+  const hour=Number(explicit[4]), minute=Number(explicit[5]), second=Number(explicit[6] ?? 0);
+  if (!validCivilDate(year,month,day) || !validClock(hour,minute,second)) return null;
+  if (explicit[9]) {
+    const offsetHour=Number(explicit[10]), offsetMinute=Number(explicit[11]);
+    if (offsetHour > 14 || offsetMinute > 59 || (offsetHour === 14 && offsetMinute !== 0)) return null;
+  }
   const parsed = new Date(value);
   return Number.isFinite(parsed.getTime()) ? { instantUtc: parsed.toISOString(), source: "archive", confidence } : null;
 }
@@ -24,12 +60,16 @@ function namedElement(value: unknown, confidence: "high" | "unverified", kind: "
   // The static schema documents Tithi number (1..30); other numeric conventions are not assumed.
   const candidate = kind === "tithi" ? numberOrNull(item.number) : numberOrNull(item.index);
   const index = candidate !== null && (kind === "tithi" ? candidate >= 1 && candidate <= 30 : candidate >= 0 && candidate <= 26) ? candidate : null;
+  const nameNe=stringOrNull(item.ne) ?? stringOrNull(item.name_ne);
+  const nameEn=stringOrNull(item.en) ?? stringOrNull(item.name_en);
+  const starts=archiveInstant(item.start_npt,confidence);
+  const ends=archiveInstant(item.end_npt,confidence);
   return {
     ...(index !== null ? { index } : {}),
-    ...(stringOrNull(item.ne) ?? stringOrNull(item.name_ne) ? { nameNe: stringOrNull(item.ne) ?? stringOrNull(item.name_ne) } : {}),
-    ...(stringOrNull(item.en) ?? stringOrNull(item.name_en) ? { nameEn: stringOrNull(item.en) ?? stringOrNull(item.name_en) } : {}),
-    ...(archiveInstant(item.start_npt, confidence) ? { starts: archiveInstant(item.start_npt, confidence) } : {}),
-    ...(archiveInstant(item.end_npt, confidence) ? { ends: archiveInstant(item.end_npt, confidence) } : {})
+    ...(nameNe ? { nameNe } : {}),
+    ...(nameEn ? { nameEn } : {}),
+    ...(starts ? { starts } : {}),
+    ...(ends ? { ends } : {})
   };
 }
 function nsText(value: unknown): string | null {
