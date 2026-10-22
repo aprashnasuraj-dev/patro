@@ -32,6 +32,15 @@ describe("bilingual feature-first visual obligations", () => {
     expect(hubSource).toContain('symbol="search"');
     expect(hubSource).not.toContain("{group.icon}");
     expect(hubSource).not.toContain("{item.icon}");
+    const mainPages = source("src/AafnaiPages.tsx");
+    const detailPages = source("src/AafnaiDetailPages.tsx");
+    expect(mainPages).toContain('iconFeatureId:"F085"');
+    expect(mainPages).toContain('FeatureGlyph featureId="F085" size="inline" className="ap-next-festival-glyph"');
+    expect(mainPages).not.toContain('icon:"☾"');
+    expect(detailPages).toContain('symbol="sunrise"');
+    expect(detailPages).toContain('symbol="sunset"');
+    expect(detailPages).toContain('FeatureGlyph featureId="F085" size="inline"');
+    expect(source("src/aafnai-enhancements.css")).toContain(".ap-event-card-title .ap-pj-icon");
 
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     expect(panchang).toContain('symbol="sun"');
