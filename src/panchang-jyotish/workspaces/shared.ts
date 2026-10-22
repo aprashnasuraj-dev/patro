@@ -2,6 +2,7 @@ import { panchangAt } from "../../patro-tools/core/astro";
 import { defaultPanchang } from "../../patro-tools/core/provider";
 import { KATHMANDU, type DayPanchang } from "../../patro-tools/core/types";
 import { toNepaliDigits } from "../../patro-tools/core/names";
+import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 
 export const NPT = "Asia/Kathmandu";
 export const NAKSHATRA_EN = [
@@ -150,13 +151,14 @@ export function dayWindows(day: DayPanchang, previousSunset: Date): DayWindows {
   };
 }
 
-export function calculateLocalDay(date: string): { day: DayPanchang; previousSunset: Date; nextSunrise: Date; windows: DayWindows } {
+export function calculateLocalDay(date: string): { day: DayPanchang; contract: PanchangDayContractV1; previousSunset: Date; nextSunrise: Date; windows: DayWindows } {
   if (!validIsoDate(date)) throw new Error("invalid_date");
   const day = defaultPanchang.day(date, KATHMANDU);
   const previous = defaultPanchang.day(addIsoDays(date, -1), KATHMANDU);
   const next = defaultPanchang.day(addIsoDays(date, 1), KATHMANDU);
   return {
     day,
+    contract: fromCalculatedDay(day, KATHMANDU),
     previousSunset: previous.sunset,
     nextSunrise: next.sunrise,
     windows: dayWindows(day, previous.sunset)
