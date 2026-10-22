@@ -19,15 +19,15 @@ function archiveInstant(value: unknown, confidence: "high" | "unverified" = "unv
   const parsed = new Date(value);
   return Number.isFinite(parsed.getTime()) ? { instantUtc: parsed.toISOString(), source: "archive", confidence } : null;
 }
-function namedElement(value: unknown, fallback: PanchangElement, confidence: "high" | "unverified"): Partial<PanchangElement> {
+function namedElement(value: unknown, confidence: "high" | "unverified"): Partial<PanchangElement> {
   const item = asObject(value) as Named;
   const index = numberOrNull(item.number) ?? numberOrNull(item.index);
   return {
-    index: index ?? fallback.index,
-    nameNe: stringOrNull(item.ne) ?? stringOrNull(item.name_ne) ?? fallback.nameNe,
-    nameEn: stringOrNull(item.en) ?? stringOrNull(item.name_en) ?? fallback.nameEn,
-    starts: archiveInstant(item.start_npt, confidence) ?? fallback.starts,
-    ends: archiveInstant(item.end_npt, confidence) ?? fallback.ends
+    ...(index !== null ? { index } : {}),
+    ...(stringOrNull(item.ne) ?? stringOrNull(item.name_ne) ? { nameNe: stringOrNull(item.ne) ?? stringOrNull(item.name_ne) } : {}),
+    ...(stringOrNull(item.en) ?? stringOrNull(item.name_en) ? { nameEn: stringOrNull(item.en) ?? stringOrNull(item.name_en) } : {}),
+    ...(archiveInstant(item.start_npt, confidence) ? { starts: archiveInstant(item.start_npt, confidence) } : {}),
+    ...(archiveInstant(item.end_npt, confidence) ? { ends: archiveInstant(item.end_npt, confidence) } : {})
   };
 }
 function nsText(value: unknown): string | null {
@@ -39,8 +39,8 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
   if (row.ad !== dateAd || !row.bs || !row.panchang?.tithi) throw new Error("archive_row_incomplete");
   const p = asObject(row.panchang);
   const confidence = "unverified" as const; // Packaged archive has no per-field audited confidence guarantee.
-  const tithi = namedElement(p.tithi, calculated.elements.tithi, confidence);
-  const nk = namedElement(p.nakshatra, calculated.elements.nakshatra, confidence);
+  const tithi = namedElement(p.tithi, confidence);
+  const nk = namedElement(p.nakshatra, confidence);
   const nak = asObject(p.nakshatra);
   const pada = numberOrNull(nak.pada) ?? numberOrNull(p.nakshatra_pada);
   return {
@@ -50,8 +50,8 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
     elements: {
       tithi,
       nakshatra: { ...nk, pada: pada !== null && pada >= 1 && pada <= 4 ? pada : calculated.elements.nakshatra.pada },
-      yoga: namedElement(p.yoga, calculated.elements.yoga, confidence),
-      karana: namedElement(p.karana, calculated.elements.karana, confidence)
+      yoga: namedElement(p.yoga, confidence),
+      karana: namedElement(p.karana, confidence)
     }
   };
 }
