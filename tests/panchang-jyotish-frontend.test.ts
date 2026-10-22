@@ -97,15 +97,16 @@ describe("bilingual feature-first visual obligations", () => {
   });
 
   it("exposes Panchak/Ganda Moola only as caveated candidate calculators", () => {
-    const hub = source("src/panchang-jyotish/FeatureGroupHub.tsx");
+    const catalog = source("src/panchang-jyotish/catalog.ts");
     const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
+    const guides = source("src/panchang-jyotish/feature-reference-guides.ts");
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     const ruleEngine = source("src/panchang-jyotish/reviewed-candidate-rules.ts");
-    expect(hub).toContain("CANDIDATE_ONLY_SOURCE_REVIEW_PREVIEWS");
+    expect(catalog).toContain("CANDIDATE_ONLY_SOURCE_REVIEW_PREVIEWS");
     expect(experience).toContain("const guide=FEATURE_REFERENCE_GUIDES[feature.id]");
-    expect(experience).toContain("नक्षत्र प्रवेश र समाप्ति");
+    expect(guides).toContain("नक्षत्रका प्रवेश र समाप्ति क्षण");
     expect(panchang).toContain("findNakshatraRuleWindows(date, ruleWindowDays, rule");
-    expect(panchang).toContain("candidate-unverified");
+    expect(panchang).toContain("Candidate Panchak Nakshatra intervals");
     expect(panchang).toContain("is not an official Muhurat");
     expect(panchang).toContain("is not equated with the narrower Gandanta concept");
     expect(ruleEngine).toContain("SIX_HOURS_MS");
