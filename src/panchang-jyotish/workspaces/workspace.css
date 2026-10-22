@@ -81,3 +81,17 @@
 .ap-pjw-ribbon-span.is-auspicious{background:#27794c}.ap-pjw-ribbon-span.is-caution{background:#b47634}.ap-pjw-ribbon-span.is-yama{background:#8e6598}.ap-pjw-ribbon-span.is-gulika{background:#557f94}
 .ap-pjw-muhurat-ribbon>p{margin:13px 0 0;font-size:.77rem;line-height:1.55;opacity:.66}
 @media(max-width:640px){.ap-pjw-muhurat-ribbon{padding:11px}.ap-pjw-ribbon-lane{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ap-pjw-ribbon-lane-track{grid-column:1/-1;grid-row:2}.ap-pjw-ribbon-lane>small{grid-column:2;grid-row:1}.ap-pjw-ribbon-lane>span{grid-column:1;grid-row:1}.ap-pjw-muhurat-ribbon figcaption{align-items:flex-start;flex-direction:column;gap:3px}}
+
+/* Position wheel is a view of the same numerical rows, not a second calculation engine. */
+.ap-pjw-planet-figure{display:grid;grid-template-columns:minmax(200px,340px) minmax(0,1fr);align-items:center;gap:22px;margin:14px 0;padding:16px;border-radius:18px;border:1px solid rgba(56,109,145,.24);background:radial-gradient(circle at 18% 50%,rgba(79,135,172,.1),transparent 52%),color-mix(in srgb,currentColor 1.5%,transparent)}
+.ap-pjw-wheel-stage svg{display:block;width:100%;height:auto;max-height:340px}
+.ap-pjw-wheel-key{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.ap-pjw-wheel-key>span{display:flex;gap:5px;align-items:center;min-width:0;font-size:.8rem;font-weight:750}
+.ap-pjw-wheel-key b{display:grid;place-items:center;flex:0 0 23px;height:23px;border-radius:50%;background:#247344;color:#fff;font-size:.86rem}
+.ap-pjw-wheel-key small{font-variant-numeric:tabular-nums;font-size:.67rem;opacity:.62}
+.ap-pjw-wheel-signs{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.ap-pjw-wheel-signs>span{border:1px solid rgba(127,127,127,.17);border-radius:7px;padding:4px 6px;font-size:.68rem;line-height:1.3}
+.ap-pjw-wheel-signs b{opacity:.65}
+.ap-pjw-planet-figure figcaption>p{margin:12px 0 0;font-size:.8rem;line-height:1.55;opacity:.71}
+@media(max-width:760px){.ap-pjw-planet-figure{grid-template-columns:1fr;justify-items:center;padding:12px;gap:10px}.ap-pjw-wheel-stage{width:min(100%,340px)}.ap-pjw-planet-figure figcaption{width:100%}}
+@media(max-width:420px){.ap-pjw-wheel-key{grid-template-columns:repeat(2,minmax(0,1fr))}.ap-pjw-wheel-signs>span{font-size:.64rem}}
