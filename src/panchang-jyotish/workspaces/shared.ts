@@ -1,6 +1,7 @@
 import { panchangAt } from "../../patro-tools/core/astro";
 import { defaultPanchang } from "../../patro-tools/core/provider";
 import { KATHMANDU, type DayPanchang } from "../../patro-tools/core/types";
+import { toNepaliDigits } from "../../patro-tools/core/names";
 
 export const NPT = "Asia/Kathmandu";
 export const NAKSHATRA_EN = [
@@ -42,6 +43,24 @@ export function formatLocalTime(value: Date | null | undefined, language: "ne" |
   return new Intl.DateTimeFormat(language === "ne" ? "ne-NP-u-nu-deva" : "en-GB", {
     timeZone: NPT, hour: "2-digit", minute: "2-digit", hourCycle: "h23"
   }).format(value);
+}
+export type PanchangClockMode = "12h" | "24h" | "24plus";
+export function formatPanchangClock(value: Date | null | undefined, anchorDateAd: string, mode: PanchangClockMode, language: "ne" | "en"): string {
+  if (!value || !Number.isFinite(value.getTime())) return "—";
+  if (mode === "12h") return new Intl.DateTimeFormat(language === "ne" ? "ne-NP-u-nu-deva" : "en-GB", {
+    timeZone: NPT, hour: "numeric", minute: "2-digit", hourCycle: "h12"
+  }).format(value);
+  if (mode === "24h") return formatLocalTime(value, language);
+  if (!validIsoDate(anchorDateAd)) return "—";
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: NPT, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+  }).formatToParts(value);
+  const get = (part: string) => parts.find(item => item.type === part)?.value ?? "";
+  const date = [get("year"), get("month"), get("day")].join("-");
+  const dayDelta = Math.round((Date.parse(date + "T00:00:00Z") - Date.parse(anchorDateAd + "T00:00:00Z")) / 86_400_000);
+  const hours = Number(get("hour")) + dayDelta * 24;
+  const output = String(hours).padStart(2, hours < 0 ? 3 : 2) + ":" + get("minute");
+  return language === "ne" ? toNepaliDigits(output) : output;
 }
 export function formatLocalDateTime(value: Date | null | undefined, language: "ne" | "en"): string {
   if (!value || !Number.isFinite(value.getTime())) return "—";
