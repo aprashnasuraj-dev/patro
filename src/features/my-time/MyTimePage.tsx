@@ -7,6 +7,7 @@ import { apparentSolarTime } from "../../patro-tools/core/apparent-solar-time";
 import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleCounters } from "../../patro-tools/core/my-time-extended";
 import { choghadiyaWindows, horaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
 import { readPlace } from "../../place/place";
+import { civilBounds, zonedInstant } from "../../place/civil";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
 import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
@@ -164,10 +165,18 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
   const [selectedEvent, setSelectedEvent] = useState<{ key: string; label: string; start: string; end: string; explanation: string } | null>(null);
   const [focusedEventKey, setFocusedEventKey] = useState<string | null>(null);
   const safeTimezoneValue = safeTimeZone(timezone);
-  const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, hour: "2-digit", hourCycle: "h23" }).format(now));
-  const minutes = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, minute: "2-digit" }).format(now));
-  const seconds = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, second: "2-digit" }).format(now));
-  const dayProgress = (hours + minutes / 60 + seconds / 3600) / 24;
+  const dayBounds = useMemo(() => {
+    if (!snapshot) return null;
+    try { return civilBounds(snapshot.date, safeTimezoneValue); }
+    catch { return null; }
+  }, [snapshot?.date, safeTimezoneValue]);
+  const currentDateMatchesDial = Boolean(snapshot && snapshot.date === localDate(safeTimezoneValue, now));
+  const elapsedDayMs = dayBounds ? dayBounds.end.getTime() - dayBounds.start.getTime() : 86400000;
+  const wallMinutes = localMinute(now.toISOString(), safeTimezoneValue);
+  // Real UTC elapsed time on the selected date, including 23/25-hour DST civil days.
+  const dayProgress = currentDateMatchesDial && dayBounds
+    ? Math.max(0,Math.min(1,(now.getTime()-dayBounds.start.getTime())/elapsedDayMs))
+    : wallMinutes/1440;
   const angle = dayProgress * Math.PI * 2 - Math.PI / 2;
   const x = 150 + Math.cos(angle) * 92, y = 150 + Math.sin(angle) * 92;
   const progressLength = Math.max(0.5, dayProgress * 2 * Math.PI * 100);
@@ -183,7 +192,14 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
     {key:"nautical-dusk",label:l(language,"नौचालन साँझ","Nautical dusk"),start:snapshot.panchang.sunset_utc,end:snapshot.twilight.nautical_dusk_utc},
     {key:"astronomical-dusk",label:l(language,"खगोलीय साँझ","Astronomical dusk"),start:snapshot.panchang.sunset_utc,end:snapshot.twilight.astronomical_dusk_utc}
   ].filter((window): window is {key:string;label:string;start:string;end:string} => Boolean(window.start && window.end && Date.parse(window.end)>Date.parse(window.start))) : [];
-  const pathsFor = (start: string,end: string,radius: number) => arcPaths(localMinute(start,safeTimezoneValue),localMinute(end,safeTimezoneValue),radius);
+  const pathsFor = (start: string,end: string,radius: number) => {
+    if (!dayBounds) return arcPaths(localMinute(start,safeTimezoneValue),localMinute(end,safeTimezoneValue),radius);
+    const from = Math.max(dayBounds.start.getTime(),Date.parse(start));
+    const until = Math.min(dayBounds.end.getTime(),Date.parse(end));
+    if (!Number.isFinite(from) || !Number.isFinite(until) || until <= from) return [];
+    const fraction = (instant:number)=>(instant-dayBounds.start.getTime())/elapsedDayMs*1440;
+    return arcPaths(fraction(from),fraction(until),radius);
+  };
   const selectEvent = (key: string, label: string, start: string, end: string, explanation: string) => setSelectedEvent({ key, label, start, end, explanation });
   const durationText = (start: string, end: string) => {
     const totalMinutes = Math.max(0, Math.round((Date.parse(end) - Date.parse(start)) / 60000));
@@ -226,16 +242,21 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
         {showTwilight && twilightWindows.map(window=>pathsFor(window.start,window.end,48).map((d,index)=>selectablePath(window.key+"-"+index,d,window.label,window.start,window.end,"#d4a653",2.2,0.8,l(language,"सौर उचाइमा आधारित सन्ध्याकालको अन्तराल।","A twilight interval derived from solar altitude."))))}
       </g>
       {Array.from({ length: 24 }, (_, hour) => {
-        const a = (hour / 24) * Math.PI * 2 - Math.PI / 2;
+        let dayFraction = hour / 24;
+        if (dayBounds && snapshot) {
+          try { dayFraction = (zonedInstant(snapshot.date,String(hour).padStart(2,"0")+":00",safeTimezoneValue).instant.getTime()-dayBounds.start.getTime())/elapsedDayMs; }
+          catch { return null; } // A skipped local hour must not get an invented tick.
+        }
+        const a = dayFraction * Math.PI * 2 - Math.PI / 2;
         const major = hour % 6 === 0;
         return <g key={hour}><line x1={150 + Math.cos(a) * (major ? 104 : 109)} y1={150 + Math.sin(a) * (major ? 104 : 109)} x2={150 + Math.cos(a) * 116} y2={150 + Math.sin(a) * 116} stroke="var(--mt-muted)" strokeWidth={major ? 2 : 1}/>{major && <text x={150 + Math.cos(a) * 88} y={154 + Math.sin(a) * 88} textAnchor="middle" fontSize="10" fill="var(--mt-muted)">{String(hour).padStart(2,"0")}</text>}</g>;
       })}
-      <line x1="150" y1="150" x2={x} y2={y} stroke="var(--mt-accent)" strokeWidth="2.5" strokeLinecap="round"/>
-      <circle className="mt-polar-dot" cx={x} cy={y} r="6" fill="var(--mt-accent)" stroke="var(--mt-card)" strokeWidth="3"/>
+      {(!snapshot || currentDateMatchesDial) && <><line x1="150" y1="150" x2={x} y2={y} stroke="var(--mt-accent)" strokeWidth="2.5" strokeLinecap="round"/><circle className="mt-polar-dot" cx={x} cy={y} r="6" fill="var(--mt-accent)" stroke="var(--mt-card)" strokeWidth="3"/></>}
       <circle cx="150" cy="150" r="43" fill="var(--mt-card)" stroke="var(--mt-line)"/>
       <text x="150" y="145" textAnchor="middle" fontSize="23" fontWeight="700" fill="var(--mt-ink)">{localClock(timezone, now).slice(0,5)}</text>
       <text x="150" y="164" textAnchor="middle" fontSize="10" fill="var(--mt-muted)">{l(language,"स्थानीय समय","LOCAL TIME")}</text>
     </svg>
+    {dayBounds && elapsedDayMs !== 86400000 && <p className="mt-day-duration-note" role="status">{l(language,"यस मितिमा स्थानीय दिन "+String(elapsedDayMs/3600000)+" घण्टाको छ; घेरामा वास्तविक बितेको समयअनुसार दूरी देखाइएको छ।","This local civil date spans "+String(elapsedDayMs/3600000)+" elapsed hours; ring geometry follows real elapsed time.")}</p>}
     <div className="mt-polar-legend"><span><i className="mt-legend-time"/> {l(language,"स्थानीय समय","Local time")}</span><span><i className="mt-legend-day"/> {l(language,"२४ घण्टे चक्र","24-hour cycle")}</span>{solarReady&&<>{showChoghadiya&&<span><i className="mt-legend-choghadiya"/> {l(language,"चौघडिया","Choghadiya")}</span>}{showKaal&&<span><i className="mt-legend-kaal"/> {l(language,"राहु / यमगण्ड / गुलिक","Rahu / Yamaganda / Gulika")}</span>}{showHora&&<span><i className="mt-legend-hora"/> {l(language,"होरा","Hora")}</span>}{showTwilight&&<span><i className="mt-legend-twilight"/> {l(language,"सन्ध्याकाल","Twilight")}</span>}{showTantra&&tantraTime&&<span><i className="mt-legend-tatwa" style={{backgroundColor:tantraTime.activeTatwa.color}}/> {l(language,"पञ्चतत्त्व","Pancha Tatwa")}</span>}<span className="mt-legend-note">{l(language,"घेरा छान्नुहोस् · सुई = अहिले · घेरा = चयन गरिएको मिति","Select a ring · hand = now · rings = selected date")}</span></>}</div>
     {selectedEvent && <section className="mt-selected-event" role="region" aria-label={l(language,"चयन गरिएको समय खण्डको विवरण","Selected time-window details")} aria-live="polite"><div className="mt-selected-event-copy"><span>{l(language,"चयन गरिएको समय खण्ड","SELECTED TIME WINDOW")}</span><strong>{selectedEvent.label}</strong><p>{formatInstant(selectedEvent.start,timezone,language)}–{formatInstant(selectedEvent.end,timezone,language)} · {durationText(selectedEvent.start,selectedEvent.end)}</p><p>{selectedEvent.explanation}</p></div><button type="button" aria-label={l(language,"चयन हटाउनुहोस्","Clear selection")} onClick={()=>setSelectedEvent(null)}>{l(language,"बन्द","Clear")}</button></section>}
   </div>;
