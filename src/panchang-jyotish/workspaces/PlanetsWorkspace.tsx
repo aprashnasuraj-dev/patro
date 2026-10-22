@@ -4,6 +4,7 @@ import { readExistingJanmaPatroBirth } from "../read-existing-birth";
 import { NAKSHATRAS } from "../../patro-tools/core/names";
 import { l } from "../../useUiLanguage";
 import { addIsoDays, formatLocalDateTime, NAKSHATRA_EN, todayInNepal, validIsoDate } from "./shared";
+import { PlanetWheel } from "./PlanetWheel";
 import "./workspace.css";
 
 type Props={language:"ne"|"en";selectedFeatureId?:string|null};
@@ -165,6 +166,7 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
       <div className="ap-pjw-subhead"><h3>{l(language,"निरयण ग्रहस्थिति","Sidereal planetary positions")}</h3><small>{localLabel(instant,language)} · {l(language,"नेपाल समय","NPT")}</small></div>
       <p className="ap-pjw-section-note">{l(language,"ग्रहस्थिति विद्यमान जन्मपत्रो गणकले प्रयोग गर्ने समान दीर्घांश/अयनांश विधिबाट ब्राउजरमै निकालिन्छ। यस तालिकामा भाव/लग्न देखाइएको छैन, किनकि त्यसका लागि अलग स्थान-आधारित कुण्डली आवश्यक हुन्छ।","Positions are calculated locally with the same longitude/ayanamsha functions used by the existing birth-chart engine. Houses/ascendant are not shown here because they require a separate location-based chart.")}</p>
       <p className="ap-pjw-section-note">{l(language,"सूर्यबाट कोणीय दूरी देखाइन्छ; ग्रह अस्त/उदयको निष्कर्ष परम्पराअनुसार फरक सीमामा निर्भर हुने भएकाले स्रोत-पुष्टि भएको सीमा बिना निश्चित निर्णय देखाइँदैन।","Angular distance from the Sun is shown. Combustion/rising interpretation depends on tradition-specific thresholds, so no definitive judgment is made without a reviewed threshold.")}</p>
+      <PlanetWheel positions={positions} language={language}/>
       <div className="ap-pjw-position-wrap"><table className="ap-pjw-position-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"राशि","Sign")}</th><th>{l(language,"राशिमा अंश","Degree in sign")}</th><th>{l(language,"निरयण दीर्घांश","Sidereal longitude")}</th><th>{l(language,"सूर्यबाट कोण","Angular distance from Sun")}</th><th>{l(language,"दैनिक गति","Daily speed")}</th><th>{l(language,"गति","Motion")}</th></tr></thead><tbody>{positions.map(item=><tr key={item.key}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,SIGNS_NE[item.signIndex],SIGNS_EN[item.signIndex])}</td><td>{deg(item.degreeInSign)}</td><td>{deg(item.longitude)}</td><td>{sunPosition?deg(angleDistance(item.longitude,sunPosition.longitude)):"—"}</td><td>{deg(item.longitudeSpeedDegPerDay)}</td><td><span className={"ap-pjw-chip"+(item.isRetrograde?" is-warning":"")}>{item.isRetrograde?l(language,"वक्री","Retrograde"):l(language,"मार्गी / सामान्य","Direct")}</span></td></tr>)}</tbody></table></div>
     </section>
     <section className="ap-pjw-card">
