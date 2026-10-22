@@ -13,6 +13,37 @@ const base = {
   natalFactorsApplied: true
 };
 
+const natalChart = {
+  rashi: "वृष", lagna: "कन्या", nakshatra: "रोहिणी", pada: 2,
+  birth: null,
+  planets: [
+    {key:"Sun",name:"Sun",sign:"मेष",house:8},
+    {key:"Moon",name:"Moon",sign:"वृष",house:9},
+    {key:"Mars",name:"Mars",sign:"मिथुन",house:10},
+    {key:"Mercury",name:"Mercury",sign:"कन्या",house:1},
+    {key:"Jupiter",name:"Jupiter",sign:"कर्कट",house:11},
+    {key:"Venus",name:"Venus",sign:"तुला",house:2},
+    {key:"Saturn",name:"Saturn",sign:"मकर",house:5},
+    {key:"Rahu",name:"Rahu",sign:"वृश्चिक",house:3},
+    {key:"Ketu",name:"Ketu",sign:"वृष",house:9}
+  ],
+  dashas: [{lord:"Mercury",start:"2020-01-01T00:00:00.000Z",end:"2030-01-01T00:00:00.000Z"}]
+};
+const muhurtaChart = {
+  lagnaSign: "कन्या",
+  planets: [
+    {key:"Sun",name:"Sun",sign:"सिंह",house:12},
+    {key:"Moon",name:"Moon",sign:"मिथुन",house:10},
+    {key:"Mars",name:"Mars",sign:"मेष",house:8},
+    {key:"Mercury",name:"Mercury",sign:"मिथुन",house:10},
+    {key:"Jupiter",name:"Jupiter",sign:"कर्कट",house:11},
+    {key:"Venus",name:"Venus",sign:"तुला",house:2},
+    {key:"Saturn",name:"Saturn",sign:"मीन",house:7},
+    {key:"Rahu",name:"Rahu",sign:"कुम्भ",house:6},
+    {key:"Ketu",name:"Ketu",sign:"सिंह",house:12}
+  ]
+};
+
 describe("personal-time recommendation engine", () => {
   it("uses real matching Rashifal domain scores and exposes why", () => {
     const result = evaluatePersonalTime({
@@ -21,10 +52,80 @@ describe("personal-time recommendation engine", () => {
     });
     expect(result.components.map(item => item.key)).toEqual(["panchang", "rashifal", "dasha-hora", "activity-hora", "activity-tatwa"]);
     expect(result.components.find(item => item.key === "rashifal")?.score).toBe(92);
-    expect(result.components.find(item => item.key === "dasha-hora")?.score).toBe(100);
+    expect(result.components.find(item => item.key === "dasha-hora")?.score).toBe(98);
     expect(result.score).toBeGreaterThan(70);
     expect(result.confidence).toBe("personalized");
     expect(result.reasons.some(reason => reason.includes("published work domain score"))).toBe(true);
+  });
+
+  it("does not downgrade a connected birth chart to limited signals when optional chart components are absent", () => {
+    const connectedButSparseChart = { ...natalChart, lagna: "", planets: [], dashas: [] };
+    const result = evaluatePersonalTime({
+      ...base, hasNatalChart: true, natalFactorsApplied: false, natalChart: connectedButSparseChart,
+      dashaLord: null, horaLord: null, tatwa: null, rashifal: null
+    });
+    expect(result.score).toBe(70);
+    expect(result.confidence).toBe("personalized");
+    expect(result.missing).toContain("chart-lords");
+    expect(result.missing).toContain("gochara");
+    expect(result.components.map(item => item.key)).toEqual(["panchang"]);
+  });
+
+  it("uses graded Dasha–Hora relationships instead of a binary match score", () => {
+    const friend = evaluatePersonalTime({ ...base, dashaLord: "Mercury", horaLord: "Venus", natalChart, tatwa: null });
+    const enemy = evaluatePersonalTime({ ...base, dashaLord: "Mercury", horaLord: "Moon", natalChart, tatwa: null });
+    expect(friend.components.find(item => item.key === "dasha-hora")?.score).toBe(85);
+    expect(enemy.components.find(item => item.key === "dasha-hora")?.score).toBe(35);
+  });
+
+  it("reduces Dasha–Hora compatibility when the natal Dasha lord is debilitated and afflicted", () => {
+    const afflictedChart = {
+      ...natalChart,
+      planets: natalChart.planets.map(planet =>
+        planet.key === "Mercury" ? {...planet, sign:"मीन", house:7}
+          : planet.key === "Mars" ? {...planet, sign:"मीन", house:7}
+          : planet
+      )
+    };
+    const result = evaluatePersonalTime({ ...base, natalChart: afflictedChart, dashaLord: "Mercury", horaLord: "Venus", tatwa: null });
+    expect(result.components.find(item => item.key === "dasha-hora")?.score).toBe(75);
+  });
+
+  it("includes natal/event chart lords and Jupiter/Saturn gochara in the explainable score", () => {
+    const result = evaluatePersonalTime({
+      ...base, natalChart, muhurtaChart, dashaLord: "Mercury", horaLord: "Mercury", tatwa: "Vayu",
+      rashifal: { domains: { work: 80 } }, choghadiyaType: "Labh"
+    });
+    const keys = result.components.map(item => item.key);
+    expect(keys).toContain("chart-lords");
+    expect(keys).toContain("gochara");
+    expect(result.components.find(item => item.key === "chart-lords")?.score).toBeGreaterThan(0);
+    expect(result.components.find(item => item.key === "gochara")?.score).toBeGreaterThan(0);
+    expect(result.components.find(item => item.key === "chart-lords")?.explanationNe).toContain("जन्मपत्रो");
+    expect(result.components.reduce((sum, item) => sum + item.weight, 0)).toBeCloseTo(100, 0);
+  });
+
+  it("changes functional house-lord evaluation with the chart's Lagna", () => {
+    const ariesLagnaChart = { ...natalChart, lagna: "मेष" };
+    const fromVirgo = evaluatePersonalTime({
+      ...base, natalChart, dashaLord: null, horaLord: null, tatwa: null
+    }).components.find(item => item.key === "chart-lords")?.score;
+    const fromAries = evaluatePersonalTime({
+      ...base, natalChart: ariesLagnaChart, dashaLord: null, horaLord: null, tatwa: null
+    }).components.find(item => item.key === "chart-lords")?.score;
+    expect(fromVirgo).toBeDefined();
+    expect(fromAries).toBeDefined();
+    expect(fromVirgo).not.toBe(fromAries);
+  });
+
+  it("adjusts Choghadiya fit for the selected activity and varies activity weights", () => {
+    const labh = evaluatePersonalTime({ ...base, hasNatalChart: false, activity: "work", choghadiyaType: "Labh" });
+    const rog = evaluatePersonalTime({ ...base, hasNatalChart: false, activity: "work", choghadiyaType: "Rog" });
+    expect(labh.score).toBeGreaterThan(rog.score);
+    expect(labh.components.find(item => item.key === "panchang")?.score).toBe(78);
+    const work = evaluatePersonalTime({ ...base, activity: "work", natalChart, muhurtaChart, dashaLord:"Mercury", horaLord:"Mercury", tatwa:"Vayu" });
+    const meditation = evaluatePersonalTime({ ...base, activity: "meditation", natalChart, muhurtaChart, dashaLord:"Mercury", horaLord:"Moon", tatwa:"Akash" });
+    expect(work.components.find(item => item.key === "chart-lords")?.weight).toBeGreaterThan(meditation.components.find(item => item.key === "chart-lords")?.weight || 0);
   });
 
   it("keeps a strong Rahu Kaal caution from being overridden by high supplementary signals", () => {
@@ -68,10 +169,16 @@ describe("personal-time recommendation engine", () => {
   });
 
 
-  it("does not call a saved chart fully personalized if natal comparisons are unavailable", () => {
-    const result = evaluatePersonalTime({ ...base, natalFactorsApplied: false, horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
-    expect(result.confidence).toBe("partially-personalized");
+  it("keeps a connected JanmaPatro chart personalized when one Moon-comparison signal is unavailable", () => {
+    const result = evaluatePersonalTime({
+      ...base, natalFactorsApplied: false, natalChart, muhurtaChart,
+      horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu"
+    });
+    expect(result.confidence).toBe("personalized");
+    expect(result.components.map(item => item.key)).toContain("chart-lords");
+    expect(result.components.map(item => item.key)).toContain("gochara");
     expect(result.missing).toContain("natal-compatibility");
+    expect(result.components.reduce((sum, item) => sum + item.weight, 0)).toBeCloseTo(100, 0);
   });
   it("does not call sign-only Rashifal guidance fully birth-personalized", () => {
     const result = evaluatePersonalTime({

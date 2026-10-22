@@ -67,6 +67,32 @@ function isValidBirthDate(value: string): boolean {
 function normalizedBirthDateOrEmpty(value: string): string {
   try { return normalizeBirthDate(value); } catch { return ""; }
 }
+
+/** Build the chart for a candidate Muhurta instant through the existing Jyotish chart engine. */
+function candidateMuhurtaChart(instant: Date, preferences: Preferences) {
+  try {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
+      timeZone: preferences.timezone, year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).formatToParts(instant).map(part => [part.type, part.value]));
+    const date = `${parts.year}-${parts.month}-${parts.day}`;
+    const time = `${parts.hour}:${parts.minute}`;
+    const chart = calculateChart({
+      name: "", date, time, location: preferences.label || preferences.timezone,
+      lat: preferences.lat, lng: preferences.lng, timezone: preferences.timezone
+    });
+    return {
+      lagnaSign: RASHIS[chart.ascSignIndex] || "",
+      planets: chart.planets.map(planet => ({
+        key: planet.key, name: planet.name,
+        sign: RASHIS[planet.signIndex] || planet.sign, house: planet.house
+      }))
+    };
+  } catch {
+    // A location/ephemeris limitation must never fabricate a candidate chart.
+    return null;
+  }
+}
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
 const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
@@ -569,11 +595,6 @@ export default function MyTimePage() {
   const chandraHouse = snapshot && natalMoonSignIndex >= 0 ? ((snapshot.panchang.moon_rashi_index - natalMoonSignIndex + 12) % 12) + 1 : null;
   const chandraScore = chandraHouse === null ? null : [1,3,6,7,10,11].includes(chandraHouse) ? 100 : [4,8,12].includes(chandraHouse) ? 0 : 50;
   const declaredSign = SIGNS.find(sign => sign.id === personalContext.effectiveSign);
-  const personalizedMuhurta = useMemo(() => {
-    if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return null;
-    try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
-    catch { return null; }
-  }, [snapshot, now, preferences.timezone, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
   const recommendedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
     const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
@@ -623,22 +644,28 @@ export default function MyTimePage() {
       const hora = horaPeriods.find(period => midpoint.getTime() >= Date.parse(period.start_utc) && midpoint.getTime() < Date.parse(period.end_utc));
       const horaName = hora?.name_en || "";
       const activities = selectedInterests.length ? selectedInterests : ["general" as PersonalTimeActivity];
+      // Reuse the established Jyotish engine for the chart at this candidate instant.
+      const muhurtaChart = personalContext.birthChart ? candidateMuhurtaChart(midpoint, preferences) : null;
       const evaluations = activities.map(activity => evaluatePersonalTime({
         startUtc: segment.start_utc, endUtc: segment.end_utc, panchangScore: segment.score,
         panchangReasons: segment.score >= 75 ? ["supportive_panchang_indications"] : [],
-        panchangCautions: segment.cautions,
+        panchangCautions: segment.cautions, choghadiyaType: window.name_en,
         activity, horaLord: horaName || null, tatwa: tatwaName || null,
         rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
         dashaLord: personalContext.birthChart?.dashas.find(period => Date.parse(period.start) <= midpoint.getTime() && Date.parse(period.end) > midpoint.getTime())?.lord || null,
-        hasNatalChart: Boolean(personalContext.birthChart),
+        hasNatalChart: Boolean(personalContext.birthChart), natalChart: personalContext.birthChart, muhurtaChart,
         natalFactorsApplied: Boolean(personalContext.birthChart) && taraIndex >= 0 && chandraHouse != null
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
       const personalizationLevel: "personalized" | "partial" | "general" = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
       const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
+      // Average each activity's weighted contribution, keeping the visible breakdown
+      // consistent with the combined score when more than one interest is selected.
       const aggregateComponents = componentKeys.map(key => {
         const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
-        return { ...present[0], score: Math.round(present.reduce((sum, item) => sum + item.score, 0) / present.length) };
+        const contribution = present.reduce((sum, item) => sum + item.score * item.weight, 0) / evaluations.length;
+        const weight = present.reduce((sum, item) => sum + item.weight, 0) / evaluations.length;
+        return { ...present[0], score: weight > 0 ? Math.round(contribution / weight) : present[0].score, weight: Math.round(weight * 10) / 10 };
       });
       const personalEvaluation = {
         ...evaluations[0], score: combinedScore,
@@ -657,8 +684,11 @@ export default function MyTimePage() {
         combinedScore, personalEvaluation, personalizationLevel
       };
     })).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
-  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
+  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart, preferences]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
+  const currentRankedMuhurta = selectedDateIsToday
+    ? combinedMuhurtaWindows.find(window => Date.parse(window.start_utc) <= now.getTime() && Date.parse(window.end_utc) > now.getTime()) || null
+    : null;
   const nextCautionWindow = combinedMuhurtaWindows.filter(window => window.label === "caution" && Date.parse(window.end_utc) > now.getTime()).sort((a,b)=>Date.parse(a.start_utc)-Date.parse(b.start_utc))[0] || null;
   const personalLuckyNumber = snapshot && personalContext.birthChart?.birth?.date
     ? calculatePersonalLuckyNumber(personalContext.birthChart.birth.date, snapshot.panchang.tithi_index, natalStarIndex >= 0 ? natalStarIndex + 1 : null, personalContext.birthChart.pada)
@@ -714,17 +744,17 @@ export default function MyTimePage() {
             <h3>{formatInstant(bestTimeWindow.start_utc,preferences.timezone,language)} – {formatInstant(bestTimeWindow.end_utc,preferences.timezone,language)}</h3>
             <p>{l(language,"तपाईंको रुचि","Your focus")}: {interestLabel} · {bestTimeWindow.tatwaName ? l(language,bestTimeWindow.tatwaName,bestTimeWindow.tatwaName) : l(language,"तन्त्र समय उपलब्ध छैन","Tantra timing unavailable")} · {l(language,"होरा","Hora")}: {bestTimeWindow.horaName || "—"}</p>
             <p>{bestTimeWindow.label==="supportive" ? l(language,"पञ्चाङ्ग/ज्योतिष स्कोर र तत्त्वको मेलका आधारमा उपलब्ध विकल्पमध्ये अगाडि आएको समय।","Top-ranked among available windows by the Panchang/Jyotish score and Tatwa fit.") : bestTimeWindow.label==="mixed" ? l(language,"उपलब्ध विकल्पमध्ये तुलनात्मक रूपमा अगाडि आएको समय; आफ्नो परम्परा र कामसँग मिलाएर रोज्नुहोस्।","A comparatively stronger available window; choose in line with your practice and task.") : l(language,"यो उपलब्ध विकल्पमध्ये सबैभन्दा अगाडि आए पनि सावधानी सङ्केत हुन सक्छ—विवरण हेरेर निर्णय लिनुहोस्।","This ranks highest among available options but may still carry cautions—review details before deciding.")}</p>
-            <small>{l(language,"स्कोर उपलब्ध इनपुटअनुसार भार मिलाएर निकालिन्छ: पञ्चाङ्ग ४५%, मिल्दो राशिफल डोमेन २५%, सक्रिय दशा–होरा सम्बन्ध १५%, गतिविधि–होरा १०%, तत्त्व मेल ५%। अनुपलब्ध डेटा बनावटी रूपमा थपिँदैन; यो परम्परागत मार्गदर्शन हो, परिणामको ग्यारेन्टी होइन।","Weights are normalized over available inputs: Panchang 45%, matching Rashifal domain 25%, active Dasha–Hora relation 15%, activity–Hora fit 10%, Tatwa fit 5%. Missing data is not invented; this is traditional guidance, not a guarantee.")}</small>
+            <small>{l(language,"भार गतिविधिअनुसार फरक हुन्छ र उपलब्ध घटकमा पुनः मिलाइन्छ: पञ्चाङ्ग, राशिफल, दशा–होरा, लग्न/दशौँ–एघारौँ भावेश, गतिविधि–होरा, चौघडिया प्राथमिकता, तत्त्व र गुरु/शनि गोचर। जन्मपत्रो जोडिएको अवस्थामा त्यसका उपलब्ध व्यक्तिगत सङ्केत गणनामा प्रयोग हुन्छन्। यो परम्परागत तुलनात्मक अङ्क हो, सफलताको सम्भाव्यता वा ग्यारेन्टी होइन।","Weights vary by selected activity and are normalized over available components: Panchang, Rashifal, Dasha–Hora, natal/event-chart lords, activity–Hora, activity-linked Choghadiya fit, Tatwa and Jupiter/Saturn transits. A connected JanmaPatro profile is used in the score. This is a relative traditional ranking, not a probability or guarantee of success.")}</small>
             <div className="mt-personal-score-breakdown" aria-label={l(language,"समय सिफारिसका कारणहरू","Recommendation factors")}>
               <strong>{l(language,"यो समय किन छानियो","Why this window ranked here")}</strong>
               <p>{l(language,bestTimeWindow.personalizationLevel==="personalized"?"जन्मपत्रो र दैनिक राशिफलका उपलब्ध संकेत पनि गणनामा समावेश छन्।":bestTimeWindow.personalizationLevel==="partial"?"केही व्यक्तिगत संकेत उपलब्ध छन्; बाँकी स्कोर पञ्चाङ्ग र समय तहबाट निकालिएको छ।":"जन्मपत्रो वा मिल्दो राशिफल डोमेन उपलब्ध नभएकाले यो मुख्यतः सामान्य समय मार्गदर्शन हो।",bestTimeWindow.personalizationLevel==="personalized"?"Available birth-chart and daily Rashifal signals are included.":bestTimeWindow.personalizationLevel==="partial"?"Some personal signals are available; the remaining score comes from Panchang and timing layers.":"No birth-chart or matching Rashifal domain is available, so this is primarily general timing guidance.")}</p>
-              <div>{bestTimeWindow.personalEvaluation.components.map(component=><span key={component.key}><b>{component.key==="panchang"?l(language,"पञ्चाङ्ग","Panchang"):component.key==="rashifal"?l(language,"राशिफल","Rashifal"):component.key==="dasha-hora"?l(language,"दशा–होरा","Dasha–Hora"):component.key==="activity-hora"?l(language,"काम–होरा","Activity–Hora"):l(language,"तत्त्व मेल","Tatwa fit")}</b> {component.score}/100</span>)}</div>
-              <ul>{bestTimeWindow.personalEvaluation.components.map(component=><li key={component.key}>{l(language,component.key==="panchang"?"चौघडिया, सावधानीका समय र उपलब्ध ताराबल/चन्द्रबलबाट पञ्चाङ्ग स्कोर निकालिएको छ।":component.key==="rashifal"?"छानिएको गतिविधिसँग मिल्ने दैनिक राशिफल क्षेत्रको प्रकाशित स्कोर जोडिएको छ।":component.key==="dasha-hora"?"छानिएको मितिको सक्रिय विम्शोत्तरी दशा र होराको स्वामी तुलना गरिएको छ।":component.key==="activity-hora"?"गतिविधिसँग मिल्ने होरा प्राथमिकता तुलना गरिएको छ; नमिलेमा तटस्थ स्कोर दिइन्छ।":"छानिएको गतिविधिसँग तन्त्रको पञ्चतत्त्व मेल तुलना गरिएको छ।",component.explanation)}</li>)}</ul>
+              <div>{bestTimeWindow.personalEvaluation.components.map(component=><span key={component.key}><b>{component.key==="panchang"?l(language,"पञ्चाङ्ग","Panchang"):component.key==="rashifal"?l(language,"राशिफल","Rashifal"):component.key==="dasha-hora"?l(language,"दशा–होरा","Dasha–Hora"):component.key==="chart-lords"?l(language,"लग्न/भावेश","Lagna & house lords"):component.key==="activity-hora"?l(language,"गतिविधि–होरा","Activity–Hora"):component.key==="activity-tatwa"?l(language,"तत्त्व मेल","Tatwa fit"):l(language,"गुरु/शनि गोचर","Jupiter/Saturn transit")}</b> {component.score}/100 <small>· {component.weight.toFixed(1)}%</small></span>)}</div>
+              <ul>{bestTimeWindow.personalEvaluation.components.map(component=><li key={component.key}>{l(language,component.key==="panchang"?"चौघडिया, सावधानीका समय र उपलब्ध ताराबल/चन्द्रबलबाट पञ्चाङ्ग स्कोर निकालिन्छ।":component.key==="rashifal"?"छानिएको गतिविधिसँग मिल्ने दैनिक राशिफल डोमेनको स्कोर जोडिन्छ।":component.key==="dasha-hora"?"दशा स्वामी र प्रस्तावित समयको होरा स्वामीको प्राकृतिक सम्बन्ध तथा उपलब्ध जन्मकुण्डलीय अवस्था मूल्याङ्कन हुन्छ।":component.key==="chart-lords"?"जन्मपत्रो र प्रस्तावित समयको लग्नेश तथा सम्बन्धित दशौँ/एघारौँ भावेशको राशि-गरिमा र उपलब्ध युति-सङ्केत जोडिन्छ।":component.key==="activity-hora"?"छानिएको गतिविधिका लागि होराको परम्परागत उपयुक्तता मूल्याङ्कन हुन्छ।":component.key==="activity-tatwa"?"छानिएको गतिविधिसँग पञ्चतत्त्वको परम्परागत मेल मूल्याङ्कन हुन्छ।":"गोचर गुरु र शनिको स्थान जन्म चन्द्र राशि तथा लग्नबाट परम्परागत भाव सम्बन्धअनुसार मूल्याङ्कन हुन्छ।",component.explanation)} <small>({component.weight.toFixed(1)}%)</small></li>)}</ul>
             </div>
           </div>
         </div>
         <div className="mt-best-current-grid">
-          <article><small>{l(language,"अहिलेको मुहूर्त","CURRENT MUHURTA")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label) : l(language,"गणना हुँदैछ","Calculating")}</strong><span>{personalizedMuhurta ? String(personalizedMuhurta.score)+"/100" : "—"} · {currentChoghadiya ? l(language,currentChoghadiya.name_ne,currentChoghadiya.name_en) : snapshot && snapshot.date !== localDate(preferences.timezone, now) ? l(language,"छानिएको मिति आज होइन","Selected date is not today") : l(language,"समय खण्ड उपलब्ध छैन","No active window")}</span><p>{currentKaal ? l(language,"अहिले "+currentKaal.name_ne+" चलिरहेको छ; नयाँ शुभकार्य अर्को समयका लागि राख्न सक्नुहुन्छ。",currentKaal.name_en+" is active; you may defer a new auspicious start.") : l(language,"हाल सक्रिय राहुकाल/यमगण्ड/गुलिक भेटिएन।","No active Rahu Kaal/Yamaganda/Gulika window was found.")}</p></article>
+          <article><small>{l(language,"अहिलेको मुहूर्त","CURRENT MUHURTA")}</small><strong>{currentRankedMuhurta ? l(language,currentRankedMuhurta.label==="supportive"?"अनुकूल सङ्केत":currentRankedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",currentRankedMuhurta.label) : l(language,"गणना हुँदैछ","Calculating")}</strong><span>{currentRankedMuhurta ? String(currentRankedMuhurta.combinedScore)+"/100" : "—"} · {currentChoghadiya ? l(language,currentChoghadiya.name_ne,currentChoghadiya.name_en) : snapshot && snapshot.date !== localDate(preferences.timezone, now) ? l(language,"छानिएको मिति आज होइन","Selected date is not today") : l(language,"समय खण्ड उपलब्ध छैन","No active window")}</span><p>{currentKaal ? l(language,"अहिले "+currentKaal.name_ne+" चलिरहेको छ; नयाँ शुभकार्य अर्को समयका लागि राख्न सक्नुहुन्छ।",currentKaal.name_en+" is active; you may defer a new auspicious start.") : currentRankedMuhurta ? l(language,"अहिलेको स्कोरमा पञ्चाङ्ग, व्यक्तिगत जन्मपत्रो र गतिविधिअनुसारका उपलब्ध घटक जोडिएका छन्।","The current ranking combines Panchang, available natal-chart and activity-specific signals.") : l(language,"हाल सक्रिय राहुकाल/यमगण्ड/गुलिक भेटिएन।","No active Rahu Kaal/Yamaganda/Gulika window was found.")}</p></article>
           <article><small>{selectedDateIsToday ? l(language,"अहिलेको तन्त्र समय","CURRENT TANTRA TIMING") : l(language,"छानिएको मितिको तन्त्र समय","TANTRA TIMING FOR SELECTED DATE")}</small><strong>{tantraTime ? l(language,tantraTime.activeTatwa.name,tantraTime.activeTatwa.name) : l(language,"उपलब्ध छैन","Unavailable")}</strong><span>{tantraTime ? String(tantraTime.tatwaRemainingMinutes)+" "+l(language,"मिनेट बाँकी","minutes left")+" · "+l(language,tantraTime.nityaDevi.name,tantraTime.nityaDevi.name) : l(language,"सौर घटना आवश्यक","Solar events required")}</span><p>{tantraTime ? l(language,tantraTime.activeTatwa.recommended,tantraTime.activeTatwa.recommended) : l(language,"स्थान र सूर्योदय/सूर्यास्त जाँच्नुहोस्।","Check location and solar events.")}</p></article>
         </div>
         <div className="mt-best-alternatives"><strong>{l(language,"अर्का राम्रा विकल्प","Next best windows")}</strong>{combinedMuhurtaWindows.slice(1,3).map((window,index)=><div key={window.key+"-"+window.start_utc}><span>{index+2}</span><strong>{formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</strong><small>{window.combinedScore}/100 · {window.tatwaName ? l(language,window.tatwaName,window.tatwaName) : "—"}</small></div>)}</div>
@@ -766,7 +796,7 @@ export default function MyTimePage() {
     </section>}
     {observatoryLayers.muhurta && <section className="mt-extra-grid" aria-label={l(language,"मुहूर्त र व्यक्तिगत समय","Muhurta and personalized timing")}>
       <article className="mt-extra-card"><small>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</small><strong>{abhijit ? formatInstant(abhijit.start_utc,preferences.timezone,language)+" – "+formatInstant(abhijit.end_utc,preferences.timezone,language) : "—"}</strong><span>{abhijit ? l(language,"स्थानीय दिनको उज्यालो अवधि र मध्यबिन्दुबाट परम्परागत रूपमा निकालिएको।","Derived traditionally from the daylight span and its midpoint.") : l(language,"सूर्योदय र सूर्यास्त उपलब्ध भएपछि देखाइन्छ।","Shown when sunrise and sunset are available.")}</span></article>
-      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first")}</strong><span>{personalizedMuhurta ? l(language,"समय सङ्केत स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Timing guidance score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{recommendedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्को सुझाइएका समय","Next suggested windows")}</b>{recommendedMuhurtaWindows.slice(0,3).map(window=><div key={window.key}><span>{ne ? window.name_ne : window.name_en} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.score}/100</strong></div>)}</div>}</article>
+      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · हालको समय झ्याल","PERSONALIZED TIMING · CURRENT WINDOW")}</small><strong>{currentRankedMuhurta ? l(language,currentRankedMuhurta.label==="supportive"?"अनुकूल सङ्केत":currentRankedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",currentRankedMuhurta.label) : l(language,personalContext.birthChart?"जन्मपत्रो जोडिएको छ · समय मिलाइँदैछ":"पहिले समय गणना लोड गर्नुहोस्",personalContext.birthChart?"Birth chart connected · syncing time windows":"Load a time snapshot first")}</strong><span>{currentRankedMuhurta ? l(language,"व्यक्तिगत स्कोर: "+currentRankedMuhurta.combinedScore+"/100 · ग्यारेन्टी होइन","Personal score: "+currentRankedMuhurta.combinedScore+"/100 · not a guarantee") : l(language,personalContext.birthChart?"व्यक्तिगत समयखण्ड पुनः मिलाइँदैछ।":"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।",personalContext.birthChart?"Your personalized timing windows are being synchronized.":"Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{combinedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्का सुझाइएका व्यक्तिगत समय","Next personalized windows")}</b>{combinedMuhurtaWindows.slice(0,3).map(window=><div key={window.key}><span>{ne ? window.name_ne : window.name_en} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.combinedScore}/100</strong></div>)}</div>}</article>
     </section>}
 
     {error && <div className="mt-notice" role="status"><CircleAlert size={19}/><div><strong>{l(language,"गणना सेवा","Calculation service")}</strong><p>{error}</p>{error.includes("not enabled") || error.includes("सक्रिय") ? <small>{l(language,"यो पृष्ठ र API feature flag सक्रिय भएपछि परिणाम देखिनेछ।","Results appear when the page and API rollout are enabled.")}</small> : null}</div></div>}
@@ -839,8 +869,8 @@ export default function MyTimePage() {
         chandraHouse={chandraHouse} luckyNumber={personalLuckyNumber} dashaLord={activeDashaLord}
         tatwa={tantraTime?.activeTatwa?.name ?? null} nitya={tantraTime?.nityaDevi?.name ?? null}
         luckyTime={personalLuckyTime ? { start: personalLuckyTime.start_utc, end: personalLuckyTime.end_utc, score: personalLuckyTime.combinedScore,
-          confidence: personalLuckyTime.personalizationLevel === "personalized" ? "personalized" : "partial", activity: interestLabel,
-          reasons: personalLuckyTime.personalEvaluation.reasons } : null}
+          confidence: personalContext.birthChart ? "personalized" : "partial", activity: interestLabel,
+          components: personalLuckyTime.personalEvaluation.components, reasons: personalLuckyTime.personalEvaluation.reasons, cautions: personalLuckyTime.personalEvaluation.cautions } : null}
         windows={combinedMuhurtaWindows.map(w => ({ key:w.key, start:w.start_utc, end:w.end_utc, score:w.combinedScore, label:w.label,
           reasons:w.personalEvaluation.reasons, cautions:w.personalEvaluation.cautions, confidence:w.personalEvaluation.confidence }))}
         onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />
