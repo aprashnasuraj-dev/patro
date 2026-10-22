@@ -587,8 +587,8 @@ export default function MyTimePage() {
     if (!solar.sunrise_utc || !solar.sunset_utc || !solar.next_sunrise_utc) return [];
     const horas = horaWindows(snapshot.weekday, solar.sunrise_utc, solar.sunset_utc, solar.next_sunrise_utc);
     const horaPeriods = [...horas.day, ...horas.night];
-    return recommendedMuhurtaWindows.map(window => {
-      const start = Date.parse(window.start_utc), end = Date.parse(window.end_utc);
+    return recommendedMuhurtaWindows.flatMap(window => splitTimingWindowAtBoundaries(window, horaPeriods).map((segment, segmentIndex) => {
+      const start = Date.parse(segment.start_utc), end = Date.parse(segment.end_utc);
       const midpoint = new Date(start + (end - start) / 2);
       let tatwaName = "", nityaName = "";
       try {
@@ -600,9 +600,9 @@ export default function MyTimePage() {
       const horaName = hora?.name_en || "";
       const activities = selectedInterests.length ? selectedInterests : ["general" as PersonalTimeActivity];
       const evaluations = activities.map(activity => evaluatePersonalTime({
-        startUtc: window.start_utc, endUtc: window.end_utc, panchangScore: window.score,
-        panchangReasons: window.score >= 75 ? ["supportive_panchang_indications"] : [],
-        panchangCautions: window.cautions,
+        startUtc: segment.start_utc, endUtc: segment.end_utc, panchangScore: segment.score,
+        panchangReasons: segment.score >= 75 ? ["supportive_panchang_indications"] : [],
+        panchangCautions: segment.cautions,
         activity, horaLord: horaName || null, tatwa: tatwaName || null,
         rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
         dashaLord: activeDashaLord,
@@ -626,13 +626,13 @@ export default function MyTimePage() {
         missing: [...new Set(evaluations.flatMap(item => item.missing))]
       };
       return {
-        ...window, tatwaName, nityaName, horaName,
+        ...segment, key: segment.key + "-hora-" + segmentIndex, tatwaName, nityaName, horaName,
         label: personalEvaluation.label,
         tantraFit: aggregateComponents.find(item => item.key === "activity-tatwa")?.score ?? null,
         horaFit: aggregateComponents.find(item => item.key === "activity-hora")?.score ?? null,
         combinedScore, personalEvaluation, personalizationLevel
       };
-    }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
+    })).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
   }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
   const nextCautionWindow = combinedMuhurtaWindows.filter(window => window.label === "caution" && Date.parse(window.end_utc) > now.getTime()).sort((a,b)=>Date.parse(a.start_utc)-Date.parse(b.start_utc))[0] || null;
