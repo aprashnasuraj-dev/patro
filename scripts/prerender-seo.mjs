@@ -30,7 +30,7 @@ function parseCsvLine(line) {
   values.push(value);
   return values;
 }
-const acceptanceCsv = (await readFile(resolve(root, "docs/panchang-jyotish-integration/05_FEATURE_ACCEPTANCE_91.csv"), "utf8")).trim().split(/\\r?\\n/);
+const acceptanceCsv = (await readFile(resolve(root, "docs/panchang-jyotish-integration/05_FEATURE_ACCEPTANCE_91.csv"), "utf8")).trim().split(/\r?\n/);
 const acceptanceHeaders = parseCsvLine(acceptanceCsv[0]);
 const acceptanceRows = acceptanceCsv.slice(1).filter(Boolean).map(line => {
   const values = parseCsvLine(line);
