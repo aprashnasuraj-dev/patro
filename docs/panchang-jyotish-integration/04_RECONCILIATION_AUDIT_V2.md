@@ -69,6 +69,20 @@ Important incomplete rows:
 
 The master-day database payload contains more transition fields than the public static year shard exposed through `archiveDay`. Adding a new database query solely for the new Panchang UI would violate the preferred browser/static budget. Before marking F002–F006/F011 complete, decide whether to add an immutable, bundled/partitioned **build-time** public boundary shard from the approved archive, or to extend an existing archive projection through its established release process. Until the source and exact civil-date parsing are verified, do not fabricate those fields.
 
+## Follow-up implementation batch recorded after this audit
+
+- Static-calendar year asset reader integrated into the browser Panchang via a versioned DTO; missing source values are not invented, and UTC-offset-qualified transition instants are preserved as UTC.
+- All four core elements have browser-calculated start and end transition solvers. If an archive label disagrees with its calculated fallback, unverified fallback boundary times are withheld rather than shown beside a potentially different element.
+- Clock display supports 12h, 24h and a date-aware 24+ display without mutating stored UTC timestamps; a rollover test was authored.
+- BS and Nepal Sambat are surfaced where provided by the existing archive; lunar month naming now distinguishes Amanta and Purnimanta, with Adhika/Kshaya labels explicitly calculated.
+- An initial sunrise-sequence Kshaya/Vriddhi indicator was authored; **it is not a substitute for a reviewed ritual observance decision**.
+- Planet search now uses the engine's canonical lowercase keys. Sadesati checks twelve-sign modular distance (rather than treating signs as degrees); a planet-key/Sadesati test was authored.
+- New Jyotish reads the timezone actually saved in the existing JanmaPatro context via a read-only adapter, without changing `src/jyotish/my-time-bridge.ts`.
+- `05_FEATURE_ACCEPTANCE_91.csv` records all 91 entries with their independent v3 audit priority, canonical destination, implementation class and *unrun* release gates: 17 existing links, 45 browser previews, 26 requiring tradition/source review and 3 further reference-only features.
+- `scripts/panchang-prepr-audit.mjs` is a read-only local gate to check protected paths, 91 unique entries, 5 hub routes, 29 existing tool routes, generated static HTML and master sitemap presence after a completed build. It has not been executed here.
+
+**No source-related gate was changed to PASS merely because this implementation work was authored.** In particular the full master-day boundary projection, genuine completion of reviewed calculators, full build artifacts and comprehensive regression results are still missing.
+
 ## No PR/CI/deploy authorization
 
 None of this audit, these commits, or the existence of test files authorizes PR creation, CI execution, merge, Worker deployment or production writes. After every gate truly passes, obtain an explicit separate instruction for PR/CI, and again for merge.
