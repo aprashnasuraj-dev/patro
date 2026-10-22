@@ -1,16 +1,13 @@
 import { useMemo, useState } from "react";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../patro-tools/core/names";
 import { panchangAt, sunSidereal } from "../../patro-tools/core/astro";
-import { useUiLanguage, l } from "../../useUiLanguage";
+import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
 import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, nextFieldTransition, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
 type BoundaryRow = { labelNe: string; labelEn: string; value: string; end: Date | null };
-
-const WEEKDAY_NE = ["आइतबार", "सोमबार", "मंगलबार", "बुधबार", "बिहीबार", "शुक्रबार", "शनिबार"];
-const WEEKDAY_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function localDateLabel(date: string, language: "ne" | "en") {
   const value = new Date(date + "T12:00:00Z");
