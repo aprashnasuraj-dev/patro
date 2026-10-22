@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import type { FeatureGroupId, PatroFeature } from "./catalog";
-import { FEATURE_GROUPS, getFeaturesForGroup } from "./catalog";
+import { FEATURE_GROUPS, getFeaturesForGroup, getFeatureAvailability } from "./catalog";
 import { useUiLanguage, l } from "../useUiLanguage";
 import "./feature-group-hub.css";
 
@@ -131,7 +131,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
               <span className="ap-pj-feature-mark" aria-hidden="true">{item.id.slice(1)}</span>
               <span className="ap-pj-feature-copy">
                 <strong>{l(language, item.titleNe, item.titleEn)}</strong>
-                <small>{l(language, item.descriptionNe, item.descriptionEn)}</small>
+                <small>{l(language, item.descriptionNe, item.descriptionEn)}</small><small className="ap-pj-feature-status">{getFeatureAvailability(item) === "existing" ? l(language, "विद्यमान सुविधा", "Existing feature") : getFeatureAvailability(item) === "browser-preview" ? l(language, "ब्राउजरमै गणना · स्रोत जाँच आवश्यक", "Browser calculation · source checking required") : l(language, "परम्परागत नियम र स्रोत समीक्षा आवश्यक", "Traditional rules and source review required")}</small>
               </span>
               <span className="ap-pj-feature-arrow" aria-hidden="true">{local ? "↓" : "↗"}</span>
             </a>;
