@@ -1,5 +1,6 @@
 import { l } from "../../useUiLanguage";
 import { formatLocalTime } from "./shared";
+import { FeatureGlyph } from "../FeatureGlyph";
 
 type Window = { start: Date; end: Date };
 export type DayWindowRibbonData = {
@@ -7,10 +8,10 @@ export type DayWindowRibbonData = {
   abhijit: Window; rahu: Window; yama: Window; gulika: Window;
 };
 const CATEGORIES = [
-  { key: "abhijit", ne: "अभिजित मुहूर्त", en: "Abhijit Muhurta", style: "auspicious" },
-  { key: "rahu", ne: "राहुकाल", en: "Rahu Kalam", style: "caution" },
-  { key: "yama", ne: "यमगण्ड", en: "Yamaganda", style: "yama" },
-  { key: "gulika", ne: "गुलिक काल", en: "Gulika Kalam", style: "gulika" }
+  { key: "abhijit", ne: "अभिजित मुहूर्त", en: "Abhijit Muhurta", style: "auspicious", icon: "sun-star" },
+  { key: "rahu", ne: "राहुकाल", en: "Rahu Kalam", style: "caution", icon: "day-segment" },
+  { key: "yama", ne: "यमगण्ड", en: "Yamaganda", style: "yama", icon: "day-cycle" },
+  { key: "gulika", ne: "गुलिक काल", en: "Gulika Kalam", style: "gulika", icon: "clock" }
 ] as const;
 export function MuhuratDayRibbon({ day, language, showCautions }: { day: DayWindowRibbonData; language: "ne" | "en"; showCautions: boolean }) {
   const start = day.sunrise.getTime(), end = day.sunset.getTime(), length = end - start;
@@ -25,7 +26,7 @@ export function MuhuratDayRibbon({ day, language, showCautions }: { day: DayWind
       {visible.map(item => {
         const interval = day[item.key], from = percent(interval.start), to = percent(interval.end);
         return <div className="ap-pjw-ribbon-lane" key={item.key}>
-          <span>{l(language,item.ne,item.en)}</span>
+          <span className="ap-pjw-icon-label"><FeatureGlyph featureId={item.key === "abhijit" ? "F018" : item.key === "rahu" ? "F015" : item.key === "yama" ? "F016" : "F017"} symbol={item.icon} size="inline" />{l(language,item.ne,item.en)}</span>
           <div className="ap-pjw-ribbon-lane-track" role="img" aria-label={l(language,item.ne,item.en)+": "+formatLocalTime(interval.start,language)+" – "+formatLocalTime(interval.end,language)}>
             <div className={"ap-pjw-ribbon-span is-"+item.style} style={{left:from+"%",width:Math.max(0,to-from)+"%"}}/>
           </div>
