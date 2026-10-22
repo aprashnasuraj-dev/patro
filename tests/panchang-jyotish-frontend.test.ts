@@ -24,6 +24,32 @@ describe("bilingual feature-first visual obligations", () => {
     expect(iconComponent).not.toContain("https://");
     expect(source("src/panchang-jyotish/FeatureGroupHub.tsx")).toContain('<FeatureGlyph featureId={item.id} size="card"');
     expect(source("src/panchang-jyotish/FeatureExperience.tsx")).toContain('<FeatureGlyph featureId={feature.id} size="hero"');
+
+    const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
+    expect(panchang).toContain('symbol="sun"');
+    expect(panchang).toContain('symbol="moon"');
+    expect(panchang).toContain('symbol="nakshatra"');
+    expect(panchang).toContain('symbol="yoga"');
+    expect(panchang).toContain('symbol="karana"');
+    expect(panchang).toContain('symbol="sunrise"');
+    expect(panchang).toContain('symbol="sunset"');
+    expect(panchang).toContain('className="ap-pjw-icon-label"');
+    const daylight = source("src/panchang-jyotish/workspaces/DaylightArc.tsx");
+    expect(daylight).toContain('symbol="sunrise"');
+    expect(daylight).toContain('symbol="sunset"');
+    const ribbon = source("src/panchang-jyotish/workspaces/MuhuratDayRibbon.tsx");
+    expect(ribbon).toContain('FeatureGlyph featureId={item.key');
+    expect(ribbon).toContain('icon: "sun-star"');
+    const muhurat = source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx");
+    expect(muhurat).toContain('FeatureGlyph featureId={rule.id}');
+    expect(muhurat).toContain('symbol="personal-time"');
+    const planets = source("src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx");
+    expect(planets).toContain("function planetIcon(key:string)");
+    expect(planets).toContain("symbol={planetIcon(item.key)}");
+    expect(planets).toContain("symbol={planetIcon(item.a.key)}");
+    const wheel = source("src/panchang-jyotish/workspaces/PlanetWheel.tsx");
+    expect(wheel).toContain("<FeatureGlyph featureId=\"F046\"");
+    expect(source("src/panchang-jyotish/workspaces/workspace.css")).toContain(".ap-pjw-icon-label .ap-pj-icon");
     expect(Object.keys(FEATURE_REFERENCE_GUIDES)).toHaveLength(29);
     for (const item of PATRO_FEATURES.filter(feature => getFeatureAvailability(feature) === "reference")) {
       const guide = FEATURE_REFERENCE_GUIDES[item.id];
