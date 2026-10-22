@@ -98,6 +98,26 @@ export function nextFieldTransition(start: Date, field: PanchangField, searchHou
   return null;
 }
 
+export function previousFieldTransition(anchor: Date, field: PanchangField, searchHours = 36): Date | null {
+  const initial = panchangAt(anchor)[field];
+  const minimum = anchor.getTime() - searchHours * 3_600_000;
+  const step = 10 * 60_000;
+  let right = anchor.getTime();
+  for (let left = right - step; left >= minimum; left -= step) {
+    if (panchangAt(new Date(left))[field] !== initial) {
+      let lo = left, hi = right;
+      // Return the first instant belonging to the present sunrise element.
+      for (let iteration = 0; iteration < 32 && hi - lo > 1_000; iteration++) {
+        const mid = Math.floor((lo + hi) / 2);
+        if (panchangAt(new Date(mid))[field] === initial) hi = mid;
+        else lo = mid;
+      }
+      return new Date(hi);
+    }
+    right = left;
+  }
+  return null;
+}
 export type LocalWindow = { start: Date; end: Date; segment?: number };
 export type DayWindows = { rahu: LocalWindow; yamaganda: LocalWindow; gulika: LocalWindow; abhijit: LocalWindow; brahma: LocalWindow };
 
