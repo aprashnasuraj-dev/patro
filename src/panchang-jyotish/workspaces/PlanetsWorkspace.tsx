@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { calculateSiderealPlanetPositions, type SiderealPlanetPosition } from "../../jyotish/jyotishEngine";
+import { NAKSHATRAS } from "../../patro-tools/core/names";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { addIsoDays, formatLocalDateTime, todayInNepal, validIsoDate } from "./shared";
 import "./workspace.css";
@@ -13,18 +14,21 @@ const RETROGRADE_KEYS=new Set(["Mercury","Venus","Mars","Jupiter","Saturn"]);
 function angleDistance(a:number,b:number){const d=Math.abs((a-b+540)%360-180);return Math.min(d,360-d);}
 function signedAngle(value:number){return ((value%360)+540)%360-180;}
 function instantForNptDate(date:string){return new Date(date+"T06:15:00Z");}
+function midnightForNptDate(date:string){return new Date(Date.parse(date+"T00:00:00Z")-345*60_000);}
+function nakshatraIndex(position:SiderealPlanetPosition){return Math.floor(position.longitude/(360/27));}
 function planetAt(date:Date,key:string){return calculateSiderealPlanetPositions(date).find(item=>item.key===key);}
 function localLabel(instant:Date,language:"ne"|"en"){return formatLocalDateTime(instant,language);}
 
 type IngressEvent={key:string;name:string;fromSign:number;toSign:number;instant:Date};
 type StationEvent={key:string;name:string;direction:"direct"|"retrograde";instant:Date};
+type NakshatraEvent={key:string;name:string;fromNakshatra:number;toNakshatra:number;instant:Date};
 
 function scanIngresses(startDate:string,days:number,bodyFilter:string):IngressEvent[]{
   const output:IngressEvent[]=[];
-  let previousDate=instantForNptDate(startDate);
+  let previousDate=midnightForNptDate(startDate);
   let previous=calculateSiderealPlanetPositions(previousDate);
   for(let day=1;day<=days;day++){
-    const date=instantForNptDate(addIsoDays(startDate,day));
+    const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=calculateSiderealPlanetPositions(date);
     for(const before of previous){
       if(bodyFilter!=="all"&&before.key!==bodyFilter)continue;
@@ -45,7 +49,7 @@ function scanIngresses(startDate:string,days:number,bodyFilter:string):IngressEv
 
 function scanStations(startDate:string,days:number):StationEvent[]{
   const output:StationEvent[]=[];
-  let previousDate=instantForNptDate(startDate);
+  let previousDate=midnightForNptDate(startDate);
   let previous=calculateSiderealPlanetPositions(previousDate).filter(item=>RETROGRADE_KEYS.has(item.key));
   for(let day=1;day<=days;day++){
     const date=instantForNptDate(addIsoDays(startDate,day));
@@ -66,20 +70,42 @@ function scanStations(startDate:string,days:number):StationEvent[]{
   return output;
 }
 
+function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:string):NakshatraEvent[]{
+  const output:NakshatraEvent[]=[];
+  let previousDate=midnightForNptDate(startDate);
+  let previous=calculateSiderealPlanetPositions(previousDate);
+  for(let day=1;day<=days;day++){
+    const date=midnightForNptDate(addIsoDays(startDate,day));
+    const current=calculateSiderealPlanetPositions(date);
+    for(const before of previous){
+      if(bodyFilter!=="all"&&before.key!==bodyFilter)continue;
+      const after=current.find(item=>item.key===before.key);
+      if(!after||nakshatraIndex(after)===nakshatraIndex(before))continue;
+      let lo=previousDate.getTime(),hi=date.getTime();
+      for(let iteration=0;iteration<26&&hi-lo>60_000;iteration++){
+        const mid=new Date((lo+hi)/2),state=planetAt(mid,before.key);
+        if(state&&nakshatraIndex(state)===nakshatraIndex(before))lo=mid.getTime();else hi=mid.getTime();
+      }
+      output.push({key:before.key,name:before.name,fromNakshatra:nakshatraIndex(before),toNakshatra:nakshatraIndex(after),instant:new Date(hi)});
+    }
+    previousDate=date;previous=current;
+  }
+  return output;
+}
+
 function tropicalSeasonCrossings(startDate:string,days:number):Array<{degree:number;instant:Date}>{
   const output:Array<{degree:number;instant:Date}>=[];
   const targets=[0,90,180,270];
-  const unwrap=(a:number,b:number)=>((b-a+540)%360)-180;
-  let previousDate=instantForNptDate(startDate);
+  let previousDate=midnightForNptDate(startDate);
   let previous=planetAt(previousDate,"Sun");
   for(let day=1;day<=days;day++){
-    const date=instantForNptDate(addIsoDays(startDate,day));
+    const date=midnightForNptDate(addIsoDays(startDate,day));
     const current=planetAt(date,"Sun");
     if(!previous||!current){previousDate=date;previous=current;continue;}
     for(const target of targets){
       const a=signedAngle(previous.tropicalLongitude-target);
       const b=signedAngle(current.tropicalLongitude-target);
-      if((a<=0&&b>0)||(a>0&&b<=0)||Math.abs(unwrap(previous.tropicalLongitude,current.tropicalLongitude))>180){
+      if((a<=0&&b>0)||(a>0&&b<=0)){
         let lo=previousDate.getTime(),hi=date.getTime();
         const startValue=signedAngle(previous.tropicalLongitude-target);
         for(let iteration=0;iteration<26&&hi-lo>60_000;iteration++){
