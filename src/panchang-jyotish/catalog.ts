@@ -170,9 +170,9 @@ export const PATRO_FEATURES: PatroFeature[] = [
   feature("F073", "planets", "ग्रीष्म अयनान्त", "Summer Solstice", "उत्तरी गोलार्धको ग्रीष्म अयनान्त समय।", "Northern-hemisphere summer solstice instant.", "/planets#summer-solstice"),
   feature("F074", "planets", "शरद विषुव", "Autumnal Equinox", "सूर्यको खगोलीय निर्देशाङ्कबाट शरद विषुवको समय।", "Autumnal equinox instant from solar coordinates.", "/planets#autumnal-equinox"),
   feature("F075", "planets", "शीत अयनान्त", "Winter Solstice", "उत्तरी गोलार्धको शीत अयनान्त समय।", "Northern-hemisphere winter solstice instant.", "/planets#winter-solstice"),
-  feature("F076", "planets", "ग्रहस्थिति तालिका", "Planet Position Table", "वर्तमान ग्रहका राशि, अंश र गणना समय।", "Current planet signs, degrees and evaluation time.", "/planets#positions"),
-  feature("F077", "planets", "ग्रह अस्त / उदय विवरण", "Graha Asta / Uday", "ग्रहअनुसार अस्त र उदय सीमा तथा विधि।", "Planet-specific combustion/rising thresholds and methodology.", "/planets#combustion", "source-review"),
-  feature("F078", "planets", "वक्री / मार्गी पात्रो", "Retrograde / Direct Calendar", "ग्रहको गति परिवर्तनका घटनाको सूची।", "A listing of planetary direction-change events.", "/planets#stations"),
+  feature("F076", "planets", "ग्रहस्थिति तालिका", "Planet Position Table", "वर्तमान ग्रहका राशि, अंश र गणना समय।", "Current planet signs, degrees and evaluation time.", "/planets#position-table"),
+  feature("F077", "planets", "ग्रह अस्त / उदय विवरण", "Graha Asta / Uday", "ग्रहअनुसार अस्त र उदय सीमा तथा विधि।", "Planet-specific combustion/rising thresholds and methodology.", "/planets#combustion-method", "source-review"),
+  feature("F078", "planets", "वक्री / मार्गी पात्रो", "Retrograde / Direct Calendar", "ग्रहको गति परिवर्तनका घटनाको सूची।", "A listing of planetary direction-change events.", "/planets#retrograde-calendar"),
   feature("F079", "planets", "ऋतु र हिन्दू ऋतु", "Indian / Hindu Seasons", "नेपालको ऋतु नाम र खगोलीय ऋतुबीचको भिन्नता।", "Distinguish Nepal's seasonal terminology from astronomical seasons.", "/planets#seasons"),
 
   // Group E — Nepal calendars, observances and regional calendars (12)

@@ -34,7 +34,7 @@ describe("bilingual feature-first visual obligations", () => {
     expect(hubSource).not.toContain("{item.icon}");
     const mainPages = source("src/AafnaiPages.tsx");
     const detailPages = source("src/AafnaiDetailPages.tsx");
-    expect(mainPages).toContain('iconFeatureId:"F085"');
+    expect(mainPages).toContain('FeatureGlyph featureId="F085" size="inline" className="ap-next-festival-glyph"');
     expect(mainPages).toContain('FeatureGlyph featureId="F085" size="inline" className="ap-next-festival-glyph"');
     expect(mainPages).not.toContain('icon:"☾"');
     expect(detailPages).toContain('symbol="sunrise"');

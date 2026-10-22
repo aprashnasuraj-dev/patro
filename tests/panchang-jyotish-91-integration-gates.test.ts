@@ -119,7 +119,8 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
     expect(hub).toContain('window.addEventListener("hashchange", sync)');
     expect(hub).toContain('window.addEventListener("popstate", sync)');
     expect(hub).toContain("window.history.pushState(null");
-    expect(hub).not.toContain("window.history.replaceState(null");
+    expect(hub).toContain("window.history.replaceState(null");
+    expect(hub).toContain("setActiveFeature(null); setWorkspaceRequested(false)");
     expect(hub).toContain("sync();");
     expect(hub).toContain("event.preventDefault(); openFeature(item)");
     expect(hub).toContain("<WorkspaceErrorBoundary");
@@ -129,7 +130,7 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
     const archive=source("src/panchang-jyotish/archive-adapter.ts");
     expect(archive).toContain('archiveDay(dateAd, signal)');
     expect(archive).toContain("mergeVerifiedArchive(calculated, overlay)");
-    expect(archive).not.toContain("...nk,");
+    expect(archive).not.toMatch(/localStorage\\.setItem|sessionStorage\\.setItem|\\bDB\\.prepare\\s*\\(|\\bfetch\\s*\\(/);
     const birth=source("src/panchang-jyotish/read-existing-birth.ts");
     expect(birth).not.toContain("localStorage.setItem");
     expect(source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx")).toContain("readExistingJanmaPatroBirth()");
