@@ -29,6 +29,13 @@ describe("five-group Panchang feature catalog", () => {
     expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F058")!)).toBe("reference");
     expect(getFeatureAvailability(PATRO_FEATURES.find(item => item.id === "F067")!)).toBe("existing");
   });
+  it("uses an explicit source-review disposition without promoting gated items to tools", () => {
+    const gated = PATRO_FEATURES.filter(feature => feature.disposition === "source-review");
+    expect(gated).toHaveLength(26);
+    expect(gated.every(feature => getFeatureAvailability(feature) === "reference")).toBe(true);
+    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F021")!)).toBe("reference");
+    expect(getFeatureAvailability(PATRO_FEATURES.find(feature => feature.id === "F064")!)).toBe("reference");
+  });
   it("does not create a second My Time tool route or duplicate canonical chart route", () => {
     expect(PATRO_FEATURES.filter((feature) => feature.href === "/mytime").length).toBeGreaterThan(0);
     expect(PATRO_FEATURES.filter((feature) => feature.href === "/janmapatro").length).toBeGreaterThan(0);
