@@ -19,7 +19,7 @@ export const FEATURE_ICON_BY_ID: Record<string, string> = {
 };
 
 export const FEATURE_ICON_SYMBOLS = [
-  "calendar","moon","clock","nakshatra","yoga","karana","sun-moon","lunar-calendar","calendar-cycle",
+  "calendar","search","moon","clock","nakshatra","yoga","karana","sun-moon","lunar-calendar","calendar-cycle",
   "timeline","sunrise","sunset","moonrise","day-segment","day-cycle","star","orbit","sun-star","dawn","segments",
   "gandamoola","star-compass","ingress","ritual","chart","question-chart","bird","gem","beads","node-axis",
   "saturn","ascendant","sun","shield","rings","scroll","full-moon-series","baby-name","planet","retrograde",
