@@ -74,6 +74,7 @@ This closes the earlier parser-shape mismatch in code, but **not the release val
 ## Follow-up implementation batch recorded after this audit
 
 - Browser feature-topic navigation now records history entries and syncs selection on both `hashchange` and `popstate`; source guard added, browser execution still pending.
+- Panchak candidate start is explicitly 300° sidereal Moon longitude (Dhanishtha Pada 3), not the beginning of the entire Dhanishtha Nakshatra; the scanner runs beyond the requested range edge to report complete overlapping windows. Its outputs remain candidate-unverified until exact Nepal-local reference comparisons pass.
 - Planetary event scans yield control, cancel stale searches, expose localized running/error states, and sample Nakshatra boundaries every six hours so a fast-moving Moon does not collapse two same-day crossings into a false direct jump; regression guards authored, not yet executed.
 - Muhurat date ranges calculate progressively with cancellation and localized loading/error states rather than synchronously building all days during render.
 - The existing JanmaPatro summary still reads its prior context only; the live Saturn sign now refreshes on focus and once per minute instead of freezing at mount time.
@@ -87,7 +88,7 @@ This closes the earlier parser-shape mismatch in code, but **not the release val
 - An initial sunrise-sequence Kshaya/Vriddhi indicator was authored; **it is not a substitute for a reviewed ritual observance decision**.
 - Planet search now uses the engine's canonical lowercase keys. Sadesati checks twelve-sign modular distance (rather than treating signs as degrees); a planet-key/Sadesati test was authored.
 - New Jyotish reads the timezone actually saved in the existing JanmaPatro context via a read-only adapter, without changing `src/jyotish/my-time-bridge.ts`.
-- `05_FEATURE_ACCEPTANCE_91.csv` records all 91 entries with their independent v3 audit priority, canonical destination, implementation class and *unrun* release gates: 17 existing links, 45 browser previews, 26 requiring tradition/source review and 3 further reference-only features.
+- `05_FEATURE_ACCEPTANCE_91.csv` records all 91 entries with their independent v3 audit priority, canonical destination, implementation class and *unrun* release gates. Current hub availability is 17 existing links, 47 browser previews (including two candidate-only Nakshatra interval tools), and 27 reference-only entries. The underlying source-review disposition remains on 26 items; F021/F022 expose candidate math but stay source-review-required and BLOCKED.
 - `scripts/panchang-prepr-audit.mjs` is a read-only local gate to check protected paths, 91 unique entries, 5 hub routes, 29 existing tool routes, generated static HTML and master sitemap presence after a completed build. It has not been executed here.
 
 **No source-related gate was changed to PASS merely because this implementation work was authored.** In particular the full master-day boundary projection, genuine completion of reviewed calculators, full build artifacts and comprehensive regression results are still missing.
