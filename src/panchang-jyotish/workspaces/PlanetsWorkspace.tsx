@@ -128,6 +128,7 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const [body,setBody]=useState("all");
   const [searchMode,setSearchMode]=useState<"ingress"|"nakshatra"|"station"|"season">(()=>selectedFeatureId==="F048"?"nakshatra":selectedFeatureId==="F051"||selectedFeatureId==="F078"?"station":selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075"?"season":"ingress");
   const [runScan,setRunScan]=useState(false);
+  useEffect(()=>{if(selectedFeatureId==="F048")setSearchMode("nakshatra");else if(selectedFeatureId==="F051"||selectedFeatureId==="F078")setSearchMode("station");else if(selectedFeatureId==="F072"||selectedFeatureId==="F073"||selectedFeatureId==="F074"||selectedFeatureId==="F075")setSearchMode("season");else if(selectedFeatureId==="F047")setSearchMode("ingress");setRunScan(false);},[selectedFeatureId]);
   const [natalChart,setNatalChart]=useState<ChartResult|null>(null);
   const [natalContextChecked,setNatalContextChecked]=useState(false);
   useEffect(()=>{let active=true;try{const birth=readJanmaPatroBirthInput();if(!birth){if(active)setNatalChart(null);return;}const timezone=findJanmaPatroBirthTimezone(birth.location)||"Asia/Kathmandu";const result=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});if(active)setNatalChart(result);}catch{if(active)setNatalChart(null);}finally{if(active)setNatalContextChecked(true);}return()=>{active=false;}},[]);
