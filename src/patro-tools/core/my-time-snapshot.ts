@@ -87,8 +87,12 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const evaluatedAt = localDateTimeToUtc(date, timezone, 12);
   const location = { lat, lon: lng, tz: timezone, height: 0, name: "My Time" };
   let daily: ReturnType<typeof placeTiming> | null = null;
-  try { const timing = placeTiming(date, location); daily = timing.polarFallback ? null : timing; } catch { daily = null; }
+  let sourceStatus: "shared-provider" | "polar-noon-fallback" | "provider-error-fallback" = "shared-provider";
+  try { const timing = placeTiming(date, location); if (timing.polarFallback) sourceStatus = "polar-noon-fallback"; else daily = timing; }
+  catch { sourceStatus = "provider-error-fallback"; }
   const panchang = daily || panchangAt(evaluatedAt);
+  let previousDay: ReturnType<typeof placeTiming> | null = null;
+  if (daily) { try { const timing = placeTiming(addIsoDays(date,-1),location); previousDay = timing.polarFallback ? null : timing; } catch { previousDay = null; } }
   let nextDay: ReturnType<typeof placeTiming> | null = null;
   if (daily) { try { const timing = placeTiming(addIsoDays(date, 1), location); nextDay = timing.polarFallback ? null : timing; } catch { nextDay = null; } }
   const sunLongitude = normalizeLongitude(Astronomy.SunPosition(evaluatedAt).elon);
@@ -147,6 +151,8 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
       moon_rashi_ne: RASHIS[panchang.moonRashi],
       sun_rashi_index: panchang.sunRashi,
       sun_rashi_ne: RASHIS[panchang.sunRashi],
+      previous_sunrise_utc: previousDay?.sunrise.toISOString() ?? null,
+      previous_sunset_utc: previousDay?.sunset.toISOString() ?? null,
       sunrise_utc: daily?.sunrise.toISOString() ?? null,
       sunset_utc: daily?.sunset.toISOString() ?? null,
       next_sunrise_utc: nextDay?.sunrise.toISOString() ?? null,
@@ -165,6 +171,8 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     methodology: {
       engine: "AafnaiPatro shared Panchang provider + astronomy-engine",
       time_anchor: timeAnchor,
+      source_status: sourceStatus,
+      fallback_used: sourceStatus !== "shared-provider",
       sidereal_positions: true,
       limitations: [
         "The shared Panchang provider calculates Tithi, Nakshatra/Pada, Yoga, Karana, sidereal Sun/Moon signs and local sunrise/sunset where available.",

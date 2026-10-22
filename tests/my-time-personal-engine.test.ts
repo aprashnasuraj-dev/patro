@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { JANMAPATRO_CONTEXT_STORAGE_KEY, createJanmaPatroContext, findJanmaPatroBirthPlace, readJanmaPatroBirthInput, saveJanmaPatroContext } from "../src/jyotish/my-time-bridge";
-import { calculateChart, normalizeBirthDate, type ChartResult } from "../src/jyotish/jyotishEngine";
+import { birthInstant, calculateChart, normalizeBirthDate, type ChartResult } from "../src/jyotish/jyotishEngine";
 import { panchangAt } from "../src/patro-tools/core/astro";
 import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
 
@@ -9,7 +9,8 @@ const base = {
   endUtc: "2026-10-20T09:00:00Z",
   panchangScore: 70,
   activity: "work" as const,
-  hasNatalChart: true
+  hasNatalChart: true,
+  natalFactorsApplied: true
 };
 
 describe("personal-time recommendation engine", () => {
@@ -26,6 +27,18 @@ describe("personal-time recommendation engine", () => {
     expect(result.reasons.some(reason => reason.includes("published work domain score"))).toBe(true);
   });
 
+  it("keeps a strong Rahu Kaal caution from being overridden by high supplementary signals", () => {
+    const result = evaluatePersonalTime({ ...base, panchangScore: 40, panchangCautions: ["rahu_kaal"],
+      rashifal: { domains: { work: 100 } }, horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
+    expect(result.score).toBeLessThanOrEqual(44);
+    expect(result.label).toBe("caution");
+    expect(result.cautions).toContain("traditional_caution_caps_overall_rank");
+  });
+  it("does not apply a caution cap when no caution is supplied", () => {
+    const result = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 100 } },
+      horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
+    expect(result.score).toBeGreaterThan(70);
+  });
   it("changes the recommendation when the matching Rashifal domain changes", () => {
     const high = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 95 } }, horaLord: "Mercury", tatwa: "Vayu" });
     const low = evaluatePersonalTime({ ...base, rashifal: { domains: { work: 20 } }, horaLord: "Mercury", tatwa: "Vayu" });
@@ -55,6 +68,11 @@ describe("personal-time recommendation engine", () => {
   });
 
 
+  it("does not call a saved chart fully personalized if natal comparisons are unavailable", () => {
+    const result = evaluatePersonalTime({ ...base, natalFactorsApplied: false, horaLord: "Mercury", dashaLord: "Mercury", tatwa: "Vayu" });
+    expect(result.confidence).toBe("partially-personalized");
+    expect(result.missing).toContain("natal-compatibility");
+  });
   it("does not call sign-only Rashifal guidance fully birth-personalized", () => {
     const result = evaluatePersonalTime({
       ...base, hasNatalChart: false, rashifal: { domains: { work: 80 } },
@@ -128,6 +146,23 @@ describe("personal-time recommendation engine", () => {
   });
 });
 
+
+describe("birthplace historical timezone integrity", () => {
+  it("preserves the Nepal Standard Time behavior of existing records", () => {
+    expect(birthInstant({date:"1995-04-10",time:"08:30"}).toISOString()).toBe("1995-04-10T02:45:00.000Z");
+    expect(birthInstant({date:"1995-04-10",time:"08:30",timezone:"Asia/Kathmandu"}).toISOString()).toBe("1995-04-10T02:45:00.000Z");
+  });
+  it("converts Tokyo and winter/summer London correctly", () => {
+    expect(birthInstant({date:"2026-01-10",time:"09:00",timezone:"Asia/Tokyo"}).toISOString()).toBe("2026-01-10T00:00:00.000Z");
+    expect(birthInstant({date:"2026-01-10",time:"09:00",timezone:"Europe/London"}).toISOString()).toBe("2026-01-10T09:00:00.000Z");
+    expect(birthInstant({date:"2026-07-10",time:"09:00",timezone:"Europe/London"}).toISOString()).toBe("2026-07-10T08:00:00.000Z");
+  });
+  it("rejects DST gaps and duplicated birth times rather than guessing", () => {
+    expect(()=>birthInstant({date:"2026-03-29",time:"01:30",timezone:"Europe/London"})).toThrow("nonexistent_birth_wall_time");
+    expect(()=>birthInstant({date:"2026-10-25",time:"01:30",timezone:"Europe/London"})).toThrow("ambiguous_birth_wall_time");
+    expect(()=>birthInstant({date:"2026-01-10",time:"09:00",timezone:"Mars/Olympus"})).toThrow("invalid_birth_timezone");
+  });
+});
 
 describe("Janmapatro and My Time shared birth profile", () => {
   it("resolves known cities and leaves unknown places unresolved", () => {

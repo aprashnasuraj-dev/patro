@@ -25,6 +25,23 @@ export function findJanmaPatroBirthPlace(value: string) {
   return place ? { name: place[0], lat: place[1], lng: place[2] } : null;
 }
 
+/** Timezones are explicit: city coordinates alone do not establish a birth wall-clock offset. */
+export function findJanmaPatroBirthTimezone(location: string): string | null {
+  const name=location.trim().normalize("NFKC").toLowerCase();
+  if(!findJanmaPatroBirthPlace(location))return null;
+  if(name.includes("japan"))return "Asia/Tokyo";
+  if(name.includes("india"))return "Asia/Kolkata";
+  if(name.includes("bangladesh"))return "Asia/Dhaka";
+  if(name.includes("thailand"))return "Asia/Bangkok";
+  if(name.includes("uae"))return "Asia/Dubai";
+  if(name.includes("london"))return "Europe/London";
+  if(name.includes("new york"))return "America/New_York";
+  if(name.includes("los angeles"))return "America/Los_Angeles";
+  if(name.includes("south korea"))return "Asia/Seoul";
+  if(name.includes("australia"))return "Australia/Sydney";
+  return "Asia/Kathmandu";
+}
+
 /** Canonical local context shape shared by Janmapatro and My Time. */
 export function createJanmaPatroContext(chart: ChartResult) {
   const moon = chart.planets.find(planet => planet.key === "moon");

@@ -6,7 +6,7 @@ function json(body: unknown, status = 200): Response {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": "public, max-age=60, s-maxage=300",
+      "cache-control": status === 200 ? "public, max-age=60, s-maxage=300" : "no-store",
       "x-content-type-options": "nosniff"
     }
   });

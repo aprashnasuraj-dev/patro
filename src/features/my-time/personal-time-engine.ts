@@ -19,6 +19,8 @@ export type PersonalTimeWindowInput = {
   rashifal?: RashifalSignal | null;
   dashaLord?: string | null;
   hasNatalChart?: boolean;
+  /** True only when both natal Tara and Moon-sign comparisons were actually calculated. */
+  natalFactorsApplied?: boolean;
 };
 export type PersonalTimeComponent = { key: string; score: number; weight: number; explanation: string };
 export type PersonalTimeEvaluation = {
@@ -93,9 +95,17 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
     });
   }
   const weightTotal = components.reduce((sum, item) => sum + item.weight, 0);
-  const score = Math.round(components.reduce((sum, item) => sum + item.score * item.weight, 0) / weightTotal);
+  const weightedScore = Math.round(components.reduce((sum, item) => sum + item.score * item.weight, 0) / weightTotal);
+  // A strong traditional caution is a ranking constraint, not a small penalty
+  // that unrelated Rashifal/Hora components may cancel out.
+  const cautionSet = new Set(input.panchangCautions || []);
+  const score = cautionSet.has("rahu_kaal") ? Math.min(weightedScore, 44)
+    : cautionSet.has("yamaganda") ? Math.min(weightedScore, 54)
+    : cautionSet.has("gulika") ? Math.min(weightedScore, 59)
+    : weightedScore;
   const missing: string[] = [];
   if (!input.hasNatalChart) missing.push("birth-chart");
+  else if (!input.natalFactorsApplied) missing.push("natal-compatibility");
   if (readingScore === null) missing.push("matching-rashifal-domain");
   if (!input.dashaLord) missing.push("active-dasha");
   if (!input.horaLord) missing.push("hora");
@@ -103,9 +113,10 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
   const personalizedSignals = components.some(item => item.key === "rashifal" || item.key === "dasha-hora");
   const confidence = !input.hasNatalChart
     ? personalizedSignals ? "partially-personalized" : "general"
-    : missing.length >= 3 ? "partially-personalized" : "personalized";
+    : !input.natalFactorsApplied || missing.length >= 3 ? "partially-personalized" : "personalized";
   const reasons = [...(input.panchangReasons || [])];
   const cautions = [...(input.panchangCautions || [])];
+  if (score !== weightedScore) cautions.push("traditional_caution_caps_overall_rank");
   for (const component of components.slice(1)) reasons.push(component.explanation);
   return {
     score, label: score >= 75 ? "supportive" : score >= 45 ? "mixed" : "caution",
@@ -119,7 +130,7 @@ export type SavedJanmaPatroContext = {
   lagna: string;
   nakshatra: string;
   pada: number | null;
-  birth: { name: string; date: string; time: string; location: string; lat: number | null; lng: number | null } | null;
+  birth: { name: string; date: string; time: string; location: string; lat: number | null; lng: number | null; timezone?: string } | null;
   planets: Array<{ key: string; name: string; sign: string; house: number | null }>;
   dashas: Array<{ lord: string; start: string; end: string }>;
 };
@@ -178,7 +189,8 @@ export function normalizeJanmaPatroContext(value: unknown): SavedJanmaPatroConte
         time: String(raw.birth.time || ""),
         location: String(raw.birth.location || ""),
         lat: typeof raw.birth.lat === "number" && Number.isFinite(raw.birth.lat) && Math.abs(raw.birth.lat) <= 90 ? raw.birth.lat : null,
-        lng: typeof raw.birth.lng === "number" && Number.isFinite(raw.birth.lng) && Math.abs(raw.birth.lng) <= 180 ? raw.birth.lng : null
+        lng: typeof raw.birth.lng === "number" && Number.isFinite(raw.birth.lng) && Math.abs(raw.birth.lng) <= 180 ? raw.birth.lng : null,
+        ...(typeof raw.birth.timezone === "string" && raw.birth.timezone.trim() ? { timezone: raw.birth.timezone.trim() } : {})
       }
     : null;
   const planets = Array.isArray(raw.planets)

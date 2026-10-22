@@ -16,7 +16,7 @@ export function myTimeCacheEvictions(rows: Array<{ key: string; savedAt: number 
 }
 
 export function myTimeCacheKey(date: string, timezone: string, lat: number, lng: number) {
-  return ["v2", date, timezone, lat.toFixed(4), lng.toFixed(4)].join("|");
+  return ["v3-20261022", date, timezone, lat.toFixed(6), lng.toFixed(6)].join("|");
 }
 function openDb(): Promise<IDBDatabase> {
   return new Promise((resolve,reject) => {
