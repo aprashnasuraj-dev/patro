@@ -41,6 +41,11 @@ const TOOL_META:Record<string,[string,string]>={
 const EXACT:Record<string,SeoMeta>={
  "/":{title:"आजको नेपाली पात्रो, तिथि र चाडपर्व",description:"आजको नेपाली मिति, तिथि, चाडपर्व, बिदा, नेपाल संवत्, सूर्योदय–सूर्यास्त र मासिक पात्रो।"},
  "/tools":{title:"२९ नेपाली उपकरण · Nepali Tools",description:"मिति, भाषा, finance, जग्गा, QR, OCR, तिथि, साइत र अन्य नेपाली utilities एउटै ठाउँमा।"},
+ "/panchang":{title:"नेपाली पञ्चाङ्ग · Daily Panchang Nepal",description:"नेपालको स्थानीय मिति र समयअनुसार तिथि, नक्षत्र, योग, करण, सूर्योदय, सूर्यास्त र दैनिक पञ्चाङ्ग विवरण अन्वेषण गर्नुहोस्।"},
+ "/muhurat":{title:"शुभ साइत · Muhurat and Auspicious Timing",description:"स्थानीय समयखण्ड, परम्परागत साइत नियम र स्रोत-पुष्टि भएका मितिहरू स्पष्ट रूपमा छुट्याएर हेर्नुहोस्।"},
+ "/jyotish":{title:"ज्योतिष गणक · Nepali Jyotish Calculators",description:"जन्मपत्रो, जन्म राशि, नक्षत्र, लग्न, ग्रहस्थिति, गुण मिलान र परम्परागत ज्योतिष गणक।"},
+ "/planets":{title:"ग्रहस्थिति र खगोलीय घटना · Planets & Astronomy",description:"निरयण ग्रहस्थिति, राशि प्रवेश, वक्री/मार्गी स्टेशन, कोणीय सम्बन्ध र खगोलीय घटना।"},
+ "/nepal-calendar":{title:"नेपाली संवत् र क्षेत्रीय पात्रो · Nepal Calendars",description:"बिक्रम संवत्, नेपाल संवत्, समुदाय पात्रो र क्षेत्रीय सांस्कृतिक परम्पराका स्रोतहरू।"},
  "/convert":{title:"BS ↔ AD मिति रूपान्तरण · Date Converter",description:"बिक्रम संवत् र Gregorian मिति दुवैतर्फ Aafnai Patro calendar data प्रयोग गरी रूपान्तरण गर्नुहोस्।"},
  "/rashifal":{title:"राशिफल · Rashifal",description:"दैनिक, साप्ताहिक र मासिक राशिफल तथा पात्रो-सन्दर्भित Vedic astrology अनुभव।"},
  "/samachar":{title:"नेपाली समाचार · Samachar",description:"वर्गीकृत नेपाली समाचार discovery, प्रमुख स्रोत र original source links सहित।"},

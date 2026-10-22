@@ -84,7 +84,12 @@ const HIGH_VALUE = {
   "/tools/sait": [
     "subha sait", "शुभ साइत", "bibaha sait", "विवाह साइत", "today choghadiya nepali", "nepali choghadiya today",
     "auspicious time nepal", "marriage sait nepal"
-  ]
+  ],
+  "/panchang": ["nepali panchang", "daily panchang nepal", "panchang today nepal", "आजको पञ्चाङ्ग", "नेपाली पञ्चाङ्ग", "tithi nakshatra yoga karana", "nepali tithi calendar"],
+  "/muhurat": ["muhurat nepal", "nepali subha sait", "auspicious time nepal", "शुभ साइत", "विवाह साइत नेपाल", "griha pravesh muhurat nepal", "abhijit muhurta nepal"],
+  "/jyotish": ["nepali jyotish calculator", "nepali kundali calculator", "janma kundali nepal", "ज्योतिष गणक", "जन्मपत्रो गणक", "birthstar calculator nepal", "guna milan nepal"],
+  "/planets": ["planetary positions vedic astrology", "sidereal planetary positions", "planet ingress calculator", "retrograde dates calculator", "ग्रहस्थिति", "ग्रह गोचर", "खगोलीय घटना नेपाल"],
+  "/nepal-calendar": ["nepal calendar systems", "bikram sambat nepal calendar", "nepal sambat calendar", "regional calendars nepal", "नेपाली संवत्", "नेपाल संवत् पात्रो", "समुदाय पात्रो"]
 };
 for (const [route, queries] of Object.entries(HIGH_VALUE)) for (const query of queries) add(query, route, query, "high-value", 1);
 
@@ -100,6 +105,11 @@ for (const [route, meta] of Object.entries(pages)) {
 
 const CORE_SEEDS = {
   "/tools": ["nepali online tools", "nepal tools", "free nepali tools", "नेपाली अनलाइन टुल्स", "daily tools nepal"],
+  "/panchang": ["daily nepali panchang", "today tithi nepal", "nepali panchang calculator", "आजको तिथि", "पञ्चाङ्ग गणक"],
+  "/muhurat": ["nepali auspicious time finder", "marriage sait nepal", "subha muhurat nepal", "शुभ समय खोजक", "साइत गणक"],
+  "/jyotish": ["vedic astrology calculators nepal", "birth chart calculations nepali", "janma rashi calculator", "जन्म लग्न गणक", "ज्योतिष उपकरण"],
+  "/planets": ["sidereal planet calculator", "planetary events calendar", "graha gochara calculator", "ग्रह प्रवेश समय", "ग्रह वक्री मिति"],
+  "/nepal-calendar": ["nepali calendar systems", "nepal sambat and bikram sambat", "regional calendar nepal", "नेपाल संवत् र विक्रम संवत्", "समुदाय पात्रो नेपाल"],
   "/samudaya": ["nepal community calendar", "community patro nepal", "समुदाय पात्रो", "nepal cultural calendar"],
   "/methodology": ["nepali calendar accuracy", "how nepali calendar works", "bikram sambat methodology"],
   "/sources": ["nepali calendar sources", "bikram sambat source", "nepali patro source"],

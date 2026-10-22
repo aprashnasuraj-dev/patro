@@ -40,6 +40,7 @@ const BirthdayPage=lazy(()=>import('./birthday/BirthdayPage'));
 const PlacePage=lazy(()=>import('./place/PlacePage'));
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
+const FeatureGroupHub=lazy(()=>import("./panchang-jyotish/FeatureGroupHub").then(m=>({default:m.FeatureGroupHub})));
 const JanmaPatroSuite=lazy(()=>import("./jyotish/JanmaPatroSuite").then(m=>({default:m.JanmaPatroSuite})));
 const UtilitySuite=lazy(()=>import("./utilities/UtilitySuite").then(m=>({default:m.UtilitySuite})));
 const MyDiary=lazy(()=>import("./components/MyDiary").then(m=>({default:m.MyDiary})));
@@ -93,7 +94,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish","/jyotish/china","/jyotish/matchmaking","/panchang","/muhurat","/planets","/nepal-calendar","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
 function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")||p===DICTIONARY_ROUTE||p.startsWith(DICTIONARY_ROUTE+"/")}
 function currentPath(){return clean(window.location.pathname)}
@@ -118,6 +119,11 @@ export function PatroRouter(){
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/mytime")return <MyTimePage/>;
    if(path==="/tools")return <ToolsPage/>;
+   if(path==="/panchang")return <FeatureGroupHub groupId="panchang"/>;
+   if(path==="/muhurat")return <FeatureGroupHub groupId="muhurat"/>;
+   if(path==="/jyotish")return <FeatureGroupHub groupId="jyotish"/>;
+   if(path==="/planets")return <FeatureGroupHub groupId="planets"/>;
+   if(path==="/nepal-calendar")return <FeatureGroupHub groupId="nepal-calendar"/>;
    if(path==="/janmadin")return <BirthdayPage/>;
    if(path==="/tools/janmadin-akhbar"&&new URLSearchParams(location.search).get("birthday")==="1")return <><PatroToolsShell slug="janmadin-akhbar"/><BirthdayPage/></>;
    if(path==="/tools/my-place")return <PlacePage/>;

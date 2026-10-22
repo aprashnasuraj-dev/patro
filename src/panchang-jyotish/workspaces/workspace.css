@@ -1,0 +1,116 @@
+.ap-pjw-root{display:grid;gap:16px;min-width:0}
+
+/* Consistent local SVG pictograms beside the actual data, not just in directory cards. */
+.ap-pjw-icon-label{display:inline-flex;align-items:center;gap:7px;min-width:0}
+.ap-pjw-icon-label .ap-pj-icon{display:inline-block;width:18px;height:18px;flex:0 0 18px;overflow:visible;color:var(--ap-pjw-icon-color,#247344);stroke:currentColor;fill:none}
+.ap-pjw-date-heading .ap-pjw-icon-label .ap-pj-icon{width:19px;height:19px;flex-basis:19px}
+.ap-pjw-boundaries .ap-pjw-icon-label{font-size:.84rem;font-weight:750}
+.ap-pjw-ribbon-lane .ap-pjw-icon-label .ap-pj-icon{color:var(--ap-pjw-icon-color,#9b7940)}
+.ap-pjw-icon-label .ap-pj-icon[aria-hidden="true"]{pointer-events:none}
+.ap-pjw-datebar{display:flex;flex-wrap:wrap;align-items:end;gap:9px;padding:12px;border:1px solid rgba(127,127,127,.17);border-radius:16px;background:color-mix(in srgb,currentColor 2%,transparent)}
+.ap-pjw-datebar label{display:grid;gap:6px;flex:1 1 210px;font-size:.84rem;font-weight:800}
+.ap-pjw-datebar input,.ap-pjw-select,.ap-pjw-textinput{min-height:43px;max-width:100%;padding:9px 11px;border:1px solid rgba(127,127,127,.28);border-radius:11px;background:color-mix(in srgb,currentColor 3%,transparent);color:inherit;font:inherit}
+.ap-pjw-secondary,.ap-pjw-primary{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:8px 12px;border-radius:11px;border:1px solid rgba(23,111,59,.24);font:inherit;font-weight:800;cursor:pointer;text-decoration:none;color:inherit;background:rgba(23,111,59,.075)}
+.ap-pjw-primary{background:#176f3b;color:#fff;border-color:#176f3b}
+.ap-pjw-date-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:4px 2px 0}
+.ap-pjw-date-heading>div{display:grid;gap:5px}.ap-pjw-date-heading span,.ap-pjw-stats article>span,.ap-pjw-solar article>span,.ap-pjw-boundaries>div>span,.ap-pjw-window-grid article>span,.ap-pjw-indicator-grid article>span,.ap-pjw-position-table th,.ap-pjw-event-table th{font-size:.82rem;opacity:.7;font-weight:750}
+.ap-pjw-date-heading h3{margin:0;font-size:clamp(1.15rem,3vw,1.6rem);line-height:1.3}
+.ap-pjw-meta{justify-items:end;text-align:right}.ap-pjw-meta strong{font-size:.86rem}.ap-pjw-meta small{opacity:.65}
+.ap-pjw-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ap-pjw-stats article,.ap-pjw-solar article,.ap-pjw-window-grid article,.ap-pjw-indicator-grid article{display:grid;align-content:start;gap:7px;min-width:0;padding:13px;border:1px solid rgba(127,127,127,.18);border-radius:15px;background:color-mix(in srgb,currentColor 2%,transparent)}
+.ap-pjw-stats article strong{font-size:1.04rem;line-height:1.35;overflow-wrap:anywhere}.ap-pjw-stats article small{opacity:.65;line-height:1.4}
+.ap-pjw-solar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ap-pjw-solar article strong{font-size:1.18rem;font-variant-numeric:tabular-nums}
+.ap-pjw-card{padding:15px;border:1px solid rgba(127,127,127,.18);border-radius:18px;background:color-mix(in srgb,currentColor 1.5%,transparent)}
+.ap-pjw-subhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px}
+.ap-pjw-subhead h3{margin:0;font-size:1.08rem}.ap-pjw-subhead small{opacity:.62;text-align:right}
+.ap-pjw-boundaries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ap-pjw-boundaries>div{display:grid;gap:5px;padding:12px;border-radius:13px;background:rgba(23,111,59,.055)}
+.ap-pjw-boundaries>div strong{font-size:1.04rem}.ap-pjw-boundaries>div small{opacity:.68;line-height:1.5}
+.ap-pjw-window-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ap-pjw-window-grid article strong{font-size:1rem;line-height:1.5;font-variant-numeric:tabular-nums}
+.ap-pjw-indicator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ap-pjw-indicator-grid article strong{font-size:.95rem;line-height:1.5}
+.ap-pjw-indicator-grid article small{opacity:.65;line-height:1.45}
+.ap-pjw-indicator-grid article.is-flagged{border-color:rgba(188,128,37,.45);background:rgba(199,157,68,.09)}
+.ap-pjw-note,.ap-pjw-method,.ap-pjw-error{margin:0;padding:12px 14px;border-radius:13px;background:rgba(199,157,68,.09);border:1px solid rgba(199,157,68,.2);font-size:.88rem;line-height:1.65}
+.ap-pjw-error{background:rgba(180,35,35,.06);border-color:rgba(180,35,35,.22)}
+.ap-pjw-footer-links{display:flex;flex-wrap:wrap;gap:9px}.ap-pjw-footer-links a{padding:8px 11px;border:1px solid rgba(23,111,59,.22);border-radius:11px;text-decoration:none;color:inherit;font-weight:800;font-size:.85rem}
+.ap-pjw-feature-focus{padding:15px;border:1px solid rgba(23,111,59,.22);border-radius:15px;background:rgba(23,111,59,.06)}
+.ap-pjw-feature-focus h3{margin:0 0 8px}.ap-pjw-feature-focus strong{font-size:1.15rem}.ap-pjw-feature-focus p{line-height:1.55;opacity:.7;margin-bottom:0}
+.ap-pjw-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ap-pjw-link-card{display:grid;gap:7px;padding:14px;border:1px solid rgba(127,127,127,.18);border-radius:15px;color:inherit;text-decoration:none;background:color-mix(in srgb,currentColor 2%,transparent)}
+.ap-pjw-link-card strong{font-size:1rem}.ap-pjw-link-card small{opacity:.68;line-height:1.55}.ap-pjw-link-card span{color:#176f3b;font-weight:850}
+.ap-pjw-position-wrap{overflow-x:auto;max-width:100%;border:1px solid rgba(127,127,127,.18);border-radius:14px}
+.ap-pjw-position-table,.ap-pjw-event-table{width:100%;border-collapse:collapse;font-size:.87rem;white-space:nowrap}
+.ap-pjw-position-table th,.ap-pjw-position-table td,.ap-pjw-event-table th,.ap-pjw-event-table td{padding:10px 12px;text-align:left;border-bottom:1px solid rgba(127,127,127,.14)}
+.ap-pjw-position-table tr:last-child td,.ap-pjw-event-table tr:last-child td{border-bottom:0}
+.ap-pjw-position-table th,.ap-pjw-event-table th{background:rgba(23,111,59,.06)}
+.ap-pjw-chip{display:inline-flex;border-radius:999px;padding:3px 8px;font-size:.76rem;font-weight:800;background:rgba(23,111,59,.08)}
+.ap-pjw-chip.is-warning{background:rgba(199,157,68,.13)}
+.ap-pjw-inline-error{color:#a12d2d;font-size:.88rem;font-weight:700}
+.ap-pjw-empty{padding:18px;border:1px dashed rgba(127,127,127,.35);border-radius:13px;text-align:center;line-height:1.65;opacity:.75}
+.ap-pjw-filter-row{display:flex;flex-wrap:wrap;align-items:end;gap:10px}
+.ap-pjw-filter-row label{display:grid;gap:6px;flex:1 1 150px;font-size:.84rem;font-weight:800}
+.ap-pjw-section-note{margin:0;font-size:.88rem;line-height:1.65;opacity:.72}
+@media(max-width:720px){.ap-pjw-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.ap-pjw-indicator-grid{grid-template-columns:1fr}.ap-pjw-solar{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.ap-pjw-date-heading{align-items:flex-start;flex-direction:column}.ap-pjw-meta{justify-items:start;text-align:left}.ap-pjw-stats{gap:8px}.ap-pjw-stats article,.ap-pjw-solar article,.ap-pjw-window-grid article,.ap-pjw-indicator-grid article{padding:10px}.ap-pjw-solar{grid-template-columns:1fr}.ap-pjw-boundaries,.ap-pjw-window-grid,.ap-pjw-link-grid{grid-template-columns:1fr}.ap-pjw-subhead{align-items:flex-start;flex-direction:column}.ap-pjw-subhead small{text-align:left}.ap-pjw-datebar{padding:9px}.ap-pjw-datebar label{flex-basis:100%}}
+
+.ap-pjw-action-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:12px}
+.ap-pjw-check{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:9px 11px;border:1px solid rgba(127,127,127,.22);border-radius:11px;font-size:.85rem;line-height:1.45}
+.ap-pjw-check input{width:17px;height:17px;accent-color:#176f3b}
+.ap-pjw-event-table-wrap{max-width:100%;overflow-x:auto;border:1px solid rgba(127,127,127,.18);border-radius:14px}
+.ap-pjw-event-table-wrap table{min-width:740px}
+.ap-pjw-action-row button:disabled{opacity:.6;cursor:wait}
+.ap-pjw-feature-focus .ap-pjw-stats{margin-top:12px}
+@media(max-width:480px){.ap-pjw-action-row>*{max-width:100%}.ap-pjw-action-row .ap-pjw-primary,.ap-pjw-action-row .ap-pjw-secondary{white-space:normal}}
+
+/* Solar visualization uses the actual local sunrise/sunset in the selected day payload. */
+.ap-pjw-daylight{display:grid;gap:7px;justify-items:center;margin:0;padding:13px 15px 10px;border-radius:18px;border:1px solid rgba(23,111,59,.18);background:radial-gradient(ellipse at 50% 85%,rgba(203,158,75,.13),transparent 58%),linear-gradient(135deg,rgba(23,111,59,.045),transparent)}
+.ap-pjw-daylight-art{width:min(100%,430px)}.ap-pjw-daylight-art svg{display:block;width:100%;height:auto;overflow:visible}
+.ap-pjw-daylight-caption{display:flex;align-items:end;justify-content:space-between;gap:10px;width:min(100%,430px);font-size:.76rem;text-align:center;line-height:1.4}
+.ap-pjw-daylight-caption>span:first-child,.ap-pjw-daylight-caption>span:last-child{display:grid;gap:3px;flex:0 0 auto}
+.ap-pjw-daylight-caption>span:nth-child(2){opacity:.64;max-width:140px}
+.ap-pjw-daylight-caption strong{font-variant-numeric:tabular-nums;font-size:.98rem}
+@media(max-width:480px){.ap-pjw-daylight{padding:9px}.ap-pjw-daylight-caption>span:nth-child(2){font-size:.66rem}.ap-pjw-daylight-caption strong{font-size:.85rem}}
+
+/* Muhurat daylight timeline: widths/positions come from calculated sunrise-based intervals. */
+.ap-pjw-muhurat-ribbon{margin:14px 0;padding:15px;border-radius:18px;border:1px solid rgba(188,128,37,.24);background:linear-gradient(145deg,rgba(199,157,68,.09),rgba(23,111,59,.025));min-width:0}
+.ap-pjw-muhurat-ribbon figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.ap-pjw-muhurat-ribbon figcaption strong{font-size:.98rem}.ap-pjw-muhurat-ribbon figcaption small{opacity:.65}
+.ap-pjw-ribbon-axis{display:flex;justify-content:space-between;gap:12px;font-size:.76rem;font-weight:750;font-variant-numeric:tabular-nums}
+.ap-pjw-ribbon-axis span:nth-child(2){opacity:.55}
+.ap-pjw-ribbon-track{position:relative;height:10px;margin:8px 0 13px;border-radius:999px;background:linear-gradient(90deg,#9b7940,#e3be75 46%,#528967)}
+.ap-pjw-ribbon-track i{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.5)}
+.ap-pjw-ribbon-lanes{display:grid;gap:11px}.ap-pjw-ribbon-lane{display:grid;grid-template-columns:minmax(90px,125px) minmax(0,1fr) minmax(90px,145px);align-items:center;gap:10px}
+.ap-pjw-ribbon-lane>span{font-size:.83rem;font-weight:800}.ap-pjw-ribbon-lane>small{text-align:right;font-size:.76rem;font-variant-numeric:tabular-nums;opacity:.8}
+.ap-pjw-ribbon-lane-track{position:relative;height:17px;border-radius:999px;background:rgba(127,127,127,.1);overflow:hidden}
+.ap-pjw-ribbon-lane-track::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(12.5% - 1px),rgba(127,127,127,.17) calc(12.5% - 1px),rgba(127,127,127,.17) 12.5%)}
+.ap-pjw-ribbon-span{position:absolute;top:2px;bottom:2px;z-index:1;border-radius:999px;min-width:2px}
+.ap-pjw-ribbon-span.is-auspicious{background:#27794c}.ap-pjw-ribbon-span.is-caution{background:#b47634}.ap-pjw-ribbon-span.is-yama{background:#8e6598}.ap-pjw-ribbon-span.is-gulika{background:#557f94}
+.ap-pjw-muhurat-ribbon>p{margin:13px 0 0;font-size:.77rem;line-height:1.55;opacity:.66}
+@media(max-width:640px){.ap-pjw-muhurat-ribbon{padding:11px}.ap-pjw-ribbon-lane{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ap-pjw-ribbon-lane-track{grid-column:1/-1;grid-row:2}.ap-pjw-ribbon-lane>small{grid-column:2;grid-row:1}.ap-pjw-ribbon-lane>span{grid-column:1;grid-row:1}.ap-pjw-muhurat-ribbon figcaption{align-items:flex-start;flex-direction:column;gap:3px}}
+
+/* Position wheel is a view of the same numerical rows, not a second calculation engine. */
+.ap-pjw-planet-figure{display:grid;grid-template-columns:minmax(200px,340px) minmax(0,1fr);align-items:center;gap:22px;margin:14px 0;padding:16px;border-radius:18px;border:1px solid rgba(56,109,145,.24);background:radial-gradient(circle at 18% 50%,rgba(79,135,172,.1),transparent 52%),color-mix(in srgb,currentColor 1.5%,transparent)}
+.ap-pjw-wheel-stage svg{display:block;width:100%;height:auto;max-height:340px}
+.ap-pjw-wheel-key{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.ap-pjw-wheel-key>span{display:flex;gap:5px;align-items:center;min-width:0;font-size:.8rem;font-weight:750}
+.ap-pjw-wheel-key b{display:grid;place-items:center;flex:0 0 23px;height:23px;border-radius:50%;background:#247344;color:#fff;font-size:.86rem}
+.ap-pjw-wheel-key b .ap-pj-icon{display:block;width:17px;height:17px;color:#fff;stroke:currentColor;fill:none;overflow:visible}
+.ap-pjw-wheel-key small{font-variant-numeric:tabular-nums;font-size:.67rem;opacity:.62}
+.ap-pjw-wheel-signs{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.ap-pjw-wheel-signs>span{border:1px solid rgba(127,127,127,.17);border-radius:7px;padding:4px 6px;font-size:.68rem;line-height:1.3}
+.ap-pjw-wheel-signs b{opacity:.65}
+.ap-pjw-planet-figure figcaption>p{margin:12px 0 0;font-size:.8rem;line-height:1.55;opacity:.71}
+@media(max-width:760px){.ap-pjw-planet-figure{grid-template-columns:1fr;justify-items:center;padding:12px;gap:10px}.ap-pjw-wheel-stage{width:min(100%,340px)}.ap-pjw-planet-figure figcaption{width:100%}}
+@media(max-width:420px){.ap-pjw-wheel-key{grid-template-columns:repeat(2,minmax(0,1fr))}.ap-pjw-wheel-signs>span{font-size:.64rem}}
+
+/* Keep interactive calculators legible on phones and for keyboard-only visitors. */
+.ap-pjw-root :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #a97821;outline-offset:3px}
+.ap-pjw-root :is(button,input,select,textarea){font:inherit}
+.ap-pjw-root :is(.ap-pjw-position-wrap,.ap-pjw-event-table-wrap){overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.ap-pjw-root :is(.ap-pjw-position-table,.ap-pjw-event-table) th{font-weight:800}
+.ap-pjw-root :is(.ap-pjw-primary,.ap-pjw-secondary,.ap-pjw-link-card,.ap-pjw-footer-links a):hover{filter:brightness(.95)}
+.ap-pjw-root :is(.ap-pjw-primary,.ap-pjw-secondary):disabled{opacity:.6;cursor:not-allowed}
+@media(max-width:380px){.ap-pjw-stats,.ap-pjw-window-grid,.ap-pjw-indicator-grid,.ap-pjw-link-grid{grid-template-columns:1fr}.ap-pjw-datebar>*{min-width:0}}
+@media(forced-colors:active){.ap-pjw-root :is(.ap-pjw-primary,.ap-pjw-secondary,.ap-pjw-chip,.ap-pjw-note,.ap-pjw-card){border:1px solid CanvasText}}

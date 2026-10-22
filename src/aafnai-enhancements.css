@@ -15,6 +15,9 @@
 .ap-home-top .ap-today-card{margin:0}
 .ap-next-card{display:flex!important;flex-direction:column;justify-content:center;gap:6px;margin:0!important;padding:22px 24px;border-radius:var(--ap-radius);background:var(--ap-marigold-soft);color:var(--ap-ink);text-decoration:none;border:1px solid transparent}
 .ap-next-card strong{font:700 var(--ap-t-xl)/1.25 var(--ap-display)}
+.ap-next-festival-glyph{display:block;width:25px;height:25px;margin-bottom:2px;color:var(--ap-marigold);stroke:currentColor;fill:none}
+.ap-tool-icon .ap-pj-icon{display:block;width:26px;height:26px;color:currentColor;stroke:currentColor;fill:none}
+.ap-event-card-title{display:flex;align-items:flex-start;gap:9px}.ap-event-card-title .ap-pj-icon{display:block;flex:0 0 20px;width:20px;height:20px;margin-top:2px;color:var(--ap-marigold);stroke:currentColor;fill:none}
 .ap-next-card b{align-self:flex-start;margin-top:7px;padding:5px 11px;border-radius:999px;background:var(--ap-surface);color:var(--ap-marigold);font-size:var(--ap-t-sm)}
 .ap-inline-error{display:block;color:var(--ap-red);margin-top:8px}
 .ap-retry{margin-top:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--ap-red);background:var(--ap-surface);color:var(--ap-red);font-weight:700;cursor:pointer}
