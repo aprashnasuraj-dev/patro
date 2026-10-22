@@ -68,3 +68,14 @@ The generated static payload was traced through `scripts/build-client-calendar.m
 The adapter mirrors that observed shape: it normalizes one-based `nakshatra.number` only when that field exists, accepts both transition key casings and explicit-offset transition aliases, rejects contradictory representations of the same boundary, and refuses to attach archive-local clocks if an explicit timezone conflicts with Kathmandu. Archive metadata is preserved separately as reported source/timestamp; it does not increase the confidence tier. The observed generated row has no independent per-field audit evidence, so archive-provided facts remain `confidence: "unverified"`. Missing elements remain calculated/unavailable rather than being relabelled as archived.
 
 Regression tests were added for the real 2026 payload shape, the 2037 `time + minutes` boundary, Nakshatra's one-based number convention, camelCase/offset timestamps, conflicting boundaries, unqualified clocks and a conflicting timezone. **These tests have been authored but not executed.**
+
+
+## Existing destination ownership review — 2026-10-22
+
+The 17 catalogue rows classified as `reuse` retain their original `href` values; no legacy path was silently repointed. The source-level route owners are now covered by the integration gate:
+
+- `/moon` (F014, F069) and `/eclipse` (F070, F071) are existing growth-page families. `worker/optimized-entry.ts` calls `growthPageResponse`; `worker/growth/index.ts` dispatches to the Moon/Eclipse page handlers; `scripts/prerender-growth.mjs` emits their static pages; `wrangler.jsonc` excludes those paths from `run_worker_first` so normal traffic uses static assets, with a low-cost worker fallback.
+- `/tools/sait` and `/tools/baby-names` remain registered tool destinations. The existing tool registry includes both slugs, and the canonical tool-sitemap inventory remains 29.
+- `/mytime`, `/janmapatro`, `/janmapatro/milan.html`, `/rashifal`, `/nepal-sambat/mandala`, `/samudaya`, and `/` remain in the established connected SPA route set. My Time and the JanmaPatro birth-context bridge are preservation-protected, not refactor targets.
+
+**Evidence level:** this verifies source-level ownership and build/configuration wiring, not the live production HTTP response. Browser/mobile smoke checks and a built-static-asset check remain unrun, so the 17 reused routes remain `partial`, not `verified`.
