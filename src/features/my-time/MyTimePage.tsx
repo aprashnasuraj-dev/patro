@@ -674,6 +674,8 @@ export default function MyTimePage() {
       </div>
     </section>
 
+    {snapshot?.methodology.fallback_used && <p className="mt-calculation-warning" role="status"><CircleAlert size={16}/>{snapshot.methodology.source_status === "polar-noon-fallback" ? l(language,"यस स्थान/मितिमा सूर्योदय-आधारित गणना उपलब्ध छैन; स्थानीय मध्यान्हको पञ्चाङ्ग देखाइएको छ।","Sunrise-anchored calculations are unavailable here; showing local-noon Panchang instead.") : l(language,"मुख्य गणना प्रदायक उपलब्ध नभएकाले स्थानीय मध्यान्हको वैकल्पिक गणना देखाइएको छ।","The primary timing provider failed; showing a local-noon fallback calculation.")}</p>}
+
     <MyTimePersonalization language={language} date={localDate(preferences.timezone, now)} now={now} timezone={preferences.timezone} locationLabel={locationLabel} lat={preferences.lat} lng={preferences.lng} tithiIndex={briefingTithiIndex} nakshatraIndex={briefingNakshatraIndex} tithiName={briefingTithiName} nakshatraName={briefingNakshatraName} currentWindow={briefingUsesCurrentDate && currentChoghadiya ? { key: currentChoghadiya.key, name: ne ? currentChoghadiya.name_ne : currentChoghadiya.name_en, start_utc: currentChoghadiya.start_utc, end_utc: currentChoghadiya.end_utc, favorable: currentChoghadiya.favorable } : null} nextWindow={nextBriefingWindow ? { key: nextBriefingWindow.key, name: ne ? nextBriefingWindow.name_ne : nextBriefingWindow.name_en, start_utc: nextBriefingWindow.start_utc, end_utc: nextBriefingWindow.end_utc } : null} onLocationChange={applyPersonalLocation} onLensChange={applyTimeLens} />
 
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
