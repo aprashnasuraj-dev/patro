@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { calculateMyTimeSnapshot, localDateTimeToUtc, normalizeLongitude } from "../src/patro-tools/core/my-time-snapshot";
 import { myTimeResponse } from "../worker/my-time";
+import { civilBounds } from "../src/place/civil";
 import { panchangAt } from "../src/patro-tools/core/astro";
 
 describe("My Time astronomical core", () => {
@@ -13,6 +14,13 @@ describe("My Time astronomical core", () => {
   it("converts local noon using the selected IANA timezone, not a fixed Nepal offset", () => {
     expect(localDateTimeToUtc("2026-01-15", "Asia/Kathmandu").toISOString()).toBe("2026-01-15T06:15:00.000Z");
     expect(localDateTimeToUtc("2026-07-15", "America/New_York").toISOString()).toBe("2026-07-15T16:00:00.000Z");
+  });
+
+  it("uses 23/25-hour civil bounds rather than assuming 1440 minutes on DST dates", () => {
+    const spring = civilBounds("2026-03-29", "Europe/London");
+    const fall = civilBounds("2026-10-25", "Europe/London");
+    expect((spring.end.getTime()-spring.start.getTime())/3600000).toBe(23);
+    expect((fall.end.getTime()-fall.start.getTime())/3600000).toBe(25);
   });
 
   it("returns a typed, versioned bilingual Tithi snapshot for a local date", () => {
@@ -34,6 +42,9 @@ describe("My Time astronomical core", () => {
     expect(snapshot.panchang.nakshatra_pada).toBeLessThanOrEqual(4);
     expect(snapshot.panchang.yoga_name_ne).toBeTruthy();
     expect(snapshot.panchang.karana_name_ne).toBeTruthy();
+    expect(snapshot.panchang.previous_sunrise_utc).toBeTruthy();
+    expect(snapshot.panchang.previous_sunset_utc).toBeTruthy();
+    expect(Date.parse(snapshot.panchang.previous_sunset_utc!)).toBeLessThan(Date.parse(snapshot.panchang.sunrise_utc!));
     expect(snapshot.panchang.sunrise_utc).toBeTruthy();
     expect(snapshot.panchang.sunset_utc).toBeTruthy();
     expect(snapshot.twilight.civil_dawn_utc).toBeTruthy();
