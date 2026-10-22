@@ -62,6 +62,40 @@ describe("existing static archive adapter", () => {
       expect(overlay.elements?.tithi?.ends).toBeUndefined();
     }
   });
+  it("normalizes the established static archive transition/daylight shape using Nepal time", () => {
+    const date = "2037-02-03";
+    const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
+    const overlay = overlayFromStaticArchive(date, {
+      ad: date,
+      bs: { year: 2093, month: 10, day: 21 },
+      ns: { formatted_ne: "ने.सं. 1157" },
+      panchang: {
+        tithi: { number: 18, ne: "तृतीया", en: "Tritiya", paksha: "Krishna Paksha" },
+        tithi_transition: { time: "09:05", minutes: 545, next_en: "Chaturthi", next_ne: "चतुर्थी" },
+        sunrise: "06:49",
+        sunset: "17:45",
+        location: "Kathmandu, Nepal",
+        source: "existing Patro astronomical archive"
+      }
+    }, fallback);
+    expect(overlay.elements?.tithi?.ends?.instantUtc).toBe("2037-02-03T03:20:00.000Z");
+    expect(overlay.sun?.sunrise?.instantUtc).toBe("2037-02-03T01:04:00.000Z");
+    expect(overlay.sun?.sunset?.instantUtc).toBe("2037-02-03T12:00:00.000Z");
+    expect(overlay.elements?.tithi?.ends?.confidence).toBe("unverified");
+  });
+  it("withholds Tithi boundary when archived clock and minute count disagree", () => {
+    const date = "2037-02-03";
+    const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
+    const overlay = overlayFromStaticArchive(date, {
+      ad: date, bs: { year: 2093, month: 10, day: 21 },
+      panchang: {
+        tithi: { number: 18, ne: "तृतीया", en: "Tritiya", paksha: "Krishna Paksha" },
+        tithi_transition: { time: "09:05", minutes: 600 },
+        sunrise: "06:49", sunset: "17:45", location: "Kathmandu, Nepal"
+      }
+    }, fallback);
+    expect(overlay.elements?.tithi?.ends).toBeUndefined();
+  });
   it("rejects a row for the wrong civil date before merge", () => {
     const date = "2026-10-22";
     const fallback = fromCalculatedDay(defaultPanchang.day(date, KATHMANDU), KATHMANDU);
