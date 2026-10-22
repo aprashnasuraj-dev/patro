@@ -1,4 +1,5 @@
-import { defaultPanchang, panchangAt } from "../../patro-tools/core/astro";
+import { panchangAt } from "../../patro-tools/core/astro";
+import { defaultPanchang } from "../../patro-tools/core/provider";
 import { KATHMANDU, type DayPanchang } from "../../patro-tools/core/types";
 
 export const NPT = "Asia/Kathmandu";
