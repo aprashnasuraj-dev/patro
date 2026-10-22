@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
-import { calculateSiderealPlanetPositions, type SiderealPlanetPosition } from "../../jyotish/jyotishEngine";
+import { useEffect, useMemo, useState } from "react";
+import { calculateChart, calculateSiderealPlanetPositions, type ChartResult, type SiderealPlanetPosition } from "../../jyotish/jyotishEngine";
+import { findJanmaPatroBirthTimezone, readJanmaPatroBirthInput } from "../../jyotish/my-time-bridge";
 import { NAKSHATRAS } from "../../patro-tools/core/names";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { addIsoDays, formatLocalDateTime, NAKSHATRA_EN, todayInNepal, validIsoDate } from "./shared";
@@ -127,6 +128,9 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
   const [body,setBody]=useState("all");
   const [searchMode,setSearchMode]=useState<"ingress"|"nakshatra"|"station"|"season">("ingress");
   const [runScan,setRunScan]=useState(false);
+  const [natalChart,setNatalChart]=useState<ChartResult|null>(null);
+  const [natalContextChecked,setNatalContextChecked]=useState(false);
+  useEffect(()=>{let active=true;try{const birth=readJanmaPatroBirthInput();if(!birth){if(active)setNatalChart(null);return;}const timezone=findJanmaPatroBirthTimezone(birth.location)||"Asia/Kathmandu";const result=calculateChart({name:birth.name||"",date:birth.date,time:birth.time,lat:birth.lat,lng:birth.lng,location:birth.location,timezone});if(active)setNatalChart(result);}catch{if(active)setNatalChart(null);}finally{if(active)setNatalContextChecked(true);}return()=>{active=false;}},[]);
   const instant=useMemo(()=>instantForNptDate(date),[date]);
   const positions=useMemo(()=>calculateSiderealPlanetPositions(instant),[instant]);
   const aspects=useMemo(()=>{
@@ -144,6 +148,9 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
     if(searchMode==="station")return {ingresses:[] as IngressEvent[],nakshatras:[] as NakshatraEvent[],stations:scanStations(date,range),seasons:[] as Array<{degree:number;instant:Date}>};
     return {ingresses:[] as IngressEvent[],nakshatras:[] as NakshatraEvent[],stations:[] as StationEvent[],seasons:tropicalSeasonCrossings(date,range)};
   },[date,range,body,searchMode,runScan]);
+  const natalMoonSign=natalChart?.planets.find(item=>item.key==="moon")?.signIndex??null;
+  const natalLagnaSign=natalChart?.ascSignIndex??null;
+  const transitSummary=useMemo(()=>positions.filter(item=>["Jupiter","Saturn","Mars"].includes(item.name)).map(item=>({planet:item,fromMoon:natalMoonSign===null?null:((item.signIndex-natalMoonSign+12)%12)+1,fromLagna:natalLagnaSign===null?null:((item.signIndex-natalLagnaSign+12)%12)+1})),[positions,natalMoonSign,natalLagnaSign]);
   const focusText=selectedFeatureId==="F052"||selectedFeatureId==="F077";
   const deg=(n:number)=>Number(n).toFixed(2)+"°";
 
@@ -166,6 +173,13 @@ export function PlanetsWorkspace({language,selectedFeatureId}:Props){
         <button type="button" className="ap-pjw-primary" onClick={()=>setRunScan(true)}>{l(language,"घटना खोज्नुहोस्","Find events")}</button>
       </div>
       {!runScan?<p className="ap-pjw-section-note">{l(language,"मिति र अवधि छानेपछि मात्र ब्राउजरले घटना खोज्छ। ठूलो अवधि खोज्दा उपकरण केही समय गणना गर्न सक्छ।","The browser scans only after you select a date and duration. Longer windows may take a little time to calculate.")}</p>:events.ingresses.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"राशिबाट","From sign")}</th><th>{l(language,"राशिमा","Into sign")}</th><th>{l(language,"प्रवेश समय","Ingress time")}</th></tr></thead><tbody>{events.ingresses.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,SIGNS_NE[item.fromSign],SIGNS_EN[item.fromSign])}</td><td>{l(language,SIGNS_NE[item.toSign],SIGNS_EN[item.toSign])}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.nakshatras.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"नक्षत्रबाट","From Nakshatra")}</th><th>{l(language,"नक्षत्रमा","Into Nakshatra")}</th><th>{l(language,"प्रवेश समय","Ingress time")}</th></tr></thead><tbody>{events.nakshatras.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{l(language,NAKSHATRAS[item.fromNakshatra]||"नक्षत्र",NAKSHATRA_EN[item.fromNakshatra]||"Nakshatra")}</td><td>{l(language,NAKSHATRAS[item.toNakshatra]||"नक्षत्र",NAKSHATRA_EN[item.toNakshatra]||"Nakshatra")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.stations.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"गति परिवर्तन","Motion change")}</th><th>{l(language,"समय","Time")}</th></tr></thead><tbody>{events.stations.map((item,index)=><tr key={item.key+item.instant.toISOString()+index}><td>{l(language,PLANET_NE[item.name]||item.name,item.name)}</td><td>{item.direction==="retrograde"?l(language,"वक्री सुरु","Retrograde station"):l(language,"मार्गी सुरु","Direct station")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:events.seasons.length>0?<div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"घटना","Event")}</th><th>{l(language,"समय","Time")}</th></tr></thead><tbody>{events.seasons.map(item=><tr key={item.degree}><td>{l(language,item.degree===0?"वसन्त विषुव":item.degree===90?"ग्रीष्म अयनान्त":item.degree===180?"शरद विषुव":"शीत अयनान्त",item.degree===0?"Vernal equinox":item.degree===90?"Summer solstice":item.degree===180?"Autumnal equinox":"Winter solstice")}</td><td>{localLabel(item.instant,language)}</td></tr>)}</tbody></table></div>:<div className="ap-pjw-empty">{l(language,"यो खोज अवधिमा घटना फेला परेन।","No event was found in this search window.")}</div>}
+    </section>
+    <section className="ap-pjw-card">
+      <div className="ap-pjw-subhead"><h3>{l(language,"जन्म चन्द्र/लग्नबाट गोचर","Transits from natal Moon/Lagna")}</h3><small>{l(language,"विद्यमान जन्मपत्रो प्रयोग हुन्छ","Uses the existing birth chart")}</small></div>
+      {!natalContextChecked?<p className="ap-pjw-section-note">{l(language,"जन्मपत्रो सन्दर्भ जाँचिँदैछ…","Checking the existing birth-chart context…")}</p>:!natalChart?<div className="ap-pjw-empty"><p>{l(language,"गोचर तुलना गर्न विद्यमान जन्मपत्रो आवश्यक छ। नयाँ जन्म विवरण सुरक्षित गरिँदैन।","Transit comparison requires the existing birth chart. No new birth profile is created or saved.")}</p><a className="ap-pjw-secondary" href="/janmapatro">{l(language,"जन्मपत्रो खोल्नुहोस्","Open JanmaPatro")} ↗</a></div>:<>
+        <p className="ap-pjw-section-note">{l(language,"यो तालिकाले ग्रहको हालको निरयण राशि जन्म चन्द्र वा जन्म लग्नबाट कति औँ राशिमा पर्छ भनेर देखाउँछ। यसको परम्परागत व्याख्या निश्चित भविष्यवाणी होइन।","This table shows the current sidereal sign of selected planets counted from the natal Moon and natal Lagna. Traditional interpretations are not certain predictions.")}</p>
+        <div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th>{l(language,"ग्रह","Planet")}</th><th>{l(language,"राशि","Sign")}</th><th>{l(language,"जन्म चन्द्रबाट","From natal Moon")}</th><th>{l(language,"जन्म लग्नबाट","From natal Lagna")}</th></tr></thead><tbody>{transitSummary.map(item=><tr key={item.planet.key}><td>{l(language,PLANET_NE[item.planet.name]||item.planet.name,item.planet.name)}</td><td>{l(language,SIGNS_NE[item.planet.signIndex],SIGNS_EN[item.planet.signIndex])}</td><td>{item.fromMoon===null?"—":l(language,item.fromMoon+"औँ राशि",item.fromMoon+"th sign")}</td><td>{item.fromLagna===null?"—":l(language,item.fromLagna+"औँ राशि",item.fromLagna+"th sign")}</td></tr>)}</tbody></table></div>
+      </>}
     </section>
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"निकट कोणीय सम्बन्ध","Nearby angular aspects")}</h3><small>{l(language,"अधिकतम २.५° ओर्ब","Maximum 2.5° orb")}</small></div>
