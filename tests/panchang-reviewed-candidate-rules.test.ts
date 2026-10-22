@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { panchangAt } from "../src/patro-tools/core/astro";
-import { classifyNakshatraCandidate, findNakshatraRuleWindows, kathmanduCivilWeekday, SOURCE_REVIEWED_NAKSHATRA_RULES } from "../src/panchang-jyotish/reviewed-candidate-rules";
+import { classifyNakshatraCandidate, findNakshatraRuleWindows, kathmanduCivilWeekday, NAKSHATRA_CANDIDATE_RULES } from "../src/panchang-jyotish/reviewed-candidate-rules";
 
 describe("source-audited candidate membership, not a definitive observance", () => {
   it("starts Panchak at 300° in Dhanishtha's third pada, not the whole Nakshatra", () => {
-    expect(SOURCE_REVIEWED_NAKSHATRA_RULES.panchak).toEqual([23,24,25,26,27]);
+    expect(NAKSHATRA_CANDIDATE_RULES.panchak).toEqual([23,24,25,26,27]);
     expect(classifyNakshatraCandidate("panchak", 23, 0)).toBe(false); // a star name alone is insufficient
     expect(classifyNakshatraCandidate("panchak", 23, 0, 299.999)).toBe(false);
     expect(classifyNakshatraCandidate("panchak", 23, 0, 300)).toBe(true);
@@ -15,7 +15,7 @@ describe("source-audited candidate membership, not a definitive observance", () 
   });
   it("keeps broad Ganda Moola distinct from an inferred Gandanta judgment", () => {
     const six=[1,9,10,18,19,27];
-    expect(SOURCE_REVIEWED_NAKSHATRA_RULES.gandaMoola).toEqual(six);
+    expect(NAKSHATRA_CANDIDATE_RULES.gandaMoola).toEqual(six);
     for(let n=1;n<=27;n++) expect(classifyNakshatraCandidate("gandaMoola",n,1)).toBe(six.includes(n));
   });
   it("requires both Pushya and correct weekday for Ravi/Guru candidate", () => {
@@ -50,10 +50,10 @@ describe("source-audited candidate membership, not a definitive observance", () 
       expect(row.start.getTime()).toBeLessThan(endMs);
       expect(row.confidence).toBe("candidate-unverified");
       expect(row.timezone).toBe("Asia/Kathmandu");
-      expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(row.entryNakshatra as never)).toBe(true);
-      expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(row.lastNakshatra as never)).toBe(true);
+      expect(NAKSHATRA_CANDIDATE_RULES[row.rule].includes(row.entryNakshatra as never)).toBe(true);
+      expect(NAKSHATRA_CANDIDATE_RULES[row.rule].includes(row.lastNakshatra as never)).toBe(true);
       const midpoint = new Date((row.start.getTime() + row.end.getTime()) / 2);
-      expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(panchangAt(midpoint).nakshatra + 1 as never)).toBe(true);
+      expect(NAKSHATRA_CANDIDATE_RULES[row.rule].includes(panchangAt(midpoint).nakshatra + 1 as never)).toBe(true);
       if (row.rule === "panchak") {
         expect(panchangAt(midpoint).moonSidereal).toBeGreaterThanOrEqual(300);
         expect(panchangAt(midpoint).moonSidereal).toBeLessThan(360);
