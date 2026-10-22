@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useUiLanguage, l } from "../../useUiLanguage";
-import { addIsoDays, calculateLocalDay, formatDuration, formatLocalTime, todayInNepal, validIsoDate } from "./shared";
+import { addIsoDays, calculateLocalDay, formatLocalTime, todayInNepal, validIsoDate } from "./shared";
 import { getFeatureById } from "../catalog";
 import "./workspace.css";
 
@@ -20,7 +20,6 @@ export function MuhuratWorkspace({language,selectedFeatureId}:Props){
   const [start,setStart]=useState(()=>{const from=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("date"):null;return from&&validIsoDate(from)?from:todayInNepal()});
   const [days,setDays]=useState(7);
   const [showCautions,setShowCautions]=useState(true);
-  const selected=selectedFeatureId?getFeatureById(selectedFeatureId):null;
   const windows=useMemo(()=>{
     const out:Array<{date:string;sunrise:Date;sunset:Date;abhijit:{start:Date;end:Date};rahu:{start:Date;end:Date};yama:{start:Date;end:Date};gulika:{start:Date;end:Date}}=[];
     if(!validIsoDate(start))return out;
