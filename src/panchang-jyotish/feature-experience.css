@@ -36,3 +36,26 @@
 @media(max-width:680px){.ap-pj-experience-top{grid-template-columns:90px minmax(0,1fr);align-items:start;gap:11px}.ap-pj-experience-art{height:115px}.ap-pj-experience-orbit--center{width:50px;height:50px;font-size:1.9rem}.ap-pj-experience-topline{gap:5px}.ap-pj-experience-topline span{padding:4px 7px;font-size:.67rem}.ap-pj-experience-kicker{margin-top:9px!important}.ap-pj-experience-intro h3{font-size:1.24rem}.ap-pj-experience-intro>p:not(.ap-pj-experience-kicker){font-size:.85rem}.ap-pj-experience-bottom{grid-template-columns:1fr}.ap-pj-experience-journey,.ap-pj-experience-trust{padding:13px}}
 @media(max-width:400px){.ap-pj-experience-top{grid-template-columns:1fr}.ap-pj-experience-art{height:80px;max-width:150px;justify-self:center}.ap-pj-experience-orbit--outer{height:79px}.ap-pj-experience-orbit--inner{height:58px}.ap-pj-experience-orbit--center{width:42px;height:42px;font-size:1.6rem}}
 @media(prefers-reduced-motion:reduce){.ap-pj-experience *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Group-specific visual storytelling. These are authored HTML/CSS shapes, not remote media or claims of live sky data. */
+.ap-pj-experience-axis{position:absolute;pointer-events:none;border:1px solid color-mix(in srgb,var(--pj-accent) 26%,transparent);width:72%;height:1px;left:14%;top:50%;transform:rotate(32deg);opacity:.85}
+.ap-pj-experience-axis--second{transform:rotate(-32deg);opacity:.55}
+.ap-pj-experience--panchang .ap-pj-experience-orbit--center{border-radius:50%;background:radial-gradient(circle at 30% 28%,#ffe6a7,#d7a04d 55%,#98632f);color:#553015;box-shadow:0 0 0 8px rgba(220,165,69,.10),0 0 45px rgba(213,157,54,.18)}
+.ap-pj-experience--muhurat .ap-pj-experience-orbit--outer{border-style:dotted;transform:rotate(-18deg) scaleX(.95)}
+.ap-pj-experience--muhurat .ap-pj-experience-axis{transform:rotate(0deg);width:80%;left:10%;background:linear-gradient(90deg,transparent,rgba(169,118,53,.25),transparent)}
+.ap-pj-experience--muhurat .ap-pj-experience-axis--second{transform:rotate(90deg)}
+.ap-pj-experience--muhurat .ap-pj-experience-orbit--center{clip-path:polygon(50% 0,63% 33%,98% 37%,72% 59%,79% 96%,50% 77%,21% 96%,28% 59%,2% 37%,37% 33%);border-radius:0;background:linear-gradient(150deg,#f1d69d,#c18c3c);color:#5c3b12}
+.ap-pj-experience--jyotish .ap-pj-experience-orbit--outer{border-width:2px;transform:rotate(22deg) scaleX(.96)}
+.ap-pj-experience--jyotish .ap-pj-experience-orbit--inner{transform:rotate(67deg) scaleX(.68)}
+.ap-pj-experience--jyotish .ap-pj-experience-orbit--center{border-radius:15px;transform:rotate(45deg);background:linear-gradient(140deg,#e0d5f8,#ab99ce)}
+.ap-pj-experience--jyotish .ap-pj-experience-orbit--center{font-size:0}
+.ap-pj-experience--jyotish .ap-pj-experience-orbit--center::after{content:"✧";transform:rotate(-45deg);font-size:2.8rem;color:#4d3877}
+.ap-pj-experience--planets .ap-pj-experience-orbit--outer{transform:rotate(43deg) scaleX(.48);border-width:2px}
+.ap-pj-experience--planets .ap-pj-experience-orbit--inner{transform:rotate(-43deg) scaleX(.5)}
+.ap-pj-experience--planets .ap-pj-experience-orbit--center{border-radius:50%;background:radial-gradient(circle at 32% 23%,#d8ecf4,#75aac7 55%,#336481);color:#163d54}
+.ap-pj-experience--nepal-calendar .ap-pj-experience-orbit--outer{border-radius:17%;transform:rotate(45deg) scale(.91)}
+.ap-pj-experience--nepal-calendar .ap-pj-experience-orbit--inner{border-radius:25%;transform:rotate(0deg) scale(.85);border-style:solid}
+.ap-pj-experience--nepal-calendar .ap-pj-experience-orbit--center{border-radius:13px;background:linear-gradient(135deg,#f5e7c5,#bd8b5b);color:#623e20}
+.ap-pj-experience--nepal-calendar .ap-pj-experience-axis{transform:rotate(45deg)}
+.ap-pj-experience--nepal-calendar .ap-pj-experience-axis--second{transform:rotate(-45deg)}
+@media(forced-colors:active){.ap-pj-experience-orbit,.ap-pj-experience-axis,.ap-pj-experience-orbit--center{forced-color-adjust:auto;border:1px solid CanvasText}.ap-pj-experience-action{border:1px solid ButtonText}}
