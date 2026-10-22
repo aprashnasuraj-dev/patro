@@ -29,6 +29,9 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
     expect(hub).toContain("const showWorkspace = workspaceRequested");
     expect(hub).toContain("featureFromHash(groupId)");
     expect(hub).toContain('window.addEventListener("hashchange", sync)');
+    expect(hub).toContain('window.addEventListener("popstate", sync)');
+    expect(hub).toContain("window.history.pushState(null");
+    expect(hub).not.toContain("window.history.replaceState(null");
     expect(hub).toContain("sync();");
     expect(hub).toContain("event.preventDefault(); openFeature(item)");
     expect(hub).toContain("<WorkspaceErrorBoundary");
