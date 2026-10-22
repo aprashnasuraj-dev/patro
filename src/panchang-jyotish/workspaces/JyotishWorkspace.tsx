@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as Astronomy from "astronomy-engine";
 import { calculateChart, calculateSiderealPlanetPositions, type ChartResult } from "../../jyotish/jyotishEngine";
 import { readExistingJanmaPatroBirth } from "../read-existing-birth";
@@ -48,6 +48,15 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
   const [fullMoonRunning,setFullMoonRunning]=useState(false);
   const [fullMoonError,setFullMoonError]=useState("");
   const focus=selectedFeatureId?getFeatureById(selectedFeatureId):null;
+  const fullMoonRunRef=useRef(0);
+  useEffect(()=>()=>{fullMoonRunRef.current+=1;},[]);
+  useEffect(()=>{
+    if(selectedFeatureId!=="F041"&&fullMoonRunning){
+      fullMoonRunRef.current+=1;
+      setFullMoonRunning(false);
+      setFullMoonCount(0);
+    }
+  },[selectedFeatureId,fullMoonRunning]);
 
   useEffect(()=>{
     let active=true;
@@ -85,6 +94,42 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
     return {candidate:allFirst||allSecond,offsets};
   },[chart,rahu,ketu]);
   const ghatiMinutes=useMemo(()=>Math.max(0,Number(vedicGhati)||0)*24+Math.max(0,Number(vedicPala)||0)*0.4,[vedicGhati,vedicPala]);
+
+  async function runFullMoonCalculation(){
+    if(!validIsoDate(fullMoonStart)){
+      setFullMoonError(l(language,"मिति जाँच्नुहोस्।","Check the date."));
+      return;
+    }
+    const runId=++fullMoonRunRef.current;
+    setFullMoonRunning(true);
+    setFullMoonError("");
+    setFullMoonDates([]);
+    setFullMoonCount(0);
+    try{
+      let cursor=new Date(fullMoonStart+"T06:15:00Z");
+      const rows:Date[]=[];
+      let hit=Astronomy.SearchMoonPhase(180,cursor,36);
+      for(let i=0;i<1000&&hit;i++){
+        if(runId!==fullMoonRunRef.current)return;
+        rows.push(hit.date);
+        if((i+1)%20===0){
+          setFullMoonCount(i+1);
+          await yieldToBrowser();
+          if(runId!==fullMoonRunRef.current)return;
+        }
+        cursor=new Date(hit.date.getTime()+60_000);
+        hit=Astronomy.SearchMoonPhase(180,cursor,35);
+      }
+      if(runId!==fullMoonRunRef.current)return;
+      setFullMoonDates(rows);
+      setFullMoonCount(rows.length);
+      if(rows.length!==1000)setFullMoonError(l(language,"उपलब्ध खोज सीमाभित्र १००० पूर्णिमा फेला परेनन्।","The search did not return 1000 full moons within the available calculation range."));
+    }catch{
+      if(runId===fullMoonRunRef.current)setFullMoonError(l(language,"पूर्णिमा गणना सफल भएन। अर्को सुरु मिति छान्नुहोस्।","The full-moon calculation did not complete. Choose another start date."));
+    }finally{
+      if(runId===fullMoonRunRef.current)setFullMoonRunning(false);
+    }
+  }
 
   return <div className="ap-pjw-root">
     <section className="ap-pjw-card">
@@ -135,7 +180,7 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
     {selectedFeatureId==="F041"&&<section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3>{l(language,"१००० पूर्णिमा गणक","1000 Full Moons Calculator")}</h3><small>{l(language,"खगोलीय पूर्णिमा क्षण","Astronomical full-moon instants")}</small></div>
       <p className="ap-pjw-section-note">{l(language,"छानिएको मितिपछि आउने क्रमिक १००० पूर्णिमाका क्षण खगोलीय चन्द्र-चरण खोजबाट ब्राउजरमै निकालिन्छन्। गणना चलाउँदा कुनै API वा Cloudflare storage प्रयोग हुँदैन।","The next 1000 full-moon instants after the selected date are searched in the browser using the astronomical lunar phase function. This makes no API or Cloudflare storage request.")}</p>
-      <div className="ap-pjw-filter-row"><label>{l(language,"सुरु मिति","Start date")}<input className="ap-pjw-textinput" type="date" value={fullMoonStart} disabled={fullMoonRunning} onChange={event=>{setFullMoonStart(event.target.value);setFullMoonDates([]);setFullMoonError("")}}/></label><button className="ap-pjw-primary" type="button" disabled={fullMoonRunning} aria-live="polite" aria-busy={fullMoonRunning} onClick={async()=>{if(!validIsoDate(fullMoonStart)){setFullMoonError(l(language,"मिति जाँच्नुहोस्।","Check the date."));return;}setFullMoonRunning(true);setFullMoonError("");setFullMoonDates([]);setFullMoonCount(0);try{let cursor=new Date(fullMoonStart+"T06:15:00Z");const rows:Date[]=[];let hit=Astronomy.SearchMoonPhase(180,cursor,36);for(let i=0;i<1000&&hit;i++){rows.push(hit.date);if((i+1)%20===0){setFullMoonCount(i+1);await yieldToBrowser();}cursor=new Date(hit.date.getTime()+60_000);hit=Astronomy.SearchMoonPhase(180,cursor,35);}setFullMoonDates(rows);setFullMoonCount(rows.length);if(rows.length!==1000)setFullMoonError(l(language,"उपलब्ध खोज सीमाभित्र १००० पूर्णिमा फेला परेनन्।","The search did not return 1000 full moons within the available calculation range."));}catch{setFullMoonError(l(language,"पूर्णिमा गणना सफल भएन। अर्को सुरु मिति छान्नुहोस्।","The full-moon calculation did not complete. Choose another start date."));}finally{setFullMoonRunning(false);}}}>{fullMoonRunning?l(language,"गणना हुँदैछ… "+fullMoonCount+"/1000","Calculating… "+fullMoonCount+"/1000"):l(language,"१००० पूर्णिमा गणना","Calculate 1000 full moons")}</button></div>
+      <div className="ap-pjw-filter-row"><label>{l(language,"सुरु मिति","Start date")}<input className="ap-pjw-textinput" type="date" value={fullMoonStart} disabled={fullMoonRunning} onChange={event=>{setFullMoonStart(event.target.value);setFullMoonDates([]);setFullMoonError("")}}/></label><button className="ap-pjw-primary" type="button" disabled={fullMoonRunning} aria-live="polite" aria-busy={fullMoonRunning} onClick={runFullMoonCalculation}>{fullMoonRunning?l(language,"गणना हुँदैछ… "+fullMoonCount+"/1000","Calculating… "+fullMoonCount+"/1000"):l(language,"१००० पूर्णिमा गणना","Calculate 1000 full moons")}</button></div>
       {fullMoonError&&<p className="ap-pjw-error" role="alert">{fullMoonError}</p>}
       {fullMoonDates.length>0&&<><p className="ap-pjw-note">{l(language,"कुल प्राप्त पूर्णिमा: ","Full moons found: ")}{fullMoonDates.length}</p><div className="ap-pjw-position-wrap"><table className="ap-pjw-event-table"><thead><tr><th scope="col">#</th><th scope="col">{l(language,"पूर्णिमा (नेपाल समय)","Full moon (Nepal time)")}</th></tr></thead><tbody>{fullMoonDates.slice(0,20).map((item,index)=><tr key={item.toISOString()}><td>{index+1}</td><td>{showNptDateTime(item,language)}</td></tr>)}</tbody></table></div>{fullMoonDates.length>20&&<p className="ap-pjw-section-note">{l(language,"पहिला २० समय देखाइएका छन्; सम्पूर्ण गणना यस सत्रको ब्राउजर मेमोरीमा छ।","The first 20 instants are shown; the complete result remains in this browser session's memory.")}</p>}</>}
     </section>}

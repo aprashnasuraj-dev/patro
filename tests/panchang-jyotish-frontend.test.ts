@@ -205,6 +205,8 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).toContain('Time zone (IANA)');
     expect(jyotish).toContain("timezone:prashnaTimezone.trim()");
     expect(jyotish).toContain("disabled={fullMoonRunning}");
+    expect(jyotish).toContain("runId!==fullMoonRunRef.current");
+    expect(jyotish).toContain("fullMoonRunRef.current+=1");
     expect(panchang).toContain("archiveUnavailable");
     expect(panchang).toContain("archivePending");
   });
