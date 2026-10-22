@@ -5,6 +5,7 @@ import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
 import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 import { resolveNepalPanchangDay } from "../archive-adapter";
+import { findNakshatraRuleWindows, type NakshatraRuleWindow } from "../reviewed-candidate-rules";
 import { KATHMANDU } from "../../patro-tools/core/types";
 import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, localSunriseTithiPattern, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import { DaylightArc } from "./DaylightArc";
@@ -50,8 +51,31 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     return queryDate && validIsoDate(queryDate) ? queryDate : todayInNepal();
   });
   const [clockMode, setClockMode] = useState<PanchangClockMode>("24h");
+  const [ruleWindowDays, setRuleWindowDays] = useState(30);
+  const [ruleWindows, setRuleWindows] = useState<NakshatraRuleWindow[]>([]);
+  const [ruleWindowState, setRuleWindowState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [resolved, setResolved] = useState<{ date: string; value: PanchangDayContractV1; archive: "loaded" | "unavailable" } | null>(null);
   useEffect(() => { const controller = new AbortController(); setResolved(null); resolveNepalPanchangDay(date, controller.signal).then(result => { if (!controller.signal.aborted) setResolved({ date, value: result.value, archive: result.archive }); }).catch(() => {}); return () => controller.abort(); }, [date]);
+  useEffect(() => {
+    if (selectedFeatureId !== "F021" && selectedFeatureId !== "F022") {
+      setRuleWindows([]);
+      setRuleWindowState("idle");
+      return;
+    }
+    let active = true;
+    setRuleWindows([]);
+    setRuleWindowState("loading");
+    const rule = selectedFeatureId === "F021" ? "panchak" : "gandaMoola";
+    findNakshatraRuleWindows(date, ruleWindowDays, rule, () => !active)
+      .then(result => {
+        if (!active || !result) return;
+        setRuleWindows(result);
+        setRuleWindowState("ready");
+      })
+      .catch(() => { if (active) setRuleWindowState("error"); });
+    return () => { active = false; };
+  }, [date, ruleWindowDays, selectedFeatureId]);
+
   const computed = useMemo(() => {
     try { return calculateLocalDay(date); }
     catch { return null; }
@@ -137,6 +161,36 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       </div>
 
       {Object.values(conflicts).some(Boolean) && <p className="ap-pjw-note" role="status">{l(language, "अभिलेख र स्थानीय गणनाको कुनै तत्व नमिलेकाले त्यस्तो तत्वको अपुष्ट परिवर्तन समय लुकाइएको छ। सम्बन्धित अभिलेखको मिति/स्रोत जाँच्नुहोस्।", "An archived element differs from the local calculation, so its unverified fallback transition time has been withheld. Check the corresponding archive date and source.")}</p>}
+      {(selectedFeatureId === "F021" || selectedFeatureId === "F022") && <section className="ap-pjw-card">
+        <div className="ap-pjw-subhead">
+          <h3>{selectedFeatureId === "F021" ? l(language, "पञ्चकका सम्भावित नक्षत्र-अवधि", "Candidate Panchak Nakshatra intervals") : l(language, "गण्डमूलका सम्भावित नक्षत्र-अवधि", "Candidate Ganda Moola Nakshatra intervals")}</h3>
+          <small>{l(language, "परम्परागत स्रोत/स्थान पुष्टि बाँकी", "Traditional source and regional review pending")}</small>
+        </div>
+        <div className="ap-pjw-datebar">
+          <label><span>{l(language, "खोज अवधि", "Search range")}</span>
+            <select className="ap-pjw-select" value={ruleWindowDays} onChange={event => setRuleWindowDays(Number(event.target.value))}>
+              {[7,14,30,60,90].map(value => <option value={value} key={value}>{l(language, value + " दिन", value + " days")}</option>)}
+            </select>
+          </label>
+          <span className="ap-pjw-section-note">{l(language, "सुरु मिति: " + date, "Starting date: " + date)}</span>
+        </div>
+        <p className="ap-pjw-section-note">{selectedFeatureId === "F021"
+          ? l(language, "धनिष्ठाको उत्तरार्धबाट शतभिषा, पूर्वभाद्रपदा, उत्तरभाद्रपदा हुँदै रेवतीसम्मको एक-आधारित नक्षत्र सदस्यता प्रयोग गरिएको सम्भावित अन्तराल हो। यो आधिकारिक साइत, निषेध वा पर्व-निर्णय होइन।", "These are candidate intervals for the conventional Panchak sequence from the latter part of Dhanishtha through Shatabhisha, Purva Bhadrapada, Uttara Bhadrapada and Revati. This is not an official Muhurat, prohibition or observance decision.")
+          : l(language, "अश्विनी, आश्लेषा, मघा, ज्येष्ठा, मूल र रेवती नक्षत्रको सम्भावित अवधि हो। यो व्यापक नक्षत्र वर्गीकरण हो; साँघुरो गण्डान्तसँग एकै अर्थमा प्रयोग गरिएको छैन र जन्मसम्बन्धी अन्तिम निर्णय गर्दैन।", "These are candidate intervals for Ashwini, Ashlesha, Magha, Jyeshtha, Mula and Revati. This broad Nakshatra classification is not equated with the narrower Gandanta concept and does not make a definitive natal judgment.")}</p>
+        {ruleWindowState === "loading" ? <p className="ap-pjw-section-note" role="status">{l(language, "नक्षत्रका सीमा गणना हुँदैछन्…", "Calculating Nakshatra boundaries…")}</p>
+          : ruleWindowState === "error" ? <p className="ap-pjw-error" role="alert">{l(language, "अन्तराल गणना भएन। मिति वा अवधि परिवर्तन गरी पुनः प्रयास गर्नुहोस्।", "The interval search failed. Change the date or range and try again.")}</p>
+          : ruleWindowState === "ready" && ruleWindows.length === 0 ? <div className="ap-pjw-empty">{l(language, "यो खोज अवधिमा मिल्ने सम्भावित अन्तराल भेटिएन।", "No candidate interval was found in this date range.")}</div>
+          : ruleWindowState === "ready" ? <div className="ap-pjw-event-table-wrap"><table className="ap-pjw-event-table">
+            <thead><tr><th>{l(language, "नक्षत्र प्रवेश", "Entry Nakshatra")}</th><th>{l(language, "नक्षत्र अन्त्य", "Last Nakshatra")}</th><th>{l(language, "सुरु (NPT)", "Starts (NPT)")}</th><th>{l(language, "समाप्ति (NPT)", "Ends (NPT)")}</th></tr></thead>
+            <tbody>{ruleWindows.map((item,index)=><tr key={item.start.toISOString()+index}>
+              <td>{l(language, NAKSHATRAS[item.entryNakshatra-1] ?? "—", NAKSHATRA_EN[item.entryNakshatra-1] ?? "—")}</td>
+              <td>{l(language, NAKSHATRAS[item.lastNakshatra-1] ?? "—", NAKSHATRA_EN[item.lastNakshatra-1] ?? "—")}</td>
+              <td>{new Intl.DateTimeFormat(language === "ne" ? "ne-NP-u-nu-deva" : "en-GB", {timeZone:"Asia/Kathmandu",dateStyle:"medium",timeStyle:"short",hourCycle:"h23"}).format(item.start)}</td>
+              <td>{new Intl.DateTimeFormat(language === "ne" ? "ne-NP-u-nu-deva" : "en-GB", {timeZone:"Asia/Kathmandu",dateStyle:"medium",timeStyle:"short",hourCycle:"h23"}).format(item.end)}</td>
+            </tr>)}</tbody>
+          </table></div> : null}
+        <p className="ap-pjw-method">{l(language, "विधि: निरयण चन्द्र-दीर्घांशको २७ नक्षत्र सीमा; ६ घण्टाका नमुना-ब्र्याकेट र त्यसपछि द्विभाजनबाट सीमा खोजिन्छ। विश्वास: सम्भावित मात्र; प्रकाशित नेपाल पञ्चाङ्ग र अनुष्ठान नियमसँग स्वतन्त्र तुलना बाँकी।", "Method: 27 equal sidereal Nakshatra divisions of lunar longitude, bracketed at six-hour intervals and refined by bisection. Confidence: candidate only; independent comparison with a published Nepal Panchang and observance rules remains open.")}</p>
+      </section>}
       {selectedFeatureId === "F010" && tithiPattern && <section className="ap-pjw-card">
         <div className="ap-pjw-subhead"><h3>{l(language, "सूर्योदय र तिथिको निरन्तरता", "Tithi across successive sunrises")}</h3><small>{l(language, "स्थानीय गणनात्मक सङ्केत", "Local calculated indication")}</small></div>
         <div className="ap-pjw-stats">
