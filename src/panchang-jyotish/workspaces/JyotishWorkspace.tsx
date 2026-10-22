@@ -62,7 +62,7 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
   const moon=chart?.planets.find((item)=>item.key==="moon");
   const rahu=chart?.planets.find((item)=>item.key==="rahu");
   const ketu=chart?.planets.find((item)=>item.key==="ketu");
-  const currentSaturn=useMemo(()=>calculateSiderealPlanetPositions(new Date()).find((item)=>item.key==="Saturn")||null,[]);
+  const currentSaturn=useMemo(()=>calculateSiderealPlanetPositions(new Date()).find((item)=>item.key==="saturn")||null,[]);
   const sadesatiOffset=moon&&currentSaturn?angleForward(moon.signIndex,currentSaturn.signIndex):null;
   const sadesatiActive=sadesatiOffset!==null&&[11,0,1].includes(sadesatiOffset);
   const axisSummary=useMemo(()=>{
