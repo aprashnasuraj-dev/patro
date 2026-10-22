@@ -28,7 +28,7 @@ describe("My Time extended instruments", () => {
   });
 
   it("versions cached snapshots for the expanded My Time payload", () => {
-    expect(myTimeCacheKey("2026-10-20", "Asia/Kathmandu", 27.7172, 85.324).startsWith("v2|2026-10-20|Asia/Kathmandu|")).toBe(true);
+    expect(myTimeCacheKey("2026-10-20", "Asia/Kathmandu", 27.7172, 85.324).startsWith("v3-20261022|2026-10-20|Asia/Kathmandu|")).toBe(true);
   });
 
   it("bounds the offline cache to recent unexpired snapshots", () => {
