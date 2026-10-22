@@ -75,6 +75,26 @@ export function formatDuration(start: Date, end: Date, language: "ne" | "en"): s
   return language === "ne" ? (h ? h + " घण्टा " : "") + (m ? m + " मिनेट" : h ? "" : "० मिनेट") : (h ? h + " h " : "") + (m ? m + " min" : h ? "" : "0 min");
 }
 
+export type SunriseTithiPattern = { advance: number; repeated: boolean; skipped: number; status: "vriddhi" | "kshaya" | "ordinary" };
+export function classifySunriseTithi(previous: number, current: number): SunriseTithiPattern {
+  if (!Number.isInteger(previous) || !Number.isInteger(current) || previous < 1 || previous > 30 || current < 1 || current > 30) {
+    throw new Error("invalid_sunrise_tithi");
+  }
+  const advance = (current - previous + 30) % 30;
+  // Adjacent civil sunrises should not jump by three or more Tithis.
+  if (advance > 2) throw new Error("unexpected_tithi_jump");
+  return { advance, repeated: advance === 0, skipped: Math.max(0, advance - 1), status: advance === 0 ? "vriddhi" : advance === 2 ? "kshaya" : "ordinary" };
+}
+export function localSunriseTithiPattern(dateAd: string) {
+  const previous = defaultPanchang.day(addIsoDays(dateAd, -1), KATHMANDU);
+  const current = defaultPanchang.day(dateAd, KATHMANDU);
+  const next = defaultPanchang.day(addIsoDays(dateAd, 1), KATHMANDU);
+  return {
+    previous: previous.tithi, current: current.tithi, next: next.tithi,
+    entering: classifySunriseTithi(previous.tithi, current.tithi),
+    leaving: classifySunriseTithi(current.tithi, next.tithi)
+  };
+}
 export type PanchangField = "tithi" | "nakshatra" | "yoga" | "karana";
 
 export function nextFieldTransition(start: Date, field: PanchangField, searchHours = 36): Date | null {
