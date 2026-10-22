@@ -59,3 +59,10 @@
 .ap-pj-experience--nepal-calendar .ap-pj-experience-axis{transform:rotate(45deg)}
 .ap-pj-experience--nepal-calendar .ap-pj-experience-axis--second{transform:rotate(-45deg)}
 @media(forced-colors:active){.ap-pj-experience-orbit,.ap-pj-experience-axis,.ap-pj-experience-orbit--center{forced-color-adjust:auto;border:1px solid CanvasText}.ap-pj-experience-action{border:1px solid ButtonText}}
+
+/* Topic-specific references are editorial notes, never simulated prediction cards. */
+.ap-pj-experience-reference{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 clamp(16px,3vw,28px) 17px}
+.ap-pj-experience-reference>div{min-width:0;padding:15px;border:1px solid color-mix(in srgb,var(--pj-accent) 21%,transparent);border-radius:15px;background:color-mix(in srgb,var(--pj-accent) 5%,transparent)}
+.ap-pj-experience-reference h4{font-size:.86rem;line-height:1.45;color:var(--pj-accent);margin:0 0 7px}
+.ap-pj-experience-reference p{font-size:.85rem;line-height:1.65;margin:0;opacity:.78}
+@media(max-width:680px){.ap-pj-experience-reference{grid-template-columns:1fr}.ap-pj-experience-reference>div{padding:13px}}
