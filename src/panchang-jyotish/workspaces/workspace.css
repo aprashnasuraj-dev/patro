@@ -96,6 +96,7 @@
 .ap-pjw-wheel-key{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 .ap-pjw-wheel-key>span{display:flex;gap:5px;align-items:center;min-width:0;font-size:.8rem;font-weight:750}
 .ap-pjw-wheel-key b{display:grid;place-items:center;flex:0 0 23px;height:23px;border-radius:50%;background:#247344;color:#fff;font-size:.86rem}
+.ap-pjw-wheel-key b .ap-pj-icon{display:block;width:17px;height:17px;color:#fff;stroke:currentColor;fill:none;overflow:visible}
 .ap-pjw-wheel-key small{font-variant-numeric:tabular-nums;font-size:.67rem;opacity:.62}
 .ap-pjw-wheel-signs{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
 .ap-pjw-wheel-signs>span{border:1px solid rgba(127,127,127,.17);border-radius:7px;padding:4px 6px;font-size:.68rem;line-height:1.3}
