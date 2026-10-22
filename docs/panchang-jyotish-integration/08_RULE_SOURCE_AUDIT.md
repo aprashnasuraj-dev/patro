@@ -22,8 +22,8 @@ The release registry now uses the explicit `source-review` disposition for 26 en
 | ID | Root cause | Validated rule or exact remaining task | Release evidence required |
 |---|---|---|---|
 | F010 | astronomy-boundary | compare Tithi at 3 successive Nepal sunrises; verify kshaya/vriddhi and observance precedence | archive sunrise and transition fixtures |
-| F021 | astronomy-rule | Panchak: Dhanishtha (23) through Revati (27), one-based Nakshatra | Drik Nakshatra list and Panchak independent dates |
-| F022 | astronomy-rule | Ganda Moola: Ashwini 1, Ashlesha 9, Magha 10, Jyeshtha 18, Mula 19, Revati 27; Gandanta is narrower and distinct | Drik Ganda Moola Nepal list |
+| F021 | astronomy-rule | Browser implementation now finds continuous intervals for one-based Nakshatra membership 23–27, refined from 6-hour brackets; candidate output only | Independent Nepal-local published interval comparison, exception/ritual policy, start/end fixtures and source review still required; not a definitive Muhurat |
+| F022 | astronomy-rule | Browser implementation now finds continuous intervals for the six one-based Nakshatra memberships 1, 9, 10, 18, 19, 27; candidate output only and does not infer natal consequences | Independent Nepal-local published interval comparison, exact boundaries, region/ritual rules and source review still required; Gandanta remains distinct |
 | F024 | source-variant | 28th Abhijit Nakshatra requires a separate 28-division convention; do not infer from 27-star Muhurta | classical text and exact longitude convention |
 | F026 | observance | Shraddha needs ritual-window and Tithi overlap rules rather than sunrise-only Tithi | Nepal published observance calendar |
 | F058 | observance | property legal office date differs from traditional auspicious date; existing Sait is not proof of a new rule | Nepal legal calendar and attributed Muhurta rule |
@@ -53,8 +53,8 @@ The release registry now uses the explicit `source-review` disposition for 26 en
 
 ## Completed source-level validation (not release approval)
 
-- F021: one-based Panchak membership 23–27 recorded in pure helper; requires exact Moon/Nakshatra entry and exit instants before publishing intervals.
-- F022: six Ganda Moola Nakshatras recorded; distinguish broad Ganda Moola from narrow Gandanta and avoid natal consequences.
+- F021: the browser computes continuous candidate windows for the one-based Panchak membership 23–27, with 6-hour brackets and bisection-refined boundaries. It is explicitly `candidate-unverified`, not an official Muhurat or ritual prohibition. Independently compare starts/ends with published Nepal-local fixtures before any promotion.
+- F022: the browser computes continuous candidate windows for Nakshatras 1, 9, 10, 18, 19 and 27. Broad Ganda Moola remains separate from narrow Gandanta and no natal consequence is inferred. Independent regional-source and boundary review is still mandatory.
 - F064 and F065: Sunday/Thursday + Pushya 8 membership recorded. Pure helper uses civil weekday **only as a candidate input**; the live yoga must calculate sunrise-to-sunrise Vara, intersection with Nakshatra intervals and local Nepal date. F064 has a Nepal-specific published comparison source.
 - F068: source confirms Dwadashi and Hari Vasara constraints, but final Parana requires fasting-date decision, first quarter of Dwadashi, sunrise and sect-specific exceptions; it remains gated.
 
