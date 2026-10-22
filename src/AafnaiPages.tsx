@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { BS_MONTHS, calendarTitle, pageTitle, setPageTitle, toNepaliDigits } from "./title";
 import { l, useUiLanguage } from "./useUiLanguage";
 import { FeatureGlyph } from "./panchang-jyotish/FeatureGlyph";
+import { getToolIcon } from "./iconography";
 
 const NE_DAYS=["आइत","सोम","मंगल","बुध","बिही","शुक्र","शनि"];
 const FULL_NE_DAYS=["आइतबार","सोमबार","मंगलबार","बुधबार","बिहीबार","शुक्रबार","शनिबार"];
@@ -11,7 +12,7 @@ type BsDate={year:number;month:number;day:number;month_ne?:string;formatted?:str
 type CalendarDay={ad:string;bs:BsDate;nepal_sambat?:any;panchang?:any};
 type Festival={ad_date?:string;fact_date?:string;date?:string;name_ne?:string;title_ne?:string;label_ne?:string;name_en?:string;title?:string;key?:string;effect?:string;status?:string;description_ne?:string;value?:any};
 type TodayView={ad:string;bs:BsDate|null;ns:string;tithi:string;tithiNext:string;sunrise:string;sunset:string};
-type Tool={icon:string;title:string;desc:string;href:string;badge?:string};
+type Tool={title:string;desc:string;href:string;badge?:string};
 
 function todayNepal(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
 async function getJson<T>(url:string,signal?:AbortSignal):Promise<T>{const r=await fetch(url,{headers:{accept:"application/json"},signal,credentials:"same-origin"});if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}
@@ -128,49 +129,49 @@ const HUB_GROUP_TITLE:Record<string,string> = {
 };
 const toolGroups:{name:string;items:Tool[]}[]=[
  {name:"मिति र पात्रो",items:[
-  {icon:"↔",title:"मिति रूपान्तरण",desc:"वि.सं. र ई.सं. मिति दुवैतर्फ रूपान्तरण",href:"/convert"},
-  {icon:"वि",title:"वि.सं. बाट ई.सं.",desc:"बिक्रम संवत् मितिलाई ई.सं. मा बदल्नुहोस्",href:"/tools/bstoad"},
-  {icon:"ई",title:"ई.सं. बाट वि.सं.",desc:"ई.सं. मितिलाई बिक्रम संवत् मा बदल्नुहोस्",href:"/tools/adtobs"},
-  {icon:"±",title:"दिन गणना",desc:"दुई मितिबीचका दिन वा मितिमा दिन थपघट",href:"/tools/calc"},
-  {icon:"उ",title:"उमेर गणक",desc:"वर्ष, महिना र दिनसहित उमेर गणना",href:"/tools/age"},
-  {icon:"त",title:"तिथि रिमाइन्डर",desc:"तिथि, श्राद्ध र जन्मदिनका आगामी मिति",href:"/tools/tithi-reminder"},
-  {icon:"⏳",title:"समययन्त्र",desc:"नेपालको ऐतिहासिक समयरेखा अन्वेषण",href:"/time-machine"},
-  {icon:"इत",title:"आज इतिहासमा",desc:"चयन गरिएको मितिका ऐतिहासिक घटना",href:"/on-this-day"},
-  {icon:"घ",title:"विश्व घडी",desc:"नेपालसहित विश्वका शहरहरूको समय",href:"/tools/clock"},
-  {icon:"◉",title:"मेरो समय · My Time",desc:"स्थानीय समय, पञ्चाङ्ग, आकाश र व्यक्तिगत समय सन्दर्भ",href:"/mytime",badge:"नयाँ"}
+  {title:"मिति रूपान्तरण",desc:"वि.सं. र ई.सं. मिति दुवैतर्फ रूपान्तरण",href:"/convert"},
+  {title:"वि.सं. बाट ई.सं.",desc:"बिक्रम संवत् मितिलाई ई.सं. मा बदल्नुहोस्",href:"/tools/bstoad"},
+  {title:"ई.सं. बाट वि.सं.",desc:"ई.सं. मितिलाई बिक्रम संवत् मा बदल्नुहोस्",href:"/tools/adtobs"},
+  {title:"दिन गणना",desc:"दुई मितिबीचका दिन वा मितिमा दिन थपघट",href:"/tools/calc"},
+  {title:"उमेर गणक",desc:"वर्ष, महिना र दिनसहित उमेर गणना",href:"/tools/age"},
+  {title:"तिथि रिमाइन्डर",desc:"तिथि, श्राद्ध र जन्मदिनका आगामी मिति",href:"/tools/tithi-reminder"},
+  {title:"समययन्त्र",desc:"नेपालको ऐतिहासिक समयरेखा अन्वेषण",href:"/time-machine"},
+  {title:"आज इतिहासमा",desc:"चयन गरिएको मितिका ऐतिहासिक घटना",href:"/on-this-day"},
+  {title:"विश्व घडी",desc:"नेपालसहित विश्वका शहरहरूको समय",href:"/tools/clock"},
+  {title:"मेरो समय · My Time",desc:"स्थानीय समय, पञ्चाङ्ग, आकाश र व्यक्तिगत समय सन्दर्भ",href:"/mytime",badge:"नयाँ"}
  ]},
  {name:"भाषा र लेखन",items:[
-  {icon:"क",title:"नेपाली टाइपिङ",desc:"रोमन अक्षरबाट नेपाली युनिकोड टाइपिङ",href:"/tools/nepali-typing"},
-  {icon:"प्री",title:"प्रीति रूपान्तरण",desc:"प्रीति र युनिकोडबीच दुवैतर्फ रूपान्तरण",href:"/tools/preeti-converter"},
-  {icon:"श",title:"नेपाली शब्दकोश",desc:"४९ हजार शब्द, अङ्ग्रेजी अर्थ, उच्चारण, क्विज र शब्द अभ्यास",href:"/tool/nepalidictionary",badge:"नयाँ"},
-  {icon:"✓",title:"नेपाली हिज्जे जाँच",desc:"नेपाली पाठको हिज्जे जाँच र सुझाव",href:"/tools/spell-check"},
-  {icon:"🎙",title:"बोली टाइपिङ",desc:"बोलेर नेपाली पाठ लेख्नुहोस्",href:"/tools/voice-typing"},
-  {icon:"OCR",title:"नेपाली OCR",desc:"तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्",href:"/tools/ocr"},
-  {icon:"🔊",title:"पढेर सुनाउने",desc:"नेपाली पाठ आवाजमा सुन्नुहोस्",href:"/tools/read-aloud"},
-  {icon:"अ",title:"अंकलाई शब्दमा",desc:"रकमलाई नेपाली वा अङ्ग्रेजी शब्दमा",href:"/tools/words"}
+  {title:"नेपाली टाइपिङ",desc:"रोमन अक्षरबाट नेपाली युनिकोड टाइपिङ",href:"/tools/nepali-typing"},
+  {title:"प्रीति रूपान्तरण",desc:"प्रीति र युनिकोडबीच दुवैतर्फ रूपान्तरण",href:"/tools/preeti-converter"},
+  {title:"नेपाली शब्दकोश",desc:"४९ हजार शब्द, अङ्ग्रेजी अर्थ, उच्चारण, क्विज र शब्द अभ्यास",href:"/tool/nepalidictionary",badge:"नयाँ"},
+  {title:"नेपाली हिज्जे जाँच",desc:"नेपाली पाठको हिज्जे जाँच र सुझाव",href:"/tools/spell-check"},
+  {title:"बोली टाइपिङ",desc:"बोलेर नेपाली पाठ लेख्नुहोस्",href:"/tools/voice-typing"},
+  {title:"नेपाली OCR",desc:"तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्",href:"/tools/ocr"},
+  {title:"पढेर सुनाउने",desc:"नेपाली पाठ आवाजमा सुन्नुहोस्",href:"/tools/read-aloud"},
+  {title:"अंकलाई शब्दमा",desc:"रकमलाई नेपाली वा अङ्ग्रेजी शब्दमा",href:"/tools/words"}
  ]},
  {name:"ज्योतिष र संस्कार",items:[
-  {icon:"रा",title:"राशिफल",desc:"दैनिक वैदिक राशिफल",href:"/rashifal"},
-  {icon:"चि",title:"चिना",desc:"जन्ममिति, समय र स्थानका आधारमा जन्मपत्रिका",href:"/jyotish/china"},
-  {icon:"शु",title:"साइत",desc:"परम्परागत नियम र उपलब्ध आधिकारिक मितिसहित शुभ समय",href:"/tools/sait"},
-  {icon:"ना",title:"नक्षत्र अनुसार बच्चाको नाम",desc:"नक्षत्र र पदका आधारमा नाम सुझाव",href:"/tools/baby-names"},
-  {icon:"नाम",title:"नाम जाँच",desc:"नामको सुरु अक्षर र नक्षत्र मिलान",href:"/tools/name-check"}
+  {title:"राशिफल",desc:"दैनिक वैदिक राशिफल",href:"/rashifal"},
+  {title:"चिना",desc:"जन्ममिति, समय र स्थानका आधारमा जन्मपत्रिका",href:"/jyotish/china"},
+  {title:"साइत",desc:"परम्परागत नियम र उपलब्ध आधिकारिक मितिसहित शुभ समय",href:"/tools/sait"},
+  {title:"नक्षत्र अनुसार बच्चाको नाम",desc:"नक्षत्र र पदका आधारमा नाम सुझाव",href:"/tools/baby-names"},
+  {title:"नाम जाँच",desc:"नामको सुरु अक्षर र नक्षत्र मिलान",href:"/tools/name-check"}
  ]},
  {name:"हिसाब, वित्त र दैनिक उपयोग",items:[
-  {icon:"$",title:"विदेशी मुद्रा",desc:"नेपाल राष्ट्र बैंकका विनिमय दर",href:"/tools/forex"},
-  {icon:"सु",title:"सुनचाँदी हिसाब",desc:"तौल र तपाईंले राखेको दरका आधारमा मूल्य अनुमान",href:"/tools/gold"},
-  {icon:"%",title:"कर्जा EMI",desc:"मासिक किस्ता र कुल ब्याज गणना",href:"/tools/emi"},
-  {icon:"भ",title:"भ्याट र प्रतिशत",desc:"भ्याट थपघट र प्रतिशत गणना",href:"/tools/vat"},
-  {icon:"रु",title:"आयकर",desc:"आ.व. २०८३/८४ को व्यक्तिगत आयकर अनुमान",href:"/tools/incometax"},
-  {icon:"रो",title:"जग्गा नाप",desc:"रोपनी–आना र बिघा–कट्ठा रूपान्तरण",href:"/tools/landconverter"},
-  {icon:"ना",title:"नाप–तौल",desc:"परम्परागत नेपाली एकाइ रूपान्तरण",href:"/tools/units"},
-  {icon:"इ",title:"इन्धन मूल्य",desc:"नेपाल आयल निगमका पेट्रोलियम मूल्य",href:"/tools/fuelprice"},
-  {icon:"QR",title:"QR कोड",desc:"नेपाली वा अङ्ग्रेजी पाठबाट निजी QR",href:"/tools/nepaliqr"}
+  {title:"विदेशी मुद्रा",desc:"नेपाल राष्ट्र बैंकका विनिमय दर",href:"/tools/forex"},
+  {title:"सुनचाँदी हिसाब",desc:"तौल र तपाईंले राखेको दरका आधारमा मूल्य अनुमान",href:"/tools/gold"},
+  {title:"कर्जा EMI",desc:"मासिक किस्ता र कुल ब्याज गणना",href:"/tools/emi"},
+  {title:"भ्याट र प्रतिशत",desc:"भ्याट थपघट र प्रतिशत गणना",href:"/tools/vat"},
+  {title:"आयकर",desc:"आ.व. २०८३/८४ को व्यक्तिगत आयकर अनुमान",href:"/tools/incometax"},
+  {title:"जग्गा नाप",desc:"रोपनी–आना र बिघा–कट्ठा रूपान्तरण",href:"/tools/landconverter"},
+  {title:"नाप–तौल",desc:"परम्परागत नेपाली एकाइ रूपान्तरण",href:"/tools/units"},
+  {title:"इन्धन मूल्य",desc:"नेपाल आयल निगमका पेट्रोलियम मूल्य",href:"/tools/fuelprice"},
+  {title:"QR कोड",desc:"नेपाली वा अङ्ग्रेजी पाठबाट निजी QR",href:"/tools/nepaliqr"}
  ]},
  {name:"सिर्जना र सहायक",items:[
-  {icon:"📰",title:"जन्मदिन अखबार",desc:"जन्मदिनको पात्रो र इतिहासबाट शेयर कार्ड",href:"/tools/janmadin-akhbar"},
-  {icon:"✉",title:"भविष्यको चिठी",desc:"छानिएको मिति वा तिथिमा खुल्ने निजी चिठी",href:"/tools/future-letter"},
-  {icon:"Bot",title:"पात्रो बोट",desc:"मिति, तिथि र पात्रोका छोटा प्रश्नको सहायक",href:"/tools/patro-bot"}
+  {title:"जन्मदिन अखबार",desc:"जन्मदिनको पात्रो र इतिहासबाट शेयर कार्ड",href:"/tools/janmadin-akhbar"},
+  {title:"भविष्यको चिठी",desc:"छानिएको मिति वा तिथिमा खुल्ने निजी चिठी",href:"/tools/future-letter"},
+  {title:"पात्रो बोट",desc:"मिति, तिथि र पात्रोका छोटा प्रश्नको सहायक",href:"/tools/patro-bot"}
  ]}
 ];
 export function ToolsPage(){
@@ -180,16 +181,16 @@ export function ToolsPage(){
   <header className="ap-page-title"><span className="ap-eyebrow">{l(language,"आफ्नै पात्रो · उपकरण","Aafnai Patro · Tools")}</span><h1>{l(language,"दैनिक कामका उपयोगी उपकरण","Useful tools for everyday life")}</h1><p>{l(language,"नेपाली पात्रो, समय, ज्योतिष, हिसाब र सामग्रीका उपयोगी सुविधा एकै ठाउँमा।","Calendar, time, Jyotish, calculations and creative utilities in one place.")}</p></header>
   <section className="ap-tool-section ap-pj-tool-hubs"><h2>{l(language,"पञ्चाङ्ग र विशेष गणक","Panchang and specialist tools")}</h2><div className="ap-tool-grid">{Object.entries(HUB_COPY).map(([href,item])=><a className="ap-tool-card ap-pj-hub-card" href={href} key={href}><span className="ap-tool-icon"><FeatureGlyph featureId={item.iconFeatureId} size="card" /></span><div><strong>{l(language,item.titleNe,item.titleEn)}</strong><small>{l(language,item.descriptionNe,item.descriptionEn)}</small></div><span aria-hidden="true">›</span></a>)}</div></section>
   <a className="ap-astro-feature" href="/tools/astro"><span className="ap-astro-orb" aria-hidden="true"/><span><strong>{l(language,"खगोलीय पात्रो","Astronomical calendar")}</strong><small>{l(language,"तिथि, चन्द्र अवस्था र आकाशीय घटनासहितको विस्तृत पात्रो","Detailed calendar with Tithi, Moon phases and sky events")}</small></span><b>{l(language,"खोल्नुहोस्","Open")} →</b></a>
-  {toolGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{l(language,group.name,HUB_GROUP_TITLE[group.name]||group.name)}</h2><div className="ap-tool-grid">{group.items.map(item=>{const translated=TOOL_EN[item.href];return <a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{language==="en"?(translated?.title||item.title):item.title}</strong><small>{language==="en"?(translated?.desc||item.desc):item.desc}</small></div><span aria-hidden="true">›</span></a>})}</div></section>)}
+  {toolGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{l(language,group.name,HUB_GROUP_TITLE[group.name]||group.name)}</h2><div className="ap-tool-grid">{group.items.map(item=>{const translated=TOOL_EN[item.href];const Icon=getToolIcon(item.href);return <a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon"><Icon size={21} strokeWidth={1.8} aria-hidden="true"/></span><div><strong>{language==="en"?(translated?.title||item.title):item.title}</strong><small>{language==="en"?(translated?.desc||item.desc):item.desc}</small></div><span aria-hidden="true">›</span></a>})}</div></section>)}
  </main>
 }
 
 const personalGroups:{name:string;items:Tool[]}[]=[
- {name:"लेखन",items:[{icon:"✎",title:"डायरी",desc:"निजी दैनिक लेख र सम्झना",href:"/me/diary"},{icon:"▤",title:"नोट",desc:"छोटो नोट र सूची",href:"/me/notes"},{icon:"✓",title:"योजना",desc:"काम र दिनको योजना",href:"/me/planner"}]},
- {name:"परिवार र सम्झना",items:[{icon:"परि",title:"परिवार",desc:"परिवारका मिति र साझा घटना",href:"/me/family"},{icon:"घ",title:"रिमाइन्डर",desc:"तिथि र मिति अनुसार सूचना",href:"/me/reminders"},{icon:"▣",title:"कार्ड",desc:"मिति र चाडपर्व शेयर कार्ड",href:"/me/cards"}]},
- {name:"सेटिङ",items:[{icon:"⚙",title:"सेटिङ",desc:"बिदा, भाषा र सूचना प्राथमिकता",href:"/me/settings"},{icon:"डेटा",title:"डेटा",desc:"व्यक्तिगत डेटा हेर्नुहोस्, निर्यात वा हटाउनुहोस्",href:"/me/data"}]}
+ {name:"लेखन",items:[{title:"डायरी",desc:"निजी दैनिक लेख र सम्झना",href:"/me/diary"},{title:"नोट",desc:"छोटो नोट र सूची",href:"/me/notes"},{title:"योजना",desc:"काम र दिनको योजना",href:"/me/planner"}]},
+ {name:"परिवार र सम्झना",items:[{title:"परिवार",desc:"परिवारका मिति र साझा घटना",href:"/me/family"},{title:"रिमाइन्डर",desc:"तिथि र मिति अनुसार सूचना",href:"/me/reminders"},{title:"कार्ड",desc:"मिति र चाडपर्व शेयर कार्ड",href:"/me/cards"}]},
+ {name:"सेटिङ",items:[{title:"सेटिङ",desc:"बिदा, भाषा र सूचना प्राथमिकता",href:"/me/settings"},{title:"डेटा",desc:"व्यक्तिगत डेटा हेर्नुहोस्, निर्यात वा हटाउनुहोस्",href:"/me/data"}]}
 ];
-export function MePage(){useEffect(()=>setPageTitle("आफ्नै ठाउँ"),[]);return <main className="ap-page ap-me-hub"><header className="ap-page-title"><span className="ap-eyebrow">आफ्नै ठाउँ</span><h1>तपाईंका निजी उपकरण</h1><p>लेखन, परिवार, सम्झना र सेटिङ एउटै सुरक्षित ठाउँमा।</p></header>{personalGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{group.name}</h2><div className="ap-tool-grid">{group.items.map(item=><a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{item.title}</strong><small>{item.desc}</small></div><span aria-hidden="true">›</span></a>)}</div></section>)}</main>}
+export function MePage(){useEffect(()=>setPageTitle("आफ्नै ठाउँ"),[]);return <main className="ap-page ap-me-hub"><header className="ap-page-title"><span className="ap-eyebrow">आफ्नै ठाउँ</span><h1>तपाईंका निजी उपकरण</h1><p>लेखन, परिवार, सम्झना र सेटिङ एउटै सुरक्षित ठाउँमा।</p></header>{personalGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{group.name}</h2><div className="ap-tool-grid">{group.items.map(item=>{const Icon=getToolIcon(item.href);return <a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon"><Icon size={21} strokeWidth={1.8} aria-hidden="true"/></span><div><strong>{item.title}</strong><small>{item.desc}</small></div><span aria-hidden="true">›</span></a>})}</div></section>)}</main>}
 
 export function RashifalPage(){const[data,setData]=useState<any>(null),[error,setError]=useState("");useEffect(()=>{setPageTitle("राशिफल");const c=new AbortController();getJson<any>(`/api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=${todayNepal()}`,c.signal).then(setData).catch(()=>setError("आजको राशिफल लोड हुन सकेन।"));return()=>c.abort()},[]);const readings=data?.readings||data?.items||[];return <main className="ap-page"><header className="ap-page-title"><span className="ap-eyebrow">ज्योतिष</span><h1>आजको राशिफल</h1><p>वैदिक प्रणालीमा आधारित दैनिक राशिफल</p></header>{error?<div className="ap-state ap-error">{error}</div>:!data?<div className="ap-state">राशिफल लोड हुँदैछ…</div>:readings.length?<div className="ap-rashi-grid">{readings.map((r:any,i:number)=><article className="ap-rashi-card" key={r?.sign?.id||r?.sign||i}><h2>{r?.sign?.name_ne||r?.sign_name_ne||r?.sign?.name||r?.sign||"राशि"}</h2><p>{r?.summary_ne||r?.summary||r?.text_ne||r?.text||r?.reading_ne||"आजको राशिफल उपलब्ध छ।"}</p></article>)}</div>:<div className="ap-state">आजको राशिफल प्रकाशन उपलब्ध छैन।</div>}</main>}
 
