@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, CircleAlert, Clock3, Fingerprint, Moon, Sparkles, X } from "lucide-react";
 import type { UiLanguage } from "../../i18n";
 import { l } from "../../useUiLanguage";
+import { choghadiyaWindows, type TemporalWindow } from "../../patro-tools/core/temporal-windows";
+import "./choghadiya-summary.css";
 import type { SavedJanmaPatroContext } from "./personal-time-engine";
 import "./personal-astrology-observatory.css";
 
@@ -17,6 +19,7 @@ type Props = {
   chandraHouse: number | null; luckyNumber: number | null; dashaLord: string | null;
   tatwa: string | null; nitya: string | null; windows: AstrologyWindow[];
   luckyTime: { start: string; end: string; score: number; confidence: string; activity: string; reasons: string[] } | null;
+  choghadiyaSource: { weekday: number; sunrise: string | null; sunset: string | null; nextSunrise: string | null } | null;
   onEdit: () => void;
 };
 function clock(value: string, timezone: string, language: UiLanguage) {
@@ -30,6 +33,33 @@ function Wave({ active, label }: { active: boolean; label: string }) {
     <path d="M0 55 C24 55 24 24 48 24 S72 80 96 80 S120 31 144 31 S168 68 192 68 S216 18 240 18 S264 76 288 76 S312 39 336 39 S360 61 384 61 S408 45 420 45" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
   </svg>;
 }
+
+const CHOGHADIYA_TYPES = [
+  { ne: "अमृत", en: "Amrit", lordNe: "चन्द्र", lordEn: "Moon", tone: "good", hintNe: "उत्तम शुभ", hintEn: "Highly favorable" },
+  { ne: "शुभ", en: "Shubh", lordNe: "बृहस्पति", lordEn: "Jupiter", tone: "good", hintNe: "शुभ · वृद्धि", hintEn: "Growth · auspicious" },
+  { ne: "लाभ", en: "Labh", lordNe: "बुध", lordEn: "Mercury", tone: "good", hintNe: "लाभ · व्यापार", hintEn: "Gain · commerce" },
+  { ne: "चल", en: "Char", lordNe: "शुक्र", lordEn: "Venus", tone: "neutral", hintNe: "यात्रा · चलायमान", hintEn: "Travel · movement" },
+  { ne: "रोग", en: "Rog", lordNe: "मङ्गल", lordEn: "Mars", tone: "caution", hintNe: "विवाद · अवरोध", hintEn: "Conflict · obstacles" },
+  { ne: "काल", en: "Kaal", lordNe: "शनि", lordEn: "Saturn", tone: "caution", hintNe: "ढिलाइ · बाधा", hintEn: "Delays · barriers" },
+  { ne: "उद्वेग", en: "Udveg", lordNe: "सूर्य", lordEn: "Sun", tone: "caution", hintNe: "चिन्ता · प्रशासन", hintEn: "Stress · administration" }
+] as const;
+function SevenChoghadiyaSummary({ source, timezone, language }: { source: Props["choghadiyaSource"]; timezone: string; language: UiLanguage }) {
+  const spans = source ? choghadiyaWindows(source.weekday, source.sunrise, source.sunset, source.nextSunrise) : { day: [], night: [] };
+  const windows = [...spans.day, ...spans.night];
+  const display = (w: TemporalWindow) => clock(w.start_utc, timezone, language) + "–" + clock(w.end_utc, timezone, language);
+  return <section className="mt-seven" aria-labelledby="mt-seven-title">
+    <div className="mt-seven-heading"><h3 id="mt-seven-title">{l(language,"सात चौघडिया · दिन र रात","Seven Choghadiya · day & night")}</h3><small>{l(language,"चयन गरिएको स्थानको वास्तविक सूर्योदयदेखि अर्को सूर्योदयसम्म","Actual local sunrise to next sunrise")}</small></div>
+    {windows.length ? <div className="mt-seven-rows">{CHOGHADIYA_TYPES.map(type => {
+      const matches = windows.filter(w => w.name_ne === type.ne);
+      return <div className={"mt-seven-row is-" + type.tone} key={type.en}>
+        <span className="mt-seven-name"><strong>{l(language,type.ne,type.en)}</strong><small>{l(language,type.lordNe,type.lordEn)} · {l(language,type.hintNe,type.hintEn)}</small></span>
+        <span className="mt-seven-times">{matches.length ? matches.map(w => <span key={w.key} title={w.key.startsWith("day") ? l(language,"दिन","Day") : l(language,"रात","Night")}><b>{w.key.startsWith("day") ? l(language,"दिन","Day") : l(language,"रात","Night")}</b> {display(w)}</span>) : "—"}</span>
+      </div>;
+    })}</div> : <p className="mt-astro-empty">{l(language,"सूर्योदय, सूर्यास्त र भोलिको सूर्योदय उपलब्ध भएपछि सात समयखण्ड देखाइन्छन्।","Seven timing rows require sunrise, sunset and next sunrise for the selected location.")}</p>}
+    <small className="mt-seven-note">{l(language,"परम्परागत चौघडिया वर्गीकरण हो, व्यक्तिगत शुभ समयको स्कोर होइन। रातका खण्ड अर्को स्थानीय मितिसम्म जान सक्छन्।","Traditional Choghadiya categories, not personalized lucky-time scores. Night windows may extend into the next local date.")}</small>
+  </section>;
+}
+
 export default function PersonalAstrologyObservatory(p: Props) {
   const { language: lang, birth, now, timezone } = p;
   const [profileOpen, setProfileOpen] = useState(false);
@@ -52,6 +82,7 @@ export default function PersonalAstrologyObservatory(p: Props) {
       </div>
       <button className="mt-astro-profile-trigger" type="button" ref={openerRef} onClick={() => setProfileOpen(true)} aria-haspopup="dialog" aria-expanded={profileOpen}><Fingerprint size={18}/>{available ? (birth?.birth?.name || l(lang,"मेरो जन्म विवरण","My birth profile")) : l(lang,"जन्म विवरण जोड्नुहोस्","Connect birth profile")}<ArrowUpRight size={15}/></button>
     </header>
+    <SevenChoghadiyaSummary source={p.choghadiyaSource} timezone={timezone} language={lang}/>
     <div className="mt-astro-status" role="status"><span className={"mt-astro-dot"+(available?" is-connected":"")}/>{available?l(lang,"जन्मपत्रो जोडिएको छ","Janmapatro connected"):l(lang,"सामान्य दृश्य · जन्म विवरण आवश्यक","General view · birth profile needed")}<span>{p.selectedDate} · {currentDay}</span></div>
     {available && birth?.birth && <div className="mt-astro-profile-evidence" role="note" aria-label={l(lang,"गणनामा प्रयोग गरिएको सुरक्षित जन्म विवरण","Saved birth profile used for calculations")}>
       <span>{l(lang,"सक्रिय जन्म विवरण","APPLIED BIRTH PROFILE")}</span>
