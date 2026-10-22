@@ -12,6 +12,7 @@
 .ap-pj-experience-orbit--inner{height:min(67%,130px);border-style:dashed;opacity:.8;transform:rotate(32deg) scaleX(.87)}
 .ap-pj-experience-orbit--outer::before{content:"";position:absolute;width:12px;height:12px;background:var(--pj-warm);border-radius:50%;top:17px;left:20px;box-shadow:0 0 0 5px color-mix(in srgb,var(--pj-warm) 15%,transparent)}
 .ap-pj-experience-orbit--center{display:grid;place-items:center;width:76px;height:76px;z-index:1;border:1px solid color-mix(in srgb,var(--pj-accent) 30%,transparent);background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.7),rgba(211,174,110,.2));color:var(--pj-accent);font-size:2.8rem;box-shadow:0 10px 30px rgba(35,65,42,.08)}
+.ap-pj-experience-glyph{display:block;width:44px;height:44px;color:inherit;stroke:currentColor;fill:none;overflow:visible;transform-origin:center}
 .ap-pj-experience-dot{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--pj-accent)}.ap-pj-experience-dot--one{top:18px;right:10px}.ap-pj-experience-dot--two{bottom:15px;left:11px;background:var(--pj-warm)}
 .ap-pj-experience-intro{min-width:0}.ap-pj-experience-topline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--pj-accent);font-size:.72rem;font-weight:850;letter-spacing:.035em}
 .ap-pj-experience-topline span{border:1px solid color-mix(in srgb,var(--pj-accent) 21%,transparent);border-radius:999px;padding:5px 10px;background:color-mix(in srgb,var(--pj-accent) 6%,transparent)}
@@ -33,8 +34,8 @@
 .ap-pj-experience-next a{display:inline-flex;gap:8px;align-items:center;color:inherit;text-decoration:none;font-size:.81rem;font-weight:800;padding:8px 11px;border-radius:11px;border:1px solid rgba(127,127,127,.2);background:color-mix(in srgb,currentColor 2%,transparent)}
 .ap-pj-experience-next a:hover{border-color:var(--pj-accent)}.ap-pj-experience-next a span{color:var(--pj-accent)}
 .ap-pj-calculator{scroll-margin-top:24px}
-@media(max-width:680px){.ap-pj-experience-top{grid-template-columns:90px minmax(0,1fr);align-items:start;gap:11px}.ap-pj-experience-art{height:115px}.ap-pj-experience-orbit--center{width:50px;height:50px;font-size:1.9rem}.ap-pj-experience-topline{gap:5px}.ap-pj-experience-topline span{padding:4px 7px;font-size:.67rem}.ap-pj-experience-kicker{margin-top:9px!important}.ap-pj-experience-intro h3{font-size:1.24rem}.ap-pj-experience-intro>p:not(.ap-pj-experience-kicker){font-size:.85rem}.ap-pj-experience-bottom{grid-template-columns:1fr}.ap-pj-experience-journey,.ap-pj-experience-trust{padding:13px}}
-@media(max-width:400px){.ap-pj-experience-top{grid-template-columns:1fr}.ap-pj-experience-art{height:80px;max-width:150px;justify-self:center}.ap-pj-experience-orbit--outer{height:79px}.ap-pj-experience-orbit--inner{height:58px}.ap-pj-experience-orbit--center{width:42px;height:42px;font-size:1.6rem}}
+@media(max-width:680px){.ap-pj-experience-top{grid-template-columns:90px minmax(0,1fr);align-items:start;gap:11px}.ap-pj-experience-art{height:115px}.ap-pj-experience-orbit--center{width:50px;height:50px;font-size:1.9rem}.ap-pj-experience-glyph{width:30px;height:30px}.ap-pj-experience-topline{gap:5px}.ap-pj-experience-topline span{padding:4px 7px;font-size:.67rem}.ap-pj-experience-kicker{margin-top:9px!important}.ap-pj-experience-intro h3{font-size:1.24rem}.ap-pj-experience-intro>p:not(.ap-pj-experience-kicker){font-size:.85rem}.ap-pj-experience-bottom{grid-template-columns:1fr}.ap-pj-experience-journey,.ap-pj-experience-trust{padding:13px}}
+@media(max-width:400px){.ap-pj-experience-top{grid-template-columns:1fr}.ap-pj-experience-art{height:80px;max-width:150px;justify-self:center}.ap-pj-experience-orbit--outer{height:79px}.ap-pj-experience-orbit--inner{height:58px}.ap-pj-experience-orbit--center{width:42px;height:42px;font-size:1.6rem}.ap-pj-experience-glyph{width:25px;height:25px}}
 @media(prefers-reduced-motion:reduce){.ap-pj-experience *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 /* Group-specific visual storytelling. These are authored HTML/CSS shapes, not remote media or claims of live sky data. */
@@ -49,7 +50,7 @@
 .ap-pj-experience--jyotish .ap-pj-experience-orbit--inner{transform:rotate(67deg) scaleX(.68)}
 .ap-pj-experience--jyotish .ap-pj-experience-orbit--center{border-radius:15px;transform:rotate(45deg);background:linear-gradient(140deg,#e0d5f8,#ab99ce)}
 .ap-pj-experience--jyotish .ap-pj-experience-orbit--center{font-size:0}
-.ap-pj-experience--jyotish .ap-pj-experience-orbit--center::after{content:"✧";transform:rotate(-45deg);font-size:2.8rem;color:#4d3877}
+.ap-pj-experience--jyotish .ap-pj-experience-glyph{transform:rotate(-45deg)}
 .ap-pj-experience--planets .ap-pj-experience-orbit--outer{transform:rotate(43deg) scaleX(.48);border-width:2px}
 .ap-pj-experience--planets .ap-pj-experience-orbit--inner{transform:rotate(-43deg) scaleX(.5)}
 .ap-pj-experience--planets .ap-pj-experience-orbit--center{border-radius:50%;background:radial-gradient(circle at 32% 23%,#d8ecf4,#75aac7 55%,#336481);color:#163d54}
