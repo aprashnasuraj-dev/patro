@@ -1,4 +1,12 @@
 .ap-pjw-root{display:grid;gap:16px;min-width:0}
+
+/* Consistent local SVG pictograms beside the actual data, not just in directory cards. */
+.ap-pjw-icon-label{display:inline-flex;align-items:center;gap:7px;min-width:0}
+.ap-pjw-icon-label .ap-pj-icon{display:inline-block;width:18px;height:18px;flex:0 0 18px;overflow:visible;color:var(--ap-pjw-icon-color,#247344);stroke:currentColor;fill:none}
+.ap-pjw-date-heading .ap-pjw-icon-label .ap-pj-icon{width:19px;height:19px;flex-basis:19px}
+.ap-pjw-boundaries .ap-pjw-icon-label{font-size:.84rem;font-weight:750}
+.ap-pjw-ribbon-lane .ap-pjw-icon-label .ap-pj-icon{color:var(--ap-pjw-icon-color,#9b7940)}
+.ap-pjw-icon-label .ap-pj-icon[aria-hidden="true"]{pointer-events:none}
 .ap-pjw-datebar{display:flex;flex-wrap:wrap;align-items:end;gap:9px;padding:12px;border:1px solid rgba(127,127,127,.17);border-radius:16px;background:color-mix(in srgb,currentColor 2%,transparent)}
 .ap-pjw-datebar label{display:grid;gap:6px;flex:1 1 210px;font-size:.84rem;font-weight:800}
 .ap-pjw-datebar input,.ap-pjw-select,.ap-pjw-textinput{min-height:43px;max-width:100%;padding:9px 11px;border:1px solid rgba(127,127,127,.28);border-radius:11px;background:color-mix(in srgb,currentColor 3%,transparent);color:inherit;font:inherit}
