@@ -96,7 +96,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
       </nav>
 
       <section className="ap-pj-hero">
-        <div className="ap-pj-orb" aria-hidden="true">{group.icon}</div>
+        <div className="ap-pj-orb" aria-hidden="true"><FeatureGlyph featureId={group.iconFeatureId} size="hero" /></div>
         <div className="ap-pj-hero-copy">
           <p className="ap-pj-eyebrow">{l(language, "आफ्नै पात्रो · उपयोगी गणक", "Aafnai Patro · Useful calculators")}</p>
           <h1>{l(language, group.titleNe, group.titleEn)}</h1>
@@ -125,7 +125,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
           {showWorkspace ? <WorkspaceErrorBoundary language={language} resetKey={groupId + ":" + (activeFeature ?? "overview")}><Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
             <Workspace language={language} selectedFeatureId={activeFeature} />
           </Suspense></WorkspaceErrorBoundary> : <div className="ap-pj-launch-panel">
-            <span aria-hidden="true" className="ap-pj-launch-emblem">{group.icon}</span>
+            <span aria-hidden="true" className="ap-pj-launch-emblem"><FeatureGlyph featureId={group.iconFeatureId} size="card" /></span>
             <div><h3>{selectedAvailability === "existing" ? l(language, "पहिलेकै उपकरण सुरक्षित छ", "Your existing tool is preserved") : selectedAvailability === "reference" ? l(language, "स्रोतमा आधारित जानकारी", "Source-based reference") : l(language, "आफ्नो गणक सुरु गर्नुहोस्", "Start your calculator")}</h3>
             <p>{selectedAvailability === "existing" ? l(language, "सम्बन्धित मूल पेजमा जाँदा पुरानै कार्यप्रणाली प्रयोग हुन्छ।", "The original destination retains its own functionality.") : selectedAvailability === "reference" ? l(language, "नियम वा स्रोत पुष्टि नहुँदा निश्चित व्यक्तिगत वा पर्व-सम्बन्धी गणना यहाँ देखाइँदैन।", "Definitive personal or observance results remain unavailable until the relevant rules or sources are verified.") : l(language, "उपकरण खोलेपछि मात्र आवश्यक गणना कोड डाउनलोड र चल्छ।", "Calculation code is downloaded and executed only after you open the tool.")}</p></div>
             {selectedAvailability === "existing" && selected ? <a className="ap-pjw-primary" href={selected.href}>{l(language, "मूल उपकरण खोल्नुहोस्", "Open original tool")} ↗</a> : selectedAvailability === "reference" ? <a className="ap-pjw-secondary" href="/sources">{l(language, "स्रोतहरू हेर्नुहोस्", "View sources")} ↗</a> : <button type="button" className="ap-pjw-primary" onClick={() => setWorkspaceRequested(true)}>{l(language, "गणक खोल्नुहोस्", "Open calculator")} →</button>}
@@ -143,7 +143,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
           <div className="ap-pj-count">{matches.length} / {features.length}</div>
         </div>
         <label className="ap-pj-search">
-          <span aria-hidden="true">⌕</span>
+          <span aria-hidden="true" className="ap-pj-search-glyph"><FeatureGlyph featureId={group.iconFeatureId} symbol="search" size="inline" /></span>
           <span className="ap-pj-sr-only">{l(language, "सुविधा खोज्नुहोस्", "Search features")}</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={l(language, "तिथि, नक्षत्र, साइत, ग्रह… खोज्नुहोस्", "Search Tithi, Nakshatra, Muhurat, planets…")} />
           {query && <button type="button" onClick={() => setQuery("")} aria-label={l(language, "खोज हटाउनुहोस्", "Clear search")}>×</button>}
@@ -175,7 +175,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
       <section className="ap-pj-related">
         <h2>{l(language, "आफ्नै पात्रोका अन्य सुविधा", "More from Aafnai Patro")}</h2>
         <div>
-          {FEATURE_GROUPS.filter((item) => item.id !== groupId).map((item) => <a href={item.href} key={item.id}><span>{item.icon}</span><strong>{l(language, item.titleNe, item.titleEn)}</strong><small>{l(language, item.descriptionNe, item.descriptionEn)}</small></a>)}
+          {FEATURE_GROUPS.filter((item) => item.id !== groupId).map((item) => <a href={item.href} key={item.id}><span aria-hidden="true"><FeatureGlyph featureId={item.iconFeatureId} size="card" /></span><strong>{l(language, item.titleNe, item.titleEn)}</strong><small>{l(language, item.descriptionNe, item.descriptionEn)}</small></a>)}
         </div>
       </section>
     </main>
