@@ -146,7 +146,7 @@ function candidateChartAt(instant: Date, preferences: Preferences): PersonalChar
     const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
     const date = values.year + "-" + values.month + "-" + values.day;
     const time = values.hour + ":" + values.minute;
-    if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(date) || !/^\\d{2}:\\d{2}$/.test(time)) return null;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) return null;
     const chart = calculateChart({
       name: "My Time candidate", date, time,
       location: preferences.label || "Selected observation place",
