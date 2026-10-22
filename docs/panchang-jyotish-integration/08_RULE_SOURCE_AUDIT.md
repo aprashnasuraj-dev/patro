@@ -53,7 +53,7 @@ The release registry now uses the explicit `source-review` disposition for 26 en
 
 ## Completed source-level validation (not release approval)
 
-- F021: the browser computes continuous candidate windows for the one-based Panchak membership 23–27, with 6-hour brackets and bisection-refined boundaries. It is explicitly `candidate-unverified`, not an official Muhurat or ritual prohibition. Independently compare starts/ends with published Nepal-local fixtures before any promotion.
+- F021: the browser computes a continuous candidate interval from sidereal lunar longitude 300° to 360° (Dhanishtha Pada 3 through the end of Revati), using 6-hour brackets and bisection-refined boundaries. It is explicitly `candidate-unverified`, not an official Muhurat or ritual prohibition. Independently compare starts/ends with published Nepal-local fixtures before any promotion.
 - F022: the browser computes continuous candidate windows for Nakshatras 1, 9, 10, 18, 19 and 27. Broad Ganda Moola remains separate from narrow Gandanta and no natal consequence is inferred. Independent regional-source and boundary review is still mandatory.
 - F064 and F065: Sunday/Thursday + Pushya 8 membership recorded. Pure helper uses civil weekday **only as a candidate input**; the live yoga must calculate sunrise-to-sunrise Vara, intersection with Nakshatra intervals and local Nepal date. F064 has a Nepal-specific published comparison source.
 - F068: source confirms Dwadashi and Hari Vasara constraints, but final Parana requires fasting-date decision, first quarter of Dwadashi, sunrise and sect-specific exceptions; it remains gated.
