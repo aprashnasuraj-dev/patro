@@ -91,6 +91,8 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   try { const timing = placeTiming(date, location); if (timing.polarFallback) sourceStatus = "polar-noon-fallback"; else daily = timing; }
   catch { sourceStatus = "provider-error-fallback"; }
   const panchang = daily || panchangAt(evaluatedAt);
+  let previousDay: ReturnType<typeof placeTiming> | null = null;
+  if (daily) { try { const timing = placeTiming(addIsoDays(date,-1),location); previousDay = timing.polarFallback ? null : timing; } catch { previousDay = null; } }
   let nextDay: ReturnType<typeof placeTiming> | null = null;
   if (daily) { try { const timing = placeTiming(addIsoDays(date, 1), location); nextDay = timing.polarFallback ? null : timing; } catch { nextDay = null; } }
   const sunLongitude = normalizeLongitude(Astronomy.SunPosition(evaluatedAt).elon);
@@ -149,6 +151,8 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
       moon_rashi_ne: RASHIS[panchang.moonRashi],
       sun_rashi_index: panchang.sunRashi,
       sun_rashi_ne: RASHIS[panchang.sunRashi],
+      previous_sunrise_utc: previousDay?.sunrise.toISOString() ?? null,
+      previous_sunset_utc: previousDay?.sunset.toISOString() ?? null,
       sunrise_utc: daily?.sunrise.toISOString() ?? null,
       sunset_utc: daily?.sunset.toISOString() ?? null,
       next_sunrise_utc: nextDay?.sunrise.toISOString() ?? null,
