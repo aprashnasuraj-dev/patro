@@ -138,7 +138,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
   return <div className="ap-pjw-root">
     <div className="ap-pjw-datebar">
       <label>
-        <span>{l(language, "मिति छान्नुहोस्", "Choose date")}</span>
+        <span className="ap-pjw-icon-label"><FeatureGlyph featureId="F001" symbol="calendar" size="inline" />{l(language, "मिति छान्नुहोस्", "Choose date")}</span>
         <input type="date" value={date} max="2100-12-31" min="1900-01-01" onChange={(event) => { setDate(event.target.value); }} />
       </label>
       <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(todayInNepal()); }}>{l(language, "आज", "Today")}</button>
@@ -184,8 +184,8 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
           : ruleWindowState === "ready" ? <div className="ap-pjw-event-table-wrap"><table className="ap-pjw-event-table">
             <thead><tr><th>{l(language, "नक्षत्र प्रवेश", "Entry Nakshatra")}</th><th>{l(language, "नक्षत्र अन्त्य", "Last Nakshatra")}</th><th>{l(language, "सुरु (NPT)", "Starts (NPT)")}</th><th>{l(language, "समाप्ति (NPT)", "Ends (NPT)")}</th></tr></thead>
             <tbody>{ruleWindows.map((item,index)=><tr key={item.start.toISOString()+index}>
-              <td>{l(language, NAKSHATRAS[item.entryNakshatra-1] ?? "—", NAKSHATRA_EN[item.entryNakshatra-1] ?? "—")}</td>
-              <td>{l(language, NAKSHATRAS[item.lastNakshatra-1] ?? "—", NAKSHATRA_EN[item.lastNakshatra-1] ?? "—")}</td>
+              <td><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F004" symbol="nakshatra" size="inline"/>{l(language, NAKSHATRAS[item.entryNakshatra-1] ?? "—", NAKSHATRA_EN[item.entryNakshatra-1] ?? "—")}</span></td>
+              <td><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F004" symbol="nakshatra" size="inline"/>{l(language, NAKSHATRAS[item.lastNakshatra-1] ?? "—", NAKSHATRA_EN[item.lastNakshatra-1] ?? "—")}</span></td>
               <td>{new Intl.DateTimeFormat(language === "ne" ? "ne-NP-u-nu-deva" : "en-GB", {timeZone:"Asia/Kathmandu",dateStyle:"medium",timeStyle:"short",hourCycle:"h23"}).format(item.start)}</td>
               <td>{new Intl.DateTimeFormat(language === "ne" ? "ne-NP-u-nu-deva" : "en-GB", {timeZone:"Asia/Kathmandu",dateStyle:"medium",timeStyle:"short",hourCycle:"h23"}).format(item.end)}</td>
             </tr>)}</tbody>
@@ -197,18 +197,18 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       {selectedFeatureId === "F010" && tithiPattern && <section className="ap-pjw-card">
         <div className="ap-pjw-subhead"><h3>{l(language, "सूर्योदय र तिथिको निरन्तरता", "Tithi across successive sunrises")}</h3><small>{l(language, "स्थानीय गणनात्मक सङ्केत", "Local calculated indication")}</small></div>
         <div className="ap-pjw-stats">
-          <article><span>{l(language, "अघिल्लो सूर्योदय", "Previous sunrise")}</span><strong>{l(language, tithiName(tithiPattern.previous), TITHI_EN[tithiPattern.previous - 1])}</strong></article>
-          <article><span>{l(language, "यस सूर्योदय", "Today's sunrise")}</span><strong>{l(language, tithiName(tithiPattern.current), TITHI_EN[tithiPattern.current - 1])}</strong></article>
-          <article><span>{l(language, "अर्को सूर्योदय", "Next sunrise")}</span><strong>{l(language, tithiName(tithiPattern.next), TITHI_EN[tithiPattern.next - 1])}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunrise" size="inline"/>{l(language, "अघिल्लो सूर्योदय", "Previous sunrise")}</span><strong>{l(language, tithiName(tithiPattern.previous), TITHI_EN[tithiPattern.previous - 1])}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunrise" size="inline"/>{l(language, "यस सूर्योदय", "Today's sunrise")}</span><strong>{l(language, tithiName(tithiPattern.current), TITHI_EN[tithiPattern.current - 1])}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunrise" size="inline"/>{l(language, "अर्को सूर्योदय", "Next sunrise")}</span><strong>{l(language, tithiName(tithiPattern.next), TITHI_EN[tithiPattern.next - 1])}</strong></article>
         </div>
         <p className="ap-pjw-method">{tithiPattern.entering.status === "vriddhi" ? l(language, "अघिल्लो र आजको सूर्योदयमा एउटै तिथि: वृद्धि तिथिको सम्भावित सङ्केत।", "The same Tithi occurs at yesterday's and today's sunrise: a possible Vriddhi Tithi indication.") : tithiPattern.entering.status === "kshaya" ? l(language, "दुई सूर्योदयबीच एउटा तिथि छुटेको गणनात्मक सङ्केत।", "The calculated sunrise sequence indicates one Tithi skipped between the two sunrises.") : l(language, "यस सूर्योदयमा तिथि सामान्य क्रमले अगाडि बढेको छ।", "The Tithi advances normally at this sunrise.")} {l(language, "व्रत वा पर्व निर्णयका लागि प्रचलित अनुष्ठान-समय र प्रकाशित पात्रो अलग जाँच्नुपर्छ।", "Festival and fasting decisions still require the applicable observance window and published Panchang.")}</p>
       </section>}
       <section className="ap-pjw-card">
-        <div className="ap-pjw-subhead"><h3>{l(language, "चन्द्र महिनाको प्रणाली", "Lunar month convention")}</h3><small>{l(language, "नेपालमा प्रचलित पूर्णिमान्त नामकरण", "Purnimanta naming used in Nepal")}</small></div>
+        <div className="ap-pjw-subhead"><h3 className="ap-pjw-icon-label"><FeatureGlyph featureId="F008" symbol="lunar-calendar" size="inline"/>{l(language, "चन्द्र महिनाको प्रणाली", "Lunar month convention")}</h3><small>{l(language, "नेपालमा प्रचलित पूर्णिमान्त नामकरण", "Purnimanta naming used in Nepal")}</small></div>
         <div className="ap-pjw-stats">
-          <article><span>{l(language, "अमान्त महिना", "Amanta month")}</span><strong>{l(language, LUNAR_MONTHS[p.lunarMonth.amantaIndex], LUNAR_MONTHS_ROMAN[p.lunarMonth.amantaIndex])}</strong></article>
-          <article><span>{l(language, "पूर्णिमान्त महिना", "Purnimanta month")}</span><strong>{l(language, LUNAR_MONTHS[p.monthIndex], LUNAR_MONTHS_ROMAN[p.monthIndex])}</strong></article>
-          <article><span>{l(language, "महिनाको विशेष अवस्था", "Special month state")}</span><strong>{p.lunarMonth.adhik ? l(language, "अधिक मास", "Adhika Masa") : p.lunarMonth.kshaya ? l(language, "क्षय मास", "Kshaya Masa") : l(language, "सामान्य चन्द्र महिना", "Ordinary lunar month")}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F008" symbol="lunar-calendar" size="inline"/>{l(language, "अमान्त महिना", "Amanta month")}</span><strong>{l(language, LUNAR_MONTHS[p.lunarMonth.amantaIndex], LUNAR_MONTHS_ROMAN[p.lunarMonth.amantaIndex])}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F008" symbol="lunar-calendar" size="inline"/>{l(language, "पूर्णिमान्त महिना", "Purnimanta month")}</span><strong>{l(language, LUNAR_MONTHS[p.monthIndex], LUNAR_MONTHS_ROMAN[p.monthIndex])}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F009" symbol="calendar-cycle" size="inline"/>{l(language, "महिनाको विशेष अवस्था", "Special month state")}</span><strong>{p.lunarMonth.adhik ? l(language, "अधिक मास", "Adhika Masa") : p.lunarMonth.kshaya ? l(language, "क्षय मास", "Kshaya Masa") : l(language, "सामान्य चन्द्र महिना", "Ordinary lunar month")}</strong></article>
         </div>
         <p className="ap-pjw-section-note">{l(language, "यी गणनात्मक महिना-नाम तथा विशेष अवस्था स्थानीय प्रकाशित पात्रोको समीक्षा बिना आधिकारिक पर्व-मिति होइनन्।", "These calculated lunar-month names and special states are not official festival dates without review against the local published calendar.")}</p>
       </section>
@@ -242,9 +242,9 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       <section className="ap-pjw-card">
         <div className="ap-pjw-subhead"><h3>{l(language, "विशेष परम्परागत सङ्केत", "Traditional indicators")}</h3><small>{l(language, "व्याख्या परम्पराअनुसार फरक हुन सक्छ", "Interpretations can vary by tradition")}</small></div>
         <div className="ap-pjw-indicator-grid">
-          <article className={panchak ? "is-flagged" : ""}><span>{l(language, "पञ्चक", "Panchak")}</span><strong>{panchak ? l(language, "चलिरहेको हुन सक्छ", "May be active") : l(language, "यस सूर्योदयमा देखिएन", "Not indicated at this sunrise")}</strong><small>{l(language, "नक्षत्र र पादबाट प्राथमिक सङ्केत", "Preliminary indication from Nakshatra and Pada")}</small></article>
-          <article className={gandaMoola ? "is-flagged" : ""}><span>{l(language, "गण्डमूल", "Ganda Moola")}</span><strong>{gandaMoola ? l(language, "गण्डमूल नक्षत्र", "Ganda Moola Nakshatra") : l(language, "यस सूर्योदयमा देखिएन", "Not indicated at this sunrise")}</strong><small>{l(language, "परम्परागत नक्षत्र वर्गीकरण", "Traditional Nakshatra classification")}</small></article>
-          <article className={vishti ? "is-flagged" : ""}><span>{l(language, "विष्टि / भद्रा", "Vishti / Bhadra")}</span><strong>{vishti ? l(language, "विष्टि करण", "Vishti Karana") : l(language, "यस सूर्योदयमा छैन", "Not present at this sunrise")}</strong><small>{l(language, "करण गणनामा आधारित", "Based on calculated Karana")}</small></article>
+          <article className={panchak ? "is-flagged" : ""}><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F021" symbol="nakshatra" size="inline"/>{l(language, "पञ्चक", "Panchak")}</span><strong>{panchak ? l(language, "चलिरहेको हुन सक्छ", "May be active") : l(language, "यस सूर्योदयमा देखिएन", "Not indicated at this sunrise")}</strong><small>{l(language, "नक्षत्र र पादबाट प्राथमिक सङ्केत", "Preliminary indication from Nakshatra and Pada")}</small></article>
+          <article className={gandaMoola ? "is-flagged" : ""}><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F022" symbol="gandamoola" size="inline"/>{l(language, "गण्डमूल", "Ganda Moola")}</span><strong>{gandaMoola ? l(language, "गण्डमूल नक्षत्र", "Ganda Moola Nakshatra") : l(language, "यस सूर्योदयमा देखिएन", "Not indicated at this sunrise")}</strong><small>{l(language, "परम्परागत नक्षत्र वर्गीकरण", "Traditional Nakshatra classification")}</small></article>
+          <article className={vishti ? "is-flagged" : ""}><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F023" symbol="karana" size="inline"/>{l(language, "विष्टि / भद्रा", "Vishti / Bhadra")}</span><strong>{vishti ? l(language, "विष्टि करण", "Vishti Karana") : l(language, "यस सूर्योदयमा छैन", "Not present at this sunrise")}</strong><small>{l(language, "करण गणनामा आधारित", "Based on calculated Karana")}</small></article>
         </div>
       </section>
 
