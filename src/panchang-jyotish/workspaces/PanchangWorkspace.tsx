@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../patro-tools/core/names";
+import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, LUNAR_MONTHS, LUNAR_MONTHS_ROMAN, tithiName, toNepaliDigits } from "../../patro-tools/core/names";
 import { panchangAt, sunSidereal } from "../../patro-tools/core/astro";
 import { l } from "../../useUiLanguage";
 import { getFeatureById } from "../catalog";
 import { fromCalculatedDay, type PanchangDayContractV1 } from "../contract";
 import { resolveNepalPanchangDay } from "../archive-adapter";
 import { KATHMANDU } from "../../patro-tools/core/types";
-import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, nextFieldTransition, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
+import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
@@ -48,8 +48,7 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     const queryDate = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("date") : null;
     return queryDate && validIsoDate(queryDate) ? queryDate : todayInNepal();
   });
-  const [showMore, setShowMore] = useState(false);
-  const [error, setError] = useState("");
+  const [clockMode, setClockMode] = useState<PanchangClockMode>("24h");
   const [resolved, setResolved] = useState<{ date: string; value: PanchangDayContractV1; archive: "loaded" | "unavailable" } | null>(null);
   useEffect(() => { const controller = new AbortController(); setResolved(null); resolveNepalPanchangDay(date, controller.signal).then(result => { if (!controller.signal.aborted) setResolved({ date, value: result.value, archive: result.archive }); }).catch(() => {}); return () => controller.abort(); }, [date]);
   const computed = useMemo(() => {
@@ -90,18 +89,17 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
     <div className="ap-pjw-datebar">
       <label>
         <span>{l(language, "मिति छान्नुहोस्", "Choose date")}</span>
-        <input type="date" value={date} max="2100-12-31" min="1900-01-01" onChange={(event) => { setDate(event.target.value); setError(""); }} />
+        <input type="date" value={date} max="2100-12-31" min="1900-01-01" onChange={(event) => { setDate(event.target.value); }} />
       </label>
       <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(todayInNepal()); setError(""); }}>{l(language, "आज", "Today")}</button>
       <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, -1)); setError(""); }} aria-label={l(language, "अघिल्लो दिन", "Previous day")}>‹</button>
       <button type="button" className="ap-pjw-secondary" onClick={() => { setDate(addIsoDays(date, 1)); setError(""); }} aria-label={l(language, "अर्को दिन", "Next day")}>›</button>
     </div>
-    {error && <p className="ap-pjw-error" role="alert">{error}</p>}
     {!computed || !p || !at || !windows ? <div className="ap-pjw-empty">{l(language, "यो मितिका लागि स्थानीय सूर्योदय उपलब्ध छैन। फरक मिति वा स्थान छान्नुहोस्।", "Local sunrise is unavailable for this date. Choose another date or location.")}</div> : <>
       <p className="ap-pjw-method" role="status">{archiveLoaded ? l(language, "मौजुदा पात्रो अभिलेख उपलब्ध छ। अभिलेखमा नभएका समयहरू अलग गणनात्मक अनुमान हुन्।", "Existing calendar archive loaded. Times not supplied by the archive remain separately calculated estimates.") : l(language, "यो दृश्य स्थानीय गणनाबाट बनेको हो; अभिलेख लोड नभएसम्म प्रकाशित मिति वा समयको आधिकारिक पुष्टि मान्नु हुँदैन।", "This view is calculated locally. Do not treat dates or times as officially verified while the archive is unavailable or loading.")}</p>
       <div className="ap-pjw-date-heading">
         <div><span>{l(language, "नेपालको स्थानीय मिति", "Nepal local date")}</span><h3>{localDateLabel(date, language)}</h3></div>
-        <div className="ap-pjw-meta"><strong>{l(language, "वि.सं. / नेपाल संवत्", "BS / Nepal Sambat")}</strong><small>{l(language, "तिथि गणना: सूर्योदय", "Daily Panchang anchor: sunrise")}</small></div>
+        <div className="ap-pjw-meta"><strong>{contract?.calendars.bs ? l(language, "वि.सं. " + toNepaliDigits(contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day), "BS " + contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day) : l(language, "वि.सं. अभिलेख खुल्दैछ", "BS archive loading")}</strong><small>{contract?.calendars.nepalSambat ?? l(language, "नेपाल संवत्: अभिलेखमा उपलब्ध भएमा", "Nepal Sambat: when available in archive")}</small></div>
       </div>
       <div className="ap-pjw-stats">
         <article><span>{l(language, "तिथि / पक्ष", "Tithi / Paksha")}</span><strong>{l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1])}</strong><small>{p.paksha === "shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")}</small></article>
@@ -112,6 +110,15 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
         <article><span>{l(language, "सूर्य राशि", "Sun Rashi")}</span><strong>{l(language, RASHIS[p.sunRashi], RASHI_EN[p.sunRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
       </div>
 
+      <section className="ap-pjw-card">
+        <div className="ap-pjw-subhead"><h3>{l(language, "चन्द्र महिनाको प्रणाली", "Lunar month convention")}</h3><small>{l(language, "नेपालमा प्रचलित पूर्णिमान्त नामकरण", "Purnimanta naming used in Nepal")}</small></div>
+        <div className="ap-pjw-stats">
+          <article><span>{l(language, "अमान्त महिना", "Amanta month")}</span><strong>{l(language, LUNAR_MONTHS[p.lunarMonth.amantaIndex], LUNAR_MONTHS_ROMAN[p.lunarMonth.amantaIndex])}</strong></article>
+          <article><span>{l(language, "पूर्णिमान्त महिना", "Purnimanta month")}</span><strong>{l(language, LUNAR_MONTHS[p.monthIndex], LUNAR_MONTHS_ROMAN[p.monthIndex])}</strong></article>
+          <article><span>{l(language, "महिनाको विशेष अवस्था", "Special month state")}</span><strong>{p.lunarMonth.adhik ? l(language, "अधिक मास", "Adhika Masa") : p.lunarMonth.kshaya ? l(language, "क्षय मास", "Kshaya Masa") : l(language, "सामान्य चन्द्र महिना", "Ordinary lunar month")}</strong></article>
+        </div>
+        <p className="ap-pjw-section-note">{l(language, "यी गणनात्मक महिना-नाम तथा विशेष अवस्था स्थानीय प्रकाशित पात्रोको समीक्षा बिना आधिकारिक पर्व-मिति होइनन्।", "These calculated lunar-month names and special states are not official festival dates without review against the local published calendar.")}</p>
+      </section>
       <div className="ap-pjw-solar">
         <article><span>☀ {l(language, "सूर्योदय", "Sunrise")}</span><strong>{formatLocalTime(p.sunrise, language)}</strong></article>
         <article><span>☀ {l(language, "सूर्यास्त", "Sunset")}</span><strong>{formatLocalTime(p.sunset, language)}</strong></article>
@@ -120,7 +127,11 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
 
       <section className="ap-pjw-card">
         <div className="ap-pjw-subhead"><h3>{l(language, "पञ्चाङ्ग परिवर्तन", "Panchang transitions")}</h3><small>{l(language, "समय नेपाल समय (NPT)", "Times in Nepal time (NPT)")}</small></div>
-        <div className="ap-pjw-boundaries">{rows.map((row) => <div key={row.labelEn}><span>{l(language, row.labelNe, row.labelEn)}</span><strong>{row.value}</strong><small>{l(language, "समाप्ति", "Ends")}: {row.end ? formatLocalDateTime(row.end, language) : "—"}</small></div>)}</div>
+        <div className="ap-pjw-filter-row ap-pjw-clock-modes" role="group" aria-label={l(language, "समय देखाउने तरिका", "Clock display mode")}>
+          {(["12h", "24h", "24plus"] as const).map(mode => <button key={mode} type="button" className={clockMode === mode ? "ap-pjw-primary" : "ap-pjw-secondary"} aria-pressed={clockMode === mode} onClick={() => setClockMode(mode)}>{mode === "24plus" ? l(language, "२४+ घण्टा", "24+ hours") : mode === "12h" ? l(language, "१२ घण्टा", "12 hours") : l(language, "२४ घण्टा", "24 hours")}</button>)}
+        </div>
+        <p className="ap-pjw-section-note">{l(language, "२४+ विकल्पले अर्को नागरिक मितिको समयलाई २४:०० पछि निरन्तर देखाउँछ; मूल क्षण परिवर्तन हुँदैन।", "The 24+ option continues past 24:00 on the next civil date; the underlying instant is unchanged.")}</p>
+        <div className="ap-pjw-boundaries">{rows.map((row) => <div key={row.labelEn}><span>{l(language, row.labelNe, row.labelEn)}</span><strong>{row.value}</strong><small>{l(language, "समाप्ति", "Ends")}: {row.end ? clockMode === "24plus" ? formatPanchangClock(row.end, date, clockMode, language) : (formatPanchangClock(row.end, date, clockMode, language) + " · " + formatLocalDateTime(row.end, language)) : "—"}</small></div>)}</div>
       </section>
 
       <section className="ap-pjw-card">
