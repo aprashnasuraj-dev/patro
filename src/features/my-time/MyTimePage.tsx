@@ -68,8 +68,22 @@ function normalizedBirthDateOrEmpty(value: string): string {
   try { return normalizeBirthDate(value); } catch { return ""; }
 }
 
+type CandidateMuhurtaChart = { lagnaSign: string; planets: Array<{ key: string; name: string; sign: string; house: number }> };
+const candidateMuhurtaChartCache = new Map<string, CandidateMuhurtaChart | null>();
+
 /** Build the chart for a candidate Muhurta instant through the existing Jyotish chart engine. */
-function candidateMuhurtaChart(instant: Date, preferences: Preferences) {
+function candidateMuhurtaChart(instant: Date, preferences: Preferences): CandidateMuhurtaChart | null {
+  const cacheKey = [instant.toISOString(), preferences.timezone, preferences.lat, preferences.lng].join("|");
+  if (candidateMuhurtaChartCache.has(cacheKey)) return candidateMuhurtaChartCache.get(cacheKey) ?? null;
+  const remember = (value: CandidateMuhurtaChart | null) => {
+    // Keep an in-memory, local-only working set bounded during the live clock.
+    if (candidateMuhurtaChartCache.size >= 512) {
+      const oldest = candidateMuhurtaChartCache.keys().next().value;
+      if (oldest !== undefined) candidateMuhurtaChartCache.delete(oldest);
+    }
+    candidateMuhurtaChartCache.set(cacheKey, value);
+    return value;
+  };
   try {
     const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
       timeZone: preferences.timezone, year: "numeric", month: "2-digit", day: "2-digit",
@@ -81,16 +95,16 @@ function candidateMuhurtaChart(instant: Date, preferences: Preferences) {
       name: "", date, time, location: preferences.label || preferences.timezone,
       lat: preferences.lat, lng: preferences.lng, timezone: preferences.timezone
     });
-    return {
+    return remember({
       lagnaSign: RASHIS[chart.ascSignIndex] || "",
       planets: chart.planets.map(planet => ({
         key: planet.key, name: planet.name,
         sign: RASHIS[planet.signIndex] || planet.sign, house: planet.house
       }))
-    };
+    });
   } catch {
     // A location/ephemeris limitation must never fabricate a candidate chart.
-    return null;
+    return remember(null);
   }
 }
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
