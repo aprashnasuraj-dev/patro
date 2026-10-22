@@ -4,7 +4,7 @@
 
 ## Why 29 were blocked
 
-The release registry contains 26 explicit `reviewed` entries and 3 additional unlisted functional previews (F010, F058, F079). The 91-row catalog originally did not carry per-rule source version, jurisdiction, input dependencies, boundary fixtures, licenses or an approval record. Existing archive Tithi/Nakshatra data supplies astronomical ingredients but cannot automatically settle ritual, regional, editorial, or official event rules. Third-party sites are comparison references, **not a dataset to copy wholesale**.
+The release registry now uses the explicit `source-review` disposition for 26 entries; three additional items (F010, F058, F079) also remain reference-gated by the functional availability registry. `source-review` means review is still required, not that review has already passed. The 91-row catalog originally did not carry per-rule source version, jurisdiction, input dependencies, boundary fixtures, licenses or an approval record. Existing archive Tithi/Nakshatra data supplies astronomical ingredients but cannot automatically settle ritual, regional, editorial, or official event rules. Third-party sites are comparison references, **not a dataset to copy wholesale**.
 
 ## Source trail
 
