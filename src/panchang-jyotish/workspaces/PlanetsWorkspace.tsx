@@ -92,11 +92,16 @@ async function scanStations(startDate:string,days:number,cancelled:ScanCancelled
 
 async function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:string,cancelled:ScanCancelled):Promise<NakshatraEvent[]|null>{
   const output:NakshatraEvent[]=[];
-  let previousDate=midnightForNptDate(startDate);
+  const first=midnightForNptDate(startDate);
+  const stepMs=6*60*60_000;
+  const steps=days*4;
+  let previousDate=first;
   let previous=calculateSiderealPlanetPositions(previousDate);
-  for(let day=1;day<=days;day++){
+  for(let step=1;step<=steps;step++){
     if(cancelled())return null;
-    const date=midnightForNptDate(addIsoDays(startDate,day));
+    // The Moon can cross two 13°20′ Nakshatra boundaries within one civil day.
+    // Six-hour samples keep each bracket narrow enough to avoid reporting a skipped star.
+    const date=new Date(first.getTime()+step*stepMs);
     const current=calculateSiderealPlanetPositions(date);
     for(const before of previous){
       if(cancelled())return null;
@@ -108,14 +113,16 @@ async function scanNakshatraIngresses(startDate:string,days:number,bodyFilter:st
         const mid=new Date((lo+hi)/2),state=planetAt(mid,before.key);
         if(state&&nakshatraIndex(state)===nakshatraIndex(before))lo=mid.getTime();else hi=mid.getTime();
       }
-      output.push({key:before.key,name:before.name,fromNakshatra:nakshatraIndex(before),toNakshatra:nakshatraIndex(after),instant:new Date(hi)});
+      const eventTime=new Date(hi);
+      if(!output.some(item=>item.key===before.key&&Math.abs(item.instant.getTime()-eventTime.getTime())<60_000)){
+        output.push({key:before.key,name:before.name,fromNakshatra:nakshatraIndex(before),toNakshatra:nakshatraIndex(after),instant:eventTime});
+      }
     }
     previousDate=date;previous=current;
-    if(day%2===0)await yieldToBrowser();
+    if(step%8===0)await yieldToBrowser();
   }
-  return output;
+  return output.sort((a,b)=>a.instant.getTime()-b.instant.getTime());
 }
-
 async function tropicalSeasonCrossings(startDate:string,days:number,cancelled:ScanCancelled):Promise<Array<{degree:number;instant:Date}>|null>{
   const output:Array<{degree:number;instant:Date}>=[];
   const targets=[0,90,180,270];
