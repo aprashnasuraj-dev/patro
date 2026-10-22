@@ -9,6 +9,7 @@ import { findNakshatraRuleWindows, type NakshatraRuleWindow } from "../reviewed-
 import { KATHMANDU } from "../../patro-tools/core/types";
 import { addIsoDays, calculateLocalDay, formatDuration, formatLocalDateTime, formatLocalTime, formatPanchangClock, nextFieldTransition, previousFieldTransition, localSunriseTithiPattern, type PanchangClockMode, NAKSHATRA_EN, RASHI_EN, TITHI_EN, YOGA_EN, type LocalWindow, validIsoDate, todayInNepal } from "./shared";
 import { DaylightArc } from "./DaylightArc";
+import { FeatureGlyph } from "../FeatureGlyph";
 import "./workspace.css";
 
 type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
@@ -152,12 +153,12 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
         <div className="ap-pjw-meta"><strong>{contract?.calendars.bs ? l(language, "वि.सं. " + toNepaliDigits(contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day), "BS " + contract.calendars.bs.year + "/" + contract.calendars.bs.month + "/" + contract.calendars.bs.day) : l(language, "वि.सं. अभिलेख खुल्दैछ", "BS archive loading")}</strong><small>{contract?.calendars.nepalSambat ? l(language, contract.calendars.nepalSambat, contract.calendars.nepalSambatEn ?? contract.calendars.nepalSambat) : l(language, "नेपाल संवत्: अभिलेखमा उपलब्ध भएमा", "Nepal Sambat: when available in archive")}</small></div>
       </div>
       <div className="ap-pjw-stats">
-        <article><span>{l(language, "तिथि / पक्ष", "Tithi / Paksha")}</span><strong>{(rows[0]?.value ?? l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1]))}</strong><small>{displayedPaksha === "shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")}</small></article>
-        <article><span>{l(language, "नक्षत्र / पाद", "Nakshatra / Pada")}</span><strong>{(rows[1]?.value ?? l(language, NAKSHATRAS[p.nakshatra], NAKSHATRA_EN[p.nakshatra]))}</strong><small>{l(language, "पाद", "Pada")} {contract?.elements.nakshatra.pada ?? p.nakshatraPada}</small></article>
-        <article><span>{l(language, "योग", "Yoga")}</span><strong>{(rows[2]?.value ?? l(language, YOGAS[p.yoga], YOGA_EN[p.yoga]))}</strong><small>{l(language, "स्थानीय सूर्योदयमा", "At local sunrise")}</small></article>
-        <article><span>{l(language, "करण", "Karana")}</span><strong>{(rows[3]?.value ?? l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana]))}</strong><small>{vishti ? l(language, "विष्टि / भद्रा", "Vishti / Bhadra") : l(language, "आधा तिथि", "Half-Tithi segment")}</small></article>
-        <article><span>{l(language, "चन्द्र राशि", "Moon Rashi")}</span><strong>{l(language, RASHIS[p.moonRashi], RASHI_EN[p.moonRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
-        <article><span>{l(language, "सूर्य राशि", "Sun Rashi")}</span><strong>{l(language, RASHIS[p.sunRashi], RASHI_EN[p.sunRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F002" symbol="moon" size="inline" />{l(language, "तिथि / पक्ष", "Tithi / Paksha")}</span><strong>{(rows[0]?.value ?? l(language, tithiName(p.tithi), TITHI_EN[p.tithi - 1]))}</strong><small>{displayedPaksha === "shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F004" symbol="nakshatra" size="inline" />{l(language, "नक्षत्र / पाद", "Nakshatra / Pada")}</span><strong>{(rows[1]?.value ?? l(language, NAKSHATRAS[p.nakshatra], NAKSHATRA_EN[p.nakshatra]))}</strong><small>{l(language, "पाद", "Pada")} {contract?.elements.nakshatra.pada ?? p.nakshatraPada}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F005" symbol="yoga" size="inline" />{l(language, "योग", "Yoga")}</span><strong>{(rows[2]?.value ?? l(language, YOGAS[p.yoga], YOGA_EN[p.yoga]))}</strong><small>{l(language, "स्थानीय सूर्योदयमा", "At local sunrise")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F006" symbol="karana" size="inline" />{l(language, "करण", "Karana")}</span><strong>{(rows[3]?.value ?? l(language, KARANA_NAMES[p.karana], KARANA_EN[p.karana]))}</strong><small>{vishti ? l(language, "विष्टि / भद्रा", "Vishti / Bhadra") : l(language, "आधा तिथि", "Half-Tithi segment")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F034" symbol="moon" size="inline" />{l(language, "चन्द्र राशि", "Moon Rashi")}</span><strong>{l(language, RASHIS[p.moonRashi], RASHI_EN[p.moonRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F037" symbol="sun" size="inline" />{l(language, "सूर्य राशि", "Sun Rashi")}</span><strong>{l(language, RASHIS[p.sunRashi], RASHI_EN[p.sunRashi])}</strong><small>{l(language, "निरयण राशि", "Sidereal sign")}</small></article>
       </div>
 
       {Object.values(conflicts).some(Boolean) && <p className="ap-pjw-note" role="status">{l(language, "अभिलेख र स्थानीय गणनाको कुनै तत्व नमिलेकाले त्यस्तो तत्वको अपुष्ट परिवर्तन समय लुकाइएको छ। सम्बन्धित अभिलेखको मिति/स्रोत जाँच्नुहोस्।", "An archived element differs from the local calculation, so its unverified fallback transition time has been withheld. Check the corresponding archive date and source.")}</p>}
@@ -213,9 +214,9 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
       </section>
       <DaylightArc day={p} language={language}/>
       <div className="ap-pjw-solar">
-        <article><span>☀ {l(language, "सूर्योदय", "Sunrise")}</span><strong>{formatLocalTime(displaySunrise, language)}</strong><small>{archivedSunrise ? l(language, "अभिलेख · स्वतन्त्र अडिट बाँकी", "Archive · independent audit pending") : l(language, "गणनात्मक अनुमान", "Calculated estimate")}</small></article>
-        <article><span>☀ {l(language, "सूर्यास्त", "Sunset")}</span><strong>{formatLocalTime(displaySunset, language)}</strong><small>{archivedSunset ? l(language, "अभिलेख · स्वतन्त्र अडिट बाँकी", "Archive · independent audit pending") : l(language, "गणनात्मक अनुमान", "Calculated estimate")}</small></article>
-        <article><span>◷ {l(language, "दिनमान", "Daylight")}</span><strong>{displaySunrise && displaySunset ? formatDuration(displaySunrise, displaySunset, language) : "—"}</strong><small>{archivedSunrise && archivedSunset ? l(language, "अभिलेखका समयबाट", "From archived times") : l(language, "गणनात्मक समयबाट", "From calculated times")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunrise" size="inline" />{l(language, "सूर्योदय", "Sunrise")}</span><strong>{formatLocalTime(displaySunrise, language)}</strong><small>{archivedSunrise ? l(language, "अभिलेख · स्वतन्त्र अडिट बाँकी", "Archive · independent audit pending") : l(language, "गणनात्मक अनुमान", "Calculated estimate")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sunset" size="inline" />{l(language, "सूर्यास्त", "Sunset")}</span><strong>{formatLocalTime(displaySunset, language)}</strong><small>{archivedSunset ? l(language, "अभिलेख · स्वतन्त्र अडिट बाँकी", "Archive · independent audit pending") : l(language, "गणनात्मक अनुमान", "Calculated estimate")}</small></article>
+        <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F013" symbol="sun" size="inline" />{l(language, "दिनमान", "Daylight")}</span><strong>{displaySunrise && displaySunset ? formatDuration(displaySunrise, displaySunset, language) : "—"}</strong><small>{archivedSunrise && archivedSunset ? l(language, "अभिलेखका समयबाट", "From archived times") : l(language, "गणनात्मक समयबाट", "From calculated times")}</small></article>
       </div>
 
       <section className="ap-pjw-card">
@@ -224,17 +225,17 @@ export function PanchangWorkspace({ language, selectedFeatureId }: Props) {
           {(["12h", "24h", "24plus"] as const).map(mode => <button key={mode} type="button" className={clockMode === mode ? "ap-pjw-primary" : "ap-pjw-secondary"} aria-pressed={clockMode === mode} onClick={() => setClockMode(mode)}>{mode === "24plus" ? l(language, "२४+ घण्टा", "24+ hours") : mode === "12h" ? l(language, "१२ घण्टा", "12 hours") : l(language, "२४ घण्टा", "24 hours")}</button>)}
         </div>
         <p className="ap-pjw-section-note">{l(language, "२४+ विकल्पले अर्को नागरिक मितिको समयलाई २४:०० पछि निरन्तर देखाउँछ; मूल क्षण परिवर्तन हुँदैन।", "The 24+ option continues past 24:00 on the next civil date; the underlying instant is unchanged.")}</p>
-        <div className="ap-pjw-boundaries">{rows.map((row) => <div key={row.labelEn}><span>{l(language, row.labelNe, row.labelEn)}</span><strong>{row.value}</strong><small>{l(language, "सुरु", "Starts")}: {row.start ? formatPanchangClock(row.start, date, clockMode, language) : "—"} · {l(language, "समाप्ति", "Ends")}: {row.end ? formatPanchangClock(row.end, date, clockMode, language) : "—"}</small><small>{row.end ? formatLocalDateTime(row.end, language) : "—"} {l(language, "नेपाल समय", "Nepal time")}</small></div>)}</div>
+        <div className="ap-pjw-boundaries">{rows.map((row) => <div key={row.labelEn}><span className="ap-pjw-icon-label"><FeatureGlyph featureId={row.labelEn === "Tithi" ? "F002" : row.labelEn === "Nakshatra" ? "F004" : row.labelEn === "Yoga" ? "F005" : "F006"} symbol={row.labelEn === "Tithi" ? "moon" : row.labelEn === "Nakshatra" ? "nakshatra" : row.labelEn === "Yoga" ? "yoga" : "karana"} size="inline" />{l(language, row.labelNe, row.labelEn)}</span><strong>{row.value}</strong><small>{l(language, "सुरु", "Starts")}: {row.start ? formatPanchangClock(row.start, date, clockMode, language) : "—"} · {l(language, "समाप्ति", "Ends")}: {row.end ? formatPanchangClock(row.end, date, clockMode, language) : "—"}</small><small>{row.end ? formatLocalDateTime(row.end, language) : "—"} {l(language, "नेपाल समय", "Nepal time")}</small></div>)}</div>
       </section>
 
       <section className="ap-pjw-card">
         <div className="ap-pjw-subhead"><h3>{l(language, "दिनका परम्परागत समयखण्ड", "Traditional day windows")}</h3><small>{l(language, "स्थानीय सूर्योदय र सूर्यास्तबाट गणना", "Calculated from local sunrise and sunset")}</small></div>
         <div className="ap-pjw-window-grid">
-          <article><span>{l(language, "राहुकाल", "Rahu Kalam")}</span><strong>{timeWindow(windows.rahu, language)}</strong></article>
-          <article><span>{l(language, "यमगण्ड", "Yamaganda")}</span><strong>{timeWindow(windows.yamaganda, language)}</strong></article>
-          <article><span>{l(language, "गुलिक काल", "Gulika Kalam")}</span><strong>{timeWindow(windows.gulika, language)}</strong></article>
-          <article><span>{l(language, "अभिजित मुहूर्त", "Abhijit Muhurta")}</span><strong>{timeWindow(windows.abhijit, language)}</strong></article>
-          <article><span>{l(language, "ब्रह्म मुहूर्त", "Brahma Muhurta")}</span><strong>{timeWindow(windows.brahma, language)}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F015" symbol="day-segment" size="inline" />{l(language, "राहुकाल", "Rahu Kalam")}</span><strong>{timeWindow(windows.rahu, language)}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F016" symbol="day-cycle" size="inline" />{l(language, "यमगण्ड", "Yamaganda")}</span><strong>{timeWindow(windows.yamaganda, language)}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F017" symbol="clock" size="inline" />{l(language, "गुलिक काल", "Gulika Kalam")}</span><strong>{timeWindow(windows.gulika, language)}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F018" symbol="sun-star" size="inline" />{l(language, "अभिजित मुहूर्त", "Abhijit Muhurta")}</span><strong>{timeWindow(windows.abhijit, language)}</strong></article>
+          <article><span className="ap-pjw-icon-label"><FeatureGlyph featureId="F019" symbol="dawn" size="inline" />{l(language, "ब्रह्म मुहूर्त", "Brahma Muhurta")}</span><strong>{timeWindow(windows.brahma, language)}</strong></article>
         </div>
       </section>
 
