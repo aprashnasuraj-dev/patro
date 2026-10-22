@@ -30,8 +30,10 @@ jobs:
         run: npm run test:patro-tools
       - name: Build production assets
         run: npm run build
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright test runtime and Chromium
+        run: |
+          npm install --no-save --legacy-peer-deps --ignore-scripts --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
       - name: Browser smoke script
         run: |
           npx vite preview --host 127.0.0.1 --port 4173 > /tmp/mytime-vite.log 2>&1 &
