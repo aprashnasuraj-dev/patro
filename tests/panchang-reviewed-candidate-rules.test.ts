@@ -3,9 +3,15 @@ import { panchangAt } from "../src/patro-tools/core/astro";
 import { classifyNakshatraCandidate, findNakshatraRuleWindows, kathmanduCivilWeekday, SOURCE_REVIEWED_NAKSHATRA_RULES } from "../src/panchang-jyotish/reviewed-candidate-rules";
 
 describe("source-audited candidate membership, not a definitive observance", () => {
-  it("uses one-based Nakshatra positions for Panchak", () => {
+  it("starts Panchak at 300° in Dhanishtha's third pada, not the whole Nakshatra", () => {
     expect(SOURCE_REVIEWED_NAKSHATRA_RULES.panchak).toEqual([23,24,25,26,27]);
-    for(let n=1;n<=27;n++) expect(classifyNakshatraCandidate("panchak",n,0)).toBe(n>=23);
+    expect(classifyNakshatraCandidate("panchak", 23, 0)).toBe(false); // a star name alone is insufficient
+    expect(classifyNakshatraCandidate("panchak", 23, 0, 299.999)).toBe(false);
+    expect(classifyNakshatraCandidate("panchak", 23, 0, 300)).toBe(true);
+    expect(classifyNakshatraCandidate("panchak", 24, 0, 313.333333)).toBe(true);
+    expect(classifyNakshatraCandidate("panchak", 27, 0, 359.999)).toBe(true);
+    expect(classifyNakshatraCandidate("panchak", 1, 0, 0)).toBe(false);
+    expect(classifyNakshatraCandidate("panchak", 23, 0, 360)).toBe(false);
   });
   it("keeps broad Ganda Moola distinct from an inferred Gandanta judgment", () => {
     const six=[1,9,10,18,19,27];
@@ -48,6 +54,12 @@ describe("source-audited candidate membership, not a definitive observance", () 
       expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(row.lastNakshatra as never)).toBe(true);
       const midpoint = new Date((row.start.getTime() + row.end.getTime()) / 2);
       expect(SOURCE_REVIEWED_NAKSHATRA_RULES[row.rule].includes(panchangAt(midpoint).nakshatra + 1 as never)).toBe(true);
+      if (row.rule === "panchak") {
+        expect(panchangAt(midpoint).moonSidereal).toBeGreaterThanOrEqual(300);
+        expect(panchangAt(midpoint).moonSidereal).toBeLessThan(360);
+        expect(Math.abs(panchangAt(row.start).moonSidereal - 300)).toBeLessThan(0.02);
+        expect(Math.min(panchangAt(row.end).moonSidereal, 360 - panchangAt(row.end).moonSidereal)).toBeLessThan(0.02);
+      }
     }
   });
   it("rejects invalid ranges and returns promptly when a candidate scan is cancelled", async () => {
