@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
+import { FEATURE_SYMBOL } from "../src/panchang-jyotish/FeatureExperience";
 
 function source(path: string) { return readFileSync(new URL("../" + path, import.meta.url), "utf8"); }
 
@@ -8,6 +9,8 @@ describe("bilingual feature-first visual obligations", () => {
   it("keeps 91 entries and exactly five authored visual categories", () => {
     expect(validateFeatureCatalog().valid).toBe(true);
     expect(FEATURE_GROUPS).toHaveLength(5);
+    expect(Object.keys(FEATURE_SYMBOL)).toHaveLength(91);
+    for (const feature of PATRO_FEATURES) expect(FEATURE_SYMBOL[feature.id]).toBeTruthy();
     const css = source("src/panchang-jyotish/feature-experience.css");
     for (const group of FEATURE_GROUPS) {
       expect(css).toContain(".ap-pj-experience--" + group.id);
