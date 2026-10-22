@@ -39,6 +39,9 @@ describe("Panchang planetary event key invariants", () => {
     expect(workspace).toContain("const tolerance=Number(aspectOrb)");
     expect(workspace).toContain("[positions,aspectTarget,aspectOrb]");
     expect(workspace).toContain("if(aspectTarget!==\"all\"&&String(aspect.angle)!==aspectTarget)continue");
+    expect(workspace).toContain("function eventLocalLabel");
+    expect(workspace).toContain('year:"numeric",month:"short",day:"2-digit"');
+    expect(workspace).toContain("eventLocalLabel(item.instant,language)");
     expect(workspace).toContain("previousDate=date;previous=current");
     expect(workspace).toContain("return output.sort((a,b)=>a.instant.getTime()-b.instant.getTime())");
     expect(workspace).toContain('scanState==="running"');
