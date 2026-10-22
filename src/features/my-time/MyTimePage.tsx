@@ -605,7 +605,7 @@ export default function MyTimePage() {
         panchangCautions: segment.cautions,
         activity, horaLord: horaName || null, tatwa: tatwaName || null,
         rashifal: rashifalSignal && rashifalSignal.date === snapshot.date && rashifalSignal.sign === personalContext.effectiveSign ? rashifalSignal.signal : null,
-        dashaLord: activeDashaLord,
+        dashaLord: personalContext.birthChart?.dashas.find(period => Date.parse(period.start) <= midpoint.getTime() && Date.parse(period.end) > midpoint.getTime())?.lord || null,
         hasNatalChart: Boolean(personalContext.birthChart),
         natalFactorsApplied: Boolean(personalContext.birthChart) && taraIndex >= 0 && chandraHouse != null
       }));
