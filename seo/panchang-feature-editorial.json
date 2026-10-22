@@ -1,0 +1,825 @@
+{
+  "version": 1,
+  "note": "Editorial descriptions sourced from the authored AafnaiPatro feature catalog; not scraped from another Panchang.",
+  "features": [
+    {
+      "id": "F001",
+      "group": "panchang",
+      "titleNe": "आजको विस्तृत पञ्चाङ्ग",
+      "titleEn": "Daily Panchang Summary",
+      "descriptionNe": "वि.सं., नेपाल संवत् र आजका प्रमुख पञ्चाङ्ग विवरण।",
+      "descriptionEn": "BS, Nepal Sambat and today's key Panchang facts.",
+      "href": "/panchang#daily-summary"
+    },
+    {
+      "id": "F002",
+      "group": "panchang",
+      "titleNe": "तिथि र पक्ष",
+      "titleEn": "Tithi & Paksha",
+      "descriptionNe": "शुक्ल वा कृष्ण पक्षसहित तिथिको अवस्था।",
+      "descriptionEn": "Tithi state with Shukla or Krishna Paksha.",
+      "href": "/panchang#tithi"
+    },
+    {
+      "id": "F003",
+      "group": "panchang",
+      "titleNe": "तिथि परिवर्तन समय",
+      "titleEn": "Tithi Transition",
+      "descriptionNe": "तिथि कहिले सुरु हुन्छ र कहिले समाप्त हुन्छ हेर्नुहोस्।",
+      "descriptionEn": "See when the current Tithi starts and ends.",
+      "href": "/panchang#transitions"
+    },
+    {
+      "id": "F004",
+      "group": "panchang",
+      "titleNe": "नक्षत्र र पाद",
+      "titleEn": "Nakshatra & Pada",
+      "descriptionNe": "चन्द्र नक्षत्र, पाद र परिवर्तन समय।",
+      "descriptionEn": "Moon Nakshatra, Pada and transition time.",
+      "href": "/panchang#nakshatra"
+    },
+    {
+      "id": "F005",
+      "group": "panchang",
+      "titleNe": "योग र परिवर्तन",
+      "titleEn": "Yoga & Transition",
+      "descriptionNe": "आजको नित्य योग र अर्को परिवर्तनको समय।",
+      "descriptionEn": "Today's Nitya Yoga and next transition.",
+      "href": "/panchang#yoga"
+    },
+    {
+      "id": "F006",
+      "group": "panchang",
+      "titleNe": "करण र विष्टि",
+      "titleEn": "Karana & Vishti",
+      "descriptionNe": "करणको नाम, आधा-तिथि स्थिति र उपलब्ध समय।",
+      "descriptionEn": "Karana name, half-Tithi state and available timing.",
+      "href": "/panchang#karana"
+    },
+    {
+      "id": "F007",
+      "group": "panchang",
+      "titleNe": "सूर्य राशि र चन्द्र राशि",
+      "titleEn": "Sun & Moon Rashi",
+      "descriptionNe": "गणनाको समय र पद्धतिसहित सूर्य तथा चन्द्र राशि।",
+      "descriptionEn": "Sun and Moon signs with calculation time and method.",
+      "href": "/panchang#rashi"
+    },
+    {
+      "id": "F008",
+      "group": "panchang",
+      "titleNe": "अमान्त र पूर्णिमान्त महिना",
+      "titleEn": "Amanta & Purnimanta",
+      "descriptionNe": "चन्द्र महिनाको नामकरण प्रणालीको भिन्नता।",
+      "descriptionEn": "Understand the difference between lunar-month naming systems.",
+      "href": "/panchang#month-system"
+    },
+    {
+      "id": "F009",
+      "group": "panchang",
+      "titleNe": "अधिक मास र क्षय मास",
+      "titleEn": "Adhika & Kshaya Masa",
+      "descriptionNe": "चन्द्र–सौर महिनाको विशेष अवस्था र व्याख्या।",
+      "descriptionEn": "Special lunisolar month states and their meaning.",
+      "href": "/panchang#lunar-month"
+    },
+    {
+      "id": "F010",
+      "group": "panchang",
+      "titleNe": "क्षय र वृद्धि तिथि",
+      "titleEn": "Kshaya & Vriddhi Tithi",
+      "descriptionNe": "सूर्योदयसँग तिथि मिल्ने नियम र अपवाद।",
+      "descriptionEn": "Sunrise-based Tithi assignment, skipped and repeated-day cases.",
+      "href": "/panchang#tithi-observance"
+    },
+    {
+      "id": "F011",
+      "group": "panchang",
+      "titleNe": "पञ्चाङ्ग समयरेखा",
+      "titleEn": "Panchang Timeline",
+      "descriptionNe": "तिथि, नक्षत्र, योग र करणका परिवर्तन एउटै समयरेखामा।",
+      "descriptionEn": "A single timeline for Tithi, Nakshatra, Yoga and Karana transitions.",
+      "href": "/panchang#timeline"
+    },
+    {
+      "id": "F012",
+      "group": "panchang",
+      "titleNe": "१२/२४ र २४+ घण्टा समय",
+      "titleEn": "12/24/24+ Hour Display",
+      "descriptionNe": "मध्यरातपछिका परम्परागत समयलाई स्पष्ट मिति सहित हेर्नुहोस्।",
+      "descriptionEn": "Show post-midnight traditional times with an explicit date.",
+      "href": "/panchang#clock"
+    },
+    {
+      "id": "F013",
+      "group": "panchang",
+      "titleNe": "सूर्योदय र सूर्यास्त",
+      "titleEn": "Sunrise & Sunset",
+      "descriptionNe": "स्थानअनुसार सूर्योदय, सूर्यास्त र गणना विधि।",
+      "descriptionEn": "Location-specific sunrise, sunset and calculation method.",
+      "href": "/panchang#sun"
+    },
+    {
+      "id": "F014",
+      "group": "panchang",
+      "titleNe": "चन्द्रोदय, चन्द्रास्त र प्रकाश",
+      "titleEn": "Moonrise, Moonset & Illumination",
+      "descriptionNe": "स्थानीय चन्द्रोदय तथा चन्द्रको प्रकाशित भाग।",
+      "descriptionEn": "Local moonrise, moonset and illuminated fraction.",
+      "href": "/moon"
+    },
+    {
+      "id": "F015",
+      "group": "panchang",
+      "titleNe": "राहुकाल",
+      "titleEn": "Rahu Kalam",
+      "descriptionNe": "स्थानीय सूर्योदयदेखि सूर्यास्तसम्मको परम्परागत समयखण्ड।",
+      "descriptionEn": "Traditional daytime interval based on local sunrise and sunset.",
+      "href": "/panchang#rahu-kalam"
+    },
+    {
+      "id": "F016",
+      "group": "panchang",
+      "titleNe": "यमगण्ड",
+      "titleEn": "Yamaganda",
+      "descriptionNe": "स्थानीय दिनमान र वारअनुसारको समयखण्ड।",
+      "descriptionEn": "Daytime interval derived from local day length and weekday.",
+      "href": "/panchang#yamaganda"
+    },
+    {
+      "id": "F017",
+      "group": "panchang",
+      "titleNe": "गुलिक काल",
+      "titleEn": "Gulika Kalam",
+      "descriptionNe": "स्थानीय वार र दिनमानका आधारमा गुलिक काल।",
+      "descriptionEn": "Gulika interval from local weekday and daylight duration.",
+      "href": "/panchang#gulika"
+    },
+    {
+      "id": "F018",
+      "group": "panchang",
+      "titleNe": "अभिजित मुहूर्त",
+      "titleEn": "Abhijit Muhurta",
+      "descriptionNe": "दैनिक दिनमानबाट निकालिएको अभिजित मुहूर्त।",
+      "descriptionEn": "Daily Abhijit Muhurta derived from local daylight.",
+      "href": "/panchang#abhijit-muhurta"
+    },
+    {
+      "id": "F019",
+      "group": "panchang",
+      "titleNe": "ब्रह्म मुहूर्त",
+      "titleEn": "Brahma Muhurta",
+      "descriptionNe": "रात र अर्को सूर्योदयका आधारमा ब्रह्म मुहूर्त।",
+      "descriptionEn": "Brahma Muhurta derived from night length and next sunrise.",
+      "href": "/panchang#brahma-muhurta"
+    },
+    {
+      "id": "F020",
+      "group": "panchang",
+      "titleNe": "दिन/रात चौघडिया",
+      "titleEn": "Day/Night Choghadiya",
+      "descriptionNe": "वर्तमान व्यक्तिगत समय अनुभवमा उपलब्ध चौघडिया।",
+      "descriptionEn": "Choghadiya available in the existing personal-time experience.",
+      "href": "/mytime"
+    },
+    {
+      "id": "F021",
+      "group": "panchang",
+      "titleNe": "पञ्चक",
+      "titleEn": "Panchak",
+      "descriptionNe": "धनिष्ठादेखि रेवतीसम्मको परम्परागत नक्षत्र अवधि।",
+      "descriptionEn": "Traditional Nakshatra period from Dhanishtha through Revati.",
+      "href": "/panchang#panchak"
+    },
+    {
+      "id": "F022",
+      "group": "panchang",
+      "titleNe": "गण्डमूल",
+      "titleEn": "Ganda Moola",
+      "descriptionNe": "परम्परागत गण्डमूल नक्षत्र र यसको समय।",
+      "descriptionEn": "Traditional Ganda Moola Nakshatra intervals.",
+      "href": "/panchang#ganda-moola"
+    },
+    {
+      "id": "F023",
+      "group": "panchang",
+      "titleNe": "भद्रा / विष्टि",
+      "titleEn": "Bhadra / Vishti",
+      "descriptionNe": "विष्टि करणको समय र प्रचलित परम्परागत सावधानी।",
+      "descriptionEn": "Vishti Karana timing and its traditional interpretation.",
+      "href": "/panchang#bhadra"
+    },
+    {
+      "id": "F024",
+      "group": "panchang",
+      "titleNe": "अभिजित नक्षत्र",
+      "titleEn": "Abhijit Nakshatra",
+      "descriptionNe": "विशेष नक्षत्र गणनालाई अभिजित मुहूर्तबाट अलग देखाउनुहोस्।",
+      "descriptionEn": "Keep the special Nakshatra distinct from Abhijit Muhurta.",
+      "href": "/panchang#abhijit-nakshatra"
+    },
+    {
+      "id": "F025",
+      "group": "panchang",
+      "titleNe": "संक्रान्ति र सूर्य राशि प्रवेश",
+      "titleEn": "Sankranti & Solar Ingress",
+      "descriptionNe": "सूर्यको राशि परिवर्तन र उपलब्ध अभिलेख विवरण।",
+      "descriptionEn": "Solar sign ingress and available archive details.",
+      "href": "/panchang#sankranti"
+    },
+    {
+      "id": "F026",
+      "group": "panchang",
+      "titleNe": "श्राद्ध तिथि",
+      "titleEn": "Shraddha Tithi",
+      "descriptionNe": "श्राद्धको तिथि र अनुष्ठान समयका नियम।",
+      "descriptionEn": "Shraddha Tithi with observance-window rules.",
+      "href": "/panchang#shraddha-tithi"
+    },
+    {
+      "id": "F055",
+      "group": "muhurat",
+      "titleNe": "विवाहको साइत",
+      "titleEn": "Marriage Muhurat",
+      "descriptionNe": "उपलब्ध आधिकारिक मिति र गणना गरिएको उम्मेदवार अलग-अलग।",
+      "descriptionEn": "Keep published marriage dates distinct from calculated candidates.",
+      "href": "/tools/sait"
+    },
+    {
+      "id": "F056",
+      "group": "muhurat",
+      "titleNe": "गृह प्रवेश",
+      "titleEn": "Griha Pravesh",
+      "descriptionNe": "गृह प्रवेशको मिति तथा नियमका लागि साइत उपकरण।",
+      "descriptionEn": "Open the existing Sait tool for home-entry dates and rules.",
+      "href": "/tools/sait"
+    },
+    {
+      "id": "F057",
+      "group": "muhurat",
+      "titleNe": "सवारी साधन खरिद",
+      "titleEn": "Vehicle Purchase Muhurat",
+      "descriptionNe": "सवारी साधन खरिदका लागि उपलब्ध साइत नियम।",
+      "descriptionEn": "Existing Sait rules for vehicle purchases.",
+      "href": "/tools/sait"
+    },
+    {
+      "id": "F058",
+      "group": "muhurat",
+      "titleNe": "घरजग्गा खरिद / रजिस्ट्रेसन",
+      "titleEn": "Property Purchase & Registration",
+      "descriptionNe": "घरजग्गा सम्बन्धी शुभ मितिका नियम।",
+      "descriptionEn": "Traditional date rules for property purchase and registration.",
+      "href": "/muhurat#property"
+    },
+    {
+      "id": "F059",
+      "group": "muhurat",
+      "titleNe": "व्रतबन्ध, नामकरण र व्यवसाय साइत",
+      "titleEn": "Bratabandha, Namakaran & Business",
+      "descriptionNe": "उपलब्ध संस्कार र व्यवसाय साइत एउटै उपकरणमा।",
+      "descriptionEn": "Available lifecycle and business Muhurat categories in one tool.",
+      "href": "/tools/sait"
+    },
+    {
+      "id": "F060",
+      "group": "muhurat",
+      "titleNe": "सर्वार्थसिद्धि योग",
+      "titleEn": "Sarvarthasiddhi Yoga",
+      "descriptionNe": "स्रोत पुष्टि भएका नियमबाट योग उम्मेदवार खोज्नुहोस्।",
+      "descriptionEn": "Find candidate windows only from source-reviewed rules.",
+      "href": "/muhurat#sarvarthasiddhi"
+    },
+    {
+      "id": "F061",
+      "group": "muhurat",
+      "titleNe": "अमृतसिद्धि योग",
+      "titleEn": "Amritsiddhi Yoga",
+      "descriptionNe": "वार र नक्षत्रका नियम प्रयोग गर्ने योग खोजी।",
+      "descriptionEn": "Yoga finder based on weekday and Nakshatra rules.",
+      "href": "/muhurat#amritsiddhi"
+    },
+    {
+      "id": "F062",
+      "group": "muhurat",
+      "titleNe": "द्विपुष्कर योग",
+      "titleEn": "Dwipushkar Yoga",
+      "descriptionNe": "परम्परागत द्विपुष्कर संयोजनका मिति।",
+      "descriptionEn": "Dates matching traditional Dwipushkar combinations.",
+      "href": "/muhurat#dwipushkar"
+    },
+    {
+      "id": "F063",
+      "group": "muhurat",
+      "titleNe": "त्रिपुष्कर योग",
+      "titleEn": "Tripushkar Yoga",
+      "descriptionNe": "परम्परागत त्रिपुष्कर संयोजनका मिति।",
+      "descriptionEn": "Dates matching traditional Tripushkar combinations.",
+      "href": "/muhurat#tripushkar"
+    },
+    {
+      "id": "F064",
+      "group": "muhurat",
+      "titleNe": "रवि पुष्य योग",
+      "titleEn": "Ravi Pushya Yoga",
+      "descriptionNe": "रविबार र पुष्य नक्षत्रको संयोजन खोज्नुहोस्।",
+      "descriptionEn": "Find Sunday–Pushya combinations using reviewed local rules.",
+      "href": "/muhurat#ravi-pushya"
+    },
+    {
+      "id": "F065",
+      "group": "muhurat",
+      "titleNe": "गुरु पुष्य योग",
+      "titleEn": "Guru Pushya Yoga",
+      "descriptionNe": "बिहिबार र पुष्य नक्षत्रको संयोजन खोज्नुहोस्।",
+      "descriptionEn": "Find Thursday–Pushya combinations using reviewed local rules.",
+      "href": "/muhurat#guru-pushya"
+    },
+    {
+      "id": "F066",
+      "group": "muhurat",
+      "titleNe": "रवि योग",
+      "titleEn": "Ravi Yoga",
+      "descriptionNe": "स्रोत पुष्टि भएका नक्षत्र–वार नियमबाट उम्मेदवार खोज्नुहोस्।",
+      "descriptionEn": "Find candidates from a reviewed Nakshatra–weekday rule set.",
+      "href": "/muhurat#ravi-yoga"
+    },
+    {
+      "id": "F067",
+      "group": "muhurat",
+      "titleNe": "व्यक्तिगत शुभ समय",
+      "titleEn": "Personal Auspicious Time",
+      "descriptionNe": "विद्यमान व्यक्तिगत समय अनुभव खोल्नुहोस्।",
+      "descriptionEn": "Open the existing personal-time experience.",
+      "href": "/mytime"
+    },
+    {
+      "id": "F068",
+      "group": "muhurat",
+      "titleNe": "एकादशी पारण",
+      "titleEn": "Ekadashi Parana",
+      "descriptionNe": "पारण समयका नियम, हरिवासर र स्थानीय सूर्योदय।",
+      "descriptionEn": "Parana rules, Hari Vasara and local sunrise.",
+      "href": "/muhurat#ekadashi-parana"
+    },
+    {
+      "id": "F027",
+      "group": "jyotish",
+      "titleNe": "जन्मपत्रो",
+      "titleEn": "Janma Kundali",
+      "descriptionNe": "जन्म विवरणबाट जन्मपत्रिका बनाउन विद्यमान गणक खोल्नुहोस्।",
+      "descriptionEn": "Use the existing birth-chart calculator.",
+      "href": "/janmapatro"
+    },
+    {
+      "id": "F028",
+      "group": "jyotish",
+      "titleNe": "प्रश्न कुण्डली",
+      "titleEn": "Prashna Kundali",
+      "descriptionNe": "प्रश्नको समय र स्थानमा आधारित कुण्डली।",
+      "descriptionEn": "Question-time chart based on the chosen time and location.",
+      "href": "/jyotish#prashna"
+    },
+    {
+      "id": "F029",
+      "group": "jyotish",
+      "titleNe": "पञ्चपक्षी गणक",
+      "titleEn": "Pancha Pakshi Calculator",
+      "descriptionNe": "परम्परागत तालिका पुष्टि भएपछि पक्षी चक्र निकाल्नुहोस्।",
+      "descriptionEn": "Bird-cycle calculator with a source-reviewed traditional table.",
+      "href": "/jyotish#pancha-pakshi"
+    },
+    {
+      "id": "F030",
+      "group": "jyotish",
+      "titleNe": "रत्न सिफारिस",
+      "titleEn": "Gemstone Guide",
+      "descriptionNe": "परम्परागत रत्नसम्बन्धी जानकारी; किनमेल दबाब बिना।",
+      "descriptionEn": "Traditional gemstone information without purchase pressure.",
+      "href": "/jyotish#gemstone"
+    },
+    {
+      "id": "F031",
+      "group": "jyotish",
+      "titleNe": "रुद्राक्ष जानकारी",
+      "titleEn": "Rudraksha Guide",
+      "descriptionNe": "परम्परागत रुद्राक्ष वर्गीकरण र स्रोत विवरण।",
+      "descriptionEn": "Traditional Rudraksha classifications and source notes.",
+      "href": "/jyotish#rudraksha"
+    },
+    {
+      "id": "F032",
+      "group": "jyotish",
+      "titleNe": "कालसर्प योग गणक",
+      "titleEn": "Kalasarpa Yoga Calculator",
+      "descriptionNe": "जन्मपत्रिकाका ग्रहस्थितिबाट प्रचलित नियम जाँच्नुहोस्।",
+      "descriptionEn": "Check the stated traditional rule against natal planetary positions.",
+      "href": "/jyotish#kalasarpa"
+    },
+    {
+      "id": "F033",
+      "group": "jyotish",
+      "titleNe": "शनि साढेसाती",
+      "titleEn": "Shani Sadesati",
+      "descriptionNe": "जन्म चन्द्र राशिको आधारमा शनि गोचर जाँच्नुहोस्।",
+      "descriptionEn": "Check Saturn transit relative to the natal Moon sign.",
+      "href": "/jyotish#sadesati"
+    },
+    {
+      "id": "F034",
+      "group": "jyotish",
+      "titleNe": "जन्म राशि",
+      "titleEn": "Janmarashi / Moon Sign",
+      "descriptionNe": "विद्यमान जन्मपत्रोबाट चन्द्र राशि हेर्नुहोस्।",
+      "descriptionEn": "Read the Moon sign from the existing birth-chart result.",
+      "href": "/jyotish#janmarashi"
+    },
+    {
+      "id": "F035",
+      "group": "jyotish",
+      "titleNe": "जन्म नक्षत्र र पाद",
+      "titleEn": "Birthstar & Pada",
+      "descriptionNe": "जन्म चन्द्रको नक्षत्र र पाद।",
+      "descriptionEn": "Birth Moon Nakshatra and Pada.",
+      "href": "/jyotish#birthstar"
+    },
+    {
+      "id": "F036",
+      "group": "jyotish",
+      "titleNe": "जन्म लग्न",
+      "titleEn": "Janma Lagna / Ascendant",
+      "descriptionNe": "जन्मपत्रो गणकको लग्न र लग्न राशि।",
+      "descriptionEn": "Ascendant and Lagna Rashi from the current chart engine.",
+      "href": "/jyotish#lagna"
+    },
+    {
+      "id": "F037",
+      "group": "jyotish",
+      "titleNe": "सूर्य राशि",
+      "titleEn": "Surya Rashi / Sun Sign",
+      "descriptionNe": "जन्म समयमा गणना गरिएको सूर्य राशि।",
+      "descriptionEn": "Sun sign calculated for the birth instant.",
+      "href": "/jyotish#surya-rashi"
+    },
+    {
+      "id": "F038",
+      "group": "jyotish",
+      "titleNe": "मङ्गल दोष",
+      "titleEn": "Mangal Dosha",
+      "descriptionNe": "जन्मपत्रोमा उपलब्ध मङ्गल दोष विवरण।",
+      "descriptionEn": "Mangal Dosha details already calculated by the birth-chart engine.",
+      "href": "/jyotish#mangal-dosha"
+    },
+    {
+      "id": "F039",
+      "group": "jyotish",
+      "titleNe": "गुण मिलान",
+      "titleEn": "Kundali Milan",
+      "descriptionNe": "विद्यमान गुण मिलान गणक प्रयोग गर्नुहोस्।",
+      "descriptionEn": "Use the existing horoscope-matching calculator.",
+      "href": "/janmapatro/milan.html"
+    },
+    {
+      "id": "F040",
+      "group": "jyotish",
+      "titleNe": "दैनिक राशिफल",
+      "titleEn": "Daily Rashifal",
+      "descriptionNe": "विद्यमान दैनिक वैदिक राशिफल खोल्नुहोस्।",
+      "descriptionEn": "Open the existing daily Vedic Rashifal.",
+      "href": "/rashifal"
+    },
+    {
+      "id": "F041",
+      "group": "jyotish",
+      "titleNe": "सहस्र पूर्णचन्द्रोदय",
+      "titleEn": "1000 Full Moons",
+      "descriptionNe": "चन्द्रचक्रमा आधारित एक हजार पूर्णिमाको समयरेखा।",
+      "descriptionEn": "A timeline of one thousand full-moon instants.",
+      "href": "/jyotish#1000-moons"
+    },
+    {
+      "id": "F042",
+      "group": "jyotish",
+      "titleNe": "वैदिक समय गणक",
+      "titleEn": "Vedic Time Calculator",
+      "descriptionNe": "घटी र पला रूपान्तरणका लागि स्थानीय गणक।",
+      "descriptionEn": "Local Ghati and Pala time conversion.",
+      "href": "/jyotish#vedic-time"
+    },
+    {
+      "id": "F043",
+      "group": "jyotish",
+      "titleNe": "नक्षत्र अनुसार बच्चाको नाम",
+      "titleEn": "Nakshatra Baby Names",
+      "descriptionNe": "विद्यमान नाम तथा नक्षत्र उपकरण खोल्नुहोस्।",
+      "descriptionEn": "Open the existing baby-name and Nakshatra tool.",
+      "href": "/tools/baby-names"
+    },
+    {
+      "id": "F044",
+      "group": "jyotish",
+      "titleNe": "जन्मपत्रो ग्रहस्थिति",
+      "titleEn": "Natal Planetary Positions",
+      "descriptionNe": "जन्मपत्रोबाट ग्रहको राशि, अंश र भाव।",
+      "descriptionEn": "Planet signs, degrees and houses from the natal chart.",
+      "href": "/jyotish#natal-planets"
+    },
+    {
+      "id": "F045",
+      "group": "jyotish",
+      "titleNe": "विंशोत्तरी दशा",
+      "titleEn": "Vimshottari Dasha",
+      "descriptionNe": "विद्यमान जन्मपत्रो गणकका दशा अवधि।",
+      "descriptionEn": "Dasha periods from the existing birth-chart engine.",
+      "href": "/jyotish#dasha"
+    },
+    {
+      "id": "F046",
+      "group": "planets",
+      "titleNe": "वर्तमान ग्रहस्थिति",
+      "titleEn": "Current Sidereal Planetary Positions",
+      "descriptionNe": "एकै गणना समयका ग्रह राशि र अंश।",
+      "descriptionEn": "Planet signs and degrees at one declared evaluation instant.",
+      "href": "/planets#positions"
+    },
+    {
+      "id": "F047",
+      "group": "planets",
+      "titleNe": "ग्रह राशि प्रवेश",
+      "titleEn": "Planetary Rashi Ingress",
+      "descriptionNe": "निर्धारित ग्रहले राशि सीमा काटेको समय।",
+      "descriptionEn": "Times when a selected planet crosses a sign boundary.",
+      "href": "/planets#rashi-ingress"
+    },
+    {
+      "id": "F048",
+      "group": "planets",
+      "titleNe": "ग्रह नक्षत्र प्रवेश",
+      "titleEn": "Planetary Nakshatra Ingress",
+      "descriptionNe": "ग्रहको नक्षत्र सीमा प्रवेश समय।",
+      "descriptionEn": "Times when a planet crosses a Nakshatra boundary.",
+      "href": "/planets#nakshatra-ingress"
+    },
+    {
+      "id": "F049",
+      "group": "planets",
+      "titleNe": "ग्रह युति",
+      "titleEn": "Planetary Conjunctions",
+      "descriptionNe": "चयन गरिएको कोणीय दूरीमा ग्रहको युति।",
+      "descriptionEn": "Planetary conjunctions at a selected angular separation.",
+      "href": "/planets#conjunctions"
+    },
+    {
+      "id": "F050",
+      "group": "planets",
+      "titleNe": "ग्रह दृष्टि र कोण",
+      "titleEn": "Planetary Aspects",
+      "descriptionNe": "चयन गरिएको कोण र सहनशीलताका आधारमा कोणीय घटना।",
+      "descriptionEn": "Angular events using a selected aspect and tolerance.",
+      "href": "/planets#aspects"
+    },
+    {
+      "id": "F051",
+      "group": "planets",
+      "titleNe": "वक्री र मार्गी स्टेशन",
+      "titleEn": "Retrograde / Direct Stations",
+      "descriptionNe": "ग्रहको दीर्घांश गति उल्टिने वा फेरिने समय।",
+      "descriptionEn": "Times when apparent longitudinal motion changes direction.",
+      "href": "/planets#stations"
+    },
+    {
+      "id": "F052",
+      "group": "planets",
+      "titleNe": "ग्रह अस्त र उदय",
+      "titleEn": "Combustion & Rising",
+      "descriptionNe": "सूर्यबाट कोणीय दूरी र परम्परागत अस्त सीमा।",
+      "descriptionEn": "Angular distance from the Sun and tradition-specific combustion thresholds.",
+      "href": "/planets#combustion"
+    },
+    {
+      "id": "F053",
+      "group": "planets",
+      "titleNe": "ग्रह गोचर",
+      "titleEn": "Graha Gochara",
+      "descriptionNe": "जन्म चन्द्र वा लग्नबाट वर्तमान ग्रहस्थिति हेर्नुहोस्।",
+      "descriptionEn": "View transit positions relative to the natal Moon or Lagna.",
+      "href": "/planets#gochara"
+    },
+    {
+      "id": "F054",
+      "group": "planets",
+      "titleNe": "आगामी ग्रह घटना",
+      "titleEn": "Upcoming Planetary Events",
+      "descriptionNe": "चयन गरिएको समयसीमाका ग्रह घटना खोज्नुहोस्।",
+      "descriptionEn": "Search planetary events within a chosen time window.",
+      "href": "/planets#upcoming"
+    },
+    {
+      "id": "F069",
+      "group": "planets",
+      "titleNe": "चन्द्र कला, पूर्णिमा र औंसी",
+      "titleEn": "Moon Phases, Full & New Moon",
+      "descriptionNe": "विद्यमान चन्द्र पृष्ठमा पूर्ण विवरण हेर्नुहोस्।",
+      "descriptionEn": "See complete details on the existing Moon page.",
+      "href": "/moon"
+    },
+    {
+      "id": "F070",
+      "group": "planets",
+      "titleNe": "सूर्य ग्रहण",
+      "titleEn": "Solar Eclipse",
+      "descriptionNe": "ग्रहण मिति र स्थानीय दृश्यता।",
+      "descriptionEn": "Eclipse dates and local visibility.",
+      "href": "/eclipse"
+    },
+    {
+      "id": "F071",
+      "group": "planets",
+      "titleNe": "चन्द्र ग्रहण",
+      "titleEn": "Lunar Eclipse",
+      "descriptionNe": "चन्द्र ग्रहण मिति र स्थानीय दृश्यता।",
+      "descriptionEn": "Lunar eclipse dates and local visibility.",
+      "href": "/eclipse"
+    },
+    {
+      "id": "F072",
+      "group": "planets",
+      "titleNe": "वसन्त विषुव",
+      "titleEn": "Vernal Equinox",
+      "descriptionNe": "सूर्यको खगोलीय निर्देशाङ्कबाट विषुवको समय।",
+      "descriptionEn": "Equinox instant from solar coordinates.",
+      "href": "/planets#vernal-equinox"
+    },
+    {
+      "id": "F073",
+      "group": "planets",
+      "titleNe": "ग्रीष्म अयनान्त",
+      "titleEn": "Summer Solstice",
+      "descriptionNe": "उत्तरी गोलार्धको ग्रीष्म अयनान्त समय।",
+      "descriptionEn": "Northern-hemisphere summer solstice instant.",
+      "href": "/planets#summer-solstice"
+    },
+    {
+      "id": "F074",
+      "group": "planets",
+      "titleNe": "शरद विषुव",
+      "titleEn": "Autumnal Equinox",
+      "descriptionNe": "सूर्यको खगोलीय निर्देशाङ्कबाट शरद विषुवको समय।",
+      "descriptionEn": "Autumnal equinox instant from solar coordinates.",
+      "href": "/planets#autumnal-equinox"
+    },
+    {
+      "id": "F075",
+      "group": "planets",
+      "titleNe": "शीत अयनान्त",
+      "titleEn": "Winter Solstice",
+      "descriptionNe": "उत्तरी गोलार्धको शीत अयनान्त समय।",
+      "descriptionEn": "Northern-hemisphere winter solstice instant.",
+      "href": "/planets#winter-solstice"
+    },
+    {
+      "id": "F076",
+      "group": "planets",
+      "titleNe": "ग्रहस्थिति तालिका",
+      "titleEn": "Planet Position Table",
+      "descriptionNe": "वर्तमान ग्रहका राशि, अंश र गणना समय।",
+      "descriptionEn": "Current planet signs, degrees and evaluation time.",
+      "href": "/planets#positions"
+    },
+    {
+      "id": "F077",
+      "group": "planets",
+      "titleNe": "ग्रह अस्त / उदय विवरण",
+      "titleEn": "Graha Asta / Uday",
+      "descriptionNe": "ग्रहअनुसार अस्त र उदय सीमा तथा विधि।",
+      "descriptionEn": "Planet-specific combustion/rising thresholds and methodology.",
+      "href": "/planets#combustion"
+    },
+    {
+      "id": "F078",
+      "group": "planets",
+      "titleNe": "वक्री / मार्गी पात्रो",
+      "titleEn": "Retrograde / Direct Calendar",
+      "descriptionNe": "ग्रहको गति परिवर्तनका घटनाको सूची।",
+      "descriptionEn": "A listing of planetary direction-change events.",
+      "href": "/planets#stations"
+    },
+    {
+      "id": "F079",
+      "group": "planets",
+      "titleNe": "ऋतु र हिन्दू ऋतु",
+      "titleEn": "Indian / Hindu Seasons",
+      "descriptionNe": "नेपालको ऋतु नाम र खगोलीय ऋतुबीचको भिन्नता।",
+      "descriptionEn": "Distinguish Nepal's seasonal terminology from astronomical seasons.",
+      "href": "/planets#seasons"
+    },
+    {
+      "id": "F080",
+      "group": "nepal-calendar",
+      "titleNe": "बिक्रम संवत् पात्रो",
+      "titleEn": "Bikram Sambat Calendar",
+      "descriptionNe": "विद्यमान नेपाली पात्रो र मिति रूपान्तरण।",
+      "descriptionEn": "Existing Nepali calendar and date-conversion experience.",
+      "href": "/"
+    },
+    {
+      "id": "F081",
+      "group": "nepal-calendar",
+      "titleNe": "नेपाल संवत्",
+      "titleEn": "Nepal Sambat",
+      "descriptionNe": "विद्यमान नेपाल संवत् पात्रो र चाडपर्व।",
+      "descriptionEn": "Existing Nepal Sambat calendar and observances.",
+      "href": "/nepal-sambat/mandala"
+    },
+    {
+      "id": "F082",
+      "group": "nepal-calendar",
+      "titleNe": "तमिल पञ्चाङ्गम्",
+      "titleEn": "Tamil Panchangam",
+      "descriptionNe": "तमिल परम्पराको सूर्य–चन्द्र पात्रो परिचय।",
+      "descriptionEn": "Reference to the Tamil solar-lunar calendar tradition.",
+      "href": "/nepal-calendar#tamil-panchangam"
+    },
+    {
+      "id": "F083",
+      "group": "nepal-calendar",
+      "titleNe": "गौरी नल्ला नेरम",
+      "titleEn": "Gowri Nalla Neram",
+      "descriptionNe": "तमिल परम्पराको समय गणना नियम र स्रोत।",
+      "descriptionEn": "Traditional timing rules and sources for Gowri Nalla Neram.",
+      "href": "/nepal-calendar#gowri-nalla-neram"
+    },
+    {
+      "id": "F084",
+      "group": "nepal-calendar",
+      "titleNe": "कार्तिगै र तमिल पात्रो",
+      "titleEn": "Tamil Calendar & Karthigai",
+      "descriptionNe": "तमिल महिनाहरू र पर्व सम्बन्धी सन्दर्भ।",
+      "descriptionEn": "Tamil months and Karthigai observance reference.",
+      "href": "/nepal-calendar#tamil-calendar"
+    },
+    {
+      "id": "F085",
+      "group": "nepal-calendar",
+      "titleNe": "तमिल पर्व",
+      "titleEn": "Tamil Festivals & Kanda Sashti",
+      "descriptionNe": "परम्परागत नियम र मिति स्रोतको सन्दर्भ।",
+      "descriptionEn": "Reference to traditional rules and date sources.",
+      "href": "/nepal-calendar#tamil-festivals"
+    },
+    {
+      "id": "F086",
+      "group": "nepal-calendar",
+      "titleNe": "मलयालम पात्रो",
+      "titleEn": "Malayalam Panchangam",
+      "descriptionNe": "मलयालम सौर पात्रो र महिनाको परिचय।",
+      "descriptionEn": "Overview of Malayalam solar calendar and months.",
+      "href": "/nepal-calendar#malayalam"
+    },
+    {
+      "id": "F087",
+      "group": "nepal-calendar",
+      "titleNe": "बंगाली पञ्जिका",
+      "titleEn": "Bengali Panjika",
+      "descriptionNe": "बंगाली पात्रो परम्परा र मिति प्रणाली।",
+      "descriptionEn": "Bengali calendar tradition and date system.",
+      "href": "/nepal-calendar#bengali"
+    },
+    {
+      "id": "F088",
+      "group": "nepal-calendar",
+      "titleNe": "गुजराती संवत्",
+      "titleEn": "Gujarati Samvat / Amanta Calendar",
+      "descriptionNe": "गुजराती अमान्त महिनाको पद्धति।",
+      "descriptionEn": "Gujarati Amanta month-system reference.",
+      "href": "/nepal-calendar#gujarati"
+    },
+    {
+      "id": "F089",
+      "group": "nepal-calendar",
+      "titleNe": "कुम्भ मेला",
+      "titleEn": "Kumbha Mela Dates",
+      "descriptionNe": "आयोजनका पुष्टि गरिएका मिति र स्रोत।",
+      "descriptionEn": "Verified event dates and source citations.",
+      "href": "/nepal-calendar#kumbha-mela"
+    },
+    {
+      "id": "F090",
+      "group": "nepal-calendar",
+      "titleNe": "समुदाय पात्रो",
+      "titleEn": "Community Calendars",
+      "descriptionNe": "ल्होसार, थारु, मिथिला, किरात र हिजरी पात्रो।",
+      "descriptionEn": "Lhosar, Tharu, Mithila, Kirat and Hijri calendars.",
+      "href": "/samudaya"
+    },
+    {
+      "id": "F091",
+      "group": "nepal-calendar",
+      "titleNe": "भक्तिगीत र सांस्कृतिक सामग्री",
+      "titleEn": "Devotional & Cultural Library",
+      "descriptionNe": "नेपाली संस्कृति र संस्कारसँग सम्बन्धित सामग्री।",
+      "descriptionEn": "Cultural and devotional material relevant to Nepal.",
+      "href": "/nepal-calendar#culture"
+    }
+  ]
+}
