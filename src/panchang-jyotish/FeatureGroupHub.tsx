@@ -35,7 +35,6 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const language = useUiLanguage();
   const group = FEATURE_GROUPS.find((item) => item.id === groupId) ?? FEATURE_GROUPS[0];
   const [query, setQuery] = useState("");
-  const [loadFailure, setLoadFailure] = useState(false);
   const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview" | "reference">("all");
   const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
@@ -54,7 +53,6 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   }, [features, query, availabilityFilter]);
 
   useEffect(() => {
-    setLoadFailure(false);
     const sync = () => { const id = featureFromHash(groupId); setActiveFeature(id); setWorkspaceRequested(Boolean(id && getFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview"))); };
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
@@ -70,7 +68,6 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
     if (hash) {
       if (window.location.hash !== "#" + hash) window.history.replaceState(null, "", window.location.pathname + window.location.search + "#" + hash);
       setActiveFeature(item.id);
-      setLoadFailure(false);
       setWorkspaceRequested(getFeatureAvailability(item) === "browser-preview");
       window.setTimeout(() => document.getElementById("ap-pj-workspace")?.scrollIntoView({ behavior: "smooth", block: "start" }), 20);
     }
@@ -111,7 +108,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
         </header>
         {selected && <FeatureExperience feature={selected} group={groupId} language={language} onNavigate={openFeature} />}
         <div className="ap-pj-calculator" id="ap-pj-calculator">
-          {showWorkspace && loadFailure ? <div className="ap-pj-loading" role="alert">{l(language, "गणक लोड हुन सकेन। पेज पुनः खोल्नुहोस् वा मूल उपकरण प्रयोग गर्नुहोस्।", "Calculator failed to load. Reload the page or use the original tool.")} <button type="button" className="ap-pjw-secondary" onClick={() => window.location.reload()}>{l(language, "पुनः प्रयास", "Retry")}</button></div> : showWorkspace ? <Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
+          {showWorkspace ? <Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
             <Workspace language={language} selectedFeatureId={activeFeature} />
           </Suspense> : <div className="ap-pj-launch-panel">
             <span aria-hidden="true" className="ap-pj-launch-emblem">{group.icon}</span>
