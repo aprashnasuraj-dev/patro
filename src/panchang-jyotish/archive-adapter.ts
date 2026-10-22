@@ -51,7 +51,7 @@ export function overlayFromStaticArchive(dateAd: string, row: ArchiveDay, calcul
     nepalSambat: nsText(row.ns ?? row.nepal_sambat),
     elements: {
       tithi,
-      nakshatra: { ...nk, pada: pada !== null && pada >= 1 && pada <= 4 ? pada : calculated.elements.nakshatra.pada },
+      nakshatra: { ...namedElement(p.nakshatra, confidence, "other"), pada: pada !== null && pada >= 1 && pada <= 4 ? pada : calculated.elements.nakshatra.pada },
       yoga: namedElement(p.yoga, confidence, "other"),
       karana: namedElement(p.karana, confidence, "other")
     }
