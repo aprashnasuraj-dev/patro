@@ -12,10 +12,10 @@ Branch: `newlook-fastgate` (created from `main`). Status: planning / baseline au
 
 ## Phase A — Baseline and design direction
 - [ ] **01. Baseline inventory:** capture current `main` commit SHA, routes, sitemap, actual tool registry, hero/sidebar/footer elements and major breakpoint screenshots; map critical API contracts and external assets.
-- [ ] **02. Cloudflare baseline:** read-only audit Worker routes, build/deployment setup, custom domain, cache/assets rules, current configuration and safe preview path; never mutate production resources for design review.
+- [x] **02. Cloudflare baseline:** read-only audit Worker routes, build/deployment setup, custom domain, cache/assets rules, current configuration and safe preview path; never mutate production resources for design review.
 - [ ] **03. Regression snapshot:** capture representative Kathmandu dates (including month boundaries, a Saturday, festival, observance and absent data), bilingual screenshots, current page weight and Web Vitals baseline.
-- [ ] **04. Brand principles:** document the brand sentence, use/don't-use examples and component acceptance rubric (warm/cultural/calm/precise; no distracting ornament).
-- [ ] **05. Content and terminology audit:** record ALL typos/spacing/truncations and inconsistent bilingual names including “Astronomica calendar”, “Dhanya Purnima / Udhhauli”, “Sait rules”; propose corrections but do not change festival/month transliterations pending review.
+- [x] **04. Brand principles:** document the brand sentence, use/don't-use examples and component acceptance rubric (warm/cultural/calm/precise; no distracting ornament).
+- [x] **05. Content and terminology audit:** record ALL typos/spacing/truncations and inconsistent bilingual names including “Astronomica calendar”, “Dhanya Purnima / Udhhauli”, “Sait rules”; propose corrections but do not change festival/month transliterations pending review.
 - [ ] **06. Canonical destination inventory:** map every header/chip/sidebar/group/footer/tool link to exactly one canonical tool name, description, category and existing URL; explicitly include all current deep links and redirects.
 - [ ] **07. Design concept sign-off:** wireframe responsive home, mobile bottom nav, menu, calendar, festival, tools and dark variants before broad implementation.
 
@@ -80,3 +80,5 @@ Branch: `newlook-fastgate` (created from `main`). Status: planning / baseline au
 - **Checklist initialized:** 52 numbered tasks; 0 implementation tasks marked complete. Current implementation begins at **#01 Baseline inventory**, followed by **#02 Cloudflare baseline** and **#03 Regression snapshot**. Creating this branch/document is setup and not falsely counted as completion of an audit or redesign.
 - 2026-10-23: branch `newlook-fastgate` created from default `main`; verified `package.json`, `src/PatroRouter.tsx`, `src/AafnaiPages.tsx`, `wrangler.jsonc` before writing plan.
 - 2026-10-23: #01 IN PROGRESS. Initial evidence committed in [`01_BASELINE_INVENTORY.md`](./01_BASELINE_INVENTORY.md). Confirmed actual homepage is `HomePageCurrent.tsx` through `ReferenceHomePage`; identified core data/display dependencies and read-only Cloudflare route findings. Screenshots/full navigation inventory remain open; do not check off #01 yet. #02 Cloudflare inventory partially gathered, but formal review pending.
+
+- 2026-10-23 Phase A: committed audit artifacts 02–07. #02 configuration inventory complete (remote performance/release validation deferred #51), #04 principles documented, #05 targeted editorial audit complete (owner approval for transliteration pending), #01 full inventory and #03 actual visual/performance measurement still open, #06 automated full tool/route crosswalk still open; #07 implementation specification documented but user visual sign-off not presumed. Evidence: ./02_CLOUDFLARE_BASELINE.md through ./07_WIREFRAME_DIRECTION.md. Phase A is **not yet fully complete**.
