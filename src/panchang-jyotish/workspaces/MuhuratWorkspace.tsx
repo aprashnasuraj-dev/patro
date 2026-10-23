@@ -9,7 +9,7 @@ type Props = { language: "ne" | "en"; selectedFeatureId?: string | null };
 type MuhuratWindow = { date: string; sunrise: Date; sunset: Date; abhijit: { start: Date; end: Date }; rahu: { start: Date; end: Date }; yama: { start: Date; end: Date }; gulika: { start: Date; end: Date } };
 
 
-export function MuhuratWorkspace({language,selectedFeatureId}:Props){
+export function MuhuratWorkspace({language}:Props){
   const [start,setStart]=useState(()=>{const from=typeof window!=="undefined"?new URLSearchParams(window.location.search).get("date"):null;return from&&validIsoDate(from)?from:todayInNepal()});
   const [days,setDays]=useState(7);
   const [showCautions,setShowCautions]=useState(true);
