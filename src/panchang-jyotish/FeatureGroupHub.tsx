@@ -111,7 +111,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
       </section>
 
       <p className="ap-pj-sr-only" role="status" aria-live="polite" aria-atomic="true">{announcement}</p>
-      <section className="ap-pj-workspace" id="ap-pj-workspace" aria-label={l(language, "गणना कार्यक्षेत्र", "Calculation workspace")}>
+      <section className="ap-pj-workspace" id="ap-pj-workspace" aria-label={l(language, "चयन गरिएको सुविधा", "Selected feature")}>
         <header className="ap-pj-section-head">
           <div>
             <span className="ap-pj-eyebrow">{l(language, "छानिएको सुविधा", "Selected feature")}</span>
