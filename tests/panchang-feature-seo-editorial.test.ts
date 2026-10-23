@@ -1,14 +1,22 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { PATRO_FEATURES, FEATURE_GROUPS } from "../src/panchang-jyotish/catalog";
+import { PATRO_FEATURES, FEATURE_GROUPS, getFeatureAvailability, getPublicFeaturesForGroup, PUBLIC_FEATURE_COUNT } from "../src/panchang-jyotish/catalog";
 const read=(path:string)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 describe("original feature SEO and canonical hub policy",()=>{
   const editorial=JSON.parse(read("seo/panchang-feature-editorial.json")).features as Array<{id:string;group:string;href:string;titleNe:string;titleEn:string;descriptionNe:string;descriptionEn:string}>;
-  it("covers every feature with original bilingual short copy and no orphan",()=>{
-    expect(editorial).toHaveLength(91);
-    expect(new Set(editorial.map(x=>x.id)).size).toBe(91);
+  it("includes only working or existing features in public SEO listings",()=>{
+    const publicFeatures=PATRO_FEATURES.filter(feature=>getFeatureAvailability(feature)!=="reference");
+    expect(PUBLIC_FEATURE_COUNT).toBe(64);
+    expect(getPublicFeaturesForGroup("panchang").every(feature=>getFeatureAvailability(feature)!=="reference")).toBe(true);
+    expect(editorial).toHaveLength(64);
+    expect(new Set(editorial.map(x=>x.id)).size).toBe(64);
+    expect(editorial.map(x=>x.id).sort()).toEqual(publicFeatures.map(x=>x.id).sort());
     for(const feature of PATRO_FEATURES){
       const entry=editorial.find(x=>x.id===feature.id);
+      if(getFeatureAvailability(feature)==="reference"){
+        expect(entry,feature.id+" must not be published in SEO guides").toBeUndefined();
+        continue;
+      }
       expect(entry).toBeDefined();
       expect(entry?.href).toBe(feature.href);
       expect(entry?.group).toBe(feature.group);
