@@ -38,7 +38,7 @@ const CORE_COPY = {
   "/privacy": ["Privacy Policy | Aafnai Patro", "Review Aafnai Patro’s privacy information covering browser storage, optional synchronization, third-party services, and advertising."],
   "/terms": ["Terms of Use | Aafnai Patro", "Review the terms governing Aafnai Patro’s informational content, calculations, external links, service availability, and acceptable use."],
   "/contact": ["Contact & Support | Aafnai Patro", "Contact Aafnai Patro for technical help, product feedback, accessibility suggestions, or evidence-based calendar corrections."]
-};;
+};
 
 function esc(value) {
   return String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
