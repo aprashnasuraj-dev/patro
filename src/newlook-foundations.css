@@ -1,0 +1,26 @@
+/* Newlook Fastgate — isolated semantic foundation, intentionally not imported until visual integration review. */
+:root {
+  --nl-paper: #fbf7f0; --nl-surface: #fffdf9; --nl-surface-raised: #ffffff;
+  --nl-ink: #1f2937; --nl-muted: #4b5563; --nl-border: #d9d3c9;
+  --nl-blue: #003893; --nl-blue-on: #ffffff; --nl-crimson: #b42338;
+  --nl-holiday: #a31e35; --nl-today: #003893; --nl-selected: #1f2937;
+  --nl-focus: #005fcc; --nl-success: #17633d; --nl-warning: #865600;
+  --nl-radius-sm: 8px; --nl-radius-md: 16px; --nl-radius-lg: 24px;
+  --nl-space-1: 4px; --nl-space-2: 8px; --nl-space-3: 12px; --nl-space-4: 16px;
+  --nl-space-6: 24px; --nl-space-8: 32px; --nl-space-12: 48px;
+  --nl-duration-fast: 140ms; --nl-duration-normal: 220ms;
+  --nl-ease: cubic-bezier(.2,.8,.2,1);
+}
+:root[data-theme="dark"],:root[data-mode="dark"] {
+  --nl-paper: #121923; --nl-surface: #1b2531; --nl-surface-raised: #263241;
+  --nl-ink: #f5f1e9; --nl-muted: #d3d7df; --nl-border: #4c5869;
+  --nl-blue: #92b8ff; --nl-blue-on: #101b2d; --nl-crimson: #ff8596;
+  --nl-holiday: #ff9bad; --nl-today: #9bbdff; --nl-selected: #e7eaf0;
+  --nl-focus: #ffce66; --nl-success: #8edbb2; --nl-warning: #ffd080;
+}
+.nl-surface { background: var(--nl-surface); color: var(--nl-ink); border: 1px solid var(--nl-border); border-radius: var(--nl-radius-md); }
+.nl-interactive { transition: background-color var(--nl-duration-fast) var(--nl-ease),border-color var(--nl-duration-fast) var(--nl-ease),transform var(--nl-duration-normal) var(--nl-ease); }
+.nl-interactive:focus-visible { outline: 3px solid var(--nl-focus); outline-offset: 3px; }
+.nl-tap-target { min-width: 44px; min-height: 44px; }
+.nl-deva { line-height: 1.65; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion:reduce) { .nl-interactive { transition: none; animation: none; } }
