@@ -37,7 +37,8 @@ test("history renderer uses packaged shards and never hides unverified records",
   const pkg = JSON.parse(read("package.json"));
   assert.ok(renderer.includes("public/data/on-this-day"));
   assert.ok(renderer.includes("source_url"));
-  assert.ok(renderer.includes("Needs further verification · थप प्रमाणीकरण आवश्यक"));
+  assert.ok(renderer.includes("Source not yet confirmed · स्रोत पुष्टि हुन बाँकी"));
+  assert.ok(!renderer.includes("Needs further verification · थप प्रमाणीकरण आवश्यक"));
   assert.ok(!renderer.includes(".filter((entry) => entry.url && entry.title)"));
   assert.ok(pages.includes('/data/on-this-day/month-${month}.json'));
   assert.ok(router.includes("HISTORY_DAY_ROUTE"));
