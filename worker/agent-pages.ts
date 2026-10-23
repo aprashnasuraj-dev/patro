@@ -109,8 +109,8 @@ async function panchangPage(request: Request, env: AgentEnv, city: string, bsDat
   const tithi = typeof result.tithi === "string" ? result.tithi : result.tithi?.tithi?.ne || result.tithi?.name_ne || result.tithi?.tithi || p?.tithi?.ne || p?.tithi_name_ne || "—";
   const title = `${result.city.name} को पञ्चाङ्ग ${bsDate} · आफ्नै पात्रो`;
   const facts = [
-    ["Tithi", tithi], ["Sunrise", p.sunrise || "—"], ["Sunset", p.sunset || "—"],
-    ["Rahu Kaal", p.rahu_kaal || p.rahuKaal || "—"], ["AD", result.ad], ["Timezone", result.city.timeZone]
+    ["तिथि", tithi], ["सूर्योदय", p.sunrise || "—"], ["सूर्यास्त", p.sunset || "—"],
+    ["राहुकाल", p.rahu_kaal || p.rahuKaal || "—"], ["इस्वी मिति", result.ad]
   ];
   const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(result.city.name)} मा ${esc(bsDate)} का लागि उपलब्ध पञ्चाङ्ग विवरण। सूर्योदय, सूर्यास्त र दिनका समय स्थानअनुसार फरक हुन सक्छन्।</p><div class="grid">${facts.map(([k, v]) => `<div class="card"><b>${esc(k)}</b><div>${esc(v)}</div></div>`).join("")}</div></article>`;
   return pageShell(env, request, { title, description: `${result.city.name} मा वि.सं. ${bsDate} को तिथि, सूर्योदय, सूर्यास्त र राहुकालको विवरण।`, body });
