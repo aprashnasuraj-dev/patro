@@ -25,7 +25,6 @@
 .mt-moon-mark,
 .mt-insight-icon,
 .mt-astro-lucky-orbit {
-  --ap-icon-tone: var(--ap-icon-tone, #286a55);
   position: relative;
   isolation: isolate;
   display: grid;
@@ -40,7 +39,7 @@
     radial-gradient(circle at 80% 22%, color-mix(in srgb, var(--ap-icon-tone) 15%, transparent) 0 .7px, transparent 1.15px),
     radial-gradient(circle at 26% 78%, rgba(137, 101, 49, .10) 0 .6px, transparent 1px),
     repeating-linear-gradient(17deg, rgba(160, 126, 72, .055) 0 1px, transparent 1px 5px),
-    linear-gradient(145deg, var(--ap-icon-paper-light), var(--ap-icon-paper) 68%, var(--ap-icon-paper-shadow)) !important;
+    linear-gradient(145deg, var(--ap-icon-paper-light), color-mix(in srgb, var(--ap-icon-wash) 78%, var(--ap-icon-paper)) 58%, var(--ap-icon-paper-shadow)) !important;
   background-size: auto, 13px 13px, 17px 19px, auto, auto;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .92),
