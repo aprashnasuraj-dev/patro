@@ -35,8 +35,11 @@ describe("personal-time component presentation", () => {
     expect(neLabels[3]).toContain("तारा बल");
     expect(neLabels[3]).not.toBe("तत्त्व मेल");
     const explanations = sampleComponents.map(component => personalComponentExplanation({ ...component }, "ne"));
+    const englishExplanations = sampleComponents.map(component => personalComponentExplanation({ ...component }, "en"));
     expect(explanations).toHaveLength(8);
     expect(new Set(explanations).size).toBe(8);
+    expect(englishExplanations.every(explanation => explanation.trim().length > 0)).toBe(true);
+    expect(new Set(englishExplanations).size).toBe(8);
     expect(explanations[3]).toContain("तारा बल");
     expect(explanations[4]).toContain("भाव");
     expect(explanations[5]).toContain("बृहस्पति");
@@ -305,7 +308,7 @@ describe("personal-time recommendation engine", () => {
     const result = evaluatePersonalTime({
       ...base,
       panchangReasons: ["Example reason", " example REASON. "],
-      panchangCautions: ["rahu_kaal", "RAHU KAAL"],
+      panchangCautions: ["rahu_kaal", "RAHU_KAAL"],
       horaLord: null, dashaLord: null, tatwa: null
     });
     expect(result.reasons.filter(reason => reason.toLowerCase().includes("example reason"))).toHaveLength(1);
