@@ -2,6 +2,7 @@ import { formatNeDate } from "./nepaliDate";
 import { useEffect, useMemo, useState } from "react";
 import { BS_MONTHS, calendarTitle, pageTitle, setPageTitle, toNepaliDigits } from "./title";
 import { l, useUiLanguage } from "./useUiLanguage";
+import { FeatureGlyph } from "./panchang-jyotish/FeatureGlyph";
 import { getToolIcon } from "./iconography";
 
 const NE_DAYS=["आइत","सोम","मंगल","बुध","बिही","शुक्र","शनि"];
