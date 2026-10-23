@@ -89,7 +89,7 @@ function festivalPage(request: Request, env: GrowthEnv, def: FestivalDef, year: 
   const crumbs: Array<[string, string]> = [["Aafnai Patro", "/"], ["US festival times", "/us/festivals"], [`${def.name} ${year}`, path]];
   const body = `${crumbsHtml(crumbs)}
 <h1>${esc(def.name)} ${year} in the USA: Date and ${esc(def.timing === "moonrise" ? "Moonrise Time" : def.timing === "sunset-sunrise" ? "Arghya Times" : "Muhurat")} by City</h1>
-${def.verified ? "" : `<p class="answer note">Provisional: this festival's rule is still being checked against an independent panchang. Confirm with your temple.</p>`}
+${def.verified ? "" : `<p class="answer note">Estimated date: this year's observance timing may change. Please confirm with your temple or local Panchang.</p>`}
 <div class="answer"><p>In the US, ${esc(def.name)} ${year} is on <strong>${esc(dayLabel(nyT.date))}</strong> (New York; same date in most US cities — see the table).${nyT.publicDate ? ` ${esc(def.publicLabel || "Main celebration")}: ${esc(dayLabel(nyT.publicDate))}.` : ""}</p><p>${keyTime}</p><p>${indiaLine}${nepalLine}</p></div>
 <section class="card"><h2>${esc(def.name)} ${year} — every major US city</h2><div class="tablewrap"><table><thead><tr><th>City</th><th>Date</th><th>${esc(def.timingLabel)}</th><th>Tithi (local)</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>
 <p class="note">All times are local to each city. Cities in the same metro (e.g. Edison and New York) can differ by a minute or two.</p></section>
