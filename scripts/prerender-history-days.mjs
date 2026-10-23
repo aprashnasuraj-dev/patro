@@ -119,7 +119,7 @@ for (const entity of historyDays) {
   const description = `${display} मा यस दिन भएका ऐतिहासिक घटना र उपलब्ध स्रोतका लिङ्क। स्रोत पुष्टि हुन बाँकी विवरणमा छुट्टै सूचना देखाइएको छ।`;
   const items = rows.length
     ? `<ol>${rows.map(({ row, url, title: eventTitle, year, needsFurtherVerification: needsVerification }) => `<li>${year ? `<strong>${esc(year)}</strong> — ` : ""}${esc(eventTitle)} ${url ? `<a href="${esc(url)}" rel="nofollow noopener">${esc(sourceNameOf(row, url))}</a>` : ""}${needsVerification ? ` <strong data-verification="needs-further-verification">Source not yet confirmed · स्रोत पुष्टि हुन बाँकी</strong>` : ""}</li>`).join("")}</ol>`
-    : `<p>यो मितिका लागि हालको archive snapshot मा अभिलेख छैन।</p>`;
+    : `<p>यस मितिका लागि कुनै ऐतिहासिक घटना भेटिएन।</p>`;
   const prev = adjacentMonthDay(mmdd, -1);
   const next = adjacentMonthDay(mmdd, 1);
   const body = `<article><p class="eyebrow">इतिहासमा यस दिन</p><h1>${esc(title)}</h1><p>${esc(description)}</p>${items}<nav aria-label="History archive navigation"><a href="/on-this-day/${prev}">← ${esc(prev)}</a> · <a href="/on-this-day">आज इतिहासमा</a> · <a href="/on-this-day/${next}">${esc(next)} →</a></nav><p><a href="/convert">मिति रूपान्तरण गर्नुहोस्</a></p></article>`;
