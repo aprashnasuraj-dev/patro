@@ -93,7 +93,7 @@
     radial-gradient(circle at center, var(--ap-icon-paper-light) 0 12%, transparent 14% 25%, color-mix(in srgb, var(--ap-icon-tone) 46%, transparent) 27% 31%, transparent 33%),
     repeating-conic-gradient(from 8deg, color-mix(in srgb, var(--ap-icon-tone) 45%, transparent) 0deg 8deg, transparent 8deg 22deg);
 }
-.ap-tool-icon { width: 48px; height: 48px; border-radius: 14px !important; }
+.ap-tool-card { grid-template-columns: 50px minmax(0,1fr) auto; }\n.ap-tool-icon { width: 48px; height: 48px; border-radius: 14px !important; }
 .ap-launcher-orb { width: 48px; height: 48px; border-radius: 15px !important; }
 .ap-launcher-search > span { border-radius: 12px !important; }
 .ap-feature-launcher-button > span { border-radius: 50% !important; }
@@ -234,7 +234,7 @@
   .mp-feature-grid { grid-template-columns:minmax(0,1fr); }
   .mp-feature-card { padding:12px; }
 }
-@media (prefers-reduced-motion:reduce) {
+@media (max-width:440px) { .ap-launcher-orb { width:40px; height:40px; } }\n@media (prefers-reduced-motion:reduce) {
   .ap-tool-card,.ap-launcher-item,.mp-feature-card,.ap-feature-launcher-button > span,.ap-tool-icon,.ap-launcher-orb,.mp-feature-icon,.mt-layer-icon { transition:none !important; }
 }
 .ap-tool-card:focus-visible .ap-tool-icon,
