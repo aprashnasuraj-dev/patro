@@ -214,8 +214,14 @@ export function getFeatureAvailability(feature: PatroFeature): FeatureAvailabili
 export const FEATURE_COUNT = PATRO_FEATURES.length;
 export const EXPECTED_FEATURE_COUNT = 91;
 
+/** Only list usable or existing destinations in the public directory. The full catalog remains
+ * available to acceptance/audit code, but reference-only entries are not advertised as tools. */
 export function getFeaturesForGroup(group: FeatureGroupId) {
-  return PATRO_FEATURES.filter((item) => item.group === group);
+  return PATRO_FEATURES.filter((item) =>
+    item.group === group &&
+    item.disposition !== "source-review" &&
+    getFeatureAvailability(item) !== "reference"
+  );
 }
 
 export function getFeatureById(id: string) {
