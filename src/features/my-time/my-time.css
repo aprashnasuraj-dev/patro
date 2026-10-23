@@ -409,8 +409,8 @@
 
 /* Accessible hit areas for the primary My Time ring. The visible arcs remain decorative; these wider paths handle pointer and keyboard interaction. */
 .mt-polar-hit-target{fill:none;stroke:transparent;pointer-events:stroke;touch-action:manipulation;cursor:pointer}
-.mt-polar-hit-target:focus{outline:none;stroke:var(--mt-accent)!important;stroke-width:20px;stroke-dasharray:2 3;opacity:.95}
-.mt-polar-hit-target:focus-visible{stroke:var(--mt-accent)!important;stroke-width:20px;stroke-dasharray:2 3;opacity:.95}
+.mt-polar-hit-target:focus{outline:none;stroke:var(--mt-accent,#26745c)!important;stroke-width:20px;stroke-dasharray:2 3;opacity:.95;filter:drop-shadow(0 0 2px #26745c)}
+.mt-polar-hit-target:focus-visible{stroke:var(--mt-accent,#26745c)!important;stroke-width:20px;stroke-dasharray:2 3;opacity:.95;filter:drop-shadow(0 0 2px #26745c)}
 .mt-selected-event{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;width:min(100%,520px);box-sizing:border-box;margin:14px auto 0;padding:14px 16px;border:1px solid var(--mt-line);border-left:4px solid var(--mt-accent);border-radius:14px;background:color-mix(in srgb,var(--mt-soft) 60%,var(--mt-card));color:var(--mt-ink)}
 .mt-selected-event-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
 .mt-selected-event-copy>span{font-size:10px;font-weight:800;color:var(--mt-accent);letter-spacing:.05em}
