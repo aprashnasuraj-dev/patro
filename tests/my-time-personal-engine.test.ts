@@ -13,6 +13,78 @@ const base = {
   natalFactorsApplied: true
 };
 
+
+describe("personal-time component presentation", () => {
+  const sampleComponents = [
+    { key: "panchang", score: 70, weight: 30, explanation: "Panchang timing score." },
+    { key: "rashifal", score: 72, weight: 10, explanation: "Published work domain score." },
+    { key: "dasha-hora", score: 80, weight: 10, explanation: "Mercury Dasha with Mercury Hora: same planet graded at 98/100." },
+    { key: "natal-bala", score: 77, weight: 10, explanation: "Sampat Tara Bala; Moon occupies house 10 from natal Moon." },
+    { key: "chart-lords", score: 65, weight: 15, explanation: "Chart-lord relevance score for houses (6, 10, 11)." },
+    { key: "gochara", score: 60, weight: 5, explanation: "Jupiter transits 5th and Saturn 10th from natal Moon." },
+    { key: "activity-hora", score: 95, weight: 10, explanation: "Mercury Hora is a traditional preference for work." },
+    { key: "activity-tatwa", score: 95, weight: 10, explanation: "Vayu Tatwa matches the traditional preference for work; this is a weak contextual signal." }
+  ] as const;
+
+  it("uses distinct labels and explanations for all eight scoring components", async () => {
+    const { personalComponentLabel, personalComponentExplanation } = await import("../src/features/my-time/personal-time-copy");
+    const neLabels = sampleComponents.map(component => personalComponentLabel(component.key, "ne"));
+    const enLabels = sampleComponents.map(component => personalComponentLabel(component.key, "en"));
+    expect(new Set(neLabels).size).toBe(8);
+    expect(new Set(enLabels).size).toBe(8);
+    expect(neLabels[3]).toContain("तारा बल");
+    expect(neLabels[3]).not.toBe("तत्त्व मेल");
+    const explanations = sampleComponents.map(component => personalComponentExplanation({ ...component }, "ne"));
+    expect(explanations).toHaveLength(8);
+    expect(new Set(explanations).size).toBe(8);
+    expect(explanations[3]).toContain("तारा बल");
+    expect(explanations[4]).toContain("भाव");
+    expect(explanations[5]).toContain("बृहस्पति");
+    expect(explanations[6]).toContain("बुध");
+    expect(explanations[7]).toContain("वायु");
+  });
+
+  it("describes an unknown component explicitly instead of using the Tantra fallback", async () => {
+    const { personalComponentLabel, personalComponentExplanation } = await import("../src/features/my-time/personal-time-copy");
+    const unknown = { key: "future-component", score: 50, weight: 1, explanation: "raw" };
+    expect(personalComponentLabel(unknown.key, "ne")).toContain(unknown.key);
+    expect(personalComponentExplanation(unknown, "ne")).toContain("व्याख्या उपलब्ध छैन");
+    expect(personalComponentExplanation(unknown, "en")).toContain("No explanation is configured");
+    expect(personalComponentExplanation(unknown, "ne")).not.toContain("तन्त्रको पञ्चतत्त्व");
+  });
+
+  it("preserves each selected activity's Hora and Tatwa evidence when aggregating scores", async () => {
+    const { aggregatePersonalTimeComponents, personalComponentExplanation } = await import("../src/features/my-time/personal-time-copy");
+    const evaluations = [
+      { components: [
+        { key: "activity-hora", score: 90, weight: 40, explanation: "Mercury Hora is a traditional preference for work." },
+        { key: "activity-tatwa", score: 95, weight: 20, explanation: "Vayu Tatwa matches the traditional preference for work; this is a weak contextual signal." }
+      ] },
+      { components: [
+        { key: "activity-hora", score: 30, weight: 20, explanation: "Venus Hora is not the preferred Hora; treated as neutral, not harmful for study." },
+        { key: "activity-tatwa", score: 55, weight: 30, explanation: "Prithvi Tatwa does not match the traditional preference for study; this is a weak contextual signal." }
+      ] }
+    ];
+    const aggregate = aggregatePersonalTimeComponents(evaluations);
+    const hora = aggregate.find(component => component.key === "activity-hora");
+    const tatwa = aggregate.find(component => component.key === "activity-tatwa");
+    expect(hora?.score).toBe(70);
+    expect(hora?.weight).toBe(30);
+    expect(hora?.activityExplanations).toHaveLength(2);
+    expect(personalComponentExplanation(hora!, "ne")).toContain("काम / व्यवसाय");
+    expect(personalComponentExplanation(hora!, "ne")).toContain("अध्ययन");
+    expect(personalComponentExplanation(tatwa!, "ne")).toContain("वायु");
+    expect(personalComponentExplanation(tatwa!, "ne")).toContain("पृथ्वी");
+  });
+
+  it("deduplicates equivalent display messages without deleting distinct explanations", async () => {
+    const { dedupeDisplayStrings } = await import("../src/features/my-time/personal-time-utils");
+    expect(dedupeDisplayStrings(["Repeated reason", " repeated REASON. ", "Different reason"])).toEqual([
+      "Repeated reason", "Different reason"
+    ]);
+  });
+});
+
 describe("personal-time recommendation engine", () => {
   it("uses real matching Rashifal domain scores and exposes why", () => {
     const result = evaluatePersonalTime({
@@ -226,6 +298,18 @@ describe("personal-time recommendation engine", () => {
   it("rejects invalid coordinates instead of exposing them as reusable birth data", () => {
     const context = normalizeJanmaPatroContext({ rashi: { name: "वृष" }, birth: { date: "1995-04-10", lat: 91, lng: 181 } });
     expect(context?.birth).toMatchObject({ lat: null, lng: null });
+  });
+
+
+  it("deduplicates duplicate reasons and cautions in the evaluation result", () => {
+    const result = evaluatePersonalTime({
+      ...base,
+      panchangReasons: ["Example reason", " example REASON. "],
+      panchangCautions: ["rahu_kaal", "RAHU KAAL"],
+      horaLord: null, dashaLord: null, tatwa: null
+    });
+    expect(result.reasons.filter(reason => reason.toLowerCase().includes("example reason"))).toHaveLength(1);
+    expect(result.cautions.filter(caution => caution.toLowerCase().replace(/[^a-z]/g, "") === "rahukaal")).toHaveLength(1);
   });
 
   it("rejects invalid windows and scores", () => {
