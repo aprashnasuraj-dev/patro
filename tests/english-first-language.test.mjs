@@ -9,6 +9,7 @@ const launcher = read("src/components/FeatureLauncher.tsx");
 const languageHook = read("src/useUiLanguage.ts");
 const index = read("index.html");
 const prerender = read("scripts/prerender-seo.mjs");
+const runtimeSeo = read("src/seo.ts");
 const intents = JSON.parse(read("seo/search-intents.json"));
 
 test("first visit defaults to English outside Nepali browser locales and preserves manual choice", () => {
@@ -50,6 +51,9 @@ test("static HTML and crawler-facing metadata are English-first", () => {
   assert.ok(prerender.includes("'<html lang=\"en\"'"));
   assert.ok(prerender.includes("Nepal Time Machine | History Timeline"));
   assert.ok(prerender.includes("Vedic Birth Chart & Nepali Jyotish"));
+  assert.ok(runtimeSeo.includes("const ENGLISH_FIRST"));
+  assert.ok(runtimeSeo.includes('if (ENGLISH_FIRST[clean]) row = { ...row, ...ENGLISH_FIRST[clean] };'));
+  assert.ok(runtimeSeo.includes("Nepal Time Machine | History Timeline"));
   assert.ok(prerender.includes("Explore these tools · यस समूहका विषय र उपकरण"));
   assert.ok(prerender.includes("item.titleEn"));
   assert.ok(prerender.includes("item.titleNe"));
