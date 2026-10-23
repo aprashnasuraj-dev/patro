@@ -294,7 +294,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
           <span className="rh-pj-hub-icon" aria-hidden="true">{icon}</span><span className="rh-pj-hub-copy"><strong>{l(language,ne,en)}</strong><small>{l(language,descNe,descEn)}</small></span><span className="rh-pj-hub-arrow" aria-hidden="true">↗</span>
         </a>)}
       </div>
-      <div className="rh-pj-discovery-foot"><span>{l(language,"सबै ९१ सुविधा पाँच समूहमा व्यवस्थित छन्।","All 91 features are organized into five groups.")}</span><a href="/tools">{l(language,"सबै उपकरण हेर्नुहोस्","Browse all tools")} →</a></div>
+      <div className="rh-pj-discovery-foot"><span>{l(language,"उपलब्ध ६४ सुविधा पाँच समूहमा व्यवस्थित छन्।","All 64 available features are organized into five groups.")}</span><a href="/tools">{l(language,"सबै उपकरण हेर्नुहोस्","Browse all tools")} →</a></div>
     </section>
   </main>;
 }
