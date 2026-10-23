@@ -124,6 +124,7 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
       expect(editorial.some(item=>item.id===feature.id)).toBe(false);
     }
     expect(source("src/panchang-jyotish/FeatureGroupHub.tsx")).toContain("getPublicFeaturesForGroup(groupId)");
+    expect(source("src/panchang-jyotish/FeatureExperience.tsx")).toContain("getPublicFeaturesForGroup(group)");
     expect(source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx")).not.toContain("REVIEW_CARDS");
     expect(source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx")).not.toContain("REVIEW_RULES");
     expect(source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx")).not.toContain("SYSTEMS");
