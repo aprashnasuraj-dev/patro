@@ -42,6 +42,12 @@ test("My Time temporal layers use Lucide icon components and preserve Jyotish ho
 
 test("CSS-only Nepali paper texture is attached to tools, launcher, features and My Time", () => {
   assert.match(theme, /repeating-linear-gradient/);
+  assert.match(theme, /radial-gradient\\(ellipse at 22% 13%/);
+  assert.match(theme, /--ap-icon-tone: #2c6097/);
+  assert.match(theme, /--ap-icon-tone: #9b4d36/);
+  assert.match(theme, /--ap-icon-wash/);
+  assert.match(theme, /\\.ap-tool-icon::before/);
+  assert.match(theme, /\\.mp-feature-icon::after/);
   assert.match(theme, /radial-gradient\(circle at 17% 21%/);
   for (const selector of [".ap-tool-icon", ".ap-launcher-orb", ".mp-feature-icon", ".mt-layer-icon", ".mt-moon-mark", ".mt-insight-icon", ".mt-astro-lucky-orbit"]) {
     assert.ok(theme.includes(selector), "missing paper icon selector " + selector);
