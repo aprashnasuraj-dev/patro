@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const read = (path) => readFileSync(new URL(path, import.meta.url), "utf8");
-const tools = read("../src/AafnaiPages.tsx");\nconst details = read("../src/AafnaiDetailPages.tsx");
+const tools = read("../src/AafnaiPages.tsx");
+const details = read("../src/AafnaiDetailPages.tsx");
 const launcher = read("../src/components/FeatureLauncher.tsx");
 const hub = read("../src/components/FeatureHub.tsx");
 const myTime = read("../src/features/my-time/MyTimePage.tsx");
@@ -20,7 +21,9 @@ test("tool cards use the shared route icons and semantic paper themes", () => {
   assert.match(registry, /return "astronomy"/);
   assert.match(registry, /return "astrology"/);
   assert.ok(tools.includes('const Icon=getToolIcon(href);return <a className="ap-tool-card ap-pj-hub-card"'), "specialist Panchang/Jyotish cards must use route icons");
-  assert.ok(!tools.includes("FeatureGlyph featureId={item.iconFeatureId}"), "specialist Tools cards must not use the legacy glyph fallback");\n  assert.ok(details.includes('className="ap-tool-icon" data-paper="astrology"><FeatureGlyph featureId="F002"'));\n  assert.ok(details.includes('className="ap-tool-icon" data-paper="astronomy"><FeatureGlyph featureId="F010"'));
+  assert.ok(!tools.includes("FeatureGlyph featureId={item.iconFeatureId}"), "specialist Tools cards must not use the legacy glyph fallback");
+  assert.ok(details.includes('className="ap-tool-icon" data-paper="astrology"><FeatureGlyph featureId="F002"'));
+  assert.ok(details.includes('className="ap-tool-icon" data-paper="astronomy"><FeatureGlyph featureId="F010"'));
 });
 
 test("feature launcher uses SVG icons and a route-specific paper seal", () => {
