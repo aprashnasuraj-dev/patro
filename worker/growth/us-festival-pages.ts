@@ -150,7 +150,7 @@ function hubPage(request: Request, env: GrowthEnv, now: Date) {
 <h1>Hindu and Nepali Festival Dates in the USA (Next 12 Months)</h1>
 <div class="answer"><p>Dates for the US are worked out from local sunrise, sunset and moonrise, so they can differ from India or Nepal by a day. Each festival page lists the date and the key time for 27 US cities.</p></div>
 <section class="card"><div class="tablewrap"><table><thead><tr><th>Festival</th><th>New York</th><th>Los Angeles</th></tr></thead><tbody>
-${items.map(({ def, date, year }) => { const la = festivalTimings(def, year, LA, date)[0]; return `<tr><td><a href="/us/${def.slug}-${year}">${esc(def.name)} ${year}</a>${def.verified ? "" : ' <span class="tag">provisional</span>'}</td><td>${esc(dayLabel(date, "short"))}</td><td>${la ? esc(dayLabel(la.date, "short")) : "—"}</td></tr>`; }).join("")}
+${items.map(({ def, date, year }) => { const la = festivalTimings(def, year, LA, date)[0]; return `<tr><td><a href="/us/${def.slug}-${year}">${esc(def.name)} ${year}</a>${def.verified ? "" : ' <span class="tag">Check local date</span>'}</td><td>${esc(dayLabel(date, "short"))}</td><td>${la ? esc(dayLabel(la.date, "short")) : "—"}</td></tr>`; }).join("")}
 </tbody></table></div><p class="links"><a href="/us/ekadashi-${y}">Ekadashi ${y}</a><a href="/us/ekadashi-${y + 1}">Ekadashi ${y + 1}</a><a href="/moon/full-moon/${y}">Purnima / full moons ${y}</a><a href="/moon/new-moon/${y}">Amavasya / new moons ${y}</a></p></section>`;
   return shell(request, env, {
     title: "Hindu & Nepali Festival Dates in the USA — Diwali, Karwa Chauth, Ekadashi & More",
