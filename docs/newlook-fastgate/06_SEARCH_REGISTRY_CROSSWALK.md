@@ -1,6 +1,6 @@
 # 06 — Search registry canonical crosswalk (source-derived)
 
-Extracted from `src/components/FeatureLauncher.tsx` on branch `newlook-fastgate`. **54 unique searchable destinations**, 55 href declarations (one duplicate link reference in surrounding markup). These are existing destination names, not necessarily the final editorial names. All 54 paths must survive redesign. Other routes (worker/static/personal) are additionally preserved in `06_CANONICAL_DESTINATIONS.md`.
+Extracted from `src/components/FeatureLauncher.tsx` on branch `newlook-fastgate`. **53 parsed registry destinations in this table**. A separate literal-href scan found 54 unique href strings across the entire file (including surrounding markup); these counts are different scopes. These are existing destination names, not necessarily the final editorial names. All 54 paths must survive redesign. Other routes (worker/static/personal) are additionally preserved in `06_CANONICAL_DESTINATIONS.md`.
 
 | # | Existing destination | Nepali name | English name | Current grouping |
 |---:|---|---|---|---|
