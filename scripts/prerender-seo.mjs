@@ -147,7 +147,7 @@ function replaceOrInsert(html, matcher, replacement, before = "</head>") {
 function render(path, indexed) {
   const meta = pageMeta(path);
   const canonical = abs(path);
-  const title = meta.title.length <= 58 ? `${meta.title} · Aafnai Patro` : meta.title;
+  const title = /(?:Aafnai Patro|आफ्नै पात्रो)/i.test(meta.title) ? meta.title : meta.title.length <= 58 ? `${meta.title} · Aafnai Patro` : meta.title;
   let html = shell;
   html = html.replace(/<html\s+lang="[^"]*"/i, '<html lang="en"');
   html = replaceOrInsert(html, /<title>.*?<\/title>/is, `<title>${esc(title)}</title>`);
