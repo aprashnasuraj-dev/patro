@@ -34,3 +34,11 @@ Account hosts Workers `patro`, `patro-day-atlas`, `patro-growth-gate`; zone `aaf
 - Verify precise baseline `main` commit against branch ancestry and save page weight/performance in #03.
 
 This note documents findings, not completed implementation. No calculations, UI code, routes or production changed.
+
+## Shell inventory addendum (verified)
+- `src/components/AppChrome.tsx` owns desktop header, More menu, utility controls, footer and a **five-item** mobile tabbar. Current desktop direct entries are Calendar, Astronomy, Horoscope, Nepali tools + More; mobile entries Calendar, Horoscope, Convert, My space, More. New IA must replace rather than create a second competing shell.
+- `AppChrome` already persists language under `patro.ui.language` and theme under `patro.ui.mode`; keep those keys and `patro:set-language` event behavior. Existing auth component is `GoogleAuthButton`, existing search trigger is `patro:open-search`; no duplicate auth/search.
+- Header More includes the feature registry `src/components/FeatureLauncher` and direct media/community/history routes. Footer currently has compact functional links to Tools, Advanced tools, Guides, Time Machine, Community, About, Sources, Privacy, Terms and Contact, not the entire legacy keyword wall (which needs separate SEO/static inventory).
+- `src/components/MobilePrimaryNav.tsx` implements **another** mobile nav with community bottom sheet. Audit where mounted before removing or hiding it; a CSS-only second tabbar would be a regression.
+- `src/components/HomeExperience.tsx` contains a separate `InstallCard` with `beforeinstallprompt` and offline warmup; cross-reference all existing install prompts before consolidation. Do not promise offline completion based only on a timer.
+- Source assets: `/aafnai-logo.png`, current Lucide import in AppChrome, plus Unicode glyphs. Keep bundled/installed icon dependency, prevent adding external script.
