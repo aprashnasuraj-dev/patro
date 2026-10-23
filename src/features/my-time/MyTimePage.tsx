@@ -134,8 +134,8 @@ function localClock(timezone: string, now: Date) {
 }
 
 /** Build a candidate-time chart using the established Jyotish engine, observation
- * place coordinates and the selected IANA timezone. Invalid/DST-ambiguous candidate
- * wall times gracefully omit chart-only signals rather than fabricating a chart. */
+ * place coordinates and the selected local time zone. Invalid or ambiguous daylight-saving
+ * times gracefully omit chart-only signals rather than inventing a chart. */
 function candidateChartAt(instant: Date, preferences: Preferences): PersonalChartSnapshot | null {
   try {
     if (!Number.isFinite(instant.getTime()) || Math.abs(preferences.lat) > 66.5) return null;
