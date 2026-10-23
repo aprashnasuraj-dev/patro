@@ -71,7 +71,7 @@ export function resolveRouteSeo(path:string){
   const edge=connectedRouteMeta(clean);
   const guide=guides.find(row=>clean==="/guides/"+row.slug);
   let row=guide||catalog[edge.canonicalPath||clean]||edge;
-  if (ENGLISH_FIRST[clean]) row = ENGLISH_FIRST[clean];
+  if (ENGLISH_FIRST[clean]) row = { ...row, ...ENGLISH_FIRST[clean] };
   if(clean==="/guides")row={title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति रूपान्तरण, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।"};
   if(clean==="/janmadin")row={title:"मेरो असली जन्मदिन · Three Birthdays",description:"AD, BS र तिथि जन्मदिन, निजी स्थानीय जन्म-पञ्चाङ्ग र नेपालका सांस्कृतिक पात्रो।"};
   const date=clean.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
