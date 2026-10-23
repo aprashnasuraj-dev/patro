@@ -33,7 +33,7 @@ function pageShell(env: AgentEnv, request: Request, opts: { title: string; descr
   const canonical = site(env) + url.pathname;
   const index = opts.index !== false;
   const schema = opts.schema || { "@context": "https://schema.org", "@type": "WebPage", name: opts.title, description: opts.description, url: canonical };
-  const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${index ? "index,follow" : "noindex,nofollow"}"><link rel="canonical" href="${esc(canonical)}"><meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script><style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:900px;margin:auto;padding:28px 18px 56px}nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 24px}a{color:#176f3b}article{background:white;border:1px solid #dfe6df;border-radius:20px;padding:24px;box-shadow:0 12px 34px rgba(23,111,59,.08)}h1{line-height:1.2;margin-top:0}.fact{font-size:1.08rem;line-height:1.7}.meta{color:#5b675e;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{border:1px solid #e2e8e2;border-radius:14px;padding:14px;background:#fbfcfa}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left}</style></head><body><main><nav><a href="/">आज</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools">आफ्नै टुल्स</a><a href="/methodology">पद्धति</a><a href="/corrections">सुधार लग</a></nav>${opts.body}<p class="meta">${esc(citeString())}</p></main></body></html>`;
+  const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${index ? "index,follow" : "noindex,nofollow"}"><link rel="canonical" href="${esc(canonical)}"><meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script><style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:900px;margin:auto;padding:28px 18px 56px}nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 24px}a{color:#176f3b}article{background:white;border:1px solid #dfe6df;border-radius:20px;padding:24px;box-shadow:0 12px 34px rgba(23,111,59,.08)}h1{line-height:1.2;margin-top:0}.fact{font-size:1.08rem;line-height:1.7}.meta{color:#5b675e;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{border:1px solid #e2e8e2;border-radius:14px;padding:14px;background:#fbfcfa}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left}</style></head><body><main><nav><a href="/">आज</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools">आफ्नै टुल्स</a><a href="/methodology">पद्धति</a><a href="/corrections">सुधार विवरण</a></nav>${opts.body}<p class="meta">${esc(citeString())}</p></main></body></html>`;
   const cache = Math.max(0, Number(opts.cacheSeconds ?? 3600));
   return new Response(html, { status: 200, headers: {
     "content-type": "text/html; charset=utf-8",
@@ -53,10 +53,10 @@ async function todayPage(request: Request, env: AgentEnv, citySlug?: string) {
   if (citySlug && !city) return new Response("Unknown city", { status: 404 });
   const tithi = day.panchang?.tithi?.ne || day.panchang?.tithi?.name_ne || day.panchang?.tithi_name_ne || "तिथि डेटा उपलब्ध छैन";
   const ns = day.ns?.formatted_ne || day.ns?.formatted || "";
-  const title = city ? `Nepali Date Today in ${city.name} · Aafnai Patro` : `आज कति गते? नेपाली पात्रो · Aafnai Patro`;
-  const description = city ? `${city.name} बाट हेर्दा आजको नेपाल-आधारित Bikram Sambat मिति, तिथि र Nepal-midnight boundary.` : "नेपाल समयअनुसार आजको Bikram Sambat मिति, तिथि, Nepal Sambat र पञ्चाङ्ग तथ्य।";
+  const title = city ? `${city.name} मा आजको नेपाली मिति · आफ्नै पात्रो` : `आज कति गते? नेपाली पात्रो · आफ्नै पात्रो`;
+  const description = city ? `${city.name} को स्थानीय समयसहित आजको वि.सं. मिति, तिथि र नेपाल संवत्।` : "नेपाल समयअनुसार आजको वि.सं. मिति, तिथि, नेपाल संवत् र पञ्चाङ्ग विवरण।";
   const localNow = city ? new Intl.DateTimeFormat("en-GB", { timeZone: city.timeZone, dateStyle: "full", timeStyle: "short" }).format(new Date()) : "";
-  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`)}</strong> = ${esc(dateLabel(day.ad))}</p><div class="grid"><div class="card"><b>तिथि</b><div>${esc(tithi)}</div></div><div class="card"><b>Nepal Sambat</b><div>${esc(ns || "—")}</div></div><div class="card"><b>AD</b><div>${esc(day.ad)}</div></div>${city ? `<div class="card"><b>${esc(city.name)} local time</b><div>${esc(localNow)}</div></div>` : ""}</div><p class="meta">Date boundary: Asia/Kathmandu (UTC+05:45). ${city ? `Local display timezone: ${esc(city.timeZone)}.` : ""}</p></article>`;
+  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`)}</strong> = ${esc(dateLabel(day.ad))}</p><div class="grid"><div class="card"><b>तिथि</b><div>${esc(tithi)}</div></div><div class="card"><b>Nepal Sambat</b><div>${esc(ns || "—")}</div></div><div class="card"><b>AD</b><div>${esc(day.ad)}</div></div>${city ? `<div class="card"><b>${esc(city.name)} को स्थानीय समय</b><div>${esc(localNow)}</div></div>` : ""}</div><p class="meta">मिति र पञ्चाङ्ग नेपाल समयअनुसार देखाइएका छन्। ${city ? `${esc(city.name)} को समय स्थानीय समयअनुसार छ।` : ""}</p></article>`;
   return pageShell(env, request, { title, description, body, cacheSeconds: secondsUntilNepalMidnight(), schema: { "@context": "https://schema.org", "@type": "WebPage", name: title, description, dateModified: new Date().toISOString(), mainEntity: { "@type": "Thing", name: "Nepali date today", description: `${day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`} = ${day.ad}; tithi: ${String(tithi)}` } } });
 }
 
@@ -104,7 +104,7 @@ async function countdownPage(request: Request, env: AgentEnv, slug: string, year
 async function panchangPage(request: Request, env: AgentEnv, city: string, bsDate: string) {
   const adapter = createPatroAdapter(createD1PatroSource(env));
   const result = await adapter.getTithiAt(city, bsDate);
-  if (!result) return new Response("Panchang record not found", { status: 404 });
+  if (!result) return new Response("पञ्चाङ्ग विवरण भेटिएन।", { status: 404 });
   const p = result.panchang || {};
   const tithi = typeof result.tithi === "string" ? result.tithi : result.tithi?.tithi?.ne || result.tithi?.name_ne || result.tithi?.tithi || p?.tithi?.ne || p?.tithi_name_ne || "—";
   const title = `${result.city.name} को पञ्चाङ्ग ${bsDate} · आफ्नै पात्रो`;
@@ -207,7 +207,7 @@ async function todayWidget(request: Request, env: AgentEnv) {
   const day = await adapter.getTodayNepal();
   if (!day) return new Response("Unavailable", { status: 503 });
   const body = `<article><h1>आज</h1><p class="fact"><strong>${esc(day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`)}</strong></p><p>${esc(dateLabel(day.ad))}</p><p><a target="_blank" rel="noopener" href="${esc(site(env))}/">Aafnai Patro</a></p></article>`;
-  return pageShell(env, request, { title: "Aafnai Patro Today Widget", description: "Embeddable current Nepali date widget.", body, index: false, cacheSeconds: secondsUntilNepalMidnight(), frame: true });
+  return pageShell(env, request, { title: "Aafnai Patro Today Widget", description: "आजको नेपाली मिति र तिथि देखाउने पात्रो।", body, index: false, cacheSeconds: secondsUntilNepalMidnight(), frame: true });
 }
 
 async function calendarWidget(request: Request, env: AgentEnv, year: number, month: number) {
@@ -215,7 +215,7 @@ async function calendarWidget(request: Request, env: AgentEnv, year: number, mon
   const days = await adapter.getMonth(year, month);
   if (!days.length) return new Response("Unavailable", { status: 404 });
   const body = `<article><h1>${esc(BS_MONTHS[month])} ${year}</h1><div class="grid">${days.map((d) => `<div class="card"><b>${esc(d.bs.day)}</b><div>${esc(d.ad.slice(5))}</div></div>`).join("")}</div><p><a target="_blank" rel="noopener" href="${esc(site(env))}/calendar/${year}/${String(month).padStart(2, "0")}">Open full calendar</a></p></article>`;
-  return pageShell(env, request, { title: `Aafnai Patro ${BS_MONTHS[month]} ${year} Widget`, description: "Embeddable Nepali calendar month widget.", body, index: false, cacheSeconds: 86400, frame: true });
+  return pageShell(env, request, { title: `${BS_MONTHS[month]} ${year} को नेपाली पात्रो`, description: `${BS_MONTHS[month]} ${year} का दैनिक नेपाली मितिहरू।`, body, index: false, cacheSeconds: 86400, frame: true });
 }
 
 export async function agentPageResponse(request: Request, env: AgentEnv): Promise<Response | null> {
