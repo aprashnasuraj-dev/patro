@@ -6,6 +6,59 @@ import { historicalCalendarNoindex } from "../worker/seo-window";
 const BASE=(((import.meta as ImportMeta & {env?:Record<string,string|undefined>}).env?.VITE_PUBLIC_BASE_URL)||"https://aafnaipatro.com").replace(/\/+$/,"");
 const NOINDEX=new Set(["/samachar","/developers","/tools/api","/offline","/mcp","/widget/today"]);
 const catalog:Record<string,{title:string;description:string}>={...intents.core,...intents.tools};
+
+// English-first metadata is the crawlable default for global discovery. The UI
+// still follows the saved language or the visitor's preferred browser language.
+const ENGLISH_FIRST: Record<string, { title: string; description: string }> = {
+  "/": {
+    title: "Nepali Calendar Today | Nepal Date, Tithi & Festivals",
+    description: "Check today’s date in Nepal, Bikram Sambat (BS) and Gregorian (AD) conversion, tithi, festivals, public holidays and the Nepali calendar. Aafnai Patro is available in English and Nepali."
+  },
+  "/tools": {
+    title: "Free Online Tools for Nepal | Aafnai Patro",
+    description: "Explore free tools for Nepali typing, BS–AD date conversion, age, EMI, VAT, land measurement, QR, OCR, tithi, auspicious timing and everyday calculations. Available in English and Nepali."
+  },
+  "/tools/astro": {
+    title: "Nepali Astronomical Calendar | Tithi, Moon Phase & Sky Events",
+    description: "Explore the Nepali astronomical calendar with tithi, Moon phase, sunrise and sunset, and astronomical context by date. Compare calendar information in English or Nepali."
+  },
+  "/time-machine": {
+    title: "Nepal Time Machine | History Timeline",
+    description: "Explore notable events from Nepal and world history with dates, historical context, and source references."
+  },
+  "/on-this-day": {
+    title: "On This Day in Nepal and World History",
+    description: "Explore notable events that happened on this date in Nepal and around the world, with source context."
+  },
+  "/jyotish": {
+    title: "Nepali Jyotish Calculators | Birth Chart & Kundali",
+    description: "Explore birth charts, rashi, nakshatra, lagna, planetary positions, traditional matchmaking, and related Jyotish calculators."
+  },
+  "/jyotish/china": {
+    title: "Vedic Birth Chart & Nepali Jyotish | Aafnai Patro",
+    description: "Explore a birth chart using date, time, and place of birth, with traditional lagna, planetary positions, nakshatra, dasha, and chart interpretations."
+  },
+  "/about": {
+    title: "About Aafnai Patro | Product & Principles",
+    description: "Learn about Aafnai Patro’s purpose, calendar and astronomy features, product principles, and approach to transparent information."
+  },
+  "/sources": {
+    title: "Sources & Methodology | Aafnai Patro",
+    description: "Understand the sources and limitations behind Nepal calendar dates, tithi, astronomical calculations, cultural calendars, and external content."
+  },
+  "/privacy": {
+    title: "Privacy Policy | Aafnai Patro",
+    description: "Review Aafnai Patro’s privacy information covering browser storage, optional synchronization, third-party services, and advertising."
+  },
+  "/terms": {
+    title: "Terms of Use | Aafnai Patro",
+    description: "Review the terms governing Aafnai Patro’s informational content, calculations, external links, service availability, and acceptable use."
+  },
+  "/contact": {
+    title: "Contact & Support | Aafnai Patro",
+    description: "Contact Aafnai Patro for technical help, product feedback, accessibility suggestions, or evidence-based calendar corrections."
+  }
+};
 export function isPublicPreviewHost(hostname:string){
   const host=hostname.toLowerCase();
   // Loopback development/audit servers cannot be crawled publicly. Let their
@@ -18,6 +71,7 @@ export function resolveRouteSeo(path:string){
   const edge=connectedRouteMeta(clean);
   const guide=guides.find(row=>clean==="/guides/"+row.slug);
   let row=guide||catalog[edge.canonicalPath||clean]||edge;
+  if (ENGLISH_FIRST[clean]) row = ENGLISH_FIRST[clean];
   if(clean==="/guides")row={title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति रूपान्तरण, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।"};
   if(clean==="/janmadin")row={title:"मेरो असली जन्मदिन · Three Birthdays",description:"AD, BS र तिथि जन्मदिन, निजी स्थानीय जन्म-पञ्चाङ्ग र नेपालका सांस्कृतिक पात्रो।"};
   const date=clean.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
