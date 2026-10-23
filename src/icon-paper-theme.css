@@ -1,21 +1,18 @@
 /*
- * Aafnai Patro iconography system.
- * Layered lokta-paper texture, ornamental inset borders and a restrained
- * seven-colour heritage palette make icons feel tactile without adding images.
+ * Meaningful Lokta Paper icon system — visibly fibrous stock, heritage ink,
+ * double-stamped frames and a category-specific seal behind each SVG.
+ * All textures are CSS-generated so icons remain sharp, light and offline-safe.
  */
 :root {
-  --ap-icon-paper: #f4ead4;
-  --ap-icon-paper-light: #fffaf0;
-  --ap-icon-paper-shadow: #e7d5b0;
-  --ap-icon-paper-edge: #ceb98d;
-  --ap-icon-ink: #285f4d;
-  --ap-icon-grain: rgba(113, 86, 45, .085);
-  --ap-icon-tone: #286a55;
-  --ap-icon-wash: #dfecdf;
-  --ap-icon-edge: #b6cdae;
+  --ap-icon-paper: #f1dfbd;
+  --ap-icon-paper-light: #fff7e4;
+  --ap-icon-paper-shadow: #d7b98a;
+  --ap-icon-edge: #b58c55;
+  --ap-icon-tone: #7b3c32;
+  --ap-icon-wash: #edcfc0;
+  --ap-icon-fiber: rgba(93, 62, 36, .18);
 }
 
-/* Apply the same handcrafted paper treatment wherever a feature appears. */
 .ap-tool-icon,
 .ap-launcher-orb,
 .ap-launcher-search > span,
@@ -32,24 +29,26 @@
   flex: none;
   overflow: hidden;
   color: var(--ap-icon-tone) !important;
-  border: 1px solid color-mix(in srgb, var(--ap-icon-tone) 33%, var(--ap-icon-paper-edge)) !important;
+  border: 2px solid var(--ap-icon-edge) !important;
+  border-radius: 14px !important;
   background-color: var(--ap-icon-paper) !important;
   background-image:
-    radial-gradient(ellipse at 22% 13%, rgba(255, 255, 255, .96) 0 7%, transparent 43%),
-    radial-gradient(circle at 80% 22%, color-mix(in srgb, var(--ap-icon-tone) 15%, transparent) 0 .7px, transparent 1.15px),
-    radial-gradient(circle at 26% 78%, rgba(137, 101, 49, .10) 0 .6px, transparent 1px),
-    repeating-linear-gradient(17deg, rgba(160, 126, 72, .055) 0 1px, transparent 1px 5px),
-    linear-gradient(145deg, var(--ap-icon-paper-light), color-mix(in srgb, var(--ap-icon-wash) 78%, var(--ap-icon-paper)) 58%, var(--ap-icon-paper-shadow)) !important;
-  background-size: auto, 13px 13px, 17px 19px, auto, auto;
+    radial-gradient(circle at 50% 48%, transparent 0 18%, color-mix(in srgb, var(--ap-icon-tone) 24%, transparent) 19% 21%, transparent 22% 31%, color-mix(in srgb, var(--ap-icon-tone) 16%, transparent) 32% 34%, transparent 35% 46%, color-mix(in srgb, var(--ap-icon-tone) 13%, transparent) 47% 49%, transparent 50%),
+    repeating-linear-gradient(33deg, var(--ap-icon-fiber) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(112deg, rgba(255,255,255,.28) 0 1px, transparent 1px 6px),
+    radial-gradient(circle at 14% 17%, rgba(255,255,255,.94) 0 1.2px, transparent 2.2px),
+    radial-gradient(circle at 76% 78%, rgba(123,76,40,.24) 0 .8px, transparent 1.8px),
+    linear-gradient(145deg, var(--ap-icon-paper-light) 0%, var(--ap-icon-wash) 58%, var(--ap-icon-paper-shadow) 100%) !important;
+  background-size: auto, 11px 11px, 17px 15px, 13px 13px, 17px 19px, auto;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .92),
-    inset 0 0 0 2px rgba(255, 250, 236, .54),
-    0 3px 0 color-mix(in srgb, var(--ap-icon-tone) 13%, var(--ap-icon-paper-edge)),
-    0 6px 13px rgba(72, 57, 31, .11);
-  transition: transform .22s cubic-bezier(.2, .75, .25, 1), box-shadow .22s ease, filter .22s ease;
+    inset 0 1px 0 rgba(255,255,255,.98),
+    inset 0 0 0 2px rgba(255,249,231,.72),
+    0 3px 0 color-mix(in srgb, var(--ap-icon-tone) 26%, var(--ap-icon-paper-shadow)),
+    0 5px 11px rgba(76,48,25,.18);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
 
-/* Delicate inset frame and a tiny diamond hallmark evoke a stamped paper seal. */
+/* Pressed-fibre double frame, like a small traditional paper seal. */
 .ap-tool-icon::before,
 .ap-launcher-orb::before,
 .ap-launcher-search > span::before,
@@ -62,12 +61,14 @@
   content: "";
   position: absolute;
   z-index: 0;
-  inset: 4px;
-  border: 1px solid color-mix(in srgb, var(--ap-icon-tone) 22%, transparent);
+  inset: 3px;
+  border: 1px solid color-mix(in srgb, var(--ap-icon-tone) 56%, transparent);
   border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.44);
   pointer-events: none;
 }
+
+/* A larger seal—not a tiny corner diamond—adds a visible handmade motif. */
 .ap-tool-icon::after,
 .ap-launcher-orb::after,
 .ap-launcher-search > span::after,
@@ -80,23 +81,25 @@
   content: "";
   position: absolute;
   z-index: 1;
-  top: 6px;
-  right: 6px;
-  width: 5px;
-  height: 5px;
-  border: 1px solid color-mix(in srgb, var(--ap-icon-tone) 58%, #bf8b36);
-  border-radius: 1px;
-  transform: rotate(45deg);
-  opacity: .8;
+  width: 24px;
+  height: 24px;
+  right: -5px;
+  bottom: -5px;
+  border: 1.5px solid color-mix(in srgb, var(--ap-icon-tone) 76%, #9c5e25);
+  border-radius: 50%;
+  opacity: .86;
   pointer-events: none;
+  background:
+    radial-gradient(circle at center, var(--ap-icon-paper-light) 0 12%, transparent 14% 25%, color-mix(in srgb, var(--ap-icon-tone) 46%, transparent) 27% 31%, transparent 33%),
+    repeating-conic-gradient(from 8deg, color-mix(in srgb, var(--ap-icon-tone) 45%, transparent) 0deg 8deg, transparent 8deg 22deg);
 }
-
-.ap-tool-icon { border-radius: 14px !important; }
-.ap-launcher-orb { border-radius: 15px !important; }
+.ap-tool-card { grid-template-columns: 50px minmax(0,1fr) auto; }
+.ap-tool-icon { width: 48px; height: 48px; border-radius: 14px !important; }
+.ap-launcher-orb { width: 48px; height: 48px; border-radius: 15px !important; }
 .ap-launcher-search > span { border-radius: 12px !important; }
 .ap-feature-launcher-button > span { border-radius: 50% !important; }
-.mp-feature-icon { width: 46px; height: 46px; border-radius: 15px !important; }
-.mt-layer-icon { border-radius: 14px !important; }
+.mp-feature-icon { width: 50px; height: 50px; border-radius: 15px !important; }
+.mt-layer-icon { width: 48px; height: 48px; border-radius: 14px !important; }
 .mt-moon-mark { border-radius: 18px !important; }
 .mt-insight-icon { border-radius: 14px !important; }
 
@@ -110,57 +113,95 @@
 .mt-insight-icon svg,
 .mt-astro-lucky-orbit svg {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: block;
   flex: none;
   color: currentColor;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .72));
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.95));
 }
 
-/* Heritage-inspired accents distinguish broad tool families at a glance. */
-.ap-tool-card:nth-child(7n + 1), .ap-launcher-item:nth-child(7n + 1),
-.mp-feature-card:nth-child(7n + 1), .mt-layer-card:nth-child(7n + 1),
-.ap-feature-launcher-button:nth-child(7n + 1) {
-  --ap-icon-tone: #23684f; --ap-icon-wash: #e0eddf; --ap-icon-edge: #adc9ae;
+/* Semantic colours: the subject chooses the paper/ink pairing, never card order. */
+[data-paper="calendar"] { --ap-icon-tone:#8c332f; --ap-icon-paper:#f0d7b4; --ap-icon-paper-light:#fff4db; --ap-icon-paper-shadow:#d5aa78; --ap-icon-edge:#b66b48; --ap-icon-wash:#f0c8b1; --ap-icon-fiber:rgba(111,57,34,.2); }
+[data-paper="astrology"] { --ap-icon-tone:#8a5011; --ap-icon-paper:#f2dfac; --ap-icon-paper-light:#fff8d9; --ap-icon-paper-shadow:#d8b768; --ap-icon-edge:#b78a36; --ap-icon-wash:#f5df9c; --ap-icon-fiber:rgba(115,79,24,.2); }
+[data-paper="astronomy"] { --ap-icon-tone:#344e88; --ap-icon-paper:#dce3ed; --ap-icon-paper-light:#f7f8ff; --ap-icon-paper-shadow:#a9b6d2; --ap-icon-edge:#7487b4; --ap-icon-wash:#cbd7ed; --ap-icon-fiber:rgba(52,68,116,.16); }
+[data-paper="language"] { --ap-icon-tone:#176b62; --ap-icon-paper:#d9e9d8; --ap-icon-paper-light:#f6fff0; --ap-icon-paper-shadow:#a7c8a9; --ap-icon-edge:#6ea39a; --ap-icon-wash:#c1e1d1; --ap-icon-fiber:rgba(38,92,73,.18); }
+[data-paper="finance"] { --ap-icon-tone:#843c45; --ap-icon-paper:#f0d8bf; --ap-icon-paper-light:#fff5e3; --ap-icon-paper-shadow:#d3ad89; --ap-icon-edge:#b8785d; --ap-icon-wash:#e9c2aa; --ap-icon-fiber:rgba(117,55,51,.18); }
+[data-paper="measurement"] { --ap-icon-tone:#236786; --ap-icon-paper:#d6e6e8; --ap-icon-paper-light:#f3ffff; --ap-icon-paper-shadow:#a1c9cc; --ap-icon-edge:#69a1a9; --ap-icon-wash:#bee2e2; --ap-icon-fiber:rgba(35,93,120,.16); }
+[data-paper="media"] { --ap-icon-tone:#8a3f37; --ap-icon-paper:#f0d1c8; --ap-icon-paper-light:#fff3e9; --ap-icon-paper-shadow:#d4a29a; --ap-icon-edge:#bc796a; --ap-icon-wash:#edbeb2; --ap-icon-fiber:rgba(123,48,44,.2); }
+[data-paper="personal"] { --ap-icon-tone:#765083; --ap-icon-paper:#eadced; --ap-icon-paper-light:#fff6ff; --ap-icon-paper-shadow:#c3a4ce; --ap-icon-edge:#a982b6; --ap-icon-wash:#ddc5e5; --ap-icon-fiber:rgba(95,57,113,.16); }
+[data-paper="create"] { --ap-icon-tone:#9a6022; --ap-icon-paper:#f5e2b9; --ap-icon-paper-light:#fff9df; --ap-icon-paper-shadow:#dfbb76; --ap-icon-edge:#c18b3e; --ap-icon-wash:#f3d99a; --ap-icon-fiber:rgba(130,82,26,.2); }
+[data-paper="utility"] { --ap-icon-tone:#3d6850; --ap-icon-paper:#e0e4c9; --ap-icon-paper-light:#fbffe9; --ap-icon-paper-shadow:#b8c49b; --ap-icon-edge:#87a071; --ap-icon-wash:#d1dfb4; --ap-icon-fiber:rgba(61,100,58,.18); }
+
+/* Each paper family gets a different faint watermark motif inside its seal. */
+[data-paper="calendar"]::after {
+  background:
+    linear-gradient(90deg, transparent 42%, color-mix(in srgb, var(--ap-icon-tone) 42%, transparent) 43% 48%, transparent 49%),
+    repeating-linear-gradient(0deg, transparent 0 5px, color-mix(in srgb, var(--ap-icon-tone) 44%, transparent) 5px 6px),
+    var(--ap-icon-paper-light);
+  border-radius: 4px;
+  transform: rotate(-4deg);
 }
-.ap-tool-card:nth-child(7n + 2), .ap-launcher-item:nth-child(7n + 2),
-.mp-feature-card:nth-child(7n + 2), .mt-layer-card:nth-child(7n + 2),
-.ap-feature-launcher-button:nth-child(7n + 2) {
-  --ap-icon-tone: #2c6097; --ap-icon-wash: #e0eaf4; --ap-icon-edge: #a9c4dc;
+[data-paper="astrology"]::after {
+  background:
+    radial-gradient(circle, var(--ap-icon-paper-light) 0 12%, transparent 14% 25%, color-mix(in srgb, var(--ap-icon-tone) 52%, transparent) 27% 31%, transparent 33%),
+    repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--ap-icon-tone) 58%, transparent) 0deg 9deg, transparent 9deg 22deg);
 }
-.ap-tool-card:nth-child(7n + 3), .ap-launcher-item:nth-child(7n + 3),
-.mp-feature-card:nth-child(7n + 3), .mt-layer-card:nth-child(7n + 3),
-.ap-feature-launcher-button:nth-child(7n + 3) {
-  --ap-icon-tone: #9b4d36; --ap-icon-wash: #f4e0d6; --ap-icon-edge: #deb6a2;
+[data-paper="astronomy"]::after {
+  border-radius: 42%;
+  background:
+    radial-gradient(circle at 24% 25%, var(--ap-icon-tone) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 72% 19%, var(--ap-icon-tone) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 65% 70%, var(--ap-icon-tone) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 28% 72%, var(--ap-icon-tone) 0 1px, transparent 1.6px),
+    radial-gradient(circle at center, var(--ap-icon-paper-light) 0 11%, transparent 13% 100%);
 }
-.ap-tool-card:nth-child(7n + 4), .ap-launcher-item:nth-child(7n + 4),
-.mp-feature-card:nth-child(7n + 4), .mt-layer-card:nth-child(7n + 4),
-.ap-feature-launcher-button:nth-child(7n + 4) {
-  --ap-icon-tone: #76549a; --ap-icon-wash: #ece3f4; --ap-icon-edge: #c7b2db;
+[data-paper="language"]::after {
+  border-radius: 4px;
+  background: repeating-linear-gradient(0deg, var(--ap-icon-paper-light) 0 3px, color-mix(in srgb, var(--ap-icon-tone) 55%, transparent) 3px 4px);
+  transform: rotate(-9deg);
 }
-.ap-tool-card:nth-child(7n + 5), .ap-launcher-item:nth-child(7n + 5),
-.mp-feature-card:nth-child(7n + 5), .mt-layer-card:nth-child(7n + 5),
-.ap-feature-launcher-button:nth-child(7n + 5) {
-  --ap-icon-tone: #9a6a16; --ap-icon-wash: #f6ebcb; --ap-icon-edge: #dbc588;
+[data-paper="finance"]::after {
+  background:
+    radial-gradient(circle at center, var(--ap-icon-paper-light) 0 12%, transparent 14% 25%, color-mix(in srgb, var(--ap-icon-tone) 58%, transparent) 27% 31%, transparent 33%),
+    conic-gradient(from 12deg, color-mix(in srgb, var(--ap-icon-tone) 50%, transparent) 0 15deg, transparent 15deg 30deg);
 }
-.ap-tool-card:nth-child(7n + 6), .ap-launcher-item:nth-child(7n + 6),
-.mp-feature-card:nth-child(7n + 6), .mt-layer-card:nth-child(7n + 6),
-.ap-feature-launcher-button:nth-child(7n + 6) {
-  --ap-icon-tone: #177b7b; --ap-icon-wash: #d9eeee; --ap-icon-edge: #a1cecd;
+[data-paper="measurement"]::after {
+  border-radius: 3px;
+  background: repeating-linear-gradient(90deg, var(--ap-icon-paper-light) 0 3px, color-mix(in srgb, var(--ap-icon-tone) 56%, transparent) 3px 4px, transparent 4px 7px);
+  transform: rotate(-35deg);
 }
-.ap-tool-card:nth-child(7n), .ap-launcher-item:nth-child(7n),
-.mp-feature-card:nth-child(7n), .mt-layer-card:nth-child(7n),
-.ap-feature-launcher-button:nth-child(7n) {
-  --ap-icon-tone: #a34451; --ap-icon-wash: #f3e0e2; --ap-icon-edge: #dcb5bb;
+[data-paper="media"]::after {
+  border-radius: 5px;
+  background: repeating-radial-gradient(ellipse at left center, color-mix(in srgb, var(--ap-icon-tone) 58%, transparent) 0 1px, transparent 2px 4px);
+}
+[data-paper="personal"]::after {
+  background:
+    radial-gradient(circle at center, var(--ap-icon-paper-light) 0 10%, transparent 12% 100%),
+    repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--ap-icon-tone) 55%, transparent) 0deg 12deg, transparent 12deg 27deg);
+}
+[data-paper="create"]::after {
+  border-radius: 3px;
+  background:
+    linear-gradient(45deg, transparent 40%, color-mix(in srgb, var(--ap-icon-tone) 55%, transparent) 41% 47%, transparent 48%),
+    linear-gradient(-45deg, transparent 40%, color-mix(in srgb, var(--ap-icon-tone) 55%, transparent) 41% 47%, transparent 48%),
+    var(--ap-icon-paper-light);
+  transform: rotate(45deg);
+}
+[data-paper="utility"]::after {
+  background:
+    radial-gradient(circle at 25% 25%, var(--ap-icon-tone) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 75% 25%, var(--ap-icon-tone) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 25% 75%, var(--ap-icon-tone) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 75% 75%, var(--ap-icon-tone) 0 1px, transparent 1.8px),
+    radial-gradient(circle at center, var(--ap-icon-paper-light) 0 11%, transparent 13%);
 }
 
-/* My Time's standalone observatory symbols get meaningful, stable colours too. */
-.mt-moon-mark { --ap-icon-tone: #6656a5; }
-.mt-insight-icon { --ap-icon-tone: #a16b1c; }
-.mt-astro-lucky-orbit { --ap-icon-tone: #236b83; }
-.ap-launcher-search > span { --ap-icon-tone: #9a6a16; }
+/* Dedicated My Time icon families remain meaningful outside the general tool registry. */
+.mt-moon-mark { --ap-icon-tone:#65529a; --ap-icon-paper:#e6dff1; --ap-icon-paper-light:#faf6ff; --ap-icon-paper-shadow:#bdb0d9; --ap-icon-edge:#9281be; --ap-icon-wash:#d2c8eb; }
+.mt-insight-icon { --ap-icon-tone:#a16b1c; --ap-icon-paper:#f2e0b9; --ap-icon-paper-light:#fff9e7; --ap-icon-paper-shadow:#d4b376; --ap-icon-edge:#ba914b; --ap-icon-wash:#efda9c; }
+.mt-astro-lucky-orbit { --ap-icon-tone:#236b83; --ap-icon-paper:#d7e9e9; --ap-icon-paper-light:#f4ffff; --ap-icon-paper-shadow:#a1c6cc; --ap-icon-edge:#6a9eaa; --ap-icon-wash:#c2e2e2; }
 
-/* Gentle lift, not a loud animation: the paper seal catches light on focus/hover. */
+/* Cohesive hover without shaking the card layout. */
 .ap-tool-card:hover .ap-tool-icon,
 .ap-launcher-item:hover .ap-launcher-orb,
 .ap-feature-launcher-button:hover > span,
@@ -168,44 +209,40 @@
 .mt-layer-card:hover .mt-layer-icon {
   transform: translateY(-2px) rotate(-1deg);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .96),
-    inset 0 0 0 2px rgba(255, 250, 236, .66),
-    0 4px 0 color-mix(in srgb, var(--ap-icon-tone) 16%, var(--ap-icon-paper-edge)),
-    0 10px 19px color-mix(in srgb, var(--ap-icon-tone) 20%, transparent);
-  filter: saturate(1.08);
+    inset 0 1px 0 rgba(255,255,255,.98),
+    inset 0 0 0 2px rgba(255,249,231,.85),
+    0 4px 0 color-mix(in srgb, var(--ap-icon-tone) 30%, var(--ap-icon-paper-shadow)),
+    0 10px 19px color-mix(in srgb, var(--ap-icon-tone) 25%, transparent);
+  filter: saturate(1.12);
 }
 
-/* The feature directory shares the same tactile icon treatment. */
-.mp-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+/* Feature directory: airy cards make the seal and its paper texture readable. */
+.mp-feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
 .mp-feature-card {
-  display: grid; grid-template-columns: 46px minmax(0, 1fr) auto;
-  align-items: center; gap: 12px; min-width: 0;
-  padding: 14px; border: 1px solid var(--ap-line, #dce6de); border-radius: 17px;
-  color: var(--ap-ink, #18352b); text-decoration: none;
-  background: linear-gradient(135deg, #fffdf8, var(--ap-surface, #fff) 70%);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  display:grid; grid-template-columns:50px minmax(0,1fr) auto; align-items:center; gap:13px; min-width:0;
+  padding:14px; border:1px solid var(--ap-line,#dce6de); border-radius:17px;
+  color:var(--ap-ink,#18352b); text-decoration:none;
+  background:linear-gradient(135deg,#fffdf8,var(--ap-surface,#fff) 70%);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
 }
-.mp-feature-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--ap-icon-tone, #286a55) 28%, var(--ap-line, #dce6de)); box-shadow: 0 10px 24px rgba(34, 62, 45, .09); }
-.mp-feature-card > span:nth-child(2) { display: grid; gap: 3px; min-width: 0; }
-.mp-feature-card strong { font-size: .94rem; line-height: 1.35; }
-.mp-feature-card small { color: var(--ap-muted, #63756c); line-height: 1.5; }
-.mp-feature-card > b { color: var(--ap-icon-tone, #286a55); }
+.mp-feature-card:hover { transform:translateY(-2px); border-color:color-mix(in srgb,var(--ap-icon-tone,#286a55) 28%,var(--ap-line,#dce6de)); box-shadow:0 10px 24px rgba(34,62,45,.09); }
+.mp-feature-card > span:nth-child(2) { display:grid; gap:3px; min-width:0; }
+.mp-feature-card strong { font-size:.94rem; line-height:1.35; }
+.mp-feature-card small { color:var(--ap-muted,#63756c); line-height:1.5; }
+.mp-feature-card > b { color:var(--ap-icon-tone,#286a55); }
 
-@media (max-width: 620px) {
-  .mp-feature-grid { grid-template-columns: minmax(0, 1fr); }
-  .mp-feature-card { padding: 12px; }
+@media (max-width:620px) {
+  .mp-feature-grid { grid-template-columns:minmax(0,1fr); }
+  .mp-feature-card { padding:12px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .ap-tool-card, .ap-launcher-item, .mp-feature-card,
-  .ap-feature-launcher-button > span, .ap-tool-icon, .ap-launcher-orb,
-  .mp-feature-icon, .mt-layer-icon { transition: none !important; }
+@media (max-width:440px) { .ap-launcher-orb { width:40px; height:40px; } }
+@media (prefers-reduced-motion:reduce) {
+  .ap-tool-card,.ap-launcher-item,.mp-feature-card,.ap-feature-launcher-button > span,.ap-tool-icon,.ap-launcher-orb,.mp-feature-icon,.mt-layer-icon { transition:none !important; }
 }
-
-/* Focus remains visible without relying on color alone. */
 .ap-tool-card:focus-visible .ap-tool-icon,
 .ap-launcher-item:focus-visible .ap-launcher-orb,
 .mp-feature-card:focus-visible .mp-feature-icon,
 .ap-feature-launcher-button:focus-visible > span {
-  outline: 2px solid var(--ap-icon-tone, #286a55);
-  outline-offset: 3px;
+  outline:2px solid var(--ap-icon-tone,#286a55);
+  outline-offset:3px;
 }
