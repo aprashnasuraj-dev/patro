@@ -58,7 +58,8 @@ describe("bilingual feature-first visual obligations", () => {
     expect(ribbon).toContain('FeatureGlyph featureId={item.key');
     expect(ribbon).toContain('icon: "sun-star"');
     const muhurat = source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx");
-    expect(muhurat).toContain('FeatureGlyph featureId={rule.id}');
+    expect(muhurat).not.toContain("REVIEW_RULES");
+    expect(muhurat).toContain('href="/mytime"');
     expect(muhurat).toContain('symbol="personal-time"');
     const planets = source("src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx");
     expect(planets).toContain("function planetIcon(key:string)");
@@ -199,12 +200,13 @@ describe("bilingual feature-first visual obligations", () => {
     expect(daylight).toContain("toNepaliDigits");
     expect(daylight).toContain("valueLabel");
   });
-  it("improves regional search recovery and live daylight rendering", () => {
+  it("keeps existing regional calendar routes and live daylight rendering while hiding unverified systems", () => {
     const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
     const daylight = source("src/panchang-jyotish/workspaces/DaylightArc.tsx");
-    expect(regional).toContain('type="search"');
+    expect(regional).not.toContain('type="search"');
     expect(regional).toContain('aria-expanded={showMethods}');
-    expect(regional).toContain("Show all calendars");
+    expect(regional).toContain('href:"/samudaya"');
+    expect(regional).not.toContain("Show all calendars");
     expect(daylight).toContain("setInterval(() => setNow(Date.now()), 60_000)");
     expect(daylight).toContain('useId().replace(/:/g, "")');
   });
