@@ -17,7 +17,7 @@ test("tool cards use the shared route-to-Lucide icon registry", () => {
   assert.doesNotMatch(tools, /ap-tool-icon">\{item\.icon\}/);
   assert.match(registry, /export function getToolIcon\(href: string\)/);
   assert.ok(tools.includes("const Icon=getToolIcon(href);return <a className=\"ap-tool-card ap-pj-hub-card\""), "specialist Panchang/Jyotish cards must use route icons");
-  assert.ok(!tools.includes("FeatureGlyph"), "legacy generic glyph fallbacks should not remain in the Tools page");
+  assert.ok(!tools.includes("FeatureGlyph featureId={item.iconFeatureId}"), "specialist Tools cards must not use the legacy glyph fallback");
 });
 
 test("feature launcher uses SVG search and route icons, not text marks", () => {
