@@ -74,9 +74,9 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).toContain('symbol={planetIcon(planet.key)}');
     const regional = source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx");
     expect(regional).toContain('FeatureGlyph featureId={item.featureId}');
-    expect(regional).toContain('FeatureGlyph featureId={item.id}');
-    expect(regional).toContain('symbol="search"');
-    expect(regional).toContain('featureId="F090" size="inline"');
+    expect(regional).not.toContain('FeatureGlyph featureId={item.id}');
+    expect(regional).not.toContain('symbol="search"');
+    expect(regional).toContain('featureId="F080" size="inline"');
     expect(regional).not.toContain("⌕");
     expect(planets).toContain('symbol={planetIcon(item.planet.key)}');
     expect(planets).toContain('symbol={planetIcon(item.a.key)}');
