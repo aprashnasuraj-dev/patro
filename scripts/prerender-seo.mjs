@@ -12,7 +12,7 @@ if (!shell.includes('id="root"')) throw new Error("SEO prerender requires the Vi
 const intentCatalog = JSON.parse(await readFile(resolve(root, "seo/search-intents.json"), "utf8"));
 const INTENT_META = { ...intentCatalog.core, ...intentCatalog.tools };
 const featureEditorial = JSON.parse(await readFile(resolve(root, "seo/panchang-feature-editorial.json"), "utf8")).features;
-if (featureEditorial.length !== 91 || new Set(featureEditorial.map(item => item.id)).size !== 91) throw new Error("91 unique feature editorial entries required");
+if (featureEditorial.length !== 64 || new Set(featureEditorial.map(item => item.id)).size !== 64) throw new Error("64 public feature editorial entries required");
 const FEATURE_HUB_ROUTES = new Set(["/panchang", "/muhurat", "/jyotish", "/planets", "/nepal-calendar"]);
 for (const item of featureEditorial) if (!FEATURE_HUB_ROUTES.has("/" + item.group) || !item.href.startsWith("/")) throw new Error("Invalid feature editorial route: " + item.id);
 for (const route of TOOL_ROUTES) if (!INTENT_META[route]) throw new Error(`Missing canonical SEO intent metadata for ${route}`);
