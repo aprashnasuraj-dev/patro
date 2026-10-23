@@ -2,7 +2,7 @@
   "version": 1,
   "core": {
     "/": {
-      "title": "Nepali Calendar Today | Nepal Date, Tithi & Festivals",
+      "title": "Nepali Calendar Today | Aafnai Patro",
       "description": "Check today’s date in Nepal, Bikram Sambat (BS) and Gregorian (AD) conversion, tithi, festivals, public holidays and the Nepali calendar. Aafnai Patro is available in English and Nepali.",
       "aliases": [
         "nepali calendar",
@@ -299,7 +299,7 @@
   },
   "tools": {
     "/tools/astro": {
-      "title": "Nepali Astronomical Calendar | Tithi, Moon Phase & Sky Events",
+      "title": "Nepali Astronomy Calendar | Aafnai Patro",
       "description": "Explore the Nepali astronomical calendar with tithi, Moon phase, sunrise and sunset, and astronomical context by date. Compare calendar information in English or Nepali.",
       "aliases": [
         "nepali astronomical calendar",
