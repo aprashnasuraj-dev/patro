@@ -136,14 +136,41 @@ describe("bilingual feature-first visual obligations", () => {
     expect(hub).not.toMatch(/setLanguage\(|localStorage\.setItem\(/);
   });
 
-  it("defers calculator mounting, offers a real action, and preserves source review", () => {
+  it("defers calculator mounting and keeps feature navigation accessible", () => {
     const hub = source("src/panchang-jyotish/FeatureGroupHub.tsx");
     expect(hub).toContain("const showWorkspace = workspaceRequested");
     expect(hub).toContain("setWorkspaceRequested(true)");
     expect(hub).toContain("selectedAvailability === \"reference\"");
-    expect(hub).toContain("availabilityFilter");
+    expect(hub).not.toContain("availabilityFilter");
+    expect(hub).not.toContain("Browser calculation · source checking required");
+    expect(hub).not.toContain("परम्परागत नियम र स्रोत समीक्षा आवश्यक");
+    expect(hub).not.toContain("Calculation code is downloaded and executed");
     const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
+    const catalog = source("src/panchang-jyotish/catalog.ts");
+    const jyotish = source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx");
+    const muhurat = source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx");
+    expect(catalog).not.toContain("current chart engine");
+    expect(catalog).not.toContain("existing personal-time experience");
+    expect(jyotish).not.toContain("Existing birth-chart summary");
+    expect(jyotish).not.toContain("existing natal-chart engine");
+    expect(jyotish).not.toContain("The result is calculated in this browser");
+    expect(jyotish).not.toContain("no API or Cloudflare storage request");
+    expect(muhurat).not.toContain("Existing Sait tool with supported categories and sources");
+    const myTime = source("src/features/my-time/MyTimePage.tsx");
+    const myTimePersonalization = source("src/features/my-time/MyTimePersonalization.tsx");
+    const personalObservatory = source("src/features/my-time/PersonalAstrologyObservatory.tsx");
+    expect(myTime).not.toContain("API feature flag");
+    expect(myTime).not.toContain("first-stage snapshot");
+    expect(myTime).not.toContain("AafnaiPatro calendar archive / D1 fallback");
+    expect(myTime).not.toContain("Existing astrology engine");
+    expect(myTime).not.toContain("On-device calculation");
+    expect(myTime).not.toContain("Archive for Nepal’s current date");
+    expect(myTimePersonalization).not.toContain("stored in this browser on this device");
+    expect(personalObservatory).not.toContain("Element from the existing engine");
     expect(experience).toContain('state==="reference"');
+    expect(experience).not.toContain("Source review pending");
+    expect(experience).not.toContain("Calculated in your browser");
+    expect(experience).not.toContain("preview until numerical and source validation is complete");
     expect(experience).toContain('href="/sources"');
     expect(experience).toContain('state==="existing"');
     expect(experience).toContain('href={feature.href}');
@@ -221,10 +248,11 @@ describe("bilingual feature-first visual obligations", () => {
     expect(panchang).toContain("archiveUnavailable");
     expect(panchang).toContain("archivePending");
   });
-  it("keeps archive provenance bilingual and makes long workspace work cancellable", () => {
+  it("keeps calendar-time descriptions clear and long workspace work cancellable", () => {
     const panchang = source("src/panchang-jyotish/workspaces/PanchangWorkspace.tsx");
     expect(panchang).toContain("contract.calendars.nepalSambatEn");
-    expect(panchang).toContain("Archive · independent audit pending");
+    expect(panchang).toContain('l(language, "प्रकाशित पात्रो", "Published calendar")');
+    expect(panchang).not.toContain("independent audit pending");
     expect(panchang).toContain("solarArchiveDiffers");
     expect(panchang).toContain("formatDuration(displaySunrise, displaySunset, language)");
 
@@ -241,7 +269,7 @@ describe("bilingual feature-first visual obligations", () => {
     expect(jyotish).not.toContain("calculateSiderealPlanetPositions(new Date()).find((item)=>item.key===\"saturn\")||null,[]");
   });
 
-  it("exposes Panchak/Ganda Moola only as caveated candidate calculators", () => {
+  it("labels Panchak/Ganda Moola periods clearly and preserves their caution", () => {
     const catalog = source("src/panchang-jyotish/catalog.ts");
     const experience = source("src/panchang-jyotish/FeatureExperience.tsx");
     const guides = source("src/panchang-jyotish/feature-reference-guides.ts");
@@ -249,11 +277,11 @@ describe("bilingual feature-first visual obligations", () => {
     const ruleEngine = source("src/panchang-jyotish/reviewed-candidate-rules.ts");
     expect(catalog).toContain("CANDIDATE_ONLY_SOURCE_REVIEW_PREVIEWS");
     expect(experience).toContain("const guide=FEATURE_REFERENCE_GUIDES[feature.id]");
-    expect(guides).toContain("नक्षत्रका प्रवेश र समाप्ति क्षण");
+    expect(guides).toContain("पञ्चकको अवधि धनिष्ठाको तेस्रो पाद");
     expect(panchang).toContain("findNakshatraRuleWindows(date, ruleWindowDays, rule");
-    expect(panchang).toContain("Candidate Panchak Nakshatra intervals");
-    expect(panchang).toContain("is not an official Muhurat");
-    expect(panchang).toContain("is not equated with the narrower Gandanta concept");
+    expect(panchang).toContain("Panchak period");
+    expect(panchang).toContain("Check a published local Panchang");
+    expect(panchang).toContain("These are possible intervals based on the traditional periods");
     expect(ruleEngine).toContain("SIX_HOURS_MS");
     expect(ruleEngine).toContain("candidate-unverified");
   });
