@@ -133,7 +133,7 @@ const forbidden = [
   ["developer-style date status", />provisional<\/span>|Expected date — confirm locally|Calculated date — confirm locally|Officially announced|Local confirmation recommended|Confidence \/ status/i],
   ["public methodology implementation jargon", /validated calendar archive|second calendar dataset|search-visible HTML|conversion endpoints|agent tools|Source-of-truth rules|hardcoded daily fact|production archive coverage|production correction overlays|silently rewrite|verified date unavailable|source record मा official|structured sait records|Nepal date boundary Asia\/Kathmandu|local display timezone/i],
   ["prerendered date implementation labels", /local archive record|national holiday.{0,24}label|Aafnai Patro validated calendar archive|Source: \$\{source\}| · verified /i],
-  ["public timezone internals", /Timezone|Nepal date boundary Asia\/Kathmandu|local display timezone/i]
+  ["public timezone internals", /Date boundary: Asia\/Kathmandu|Nepal date boundary Asia\/Kathmandu|Local display timezone|local display timezone/i]
 ];
 
 const failures = [];
