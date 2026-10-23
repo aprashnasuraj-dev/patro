@@ -38,7 +38,6 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const group = FEATURE_GROUPS.find((item) => item.id === groupId) ?? FEATURE_GROUPS[0];
   const [query, setQuery] = useState("");
   const [announcement, setAnnouncement] = useState("");
-  const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview" | "reference">("all");
   const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getPublicFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
   const features = useMemo(() => getPublicFeaturesForGroup(groupId), [groupId]);
@@ -49,11 +48,10 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const matches = useMemo(() => {
     const q = query.trim().toLocaleLowerCase();
     return features.filter((item) =>
-      (availabilityFilter === "all" || getFeatureAvailability(item) === availabilityFilter) &&
       [item.titleNe, item.titleEn, item.descriptionNe, item.descriptionEn, item.id]
         .some((value) => value.toLocaleLowerCase().includes(q))
     );
-  }, [features, query, availabilityFilter]);
+  }, [features, query]);
 
   useEffect(() => {
     const sync = () => {
@@ -116,8 +114,8 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
       <section className="ap-pj-workspace" id="ap-pj-workspace" aria-label={l(language, "गणना कार्यक्षेत्र", "Calculation workspace")}>
         <header className="ap-pj-section-head">
           <div>
-            <span className="ap-pj-eyebrow">{l(language, "छानिएको समूह", "Selected group")}</span>
-            <h2>{selected ? l(language, selected.titleNe, selected.titleEn) : l(language, "आजबाट सुरु गर्नुहोस्", "Start with today")}</h2>
+            <span className="ap-pj-eyebrow">{l(language, "छानिएको सुविधा", "Selected feature")}</span>
+            <h2>{selected ? l(language, selected.titleNe, selected.titleEn) : l(language, "आफ्नो सुविधा छान्नुहोस्", "Choose a feature")}</h2>
           </div>
           {activeFeature && <button type="button" className="ap-pj-clear" onClick={() => { setActiveFeature(null); setWorkspaceRequested(false); if (window.location.hash) window.history.replaceState(null, "", window.location.pathname + window.location.search); }}>{l(language, "सारांश", "Overview")}</button>}
         </header>
@@ -127,9 +125,9 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
             <Workspace language={language} selectedFeatureId={activeFeature} />
           </Suspense></WorkspaceErrorBoundary> : <div className="ap-pj-launch-panel">
             <span aria-hidden="true" className="ap-pj-launch-emblem"><FeatureGlyph featureId={group.iconFeatureId} size="card" /></span>
-            <div><h3>{selectedAvailability === "existing" ? l(language, "पहिलेकै उपकरण सुरक्षित छ", "Your existing tool is preserved") : selectedAvailability === "reference" ? l(language, "स्रोतमा आधारित जानकारी", "Source-based reference") : l(language, "आफ्नो गणक सुरु गर्नुहोस्", "Start your calculator")}</h3>
-            <p>{selectedAvailability === "existing" ? l(language, "सम्बन्धित मूल पेजमा जाँदा पुरानै कार्यप्रणाली प्रयोग हुन्छ।", "The original destination retains its own functionality.") : selectedAvailability === "reference" ? l(language, "नियम वा स्रोत पुष्टि नहुँदा निश्चित व्यक्तिगत वा पर्व-सम्बन्धी गणना यहाँ देखाइँदैन।", "Definitive personal or observance results remain unavailable until the relevant rules or sources are verified.") : l(language, "उपकरण खोलेपछि मात्र आवश्यक गणना कोड डाउनलोड र चल्छ।", "Calculation code is downloaded and executed only after you open the tool.")}</p></div>
-            {selectedAvailability === "existing" && selected ? <a className="ap-pjw-primary" href={selected.href}>{l(language, "मूल उपकरण खोल्नुहोस्", "Open original tool")} ↗</a> : selectedAvailability === "reference" ? <a className="ap-pjw-secondary" href="/sources">{l(language, "स्रोतहरू हेर्नुहोस्", "View sources")} ↗</a> : <button type="button" className="ap-pjw-primary" onClick={() => setWorkspaceRequested(true)}>{l(language, "गणक खोल्नुहोस्", "Open calculator")} →</button>}
+            <div><h3>{selectedAvailability === "existing" ? l(language, "यो सुविधा खोल्नुहोस्", "Open this feature") : selectedAvailability === "reference" ? l(language, "थप जानकारी", "More information") : l(language, "आफ्नो गणक सुरु गर्नुहोस्", "Start your calculator")}</h3>
+            <p>{selectedAvailability === "existing" ? l(language, "यस सुविधाको प्रयोग गर्न सम्बन्धित पेज खोल्नुहोस्।", "Open the related page to use this feature.") : selectedAvailability === "reference" ? l(language, "यस विषयको परम्परागत अर्थ स्थान र चलनअनुसार फरक हुन सक्छ। महत्त्वपूर्ण निर्णयअघि स्थानीय पात्रो पनि हेर्नुहोस्।", "Traditional interpretations can vary by place and custom. Check a local calendar before making an important decision.") : l(language, "सुरु गर्न मिति र आवश्यक विवरण छान्नुहोस्।", "Choose a date and any required details to get started.")}</p></div>
+            {selectedAvailability === "existing" && selected ? <a className="ap-pjw-primary" href={selected.href}>{l(language, "उपकरण खोल्नुहोस्", "Open tool")} ↗</a> : selectedAvailability === "reference" ? <a className="ap-pjw-secondary" href="/sources">{l(language, "स्रोतहरू हेर्नुहोस्", "View sources")} ↗</a> : <button type="button" className="ap-pjw-primary" onClick={() => setWorkspaceRequested(true)}>{l(language, "गणक खोल्नुहोस्", "Open calculator")} →</button>}
           </div>}
         </div>
       </section>
@@ -139,7 +137,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
           <div>
             <span className="ap-pj-eyebrow">{l(language, "समूहभित्रका सुविधा", "Features in this group")}</span>
             <h2>{l(language, "गणक र जानकारी", "Calculators and guides")}</h2>
-            <p>{l(language, "आफूलाई चाहिएको सुविधा खोज्नुहोस्। उपलब्ध गणना ब्राउजरमै चल्छ; प्रमाणित प्रकाशन र परम्परागत नियम छुट्टै चिनाइन्छ।", "Find the feature you need. Available calculations run in your browser; published dates and tradition-specific rules are identified separately.")}</p>
+            <p>{l(language, "आफूलाई चाहिएको सुविधा खोज्नुहोस् र विवरण हेर्न खोल्नुहोस्।", "Find a feature and open it to explore its details.")}</p>
           </div>
           <output className="ap-pj-count" aria-live="polite" aria-atomic="true" aria-label={l(language, "मिलेका सुविधा", "Matching features")}>{matches.length} / {features.length}</output>
         </div>
@@ -149,9 +147,6 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
           <input type="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={l(language, "तिथि, नक्षत्र, साइत, ग्रह… खोज्नुहोस्", "Search Tithi, Nakshatra, Muhurat, planets…")} />
           {query && <button type="button" onClick={() => setQuery("")} aria-label={l(language, "खोज हटाउनुहोस्", "Clear search")}>×</button>}
         </label>
-        <div className="ap-pj-filters" role="group" aria-label={l(language, "सुविधाको अवस्था अनुसार छान्नुहोस्", "Filter features by availability")}>
-          {(["all", "existing", "browser-preview", "reference"] as const).map(state => <button type="button" key={state} aria-pressed={availabilityFilter === state} className={availabilityFilter === state ? "is-selected" : ""} onClick={() => setAvailabilityFilter(state)}>{state === "all" ? l(language, "सबै", "All") : state === "existing" ? l(language, "विद्यमान", "Existing") : state === "browser-preview" ? l(language, "ब्राउजर गणक", "Browser tools") : l(language, "सन्दर्भ", "References")} <span>{state === "all" ? features.length : features.filter(item => getFeatureAvailability(item) === state).length}</span></button>)}
-        </div>
         {matches.length ? <div className="ap-pj-grid">
           {matches.map((item) => {
             const local = isLocalFeature(item, groupId);
@@ -165,12 +160,12 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
               <span className="ap-pj-feature-mark" aria-hidden="true"><FeatureGlyph featureId={item.id} size="card" /></span>
               <span className="ap-pj-feature-copy">
                 <strong>{l(language, item.titleNe, item.titleEn)}</strong>
-                <small>{l(language, item.descriptionNe, item.descriptionEn)}</small><small className="ap-pj-feature-status">{getFeatureAvailability(item) === "existing" ? l(language, "विद्यमान सुविधा", "Existing feature") : getFeatureAvailability(item) === "browser-preview" ? l(language, "ब्राउजरमै गणना · स्रोत जाँच आवश्यक", "Browser calculation · source checking required") : l(language, "परम्परागत नियम र स्रोत समीक्षा आवश्यक", "Traditional rules and source review required")}</small>
+                <small>{l(language, item.descriptionNe, item.descriptionEn)}</small>
               </span>
               <span className="ap-pj-feature-arrow" aria-hidden="true">{local ? "↓" : "↗"}</span>
             </a>;
           })}
-        </div> : <div className="ap-pj-empty" role="status"><p>{l(language, "यस खोजसँग मिल्ने सुविधा भेटिएन।", "No features match this search.")}</p><button type="button" className="ap-pj-clear" onClick={() => { setQuery(""); setAvailabilityFilter("all"); }}>{l(language, "सबै सुविधा देखाउनुहोस्", "Show all features")}</button></div>}
+        </div> : <div className="ap-pj-empty" role="status"><p>{l(language, "यस खोजसँग मिल्ने सुविधा भेटिएन।", "No features match this search.")}</p><button type="button" className="ap-pj-clear" onClick={() => { setQuery(""); }}>{l(language, "सबै सुविधा देखाउनुहोस्", "Show all features")}</button></div>}
       </section>
 
       <section className="ap-pj-related">
