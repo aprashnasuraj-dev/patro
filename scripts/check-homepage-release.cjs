@@ -31,6 +31,8 @@ function fail(message) { throw new Error(message); }
   await firstPaint.close();
 
   const failureContext = await browser.newContext({ viewport: { width: 375, height: 812 }, serviceWorkers: "block", reducedMotion: "reduce" });
+  // This regression covers existing Nepali calendar-picker behavior; pin its locale now that first visits default to English.
+  await failureContext.addInitScript(() => localStorage.setItem("patro.ui.language", "ne"));
   await failureContext.route("**/api/**", (route) => route.fulfill({
     status: 503,
     headers: { "content-type": "application/json", "cache-control": "no-store" },
