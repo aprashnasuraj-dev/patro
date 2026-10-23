@@ -77,7 +77,8 @@ function relatedLinks(path) {
     ["/convert", "BS ↔ AD date converter · मिति रूपान्तरण"],
     ["/tools/nepali-typing", "Nepali typing · नेपाली टाइपिङ"], ["/tools/preeti-converter", "Preeti ↔ Unicode converter"],
     ["/tools/bstoad", "Bikram Sambat to AD · BS to AD"], ["/tools/adtobs", "AD to Bikram Sambat · AD to BS"], ["/tools/sait", "Auspicious timing · शुभ साइत"],
-    ["/rashifal", "Horoscope · राशिफल"], ["/janmapatro", "Nepali birth chart · जन्मपत्रो"], ["/janmapatro/milan.html", "Traditional 36-guna matchmaking · ३६ गुण मिलान"],
+    ["/rashifal", "Horoscope · राशिफल"], ["/jyotish/china", "Vedic birth chart & Jyotish · ज्योतिष"], ["/janmapatro", "Nepali birth chart · जन्मपत्रो"], ["/janmapatro/milan.html", "Traditional 36-guna matchmaking · ३६ गुण मिलान"],
+    ["/time-machine", "Nepal Time Machine · समययन्त्र"], ["/tools/astro", "Nepali astronomical calendar · खगोलीय पात्रो"],
     ["/on-this-day", "On This Day in History · इतिहासमा आज"], ["/moon", "Moon calendar · चन्द्र पात्रो"], ["/fm", "Nepali FM radio · नेपाली FM रेडियो"],
     ["/festivals", "Nepal festivals · नेपाली चाडपर्व"], ["/tools", "Free online tools · सबै उपकरण"], ["/guides", "Practical guides · उपकरण प्रयोग निर्देशिका"]
   ];
