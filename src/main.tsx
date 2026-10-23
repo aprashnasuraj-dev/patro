@@ -46,6 +46,7 @@ import "./release-seven.css";
 import "./release-seven-mobile-fix.css";
 import "./mobile-home.css";
 import "./icon-paper-theme.css";
+import "./newlook-foundations.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
