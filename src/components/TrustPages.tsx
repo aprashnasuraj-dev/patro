@@ -479,7 +479,13 @@ export function TrustPage({ page }: { page: PageKey }) {
 
   useEffect(() => {
     applyRouteSeo("/" + page);
-    applyLocalizedMetadata(page, language);
+    let active = true;
+    // AppChrome also refreshes route metadata. Queue the localized values after
+    // all route effects so an English page is not reset to Nepali metadata.
+    queueMicrotask(() => {
+      if (active) applyLocalizedMetadata(page, language);
+    });
+    return () => { active = false; };
   }, [page, language]);
 
   return (
