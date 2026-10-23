@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
+import { FEATURE_GROUPS, PATRO_FEATURES, getFeatureAvailability, getPublicFeaturesForGroup, PUBLIC_FEATURE_COUNT, validateFeatureCatalog } from "../src/panchang-jyotish/catalog";
 const source=(path:string)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 function parseCsvLine(line:string):string[]{
   const out:string[]=[];let value="";let quoted=false;
@@ -110,6 +110,24 @@ describe("91 feature navigation, runtime and preservation gates",()=>{
     expect(PATRO_FEATURES.filter(x=>getFeatureAvailability(x)==="reference")).toHaveLength(27);
     expect(getFeatureAvailability(PATRO_FEATURES.find(x=>x.id==="F021")!)).toBe("browser-preview");
     expect(getFeatureAvailability(PATRO_FEATURES.find(x=>x.id==="F022")!)).toBe("browser-preview");
+  });
+  it("keeps reference-only features out of user-facing directories, workspaces and public SEO",()=>{
+    const publicFeatures=FEATURE_GROUPS.flatMap(group=>getPublicFeaturesForGroup(group.id));
+    const blocked=PATRO_FEATURES.filter(feature=>getFeatureAvailability(feature)==="reference");
+    const editorial=JSON.parse(source("seo/panchang-feature-editorial.json")).features as Array<{id:string}>;
+    expect(PUBLIC_FEATURE_COUNT).toBe(64);
+    expect(publicFeatures).toHaveLength(64);
+    expect(publicFeatures.every(feature=>getFeatureAvailability(feature)!=="reference")).toBe(true);
+    expect(editorial).toHaveLength(64);
+    for(const feature of blocked){
+      expect(publicFeatures.some(item=>item.id===feature.id)).toBe(false);
+      expect(editorial.some(item=>item.id===feature.id)).toBe(false);
+    }
+    expect(source("src/panchang-jyotish/FeatureGroupHub.tsx")).toContain("getPublicFeaturesForGroup(groupId)");
+    expect(source("src/panchang-jyotish/workspaces/JyotishWorkspace.tsx")).not.toContain("REVIEW_CARDS");
+    expect(source("src/panchang-jyotish/workspaces/MuhuratWorkspace.tsx")).not.toContain("REVIEW_RULES");
+    expect(source("src/panchang-jyotish/workspaces/RegionalWorkspace.tsx")).not.toContain("SYSTEMS");
+    expect(source("src/panchang-jyotish/workspaces/PlanetsWorkspace.tsx")).not.toContain("focusText");
   });
   it("keeps calculator bundles deferred and restores direct-link selection",()=>{
     const hub=source("src/panchang-jyotish/FeatureGroupHub.tsx");
