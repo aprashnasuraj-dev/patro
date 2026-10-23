@@ -27,7 +27,7 @@ export function RegionalWorkspace({language}:Props){
     <section className="ap-pjw-card">
       <div className="ap-pjw-subhead"><h3 className="ap-pjw-icon-label"><FeatureGlyph featureId="F080" size="inline"/>{l(language,"मिति कसरी निकालिन्छ?","How are dates determined?")}</h3><button type="button" className="ap-pjw-secondary" aria-expanded={showMethods} aria-controls="ap-pjw-calendar-methods" onClick={()=>setShowMethods(value=>!value)}>{showMethods?l(language,"लुकाउनुहोस्","Hide"):l(language,"विधि हेर्नुहोस्","Show methods")}</button></div>
       {showMethods&&<div className="ap-pjw-root" id="ap-pjw-calendar-methods">
-        <p className="ap-pjw-section-note">{l(language,"वि.सं. मितिका लागि विद्यमान नेपाली मिति रूपान्तरण र प्रमाणित अभिलेख प्रयोग हुन्छ। नेपाल संवत्का लागि विद्यमान समुदाय-पात्रो स्रोत प्रयोग हुन्छ। क्षेत्रीय प्रणालीमा आधिकारिक प्रकाशन, नियम-संस्करण र परम्परागत स्थानीय समयक्षेत्र अलगसँग अभिलेख हुनुपर्छ।", "Bikram Sambat uses the existing Nepali date-conversion/archive layer. Nepal Sambat uses the existing community-calendar sources. Regional systems require their own official publications, rule versions and local timezone records.")}</p>
+        <p className="ap-pjw-section-note">{l(language,"वि.सं. र नेपाल संवत्का मिति सम्बन्धित पात्रो स्रोतअनुसार देखाइन्छन्। क्षेत्रीय पर्वका लागि आफ्नो समुदाय वा आयोजकले प्रकाशित गरेको मिति पनि जाँच्नुहोस्।", "Bikram Sambat and Nepal Sambat dates follow their respective calendar sources. For regional observances, also check dates published by your community or event organizer.")}</p>
         <a className="ap-pjw-secondary" href="/sources">{l(language,"स्रोत र पात्रो विधि","Sources and calendar methods")} ↗</a>
       </div>}
     </section>
