@@ -313,7 +313,7 @@
       "group": "jyotish",
       "titleNe": "जन्म लग्न",
       "titleEn": "Janma Lagna / Ascendant",
-      "descriptionNe": "जन्मपत्रो गणकको लग्न र लग्न राशि।",
+      "descriptionNe": "जन्म समय र स्थानका आधारमा लग्न र लग्न राशि।",
       "descriptionEn": "Ascendant and rising sign based on birth time and place.",
       "href": "/jyotish#lagna"
     },
@@ -331,7 +331,7 @@
       "group": "jyotish",
       "titleNe": "मङ्गल दोष",
       "titleEn": "Mangal Dosha",
-      "descriptionNe": "जन्मपत्रोमा उपलब्ध मङ्गल दोष विवरण।",
+      "descriptionNe": "जन्मपत्रोमा देखाइने मङ्गल दोषसम्बन्धी विवरण।",
       "descriptionEn": "Mangal Dosha information shown in the birth chart.",
       "href": "/jyotish#mangal-dosha"
     },
@@ -340,7 +340,7 @@
       "group": "jyotish",
       "titleNe": "गुण मिलान",
       "titleEn": "Kundali Milan",
-      "descriptionNe": "विद्यमान गुण मिलान गणक प्रयोग गर्नुहोस्।",
+      "descriptionNe": "दुई जन्मपत्रोको गुण मिलान हेर्नुहोस्।",
       "descriptionEn": "Compare two birth charts for horoscope matching.",
       "href": "/janmapatro/milan.html"
     },
@@ -349,7 +349,7 @@
       "group": "jyotish",
       "titleNe": "दैनिक राशिफल",
       "titleEn": "Daily Rashifal",
-      "descriptionNe": "विद्यमान दैनिक वैदिक राशिफल खोल्नुहोस्।",
+      "descriptionNe": "दैनिक वैदिक राशिफल पढ्नुहोस्।",
       "descriptionEn": "Read the daily Vedic Rashifal.",
       "href": "/rashifal"
     },
@@ -376,7 +376,7 @@
       "group": "jyotish",
       "titleNe": "नक्षत्र अनुसार बच्चाको नाम",
       "titleEn": "Nakshatra Baby Names",
-      "descriptionNe": "विद्यमान नाम तथा नक्षत्र उपकरण खोल्नुहोस्।",
+      "descriptionNe": "जन्म नक्षत्र र अक्षरका आधारमा नामका सुझाव हेर्नुहोस्।",
       "descriptionEn": "Explore name suggestions based on birth Nakshatra and syllables.",
       "href": "/tools/baby-names"
     },
@@ -475,7 +475,7 @@
       "group": "planets",
       "titleNe": "चन्द्र कला, पूर्णिमा र औंसी",
       "titleEn": "Moon Phases, Full & New Moon",
-      "descriptionNe": "विद्यमान चन्द्र पृष्ठमा पूर्ण विवरण हेर्नुहोस्।",
+      "descriptionNe": "चन्द्र कला, पूर्णिमा र औंसीको विवरण हेर्नुहोस्।",
       "descriptionEn": "Explore Moon phases, full moons and new moons.",
       "href": "/moon"
     },
@@ -556,7 +556,7 @@
       "group": "nepal-calendar",
       "titleNe": "बिक्रम संवत् पात्रो",
       "titleEn": "Bikram Sambat Calendar",
-      "descriptionNe": "विद्यमान नेपाली पात्रो र मिति रूपान्तरण।",
+      "descriptionNe": "नेपाली मिति र इस्वी संवत्सँगको रूपान्तरण।",
       "descriptionEn": "Nepali dates and conversion to the Gregorian calendar.",
       "href": "/"
     },
@@ -565,7 +565,7 @@
       "group": "nepal-calendar",
       "titleNe": "नेपाल संवत्",
       "titleEn": "Nepal Sambat",
-      "descriptionNe": "विद्यमान नेपाल संवत् पात्रो र चाडपर्व।",
+      "descriptionNe": "नेपाल संवत्का मिति र सम्बन्धित चाडपर्व।",
       "descriptionEn": "Nepal Sambat dates and related observances.",
       "href": "/nepal-sambat/mandala"
     },
