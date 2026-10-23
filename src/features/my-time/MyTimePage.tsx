@@ -524,7 +524,7 @@ export default function MyTimePage() {
         setSnapshot(local);
         setOfflineSnapshot(true);
         void writeMyTimeSnapshot(cacheKey,local).catch(()=>{});
-        setError(l(language,"अनलाइन सेवा उपलब्ध नभएकाले वैकल्पिक गणना प्रयोग भइरहेको छ।","The online service is unavailable, so an alternative calculation is being used."));
+        setError(l(language,"समय सेवा अहिले उपलब्ध छैन। देखाइएका समय स्थानीय गणनामा आधारित छन्।","The timing service is temporarily unavailable. The displayed times use a local calculation."));
       } catch {
         if (cached) {
           setSnapshot(cached); setOfflineSnapshot(true);
