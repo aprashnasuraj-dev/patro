@@ -6,6 +6,10 @@ function readLanguage(): UiLanguage {
     const saved = localStorage.getItem("patro.ui.language");
     if (saved === "ne" || saved === "en") return saved;
   } catch {}
+  const locale = typeof navigator !== "undefined"
+    ? (navigator.languages?.[0] || navigator.language || "")
+    : "";
+  if (/^ne(?:-|$)/i.test(locale)) return "ne";
   if (typeof document !== "undefined" && document.documentElement.lang.toLowerCase().startsWith("ne")) return "ne";
   return "en";
 }
