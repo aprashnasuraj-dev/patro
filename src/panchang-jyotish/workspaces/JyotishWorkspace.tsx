@@ -16,11 +16,6 @@ const PLANET_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द�
 const PLANET_ICON:Record<string,"sun"|"moon"|"saturn"|"node-axis"|"planet">={sun:"sun",moon:"moon",mars:"planet",mercury:"planet",jupiter:"planet",venus:"planet",saturn:"saturn",rahu:"node-axis",ketu:"node-axis"};
 function planetIcon(key:string){return PLANET_ICON[key]??"planet";}
 const DASHAS=["केतु","शुक्र","सूर्य","चन्द्र","मङ्गल","राहु","बृहस्पति","शनि","बुध"];
-const REVIEW_CARDS=[
-  {id:"F029",ne:"पञ्चपक्षी",en:"Pancha Pakshi",bodyNe:"पञ्चपक्षी तालिका परम्परा र जन्मसम्बन्धी नियमअनुसार फरक पर्न सक्छ। स्रोत र नियम पुष्टि भएपछि मात्र व्यक्तिगत नतिजा निकालिन्छ।",bodyEn:"Pancha Pakshi tables and birth-context rules vary by tradition. A personal result requires a source-verified rule set."},
-  {id:"F030",ne:"रत्नसम्बन्धी जानकारी",en:"Gemstone traditions",bodyNe:"रत्नसम्बन्धी परम्परागत मत जानकारीका रूपमा प्रस्तुत गरिन्छ; यसलाई किनमेल वा स्वास्थ्य उपचारको निर्देशन मान्नु हुँदैन।",bodyEn:"Gemstone traditions are presented as cultural information, not purchase pressure or medical advice."},
-  {id:"F031",ne:"रुद्राक्ष",en:"Rudraksha",bodyNe:"रुद्राक्षको वर्गीकरणका लागि परम्परागत स्रोत र क्षेत्रअनुसारको सन्दर्भ आवश्यक छ।",bodyEn:"Rudraksha classifications require source and regional context."}
-];
 
 function signName(index:number,language:"ne"|"en"){return language==="ne"?RASHIS[index]??"—":RASHI_EN[index]??"—";}
 function degree(value:number){return value.toFixed(2)+"°";}
@@ -200,7 +195,6 @@ export function JyotishWorkspace({language,selectedFeatureId}:Props){
         <a className="ap-pjw-link-card" href="/panchang"><strong>{l(language,"दैनिक पञ्चाङ्ग","Daily Panchang")}</strong><small>{l(language,"तिथि, नक्षत्र र दिनका समयखण्ड।","Tithi, Nakshatra and daily windows.")}</small><span>{l(language,"खोल्नुहोस्","Open")} ↗</span></a>
       </div>
     </section>
-    {REVIEW_CARDS.map((card)=><section className="ap-pjw-card" key={card.id}><div className="ap-pjw-subhead"><h3>{l(language,card.ne,card.en)}</h3><small>{l(language,"परम्परागत सन्दर्भ","Traditional reference")}</small></div><p className="ap-pjw-section-note">{l(language,card.bodyNe,card.bodyEn)}</p></section>)}
     {focus?.disposition==="source-review"&&<p className="ap-pjw-method">{l(language,"यो सुविधा स्रोत-पुष्टि भएको परम्परागत नियमबिना निश्चित व्यक्तिगत निर्णयका रूपमा प्रस्तुत हुँदैन।","This feature is not presented as a definitive personal judgment without a source-verified traditional rule.")}</p>}
   </div>;
 }
