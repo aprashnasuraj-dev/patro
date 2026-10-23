@@ -36,6 +36,6 @@ const GROUPS:{title:string;items:Item[]}[]=[
 export function FeatureHub(){
   return <main className="mp-page mp-feature-hub">
     <div className="mp-page-hero"><p className="eyebrow">आफ्नै सबै सुविधा</p><h1>आफ्नै पात्रोमा आफ्नै कामका सबै उपकरण, एउटै ठाउँमा।</h1><p>पात्रो, नोट, मिडिया, ज्योतिष र उपयोगी उपकरणहरू एउटै आफ्नै अनुभवमा।</p></div>
-    {GROUPS.map(group=><section key={group.title} className="mp-feature-group"><header><h2>{group.title}</h2></header><div className="mp-feature-grid">{group.items.map(item=>{const Icon=item.icon;return <a href={item.path} className="mp-feature-card" key={item.path+item.title}><span className="mp-feature-icon" aria-hidden="true"><Icon size={23} strokeWidth={1.8}/></span><span><strong>{item.title}</strong><small>{item.description}</small></span><b aria-hidden="true">→</b></a>})}</div></section>)}
+    {GROUPS.map(group=><section key={group.title} className="mp-feature-group"><header><h2>{group.title}</h2></header><div className="mp-feature-grid">{group.items.map(item=>{const Icon=item.icon;return <a href={item.path} className="mp-feature-card" key={item.path+item.title}><span className="mp-feature-icon" aria-hidden="true"><Icon size={25} strokeWidth={2}/></span><span><strong>{item.title}</strong><small>{item.description}</small></span><b aria-hidden="true">→</b></a>})}</div></section>)}
   </main>;
 }

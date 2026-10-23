@@ -63,7 +63,7 @@ export const ITEMS:LaunchItem[]=[
 
 function isTypingTarget(target:EventTarget|null){return target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement||(target instanceof HTMLElement&&target.isContentEditable)}
 
-function RouteIcon({href}:{href:string}) { const Icon=getToolIcon(href); return <Icon size={20} strokeWidth={1.8} aria-hidden="true"/>; }
+function RouteIcon({href}:{href:string}) { const Icon=getToolIcon(href); return <Icon size={23} strokeWidth={2} aria-hidden="true"/>; }
 
 export function FeatureLauncher(){
  const[open,setOpen]=useState(false);

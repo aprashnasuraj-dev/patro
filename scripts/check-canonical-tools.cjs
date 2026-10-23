@@ -18,6 +18,9 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   const browser=await chromium.launch({channel:"chromium",headless:true,args:["--disable-dev-shm-usage"]});
   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:"reduce"});
   const page=await context.newPage();
+  // External ad/measurement scripts are not part of the product regression surface.
+  // Their third-party runtime errors (e.g. AdSense "int64") must not fail local route checks.
+  await page.route(/^https:\/\/(?:pagead2\.googlesyndication\.com|googleads\.g\.doubleclick\.net|ep1\.adtrafficquality\.google|csi\.gstatic\.com)\//,route=>route.abort());
 
   const homeErrors=[];
   const onHomeError=(error)=>homeErrors.push(error?.stack || String(error));

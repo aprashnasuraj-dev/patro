@@ -13,9 +13,11 @@ const main = read("../src/main.tsx");
 
 test("tool cards use the shared route-to-Lucide icon registry", () => {
   assert.match(tools, /getToolIcon\(item\.href\)/);
-  assert.match(tools, /className="ap-tool-icon"><Icon size=\{21\}/);
+  assert.match(tools, /className="ap-tool-icon"><Icon size=\{24\}/);
   assert.doesNotMatch(tools, /ap-tool-icon">\{item\.icon\}/);
   assert.match(registry, /export function getToolIcon\(href: string\)/);
+  assert.ok(tools.includes("const Icon=getToolIcon(href);return <a className=\"ap-tool-card ap-pj-hub-card\""), "specialist Panchang/Jyotish cards must use route icons");
+  assert.ok(!tools.includes("FeatureGlyph featureId={item.iconFeatureId}"), "specialist Tools cards must not use the legacy glyph fallback");
 });
 
 test("feature launcher uses SVG search and route icons, not text marks", () => {
@@ -27,14 +29,14 @@ test("feature launcher uses SVG search and route icons, not text marks", () => {
 
 test("feature directory wraps icons in paper-backed semantic containers", () => {
   assert.match(hub, /className="mp-feature-icon"/);
-  assert.match(hub, /<Icon size=\{23\} strokeWidth=\{1\.8\}/);
+  assert.match(hub, /<Icon size=\{25\} strokeWidth=\{2\}/);
 });
 
 test("My Time temporal layers use Lucide icon components and preserve Jyotish hooks", () => {
   assert.match(myTime, /\[Sunrise,"सूर्योदय र सूर्यास्त"/);
   assert.match(myTime, /\[MoonStar,"ताराबल र चन्द्रबल"/);
   assert.match(myTime, /UPCOMING\.map\(\(\[Icon,titleNe,titleEn,descNe,descEn,status\]\)/);
-  assert.match(myTime, /<span className="mt-layer-icon"><Icon size=\{21\}/);
+  assert.match(myTime, /<span className="mt-layer-icon"><Icon size=\{23\}/);
   assert.match(myTime, /personalContext\.birthChart/);
   assert.match(myTime, /scorePersonalizedMuhurta/);
   assert.doesNotMatch(myTime, /\["☼","सूर्योदय/);
@@ -42,7 +44,12 @@ test("My Time temporal layers use Lucide icon components and preserve Jyotish ho
 
 test("CSS-only Nepali paper texture is attached to tools, launcher, features and My Time", () => {
   assert.match(theme, /repeating-linear-gradient/);
-  assert.match(theme, /radial-gradient\(circle at 17% 21%/);
+  assert.ok(theme.includes("radial-gradient(ellipse at 22% 13%"));
+  assert.match(theme, /--ap-icon-tone: #2c6097/);
+  assert.match(theme, /--ap-icon-tone: #9b4d36/);
+  assert.match(theme, /--ap-icon-wash/);
+  assert.ok(theme.includes(".ap-tool-icon::before"));
+  assert.ok(theme.includes(".mp-feature-icon::after"));
   for (const selector of [".ap-tool-icon", ".ap-launcher-orb", ".mp-feature-icon", ".mt-layer-icon", ".mt-moon-mark", ".mt-insight-icon", ".mt-astro-lucky-orbit"]) {
     assert.ok(theme.includes(selector), "missing paper icon selector " + selector);
   }
