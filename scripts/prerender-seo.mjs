@@ -52,48 +52,51 @@ function pathToFile(path) {
 }
 function breadcrumb(path, title) {
   const pieces = path.split("/").filter(Boolean);
-  const items = [{ "@type": "ListItem", position: 1, name: "आफ्नै पात्रो", item: SITE + "/" }];
+  const items = [{ "@type": "ListItem", position: 1, name: "Aafnai Patro", item: SITE + "/" }];
   if (pieces.length) items.push({ "@type": "ListItem", position: 2, name: title, item: abs(path) });
   return { "@type": "BreadcrumbList", itemListElement: items };
 }
 function monthMeta(year, monthNumber) {
   const month = BS_MONTHS[monthNumber - 1];
-  const title = `${month.ne} ${year} नेपाली पात्रो · Nepali Calendar ${year} ${month.en}`;
-  const description = `${month.ne} ${year} (${month.aliases}) को नेपाली पात्रो: Bikram Sambat month calendar, तिथि, चाडपर्व, बिदा र सम्बन्धित Nepal date जानकारी।`;
+  const title = `Nepali Calendar ${year} ${month.en} · ${month.ne} ${year} | Bikram Sambat`;
+  const description = `Explore the ${month.en} ${year} Bikram Sambat calendar with Gregorian date mapping, tithi, festivals, public holidays, and Nepal date context. · ${month.ne} ${year} को नेपाली पात्रो विवरण।`;
   return { title, description, month, aliases: [`Nepali calendar ${year} ${month.en}`, `${month.ne} ${year} पात्रो`, `${month.aliases} ${year}`] };
 }
 function pageMeta(path) {
-  if(path==="/janmadin")return {title:"मेरो असली जन्मदिन · AD, BS and Tithi Birthday",description:"Private device-local birthday calculations, cultural calendars and reflection with Aafnai Patro.",aliases:[]};
+  if(path==="/janmadin")return {title:"Birthdays in AD, BS and Tithi | Aafnai Patro",description:"Calculate birthdays in the Gregorian calendar, Bikram Sambat, and by tithi, with cultural-calendar context.",aliases:[]};
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   if (match) return monthMeta(Number(match[1]), Number(match[2]));
   if (INTENT_META[path]) return INTENT_META[path];
   const copy = CORE_COPY[path];
   if (copy) return { title: copy[0], description: copy[1], aliases: [] };
-  return { title: "आफ्नै पात्रो · Nepali Calendar", description: "नेपाली पात्रो, Nepal date, तिथि, चाडपर्व र उपयोगी नेपाली tools।", aliases: [] };
+  return { title: "Nepali Calendar & Online Tools | Aafnai Patro", description: "Explore Nepal’s calendar, Bikram Sambat date conversion, tithi, festivals, astronomy, and useful online tools in English or Nepali.", aliases: [] };
 }
 function relatedLinks(path) {
   const links = [
-    ["/", "आजको नेपाली मिति"], ["/today", "आज कति गते?"], ["/convert", "BS ↔ AD मिति रूपान्तरण"],
-    ["/tools/nepali-typing", "नेपाली टाइपिङ"], ["/tools/preeti-converter", "Preeti ↔ Unicode"],
-    ["/tools/bstoad", "BS to AD"], ["/tools/adtobs", "AD to BS"], ["/tools/sait", "शुभ साइत"],
-    ["/rashifal", "राशिफल"], ["/janmapatro", "जन्मपत्रो"], ["/janmapatro/milan.html", "३६ गुण मिलान"], ["/on-this-day", "इतिहासमा आज"], ["/moon", "चन्द्र पात्रो"], ["/fm", "नेपाली FM रेडियो"], ["/festivals", "नेपाली चाडपर्व"], ["/tools", "सबै नेपाली tools"], ["/guides", "उपकरण प्रयोग निर्देशिका"]
+    ["/", "Nepali calendar today · आजको नेपाली मिति"], ["/today", "Today’s date in Nepal · आज कति गते?"],
+    ["/convert", "BS ↔ AD date converter · मिति रूपान्तरण"],
+    ["/tools/nepali-typing", "Nepali typing · नेपाली टाइपिङ"], ["/tools/preeti-converter", "Preeti ↔ Unicode converter"],
+    ["/tools/bstoad", "Bikram Sambat to AD · BS to AD"], ["/tools/adtobs", "AD to Bikram Sambat · AD to BS"], ["/tools/sait", "Auspicious timing · शुभ साइत"],
+    ["/rashifal", "Horoscope · राशिफल"], ["/janmapatro", "Nepali birth chart · जन्मपत्रो"], ["/janmapatro/milan.html", "Traditional 36-guna matchmaking · ३६ गुण मिलान"],
+    ["/on-this-day", "On This Day in History · इतिहासमा आज"], ["/moon", "Moon calendar · चन्द्र पात्रो"], ["/fm", "Nepali FM radio · नेपाली FM रेडियो"],
+    ["/festivals", "Nepal festivals · नेपाली चाडपर्व"], ["/tools", "Free online tools · सबै उपकरण"], ["/guides", "Practical guides · उपकरण प्रयोग निर्देशिका"]
   ];
   if (path.startsWith("/calendar/")) {
     const [, , y] = path.split("/");
-    for (const m of BS_MONTHS) links.push([calendarRoute(Number(y), m.n), `${m.ne} ${y}`]);
+    for (const m of BS_MONTHS) links.push([calendarRoute(Number(y), m.n), `Nepali calendar ${m.en} ${y} · ${m.ne} ${y}`]);
   }
   return unique(links.filter(([href]) => href !== path).map(([href, label]) => `<a href="${esc(href)}">${esc(label)}</a>`)).join(" · ");
 }
 function intentGuide(meta) {
   if (!meta?.steps?.length && !meta?.faqs?.length) return "";
-  const steps = meta.steps?.length ? `<section class="seo-howto"><h2>कसरी प्रयोग गर्ने?</h2><ol>${meta.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol></section>` : "";
-  const faq = meta.faqs?.length ? `<section class="seo-faq"><h2>धेरै सोधिने प्रश्न</h2>${meta.faqs.map((item) => `<h3>${esc(item.q)}</h3><p>${esc(item.a)}</p>`).join("")}</section>` : "";
+  const steps = meta.steps?.length ? `<section class="seo-howto"><h2>How to use this tool · कसरी प्रयोग गर्ने?</h2><ol>${meta.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol></section>` : "";
+  const faq = meta.faqs?.length ? `<section class="seo-faq"><h2>Frequently asked questions · धेरै सोधिने प्रश्न</h2>${meta.faqs.map((item) => `<h3>${esc(item.q)}</h3><p>${esc(item.a)}</p>`).join("")}</section>` : "";
   return `${steps}${faq}`;
 }
 function featureDirectory(path) {
   if (!FEATURE_HUB_ROUTES.has(path)) return "";
   const features = featureEditorial.filter(item => "/" + item.group === path);
-  return `<section class="seo-feature-directory" aria-label="Feature guide"><h2>यस समूहका विषय र उपकरण · Explore these tools</h2><p>प्रत्येक विषयको उद्देश्य र उपलब्धता बुझेर सम्बन्धित सुविधा खोल्नुहोस्। · Choose a topic and read what it offers before opening its tool.</p>${features.map(item => `<article><h3><a href="${esc(item.href)}">${esc(item.titleNe)} · ${esc(item.titleEn)}</a></h3><p lang="ne">${esc(item.descriptionNe)}</p><p lang="en">${esc(item.descriptionEn)}</p></article>`).join("")}</section>`;
+  return `<section class="seo-feature-directory" aria-label="Feature guide"><h2>Explore these tools · यस समूहका विषय र उपकरण</h2><p>Choose a topic to understand what it offers before opening the tool. · प्रत्येक विषयको उद्देश्य र उपलब्धता बुझेर सम्बन्धित सुविधा खोल्नुहोस्।</p>${features.map(item => `<article><h3><a href="${esc(item.href)}" lang="en">${esc(item.titleEn)} · ${esc(item.titleNe)}</a></h3><p lang="en">${esc(item.descriptionEn)}</p><p lang="ne">${esc(item.descriptionNe)}</p></article>`).join("")}</section>`;
 }
 function bodyFor(path, meta, indexed) {
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
@@ -104,9 +107,9 @@ function bodyFor(path, meta, indexed) {
     const nextN = number === 12 ? 1 : number + 1, nextY = number === 12 ? year + 1 : year;
     extra = `<p><strong>${esc(month.ne)} ${year}</strong> को पात्रोमा दैनिक Gregorian मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्।</p><p><a href="${calendarRoute(prevY, prevN)}">अघिल्लो महिना</a> · <a href="${calendarRoute(nextY, nextN)}">अर्को महिना</a></p>`;
   } else if (path === "/") {
-    extra = `<p><strong>आज कति गते?</strong> नेपाल समय (Asia/Kathmandu) अनुसार आजको Bikram Sambat मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्।</p>`;
+    extra = `<p><strong>What is today’s date in Nepal?</strong> Check today’s Bikram Sambat date, tithi, festivals, and public holidays using Asia/Kathmandu time. · नेपाल समयअनुसार आजको नेपाली मिति र पात्रो विवरण पनि हेर्नुहोस्।</p>`;
   } else if (path === "/today") {
-    extra = `<p>नेपाल समयअनुसार आजको नेपाली मिति, बार, तिथि र सम्बन्धित पात्रो जानकारी एउटै पृष्ठमा हेर्नुहोस्। विदेशमा हुँदा पनि नेपालको “आज” यही पृष्ठबाट जाँच गर्न सकिन्छ।</p>`;
+    extra = `<p>Check today’s Nepali date, weekday, tithi, and calendar details in Nepal time. This page is also useful when you live abroad and need Nepal’s current date. · विदेशमा हुँदा पनि नेपालको आजको मिति जाँच गर्न सकिन्छ।</p>`;
   } else if (path === "/fm") {
     extra = `<h2>नेपाली FM रेडियो अनलाइन</h2><p>स्टेशन खोजेर उपलब्ध लाइभ स्ट्रिम सुन्नुहोस्। प्रसारणको उपलब्धता रेडियो स्टेशन र इन्टरनेट जडानमा निर्भर हुन्छ। <a href="/tv">अन्य लाइभ मिडिया</a> पनि हेर्नुहोस्।</p>`;
   } else if (path === "/tools/nepali-typing") {
@@ -118,7 +121,7 @@ function bodyFor(path, meta, indexed) {
 }
 function schemaFor(path, meta) {
   const graph = [
-    { "@type": "WebPage", "@id": abs(path) + "#page", url: abs(path), name: meta.title, description: meta.description, inLanguage: ["ne", "en"], isPartOf: { "@id": SITE + "/#website" } },
+    { "@type": "WebPage", "@id": abs(path) + "#page", url: abs(path), name: meta.title, description: meta.description, inLanguage: ["en", "ne"], isPartOf: { "@id": SITE + "/#website" } },
     breadcrumb(path, meta.title)
   ];
   if (path === "/") {
@@ -143,9 +146,9 @@ function replaceOrInsert(html, matcher, replacement, before = "</head>") {
 function render(path, indexed) {
   const meta = pageMeta(path);
   const canonical = abs(path);
-  const title = meta.title.length <= 58 ? `${meta.title} · आफ्नै पात्रो` : meta.title;
+  const title = meta.title.length <= 58 ? `${meta.title} · Aafnai Patro` : meta.title;
   let html = shell;
-  html = html.replace(/<html\s+lang="[^"]*"/i, '<html lang="ne"');
+  html = html.replace(/<html\s+lang="[^"]*"/i, '<html lang="en"');
   html = replaceOrInsert(html, /<title>.*?<\/title>/is, `<title>${esc(title)}</title>`);
   html = replaceOrInsert(html, /<meta\s+name="description"[^>]*>/i, `<meta name="description" content="${esc(meta.description)}" />`);
   html = replaceOrInsert(html, /<link\s+rel="canonical"[^>]*>/i, `<link rel="canonical" href="${esc(canonical)}" />`);
