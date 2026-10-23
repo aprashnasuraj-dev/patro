@@ -152,7 +152,7 @@ export function JanmaPatroSuite(){
    const calculated=calculateChart(a);
    const context=createJanmaPatroContext(calculated);
    setChart(calculated);setGuna(null);setNameGuna(null);
-   if(!saveJanmaPatroContext(context)){setError(tx(language,"जन्म विवरण यस ब्राउजरमा सुरक्षित हुन सकेन। स्थानीय भण्डारण अनुमति जाँच्नुहोस्।","Birth details could not be saved in this browser. Check local storage permissions."));return;}
+   if(!saveJanmaPatroContext(context)){setError(tx(language,"जन्म विवरण सुरक्षित गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।","Your birth details could not be saved. Please try again."));return;}
    window.history.pushState(window.history.state,"","/mytime");
    window.dispatchEvent(new Event("patro:navigation"));
   }catch(err){setChart(null);setGuna(null);setNameGuna(null);setError(err instanceof Error?err.message:tx(language,"मेरो समयसँग जोड्न सकिएन। जन्म विवरण जाँच्नुहोस्।","Could not connect to My Time. Check the birth details."));}
