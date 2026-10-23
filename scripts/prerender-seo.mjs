@@ -18,26 +18,27 @@ for (const item of featureEditorial) if (!FEATURE_HUB_ROUTES.has("/" + item.grou
 for (const route of TOOL_ROUTES) if (!INTENT_META[route]) throw new Error(`Missing canonical SEO intent metadata for ${route}`);
 
 const CORE_COPY = {
-  "/time-machine": ["नेपाल Time Machine · इतिहास", "नेपाल र विश्व इतिहासका उल्लेखनीय वर्ष, घटना र calendar context अन्वेषण गर्नुहोस्।"],
-  "/on-this-day": ["इतिहासमा आज · On This Day Nepal", "आजको दिन नेपाल र विश्व इतिहासमा भएका उल्लेखनीय घटनाहरू स्रोतसहित अन्वेषण गर्नुहोस्।"],
-  "/fm": ["नेपाली FM रेडियो · Nepal Radio", "नेपाल र विश्वका उपलब्ध FM तथा internet radio station खोज्नुहोस् र सुन्नुहोस्।"],
-  "/tv": ["Nepal Live TV Explorer", "देश, भाषा र category अनुसार उपलब्ध public live TV channels खोज्नुहोस्।"],
-  "/samudaya": ["समुदाय पात्रो · Community Calendars", "नेपाल संवत्, ल्होसार, थारू, मिथिला, किरात, हिजरी र Chakra सहित समुदाय-केंद्रित पात्रोहरू एउटै ठाउँबाट अन्वेषण गर्नुहोस्।"],
-  "/panchang": ["नेपाली पञ्चाङ्ग · Daily Panchang Nepal", "नेपालको स्थानीय मिति र समयअनुसार तिथि, नक्षत्र, योग, करण, सूर्योदय, सूर्यास्त र दैनिक पञ्चाङ्ग विवरण अन्वेषण गर्नुहोस्।"],
-  "/muhurat": ["शुभ साइत · Muhurat and Auspicious Timing", "स्थानीय समयखण्ड, परम्परागत साइत नियम र स्रोत-पुष्टि भएका मितिहरू स्पष्ट रूपमा छुट्याएर हेर्नुहोस्।"],
-  "/jyotish": ["ज्योतिष गणक · Nepali Jyotish Calculators", "जन्मपत्रो, जन्म राशि, नक्षत्र, लग्न, ग्रहस्थिति, गुण मिलान र अन्य परम्परागत ज्योतिष गणकहरू एकै समूहमा खोल्नुहोस्।"],
-  "/planets": ["ग्रहस्थिति र खगोलीय घटना · Planets & Astronomy", "निरयण ग्रहस्थिति, राशि प्रवेश, वक्री/मार्गी स्टेशन, कोणीय सम्बन्ध र खगोलीय घटनाहरू अन्वेषण गर्नुहोस्।"],
-  "/nepal-calendar": ["नेपाली संवत् र क्षेत्रीय पात्रो · Nepal Calendars", "बिक्रम संवत्, नेपाल संवत्, समुदाय पात्रो र क्षेत्रीय सांस्कृतिक परम्पराका स्रोतहरू अन्वेषण गर्नुहोस्।"],
-  "/janmapatro": ["जन्मपत्रो · Nepali Birth Chart", "जन्म मिति, सही समय र स्थानका आधारमा लग्न, ग्रहस्थिति, नक्षत्र, दशा र चन्द्र कुण्डली गणना गर्नुहोस्।"],
-  "/janmapatro/milan.html": ["३६ गुण मिलान · Nepali Matchmaking", "जन्म विवरण वा नामको नक्षत्र-अक्षरबाट परम्परागत अष्टकूट ३६ गुण मिलान हेर्नुहोस्।"],
-  "/about": ["आफ्नै पात्रोबारे · About Aafnai Patro", "Aafnai Patro को उद्देश्य, नेपाली calendar अनुभव र उपलब्ध सुविधाबारे जान्नुहोस्।"],
-  "/sources": ["स्रोत र पद्धति · Calendar Sources", "नेपाली पात्रो, तिथि र अन्य तथ्यका स्रोत तथा शुद्धताबारे जान्नुहोस्।"],
-  "/methodology": ["नेपाली पात्रो पद्धति · Methodology", "आफ्नै पात्रोले मिति, तिथि, चाडपर्व र conversion जानकारी कसरी तयार र जाँच गर्छ भन्ने पद्धति।"],
-  "/corrections": ["पात्रो सुधार · Aafnai Patro", "Calendar तथ्यमा त्रुटि भेटिएमा सुधार पठाउने तरिका र सार्वजनिक सुधार विवरण हेर्नुहोस्।"],
-  "/privacy": ["गोपनीयता · Privacy", "Aafnai Patro को privacy र data-handling जानकारी।"],
-  "/terms": ["सर्तहरू · Terms", "Aafnai Patro प्रयोगका सर्तहरू।"],
-  "/contact": ["सम्पर्क · Contact Aafnai Patro", "Aafnai Patro सँग सम्पर्क, सुझाव वा तथ्य-सुधार पठाउने जानकारी।"]
-};
+  "/time-machine": ["Nepal Time Machine | History Timeline", "Explore notable events from Nepal and world history with dates, historical context, and source references."],
+  "/on-this-day": ["On This Day in Nepal and World History", "Explore notable events that happened on this date in Nepal and around the world, with source context."],
+  "/fm": ["Nepali FM Radio Online | Aafnai Patro", "Find and listen to available FM and internet radio stations from Nepal and beyond. Stream availability depends on each broadcaster."],
+  "/tv": ["Nepal Live TV Explorer | Aafnai Patro", "Discover supported public live television channels by country, language, or category."],
+  "/samudaya": ["Community Calendars of Nepal | Aafnai Patro", "Explore Nepal Sambat, Lhosar, Tharu, Mithila, Kirat, Hijri, and community-cycle calendars in one place."],
+  "/panchang": ["Daily Panchang Nepal | Tithi, Nakshatra & Sunrise", "Explore tithi, nakshatra, yoga, karana, sunrise, sunset, and daily Panchang details for Nepal’s local date and time."],
+  "/muhurat": ["Muhurat & Auspicious Timing | Aafnai Patro", "Review local time windows and traditional auspicious-timing references, while distinguishing calculated times from source-confirmed dates."],
+  "/jyotish": ["Nepali Jyotish Calculators | Birth Chart & Kundali", "Explore birth charts, rashi, nakshatra, lagna, planetary positions, traditional matchmaking, and related Jyotish calculators."],
+  "/jyotish/china": ["Vedic Birth Chart & Nepali Jyotish | Aafnai Patro", "Explore a birth chart using date, time, and place of birth, with traditional lagna, planetary positions, nakshatra, dasha, and chart interpretations."],
+  "/planets": ["Planetary Positions & Astronomical Events", "Explore sidereal planetary positions, sign ingresses, retrograde stations, angular relationships, and astronomical events."],
+  "/nepal-calendar": ["Nepal Calendars & Cultural Traditions", "Explore Bikram Sambat, Nepal Sambat, regional calendars, and cultural traditions with relevant source context."],
+  "/janmapatro": ["Nepali Birth Chart | Lagna, Nakshatra & Dasha", "Calculate a traditional birth chart from birth date, exact time, and location, including lagna, planetary positions, nakshatra, and dasha."],
+  "/janmapatro/milan.html": ["Nepali Matchmaking | Traditional 36-Guna Milan", "Explore traditional Ashtakoota 36-guna compatibility using birth details or name-based nakshatra initials."],
+  "/about": ["About Aafnai Patro | Product & Principles", "Learn about Aafnai Patro’s purpose, calendar and astronomy features, product principles, and approach to transparent information."],
+  "/sources": ["Sources & Methodology | Aafnai Patro", "Understand the sources and limitations behind Nepal calendar dates, tithi, astronomical calculations, cultural calendars, and external content."],
+  "/methodology": ["Nepali Calendar Methodology | Aafnai Patro", "Learn how calendar dates, tithi, festivals, and date-conversion information are prepared and reviewed."],
+  "/corrections": ["Calendar Corrections | Aafnai Patro", "Report a possible calendar or content error with the relevant date, location, observed result, and supporting source."],
+  "/privacy": ["Privacy Policy | Aafnai Patro", "Review Aafnai Patro’s privacy information covering browser storage, optional synchronization, third-party services, and advertising."],
+  "/terms": ["Terms of Use | Aafnai Patro", "Review the terms governing Aafnai Patro’s informational content, calculations, external links, service availability, and acceptable use."],
+  "/contact": ["Contact & Support | Aafnai Patro", "Contact Aafnai Patro for technical help, product feedback, accessibility suggestions, or evidence-based calendar corrections."]
+};;
 
 function esc(value) {
   return String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
