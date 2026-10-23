@@ -1,5 +1,5 @@
 import type { PatroFeature, FeatureGroupId } from "./catalog";
-import { getFeatureAvailability, getFeaturesForGroup } from "./catalog";
+import { getFeatureAvailability, getPublicFeaturesForGroup } from "./catalog";
 import { l } from "../useUiLanguage";
 import { FEATURE_REFERENCE_GUIDES } from "./feature-reference-guides";
 import { FeatureGlyph } from "./FeatureGlyph";
@@ -70,7 +70,7 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
   const copy=stateCopy(feature,language);
   const state=getFeatureAvailability(feature);
   const guide=FEATURE_REFERENCE_GUIDES[feature.id];
-  const next=getFeaturesForGroup(group).filter(item=>item.id!==feature.id).slice(0,3);
+  const next=getPublicFeaturesForGroup(group).filter(item=>item.id!==feature.id).slice(0,3);
   const label=l(language,feature.titleNe,feature.titleEn);
   return <section className={"ap-pj-experience ap-pj-experience--"+group} aria-label={label} data-feature-id={feature.id}>
     <div className="ap-pj-experience-top">

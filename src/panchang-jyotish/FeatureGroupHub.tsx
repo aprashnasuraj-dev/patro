@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import type { FeatureGroupId, PatroFeature } from "./catalog";
-import { FEATURE_GROUPS, getFeaturesForGroup, getFeatureAvailability } from "./catalog";
+import { FEATURE_GROUPS, getPublicFeaturesForGroup, getFeatureAvailability } from "./catalog";
 import { useUiLanguage, l } from "../useUiLanguage";
 import { FeatureExperience } from "./FeatureExperience";
 import { FeatureGlyph } from "./FeatureGlyph";
@@ -25,7 +25,7 @@ const WORKSPACES = {
 function featureFromHash(group: FeatureGroupId): string | null {
   if (typeof window === "undefined") return null;
   const hash = window.location.hash.replace(/^#/, "");
-  return getFeaturesForGroup(group).find((item) => item.href.split("#")[1] === hash)?.id ?? null;
+  return getPublicFeaturesForGroup(group).find((item) => item.href.split("#")[1] === hash)?.id ?? null;
 }
 
 function isLocalFeature(item: PatroFeature, group: FeatureGroupId) {
@@ -39,9 +39,9 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
   const [query, setQuery] = useState("");
   const [announcement, setAnnouncement] = useState("");
   const [availabilityFilter, setAvailabilityFilter] = useState<"all" | "existing" | "browser-preview" | "reference">("all");
-  const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
+  const [workspaceRequested, setWorkspaceRequested] = useState(() => { const id = featureFromHash(groupId); const item = getPublicFeaturesForGroup(groupId).find(feature => feature.id === id); return Boolean(item && getFeatureAvailability(item) === "browser-preview"); });
   const [activeFeature, setActiveFeature] = useState<string | null>(() => featureFromHash(groupId));
-  const features = useMemo(() => getFeaturesForGroup(groupId), [groupId]);
+  const features = useMemo(() => getPublicFeaturesForGroup(groupId), [groupId]);
   const selected = features.find(item => item.id === activeFeature) ?? null;
   const Workspace = WORKSPACES[groupId];
   const selectedAvailability = selected ? getFeatureAvailability(selected) : null;
@@ -59,7 +59,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
     const sync = () => {
       const id = featureFromHash(groupId);
       setActiveFeature(id);
-      setWorkspaceRequested(Boolean(id && getFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview")));
+      setWorkspaceRequested(Boolean(id && getPublicFeaturesForGroup(groupId).some(item => item.id === id && getFeatureAvailability(item) === "browser-preview")));
     };
     sync();
     // pushState does not emit hashchange; popstate is needed for Back/Forward.

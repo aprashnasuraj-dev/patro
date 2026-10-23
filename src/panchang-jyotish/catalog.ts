@@ -218,6 +218,13 @@ export function getFeaturesForGroup(group: FeatureGroupId) {
   return PATRO_FEATURES.filter((item) => item.group === group);
 }
 
+/** Public directory entries exclude reference-only candidates until their rules/data pass review. */
+export function getPublicFeaturesForGroup(group: FeatureGroupId) {
+  return getFeaturesForGroup(group).filter((item) => getFeatureAvailability(item) !== "reference");
+}
+
+export const PUBLIC_FEATURE_COUNT = PATRO_FEATURES.filter((item) => getFeatureAvailability(item) !== "reference").length;
+
 export function getFeatureById(id: string) {
   return PATRO_FEATURES.find((item) => item.id === id);
 }
