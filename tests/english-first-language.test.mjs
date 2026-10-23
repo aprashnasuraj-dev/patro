@@ -50,6 +50,9 @@ test("static HTML and crawler-facing metadata are English-first", () => {
   assert.ok(index.includes('hreflang="en"'));
   assert.ok(prerender.includes("'<html lang=\"en\"'"));
   assert.ok(prerender.includes("Nepal Time Machine | History Timeline"));
+  assert.ok(prerender.includes('"/time-machine", "Nepal Time Machine · समययन्त्र"'));
+  assert.ok(prerender.includes('"/tools/astro", "Nepali astronomical calendar · खगोलीय पात्रो"'));
+  assert.ok(prerender.includes('"/jyotish/china", "Vedic birth chart & Jyotish · ज्योतिष"'));
   assert.ok(prerender.includes("Vedic Birth Chart & Nepali Jyotish"));
   assert.ok(runtimeSeo.includes("const ENGLISH_FIRST"));
   assert.ok(runtimeSeo.includes('if (ENGLISH_FIRST[clean]) row = { ...row, ...ENGLISH_FIRST[clean] };'));
