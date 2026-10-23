@@ -21,6 +21,8 @@ import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import PersonalAstrologyObservatory from "./PersonalAstrologyObservatory";
+import { personalComponentLabel, personalComponentExplanation, aggregatePersonalTimeComponents } from "./personal-time-copy";
+import { dedupeDisplayStrings } from "./personal-time-utils";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
 import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, selectPersonalLuckyTime, type PersonalChartSnapshot, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
@@ -259,7 +261,7 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
         onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectEvent(key, label, start, end, explanation); } }}>
         <title>{intervalLabel}</title>
       </path>
-      {focused && <path d={d} fill="none" stroke="var(--mt-ink)" strokeWidth={width + 9} strokeLinecap="round" strokeDasharray="2 3" opacity={0.72} pointerEvents="none" />}
+      {focused && <path className="mt-polar-focus-indicator" d={d} fill="none" stroke="var(--mt-ink)" strokeWidth={width + 9} strokeLinecap="round" strokeDasharray="2 3" opacity={0.72} pointerEvents="none" />}
     </g>;
   };
   return <div className="mt-polar-wrap">
@@ -694,24 +696,15 @@ export default function MyTimePage() {
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
       const personalizationLevel: "personalized" | "partial" | "general" = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
-      const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
-      const aggregateComponents = componentKeys.map(key => {
-        const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
-        const totalWeight = present.reduce((sum, item) => sum + item.weight, 0);
-        return {
-          ...present[0],
-          score: totalWeight ? Math.round(present.reduce((sum, item) => sum + item.score * item.weight, 0) / totalWeight) : present[0].score,
-          weight: Math.round((present.reduce((sum, item) => sum + item.weight, 0) / evaluations.length) * 10) / 10
-        };
-      });
+      const aggregateComponents = aggregatePersonalTimeComponents(evaluations);
       const personalEvaluation = {
         ...evaluations[0], score: combinedScore,
         label: (combinedScore >= 75 ? "supportive" : combinedScore >= 45 ? "mixed" : "caution") as "supportive" | "mixed" | "caution",
         confidence: personalizationLevel === "personalized" ? "personalized" as const : personalizationLevel === "partial" ? "partially-personalized" as const : "general" as const,
         components: aggregateComponents,
-        reasons: [...new Set(evaluations.flatMap(item => item.reasons))],
-        cautions: [...new Set(evaluations.flatMap(item => item.cautions))],
-        missing: [...new Set(evaluations.flatMap(item => item.missing))]
+        reasons: dedupeDisplayStrings(evaluations.flatMap(item => item.reasons)),
+        cautions: dedupeDisplayStrings(evaluations.flatMap(item => item.cautions)),
+        missing: dedupeDisplayStrings(evaluations.flatMap(item => item.missing))
       };
       return {
         ...segment, key: segment.key + "-hora-" + segmentIndex, tatwaName, nityaName, horaName,
@@ -782,8 +775,8 @@ export default function MyTimePage() {
             <div className="mt-personal-score-breakdown" aria-label={l(language,"समय सिफारिसका कारणहरू","Recommendation factors")}>
               <strong>{l(language,"यो समय किन छानियो","Why this window ranked here")}</strong>
               <p>{l(language,bestTimeWindow.personalizationLevel==="personalized"?"जन्मपत्रो र दैनिक राशिफलका उपलब्ध संकेत पनि गणनामा समावेश छन्।":bestTimeWindow.personalizationLevel==="partial"?"केही व्यक्तिगत संकेत उपलब्ध छन्; बाँकी स्कोर पञ्चाङ्ग र समय तहबाट निकालिएको छ।":"जन्मपत्रो वा मिल्दो राशिफल डोमेन उपलब्ध नभएकाले यो मुख्यतः सामान्य समय मार्गदर्शन हो।",bestTimeWindow.personalizationLevel==="personalized"?"Available birth-chart and daily Rashifal signals are included.":bestTimeWindow.personalizationLevel==="partial"?"Some personal signals are available; the remaining score comes from Panchang and timing layers.":"No birth-chart or matching Rashifal domain is available, so this is primarily general timing guidance.")}</p>
-              <div>{bestTimeWindow.personalEvaluation.components.map(component=><span key={component.key}><b>{component.key==="panchang"?l(language,"पञ्चाङ्ग","Panchang"):component.key==="rashifal"?l(language,"राशिफल","Rashifal"):component.key==="dasha-hora"?l(language,"दशा–होरा","Dasha–Hora"):component.key==="activity-hora"?l(language,"काम–होरा","Activity–Hora"):l(language,"तत्त्व मेल","Tatwa fit")}</b> {component.score}/100</span>)}</div>
-              <ul>{bestTimeWindow.personalEvaluation.components.map(component=><li key={component.key}>{l(language,component.key==="panchang"?"चौघडिया, सावधानीका समय र उपलब्ध ताराबल/चन्द्रबलबाट पञ्चाङ्ग स्कोर निकालिएको छ।":component.key==="rashifal"?"छानिएको गतिविधिसँग मिल्ने दैनिक राशिफल क्षेत्रको प्रकाशित स्कोर जोडिएको छ।":component.key==="dasha-hora"?"छानिएको मितिको सक्रिय विम्शोत्तरी दशा र होराको स्वामी तुलना गरिएको छ।":component.key==="activity-hora"?"गतिविधिसँग मिल्ने होरा प्राथमिकता तुलना गरिएको छ; नमिलेमा तटस्थ स्कोर दिइन्छ।":"छानिएको गतिविधिसँग तन्त्रको पञ्चतत्त्व मेल तुलना गरिएको छ।",component.explanation)}</li>)}</ul>
+              <div>{bestTimeWindow.personalEvaluation.components.map(component=><span key={component.key}><b>{personalComponentLabel(component.key, language)}</b> {component.score}/100</span>)}</div>
+              <ul>{bestTimeWindow.personalEvaluation.components.map(component=><li key={component.key}>{personalComponentExplanation(component, language)}</li>)}</ul>
             </div>
           </div>
         </div>

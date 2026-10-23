@@ -5,6 +5,7 @@ import { l } from "../../useUiLanguage";
 import { choghadiyaWindows, type TemporalWindow } from "../../patro-tools/core/temporal-windows";
 import "./choghadiya-summary.css";
 import type { PersonalTimeComponent, SavedJanmaPatroContext } from "./personal-time-engine";
+import { personalComponentLabel, personalComponentExplanation } from "./personal-time-copy";
 import "./personal-astrology-observatory.css";
 
 export type AstrologyWindow = {
@@ -23,63 +24,6 @@ type Props = {
   onEdit: () => void;
 };
 
-function personalActivityLabel(activity: string, language: UiLanguage) {
-  const values: Record<string, [string, string]> = {
-    general: ["सामान्य", "General"], work: ["काम / व्यवसाय", "Work / business"], study: ["अध्ययन", "Study"],
-    travel: ["यात्रा", "Travel"], prayer: ["पूजा / आध्यात्मिक अभ्यास", "Prayer / spiritual practice"],
-    meditation: ["ध्यान", "Meditation"], family: ["परिवार / व्यक्तिगत काम", "Family / personal plans"]
-  };
-  const value = values[activity] || [activity, activity];
-  return value[language === "ne" ? 0 : 1];
-}
-function personalComponentLabel(key: string, language: UiLanguage) {
-  const labels: Record<string, [string, string]> = {
-    panchang: ["पञ्चाङ्ग र शुभ समय", "Panchang & timing"],
-    rashifal: ["सम्बन्धित राशिफल", "Matching Rashifal"],
-    "dasha-hora": ["दशा–होरा अनुकूलता", "Dasha–Hora compatibility"],
-    "natal-bala": ["तारा बल र चन्द्र बल", "Tara Bala & Chandra Bala"],
-    "chart-lords": ["लग्न तथा कार्य-सम्बन्धित भावका स्वामी", "Lagna & activity-house lords"],
-    gochara: ["बृहस्पति–शनि गोचर", "Jupiter–Saturn Gochara"],
-    "activity-hora": ["कार्यअनुसार होरा", "Activity–Hora fit"],
-    "activity-tatwa": ["कार्यअनुसार तत्त्व", "Activity–Tatwa fit"]
-  };
-  const value = labels[key] || [key, key];
-  return value[language === "ne" ? 0 : 1];
-}
-function personalComponentExplanation(component: PersonalTimeComponent, language: UiLanguage) {
-  if (language !== "ne") return component.explanation;
-  const original = component.explanation;
-  if (component.key === "panchang") return "पञ्चाङ्ग, चोघडिया र सावधानी समयको संयुक्त मूल्याङ्कन। राहुकाल, यमगण्ड र गुलिकाका परम्परागत सावधानीले अङ्कमा अधिकतम सीमा लगाउँछन्।";
-  if (component.key === "rashifal") return "उपलब्ध दैनिक राशिफलको सम्बन्धित क्षेत्रको अङ्क मात्र प्रयोग गरिएको छ; मिल्ने क्षेत्र नभए यो अंश भारमा समावेश हुँदैन।";
-  if (component.key === "dasha-hora") {
-    const match = original.match(/^(.+?) Dasha with (.+?) Hora: (.+?) graded at (\d+)\/100(.*)$/);
-    if (!match) return "चलिरहेको विम्शोत्तरी दशा स्वामी र उम्मेदवार समयको होरा स्वामीलाई प्राकृतिक मित्रता, तटस्थता वा शत्रुताका आधारमा तुलना गरिएको छ।";
-    const relation = match[3] === "same planet" ? "एउटै ग्रह" : match[3] === "natural friend" ? "प्राकृतिक मित्र" : match[3] === "natural enemy" ? "प्राकृतिक शत्रु" : "तटस्थ सम्बन्ध";
-    const penalty = match[5].includes("reduced") ? " जन्मपत्रोका भाव, नीच राशि वा युति-सावधानीका कारण अतिरिक्त कटौती गरिएको छ।" : "";
-    return match[1] + " दशा र " + match[2] + " होरा: " + relation + " (" + match[4] + "/100)।" + penalty + " यो परम्परागत ज्योतिषीय नियम हो, वैज्ञानिक मापन होइन।";
-  }
-  if (component.key === "natal-bala") {
-    const parts = [];
-    const tara = original.match(/(Janma|Sampat|Vipat|Kshema|Pratyari|Sadhaka|Naidhana|Mitra|Atimitra) Tara Bala/);
-    const moon = original.match(/house (\d+)/);
-    if (tara) parts.push(({ Janma: "जन्म", Sampat: "सम्पत्", Vipat: "विपत्", Kshema: "क्षेम", Pratyari: "प्रत्यरि", Sadhaka: "साधक", Naidhana: "नैधन", Mitra: "मित्र", Atimitra: "अतिमित्र" } as Record<string, string>)[tara[1]] + " तारा बल");
-    if (moon) parts.push("जन्म चन्द्रबाट " + moon[1] + "औँ भावको चन्द्र बल");
-    return parts.length ? parts.join(" र ") + " को परम्परागत सापेक्ष सङ्केत हो।" : "उपलब्ध तारा बल र चन्द्र बलको परम्परागत तुलना।";
-  }
-  if (component.key === "chart-lords") {
-    const match = original.match(/\(([\d, ]+)\)/);
-    return "तपाईंको जन्म लग्न र यस उम्मेदवार समयको लग्नबाट सम्बन्धित कार्यका भाव स्वामी, तिनको भावस्थिति र राशि बल हेरिन्छ" +
-      (match ? " (भाव " + match[1].replace(/, /g, ", ") + ")" : "") + "। यो पारम्परिक नियममा आधारित सूचक हो।";
-  }
-  if (component.key === "gochara") {
-    const match = original.match(/Jupiter transits (\d+)th and Saturn (\d+)th from natal Moon/);
-    return match ? "जन्म चन्द्र राशिबाट बृहस्पति " + match[1] + "औँ र शनि " + match[2] + "औँ भावमा पर्ने गोचरको परम्परागत तुलना। यो भविष्यवाणी होइन।"
-      : "जन्म चन्द्र राशिबाट बृहस्पति र शनिको गोचरको परम्परागत तुलना; उपलब्ध तथ्य नभए यो अंश हटाइन्छ।";
-  }
-  if (component.key === "activity-hora") return "छानिएको " + personalActivityLabel((original.match(/for ([a-z]+)\./)?.[1] || "general"), "ne") + " कामका लागि होराको परम्परागत उपयुक्तता; नमिल्दा पनि यसलाई निषेध वा हानि मानिँदैन।";
-  if (component.key === "activity-tatwa") return "छानिएको गतिविधिसँग तत्त्वको परम्परागत मेल हेरिन्छ। यो कमजोर सन्दर्भ सङ्केत हो, निषेध होइन।";
-  return original;
-}
 function personalCautionLabel(value: string, language: UiLanguage) {
   const labels: Record<string, [string, string]> = {
     rahu_kaal: ["राहुकालको परम्परागत सावधानी", "Traditional Rahu Kaal caution"],
@@ -193,9 +137,9 @@ export default function PersonalAstrologyObservatory(p: Props) {
         {p.luckyTime && <section className="mt-astro-score-breakdown" aria-label={l(lang,"अङ्कको विवरण","Score breakdown")}>
           <div className="mt-astro-score-heading"><strong>{l(lang,"अङ्कको विवरण","Score breakdown")}</strong><span>{l(lang,"भार उपलब्ध सङ्केतअनुसार समायोजित गरिएको छ","Weights are normalized to the signals available for this result")}</span></div>
           {p.luckyTime.components.map(component => <article className="mt-astro-score-component" key={component.key}>
-            <div className="mt-astro-score-component-head"><strong>{personalComponentLabel(component.key,lang)}</strong><span>{component.score}/100 · {component.weight.toFixed(1)}%</span></div>
+            <div className="mt-astro-score-component-head"><strong>{personalComponentLabel(component.key, lang)}</strong><span>{component.score}/100 · {component.weight.toFixed(1)}%</span></div>
             <div className="mt-astro-score-track" aria-hidden="true"><span style={{width: Math.max(0,Math.min(100,component.score))+"%"}}/></div>
-            <p>{personalComponentExplanation(component,lang)}</p>
+            <p>{personalComponentExplanation(component, lang)}</p>
           </article>)}
           {p.luckyTime.cautions.length > 0 && <div className="mt-astro-score-cautions" role="note"><strong>{l(lang,"सावधानी सङ्केत","Caution signals")}</strong><ul>{[...new Set(p.luckyTime.cautions)].map(value=><li key={value}>{personalCautionLabel(value,lang)}</li>)}</ul></div>}
         </section>}

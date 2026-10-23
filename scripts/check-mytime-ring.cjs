@@ -101,8 +101,15 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
     await first.focus();
     await page.keyboard.press("Tab");
     assert.equal(await second.evaluate((element) => element === document.activeElement), true, "Tab must move keyboard focus to the next ring segment");
-    const focusStroke = await second.evaluate((element) => getComputedStyle(element).stroke);
-    assert.notEqual(focusStroke, "rgba(0, 0, 0, 0)", "keyboard focus must be visible on the ring");
+    const focusIndicator = page.locator(".mt-polar-focus-indicator");
+    assert.equal(await focusIndicator.count(), 1, "keyboard focus must render a visible ring-segment indicator");
+    const focusMetrics = await focusIndicator.first().evaluate((element) => {
+      const style = getComputedStyle(element);
+      return { stroke: style.stroke, strokeWidth: style.strokeWidth, opacity: style.opacity };
+    });
+    assert.notEqual(focusMetrics.stroke, "rgba(0, 0, 0, 0)", "visible keyboard focus must use a non-transparent stroke");
+    assert(Number.parseFloat(focusMetrics.strokeWidth) > 0, "visible keyboard focus must have a positive stroke width");
+    assert(Number.parseFloat(focusMetrics.opacity) > 0, "visible keyboard focus must have non-zero opacity");
     await page.keyboard.press("Enter");
     await page.waitForFunction(() => document.activeElement?.getAttribute("aria-pressed") === "true", null, { timeout: 5000 });
     const keyboardDetails = await page.locator(".mt-selected-event-copy").innerText();
