@@ -32,8 +32,8 @@ for (const entity of history) {
 }
 if (unverified !== 2147) throw new Error(`Expected exactly 2,147 unverified history records; got ${unverified}`);
 
-if (!historyRenderer.includes("Needs further verification · थप प्रमाणीकरण आवश्यक")) throw new Error("Prerendered history archive lacks the explicit verification label");
-if (!historyUi.includes("Needs further verification · थप प्रमाणीकरण आवश्यक")) throw new Error("Hydrated history archive lacks the explicit verification label");
+if (!historyRenderer.includes("Source not yet confirmed · स्रोत पुष्टि हुन बाँकी")) throw new Error("Prerendered history page lacks the reader-friendly source note");
+if (!historyUi.includes("यस घटनाको स्रोत अझै पुष्टि भएको छैन")) throw new Error("History page lacks the reader-friendly source note");
 if (historyUi.includes("setData(rows.filter(item=>Boolean(historySourceUrl(item))))")) throw new Error("Hydrated history archive still hides records without source_url");
 if (historyRenderer.includes(".filter((entry) => entry.url && entry.title)")) throw new Error("Prerendered history archive still hides unsourced records");
 
@@ -47,4 +47,4 @@ if (!festivalRenderer.includes("घर, परिवार") || !festivalRendere
   throw new Error("Festival renderer lost people/community observance semantics");
 }
 
-console.log("Steps 3 and 6 completion contract valid: festival observance semantics + all 5,454 history records retained with 2,147 verification labels.");
+console.log("Steps 3 and 6 completion contract valid: festival observance semantics + all 5,454 history records retained with 2,147 source-warning labels.");
