@@ -1,4 +1,4 @@
-/* Newlook Fastgate — isolated semantic foundation, intentionally not imported until visual integration review. */
+/* Newlook Fastgate semantic foundation. Opt-in nl-* classes avoid changing legacy UI. */
 :root {
   --nl-paper: #fbf7f0; --nl-surface: #fffdf9; --nl-surface-raised: #ffffff;
   --nl-ink: #1f2937; --nl-muted: #4b5563; --nl-border: #d9d3c9;
@@ -24,3 +24,27 @@
 .nl-tap-target { min-width: 44px; min-height: 44px; }
 .nl-deva { line-height: 1.65; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion:reduce) { .nl-interactive { transition: none; animation: none; } }
+
+/* #08 distinct roles: do not use holiday color for observances. */
+:root { --nl-observance:#6750a4; --nl-disabled:#737b86; --nl-info:#075985; --nl-saturday:#9d3348; --nl-calendar-grid:#e5dfd6; --nl-shadow:0 8px 28px rgb(31 41 55 / .09); --nl-max-width:1240px; --nl-font-ne:"Noto Sans Devanagari","Mukta",system-ui,sans-serif; --nl-font-latin:system-ui,-apple-system,"Segoe UI",sans-serif; }
+:root[data-theme="dark"],:root[data-mode="dark"] { --nl-observance:#c5afff; --nl-disabled:#adb6c5; --nl-info:#9cd9ff; --nl-saturday:#ffa2b3; --nl-calendar-grid:#495566; --nl-shadow:0 8px 28px rgb(0 0 0 / .24); }
+/* #11 five-role type hierarchy; script-aware without new remote font dependency. */
+.nl-type-display {font-family:var(--nl-font-ne);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:750;line-height:1.4;letter-spacing:-.025em}
+.nl-type-title {font-family:var(--nl-font-ne);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:700;line-height:1.55}
+.nl-type-subtitle {font-family:var(--nl-font-ne);font-size:1.125rem;font-weight:650;line-height:1.6}
+.nl-type-body {font-family:var(--nl-font-ne);font-size:1rem;line-height:1.7}
+.nl-type-caption {font-family:var(--nl-font-ne);font-size:.875rem;line-height:1.65}
+/* #12 layout and reusable surfaces */
+.nl-container {width:min(var(--nl-max-width),calc(100% - 32px));margin-inline:auto}
+.nl-grid {display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--nl-space-4)}
+.nl-card {background:var(--nl-surface);color:var(--nl-ink);border:1px solid var(--nl-border);border-radius:var(--nl-radius-md);box-shadow:var(--nl-shadow);padding:var(--nl-space-6)}
+.nl-calendar-today {outline:2px solid var(--nl-today);outline-offset:-3px}
+.nl-calendar-selected {background:var(--nl-selected);color:var(--nl-paper)}
+.nl-calendar-holiday {border-bottom:3px solid var(--nl-holiday)}
+.nl-calendar-observance {text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--nl-observance);text-underline-offset:4px}
+.nl-icon {width:1.25em;height:1.25em;stroke:currentColor;stroke-width:1.8;fill:none;flex:none}
+.nl-interactive:hover {border-color:var(--nl-blue)}
+.nl-interactive:active {transform:translateY(1px)}
+@media(max-width:767px){.nl-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--nl-space-2)}.nl-card{padding:var(--nl-space-4)}}
+/* #14 remove animations and smooth scrolling for users who request reduced motion */
+@media(prefers-reduced-motion:reduce){.nl-interactive,.nl-interactive *, .nl-card{animation:none!important;transition:none!important;scroll-behavior:auto!important}.nl-interactive:active{transform:none}}
