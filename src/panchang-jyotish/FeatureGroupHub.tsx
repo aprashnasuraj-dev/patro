@@ -121,7 +121,7 @@ export function FeatureGroupHub({ groupId }: { groupId: FeatureGroupId }) {
         </header>
         {selected && <FeatureExperience feature={selected} group={groupId} language={language} onNavigate={openFeature} />}
         <div className="ap-pj-calculator" id="ap-pj-calculator">
-          {showWorkspace ? <WorkspaceErrorBoundary language={language} resetKey={groupId + ":" + (activeFeature ?? "overview")}><Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "गणना कार्यक्षेत्र खुल्दैछ…", "Opening the calculation workspace…")}</div>}>
+          {showWorkspace ? <WorkspaceErrorBoundary language={language} resetKey={groupId + ":" + (activeFeature ?? "overview")}><Suspense fallback={<div className="ap-pj-loading" role="status" aria-live="polite">{l(language, "सुविधा खुल्दैछ…", "Opening feature…")}</div>}>
             <Workspace language={language} selectedFeatureId={activeFeature} />
           </Suspense></WorkspaceErrorBoundary> : <div className="ap-pj-launch-panel">
             <span aria-hidden="true" className="ap-pj-launch-emblem"><FeatureGlyph featureId={group.iconFeatureId} size="card" /></span>
