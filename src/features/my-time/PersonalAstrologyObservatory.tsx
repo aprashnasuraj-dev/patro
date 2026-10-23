@@ -5,7 +5,7 @@ import { l } from "../../useUiLanguage";
 import { choghadiyaWindows, type TemporalWindow } from "../../patro-tools/core/temporal-windows";
 import "./choghadiya-summary.css";
 import type { PersonalTimeComponent, SavedJanmaPatroContext } from "./personal-time-engine";
-import { personalActivityLabel, personalComponentLabel, personalComponentExplanation } from "./personal-time-copy";
+import { personalComponentLabel, personalComponentExplanation } from "./personal-time-copy";
 import "./personal-astrology-observatory.css";
 
 export type AstrologyWindow = {
