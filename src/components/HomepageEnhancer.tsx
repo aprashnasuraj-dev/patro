@@ -2,6 +2,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useMemo, useState } from "react";
 import { adToBs } from "../../packages/core/src";
 import { BS_MONTHS, toNepaliDigits } from "../title";
+import { l, useUiLanguage } from "../useUiLanguage";
 import "../homepage-interactions.css";
 
 const BS_MIN_YEAR = 1883;
@@ -52,6 +53,8 @@ function navigate(path: string) {
 
 export function HomepageEnhancer() {
   const path = usePathname();
+  const language = useUiLanguage();
+  const ne = language === "ne";
   const [navTarget, setNavTarget] = useState<HTMLElement | null>(null);
   const [quickTarget, setQuickTarget] = useState<HTMLElement | null>(null);
   const [monthTarget, setMonthTarget] = useState<HTMLElement | null>(null);
@@ -79,30 +82,30 @@ export function HomepageEnhancer() {
   const years = useMemo(() => Array.from({ length: BS_MAX_YEAR - BS_MIN_YEAR + 1 }, (_, index) => BS_MIN_YEAR + index), []);
 
   const headerLinks = navTarget ? createPortal(<>
-    <a className="hp-nav-extra" href="/jyotish/china" aria-label="ज्योतिष खोल्नुहोस्">ज्योतिष</a>
-    <a className="hp-nav-extra" href="/time-machine" aria-label="समययन्त्र खोल्नुहोस्">समययन्त्र</a>
-    <a className="hp-nav-extra" href="/tools/astro" aria-label="खगोलीय पात्रो खोल्नुहोस्">खगोलीय पात्रो</a>
+    <a className="hp-nav-extra" href="/jyotish/china" aria-label={l(language, "ज्योतिष खोल्नुहोस्", "Open Jyotish and birth chart")}>{l(language, "ज्योतिष", "Jyotish")}</a>
+    <a className="hp-nav-extra" href="/time-machine" aria-label={l(language, "समययन्त्र खोल्नुहोस्", "Open Time Machine")}>{l(language, "समययन्त्र", "Time Machine")}</a>
+    <a className="hp-nav-extra" href="/tools/astro" aria-label={l(language, "खगोलीय पात्रो खोल्नुहोस्", "Open astronomical calendar")}>{l(language, "खगोलीय पात्रो", "Astronomical calendar")}</a>
   </>, navTarget) : null;
 
   const quickLinks = calendarSurface && quickTarget ? createPortal(<>
-    <a data-home-extra="jyotish" href="/jyotish/china" aria-label="ज्योतिष"><b aria-hidden="true">ज्यो</b><span>ज्योतिष</span></a>
-    <a data-home-extra="time-machine" href="/time-machine" aria-label="समययन्त्र"><b aria-hidden="true">⌛</b><span>समययन्त्र</span></a>
-    <a data-home-extra="astronomy" href="/tools/astro" aria-label="खगोलीय पात्रो"><b aria-hidden="true">☾</b><span>खगोलीय पात्रो</span></a>
-    <a data-home-extra="all-tools" href="/tools" aria-label="सबै उपकरण"><b aria-hidden="true">⌘</b><span>सबै उपकरण</span></a>
+    <a data-home-extra="jyotish" href="/jyotish/china" aria-label={l(language, "ज्योतिष", "Jyotish / Birth chart")}><b aria-hidden="true">{ne ? "ज्यो" : "✧"}</b><span>{l(language, "ज्योतिष", "Jyotish")}</span></a>
+    <a data-home-extra="time-machine" href="/time-machine" aria-label={l(language, "समययन्त्र", "Time Machine")}><b aria-hidden="true">⌛</b><span>{l(language, "समययन्त्र", "Time Machine")}</span></a>
+    <a data-home-extra="astronomy" href="/tools/astro" aria-label={l(language, "खगोलीय पात्रो", "Astronomical calendar")}><b aria-hidden="true">☾</b><span>{l(language, "खगोलीय पात्रो", "Astronomical calendar")}</span></a>
+    <a data-home-extra="all-tools" href="/tools" aria-label={l(language, "सबै उपकरण", "All tools")}><b aria-hidden="true">⌘</b><span>{l(language, "सबै उपकरण", "All tools")}</span></a>
   </>, quickTarget) : null;
 
   const monthPicker = calendarSurface && monthTarget ? createPortal(
-    <div className="hp-month-jump" role="group" aria-label="वर्ष र महिना छान्नुहोस्">
+    <div className="hp-month-jump" role="group" aria-label={l(language, "वर्ष र महिना छान्नुहोस्", "Choose year and month")}>
       <label>
-        <span>वर्ष</span>
-        <select aria-label="विक्रम संवत् वर्ष" value={current.year} onChange={(event) => navigate(`/calendar/${event.target.value}/${String(current.month).padStart(2, "0")}`)}>
-          {years.map((year) => <option value={year} key={year}>{toNepaliDigits(year)}</option>)}
+        <span>{l(language, "वर्ष", "Year")}</span>
+        <select aria-label={l(language, "विक्रम संवत् वर्ष", "Bikram Sambat year")} value={current.year} onChange={(event) => navigate(`/calendar/${event.target.value}/${String(current.month).padStart(2, "0")}`)}>
+          {years.map((year) => <option value={year} key={year}>{ne ? toNepaliDigits(year) : year}</option>)}
         </select>
       </label>
       <label>
-        <span>महिना</span>
-        <select aria-label="विक्रम संवत् महिना" value={current.month} onChange={(event) => navigate(`/calendar/${current.year}/${String(event.target.value).padStart(2, "0")}`)}>
-          {BS_MONTHS.map((month, index) => <option value={index + 1} key={month}>{month}</option>)}
+        <span>{l(language, "महिना", "Month")}</span>
+        <select aria-label={l(language, "विक्रम संवत् महिना", "Bikram Sambat month")} value={current.month} onChange={(event) => navigate(`/calendar/${current.year}/${String(event.target.value).padStart(2, "0")}`)}>
+          {BS_MONTHS.map((month, index) => <option value={index + 1} key={month}>{ne ? month : ["Baisakh", "Jestha", "Ashadh", "Shrawan", "Bhadra", "Ashwin", "Kartik", "Mangsir", "Poush", "Magh", "Falgun", "Chaitra"][index]}</option>)}
         </select>
       </label>
     </div>,
