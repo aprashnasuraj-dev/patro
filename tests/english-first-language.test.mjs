@@ -57,10 +57,11 @@ test("static HTML and crawler-facing metadata are English-first", () => {
   assert.ok(runtimeSeo.includes("const ENGLISH_FIRST"));
   assert.ok(runtimeSeo.includes('if (ENGLISH_FIRST[clean]) row = { ...row, ...ENGLISH_FIRST[clean] };'));
   assert.ok(runtimeSeo.includes("Nepal Time Machine | History Timeline"));
+  assert.ok(runtimeSeo.includes("Aafnai Patro|आफ्नै पात्रो"));
   assert.ok(prerender.includes("Explore these tools · यस समूहका विषय र उपकरण"));
   assert.ok(prerender.includes("item.titleEn"));
   assert.ok(prerender.includes("item.titleNe"));
-  assert.equal(intents.core["/"].title, "Nepali Calendar Today | Nepal Date, Tithi & Festivals");
+  assert.equal(intents.core["/"].title, "Nepali Calendar Today | Aafnai Patro");
   assert.equal(intents.core["/tools"].title, "Free Online Tools for Nepal | Aafnai Patro");
-  assert.equal(intents.tools["/tools/astro"].title, "Nepali Astronomical Calendar | Tithi, Moon Phase & Sky Events");
+  assert.equal(intents.tools["/tools/astro"].title, "Nepali Astronomy Calendar | Aafnai Patro");
 });
