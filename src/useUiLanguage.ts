@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import type { UiLanguage } from "./i18n";
 
 function readLanguage(): UiLanguage {
-  if (typeof document !== "undefined" && document.documentElement.lang.toLowerCase().startsWith("en")) return "en";
-  try { return localStorage.getItem("patro.ui.language") === "en" ? "en" : "ne"; } catch { return "ne"; }
+  try {
+    const saved = localStorage.getItem("patro.ui.language");
+    if (saved === "ne" || saved === "en") return saved;
+  } catch {}
+  const locale = typeof navigator !== "undefined"
+    ? (navigator.languages?.[0] || navigator.language || "")
+    : "";
+  if (/^ne(?:-|$)/i.test(locale)) return "ne";
+  if (typeof document !== "undefined" && document.documentElement.lang.toLowerCase().startsWith("ne")) return "ne";
+  return "en";
 }
 
 export function useUiLanguage(): UiLanguage {

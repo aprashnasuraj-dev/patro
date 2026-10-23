@@ -2,22 +2,22 @@
   "version": 1,
   "core": {
     "/": {
-      "title": "नेपाली पात्रो २०८३ · Nepali Calendar · आज कति गते?",
-      "description": "नेपाल समयअनुसार आजको नेपाली मिति, तिथि, चाडपर्व, बिदा र मासिक Bikram Sambat पात्रो। Nepali date today, Nepal calendar र aaja kati gate को सीधा उत्तर।",
+      "title": "Nepali Calendar Today | Aafnai Patro",
+      "description": "Check today’s date in Nepal, Bikram Sambat (BS) and Gregorian (AD) conversion, tithi, festivals, public holidays and the Nepali calendar. Aafnai Patro is available in English and Nepali.",
       "aliases": [
         "nepali calendar",
         "nepal calendar",
         "nepali patro",
-        "नेपाली पात्रो",
-        "aaj kati gate",
-        "aaja kati gate",
-        "आज कति गते",
         "today nepali date",
         "nepali date today",
-        "आजको नेपाली मिति",
-        "nepali miti",
         "nepal date",
         "bikram sambat calendar",
+        "aaj kati gate",
+        "aaja kati gate",
+        "नेपाली पात्रो",
+        "आज कति गते",
+        "आजको नेपाली मिति",
+        "nepali miti",
         "nepali calendar 2083"
       ],
       "steps": [
@@ -97,8 +97,8 @@
       ]
     },
     "/tools": {
-      "title": "नेपाली अनलाइन टुल्स · Nepali Tools",
-      "description": "नेपाली टाइपिङ, मिति रूपान्तरण, age, EMI, VAT, land, QR, OCR, तिथि, साइत र अन्य 29 उपयोगी नेपाली tools को एकै hub।",
+      "title": "Free Online Tools for Nepal | Aafnai Patro",
+      "description": "Explore free tools for Nepali typing, BS–AD date conversion, age, EMI, VAT, land measurement, QR, OCR, tithi, auspicious timing and everyday calculations. Available in English and Nepali.",
       "aliases": [
         "nepali tools",
         "nepali online tools",
@@ -299,8 +299,8 @@
   },
   "tools": {
     "/tools/astro": {
-      "title": "खगोलीय पात्रो · Nepali Astronomical Calendar",
-      "description": "नेपाली पात्रोसँग तिथि, चन्द्र अवस्था, सूर्योदय/सूर्यास्त र खगोलीय सन्दर्भ हेर्ने astronomy tool।",
+      "title": "Nepali Astronomy Calendar | Aafnai Patro",
+      "description": "Explore the Nepali astronomical calendar with tithi, Moon phase, sunrise and sunset, and astronomical context by date. Compare calendar information in English or Nepali.",
       "aliases": [
         "nepali astronomical calendar",
         "astronomical calendar nepal",
