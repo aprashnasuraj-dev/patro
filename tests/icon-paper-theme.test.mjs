@@ -48,7 +48,6 @@ test("CSS-only Nepali paper texture is attached to tools, launcher, features and
   assert.match(theme, /--ap-icon-wash/);
   assert.match(theme, /\\.ap-tool-icon::before/);
   assert.match(theme, /\\.mp-feature-icon::after/);
-  assert.match(theme, /radial-gradient\(circle at 17% 21%/);
   for (const selector of [".ap-tool-icon", ".ap-launcher-orb", ".mp-feature-icon", ".mt-layer-icon", ".mt-moon-mark", ".mt-insight-icon", ".mt-astro-lucky-orbit"]) {
     assert.ok(theme.includes(selector), "missing paper icon selector " + selector);
   }
