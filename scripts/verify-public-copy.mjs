@@ -62,7 +62,9 @@ const files = [
   "src/panchang-jyotish/workspaces/MuhuratDayRibbon.tsx",
   "src/HomePageCurrent.tsx",
   "worker/public-archive-pages.ts",
-  "worker/growth/us-festival-pages.ts"
+  "worker/growth/us-festival-pages.ts",
+  "scripts/prerender-days-seo.mjs",
+  "worker/agent-pages.ts"
 ];
 
 const forbidden = [
@@ -128,7 +130,10 @@ const forbidden = [
   ["festival rule review status", /Provisional: this festival's rule is still being checked against an independent panchang/i],
   ["calculation workspace jargon", /गणना कार्यक्षेत्र|calculation workspace/i],
   ["archive version shown to visitors", /Source version:|source\/engine-backed observance records|Versioned public calendar archive served from|data-archive-backend/i],
-  ["developer-style date status", />provisional<\/span>|Expected date — confirm locally|Calculated date — confirm locally|Officially announced|Local confirmation recommended|Confidence \/ status/i]
+  ["developer-style date status", />provisional<\/span>|Expected date — confirm locally|Calculated date — confirm locally|Officially announced|Local confirmation recommended|Confidence \/ status/i],
+  ["public methodology implementation jargon", /validated calendar archive|second calendar dataset|search-visible HTML|conversion endpoints|agent tools|Source-of-truth rules|hardcoded daily fact|production archive coverage|production correction overlays|silently rewrite|verified date unavailable|source record मा official|structured sait records|Nepal date boundary Asia\/Kathmandu|local display timezone/i],
+  ["prerendered date implementation labels", /local archive record|national holiday.{0,24}label|Aafnai Patro validated calendar archive|Source: \$\{source\}| · verified /i],
+  ["public timezone internals", /Timezone|Nepal date boundary Asia\/Kathmandu|local display timezone/i]
 ];
 
 const failures = [];
