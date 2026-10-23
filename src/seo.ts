@@ -11,7 +11,7 @@ const catalog:Record<string,{title:string;description:string}>={...intents.core,
 // still follows the saved language or the visitor's preferred browser language.
 const ENGLISH_FIRST: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "Nepali Calendar Today | Nepal Date, Tithi & Festivals",
+    title: "Nepali Calendar Today | Aafnai Patro",
     description: "Check today’s date in Nepal, Bikram Sambat (BS) and Gregorian (AD) conversion, tithi, festivals, public holidays and the Nepali calendar. Aafnai Patro is available in English and Nepali."
   },
   "/tools": {
@@ -19,7 +19,7 @@ const ENGLISH_FIRST: Record<string, { title: string; description: string }> = {
     description: "Explore free tools for Nepali typing, BS–AD date conversion, age, EMI, VAT, land measurement, QR, OCR, tithi, auspicious timing and everyday calculations. Available in English and Nepali."
   },
   "/tools/astro": {
-    title: "Nepali Astronomical Calendar | Tithi, Moon Phase & Sky Events",
+    title: "Nepali Astronomy Calendar | Aafnai Patro",
     description: "Explore the Nepali astronomical calendar with tithi, Moon phase, sunrise and sunset, and astronomical context by date. Compare calendar information in English or Nepali."
   },
   "/time-machine": {
@@ -97,7 +97,7 @@ export function applyRouteSeo(path=location.pathname){
   const initialMatch=canonical?.href===row.canonical;
   if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical)}
   if(!initialMatch){
-    document.title=row.title.includes("आफ्नै पात्रो")?row.title:`${row.title} · आफ्नै पात्रो`;
+    document.title=/(?:Aafnai Patro|आफ्नै पात्रो)/i.test(row.title)?row.title:`${row.title} · Aafnai Patro`;
     meta("description",row.description);
     for(const [name,value] of [["og:title",document.title],["og:description",row.description],["og:url",row.canonical],["og:image",BASE+"/og-default.png"]])meta(name,value,true);
     for(const [name,value] of [["twitter:card","summary_large_image"],["twitter:title",document.title],["twitter:description",row.description],["twitter:image",BASE+"/og-default.png"]])meta(name,value);
