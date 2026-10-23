@@ -1,0 +1,46 @@
+name: MyTime PR validation fallback
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/features/my-time/**"
+      - "tests/my-time-*.test.ts"
+      - ".github/workflows/mytime-runner-fallback.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mytime-fallback-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: MyTime typecheck, regressions, and production build
+    # Separate hosted runner pool for diagnosis because ubuntu-latest jobs
+    # are failing before runner assignment (runner_id=0, no steps/logs).
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+
+      - name: TypeScript validation
+        run: npm run typecheck
+
+      - name: MyTime and Patro regression suite
+        run: npm run test:patro-tools
+
+      - name: Production build
+        run: npm run build
