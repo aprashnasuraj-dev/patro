@@ -10,10 +10,10 @@ function esc(value: unknown) {
   return String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
 }
 function site(env: AgentEnv) { return String(env.PUBLIC_SITE_URL || SITE_FALLBACK).replace(/\/+$/, ""); }
-function citeString() { return `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${new Date().toISOString().slice(0, 10)}`; }
+function citeString() { return `सन्दर्भ: आफ्नै पात्रो · हेरिएको मिति ${new Date().toISOString().slice(0, 10)}`; }
 function adOf(row: any) { return String(row?.ad_date || row?.fact_date || row?.date || row?.ad || "").slice(0, 10); }
 function nameOf(row: any) { return String(row?.name_ne || row?.title_ne || row?.name_en || row?.title || row?.key || row?.id || "चाडपर्व"); }
-function sourceOf(row: any) { return String(row?.source_title || row?.source || row?.source_url || "Aafnai Patro validated calendar archive"); }
+function sourceOf(row: any) { return String(row?.source_title || row?.source || row?.source_url || "आफ्नै पात्रो"); }
 function validBsDate(value: string) { return /^\d{4}-\d{1,2}-\d{1,2}$/.test(value); }
 function cleanSlug(value: string) { return value.trim().toLowerCase().replace(/[^a-z0-9\p{L}]+/gu, "-").replace(/^-+|-+$/g, ""); }
 function nepalToday() { return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
