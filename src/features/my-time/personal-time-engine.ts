@@ -5,6 +5,8 @@
  * Panchang, Rashifal, Janma Patro and timing engines. Missing inputs are omitted
  * and remaining weights are normalized; missing birth data is never fabricated.
  */
+import { dedupeDisplayStrings } from "./personal-time-utils";
+
 export type PersonalTimeActivity = "general" | "work" | "study" | "travel" | "prayer" | "meditation" | "family";
 export type RashifalSignal = { overall?: number; domains?: Record<string, number>; sections?: Array<{ domain?: string; score?: number; band?: string; text?: string }> };
 export type PersonalChartPoint = { key?: string; name: string; signIndex?: number | null; sign?: string; house?: number | null };
@@ -31,7 +33,7 @@ export type PersonalTimeWindowInput = {
   natalChart?: SavedJanmaPatroContext | null;
   eventChart?: PersonalChartSnapshot | null;
 };
-export type PersonalTimeComponent = { key: string; score: number; weight: number; configuredWeight?: number; explanation: string };
+export type PersonalTimeComponent = { key: string; score: number; weight: number; configuredWeight?: number; explanation: string; activityExplanations?: string[] };
 export type PersonalTimeEvaluation = {
   score: number;
   label: "supportive" | "mixed" | "caution";
@@ -277,13 +279,13 @@ export function evaluatePersonalTime(input: PersonalTimeWindowInput): PersonalTi
   if (lords.score == null) missing.push("chart-lords");
   if (gochara.score == null) missing.push("jupiter-saturn-gochara");
   const confidence = input.hasNatalChart ? "personalized" : components.some(item => item.key !== "panchang") ? "partially-personalized" : "general";
-  const reasons = [...(input.panchangReasons || []), ...components.filter(item => item.key !== "panchang").map(item => item.explanation)];
-  const cautions = [...(input.panchangCautions || [])];
+  const reasons = dedupeDisplayStrings([...(input.panchangReasons || []), ...components.filter(item => item.key !== "panchang").map(item => item.explanation)]);
+  const cautions = dedupeDisplayStrings(input.panchangCautions || []);
   if (score !== weightedScore) cautions.push("traditional_caution_caps_overall_rank");
   const normalizedComponents = components.map(item => ({ ...item, weight: Math.round((item.weight / weightTotal) * 1000) / 10 }));
   return {
     score, label: score >= 75 ? "supportive" : score >= 45 ? "mixed" : "caution",
-    confidence, components: normalizedComponents, reasons, cautions, missing
+    confidence, components: normalizedComponents, reasons, cautions: dedupeDisplayStrings(cautions), missing
   };
 }
 
