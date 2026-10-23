@@ -84,7 +84,7 @@ async function festivalPage(request: Request, env: AgentEnv, slug: string, year:
   if (!festival) return new Response("Festival not found", { status: 404 });
   const ad = adOf(festival);
   const title = `${nameOf(festival)} ${year} कहिले? · Aafnai Patro`;
-  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(nameOf(festival))}</strong>${ad ? `: ${esc(dateLabel(ad))} (${esc(ad)})` : " — verified date unavailable"}.</p><p>स्रोत: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year - 1}">अघिल्लो वर्ष</a> · <a href="/festivals/${esc(slug)}/${year + 1}">अर्को वर्ष</a>${ad ? ` · <a href="/date/${esc(ad)}">दिनको पात्रो</a>` : ""}</p></article>`;
+  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(nameOf(festival))}</strong>${ad ? `: ${esc(dateLabel(ad))} (${esc(ad)})` : " — मिति उपलब्ध छैन"}.</p><p>स्रोत: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year - 1}">अघिल्लो वर्ष</a> · <a href="/festivals/${esc(slug)}/${year + 1}">अर्को वर्ष</a>${ad ? ` · <a href="/date/${esc(ad)}">दिनको पात्रो</a>` : ""}</p></article>`;
   return pageShell(env, request, { title, description: `${nameOf(festival)} ${year} को नेपाली पात्रो मिति र सम्बन्धित स्रोतको विवरण।`, body, schema: { "@context": "https://schema.org", "@type": "Event", name: nameOf(festival), ...(ad ? { startDate: ad } : {}), url: site(env) + new URL(request.url).pathname, description: `स्रोत: ${sourceOf(festival)}` } });
 }
 
@@ -112,7 +112,7 @@ async function panchangPage(request: Request, env: AgentEnv, city: string, bsDat
     ["Tithi", tithi], ["Sunrise", p.sunrise || "—"], ["Sunset", p.sunset || "—"],
     ["Rahu Kaal", p.rahu_kaal || p.rahuKaal || "—"], ["AD", result.ad], ["Timezone", result.city.timeZone]
   ];
-  const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(result.city.name)} का लागि ${esc(bsDate)} को उपलब्ध पञ्चाङ्ग र तिथि तथ्य। Nepal date boundary Asia/Kathmandu मा anchored छ; local display timezone ${esc(result.city.timeZone)} हो।</p><div class="grid">${facts.map(([k, v]) => `<div class="card"><b>${esc(k)}</b><div>${esc(v)}</div></div>`).join("")}</div></article>`;
+  const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(result.city.name)} मा ${esc(bsDate)} का लागि उपलब्ध पञ्चाङ्ग विवरण। सूर्योदय, सूर्यास्त र दिनका समय स्थानअनुसार फरक हुन सक्छन्।</p><div class="grid">${facts.map(([k, v]) => `<div class="card"><b>${esc(k)}</b><div>${esc(v)}</div></div>`).join("")}</div></article>`;
   return pageShell(env, request, { title, description: `${result.city.name} मा वि.सं. ${bsDate} को तिथि, सूर्योदय, सूर्यास्त र राहुकालको विवरण।`, body });
 }
 
@@ -130,12 +130,12 @@ async function tikaTimePage(request: Request, env: AgentEnv, slug: string, year:
   const city = PATRO_CITIES.find((x) => x.slug === cleanSlug(citySlug));
   if (!festival || !city) return new Response("Festival or city not found", { status: 404 });
   const moment = extractFestivalMoment(festival);
-  const title = `${nameOf(festival)} ${year} tika time in ${city.name} · Aafnai Patro`;
+  const title = `${nameOf(festival)} ${year} को टिका समय · ${city.name}`;
   let fact = "यस पर्वको आधिकारिक टिका वा मुहूर्त समय उपलब्ध छैन।";
   if (moment) {
     const local = new Intl.DateTimeFormat("en-GB", { timeZone: city.timeZone, dateStyle: "full", timeStyle: "short" }).format(moment);
     const nepal = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kathmandu", dateStyle: "full", timeStyle: "short" }).format(moment);
-    fact = `${city.name} को स्थानीय समय: ${local}; नेपाल समय: ${nepal}.`;
+    fact = `${city.name} को स्थानीय समय: ${local}; नेपाल समय: ${nepal}।`;
   }
   const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(fact)}</p><p>स्रोत: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year}">पर्वको विवरण</a></p></article>`;
   return pageShell(env, request, { title, description: `${city.name} मा ${nameOf(festival)} ${year} को टिका वा मुहूर्त समय, आधिकारिक विवरण उपलब्ध हुँदा।`, body });
