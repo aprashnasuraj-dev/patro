@@ -14,8 +14,8 @@ type Props = {
 const DESIGN: Record<FeatureGroupId,{captionNe:string;captionEn:string;stepsNe:[string,string,string];stepsEn:[string,string,string];metricNe:string;metricEn:string}> = {
   panchang: {
     captionNe:"सूर्योदयबाट सुरु हुने नेपालको दिन",captionEn:"A Nepal day beginning at sunrise",
-    stepsNe:["मिति छान्नुहोस्","तिथि तथा समय हेर्नुहोस्","स्रोत र गणना छुट्याउनुहोस्"],
-    stepsEn:["Choose your date","Explore the elements and timings","Distinguish source from calculation"],
+    stepsNe:["मिति छान्नुहोस्","तिथि तथा समय हेर्नुहोस्","दिनको विवरण बुझ्नुहोस्"],
+    stepsEn:["Choose a date","Review Tithi and daily timings","Explore the day's details"],
     metricNe:"नेपाल समय · NPT",metricEn:"Nepal Standard Time · NPT"
   },
   muhurat: {
@@ -25,43 +25,43 @@ const DESIGN: Record<FeatureGroupId,{captionNe:string;captionEn:string;stepsNe:[
     metricNe:"स्थान · काठमाडौं",metricEn:"Location · Kathmandu"
   },
   jyotish: {
-    captionNe:"आफ्नो विद्यमान जन्मपत्रोबाट",captionEn:"From your existing birth chart",
-    stepsNe:["विद्यमान चिना खोल्नुहोस्","समय तथा स्थान जाँच्नुहोस्","सम्बन्धित गणना बुझ्नुहोस्"],
-    stepsEn:["Open your existing chart","Verify birth time and place","Explore the calculation"],
-    metricNe:"अर्को प्रोफाइल चाहिँदैन",metricEn:"No additional profile"
+    captionNe:"तपाईंको जन्मपत्रोबाट",captionEn:"From your birth chart",
+    stepsNe:["जन्मपत्रो खोल्नुहोस्","जन्म समय र स्थान हेर्नुहोस्","ग्रहस्थिति र गोचर बुझ्नुहोस्"],
+    stepsEn:["Open your birth chart","Review birth time and place","Explore planetary positions and transits"],
+    metricNe:"जन्मपत्रोमा आधारित",metricEn:"Based on your birth chart"
   },
   planets: {
     captionNe:"आकाशीय गति, ग्रह र समय",captionEn:"Celestial motion, planets and time",
     stepsNe:["गणना मिति छान्नुहोस्","चाहिएको घटना खोज्नुहोस्","पद्धति र सीमाहरू पढ्नुहोस्"],
     stepsEn:["Choose an evaluation date","Find your selected event","Read the method and limits"],
-    metricNe:"उपकरणमा स्थानीय गणना",metricEn:"Locally calculated in your browser"
+    metricNe:"खगोलीय जानकारी",metricEn:"Astronomical information"
   },
   "nepal-calendar": {
     captionNe:"नेपालका संवत् र समुदाय",captionEn:"Nepal's calendar traditions",
-    stepsNe:["संवत् वा समुदाय छान्नुहोस्","विद्यमान पात्रो खोल्नुहोस्","स्थानीय स्रोत हेर्नुहोस्"],
-    stepsEn:["Choose a calendar or community","Open the existing calendar","Review local sources"],
+    stepsNe:["संवत् वा समुदाय छान्नुहोस्","पात्रो हेर्नुहोस्","स्थानीय परम्परा बुझ्नुहोस्"],
+    stepsEn:["Choose a calendar or community","View the calendar","Explore local traditions"],
     metricNe:"परम्परा अलग, स्रोत स्पष्ट",metricEn:"Distinct traditions, clear sources"
   }
 };
 function stateCopy(feature:PatroFeature, language:Lang) {
   const state=getFeatureAvailability(feature);
   if(state==="existing")return {
-    label:l(language,"विद्यमान सुविधा","Existing AafnaiPatro tool"),
-    title:l(language,"उही भरपर्दो उपकरण, नयाँ प्रवेशमार्ग","The same tool, easier to find"),
-    body:l(language,"तपाईंलाई यही सुविधा भएको विद्यमान पेजमा लैजान्छ। गणना, सेटिङ वा सुरक्षित विवरणको अर्को प्रति यहाँ बनाइएको छैन।","Opens the existing feature without duplicating its engine, settings or saved details."),
-    action:l(language,"मूल उपकरण खोल्नुहोस्","Open existing tool")
+    label:l(language,"उपकरण","Tool"),
+    title:l(language,"यो सुविधा खोल्नुहोस्","Open this feature"),
+    body:l(language,"यस सुविधाको प्रयोग गर्न सम्बन्धित पेज खोल्नुहोस्।","Open the related page to use this feature."),
+    action:l(language,"खोल्नुहोस्","Open tool")
   };
   if(state==="reference")return {
-    label:l(language,"स्रोत जाँच बाँकी","Source review pending"),
-    title:l(language,"परम्पराको जानकारी र गणना फरक राखिएको छ","Reference first; no invented results"),
-    body:l(language,"यस विषयको नियम वा प्रकाशित मिति पुष्टि नभएसम्म यहाँ कुनै निश्चित व्यक्तिगत नतिजा, साइत वा पर्व-मिति देखाइँदैन। उपलब्ध सन्दर्भ र सम्बन्धित उपकरण मात्र अन्वेषण गर्नुहोस्।","Until its rules or published dates have been verified, this experience will not invent a definitive personal result, Muhurat or festival date. Explore the available context and related tools."),
-    action:l(language,"सम्बन्धित स्रोत हेर्नुहोस्","Explore related sources")
+    label:l(language,"थप जानकारी","More information"),
+    title:l(language,"परम्परागत जानकारी","Traditional guidance"),
+    body:l(language,"यस विषयको परम्परागत अर्थ स्थान र चलनअनुसार फरक हुन सक्छ। महत्त्वपूर्ण निर्णयअघि स्थानीय पात्रो पनि हेर्नुहोस्।","Traditional interpretations can vary by place and custom. Check a local calendar before making an important decision."),
+    action:l(language,"थप जानकारी हेर्नुहोस्","Explore more information")
   };
   return {
-    label:l(language,"ब्राउजरमा गणना","Calculated in your browser"),
-    title:l(language,"तपाईंले छानेको सुविधा तल खुल्छ","Explore your selected feature below"),
-    body:l(language,"आफ्नै पात्रोको हालको गणना विधिमा आधारित यो दृश्य प्राविधिक तथा स्रोत समीक्षा पूरा नभएसम्म पूर्वावलोकनकै रूपमा बुझ्नुहोस्।","This view uses AafnaiPatro's existing calculation method and remains a preview until numerical and source validation is complete."),
-    action:l(language,"गणना कार्यक्षेत्र हेर्नुहोस्","Explore calculation workspace")
+    label:l(language,"गणना उपकरण","Calculator"),
+    title:l(language,"आफ्नो नतिजा हेर्नुहोस्","Explore your results"),
+    body:l(language,"मिति र स्थानअनुसार देखाइएका समयलाई मार्गदर्शनका रूपमा लिनुहोस्। पर्व वा संस्कारको अन्तिम निर्णयका लागि स्थानीय प्रकाशित पञ्चाङ्ग पनि हेर्नुहोस्।","Use the times shown for your selected date and place as a guide. Check a published local Panchang before making a final festival or observance decision."),
+    action:l(language,"गणना हेर्नुहोस्","View calculation")
   };
 }
 
@@ -104,8 +104,8 @@ export function FeatureExperience({feature,language,group,onNavigate}:Props){
       </div>
     </div>
     {guide && <div className="ap-pj-experience-reference" aria-label={l(language,"यस विषयबारे जानकारी","About this topic")}>
-      <div><h4 className="ap-pj-reference-heading"><FeatureGlyph featureId={feature.id} symbol="document" size="inline" />{l(language,"यो किन फरक छ?","What makes this distinct?")}</h4><p>{l(language,guide.contextNe,guide.contextEn)}</p></div>
-      <div><h4 className="ap-pj-reference-heading"><FeatureGlyph featureId={feature.id} symbol="shield" size="inline" />{l(language,"मिति वा नतिजा देखाउनुअघि","Before dates or results can be published")}</h4><p>{l(language,guide.nextNe,guide.nextEn)}</p></div>
+      <div><h4 className="ap-pj-reference-heading"><FeatureGlyph featureId={feature.id} symbol="document" size="inline" />{l(language,"यो जानकारी कसरी बुझ्ने?","How to understand this information")}</h4><p>{l(language,guide.contextNe,guide.contextEn)}</p></div>
+      <div><h4 className="ap-pj-reference-heading"><FeatureGlyph featureId={feature.id} symbol="shield" size="inline" />{l(language,"महत्त्वपूर्ण निर्णय गर्नुअघि","Before making an important decision")}</h4><p>{l(language,guide.nextNe,guide.nextEn)}</p></div>
     </div>}
     <div className="ap-pj-experience-next">
       <span>{l(language,"योसँग सम्बन्धित","You may also explore")}</span>

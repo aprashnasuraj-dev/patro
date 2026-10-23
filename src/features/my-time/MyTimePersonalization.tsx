@@ -92,7 +92,7 @@ export default function MyTimePersonalization(props: Props) {
       const zone = deviceZone();
       setPlaceId("custom");
       onLocationChange({ timezone: zone, lat: position.coords.latitude, lng: position.coords.longitude, label: l(language, "हालको स्थान", "Current location") });
-      setNotice(l(language, "स्थान यस उपकरणमा मात्र प्रयोग हुनेछ; खाता वा जन्म विवरण आवश्यक छैन।", "Location is used on this device; no account or birth details are required."));
+      setNotice(l(language, "स्थान तपाईंको उपकरणमै प्रयोग हुन्छ; खाता वा जन्म विवरण आवश्यक पर्दैन।", "Your location is used on this device; no account or birth details are needed."));
     }, () => setNotice(l(language, "स्थान उपलब्ध भएन। तलका स्थानमध्ये छान्नुहोस् वा समय क्षेत्र र निर्देशाङ्क म्यानुअल रूपमा राख्नुहोस्।", "Location unavailable. Choose a city below or enter the timezone and coordinates manually.")), { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 });
   }
   const activeLens = LENSES.find(item => item.id === settings.lens) || LENSES[0];
@@ -126,7 +126,7 @@ export default function MyTimePersonalization(props: Props) {
       </div>
       <div className="mt-setup-options"><strong>{l(language, "तपाईंको समय लेन्स", "Your time lens")}</strong><div>{LENSES.map(item=><button type="button" key={item.id} className={settings.lens===item.id?"is-selected":""} aria-pressed={settings.lens===item.id} onClick={()=>chooseLens(item.id)}><b>{language==="ne"?item.ne:item.en}</b><small>{language === "ne" ? item.detailNe : item.detail}</small></button>)}</div></div>
       <div className="mt-setup-options"><strong>{l(language, "दैनिक रुचि (एक वा धेरै)", "Daily interests (choose any)")}</strong><div className="mt-interest-options">{INTERESTS.map(item=><label key={item.id}><input type="checkbox" checked={settings.interests.includes(item.id)} onChange={()=>toggleInterest(item.id)}/>{language==="ne"?item.ne:item.en}</label>)}</div></div>
-      <p className="mt-privacy-note">{l(language, "गोपनीयता: स्थान, रुचि र दृश्य प्राथमिकता यस उपकरणको ब्राउजरमा सुरक्षित हुन्छन्। जन्म मिति, जन्म समय र जन्मस्थान आवश्यक छैनन्; व्यक्तिगत जन्मकुण्डली चाहिएको बेला मात्र सम्बन्धित सुविधा प्रयोग गर्नुहोस्।", "Privacy: location, interests and view preferences are stored in this browser on this device. Birth date, birth time and birthplace are not required; use a separate birth-chart feature only if you want that functionality.")}</p>
+      <p className="mt-privacy-note">{l(language, "गोपनीयता: स्थान, रुचि र दृश्य प्राथमिकता यही उपकरणमा सुरक्षित रहन्छन्। व्यक्तिगत जन्मकुण्डलीका लागि मात्र जन्म विवरण चाहिन्छ।", "Privacy: your location, interests and view preferences stay on this device. Birth details are needed only for personalized birth-chart features.")}</p>
       <div className="mt-personal-actions"><button type="button" className="mt-primary" onClick={()=>{update(old=>({...old,setupComplete:true}));setNotice(l(language,"दृश्य सुरक्षित भयो—लेन्स र समयका तह तुरुन्तै लागू हुन्छन्।","View saved—your lens and time layers apply immediately."));}}><Check size={16}/>{l(language, "मेरो दृश्य सुरक्षित गर्नुहोस्", "Save my view")}</button><button type="button" className="mt-secondary" onClick={()=>{update(old=>({...old,setupComplete:true,lens:"universal",interests:["general"]}));onLensChange("universal");}}>{l(language, "सार्वभौमिक दृश्यमा जानुहोस्", "Continue with universal view")}</button></div>
     </section></details>
 

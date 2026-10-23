@@ -10,10 +10,10 @@ function esc(value: unknown) {
   return String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
 }
 function site(env: AgentEnv) { return String(env.PUBLIC_SITE_URL || SITE_FALLBACK).replace(/\/+$/, ""); }
-function citeString() { return `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${new Date().toISOString().slice(0, 10)}`; }
+function citeString() { return `सन्दर्भ: आफ्नै पात्रो · हेरिएको मिति ${new Date().toISOString().slice(0, 10)}`; }
 function adOf(row: any) { return String(row?.ad_date || row?.fact_date || row?.date || row?.ad || "").slice(0, 10); }
 function nameOf(row: any) { return String(row?.name_ne || row?.title_ne || row?.name_en || row?.title || row?.key || row?.id || "चाडपर्व"); }
-function sourceOf(row: any) { return String(row?.source_title || row?.source || row?.source_url || "Aafnai Patro validated calendar archive"); }
+function sourceOf(row: any) { return String(row?.source_title || row?.source || row?.source_url || "आफ्नै पात्रो"); }
 function validBsDate(value: string) { return /^\d{4}-\d{1,2}-\d{1,2}$/.test(value); }
 function cleanSlug(value: string) { return value.trim().toLowerCase().replace(/[^a-z0-9\p{L}]+/gu, "-").replace(/^-+|-+$/g, ""); }
 function nepalToday() { return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
@@ -33,7 +33,7 @@ function pageShell(env: AgentEnv, request: Request, opts: { title: string; descr
   const canonical = site(env) + url.pathname;
   const index = opts.index !== false;
   const schema = opts.schema || { "@context": "https://schema.org", "@type": "WebPage", name: opts.title, description: opts.description, url: canonical };
-  const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${index ? "index,follow" : "noindex,nofollow"}"><link rel="canonical" href="${esc(canonical)}"><meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script><style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:900px;margin:auto;padding:28px 18px 56px}nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 24px}a{color:#176f3b}article{background:white;border:1px solid #dfe6df;border-radius:20px;padding:24px;box-shadow:0 12px 34px rgba(23,111,59,.08)}h1{line-height:1.2;margin-top:0}.fact{font-size:1.08rem;line-height:1.7}.meta{color:#5b675e;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{border:1px solid #e2e8e2;border-radius:14px;padding:14px;background:#fbfcfa}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left}</style></head><body><main><nav><a href="/">आज</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools">आफ्नै टुल्स</a><a href="/methodology">पद्धति</a><a href="/corrections">सुधार लग</a></nav>${opts.body}<p class="meta">${esc(citeString())}</p></main></body></html>`;
+  const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${index ? "index,follow" : "noindex,nofollow"}"><link rel="canonical" href="${esc(canonical)}"><meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script><style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:900px;margin:auto;padding:28px 18px 56px}nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 24px}a{color:#176f3b}article{background:white;border:1px solid #dfe6df;border-radius:20px;padding:24px;box-shadow:0 12px 34px rgba(23,111,59,.08)}h1{line-height:1.2;margin-top:0}.fact{font-size:1.08rem;line-height:1.7}.meta{color:#5b675e;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{border:1px solid #e2e8e2;border-radius:14px;padding:14px;background:#fbfcfa}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left}</style></head><body><main><nav><a href="/">आज</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools">आफ्नै टुल्स</a><a href="/methodology">पद्धति</a><a href="/corrections">सुधार विवरण</a></nav>${opts.body}<p class="meta">${esc(citeString())}</p></main></body></html>`;
   const cache = Math.max(0, Number(opts.cacheSeconds ?? 3600));
   return new Response(html, { status: 200, headers: {
     "content-type": "text/html; charset=utf-8",
@@ -53,29 +53,29 @@ async function todayPage(request: Request, env: AgentEnv, citySlug?: string) {
   if (citySlug && !city) return new Response("Unknown city", { status: 404 });
   const tithi = day.panchang?.tithi?.ne || day.panchang?.tithi?.name_ne || day.panchang?.tithi_name_ne || "तिथि डेटा उपलब्ध छैन";
   const ns = day.ns?.formatted_ne || day.ns?.formatted || "";
-  const title = city ? `Nepali Date Today in ${city.name} · Aafnai Patro` : `आज कति गते? नेपाली पात्रो · Aafnai Patro`;
-  const description = city ? `${city.name} बाट हेर्दा आजको नेपाल-आधारित Bikram Sambat मिति, तिथि र Nepal-midnight boundary.` : "नेपाल समयअनुसार आजको Bikram Sambat मिति, तिथि, Nepal Sambat र पञ्चाङ्ग तथ्य।";
+  const title = city ? `${city.name} मा आजको नेपाली मिति · आफ्नै पात्रो` : `आज कति गते? नेपाली पात्रो · आफ्नै पात्रो`;
+  const description = city ? `${city.name} को स्थानीय समयसहित आजको वि.सं. मिति, तिथि र नेपाल संवत्।` : "नेपाल समयअनुसार आजको वि.सं. मिति, तिथि, नेपाल संवत् र पञ्चाङ्ग विवरण।";
   const localNow = city ? new Intl.DateTimeFormat("en-GB", { timeZone: city.timeZone, dateStyle: "full", timeStyle: "short" }).format(new Date()) : "";
-  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`)}</strong> = ${esc(dateLabel(day.ad))}</p><div class="grid"><div class="card"><b>तिथि</b><div>${esc(tithi)}</div></div><div class="card"><b>Nepal Sambat</b><div>${esc(ns || "—")}</div></div><div class="card"><b>AD</b><div>${esc(day.ad)}</div></div>${city ? `<div class="card"><b>${esc(city.name)} local time</b><div>${esc(localNow)}</div></div>` : ""}</div><p class="meta">Date boundary: Asia/Kathmandu (UTC+05:45). ${city ? `Local display timezone: ${esc(city.timeZone)}.` : ""}</p></article>`;
+  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`)}</strong> = ${esc(dateLabel(day.ad))}</p><div class="grid"><div class="card"><b>तिथि</b><div>${esc(tithi)}</div></div><div class="card"><b>Nepal Sambat</b><div>${esc(ns || "—")}</div></div><div class="card"><b>AD</b><div>${esc(day.ad)}</div></div>${city ? `<div class="card"><b>${esc(city.name)} को स्थानीय समय</b><div>${esc(localNow)}</div></div>` : ""}</div><p class="meta">मिति र पञ्चाङ्ग नेपाल समयअनुसार देखाइएका छन्। ${city ? `${esc(city.name)} को समय स्थानीय समयअनुसार छ।` : ""}</p></article>`;
   return pageShell(env, request, { title, description, body, cacheSeconds: secondsUntilNepalMidnight(), schema: { "@context": "https://schema.org", "@type": "WebPage", name: title, description, dateModified: new Date().toISOString(), mainEntity: { "@type": "Thing", name: "Nepali date today", description: `${day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`} = ${day.ad}; tithi: ${String(tithi)}` } } });
 }
 
 function methodologyPage(request: Request, env: AgentEnv) {
-  const title = "नेपाली पात्रो पद्धति · Aafnai Patro Methodology";
-  const description = "Aafnai Patro ले एउटै validated calendar archive बाट BS, AD, Nepal Sambat, tithi, festival र conversion तथ्य कसरी प्रस्तुत गर्छ भन्ने पद्धति।";
-  const body = `<article><h1>${esc(title)}</h1><p class="fact">Aafnai Patro ले दोस्रो calendar dataset बनाउँदैन। UI, search-visible HTML, conversion endpoints र agent tools ले एउटै validated calendar source प्रयोग गर्छन्। Bikram Sambat महिनाको लम्बाइ वर्षअनुसार बदलिन सक्छ, त्यसैले conversion कुनै fixed 30-day assumption बाट गरिँदैन।</p><h2>Source-of-truth rules</h2><ul><li>BS ↔ AD mapping archive record बाट मात्र।</li><li>Tithi/Panchang archive वा astronomical calculator बाट; hardcoded daily fact छैन।</li><li>Holiday/festival source record र correction overlay बाट।</li><li>Unknown or unavailable facts are reported as unavailable, not guessed.</li></ul><p>Current production archive coverage and verification metadata are published through the Sources page.</p><p><a href="/sources">स्रोत हेर्नुहोस्</a></p></article>`;
+  const title = "नेपाली पात्रोको गणना विधि · आफ्नै पात्रो";
+  const description = "नेपाली मिति, तिथि, चाडपर्व र मिति रूपान्तरणसम्बन्धी विवरण कसरी तयार गरिन्छ भन्ने जानकारी।";
+  const body = `<article><h1>${esc(title)}</h1><p class="fact">नेपाली पात्रोमा वि.सं., इस्वी संवत्, नेपाल संवत्, तिथि, चाडपर्व र मिति रूपान्तरणका विवरण सम्बन्धित पात्रो स्रोत तथा खगोलीय गणनाका आधारमा तयार गरिन्छन्। वि.सं. महिनाको लम्बाइ वर्षअनुसार फरक हुने भएकाले प्रत्येक मितिको रूपान्तरण छुट्टै गणना गरिन्छ।</p><h2>मिति कसरी तयार गरिन्छ?</h2><ul><li>वि.सं. र इस्वी संवत्‌बीचको रूपान्तरण नेपाली पात्रोको मिति विवरणमा आधारित हुन्छ।</li><li>तिथि र पञ्चाङ्ग विवरण उपलब्ध पात्रो वा खगोलीय गणनाबाट लिइन्छ।</li><li>चाडपर्व तथा बिदाका लागि उपलब्ध प्रकाशित स्रोत र सुधार विवरणलाई आधार मानिन्छ।</li><li>विश्वसनीय विवरण उपलब्ध नभए अनुमान गरेर निश्चित तथ्य देखाइँदैन।</li></ul><p>थप जानकारीका लागि स्रोत र शुद्धतासम्बन्धी पृष्ठ हेर्नुहोस्।</p><p><a href="/sources">स्रोत हेर्नुहोस्</a></p></article>`;
   return pageShell(env, request, { title, description, body, schema: { "@context": "https://schema.org", "@type": "TechArticle", headline: title, description } });
 }
 
 async function correctionsPage(request: Request, env: AgentEnv) {
-  const title = "पात्रो सुधार लग · Calendar Corrections";
+  const title = "पात्रो सुधार तथा संशोधन · आफ्नै पात्रो";
   let rows: any[] = [];
   if (env.DB) {
     try { rows = (await env.DB.prepare("select id,ad_date,name_ne,name_en,effect,status,source_url,source_title,updated_at from holiday_overrides order by updated_at desc limit 100").all()).results || []; } catch {}
   }
-  const list = rows.length ? `<table><thead><tr><th>Date</th><th>Correction</th><th>Source</th><th>Updated</th></tr></thead><tbody>${rows.map((r) => `<tr><td>${esc(r.ad_date || "—")}</td><td>${esc(r.name_ne || r.name_en || r.id)}</td><td>${r.source_url ? `<a rel="nofollow noopener" href="${esc(r.source_url)}">${esc(r.source_title || "source")}</a>` : esc(r.source_title || "—")}</td><td>${esc(r.updated_at || "—")}</td></tr>`).join("")}</tbody></table>` : `<p>No published correction overlays are present in the current production database snapshot.</p>`;
-  const body = `<article><h1>${esc(title)}</h1><p class="fact">यो पृष्ठले production correction overlays मात्र देखाउँछ। मूल archive silently rewrite गरिँदैन; verified correction छुट्टै overlay का रूपमा traceable राखिन्छ।</p>${list}<p><a href="/contact">गल्ती रिपोर्ट गर्नुहोस्</a></p></article>`;
-  return pageShell(env, request, { title, description: "Public log of verified Aafnai Patro calendar correction overlays.", body });
+  const list = rows.length ? `<table><thead><tr><th>मिति</th><th>सुधारको विवरण</th><th>स्रोत</th><th>अद्यावधिक मिति</th></tr></thead><tbody>${rows.map((r) => `<tr><td>${esc(r.ad_date || "—")}</td><td>${esc(r.name_ne || r.name_en || r.id)}</td><td>${r.source_url ? `<a rel="nofollow noopener" href="${esc(r.source_url)}">${esc(r.source_title || "स्रोत हेर्नुहोस्")}</a>` : esc(r.source_title || "—")}</td><td>${esc(r.updated_at || "—")}</td></tr>`).join("")}</tbody></table>` : `<p>हाल कुनै पात्रो सुधार विवरण उपलब्ध छैन।</p>`;
+  const body = `<article><h1>${esc(title)}</h1><p class="fact">यस पृष्ठमा पात्रोसम्बन्धी प्रकाशित सुधार र तिनका स्रोत देखाइएका छन्। सुधार भएका विवरण र मूल मितिबीचको भिन्नता स्पष्ट राखिन्छ।</p>${list}<p><a href="/contact">गल्ती रिपोर्ट गर्नुहोस्</a></p></article>`;
+  return pageShell(env, request, { title, description: "आफ्नै पात्रोमा प्रकाशित सुधार, संशोधन र सम्बन्धित स्रोतहरूको विवरण।", body });
 }
 
 async function festivalPage(request: Request, env: AgentEnv, slug: string, year: number) {
@@ -84,8 +84,8 @@ async function festivalPage(request: Request, env: AgentEnv, slug: string, year:
   if (!festival) return new Response("Festival not found", { status: 404 });
   const ad = adOf(festival);
   const title = `${nameOf(festival)} ${year} कहिले? · Aafnai Patro`;
-  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(nameOf(festival))}</strong>${ad ? `: ${esc(dateLabel(ad))} (${esc(ad)})` : " — verified date unavailable"}.</p><p>Source: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year - 1}">अघिल्लो वर्ष</a> · <a href="/festivals/${esc(slug)}/${year + 1}">अर्को वर्ष</a>${ad ? ` · <a href="/date/${esc(ad)}">दिनको पात्रो</a>` : ""}</p></article>`;
-  return pageShell(env, request, { title, description: `${nameOf(festival)} ${year} को verified Nepali calendar date and source context.`, body, schema: { "@context": "https://schema.org", "@type": "Event", name: nameOf(festival), ...(ad ? { startDate: ad } : {}), url: site(env) + new URL(request.url).pathname, description: `Source: ${sourceOf(festival)}` } });
+  const body = `<article><h1>${esc(title)}</h1><p class="fact"><strong>${esc(nameOf(festival))}</strong>${ad ? `: ${esc(dateLabel(ad))} (${esc(ad)})` : " — मिति उपलब्ध छैन"}.</p><p>स्रोत: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year - 1}">अघिल्लो वर्ष</a> · <a href="/festivals/${esc(slug)}/${year + 1}">अर्को वर्ष</a>${ad ? ` · <a href="/date/${esc(ad)}">दिनको पात्रो</a>` : ""}</p></article>`;
+  return pageShell(env, request, { title, description: `${nameOf(festival)} ${year} को नेपाली पात्रो मिति र सम्बन्धित स्रोतको विवरण।`, body, schema: { "@context": "https://schema.org", "@type": "Event", name: nameOf(festival), ...(ad ? { startDate: ad } : {}), url: site(env) + new URL(request.url).pathname, description: `स्रोत: ${sourceOf(festival)}` } });
 }
 
 async function countdownPage(request: Request, env: AgentEnv, slug: string, year: number) {
@@ -96,24 +96,24 @@ async function countdownPage(request: Request, env: AgentEnv, slug: string, year
   if (!/^\d{4}-\d{2}-\d{2}$/.test(ad)) return new Response("Festival date unavailable", { status: 404 });
   const diff = Math.round((Date.parse(ad + "T00:00:00Z") - Date.parse(nepalToday() + "T00:00:00Z")) / 86400000);
   const answer = diff === 0 ? "आज हो।" : diff > 0 ? `${diff} दिन बाँकी छ।` : `${Math.abs(diff)} दिन अघि बितिसकेको छ।`;
-  const title = `${nameOf(festival)} ${year} countdown · ${Math.abs(diff)} days · Aafnai Patro`;
-  const body = `<article><h1>${esc(nameOf(festival))} ${year} सम्म कति दिन?</h1><p class="fact"><strong>${esc(answer)}</strong></p><p>${esc(nameOf(festival))}: ${esc(dateLabel(ad))} (${esc(ad)}).</p><p><a href="/festivals/${esc(slug)}/${year}">Festival details</a></p></article>`;
-  return pageShell(env, request, { title, description: `${nameOf(festival)} ${year} सम्मको Nepal-time countdown based on the verified festival date.`, body, cacheSeconds: secondsUntilNepalMidnight() });
+  const title = `${nameOf(festival)} ${year} सम्म कति दिन? · आफ्नै पात्रो`;
+  const body = `<article><h1>${esc(nameOf(festival))} ${year} सम्म कति दिन?</h1><p class="fact"><strong>${esc(answer)}</strong></p><p>${esc(nameOf(festival))}: ${esc(dateLabel(ad))} (${esc(ad)}).</p><p><a href="/festivals/${esc(slug)}/${year}">पर्वको विवरण</a></p></article>`;
+  return pageShell(env, request, { title, description: `${nameOf(festival)} ${year} सम्म बाँकी दिनको गणना।`, body, cacheSeconds: secondsUntilNepalMidnight() });
 }
 
 async function panchangPage(request: Request, env: AgentEnv, city: string, bsDate: string) {
   const adapter = createPatroAdapter(createD1PatroSource(env));
   const result = await adapter.getTithiAt(city, bsDate);
-  if (!result) return new Response("Panchang record not found", { status: 404 });
+  if (!result) return new Response("पञ्चाङ्ग विवरण भेटिएन।", { status: 404 });
   const p = result.panchang || {};
   const tithi = typeof result.tithi === "string" ? result.tithi : result.tithi?.tithi?.ne || result.tithi?.name_ne || result.tithi?.tithi || p?.tithi?.ne || p?.tithi_name_ne || "—";
-  const title = `${result.city.name} Panchang ${bsDate} · Aafnai Patro`;
+  const title = `${result.city.name} को पञ्चाङ्ग ${bsDate} · आफ्नै पात्रो`;
   const facts = [
-    ["Tithi", tithi], ["Sunrise", p.sunrise || "—"], ["Sunset", p.sunset || "—"],
-    ["Rahu Kaal", p.rahu_kaal || p.rahuKaal || "—"], ["AD", result.ad], ["Timezone", result.city.timeZone]
+    ["तिथि", tithi], ["सूर्योदय", p.sunrise || "—"], ["सूर्यास्त", p.sunset || "—"],
+    ["राहुकाल", p.rahu_kaal || p.rahuKaal || "—"], ["इस्वी मिति", result.ad]
   ];
-  const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(result.city.name)} का लागि ${esc(bsDate)} को उपलब्ध पञ्चाङ्ग र तिथि तथ्य। Nepal date boundary Asia/Kathmandu मा anchored छ; local display timezone ${esc(result.city.timeZone)} हो।</p><div class="grid">${facts.map(([k, v]) => `<div class="card"><b>${esc(k)}</b><div>${esc(v)}</div></div>`).join("")}</div></article>`;
-  return pageShell(env, request, { title, description: `${result.city.name} panchang for BS ${bsDate}: tithi, sunrise, sunset and available kaal data.`, body });
+  const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(result.city.name)} मा ${esc(bsDate)} का लागि उपलब्ध पञ्चाङ्ग विवरण। सूर्योदय, सूर्यास्त र दिनका समय स्थानअनुसार फरक हुन सक्छन्।</p><div class="grid">${facts.map(([k, v]) => `<div class="card"><b>${esc(k)}</b><div>${esc(v)}</div></div>`).join("")}</div></article>`;
+  return pageShell(env, request, { title, description: `${result.city.name} मा वि.सं. ${bsDate} को तिथि, सूर्योदय, सूर्यास्त र राहुकालको विवरण।`, body });
 }
 
 function extractFestivalMoment(row: any) {
@@ -130,15 +130,15 @@ async function tikaTimePage(request: Request, env: AgentEnv, slug: string, year:
   const city = PATRO_CITIES.find((x) => x.slug === cleanSlug(citySlug));
   if (!festival || !city) return new Response("Festival or city not found", { status: 404 });
   const moment = extractFestivalMoment(festival);
-  const title = `${nameOf(festival)} ${year} tika time in ${city.name} · Aafnai Patro`;
-  let fact = "यो source record मा official tika/muhurat timestamp उपलब्ध छैन; Aafnai Patro ले समय अनुमान गर्दैन।";
+  const title = `${nameOf(festival)} ${year} को टिका समय · ${city.name}`;
+  let fact = "यस पर्वको आधिकारिक टिका वा मुहूर्त समय उपलब्ध छैन।";
   if (moment) {
     const local = new Intl.DateTimeFormat("en-GB", { timeZone: city.timeZone, dateStyle: "full", timeStyle: "short" }).format(moment);
     const nepal = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kathmandu", dateStyle: "full", timeStyle: "short" }).format(moment);
-    fact = `Tika muhurat in ${city.name}: ${local} (${city.timeZone}); Nepal time: ${nepal}.`;
+    fact = `${city.name} को स्थानीय समय: ${local}; नेपाल समय: ${nepal}।`;
   }
-  const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(fact)}</p><p>Source: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year}">Festival details</a></p></article>`;
-  return pageShell(env, request, { title, description: `${nameOf(festival)} ${year} local-time tika/muhurat conversion for ${city.name}, only when an official source timestamp exists.`, body });
+  const body = `<article><h1>${esc(title)}</h1><p class="fact">${esc(fact)}</p><p>स्रोत: ${esc(sourceOf(festival))}</p><p><a href="/festivals/${esc(slug)}/${year}">पर्वको विवरण</a></p></article>`;
+  return pageShell(env, request, { title, description: `${city.name} मा ${nameOf(festival)} ${year} को टिका वा मुहूर्त समय, आधिकारिक विवरण उपलब्ध हुँदा।`, body });
 }
 
 async function busiestMonthsPage(request: Request, env: AgentEnv, type: string, year: number) {
@@ -154,9 +154,9 @@ async function busiestMonthsPage(request: Request, env: AgentEnv, type: string, 
     if (month >= 1 && month <= 12) counts.set(month, (counts.get(month) || 0) + 1);
   }
   const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1]);
-  const title = `${type} ${year} busiest months · Aafnai Patro`;
-  const body = `<article><h1>${esc(title)}</h1>${ranked.length ? `<p class="fact">सबैभन्दा धेरै उपलब्ध ${esc(type)} साइत भएका महिना: <strong>${esc(BS_MONTHS[ranked[0][0]])}</strong> (${ranked[0][1]} records).</p><ol>${ranked.map(([m, n]) => `<li>${esc(BS_MONTHS[m])}: ${n}</li>`).join("")}</ol>` : `<p class="fact">यो वर्ष/type का लागि structured sait records उपलब्ध छैनन्।</p>`}<p><a href="/tools/sait">साइत tool खोल्नुहोस्</a></p></article>`;
-  return pageShell(env, request, { title, description: `${year} BS मा उपलब्ध ${type} sait records को month distribution.`, body });
+  const title = `${year} का ${type} साइत · आफ्नै पात्रो`;
+  const body = `<article><h1>${esc(title)}</h1>${ranked.length ? `<p class="fact">सबैभन्दा धेरै उपलब्ध ${esc(type)} साइत भएको महिना: <strong>${esc(BS_MONTHS[ranked[0][0]])}</strong> (${ranked[0][1]} वटा)।</p><ol>${ranked.map(([m, n]) => `<li>${esc(BS_MONTHS[m])}: ${n}</li>`).join("")}</ol>` : `<p class="fact">यस वर्ष यस प्रकारका साइत उपलब्ध छैनन्।</p>`}<p><a href="/tools/sait">साइत गणक खोल्नुहोस्</a></p></article>`;
+  return pageShell(env, request, { title, description: `${year} का ${type} साइत कुन महिनामा बढी उपलब्ध छन् भन्ने विवरण।`, body });
 }
 
 function icsEscape(value: string) { return value.replace(/([,;\\])/g, "\\$1").replace(/\r?\n/g, "\\n"); }
@@ -207,7 +207,7 @@ async function todayWidget(request: Request, env: AgentEnv) {
   const day = await adapter.getTodayNepal();
   if (!day) return new Response("Unavailable", { status: 503 });
   const body = `<article><h1>आज</h1><p class="fact"><strong>${esc(day.bs?.formatted || `${day.bs.year}-${day.bs.month}-${day.bs.day}`)}</strong></p><p>${esc(dateLabel(day.ad))}</p><p><a target="_blank" rel="noopener" href="${esc(site(env))}/">Aafnai Patro</a></p></article>`;
-  return pageShell(env, request, { title: "Aafnai Patro Today Widget", description: "Embeddable current Nepali date widget.", body, index: false, cacheSeconds: secondsUntilNepalMidnight(), frame: true });
+  return pageShell(env, request, { title: "Aafnai Patro Today Widget", description: "आजको नेपाली मिति र तिथि देखाउने पात्रो।", body, index: false, cacheSeconds: secondsUntilNepalMidnight(), frame: true });
 }
 
 async function calendarWidget(request: Request, env: AgentEnv, year: number, month: number) {
@@ -215,7 +215,7 @@ async function calendarWidget(request: Request, env: AgentEnv, year: number, mon
   const days = await adapter.getMonth(year, month);
   if (!days.length) return new Response("Unavailable", { status: 404 });
   const body = `<article><h1>${esc(BS_MONTHS[month])} ${year}</h1><div class="grid">${days.map((d) => `<div class="card"><b>${esc(d.bs.day)}</b><div>${esc(d.ad.slice(5))}</div></div>`).join("")}</div><p><a target="_blank" rel="noopener" href="${esc(site(env))}/calendar/${year}/${String(month).padStart(2, "0")}">Open full calendar</a></p></article>`;
-  return pageShell(env, request, { title: `Aafnai Patro ${BS_MONTHS[month]} ${year} Widget`, description: "Embeddable Nepali calendar month widget.", body, index: false, cacheSeconds: 86400, frame: true });
+  return pageShell(env, request, { title: `${BS_MONTHS[month]} ${year} को नेपाली पात्रो`, description: `${BS_MONTHS[month]} ${year} का दैनिक नेपाली मितिहरू।`, body, index: false, cacheSeconds: 86400, frame: true });
 }
 
 export async function agentPageResponse(request: Request, env: AgentEnv): Promise<Response | null> {

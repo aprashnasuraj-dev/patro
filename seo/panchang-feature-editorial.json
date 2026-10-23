@@ -169,8 +169,8 @@
       "group": "panchang",
       "titleNe": "दिन/रात चौघडिया",
       "titleEn": "Day/Night Choghadiya",
-      "descriptionNe": "वर्तमान व्यक्तिगत समय अनुभवमा उपलब्ध चौघडिया।",
-      "descriptionEn": "Choghadiya available in the existing personal-time experience.",
+      "descriptionNe": "व्यक्तिगत शुभ समयसँगै चौघडिया हेर्नुहोस्।",
+      "descriptionEn": "Explore Choghadiya alongside your personalized timings.",
       "href": "/mytime"
     },
     {
@@ -178,8 +178,8 @@
       "group": "panchang",
       "titleNe": "पञ्चक",
       "titleEn": "Panchak",
-      "descriptionNe": "धनिष्ठाको तेस्रो पाद (निरयण चन्द्र ३००°) देखि रेवतीको अन्त्यसम्मको सम्भावित पञ्चक अवधि।",
-      "descriptionEn": "Candidate Panchak interval from Dhanishtha Pada 3 (300° sidereal Moon longitude) through the end of Revati.",
+      "descriptionNe": "धनिष्ठाको तेस्रो पाददेखि रेवती नक्षत्रको अन्त्यसम्मको सम्भावित पञ्चक अवधि।",
+      "descriptionEn": "Possible Panchak period from Dhanishtha Pada 3 through the end of Revati.",
       "href": "/panchang#panchak"
     },
     {
@@ -187,8 +187,8 @@
       "group": "panchang",
       "titleNe": "गण्डमूल",
       "titleEn": "Ganda Moola",
-      "descriptionNe": "छ नक्षत्रहरूको सम्भावित गण्डमूल अवधि; गण्डान्तसँग अलग।",
-      "descriptionEn": "Candidate Ganda Moola intervals for six Nakshatras, distinct from Gandanta.",
+      "descriptionNe": "छ नक्षत्रसँग सम्बन्धित सम्भावित गण्डमूल अवधि; गण्डान्तसँग फरक।",
+      "descriptionEn": "Possible Ganda Moola periods for six Nakshatras, distinct from Gandanta.",
       "href": "/panchang#ganda-moola"
     },
     {
@@ -205,8 +205,8 @@
       "group": "panchang",
       "titleNe": "संक्रान्ति र सूर्य राशि प्रवेश",
       "titleEn": "Sankranti & Solar Ingress",
-      "descriptionNe": "सूर्यको राशि परिवर्तन र उपलब्ध अभिलेख विवरण।",
-      "descriptionEn": "Solar sign ingress and available archive details.",
+      "descriptionNe": "सूर्यको राशि परिवर्तनको मिति र समय।",
+      "descriptionEn": "Date and time of the Sun’s sign change.",
       "href": "/panchang#sankranti"
     },
     {
@@ -214,8 +214,8 @@
       "group": "muhurat",
       "titleNe": "विवाहको साइत",
       "titleEn": "Marriage Muhurat",
-      "descriptionNe": "उपलब्ध आधिकारिक मिति र गणना गरिएको उम्मेदवार अलग-अलग।",
-      "descriptionEn": "Keep published marriage dates distinct from calculated candidates.",
+      "descriptionNe": "प्रकाशित विवाह साइत र गणनाबाट आएको समय तुलना गर्नुहोस्।",
+      "descriptionEn": "Compare published marriage dates with calculated timing options.",
       "href": "/tools/sait"
     },
     {
@@ -223,8 +223,8 @@
       "group": "muhurat",
       "titleNe": "गृह प्रवेश",
       "titleEn": "Griha Pravesh",
-      "descriptionNe": "गृह प्रवेशको मिति तथा नियमका लागि साइत उपकरण।",
-      "descriptionEn": "Open the existing Sait tool for home-entry dates and rules.",
+      "descriptionNe": "गृह प्रवेशको साइत र सम्बन्धित जानकारी हेर्नुहोस्।",
+      "descriptionEn": "Explore home-entry timing and related guidance.",
       "href": "/tools/sait"
     },
     {
@@ -232,8 +232,8 @@
       "group": "muhurat",
       "titleNe": "सवारी साधन खरिद",
       "titleEn": "Vehicle Purchase Muhurat",
-      "descriptionNe": "सवारी साधन खरिदका लागि उपलब्ध साइत नियम।",
-      "descriptionEn": "Existing Sait rules for vehicle purchases.",
+      "descriptionNe": "सवारी साधन खरिदको साइतसम्बन्धी जानकारी।",
+      "descriptionEn": "Explore vehicle-purchase timing guidance.",
       "href": "/tools/sait"
     },
     {
@@ -241,8 +241,8 @@
       "group": "muhurat",
       "titleNe": "व्रतबन्ध, नामकरण र व्यवसाय साइत",
       "titleEn": "Bratabandha, Namakaran & Business",
-      "descriptionNe": "उपलब्ध संस्कार र व्यवसाय साइत एउटै उपकरणमा।",
-      "descriptionEn": "Available lifecycle and business Muhurat categories in one tool.",
+      "descriptionNe": "विभिन्न संस्कार र व्यवसायका लागि साइतसम्बन्धी जानकारी।",
+      "descriptionEn": "Explore timing guidance for life events and business.",
       "href": "/tools/sait"
     },
     {
@@ -250,8 +250,8 @@
       "group": "muhurat",
       "titleNe": "व्यक्तिगत शुभ समय",
       "titleEn": "Personal Auspicious Time",
-      "descriptionNe": "विद्यमान व्यक्तिगत समय अनुभव खोल्नुहोस्।",
-      "descriptionEn": "Open the existing personal-time experience.",
+      "descriptionNe": "आफ्नो व्यक्तिगत शुभ समय हेर्नुहोस्।",
+      "descriptionEn": "Explore your personalized auspicious timings.",
       "href": "/mytime"
     },
     {
@@ -259,8 +259,8 @@
       "group": "jyotish",
       "titleNe": "जन्मपत्रो",
       "titleEn": "Janma Kundali",
-      "descriptionNe": "जन्म विवरणबाट जन्मपत्रिका बनाउन विद्यमान गणक खोल्नुहोस्।",
-      "descriptionEn": "Use the existing birth-chart calculator.",
+      "descriptionNe": "जन्म मिति, समय र स्थानका आधारमा आफ्नो जन्मपत्रो तयार गर्नुहोस्।",
+      "descriptionEn": "Create your birth chart using your date, time and place of birth.",
       "href": "/janmapatro"
     },
     {
@@ -295,8 +295,8 @@
       "group": "jyotish",
       "titleNe": "जन्म राशि",
       "titleEn": "Janmarashi / Moon Sign",
-      "descriptionNe": "विद्यमान जन्मपत्रोबाट चन्द्र राशि हेर्नुहोस्।",
-      "descriptionEn": "Read the Moon sign from the existing birth-chart result.",
+      "descriptionNe": "जन्मपत्रोमा चन्द्र राशि हेर्नुहोस्।",
+      "descriptionEn": "Explore the Moon sign in your birth chart.",
       "href": "/jyotish#janmarashi"
     },
     {
@@ -313,8 +313,8 @@
       "group": "jyotish",
       "titleNe": "जन्म लग्न",
       "titleEn": "Janma Lagna / Ascendant",
-      "descriptionNe": "जन्मपत्रो गणकको लग्न र लग्न राशि।",
-      "descriptionEn": "Ascendant and Lagna Rashi from the current chart engine.",
+      "descriptionNe": "जन्म समय र स्थानका आधारमा लग्न र लग्न राशि।",
+      "descriptionEn": "Ascendant and rising sign based on birth time and place.",
       "href": "/jyotish#lagna"
     },
     {
@@ -331,8 +331,8 @@
       "group": "jyotish",
       "titleNe": "मङ्गल दोष",
       "titleEn": "Mangal Dosha",
-      "descriptionNe": "जन्मपत्रोमा उपलब्ध मङ्गल दोष विवरण।",
-      "descriptionEn": "Mangal Dosha details already calculated by the birth-chart engine.",
+      "descriptionNe": "जन्मपत्रोमा देखाइने मङ्गल दोषसम्बन्धी विवरण।",
+      "descriptionEn": "Mangal Dosha information shown in the birth chart.",
       "href": "/jyotish#mangal-dosha"
     },
     {
@@ -340,8 +340,8 @@
       "group": "jyotish",
       "titleNe": "गुण मिलान",
       "titleEn": "Kundali Milan",
-      "descriptionNe": "विद्यमान गुण मिलान गणक प्रयोग गर्नुहोस्।",
-      "descriptionEn": "Use the existing horoscope-matching calculator.",
+      "descriptionNe": "दुई जन्मपत्रोको गुण मिलान हेर्नुहोस्।",
+      "descriptionEn": "Compare two birth charts for horoscope matching.",
       "href": "/janmapatro/milan.html"
     },
     {
@@ -349,8 +349,8 @@
       "group": "jyotish",
       "titleNe": "दैनिक राशिफल",
       "titleEn": "Daily Rashifal",
-      "descriptionNe": "विद्यमान दैनिक वैदिक राशिफल खोल्नुहोस्।",
-      "descriptionEn": "Open the existing daily Vedic Rashifal.",
+      "descriptionNe": "दैनिक वैदिक राशिफल पढ्नुहोस्।",
+      "descriptionEn": "Read the daily Vedic Rashifal.",
       "href": "/rashifal"
     },
     {
@@ -376,8 +376,8 @@
       "group": "jyotish",
       "titleNe": "नक्षत्र अनुसार बच्चाको नाम",
       "titleEn": "Nakshatra Baby Names",
-      "descriptionNe": "विद्यमान नाम तथा नक्षत्र उपकरण खोल्नुहोस्।",
-      "descriptionEn": "Open the existing baby-name and Nakshatra tool.",
+      "descriptionNe": "जन्म नक्षत्र र अक्षरका आधारमा नामका सुझाव हेर्नुहोस्।",
+      "descriptionEn": "Explore name suggestions based on birth Nakshatra and syllables.",
       "href": "/tools/baby-names"
     },
     {
@@ -394,8 +394,8 @@
       "group": "jyotish",
       "titleNe": "विंशोत्तरी दशा",
       "titleEn": "Vimshottari Dasha",
-      "descriptionNe": "विद्यमान जन्मपत्रो गणकका दशा अवधि।",
-      "descriptionEn": "Dasha periods from the existing birth-chart engine.",
+      "descriptionNe": "जन्मपत्रोका विंशोत्तरी दशा अवधि।",
+      "descriptionEn": "Vimshottari Dasha periods in your birth chart.",
       "href": "/jyotish#dasha"
     },
     {
@@ -475,8 +475,8 @@
       "group": "planets",
       "titleNe": "चन्द्र कला, पूर्णिमा र औंसी",
       "titleEn": "Moon Phases, Full & New Moon",
-      "descriptionNe": "विद्यमान चन्द्र पृष्ठमा पूर्ण विवरण हेर्नुहोस्।",
-      "descriptionEn": "See complete details on the existing Moon page.",
+      "descriptionNe": "चन्द्र कला, पूर्णिमा र औंसीको विवरण हेर्नुहोस्।",
+      "descriptionEn": "Explore Moon phases, full moons and new moons.",
       "href": "/moon"
     },
     {
@@ -556,8 +556,8 @@
       "group": "nepal-calendar",
       "titleNe": "बिक्रम संवत् पात्रो",
       "titleEn": "Bikram Sambat Calendar",
-      "descriptionNe": "विद्यमान नेपाली पात्रो र मिति रूपान्तरण।",
-      "descriptionEn": "Existing Nepali calendar and date-conversion experience.",
+      "descriptionNe": "नेपाली मिति र इस्वी संवत्सँगको रूपान्तरण।",
+      "descriptionEn": "Nepali dates and conversion to the Gregorian calendar.",
       "href": "/"
     },
     {
@@ -565,8 +565,8 @@
       "group": "nepal-calendar",
       "titleNe": "नेपाल संवत्",
       "titleEn": "Nepal Sambat",
-      "descriptionNe": "विद्यमान नेपाल संवत् पात्रो र चाडपर्व।",
-      "descriptionEn": "Existing Nepal Sambat calendar and observances.",
+      "descriptionNe": "नेपाल संवत्का मिति र सम्बन्धित चाडपर्व।",
+      "descriptionEn": "Nepal Sambat dates and related observances.",
       "href": "/nepal-sambat/mandala"
     },
     {
