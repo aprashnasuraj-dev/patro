@@ -42,15 +42,15 @@ export type IconPaperTheme =
 
 /** Semantic paper-seal family: meaning drives the palette, not card position. */
 export function getToolIconTheme(href: string): IconPaperTheme {
-  if (["/panchang", "/muhurat", "/jyotish", "/jyotish/china", "/janmapatro", "/rashifal", "/astro", "/tools/astro", "/planets", "/tools/sait", "/tools/baby-names", "/tools/name-check", "/samudaya/hijri"].includes(href)) return "astrology";
-  if (["/#home-weather", "/mytime", "/tools/clock"].includes(href) || href === "/astro" || href === "/tools/astro" || href === "/planets") return "astronomy";
+  if (["/panchang", "/muhurat", "/jyotish", "/jyotish/rashifal", "/jyotish/china", "/janmapatro", "/janmapatro/milan.html", "/rashifal", "/tools/sait", "/tools/baby-names", "/tools/name-check", "/samudaya/hijri"].includes(href)) return "astrology";
+  if (["/#home-weather", "/mytime", "/tools/clock", "/astro", "/tools/astro", "/planets"].includes(href)) return "astronomy";
   if (["/samachar", "/fm", "/tv"].includes(href)) return "media";
   if (["/tools/nepali-typing", "/tools/preeti-converter", "/tool/nepalidictionary", "/tools/spell-check", "/tools/voice-typing", "/tools/ocr", "/tools/read-aloud", "/tools/words"].includes(href)) return "language";
   if (["/tools/forex", "/tools/gold", "/tools/emi", "/tools/vat", "/tools/incometax", "/tools/fuelprice"].includes(href)) return "finance";
   if (["/tools/landconverter", "/tools/units", "/tools/calc", "/tools/age", "/tools/adtobs", "/tools/bstoad"].includes(href)) return "measurement";
   if (["/me/diary", "/me/notes", "/me/planner", "/me/family", "/me/reminders", "/me/cards", "/me/settings", "/me/data", "/my-diary", "/my-diary?tab=due", "/my-diary?tab=family", "/my-diary?tab=documents", "/my-diary?tab=festival", "/settings"].includes(href)) return "personal";
   if (["/tools/nepaliqr", "/tools/janmadin-akhbar", "/tools/future-letter", "/tools/patro-bot", "/me/diary"].includes(href)) return "create";
-  if (["/", "/convert", "/tools/tithi-reminder", "/nepal-calendar", "/nepal-sambat/mandala", "/time-machine", "/on-this-day"].includes(href)) return "calendar";
+  if (["/", "/convert", "/tools/tithi-reminder", "/nepal-calendar", "/nepal-sambat/mandala", "/time-machine", "/on-this-day", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/chakra"].includes(href)) return "calendar";
   return "utility";
 }
 
