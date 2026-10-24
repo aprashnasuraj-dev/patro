@@ -117,11 +117,11 @@ describe("bilingual feature-first visual obligations", () => {
 
   it("keeps the main calendar ahead of the discovery panel for mobile calendar-first layout", () => {
     const homepage = source("src/HomePageCurrent.tsx");
-    const calendarIndex = homepage.indexOf('<section className="rh-card rh-calendar">');
-    const discoveryIndex = homepage.indexOf('<section className="rh-card rh-pj-discovery"');
+    const calendarIndex = homepage.indexOf('id="home-calendar"');
+    const discoveryIndex = homepage.indexOf('<HomeToolDirectory');
     expect(calendarIndex).toBeGreaterThanOrEqual(0);
     expect(discoveryIndex).toBeGreaterThan(calendarIndex);
-    expect(homepage).toContain('className="rh-pj-hub-card"');
+    expect(source("src/components/HomeToolDirectory.tsx")).toContain('className="home-specialists"');
   });
 
   it("uses the homepage language state and does not expose internal identifiers in the spotlight", () => {

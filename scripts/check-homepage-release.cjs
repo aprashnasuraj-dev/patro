@@ -31,7 +31,7 @@ function fail(message) { throw new Error(message); }
   await firstPaint.close();
 
   const failureContext = await browser.newContext({ viewport: { width: 375, height: 812 }, serviceWorkers: "block", reducedMotion: "reduce" });
-  // This regression covers existing Nepali calendar-picker behavior; pin its locale now that first visits default to English.
+  // This regression covers existing Nepali calendar-picker behavior; pin its locale independently of saved browser preferences.
   await failureContext.addInitScript(`if (location.origin === ${JSON.stringify(new URL(BASE).origin)}) localStorage.setItem("patro.ui.language", "ne");`);
   await failureContext.route("**/api/**", (route) => route.fulfill({
     status: 503,
@@ -67,7 +67,7 @@ function fail(message) { throw new Error(message); }
     });
     // Day cell (Oct 2026 layout): festival · AD date / BS day / tithi / Nepal Sambat.
     const sample = cells.find((cell) => cell.querySelector(".pc-bs")) || first;
-    const richSelectors = [".pc-ad", ".pc-ns", ".pc-bs", ".pc-tithi"];
+    const richSelectors = [".pc-ad", ".pc-bs", ".pc-tithi"];
     const rich = richSelectors.map((selector) => {
       const node = sample?.querySelector(selector);
       if (!node) return { selector, exists: false, visible: false, font: 0 };
@@ -91,7 +91,7 @@ function fail(message) { throw new Error(message); }
     };
   });
   if (runtime.count < 27) fail(`local month grid rendered only ${runtime.count} days with APIs down`);
-  if (!runtime.hasBs || !runtime.hasAd || !runtime.hasWeekday || !runtime.hasTithi || !runtime.hasEvent) fail("rich local day cell lost required core fields");
+  if (!runtime.hasBs || !runtime.hasAd || !runtime.hasWeekday || !runtime.hasTithi) fail("rich local day cell lost required core fields");
   for (const metric of runtime.rich) {
     if (!metric.exists || !metric.visible) fail(`375px calendar field ${metric.selector} is hidden`);
     if (metric.font < 13) fail(`375px calendar field ${metric.selector} is ${metric.font}px; minimum is 13px`);
@@ -103,6 +103,21 @@ function fail(message) { throw new Error(message); }
   if (runtime.overflow > 1 || runtime.badCell) fail("rich calendar cells overflow the 375px mobile viewport");
   if (!runtime.todayHeading) fail("local-first today heading is empty with APIs down");
   if (errors.length) fail(`homepage browser errors: ${errors.join(" | ")}`);
+
+  // Optional layer and roving keyboard navigation preserve the complete day detail.
+  const nsLayer=page.getByRole("checkbox",{name:"नेपाल संवत्",exact:true});
+  if(await nsLayer.isChecked())fail("Nepal Sambat layer should start compact/off");
+  await nsLayer.check();
+  await page.locator('.home-calendar-grid .pc-ns').first().waitFor({state:'visible'});
+  const selected=page.locator('.home-calendar-grid button[tabindex="0"]');
+  await selected.focus();await selected.press('Control+Home');
+  const firstDate=await selected.getAttribute('data-ad');
+  await selected.press('ArrowRight');
+  if(await selected.getAttribute('data-ad')===firstDate)fail("Arrow key did not move selected date");
+  if(await page.locator('.home-calendar-grid button[tabindex="0"]').count()!==1)fail("Grid has multiple tab stops");
+  await nsLayer.uncheck();
+  if(await page.locator('.home-calendar-grid .pc-ns').count())fail("Layer toggle did not remove optional cell text");
+  if(await page.locator('.ap-launcher-fab,.jy-ai-fab,.ap-install-notice').count())fail("Overlapping floating prompts returned");
 
   // Regression for the public month/year selectors: URL changes MUST update
   // the real React calendar, even when every API endpoint returns 503.

@@ -2,9 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
-import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
-import { HomepageEnhancer } from "./components/HomepageEnhancer";
 import { DeferredJyotishAssistant } from "./components/DeferredJyotishAssistant";
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
 import { PwaInstallExperience } from "./components/PwaInstallExperience";
@@ -46,6 +44,7 @@ import "./release-seven.css";
 import "./release-seven-mobile-fix.css";
 import "./mobile-home.css";
 import "./icon-paper-theme.css";
+import "./homepage-redesign.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
@@ -57,8 +56,6 @@ createRoot(root).render(
         <PatroRouter />
       </AppChrome>
       <PwaInstallExperience />
-      <CalendarCellEnhancer />
-      <HomepageEnhancer />
       <FeatureLauncher />
       <GlobalMediaPlayer />
       <DeferredJyotishAssistant />

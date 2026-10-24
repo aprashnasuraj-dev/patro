@@ -81,7 +81,9 @@ test("homepage core calendar is local-first and does not collapse into an API er
   assert.match(home, /function localMonthDays/);
   assert.match(home, /daysInBsMonth\(\s*year,\s*month\s*\)/);
   assert.match(home, /bsToAd\(\{\s*year,\s*month,\s*day\s*\}\)/);
-  assert.match(home, /catch\s*\{\s*return fallback;?\s*\}/);
+  assert.match(home, /setDays\(fallback\)/);
+  assert.match(home, /Promise.allSettled/);
+  assert.match(home, /setMonthState/);
   assert.doesNotMatch(home, /आजको पात्रो लोड हुन सकेन/);
   assert.doesNotMatch(home, /आजको पात्रो तयार हुँदैछ/);
 });

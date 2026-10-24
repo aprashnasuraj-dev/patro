@@ -28,7 +28,7 @@ test("tool cards use the shared route icons and semantic paper themes", () => {
 
 test("feature launcher uses SVG icons and a route-specific paper seal", () => {
   assert.match(launcher, /getToolIcon\(href\)/);
-  assert.match(launcher, /<Search size=\{19\}/);
+  assert.match(launcher, /<Search size=\{20\}/);
   assert.match(launcher, /RouteIcon href=\{item\.href\}/);
   assert.match(launcher, /className="ap-launcher-orb" data-paper=\{getToolIconTheme\(item\.href\)\}/);
   assert.doesNotMatch(launcher, /item\.mark/);

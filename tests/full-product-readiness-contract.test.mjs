@@ -17,7 +17,7 @@ function toolDirectoryHrefs(source){
 function setStringEntries(source){return unique([...source.matchAll(/"([a-z0-9-]+)"/g)].map((m)=>m[1]));}
 
 test("new Aafnai UI preserves all 29 canonical public tools without advertising developer API",()=>{
-  const pages=read("src/AafnaiPages.tsx");
+  const pages=read("src/tool-directory.ts")+read("src/AafnaiPages.tsx");
   const router=read("src/PatroRouter.tsx");
   const utilities=read("src/utilities/UtilitySuite.tsx");
   const slugs=setStringEntries(read("src/patro-tools-integration/toolSlugs.ts"));
@@ -58,7 +58,7 @@ test("29 canonical public tools stay SEO-discoverable while equivalent converter
 });
 
 test("critical product surfaces and all Community Suite calendars are visible from the authoritative shell",()=>{
-  const pages=read("src/AafnaiPages.tsx");
+  const pages=read("src/tool-directory.ts")+read("src/AafnaiPages.tsx");
   const chrome=read("src/components/AppChrome.tsx");
   const launcher=read("src/components/FeatureLauncher.tsx");
   const router=read("src/PatroRouter.tsx");
@@ -114,7 +114,7 @@ test("route-aware metadata covers public discovery and protects private pages",(
 });
 
 test("calendar, Time Machine, Samachar and media UI point to backed API contracts",()=>{
-  const pages=read("src/AafnaiPages.tsx");
+  const pages=read("src/tool-directory.ts")+read("src/AafnaiPages.tsx");
   const details=read("src/AafnaiDetailPages.tsx");
   const media=read("src/media/MediaSuite.tsx");
   const provider=read("src/media/MediaProvider.tsx");
