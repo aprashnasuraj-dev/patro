@@ -34,7 +34,8 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   assert.ok(router.includes("/rashifal")&&chrome.includes("/rashifal"),"authoritative app shell/router lost /rashifal");
   assert.ok(enhancer.includes("hp-month-jump")&&enhancer.includes("/calendar/${event.target.value}"),"year/month jump controls must navigate real calendar routes");
   assert.ok(enhancer.includes('aria-label={l(language, "विक्रम संवत् वर्ष", "Bikram Sambat year")}')&&enhancer.includes('aria-label={l(language, "विक्रम संवत् महिना", "Bikram Sambat month")}'),"calendar jump controls must retain localized accessible names");
-  assert.ok(main.includes("<HomepageEnhancer />"),"homepage enhancer must be mounted");
+  assert.ok(!main.includes("<HomepageEnhancer />"),"imperative enhancer must not duplicate React navigation");
+  assert.ok(read("src/HomePageCurrent.tsx").includes("home-month-picker"),"React owns the month picker");
   assert.ok(css.includes("pointer-events:auto!important")&&css.includes(".rh-cell"),"interactive calendar and link surfaces must explicitly accept pointer events");
   assert.ok(css.includes("min-height:44px")&&css.includes("outline:3px solid var(--ap-green)"),"mobile controls must keep usable tap targets and keyboard focus");
 

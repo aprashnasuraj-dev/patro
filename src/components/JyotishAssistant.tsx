@@ -132,8 +132,9 @@ async function streamAssistant(response: Response, onText: (text: string) => voi
   return output;
 }
 
-export function JyotishAssistant({ initiallyOpen = false }: { initiallyOpen?: boolean } = {}) {
+export function JyotishAssistant({ initiallyOpen = false, showLauncher = true }: { initiallyOpen?: boolean; showLauncher?: boolean } = {}) {
   const [open, setOpen] = useState(initiallyOpen);
+  useEffect(()=>{const show=()=>setOpen(true);window.addEventListener("patro:open-assistant",show);return()=>window.removeEventListener("patro:open-assistant",show);},[]);
   useDismiss(open, () => setOpen(false));
   const [messages, setMessages] = useState<ChatMessage[]>(readHistory);
   const [language, setLanguage] = useState<ChatLanguage>(readLanguage);
@@ -284,9 +285,9 @@ export function JyotishAssistant({ initiallyOpen = false }: { initiallyOpen?: bo
   }
 
   return <>
-    <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-bot-panel" aria-label="आफ्नै Patro Bot खोल्नुहोस्" title="आफ्नै Patro Bot">
+    {showLauncher && <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-bot-panel" aria-label="आफ्नै Patro Bot खोल्नुहोस्" title="आफ्नै Patro Bot">
       <span aria-hidden="true"><img src="/aafnai-logo.png" alt="" width="30" height="30" style={{ objectFit: "contain" }} /></span><em>आफ्नै Patro Bot</em><b>आफ्नै</b>
-    </button>
+    </button>}
     {open && <section id="aafnai-bot-panel" className="jy-ai-panel" ref={panel} aria-label="आफ्नै Patro Bot">
       <header className="jy-ai-head">
         <div><span aria-hidden="true"><img src="/aafnai-logo.png" alt="" width="30" height="30" style={{ objectFit: "contain" }} /></span><div><strong>आफ्नै Patro Bot</strong><small>{china ? "पात्रो + ज्योतिष · तपाईंको चिना जोडिएको" : "पात्रो, मिति, चाडपर्व र ज्योतिष सहायक"}</small></div></div>

@@ -26,6 +26,7 @@
       "/*",
       "!/assets/*",
       "!/manifest.webmanifest",
+      "!/calendar/festivals.ics",
       "!/pwa-install-early.js",
       "!/sw.js",
       "!/patro-boot-recovery.js",

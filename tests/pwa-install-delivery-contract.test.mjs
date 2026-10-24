@@ -20,9 +20,12 @@ test("Service worker registration does not wait for window load",()=>{
   assert.ok(source.includes('document.readyState'));
   assert.ok(!source.includes('window.addEventListener("load",'));
 });
-test("Native install CTA appears immediately on event; Android fallback is delayed",()=>{
+test("install is available from one footer entry and never auto-prompts",()=>{
   const source=read("src/components/PwaInstallExperience.tsx");
-  assert.ok(source.includes("const INSTALL_NOTICE_DELAY_MS=32000"));
-  assert.ok(source.includes("setShowNotice(true);"));
-  assert.ok(source.includes("browser.android&&!browser.embedded?INSTALL_NOTICE_DELAY_MS"));
+  assert.ok(source.includes('document.getElementById("home-install-entry")'));
+  assert.ok(source.includes('await candidate.prompt()'));
+  assert.ok(source.includes('window.addEventListener("patro:install",handler)'));
+  assert.ok(!source.includes('setTimeout'));
+  assert.ok(!source.includes('ap-install-notice'));
+  assert.ok(source.includes('aria-modal="true"'));
 });

@@ -50,10 +50,11 @@ test("one authoritative mobile navigation and Community Patro entries stay visib
   const main=read("src/main.tsx");
   const router=read("src/PatroRouter.tsx");
   assert.equal((chrome.match(/className="ap-tabbar"/g)||[]).length,1,"AppChrome must expose exactly one mobile tabbar");
-  for(const route of ["/","/rashifal","/convert","/me","/tools"]){
+  for(const route of ["/","/guides","/convert","/me","/tools"]){
     assert.ok(chrome.includes(`href="${route}"`),`authoritative mobile nav route missing ${route}`);
   }
-  for(const label of ["पात्रो","राशिफल","रूपान्तरण","आफ्नै ठाउँ","थप"])assert.ok(chrome.includes(label),label);
+  for(const label of ["पात्रो","लेख","रूपान्तरण","आफ्नै ठाउँ","उपकरण"])assert.ok(chrome.includes(label),label);
+  assert.ok(read("src/components/MobileMenu.tsx").includes('"/rashifal"'),"Horoscope remains in mobile drawer");
   const communities=["/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri"];
   for(const route of communities)assert.ok(chrome.includes(route)||hub.includes(route),`community route missing ${route}`);
   assert.ok(hub.includes("COMMUNITY_OPTIONS"),"community hub must use canonical registry");
@@ -82,7 +83,7 @@ test("root homepage cannot regress into the astronomical calendar",()=>{
   assert.ok(router.includes('if(path==="/tools/astro")return <AstroPage/>'),"astronomical calendar must stay isolated to /tools/astro");
   assert.ok(router.includes('const AstroPage=lazy(()=>import("./App"))'),"astronomy should remain lazy-loaded as a feature, not the shell root");
   assert.ok(main.includes("<PatroRouter />"),"the application shell must mount PatroRouter");
-  assert.ok(home.includes('href="/tools/astro"'),"homepage may link to Astronomy but must not render the astronomy app at root");
+  assert.ok(read("src/components/HomeToolDirectory.tsx").includes('href="/tools/astro"'),"homepage may link to Astronomy but must not render the astronomy app at root");
 });
 
 test("Notes expose English Nepali suggestion and voice input using the same local worker",()=>{
@@ -103,7 +104,7 @@ test("Notes expose English Nepali suggestion and voice input using the same loca
 });
 
 test("visible tool surfaces consolidate directional date conversion without killing legacy routes",()=>{
-  const pages=read("src/AafnaiPages.tsx");
+  const pages=read("src/tool-directory.ts")+read("src/AafnaiPages.tsx");
   const launcher=read("src/components/FeatureLauncher.tsx");
   const css=read("src/jyotish-assistant.css");
   const router=read("src/PatroRouter.tsx");
