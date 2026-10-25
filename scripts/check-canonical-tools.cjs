@@ -48,8 +48,7 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   });
   await page.waitForFunction(()=>document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)").length>=28,{timeout:20000});
   const nsLayer=page.getByRole("checkbox",{name:"नेपाल संवत्",exact:true});
-  if(await nsLayer.isChecked())throw new Error("NS layer should start off in the compact calendar");
-  await nsLayer.check();
+  if(!(await nsLayer.isChecked()))throw new Error("Nepal Sambat must be visible in calendar cells by default");
   await page.locator('.rh-calendar .pc-ns').first().waitFor({state:"visible"});
   const festivalDay=page.locator(`.rh-calendar button[data-ad="${testEventDate}"]`);
   await festivalDay.locator('.pc-event').waitFor({state:"attached"});

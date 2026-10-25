@@ -45,6 +45,7 @@ describe("homepage product and language contract",()=>{
    expect((html.match(/role="grid"/g)||[]).length).toBe(1);expect((html.match(/role="columnheader"/g)||[]).length).toBe(7);
    expect((html.match(/data-ad="/g)||[]).length).toBe(30);expect((html.match(/tabindex="0"/g)||[]).length).toBe(1);
    expect((html.match(/type="checkbox"/g)||[]).length).toBe(5);expect(html).toContain("तपाईं अफलाइन हुनुहुन्छ");
+   expect((html.match(/class="pc-ns"/g)||[]).length).toBe(30);
  });
  it("all defined foreground tokens meet AA on each declared homepage surface",()=>{
    const css=readFileSync(new URL('../src/homepage-redesign.css',import.meta.url),'utf8');

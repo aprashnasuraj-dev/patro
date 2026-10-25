@@ -125,7 +125,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   const language = useUiLanguage();
   const [today, setToday] = useState(todayNepal);
   useEffect(() => { const refresh = () => setToday(todayNepal()); const timer = window.setInterval(refresh, 60000); window.addEventListener("focus",refresh); return () => { clearInterval(timer); window.removeEventListener("focus",refresh); }; }, []);
-  const [layers,setLayers] = useState({ad:true,tithi:true,ns:false,holidays:true,festivals:true});
+  const [layers,setLayers] = useState({ad:true,tithi:true,ns:true,holidays:true,festivals:true});
   const [monthState,setMonthState] = useState<"loading"|"ready"|"error">("loading");
   const [retry,setRetry] = useState(0);
   const [todayError,setTodayError] = useState(false);
@@ -270,7 +270,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
                 <strong className="pc-bs" aria-hidden="true">{number(day.bs.day,language)}</strong>
                 {layers.ad?<span className="pc-ad" aria-hidden="true">{ad}</span>:null}
                 {layers.tithi?<span className="pc-tithi" aria-hidden="true">{tithi||"—"}</span>:null}
-                {layers.ns?<span className="pc-ns" aria-hidden="true">{ns}</span>:null}
+                {layers.ns?<span className="pc-ns" aria-hidden="true">{ns||"—"}</span>:null}
                 {label?<span className="pc-event" aria-hidden="true">{label}</span>:null}
                 {shownEvents.length?<i className="pc-dot" aria-hidden="true"/>:null}
               </button></div>;

@@ -104,10 +104,9 @@ function fail(message) { throw new Error(message); }
   if (!runtime.todayHeading) fail("local-first today heading is empty with APIs down");
   if (errors.length) fail(`homepage browser errors: ${errors.join(" | ")}`);
 
-  // Optional layer and roving keyboard navigation preserve the complete day detail.
+  // Nepal Sambat is visible by default; layer controls and keyboard navigation preserve day detail.
   const nsLayer=page.getByRole("checkbox",{name:"नेपाल संवत्",exact:true});
-  if(await nsLayer.isChecked())fail("Nepal Sambat layer should start compact/off");
-  await nsLayer.check();
+  if(!(await nsLayer.isChecked()))fail("Nepal Sambat must be visible in calendar cells by default");
   await page.locator('.home-calendar-grid .pc-ns').first().waitFor({state:'visible'});
   const selected=page.locator('.home-calendar-grid button[tabindex="0"]');
   await selected.focus();await selected.press('Control+Home');
