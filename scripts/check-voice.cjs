@@ -22,6 +22,8 @@ const {chromium}=require('playwright');
         Object.defineProperty(window,'webkitSpeechRecognition',{configurable:true,value:undefined});
       });
       await page.goto(origin+target.path);
+      // Quick Note now loads lazily when its homepage disclosure opens.
+      if(target.path==='/') await page.locator('details.home-notes > summary').click();
       const mic=page.locator(target.mic);await mic.waitFor({state:'visible'});
       await mic.click();await page.waitForFunction(()=>window.__voice.starts===1);
       await page.evaluate(()=>{
