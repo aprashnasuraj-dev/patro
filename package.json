@@ -94,7 +94,7 @@
     "vite": "6.4.4",
     "typescript": "5.8.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.3.1",
     "framer-motion": "13.4.3",
     "motion-dom": "13.4.5",
     "motion-utils": "13.3.0",
@@ -113,7 +113,7 @@
   },
   "devDependencies": {
     "@types/react": "19.1.2",
-    "@types/react-dom": "19.1.2",
+    "@types/react-dom": "19.3.0",
     "vitest": "5.0.5",
     "esbuild": "0.25.10",
     "wrangler": "4.144.0"
