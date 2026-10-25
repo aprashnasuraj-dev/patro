@@ -11,8 +11,8 @@ import { installGoogleTagInBuild } from "../scripts/install-google-tag.mjs";
 
 const source = '<!doctype html><html><head><meta charset="utf-8"><title>Test</title></head><body>नेपाल</body></html>';
 function checkTag(html) {
-  assert.equal((html.match(/googletagmanager\.com\/gtag\/js\?id=G-KWLDWTSK14/g) || []).length, 1);
-  assert.equal((html.match(/gtag\('config', 'G-KWLDWTSK14'\)/g) || []).length, 1);
+  assert.equal((html.match(/googletagmanager\.com\/gtag\/js\?id=G-XF46HGE1WR/g) || []).length, 1);
+  assert.equal((html.match(/gtag\('config', 'G-XF46HGE1WR'\)/g) || []).length, 1);
   assert.match(html, /<head>\s*<!-- Google tag \(gtag\.js\) -->\s*<script/);
   assert.ok(html.includes('नेपाल'));
 }
