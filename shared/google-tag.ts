@@ -1,5 +1,5 @@
 // One source for the build-time static pages and the dynamic Worker responses.
-export const GOOGLE_TAG_ID = "G-KWLDWTSK14";
+export const GOOGLE_TAG_ID = "G-XF46HGE1WR";
 export const GOOGLE_TAG_INIT = `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -13,7 +13,7 @@ export const GOOGLE_TAG_HTML = `<!-- Google tag (gtag.js) -->
 
 // Verified against GOOGLE_TAG_INIT in tests; allows only this inline initializer
 // on pages such as Advanced Tools whose CSP otherwise disallows inline scripts.
-export const GOOGLE_TAG_HASH = "'sha256-tcnd4K/edH7A3LzDRjFjIfm3GTH8JtfJOBjNzuzjydg='";
+export const GOOGLE_TAG_HASH = "'sha256-j4oVudpMyIko4ya+fKADa1wFFsjvbbYOAc+Iecdcizk='";
 
 export function googleTagCsp(policy: string): string {
   if (!policy) return policy;
