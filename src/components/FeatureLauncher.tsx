@@ -1,12 +1,13 @@
 import { Search } from "lucide-react";
 import { getToolIcon, getToolIconTheme } from "../iconography";
 import { useDismiss } from "../useDismiss";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { l, useUiLanguage } from "../useUiLanguage";
 
 type LaunchItem={href:string;ne:string;en:string;group:string;keywords:string};
 
 export const ITEMS:LaunchItem[]=[
+ {href:"/guides",ne:"लेख र मार्गदर्शन",en:"Articles & guides",group:"लेख · Reading",keywords:"blog articles guides reading लेख मार्गदर्शन पढ्नुहोस्"},
  {href:"/",ne:"आजको पात्रो",en:"Today · Calendar",group:"पात्रो · Calendar",keywords:"today calendar nepali date bs ad आज पात्रो मिति"},
  {href:"/#home-weather",ne:"मौसम पूर्वानुमान",en:"Weather forecast",group:"दैनिक · Daily",keywords:"weather forecast rain temperature city मौसम वर्षा तापक्रम शहर"},
  {href:"/convert",ne:"मिति रूपान्तरण",en:"BS ↔ AD Date converter",group:"पात्रो · Calendar",keywords:"convert conversion ad bs date bs to ad ad to bs nepali date converter bikram sambat gregorian वि सं ई सं विक्रम संवत् मिति रूपान्तरण"},
@@ -69,18 +70,34 @@ function RouteIcon({href}:{href:string}) { const Icon=getToolIcon(href); return 
 export function FeatureLauncher(){
  const language = useUiLanguage();
  const ne = language === "ne";
+ const panel=useRef<HTMLElement>(null);
  const[open,setOpen]=useState(false);
  useDismiss(open,()=>setOpen(false));
  const[query,setQuery]=useState("");
  useEffect(()=>{const onKey=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();setOpen(value=>!value);return}if(event.key==="/"&&!isTypingTarget(event.target)&&!event.ctrlKey&&!event.metaKey&&!event.altKey){event.preventDefault();setOpen(true);return}if(event.key==="Escape")setOpen(false)};window.addEventListener("keydown",onKey);return()=>window.removeEventListener("keydown",onKey)},[]);
  useEffect(()=>{const show=()=>setOpen(true),close=()=>setOpen(false);window.addEventListener("patro:open-search",show);window.addEventListener("patro:navigation",close);return()=>{window.removeEventListener("patro:open-search",show);window.removeEventListener("patro:navigation",close)}},[]);
  useEffect(()=>{if(!open)setQuery("")},[open]);
+ useEffect(()=>{
+   if(!open)return;
+   const previous=document.activeElement as HTMLElement|null;
+   const overflow=document.body.style.overflow;document.body.style.overflow="hidden";
+   panel.current?.querySelector<HTMLInputElement>("input")?.focus();
+   const trap=(event:KeyboardEvent)=>{
+     if(event.key!=="Tab")return;
+     const controls=[...(panel.current?.querySelectorAll<HTMLElement>('a[href],button,input')||[])];
+     const first=controls[0],last=controls.at(-1);
+     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
+     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+   };
+   document.addEventListener("keydown",trap);
+   return()=>{document.removeEventListener("keydown",trap);document.body.style.overflow=overflow;previous?.focus();};
+ },[open]);
  const results=useMemo(()=>{const needle=query.trim().toLocaleLowerCase();if(!needle)return ITEMS.slice(0,14);return ITEMS.filter(item=>`${item.ne} ${item.en} ${item.group} ${item.keywords}`.toLocaleLowerCase().includes(needle)).slice(0,24)},[query]);
  return <>
- <button className="ap-feature-launcher-button" type="button" onClick={()=>setOpen(true)} aria-haspopup="dialog" aria-label={l(language,"सबै सुविधा खोज्नुहोस्","Search all features")}><span data-paper="utility" aria-hidden="true"><Search size={19} strokeWidth={1.8}/></span><strong>{l(language,"खोज","Search")}</strong><kbd>⌘K</kbd></button>
- {open?<div className="ap-launcher-backdrop" role="presentation" onMouseDown={()=>setOpen(false)}><section className="ap-launcher" role="dialog" aria-modal="true" aria-label={l(language,"आफ्नै पात्रो सुविधा खोज","Search Aafnai Patro features")} onMouseDown={event=>event.stopPropagation()}>
- <header className="ap-launcher-search"><span data-paper="utility" aria-hidden="true"><Search size={20} strokeWidth={1.8}/></span><input autoFocus value={query} onChange={event=>setQuery(event.target.value)} placeholder={l(language,"पात्रो, तिथि, रेडियो, OCR…","Calendar, tithi, radio, OCR…")} aria-label={l(language,"सुविधा खोज्नुहोस्","Search features")}/><button type="button" onClick={()=>setOpen(false)} aria-label={l(language,"बन्द गर्नुहोस्","Close")}>×</button></header>
- <div className="ap-launcher-hint"><span>{l(language,"सबै सुविधा एउटै ठाउँमा","All tools in one place")}</span><small>{l(language,"नाम, category वा काम लेख्नुहोस्","Search by name, category, or task")}</small></div>
+
+ {open?<div className="ap-launcher-backdrop" role="presentation" onMouseDown={()=>setOpen(false)}><section ref={panel} className="ap-launcher" role="dialog" aria-modal="true" aria-label={l(language,"आफ्नै पात्रो सुविधा खोज","Search Aafnai Patro features")} onMouseDown={event=>event.stopPropagation()}>
+ <header className="ap-launcher-search"><span data-paper="utility" aria-hidden="true"><Search size={20} strokeWidth={1.8}/></span><input value={query} onChange={event=>setQuery(event.target.value)} placeholder={l(language,"पात्रो, तिथि, रेडियो, OCR…","Calendar, tithi, radio, OCR…")} aria-label={l(language,"सुविधा खोज्नुहोस्","Search features")}/><button type="button" onClick={()=>setOpen(false)} aria-label={l(language,"बन्द गर्नुहोस्","Close")}>×</button></header>
+ <div className="ap-launcher-hint"><span>{l(language,"सबै सुविधा एउटै ठाउँमा","All tools in one place")}</span><small>{l(language,"नाम, समूह वा काम लेख्नुहोस्","Search by name, category, or task")}</small></div>
  <div className="ap-launcher-results">{results.length?results.map(item=><a key={item.href} href={item.href} onClick={event=>{if(item.href==="/#home-weather"&&document.getElementById("home-weather")){event.preventDefault();setOpen(false);document.getElementById("home-weather")?.scrollIntoView({block:"start",behavior:"smooth"})}}} className="ap-launcher-item"><span className="ap-launcher-orb" data-paper={getToolIconTheme(item.href)} aria-hidden="true"><RouteIcon href={item.href}/></span><span><small>{ne?item.group.split(" · ")[0]:(item.group.split(" · ").at(-1)||item.group)}</small><strong>{ne?item.ne:item.en}</strong><em>{ne?item.en:item.ne}</em></span><b aria-hidden="true">→</b></a>):<div className="ap-launcher-empty"><strong>{l(language,"मिल्ने सुविधा भेटिएन","No matching feature found")}</strong><span>{l(language,"अर्को शब्द प्रयोग गर्नुहोस् वा सबै उपकरण खोल्नुहोस्।","Try another search or browse all tools.")}</span><a href="/tools">{l(language,"सबै उपकरण","All tools")}</a></div>}</div>
  <footer><span>{l(language,"छिटो खोल्न","Open quickly with")} <kbd>Ctrl/⌘ K</kbd> {l(language,"वा","or")} <kbd>/</kbd></span><a href="/tools">{l(language,"सबै उपकरण हेर्नुहोस् →","Browse all tools →")}</a></footer></section></div>:null}
  </>;

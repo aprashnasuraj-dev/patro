@@ -1,55 +1,17 @@
-import { useEffect, useState } from "react";
-import { Download, CalendarDays, MoonStar, Tv, Radio, Wrench, Info, ShieldCheck, BookOpenText, MessageSquare } from "lucide-react";
-import { LogoMark } from "./LogoMark";
+import { toNepaliDigits } from "../title";
+import { l } from "../useUiLanguage";
 import type { UiLanguage } from "../i18n";
 
-type InstallPromptEvent = Event & {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
-};
-
+const groups = [
+  { ne: "पात्रो र अन्वेषण", en: "Calendars & discovery", links: [["/festivals","चाडपर्व","Festivals"],["/samudaya","समुदाय पात्रो","Community calendars"],["/time-machine","समययन्त्र","Time Machine"],["/on-this-day","इतिहासमा आज","On This Day"],["/fm","रेडियो","Radio"]] },
+  { ne: "उपकरण र सहायता", en: "Tools & help", links: [["/tools","सबै उपकरण","All tools"],["/advancetools/","विशेष उपकरण","Advanced tools"],["/guides","प्रयोग निर्देशिका","Guides"],["/me","आफ्नै ठाउँ","My space"],["/contact","सम्पर्क","Contact"]] },
+  { ne: "हाम्रो बारेमा", en: "About & policies", links: [["/about","हाम्रो परिचय","About us"],["/sources","स्रोत र शुद्धता","Sources & accuracy"],["/privacy","गोपनीयता नीति","Privacy"],["/terms","सेवाका सर्तहरू","Terms"]] }
+] as const;
 export function SiteFooter({ language }: { language: UiLanguage }) {
-  const [installPrompt,setInstallPrompt]=useState<InstallPromptEvent|null>(null);
-  useEffect(()=>{
-    const onPrompt=(event:Event)=>{event.preventDefault();setInstallPrompt(event as InstallPromptEvent);};
-    window.addEventListener("beforeinstallprompt",onPrompt);
-    return()=>window.removeEventListener("beforeinstallprompt",onPrompt);
-  },[]);
-  async function install(){
-    if(!installPrompt)return;
-    await installPrompt.prompt();
-    await installPrompt.userChoice.catch(()=>null);
-    setInstallPrompt(null);
-  }
-  const ne=language==="ne";
-  return <footer className="mp-footer">
-    <div className="mp-footer__grid">
-      <section className="mp-footer__brand">
-        <a href="/" className="mp-footer__lockup"><LogoMark size={42}/><span><strong>आफ्नै पात्रो</strong></span></a>
-        <p>{ne?"नेपाली पात्रो, तिथि, चाडपर्व र राशिफल":"Nepali calendar, tithi, festivals and horoscope"}</p>
-        <button type="button" onClick={install} disabled={!installPrompt}><Download size={17}/>{ne?"एप इन्स्टल गर्नुहोस्":"Install app"}</button>
-      </section>
-      <section><h3>{ne?"पात्रो":"Calendar"}</h3>
-        <a href="/"><CalendarDays size={15}/>{ne?"आजको पात्रो":"Today"}</a>
-        <a href="/jyotish/rashifal"><MoonStar size={15}/>{ne?"राशिफल":"Horoscope"}</a>
-        <a href="/convert"><BookOpenText size={15}/>{ne?"मिति रूपान्तरण":"Date Converter"}</a>
-        <a href="/moon"><MoonStar size={15}/>{ne?"चन्द्र पात्रो":"Moon Calendar"}</a>
-      </section>
-      <section><h3>{ne?"सुविधाहरू":"Features"}</h3>
-        <a href="/tv"><Tv size={15}/>{ne?"लाइभ टिभी":"Live TV"}</a>
-        <a href="/fm"><Radio size={15}/>{ne?"रेडियो":"Radio"}</a>
-        <a href="/tools"><Wrench size={15}/>{ne?"उपयोगी उपकरण":"Tools"}</a>
-        <a href="/tools/nepali-typing"><Wrench size={15}/>{ne?"नेपाली टाइपिङ":"Nepali Typing"}</a>
-        <a href="/time-machine"><BookOpenText size={15}/>{ne?"समययन्त्र":"Time Machine"}</a>
-      </section>
-      <section><h3>{ne?"कम्पनी":"Company"}</h3>
-        <a href="/about"><Info size={15}/>{ne?"हाम्रो बारेमा":"About"}</a>
-        <a href="/sources"><BookOpenText size={15}/>{ne?"स्रोत र शुद्धता":"Sources & accuracy"}</a>
-        <a href="/privacy"><ShieldCheck size={15}/>{ne?"गोपनीयता नीति":"Privacy"}</a>
-        <a href="/terms"><BookOpenText size={15}/>{ne?"सेवाका सर्तहरू":"Terms"}</a>
-        <a href="/contact"><MessageSquare size={15}/>{ne?"सम्पर्क":"Contact"}</a>
-      </section>
-    </div>
-    <div className="mp-footer__bottom"><span>© २०२६ आफ्नै पात्रो · सर्वाधिकार सुरक्षित</span><a href="/privacy">{ne?"गोपनीयता":"Privacy"}</a><a href="/terms">{ne?"सर्तहरू":"Terms"}</a></div>
+  const year = new Date().getFullYear();
+  return <footer className="ap-footer home-footer">
+    <div className="home-footer-brand"><a href="/">{l(language,"आफ्नै पात्रो","Aafnai Patro")}</a><p>{l(language,"तपाईंको दिन, तपाईंको पात्रो।","Your day, your calendar.")}</p><span>© {language === "ne" ? toNepaliDigits(year) : year}</span></div>
+    {groups.map(group => <nav key={group.en} aria-label={l(language,group.ne,group.en)}><h2>{l(language,group.ne,group.en)}</h2>{group.links.map(([href,ne,en]) => <a key={href} href={href}>{l(language,ne,en)}</a>)}</nav>)}
+    <div className="home-footer-actions"><label>{l(language,"भाषा","Language")}<select value={language} onChange={event => window.dispatchEvent(new CustomEvent("patro:set-language",{detail:event.target.value}))}><option value="ne" lang="ne">नेपाली</option><option value="en" lang="en">English</option></select></label><div id="home-install-entry"/><button type="button" onClick={() => window.dispatchEvent(new Event("patro:open-assistant"))}>{l(language,"पात्रो सहायक खोल्नुहोस्","Open calendar assistant")}</button></div>
   </footer>;
 }

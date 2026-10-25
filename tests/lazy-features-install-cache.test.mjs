@@ -6,10 +6,10 @@ test('service worker caches installed HLS/astronomy assets and retries an interr
 
 test('homepage note and voice typing remain complete but load after first paint',()=>{
  const home=read('src/HomePageCurrent.tsx');
- const deferred=read('src/components/DeferredHomeQuickNote.tsx');
+ const deferred=read('src/components/HomeNotesDisclosure.tsx');
  const full=read('src/components/HomeQuickNote.tsx');
- assert.ok(home.includes('DeferredHomeQuickNote'));
+ assert.ok(home.includes('HomeNotesDisclosure'));
  assert.ok(!home.includes('import { HomeQuickNote }'));
- for(const guard of ['IntersectionObserver','requestIdleCallback','minHeight: 240','import("./HomeQuickNote")'])assert.ok(deferred.includes(guard),`missing lazy note guard ${guard}`);
+ for(const guard of ['onToggle','setOpened(true)','import("./HomeQuickNote")'])assert.ok(deferred.includes(guard),`missing lazy note guard ${guard}`);
  for(const feature of ['useNepaliDictation','InlineDictationPreview','syncLifeTools','<VoiceHelp','<GoogleAuthButton','className="qn-save"'])assert.ok(full.includes(feature),`lost existing notes feature ${feature}`);
 });

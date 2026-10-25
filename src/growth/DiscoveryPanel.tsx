@@ -11,7 +11,7 @@ export function DiscoveryPanel({path}:{path:string}){
   const[saved,setSaved]=useState<string[]>(savedPaths);const[message,setMessage]=useState("");
   useEffect(()=>{setMessage("")},[path]);
   const publicPath=allowed.has(path)||path==="/"||path==="/guides"||guides.some(row=>path==="/guides/"+row.slug);
-  if(!publicPath)return null;
+  if(!publicPath || path==="/" || path==="/today" || path.startsWith("/calendar/"))return null;
   const guide=guides.find(row=>row.tool===path);
   const save=()=>{const next=saved.includes(path)?saved.filter(p=>p!==path):[path,...saved].slice(0,6);try{localStorage.setItem(KEY,JSON.stringify(next));setSaved(next);setMessage("यो उपकरणमा सुरक्षित भयो।")}catch{setMessage("Browser मा सुरक्षित गर्न सकिएन।")}};
   const share=async()=>{

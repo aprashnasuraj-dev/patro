@@ -22,6 +22,14 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   // Their third-party runtime errors (e.g. AdSense "int64") must not fail local route checks.
   await page.route(/^https:\/\/(?:pagead2\.googlesyndication\.com|googleads\.g\.doubleclick\.net|ep1\.adtrafficquality\.google|csi\.gstatic\.com)\//,route=>route.abort());
 
+  // Seed one real-shaped event so a day without an event is not mistaken for
+  // a missing feature. Calendar layers are user-controlled in the redesign.
+  const testEventDate=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+  await page.route(/\/api\/v1\/events\?year=\d+$/,route=>{
+    const year=new URL(route.request().url()).searchParams.get("year");
+    const items=year===testEventDate.slice(0,4)?[{ad_date:testEventDate,name_ne:"परीक्षण पर्व",name_en:"Test festival",effect:"observance"}]:[];
+    return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({items})});
+  });
   const homeErrors=[];
   const onHomeError=(error)=>homeErrors.push(error?.stack || String(error));
   page.on("pageerror",onHomeError);
@@ -39,6 +47,16 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
     throw new Error(`Canonical home calendar unavailable: ${error.message}; browser errors=${JSON.stringify(homeErrors)}; diagnostic=${JSON.stringify(diagnostic)}`);
   });
   await page.waitForFunction(()=>document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)").length>=28,{timeout:20000});
+  const nsLayer=page.getByRole("checkbox",{name:"नेपाल संवत्",exact:true});
+  if(await nsLayer.isChecked())throw new Error("NS layer should start off in the compact calendar");
+  await nsLayer.check();
+  await page.locator('.rh-calendar .pc-ns').first().waitFor({state:"visible"});
+  const festivalDay=page.locator(`.rh-calendar button[data-ad="${testEventDate}"]`);
+  await festivalDay.locator('.pc-event').waitFor({state:"attached"});
+  if(!(await festivalDay.locator('.pc-dot').isVisible()))throw new Error("Festival marker is missing on mobile");
+  await festivalDay.click();
+  if(!(await page.locator('.rh-selected').innerText()).includes("परीक्षण पर्व"))throw new Error("Selected day lost the full festival label");
+  await page.evaluate(()=>window.scrollTo(0,0));
   const home=await page.evaluate(()=>{
     const cells=[...document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)")];
     const sample=cells.find((cell)=>cell.querySelector(".pc-bs"));
@@ -59,7 +77,7 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
       hasBs:Boolean(sample?.querySelector(".pc-bs")),
       hasWeekday:document.querySelectorAll(".rh-calendar .rh-weekheads > *").length===7,
       hasTithiSlot:Boolean(sample?.querySelector(".pc-tithi")),
-      hasEventSlot:Boolean(sample?.querySelector(".pc-event")),
+      hasEventSlot:Boolean(document.querySelector(".rh-calendar .pc-event")),
       richMetrics,
       calendarTop:calendar?.getBoundingClientRect().top??9999,
       bodyText:(document.body?.innerText||"").trim(),

@@ -40,7 +40,7 @@ export function HomeQuickNote({ language }: { language: Lang }) {
     try{
       const engine=await import("../patro-tools/language/roman-keyboard");
       setTransliterateLatin(()=>engine.transliterateRoman);setCleanupError("");
-    }catch{setCleanupError("Roman लिप्यन्तरण उपलब्ध छैन; English शब्द जस्ताको तस्तै रहन्छन्।");}
+    }catch{setCleanupError(l("लिप्यन्तरण उपलब्ध छैन। रोमन अक्षर जस्ताको तस्तै रहनेछन्।", "Transliteration is unavailable. Roman letters will stay unchanged."));}
   }
 
   async function save() {
@@ -69,16 +69,16 @@ export function HomeQuickNote({ language }: { language: Lang }) {
         <button type="button" aria-pressed={voiceLang === "ne-NP"} onClick={() => setVoiceLang("ne-NP")}>नेपाली</button>
         <button type="button" aria-pressed={voiceLang === "en-US"} onClick={() => setVoiceLang("en-US")}>English</button>
       </div>
-      <GoogleAuthButton language={language} compact/>
+      <GoogleAuthButton language={language}/>
       <button type="button" className="qn-save" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}>{l("सुरक्षित गर्नुहोस्", "Save")}</button>
     </div>
     <div className="qn-voice-settings" aria-label={l("आवाज टाइपिङ सेटिङ", "Voice typing settings")}>
-      <p role="status" aria-live="polite">{listening ? l("🎙 सुन्दैछ · Live Browser recognition", "🎙 Listening · Live Browser recognition") : supported ? l("आवाज तयार · Live Browser recognition", "Voice ready · Live Browser recognition") : dictation.capabilitiesChecked ? l("यो ब्राउजरमा आवाज उपलब्ध छैन", "Voice unavailable in this browser") : l("आवाजको उपलब्धता जाँच्दै…", "Checking microphone support…")}</p>
+      <p role="status" aria-live="polite">{listening ? l("सुन्दैछ…", "Listening…") : supported ? l("बोलेर लेख्न माइक थिच्नुहोस्।", "Press the microphone to start dictation.") : dictation.capabilitiesChecked ? l("यो ब्राउजरमा आवाज उपलब्ध छैन", "Voice unavailable in this browser") : l("आवाजको उपलब्धता जाँच्दै…", "Checking microphone support…")}</p>
       {dictation.localStatus==="downloadable"&&<button type="button" onClick={()=>void dictation.installLocalRecognition()} disabled={dictation.localInstalling||listening}>{dictation.localInstalling?l("अफलाइन आवाज डाउनलोड हुँदैछ…","Downloading offline speech…"):l("अफलाइन आवाज डाउनलोड गर्नुहोस्","Download offline speech")}</button>}
       {dictation.localStatus==="available"&&<label><input type="checkbox" checked={dictation.localEnabled} onChange={e=>dictation.selectLocalRecognition(e.target.checked)} disabled={listening}/> {l("यस उपकरणमै आवाज पहिचान", "On-device speech recognition")}</label>}
       {voiceLang==="ne-NP"&&<div className="qn-voice-cleanup">
-        <label><input type="checkbox" checked={spokenNumbers} onChange={e=>setSpokenNumbers(e.target.checked)}/> बोलेका अंक बदल्नुहोस्</label>
-        <label><input type="checkbox" checked={!!transliterateLatin} onChange={e=>void toggleTransliteration(e.target.checked)}/> Roman अक्षर देवनागरीमा</label>
+        <label><input type="checkbox" checked={spokenNumbers} onChange={e=>setSpokenNumbers(e.target.checked)}/> {l("बोलेका अंक बदल्नुहोस्", "Convert spoken numbers")}</label>
+        <label><input type="checkbox" checked={!!transliterateLatin} onChange={e=>void toggleTransliteration(e.target.checked)}/> {l("रोमन अक्षर देवनागरीमा", "Convert Roman letters to Devanagari")}</label>
       </div>}
       {cleanupError&&<p role="alert">{cleanupError}</p>}
     </div>

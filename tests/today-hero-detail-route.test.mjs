@@ -4,10 +4,10 @@ import { readFileSync } from "node:fs";
 const read = p => readFileSync(new URL("../" + p, import.meta.url), "utf8");
 test("Today box retains the full Nepal Sambat year while month cells stay compact", () => {
  const hero=read("src/components/TodayHero.tsx");
- assert.ok(hero.includes('<strong lang="ne">{ns||"—"}</strong>'));
+ assert.ok(hero.includes('neDigits(ns)'));
  assert.ok(!hero.includes("compactNepalSambat"));
  const home=read("src/HomePageCurrent.tsx");
- assert.ok(home.includes("compactNepalSambat(day.nepal_sambat, language)"));
+ assert.ok(home.includes("compactNepalSambat(day.nepal_sambat,language)"));
 });
 test("full-date link avoids SPA interception and loads the server archive", () => {
  const router=read("src/PatroRouter.tsx");

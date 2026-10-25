@@ -136,3 +136,8 @@
 /advancetools/sitemap.xml
   Cache-Control: public, max-age=3600
 # END AAFNAI ADVANCE TOOLS
+
+/calendar/festivals.ics
+  Content-Type: text/calendar; charset=utf-8
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: noindex

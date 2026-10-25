@@ -12,13 +12,13 @@ const prerender = read("scripts/prerender-seo.mjs");
 const runtimeSeo = read("src/seo.ts");
 const intents = JSON.parse(read("seo/search-intents.json"));
 
-test("first visit defaults to English outside Nepali browser locales and preserves manual choice", () => {
-  assert.ok(appChrome.includes('localStorage.getItem("patro.ui.language")'));
-  assert.ok(appChrome.includes("navigator.languages?.[0] || navigator.language"));
-  assert.ok(appChrome.includes('return /^ne(?:-|$)/i.test(locale) ? "ne" : "en";'));
-  assert.ok(languageHook.includes('if (saved === "ne" || saved === "en") return saved'));
-  assert.ok(languageHook.includes('return "en";'));
-  assert.ok(index.includes('<html lang="en">'));
+test("first visit is Nepali; explicit English is preserved", () => {
+  const policy=read("src/ui-language.ts");
+  assert.ok(policy.includes('return "ne";'));
+  assert.ok(policy.includes('if (saved === "ne" || saved === "en") return saved'));
+  assert.ok(policy.includes('requested === "ne" || requested === "en"'));
+  assert.ok(appChrome.includes('useState<UiLanguage>(initialUiLanguage)'));
+  assert.ok(index.includes('<html lang="ne">'));
 });
 
 test("homepage-injected links and featured navigation follow the active language", () => {
@@ -38,7 +38,7 @@ test("feature search puts selected-language text first, including category label
   assert.ok(launcher.includes("const language = useUiLanguage()"));
   assert.ok(launcher.includes("<strong>{ne?item.ne:item.en}</strong>"));
   assert.ok(launcher.includes('ne?item.group.split(" · ")[0]'));
-  assert.ok(launcher.includes("Search all features"));
+  assert.ok(launcher.includes("patro:open-search"));
   assert.ok(launcher.includes("No matching feature found"));
   assert.ok(launcher.includes("All tools"));
 });

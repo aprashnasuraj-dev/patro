@@ -1,9 +1,9 @@
 const { chromium } = require("playwright");
 const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
-const installLabel = "अहिले इन्स्टल गर्नुहोस्";
+const installLabel = "एप इन्स्टल गर्नुहोस्";
 
 async function waitForNotice(page) {
-  await page.locator(".ap-install-notice").waitFor({ state: "visible", timeout: 15000 });
+  if (await page.locator(".ap-install-notice").count()) throw new Error("Unsolicited installation notice returned");
   await page.locator(".ap-install-footer").waitFor({ state: "visible", timeout: 10000 });
   await page.getByRole("button", { name: installLabel, exact: true }).waitFor({ state: "visible", timeout: 5000 });
 }
@@ -26,13 +26,13 @@ async function providePrompt(page, outcome) {
     await page.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForNotice(page);
 
-    // Clicking the large content area itself must invoke the native PWA prompt,
+    // Clicking the single footer action must invoke the native PWA prompt,
     // not merely show manual installation instructions.
     await providePrompt(page, "accepted");
-    await page.locator(".ap-install-content").click();
+    await page.locator(".ap-install-footer").click();
     await page.waitForFunction(() => window.__installPromptCalls === 1, { timeout: 5000 });
     await page.getByText(/स्थापना पुष्टि भयो/).waitFor({ state: "visible", timeout: 5000 });
-    if (await page.locator(".ap-install-footer.is-installed").count()) {
+    if (await page.locator(".ap-install-footer:disabled").count()) {
       throw new Error("Accepting a prompt was incorrectly treated as a completed installation");
     }
     await page.evaluate(() => window.dispatchEvent(new Event("appinstalled")));
@@ -41,7 +41,7 @@ async function providePrompt(page, outcome) {
       throw new Error("Installation greetings must remain in the background, without a homepage card");
     }
     await page.waitForFunction(() => Boolean(localStorage.getItem("patro.morning.permission-offer.v1")), { timeout: 5000 });
-    const installedButton = page.locator(".ap-install-footer.is-installed");
+    const installedButton = page.locator(".ap-install-footer:disabled");
     await installedButton.waitFor({ state: "visible", timeout: 5000 });
     if (!(await installedButton.isDisabled())) throw new Error("App-installed footer should be disabled");
     await context.close();
@@ -52,11 +52,11 @@ async function providePrompt(page, outcome) {
     await cancelled.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForNotice(cancelled);
     await providePrompt(cancelled, "dismissed");
-    await cancelled.locator(".ap-install-primary").click();
+    await cancelled.locator(".ap-install-footer").click();
     await cancelled.waitForFunction(() => window.__installPromptCalls === 1, { timeout: 5000 });
     await cancelled.getByRole("dialog").getByText(/स्थापना रद्द भयो/).waitFor({ state: "visible", timeout: 5000 });
     await cancelled.getByText(/Add to Home screen/i).first().waitFor({ state: "visible", timeout: 5000 });
-    if (await cancelled.locator(".ap-install-footer.is-installed").count()) {
+    if (await cancelled.locator(".ap-install-footer:disabled").count()) {
       throw new Error("Dismissed native install prompt incorrectly marked app installed");
     }
     await cancelledContext.close();
@@ -67,7 +67,7 @@ async function providePrompt(page, outcome) {
     const manual = await manualContext.newPage();
     await manual.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForNotice(manual);
-    await manual.locator(".ap-install-primary").click();
+    await manual.locator(".ap-install-footer").click();
     await manual.getByRole("dialog", { name: /होमस्क्रिनमा राख्नुहोस्/ }).waitFor({ state: "visible", timeout: 5000 });
     await manual.getByText(/Add to Home screen/i).first().waitFor({ state: "visible", timeout: 5000 });
     await manual.getByRole("button", { name: /साइटको लिङ्क कपी गर्नुहोस्/ }).waitFor({state:"visible"});
@@ -82,7 +82,7 @@ async function providePrompt(page, outcome) {
     const ios = await iosContext.newPage();
     await ios.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForNotice(ios);
-    await ios.locator(".ap-install-content").click();
+    await ios.locator(".ap-install-footer").click();
     await ios.getByRole("dialog", { name: /होमस्क्रिनमा राख्नुहोस्/ }).waitFor({ state: "visible", timeout: 5000 });
     await ios.getByText(/Safari.*Share.*Add to Home Screen/i).first().waitFor({ state: "visible", timeout: 5000 });
     await iosContext.close();
@@ -103,7 +103,7 @@ async function providePrompt(page, outcome) {
       return window.__aafnaiInstallPrompt===event;
     });
     if(!earlyCapture)throw new Error("Early capture did not save the actual browser install event");
-    await early.locator(".ap-install-primary").click();
+    await early.locator(".ap-install-footer").click();
     await early.waitForFunction(()=>window.__installPromptCalls===1,{timeout:5000});
     await earlyContext.close();
 
@@ -115,8 +115,8 @@ async function providePrompt(page, outcome) {
     await chromePage.waitForTimeout(4750);
     if(await chromePage.locator(".ap-install-notice").isVisible())throw new Error("Android Chrome prompted before native installability");
     await providePrompt(chromePage,"accepted");
-    await chromePage.locator(".ap-install-notice").waitFor({state:"visible",timeout:5000});
-    await chromePage.locator(".ap-install-primary").click();
+    if(await chromePage.locator(".ap-install-notice").count())throw new Error("Installability must not open a popup");
+    await chromePage.locator(".ap-install-footer").click();
     await chromePage.waitForFunction(()=>window.__installPromptCalls===1,{timeout:5000});
     await chromeContext.close();
 
@@ -129,16 +129,16 @@ async function providePrompt(page, outcome) {
     const embedded=await embeddedContext.newPage();
     await embedded.goto(BASE+"/",{waitUntil:"domcontentloaded",timeout:30000});
     await waitForNotice(embedded);
-    await embedded.locator(".ap-install-primary").click();
+    await embedded.locator(".ap-install-footer").click();
     const chromeLink=embedded.getByRole("link",{name:/Chrome मा खोल्नुहोस्/});
     await chromeLink.waitFor({state:"visible",timeout:5000});
     if(!(await chromeLink.getAttribute("href")).startsWith("intent://aafnaipatro.com/"))throw new Error("Embedded browser Chrome action missing");
     await embeddedContext.close();
 
     console.log(JSON.stringify({
-      ok: true, nativePromptFromCard: true, acceptedNotYetInstalled: true,
+      ok: true, nativePromptFromFooter: true, acceptedNotYetInstalled: true,
       appInstalledState: true, dismissedNotInstalled: true,
-      noNativePromptGuide: true, iosGuide: true, embeddedChromeAction: true, earlyCapturedPrompt: true, androidChromeReadiness: true, visibleFallbackDialog: true, alwaysInstallNow: true
+      noNativePromptGuide: true, iosGuide: true, embeddedChromeAction: true, earlyCapturedPrompt: true, androidChromeReadiness: true, visibleFallbackDialog: true, singleFooterEntry: true
     }, null, 2));
   } finally {
     await browser.close();

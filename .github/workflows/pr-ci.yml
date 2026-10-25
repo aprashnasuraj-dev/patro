@@ -125,6 +125,7 @@ jobs:
           set -euo pipefail
           npm run typecheck
           npm run test:core
+          npm run test:homepage
 
       - name: UI / product build
         if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true'

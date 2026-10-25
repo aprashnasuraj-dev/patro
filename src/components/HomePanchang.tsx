@@ -1,3 +1,4 @@
+import { neDigits } from "../nepaliDate";
 import { useEffect, useState } from "react";
 import { Moon, Sunrise, Sunset } from "lucide-react";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../patro-tools/core/names";
@@ -39,6 +40,7 @@ export function HomePanchang({ date, panchang, language }: { date: string; panch
   }, [date, panchang.sunrise]);
   const at = calculated?.at;
   const ne = language === "ne";
+  const digits = (value: string) => ne ? neDigits(value) : value;
   const tithi = named(panchang.tithi, language) || (at ? ne ? tithiName(at.tithi) : at.tithi === 15 ? "Purnima" : at.tithi === 30 ? "Amavasya" : TITHI_EN[(at.tithi - 1) % 15] : "—");
   const paksha = panchang.tithi?.paksha || at?.paksha || "";
   const pakshaLabel = paksha ? /^k/i.test(paksha) ? l(language, "कृष्ण पक्ष", "Krishna Paksha") : l(language, "शुक्ल पक्ष", "Shukla Paksha") : "—";
@@ -51,9 +53,9 @@ export function HomePanchang({ date, panchang, language }: { date: string; panch
   ];
   return <div className="hp-panchang" aria-label={l(language, "आजको विस्तृत पञ्चाङ्ग", "Today's detailed Panchang")}>
     <div className="hp-panchang-title"><span><Moon size={15} aria-hidden="true"/>{l(language, "आजको पञ्चाङ्ग", "Today's Panchang")}</span><small>{l(language, "काठमाडौं", "Kathmandu")}</small></div>
-    <dl className="rh-today-facts hp-panchang-facts">{facts.filter(([,value])=>value&&value!=="—").map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-    <div className="hp-sun-times"><span><Sunrise size={19} aria-hidden="true"/><small>{l(language, "सूर्योदय", "Sunrise")}</small><b>{panchang.sunrise || calculated?.sunrise || "—"}</b></span><span><Sunset size={19} aria-hidden="true"/><small>{l(language, "सूर्यास्त", "Sunset")}</small><b>{panchang.sunset || calculated?.sunset || "—"}</b></span></div>
-    {panchang.tithi_transition?.time ? <p className="hp-tithi-end">{l(language, "तिथि परिवर्तन", "Tithi changes")} <b>{panchang.tithi_transition.time}</b> · {ne ? panchang.tithi_transition.next_ne : panchang.tithi_transition.next_en}</p> : null}
-    <p className="hp-panchang-source">{l(language, "नक्षत्र, योग, करण र राशि: खगोलीय गणना", "Nakshatra, Yoga, Karana & Moon sign: sunrise calculation")} <a href={`/date/${date}`} data-full-date-navigation="server">{l(language, "पूरा दिन विवरण →", "Full day details →")}</a> · <a href={`/panchang?date=${date}`}>{l(language, "विस्तृत पञ्चाङ्ग →", "Full Panchang →")}</a></p>
+    <dl className="rh-today-facts hp-panchang-facts">{facts.slice(0,2).filter(([,value])=>value&&value!=="—").map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+    <div className="hp-sun-times"><span><Sunrise size={19} aria-hidden="true"/><small>{l(language, "सूर्योदय", "Sunrise")}</small><b>{digits(panchang.sunrise || calculated?.sunrise || "—")}</b></span><span><Sunset size={19} aria-hidden="true"/><small>{l(language, "सूर्यास्त", "Sunset")}</small><b>{digits(panchang.sunset || calculated?.sunset || "—")}</b></span></div>
+    {panchang.tithi_transition?.time ? <p className="hp-tithi-end">{l(language, "तिथि परिवर्तन", "Tithi changes")} <b>{digits(panchang.tithi_transition.time)}</b> — {ne ? panchang.tithi_transition.next_ne : panchang.tithi_transition.next_en}</p> : null}
+    <details className="home-panchang-more"><summary>{l(language,"थप पञ्चाङ्ग विवरण","More Panchang details")}</summary><dl className="hp-panchang-facts">{facts.slice(2).filter(([,value])=>value&&value!=="—").map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl><p className="hp-panchang-source">{l(language, "नक्षत्र, योग, करण र राशि: खगोलीय गणना", "Nakshatra, Yoga, Karana & Moon sign: sunrise calculation")} <a href={`/date/${date}`} data-full-date-navigation="server">{l(language, "पूरा दिन विवरण", "Full day details")}</a> <a href={`/panchang?date=${date}`}>{l(language, "विस्तृत पञ्चाङ्ग", "Full Panchang")}</a></p></details>
   </div>;
 }
