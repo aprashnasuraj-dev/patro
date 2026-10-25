@@ -18,6 +18,7 @@ import { speechApiResponse } from "./speech";
 import { nativeRashifalResponse } from "./rashifal-native";
 import { dictionaryResponse } from "./dictionary";
 import { myTimeResponse } from "./my-time";
+import { googleTagResponse } from "./google-tag";
 
 /** Canonicalize human-entered dates such as /date/2026-8-06 to /date/2026-08-06. */
 function canonicalDateRedirect(request: Request): Response | null {
@@ -111,4 +112,9 @@ const optimizedWorker = {
   },
 };
 
-export default optimizedWorker;
+export default {
+  ...optimizedWorker,
+  async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    return googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
+  },
+};
