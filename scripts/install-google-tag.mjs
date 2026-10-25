@@ -2,7 +2,7 @@ import { readFile, writeFile, readdir, stat } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { createHash } from "node:crypto";
-import { installGoogleTag, googleTagCsp } from "../shared/google-tag.ts";
+import { GOOGLE_TAG_ID, installGoogleTag, googleTagCsp } from "../shared/google-tag.ts";
 
 export async function installGoogleTagInBuild(root) {
   let count = 0;
@@ -38,7 +38,7 @@ export async function installGoogleTagInBuild(root) {
   manifest.bytes = bytes;
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
   if (!count || !(await stat(join(root, "index.html"))).size) throw new Error("Google tag build: missing HTML output");
-  console.log(`Google tag G-KWLDWTSK14 installed once in ${count} static HTML pages; CSP and module hashes updated.`);
+  console.log(`Google tag ${GOOGLE_TAG_ID} installed once in ${count} static HTML pages; CSP and module hashes updated.`);
   return count;
 }
 
