@@ -6,7 +6,7 @@ import { TodayHero } from "./components/TodayHero";
 import { DeferredHomeWeather } from "./components/DeferredHomeWeather";
 import { HomeToolDirectory } from "./components/HomeToolDirectory";
 import { HomeReading } from "./components/HomeReading";
-import { CalendarDays, Languages, Calculator, BookOpen, Search } from "lucide-react";
+import { CalendarDays, Languages, Orbit, Clock, Search } from "lucide-react";
 import "./home-extras.css";
 import "./panchang-jyotish/home-discovery.css";
 import { DeferredHomeSkyFact } from "./components/DeferredHomeSkyFact";
@@ -235,8 +235,8 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
     {!online?<p className="home-status" role="status">{l(language,"तपाईं अफलाइन हुनुहुन्छ। सुरक्षित विवरण हेर्न सकिन्छ; नयाँ विवरणका लागि इन्टरनेट जोड्नुहोस्।","You’re offline. Saved details remain available; reconnect for updates.")}</p>:null}
     <TodayHero language={language} date={today} bsLabel={todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")} adLabel={adLabel(today, language)} ns={language==="en"?todayView.nsEn||todayView.ns:todayView.ns} panchang={todayView.panchang || {}} events={(eventMap.get(today) || []).map(event=>({name:festivalName(event,language)}))}/>
     {todayError?<p className="home-status" role="status">{l(language,"आजको विस्तृत विवरण आएन। फेरि प्रयास गर्नुहोस्।","Today’s full details could not load. Please retry.")}<button type="button" onClick={()=>setRetry(n=>n+1)}>{l(language,"फेरि प्रयास","Retry")}</button></p>:null}
-    <nav className="home-task-strip" aria-label={l(language,"दैनिक काम","Everyday tasks")}>
-      {[["/convert","मिति बदल्नुहोस्","Convert a date",CalendarDays],["/tools/nepali-typing","नेपाली लेख्नुहोस्","Type in Nepali",Languages],["/tools/emi","किस्ता हिसाब गर्नुहोस्","Calculate loan EMI",Calculator],["/tool/nepalidictionary","शब्दको अर्थ खोज्नुहोस्","Look up a word",BookOpen]].map(([href,ne,en,Icon]:any)=><a key={href} href={href}><Icon size={21} strokeWidth={1.8} aria-hidden="true"/><span>{l(language,ne,en)}</span></a>)}
+    <nav className="home-task-strip" aria-label={l(language,"प्रमुख सुविधा","Main features")}>
+      {[["/tools/nepali-typing","नेपाली टाइपिङ","Nepali Typing",Languages],["/jyotish","ज्योतिष","Jyotish",Orbit],["/panchang","पञ्चाङ्ग","Panchang",CalendarDays],["/mytime","मेरो समय","My Time",Clock]].map(([href,ne,en,Icon]:any)=><a key={href} href={href}><Icon size={21} strokeWidth={1.8} aria-hidden="true"/><span>{l(language,ne,en)}</span></a>)}
     </nav>
 
     <div className="rh-layout">
