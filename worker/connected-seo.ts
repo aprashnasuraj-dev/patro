@@ -1,3 +1,4 @@
+import platform from "../src/content/platform.json";
 import guides from "../seo/guides.json";
 type SeoMeta={title:string;description:string;canonicalPath?:string;index?:boolean};
 type SeoEnv={PUBLIC_SITE_URL?:unknown};
@@ -97,6 +98,9 @@ function isPrivate(path:string){return PRIVATE_TOOL_PATHS.has(path)||PRIVATE_PRE
 export function connectedRouteMeta(pathname:string):SeoMeta{
  const path=cleanPath(pathname);
  const canonical=canonicalPath(path);
+ if(canonical==="/")return{title:platform.brand.title.ne,description:platform.brand.description.ne,canonicalPath:canonical,index:true};
+ const trust=platform.pages[canonical.slice(1) as keyof typeof platform.pages];
+ if(trust)return{title:trust.title.ne,description:trust.description.ne,canonicalPath:canonical,index:true};
  const guide=guides.find(row=>canonical==="/guides/"+row.slug);
  if(guide)return{title:guide.title,description:guide.description,canonicalPath:canonical,index:true};
  if(canonical==="/guides")return{title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।",canonicalPath:canonical,index:true};
@@ -132,7 +136,7 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
  const meta=connectedRouteMeta(path);
  const base=String(env.PUBLIC_SITE_URL||incoming.origin).replace(/\/+$/,"");
  const canonical=base+(meta.canonicalPath||path);
- const fullTitle=`${meta.title} | ${BRAND}`;
+ const fullTitle=/(?:Aafnai Patro|आफ्नै पात्रो)/i.test(meta.title)?meta.title:`${meta.title} | ${BRAND}`;
  const indexable=meta.index!==false&&response.status<400;
  const robots=indexable?"index, follow, max-image-preview:large":"noindex, nofollow";
  const image=base+"/og-default.png";

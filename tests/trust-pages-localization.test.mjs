@@ -12,25 +12,26 @@ test("trust pages subscribe to the shared Nepali/English language state", () => 
   assert.match(source, /queueMicrotask/);
 });
 
-test("all five trust routes provide localized headings and descriptions", () => {
-  for (const phrase of [
-    "About Aafnai Patro",
-    "Sources & methodology",
-    "Privacy policy",
-    "Terms of use",
-    "Contact & support",
-    "Our purpose",
-    "How to interpret source types",
-    "Scope of this policy",
-    "Scope of these terms",
-    "What can you contact us about?",
-    "हाम्रो उद्देश्य",
-    "स्रोतको प्रकृति कसरी बुझ्ने",
-    "यो नीति केमा लागू हुन्छ",
-    "सर्तको दायरा",
-    "कस्तो विषयमा सम्पर्क गर्ने?"
-  ]) {
-    assert.ok(source.includes(phrase), "Missing localized trust-page copy: " + phrase);
+test("all seven trust routes have complete language pairs and unique section anchors", () => {
+  const metadata = JSON.parse(readFileSync(new URL("../src/content/platform.json", import.meta.url), "utf8"));
+  const content = JSON.parse(readFileSync(new URL("../src/content/trust-pages.json", import.meta.url), "utf8"));
+  const routes = ["about", "sources", "privacy", "terms", "contact", "methodology", "corrections"];
+  assert.deepEqual(Object.keys(metadata.pages).sort(), routes.sort());
+  assert.deepEqual(Object.keys(content).sort(), routes.sort());
+  for (const route of routes) {
+    const anchors = content[route].map(section => section.id);
+    assert.equal(new Set(anchors).size, anchors.length, route + " has duplicate anchors");
+    const pairs = [metadata.pages[route].title, metadata.pages[route].description];
+    for (const section of content[route]) {
+      assert.match(section.id, /^[a-z][a-z-]+$/);
+      assert.ok(section.paragraphs.length, route + "/" + section.id + " is empty");
+      pairs.push(section.title, ...section.paragraphs, ...(section.links || []).map(link => link.label));
+      for (const link of section.links || []) assert.match(link.href, /^(\/|https:\/\/)/);
+    }
+    for (const pair of pairs) {
+      assert.ok(pair.en.trim(), route + " has empty English copy");
+      assert.match(pair.ne, /[\u0900-\u097f]/, route + " has missing Nepali copy");
+    }
   }
 });
 

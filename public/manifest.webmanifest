@@ -2,7 +2,7 @@
   "id":"/",
   "name":"आफ्नै पात्रो · Aafnai Patro",
   "short_name":"आफ्नै पात्रो",
-  "description":"आजको नेपाली मिति, तिथि, चाडपर्व, बिदा, खगोलीय पात्रो, समययन्त्र, समुदाय पात्रो र 29 उपयोगी tools।",
+  "description":"नेपाली पात्रो, वेब उपकरण, लेख र निर्देशिका। Nepali calendars, practical web tools, research-based articles, blogs and guides.",
   "lang":"ne",
   "dir":"ltr",
   "start_url":"/?source=pwa",
@@ -24,6 +24,6 @@
     {"name":"खगोलीय पात्रो","short_name":"खगोल","description":"तिथि, चन्द्र अवस्था र astronomy","url":"/tools/astro"},
     {"name":"समययन्त्र · Time Machine","short_name":"समययन्त्र","description":"इतिहास समयरेखा खोल्नुहोस्","url":"/time-machine"},
     {"name":"समुदाय पात्रो","short_name":"समुदाय","description":"नेपालका समुदाय पात्रो अनुभव","url":"/samudaya"},
-    {"name":"आफ्नै टुल्स","short_name":"टुल्स","description":"29 नेपाली दैनिक tools","url":"/tools"}
+    {"name":"आफ्नै टुल्स","short_name":"टुल्स","description":"दैनिक कामका वेब उपकरण · Practical web tools","url":"/tools"}
   ]
 }

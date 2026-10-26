@@ -1,3 +1,4 @@
+import platform from "./content/platform.json";
 import intents from "../seo/search-intents.json";
 import guides from "../seo/guides.json";
 import { connectedRouteMeta } from "../worker/connected-seo";
@@ -10,10 +11,7 @@ const catalog:Record<string,{title:string;description:string}>={...intents.core,
 // English-first metadata is the crawlable default for global discovery. The UI
 // still follows the saved language or the visitor's preferred browser language.
 const ENGLISH_FIRST: Record<string, { title: string; description: string }> = {
-  "/": {
-    title: "Nepali Calendar Today | Aafnai Patro",
-    description: "Check today’s date in Nepal, Bikram Sambat (BS) and Gregorian (AD) conversion, tithi, festivals, public holidays and the Nepali calendar. Aafnai Patro is available in English and Nepali."
-  },
+  "/": { title: platform.brand.title.en, description: platform.brand.description.en },
   "/tools": {
     title: "Free Online Tools for Nepal | Aafnai Patro",
     description: "Explore free tools for Nepali typing, BS–AD date conversion, age, EMI, VAT, land measurement, QR, OCR, tithi, auspicious timing and everyday calculations. Available in English and Nepali."
@@ -38,27 +36,10 @@ const ENGLISH_FIRST: Record<string, { title: string; description: string }> = {
     title: "Vedic Birth Chart & Nepali Jyotish | Aafnai Patro",
     description: "Explore a birth chart using date, time, and place of birth, with traditional lagna, planetary positions, nakshatra, dasha, and chart interpretations."
   },
-  "/about": {
-    title: "About Aafnai Patro | Product & Principles",
-    description: "Learn about Aafnai Patro’s purpose, calendar and astronomy features, product principles, and approach to transparent information."
-  },
-  "/sources": {
-    title: "Sources & Methodology | Aafnai Patro",
-    description: "Understand the sources and limitations behind Nepal calendar dates, tithi, astronomical calculations, cultural calendars, and external content."
-  },
-  "/privacy": {
-    title: "Privacy Policy | Aafnai Patro",
-    description: "Review Aafnai Patro’s privacy information covering browser storage, optional synchronization, third-party services, and advertising."
-  },
-  "/terms": {
-    title: "Terms of Use | Aafnai Patro",
-    description: "Review the terms governing Aafnai Patro’s informational content, calculations, external links, service availability, and acceptable use."
-  },
-  "/contact": {
-    title: "Contact & Support | Aafnai Patro",
-    description: "Contact Aafnai Patro for technical help, product feedback, accessibility suggestions, or evidence-based calendar corrections."
-  }
 };
+for (const [key, page] of Object.entries(platform.pages)) {
+  ENGLISH_FIRST["/" + key] = { title: page.title.en + (key === "about" ? "" : " | Aafnai Patro"), description: page.description.en };
+}
 export function isPublicPreviewHost(hostname:string){
   const host=hostname.toLowerCase();
   // Loopback development/audit servers cannot be crawled publicly. Let their

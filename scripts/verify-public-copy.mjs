@@ -3,6 +3,8 @@ import { resolve } from "node:path";
 
 const root = process.cwd();
 const files = [
+  "src/content/platform.json",
+  "src/content/trust-pages.json",
   "src/AafnaiPages.tsx",
   "src/AafnaiDetailPages.tsx",
   "src/ReferenceHomePage.tsx",

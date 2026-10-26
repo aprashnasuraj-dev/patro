@@ -4,3 +4,17 @@
 .mp-not-found{min-height:62vh;display:grid;place-items:center;text-align:center}.mp-not-found>div{max-width:560px}.mp-404{font:700 5rem/1 Mukta;color:var(--brand-100)}.mp-not-found h1{font-size:2rem}.mp-not-found p{color:var(--ink-600)}.mp-not-found div>div{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.mp-not-found a{display:flex;align-items:center;gap:7px;height:40px;padding:0 14px;border-radius:12px;text-decoration:none;background:var(--brand-600);color:white}
 .cosmic-hero__toolbar button{display:inline-flex;align-items:center;gap:6px}.orbit-track__sun,.orbit-track__planet{display:grid;place-items:center;color:var(--brand-600)}.favorite-button svg{display:block;margin:auto}.global-media-player{border-color:var(--line)!important;background:color-mix(in srgb,var(--surface) 94%,transparent)!important}.global-player-main svg{pointer-events:none}.media-directory-toolbar,.media-filters{position:sticky;top:64px;z-index:20;background:color-mix(in srgb,var(--surface-2) 92%,transparent);backdrop-filter:blur(14px);padding:10px 0}.station-logo{width:54px;height:54px;object-fit:contain;border-radius:12px;background:var(--surface-2)}
 @media(max-width:820px){.mp-footer__grid{grid-template-columns:1fr 1fr}.mp-footer__brand{grid-column:1/-1}}@media(max-width:560px){.mp-footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))}.mp-footer__grid{grid-template-columns:1fr}.mp-footer__brand{grid-column:auto}.app-content,.cosmic-app-content{width:min(100% - 24px,1200px)}}
+
+/* Readable bilingual policy pages with compact, keyboard-accessible navigation. */
+.mp-trust .mp-policy-date{font-size:.9rem;color:var(--ink-600)}
+.mp-policy-nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin:20px 0;max-width:860px}
+.mp-policy-nav a{padding:8px 0;color:var(--brand-700);text-underline-offset:4px}
+.mp-policy-nav a[aria-current="page"]{font-weight:700}
+.mp-policy-contents{max-width:860px;border-block:1px solid var(--line);padding:16px 0;margin-bottom:24px}
+.mp-policy-contents summary{cursor:pointer;font-weight:600}
+.mp-policy-contents ol{line-height:1.8;padding-inline-start:24px}
+.mp-policy-contents a{color:var(--brand-700)}
+.mp-trust .mp-prose{line-height:1.85;overflow-wrap:anywhere}
+.mp-trust .mp-prose p+p{margin-top:14px}
+.mp-trust .mp-prose section{scroll-margin-top:100px}
+.mp-trust a:focus-visible,.mp-policy-contents summary:focus-visible{outline:2px solid var(--brand-600);outline-offset:4px}

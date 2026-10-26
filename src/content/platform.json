@@ -1,0 +1,93 @@
+{
+  "updated": "2026-10-26",
+  "brand": {
+    "title": {
+      "en": "Nepali Calendar Today, Web Tools & Articles | Aafnai Patro",
+      "ne": "नेपाली पात्रो, वेब उपकरण र लेख | आफ्नै पात्रो"
+    },
+    "description": {
+      "en": "Nepali calendar for today in Nepal, practical web tools, research-based articles, blogs and guides. Explore Aafnai Patro in English and Nepali.",
+      "ne": "आजको नेपाली पात्रो, व्यावहारिक वेब उपकरण, अध्ययनमा आधारित लेख, ब्लग र निर्देशिका। आफ्नै पात्रो नेपाली र अंग्रेजी दुवै भाषामा।"
+    },
+    "intro": {
+      "en": "Calendars, web tools and research-based reading",
+      "ne": "पात्रो, वेब उपकरण र अध्ययनमा आधारित लेख"
+    },
+    "footer": {
+      "en": "We build practical web tools and publish articles, blogs and guides, alongside Nepal’s calendars and cultural references.",
+      "ne": "हामी नेपाली पात्रो र सांस्कृतिक सन्दर्भसँगै व्यावहारिक वेब उपकरण विकास गर्छौँ र लेख, ब्लग तथा निर्देशिका प्रकाशित गर्छौँ।"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": {
+        "en": "About Aafnai Patro",
+        "ne": "आफ्नै पात्रोबारे"
+      },
+      "description": {
+        "en": "We build useful web tools and publish research-based articles, blogs and guides, alongside the Nepali calendar that gives Aafnai Patro its name.",
+        "ne": "आफ्नै पात्रोमा नेपाली पात्रोसँगै दैनिक काम सहज बनाउने वेब उपकरण विकास गर्छौँ र अध्ययनमा आधारित लेख, ब्लग तथा निर्देशिका प्रकाशित गर्छौँ।"
+      }
+    },
+    "sources": {
+      "title": {
+        "en": "Sources & methodology",
+        "ne": "स्रोत र पद्धति"
+      },
+      "description": {
+        "en": "Our standards for research, blog publishing, tool explanations and calendar references: show the evidence, explain the method, and make corrections possible.",
+        "ne": "अध्ययन, ब्लग प्रकाशन, उपकरणको व्याख्या र पात्रोका सन्दर्भमा हाम्रा मापदण्ड: प्रमाण देखाउने, विधि बुझाउने र त्रुटि सच्याउन सकिने बनाउने।"
+      }
+    },
+    "privacy": {
+      "title": {
+        "en": "Privacy policy",
+        "ne": "गोपनीयता नीति"
+      },
+      "description": {
+        "en": "What information is used when you read our publications, use our tools or save personal details—and what you can control.",
+        "ne": "लेख पढ्दा, उपकरण चलाउँदा वा व्यक्तिगत विवरण सुरक्षित गर्दा कुन जानकारी प्रयोग हुन्छ र तपाईंले के नियन्त्रण गर्न सक्नुहुन्छ भन्ने विवरण।"
+      }
+    },
+    "terms": {
+      "title": {
+        "en": "Terms of use",
+        "ne": "सेवा प्रयोगका सर्तहरू"
+      },
+      "description": {
+        "en": "The terms for using Aafnai Patro’s calendars, software tools, research-based articles, blogs and related services.",
+        "ne": "आफ्नै पात्रोका पात्रो, सफ्टवेयर उपकरण, अध्ययनमा आधारित लेख, ब्लग र सम्बन्धित सेवा प्रयोग गर्ने सर्तहरू।"
+      }
+    },
+    "contact": {
+      "title": {
+        "en": "Contact & support",
+        "ne": "सम्पर्क र सहयोग"
+      },
+      "description": {
+        "en": "Get help with a tool, report an error, ask about privacy, or discuss our articles and publications.",
+        "ne": "उपकरणमा सहयोग लिन, त्रुटि बताउन, गोपनीयताबारे सोध्न वा लेख र प्रकाशनबारे कुराकानी गर्न सम्पर्क गर्नुहोस्।"
+      }
+    },
+    "methodology": {
+      "title": {
+        "en": "Calendar methodology",
+        "ne": "पात्रोको पद्धति"
+      },
+      "description": {
+        "en": "How to read our date conversions, astronomical calculations and cultural calendar references.",
+        "ne": "हाम्रा मिति रूपान्तरण, खगोलीय गणना र सांस्कृतिक पात्रोका सन्दर्भ कसरी बुझ्ने भन्ने विवरण।"
+      }
+    },
+    "corrections": {
+      "title": {
+        "en": "Corrections and updates",
+        "ne": "त्रुटि सुधार र अद्यावधिक"
+      },
+      "description": {
+        "en": "Help us correct a calendar entry, tool result, translation or published article with clear, checkable evidence.",
+        "ne": "स्पष्ट र जाँच्न सकिने प्रमाण दिएर पात्रो, उपकरणको परिणाम, अनुवाद वा प्रकाशित लेख सच्याउन सहयोग गर्नुहोस्।"
+      }
+    }
+  }
+}

@@ -6,6 +6,8 @@ import {
 } from "./seo-config.mjs";
 
 const root = process.cwd();
+const platform = JSON.parse(await readFile(resolve(root, "src/content/platform.json"), "utf8"));
+const trustContent = JSON.parse(await readFile(resolve(root, "src/content/trust-pages.json"), "utf8"));
 const shellPath = resolve(root, "dist/index.html");
 const shell = await readFile(shellPath, "utf8");
 if (!shell.includes('id="root"')) throw new Error("SEO prerender requires the Vite root shell");
@@ -31,13 +33,6 @@ const CORE_COPY = {
   "/nepal-calendar": ["Nepal Calendars & Cultural Traditions", "Explore Bikram Sambat, Nepal Sambat, regional calendars, and cultural traditions with relevant source context."],
   "/janmapatro": ["Nepali Birth Chart | Lagna, Nakshatra & Dasha", "Calculate a traditional birth chart from birth date, exact time, and location, including lagna, planetary positions, nakshatra, and dasha."],
   "/janmapatro/milan.html": ["Nepali Matchmaking | Traditional 36-Guna Milan", "Explore traditional Ashtakoota 36-guna compatibility using birth details or name-based nakshatra initials."],
-  "/about": ["About Aafnai Patro | Product & Principles", "Learn about Aafnai Patro’s purpose, calendar and astronomy features, product principles, and approach to transparent information."],
-  "/sources": ["Sources & Methodology | Aafnai Patro", "Understand the sources and limitations behind Nepal calendar dates, tithi, astronomical calculations, cultural calendars, and external content."],
-  "/methodology": ["Nepali Calendar Methodology | Aafnai Patro", "Learn how calendar dates, tithi, festivals, and date-conversion information are prepared and reviewed."],
-  "/corrections": ["Calendar Corrections | Aafnai Patro", "Report a possible calendar or content error with the relevant date, location, observed result, and supporting source."],
-  "/privacy": ["Privacy Policy | Aafnai Patro", "Review Aafnai Patro’s privacy information covering browser storage, optional synchronization, third-party services, and advertising."],
-  "/terms": ["Terms of Use | Aafnai Patro", "Review the terms governing Aafnai Patro’s informational content, calculations, external links, service availability, and acceptable use."],
-  "/contact": ["Contact & Support | Aafnai Patro", "Contact Aafnai Patro for technical help, product feedback, accessibility suggestions, or evidence-based calendar corrections."]
 };
 
 function esc(value) {
@@ -63,6 +58,9 @@ function monthMeta(year, monthNumber) {
   return { title, description, month, aliases: [`Nepali calendar ${year} ${month.en}`, `${month.ne} ${year} पात्रो`, `${month.aliases} ${year}`] };
 }
 function pageMeta(path) {
+  const trust = platform.pages[path.slice(1)];
+  if (trust) return { title: trust.title.en + (path === "/about" ? "" : " | Aafnai Patro"), description: trust.description.en, aliases: [] };
+  if (path === "/") return { title: platform.brand.title.en, description: platform.brand.description.en, aliases: [] };
   if(path==="/janmadin")return {title:"Birthdays in AD, BS and Tithi | Aafnai Patro",description:"Calculate birthdays in the Gregorian calendar, Bikram Sambat, and by tithi, with cultural-calendar context.",aliases:[]};
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   if (match) return monthMeta(Number(match[1]), Number(match[2]));
@@ -99,7 +97,15 @@ function featureDirectory(path) {
   const features = featureEditorial.filter(item => "/" + item.group === path);
   return `<section class="seo-feature-directory" aria-label="Feature guide"><h2>Explore these tools · यस समूहका विषय र उपकरण</h2><p>Choose a topic to understand what it offers before opening the tool. · प्रत्येक विषयको उद्देश्य र उपलब्धता बुझेर सम्बन्धित सुविधा खोल्नुहोस्।</p>${features.map(item => `<article><h3><a href="${esc(item.href)}" lang="en">${esc(item.titleEn)} · ${esc(item.titleNe)}</a></h3><p lang="en">${esc(item.descriptionEn)}</p><p lang="ne">${esc(item.descriptionNe)}</p></article>`).join("")}</section>`;
 }
+function trustBody(path) {
+  const key = path.slice(1), page = platform.pages[key];
+  if (!page) return "";
+  const sections = trustContent[key];
+  const languageBody = language => `<article lang="${language}" id="policy-${language}"><h1>${esc(page.title[language])}</h1><p>${esc(page.description[language])}</p><p>${language === "ne" ? "पछिल्लो अद्यावधिक: २६ अक्टोबर २०२६" : "Last updated: 26 October 2026"}</p>${sections.map(section => `<section><h2>${esc(section.title[language])}</h2>${section.paragraphs.map(p => `<p>${esc(p[language])}</p>`).join("")}${(section.links || []).map(link => `<p><a href="${esc(link.href)}"${link.external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${esc(link.label[language])}</a></p>`).join("")}</section>`).join("")}${key === "contact" ? '<p><a href="mailto:meroaafnaipatro@gmail.com">meroaafnaipatro@gmail.com</a></p>' : ""}</article>`;
+  return `<main class="seo-prerender" data-seo-prerender="true"><nav aria-label="Language"><a href="#policy-en">English</a> · <a href="#policy-ne">नेपाली</a></nav>${languageBody("en")}${languageBody("ne")}<nav aria-label="About and policies">${Object.entries(platform.pages).map(([key, value]) => `<a href="/${key}">${esc(value.title.en)} · ${esc(value.title.ne)}</a>`).join(" · ")}</nav></main>`;
+}
 function bodyFor(path, meta, indexed) {
+  if (platform.pages[path.slice(1)]) return trustBody(path);
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   let extra = "";
   if (match) {
@@ -127,7 +133,7 @@ function schemaFor(path, meta) {
   ];
   if (path === "/") {
     graph.unshift(
-      { "@type": "Organization", "@id": SITE + "/#org", name: "Aafnai Patro", alternateName: ["आफ्नै पात्रो", "AafnaiPatro"], url: SITE + "/", logo: { "@type": "ImageObject", url: SITE + "/icon-512.png", width: 512, height: 512 }, areaServed: ["NP", "US", "AU", "GB", "JP", "QA", "AE", "SA", "MY", "KR", "IN"], knowsLanguage: ["ne", "en"] },
+      { "@type": "Organization", "@id": SITE + "/#org", name: "Aafnai Patro", description: platform.brand.description.en, alternateName: ["आफ्नै पात्रो", "AafnaiPatro"], url: SITE + "/", logo: { "@type": "ImageObject", url: SITE + "/icon-512.png", width: 512, height: 512 }, areaServed: ["NP", "US", "AU", "GB", "JP", "QA", "AE", "SA", "MY", "KR", "IN"], knowsLanguage: ["ne", "en"] },
       { "@type": "WebSite", "@id": SITE + "/#website", url: SITE + "/", name: "Aafnai Patro", alternateName: ["आफ्नै पात्रो", "Nepali Calendar"], inLanguage: ["ne", "en"], publisher: { "@id": SITE + "/#org" } }
     );
   }

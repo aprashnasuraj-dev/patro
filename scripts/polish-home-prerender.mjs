@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root=process.cwd();
+const platform=JSON.parse(await readFile(resolve(root,"src/content/platform.json"),"utf8"));
 const targets=[resolve(root,"dist/index.html"),resolve(root,"dist/today/index.html")];
 
 const shell=`<main class="seo-prerender ap-prerender-home" data-seo-prerender="true">
@@ -12,6 +13,7 @@ const shell=`<main class="seo-prerender ap-prerender-home" data-seo-prerender="t
     <p>नेपाली मिति, तिथि, नेपाल संवत्, चाडपर्व र सार्वजनिक बिदा स्पष्ट रूपमा हेर्नुहोस्। नेपाली Unicode टाइपिङ, BS–AD मिति रूपान्तरण, <a href="/moon">चन्द्र पात्रो</a>, <a href="/fm">FM रेडियो</a> र इतिहासका उपयोगी लिंक यही पृष्ठबाट खोल्नुहोस्।</p>
     <div class="ap-prerender-actions"><a href="/rashifal">आजको राशिफल</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools/nepali-typing">नेपाली टाइपिङ</a><a href="/me">आफ्नै ठाउँ</a></div>
   </section>
+  <p class="ap-prerender-platform">${platform.brand.intro.ne} · <a href="/about">हाम्रो परिचय</a> · <a href="/guides">लेख र निर्देशिका</a></p>
   <section class="ap-prerender-calendar" aria-label="नेपाली पात्रो महिना">
     <header><span>नेपाली पात्रो</span><h2>यो महिना</h2><p>BS · AD · नेपाल संवत् · तिथि · चाडपर्व · बिदा</p></header>
     <div class="ap-prerender-week"><span>आइत</span><span>सोम</span><span>मंगल</span><span>बुध</span><span>बिही</span><span>शुक्र</span><span>शनि</span></div>

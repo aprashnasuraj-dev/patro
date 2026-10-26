@@ -1,0 +1,929 @@
+{
+  "about": [
+    {
+      "id": "purpose",
+      "title": {
+        "en": "Our purpose",
+        "ne": "हाम्रो उद्देश्य"
+      },
+      "paragraphs": [
+        {
+          "en": "Aafnai Patro brings practical software and useful reading into one place. You can check a date, work through a calculation, prepare Nepali text, or read an explanation of the subject behind a tool. Our aim is simple: help people finish everyday tasks and understand the information they use.",
+          "ne": "आफ्नै पात्रोले काम लाग्ने सफ्टवेयर र उपयोगी अध्ययन सामग्री एउटै ठाउँमा उपलब्ध गराउँछ। यहाँ मिति हेर्न, हिसाब गर्न, नेपालीमा लेख्न वा कुनै उपकरणले कसरी काम गर्छ भन्ने बुझ्न सकिन्छ। दैनिक काम सम्पन्न गर्न र प्रयोग गरिने जानकारी बुझ्न सजिलो बनाउनु हाम्रो उद्देश्य हो।"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": {
+        "en": "Web tools we develop and provide",
+        "ne": "हामीले विकास र उपलब्ध गराउने वेब उपकरण"
+      },
+      "paragraphs": [
+        {
+          "en": "Our tools cover date conversion, Nepali typing and text conversion, everyday calculations, document and image tasks, and specialist references. Each tool has its own inputs and limits. A result is most useful when you understand the units, assumptions and information used to produce it.",
+          "ne": "हाम्रा उपकरणमा मिति रूपान्तरण, नेपाली टाइपिङ र अक्षर रूपान्तरण, दैनिक हिसाब, कागजात तथा तस्बिरसम्बन्धी काम र विशेष विषयका सन्दर्भ समेटिन्छन्। हरेक उपकरणका आफ्नै विवरण र सीमा छन्। परिणाम बुझ्दा त्यसमा प्रयोग भएका एकाइ, मान्यता र जानकारी पनि हेर्नु उपयोगी हुन्छ।"
+        },
+        {
+          "en": "We develop the website and its tools using a mixture of our own software and third-party libraries, datasets and services. Providing a feature does not mean that we own every source behind it. Credits and licence notices remain relevant wherever external work is used.",
+          "ne": "वेबसाइट र उपकरण तयार गर्दा आफ्नै कोडसँगै बाह्य सफ्टवेयर लाइब्रेरी, तथ्याङ्क र सेवा पनि प्रयोग गर्छौँ। कुनै सुविधा उपलब्ध गराउनुको अर्थ त्यसका सबै स्रोतमा हाम्रो स्वामित्व छ भन्ने होइन। बाह्य सामग्रीको श्रेय र इजाजतपत्रका सर्त सम्बन्धित ठाउँमा लागू हुन्छन्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/tools",
+          "label": {
+            "en": "Explore web tools",
+            "ne": "वेब उपकरण हेर्नुहोस्"
+          },
+          "external": false
+        },
+        {
+          "href": "/advancetools/",
+          "label": {
+            "en": "Explore specialist tools",
+            "ne": "विशेष उपकरण हेर्नुहोस्"
+          },
+          "external": false
+        }
+      ]
+    },
+    {
+      "id": "publishing",
+      "title": {
+        "en": "Research, blogs and practical guides",
+        "ne": "अध्ययन, ब्लग र व्यावहारिक निर्देशिका"
+      },
+      "paragraphs": [
+        {
+          "en": "Our publishing work connects research and reference material with questions people actually ask. It includes explanatory articles, blog posts, practical guides, and historical and cultural reading. We use “research” to mean examining and explaining sources; an article is not a peer-reviewed study unless it is explicitly identified as one.",
+          "ne": "हाम्रो प्रकाशनको उद्देश्य स्रोत र अध्ययनलाई मानिसका व्यावहारिक जिज्ञासासँग जोड्नु हो। यसमा विषय बुझाउने लेख, ब्लग, प्रयोग निर्देशिका तथा इतिहास र संस्कृतिसम्बन्धी सामग्री पर्छन्। यहाँ “अध्ययन” भन्नाले स्रोत पढेर जाँच्ने र व्याख्या गर्ने काम बुझिन्छ; स्पष्ट रूपमा उल्लेख नभएसम्म कुनै लेखलाई विज्ञद्वारा समीक्षित अनुसन्धान मान्नु हुँदैन।"
+        },
+        {
+          "en": "Evidence, explanation and opinion serve different purposes. Our editorial standards ask writers to make that distinction clear, cite material claims, and explain uncertainty. The sources page describes these standards and how to raise a correction.",
+          "ne": "प्रमाण, व्याख्या र विचारको भूमिका फरक हुन्छ। हाम्रो सम्पादकीय मापदण्डले तिनलाई स्पष्ट छुट्याउन, मुख्य दाबीका स्रोत दिन र अनिश्चितता खुलाउन भन्छ। यी मापदण्ड र त्रुटि सच्याउन अनुरोध गर्ने तरिका स्रोतसम्बन्धी पृष्ठमा छन्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/guides",
+          "label": {
+            "en": "Read articles and guides",
+            "ne": "लेख र निर्देशिका पढ्नुहोस्"
+          },
+          "external": false
+        },
+        {
+          "href": "/sources",
+          "label": {
+            "en": "Sources and editorial standards",
+            "ne": "स्रोत र सम्पादकीय मापदण्ड"
+          },
+          "external": false
+        }
+      ]
+    },
+    {
+      "id": "calendar",
+      "title": {
+        "en": "A calendar with cultural context",
+        "ne": "संस्कृतिसँग जोडिएको पात्रो"
+      },
+      "paragraphs": [
+        {
+          "en": "The Nepali calendar remains central to Aafnai Patro. Bikram Sambat and Gregorian dates, Nepal Sambat, festivals, public holidays, Panchang and astronomical references help people plan their day and stay connected with Nepal. Community traditions can differ, so a date or observance should be read with its location and source in mind.",
+          "ne": "नेपाली पात्रो आफ्नै पात्रोको प्रमुख आधार हो। विक्रम संवत् र इस्वी संवत्का मिति, नेपाल संवत्, चाडपर्व, सार्वजनिक बिदा, पञ्चाङ्ग र खगोलीय विवरणले दिनको योजना बनाउन र नेपालसँग जोडिन मद्दत गर्छन्। समुदायअनुसार परम्परा फरक हुन सक्छ; मिति वा पर्व बुझ्दा स्थान र स्रोत पनि ध्यान दिनुपर्छ।"
+        },
+        {
+          "en": "Astronomical calculations describe measurable positions and times. Jyotish, horoscopes and auspicious-time interpretations draw on traditions and beliefs. We distinguish these uses: a calculated planetary position does not establish that an astrological prediction will come true.",
+          "ne": "खगोलीय गणनाले मापन गर्न सकिने स्थिति र समय बताउँछ। ज्योतिष, राशिफल र शुभ समयको व्याख्या परम्परा र विश्वाससँग सम्बन्धित छन्। यी फरक प्रयोग हुन्: ग्रहको स्थिति गणना गर्न सकिनु मात्रले ज्योतिषीय भविष्यवाणी सही हुन्छ भन्ने प्रमाण दिँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "language",
+      "title": {
+        "en": "Made for English and Nepali readers",
+        "ne": "नेपाली र अंग्रेजी पाठकका लागि"
+      },
+      "paragraphs": [
+        {
+          "en": "We write for readers in Nepal and abroad, on phones and larger screens. Clear language matters as much as technical detail. The two language versions should carry the same meaning, while using natural expressions in each language. If a translation changes the meaning or a page is difficult to use, tell us where it happens.",
+          "ne": "हामी नेपाल र विदेशमा रहेका, मोबाइल वा ठूलो पर्दाबाट पढ्ने पाठकलाई ध्यानमा राख्छौँ। प्राविधिक विवरणजत्तिकै स्पष्ट भाषा पनि महत्वपूर्ण छ। दुवै भाषामा अर्थ समान राख्दै स्वाभाविक अभिव्यक्ति प्रयोग गर्ने हाम्रो लक्ष्य हो। अनुवादले अर्थ बदलेको वा पृष्ठ चलाउन असहज भएको भेटिए सम्बन्धित ठाउँ बताइदिनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "responsibility",
+      "title": {
+        "en": "Responsibility and contact",
+        "ne": "जिम्मेवारी र सम्पर्क"
+      },
+      "paragraphs": [
+        {
+          "en": "Aafnai Patro is the service name used on aafnaipatro.com. Questions about our tools, publications, privacy or reuse of material can be sent to meroaafnaipatro@gmail.com. We welcome specific feedback, including examples of a tool giving an unexpected result or a source that changes an article’s conclusion.",
+          "ne": "aafnaipatro.com मा उपलब्ध सेवाको नाम आफ्नै पात्रो हो। उपकरण, प्रकाशन, गोपनीयता वा सामग्रीको पुनःप्रयोगबारे meroaafnaipatro@gmail.com मा लेख्न सक्नुहुन्छ। उपकरणले अनपेक्षित नतिजा दिएको उदाहरण वा लेखको निष्कर्ष बदल्न सक्ने स्रोतसहितको प्रतिक्रिया स्वागतयोग्य छ।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/contact",
+          "label": {
+            "en": "Contact the Aafnai Patro team",
+            "ne": "आफ्नै पात्रो टोलीलाई सम्पर्क गर्नुहोस्"
+          },
+          "external": false
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-types",
+      "title": {
+        "en": "How to interpret source types",
+        "ne": "स्रोतको प्रकृति कसरी बुझ्ने"
+      },
+      "paragraphs": [
+        {
+          "en": "A published record, a mathematical result, an editorial interpretation and a traditional belief are different kinds of information. A page may contain more than one. Read the source, date, units and qualifications alongside the result; a citation supports the claim it addresses, not every statement on the page.",
+          "ne": "प्रकाशित अभिलेख, गणितीय नतिजा, सम्पादकीय व्याख्या र परम्परागत विश्वास फरक प्रकृतिका जानकारी हुन्। एउटै पृष्ठमा एकभन्दा बढी प्रकार हुन सक्छन्। नतिजासँगै स्रोत, मिति, एकाइ र सीमा पढ्नुहोस्; कुनै सन्दर्भले आफू सम्बन्धित दाबीलाई आधार दिन्छ, पृष्ठका सबै भनाइलाई होइन।"
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": {
+        "en": "Choosing and weighing evidence",
+        "ne": "प्रमाणको छनोट र मूल्याङ्कन"
+      },
+      "paragraphs": [
+        {
+          "en": "For important factual claims, our standard is to prefer original records, official publications, documentation, research papers or clearly attributed datasets. Secondary reporting can provide context, but repeated reporting is not the same as independent confirmation. Small samples, selection bias, commercial interests and conflicting findings deserve attention.",
+          "ne": "महत्वपूर्ण तथ्यका लागि मूल अभिलेख, आधिकारिक प्रकाशन, प्राविधिक दस्तावेज, अनुसन्धानपत्र वा स्रोत खुलेका तथ्याङ्कलाई प्राथमिकता दिनु हाम्रो मापदण्ड हो। अरूले गरेको रिपोर्टिङले सन्दर्भ दिन सक्छ, तर एउटै खबर धेरै ठाउँमा दोहोरिनु स्वतन्त्र पुष्टि होइन। सानो नमुना, छनोटको पूर्वाग्रह, व्यावसायिक स्वार्थ र बाझिएका निष्कर्ष पनि विचार गर्नुपर्छ।"
+        },
+        {
+          "en": "A claim about a current price, law, service or specification can become outdated. Check the source’s publication date and the period covered by its data. If sources disagree, the explanation should identify the disagreement rather than imply certainty.",
+          "ne": "हालको मूल्य, कानून, सेवा वा प्राविधिक विशेषतासम्बन्धी जानकारी पुरानो हुन सक्छ। स्रोत प्रकाशित भएको मिति र तथ्याङ्कले समेटेको अवधि हेर्नुहोस्। स्रोत बाझिएमा निश्चित उत्तर भएको आभास दिनुको सट्टा मतभेद खुलाउनुपर्छ।"
+        }
+      ]
+    },
+    {
+      "id": "editorial",
+      "title": {
+        "en": "Editorial and blog publishing standards",
+        "ne": "लेख र ब्लग प्रकाशनका मापदण्ड"
+      },
+      "paragraphs": [
+        {
+          "en": "Articles should answer a clear question, use an appropriate level of detail, and distinguish reported facts from analysis, examples and opinion. Conclusions should follow from the evidence. A useful article also explains what the evidence cannot establish and when its guidance may not apply.",
+          "ne": "लेखले स्पष्ट प्रश्नको उत्तर दिनुपर्छ, आवश्यक गहिराइमा विषय बुझाउनुपर्छ र तथ्यलाई विश्लेषण, उदाहरण तथा विचारबाट छुट्याउनुपर्छ। निष्कर्ष प्रमाणमा आधारित हुनुपर्छ। प्रमाणले के पुष्टि गर्दैन र सुझाव कुन अवस्थामा लागू हुँदैन भन्ने पनि उपयोगी लेखले खुलाउँछ।"
+        },
+        {
+          "en": "Authorship, review and update statements must describe work that actually took place. We do not treat a page’s presence on this site as proof of specialist review. Where an author, reviewer or substantive update date is provided, it should help readers assess that particular article.",
+          "ne": "लेखक, समीक्षा वा अद्यावधिकबारे उल्लेख गर्दा वास्तवमै भएको काम मात्र जनाउनुपर्छ। वेबसाइटमा सामग्री प्रकाशित हुनु मात्रलाई विशेषज्ञ समीक्षाको प्रमाण मानिँदैन। लेखक, समीक्षक वा महत्वपूर्ण अद्यावधिकको मिति दिइएको छ भने त्यसले सम्बन्धित लेख मूल्याङ्कन गर्न पाठकलाई सहयोग गर्नुपर्छ।"
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "title": {
+        "en": "Automation and AI-assisted material",
+        "ne": "स्वचालन र एआईको सहयोगमा तयार सामग्री"
+      },
+      "paragraphs": [
+        {
+          "en": "Software can help with calculations, translation, drafting and organising information. Its output can still contain mistakes or invented references. Our standard for AI-assisted publishing is the same as for other material: verify substantive claims, respect source rights, and avoid presenting generated text as independent evidence or expert review.",
+          "ne": "गणना, अनुवाद, मस्यौदा र जानकारी व्यवस्थित गर्न सफ्टवेयरले सहयोग गर्न सक्छ। तर त्यसको नतिजामा त्रुटि वा अस्तित्वमै नभएका सन्दर्भ पर्न सक्छन्। एआईको सहयोगमा तयार सामग्रीमा पनि मुख्य दाबी जाँच्ने, स्रोतको अधिकार सम्मान गर्ने र तयार गरिएको पाठलाई स्वतन्त्र प्रमाण वा विशेषज्ञ समीक्षा नमान्ने मापदण्ड लागू हुन्छ।"
+        },
+        {
+          "en": "An interactive assistant’s answer is separate from a published article and should be checked before you rely on it. Do not assume that a fluent or detailed answer has been reviewed by a person.",
+          "ne": "अन्तरक्रियात्मक सहायकको जवाफ प्रकाशित लेखभन्दा अलग हो; त्यसमा भर पर्नुअघि जाँच्नुहोस्। सहज भाषामा आएको वा लामो जवाफ मानिसले समीक्षा गरिसकेको हुन्छ भन्ने नमान्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "methods",
+      "title": {
+        "en": "Methods, units and worked examples",
+        "ne": "विधि, एकाइ र उदाहरण"
+      },
+      "paragraphs": [
+        {
+          "en": "Tool explanations should identify the inputs, formula or method, units, rounding and limits that materially affect an answer. Worked examples illustrate a method; they do not guarantee your outcome. Tax, interest, fees, exchange rates and local measurement conventions may change a result even when the arithmetic is correct.",
+          "ne": "उपकरणको व्याख्यामा नतिजालाई असर गर्ने विवरण, सूत्र वा विधि, एकाइ, पूर्णाङ्क बनाउने तरिका र सीमा खुल्नुपर्छ। उदाहरणले विधि बुझाउँछ; तपाईंको परिणामको ग्यारेन्टी गर्दैन। हिसाब सही भए पनि कर, ब्याज, शुल्क, विनिमय दर र स्थानीय नापको चलनले नतिजा बदल्न सक्छ।"
+        }
+      ]
+    },
+    {
+      "id": "calendar-sources",
+      "title": {
+        "en": "Calendar and cultural references",
+        "ne": "पात्रो र सांस्कृतिक सन्दर्भ"
+      },
+      "paragraphs": [
+        {
+          "en": "BS–AD conversion uses date mappings rather than a fixed number of days per Nepali month. Panchang times depend on the calculation method, date and location. Public holidays depend on the relevant authority’s notice, while festivals may follow regional or community practice. Use the calendar methodology page for these distinctions.",
+          "ne": "वि.सं.–इस्वी रूपान्तरणमा नेपाली महिनालाई निश्चित दिनको मानेर होइन, मितिको मिलान गरेर काम गरिन्छ। पञ्चाङ्गको समय गणना विधि, मिति र स्थानमा निर्भर हुन्छ। सार्वजनिक बिदा सम्बन्धित निकायको सूचनाअनुसार हुन्छ; चाडपर्वमा क्षेत्र वा समुदायको चलन पनि लागू हुन सक्छ। यी फरकबारे पात्रोको पद्धति पृष्ठमा पढ्नुहोस्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/methodology",
+          "label": {
+            "en": "Calendar methodology",
+            "ne": "पात्रोको पद्धति"
+          },
+          "external": false
+        }
+      ]
+    },
+    {
+      "id": "independence",
+      "title": {
+        "en": "Advertising, sponsorship and outside content",
+        "ne": "विज्ञापन, प्रायोजन र बाह्य सामग्री"
+      },
+      "paragraphs": [
+        {
+          "en": "Advertisements help fund the service. An ad placement is not an endorsement of the advertiser or its claims. Our publishing standard is to identify paid editorial placements or affiliate relationships where they occur, and to keep commercial claims distinguishable from our explanations.",
+          "ne": "विज्ञापनले सेवा सञ्चालनमा सहयोग गर्छ। विज्ञापन देखिनु त्यसको प्रदायक वा दाबीलाई हाम्रो समर्थन भएको अर्थ होइन। सशुल्क लेख वा कमिसन प्राप्त हुने सम्बन्ध भएमा खुलाउने र व्यावसायिक दाबीलाई हाम्रो व्याख्याबाट स्पष्ट छुट्याउने हाम्रो प्रकाशन मापदण्ड हो।"
+        },
+        {
+          "en": "Linked articles, embedded broadcasts and third-party datasets belong to their respective publishers or rights holders. A link provides context; it does not transfer ownership, guarantee accuracy or imply an institutional partnership.",
+          "ne": "लिङ्क गरिएका लेख, समावेश गरिएका प्रसारण र बाह्य तथ्याङ्कका अधिकार सम्बन्धित प्रकाशक वा अधिकारधनीमा रहन्छन्। लिङ्कले सन्दर्भ दिन्छ; स्वामित्व हस्तान्तरण, शुद्धताको ग्यारेन्टी वा संस्थागत साझेदारी जनाउँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "corrections",
+      "title": {
+        "en": "Corrections and meaningful updates",
+        "ne": "त्रुटि सुधार र महत्वपूर्ण अद्यावधिक"
+      },
+      "paragraphs": [
+        {
+          "en": "If you find an error, send the page link, the statement or result in question, and the evidence that supports a correction. Our standard is to distinguish a factual correction from a routine wording change, and to explain a material change to a conclusion on the affected page. A correction request does not itself establish that either version is correct.",
+          "ne": "त्रुटि भेटिए पृष्ठको लिङ्क, सम्बन्धित भनाइ वा नतिजा र सुधारको आधार पठाउनुहोस्। सामान्य भाषागत परिवर्तनबाट तथ्यगत सुधार छुट्याउने र निष्कर्षमा महत्वपूर्ण परिवर्तन भए सम्बन्धित पृष्ठमा खुलाउने हाम्रो मापदण्ड हो। सुधारको अनुरोध आउनु मात्रले कुनै एक संस्करण सही भएको पुष्टि गर्दैन।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/corrections",
+          "label": {
+            "en": "How to report an error",
+            "ne": "त्रुटि रिपोर्ट गर्ने तरिका"
+          },
+          "external": false
+        }
+      ]
+    }
+  ],
+  "privacy": [
+    {
+      "id": "scope",
+      "title": {
+        "en": "Scope of this policy",
+        "ne": "यो नीति केमा लागू हुन्छ"
+      },
+      "paragraphs": [
+        {
+          "en": "This policy covers aafnaipatro.com, including its calendars, web tools, articles, blogs and personal features. Aafnai Patro is the service name. For privacy questions or requests, contact meroaafnaipatro@gmail.com and identify the feature involved. External sites and providers have their own notices.",
+          "ne": "यो नीति aafnaipatro.com का पात्रो, वेब उपकरण, लेख, ब्लग र व्यक्तिगत सुविधामा लागू हुन्छ। सेवाको नाम आफ्नै पात्रो हो। गोपनीयतासम्बन्धी प्रश्न वा अनुरोधका लागि सम्बन्धित सुविधा उल्लेख गरी meroaafnaipatro@gmail.com मा लेख्नुहोस्। बाह्य वेबसाइट र प्रदायकका आफ्नै नीतिहरू हुन्छन्।"
+        }
+      ]
+    },
+    {
+      "id": "visit",
+      "title": {
+        "en": "When you visit or read",
+        "ne": "वेबसाइट हेर्दा वा पढ्दा"
+      },
+      "paragraphs": [
+        {
+          "en": "Delivering a page involves sending technical information to the website and its infrastructure providers. This can include your IP address, requested address, time of access, browser or device information, and referring page. Hosting and security services, including Cloudflare, process requests to deliver content, manage traffic and protect the service.",
+          "ne": "पृष्ठ खोल्दा वेबसाइट र त्यसको पूर्वाधार प्रदायकसम्म प्राविधिक जानकारी पुग्छ। यसमा आईपी ठेगाना, खोल्न खोजिएको ठेगाना, समय, ब्राउजर वा उपकरणको जानकारी र अघिल्लो पृष्ठ पर्न सक्छन्। Cloudflare सहितका होस्टिङ र सुरक्षा सेवाले सामग्री पठाउन, ट्राफिक व्यवस्थापन गर्न र सेवा सुरक्षित राख्न अनुरोध प्रशोधन गर्छन्।"
+        }
+      ]
+    },
+    {
+      "id": "inputs",
+      "title": {
+        "en": "Tool inputs, files and personal details",
+        "ne": "उपकरणमा राखिएका विवरण, फाइल र व्यक्तिगत जानकारी"
+      },
+      "paragraphs": [
+        {
+          "en": "Different tools handle information differently. Some text, image and calculation tasks operate on your device. Features that request a remote calculation, transcription, assistant response or other remote service send the required input to that service. A local tool does not prevent ordinary page requests, analytics or advertising requests from occurring.",
+          "ne": "उपकरणअनुसार जानकारी प्रयोग गर्ने तरिका फरक हुन्छ। केही पाठ, तस्बिर र हिसाबसम्बन्धी काम उपकरणमै हुन्छन्। अनलाइन गणना, आवाजबाट पाठ, सहायकको जवाफ वा अन्य दूरस्थ सेवा चाहिने सुविधाले आवश्यक विवरण सो सेवामा पठाउँछन्। उपकरणमै काम हुने सुविधामा पनि पृष्ठ खोल्ने, प्रयोग विश्लेषण वा विज्ञापनका सामान्य अनुरोध हुन सक्छन्।"
+        },
+        {
+          "en": "Birth-chart and personal-calendar features can use dates of birth, times, places, names or family details you enter. Provide only what the task needs, and use someone else’s information only with appropriate permission. Avoid putting passwords, identity documents, payment details or confidential records into general-purpose tools or assistant prompts.",
+          "ne": "जन्मपत्रो र व्यक्तिगत पात्रोका सुविधाले तपाईंले राखेको जन्ममिति, समय, स्थान, नाम वा पारिवारिक विवरण प्रयोग गर्न सक्छन्। कामका लागि चाहिने विवरण मात्र राख्नुहोस् र अरूको जानकारी उचित अनुमति लिएर मात्र प्रयोग गर्नुहोस्। सामान्य उपकरण वा सहायकलाई पासवर्ड, परिचयपत्र, भुक्तानी विवरण वा गोप्य अभिलेख नदिनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "title": {
+        "en": "Information stored in your browser",
+        "ne": "ब्राउजरमा रहने जानकारी"
+      },
+      "paragraphs": [
+        {
+          "en": "Browser storage can hold your language, theme, preferences, notes, saved dates, birth details and offline content, depending on the feature you use. These records may remain after you close the tab. Someone with access to the same device and browser profile may be able to see them.",
+          "ne": "प्रयोग गरिएको सुविधाअनुसार ब्राउजरमा भाषा, रूपरङ, प्राथमिकता, नोट, सुरक्षित मिति, जन्म विवरण र अफलाइन सामग्री रहन सक्छ। ट्याब बन्द गरेपछि पनि यी विवरण बाँकी हुन सक्छन्। एउटै उपकरण र ब्राउजर प्रोफाइलमा पहुँच भएको व्यक्तिले तिनलाई देख्न सक्छ।"
+        },
+        {
+          "en": "Use the feature’s delete or reset option where available, or clear this site’s browser data. Clearing browser data can permanently remove unsynchronised notes and saved settings, so export anything you need first. It does not delete copies already saved to an account, downloaded to a file or sent to another service.",
+          "ne": "उपलब्ध भए सुविधाको मेटाउने वा रिसेट गर्ने विकल्प प्रयोग गर्नुहोस्, वा ब्राउजरबाट यस वेबसाइटको डेटा हटाउनुहोस्। यसो गर्दा खातामा सुरक्षित नभएका नोट र सेटिङ स्थायी रूपमा मेटिन सक्छन्; चाहिने सामग्री पहिले निर्यात गर्नुहोस्। यसले खातामा रहेको, फाइलमा डाउनलोड गरिएको वा अर्को सेवामा पठाइएको प्रतिलिपि हटाउँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "account",
+      "title": {
+        "en": "Sign-in, saved accounts and shared features",
+        "ne": "साइन-इन, खातामा सुरक्षित विवरण र साझा सुविधा"
+      },
+      "paragraphs": [
+        {
+          "en": "When you sign in with Google, the account service receives verified identity information such as your account identifier, email address, display name and profile picture. It uses a session cookie to recognise your sign-in. We do not receive your Google password through this sign-in process.",
+          "ne": "Google बाट साइन-इन गर्दा खाता सेवाले पहिचान सङ्केत, इमेल ठेगाना, देखाइने नाम र प्रोफाइल तस्बिरजस्ता प्रमाणित विवरण पाउँछ। साइन-इन पहिचान गर्न सत्र कुकी प्रयोग हुन्छ। यस प्रक्रियाबाट हामीले तपाईंको Google पासवर्ड पाउँदैनौँ।"
+        },
+        {
+          "en": "Account features can store information on our servers when you save or synchronise it. Shared family features or share links can make selected information available to others. Review the audience before sharing and protect any private link. Signing out ends access through that session; it does not by itself erase the account or its saved records.",
+          "ne": "खातासँग सम्बन्धित सुविधामा सुरक्षित वा समक्रमण गर्दा जानकारी हाम्रो सर्भरमा रहन सक्छ। पारिवारिक साझा सुविधा वा साझा लिङ्कले छानिएको जानकारी अरूसम्म पुर्‍याउन सक्छ। साझा गर्नुअघि कसले देख्न सक्छ जाँच्नुहोस् र निजी लिङ्क सुरक्षित राख्नुहोस्। साइन-आउट गर्दा सो सत्रको पहुँच बन्द हुन्छ; खाता वा त्यसमा सुरक्षित अभिलेख स्वतः मेटिँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "permissions",
+      "title": {
+        "en": "Microphone, location and notifications",
+        "ne": "माइक्रोफोन, स्थान र सूचना"
+      },
+      "paragraphs": [
+        {
+          "en": "Voice features ask for microphone permission. Depending on the mode, speech may be processed by your browser’s speech provider or sent to an online transcription service. The website supports transcription through Cloudflare and Groq; the provider used can depend on availability and configuration. Do not assume that voice recognition happens entirely on your device.",
+          "ne": "आवाजसम्बन्धी सुविधाले माइक्रोफोनको अनुमति माग्छन्। प्रयोग विधिअनुसार आवाज ब्राउजरको बोली पहिचान सेवा वा अनलाइन प्रतिलेखन सेवामा जान सक्छ। वेबसाइटमा Cloudflare र Groq मार्फत प्रतिलेखनको व्यवस्था छ; प्रयोग हुने प्रदायक उपलब्धता र सेटिङमा निर्भर हुन सक्छ। बोली पहिचान पूरै उपकरणमै हुन्छ भन्ने नमान्नुहोस्।"
+        },
+        {
+          "en": "Location can be entered manually or supplied through a permission-based feature to calculate local times or show local information. Push notifications require browser permission and a delivery subscription. You can revoke microphone, location and notification permissions in your browser settings. Revoking permission stops future access through that permission, but does not automatically delete earlier records.",
+          "ne": "स्थानीय समय वा जानकारीका लागि स्थान आफैँ लेख्न वा अनुमति माग्ने सुविधाबाट दिन सकिन्छ। पुश सूचनाका लागि ब्राउजरको अनुमति र सूचना पठाउने दर्ता चाहिन्छ। ब्राउजर सेटिङबाट माइक्रोफोन, स्थान र सूचनाको अनुमति हटाउन सक्नुहुन्छ। यसले त्यस अनुमतिबाट हुने आगामी पहुँच रोक्छ, तर पहिलेका अभिलेख स्वतः मेटाउँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "analytics",
+      "title": {
+        "en": "Analytics and service measurement",
+        "ne": "प्रयोग विश्लेषण र सेवाको मापन"
+      },
+      "paragraphs": [
+        {
+          "en": "The site uses Google Analytics and its own usage-measurement features to understand page visits and improve the service. Measurement can include page addresses, referrers, browser and device details, activity events and approximate location derived from network information. Google Analytics can use cookies and similar identifiers.",
+          "ne": "वेबसाइटले पृष्ठको प्रयोग बुझ्न र सेवा सुधार गर्न Google Analytics तथा आफ्नै प्रयोग मापन सुविधा प्रयोग गर्छ। यसमा पृष्ठको ठेगाना, अघिल्लो पृष्ठ, ब्राउजर र उपकरणको विवरण, गतिविधि तथा नेटवर्कबाट अनुमान गरिएको स्थान पर्न सक्छ। Google Analytics ले कुकी र यस्तै पहिचान सङ्केत प्रयोग गर्न सक्छ।"
+        },
+        {
+          "en": "Google provides information about its data practices and an Analytics opt-out browser add-on. Browser privacy controls may also restrict measurement. These controls do not necessarily stop essential security logs or every other measurement system on the site.",
+          "ne": "Google ले आफ्नो डेटा अभ्यास र Analytics रोक्ने ब्राउजर एड-अनबारे जानकारी दिन्छ। ब्राउजरका गोपनीयता नियन्त्रणले पनि मापन सीमित गर्न सक्छन्। यी विकल्पले आवश्यक सुरक्षा अभिलेख वा वेबसाइटका सबै मापन प्रणाली अनिवार्य रूपमा रोक्दैनन्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://policies.google.com/technologies/partner-sites",
+          "label": {
+            "en": "How Google uses information from partner sites",
+            "ne": "साझेदार वेबसाइटको जानकारी Google ले कसरी प्रयोग गर्छ"
+          },
+          "external": true
+        },
+        {
+          "href": "https://tools.google.com/dlpage/gaoptout",
+          "label": {
+            "en": "Google Analytics opt-out",
+            "ne": "Google Analytics रोक्ने विकल्प"
+          },
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": "advertising",
+      "title": {
+        "en": "Advertising and cookies",
+        "ne": "विज्ञापन र कुकी"
+      },
+      "paragraphs": [
+        {
+          "en": "The site includes Google AdSense. Google and other advertising vendors may use cookies or similar technologies to select and measure ads using visits to this and other websites. Where personalised advertising is enabled, advertising identifiers can help relate activity across sites. An ad may also be selected from the page’s context rather than your interests.",
+          "ne": "वेबसाइटमा Google AdSense समावेश छ। Google र अन्य विज्ञापन प्रदायकले यस तथा अन्य वेबसाइटको भ्रमणका आधारमा विज्ञापन छान्न र मापन गर्न कुकी वा यस्तै प्रविधि प्रयोग गर्न सक्छन्। व्यक्तिगत रुचिअनुसार विज्ञापन सक्रिय हुँदा पहिचान सङ्केतले विभिन्न वेबसाइटका गतिविधि जोड्न सक्छन्। विज्ञापन तपाईंको रुचिको सट्टा पृष्ठको विषयअनुसार पनि छानिन सक्छ।"
+        },
+        {
+          "en": "You can review personalised-ad settings in Google My Ad Center and manage cookies through your browser. Turning off personalisation does not remove all ads, and deleting cookies may reset choices or sign you out. Any consent choices presented by an advertising provider are separate from accepting the site’s terms.",
+          "ne": "Google My Ad Center मा व्यक्तिगत विज्ञापनका सेटिङ हेर्न र ब्राउजरबाट कुकी व्यवस्थापन गर्न सक्नुहुन्छ। व्यक्तिगत विज्ञापन बन्द गर्दा सबै विज्ञापन हट्दैनन्; कुकी मेटाउँदा प्राथमिकता रिसेट वा साइन-आउट हुन सक्छ। विज्ञापन प्रदायकले देखाएका सहमतिका विकल्प वेबसाइटका सर्त स्वीकार गर्नुभन्दा अलग हुन्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://myadcenter.google.com/",
+          "label": {
+            "en": "Google advertising choices",
+            "ne": "Google विज्ञापनका विकल्प"
+          },
+          "external": true
+        },
+        {
+          "href": "https://policies.google.com/technologies/ads",
+          "label": {
+            "en": "Google advertising technology",
+            "ne": "Google को विज्ञापन प्रविधि"
+          },
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": "providers",
+      "title": {
+        "en": "Service providers and external content",
+        "ne": "सेवा प्रदायक र बाह्य सामग्री"
+      },
+      "paragraphs": [
+        {
+          "en": "Hosting, authentication, analytics, advertising, speech services, external media and email providers process information needed for their role. Clicking an outside link or loading embedded media can send technical information to that provider. Their policies govern their own processing, and their systems may operate in countries other than yours.",
+          "ne": "होस्टिङ, प्रमाणीकरण, प्रयोग विश्लेषण, विज्ञापन, बोली सेवा, बाह्य मिडिया र इमेल प्रदायकले आफ्नो कामका लागि आवश्यक जानकारी प्रशोधन गर्छन्। बाह्य लिङ्क खोल्दा वा समावेश गरिएको मिडिया चलाउँदा सम्बन्धित प्रदायकमा प्राविधिक जानकारी पुग्न सक्छ। उनीहरूको प्रशोधनमा आफ्नै नीति लागू हुन्छ र प्रणाली तपाईंको देशबाहिर पनि चल्न सक्छ।"
+        },
+        {
+          "en": "If you email us, the message and attachments are processed by email providers and used to handle the request. The contact form prepares an email in your own email application; you still need to send it. Information may also need to be disclosed to meet a binding legal requirement or address fraud, abuse or a security incident.",
+          "ne": "हामीलाई इमेल गर्दा सन्देश र संलग्न फाइल इमेल प्रदायकले प्रशोधन गर्छन् र अनुरोध सम्बोधन गर्न प्रयोग हुन्छन्। सम्पर्क फारामले तपाईंको इमेल एपमा मस्यौदा बनाउँछ; तपाईंले नै पठाउनुपर्छ। बाध्यकारी कानूनी माग पूरा गर्न वा ठगी, दुरुपयोग अथवा सुरक्षा घटनाको सम्बोधन गर्न पनि जानकारी दिनुपर्ने हुन सक्छ।"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://www.cloudflare.com/privacypolicy/",
+          "label": {
+            "en": "Cloudflare privacy policy",
+            "ne": "Cloudflare गोपनीयता नीति"
+          },
+          "external": true
+        },
+        {
+          "href": "https://groq.com/privacy-policy/",
+          "label": {
+            "en": "Groq privacy policy",
+            "ne": "Groq गोपनीयता नीति"
+          },
+          "external": true
+        },
+        {
+          "href": "https://policies.google.com/privacy",
+          "label": {
+            "en": "Google privacy policy",
+            "ne": "Google गोपनीयता नीति"
+          },
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": "retention",
+      "title": {
+        "en": "Retention, deletion and security",
+        "ne": "जानकारी रहने अवधि, मेटाउने प्रक्रिया र सुरक्षा"
+      },
+      "paragraphs": [
+        {
+          "en": "There is no single retention period for every feature. Browser records remain until removed or cleared by the browser; account records, correspondence, logs and provider records follow different lifecycles. This policy does not promise a fixed deletion deadline or immediate removal from backups. Contact us for the records and service relevant to your request.",
+          "ne": "सबै सुविधाको जानकारी रहने अवधि एउटै छैन। ब्राउजरको विवरण हटाइएसम्म वा ब्राउजरले सफा नगरेसम्म रहन सक्छ; खाताका अभिलेख, पत्राचार, लग र प्रदायकका विवरणको अवधि फरक हुन्छ। यो नीतिले निश्चित मेटाउने समयसीमा वा ब्याकअपबाट तत्काल हट्ने वाचा गर्दैन। आफ्नो अनुरोधसँग सम्बन्धित अभिलेख र सेवाबारे हामीलाई सोध्नुहोस्।"
+        },
+        {
+          "en": "Security measures reduce risk but cannot guarantee that a device, account or online service will never be compromised. Keep your device and browser updated, protect sign-in access and export important work. Only send the minimum information needed for support.",
+          "ne": "सुरक्षा उपायले जोखिम घटाउँछन्, तर उपकरण, खाता वा अनलाइन सेवा कहिल्यै असुरक्षित हुँदैन भन्ने ग्यारेन्टी गर्दैनन्। उपकरण र ब्राउजर अद्यावधिक राख्नुहोस्, साइन-इन सुरक्षित गर्नुहोस् र महत्वपूर्ण काम निर्यात गरेर राख्नुहोस्। सहयोग माग्दा चाहिने न्यूनतम जानकारी मात्र पठाउनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "choices",
+      "title": {
+        "en": "Your controls and privacy requests",
+        "ne": "तपाईंका नियन्त्रण र गोपनीयतासम्बन्धी अनुरोध"
+      },
+      "paragraphs": [
+        {
+          "en": "Use browser controls for local storage, cookies and permissions; use account export or deletion controls where available for saved account data. You may also email us to ask what information is held, request a correction or deletion, or raise an objection. The rights and exceptions that apply depend on your location and the processing involved. We may need proportionate identity verification before disclosing or deleting account information.",
+          "ne": "स्थानीय भण्डारण, कुकी र अनुमति ब्राउजरबाट व्यवस्थापन गर्नुहोस्; खाताको विवरणका लागि उपलब्ध निर्यात वा मेटाउने विकल्प प्रयोग गर्नुहोस्। के जानकारी छ भन्ने सोध्न, सच्याउन वा मेटाउन अनुरोध गर्न वा आपत्ति जनाउन इमेल पनि गर्न सक्नुहुन्छ। लागू अधिकार र अपवाद तपाईंको स्थान र प्रशोधनको प्रकारमा निर्भर हुन्छन्। खाताको जानकारी दिनु वा मेटाउनुअघि आवश्यक हदसम्म पहिचान पुष्टि गर्नुपर्ने हुन सक्छ।"
+        },
+        {
+          "en": "Never send a password or one-time code. If your concern relates to a third-party provider’s own records, its controls or privacy contact may be needed as well. Where applicable, you can raise a concern with the relevant data-protection authority.",
+          "ne": "पासवर्ड वा एकपटक प्रयोग हुने कोड कहिल्यै नपठाउनुहोस्। विषय बाह्य प्रदायकको आफ्नै अभिलेखसँग सम्बन्धित भए त्यसको नियन्त्रण वा गोपनीयता सम्पर्क पनि आवश्यक पर्न सक्छ। लागू हुने अवस्थामा सम्बन्धित डेटा संरक्षण निकायमा गुनासो राख्न सक्नुहुन्छ।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/my-data",
+          "label": {
+            "en": "View, export or delete account data",
+            "ne": "खाताको विवरण हेर्नुहोस्, निर्यात गर्नुहोस् वा मेटाउनुहोस्"
+          },
+          "external": false
+        },
+        {
+          "href": "/contact",
+          "label": {
+            "en": "Send a privacy request",
+            "ne": "गोपनीयतासम्बन्धी अनुरोध पठाउनुहोस्"
+          },
+          "external": false
+        }
+      ]
+    },
+    {
+      "id": "children",
+      "title": {
+        "en": "Children and family information",
+        "ne": "बालबालिका र पारिवारिक जानकारी"
+      },
+      "paragraphs": [
+        {
+          "en": "These are general-purpose tools and publications. Adults entering a child’s birth date, family record or recording should have authority to do so and avoid sharing unnecessary identifying details. If you believe a child’s information has been supplied or shared inappropriately, contact us with the affected feature or link so the concern can be investigated.",
+          "ne": "यी सामान्य प्रयोगका उपकरण र प्रकाशन हुन्। बालबालिकाको जन्ममिति, पारिवारिक अभिलेख वा रेकर्डिङ राख्ने वयस्कसँग त्यसो गर्ने अधिकार हुनुपर्छ; अनावश्यक पहिचान खुल्ने विवरण साझा नगर्नुहोस्। बालबालिकाको जानकारी अनुचित रूपमा राखिएको वा साझा भएको शङ्का भए सम्बन्धित सुविधा वा लिङ्कसहित सम्पर्क गर्नुहोस्, ताकि विषय जाँच्न सकियोस्।"
+        }
+      ]
+    },
+    {
+      "id": "changes",
+      "title": {
+        "en": "Policy updates",
+        "ne": "नीतिमा परिवर्तन"
+      },
+      "paragraphs": [
+        {
+          "en": "We update this notice when features or data practices change. The date shown on this page identifies this version. Revisit it when using a new feature, particularly one involving account storage, sharing, uploads or an external provider.",
+          "ne": "सुविधा वा जानकारी प्रयोग गर्ने अभ्यास बदलिँदा यो नीति अद्यावधिक गर्छौँ। पृष्ठमा देखिएको मितिले यो संस्करण जनाउँछ। विशेष गरी खाता भण्डारण, साझा गर्ने, अपलोड वा बाह्य प्रदायक चाहिने नयाँ सुविधा चलाउँदा नीति फेरि पढ्नुहोस्।"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "id": "scope",
+      "title": {
+        "en": "Scope of these terms",
+        "ne": "सर्तको दायरा"
+      },
+      "paragraphs": [
+        {
+          "en": "These terms apply when you use aafnaipatro.com. Read them alongside the privacy policy and any conditions shown for a particular feature. If you do not accept the terms, stop using the service. Mandatory rights under applicable law remain in place.",
+          "ne": "aafnaipatro.com प्रयोग गर्दा यी सर्त लागू हुन्छन्। गोपनीयता नीति र सम्बन्धित सुविधामा देखाइएका विशेष सर्तसँगै पढ्नुहोस्। सर्त स्वीकार नगरे सेवा प्रयोग नगर्नुहोस्। लागू कानूनले दिएका अनिवार्य अधिकार कायम रहन्छन्।"
+        }
+      ]
+    },
+    {
+      "id": "information",
+      "title": {
+        "en": "Information and professional decisions",
+        "ne": "जानकारी र पेशागत निर्णय"
+      },
+      "paragraphs": [
+        {
+          "en": "Our articles, research summaries and tools provide general information. They do not establish a professional advisory relationship or replace qualified medical, legal, financial, engineering or other specialist advice. Before relying on a result for a consequential decision, verify the inputs, method and current requirements with an appropriate source or professional.",
+          "ne": "हाम्रा लेख, अध्ययनका सार र उपकरणले सामान्य जानकारी दिन्छन्। तिनले पेशागत परामर्शको सम्बन्ध स्थापना गर्दैनन् र योग्य स्वास्थ्य, कानूनी, वित्तीय, इन्जिनियरिङ वा अन्य विशेषज्ञको सल्लाहको स्थान लिँदैनन्। महत्वपूर्ण निर्णयमा परिणाम प्रयोग गर्नुअघि विवरण, विधि र हालका आवश्यकता उचित स्रोत वा विशेषज्ञसँग जाँच्नुहोस्।"
+        },
+        {
+          "en": "A calculator can produce correct arithmetic from an unsuitable assumption. For example, a loan estimate may omit lender fees, and a conversion may use a different local unit. Research findings can also be limited by their population, date or method. Read the qualifications rather than treating a number or headline as a guarantee.",
+          "ne": "अनुपयुक्त मान्यता राखेर पनि गणकले गणितीय रूपमा सही हिसाब दिन सक्छ। उदाहरणका लागि ऋण अनुमानमा संस्थाको शुल्क छुट्न सक्छ वा रूपान्तरणमा फरक स्थानीय एकाइ प्रयोग हुन सक्छ। अध्ययनको निष्कर्ष पनि सहभागी समूह, समय वा विधिले सीमित हुन सक्छ। अंक वा शीर्षकलाई ग्यारेन्टी मान्नुको सट्टा सर्त र सीमा पढ्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "tradition",
+      "title": {
+        "en": "Calendar, astronomy and traditional guidance",
+        "ne": "पात्रो, खगोल र परम्परागत मार्गदर्शन"
+      },
+      "paragraphs": [
+        {
+          "en": "Official deadlines and holidays should be checked with the responsible authority. Festival practices and auspicious times can differ by community, location and tradition. Astrology and horoscopes are interpretive material, not scientifically established predictions or a basis for judging a person’s worth, health or suitability.",
+          "ne": "आधिकारिक समयसीमा र बिदा सम्बन्धित निकायसँग पुष्टि गर्नुहोस्। चाडपर्वका चलन र शुभ समय समुदाय, स्थान र परम्पराअनुसार फरक हुन सक्छन्। ज्योतिष र राशिफल व्याख्यात्मक सामग्री हुन्; वैज्ञानिक रूपमा प्रमाणित भविष्यवाणी वा व्यक्तिको मूल्य, स्वास्थ्य अथवा उपयुक्तता ठहर गर्ने आधार होइनन्।"
+        }
+      ]
+    },
+    {
+      "id": "responsible-use",
+      "title": {
+        "en": "Use the service responsibly",
+        "ne": "जिम्मेवारीपूर्वक सेवा प्रयोग गर्नुहोस्"
+      },
+      "paragraphs": [
+        {
+          "en": "Provide inputs you are entitled to use. Do not upload unlawful material, impersonate others, expose someone’s private information, bypass security, interfere with availability or attempt unauthorised access. Automated access must respect published restrictions and must not place an unreasonable load on the service.",
+          "ne": "प्रयोग गर्ने अधिकार भएको विवरण मात्र राख्नुहोस्। गैरकानूनी सामग्री अपलोड गर्ने, अरूको नाममा प्रस्तुत हुने, निजी जानकारी खुलाउने, सुरक्षा छल्ने, सेवा अवरुद्ध गर्ने वा अनधिकृत पहुँच खोज्ने काम नगर्नुहोस्। स्वचालित पहुँचले प्रकाशित सीमा मान्नुपर्छ र सेवामा अस्वाभाविक भार पार्नु हुँदैन।"
+        },
+        {
+          "en": "Protect your sign-in and review what a shared link exposes. Keep a separate copy of important notes, files and results. Browser storage, connectivity and external providers can fail; the site is not a guaranteed backup service.",
+          "ne": "साइन-इन सुरक्षित राख्नुहोस् र साझा लिङ्कबाट के देखिन्छ जाँच्नुहोस्। महत्वपूर्ण नोट, फाइल र परिणामको छुट्टै प्रतिलिपि राख्नुहोस्। ब्राउजर भण्डारण, इन्टरनेट र बाह्य सेवा असफल हुन सक्छन्; यो वेबसाइट सुनिश्चित ब्याकअप सेवा होइन।"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "title": {
+        "en": "Content, software and reuse",
+        "ne": "सामग्री, सफ्टवेयर र पुनःप्रयोग"
+      },
+      "paragraphs": [
+        {
+          "en": "Our original text, design, software and branding, and third-party material, remain subject to their respective rights. A free-to-use tool is not automatically open-source software; publicly readable content is not automatically public domain. Follow any licence supplied with a download, dataset, image or software component.",
+          "ne": "हाम्रो मौलिक लेखन, डिजाइन, सफ्टवेयर र ब्रान्ड तथा बाह्य सामग्रीमा सम्बन्धित अधिकार लागू हुन्छन्। निःशुल्क चलाउन पाइने उपकरण स्वतः खुला स्रोतको सफ्टवेयर हुँदैन; सार्वजनिक रूपमा पढ्न पाइने सामग्री स्वतः प्रतिलिपि अधिकारमुक्त हुँदैन। डाउनलोड, तथ्याङ्क, तस्बिर वा सफ्टवेयरसँग दिइएको इजाजतपत्र मान्नुहोस्।"
+        },
+        {
+          "en": "You may link to our public pages. For republication, commercial distribution or reuse beyond what a stated licence or applicable law permits, contact us and identify the material and intended use. Attribution alone does not replace permission. Do not suggest that Aafnai Patro endorses your product or publication without agreement.",
+          "ne": "हाम्रा सार्वजनिक पृष्ठको लिङ्क दिन सक्नुहुन्छ। इजाजतपत्र वा कानूनले दिएको अनुमतिभन्दा बाहिर पुनःप्रकाशन, व्यावसायिक वितरण वा पुनःप्रयोग गर्न सामग्री र उद्देश्य खुलाएर सम्पर्क गर्नुहोस्। श्रेय दिनु मात्र अनुमति लिनुको विकल्प होइन। सहमतिबिना आफ्नै पात्रोले तपाईंको उत्पादन वा प्रकाशनलाई समर्थन गरेको नदेखाउनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "submissions",
+      "title": {
+        "en": "Your inputs and contributions",
+        "ne": "तपाईंका विवरण र योगदान"
+      },
+      "paragraphs": [
+        {
+          "en": "You remain responsible for the rights and permissions needed for material you enter or send. Processing an input to provide a requested tool result does not transfer ownership of that input to us. If you propose an article or other contribution, publication and reuse terms must be agreed separately; sending a proposal does not guarantee publication.",
+          "ne": "तपाईंले राख्ने वा पठाउने सामग्रीका आवश्यक अधिकार र अनुमतिको जिम्मेवारी तपाईंमै रहन्छ। उपकरणको मागिएको परिणाम दिन विवरण प्रशोधन गर्नुले त्यसको स्वामित्व हामीमा सर्दैन। लेख वा अन्य योगदान प्रस्ताव गर्दा प्रकाशन र पुनःप्रयोगका सर्त छुट्टै सहमतिमा तय हुनुपर्छ; प्रस्ताव पठाउँदैमा प्रकाशन सुनिश्चित हुँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "external",
+      "title": {
+        "en": "External services and advertising",
+        "ne": "बाह्य सेवा र विज्ञापन"
+      },
+      "paragraphs": [
+        {
+          "en": "External links, broadcasts, sign-in providers and other integrations are subject to their providers’ availability and terms. Advertisements and third-party offers do not constitute our recommendation or guarantee. Check the provider, price and conditions before entering into a transaction.",
+          "ne": "बाह्य लिङ्क, प्रसारण, साइन-इन प्रदायक र अन्य जोडिएका सेवा सम्बन्धित प्रदायकको उपलब्धता र सर्तमा निर्भर हुन्छन्। विज्ञापन वा बाह्य प्रस्तावलाई हाम्रो सिफारिस वा ग्यारेन्टी नमान्नुहोस्। कारोबार गर्नुअघि प्रदायक, मूल्य र सर्त जाँच्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "availability",
+      "title": {
+        "en": "Availability, changes and limits",
+        "ne": "उपलब्धता, परिवर्तन र सीमा"
+      },
+      "paragraphs": [
+        {
+          "en": "We may update, restrict or discontinue features for maintenance, security or product changes. We do not promise uninterrupted access, complete coverage or error-free results. To the extent permitted by applicable law, the service is provided as available, without a guarantee of fitness for a particular purpose. Nothing here excludes liability or consumer rights that cannot lawfully be excluded.",
+          "ne": "मर्मतसम्भार, सुरक्षा वा सेवा परिवर्तनका लागि सुविधा अद्यावधिक, सीमित वा बन्द हुन सक्छन्। अविच्छिन्न पहुँच, सबै विषयको पूर्ण समेटाइ वा त्रुटिरहित परिणामको वाचा गर्दैनौँ। कानूनले अनुमति दिएको हदसम्म सेवा उपलब्ध अवस्थामा दिइन्छ, कुनै खास उद्देश्यमा उपयुक्त हुने ग्यारेन्टीबिना। कानूनअनुसार हटाउन नमिल्ने दायित्व वा उपभोक्ता अधिकार यी सर्तले हटाउँदैनन्।"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "title": {
+        "en": "Questions and changes to these terms",
+        "ne": "प्रश्न र सर्तमा परिवर्तन"
+      },
+      "paragraphs": [
+        {
+          "en": "The date on this page identifies this version. Review revised terms when they are published. Contact us about a dispute, reuse request or unclear condition and include the relevant page or feature so we can understand the issue.",
+          "ne": "पृष्ठको मितिले यो संस्करण जनाउँछ। संशोधित सर्त प्रकाशित हुँदा पढ्नुहोस्। विवाद, पुनःप्रयोगको अनुरोध वा अस्पष्ट सर्तबारे सम्पर्क गर्दा सम्बन्धित पृष्ठ वा सुविधा खुलाउनुहोस्, ताकि विषय बुझ्न सकियोस्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/privacy",
+          "label": {
+            "en": "Privacy policy",
+            "ne": "गोपनीयता नीति"
+          },
+          "external": false
+        },
+        {
+          "href": "/contact",
+          "label": {
+            "en": "Contact and support",
+            "ne": "सम्पर्क र सहयोग"
+          },
+          "external": false
+        }
+      ]
+    }
+  ],
+  "contact": [
+    {
+      "id": "topics",
+      "title": {
+        "en": "What can you contact us about?",
+        "ne": "कस्तो विषयमा सम्पर्क गर्ने?"
+      },
+      "paragraphs": [
+        {
+          "en": "Write to meroaafnaipatro@gmail.com about tools, calendar information, articles, research sources, translation, accessibility, privacy or content reuse. You can also send a publishing or collaboration proposal. A proposal is a conversation starter, not a promise of acceptance or an immediate publishing service.",
+          "ne": "उपकरण, पात्रो, लेख, अध्ययनका स्रोत, अनुवाद, पहुँचयोग्यता, गोपनीयता वा सामग्री पुनःप्रयोगबारे meroaafnaipatro@gmail.com मा लेख्नुहोस्। प्रकाशन वा सहकार्यको प्रस्ताव पनि पठाउन सक्नुहुन्छ। प्रस्तावले छलफल सुरु गर्छ; स्वीकार गर्ने वाचा वा तत्काल प्रकाशन सेवा जनाउँदैन।"
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "title": {
+        "en": "Help us reproduce the problem",
+        "ne": "समस्या बुझ्न आवश्यक विवरण दिनुहोस्"
+      },
+      "paragraphs": [
+        {
+          "en": "Include the page address, what you were trying to do, the result you saw and what you expected instead. For tools, add a non-sensitive example of the input and units. For calendar or Panchang questions, add the date, location and time zone. For an article, quote the specific statement and link the evidence you want us to consider.",
+          "ne": "पृष्ठको ठेगाना, गर्न खोजेको काम, देखिएको नतिजा र अपेक्षित नतिजा लेख्नुहोस्। उपकरणका लागि गोप्य नभएको नमुना विवरण र एकाइ दिनुहोस्। पात्रो वा पञ्चाङ्गका लागि मिति, स्थान र समय क्षेत्र खुलाउनुहोस्। लेखका लागि सम्बन्धित भनाइ र हामीले हेर्नुपर्ने प्रमाणको लिङ्क पठाउनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": {
+        "en": "Share only what is needed",
+        "ne": "चाहिने जानकारी मात्र पठाउनुहोस्"
+      },
+      "paragraphs": [
+        {
+          "en": "For a technical issue, the browser, device and steps to reproduce it are usually more helpful than personal records. Remove private notes, birth details, passwords, one-time codes and account tokens from screenshots. If a privacy request concerns an account, identify the feature first; do not send identity documents unless a secure and necessary verification step has been explained.",
+          "ne": "प्राविधिक समस्यामा व्यक्तिगत अभिलेखभन्दा ब्राउजर, उपकरण र समस्या दोहोरिने चरण बढी उपयोगी हुन्छन्। स्क्रिनसटबाट निजी नोट, जन्म विवरण, पासवर्ड, एकपटक प्रयोग हुने कोड र खाता टोकन हटाउनुहोस्। गोपनीयताको अनुरोध खातासँग सम्बन्धित भए पहिले सुविधा बताउनुहोस्; सुरक्षित र आवश्यक पहिचान पुष्टि प्रक्रिया स्पष्ट नभएसम्म परिचयपत्र नपठाउनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "response",
+      "title": {
+        "en": "What happens next",
+        "ne": "त्यसपछि के हुन्छ"
+      },
+      "paragraphs": [
+        {
+          "en": "The form below opens a draft in your email app. Nothing is sent until you send that email. Keep a copy for reference. Response time depends on the issue and available capacity; this is not an emergency or continuously staffed support channel.",
+          "ne": "तलको फारामले तपाईंको इमेल एपमा मस्यौदा खोल्छ। तपाईंले इमेल नपठाएसम्म सन्देश जाँदैन। पछि हेर्न प्रतिलिपि राख्नुहोस्। जवाफको समय विषय र उपलब्ध क्षमतामा निर्भर हुन्छ; यो आपत्कालीन वा चौबीसै घण्टा कर्मचारी उपलब्ध रहने सहयोग सेवा होइन।"
+        }
+      ]
+    }
+  ],
+  "methodology": [
+    {
+      "id": "dates",
+      "title": {
+        "en": "Dates and calendar records",
+        "ne": "मिति र पात्रो अभिलेख"
+      },
+      "paragraphs": [
+        {
+          "en": "Bikram Sambat months vary in length. Converting between BS and Gregorian dates requires a date mapping for the supported year; adding a fixed year offset is not enough. Historical records and distant future dates can differ between sources. For official documents, use the record accepted by the responsible authority.",
+          "ne": "विक्रम संवत्का महिनाको दिन संख्या फरक हुन्छ। वि.सं. र इस्वीबीच रूपान्तरण गर्न सम्बन्धित वर्षको मिति मिलान चाहिन्छ; वर्षको निश्चित अन्तर जोडेर मात्र हुँदैन। ऐतिहासिक अभिलेख र धेरै परका मितिमा स्रोतअनुसार फरक हुन सक्छ। आधिकारिक कागजातमा सम्बन्धित निकायले मान्ने अभिलेख प्रयोग गर्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "title": {
+        "en": "Today, location and time zones",
+        "ne": "आजको मिति, स्थान र समय क्षेत्र"
+      },
+      "paragraphs": [
+        {
+          "en": "The Nepal calendar’s “today” uses Asia/Kathmandu, UTC+5:45. Local sunrise, sunset and other place-specific results use the location and time zone shown by the feature. A time close to midnight can belong to a different date elsewhere. Check both the date and the stated time zone when comparing results.",
+          "ne": "नेपाली पात्रोको “आज” Asia/Kathmandu अर्थात् UTC+5:45 अनुसार तय हुन्छ। सूर्योदय, सूर्यास्त र स्थानअनुसारका परिणाममा सम्बन्धित सुविधाले देखाएको स्थान र समय क्षेत्र लागू हुन्छ। मध्यरातनजिकको समय अर्को ठाउँमा फरक मितिमा पर्न सक्छ। नतिजा तुलना गर्दा मिति र समय क्षेत्र दुवै हेर्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "panchang",
+      "title": {
+        "en": "Panchang and astronomy",
+        "ne": "पञ्चाङ्ग र खगोल"
+      },
+      "paragraphs": [
+        {
+          "en": "Tithi relates to the angular separation of the Sun and Moon and can change during a civil day. A sunrise-based daily label and the exact transition time therefore answer different questions. Results can vary with the astronomical model, coordinates, time standard and rounding. A displayed minute should not be read as a promise of one-minute observational accuracy.",
+          "ne": "तिथि सूर्य र चन्द्रमाको कोणीय दूरीसँग सम्बन्धित हुन्छ र एउटै दिनभित्र बदलिन सक्छ। त्यसैले सूर्योदयमा आधारित दिनको तिथि र तिथि बदलिने समयले फरक प्रश्नको उत्तर दिन्छन्। खगोलीय नमुना, स्थानाङ्क, समय पद्धति र पूर्णाङ्क बनाउने तरिकाले परिणाममा फरक पर्न सक्छ। मिनेटसम्म समय देखिनुलाई अवलोकनमा एक मिनेटकै शुद्धताको वाचा नमान्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "observances",
+      "title": {
+        "en": "Festivals, holidays and regional practice",
+        "ne": "चाडपर्व, बिदा र स्थानीय चलन"
+      },
+      "paragraphs": [
+        {
+          "en": "Festival observance can depend on a tithi at sunrise, another part of the day, or a community-specific rule. A festival is not automatically a public holiday. Official notices, regional practice and calendar records should be considered separately; check the relevant authority when planning work, travel or a formal event.",
+          "ne": "पर्व मान्ने दिन सूर्योदयको तिथि, दिनको अर्को समय वा समुदायको विशेष नियममा निर्भर हुन सक्छ। पर्व हुँदैमा सार्वजनिक बिदा हुन्छ भन्ने छैन। सरकारी सूचना, स्थानीय चलन र पात्रो अभिलेखलाई अलग बुझ्नुहोस्; काम, यात्रा वा औपचारिक कार्यक्रमको योजना बनाउँदा सम्बन्धित निकायसँग पुष्टि गर्नुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "title": {
+        "en": "Compare like with like",
+        "ne": "समान आधारमा तुलना गर्नुहोस्"
+      },
+      "paragraphs": [
+        {
+          "en": "When reporting a difference, provide the date, location, time zone, selected calculation settings, displayed result and comparison source. A difference can be a genuine error or the consequence of different conventions. The wider sources and editorial standards apply to our methodology explanations too.",
+          "ne": "फरक नतिजा रिपोर्ट गर्दा मिति, स्थान, समय क्षेत्र, छानिएका गणना सेटिङ, देखिएको परिणाम र तुलना गरिएको स्रोत दिनुहोस्। फरक देखिनु वास्तविक त्रुटि वा फरक चलनको परिणाम दुवै हुन सक्छ। पद्धतिको व्याख्यामा पनि हाम्रा स्रोत र सम्पादकीय मापदण्ड लागू हुन्छन्।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/sources",
+          "label": {
+            "en": "Sources and editorial standards",
+            "ne": "स्रोत र सम्पादकीय मापदण्ड"
+          },
+          "external": false
+        },
+        {
+          "href": "/corrections",
+          "label": {
+            "en": "Report a discrepancy",
+            "ne": "फरक नतिजा रिपोर्ट गर्नुहोस्"
+          },
+          "external": false
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "id": "report",
+      "title": {
+        "en": "Send a specific correction",
+        "ne": "स्पष्ट सुधार अनुरोध पठाउनुहोस्"
+      },
+      "paragraphs": [
+        {
+          "en": "Send the page URL, the statement or result you think is wrong, your proposed correction and the source supporting it. A short explanation of why the source applies is helpful. Please distinguish a factual error from a difference of opinion or preference.",
+          "ne": "पृष्ठको लिङ्क, गलत लागेको भनाइ वा नतिजा, प्रस्तावित सुधार र त्यसको आधार पठाउनुहोस्। स्रोत किन लागू हुन्छ भन्ने छोटो व्याख्या उपयोगी हुन्छ। तथ्यगत त्रुटिलाई विचार वा रुचिको भिन्नताबाट छुट्याइदिनुहोस्।"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": {
+        "en": "For tools and calendars",
+        "ne": "उपकरण र पात्रोका लागि"
+      },
+      "paragraphs": [
+        {
+          "en": "Include a reproducible example: input values, units, date, place, time zone and relevant settings. Use invented or redacted personal details where possible. We need enough context to distinguish a software error from an unsupported input or a different calendar convention.",
+          "ne": "समस्या दोहोर्‍याउन सकिने उदाहरण दिनुहोस्: राखिएका मान, एकाइ, मिति, स्थान, समय क्षेत्र र सम्बन्धित सेटिङ। सम्भव भएसम्म काल्पनिक वा पहिचान हटाइएको व्यक्तिगत विवरण प्रयोग गर्नुहोस्। सफ्टवेयरको गल्ती, नमिल्ने विवरण वा फरक पात्रो चलन छुट्याउन पर्याप्त सन्दर्भ चाहिन्छ।"
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "title": {
+        "en": "How a correction should be assessed",
+        "ne": "सुधारको मूल्याङ्कन कसरी हुनुपर्छ"
+      },
+      "paragraphs": [
+        {
+          "en": "The review should examine the original claim, the supplied evidence and any conflicting sources. A request may lead to a correction, a clarification, or an explanation of why the original result remains appropriate. Acknowledging a report is not confirmation that its proposed answer is correct.",
+          "ne": "मूल दाबी, पठाइएको प्रमाण र बाझिएका स्रोत हेरेर समीक्षा हुनुपर्छ। अनुरोधले सुधार, थप स्पष्टीकरण वा पहिलेको परिणाम किन उपयुक्त छ भन्ने जवाफ ल्याउन सक्छ। रिपोर्ट प्राप्त भएको स्वीकार गर्नु प्रस्तावित उत्तर सही भएको पुष्टि होइन।"
+        }
+      ]
+    },
+    {
+      "id": "updates",
+      "title": {
+        "en": "How material changes should be shown",
+        "ne": "महत्वपूर्ण परिवर्तन कसरी देखाइनुपर्छ"
+      },
+      "paragraphs": [
+        {
+          "en": "Our standard is to explain corrections that change a published conclusion or materially affect a tool’s interpretation on the affected page, with an update date where appropriate. Minor spelling or layout changes do not need to be presented as new research. An update date alone does not mean every fact on a page has been rechecked.",
+          "ne": "प्रकाशित निष्कर्ष बदल्ने वा उपकरणको नतिजा बुझाइमा महत्वपूर्ण असर गर्ने सुधार सम्बन्धित पृष्ठमा खुलाउने र आवश्यक ठाउँमा अद्यावधिक मिति राख्ने हाम्रो मापदण्ड हो। साना हिज्जे वा सजावटका परिवर्तनलाई नयाँ अध्ययन भनेर देखाउनु पर्दैन। अद्यावधिक मिति मात्रले पृष्ठका सबै तथ्य पुनःजाँच गरिएको जनाउँदैन।"
+        }
+      ],
+      "links": [
+        {
+          "href": "/contact",
+          "label": {
+            "en": "Send a correction by email",
+            "ne": "इमेलबाट सुधार अनुरोध पठाउनुहोस्"
+          },
+          "external": false
+        },
+        {
+          "href": "/sources",
+          "label": {
+            "en": "Read the editorial standards",
+            "ne": "सम्पादकीय मापदण्ड पढ्नुहोस्"
+          },
+          "external": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import platform from "./content/platform.json";
 import {festivalTiming} from "./home-festival-label";
 import {homeToday,homeMonth,homeEvents} from "./home-calendar-client";
 import { HomeNotesDisclosure } from "./components/HomeNotesDisclosure";
@@ -155,7 +156,20 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   }, [calendarYear, calendarMonth, localToday, today]);
 
   useEffect(() => {
-    document.title = calendarYear && calendarMonth ? calendarTitle(calendarYear, calendarMonth) : pageTitle();
+    if (calendarYear && calendarMonth) { document.title = calendarTitle(calendarYear, calendarMonth); return; }
+    let active = true;
+    queueMicrotask(() => {
+      if (!active) return;
+      document.title = platform.brand.title[language];
+      for (const [selector, value] of [
+        ['meta[name="description"]', platform.brand.description[language]],
+        ['meta[property="og:title"]', platform.brand.title[language]],
+        ['meta[property="og:description"]', platform.brand.description[language]],
+        ['meta[name="twitter:title"]', platform.brand.title[language]],
+        ['meta[name="twitter:description"]', platform.brand.description[language]]
+      ]) document.querySelector(selector)?.setAttribute("content", value);
+    });
+    return () => { active = false; };
   }, [calendarYear, calendarMonth, language]);
 
   useEffect(() => {
@@ -231,7 +245,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   const weekCount = Math.ceil((firstOffset+days.length)/7);
   const todayBs = todayView.bs || localToday;
   return <main className="rh-page home-redesign">
-    <header className="home-intro"><div><p>{l(language,"पात्रो, उपकरण र उपयोगी लेख","Calendar, tools and useful reading")}</p></div><button type="button" onClick={()=>window.dispatchEvent(new Event("patro:open-search"))}><Search size={19} aria-hidden="true"/>{l(language,"आज के गर्न चाहनुहुन्छ?","What would you like to do today?")}</button></header>
+    <header className="home-intro"><div><p>{platform.brand.intro[language]}</p></div><button type="button" onClick={()=>window.dispatchEvent(new Event("patro:open-search"))}><Search size={19} aria-hidden="true"/>{l(language,"आज के गर्न चाहनुहुन्छ?","What would you like to do today?")}</button></header>
     {!online?<p className="home-status" role="status">{l(language,"तपाईं अफलाइन हुनुहुन्छ। सुरक्षित विवरण हेर्न सकिन्छ; नयाँ विवरणका लागि इन्टरनेट जोड्नुहोस्।","You’re offline. Saved details remain available; reconnect for updates.")}</p>:null}
     <TodayHero language={language} date={today} bsLabel={todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")} adLabel={adLabel(today, language)} ns={language==="en"?todayView.nsEn||todayView.ns:todayView.ns} panchang={todayView.panchang || {}} events={(eventMap.get(today) || []).map(event=>({name:festivalName(event,language)}))}/>
     {todayError?<p className="home-status" role="status">{l(language,"आजको विस्तृत विवरण आएन। फेरि प्रयास गर्नुहोस्।","Today’s full details could not load. Please retry.")}<button type="button" onClick={()=>setRetry(n=>n+1)}>{l(language,"फेरि प्रयास","Retry")}</button></p>:null}
