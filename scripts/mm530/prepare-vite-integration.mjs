@@ -7,7 +7,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-registry.json"),"utf8")).tools;
 const outRoot=path.join(root,"public/_mm530");
 const origin="https://aafnaipatro.com";
-const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
+const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0164","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
 const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|prepared source|pre-publication|runtime QA|runtime validation pending|publication pending|publication action|draft research tool|source checkpoint|\bQA-approved\b|\bstaged(?:\s+only)?\b|Staging\s*:?[\s-]*noindex|not published|no product tests|product tests have not been executed|reserved tool routes?|published route|before hydration|fixtures\.json)/i;
 
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
