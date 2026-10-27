@@ -135,7 +135,8 @@
     "qr": "0.7.2",
     "sql.js": "1.15.1",
     "thumbhash": "0.1.1",
-    "upng-js": "2.1.0"
+    "upng-js": "2.1.0",
+    "@zxing/library": "0.23.0"
   },
   "devDependencies": {
     "@types/react": "19.1.2",
