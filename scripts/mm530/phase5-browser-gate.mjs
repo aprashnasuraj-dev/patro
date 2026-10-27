@@ -27,7 +27,7 @@ await fs.rm(out,{recursive:true,force:true});await fs.mkdir(shots,{recursive:tru
 
 function mime(p){const x=p.toLowerCase();if(x.endsWith('.html'))return'text/html; charset=utf-8';if(x.endsWith('.css'))return'text/css';if(x.endsWith('.js')||x.endsWith('.mjs'))return'text/javascript';if(x.endsWith('.json'))return'application/json';if(x.endsWith('.svg'))return'image/svg+xml';if(x.endsWith('.png'))return'image/png';if(x.endsWith('.jpg')||x.endsWith('.jpeg'))return'image/jpeg';if(x.endsWith('.gif'))return'image/gif';if(x.endsWith('.webp'))return'image/webp';if(x.endsWith('.woff2'))return'font/woff2';if(x.endsWith('.woff'))return'font/woff';if(x.endsWith('.wasm'))return'application/wasm';return'application/octet-stream'}
 async function uiEntry(t){for(const n of ['ui.ts','ui.tsx','ui.js','ui.mjs']){const p=path.join(root,t.source_dir,'src',n);if(await exists(p))return p}return null}
-function buildOpts(entry){return{entryPoints:[entry],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022',packages:'bundle',external:['/vendor/*','/assets/*','/fonts/*'],logLevel:'silent',loader:{'.css':'css','.svg':'dataurl','.png':'dataurl','.jpg':'dataurl','.jpeg':'dataurl','.gif':'dataurl','.webp':'dataurl','.woff':'dataurl','.woff2':'dataurl','.wasm':'binary'}}}
+function buildOpts(entry,id,kind='ui'){return{entryPoints:[entry],outfile:path.join(root,'.mm530-phase5-build',id,kind+'.js'),bundle:true,write:false,format:'esm',platform:'browser',target:'es2022',packages:'bundle',external:['/vendor/*','/assets/*','/fonts/*'],logLevel:'silent',loader:{'.css':'css','.svg':'dataurl','.png':'dataurl','.jpg':'dataurl','.jpeg':'dataurl','.gif':'dataurl','.webp':'dataurl','.woff':'dataurl','.woff2':'dataurl','.wasm':'binary'}}}
 async function buildOne(t){
  if(COMPILE_BLOCKERS.has(t.id)){flag(t,'browser_build','BLOCKED','Phase 4 reviewed build asset prerequisite remains unresolved.');return}
  const entry=await uiEntry(t);if(!entry){flag(t,'browser_build','BLOCKED','No browser UI entry found.');return}
@@ -35,9 +35,9 @@ async function buildOne(t){
    const srcDir=path.join(root,t.source_dir,'src');let sourceText='';
    for(const n of ['ui.ts','ui.tsx','ui.js','ui.mjs','core.ts','core.tsx','core.js']){const p=path.join(srcDir,n);if(await exists(p))sourceText+=await fs.readFile(p,'utf8')}
    t.usesLocalStorage=/\blocalStorage\b/.test(sourceText);t.usesShareState=/(?:URLSearchParams|history\.(?:pushState|replaceState)|location\.(?:search|hash)|share[-_ ]?state)/i.test(sourceText);
-   const built=await esbuild.build(buildOpts(entry));const js=built.outputFiles.find(x=>/\.js$/.test(x.path));
+   const built=await esbuild.build(buildOpts(entry,t.id,'ui'));const js=built.outputFiles.find(x=>/\.js$/.test(x.path)),css=built.outputFiles.find(x=>/\.css$/.test(x.path));
    if(!js)throw Error('esbuild produced no JavaScript output');
-   bundleCache.set(t.id,js.contents);flag(t,'browser_build','PASS','Source-stage browser bundle produced locally.');
+   bundleCache.set(t.id,{js:js.contents,css:css?.text||''});flag(t,'browser_build','PASS','Source-stage browser bundle produced locally.');
  }catch(e){flag(t,'browser_build','BLOCKED','Source-stage browser build prerequisite: '+err(e))}
 }
 async function pool(items,n,fn){let i=0;await Promise.all(Array.from({length:n},async()=>{while(i<items.length){const x=items[i++];try{await fn(x)}catch(e){x.notes.push('Harness exception: '+err(e))}}}))}
@@ -45,7 +45,7 @@ await pool(results,8,buildOne);
 
 async function workerBundle(t){
  if(workerCache.has(t.id))return workerCache.get(t.id);const srcDir=path.join(root,t.source_dir,'src');
- for(const n of ['worker.ts','worker.tsx','worker.js','worker.mjs']){const p=path.join(srcDir,n);if(await exists(p)){try{const b=await esbuild.build(buildOpts(p));const js=b.outputFiles.find(x=>/\.js$/.test(x.path));if(js){workerCache.set(t.id,js.contents);return js.contents}}catch(e){workerCache.set(t.id,null);t.notes.push('Worker build: '+err(e));return null}}}
+ for(const n of ['worker.ts','worker.tsx','worker.js','worker.mjs']){const p=path.join(srcDir,n);if(await exists(p)){try{const b=await esbuild.build(buildOpts(p,t.id,'worker'));const js=b.outputFiles.find(x=>/\.js$/.test(x.path));if(js){workerCache.set(t.id,js.contents);return js.contents}}catch(e){workerCache.set(t.id,null);t.notes.push('Worker build: '+err(e));return null}}}
  workerCache.set(t.id,null);return null;
 }
 const server=createServer(async(req,res)=>{try{
@@ -53,10 +53,10 @@ const server=createServer(async(req,res)=>{try{
  for(const prefix of ['/vendor/','/assets/','/fonts/'])if(pn.startsWith(prefix)){const p=path.resolve(root,'public',pn.slice(1));if(!p.startsWith(path.resolve(root,'public')+path.sep)||!await exists(p)){res.writeHead(404);return res.end('missing')}res.writeHead(200,{'Content-Type':mime(p),'Cache-Control':'no-store'});return res.end(await fs.readFile(p))}
  const m=pn.match(/^\/review\/(TOOL-\d{4})(?:\/(.*))?$/);if(!m){res.writeHead(404);return res.end('not found')}const t=byId.get(m[1]);if(!t){res.writeHead(404);return res.end('unknown tool')}
  const rel=m[2]||'page.html';
- if(rel==='__ui.js'||/^(?:src\/)?ui\.(?:ts|tsx|js|mjs)$/.test(rel)){const b=bundleCache.get(t.id);if(!b){res.writeHead(503);return res.end('browser bundle blocked')}res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store'});return res.end(b)}
+ if(rel==='__ui.js'||/^(?:src\/)?ui\.(?:ts|tsx|js|mjs)$/.test(rel)){const b=bundleCache.get(t.id);if(!b){res.writeHead(503);return res.end('browser bundle blocked')}res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store'});return res.end(b.js)}
  if(rel==='worker.js'||rel==='src/worker.js'){const b=await workerBundle(t);if(!b){res.writeHead(404);return res.end('worker unavailable')}res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store'});return res.end(b)}
  const base=path.resolve(root,t.source_dir),dest=path.resolve(base,rel);if(!dest.startsWith(base+path.sep)&&dest!==base){res.writeHead(403);return res.end('forbidden')}if(!await exists(dest)){res.writeHead(404);return res.end('missing')}
- let bytes=await fs.readFile(dest);if(rel==='page.html'){let html=bytes.toString('utf8');html=html.replace(/<head(?:\s[^>]*)?>/i,x=>x+'<base href="/review/'+t.id+'/">');html=html.replace(/<script([^>]*type=["']module["'][^>]*)src=["'](?:\.\/)?src\/ui\.(?:ts|tsx|js|mjs)["']([^>]*)><\/script>/i,'<script type="module" src="/review/'+t.id+'/__ui.js"></script>');bytes=Buffer.from(html)}
+ let bytes=await fs.readFile(dest);if(rel==='page.html'){let html=bytes.toString('utf8');html=html.replace(/<head(?:\s[^>]*)?>/i,x=>x+'<base href="/review/'+t.id+'/">');html=html.replace(/<script\b[^>]*\bsrc=["'](?:\.\/)?src\/ui\.(?:ts|tsx|js|mjs)["'][^>]*><\/script>/i,'<script type="module" src="/review/'+t.id+'/__ui.js"></script>');const built=bundleCache.get(t.id);if(built?.css)html=html.replace(/<\/head>/i,'<style data-mm530-bundle-css>'+built.css+'</style></head>');bytes=Buffer.from(html)}
  res.writeHead(200,{'Content-Type':mime(dest),'X-Robots-Tag':'noindex, nofollow','Cache-Control':'no-store'});res.end(bytes)
  }catch(e){res.writeHead(500);res.end(err(e))}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
@@ -145,11 +145,11 @@ await pool(results,6,testTool);await browser.close();server.close();
 const stage={};for(const t of results)for(const [k,v] of Object.entries(t.checks)){stage[k]??={};stage[k][v.state]=(stage[k][v.state]||0)+1}
 const hard=['mobile_360','mobile_390','tablet_768','desktop_1280','functional_valid','invalid_input','keyboard','aria_live','reduced_motion','theme','localStorage','copy','download','reset','share','device_fallback'];
 const failed=results.filter(t=>hard.some(k=>t.checks[k]?.state==='FAIL'));const blockers=results.filter(t=>hard.some(k=>['BLOCKED','REVIEW_REQUIRED'].includes(t.checks[k]?.state)));
-const summary={schema_version:'MM530_PHASE5_SUMMARY_V1',at:new Date().toISOString(),source_commit:process.env.GITHUB_SHA||null,tools:results.length,status:failed.length?'FAIL':blockers.length?'PASS_WITH_DOCUMENTED_BLOCKERS':'PASS',failed_tools:failed.length,blocked_or_review_tools:blockers.length,checks:stage,globalErrors,mm530_phase5:true,production_integration:'BLOCKED'};
+const buildPass=stage.browser_build?.PASS||0,harnessInvalid=buildPass===0||visual.length===0;const summary={schema_version:'MM530_PHASE5_SUMMARY_V1',at:new Date().toISOString(),source_commit:process.env.GITHUB_SHA||null,tools:results.length,status:failed.length||harnessInvalid?'FAIL':blockers.length?'PASS_WITH_DOCUMENTED_BLOCKERS':'PASS',failed_tools:failed.length,blocked_or_review_tools:blockers.length,browser_build_pass:buildPass,harness_invalid:harnessInvalid,checks:stage,globalErrors,mm530_phase5:true,production_integration:'BLOCKED'};
 const safe=results.map(t=>({...t,build:undefined}));
 await fs.writeFile(path.join(out,'summary.json'),JSON.stringify(summary,null,2));await fs.writeFile(path.join(out,'all-tools.json'),JSON.stringify({summary,tools:safe},null,2));await fs.writeFile(path.join(out,'failed-tools.json'),JSON.stringify({count:failed.length,tools:failed},null,2));await fs.writeFile(path.join(out,'blockers.json'),JSON.stringify({count:blockers.length,tools:blockers},null,2));await fs.writeFile(path.join(out,'visual-manifest.json'),JSON.stringify({count:visual.length,families:[...familyRep.keys()].length,items:visual},null,2));
 for(let b=1;b<=10;b++){const name='BATCH-'+String(b).padStart(2,'0'),xs=safe.filter(t=>t.batch===name);await fs.writeFile(path.join(out,'batch-'+String(b).padStart(2,'0')+'.json'),JSON.stringify({batch:name,count:xs.length,tools:xs},null,2))}
 const gate={schema_version:'MM530_PHASE5_GATE_V1',status:summary.status,tools:530,failed_tools:failed.length,blocked_or_review_tools:blockers.length,mobile_overflow_failures:Object.entries(stage).filter(([k])=>['mobile_360','mobile_390','tablet_768'].includes(k)).reduce((n,[,v])=>n+(v.FAIL||0),0),unexpected_browser_failures:failed.length,external_device_actual_tests:0,visual_representatives:visual.length,engineering_families:familyRep.size,production_integration:'BLOCKED'};
 await fs.writeFile(path.join(out,'gate.json'),JSON.stringify(gate,null,2));await fs.writeFile(path.join(out,'README.md'),'# MM530 Phase 5 browser validation\n\nStatus: **'+summary.status+'**\n\n530 tools were isolated; source-stage UI bundles were served locally and checked at 360, 390, 768 and 1280 px. Functional prepared-example interactions, invalid-input behavior, keyboard/ARIA, reduced motion, optional copy/download/reset/share controls, storage failure, and device fallbacks are recorded per tool. BLOCKED/REVIEW_REQUIRED are not PASS. Production Vite/Cloudflare integration remains BLOCKED.\n');
 console.log(JSON.stringify(gate));
-process.exitCode=globalErrors.length||failed.length?1:0;
+process.exitCode=globalErrors.length||failed.length||harnessInvalid?1:0;
