@@ -65,6 +65,11 @@ for(const tool of registry){
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
  assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
  const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
+ const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\\b[^>]*src=["']\\.\\/tool\\.js["'][^>]*><\\/script>/gi)];
+ assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
+ assert(!/research\\/sources\\.json|examples\\/fixtures\\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
+ const rawReferenceLabels=[...runtimeHtml.matchAll(/<a\\b[^>]*>\\s*(https?:\\/\\/[^<]+)<\\/a>/gi)];
+ assert(rawReferenceLabels.length===0,"RAW_REFERENCE_LABEL",tool.id+": "+rawReferenceLabels.length+" raw URL labels");
  if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
  if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
  if(hub)assert(hub.includes(tool.route),"DISCOVERY_LINK_MISSING",tool.id);
