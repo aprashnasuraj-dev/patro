@@ -60,7 +60,8 @@ async function check(tool){
   }
   item.primary_control_present=!!action;
   if(!action)throw Error('primary action missing or disabled; needs tool-specific fixture');
-  const outputSelectors='#result,#output,.mm-result,.result,.results,#feedback,#status,[role=status]';
+  const outputSelectors='#result,#output,.mm-result,.result,.results,#metrics,#summary,#data-rows';
+  const statusSelectors='#feedback,#status,.mm-status,[role=status],[role=alert]';
   const before=await page.locator(outputSelectors).allTextContents();
   if(tool.id==='TOOL-0006'){
    const input=page.locator('textarea.mm-source-editor').first();
@@ -71,7 +72,7 @@ async function check(tool){
   item.primary_action_executed=true;
   if(tool.id==='TOOL-0006'){
    const output=page.locator('pre.mm-result');
-   await page.waitForFunction(()=>{const t=document.querySelector('pre.mm-result')?.textContent||'';return t.includes('redacted.invalid')},{timeout:7000}).catch(()=>{});
+   await page.waitForFunction(()=>{const t=document.querySelector('pre.mm-result')?.textContent||'';return t.includes('redacted.invalid')},null,{timeout:7000});
    const parsed=JSON.parse(await output.innerText());
    const entry=parsed.log.entries[0];
    if(entry.response.status!==200||entry.timings.wait!==22||entry.timings.receive!==8||
@@ -88,7 +89,7 @@ async function check(tool){
    item.invalid_input_rejected=/invalid har json/i.test(status);
    if(!item.invalid_input_rejected)throw Error('HAR invalid JSON not rejected');
    await invalid.fill(JSON.stringify(harSample));await action.click();
-   await page.locator('pre.mm-result').getByText('redacted.invalid').waitFor({timeout:7000}).catch(()=>{});
+   await page.waitForFunction(()=>document.querySelector('pre.mm-result')?.textContent?.includes('redacted.invalid'),null,{timeout:7000});
    const copy=page.getByRole('button',{name:'Copy output'});
    const download=page.getByRole('button',{name:'Download output'});
    item.copy_checked=await copy.isEnabled();
@@ -98,7 +99,11 @@ async function check(tool){
   }else{
    await page.waitForTimeout(350);
    const after=await page.locator(outputSelectors).allTextContents();
-   item.visible_result_created=after.join('')!==before.join('')&&after.join('').trim().length>0;
+   const statuses=await page.locator(statusSelectors).allTextContents();
+   if(/(?:invalid|failed|error|unable|malformed|missing required|no file selected)/i.test(statuses.join(' ')))
+     throw Error('valid workflow returned error status: '+statuses.join(' ').slice(0,160));
+   item.visible_result_created=after.join('')!==before.join('')&&after.join('').trim().length>0
+      &&!/(?:^\s*(?:ready|loading|no result|output will appear|nothing to show)\s*$)/i.test(after.join(' '));
    if(!item.visible_result_created)throw Error('action clicked but meaningful output not proven; requires family fixture');
   }
   if(errors.length)throw Error('browser exception: '+errors[0]);
