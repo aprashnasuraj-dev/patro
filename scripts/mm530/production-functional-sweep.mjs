@@ -13,7 +13,7 @@ const reportPath=path.join(root,'reports/mm530-functional-gate.json');
 await fs.mkdir(path.dirname(reportPath),{recursive:true});
 const exists=p=>fs.access(p).then(()=>true,()=>false);
 const DEVICE=new Set(['TOOL-0349','TOOL-0350','TOOL-0446']);
-const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
+const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0164","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
 const MEDIA=new Set(['TOOL-0161','TOOL-0162','TOOL-0163','TOOL-0164','TOOL-0165','TOOL-0166','TOOL-0167','TOOL-0168','TOOL-0169','TOOL-0170','TOOL-0171','TOOL-0172','TOOL-0173','TOOL-0174','TOOL-0175','TOOL-0176']);
 const FORCE_FILE=new Set(['TOOL-0111']);
 const TRANSIENT=/(?:processing|loading|working|encoding|converting|running|preparing|analyzing|calculating|starting|decoding|rendering|remuxing|benchmarking|extracting|trimming|rotating|merging|cutting)/i;
@@ -138,7 +138,7 @@ async function check(tool){
  page.on('pageerror',e=>errors.push(e.message));
  page.on('request',r=>{if(r.url().endsWith('/tool.js'))runtimeRequested=true});
  page.on('response',r=>{if(r.status()===404)missingAssets.push(r.url())});
- const item={tool_id:tool.id,route:tool.route,runtime_script_attached:false,runtime_bundle_requested:false,
+ const item={tool_id:tool.id,route:tool.route,release_tier:MINIMAL_RELEASE.has(tool.id)?'MINIMAL':'FULL',runtime_script_attached:false,runtime_bundle_requested:false,
   mount_target_exists:false,runtime_mount_succeeded:false,primary_control_present:false,
   primary_action_executed:false,visible_result_created:false,invalid_input_rejected:false,
   copy_checked:false,download_checked:false,console_errors:errors,missing_assets:missingAssets,
