@@ -197,6 +197,28 @@ const handler = async (req, res) => {
     res.end('{"error":"static_audit_server"}');
     return;
   }
+  if (url.pathname === "/mm530-runtime/ffmpeg-core.wasm" && (req.method === "GET" || req.method === "HEAD")) {
+    const manifestPath = join(root, "assets/vendor/ffmpeg/ffmpeg-core.wasm.parts.json");
+    try {
+      const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+      const parts = Array.isArray(manifest.parts) ? manifest.parts : [];
+      const total = Number(manifest.totalBytes);
+      if (!Number.isInteger(total) || total <= 0 || parts.length < 2) throw new Error("invalid ffmpeg manifest");
+      const headers = { "content-type": "application/wasm", "content-length": String(total), "cache-control": "public, max-age=86400", ...headersForPath(url.pathname) };
+      res.writeHead(200, headers);
+      if (req.method === "HEAD") { res.end(); return; }
+      for (const part of parts) {
+        const rel = String(part.url || "").replace(/^\/+/, "");
+        if (!rel.startsWith("assets/vendor/ffmpeg/ffmpeg-core.wasm.part")) throw new Error("invalid ffmpeg part path");
+        res.write(await readFile(join(root, rel)));
+      }
+      res.end(); return;
+    } catch (error) {
+      res.writeHead(503, { "content-type": "text/plain; charset=utf-8" });
+      res.end("FFmpeg runtime unavailable");
+      return;
+    }
+  }
   const decoded = decodeURIComponent(url.pathname);
   const safe = normalize(decoded).replace(/^([.][.][/\\])+/, "").replace(/^[/\\]+/, "");
   let file = join(root, safe || "index.html");
