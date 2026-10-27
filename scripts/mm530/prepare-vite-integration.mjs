@@ -40,22 +40,27 @@ function finishDescription(value){
  text=(text.replace(/\s+\S*$/,"").trim()||text).replace(/[,:;\-–—]+$/,"").trim();
  return /[.!?…]$/.test(text)?text:text+".";
 }
+function titleAwareDescription(title,categoryLabel){
+ const cleanTitle=cleanPublicText(title).replace(/\s+/g," ").trim();
+ const candidates=[
+  `Use ${cleanTitle} directly in your browser. Review inputs, outputs, assumptions and limitations before relying on the result.`,
+  `Use ${cleanTitle} in your browser. Review inputs, outputs and limitations before use.`,
+  `${cleanTitle} runs in your browser. Review inputs, outputs and limitations before use.`
+ ];
+ for(const candidate of candidates)if(candidate.length>=70&&candidate.length<=165&&descriptionIsComplete(candidate))return candidate;
+ const category=String(categoryLabel||"web tool").replace(/s$/i,"").toLowerCase();
+ const maxTitle=Math.max(36,165-(`Use  as a ${category} in your browser. Review inputs and limitations.`).length);
+ const clipped=(cleanTitle.slice(0,maxTitle).replace(/\s+\S*$/,"").trim()||cleanTitle.slice(0,maxTitle).trim());
+ return finishDescription(`Use ${clipped} as a ${category} in your browser. Review inputs and limitations.`);
+}
 function boundedDescription(value,title,categoryLabel){
  let text=finishDescription(cleanPublicText(value));
- if(text.length<70)text=finishDescription(`Use ${title} directly in your browser. Review the inputs, method, examples, references and limitations before relying on the result.`);
+ if(text.length<70)text=titleAwareDescription(title,categoryLabel);
  if(text.length>165){
   const window=text.slice(0,165),ends=[...window.matchAll(/[.!?…](?=\s|$)/g)].filter(m=>m.index+1>=70),last=ends.at(-1);
-  if(last)text=window.slice(0,last.index+1).trim();
-  else{
-   const cut=window.slice(0,164).replace(/\s+\S*$/,"").trim().replace(/[,:;\-–—]+$/,"");
-   text=finishDescription(cut);
-  }
+  text=last?window.slice(0,last.index+1).trim():titleAwareDescription(title,categoryLabel);
  }
- if(text.length<70)text=finishDescription(text+" Review the stated assumptions and limitations before use.");
- if(text.length>165||!descriptionIsComplete(text)){
-  const fallback=`Use this ${String(categoryLabel||"web tool").toLowerCase()} directly in your browser. Review inputs, outputs, assumptions and limitations before relying on the result.`;
-  text=fallback.length<=165?fallback:"Use this web tool directly in your browser. Review inputs, outputs, assumptions and limitations before relying on the result.";
- }
+ if(text.length<70||text.length>165||!descriptionIsComplete(text))text=titleAwareDescription(title,categoryLabel);
  return text;
 }
 function extractDescription(html,title,categoryLabel){
