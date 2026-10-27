@@ -96,6 +96,7 @@ async function pageSignals(page){return page.evaluate(()=>{const vis=e=>{const s
 async function primary(page){for(const s of ['#run','#execute','#generate','#calculate','#start','#parse','#enc','#gen','#def','#load','#add','#decode','#primary','#primary-action','button.primary-action','button.primary','button.mm-primary','button[data-action="run"]','button[type="submit"]','form button:not([type="button"])']){const l=page.locator(s).first();if(await l.count()&&await l.isVisible().catch(()=>false))return l}return null}
 async function setFiles(page,t){const inputs=page.locator('input[type="file"]'),n=await inputs.count();let unsupported=[],set=0,skippedOptional=0;const hasPreparedText=await page.locator('textarea').evaluateAll(xs=>xs.some(x=>{const e=x,s=getComputedStyle(e);return s.display!=='none'&&s.visibility!=='hidden'&&e.value.trim().length>0}));for(let i=0;i<n;i++){const l=inputs.nth(i),required=await l.getAttribute('required')!==null;if(!required&&(hasPreparedText||t.id==='TOOL-0082')){skippedOptional++;continue}const acc=await l.getAttribute('accept')||'',f=fixture(acc,(await l.getAttribute('id')||'')+' '+t.title);if(!f){unsupported.push(acc||t.title);continue}const multiple=await l.getAttribute('multiple')!==null;await l.setInputFiles(multiple?[f,{...f,name:'second-'+f.name}]:f);set++}return{count:n,set,skippedOptional,unsupported}}
 async function functional(page,t){
+ if(DEVICE.has(t.id))return{state:'NOT_APPLICABLE',note:'Actual external-device execution is skipped in CI; device fallback is verified separately.'};
  const passwords=page.locator('input[type="password"]');for(let i=0;i<await passwords.count();i++){const x=passwords.nth(i);if(await x.isVisible().catch(()=>false)&&!(await x.inputValue()))await x.fill('MM530-valid-test-passphrase-2026');}
  if(t.id==='TOOL-0054'){const ack=page.locator('#i-ack');if(await ack.count())await ack.check();}
  const before=await page.evaluate(textSnapshot),beforeResult=await page.evaluate(resultSnapshot);const files=await setFiles(page,t);const p=await primary(page);
@@ -111,7 +112,7 @@ async function functional(page,t){
 }
 async function invalidInput(page){
  const p=await primary(page);if(!p)return{state:'NOT_APPLICABLE',note:'No generic primary action.'};
- const before=await page.evaluate(resultSnapshot);
+ const before=await page.evaluate(resultSnapshot),beforeText=await page.evaluate(textSnapshot);
  const file=page.locator('input[type="file"]').first(),password=page.locator('input[type="password"]').first(),requiredText=page.locator('input[required]:not([type="file"]):not([type="checkbox"]):not([type="radio"]):not([type="number"]),textarea[required]').first(),number=page.locator('input[type="number"]').first();
  let target='none';
  try{
@@ -129,7 +130,7 @@ async function invalidInput(page){
    const native=await page.locator(':invalid').count(),explicit=await page.evaluate(errorSnapshot),txt=await page.evaluate(textSnapshot),after=await page.evaluate(resultSnapshot);
    if(explicit)return{state:'PASS',note:`Tool rejected ${target} with an explicit error state.`};
    if(native&&!formNoValidate&&after===before)return{state:'PASS',note:`Browser constraint validation rejected ${target} before execution.`};
-   if(STRONG_ERROR.test(txt)&&after!==before)return{state:'PASS',note:`Tool rejected ${target} with bounded validation feedback.`};
+   if(STRONG_ERROR.test(txt)&&txt!==beforeText)return{state:'PASS',note:`Tool rejected ${target} with changed bounded validation feedback.`};
    return{state:'REVIEW_REQUIRED',note:`Invalid case (${target}) did not crash, but explicit rejection was not proven.`};
  }catch(e){return{state:'FAIL',note:'Invalid-input path crashed: '+err(e)}}
 }
