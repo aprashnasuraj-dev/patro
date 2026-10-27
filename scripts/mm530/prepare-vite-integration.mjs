@@ -169,7 +169,9 @@ for(const tool of registry){
   const modulePath=JSON.stringify(entry);
   const bootSource=mountExport
     ? `import * as tool from ${modulePath};
-const root=document.querySelector('#tool-interactive-root,#tool-app,[data-tool-id="${tool.id}"]');
+const explicit=document.querySelector('#tool-interactive-root,#tool-app,#${tool.id.toLowerCase()},[data-tool-id="${tool.id}"]');
+const mains=[...document.querySelectorAll('main[id]')];
+const root=explicit||(mains.length===1?mains[0]:null);
 if(!root)throw new Error("Missing explicit mount target for ${tool.id}");
 const mount=typeof tool.mount==="function"?tool.mount:tool.default;
 if(typeof mount!=="function")throw new Error("Missing exported mount function for ${tool.id}");
