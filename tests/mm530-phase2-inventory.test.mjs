@@ -21,3 +21,7 @@ test('route leaf, family and browser profile are deterministic',()=>{
  assert.equal(normalizedTitle('Heating Cost Comparator | AafnaiPatro Tools'),'Heating Cost Comparator');
  assert.equal(browserProfile({browser_first:true},{has_page_html:true}).browser_first,true);
 });
+
+test('inventory browser profile accepts generator page_html field',()=>{
+ assert.equal(browserProfile({}, {page_html:true}).has_page_html,true);
+});

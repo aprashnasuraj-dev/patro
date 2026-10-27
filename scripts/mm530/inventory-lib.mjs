@@ -65,7 +65,7 @@ export function browserProfile(meta={},files={}){
   runtime_network:meta.privacy?.runtime_network??null,
   has_worker:!!files.has_worker,
   has_browser_test:!!files.has_browser_test,
-  has_page_html:!!files.has_page_html
+  has_page_html:!!(files.has_page_html ?? files.page_html)
  };
 }
 export function normalizedFamily(master={},meta={}){

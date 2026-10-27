@@ -3,7 +3,7 @@ const rules=[
 ['tax',/\b(tax|vat|gst|1099(?:-?k)?|irs|payroll|withholding|tariff|customs|duty|excise)\b/i,
 'Estimate only; not tax or legal advice. Tax rules, thresholds, filing requirements and rates can change by jurisdiction and tax year. Confirm current official guidance before filing or paying.',
 'यो अनुमान मात्र हो, कर वा कानुनी सल्लाह होइन। करका नियम, सीमा र दर देश, क्षेत्र र कर वर्षअनुसार परिवर्तन हुन सक्छन्। विवरण पेश गर्नु वा कर बुझाउनुअघि हालको आधिकारिक जानकारी पुष्टि गर्नुहोस्।'],
-['regulatory',/\b(legal|law|compliance|regulation|eligibility|immigration|visa|labou?r|copyright|licen[sc]e|permit|contract|invoice|surcharge|wage)\b/i,
+['regulatory',/\b(legal|law|compliance|regulation|eligibility|immigration|visa|labou?r|employment|overtime|paycheck|payroll|pto|severance|minimum\s+wage|workers?\s+compensation|tenant|landlord|lease|eviction|copyright|licen[sc]e|permit|contract|invoice|surcharge|wage|medicare|medicaid|social\s+security|rmd)\b/i,
 'Information and planning only; not legal advice. Applicable rules, documentation and effective dates vary by jurisdiction and can change. Verify current official requirements with the responsible authority or qualified adviser.',
 'यो सूचना तथा योजना बनाउन प्रयोग हुने साधन हो, कानुनी सल्लाह होइन। लागू नियम, कागजात र प्रभावकारी मिति क्षेत्रअनुसार फरक पर्न र परिवर्तन हुन सक्छ। आधिकारिक निकाय वा योग्य सल्लाहकारबाट पुष्टि गर्नुहोस्।'],
 ['finance',/\b(loan|apr|mortgage|insurance|interest.rate|credit.card|debt|investment|refinance|pension)\b/i,
