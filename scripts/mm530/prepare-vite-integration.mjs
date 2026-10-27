@@ -88,7 +88,22 @@ async function copyRuntime(srcRel,dstRel){
  await fs.mkdir(path.dirname(dst),{recursive:true});const st=await fs.stat(src);if(st.isDirectory())await fs.cp(src,dst,{recursive:true});else await fs.copyFile(src,dst);
 }
 
+async function splitCloudflareAsset(rel,partBytes=16*1024*1024){
+ const file=path.join(root,"public",rel);if(!await exists(file))return null;
+ const bytes=await fs.readFile(file);if(bytes.length<=25*1024*1024)return {totalBytes:bytes.length,parts:[{url:"/"+rel,bytes:bytes.length}]};
+ const dir=path.dirname(file),base=path.basename(file),parts=[];
+ for(let offset=0,index=0;offset<bytes.length;offset+=partBytes,index++){
+  const chunk=bytes.subarray(offset,Math.min(offset+partBytes,bytes.length)),name=`${base}.part${index}`,target=path.join(dir,name);
+  await fs.writeFile(target,chunk);parts.push({url:"/"+path.posix.join(path.posix.dirname(rel),name),bytes:chunk.length});
+ }
+ await fs.rm(file);
+ const manifest={schemaVersion:1,totalBytes:bytes.length,parts};
+ await fs.writeFile(path.join(dir,`${base}.parts.json`),JSON.stringify(manifest,null,2)+"\n");
+ return manifest;
+}
+
 await fs.rm(outRoot,{recursive:true,force:true});await fs.mkdir(outRoot,{recursive:true});
+await fs.rm(path.join(root,"public/assets/vendor/ffmpeg"),{recursive:true,force:true});
 await Promise.all([
  copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.mjs","vendor/pdfjs/pdf.mjs"),
  copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs","vendor/pdfjs/pdf.worker.mjs"),
@@ -98,6 +113,8 @@ await Promise.all([
  copyRuntime("node_modules/@ffmpeg/core/dist/esm","assets/vendor/ffmpeg"),
  copyRuntime("node_modules/mathjax","vendor/mathjax")
 ]);
+const ffmpegManifest=await splitCloudflareAsset("assets/vendor/ffmpeg/ffmpeg-core.wasm");
+if(!ffmpegManifest||ffmpegManifest.parts.some(p=>p.bytes>=25*1024*1024))throw new Error("FFmpeg WASM could not be split below Cloudflare asset limits");
 const sheetWrapper=path.join(root,"public/assets/vendor/sheetjs/xlsx-0.20.3/xlsx.mjs");
 await fs.mkdir(path.dirname(sheetWrapper),{recursive:true});
 await fs.writeFile(sheetWrapper,`await import('/_mm530/TOOL-0370/src/vendor/xlsx.bundle.js');const x=globalThis.XLSX;if(!x?.read||!x?.write||!x?.utils)throw new Error('Spreadsheet runtime unavailable');export const read=x.read;export const write=x.write;export const utils=x.utils;export default x;\n`);
@@ -109,6 +126,8 @@ for(const tool of registry){
   if(!await exists(entry)||!await exists(page))throw new Error("missing tool entry or page");
   await fs.mkdir(dst,{recursive:true});await copyTree(srcDir,dst);
   await build({entryPoints:[entry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
+  const builtJsPath=path.join(dst,"tool.js");let builtJs=await fs.readFile(builtJsPath,"utf8");
+  if(builtJs.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){builtJs=builtJs.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");await fs.writeFile(builtJsPath,builtJs);}
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title,tool.categoryLabel);
   let html=sanitizeProductionHtml(original);
   html=injectSeo(html,tool,title,description);
