@@ -178,6 +178,6 @@ async function main(){
  const route=await auditRoutes();
  async function pool(fn,count,name){let i=0;await Promise.all(Array.from({length:count},async()=>{while(i<results.length){const t=results[i++];try{await fn(t,esbuild)}catch(e){flag(t,name,'FAIL',err(e))}}}))}
  await pool(compile,6,'compile');await pool(unit,4,'unit');if(process.env.MM530_PHASE4_ONLY==='1'){for(const t of results)flag(t,'browser_source','NOT_RUN','Phase 5 functional browser validation intentionally not started before Phase 4 gate')}else await browserStage();await report(route);
- process.exitCode=globalErrors.length||results.some(t=>Object.values(t.checks).some(x=>x.state!=='PASS'))?1:0;
+ const phase4Only=process.env.MM530_PHASE4_ONLY==='1';const phase4Bad=results.some(t=>['compile','unit'].some(k=>!['PASS','BLOCKED'].includes(t.checks?.[k]?.state)));process.exitCode=globalErrors.length||(phase4Only?phase4Bad:results.some(t=>Object.values(t.checks).some(x=>x.state!=='PASS')))?1:0;
 }
 main().catch(async e=>{globalErrors.push('Fatal: '+err(e));try{await report({fatal:true})}catch{};console.error(e);process.exitCode=1});

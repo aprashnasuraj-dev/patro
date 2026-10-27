@@ -1,0 +1,51 @@
+{
+  "schema_version": "MM530_PHASE4_ROOT_CAUSES_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "actions_source_commit": "c9a8d07eacec50641d165ae45f24739256ec7a13",
+    "workflow_run_id": 40453367367,
+    "workflow_run_url": "https://github.com/aprashnasuraj-dev/patro/actions/runs/40453367367",
+    "artifact": {
+      "id": 12711621150,
+      "name": "mm530-phase4-unit",
+      "digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+    }
+  },
+  "clusters": [
+    {
+      "cluster": "deterministic-logic-failures",
+      "before": 4,
+      "after": 0,
+      "tools": [
+        "TOOL-0302",
+        "TOOL-0338",
+        "TOOL-0348",
+        "TOOL-0360"
+      ],
+      "repairs": [
+        "calendarDiff comparison direction corrected",
+        "structured QR schemes classified before generic URL parsing",
+        "itunes namespace lookup made namespace-aware",
+        "device-frame geometry fixture corrected to include both outer paddings"
+      ]
+    },
+    {
+      "cluster": "todo-only-unit-suites",
+      "before_not_run": 54,
+      "after_not_run": 0,
+      "scope": "TOOL-0101..TOOL-0159 subset",
+      "repair": "Added executable deterministic guard/helper tests while retaining binary/browser fixture TODOs where authoritative assets are still required."
+    },
+    {
+      "cluster": "reviewed-build-assets",
+      "before_blocked": 3,
+      "after_blocked": 3,
+      "tools": [
+        "TOOL-0324",
+        "TOOL-0370",
+        "TOOL-0371"
+      ],
+      "resolution": "Intentionally remain BLOCKED; no approximate/substitute asset was invented."
+    }
+  ]
+}

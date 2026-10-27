@@ -1,0 +1,23 @@
+{
+  "count": 3,
+  "tools": [
+    {
+      "id": "TOOL-0324",
+      "gate": "compile",
+      "state": "BLOCKED",
+      "note": "Required reviewed build asset is unavailable: ./wordlist.generated.js"
+    },
+    {
+      "id": "TOOL-0370",
+      "gate": "compile",
+      "state": "BLOCKED",
+      "note": "Required reviewed build asset is unavailable: ./vendor/xlsx.bundle.js"
+    },
+    {
+      "id": "TOOL-0371",
+      "gate": "compile",
+      "state": "BLOCKED",
+      "note": "Required reviewed build asset is unavailable: ./vendor/mathjax-tex-svg.bundle.js"
+    }
+  ]
+}

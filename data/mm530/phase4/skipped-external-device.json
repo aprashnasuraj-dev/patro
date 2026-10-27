@@ -1,0 +1,24 @@
+{
+  "count": 3,
+  "physical_device_tests_executed": 0,
+  "tools": [
+    {
+      "id": "TOOL-0349",
+      "state": "SKIPPED_EXTERNAL_DEVICE",
+      "automated_unit": "PASS",
+      "note": "Actual screen-recording/webcam interaction requires external browser/device permission and was not executed in Phase 4."
+    },
+    {
+      "id": "TOOL-0350",
+      "state": "SKIPPED_EXTERNAL_DEVICE",
+      "automated_unit": "PASS",
+      "note": "Actual webcam/microphone capture requires external browser/device permission and was not executed in Phase 4."
+    },
+    {
+      "id": "TOOL-0446",
+      "state": "SKIPPED_EXTERNAL_DEVICE",
+      "automated_unit": "PASS",
+      "note": "Actual physical printer/alignment verification requires an external printer and was not executed in Phase 4."
+    }
+  ]
+}
