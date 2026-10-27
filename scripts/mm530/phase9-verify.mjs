@@ -118,7 +118,11 @@ const mmSitemap=await read(path.join(dist,"sitemap-mm530.xml")).catch(()=>"");co
 const robotsTxt=await read(path.join(dist,"robots.txt")).catch(()=>"");
 assert(robotsTxt.includes("Sitemap: "+origin+"/sitemap-mm530.xml"),"CRAWLER_ROBOTS_SITEMAP","robots.txt does not advertise the MM530 sitemap directly");
 for(const agent of ["Googlebot","Bingbot","OAI-SearchBot","Claude-SearchBot","PerplexityBot","Applebot","DuckDuckBot"])assert(robotsTxt.includes("User-agent: "+agent),"CRAWLER_AGENT_POLICY_MISSING",agent);
-assert(!/Disallow:\s*\/(?:calculators|generators|converters|editors|formatters|validators|analyzers|security|media|documents|network|developer)\//i.test(robotsTxt),"CRAWLER_TOOL_ROUTE_BLOCKED","robots.txt blocks a canonical MM530 family");
+assert(!/Disallow:\s*\/(?:calculators|generators|converters|editors|formatters|validators|analyzers|planners|extractors|utilities|comparisons|timers)\//i.test(robotsTxt),"CRAWLER_TOOL_ROUTE_BLOCKED","robots.txt blocks a canonical MM530 family");
+const headersSource=await read(path.join(root,"public/_headers")).catch(()=>"");
+for(const category of [...new Set(registry.map(x=>x.category))]){
+ assert(headersSource.includes("/"+category+"/*")&&headersSource.includes("s-maxage=86400"),"CRAWLER_CACHE_POLICY_MISSING",category);
+}
 for(const tool of registry){const url=origin+tool.route;const occurrences=mmSitemap.split(url).length-1;assert(occurrences===1,"SITEMAP_CANONICAL_COUNT",`${tool.id}: ${occurrences}`)}
 assert(rootSitemap.includes(origin+"/sitemap-mm530.xml"),"ROOT_SITEMAP_INTEGRATION","root sitemap index missing MM530 child");
 assert(!hub?.includes("/_mm530/"),"DISCOVERY_EAGER_RUNTIME","web-tools hub references runtime assets directly");
