@@ -108,7 +108,9 @@
       "!/client-tools",
       "!/converter",
       "!/calculator",
-      "!/tools"
+      "!/tools",
+      "!/tool/*",
+      "!/tool"
     ]
   },
   "d1_databases": [

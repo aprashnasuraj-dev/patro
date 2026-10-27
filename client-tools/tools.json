@@ -10801,8 +10801,8 @@
   },
   {
     "source_id": "CT-301",
-    "slug": "/converter/heic-to-pdf",
-    "category": "converter",
+    "slug": "/tool/heic-to-pdf",
+    "category": "tool",
     "h1": "HEIC to PDF",
     "title_tag": "HEIC to PDF",
     "meta_description": "Decode HEIC locally, preserve orientation, size pages to the image, and download a PDF without uploading files. Runs locally in your browser; inputs…",
@@ -10826,9 +10826,9 @@
       }
     ],
     "related_tools": [
-      "/converter/heic-to-jpg-under-1mb",
-      "/converter/heic-to-webp",
-      "/tools/heic-viewer"
+      "/tool/heic-to-jpg-under-1mb",
+      "/tool/heic-to-webp",
+      "/tool/heic-viewer"
     ],
     "engine": "image350",
     "operation": "heic-to-pdf",
@@ -10847,8 +10847,8 @@
   },
   {
     "source_id": "CT-302",
-    "slug": "/converter/heic-to-jpg-under-1mb",
-    "category": "converter",
+    "slug": "/tool/heic-to-jpg-under-1mb",
+    "category": "tool",
     "h1": "HEIC to JPG Under 1 MB or 2 MB",
     "title_tag": "HEIC to JPG Under 1 MB or 2 MB",
     "meta_description": "Binary-search JPEG quality and resize only when needed to meet 1 MB or 2 MB targets. Runs locally in your browser; inputs stay on your device.",
@@ -10872,9 +10872,9 @@
       }
     ],
     "related_tools": [
-      "/converter/heic-to-webp",
-      "/tools/heic-viewer",
-      "/tools/heic-exif-viewer"
+      "/tool/heic-to-webp",
+      "/tool/heic-viewer",
+      "/tool/heic-exif-viewer"
     ],
     "engine": "image350",
     "operation": "heic-to-jpg-under-1mb",
@@ -10893,8 +10893,8 @@
   },
   {
     "source_id": "CT-303",
-    "slug": "/converter/heic-to-webp",
-    "category": "converter",
+    "slug": "/tool/heic-to-webp",
+    "category": "tool",
     "h1": "HEIC to WebP",
     "title_tag": "HEIC to WebP",
     "meta_description": "Decode HEIC in a worker, encode WebP in-browser, and show before/after file sizes. Runs locally in your browser; inputs stay on your device.",
@@ -10918,9 +10918,9 @@
       }
     ],
     "related_tools": [
-      "/tools/heic-viewer",
-      "/tools/heic-exif-viewer",
-      "/converter/avif-to-jpg"
+      "/tool/heic-viewer",
+      "/tool/heic-exif-viewer",
+      "/tool/avif-to-jpg"
     ],
     "engine": "image350",
     "operation": "heic-to-webp",
@@ -10939,8 +10939,8 @@
   },
   {
     "source_id": "CT-304",
-    "slug": "/tools/heic-viewer",
-    "category": "tools",
+    "slug": "/tool/heic-viewer",
+    "category": "tool",
     "h1": "HEIC Viewer",
     "title_tag": "HEIC Viewer",
     "meta_description": "Render a decoded preview locally and expose dimensions and color-space caveats. Runs locally in your browser; inputs stay on your device.",
@@ -10964,9 +10964,9 @@
       }
     ],
     "related_tools": [
-      "/tools/heic-exif-viewer",
-      "/converter/avif-to-jpg",
-      "/converter/live-photo-to-gif"
+      "/tool/heic-exif-viewer",
+      "/tool/avif-to-jpg",
+      "/tool/live-photo-to-gif"
     ],
     "engine": "image350",
     "operation": "heic-viewer",
@@ -10985,8 +10985,8 @@
   },
   {
     "source_id": "CT-305",
-    "slug": "/tools/heic-exif-viewer",
-    "category": "tools",
+    "slug": "/tool/heic-exif-viewer",
+    "category": "tool",
     "h1": "HEIC Metadata and EXIF Viewer",
     "title_tag": "HEIC Metadata and EXIF Viewer",
     "meta_description": "Read container and EXIF fields locally, clearly separating unavailable fields from stripped data. Runs locally in your browser; inputs stay on your…",
@@ -11010,9 +11010,9 @@
       }
     ],
     "related_tools": [
-      "/converter/avif-to-jpg",
-      "/converter/live-photo-to-gif",
-      "/converter/heic-to-passport-photo-jpg"
+      "/tool/avif-to-jpg",
+      "/tool/live-photo-to-gif",
+      "/tool/heic-to-passport-photo-jpg"
     ],
     "engine": "image350",
     "operation": "heic-exif-viewer",
@@ -11031,8 +11031,8 @@
   },
   {
     "source_id": "CT-306",
-    "slug": "/converter/avif-to-jpg",
-    "category": "converter",
+    "slug": "/tool/avif-to-jpg",
+    "category": "tool",
     "h1": "AVIF to JPG",
     "title_tag": "AVIF to JPG",
     "meta_description": "Decode with the browser where supported, fall back to a lazy codec only when needed, and export JPEG locally. Runs locally in your browser; inputs…",
@@ -11056,9 +11056,9 @@
       }
     ],
     "related_tools": [
-      "/converter/live-photo-to-gif",
-      "/converter/heic-to-passport-photo-jpg",
-      "/converter/heic-to-png"
+      "/tool/live-photo-to-gif",
+      "/tool/heic-to-passport-photo-jpg",
+      "/tool/heic-to-png"
     ],
     "engine": "image350",
     "operation": "avif-to-jpg",
@@ -11077,8 +11077,8 @@
   },
   {
     "source_id": "CT-307",
-    "slug": "/converter/live-photo-to-gif",
-    "category": "converter",
+    "slug": "/tool/live-photo-to-gif",
+    "category": "tool",
     "h1": "Live Photo to GIF",
     "title_tag": "Live Photo to GIF",
     "meta_description": "Pair or accept the motion file locally, trim a short segment, and encode a browser-only GIF with limits. Runs locally in your browser; inputs stay on…",
@@ -11102,9 +11102,9 @@
       }
     ],
     "related_tools": [
-      "/converter/heic-to-passport-photo-jpg",
-      "/converter/heic-to-png",
-      "/converter/avif-to-png"
+      "/tool/heic-to-passport-photo-jpg",
+      "/tool/heic-to-png",
+      "/tool/avif-to-png"
     ],
     "engine": "image350",
     "operation": "live-photo-to-gif",
@@ -11123,8 +11123,8 @@
   },
   {
     "source_id": "CT-308",
-    "slug": "/converter/heic-to-passport-photo-jpg",
-    "category": "converter",
+    "slug": "/tool/heic-to-passport-photo-jpg",
+    "category": "tool",
     "h1": "HEIC to Passport Photo JPG",
     "title_tag": "HEIC to Passport Photo JPG",
     "meta_description": "Convert, crop and resize locally; the tool does not claim compliance with any specific government photo rules. Runs locally in your browser; inputs…",
@@ -11148,9 +11148,9 @@
       }
     ],
     "related_tools": [
-      "/converter/heic-to-png",
-      "/converter/avif-to-png",
-      "/converter/heic-to-pdf"
+      "/tool/heic-to-png",
+      "/tool/avif-to-png",
+      "/tool/heic-to-pdf"
     ],
     "engine": "image350",
     "operation": "heic-to-passport-photo-jpg",
@@ -11169,8 +11169,8 @@
   },
   {
     "source_id": "CT-309",
-    "slug": "/converter/heic-to-png",
-    "category": "converter",
+    "slug": "/tool/heic-to-png",
+    "category": "tool",
     "h1": "HEIC to PNG",
     "title_tag": "HEIC to PNG",
     "meta_description": "Net-new replacement for a duplicate HEIC-to-JPG privacy request; decoded pixels stay on-device. Runs locally in your browser; inputs stay on your device.",
@@ -11194,9 +11194,9 @@
       }
     ],
     "related_tools": [
-      "/converter/avif-to-png",
-      "/converter/heic-to-pdf",
-      "/converter/heic-to-jpg-under-1mb"
+      "/tool/avif-to-png",
+      "/tool/heic-to-pdf",
+      "/tool/heic-to-jpg-under-1mb"
     ],
     "engine": "image350",
     "operation": "heic-to-png",
@@ -11215,8 +11215,8 @@
   },
   {
     "source_id": "CT-310",
-    "slug": "/converter/avif-to-png",
-    "category": "converter",
+    "slug": "/tool/avif-to-png",
+    "category": "tool",
     "h1": "AVIF to PNG",
     "title_tag": "AVIF to PNG",
     "meta_description": "Net-new replacement for duplicate batch HEIC intent; preserves alpha when the decoded AVIF provides it. Runs locally in your browser; inputs stay on…",
@@ -11240,9 +11240,9 @@
       }
     ],
     "related_tools": [
-      "/converter/heic-to-pdf",
-      "/converter/heic-to-jpg-under-1mb",
-      "/converter/heic-to-webp"
+      "/tool/heic-to-pdf",
+      "/tool/heic-to-jpg-under-1mb",
+      "/tool/heic-to-webp"
     ],
     "engine": "image350",
     "operation": "avif-to-png",
@@ -11261,8 +11261,8 @@
   },
   {
     "source_id": "CT-311",
-    "slug": "/calculator/mortgage-recast",
-    "category": "calculator",
+    "slug": "/tool/mortgage-recast",
+    "category": "tool",
     "h1": "Mortgage Recast Calculator",
     "title_tag": "Mortgage Recast Calculator",
     "meta_description": "Re-amortize the remaining balance over the remaining term after a lump-sum principal payment. Runs locally in your browser; inputs stay on your device.",
@@ -11286,9 +11286,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/refinance-break-even",
-      "/calculator/pmi-removal-date",
-      "/calculator/arm-payment-adjustment"
+      "/tool/refinance-break-even",
+      "/tool/pmi-removal-date",
+      "/tool/arm-payment-adjustment"
     ],
     "engine": "finance350",
     "operation": "mortgage-recast",
@@ -11308,8 +11308,8 @@
   },
   {
     "source_id": "CT-312",
-    "slug": "/calculator/refinance-break-even",
-    "category": "calculator",
+    "slug": "/tool/refinance-break-even",
+    "category": "tool",
     "h1": "Refinance Break-Even Calculator",
     "title_tag": "Refinance Break-Even Calculator",
     "meta_description": "Compare old and new payment cash flows, fees and optional points without pretending to predict rates. Runs locally in your browser; inputs stay on…",
@@ -11333,9 +11333,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/pmi-removal-date",
-      "/calculator/arm-payment-adjustment",
-      "/calculator/heloc-vs-cash-out-refinance"
+      "/tool/pmi-removal-date",
+      "/tool/arm-payment-adjustment",
+      "/tool/heloc-vs-cash-out-refinance"
     ],
     "engine": "finance350",
     "operation": "refinance-break-even",
@@ -11355,8 +11355,8 @@
   },
   {
     "source_id": "CT-313",
-    "slug": "/calculator/pmi-removal-date",
-    "category": "calculator",
+    "slug": "/tool/pmi-removal-date",
+    "category": "tool",
     "h1": "PMI Removal Date Calculator",
     "title_tag": "PMI Removal Date Calculator",
     "meta_description": "Model amortization against original value and clearly flag lender/investor exceptions. Runs locally in your browser; inputs stay on your device.",
@@ -11380,9 +11380,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/arm-payment-adjustment",
-      "/calculator/heloc-vs-cash-out-refinance",
-      "/calculator/barista-fire"
+      "/tool/arm-payment-adjustment",
+      "/tool/heloc-vs-cash-out-refinance",
+      "/tool/barista-fire"
     ],
     "engine": "finance350",
     "operation": "pmi-removal-date",
@@ -11402,8 +11402,8 @@
   },
   {
     "source_id": "CT-314",
-    "slug": "/calculator/arm-payment-adjustment",
-    "category": "calculator",
+    "slug": "/tool/arm-payment-adjustment",
+    "category": "tool",
     "h1": "ARM Payment Adjustment Calculator",
     "title_tag": "ARM Payment Adjustment Calculator",
     "meta_description": "Apply user-entered index, margin, periodic/lifetime caps, balance and remaining term. Runs locally in your browser; inputs stay on your device.",
@@ -11427,9 +11427,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/heloc-vs-cash-out-refinance",
-      "/calculator/barista-fire",
-      "/calculator/roth-conversion-tax"
+      "/tool/heloc-vs-cash-out-refinance",
+      "/tool/barista-fire",
+      "/tool/roth-conversion-tax"
     ],
     "engine": "finance350",
     "operation": "arm-payment-adjustment",
@@ -11449,8 +11449,8 @@
   },
   {
     "source_id": "CT-315",
-    "slug": "/calculator/heloc-vs-cash-out-refinance",
-    "category": "calculator",
+    "slug": "/tool/heloc-vs-cash-out-refinance",
+    "category": "tool",
     "h1": "HELOC vs Cash-Out Refinance Calculator",
     "title_tag": "HELOC vs Cash-Out Refinance Calculator",
     "meta_description": "Show separate rate assumptions, fees, draw amount and mortgage balance effects. Runs locally in your browser; inputs stay on your device.",
@@ -11474,9 +11474,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/barista-fire",
-      "/calculator/roth-conversion-tax",
-      "/calculator/rule-55-withdrawal-penalty"
+      "/tool/barista-fire",
+      "/tool/roth-conversion-tax",
+      "/tool/rule-55-withdrawal-penalty"
     ],
     "engine": "finance350",
     "operation": "heloc-vs-cash-out-refinance",
@@ -11496,8 +11496,8 @@
   },
   {
     "source_id": "CT-316",
-    "slug": "/calculator/barista-fire",
-    "category": "calculator",
+    "slug": "/tool/barista-fire",
+    "category": "tool",
     "h1": "Barista FIRE Calculator",
     "title_tag": "Barista FIRE Calculator",
     "meta_description": "Net-new replacement for the existing Coast FIRE calculator. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -11521,9 +11521,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/roth-conversion-tax",
-      "/calculator/rule-55-withdrawal-penalty",
-      "/calculator/required-minimum-distribution"
+      "/tool/roth-conversion-tax",
+      "/tool/rule-55-withdrawal-penalty",
+      "/tool/required-minimum-distribution"
     ],
     "engine": "finance350",
     "operation": "barista-fire",
@@ -11543,8 +11543,8 @@
   },
   {
     "source_id": "CT-317",
-    "slug": "/calculator/roth-conversion-tax",
-    "category": "calculator",
+    "slug": "/tool/roth-conversion-tax",
+    "category": "tool",
     "h1": "Roth Conversion Tax Calculator",
     "title_tag": "Roth Conversion Tax Calculator",
     "meta_description": "Use tax-year configuration and filing-status brackets; state tax is user-entered rather than guessed. Runs locally in your browser; inputs stay on…",
@@ -11568,9 +11568,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/rule-55-withdrawal-penalty",
-      "/calculator/required-minimum-distribution",
-      "/calculator/social-security-break-even"
+      "/tool/rule-55-withdrawal-penalty",
+      "/tool/required-minimum-distribution",
+      "/tool/social-security-break-even"
     ],
     "engine": "finance350",
     "operation": "roth-conversion-tax",
@@ -11590,8 +11590,8 @@
   },
   {
     "source_id": "CT-318",
-    "slug": "/calculator/rule-55-withdrawal-penalty",
-    "category": "calculator",
+    "slug": "/tool/rule-55-withdrawal-penalty",
+    "category": "tool",
     "h1": "Rule of 55 Withdrawal Penalty Calculator",
     "title_tag": "Rule of 55 Withdrawal Penalty Calculator",
     "meta_description": "Explain eligibility assumptions and estimate tax/penalty differences only. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -11615,9 +11615,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/required-minimum-distribution",
-      "/calculator/social-security-break-even",
-      "/calculator/freelancer-quarterly-tax"
+      "/tool/required-minimum-distribution",
+      "/tool/social-security-break-even",
+      "/tool/freelancer-quarterly-tax"
     ],
     "engine": "finance350",
     "operation": "rule-55-withdrawal-penalty",
@@ -11637,8 +11637,8 @@
   },
   {
     "source_id": "CT-319",
-    "slug": "/calculator/required-minimum-distribution",
-    "category": "calculator",
+    "slug": "/tool/required-minimum-distribution",
+    "category": "tool",
     "h1": "Required Minimum Distribution Calculator",
     "title_tag": "Required Minimum Distribution Calculator",
     "meta_description": "Keep tables and tax-year rules in configuration and distinguish owner RMDs from inherited-IRA rules. Runs locally in your browser; inputs stay on your…",
@@ -11662,9 +11662,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/social-security-break-even",
-      "/calculator/freelancer-quarterly-tax",
-      "/calculator/hourly-to-salary-benefits"
+      "/tool/social-security-break-even",
+      "/tool/freelancer-quarterly-tax",
+      "/tool/hourly-to-salary-benefits"
     ],
     "engine": "finance350",
     "operation": "required-minimum-distribution",
@@ -11684,8 +11684,8 @@
   },
   {
     "source_id": "CT-320",
-    "slug": "/calculator/social-security-break-even",
-    "category": "calculator",
+    "slug": "/tool/social-security-break-even",
+    "category": "tool",
     "h1": "Social Security Break-Even Calculator",
     "title_tag": "Social Security Break-Even Calculator",
     "meta_description": "Use user-entered monthly benefits at each claiming age; optionally apply a COLA assumption consistently. Runs locally in your browser; inputs stay on…",
@@ -11709,9 +11709,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/freelancer-quarterly-tax",
-      "/calculator/hourly-to-salary-benefits",
-      "/calculator/lease-vs-buy-car"
+      "/tool/freelancer-quarterly-tax",
+      "/tool/hourly-to-salary-benefits",
+      "/tool/lease-vs-buy-car"
     ],
     "engine": "finance350",
     "operation": "social-security-break-even",
@@ -11731,8 +11731,8 @@
   },
   {
     "source_id": "CT-321",
-    "slug": "/calculator/freelancer-quarterly-tax",
-    "category": "calculator",
+    "slug": "/tool/freelancer-quarterly-tax",
+    "category": "tool",
     "h1": "Freelancer Quarterly Tax Calculator",
     "title_tag": "Freelancer Quarterly Tax Calculator",
     "meta_description": "Merged hub for the requested quarterly-estimated-tax and self-employment-tax tools to avoid duplicate pages. Runs locally in your browser; inputs stay…",
@@ -11756,9 +11756,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/hourly-to-salary-benefits",
-      "/calculator/lease-vs-buy-car",
-      "/calculator/balance-transfer-fee"
+      "/tool/hourly-to-salary-benefits",
+      "/tool/lease-vs-buy-car",
+      "/tool/balance-transfer-fee"
     ],
     "engine": "finance350",
     "operation": "freelancer-quarterly-tax",
@@ -11778,8 +11778,8 @@
   },
   {
     "source_id": "CT-322",
-    "slug": "/calculator/hourly-to-salary-benefits",
-    "category": "calculator",
+    "slug": "/tool/hourly-to-salary-benefits",
+    "category": "tool",
     "h1": "Hourly to Salary with Benefits Calculator",
     "title_tag": "Hourly to Salary with Benefits Calculator",
     "meta_description": "Value PTO, employer health contribution, retirement match and other benefits separately. Runs locally in your browser; inputs stay on your device.",
@@ -11803,9 +11803,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/lease-vs-buy-car",
-      "/calculator/balance-transfer-fee",
-      "/calculator/mortgage-points-break-even"
+      "/tool/lease-vs-buy-car",
+      "/tool/balance-transfer-fee",
+      "/tool/mortgage-points-break-even"
     ],
     "engine": "finance350",
     "operation": "hourly-to-salary-benefits",
@@ -11825,8 +11825,8 @@
   },
   {
     "source_id": "CT-323",
-    "slug": "/calculator/lease-vs-buy-car",
-    "category": "calculator",
+    "slug": "/tool/lease-vs-buy-car",
+    "category": "tool",
     "h1": "Lease vs Buy Car Calculator",
     "title_tag": "Lease vs Buy Car Calculator",
     "meta_description": "Show acquisition fees, taxes, mileage/overage assumptions, loan costs and estimated resale value. Runs locally in your browser; inputs stay on your…",
@@ -11850,9 +11850,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/balance-transfer-fee",
-      "/calculator/mortgage-points-break-even",
-      "/calculator/house-hacking-rent-offset"
+      "/tool/balance-transfer-fee",
+      "/tool/mortgage-points-break-even",
+      "/tool/house-hacking-rent-offset"
     ],
     "engine": "finance350",
     "operation": "lease-vs-buy-car",
@@ -11872,8 +11872,8 @@
   },
   {
     "source_id": "CT-324",
-    "slug": "/calculator/balance-transfer-fee",
-    "category": "calculator",
+    "slug": "/tool/balance-transfer-fee",
+    "category": "tool",
     "h1": "Balance Transfer Fee Calculator",
     "title_tag": "Balance Transfer Fee Calculator",
     "meta_description": "Compare promotional APR duration, transfer fee, payment amount and fallback APR. Runs locally in your browser; inputs stay on your device.",
@@ -11897,9 +11897,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/mortgage-points-break-even",
-      "/calculator/house-hacking-rent-offset",
-      "/calculator/rsu-sell-to-cover"
+      "/tool/mortgage-points-break-even",
+      "/tool/house-hacking-rent-offset",
+      "/tool/rsu-sell-to-cover"
     ],
     "engine": "finance350",
     "operation": "balance-transfer-fee",
@@ -11919,8 +11919,8 @@
   },
   {
     "source_id": "CT-325",
-    "slug": "/calculator/mortgage-points-break-even",
-    "category": "calculator",
+    "slug": "/tool/mortgage-points-break-even",
+    "category": "tool",
     "h1": "Mortgage Points Break-Even Calculator",
     "title_tag": "Mortgage Points Break-Even Calculator",
     "meta_description": "Net-new replacement for the existing debt snowball/avalanche tool. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -11944,9 +11944,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/house-hacking-rent-offset",
-      "/calculator/rsu-sell-to-cover",
-      "/calculator/iso-amt-estimator"
+      "/tool/house-hacking-rent-offset",
+      "/tool/rsu-sell-to-cover",
+      "/tool/iso-amt-estimator"
     ],
     "engine": "finance350",
     "operation": "mortgage-points-break-even",
@@ -11966,8 +11966,8 @@
   },
   {
     "source_id": "CT-326",
-    "slug": "/calculator/house-hacking-rent-offset",
-    "category": "calculator",
+    "slug": "/tool/house-hacking-rent-offset",
+    "category": "tool",
     "h1": "House Hacking Rent Offset Calculator",
     "title_tag": "House Hacking Rent Offset Calculator",
     "meta_description": "Net-new replacement for existing rental cap-rate/cash-flow calculators. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -11991,9 +11991,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/rsu-sell-to-cover",
-      "/calculator/iso-amt-estimator",
-      "/calculator/inflation-adjusted-salary"
+      "/tool/rsu-sell-to-cover",
+      "/tool/iso-amt-estimator",
+      "/tool/inflation-adjusted-salary"
     ],
     "engine": "finance350",
     "operation": "house-hacking-rent-offset",
@@ -12013,8 +12013,8 @@
   },
   {
     "source_id": "CT-327",
-    "slug": "/calculator/rsu-sell-to-cover",
-    "category": "calculator",
+    "slug": "/tool/rsu-sell-to-cover",
+    "category": "tool",
     "h1": "RSU Sell-to-Cover Calculator",
     "title_tag": "RSU Sell-to-Cover Calculator",
     "meta_description": "Net-new replacement for the existing RSU withholding-gap calculator. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12038,9 +12038,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/iso-amt-estimator",
-      "/calculator/inflation-adjusted-salary",
-      "/calculator/1099-vs-w2-take-home"
+      "/tool/iso-amt-estimator",
+      "/tool/inflation-adjusted-salary",
+      "/tool/1099-vs-w2-take-home"
     ],
     "engine": "finance350",
     "operation": "rsu-sell-to-cover",
@@ -12060,8 +12060,8 @@
   },
   {
     "source_id": "CT-328",
-    "slug": "/calculator/iso-amt-estimator",
-    "category": "calculator",
+    "slug": "/tool/iso-amt-estimator",
+    "category": "tool",
     "h1": "ISO Stock Option AMT Estimator",
     "title_tag": "ISO Stock Option AMT Estimator",
     "meta_description": "Use 2026 AMT exemptions/rates from config and clearly exclude state-specific rules unless entered. Runs locally in your browser; inputs stay on your…",
@@ -12085,9 +12085,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/inflation-adjusted-salary",
-      "/calculator/1099-vs-w2-take-home",
-      "/calculator/mortgage-recast"
+      "/tool/inflation-adjusted-salary",
+      "/tool/1099-vs-w2-take-home",
+      "/tool/mortgage-recast"
     ],
     "engine": "finance350",
     "operation": "iso-amt-estimator",
@@ -12107,8 +12107,8 @@
   },
   {
     "source_id": "CT-329",
-    "slug": "/calculator/inflation-adjusted-salary",
-    "category": "calculator",
+    "slug": "/tool/inflation-adjusted-salary",
+    "category": "tool",
     "h1": "Inflation-Adjusted Salary Calculator",
     "title_tag": "Inflation-Adjusted Salary Calculator",
     "meta_description": "Keep the core calculation transparent and separate inflation from location-specific cost of living. Runs locally in your browser; inputs stay on your…",
@@ -12132,9 +12132,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/1099-vs-w2-take-home",
-      "/calculator/mortgage-recast",
-      "/calculator/refinance-break-even"
+      "/tool/1099-vs-w2-take-home",
+      "/tool/mortgage-recast",
+      "/tool/refinance-break-even"
     ],
     "engine": "finance350",
     "operation": "inflation-adjusted-salary",
@@ -12154,8 +12154,8 @@
   },
   {
     "source_id": "CT-330",
-    "slug": "/calculator/1099-vs-w2-take-home",
-    "category": "calculator",
+    "slug": "/tool/1099-vs-w2-take-home",
+    "category": "tool",
     "h1": "1099 vs W-2 Take-Home Pay Calculator",
     "title_tag": "1099 vs W-2 Take-Home Pay Calculator",
     "meta_description": "Net-new replacement created after merging freelancer quarterly and self-employment tax into one page. Runs locally in your browser; inputs stay on…",
@@ -12179,9 +12179,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/mortgage-recast",
-      "/calculator/refinance-break-even",
-      "/calculator/pmi-removal-date"
+      "/tool/mortgage-recast",
+      "/tool/refinance-break-even",
+      "/tool/pmi-removal-date"
     ],
     "engine": "finance350",
     "operation": "1099-vs-w2-take-home",
@@ -12201,8 +12201,8 @@
   },
   {
     "source_id": "CT-331",
-    "slug": "/tools/cron-expression-explainer",
-    "category": "tools",
+    "slug": "/tool/cron-expression-explainer",
+    "category": "tool",
     "h1": "Cron Expression Explainer",
     "title_tag": "Cron Expression Explainer",
     "meta_description": "The page also outputs GitHub Actions and Kubernetes schedule snippets so a separate duplicate cron converter is unnecessary. Runs locally in your…",
@@ -12226,9 +12226,9 @@
       }
     ],
     "related_tools": [
-      "/converter/docker-run-to-docker-compose",
-      "/converter/curl-to-fetch-axios-python",
-      "/tools/regex-explainer"
+      "/tool/docker-run-to-docker-compose",
+      "/tool/curl-to-fetch-axios-python",
+      "/tool/regex-explainer"
     ],
     "engine": "dev350",
     "operation": "cron-expression-explainer",
@@ -12247,8 +12247,8 @@
   },
   {
     "source_id": "CT-332",
-    "slug": "/converter/docker-run-to-docker-compose",
-    "category": "converter",
+    "slug": "/tool/docker-run-to-docker-compose",
+    "category": "tool",
     "h1": "docker run to Docker Compose Converter",
     "title_tag": "docker run to Docker Compose Converter",
     "meta_description": "Parse supported flags locally, preserve unknown flags as warnings, and never execute commands. Runs locally in your browser; inputs stay on your device.",
@@ -12272,9 +12272,9 @@
       }
     ],
     "related_tools": [
-      "/converter/curl-to-fetch-axios-python",
-      "/tools/regex-explainer",
-      "/tools/sql-formatter-bigquery-snowflake"
+      "/tool/curl-to-fetch-axios-python",
+      "/tool/regex-explainer",
+      "/tool/sql-formatter-bigquery-snowflake"
     ],
     "engine": "dev350",
     "operation": "docker-run-to-docker-compose",
@@ -12293,8 +12293,8 @@
   },
   {
     "source_id": "CT-333",
-    "slug": "/converter/curl-to-fetch-axios-python",
-    "category": "converter",
+    "slug": "/tool/curl-to-fetch-axios-python",
+    "category": "tool",
     "h1": "cURL to Fetch Axios Python Converter",
     "title_tag": "cURL to Fetch Axios Python Converter",
     "meta_description": "Parse headers, method, body and auth locally; secrets remain in the browser. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12318,9 +12318,9 @@
       }
     ],
     "related_tools": [
-      "/tools/regex-explainer",
-      "/tools/sql-formatter-bigquery-snowflake",
-      "/calculator/ipv6-cidr-subnet"
+      "/tool/regex-explainer",
+      "/tool/sql-formatter-bigquery-snowflake",
+      "/tool/ipv6-cidr-subnet"
     ],
     "engine": "dev350",
     "operation": "curl-to-fetch-axios-python",
@@ -12339,8 +12339,8 @@
   },
   {
     "source_id": "CT-334",
-    "slug": "/tools/regex-explainer",
-    "category": "tools",
+    "slug": "/tool/regex-explainer",
+    "category": "tool",
     "h1": "Regex Explainer",
     "title_tag": "Regex Explainer",
     "meta_description": "Do not execute unbounded catastrophic patterns; explanation is static parsing first. Runs locally in your browser; inputs stay on your device.",
@@ -12364,9 +12364,9 @@
       }
     ],
     "related_tools": [
-      "/tools/sql-formatter-bigquery-snowflake",
-      "/calculator/ipv6-cidr-subnet",
-      "/calculator/chmod-permission"
+      "/tool/sql-formatter-bigquery-snowflake",
+      "/tool/ipv6-cidr-subnet",
+      "/tool/chmod-permission"
     ],
     "engine": "dev350",
     "operation": "regex-explainer",
@@ -12385,8 +12385,8 @@
   },
   {
     "source_id": "CT-335",
-    "slug": "/tools/sql-formatter-bigquery-snowflake",
-    "category": "tools",
+    "slug": "/tool/sql-formatter-bigquery-snowflake",
+    "category": "tool",
     "h1": "SQL Formatter for BigQuery and Snowflake",
     "title_tag": "SQL Formatter for BigQuery and Snowflake",
     "meta_description": "Formatting only; no query is sent or executed. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12410,9 +12410,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/ipv6-cidr-subnet",
-      "/calculator/chmod-permission",
-      "/tools/llm-token-counter"
+      "/tool/ipv6-cidr-subnet",
+      "/tool/chmod-permission",
+      "/tool/llm-token-counter"
     ],
     "engine": "dev350",
     "operation": "sql-formatter-bigquery-snowflake",
@@ -12431,8 +12431,8 @@
   },
   {
     "source_id": "CT-336",
-    "slug": "/calculator/ipv6-cidr-subnet",
-    "category": "calculator",
+    "slug": "/tool/ipv6-cidr-subnet",
+    "category": "tool",
     "h1": "IPv6 CIDR Subnet Calculator",
     "title_tag": "IPv6 CIDR Subnet Calculator",
     "meta_description": "Use BigInt arithmetic and canonical compressed/expanded representations. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12456,9 +12456,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/chmod-permission",
-      "/tools/llm-token-counter",
-      "/tools/timestamp-time-zone-converter"
+      "/tool/chmod-permission",
+      "/tool/llm-token-counter",
+      "/tool/timestamp-time-zone-converter"
     ],
     "engine": "dev350",
     "operation": "ipv6-cidr-subnet",
@@ -12477,8 +12477,8 @@
   },
   {
     "source_id": "CT-337",
-    "slug": "/calculator/chmod-permission",
-    "category": "calculator",
+    "slug": "/tool/chmod-permission",
+    "category": "tool",
     "h1": "chmod Permission Calculator",
     "title_tag": "chmod Permission Calculator",
     "meta_description": "Explain setuid, setgid and sticky bits without running shell commands. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12502,9 +12502,9 @@
       }
     ],
     "related_tools": [
-      "/tools/llm-token-counter",
-      "/tools/timestamp-time-zone-converter",
-      "/tools/nginx-reverse-proxy-config-generator"
+      "/tool/llm-token-counter",
+      "/tool/timestamp-time-zone-converter",
+      "/tool/nginx-reverse-proxy-config-generator"
     ],
     "engine": "dev350",
     "operation": "chmod-permission",
@@ -12523,8 +12523,8 @@
   },
   {
     "source_id": "CT-338",
-    "slug": "/tools/llm-token-counter",
-    "category": "tools",
+    "slug": "/tool/llm-token-counter",
+    "category": "tool",
     "h1": "LLM Token Counter with Model Cost",
     "title_tag": "LLM Token Counter with Model Cost",
     "meta_description": "No prompt content is transmitted; exactness depends on available local tokenizer support. Runs locally in your browser; inputs stay on your device.",
@@ -12548,9 +12548,9 @@
       }
     ],
     "related_tools": [
-      "/tools/timestamp-time-zone-converter",
-      "/tools/nginx-reverse-proxy-config-generator",
-      "/tools/env-quote-escape-validator"
+      "/tool/timestamp-time-zone-converter",
+      "/tool/nginx-reverse-proxy-config-generator",
+      "/tool/env-quote-escape-validator"
     ],
     "engine": "dev350",
     "operation": "llm-token-counter",
@@ -12569,8 +12569,8 @@
   },
   {
     "source_id": "CT-339",
-    "slug": "/tools/timestamp-time-zone-converter",
-    "category": "tools",
+    "slug": "/tool/timestamp-time-zone-converter",
+    "category": "tool",
     "h1": "Timestamp Converter with Time Zones",
     "title_tag": "Timestamp Converter with Time Zones",
     "meta_description": "All date math stays local and DST offsets are shown explicitly. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12594,9 +12594,9 @@
       }
     ],
     "related_tools": [
-      "/tools/nginx-reverse-proxy-config-generator",
-      "/tools/env-quote-escape-validator",
-      "/tools/json-patch-generator"
+      "/tool/nginx-reverse-proxy-config-generator",
+      "/tool/env-quote-escape-validator",
+      "/tool/json-patch-generator"
     ],
     "engine": "dev350",
     "operation": "timestamp-time-zone-converter",
@@ -12615,8 +12615,8 @@
   },
   {
     "source_id": "CT-340",
-    "slug": "/tools/nginx-reverse-proxy-config-generator",
-    "category": "tools",
+    "slug": "/tool/nginx-reverse-proxy-config-generator",
+    "category": "tool",
     "h1": "Nginx Reverse Proxy Config Generator",
     "title_tag": "Nginx Reverse Proxy Config Generator",
     "meta_description": "Outputs configuration text only and marks security-sensitive directives for manual review. Runs locally in your browser; inputs stay on your device.",
@@ -12640,9 +12640,9 @@
       }
     ],
     "related_tools": [
-      "/tools/env-quote-escape-validator",
-      "/tools/json-patch-generator",
-      "/tools/json-pointer-tester"
+      "/tool/env-quote-escape-validator",
+      "/tool/json-patch-generator",
+      "/tool/json-pointer-tester"
     ],
     "engine": "dev350",
     "operation": "nginx-reverse-proxy-config-generator",
@@ -12661,8 +12661,8 @@
   },
   {
     "source_id": "CT-341",
-    "slug": "/tools/env-quote-escape-validator",
-    "category": "tools",
+    "slug": "/tool/env-quote-escape-validator",
+    "category": "tool",
     "h1": ".env Quote and Escape Validator",
     "title_tag": ".env Quote and Escape Validator",
     "meta_description": "Net-new replacement for an existing .env-to-Kubernetes Secret converter. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12686,9 +12686,9 @@
       }
     ],
     "related_tools": [
-      "/tools/json-patch-generator",
-      "/tools/json-pointer-tester",
-      "/tools/snowflake-id-decoder"
+      "/tool/json-patch-generator",
+      "/tool/json-pointer-tester",
+      "/tool/snowflake-id-decoder"
     ],
     "engine": "dev350",
     "operation": "env-quote-escape-validator",
@@ -12707,8 +12707,8 @@
   },
   {
     "source_id": "CT-342",
-    "slug": "/tools/json-patch-generator",
-    "category": "tools",
+    "slug": "/tool/json-patch-generator",
+    "category": "tool",
     "h1": "JSON Patch RFC 6902 Generator",
     "title_tag": "JSON Patch RFC 6902 Generator",
     "meta_description": "Net-new replacement for an existing JSON-to-Zod tool request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12732,9 +12732,9 @@
       }
     ],
     "related_tools": [
-      "/tools/json-pointer-tester",
-      "/tools/snowflake-id-decoder",
-      "/tools/calver-version-comparator"
+      "/tool/json-pointer-tester",
+      "/tool/snowflake-id-decoder",
+      "/tool/calver-version-comparator"
     ],
     "engine": "dev350",
     "operation": "json-patch-generator",
@@ -12753,8 +12753,8 @@
   },
   {
     "source_id": "CT-343",
-    "slug": "/tools/json-pointer-tester",
-    "category": "tools",
+    "slug": "/tool/json-pointer-tester",
+    "category": "tool",
     "h1": "JSON Pointer RFC 6901 Tester",
     "title_tag": "JSON Pointer RFC 6901 Tester",
     "meta_description": "Net-new replacement for an existing semantic JSON diff request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12778,9 +12778,9 @@
       }
     ],
     "related_tools": [
-      "/tools/snowflake-id-decoder",
-      "/tools/calver-version-comparator",
-      "/tools/spki-certificate-fingerprint"
+      "/tool/snowflake-id-decoder",
+      "/tool/calver-version-comparator",
+      "/tool/spki-certificate-fingerprint"
     ],
     "engine": "dev350",
     "operation": "json-pointer-tester",
@@ -12799,8 +12799,8 @@
   },
   {
     "source_id": "CT-344",
-    "slug": "/tools/snowflake-id-decoder",
-    "category": "tools",
+    "slug": "/tool/snowflake-id-decoder",
+    "category": "tool",
     "h1": "Snowflake ID Decoder",
     "title_tag": "Snowflake ID Decoder",
     "meta_description": "Net-new replacement for a YAML-anchor conversion request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12824,9 +12824,9 @@
       }
     ],
     "related_tools": [
-      "/tools/calver-version-comparator",
-      "/tools/spki-certificate-fingerprint",
-      "/tools/github-actions-permissions-checker"
+      "/tool/calver-version-comparator",
+      "/tool/spki-certificate-fingerprint",
+      "/tool/github-actions-permissions-checker"
     ],
     "engine": "dev350",
     "operation": "snowflake-id-decoder",
@@ -12845,8 +12845,8 @@
   },
   {
     "source_id": "CT-345",
-    "slug": "/tools/calver-version-comparator",
-    "category": "tools",
+    "slug": "/tool/calver-version-comparator",
+    "category": "tool",
     "h1": "CalVer Version Parser and Comparator",
     "title_tag": "CalVer Version Parser and Comparator",
     "meta_description": "Net-new replacement for an overlapping CSP generator request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12870,9 +12870,9 @@
       }
     ],
     "related_tools": [
-      "/tools/spki-certificate-fingerprint",
-      "/tools/github-actions-permissions-checker",
-      "/calculator/kubernetes-requests-limits-ratio"
+      "/tool/spki-certificate-fingerprint",
+      "/tool/github-actions-permissions-checker",
+      "/tool/kubernetes-requests-limits-ratio"
     ],
     "engine": "dev350",
     "operation": "calver-version-comparator",
@@ -12891,8 +12891,8 @@
   },
   {
     "source_id": "CT-346",
-    "slug": "/tools/spki-certificate-fingerprint",
-    "category": "tools",
+    "slug": "/tool/spki-certificate-fingerprint",
+    "category": "tool",
     "h1": "SPKI Certificate Fingerprint Generator",
     "title_tag": "SPKI Certificate Fingerprint Generator",
     "meta_description": "Net-new replacement for an existing robots.txt tester request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12916,9 +12916,9 @@
       }
     ],
     "related_tools": [
-      "/tools/github-actions-permissions-checker",
-      "/calculator/kubernetes-requests-limits-ratio",
-      "/tools/urlpattern-tester"
+      "/tool/github-actions-permissions-checker",
+      "/tool/kubernetes-requests-limits-ratio",
+      "/tool/urlpattern-tester"
     ],
     "engine": "dev350",
     "operation": "spki-certificate-fingerprint",
@@ -12937,8 +12937,8 @@
   },
   {
     "source_id": "CT-347",
-    "slug": "/tools/github-actions-permissions-checker",
-    "category": "tools",
+    "slug": "/tool/github-actions-permissions-checker",
+    "category": "tool",
     "h1": "GitHub Actions Permissions Checker",
     "title_tag": "GitHub Actions Permissions Checker",
     "meta_description": "Net-new replacement for an existing UUIDv7 generator/decoder request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -12962,9 +12962,9 @@
       }
     ],
     "related_tools": [
-      "/calculator/kubernetes-requests-limits-ratio",
-      "/tools/urlpattern-tester",
-      "/tools/cors-preflight-simulator"
+      "/tool/kubernetes-requests-limits-ratio",
+      "/tool/urlpattern-tester",
+      "/tool/cors-preflight-simulator"
     ],
     "engine": "dev350",
     "operation": "github-actions-permissions-checker",
@@ -12983,8 +12983,8 @@
   },
   {
     "source_id": "CT-348",
-    "slug": "/calculator/kubernetes-requests-limits-ratio",
-    "category": "calculator",
+    "slug": "/tool/kubernetes-requests-limits-ratio",
+    "category": "tool",
     "h1": "Kubernetes Requests Limits Ratio Calculator",
     "title_tag": "Kubernetes Requests Limits Ratio Calculator",
     "meta_description": "Net-new replacement for an existing semver range calculator request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -13008,9 +13008,9 @@
       }
     ],
     "related_tools": [
-      "/tools/urlpattern-tester",
-      "/tools/cors-preflight-simulator",
-      "/tools/cron-expression-explainer"
+      "/tool/urlpattern-tester",
+      "/tool/cors-preflight-simulator",
+      "/tool/cron-expression-explainer"
     ],
     "engine": "dev350",
     "operation": "kubernetes-requests-limits-ratio",
@@ -13029,8 +13029,8 @@
   },
   {
     "source_id": "CT-349",
-    "slug": "/tools/urlpattern-tester",
-    "category": "tools",
+    "slug": "/tool/urlpattern-tester",
+    "category": "tool",
     "h1": "URLPattern Tester",
     "title_tag": "URLPattern Tester",
     "meta_description": "Net-new replacement for an existing CSR/certificate decoder request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
@@ -13054,9 +13054,9 @@
       }
     ],
     "related_tools": [
-      "/tools/cors-preflight-simulator",
-      "/tools/cron-expression-explainer",
-      "/converter/docker-run-to-docker-compose"
+      "/tool/cors-preflight-simulator",
+      "/tool/cron-expression-explainer",
+      "/tool/docker-run-to-docker-compose"
     ],
     "engine": "dev350",
     "operation": "urlpattern-tester",
@@ -13075,8 +13075,8 @@
   },
   {
     "source_id": "CT-350",
-    "slug": "/tools/cors-preflight-simulator",
-    "category": "tools",
+    "slug": "/tool/cors-preflight-simulator",
+    "category": "tool",
     "h1": "CORS Preflight Simulator",
     "title_tag": "CORS Preflight Simulator",
     "meta_description": "Net-new replacement for the removed duplicate dev intents; it never makes a network request. Runs locally in your browser; inputs stay on your device.",
@@ -13100,9 +13100,9 @@
       }
     ],
     "related_tools": [
-      "/tools/cron-expression-explainer",
-      "/converter/docker-run-to-docker-compose",
-      "/converter/curl-to-fetch-axios-python"
+      "/tool/cron-expression-explainer",
+      "/tool/docker-run-to-docker-compose",
+      "/tool/curl-to-fetch-axios-python"
     ],
     "engine": "dev350",
     "operation": "cors-preflight-simulator",

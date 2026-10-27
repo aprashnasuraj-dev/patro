@@ -2,8 +2,8 @@
   {
     "id": "CT-301",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/heic-to-pdf",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-pdf",
     "title": "HEIC to PDF",
     "primary_keyword": "heic to pdf",
     "long_tail_variants": [
@@ -33,8 +33,8 @@
   {
     "id": "CT-302",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/heic-to-jpg-under-1mb",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-jpg-under-1mb",
     "title": "HEIC to JPG Under 1 MB or 2 MB",
     "primary_keyword": "heic to jpg under 1mb",
     "long_tail_variants": [
@@ -64,8 +64,8 @@
   {
     "id": "CT-303",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/heic-to-webp",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-webp",
     "title": "HEIC to WebP",
     "primary_keyword": "heic to webp",
     "long_tail_variants": [
@@ -95,8 +95,8 @@
   {
     "id": "CT-304",
     "category": "image",
-    "url_kind": "tools",
-    "slug": "/tools/heic-viewer",
+    "url_kind": "tool",
+    "slug": "/tool/heic-viewer",
     "title": "HEIC Viewer",
     "primary_keyword": "heic viewer",
     "long_tail_variants": [
@@ -126,8 +126,8 @@
   {
     "id": "CT-305",
     "category": "image",
-    "url_kind": "tools",
-    "slug": "/tools/heic-exif-viewer",
+    "url_kind": "tool",
+    "slug": "/tool/heic-exif-viewer",
     "title": "HEIC Metadata and EXIF Viewer",
     "primary_keyword": "heic exif viewer",
     "long_tail_variants": [
@@ -157,8 +157,8 @@
   {
     "id": "CT-306",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/avif-to-jpg",
+    "url_kind": "tool",
+    "slug": "/tool/avif-to-jpg",
     "title": "AVIF to JPG",
     "primary_keyword": "avif to jpg",
     "long_tail_variants": [
@@ -188,8 +188,8 @@
   {
     "id": "CT-307",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/live-photo-to-gif",
+    "url_kind": "tool",
+    "slug": "/tool/live-photo-to-gif",
     "title": "Live Photo to GIF",
     "primary_keyword": "live photo to gif",
     "long_tail_variants": [
@@ -219,8 +219,8 @@
   {
     "id": "CT-308",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/heic-to-passport-photo-jpg",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-passport-photo-jpg",
     "title": "HEIC to Passport Photo JPG",
     "primary_keyword": "heic to passport photo jpg",
     "long_tail_variants": [
@@ -250,8 +250,8 @@
   {
     "id": "CT-309",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/heic-to-png",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-png",
     "title": "HEIC to PNG",
     "primary_keyword": "heic to png",
     "long_tail_variants": [
@@ -281,8 +281,8 @@
   {
     "id": "CT-310",
     "category": "image",
-    "url_kind": "converter",
-    "slug": "/converter/avif-to-png",
+    "url_kind": "tool",
+    "slug": "/tool/avif-to-png",
     "title": "AVIF to PNG",
     "primary_keyword": "avif to png",
     "long_tail_variants": [
@@ -312,8 +312,8 @@
   {
     "id": "CT-311",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/mortgage-recast",
+    "url_kind": "tool",
+    "slug": "/tool/mortgage-recast",
     "title": "Mortgage Recast Calculator",
     "primary_keyword": "mortgage recast calculator",
     "long_tail_variants": [
@@ -343,8 +343,8 @@
   {
     "id": "CT-312",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/refinance-break-even",
+    "url_kind": "tool",
+    "slug": "/tool/refinance-break-even",
     "title": "Refinance Break-Even Calculator",
     "primary_keyword": "refinance break even calculator",
     "long_tail_variants": [
@@ -374,8 +374,8 @@
   {
     "id": "CT-313",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/pmi-removal-date",
+    "url_kind": "tool",
+    "slug": "/tool/pmi-removal-date",
     "title": "PMI Removal Date Calculator",
     "primary_keyword": "pmi removal date calculator",
     "long_tail_variants": [
@@ -405,8 +405,8 @@
   {
     "id": "CT-314",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/arm-payment-adjustment",
+    "url_kind": "tool",
+    "slug": "/tool/arm-payment-adjustment",
     "title": "ARM Payment Adjustment Calculator",
     "primary_keyword": "arm payment adjustment calculator",
     "long_tail_variants": [
@@ -436,8 +436,8 @@
   {
     "id": "CT-315",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/heloc-vs-cash-out-refinance",
+    "url_kind": "tool",
+    "slug": "/tool/heloc-vs-cash-out-refinance",
     "title": "HELOC vs Cash-Out Refinance Calculator",
     "primary_keyword": "heloc vs cash out refinance calculator",
     "long_tail_variants": [
@@ -467,8 +467,8 @@
   {
     "id": "CT-316",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/barista-fire",
+    "url_kind": "tool",
+    "slug": "/tool/barista-fire",
     "title": "Barista FIRE Calculator",
     "primary_keyword": "barista fire calculator",
     "long_tail_variants": [
@@ -498,8 +498,8 @@
   {
     "id": "CT-317",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/roth-conversion-tax",
+    "url_kind": "tool",
+    "slug": "/tool/roth-conversion-tax",
     "title": "Roth Conversion Tax Calculator",
     "primary_keyword": "roth conversion tax calculator",
     "long_tail_variants": [
@@ -529,8 +529,8 @@
   {
     "id": "CT-318",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/rule-55-withdrawal-penalty",
+    "url_kind": "tool",
+    "slug": "/tool/rule-55-withdrawal-penalty",
     "title": "Rule of 55 Withdrawal Penalty Calculator",
     "primary_keyword": "rule of 55 calculator",
     "long_tail_variants": [
@@ -560,8 +560,8 @@
   {
     "id": "CT-319",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/required-minimum-distribution",
+    "url_kind": "tool",
+    "slug": "/tool/required-minimum-distribution",
     "title": "Required Minimum Distribution Calculator",
     "primary_keyword": "rmd calculator",
     "long_tail_variants": [
@@ -591,8 +591,8 @@
   {
     "id": "CT-320",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/social-security-break-even",
+    "url_kind": "tool",
+    "slug": "/tool/social-security-break-even",
     "title": "Social Security Break-Even Calculator",
     "primary_keyword": "social security break even calculator",
     "long_tail_variants": [
@@ -622,8 +622,8 @@
   {
     "id": "CT-321",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/freelancer-quarterly-tax",
+    "url_kind": "tool",
+    "slug": "/tool/freelancer-quarterly-tax",
     "title": "Freelancer Quarterly Tax Calculator",
     "primary_keyword": "freelancer quarterly estimated tax calculator",
     "long_tail_variants": [
@@ -653,8 +653,8 @@
   {
     "id": "CT-322",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/hourly-to-salary-benefits",
+    "url_kind": "tool",
+    "slug": "/tool/hourly-to-salary-benefits",
     "title": "Hourly to Salary with Benefits Calculator",
     "primary_keyword": "hourly to salary with benefits calculator",
     "long_tail_variants": [
@@ -684,8 +684,8 @@
   {
     "id": "CT-323",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/lease-vs-buy-car",
+    "url_kind": "tool",
+    "slug": "/tool/lease-vs-buy-car",
     "title": "Lease vs Buy Car Calculator",
     "primary_keyword": "lease vs buy car calculator",
     "long_tail_variants": [
@@ -715,8 +715,8 @@
   {
     "id": "CT-324",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/balance-transfer-fee",
+    "url_kind": "tool",
+    "slug": "/tool/balance-transfer-fee",
     "title": "Balance Transfer Fee Calculator",
     "primary_keyword": "balance transfer fee calculator",
     "long_tail_variants": [
@@ -746,8 +746,8 @@
   {
     "id": "CT-325",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/mortgage-points-break-even",
+    "url_kind": "tool",
+    "slug": "/tool/mortgage-points-break-even",
     "title": "Mortgage Points Break-Even Calculator",
     "primary_keyword": "mortgage points break even calculator",
     "long_tail_variants": [
@@ -777,8 +777,8 @@
   {
     "id": "CT-326",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/house-hacking-rent-offset",
+    "url_kind": "tool",
+    "slug": "/tool/house-hacking-rent-offset",
     "title": "House Hacking Rent Offset Calculator",
     "primary_keyword": "house hacking calculator",
     "long_tail_variants": [
@@ -808,8 +808,8 @@
   {
     "id": "CT-327",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/rsu-sell-to-cover",
+    "url_kind": "tool",
+    "slug": "/tool/rsu-sell-to-cover",
     "title": "RSU Sell-to-Cover Calculator",
     "primary_keyword": "rsu sell to cover calculator",
     "long_tail_variants": [
@@ -839,8 +839,8 @@
   {
     "id": "CT-328",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/iso-amt-estimator",
+    "url_kind": "tool",
+    "slug": "/tool/iso-amt-estimator",
     "title": "ISO Stock Option AMT Estimator",
     "primary_keyword": "iso stock option amt calculator",
     "long_tail_variants": [
@@ -870,8 +870,8 @@
   {
     "id": "CT-329",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/inflation-adjusted-salary",
+    "url_kind": "tool",
+    "slug": "/tool/inflation-adjusted-salary",
     "title": "Inflation-Adjusted Salary Calculator",
     "primary_keyword": "inflation adjusted salary calculator",
     "long_tail_variants": [
@@ -901,8 +901,8 @@
   {
     "id": "CT-330",
     "category": "finance",
-    "url_kind": "calculator",
-    "slug": "/calculator/1099-vs-w2-take-home",
+    "url_kind": "tool",
+    "slug": "/tool/1099-vs-w2-take-home",
     "title": "1099 vs W-2 Take-Home Pay Calculator",
     "primary_keyword": "1099 vs w2 take home calculator",
     "long_tail_variants": [
@@ -932,8 +932,8 @@
   {
     "id": "CT-331",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/cron-expression-explainer",
+    "url_kind": "tool",
+    "slug": "/tool/cron-expression-explainer",
     "title": "Cron Expression Explainer",
     "primary_keyword": "cron expression explainer",
     "long_tail_variants": [
@@ -963,8 +963,8 @@
   {
     "id": "CT-332",
     "category": "dev",
-    "url_kind": "converter",
-    "slug": "/converter/docker-run-to-docker-compose",
+    "url_kind": "tool",
+    "slug": "/tool/docker-run-to-docker-compose",
     "title": "docker run to Docker Compose Converter",
     "primary_keyword": "docker run to docker compose",
     "long_tail_variants": [
@@ -994,8 +994,8 @@
   {
     "id": "CT-333",
     "category": "dev",
-    "url_kind": "converter",
-    "slug": "/converter/curl-to-fetch-axios-python",
+    "url_kind": "tool",
+    "slug": "/tool/curl-to-fetch-axios-python",
     "title": "cURL to Fetch Axios Python Converter",
     "primary_keyword": "curl to fetch axios python",
     "long_tail_variants": [
@@ -1025,8 +1025,8 @@
   {
     "id": "CT-334",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/regex-explainer",
+    "url_kind": "tool",
+    "slug": "/tool/regex-explainer",
     "title": "Regex Explainer",
     "primary_keyword": "regex explainer",
     "long_tail_variants": [
@@ -1056,8 +1056,8 @@
   {
     "id": "CT-335",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/sql-formatter-bigquery-snowflake",
+    "url_kind": "tool",
+    "slug": "/tool/sql-formatter-bigquery-snowflake",
     "title": "SQL Formatter for BigQuery and Snowflake",
     "primary_keyword": "bigquery snowflake sql formatter",
     "long_tail_variants": [
@@ -1087,8 +1087,8 @@
   {
     "id": "CT-336",
     "category": "dev",
-    "url_kind": "calculator",
-    "slug": "/calculator/ipv6-cidr-subnet",
+    "url_kind": "tool",
+    "slug": "/tool/ipv6-cidr-subnet",
     "title": "IPv6 CIDR Subnet Calculator",
     "primary_keyword": "ipv6 cidr subnet calculator",
     "long_tail_variants": [
@@ -1118,8 +1118,8 @@
   {
     "id": "CT-337",
     "category": "dev",
-    "url_kind": "calculator",
-    "slug": "/calculator/chmod-permission",
+    "url_kind": "tool",
+    "slug": "/tool/chmod-permission",
     "title": "chmod Permission Calculator",
     "primary_keyword": "chmod calculator",
     "long_tail_variants": [
@@ -1149,8 +1149,8 @@
   {
     "id": "CT-338",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/llm-token-counter",
+    "url_kind": "tool",
+    "slug": "/tool/llm-token-counter",
     "title": "LLM Token Counter with Model Cost",
     "primary_keyword": "llm token counter cost calculator",
     "long_tail_variants": [
@@ -1180,8 +1180,8 @@
   {
     "id": "CT-339",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/timestamp-time-zone-converter",
+    "url_kind": "tool",
+    "slug": "/tool/timestamp-time-zone-converter",
     "title": "Timestamp Converter with Time Zones",
     "primary_keyword": "timestamp converter time zones",
     "long_tail_variants": [
@@ -1211,8 +1211,8 @@
   {
     "id": "CT-340",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/nginx-reverse-proxy-config-generator",
+    "url_kind": "tool",
+    "slug": "/tool/nginx-reverse-proxy-config-generator",
     "title": "Nginx Reverse Proxy Config Generator",
     "primary_keyword": "nginx reverse proxy config generator",
     "long_tail_variants": [
@@ -1242,8 +1242,8 @@
   {
     "id": "CT-341",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/env-quote-escape-validator",
+    "url_kind": "tool",
+    "slug": "/tool/env-quote-escape-validator",
     "title": ".env Quote and Escape Validator",
     "primary_keyword": "env quote escape validator",
     "long_tail_variants": [
@@ -1273,8 +1273,8 @@
   {
     "id": "CT-342",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/json-patch-generator",
+    "url_kind": "tool",
+    "slug": "/tool/json-patch-generator",
     "title": "JSON Patch RFC 6902 Generator",
     "primary_keyword": "json patch generator",
     "long_tail_variants": [
@@ -1304,8 +1304,8 @@
   {
     "id": "CT-343",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/json-pointer-tester",
+    "url_kind": "tool",
+    "slug": "/tool/json-pointer-tester",
     "title": "JSON Pointer RFC 6901 Tester",
     "primary_keyword": "json pointer tester",
     "long_tail_variants": [
@@ -1335,8 +1335,8 @@
   {
     "id": "CT-344",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/snowflake-id-decoder",
+    "url_kind": "tool",
+    "slug": "/tool/snowflake-id-decoder",
     "title": "Snowflake ID Decoder",
     "primary_keyword": "snowflake id decoder",
     "long_tail_variants": [
@@ -1366,8 +1366,8 @@
   {
     "id": "CT-345",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/calver-version-comparator",
+    "url_kind": "tool",
+    "slug": "/tool/calver-version-comparator",
     "title": "CalVer Version Parser and Comparator",
     "primary_keyword": "calver version comparator",
     "long_tail_variants": [
@@ -1397,8 +1397,8 @@
   {
     "id": "CT-346",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/spki-certificate-fingerprint",
+    "url_kind": "tool",
+    "slug": "/tool/spki-certificate-fingerprint",
     "title": "SPKI Certificate Fingerprint Generator",
     "primary_keyword": "spki certificate fingerprint generator",
     "long_tail_variants": [
@@ -1428,8 +1428,8 @@
   {
     "id": "CT-347",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/github-actions-permissions-checker",
+    "url_kind": "tool",
+    "slug": "/tool/github-actions-permissions-checker",
     "title": "GitHub Actions Permissions Checker",
     "primary_keyword": "github actions permissions checker",
     "long_tail_variants": [
@@ -1459,8 +1459,8 @@
   {
     "id": "CT-348",
     "category": "dev",
-    "url_kind": "calculator",
-    "slug": "/calculator/kubernetes-requests-limits-ratio",
+    "url_kind": "tool",
+    "slug": "/tool/kubernetes-requests-limits-ratio",
     "title": "Kubernetes Requests Limits Ratio Calculator",
     "primary_keyword": "kubernetes requests limits calculator",
     "long_tail_variants": [
@@ -1490,8 +1490,8 @@
   {
     "id": "CT-349",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/urlpattern-tester",
+    "url_kind": "tool",
+    "slug": "/tool/urlpattern-tester",
     "title": "URLPattern Tester",
     "primary_keyword": "urlpattern tester",
     "long_tail_variants": [
@@ -1521,8 +1521,8 @@
   {
     "id": "CT-350",
     "category": "dev",
-    "url_kind": "tools",
-    "slug": "/tools/cors-preflight-simulator",
+    "url_kind": "tool",
+    "slug": "/tool/cors-preflight-simulator",
     "title": "CORS Preflight Simulator",
     "primary_keyword": "cors preflight simulator",
     "long_tail_variants": [
