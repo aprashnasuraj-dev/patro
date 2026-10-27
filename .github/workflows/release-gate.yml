@@ -409,6 +409,10 @@ jobs:
             grep -Fq "rel=\"canonical\" href=\"https://aafnaipatro.com${path}\"" "$body"
           done
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/_mm530/TOOL-0001/page.html >/dev/null
+          ffmpeg_headers="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsSI https://aafnaipatro.com/mm530-runtime/ffmpeg-core.wasm)"
+          grep -Eiq '^content-type: application/wasm' <<<"$ffmpeg_headers"
+          ffmpeg_length="$(awk 'BEGIN{IGNORECASE=1} /^content-length:/{gsub("\\r","",$2);print $2}' <<<"$ffmpeg_headers" | tail -1)"
+          [[ "${ffmpeg_length:-0}" -gt 26214400 ]] || { echo "::error::FFmpeg runtime stream length is unexpectedly small: ${ffmpeg_length:-missing}"; exit 1; }
 
           while IFS='|' read -r path marker; do
             html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsSL "https://aafnaipatro.com${path}")"
