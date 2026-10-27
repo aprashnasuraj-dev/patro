@@ -106,13 +106,9 @@
       "!/calculator/*",
       "!/tools/*",
       "!/client-tools",
-      "!/client-tools/",
       "!/converter",
-      "!/converter/",
       "!/calculator",
-      "!/calculator/",
-      "!/tools",
-      "!/tools/"
+      "!/tools"
     ]
   },
   "d1_databases": [
