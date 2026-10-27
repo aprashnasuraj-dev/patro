@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0278 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {insulation} from '../src/core';const x={area:1000,current:10,target:30,rpi:4,refT:3.5,coverage:50};describe('TOOL-0278',()=>{it('computes five inches additional insulation',()=>{const r=insulation(x);expect(r.additionalR).toBe(20);expect(r.thicknessIn).toBe(5);expect(r.packages).toBe(29)});it('returns zero packages when no additional R is needed',()=>expect(insulation({...x,target:5}).packages).toBe(0))});

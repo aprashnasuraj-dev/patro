@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0276 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {fence} from '../src/core';const x={length:100,runs:1,gates:0,gateWidth:0,spacing:10,rails:2,picket:6,gap:0};describe('TOOL-0276',()=>{it('computes posts, rails and pickets',()=>{const r=fence(x);expect(r.bays).toBe(10);expect(r.posts).toBe(11);expect(r.railLengthFt).toBe(200);expect(r.pickets).toBe(200)});it('rejects gate width equal to fence length',()=>expect(()=>fence({...x,gateWidth:100})).toThrow())});

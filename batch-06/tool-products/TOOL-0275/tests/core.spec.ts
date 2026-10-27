@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0275 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {room} from '../src/core';describe('TOOL-0275',()=>{it('converts a 10×10×8 ft room',()=>{const r=room(10,0,10,0,8,0);expect(r.lengthM).toBeCloseTo(3.048,3);expect(r.areaM2).toBeCloseTo(9.2903,4)});it('rejects twelve inches instead of silently carrying',()=>expect(()=>room(10,12,10,0,8,0)).toThrow())});

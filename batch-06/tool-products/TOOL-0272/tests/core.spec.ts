@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0272 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {capRate} from '../src/core';const x={units:1,rent:1000,vac:0,other:0,opex:2000,value:100000};describe('TOOL-0272',()=>{it('computes a 10% cap rate',()=>{const r=capRate(x);expect(r.gross).toBe(12000);expect(r.noi).toBe(10000);expect(r.capRate).toBe(10)});it('rejects zero property value',()=>expect(()=>capRate({...x,value:0})).toThrow())});

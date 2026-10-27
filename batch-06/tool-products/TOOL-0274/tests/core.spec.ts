@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0274 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {polygon} from '../src/core';describe('TOOL-0274',()=>{it('computes a 10×10 ft square',()=>{const r=polygon('0,0\n10,0\n10,10\n0,10','ft');expect(r.areaFt2).toBe(100);expect(r.perimeterInput).toBe(40)});it('rejects self-intersection',()=>expect(()=>polygon('0,0\n10,10\n0,10\n10,0','ft')).toThrow(/self-intersects/))});
