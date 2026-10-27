@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0308 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {rrule} from '../src/core';describe('TOOL-0308',()=>{it('previews three daily occurrences',()=>{const r=rrule({start:'2026-01-01',freq:'DAILY',interval:1,count:3,byday:'',bymd:''});expect(r.rrule).toBe('FREQ=DAILY;INTERVAL=1;COUNT=3');expect(r.occurrences).toEqual(['2026-01-01','2026-01-02','2026-01-03'])});it('rejects unsupported frequency',()=>expect(()=>rrule({start:'2026-01-01',freq:'HOURLY',interval:1,count:3,byday:'',bymd:''})).toThrow())});

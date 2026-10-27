@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0301 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {businessDays,parseWeekend} from '../src/core';describe('TOOL-0301',()=>{it('counts a Monday-through-Friday range',()=>{const r=businessDays({start:'2026-10-26',end:'2026-10-30',weekend:'0,6',holidays:'',includeStart:true,includeEnd:true});expect(r.business).toBe(5);expect(r.calendarDays).toBe(5)});it('rejects invalid weekend indexes',()=>expect(()=>parseWeekend('6,7')).toThrow())});

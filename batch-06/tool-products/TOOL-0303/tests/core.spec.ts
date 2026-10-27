@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0303 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {meetingGrid} from '../src/core';describe('TOOL-0303',()=>{it('builds a bounded 30-minute UTC grid',()=>{const r=meetingGrid({date:'2026-01-15',time:'12:00',zone:'UTC',zones:'UTC\nAsia/Kathmandu',dis:'reject',spanMin:240});expect(r.rows).toHaveLength(17);expect(r.zones).toEqual(['UTC','Asia/Kathmandu'])});it('rejects an empty participant-zone list',()=>expect(()=>meetingGrid({date:'2026-01-15',time:'12:00',zone:'UTC',zones:'',dis:'reject',spanMin:240})).toThrow())});

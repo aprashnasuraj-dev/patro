@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0306 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {buildIcs} from '../src/core';const x={summary:'Planning',date:'2026-01-15',time:'12:00',tz:'UTC',duration:60,freq:'DAILY',count:2,alarm:10,location:'Room',description:'Agenda',uid:'event@example',nowIso:'2026-01-01T00:00:00Z'};describe('TOOL-0306',()=>{it('emits a folded VEVENT with recurrence and alarm',()=>{const r=buildIcs(x);expect(r.text).toContain('BEGIN:VEVENT');expect(r.text).toContain('RRULE:FREQ=DAILY;COUNT=2');expect(r.text).toContain('BEGIN:VALARM');expect(r.filename).toMatch(/\.ics$/)});it('rejects zero duration',()=>expect(()=>buildIcs({...x,duration:0})).toThrow())});

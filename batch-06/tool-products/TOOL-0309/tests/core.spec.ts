@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0309 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {parseDuration,buildDuration,exactSeconds} from '../src/core';describe('TOOL-0309',()=>{it('parses and totals a day plus two hours',()=>{const d=parseDuration('P1DT2H');expect(d.days).toBe(1);expect(d.hours).toBe(2);expect(exactSeconds(d)).toBe(93600)});it('builds a bounded duration',()=>expect(buildDuration({years:0,months:0,days:1,hours:2,minutes:3,seconds:4})).toBe('P1DT2H3M4S'));it('rejects bare P',()=>expect(()=>parseDuration('P')).toThrow())});

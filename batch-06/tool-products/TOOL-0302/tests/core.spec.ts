@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0302 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {exactDiff} from '../src/core';describe('TOOL-0302',()=>{it('rebuilds a one-day forward difference',()=>{const r=exactDiff('2024-01-01','2024-01-02');expect(r.totalDays).toBe(1);expect(r.days).toBe(1);expect(r.rebuilt).toBe('2024-01-02')});it('labels reverse input',()=>expect(exactDiff('2024-01-02','2024-01-01').direction).toBe('reverse'))});

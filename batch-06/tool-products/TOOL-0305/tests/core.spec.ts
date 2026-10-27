@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0305 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {convertEpoch} from '../src/core';describe('TOOL-0305',()=>{it('auto-detects a 10-digit seconds timestamp',()=>{const r=convertEpoch('1700000000','auto',10);expect(r.rows[0].unit).toBe('s');expect(r.rows[0].iso).toBe('2023-11-14T22:13:20.000Z')});it('rejects an invalid match limit',()=>expect(()=>convertEpoch('1700000000','auto',0)).toThrow())});
