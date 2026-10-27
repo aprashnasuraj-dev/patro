@@ -1,0 +1,10 @@
+{
+  "phase": "PHASE_2_CANONICAL_INVENTORY_FREEZE",
+  "run_id": 40438862112,
+  "source_commit": "265430149b986efcb4eeb3cdf06d9ca31b19306b",
+  "artifact_name": "mm530-phase2-inventory",
+  "artifact_digest": "sha256:7d4686c9f579bfd24c86a0146268c21f921fbb2ba4bdbd052fa0042ae605ceae",
+  "expected_records": 530,
+  "expected_identity_ambiguities": 0,
+  "note": "One-shot trigger. Generated data/mm530 changes do not match this workflow's path filter."
+}
