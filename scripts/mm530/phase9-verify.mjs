@@ -51,7 +51,7 @@ assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifes
 assert(advanced.counts?.webToolCategories===12,"ADVANCED_CATEGORY_COUNT",`module manifest says ${advanced.counts?.webToolCategories}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
-const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;
+const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[],toolRuntimeRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;
 const editorialSignals=[
  ["how_to",/how to use|step[- ]by[- ]step|instructions?/i],
  ["worked_example",/(?:worked|reproducible) example|example workflow/i],
@@ -82,7 +82,10 @@ for(const tool of registry){
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
  if(!(await exists(pagePath))||!(await exists(leafPath)))continue;
  const [runtimeHtml,leafHtml,sourceHtml]=await Promise.all([read(pagePath),read(leafPath),read(path.join(root,tool.sourceDir,"page.html")).catch(()=>"")]);
- runtimeBytes+=(await fs.stat(pagePath)).size+(await fs.stat(jsPath)).size;leafBytes+=(await fs.stat(leafPath)).size;
+ const runtimeHtmlStat=await fs.stat(pagePath),runtimeJsStat=await fs.stat(jsPath);
+ runtimeBytes+=runtimeHtmlStat.size+runtimeJsStat.size;leafBytes+=(await fs.stat(leafPath)).size;
+ toolRuntimeRows.push({id:tool.id,route:tool.route,htmlBytes:runtimeHtmlStat.size,jsBytes:runtimeJsStat.size,totalBytes:runtimeHtmlStat.size+runtimeJsStat.size});
+ assert(runtimeJsStat.size<1_500_000,"TOOL_RUNTIME_JS_BUDGET",tool.id+": "+runtimeJsStat.size+" bytes");
  const expected=origin+tool.route,title=tagContent(leafHtml,"title"),desc=tagContent(leafHtml,"description"),canonical=tagContent(leafHtml,"canonical"),ogurl=tagContent(leafHtml,"ogurl"),robots=tagContent(leafHtml,"robots");
  assert(Boolean(title),"SEO_TITLE_MISSING",tool.id);assert(Boolean(desc),"SEO_DESCRIPTION_MISSING",tool.id);assert(desc.length>=70&&desc.length<=165,"SEO_DESCRIPTION_LENGTH",`${tool.id}: ${desc.length}`);assert(canonical===expected,"CANONICAL_MISMATCH",`${tool.id}: ${canonical}`);assert(ogurl===expected,"OG_URL_MISMATCH",`${tool.id}: ${ogurl}`);assert(!/noindex/i.test(robots),"LEAF_NOINDEX",tool.id);assert(Boolean(tagContent(leafHtml,"ogtitle")),"OG_TITLE_MISSING",tool.id);assert(Boolean(tagContent(leafHtml,"twitter")),"TWITTER_TITLE_MISSING",tool.id);
  const previous=titles.get(title);if(previous)assert(false,"DUPLICATE_TITLE",`${tool.id} and ${previous}: ${title}`);else titles.set(title,tool.id);
@@ -156,7 +159,10 @@ const representative={light:"TOOL-0001",pdf:"TOOL-0151",spreadsheet:"TOOL-0370",
 const advancedLandingHtmlBytes=(await fs.stat(path.join(dist,"advancetools/index.html"))).size,webToolsHubHtmlBytes=(await fs.stat(hubPath)).size;
 const advancedSharedAssetBytes=await dirBytes(path.join(dist,advanced.assetPrefix.replace(/^\//,"")));
 const viteAssetsDir=path.join(dist,"assets");let viteChunks=[];try{for(const name of await fs.readdir(viteAssetsDir)){const p=path.join(viteAssetsDir,name),st=await fs.stat(p);if(st.isFile()&&/\.(?:m?js|css)$/.test(name))viteChunks.push({file:name,bytes:st.size})}}catch{}viteChunks.sort((a,b)=>b.bytes-a.bytes);
-const perf={advancedLandingHtmlBytes,webToolsHubHtmlBytes,advancedSharedAssetBytes,advancedLandingPayloadBytes:advancedLandingHtmlBytes+advancedSharedAssetBytes,webToolsHubPayloadBytes:webToolsHubHtmlBytes+advancedSharedAssetBytes,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,viteTopChunks:viteChunks.slice(0,20),representative:{},sharedVendorBytes:{}};
+toolRuntimeRows.sort((a,b)=>b.jsBytes-a.jsBytes);
+const jsSizes=toolRuntimeRows.map(x=>x.jsBytes).sort((a,b)=>a-b);
+const percentile=p=>jsSizes[Math.min(jsSizes.length-1,Math.floor((jsSizes.length-1)*p))]||0;
+const perf={advancedLandingHtmlBytes,webToolsHubHtmlBytes,advancedSharedAssetBytes,advancedLandingPayloadBytes:advancedLandingHtmlBytes+advancedSharedAssetBytes,webToolsHubPayloadBytes:webToolsHubHtmlBytes+advancedSharedAssetBytes,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,viteTopChunks:viteChunks.slice(0,20),toolRuntimeJs:{count:toolRuntimeRows.length,min:jsSizes[0]||0,median:percentile(.5),p90:percentile(.9),p95:percentile(.95),max:jsSizes.at(-1)||0,top20:toolRuntimeRows.slice(0,20)},representative:{},sharedVendorBytes:{}};
 const fiveMb=5*1024*1024;
 assert(perf.advancedLandingPayloadBytes<fiveMb,"ADVANCED_LANDING_PAYLOAD",`${perf.advancedLandingPayloadBytes} bytes >= 5 MB`);
 assert(perf.webToolsHubPayloadBytes<fiveMb,"WEB_TOOLS_HUB_PAYLOAD",`${perf.webToolsHubPayloadBytes} bytes >= 5 MB`);
