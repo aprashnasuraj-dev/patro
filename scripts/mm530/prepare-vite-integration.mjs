@@ -40,6 +40,9 @@ function sanitizeProductionHtml(html){
  html=html.replace(/<footer\b[^>]*>(?:(?!<\/footer>)[\s\S])*(?:TEST_PENDING|Client-side preparation|Reserved route)(?:(?!<\/footer>)[\s\S])*<\/footer>/gi,"");
  html=html.replace(/<(?:small|p)\b[^>]*>(?:(?!<\/(?:small|p)>)[\s\S])*(?:Source preparation status|Source preparation only|Product testing and publication pending|No runtime QA claim|Runtime validation pending|Staging mode: noindex|QA-approved\?|source checkpoint is TEST_PENDING)(?:(?!<\/(?:small|p)>)[\s\S])*<\/(?:small|p)>/gi,"");
  return html
+  .replace(/\bDeveloper studio\b/gi,"Tool workspace")
+  .replace(/\s*·\s*staged\b/gi,"")
+  .replace(/This is (?:a )?staged[^.]*\./gi,"")
   .replace(/Private browser utility\s*·\s*batch\s*0?\d+/gi,"Private browser utility")
   .replace(/Source preview\s*·\s*Not published/gi,"")
   .replace(/\bbatch\s*0?\d+\b/gi,"")
