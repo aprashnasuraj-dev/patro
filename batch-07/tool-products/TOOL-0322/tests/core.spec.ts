@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0322 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {parseSums,verify} from '../src/core';const H='ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad';describe('TOOL-0322',()=>{it('parses and verifies a GNU-style SHA-256 entry',async()=>{expect(parseSums(H+'  abc.txt')).toEqual([{expected:H,name:'abc.txt',binary:false}]);const r=await verify(H+'  abc.txt',[new File(['abc'],'abc.txt')]);expect(r[0].status).toBe('match');expect(r[0].actual).toBe(H)});it('rejects duplicate filenames',()=>expect(()=>parseSums(H+'  a\n'+H+'  a')).toThrow(/Duplicate/))});

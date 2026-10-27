@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0326 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {calc} from '../src/core';describe('TOOL-0326',()=>{it('matches the standard HMAC-SHA-256 quick-brown-fox vector',async()=>{const expected='f7bc83f430538424b13298e6aa6fb143ef4d59a14946175997479dbc2d1a3cd8';const r=await calc({hash:'SHA-256',key:'key',kenc:'utf8',payload:'The quick brown fox jumps over the lazy dog',outenc:'hex',expected});expect(r.signature).toBe(expected);expect(r.verified).toBe(true);expect(r.bytes).toBe(32)});it('rejects an empty key',async()=>{await expect(calc({hash:'SHA-256',key:'',kenc:'utf8',payload:'x',outenc:'hex',expected:''})).rejects.toThrow(/empty/)})});

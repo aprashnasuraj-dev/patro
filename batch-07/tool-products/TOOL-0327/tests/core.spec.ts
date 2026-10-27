@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0327 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {challenge,generateVerifier} from '../src/core';describe('TOOL-0327',()=>{it('matches RFC 7636 PKCE S256 example',async()=>{const v='dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk';expect(await challenge(v)).toBe('E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM')});it('generates verifier within the requested length and alphabet',()=>expect(generateVerifier(43)).toMatch(/^[A-Za-z0-9._~-]{43}$/));it('rejects short verifier',async()=>{await expect(challenge('short')).rejects.toThrow(/43–128/)})});

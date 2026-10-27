@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0321 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {hashFile} from '../src/core';describe('TOOL-0321',()=>{it('hashes abc with published digests and CRC32',async()=>{const r=await hashFile(new File(['abc'],'abc.txt'));expect(r.bytes).toBe(3);expect(r.sha256).toBe('ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');expect(r.md5).toBe('900150983cd24fb0d6963f7d28e17f72');expect(r.crc32).toBe('352441c2');expect(r.sha512).toHaveLength(128)});});

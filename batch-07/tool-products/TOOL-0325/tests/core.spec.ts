@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0325 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect,vi} from 'vitest';import {runBench} from '../src/core';describe('TOOL-0325',()=>{it('benchmarks bounded synthetic engines without user passwords',async()=>{const a=vi.fn(async()=>{}),b=vi.fn(async()=>{});const r=await runBench({argon2id:a,bcrypt:b},{memoryMiB:8,passes:1,parallelism:1,cost:8,runs:2});expect(r.argon.runs).toHaveLength(2);expect(r.bcrypt.runs).toHaveLength(2);expect(a).toHaveBeenCalledTimes(2);expect(b).toHaveBeenCalledTimes(2)});it('rejects unsafe benchmark bounds',async()=>{await expect(runBench({argon2id:async()=>{},bcrypt:async()=>{}},{memoryMiB:4,passes:1,parallelism:1,cost:8,runs:1})).rejects.toThrow()})});

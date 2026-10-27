@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0323 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {audit} from '../src/core';describe('TOOL-0323',()=>{it('flags common weak patterns',()=>{const r=audit('password123');expect(r.issues.join(' ')).toMatch(/common weak|word \+ digits/);expect(r.score).toBeLessThan(60)});it('gives a long multi-class passphrase a stronger profile',()=>expect(audit('Mango-River-Quartz-82!').score).toBeGreaterThan(60));it('caps input length',()=>expect(()=>audit('x'.repeat(513))).toThrow(/512/))});

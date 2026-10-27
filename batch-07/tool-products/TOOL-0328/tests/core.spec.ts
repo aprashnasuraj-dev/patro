@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0328 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {totp} from '../src/core';describe('TOOL-0328',()=>{it('matches RFC 6238 SHA-1 vector at 59 seconds',async()=>{const r=await totp({secret:'GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ',alg:'SHA-1',digits:8,period:30,timestamp:59});expect(r.rows.find(x=>x.offset===0)?.code).toBe('94287082');expect(r.counter).toBe('1')});it('rejects unsupported digit counts',async()=>{await expect(totp({secret:'GEZDGNBVGY3TQOJQ',alg:'SHA-1',digits:7,period:30,timestamp:59})).rejects.toThrow()})});

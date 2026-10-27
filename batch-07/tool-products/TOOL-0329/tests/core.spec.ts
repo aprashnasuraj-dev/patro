@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0329 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {encryptText,decryptText} from '../src/core';describe('TOOL-0329',()=>{it('round-trips authenticated text',async()=>{const env=await encryptText('correct horse','hello नेपाल');expect(await decryptText('correct horse',env)).toBe('hello नेपाल');const parsed=JSON.parse(env);expect(parsed.v).toBe('APENC1');expect(parsed.iter).toBe(600000)});it('rejects an empty password',async()=>{await expect(encryptText('','x')).rejects.toThrow(/required/)})});
