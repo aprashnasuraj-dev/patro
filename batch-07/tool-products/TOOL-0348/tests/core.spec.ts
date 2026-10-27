@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0348 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+// @vitest-environment jsdom
+import {describe,it,expect} from 'vitest';import {validatePodcast} from '../src/core';const xml='<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>T</title><description>D</description><language>en</language><itunes:explicit>false</itunes:explicit><itunes:image href="https://example.test/a.jpg"/><item><title>E1</title><guid>g1</guid><enclosure url="https://example.test/e.mp3" length="123" type="audio/mpeg"/></item></channel></rss>';describe('TOOL-0348',()=>{it('validates a structurally complete bounded RSS feed',()=>{const r=validatePodcast(xml);expect(r.errors).toEqual([]);expect(r.episodes).toBe(1);expect(r.uniqueGuids).toBe(1)});it('rejects XML entity declarations before parsing',()=>expect(()=>validatePodcast('<!DOCTYPE rss [<!ENTITY x "y">]><rss/>')).toThrow(/DOCTYPE/))});

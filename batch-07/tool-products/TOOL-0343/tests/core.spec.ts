@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0343 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {guide} from '../src/core';describe('TOOL-0343',()=>{it('computes inset and centered 16:9 crop geometry',()=>{const r=guide(1000,1000,10,'16:9');expect(r.safe).toEqual({x:100,y:100,w:800,h:800});expect(r.crop?.w).toBeCloseTo(1000);expect(r.crop?.h).toBeCloseTo(562.5);expect(r.crop?.y).toBeCloseTo(218.75)});it('rejects malformed crop ratios and zero images',()=>{expect(()=>guide(100,100,10,'bad')).toThrow();expect(()=>guide(0,100,10,'none')).toThrow()})});

@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0349 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect,afterEach} from 'vitest';import {bounds,mediaType} from '../src/core';const old=(globalThis as any).MediaRecorder;afterEach(()=>{(globalThis as any).MediaRecorder=old});describe('TOOL-0349',()=>{it('normalizes webcam overlay percentage',()=>expect(bounds(25)).toBe(.25));it('selects the first supported WebM type without touching hardware',()=>{(globalThis as any).MediaRecorder={isTypeSupported:(t:string)=>t.includes('vp8')};expect(mediaType()).toContain('vp8')});it('rejects out-of-range overlay size',()=>expect(()=>bounds(41)).toThrow())});

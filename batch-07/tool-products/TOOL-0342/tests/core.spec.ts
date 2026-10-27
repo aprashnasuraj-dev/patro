@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0342 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {grid} from '../src/core';describe('TOOL-0342',()=>{it('tiles every source pixel exactly once across rounded boundaries',()=>{const r=grid(101,99,3,2);expect(r).toHaveLength(6);expect(r.reduce((n,t)=>n+t.w*t.h,0)).toBe(101*99);expect(r[0]).toMatchObject({x:0,y:0,index:1})});it('rejects non-finite or too-dense grids',()=>{expect(()=>grid(NaN,100,2,2)).toThrow();expect(()=>grid(100,100,10,6)).toThrow()})});

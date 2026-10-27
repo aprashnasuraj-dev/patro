@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0350 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {rms} from '../src/core';describe('TOOL-0350',()=>{it('returns a stable zero object for an empty analyzer buffer',()=>expect(rms(new Uint8Array())).toEqual({rms:0,peak:0}));it('computes normalized RMS and peak',()=>{const r=rms(new Uint8Array([128,255]));expect(r.rms).toBeCloseTo(.70158,4);expect(r.peak).toBeCloseTo(.9921875,7)})});

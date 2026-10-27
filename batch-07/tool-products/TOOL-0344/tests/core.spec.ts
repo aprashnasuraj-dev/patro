@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0344 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {chapters} from '../src/core';describe('TOOL-0344',()=>{it('accepts three ordered chapters with ten-second minimum spacing',()=>{const r=chapters('0:00 Intro\n0:10 Topic\n0:20 End','0:40');expect(r.errors).toEqual([]);expect(r.normalized).toBe('0:00 Intro\n0:10 Topic\n0:20 End');expect(r.duration).toBe(40)});it('reports structural chapter errors without crashing',()=>{const r=chapters('0:05 A\n0:10 B');expect(r.errors.join(' ')).toMatch(/three timestamps|00:00/)})});

@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0347 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {presets} from '../src/core';describe('TOOL-0347',()=>{it('parses named output dimensions',()=>expect(presets('Square,1080,1080\nStory,1080,1920')).toEqual([{name:'Square',w:1080,h:1080},{name:'Story',w:1080,h:1920}]));it('rejects tiny and excessive-pixel presets',()=>{expect(()=>presets('x,99,100')).toThrow();expect(()=>presets('x,10000,10000')).toThrow()})});

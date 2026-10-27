@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0345 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {formatTags} from '../src/core';describe('TOOL-0345',()=>{it('normalizes separators into readable hashtag casing',()=>{const r=formatTags('hello-world,nepal_tech');expect(r.map(x=>x.output)).toEqual(['#HelloWorld','#NepalTech'])});it('does not guess boundaries inside a long lowercase token',()=>expect(formatTags('abcdefghijkl')[0].warning).toMatch(/boundary/));it('caps tag count',()=>expect(()=>formatTags(Array(501).fill('x').join(','))).toThrow())});

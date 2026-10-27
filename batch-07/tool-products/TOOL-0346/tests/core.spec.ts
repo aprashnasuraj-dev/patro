@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0346 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {variants} from '../src/core';describe('TOOL-0346',()=>{it('returns five mathematical-alphanumeric styles while preserving punctuation',()=>{const r=variants('Ab 1!');expect(r).toHaveLength(5);expect(r.find(x=>x.name==='bold')?.text).not.toBe('Ab 1!');for(const x of r)expect(x.text.endsWith('!')).toBe(true)});it('caps Unicode code points',()=>expect(()=>variants('a'.repeat(2001))).toThrow())});

@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0341 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {countPost} from '../src/core';describe('TOOL-0341',()=>{it('counts plain text against a supplied limit',()=>{const r=countPost('abc','plain',5);expect(r.weighted).toBe(3);expect(r.remaining).toBe(2);expect(r.over).toBe(0)});it('rejects invalid limits and oversized text',()=>{expect(()=>countPost('x','plain',0)).toThrow();expect(()=>countPost('x'.repeat(200001),'plain',10)).toThrow()})});
