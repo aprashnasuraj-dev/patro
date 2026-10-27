@@ -14,7 +14,7 @@ const shots=path.join(out,'screenshots');
 const inv=JSON.parse(await fs.readFile(path.join(root,'data','mm530','canonical-tools-v1.json'),'utf8'));
 const VIEWPORTS=[['mobile_360',360,800],['mobile_390',390,844],['tablet_768',768,1024],['desktop_1280',1280,900]];
 const DEVICE=new Set(['TOOL-0349','TOOL-0350','TOOL-0446']);
-const COMPILE_BLOCKERS=new Set(['TOOL-0324','TOOL-0370','TOOL-0371']);
+const COMPILE_BLOCKERS=new Set();
 const PLACEHOLDER=/^(?:ready|loading|no (?:current )?result|output will appear|your results will appear|use the (?:prepared )?example|generate|choose|select|not processed|nothing has been)/i;
 const STRONG_ERROR=/(?:^|\b)(?:input error|invalid|unable|failed|failure|required|unsupported|malformed|must be|choose (?:a|an|at least)|provide|missing|cannot|could not|exceeds|too (?:large|many|small))\b/i;
 const err=e=>String(e?.errors?.[0]?.text||e?.message||e).replace(/\s+/g,' ').slice(0,500);
@@ -53,6 +53,7 @@ const server=createServer(async(req,res)=>{try{
  const u=new URL(req.url,'http://127.0.0.1'),pn=decodeURIComponent(u.pathname);
  const runtimeAssets=new Map([['/vendor/pdfjs/pdf.mjs',path.join(root,'node_modules','pdfjs-dist','legacy','build','pdf.mjs')],['/vendor/pdfjs/pdf.worker.mjs',path.join(root,'node_modules','pdfjs-dist','legacy','build','pdf.worker.mjs')],['/vendor/pdf-lib/pdf-lib.esm.min.js',path.join(root,'node_modules','pdf-lib','dist','pdf-lib.esm.min.js')]]);
  if(runtimeAssets.has(pn)){const p=runtimeAssets.get(pn);if(!await exists(p)){res.writeHead(404);return res.end('missing runtime asset')}res.writeHead(200,{'Content-Type':mime(p),'Cache-Control':'no-store'});return res.end(await fs.readFile(p))}
+ if(pn.startsWith('/vendor/mathjax/')){const baseDir=path.resolve(root,'node_modules','mathjax'),p=path.resolve(baseDir,pn.slice('/vendor/mathjax/'.length));if(!p.startsWith(baseDir+path.sep)||!await exists(p)){res.writeHead(404);return res.end('missing MathJax asset')}res.writeHead(200,{'Content-Type':mime(p),'Cache-Control':'no-store'});return res.end(await fs.readFile(p))}
  for(const prefix of ['/vendor/','/assets/','/fonts/'])if(pn.startsWith(prefix)){const p=path.resolve(root,'public',pn.slice(1));if(!p.startsWith(path.resolve(root,'public')+path.sep)||!await exists(p)){res.writeHead(404);return res.end('missing')}res.writeHead(200,{'Content-Type':mime(p),'Cache-Control':'no-store'});return res.end(await fs.readFile(p))}
  const m=pn.match(/^\/review\/(TOOL-\d{4})(?:\/(.*))?$/);if(!m){res.writeHead(404);return res.end('not found')}const t=byId.get(m[1]);if(!t){res.writeHead(404);return res.end('unknown tool')}
  const rel=m[2]||'page.html';
