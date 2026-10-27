@@ -1,0 +1,15 @@
+{
+  "cluster": "compile:escaped-newline-source",
+  "subcluster": "generated-3",
+  "before": 6,
+  "targetAfter": 0,
+  "ids": [
+    "TOOL-0395",
+    "TOOL-0396",
+    "TOOL-0397",
+    "TOOL-0398",
+    "TOOL-0399",
+    "TOOL-0400"
+  ],
+  "filesChanged": 6
+}
