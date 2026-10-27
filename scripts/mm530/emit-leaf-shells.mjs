@@ -39,7 +39,15 @@ function iframePermissions(tool){
  return cap.join("; ");
 }
 function relatedLinks(tool){
- return registry.filter(x=>x.category===tool.category&&x.id!==tool.id).slice(0,6);
+ const peers=registry.filter(x=>x.category===tool.category);
+ const at=peers.findIndex(x=>x.id===tool.id);
+ if(at<0||peers.length<2)return [];
+ const out=[];
+ for(const offset of [-3,-2,-1,1,2,3]){
+  const item=peers[(at+offset+peers.length)%peers.length];
+  if(item&&item.id!==tool.id&&!out.some(x=>x.id===item.id))out.push(item);
+ }
+ return out;
 }
 const shellCss=`<style data-mm530-static-shell>
 .mm530-static-fallback{max-width:1180px;margin:0 auto;padding:20px 18px 56px;font-family:Inter,"Noto Sans Devanagari",system-ui,sans-serif;color:#17231b}
@@ -48,7 +56,7 @@ const shellCss=`<style data-mm530-static-shell>
 .mm530-kicker{font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.72}
 .mm530-frame-wrap{border:1px solid rgba(23,35,27,.14);border-radius:16px;overflow:hidden;background:#fff;min-height:760px}
 .mm530-frame{display:block;width:100%;height:clamp(760px,85vh,1080px);border:0;background:#fff}
-.mm530-editorial{max-width:900px;margin:34px auto 0;line-height:1.7}.mm530-editorial section,.mm530-editorial article{margin:26px 0}.mm530-editorial h2{font-size:1.45rem;margin:1.6rem 0 .55rem}.mm530-editorial h3{font-size:1.15rem}.mm530-editorial pre{overflow:auto;max-width:100%;padding:14px;border-radius:10px;background:#f5f7f5}.mm530-editorial img{max-width:100%;height:auto}
+.mm530-editorial{max-width:900px;margin:34px auto 0;line-height:1.7;content-visibility:auto;contain-intrinsic-size:700px}.mm530-related{content-visibility:auto;contain-intrinsic-size:320px}.mm530-editorial section,.mm530-editorial article{margin:26px 0}.mm530-editorial h2{font-size:1.45rem;margin:1.6rem 0 .55rem}.mm530-editorial h3{font-size:1.15rem}.mm530-editorial pre{overflow:auto;max-width:100%;padding:14px;border-radius:10px;background:#f5f7f5}.mm530-editorial img{max-width:100%;height:auto}
 .mm530-related{margin:38px 0 0}.mm530-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.mm530-related-grid a{display:block;border:1px solid rgba(23,35,27,.14);border-radius:12px;padding:14px;text-decoration:none}.mm530-related-grid strong{display:block;margin-bottom:4px}
 @media(max-width:680px){.mm530-static-fallback{padding:14px 12px 42px}.mm530-frame-wrap{min-height:680px}.mm530-frame{height:780px}}
 </style>`;
