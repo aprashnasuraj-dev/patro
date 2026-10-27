@@ -1,0 +1,58 @@
+{
+  "as_of": "2026-10-28",
+  "unit": "USD per 1M text tokens",
+  "models": {
+    "gpt-6-astra": {
+      "provider": "openai",
+      "input": 10,
+      "output": 50,
+      "token_count": "o200k local count"
+    },
+    "gpt-6.1-sol": {
+      "provider": "openai",
+      "input": 2,
+      "output": 10,
+      "token_count": "o200k local count"
+    },
+    "gpt-6.1-terra": {
+      "provider": "openai",
+      "input": 1,
+      "output": 5,
+      "token_count": "o200k local count"
+    },
+    "gpt-6-luna": {
+      "provider": "openai",
+      "input": 0.1,
+      "output": 0.5,
+      "token_count": "o200k local count"
+    },
+    "gpt-5.6-sol": {
+      "provider": "openai",
+      "input": 4,
+      "output": 20,
+      "token_count": "o200k local count; promotional price"
+    },
+    "claude-opus-5.5": {
+      "provider": "anthropic",
+      "input": 4,
+      "output": 20,
+      "token_count": "local heuristic"
+    },
+    "claude-sonnet-5.5": {
+      "provider": "anthropic",
+      "input": 2,
+      "output": 10,
+      "token_count": "local heuristic"
+    },
+    "claude-haiku-5.5": {
+      "provider": "anthropic",
+      "input": 0.1,
+      "output": 0.5,
+      "token_count": "local heuristic; base tier up to 100K prompt tokens"
+    }
+  },
+  "sources": [
+    "OpenAI API pricing, checked 2026-10-28",
+    "Anthropic Claude pricing, checked 2026-10-28"
+  ]
+}
