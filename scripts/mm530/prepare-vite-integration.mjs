@@ -196,7 +196,7 @@ if(typeof mount!=="function")throw new Error("Missing exported mount function fo
 mount(root);
 if(!root.querySelector("button,input,select,textarea,[role=button]"))throw new Error("Mount produced no interactive controls for ${tool.id}");
 root.dataset.toolMounted="true";`
-    : `import ${modulePath};`;
+    : `import ${modulePath};`)+minimalBootstrap;
   await fs.writeFile(bootstrap,bootSource);
   try{
     await build({entryPoints:{tool:bootstrap},bundle:true,format:"esm",platform:"browser",target:"es2022",outdir:dst,entryNames:"[name]",chunkNames:"chunks/[name]-[hash]",assetNames:"chunks/[name]-[hash]",splitting:true,logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
