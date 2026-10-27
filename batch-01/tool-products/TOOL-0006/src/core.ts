@@ -20,6 +20,6 @@ export function convert(input:string):Result{
    response:{status:typeof rs.status==='number'&&Number.isInteger(rs.status)&&Number(rs.status)>=100&&Number(rs.status)<=599?rs.status:0,statusText:'',httpVersion:'HTTP/1.1',cookies:[],headers:[],content:{size:isObj(rs.content)?finite(rs.content.size):0,mimeType:'application/octet-stream'},redirectURL:'',headersSize:-1,bodySize:finite(rs.bodySize)},cache:{},timings};
   return result;
  });
- const result={log:{version:'1.2',creator:{name:'Mission Mangal Local HAR Redactor',version:'source-draft-1'},entries:safe}};
+ const result={log:{version:'1.2',creator:{name:'AafnaiPatro HAR Redactor',version:'1.0.0'},entries:safe}};
  return {text:JSON.stringify(result,null,2)+'\n',warnings:['URLs, hostnames, headers, cookies, queries, request/response bodies, comments, extension fields, identifying IDs and server addresses were discarded.','Status and timing metadata remain; traffic patterns may still identify activities. Inspect the exported HAR before sharing.'],details:{Requests:entries.length,HeadersRemoved:headers,BodiesRemoved:bodies}};
 }

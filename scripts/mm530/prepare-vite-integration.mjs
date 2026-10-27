@@ -7,7 +7,8 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-registry.json"),"utf8")).tools;
 const outRoot=path.join(root,"public/_mm530");
 const origin="https://aafnaipatro.com";
-const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|prepared source|pre-publication|runtime QA|runtime validation pending|publication pending|publication action|draft research tool|source checkpoint|\bQA-approved\b|\bstaged(?:\s+only)?\b|Staging\s*:?[\s-]*noindex|not published|no product tests|product tests have not been executed|reserved tool routes?|published route|before hydration|fixtures\\.json)/i;
+const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0164","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
+const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|prepared source|pre-publication|runtime QA|runtime validation pending|publication pending|publication action|draft research tool|source checkpoint|\bQA-approved\b|\bstaged(?:\s+only)?\b|Staging\s*:?[\s-]*noindex|not published|no product tests|product tests have not been executed|reserved tool routes?|published route|before hydration|fixtures\.json)/i;
 
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
 function decodeHtml(s){return String(s||"").replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,"<").replace(/&gt;/g,">")}
@@ -39,9 +40,16 @@ function extractDescription(html,title,categoryLabel){
  return boundedDescription(value,title,categoryLabel);
 }
 function sanitizeProductionHtml(html){
+ // Remove QA-only FAQ fragments without deleting adjacent user-facing FAQ answers.
+ html=html.replace(/<strong>\s*Is the result already QA-approved\?\s*<\/strong>\s*No\s*[—-]\s*this source checkpoint is TEST_PENDING\.?/gi,"");
+ html=html.replace(/<strong>\s*Is this result already QA-approved\?\s*<\/strong>\s*No\s*[—-]\s*this source checkpoint is TEST_PENDING\.?/gi,"");
+ // Internal source paths are build metadata, never user-facing documentation.
+ html=html.replace(/Representative expected-result scenarios are recorded in\s*<code>examples\/fixtures\.json<\/code>\.?/gi,"");
+ html=html.replace(/(?:See|Review)\s*<code>examples\/fixtures\.json<\/code>[^.<]*\.?/gi,"");
+
  // Strip only publication/internal preparation markers; preserve substantive guide copy.
  // Remove whole status-only elements emitted by source-preparation templates.
- const statusOnly=/(?:Developer workspace|Source preview|Source preparation|Prepared source|Pre-publication|Runtime validation pending|Staging\s*:?[\s-]*noindex|staged only|not published|no product tests|publication action|publication URL|reserved tool routes?|published route|source is prepared|before hydration|fixtures\\.json)/i;
+ const statusOnly=/(?:Developer workspace|Source preview|Source preparation|Prepared source|Pre-publication|Runtime validation pending|Staging\s*:?[\s-]*noindex|staged only|not published|no product tests|publication action|publication URL|reserved tool routes?|published route|source is prepared|before hydration|fixtures\.json)/i;
  html=html.replace(/<(p|small|footer)\b[^>]*>[\s\S]*?<\/\1>/gi,tag=>statusOnly.test(visibleText(tag))?"":tag);
  html=html.replace(/<section\b[^>]*>\s*<h2>Integration note<\/h2>[\s\S]*?<\/section>/gi,"");
  html=html.replace(/<span\b[^>]*class=["'][^"']*staging[^"']*["'][^>]*>[^<]*<\/span>/gi,"");
@@ -67,6 +75,36 @@ function sanitizeProductionHtml(html){
   .replace(/\b(?:staged only|not published|pre-publication source|source preparation|prepared source only|runtime validation pending|no publication action)\b[^.·]*[.·]?/gi," ")
   .replace(/\s+·\s+·\s+/g," · ")
   .replace(/\s{2,}/g," ");
+}
+function readableReference(url){
+ try{
+  const u=new URL(url),host=u.hostname.replace(/^www\./,"");
+  const last=decodeURIComponent(u.pathname.split("/").filter(Boolean).slice(-2).join(" / ")).replace(/[-_]+/g," ").replace(/\.(?:md|html?|pdf)$/i,"").trim();
+  if(/\bhar-spec\b/i.test(url))return "HAR 1.2 specification";
+  if(/w3c\.github\.io/.test(host))return "W3C technical specification";
+  if(/rfc-editor\.org/.test(host))return "RFC specification "+(u.pathname.match(/rfc\d+/i)?.[0]||"");
+  if(/mozilla\.github\.io/.test(host))return "Mozilla PDF.js API documentation";
+  if(/pdf-lib\.js\.org/.test(host))return "PDF-lib documentation";
+  if(/opensource\.adobe\.com/.test(host))return "Adobe PDF reference";
+  if(/github\.com/.test(host))return (last||"Upstream project")+" — upstream documentation";
+  return (last||host)+" — "+host;
+ }catch{return "Reference documentation"}
+}
+async function presentReferences(html,srcDir){
+ const placeholder=new RegExp("<p>\\s*Authoritative implementation references are recorded in\\s*<code>research/sources\\.json</code>\\.?\\s*</p>","gi");
+ if(placeholder.test(html)){
+  let sources=[];try{
+   const data=JSON.parse(await fs.readFile(path.join(srcDir,"research/sources.json"),"utf8"));
+   sources=[...(data.sources||data.authorities||[])].map(row=>row.url).filter(url=>/^https?:\/\//i.test(String(url))).slice(0,8);
+  }catch{}
+  const list=sources.length?'<ul>'+sources.map(url=>'<li><a href="'+escapeAttr(url)+'" rel="noopener noreferrer">'+escapeAttr(readableReference(url))+'</a></li>').join('')+'</ul>':
+     '<p>Review the tool-specific method and limitations before applying its results.</p>';
+  html=html.replace(placeholder,list);
+ }
+ // Preserve authoritative destinations, but replace naked URLs with readable labels.
+ html=html.replace(/<a\b([^>]*?)href=(["'])(https?:\/\/[^"']+)\2([^>]*)>\s*https?:\/\/[^<]+<\/a>/gi,
+  (_match,before,_q,url,after)=>'<a '+before+'href="'+escapeAttr(url)+'"'+after+'>'+escapeAttr(readableReference(url))+'</a>');
+ return html;
 }
 function escapeAttr(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function injectSeo(html,tool,title,description){
@@ -107,10 +145,12 @@ await fs.rm(path.join(root,"public/assets/vendor/ffmpeg"),{recursive:true,force:
 await Promise.all([
  copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.mjs","vendor/pdfjs/pdf.mjs"),
  copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs","vendor/pdfjs/pdf.worker.mjs"),
+ copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs","assets/vendor/pdfjs/pdf.worker.min.mjs"),
  copyRuntime("node_modules/pdf-lib/dist/pdf-lib.esm.min.js","vendor/pdf-lib/pdf-lib.esm.min.js"),
  copyRuntime("node_modules/fonteditor-core/woff2/woff2.wasm","assets/vendor/fonteditor-core/woff2.wasm"),
  copyRuntime("node_modules/sql.js/dist/sql-wasm.wasm","assets/vendor/sqljs/sql-wasm.wasm"),
  copyRuntime("node_modules/@ffmpeg/core/dist/esm","assets/vendor/ffmpeg"),
+ copyRuntime("node_modules/@ffmpeg/ffmpeg/dist/esm","assets/vendor/ffmpeg-client"),
  copyRuntime("node_modules/mathjax","vendor/mathjax")
 ]);
 const ffmpegManifest=await splitCloudflareAsset("assets/vendor/ffmpeg/ffmpeg-core.wasm");
@@ -125,14 +165,84 @@ for(const tool of registry){
  try{
   if(!await exists(entry)||!await exists(page))throw new Error("missing tool entry or page");
   await fs.mkdir(dst,{recursive:true});await copyTree(srcDir,dst);
-  await build({entryPoints:[entry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
-  const builtJsPath=path.join(dst,"tool.js");let builtJs=await fs.readFile(builtJsPath,"utf8");
-  if(builtJs.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){builtJs=builtJs.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");await fs.writeFile(builtJsPath,builtJs);}
+  // Explicitly bootstrap mount-export modules; side-effect modules run via import.
+  const uiSource=await fs.readFile(entry,"utf8");
+  const mountExport=new RegExp("\\bexport\\s+(?:default\\s+)?(?:function\\s+)?mount\\s*\\(|\\bexport\\s+default\\s+mount\\b").test(uiSource);
+  const bootstrap=path.join(dst,".mm530-bootstrap.mjs");
+  const modulePath=JSON.stringify(entry);
+  const minimalBootstrap=MINIMAL_RELEASE.has(tool.id)?`
+const mm530Inputs=[...document.querySelectorAll('input[type="file"]')];
+const mm530Panel=document.querySelector('#mm530-basic-mode');
+const mm530Result=mm530Panel?.querySelector('[data-mm530-basic-result]');
+const mm530Refresh=()=>{
+ const files=mm530Inputs.flatMap(input=>[...(input.files||[])]);
+ if(!mm530Result)return;
+ if(!files.length){mm530Result.textContent='Choose a local file to inspect it in this browser.';return}
+ const bytes=files.reduce((n,file)=>n+file.size,0);
+ const names=files.slice(0,3).map(file=>file.name).join(', ');
+ mm530Result.textContent='Selected '+files.length+' local file'+(files.length===1?'':'s')+' · '+bytes.toLocaleString()+' bytes · '+names;
+};
+for(const input of mm530Inputs)input.addEventListener('change',mm530Refresh);
+mm530Refresh();
+`:'';
+  const bootSource=(mountExport
+    ? `import * as tool from ${modulePath};
+const explicit=document.querySelector('#tool-interactive-root,#tool-app,#${tool.id.toLowerCase()},[data-tool-id="${tool.id}"]');
+const mains=[...document.querySelectorAll('main[id]')];
+const root=explicit||(mains.length===1?mains[0]:null);
+if(!root)throw new Error("Missing explicit mount target for ${tool.id}");
+const mount=typeof tool.mount==="function"?tool.mount:tool.default;
+if(typeof mount!=="function")throw new Error("Missing exported mount function for ${tool.id}");
+mount(root);
+if(!root.querySelector("button,input,select,textarea,[role=button]"))throw new Error("Mount produced no interactive controls for ${tool.id}");
+root.dataset.toolMounted="true";`
+    : `import ${modulePath};`)+minimalBootstrap;
+  await fs.writeFile(bootstrap,bootSource);
+  try{
+    await build({entryPoints:{tool:bootstrap},bundle:true,format:"esm",platform:"browser",target:"es2022",outdir:dst,entryNames:"[name]",chunkNames:"chunks/[name]-[hash]",assetNames:"chunks/[name]-[hash]",splitting:true,logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
+  }finally{await fs.rm(bootstrap,{force:true})}
+  const workerEntry=path.join(srcDir,"src/worker.ts");
+  if(await exists(workerEntry)){
+    await build({entryPoints:[workerEntry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"worker.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
+  }
+  const builtJsPath=path.join(dst,"tool.js");
+  if(!await exists(builtJsPath))throw new Error("production entry tool.js was not emitted");
+  async function rewriteRuntimeJs(dir){
+   for(const ent of await fs.readdir(dir,{withFileTypes:true})){
+    const target=path.join(dir,ent.name);
+    if(ent.isDirectory()){await rewriteRuntimeJs(target);continue}
+    if(!ent.name.endsWith(".js"))continue;
+    let js=await fs.readFile(target,"utf8");
+    if(js.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){
+     js=js.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");
+    }
+    if(js.includes('/assets/vendor/ffmpeg/ffmpeg-core.js')&&js.includes('.load({coreURL:')){
+     js=js.replaceAll('.load({coreURL:"/assets/vendor/ffmpeg/ffmpeg-core.js"','.load({classWorkerURL:"/assets/vendor/ffmpeg-client/worker.js",coreURL:"/assets/vendor/ffmpeg/ffmpeg-core.js"');
+    }
+    await fs.writeFile(target,js);
+   }
+  }
+  await rewriteRuntimeJs(dst);
+  if(uiSource.includes("@jsquash/avif")){
+    const avifSrc=path.join(root,"node_modules","@jsquash","avif","codec","enc");
+    const avifDst=path.join(dst,"chunks");await fs.mkdir(avifDst,{recursive:true});
+    for(const name of ["avif_enc.wasm","avif_enc_mt.wasm","avif_enc_mt.worker.mjs"]){
+      const src=path.join(avifSrc,name);if(await exists(src))await fs.copyFile(src,path.join(avifDst,name));
+    }
+  }
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title,tool.categoryLabel);
   let html=sanitizeProductionHtml(original);
+  html=await presentReferences(html,srcDir);
   html=injectSeo(html,tool,title,description);
-  html=html.replace(/<script\b[^>]*type=["']module["'][^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
-  html=html.replace(/<script\b[^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
+  // Replace source UI scripts when present and append the compiled runtime exactly once.
+  const sourceUiScript=new RegExp('<script\\b[^>]*\\bsrc=["\\\'][^"\\\']*(?:src/|dist/)?ui\\.(?:ts|tsx|js|mjs)["\\\'][^>]*>\\s*</script>','gi');
+  html=html.replace(sourceUiScript,"");
+  const closeBody=new RegExp("</body>","i");
+  if(!closeBody.test(html))throw new Error("Runtime page lacks a closing body");
+  const minimalNote=MINIMAL_RELEASE.has(tool.id)?'<aside id="mm530-basic-mode" data-mm530-release-tier="minimal" role="note"><strong>Basic browser mode</strong><p>This tool can inspect the selected local file in every supported browser. Advanced processing remains available where the browser can load the required media, PDF or font engine.</p><p data-mm530-basic-result>Choose a local file to inspect it in this browser.</p></aside>':'';
+  html=html.replace(closeBody,minimalNote+'<script type="module" src="./tool.js"></script></body>');
+  const runtimeTag='<script type="module" src="./tool.js"></script>';
+  if(html.split(runtimeTag).length-1!==1)throw new Error("Runtime script must be present exactly once");
   if(await exists(path.join(dst,"tool.css"))&&!html.includes("./tool.css"))html=html.replace(/<\/head>/i,'<link rel="stylesheet" href="./tool.css"></head>');
   const visible=visibleText(html);if(INTERNAL_VISIBLE.test(visible))throw new Error("internal QA/developer wording remains in production-visible copy");
   await fs.writeFile(path.join(dst,"page.html"),html);

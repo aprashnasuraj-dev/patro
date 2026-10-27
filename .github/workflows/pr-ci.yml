@@ -58,7 +58,7 @@ jobs:
             esac
 
             case "$file" in
-              src/*|src/**|public/*|public/**|index.html|vite.config.*|scripts/emit-*|scripts/prerender-*|scripts/generate-seo.mjs|scripts/enhance-seo-discovery.mjs|scripts/verify-seo-build.mjs|scripts/check-homepage-release.cjs|scripts/check-canonical-tools.cjs|tests/homepage-recovery-contract.test.mjs)
+              src/*|src/**|public/*|public/**|index.html|vite.config.*|scripts/mm530/*|batch-*/tool-products/*|batch-*/tool-products/**|.github/workflows/pr-ci.yml|.github/workflows/release-gate.yml|scripts/emit-*|scripts/prerender-*|scripts/generate-seo.mjs|scripts/enhance-seo-discovery.mjs|scripts/verify-seo-build.mjs|scripts/check-homepage-release.cjs|scripts/check-canonical-tools.cjs|tests/homepage-recovery-contract.test.mjs)
                 ui=true ;;
             esac
 
@@ -272,6 +272,7 @@ jobs:
           # Verify the exact downloaded production artifact; do not rebuild it.
           node scripts/mm530/phase9-verify.mjs
           node scripts/mm530/phase10-browser-gate.mjs
+          node scripts/mm530/production-functional-sweep.mjs
           node scripts/mm530/final-acceptance.mjs
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
@@ -297,6 +298,17 @@ jobs:
           if(process.env.GITHUB_STEP_SUMMARY){const {appendFileSync}=await import("node:fs");appendFileSync(process.env.GITHUB_STEP_SUMMARY,"Mobile Lighthouse: **"+score+"/100** (goal 90+)\\n\\n"+details+"\\n");}
           if(score<90)console.log("::warning::Measured mobile homepage score "+score+" is below the 90 target; do not claim 90+ or release on this basis.");
           LHSUMMARY
+      - name: Preserve MM530 functional and crawler diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-production-diagnostics
+          path: |
+            reports/mm530-functional-gate.json
+            reports/mm530-editorial-retention.json
+            reports/mm530-phase9/
+          if-no-files-found: warn
+          retention-days: 30
 
   mm530-continuation-gates:
     name: MM530 remaining-phase source gates
