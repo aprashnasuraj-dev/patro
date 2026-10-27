@@ -1,0 +1,8 @@
+{
+  "schema_version": "MM530_PHASE8_GATE_V1",
+  "implementation_complete_for_verification": true,
+  "vite_build": "DEFERRED",
+  "lazy_import_resolution": "DEFERRED",
+  "built_route_browser_checks": "DEFERRED",
+  "publication_ready": false
+}

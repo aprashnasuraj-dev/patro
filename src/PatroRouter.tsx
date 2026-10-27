@@ -43,6 +43,8 @@ const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.Media
 const FeatureGroupHub=lazy(()=>import("./panchang-jyotish/FeatureGroupHub").then(m=>({default:m.FeatureGroupHub})));
 const JanmaPatroSuite=lazy(()=>import("./jyotish/JanmaPatroSuite").then(m=>({default:m.JanmaPatroSuite})));
 const UtilitySuite=lazy(()=>import("./utilities/UtilitySuite").then(m=>({default:m.UtilitySuite})));
+const Mm530ToolPage=lazy(()=>import("./mm530/Mm530Routes").then(m=>({default:m.Mm530ToolPage})));
+const Mm530ToolboxPage=lazy(()=>import("./mm530/Mm530Routes").then(m=>({default:m.Mm530ToolboxPage})));
 const MyDiary=lazy(()=>import("./components/MyDiary").then(m=>({default:m.MyDiary})));
 const TrustPage=lazy(()=>import("./components/TrustPages").then(m=>({default:m.TrustPage})));
 const FamilyPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.FamilyPage})));
@@ -62,6 +64,7 @@ const DiscoveryPanel=lazy(()=>import("./growth/DiscoveryPanel").then(m=>({defaul
 
 const DATE_ROUTE_PREFIX="/date/";
 const DICTIONARY_ROUTE="/tool/nepalidictionary";
+const MM530_CANONICAL_ROUTE=/^\/(calculators|generators|converters|utilities|validators|editors|planners|extractors|analyzers|formatters|comparisons|timers)\/[^/]+$/;
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
 const HISTORY_DAY_ROUTE=/^\/on-this-day\/(\d{2}-\d{2})$/;
 const COMMUNITY_SUITE_ROUTE=/^\/samudaya\/(lhosar|tharu|mithila|kirat|hijri)$/;
@@ -94,9 +97,9 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish","/jyotish/china","/jyotish/matchmaking","/panchang","/muhurat","/planets","/nepal-calendar","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/toolbox","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish","/jyotish/china","/jyotish/matchmaking","/panchang","/muhurat","/planets","/nepal-calendar","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")||p===DICTIONARY_ROUTE||p.startsWith(DICTIONARY_ROUTE+"/")}
+function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||p==="/toolbox"||p.startsWith("/toolbox/")||MM530_CANONICAL_ROUTE.test(p)||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")||p===DICTIONARY_ROUTE||p.startsWith(DICTIONARY_ROUTE+"/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
@@ -118,6 +121,8 @@ export function PatroRouter(){
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal){const year=Number(cal[1]),month=Number(cal[2]);if(year>=1883&&year<=2093&&month>=1&&month<=12)return <ReferenceHomePage calendarYear={year} calendarMonth={month}/>;return <NotFoundPage/>;}
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/mytime")return <MyTimePage/>;
+   if(path==="/toolbox"||path.startsWith("/toolbox/"))return <Mm530ToolboxPage path={path}/>;
+   if(MM530_CANONICAL_ROUTE.test(path))return <Mm530ToolPage path={path}/>;
    if(path==="/tools")return <ToolsPage/>;
    if(path==="/panchang")return <FeatureGroupHub groupId="panchang"/>;
    if(path==="/muhurat")return <FeatureGroupHub groupId="muhurat"/>;

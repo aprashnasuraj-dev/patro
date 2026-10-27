@@ -1,0 +1,3719 @@
+{
+  "schema_version": "MM530_PHASE7_ROUTE_MANIFEST_V1",
+  "tools": [
+    {
+      "id": "TOOL-0001",
+      "canonical_url": "/generators/csv-to-graphql-schema",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0001"
+    },
+    {
+      "id": "TOOL-0002",
+      "canonical_url": "/converters/json-to-zod-schema",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0002"
+    },
+    {
+      "id": "TOOL-0003",
+      "canonical_url": "/converters/openapi-to-typescript-interfaces",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0003"
+    },
+    {
+      "id": "TOOL-0004",
+      "canonical_url": "/converters/sql-to-prisma-schema",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0004"
+    },
+    {
+      "id": "TOOL-0005",
+      "canonical_url": "/generators/json-to-protobuf",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0005"
+    },
+    {
+      "id": "TOOL-0006",
+      "canonical_url": "/editors/har-file-redactor",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-01/tool-products/TOOL-0006"
+    },
+    {
+      "id": "TOOL-0007",
+      "canonical_url": "/converters/har-to-curl",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0007"
+    },
+    {
+      "id": "TOOL-0008",
+      "canonical_url": "/converters/postman-collection-to-markdown",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0008"
+    },
+    {
+      "id": "TOOL-0009",
+      "canonical_url": "/converters/env-to-kubernetes-secret",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0009"
+    },
+    {
+      "id": "TOOL-0010",
+      "canonical_url": "/converters/docker-compose-to-docker-run",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0010"
+    },
+    {
+      "id": "TOOL-0011",
+      "canonical_url": "/planners/cron-to-github-actions-schedule",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-01/tool-products/TOOL-0011"
+    },
+    {
+      "id": "TOOL-0012",
+      "canonical_url": "/generators/csv-to-create-table",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0012"
+    },
+    {
+      "id": "TOOL-0013",
+      "canonical_url": "/generators/json-to-postgres-upsert",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0013"
+    },
+    {
+      "id": "TOOL-0014",
+      "canonical_url": "/converters/mongodb-extended-json-to-json",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0014"
+    },
+    {
+      "id": "TOOL-0015",
+      "canonical_url": "/converters/jsonl-to-json-array",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0015"
+    },
+    {
+      "id": "TOOL-0016",
+      "canonical_url": "/converters/access-log-to-csv",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0016"
+    },
+    {
+      "id": "TOOL-0017",
+      "canonical_url": "/converters/tfvars-to-json",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0017"
+    },
+    {
+      "id": "TOOL-0018",
+      "canonical_url": "/converters/helm-values-to-set-flags",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0018"
+    },
+    {
+      "id": "TOOL-0019",
+      "canonical_url": "/extractors/package-lock-duplicate-finder",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-01/tool-products/TOOL-0019"
+    },
+    {
+      "id": "TOOL-0020",
+      "canonical_url": "/utilities/json-diff-ignore-order",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-01/tool-products/TOOL-0020"
+    },
+    {
+      "id": "TOOL-0021",
+      "canonical_url": "/converters/kubernetes-resource-units-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0021"
+    },
+    {
+      "id": "TOOL-0022",
+      "canonical_url": "/converters/github-actions-to-gitlab-ci",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0022"
+    },
+    {
+      "id": "TOOL-0023",
+      "canonical_url": "/converters/gitlab-ci-to-github-actions",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0023"
+    },
+    {
+      "id": "TOOL-0024",
+      "canonical_url": "/validators/dockerfile-linter",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0024"
+    },
+    {
+      "id": "TOOL-0025",
+      "canonical_url": "/validators/nginx-location-match-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0025"
+    },
+    {
+      "id": "TOOL-0026",
+      "canonical_url": "/generators/nginx-redirect-map-from-csv",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0026"
+    },
+    {
+      "id": "TOOL-0027",
+      "canonical_url": "/generators/htaccess-redirects-from-csv",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0027"
+    },
+    {
+      "id": "TOOL-0028",
+      "canonical_url": "/converters/htaccess-to-nginx",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0028"
+    },
+    {
+      "id": "TOOL-0029",
+      "canonical_url": "/validators/systemd-oncalendar-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0029"
+    },
+    {
+      "id": "TOOL-0030",
+      "canonical_url": "/analyzers/terraform-plan-json-viewer",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-01/tool-products/TOOL-0030"
+    },
+    {
+      "id": "TOOL-0031",
+      "canonical_url": "/validators/iam-policy-wildcard-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0031"
+    },
+    {
+      "id": "TOOL-0032",
+      "canonical_url": "/generators/aws-arn-parser",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0032"
+    },
+    {
+      "id": "TOOL-0033",
+      "canonical_url": "/generators/s3-bucket-policy-cloudfront-oac",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0033"
+    },
+    {
+      "id": "TOOL-0034",
+      "canonical_url": "/validators/cidr-overlap-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0034"
+    },
+    {
+      "id": "TOOL-0035",
+      "canonical_url": "/converters/ufw-to-iptables",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0035"
+    },
+    {
+      "id": "TOOL-0036",
+      "canonical_url": "/converters/ansible-inventory-ini-to-yaml",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0036"
+    },
+    {
+      "id": "TOOL-0037",
+      "canonical_url": "/validators/codeowners-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0037"
+    },
+    {
+      "id": "TOOL-0038",
+      "canonical_url": "/validators/gitignore-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0038"
+    },
+    {
+      "id": "TOOL-0039",
+      "canonical_url": "/validators/certificate-chain-order-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0039"
+    },
+    {
+      "id": "TOOL-0040",
+      "canonical_url": "/calculators/semver-range-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-01/tool-products/TOOL-0040"
+    },
+    {
+      "id": "TOOL-0041",
+      "canonical_url": "/generators/cors-config-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0041"
+    },
+    {
+      "id": "TOOL-0042",
+      "canonical_url": "/utilities/which-http-status-code",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-01/tool-products/TOOL-0042"
+    },
+    {
+      "id": "TOOL-0043",
+      "canonical_url": "/generators/set-cookie-builder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0043"
+    },
+    {
+      "id": "TOOL-0044",
+      "canonical_url": "/generators/csp-builder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0044"
+    },
+    {
+      "id": "TOOL-0045",
+      "canonical_url": "/analyzers/bulk-user-agent-parser",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-01/tool-products/TOOL-0045"
+    },
+    {
+      "id": "TOOL-0046",
+      "canonical_url": "/converters/query-string-to-json",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-01/tool-products/TOOL-0046"
+    },
+    {
+      "id": "TOOL-0047",
+      "canonical_url": "/formatters/url-encode-path-vs-query",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-01/tool-products/TOOL-0047"
+    },
+    {
+      "id": "TOOL-0048",
+      "canonical_url": "/analyzers/http-response-header-analyzer",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-01/tool-products/TOOL-0048"
+    },
+    {
+      "id": "TOOL-0049",
+      "canonical_url": "/generators/cache-control-header-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0049"
+    },
+    {
+      "id": "TOOL-0050",
+      "canonical_url": "/generators/hsts-header-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0050"
+    },
+    {
+      "id": "TOOL-0051",
+      "canonical_url": "/generators/permissions-policy-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-01/tool-products/TOOL-0051"
+    },
+    {
+      "id": "TOOL-0052",
+      "canonical_url": "/validators/websocket-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0052"
+    },
+    {
+      "id": "TOOL-0053",
+      "canonical_url": "/validators/sse-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-01/tool-products/TOOL-0053"
+    },
+    {
+      "id": "TOOL-0054",
+      "canonical_url": "/validators/localstorage-size-limit-test",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0054"
+    },
+    {
+      "id": "TOOL-0055",
+      "canonical_url": "/validators/browser-codec-support-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0055"
+    },
+    {
+      "id": "TOOL-0056",
+      "canonical_url": "/editors/ipv6-expand-compress",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-02/tool-products/TOOL-0056"
+    },
+    {
+      "id": "TOOL-0057",
+      "canonical_url": "/formatters/mac-address-formatter",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-02/tool-products/TOOL-0057"
+    },
+    {
+      "id": "TOOL-0058",
+      "canonical_url": "/generators/dmarc-record-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0058"
+    },
+    {
+      "id": "TOOL-0059",
+      "canonical_url": "/generators/security-txt-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0059"
+    },
+    {
+      "id": "TOOL-0060",
+      "canonical_url": "/analyzers/email-header-analyzer",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-02/tool-products/TOOL-0060"
+    },
+    {
+      "id": "TOOL-0061",
+      "canonical_url": "/generators/faq-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0061"
+    },
+    {
+      "id": "TOOL-0062",
+      "canonical_url": "/generators/recipe-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0062"
+    },
+    {
+      "id": "TOOL-0063",
+      "canonical_url": "/generators/local-business-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0063"
+    },
+    {
+      "id": "TOOL-0064",
+      "canonical_url": "/generators/jobposting-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0064"
+    },
+    {
+      "id": "TOOL-0065",
+      "canonical_url": "/generators/product-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0065"
+    },
+    {
+      "id": "TOOL-0066",
+      "canonical_url": "/utilities/breadcrumb-schema-generator",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0066"
+    },
+    {
+      "id": "TOOL-0067",
+      "canonical_url": "/generators/video-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0067"
+    },
+    {
+      "id": "TOOL-0068",
+      "canonical_url": "/validators/json-ld-validator",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0068"
+    },
+    {
+      "id": "TOOL-0069",
+      "canonical_url": "/generators/hreflang-generator-csv",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0069"
+    },
+    {
+      "id": "TOOL-0070",
+      "canonical_url": "/generators/sitemap-from-url-list",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0070"
+    },
+    {
+      "id": "TOOL-0071",
+      "canonical_url": "/editors/sitemap-splitter",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-02/tool-products/TOOL-0071"
+    },
+    {
+      "id": "TOOL-0072",
+      "canonical_url": "/validators/robots-txt-tester",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0072"
+    },
+    {
+      "id": "TOOL-0073",
+      "canonical_url": "/generators/open-graph-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0073"
+    },
+    {
+      "id": "TOOL-0074",
+      "canonical_url": "/validators/title-tag-pixel-width-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0074"
+    },
+    {
+      "id": "TOOL-0075",
+      "canonical_url": "/generators/bulk-utm-builder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0075"
+    },
+    {
+      "id": "TOOL-0076",
+      "canonical_url": "/editors/remove-tracking-parameters",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-02/tool-products/TOOL-0076"
+    },
+    {
+      "id": "TOOL-0077",
+      "canonical_url": "/generators/url-slug-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0077"
+    },
+    {
+      "id": "TOOL-0078",
+      "canonical_url": "/extractors/redirect-chain-finder",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-02/tool-products/TOOL-0078"
+    },
+    {
+      "id": "TOOL-0079",
+      "canonical_url": "/extractors/keyword-cannibalization-finder",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-02/tool-products/TOOL-0079"
+    },
+    {
+      "id": "TOOL-0080",
+      "canonical_url": "/generators/event-schema-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0080"
+    },
+    {
+      "id": "TOOL-0081",
+      "canonical_url": "/analyzers/invisible-character-detector",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-02/tool-products/TOOL-0081"
+    },
+    {
+      "id": "TOOL-0082",
+      "canonical_url": "/validators/homoglyph-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0082"
+    },
+    {
+      "id": "TOOL-0083",
+      "canonical_url": "/utilities/unicode-normalization-comparer",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0083"
+    },
+    {
+      "id": "TOOL-0084",
+      "canonical_url": "/editors/fix-mojibake",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-02/tool-products/TOOL-0084"
+    },
+    {
+      "id": "TOOL-0085",
+      "canonical_url": "/converters/smart-quotes-to-straight-quotes",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0085"
+    },
+    {
+      "id": "TOOL-0086",
+      "canonical_url": "/converters/line-ending-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0086"
+    },
+    {
+      "id": "TOOL-0087",
+      "canonical_url": "/validators/word-level-text-diff",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0087"
+    },
+    {
+      "id": "TOOL-0088",
+      "canonical_url": "/validators/regex-redos-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0088"
+    },
+    {
+      "id": "TOOL-0089",
+      "canonical_url": "/utilities/regex-replace-preview",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0089"
+    },
+    {
+      "id": "TOOL-0090",
+      "canonical_url": "/extractors/find-duplicate-lines",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-02/tool-products/TOOL-0090"
+    },
+    {
+      "id": "TOOL-0091",
+      "canonical_url": "/converters/fixed-width-to-csv",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0091"
+    },
+    {
+      "id": "TOOL-0092",
+      "canonical_url": "/converters/excel-to-markdown-table",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0092"
+    },
+    {
+      "id": "TOOL-0093",
+      "canonical_url": "/utilities/strip-markdown",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0093"
+    },
+    {
+      "id": "TOOL-0094",
+      "canonical_url": "/editors/clean-word-html",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-02/tool-products/TOOL-0094"
+    },
+    {
+      "id": "TOOL-0095",
+      "canonical_url": "/validators/readability-score-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0095"
+    },
+    {
+      "id": "TOOL-0096",
+      "canonical_url": "/utilities/string-escape-unescape",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0096"
+    },
+    {
+      "id": "TOOL-0097",
+      "canonical_url": "/converters/title-case-converter-style-guides",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0097"
+    },
+    {
+      "id": "TOOL-0098",
+      "canonical_url": "/utilities/bulk-find-and-replace",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0098"
+    },
+    {
+      "id": "TOOL-0099",
+      "canonical_url": "/utilities/word-frequency-counter",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0099"
+    },
+    {
+      "id": "TOOL-0100",
+      "canonical_url": "/analyzers/emoji-unicode-inspector",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-02/tool-products/TOOL-0100"
+    },
+    {
+      "id": "TOOL-0101",
+      "canonical_url": "/utilities/font-subsetter",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-02/tool-products/TOOL-0101"
+    },
+    {
+      "id": "TOOL-0102",
+      "canonical_url": "/converters/ttf-to-woff2",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0102"
+    },
+    {
+      "id": "TOOL-0103",
+      "canonical_url": "/converters/woff2-to-ttf",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-02/tool-products/TOOL-0103"
+    },
+    {
+      "id": "TOOL-0104",
+      "canonical_url": "/generators/variable-font-axes-tester",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-02/tool-products/TOOL-0104"
+    },
+    {
+      "id": "TOOL-0105",
+      "canonical_url": "/validators/font-language-support-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-02/tool-products/TOOL-0105"
+    },
+    {
+      "id": "TOOL-0106",
+      "canonical_url": "/analyzers/font-metadata-viewer",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-02/tool-products/TOOL-0106"
+    },
+    {
+      "id": "TOOL-0107",
+      "canonical_url": "/generators/font-face-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0107"
+    },
+    {
+      "id": "TOOL-0108",
+      "canonical_url": "/generators/font-fallback-size-adjust-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0108"
+    },
+    {
+      "id": "TOOL-0109",
+      "canonical_url": "/generators/css-font-stack-builder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0109"
+    },
+    {
+      "id": "TOOL-0110",
+      "canonical_url": "/generators/fluid-typography-clamp-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0110"
+    },
+    {
+      "id": "TOOL-0111",
+      "canonical_url": "/validators/test-local-font-file",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-03/tool-products/TOOL-0111"
+    },
+    {
+      "id": "TOOL-0112",
+      "canonical_url": "/converters/text-to-svg-path",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0112"
+    },
+    {
+      "id": "TOOL-0113",
+      "canonical_url": "/extractors/icon-font-glyph-map",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0113"
+    },
+    {
+      "id": "TOOL-0114",
+      "canonical_url": "/extractors/which-font-supports-character",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0114"
+    },
+    {
+      "id": "TOOL-0115",
+      "canonical_url": "/analyzers/kerning-pairs-viewer",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-03/tool-products/TOOL-0115"
+    },
+    {
+      "id": "TOOL-0116",
+      "canonical_url": "/analyzers/opentype-features-checker",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-03/tool-products/TOOL-0116"
+    },
+    {
+      "id": "TOOL-0117",
+      "canonical_url": "/calculators/text-width-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-03/tool-products/TOOL-0117"
+    },
+    {
+      "id": "TOOL-0118",
+      "canonical_url": "/generators/ascii-banner-code-comment",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0118"
+    },
+    {
+      "id": "TOOL-0119",
+      "canonical_url": "/extractors/pdf-fonts-lister",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0119"
+    },
+    {
+      "id": "TOOL-0120",
+      "canonical_url": "/generators/google-fonts-css2-url-builder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0120"
+    },
+    {
+      "id": "TOOL-0121",
+      "canonical_url": "/analyzers/remove-exif-data",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-03/tool-products/TOOL-0121"
+    },
+    {
+      "id": "TOOL-0122",
+      "canonical_url": "/converters/heic-to-jpg",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0122"
+    },
+    {
+      "id": "TOOL-0123",
+      "canonical_url": "/comparisons/image-to-avif-webp-compare",
+      "owner": "MM530",
+      "category": "comparisons",
+      "source_dir": "batch-03/tool-products/TOOL-0123"
+    },
+    {
+      "id": "TOOL-0124",
+      "canonical_url": "/converters/compress-image-to-kb",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0124"
+    },
+    {
+      "id": "TOOL-0125",
+      "canonical_url": "/editors/passport-photo-size-cropper",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0125"
+    },
+    {
+      "id": "TOOL-0126",
+      "canonical_url": "/generators/favicon-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0126"
+    },
+    {
+      "id": "TOOL-0127",
+      "canonical_url": "/generators/app-icon-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0127"
+    },
+    {
+      "id": "TOOL-0128",
+      "canonical_url": "/generators/css-sprite-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0128"
+    },
+    {
+      "id": "TOOL-0129",
+      "canonical_url": "/editors/svg-optimizer",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0129"
+    },
+    {
+      "id": "TOOL-0130",
+      "canonical_url": "/converters/svg-to-png",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0130"
+    },
+    {
+      "id": "TOOL-0131",
+      "canonical_url": "/extractors/image-color-palette-extractor",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0131"
+    },
+    {
+      "id": "TOOL-0132",
+      "canonical_url": "/generators/blurhash-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0132"
+    },
+    {
+      "id": "TOOL-0133",
+      "canonical_url": "/generators/seamless-pattern-checker",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-03/tool-products/TOOL-0133"
+    },
+    {
+      "id": "TOOL-0134",
+      "canonical_url": "/comparisons/image-diff-comparator",
+      "owner": "MM530",
+      "category": "comparisons",
+      "source_dir": "batch-03/tool-products/TOOL-0134"
+    },
+    {
+      "id": "TOOL-0135",
+      "canonical_url": "/editors/blur-image-redact",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0135"
+    },
+    {
+      "id": "TOOL-0136",
+      "canonical_url": "/extractors/gif-frame-extractor",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0136"
+    },
+    {
+      "id": "TOOL-0137",
+      "canonical_url": "/editors/gif-speed-changer",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0137"
+    },
+    {
+      "id": "TOOL-0138",
+      "canonical_url": "/converters/apng-to-gif",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0138"
+    },
+    {
+      "id": "TOOL-0139",
+      "canonical_url": "/editors/change-image-dpi",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0139"
+    },
+    {
+      "id": "TOOL-0140",
+      "canonical_url": "/converters/bulk-image-resizer",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0140"
+    },
+    {
+      "id": "TOOL-0141",
+      "canonical_url": "/analyzers/pdf-metadata-remover",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-03/tool-products/TOOL-0141"
+    },
+    {
+      "id": "TOOL-0142",
+      "canonical_url": "/editors/rearrange-pdf-pages",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0142"
+    },
+    {
+      "id": "TOOL-0143",
+      "canonical_url": "/editors/split-pdf-by-bookmarks",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0143"
+    },
+    {
+      "id": "TOOL-0144",
+      "canonical_url": "/editors/merge-pdf-with-bookmarks",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0144"
+    },
+    {
+      "id": "TOOL-0145",
+      "canonical_url": "/utilities/bates-numbering-pdf",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-03/tool-products/TOOL-0145"
+    },
+    {
+      "id": "TOOL-0146",
+      "canonical_url": "/editors/pdf-watermark",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0146"
+    },
+    {
+      "id": "TOOL-0147",
+      "canonical_url": "/editors/flatten-pdf-form",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0147"
+    },
+    {
+      "id": "TOOL-0148",
+      "canonical_url": "/extractors/pdf-form-field-lister",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0148"
+    },
+    {
+      "id": "TOOL-0149",
+      "canonical_url": "/editors/crop-pdf-margins",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-03/tool-products/TOOL-0149"
+    },
+    {
+      "id": "TOOL-0150",
+      "canonical_url": "/converters/resize-pdf-to-a4",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0150"
+    },
+    {
+      "id": "TOOL-0151",
+      "canonical_url": "/converters/images-to-pdf",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0151"
+    },
+    {
+      "id": "TOOL-0152",
+      "canonical_url": "/converters/pdf-to-images",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0152"
+    },
+    {
+      "id": "TOOL-0153",
+      "canonical_url": "/extractors/pdf-text-extractor",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0153"
+    },
+    {
+      "id": "TOOL-0154",
+      "canonical_url": "/converters/pdf-table-to-csv",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0154"
+    },
+    {
+      "id": "TOOL-0155",
+      "canonical_url": "/utilities/redact-pdf",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-03/tool-products/TOOL-0155"
+    },
+    {
+      "id": "TOOL-0156",
+      "canonical_url": "/utilities/reduce-pdf-size",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-03/tool-products/TOOL-0156"
+    },
+    {
+      "id": "TOOL-0157",
+      "canonical_url": "/extractors/extract-pdf-attachments",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-03/tool-products/TOOL-0157"
+    },
+    {
+      "id": "TOOL-0158",
+      "canonical_url": "/analyzers/pdf-page-size-checker",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-03/tool-products/TOOL-0158"
+    },
+    {
+      "id": "TOOL-0159",
+      "canonical_url": "/converters/docx-to-markdown",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-03/tool-products/TOOL-0159"
+    },
+    {
+      "id": "TOOL-0160",
+      "canonical_url": "/extractors/extract-links-from-pdf",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-04/tool-products/TOOL-0160"
+    },
+    {
+      "id": "TOOL-0161",
+      "canonical_url": "/editors/trim-video-without-reencoding",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0161"
+    },
+    {
+      "id": "TOOL-0162",
+      "canonical_url": "/extractors/extract-audio-from-video",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-04/tool-products/TOOL-0162"
+    },
+    {
+      "id": "TOOL-0163",
+      "canonical_url": "/converters/video-to-gif",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0163"
+    },
+    {
+      "id": "TOOL-0164",
+      "canonical_url": "/converters/compress-video-to-size",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0164"
+    },
+    {
+      "id": "TOOL-0165",
+      "canonical_url": "/editors/rotate-video",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0165"
+    },
+    {
+      "id": "TOOL-0166",
+      "canonical_url": "/editors/remove-audio-from-video",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0166"
+    },
+    {
+      "id": "TOOL-0167",
+      "canonical_url": "/extractors/extract-frames-from-video",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-04/tool-products/TOOL-0167"
+    },
+    {
+      "id": "TOOL-0168",
+      "canonical_url": "/editors/change-video-speed",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0168"
+    },
+    {
+      "id": "TOOL-0169",
+      "canonical_url": "/converters/mov-to-mp4",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0169"
+    },
+    {
+      "id": "TOOL-0170",
+      "canonical_url": "/converters/webm-to-mp4",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0170"
+    },
+    {
+      "id": "TOOL-0171",
+      "canonical_url": "/utilities/audio-cutter",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0171"
+    },
+    {
+      "id": "TOOL-0172",
+      "canonical_url": "/editors/merge-audio-files",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0172"
+    },
+    {
+      "id": "TOOL-0173",
+      "canonical_url": "/editors/change-audio-speed-pitch",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0173"
+    },
+    {
+      "id": "TOOL-0174",
+      "canonical_url": "/formatters/audio-loudness-normalizer",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-04/tool-products/TOOL-0174"
+    },
+    {
+      "id": "TOOL-0175",
+      "canonical_url": "/editors/remove-silence-from-audio",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0175"
+    },
+    {
+      "id": "TOOL-0176",
+      "canonical_url": "/converters/wav-to-mp3",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0176"
+    },
+    {
+      "id": "TOOL-0177",
+      "canonical_url": "/analyzers/bpm-detector",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-04/tool-products/TOOL-0177"
+    },
+    {
+      "id": "TOOL-0178",
+      "canonical_url": "/generators/audio-waveform-image-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-04/tool-products/TOOL-0178"
+    },
+    {
+      "id": "TOOL-0179",
+      "canonical_url": "/analyzers/audio-spectrogram-viewer",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-04/tool-products/TOOL-0179"
+    },
+    {
+      "id": "TOOL-0180",
+      "canonical_url": "/converters/srt-time-shifter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0180"
+    },
+    {
+      "id": "TOOL-0181",
+      "canonical_url": "/editors/split-csv-by-column",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0181"
+    },
+    {
+      "id": "TOOL-0182",
+      "canonical_url": "/editors/merge-csv-files",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0182"
+    },
+    {
+      "id": "TOOL-0183",
+      "canonical_url": "/utilities/csv-remove-duplicates",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0183"
+    },
+    {
+      "id": "TOOL-0184",
+      "canonical_url": "/utilities/csv-delimiter-encoding-fixer",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0184"
+    },
+    {
+      "id": "TOOL-0185",
+      "canonical_url": "/converters/excel-to-json",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0185"
+    },
+    {
+      "id": "TOOL-0186",
+      "canonical_url": "/utilities/csv-column-editor",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0186"
+    },
+    {
+      "id": "TOOL-0187",
+      "canonical_url": "/analyzers/csv-pivot-table",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-04/tool-products/TOOL-0187"
+    },
+    {
+      "id": "TOOL-0188",
+      "canonical_url": "/editors/split-excel-sheets",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0188"
+    },
+    {
+      "id": "TOOL-0189",
+      "canonical_url": "/utilities/combine-excel-sheets",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0189"
+    },
+    {
+      "id": "TOOL-0190",
+      "canonical_url": "/utilities/clean-csv",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0190"
+    },
+    {
+      "id": "TOOL-0191",
+      "canonical_url": "/validators/csv-validator",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-04/tool-products/TOOL-0191"
+    },
+    {
+      "id": "TOOL-0192",
+      "canonical_url": "/formatters/csv-date-format-converter",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-04/tool-products/TOOL-0192"
+    },
+    {
+      "id": "TOOL-0193",
+      "canonical_url": "/converters/phone-numbers-to-e164",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0193"
+    },
+    {
+      "id": "TOOL-0194",
+      "canonical_url": "/editors/split-full-name-csv",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-04/tool-products/TOOL-0194"
+    },
+    {
+      "id": "TOOL-0195",
+      "canonical_url": "/extractors/extract-emails-from-text",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-04/tool-products/TOOL-0195"
+    },
+    {
+      "id": "TOOL-0196",
+      "canonical_url": "/converters/csv-to-html-table",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0196"
+    },
+    {
+      "id": "TOOL-0197",
+      "canonical_url": "/utilities/join-csv-files",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-04/tool-products/TOOL-0197"
+    },
+    {
+      "id": "TOOL-0198",
+      "canonical_url": "/comparisons/csv-diff",
+      "owner": "MM530",
+      "category": "comparisons",
+      "source_dir": "batch-04/tool-products/TOOL-0198"
+    },
+    {
+      "id": "TOOL-0199",
+      "canonical_url": "/extractors/excel-formula-extractor",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-04/tool-products/TOOL-0199"
+    },
+    {
+      "id": "TOOL-0200",
+      "canonical_url": "/converters/csv-to-excel-keep-leading-zeros",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-04/tool-products/TOOL-0200"
+    },
+    {
+      "id": "TOOL-0201",
+      "canonical_url": "/calculators/ab-test-significance-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0201"
+    },
+    {
+      "id": "TOOL-0202",
+      "canonical_url": "/calculators/ab-test-sample-size-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0202"
+    },
+    {
+      "id": "TOOL-0203",
+      "canonical_url": "/calculators/wilson-score-interval-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0203"
+    },
+    {
+      "id": "TOOL-0204",
+      "canonical_url": "/calculators/survey-sample-size-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0204"
+    },
+    {
+      "id": "TOOL-0205",
+      "canonical_url": "/calculators/chi-square-test-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0205"
+    },
+    {
+      "id": "TOOL-0206",
+      "canonical_url": "/calculators/welch-t-test-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0206"
+    },
+    {
+      "id": "TOOL-0207",
+      "canonical_url": "/calculators/mann-whitney-u-test-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0207"
+    },
+    {
+      "id": "TOOL-0208",
+      "canonical_url": "/calculators/linear-regression-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0208"
+    },
+    {
+      "id": "TOOL-0209",
+      "canonical_url": "/calculators/correlation-matrix-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0209"
+    },
+    {
+      "id": "TOOL-0210",
+      "canonical_url": "/calculators/outlier-detection-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0210"
+    },
+    {
+      "id": "TOOL-0211",
+      "canonical_url": "/calculators/exponential-smoothing-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0211"
+    },
+    {
+      "id": "TOOL-0212",
+      "canonical_url": "/calculators/percentile-calculator-from-data",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-04/tool-products/TOOL-0212"
+    },
+    {
+      "id": "TOOL-0213",
+      "canonical_url": "/calculators/z-score-to-percentile-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0213"
+    },
+    {
+      "id": "TOOL-0214",
+      "canonical_url": "/calculators/binomial-poisson-probability-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0214"
+    },
+    {
+      "id": "TOOL-0215",
+      "canonical_url": "/calculators/bayes-theorem-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0215"
+    },
+    {
+      "id": "TOOL-0216",
+      "canonical_url": "/calculators/prime-factorization-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0216"
+    },
+    {
+      "id": "TOOL-0217",
+      "canonical_url": "/calculators/matrix-calculator-with-steps",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0217"
+    },
+    {
+      "id": "TOOL-0218",
+      "canonical_url": "/utilities/random-sample-generator-with-seed",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-05/tool-products/TOOL-0218"
+    },
+    {
+      "id": "TOOL-0219",
+      "canonical_url": "/utilities/monte-carlo-project-estimate",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-05/tool-products/TOOL-0219"
+    },
+    {
+      "id": "TOOL-0220",
+      "canonical_url": "/calculators/effect-size-calculator-cohens-d",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0220"
+    },
+    {
+      "id": "TOOL-0221",
+      "canonical_url": "/calculators/loan-payoff-extra-payments-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0221"
+    },
+    {
+      "id": "TOOL-0222",
+      "canonical_url": "/calculators/debt-snowball-vs-avalanche-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0222"
+    },
+    {
+      "id": "TOOL-0223",
+      "canonical_url": "/calculators/rsu-tax-withholding-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0223"
+    },
+    {
+      "id": "TOOL-0224",
+      "canonical_url": "/calculators/coast-fire-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0224"
+    },
+    {
+      "id": "TOOL-0225",
+      "canonical_url": "/calculators/compound-interest-with-inflation-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0225"
+    },
+    {
+      "id": "TOOL-0226",
+      "canonical_url": "/calculators/sip-calculator-with-step-up",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0226"
+    },
+    {
+      "id": "TOOL-0227",
+      "canonical_url": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0227"
+    },
+    {
+      "id": "TOOL-0228",
+      "canonical_url": "/calculators/credit-card-payoff-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0228"
+    },
+    {
+      "id": "TOOL-0229",
+      "canonical_url": "/calculators/true-apr-calculator-with-fees",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0229"
+    },
+    {
+      "id": "TOOL-0230",
+      "canonical_url": "/calculators/savings-goal-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0230"
+    },
+    {
+      "id": "TOOL-0231",
+      "canonical_url": "/calculators/marginal-tax-bracket-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0231"
+    },
+    {
+      "id": "TOOL-0232",
+      "canonical_url": "/converters/hourly-to-salary-calculator",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-05/tool-products/TOOL-0232"
+    },
+    {
+      "id": "TOOL-0233",
+      "canonical_url": "/calculators/biweekly-mortgage-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0233"
+    },
+    {
+      "id": "TOOL-0234",
+      "canonical_url": "/calculators/rent-vs-buy-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0234"
+    },
+    {
+      "id": "TOOL-0235",
+      "canonical_url": "/calculators/cost-basis-calculator-csv",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0235"
+    },
+    {
+      "id": "TOOL-0236",
+      "canonical_url": "/calculators/drip-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0236"
+    },
+    {
+      "id": "TOOL-0237",
+      "canonical_url": "/calculators/net-worth-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0237"
+    },
+    {
+      "id": "TOOL-0238",
+      "canonical_url": "/calculators/inflation-calculator-custom-rate",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0238"
+    },
+    {
+      "id": "TOOL-0239",
+      "canonical_url": "/calculators/compare-two-loans-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0239"
+    },
+    {
+      "id": "TOOL-0240",
+      "canonical_url": "/calculators/employer-match-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0240"
+    },
+    {
+      "id": "TOOL-0241",
+      "canonical_url": "/calculators/freelance-hourly-rate-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0241"
+    },
+    {
+      "id": "TOOL-0242",
+      "canonical_url": "/generators/invoice-generator-pdf",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0242"
+    },
+    {
+      "id": "TOOL-0243",
+      "canonical_url": "/generators/quote-generator-pdf",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0243"
+    },
+    {
+      "id": "TOOL-0244",
+      "canonical_url": "/calculators/margin-vs-markup-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0244"
+    },
+    {
+      "id": "TOOL-0245",
+      "canonical_url": "/calculators/break-even-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0245"
+    },
+    {
+      "id": "TOOL-0246",
+      "canonical_url": "/calculators/saas-metrics-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0246"
+    },
+    {
+      "id": "TOOL-0247",
+      "canonical_url": "/calculators/startup-runway-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0247"
+    },
+    {
+      "id": "TOOL-0248",
+      "canonical_url": "/calculators/vat-calculator-reverse-bulk",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0248"
+    },
+    {
+      "id": "TOOL-0249",
+      "canonical_url": "/converters/number-to-words-cheque",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-05/tool-products/TOOL-0249"
+    },
+    {
+      "id": "TOOL-0250",
+      "canonical_url": "/calculators/timesheet-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0250"
+    },
+    {
+      "id": "TOOL-0251",
+      "canonical_url": "/calculators/late-payment-interest-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0251"
+    },
+    {
+      "id": "TOOL-0252",
+      "canonical_url": "/calculators/meeting-cost-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0252"
+    },
+    {
+      "id": "TOOL-0253",
+      "canonical_url": "/calculators/fully-loaded-employee-cost-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0253"
+    },
+    {
+      "id": "TOOL-0254",
+      "canonical_url": "/generators/email-signature-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0254"
+    },
+    {
+      "id": "TOOL-0255",
+      "canonical_url": "/generators/gantt-chart-maker",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0255"
+    },
+    {
+      "id": "TOOL-0256",
+      "canonical_url": "/generators/org-chart-generator-csv",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0256"
+    },
+    {
+      "id": "TOOL-0257",
+      "canonical_url": "/calculators/reorder-point-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0257"
+    },
+    {
+      "id": "TOOL-0258",
+      "canonical_url": "/generators/bulk-barcode-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0258"
+    },
+    {
+      "id": "TOOL-0259",
+      "canonical_url": "/generators/vcard-qr-code-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-05/tool-products/TOOL-0259"
+    },
+    {
+      "id": "TOOL-0260",
+      "canonical_url": "/calculators/pro-rata-salary-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0260"
+    },
+    {
+      "id": "TOOL-0261",
+      "canonical_url": "/calculators/concrete-volume-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0261"
+    },
+    {
+      "id": "TOOL-0262",
+      "canonical_url": "/calculators/roofing-calculator-shingle-bundles",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0262"
+    },
+    {
+      "id": "TOOL-0263",
+      "canonical_url": "/calculators/paint-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0263"
+    },
+    {
+      "id": "TOOL-0264",
+      "canonical_url": "/calculators/tile-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0264"
+    },
+    {
+      "id": "TOOL-0265",
+      "canonical_url": "/calculators/drywall-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-05/tool-products/TOOL-0265"
+    },
+    {
+      "id": "TOOL-0266",
+      "canonical_url": "/calculators/board-foot-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0266"
+    },
+    {
+      "id": "TOOL-0267",
+      "canonical_url": "/calculators/deck-material-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0267"
+    },
+    {
+      "id": "TOOL-0268",
+      "canonical_url": "/calculators/stair-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0268"
+    },
+    {
+      "id": "TOOL-0269",
+      "canonical_url": "/calculators/gravel-mulch-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0269"
+    },
+    {
+      "id": "TOOL-0270",
+      "canonical_url": "/calculators/voltage-drop-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0270"
+    },
+    {
+      "id": "TOOL-0271",
+      "canonical_url": "/calculators/btu-calculator-room-size",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0271"
+    },
+    {
+      "id": "TOOL-0272",
+      "canonical_url": "/calculators/cap-rate-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0272"
+    },
+    {
+      "id": "TOOL-0273",
+      "canonical_url": "/calculators/rental-property-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0273"
+    },
+    {
+      "id": "TOOL-0274",
+      "canonical_url": "/calculators/square-footage-calculator-irregular-rooms",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0274"
+    },
+    {
+      "id": "TOOL-0275",
+      "canonical_url": "/converters/feet-inches-to-meters-calculator",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0275"
+    },
+    {
+      "id": "TOOL-0276",
+      "canonical_url": "/calculators/fence-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0276"
+    },
+    {
+      "id": "TOOL-0277",
+      "canonical_url": "/calculators/retaining-wall-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0277"
+    },
+    {
+      "id": "TOOL-0278",
+      "canonical_url": "/calculators/insulation-calculator-r-value",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0278"
+    },
+    {
+      "id": "TOOL-0279",
+      "canonical_url": "/calculators/tank-volume-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0279"
+    },
+    {
+      "id": "TOOL-0280",
+      "canonical_url": "/converters/land-area-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0280"
+    },
+    {
+      "id": "TOOL-0281",
+      "canonical_url": "/calculators/one-rep-max-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0281"
+    },
+    {
+      "id": "TOOL-0282",
+      "canonical_url": "/calculators/running-pace-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0282"
+    },
+    {
+      "id": "TOOL-0283",
+      "canonical_url": "/utilities/race-time-predictor",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-06/tool-products/TOOL-0283"
+    },
+    {
+      "id": "TOOL-0284",
+      "canonical_url": "/calculators/heart-rate-zone-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0284"
+    },
+    {
+      "id": "TOOL-0285",
+      "canonical_url": "/calculators/barbell-plate-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0285"
+    },
+    {
+      "id": "TOOL-0286",
+      "canonical_url": "/calculators/critical-swim-speed-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0286"
+    },
+    {
+      "id": "TOOL-0287",
+      "canonical_url": "/calculators/ftp-zones-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0287"
+    },
+    {
+      "id": "TOOL-0288",
+      "canonical_url": "/calculators/tdee-calculator-compare-equations",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0288"
+    },
+    {
+      "id": "TOOL-0289",
+      "canonical_url": "/calculators/sleep-cycle-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0289"
+    },
+    {
+      "id": "TOOL-0290",
+      "canonical_url": "/calculators/caffeine-half-life-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0290"
+    },
+    {
+      "id": "TOOL-0291",
+      "canonical_url": "/timers/tabata-interval-timer",
+      "owner": "MM530",
+      "category": "timers",
+      "source_dir": "batch-06/tool-products/TOOL-0291"
+    },
+    {
+      "id": "TOOL-0292",
+      "canonical_url": "/timers/box-breathing-timer",
+      "owner": "MM530",
+      "category": "timers",
+      "source_dir": "batch-06/tool-products/TOOL-0292"
+    },
+    {
+      "id": "TOOL-0293",
+      "canonical_url": "/planners/weekly-mileage-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-06/tool-products/TOOL-0293"
+    },
+    {
+      "id": "TOOL-0294",
+      "canonical_url": "/calculators/endurance-fueling-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0294"
+    },
+    {
+      "id": "TOOL-0295",
+      "canonical_url": "/calculators/grade-adjusted-pace-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0295"
+    },
+    {
+      "id": "TOOL-0296",
+      "canonical_url": "/generators/nutrition-facts-label-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-06/tool-products/TOOL-0296"
+    },
+    {
+      "id": "TOOL-0297",
+      "canonical_url": "/converters/steps-to-km-calculator",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0297"
+    },
+    {
+      "id": "TOOL-0298",
+      "canonical_url": "/calculators/hiking-time-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0298"
+    },
+    {
+      "id": "TOOL-0299",
+      "canonical_url": "/calculators/altitude-pace-adjustment-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0299"
+    },
+    {
+      "id": "TOOL-0300",
+      "canonical_url": "/calculators/dots-score-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0300"
+    },
+    {
+      "id": "TOOL-0301",
+      "canonical_url": "/calculators/business-days-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0301"
+    },
+    {
+      "id": "TOOL-0302",
+      "canonical_url": "/calculators/date-difference-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0302"
+    },
+    {
+      "id": "TOOL-0303",
+      "canonical_url": "/planners/time-zone-meeting-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-06/tool-products/TOOL-0303"
+    },
+    {
+      "id": "TOOL-0304",
+      "canonical_url": "/extractors/dst-transition-dates",
+      "owner": "MM530",
+      "category": "extractors",
+      "source_dir": "batch-06/tool-products/TOOL-0304"
+    },
+    {
+      "id": "TOOL-0305",
+      "canonical_url": "/converters/bulk-epoch-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0305"
+    },
+    {
+      "id": "TOOL-0306",
+      "canonical_url": "/generators/ics-file-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-06/tool-products/TOOL-0306"
+    },
+    {
+      "id": "TOOL-0307",
+      "canonical_url": "/converters/ics-to-csv",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0307"
+    },
+    {
+      "id": "TOOL-0308",
+      "canonical_url": "/generators/rrule-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-06/tool-products/TOOL-0308"
+    },
+    {
+      "id": "TOOL-0309",
+      "canonical_url": "/generators/iso-8601-duration-converter",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-06/tool-products/TOOL-0309"
+    },
+    {
+      "id": "TOOL-0310",
+      "canonical_url": "/calculators/week-number-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0310"
+    },
+    {
+      "id": "TOOL-0311",
+      "canonical_url": "/calculators/add-days-to-date-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0311"
+    },
+    {
+      "id": "TOOL-0312",
+      "canonical_url": "/timers/countdown-timer-generator",
+      "owner": "MM530",
+      "category": "timers",
+      "source_dir": "batch-06/tool-products/TOOL-0312"
+    },
+    {
+      "id": "TOOL-0313",
+      "canonical_url": "/converters/nepali-date-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0313"
+    },
+    {
+      "id": "TOOL-0314",
+      "canonical_url": "/converters/hijri-to-gregorian-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0314"
+    },
+    {
+      "id": "TOOL-0315",
+      "canonical_url": "/calculators/day-of-year-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0315"
+    },
+    {
+      "id": "TOOL-0316",
+      "canonical_url": "/converters/excel-serial-number-to-date",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-06/tool-products/TOOL-0316"
+    },
+    {
+      "id": "TOOL-0317",
+      "canonical_url": "/calculators/fiscal-quarter-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-06/tool-products/TOOL-0317"
+    },
+    {
+      "id": "TOOL-0318",
+      "canonical_url": "/generators/shift-schedule-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-06/tool-products/TOOL-0318"
+    },
+    {
+      "id": "TOOL-0319",
+      "canonical_url": "/calculators/golden-hour-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0319"
+    },
+    {
+      "id": "TOOL-0320",
+      "canonical_url": "/calculators/moon-phase-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0320"
+    },
+    {
+      "id": "TOOL-0321",
+      "canonical_url": "/calculators/file-hash-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0321"
+    },
+    {
+      "id": "TOOL-0322",
+      "canonical_url": "/validators/verify-sha256sums",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-07/tool-products/TOOL-0322"
+    },
+    {
+      "id": "TOOL-0323",
+      "canonical_url": "/validators/password-strength-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-07/tool-products/TOOL-0323"
+    },
+    {
+      "id": "TOOL-0324",
+      "canonical_url": "/generators/diceware-passphrase-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0324"
+    },
+    {
+      "id": "TOOL-0325",
+      "canonical_url": "/utilities/password-hash-cost-benchmark",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0325"
+    },
+    {
+      "id": "TOOL-0326",
+      "canonical_url": "/generators/hmac-signature-tester",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0326"
+    },
+    {
+      "id": "TOOL-0327",
+      "canonical_url": "/generators/pkce-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0327"
+    },
+    {
+      "id": "TOOL-0328",
+      "canonical_url": "/analyzers/totp-debugger",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-07/tool-products/TOOL-0328"
+    },
+    {
+      "id": "TOOL-0329",
+      "canonical_url": "/utilities/encrypt-text-with-password",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0329"
+    },
+    {
+      "id": "TOOL-0330",
+      "canonical_url": "/utilities/encrypt-file-in-browser",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0330"
+    },
+    {
+      "id": "TOOL-0331",
+      "canonical_url": "/generators/generate-rsa-key-pair",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0331"
+    },
+    {
+      "id": "TOOL-0332",
+      "canonical_url": "/converters/pem-to-jwk",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-07/tool-products/TOOL-0332"
+    },
+    {
+      "id": "TOOL-0333",
+      "canonical_url": "/calculators/ssh-key-fingerprint-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0333"
+    },
+    {
+      "id": "TOOL-0334",
+      "canonical_url": "/analyzers/pgp-key-inspector",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-07/tool-products/TOOL-0334"
+    },
+    {
+      "id": "TOOL-0335",
+      "canonical_url": "/generators/api-key-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0335"
+    },
+    {
+      "id": "TOOL-0336",
+      "canonical_url": "/generators/uuid-v7-generator-decoder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0336"
+    },
+    {
+      "id": "TOOL-0337",
+      "canonical_url": "/editors/remove-metadata-from-word-document",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-07/tool-products/TOOL-0337"
+    },
+    {
+      "id": "TOOL-0338",
+      "canonical_url": "/analyzers/qr-code-link-inspector",
+      "owner": "MM530",
+      "category": "analyzers",
+      "source_dir": "batch-07/tool-products/TOOL-0338"
+    },
+    {
+      "id": "TOOL-0339",
+      "canonical_url": "/utilities/defang-url",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0339"
+    },
+    {
+      "id": "TOOL-0340",
+      "canonical_url": "/generators/sri-hash-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0340"
+    },
+    {
+      "id": "TOOL-0341",
+      "canonical_url": "/utilities/social-character-counter",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0341"
+    },
+    {
+      "id": "TOOL-0342",
+      "canonical_url": "/editors/split-image-for-instagram-carousel",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-07/tool-products/TOOL-0342"
+    },
+    {
+      "id": "TOOL-0343",
+      "canonical_url": "/utilities/youtube-thumbnail-safe-zone",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0343"
+    },
+    {
+      "id": "TOOL-0344",
+      "canonical_url": "/validators/youtube-chapters-generator",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-07/tool-products/TOOL-0344"
+    },
+    {
+      "id": "TOOL-0345",
+      "canonical_url": "/formatters/hashtag-camelcase-generator",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-07/tool-products/TOOL-0345"
+    },
+    {
+      "id": "TOOL-0346",
+      "canonical_url": "/generators/unicode-text-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0346"
+    },
+    {
+      "id": "TOOL-0347",
+      "canonical_url": "/editors/social-media-image-resizer",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-07/tool-products/TOOL-0347"
+    },
+    {
+      "id": "TOOL-0348",
+      "canonical_url": "/validators/podcast-rss-validator",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-07/tool-products/TOOL-0348"
+    },
+    {
+      "id": "TOOL-0349",
+      "canonical_url": "/editors/screen-recorder-online",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-07/tool-products/TOOL-0349"
+    },
+    {
+      "id": "TOOL-0350",
+      "canonical_url": "/validators/webcam-mic-test",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-07/tool-products/TOOL-0350"
+    },
+    {
+      "id": "TOOL-0351",
+      "canonical_url": "/utilities/teleprompter-utility",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0351"
+    },
+    {
+      "id": "TOOL-0352",
+      "canonical_url": "/converters/crop-video-to-9-16",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-07/tool-products/TOOL-0352"
+    },
+    {
+      "id": "TOOL-0353",
+      "canonical_url": "/generators/link-in-bio-page-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0353"
+    },
+    {
+      "id": "TOOL-0354",
+      "canonical_url": "/editors/thread-splitter",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-07/tool-products/TOOL-0354"
+    },
+    {
+      "id": "TOOL-0355",
+      "canonical_url": "/validators/contrast-checker-apca",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-07/tool-products/TOOL-0355"
+    },
+    {
+      "id": "TOOL-0356",
+      "canonical_url": "/generators/youtube-embed-code-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0356"
+    },
+    {
+      "id": "TOOL-0357",
+      "canonical_url": "/utilities/random-giveaway-picker",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-07/tool-products/TOOL-0357"
+    },
+    {
+      "id": "TOOL-0358",
+      "canonical_url": "/generators/bingo-card-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0358"
+    },
+    {
+      "id": "TOOL-0359",
+      "canonical_url": "/generators/business-card-maker",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0359"
+    },
+    {
+      "id": "TOOL-0360",
+      "canonical_url": "/generators/screenshot-device-frame-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0360"
+    },
+    {
+      "id": "TOOL-0361",
+      "canonical_url": "/formatters/apa-7-reference-generator",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-07/tool-products/TOOL-0361"
+    },
+    {
+      "id": "TOOL-0362",
+      "canonical_url": "/converters/bibtex-to-apa",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-07/tool-products/TOOL-0362"
+    },
+    {
+      "id": "TOOL-0363",
+      "canonical_url": "/converters/ris-to-bibtex",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-07/tool-products/TOOL-0363"
+    },
+    {
+      "id": "TOOL-0364",
+      "canonical_url": "/editors/bibtex-cleaner",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-07/tool-products/TOOL-0364"
+    },
+    {
+      "id": "TOOL-0365",
+      "canonical_url": "/calculators/gpa-calculator-custom-scale",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0365"
+    },
+    {
+      "id": "TOOL-0366",
+      "canonical_url": "/calculators/final-grade-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0366"
+    },
+    {
+      "id": "TOOL-0367",
+      "canonical_url": "/converters/cgpa-to-percentage-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-07/tool-products/TOOL-0367"
+    },
+    {
+      "id": "TOOL-0368",
+      "canonical_url": "/calculators/speech-length-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-07/tool-products/TOOL-0368"
+    },
+    {
+      "id": "TOOL-0369",
+      "canonical_url": "/planners/word-count-goal-tracker",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-07/tool-products/TOOL-0369"
+    },
+    {
+      "id": "TOOL-0370",
+      "canonical_url": "/generators/excel-to-latex-table",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-07/tool-products/TOOL-0370"
+    },
+    {
+      "id": "TOOL-0371",
+      "canonical_url": "/converters/latex-equation-to-image",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-07/tool-products/TOOL-0371"
+    },
+    {
+      "id": "TOOL-0372",
+      "canonical_url": "/calculators/molar-mass-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0372"
+    },
+    {
+      "id": "TOOL-0373",
+      "canonical_url": "/utilities/chemical-equation-balancer",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-08/tool-products/TOOL-0373"
+    },
+    {
+      "id": "TOOL-0374",
+      "canonical_url": "/calculators/dilution-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0374"
+    },
+    {
+      "id": "TOOL-0375",
+      "canonical_url": "/calculators/projectile-motion-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0375"
+    },
+    {
+      "id": "TOOL-0376",
+      "canonical_url": "/calculators/significant-figures-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0376"
+    },
+    {
+      "id": "TOOL-0377",
+      "canonical_url": "/converters/scientific-notation-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-08/tool-products/TOOL-0377"
+    },
+    {
+      "id": "TOOL-0378",
+      "canonical_url": "/generators/csv-to-anki-deck",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-08/tool-products/TOOL-0378"
+    },
+    {
+      "id": "TOOL-0379",
+      "canonical_url": "/generators/math-worksheet-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-08/tool-products/TOOL-0379"
+    },
+    {
+      "id": "TOOL-0380",
+      "canonical_url": "/generators/word-search-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-08/tool-products/TOOL-0380"
+    },
+    {
+      "id": "TOOL-0381",
+      "canonical_url": "/calculators/resistor-color-code-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0381"
+    },
+    {
+      "id": "TOOL-0382",
+      "canonical_url": "/calculators/smd-resistor-code-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0382"
+    },
+    {
+      "id": "TOOL-0383",
+      "canonical_url": "/calculators/led-resistor-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0383"
+    },
+    {
+      "id": "TOOL-0384",
+      "canonical_url": "/calculators/capacitor-code-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0384"
+    },
+    {
+      "id": "TOOL-0385",
+      "canonical_url": "/calculators/voltage-divider-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0385"
+    },
+    {
+      "id": "TOOL-0386",
+      "canonical_url": "/calculators/arduino-timer-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0386"
+    },
+    {
+      "id": "TOOL-0387",
+      "canonical_url": "/calculators/uart-baud-rate-error-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0387"
+    },
+    {
+      "id": "TOOL-0388",
+      "canonical_url": "/calculators/gcode-filament-cost-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0388"
+    },
+    {
+      "id": "TOOL-0389",
+      "canonical_url": "/calculators/stl-volume-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0389"
+    },
+    {
+      "id": "TOOL-0390",
+      "canonical_url": "/calculators/nd-filter-exposure-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0390"
+    },
+    {
+      "id": "TOOL-0391",
+      "canonical_url": "/calculators/hyperfocal-distance-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0391"
+    },
+    {
+      "id": "TOOL-0392",
+      "canonical_url": "/calculators/crop-factor-equivalent-focal-length",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0392"
+    },
+    {
+      "id": "TOOL-0393",
+      "canonical_url": "/converters/cups-to-grams-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-08/tool-products/TOOL-0393"
+    },
+    {
+      "id": "TOOL-0394",
+      "canonical_url": "/utilities/recipe-scaler",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-08/tool-products/TOOL-0394"
+    },
+    {
+      "id": "TOOL-0395",
+      "canonical_url": "/calculators/bakers-percentage-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0395"
+    },
+    {
+      "id": "TOOL-0396",
+      "canonical_url": "/calculators/pizza-dough-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0396"
+    },
+    {
+      "id": "TOOL-0397",
+      "canonical_url": "/calculators/abv-calculator-og-fg",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0397"
+    },
+    {
+      "id": "TOOL-0398",
+      "canonical_url": "/calculators/coffee-ratio-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0398"
+    },
+    {
+      "id": "TOOL-0399",
+      "canonical_url": "/calculators/knitting-gauge-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0399"
+    },
+    {
+      "id": "TOOL-0400",
+      "canonical_url": "/calculators/bike-gear-ratio-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0400"
+    },
+    {
+      "id": "TOOL-0401",
+      "canonical_url": "/calculators/fence-post-concrete-bags-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0401"
+    },
+    {
+      "id": "TOOL-0402",
+      "canonical_url": "/validators/deck-joist-beam-span-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-08/tool-products/TOOL-0402"
+    },
+    {
+      "id": "TOOL-0403",
+      "canonical_url": "/validators/stair-code-compliance-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-08/tool-products/TOOL-0403"
+    },
+    {
+      "id": "TOOL-0404",
+      "canonical_url": "/calculators/rebar-mesh-slab-takeoff-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0404"
+    },
+    {
+      "id": "TOOL-0405",
+      "canonical_url": "/calculators/crown-molding-miter-angle-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0405"
+    },
+    {
+      "id": "TOOL-0406",
+      "canonical_url": "/calculators/herringbone-diagonal-tile-waste-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0406"
+    },
+    {
+      "id": "TOOL-0407",
+      "canonical_url": "/calculators/wallpaper-pattern-repeat-roll-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0407"
+    },
+    {
+      "id": "TOOL-0408",
+      "canonical_url": "/calculators/wall-roof-u-value-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0408"
+    },
+    {
+      "id": "TOOL-0409",
+      "canonical_url": "/generators/stud-wall-layout-cut-list-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-08/tool-products/TOOL-0409"
+    },
+    {
+      "id": "TOOL-0410",
+      "canonical_url": "/calculators/paver-base-and-sand-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0410"
+    },
+    {
+      "id": "TOOL-0411",
+      "canonical_url": "/calculators/gutter-downspout-sizing-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0411"
+    },
+    {
+      "id": "TOOL-0412",
+      "canonical_url": "/calculators/form-2210-annualized-income-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0412"
+    },
+    {
+      "id": "TOOL-0413",
+      "canonical_url": "/planners/estimated-tax-safe-harbor-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-08/tool-products/TOOL-0413"
+    },
+    {
+      "id": "TOOL-0414",
+      "canonical_url": "/planners/uk-payments-on-account-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-08/tool-products/TOOL-0414"
+    },
+    {
+      "id": "TOOL-0415",
+      "canonical_url": "/calculators/canada-gst-hst-quick-method-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0415"
+    },
+    {
+      "id": "TOOL-0416",
+      "canonical_url": "/planners/us-sales-tax-economic-nexus-tracker",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-08/tool-products/TOOL-0416"
+    },
+    {
+      "id": "TOOL-0417",
+      "canonical_url": "/planners/vat-gst-registration-threshold-checker",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-08/tool-products/TOOL-0417"
+    },
+    {
+      "id": "TOOL-0418",
+      "canonical_url": "/calculators/macrs-depreciation-schedule-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0418"
+    },
+    {
+      "id": "TOOL-0419",
+      "canonical_url": "/calculators/wash-sale-holding-period-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0419"
+    },
+    {
+      "id": "TOOL-0420",
+      "canonical_url": "/calculators/backdoor-roth-pro-rata-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0420"
+    },
+    {
+      "id": "TOOL-0421",
+      "canonical_url": "/comparisons/home-office-deduction-comparison",
+      "owner": "MM530",
+      "category": "comparisons",
+      "source_dir": "batch-08/tool-products/TOOL-0421"
+    },
+    {
+      "id": "TOOL-0422",
+      "canonical_url": "/calculators/w2-vs-1099-contractor-rate-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0422"
+    },
+    {
+      "id": "TOOL-0423",
+      "canonical_url": "/calculators/rent-increase-cap-and-notice-checker",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0423"
+    },
+    {
+      "id": "TOOL-0424",
+      "canonical_url": "/calculators/security-deposit-return-deadline-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-08/tool-products/TOOL-0424"
+    },
+    {
+      "id": "TOOL-0425",
+      "canonical_url": "/calculators/landlord-notice-period-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0425"
+    },
+    {
+      "id": "TOOL-0426",
+      "canonical_url": "/calculators/rental-depreciation-recapture-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0426"
+    },
+    {
+      "id": "TOOL-0427",
+      "canonical_url": "/calculators/lease-break-cost-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0427"
+    },
+    {
+      "id": "TOOL-0428",
+      "canonical_url": "/calculators/property-tax-appeal-savings-estimator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0428"
+    },
+    {
+      "id": "TOOL-0429",
+      "canonical_url": "/calculators/uk-tenancy-deposit-protection-penalty",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0429"
+    },
+    {
+      "id": "TOOL-0430",
+      "canonical_url": "/calculators/move-out-damage-depreciation-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0430"
+    },
+    {
+      "id": "TOOL-0431",
+      "canonical_url": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0431"
+    },
+    {
+      "id": "TOOL-0432",
+      "canonical_url": "/calculators/roommate-rent-split-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0432"
+    },
+    {
+      "id": "TOOL-0433",
+      "canonical_url": "/validators/trailer-tongue-weight-payload-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-09/tool-products/TOOL-0433"
+    },
+    {
+      "id": "TOOL-0434",
+      "canonical_url": "/utilities/ev-charging-cost-and-circuit-sizing",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-09/tool-products/TOOL-0434"
+    },
+    {
+      "id": "TOOL-0435",
+      "canonical_url": "/formatters/tire-load-index-speed-rating-decoder",
+      "owner": "MM530",
+      "category": "formatters",
+      "source_dir": "batch-09/tool-products/TOOL-0435"
+    },
+    {
+      "id": "TOOL-0436",
+      "canonical_url": "/planners/drivers-hours-of-service-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0436"
+    },
+    {
+      "id": "TOOL-0437",
+      "canonical_url": "/calculators/ifta-quarterly-fuel-tax-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0437"
+    },
+    {
+      "id": "TOOL-0438",
+      "canonical_url": "/calculators/gig-driver-profit-per-mile-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0438"
+    },
+    {
+      "id": "TOOL-0439",
+      "canonical_url": "/calculators/car-lease-money-factor-apr-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0439"
+    },
+    {
+      "id": "TOOL-0440",
+      "canonical_url": "/validators/window-tint-vlt-law-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-09/tool-products/TOOL-0440"
+    },
+    {
+      "id": "TOOL-0441",
+      "canonical_url": "/utilities/social-video-safe-zone-overlay",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-09/tool-products/TOOL-0441"
+    },
+    {
+      "id": "TOOL-0442",
+      "canonical_url": "/generators/print-bleed-and-safe-zone-templates",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-09/tool-products/TOOL-0442"
+    },
+    {
+      "id": "TOOL-0443",
+      "canonical_url": "/calculators/book-spine-width-cover-template-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0443"
+    },
+    {
+      "id": "TOOL-0444",
+      "canonical_url": "/calculators/max-print-size-from-pixels-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0444"
+    },
+    {
+      "id": "TOOL-0445",
+      "canonical_url": "/calculators/video-file-size-bitrate-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0445"
+    },
+    {
+      "id": "TOOL-0446",
+      "canonical_url": "/utilities/label-sheet-print-alignment-calibrator",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-09/tool-products/TOOL-0446"
+    },
+    {
+      "id": "TOOL-0447",
+      "canonical_url": "/calculators/cross-stitch-fabric-size-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0447"
+    },
+    {
+      "id": "TOOL-0448",
+      "canonical_url": "/calculators/yarn-yardage-substitution-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0448"
+    },
+    {
+      "id": "TOOL-0449",
+      "canonical_url": "/calculators/cobra-election-payment-deadline-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0449"
+    },
+    {
+      "id": "TOOL-0450",
+      "canonical_url": "/calculators/dog-cat-food-portion-cost-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0450"
+    },
+    {
+      "id": "TOOL-0451",
+      "canonical_url": "/calculators/aquarium-volume-water-change-dosing",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0451"
+    },
+    {
+      "id": "TOOL-0452",
+      "canonical_url": "/calculators/pool-chemical-dosing-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0452"
+    },
+    {
+      "id": "TOOL-0453",
+      "canonical_url": "/converters/glasses-to-contact-lens-vertex-calculator",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-09/tool-products/TOOL-0453"
+    },
+    {
+      "id": "TOOL-0454",
+      "canonical_url": "/calculators/prescription-refill-runout-date-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0454"
+    },
+    {
+      "id": "TOOL-0455",
+      "canonical_url": "/planners/clear-aligner-schedule-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0455"
+    },
+    {
+      "id": "TOOL-0456",
+      "canonical_url": "/calculators/paid-family-leave-benefits-estimator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0456"
+    },
+    {
+      "id": "TOOL-0457",
+      "canonical_url": "/calculators/final-paycheck-pto-deadline-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0457"
+    },
+    {
+      "id": "TOOL-0458",
+      "canonical_url": "/calculators/state-overtime-pay-rules-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0458"
+    },
+    {
+      "id": "TOOL-0459",
+      "canonical_url": "/planners/i9-reverification-retention-date-tracker",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0459"
+    },
+    {
+      "id": "TOOL-0460",
+      "canonical_url": "/calculators/fmla-eligibility-entitlement-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0460"
+    },
+    {
+      "id": "TOOL-0461",
+      "canonical_url": "/calculators/trir-dart-incident-rate-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0461"
+    },
+    {
+      "id": "TOOL-0462",
+      "canonical_url": "/calculators/statute-of-limitations-deadline-estimator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0462"
+    },
+    {
+      "id": "TOOL-0463",
+      "canonical_url": "/generators/court-pleading-paper-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-09/tool-products/TOOL-0463"
+    },
+    {
+      "id": "TOOL-0464",
+      "canonical_url": "/generators/data-access-request-letter-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-09/tool-products/TOOL-0464"
+    },
+    {
+      "id": "TOOL-0465",
+      "canonical_url": "/converters/international-gpa-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-09/tool-products/TOOL-0465"
+    },
+    {
+      "id": "TOOL-0466",
+      "canonical_url": "/calculators/sat-act-superscore-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0466"
+    },
+    {
+      "id": "TOOL-0467",
+      "canonical_url": "/planners/professional-exam-study-scheduler",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0467"
+    },
+    {
+      "id": "TOOL-0468",
+      "canonical_url": "/planners/continuing-education-license-renewal-tracker",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0468"
+    },
+    {
+      "id": "TOOL-0469",
+      "canonical_url": "/planners/supervised-driving-hours-log",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0469"
+    },
+    {
+      "id": "TOOL-0470",
+      "canonical_url": "/generators/homeschool-transcript-gpa-builder",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-09/tool-products/TOOL-0470"
+    },
+    {
+      "id": "TOOL-0471",
+      "canonical_url": "/converters/quarter-semester-credit-converter",
+      "owner": "MM530",
+      "category": "converters",
+      "source_dir": "batch-09/tool-products/TOOL-0471"
+    },
+    {
+      "id": "TOOL-0472",
+      "canonical_url": "/planners/journeyman-apprenticeship-hours-tracker",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-09/tool-products/TOOL-0472"
+    },
+    {
+      "id": "TOOL-0473",
+      "canonical_url": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-09/tool-products/TOOL-0473"
+    },
+    {
+      "id": "TOOL-0474",
+      "canonical_url": "/calculators/import-landed-cost-tariff-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0474"
+    },
+    {
+      "id": "TOOL-0475",
+      "canonical_url": "/validators/marketplace-listing-byte-character-counter",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-09/tool-products/TOOL-0475"
+    },
+    {
+      "id": "TOOL-0476",
+      "canonical_url": "/validators/marketplace-image-size-spec-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-09/tool-products/TOOL-0476"
+    },
+    {
+      "id": "TOOL-0477",
+      "canonical_url": "/calculators/pallet-carton-packing-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-09/tool-products/TOOL-0477"
+    },
+    {
+      "id": "TOOL-0478",
+      "canonical_url": "/editors/shipping-label-4x6-pdf-cropper",
+      "owner": "MM530",
+      "category": "editors",
+      "source_dir": "batch-10/tool-products/TOOL-0478"
+    },
+    {
+      "id": "TOOL-0479",
+      "canonical_url": "/generators/commercial-invoice-customs-forms-generator",
+      "owner": "MM530",
+      "category": "generators",
+      "source_dir": "batch-10/tool-products/TOOL-0479"
+    },
+    {
+      "id": "TOOL-0480",
+      "canonical_url": "/validators/1099k-state-platform-reporting-threshold-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-10/tool-products/TOOL-0480"
+    },
+    {
+      "id": "TOOL-0481",
+      "canonical_url": "/utilities/tracking-number-carrier-identifier",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-10/tool-products/TOOL-0481"
+    },
+    {
+      "id": "TOOL-0482",
+      "canonical_url": "/calculators/acos-roas-break-even-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0482"
+    },
+    {
+      "id": "TOOL-0483",
+      "canonical_url": "/calculators/event-room-capacity-layout-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0483"
+    },
+    {
+      "id": "TOOL-0484",
+      "canonical_url": "/calculators/tablecloth-size-drop-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0484"
+    },
+    {
+      "id": "TOOL-0485",
+      "canonical_url": "/planners/bbq-reverse-cook-schedule-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-10/tool-products/TOOL-0485"
+    },
+    {
+      "id": "TOOL-0486",
+      "canonical_url": "/utilities/digital-nomad-visa-eligibility-checker",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-10/tool-products/TOOL-0486"
+    },
+    {
+      "id": "TOOL-0487",
+      "canonical_url": "/calculators/raised-bed-soil-compost-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0487"
+    },
+    {
+      "id": "TOOL-0488",
+      "canonical_url": "/calculators/fertilizer-seed-spreader-settings-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0488"
+    },
+    {
+      "id": "TOOL-0489",
+      "canonical_url": "/calculators/sprinkler-irrigation-runtime-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0489"
+    },
+    {
+      "id": "TOOL-0490",
+      "canonical_url": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0490"
+    },
+    {
+      "id": "TOOL-0491",
+      "canonical_url": "/comparisons/multi-fuel-heating-cost-comparison",
+      "owner": "MM530",
+      "category": "comparisons",
+      "source_dir": "batch-10/tool-products/TOOL-0491"
+    },
+    {
+      "id": "TOOL-0492",
+      "canonical_url": "/calculators/portable-power-station-runtime-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0492"
+    },
+    {
+      "id": "TOOL-0493",
+      "canonical_url": "/calculators/livestock-hay-feed-needs-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0493"
+    },
+    {
+      "id": "TOOL-0494",
+      "canonical_url": "/calculators/chicken-coop-size-feed-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0494"
+    },
+    {
+      "id": "TOOL-0495",
+      "canonical_url": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0495"
+    },
+    {
+      "id": "TOOL-0496",
+      "canonical_url": "/planners/inherited-ira-rmd-10-year-rule-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-10/tool-products/TOOL-0496"
+    },
+    {
+      "id": "TOOL-0497",
+      "canonical_url": "/utilities/wash-sale-lot-matching-csv-form-8949",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-10/tool-products/TOOL-0497"
+    },
+    {
+      "id": "TOOL-0498",
+      "canonical_url": "/calculators/rsu-state-withholding-gap-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0498"
+    },
+    {
+      "id": "TOOL-0499",
+      "canonical_url": "/calculators/hsa-contribution-limit-monthly-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0499"
+    },
+    {
+      "id": "TOOL-0500",
+      "canonical_url": "/calculators/medicare-enrollment-window-penalty-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0500"
+    },
+    {
+      "id": "TOOL-0501",
+      "canonical_url": "/calculators/irmaa-bracket-cliff-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0501"
+    },
+    {
+      "id": "TOOL-0502",
+      "canonical_url": "/calculators/inherited-property-stepped-up-basis-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0502"
+    },
+    {
+      "id": "TOOL-0503",
+      "canonical_url": "/calculators/uk-share-matching-section-104-pool-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0503"
+    },
+    {
+      "id": "TOOL-0504",
+      "canonical_url": "/calculators/uk-effective-marginal-tax-trap-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0504"
+    },
+    {
+      "id": "TOOL-0505",
+      "canonical_url": "/comparisons/uk-section-24-landlord-company-comparison",
+      "owner": "MM530",
+      "category": "comparisons",
+      "source_dir": "batch-10/tool-products/TOOL-0505"
+    },
+    {
+      "id": "TOOL-0506",
+      "canonical_url": "/calculators/buy-to-let-icr-stress-test-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0506"
+    },
+    {
+      "id": "TOOL-0507",
+      "canonical_url": "/calculators/uk-pension-allowance-carry-forward-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0507"
+    },
+    {
+      "id": "TOOL-0508",
+      "canonical_url": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-10/tool-products/TOOL-0508"
+    },
+    {
+      "id": "TOOL-0509",
+      "canonical_url": "/planners/uk-shared-parental-leave-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-10/tool-products/TOOL-0509"
+    },
+    {
+      "id": "TOOL-0510",
+      "canonical_url": "/utilities/canada-adjusted-cost-base-superficial-loss-ledger",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-10/tool-products/TOOL-0510"
+    },
+    {
+      "id": "TOOL-0511",
+      "canonical_url": "/planners/canada-oas-clawback-rrif-planner",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-10/tool-products/TOOL-0511"
+    },
+    {
+      "id": "TOOL-0512",
+      "canonical_url": "/planners/canada-fhsa-rrsp-home-buyers-plan",
+      "owner": "MM530",
+      "category": "planners",
+      "source_dir": "batch-10/tool-products/TOOL-0512"
+    },
+    {
+      "id": "TOOL-0513",
+      "canonical_url": "/calculators/canada-vacation-statutory-holiday-pay-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0513"
+    },
+    {
+      "id": "TOOL-0514",
+      "canonical_url": "/calculators/australia-super-concessional-carry-forward-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0514"
+    },
+    {
+      "id": "TOOL-0515",
+      "canonical_url": "/calculators/australia-long-service-leave-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0515"
+    },
+    {
+      "id": "TOOL-0516",
+      "canonical_url": "/calculators/australia-home-battery-payback-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0516"
+    },
+    {
+      "id": "TOOL-0517",
+      "canonical_url": "/calculators/assumable-mortgage-comparison-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0517"
+    },
+    {
+      "id": "TOOL-0518",
+      "canonical_url": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0518"
+    },
+    {
+      "id": "TOOL-0519",
+      "canonical_url": "/calculators/chapter-7-bankruptcy-means-test-estimator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0519"
+    },
+    {
+      "id": "TOOL-0520",
+      "canonical_url": "/calculators/uk-ilr-citizenship-absence-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0520"
+    },
+    {
+      "id": "TOOL-0521",
+      "canonical_url": "/calculators/us-n400-physical-presence-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0521"
+    },
+    {
+      "id": "TOOL-0522",
+      "canonical_url": "/validators/flight-delay-compensation-uk-eu-canada",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-10/tool-products/TOOL-0522"
+    },
+    {
+      "id": "TOOL-0523",
+      "canonical_url": "/validators/airline-carry-on-size-weight-checker",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-10/tool-products/TOOL-0523"
+    },
+    {
+      "id": "TOOL-0524",
+      "canonical_url": "/validators/chase-5-24-credit-card-application-rules",
+      "owner": "MM530",
+      "category": "validators",
+      "source_dir": "batch-10/tool-products/TOOL-0524"
+    },
+    {
+      "id": "TOOL-0525",
+      "canonical_url": "/calculators/heat-pump-vs-gas-boiler-payback-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0525"
+    },
+    {
+      "id": "TOOL-0526",
+      "canonical_url": "/calculators/generator-sizing-running-starting-watts",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0526"
+    },
+    {
+      "id": "TOOL-0527",
+      "canonical_url": "/calculators/astrophotography-npf-exposure-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0527"
+    },
+    {
+      "id": "TOOL-0528",
+      "canonical_url": "/calculators/quilt-yardage-binding-batting-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0528"
+    },
+    {
+      "id": "TOOL-0529",
+      "canonical_url": "/utilities/puppy-adult-weight-growth-predictor",
+      "owner": "MM530",
+      "category": "utilities",
+      "source_dir": "batch-10/tool-products/TOOL-0529"
+    },
+    {
+      "id": "TOOL-0530",
+      "canonical_url": "/calculators/card-surcharge-cash-discount-calculator",
+      "owner": "MM530",
+      "category": "calculators",
+      "source_dir": "batch-10/tool-products/TOOL-0530"
+    }
+  ],
+  "dashboard_namespace": "/toolbox",
+  "category_route": "/toolbox/<category>",
+  "canonical_duplicates": 0,
+  "known_router_collisions": 0
+}

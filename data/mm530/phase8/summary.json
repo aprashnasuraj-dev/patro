@@ -1,0 +1,9 @@
+{
+  "schema_version": "MM530_PHASE8_SUMMARY_V1",
+  "status": "IMPLEMENTED_PENDING_BUILD_VERIFICATION",
+  "tools": 530,
+  "react_vite_adapter": true,
+  "inventory_driven": true,
+  "lazy_route_assets": true,
+  "main_bundle_tool_runtimes_eager": false
+}

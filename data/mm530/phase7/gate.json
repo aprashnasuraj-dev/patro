@@ -1,0 +1,10 @@
+{
+  "schema_version": "MM530_PHASE7_GATE_V1",
+  "route_manifest_complete": true,
+  "category_manifest_complete": true,
+  "tool_count": 530,
+  "duplicate_canonical_routes": 0,
+  "known_route_collisions": 0,
+  "dashboard_outside_tool_namespace": true,
+  "verification": "DEFERRED"
+}

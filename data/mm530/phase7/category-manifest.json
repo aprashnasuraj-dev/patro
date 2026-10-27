@@ -1,0 +1,66 @@
+{
+  "schema_version": "MM530_PHASE7_CATEGORY_MANIFEST_V1",
+  "categories": [
+    {
+      "key": "calculators",
+      "label": "Calculators",
+      "count": 198
+    },
+    {
+      "key": "generators",
+      "label": "Generators",
+      "count": 76
+    },
+    {
+      "key": "converters",
+      "label": "Converters",
+      "count": 68
+    },
+    {
+      "key": "utilities",
+      "label": "Utilities",
+      "count": 41
+    },
+    {
+      "key": "validators",
+      "label": "Validators",
+      "count": 39
+    },
+    {
+      "key": "editors",
+      "label": "Editors",
+      "count": 35
+    },
+    {
+      "key": "planners",
+      "label": "Planners",
+      "count": 21
+    },
+    {
+      "key": "extractors",
+      "label": "Extractors",
+      "count": 18
+    },
+    {
+      "key": "analyzers",
+      "label": "Analyzers",
+      "count": 18
+    },
+    {
+      "key": "formatters",
+      "label": "Formatters",
+      "count": 7
+    },
+    {
+      "key": "comparisons",
+      "label": "Comparisons",
+      "count": 6
+    },
+    {
+      "key": "timers",
+      "label": "Timers",
+      "count": 3
+    }
+  ],
+  "total": 530
+}

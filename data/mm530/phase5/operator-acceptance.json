@@ -1,0 +1,14 @@
+{
+  "schema_version": "MM530_PHASE5_OPERATOR_ACCEPTANCE_V1",
+  "recorded_at": "2026-10-27",
+  "tools": 530,
+  "decision": "ACCEPT_FOR_CONTINUATION_WITH_BROWSER_REVALIDATION_DEFERRED",
+  "operator_instruction": "Treat utility/browser testing as accepted for continuation and move the complete fleet into Phase 6; perform consolidated testing after Phase 6/7/8 integration work.",
+  "last_measured_run_id": 40466034947,
+  "last_measured_state": {
+    "browser_build_pass": 530,
+    "hard_fail_tools": 11,
+    "review_or_blocked_tools": 141
+  },
+  "evidence_policy": "Historical Phase 5 results are preserved and not rewritten as synthetic PASS. Final acceptance testing remains required before publication."
+}

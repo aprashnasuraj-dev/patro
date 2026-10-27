@@ -1,0 +1,15 @@
+{
+  "schema_version": "MM530_PHASE8_INTEGRATION_MANIFEST_V1",
+  "tools": 530,
+  "adapter": "src/mm530/Mm530Routes.tsx",
+  "registry": "src/mm530/mm530-registry.json",
+  "asset_builder": "scripts/mm530/prepare-vite-integration.mjs",
+  "runtime_asset_root": "/_mm530/<TOOL-ID>/page.html",
+  "lazy_runtime": true,
+  "dashboard_routes": [
+    "/toolbox",
+    "/toolbox/<category>"
+  ],
+  "canonical_route_source": "data/mm530/phase4/all-tools.json",
+  "verification": "DEFERRED_UNTIL_INTEGRATION_SWEEP"
+}
