@@ -1,0 +1,12 @@
+import {finite,roundTo,isoDate} from '../_vendor/business';
+function calendarFraction(start:Date,end:Date){const year=start.getUTCFullYear();const ys=Date.UTC(year,0,1),ye=Date.UTC(year+1,0,1);return ((end.valueOf()-start.valueOf())/86400000+1)/((ye-ys)/86400000)}
+function weekdayCount(a:Date,b:Date){let n=0;for(let t=a.valueOf();t<=b.valueOf();t+=86400000){const d=new Date(t).getUTCDay();if(d!==0&&d!==6)n++}return n}
+export function proRata(salaryRaw:number,fullHoursRaw:number,employeeHoursRaw:number,fullDaysRaw:number,employeeDaysRaw:number,leaveRaw:number,startRaw:string,endRaw:string,basis:'calendar'|'weekdays'){
+ const salary=finite(salaryRaw,'Full-time salary',0,1e12),fh=finite(fullHoursRaw,'Full-time weekly hours',.25,168),eh=finite(employeeHoursRaw,'Employee weekly hours',0,168),fd=finite(fullDaysRaw,'Full-time days/week',.5,7),ed=finite(employeeDaysRaw,'Employee days/week',0,7),leave=finite(leaveRaw,'Full annual leave',0,365);
+ if(eh>fh*2)throw new Error('Employee hours are unusually high relative to full-time hours; check the inputs.');if(ed>7)throw new Error('Employee days/week cannot exceed 7.');
+ const s=isoDate(startRaw,'Employment start'),e=isoDate(endRaw,'Employment end');if(e.valueOf()<s.valueOf())throw new Error('Employment end cannot be before start.');if(s.getUTCFullYear()!==e.getUTCFullYear())throw new Error('This preparation supports a single calendar year per calculation; split cross-year periods.');
+ const salaryFte=eh/fh,leaveFte=ed/fd,year=s.getUTCFullYear();let fraction:number,periodUnits:number,totalUnits:number;
+ if(basis==='calendar'){fraction=calendarFraction(s,e);periodUnits=Math.round((e.valueOf()-s.valueOf())/86400000)+1;totalUnits=(Date.UTC(year+1,0,1)-Date.UTC(year,0,1))/86400000}else{periodUnits=weekdayCount(s,e);totalUnits=weekdayCount(new Date(Date.UTC(year,0,1)),new Date(Date.UTC(year,11,31)));fraction=periodUnits/totalUnits}
+ const annualizedSalary=salary*salaryFte,periodSalary=annualizedSalary*fraction,annualizedLeave=leave*leaveFte,periodLeave=annualizedLeave*fraction;
+ return {salaryFte:roundTo(salaryFte,4),leaveFte:roundTo(leaveFte,4),periodFraction:roundTo(fraction,6),periodUnits,totalYearUnits:totalUnits,basis,annualizedSalary:roundTo(annualizedSalary),periodSalary:roundTo(periodSalary),annualizedLeaveDays:roundTo(annualizedLeave,2),periodLeaveDays:roundTo(periodLeave,2),periodLeaveHours:ed>0?roundTo(periodLeave*(eh/ed),2):0};
+}

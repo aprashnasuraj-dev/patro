@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0008",
+  "title": "Postman Collection to Markdown Docs",
+  "route": "/tools/postman-collection-to-markdown",
+  "slug": "postman-collection-to-markdown",
+  "source": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "family_id": "F0003",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": false,
+  "published": false,
+  "seo": {
+    "title": "Postman Collection to Markdown Docs — Private, Browser-Based Draft Tool | AafnaiPatro",
+    "meta_description": "Recursive folder-aware Markdown export focusing on request metadata and endpoint structure, excluding secrets and scripts.",
+    "h1": "Turn a Postman collection into a structured API handbook",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "privacy": {
+    "routine_worker_requests": 0,
+    "user_content_transmission": false,
+    "file_execution": false,
+    "input_budget": 1000000
+  },
+  "requirements": {
+    "runtime": "browser, compiled via existing lazy route loader",
+    "dependencies": {},
+    "test_dev_dependencies": {
+      "vitest": "3.2.4"
+    }
+  },
+  "input": "textarea and optional file local read",
+  "output": "api-handbook.md",
+  "limitations": "Postman v3 folder-based exports are not supported. Auth tokens, response examples, scripts and request bodies are intentionally omitted."
+}

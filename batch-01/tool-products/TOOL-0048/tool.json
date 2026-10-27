@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0048",
+  "name": "HTTP Response Header Analyzer",
+  "reserved_route": "/tools/http-response-header-analyzer",
+  "family_id": "F0023",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Inspect pasted HTTP response headers for common caching, security and CORS misconfigurations.",
+  "seo": {
+    "title": "HTTP Response Header Analyzer | Mission Mangal Tools",
+    "meta_description": "Inspect pasted HTTP response headers for common caching, security and CORS misconfigurations.",
+    "h1": "HTTP Response Header Analyzer",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

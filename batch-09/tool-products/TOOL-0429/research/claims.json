@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "statement": "Deposit protection exposure model",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "UK constituent nations, tenancy type and pre/post\u2013May 2026 rules need individual evaluation; dates are illustrative.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "UK constituent nations, tenancy type and pre/post\u2013May 2026 rules need individual evaluation; dates are illustrative.",
+  "authoritative_references": [
+    "https://www.gov.uk/tenancy-deposit-protection",
+    "https://www.gov.uk/deposit-protection-schemes-and-landlords/if-you-dont-protect-your-tenants-deposit",
+    "https://www.citizensadvice.org.uk/housing/deposits/getting-your-tenancy-deposit-back/"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

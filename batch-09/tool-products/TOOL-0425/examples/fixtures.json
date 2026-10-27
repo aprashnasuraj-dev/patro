@@ -1,0 +1,20 @@
+{
+  "default_inputs": {
+    "jurisdiction": "England - ground-specific",
+    "served": "2026-11-01",
+    "serviceLag": 2,
+    "noticeDays": 60,
+    "proposed": "2027-01-10"
+  },
+  "known_answer": {
+    "output_label": "Assumed legal service date",
+    "expected_value": "2026-11-03"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

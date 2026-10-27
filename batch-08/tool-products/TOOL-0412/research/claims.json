@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0412",
+  "claims": [
+    {
+      "claim": "The 2026 individual annualization factors are 4, 2.4, 1.5 and 1 for Jan–Mar, Jan–May, Jan–Aug and full year.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The tool is a planning model, not a substitute for completing every line of final Form 2210/Schedule AI.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0443",
+  "related": [
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "proposed_canonical": "/generators/print-bleed-and-safe-zone-templates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0446",
+      "title": "Label Sheet Template & Alignment Printer",
+      "proposed_canonical": "/utilities/label-sheet-print-alignment-calibrator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0117",
+      "title": "Text Width in Pixels Calculator",
+      "proposed_canonical": "/calculators/text-width-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0074",
+      "title": "Title and Meta Description Pixel Width Checker",
+      "proposed_canonical": "/validators/title-tag-pixel-width-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0081",
+      "title": "Zero-Width and Invisible Character Detector",
+      "proposed_canonical": "/analyzers/invisible-character-detector",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

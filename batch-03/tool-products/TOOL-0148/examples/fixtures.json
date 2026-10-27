@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0148",
+  "known_answer_examples": [
+    "Set text fields, checkboxes and dropdowns in a tax form, then download the filled copy."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

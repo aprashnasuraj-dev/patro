@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0261",
+  "related": [
+    {
+      "id": "TOOL-0269",
+      "title": "Gravel, Mulch and Soil Volume Calculator",
+      "proposed_canonical": "/calculators/gravel-mulch-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0401",
+      "title": "Fence & Deck Post Concrete Calculator",
+      "proposed_canonical": "/calculators/fence-post-concrete-bags-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0404",
+      "title": "Rebar & Welded Mesh Slab Takeoff",
+      "proposed_canonical": "/calculators/rebar-mesh-slab-takeoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0451",
+      "title": "Aquarium Volume, Water Change & Dose Calculator",
+      "proposed_canonical": "/calculators/aquarium-volume-water-change-dosing",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

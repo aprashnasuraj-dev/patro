@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0019",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Report package versions appearing at multiple package-lock v2/v3 locations and expose path-level evidence.",
+      "evidence_urls": [
+        "https://docs.npmjs.com/cli/v11/configuring-npm/package-lock-json/"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Multiple versions of the same package are not automatically a vulnerability or redundant install; deduplication can break semver constraints.",
+      "evidence_urls": [
+        "https://docs.npmjs.com/cli/v11/configuring-npm/package-lock-json/"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

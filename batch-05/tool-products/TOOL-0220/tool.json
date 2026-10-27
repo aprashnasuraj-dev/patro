@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0220",
+  "name": "Effect Size Calculator (Cohen's d, Hedges' g, Glass's delta)",
+  "route": "/tools/effect-size-calculator-cohens-d",
+  "batch": "BATCH-05",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0094",
+  "engineering_family": "Hypothesis Testing Lab",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Effect Size Calculator (Cohen's d, Hedges' g, Glass's delta) — Browser Calculator",
+    "meta_description": "Calculate Cohen's d, bias-corrected Hedges' g, and Glass's delta from two-group summary statistics with approximate confidence intervals.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

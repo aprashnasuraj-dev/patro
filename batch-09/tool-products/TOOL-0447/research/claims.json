@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Stitches, fabric count and finishing allowance",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Pattern orientation, manufacturer shrinkage, stretch, hoop/frame requirements and individual coverage do not follow solely from fabric count.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [],
+  "assumptions": "Pattern orientation, manufacturer shrinkage, stretch, hoop/frame requirements and individual coverage do not follow solely from fabric count.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

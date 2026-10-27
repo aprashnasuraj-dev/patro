@@ -1,0 +1,4 @@
+/* Tracking Parameter Stripper (UTM, fbclid, gclid): task-specific skin extends shared accessible composition. */
+.hero{background:linear-gradient(120deg,#155bb7,#102033 92%)}
+.workbench .panel:first-child{border-top:4px solid #155bb7}
+.result-code::selection{background:#3dd4c2;color:#071a2a}

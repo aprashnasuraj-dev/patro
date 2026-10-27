@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0316",
+  "research_scope": "Only implementation-changing date/time/calendar standards or provenance were collected.",
+  "sources": [
+    {
+      "url": "https://support.microsoft.com/en-gb/excel/date-systems-in-excel",
+      "title": "Date systems in Excel",
+      "publisher": "Microsoft",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions or semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; cite or summarize, do not redistribute protected standard text.",
+      "uncertainty": "Low for the cited definition; later revisions may change details.",
+      "important_limitations": "Excel supports 1900 and 1904 systems; the 1900 system preserves a compatibility leap-day anomaly around serial 60."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/excel/determine-a-leap-year",
+      "title": "Method to determine whether a year is a leap year",
+      "publisher": "Microsoft Learn",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions or semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; cite or summarize, do not redistribute protected standard text.",
+      "uncertainty": "Low for the cited definition; later revisions may change details.",
+      "important_limitations": "Microsoft documents that Excel treats 1900 as a leap year for compatibility even though Gregorian 1900 is not a leap year."
+    }
+  ],
+  "internal_sources": [],
+  "no_external_source_reason": null
+}

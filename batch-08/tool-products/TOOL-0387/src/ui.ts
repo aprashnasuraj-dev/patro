@@ -1,0 +1,1 @@
+import{uart}from'./core';import{q,num,setError,table}from'../_vendor/ui';q('run').addEventListener('click',()=>{const o=q('result');try{const r=uart(num('clock')*1e6,num('baud'));o.replaceChildren(table(['Mode','UBRR','Actual baud','Error %'],r.map(x=>[x.mode,x.ubrr,x.actual.toFixed(2),x.error.toFixed(4)])))}catch(e){setError(o,e)}});

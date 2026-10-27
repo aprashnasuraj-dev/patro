@@ -1,0 +1,50 @@
+{
+  "id": "TOOL-0442",
+  "name": "Print Bleed & Safe-Zone Template Generator",
+  "slug": "print-bleed-and-safe-zone-templates",
+  "route": "/tools/print-bleed-and-safe-zone-templates",
+  "family": "F0200",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Print Bleed & Safe-Zone Template Generator — Interactive Local Tool | AafnaiPatro",
+    "description": "Generate a print artwork coordinate plan and scalable SVG trim/bleed/safe guide from explicit printer-specified dimensions."
+  },
+  "execution": {
+    "mode": "client-only",
+    "account_required": false,
+    "worker_required": false,
+    "third_party_content_transmission": false,
+    "lazy_load_route_module": true
+  },
+  "entrypoints": {
+    "html": "page.html",
+    "typescript": "src/ui.ts",
+    "css": "src/styles.css"
+  },
+  "shared_imports": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css",
+    "tool-products/_shared/visual.ts"
+  ],
+  "security": {
+    "bounded_inputs": true,
+    "reject_nonfinite": true,
+    "no_user_content_upload": true,
+    "safe_text_rendering": true,
+    "no_untrusted_html": true
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "published": false,
+    "sitemap": false
+  }
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "label": "HMRC HS284 2026",
+    "url": "https://www.gov.uk/government/publications/shares-and-capital-gains-tax-hs284-self-assessment-helpsheet/hs284-shares-and-capital-gains-tax-2026",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Delivered kWh demand is held constant; energy conversions are nominal.",
+    "sources": [
+      "https://www.energy.gov/energysaver/home-heating-systems"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Installation cost and seasonal COP uncertainty are not included."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

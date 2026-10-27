@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0081",
+  "related": [
+    {
+      "id": "TOOL-0082",
+      "title": "Homoglyph and Confusable Character Checker",
+      "proposed_canonical": "/validators/homoglyph-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0100",
+      "title": "Emoji and Grapheme Cluster Inspector",
+      "proposed_canonical": "/analyzers/emoji-unicode-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0083",
+      "title": "Unicode Normalization Comparer (NFC, NFD, NFKC, NFKD)",
+      "proposed_canonical": "/utilities/unicode-normalization-comparer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0084",
+      "title": "Mojibake Repair Tool",
+      "proposed_canonical": "/editors/fix-mojibake",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0086",
+      "title": "Line Ending Detector and Converter (CRLF, LF, CR)",
+      "proposed_canonical": "/converters/line-ending-converter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

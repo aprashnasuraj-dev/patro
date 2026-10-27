@@ -1,0 +1,1 @@
+import {it,expect} from 'vitest'; import {planSilence} from '../src/core'; it('uses silenceremove',()=>expect(planSilence({thresholdDb:-40,minDuration:.5,keepMs:100,mode:'all-pauses'},'i','o').join(' ')).toContain('silenceremove'));

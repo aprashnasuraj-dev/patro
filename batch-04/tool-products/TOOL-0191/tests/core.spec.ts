@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {validateCsv} from '../src/core';describe('validateCsv',()=>{it('finds ragged rows',()=>expect(validateCsv('a,b\n1,2\n3').issues.some(x=>x.code==='RAGGED_ROW')).toBe(true));it('flags formula-like cells',()=>expect(validateCsv('a\n=1+1').issues.some(x=>x.code==='FORMULA_LIKE')).toBe(true));});

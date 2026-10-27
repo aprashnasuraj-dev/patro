@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0488",
+  "name": "Fertilizer & Seed Spreader Settings Calculator",
+  "route": "/tools/fertilizer-seed-spreader-settings-calculator",
+  "slug": "fertilizer-seed-spreader-settings-calculator",
+  "family": "F0286",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Fertilizer & Seed Spreader Settings Calculator | AafnaiPatro Tools",
+    "description": "Use measured catch-weight and calibrated width/distance to estimate spreader delivery versus the bag label rate; never invent a proprietary dial setting."
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

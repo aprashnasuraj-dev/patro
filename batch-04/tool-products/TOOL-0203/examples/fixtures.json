@@ -1,0 +1,11 @@
+{
+  "input": {
+    "successes": 42,
+    "n": 100,
+    "confidence": 0.95
+  },
+  "checks": [
+    "interval contains observed proportion",
+    "bounds remain within 0..1"
+  ]
+}

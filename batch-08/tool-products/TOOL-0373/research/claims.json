@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0373",
+  "claims": [
+    {
+      "claim": "Balance neutral chemical equations with exact rational linear algebra and return the smallest positive integer coefficient set when uniquely determined.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The source-prep solver handles neutral molecular formulas with parentheses/brackets; ionic charge, electrons, redox media and reaction feasibility are outside scope.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

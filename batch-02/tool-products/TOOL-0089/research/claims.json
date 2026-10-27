@@ -1,0 +1,12 @@
+{
+  "assumptions": "JS regex source, flags, replacement references and bounded sample input.",
+  "limitations": "Worker timeout is a safety boundary, not a complexity proof.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Worker/terminate"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

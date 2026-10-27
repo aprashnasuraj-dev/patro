@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0526",
+  "related": [
+    {
+      "id": "TOOL-0492",
+      "title": "Power Station & Generator Runtime Calculator",
+      "proposed_canonical": "/calculators/portable-power-station-runtime-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0271",
+      "title": "BTU and HVAC Room Sizing Estimator",
+      "proposed_canonical": "/calculators/btu-calculator-room-size",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0411",
+      "title": "Gutter & Downspout Sizing by City Rainfall",
+      "proposed_canonical": "/calculators/gutter-downspout-sizing-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0434",
+      "title": "EV Home Charging Cost & Circuit Sizing",
+      "proposed_canonical": "/utilities/ev-charging-cost-and-circuit-sizing",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0525",
+      "title": "Heat Pump vs Gas Boiler Payback Calculator",
+      "proposed_canonical": "/calculators/heat-pump-vs-gas-boiler-payback-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

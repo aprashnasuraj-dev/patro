@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0051",
+  "scope_claim": "Compose Permissions-Policy allowlists for camera, microphone, geolocation and other features.",
+  "authoritative_urls": [
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy",
+    "https://w3c.github.io/webappsec-permissions-policy/"
+  ],
+  "assumptions": [
+    "Recognized Permissions-Policy directives and HTTPS allowlist origins.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Browser support and feature names change; iframe allow attribute is separately enforced.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

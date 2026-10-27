@@ -1,0 +1,108 @@
+{
+  "id": "TOOL-0514",
+  "name": "Australian Super Concessional Carry-Forward Calculator",
+  "slug": "australia-super-concessional-carry-forward-calculator",
+  "route": "/tools/australia-super-concessional-carry-forward-calculator",
+  "family": "F0305",
+  "description": "Model unused concessional contribution capacity across five prior financial years, consuming oldest eligible unused cap first.",
+  "seo": {
+    "title": "Australian Super Concessional Carry-Forward Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Model unused concessional contribution capacity across five prior financial years, consuming oldest eligible unused cap first.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "allowances",
+  "inputs": [
+    {
+      "key": "totalBalance",
+      "label": "Total super balance at previous 30 June",
+      "default": 410000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "currentCap",
+      "label": "Current FY concessional contributions cap",
+      "default": 30000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "currentContrib",
+      "label": "Current FY employer plus salary-sacrifice/personal deductible contributions",
+      "default": 18000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "fyOld1",
+      "label": "Unused oldest eligible year cap (expires first)",
+      "default": 6000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "fyOld2",
+      "label": "Unused next year cap",
+      "default": 4500,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "fyOld3",
+      "label": "Unused middle year cap",
+      "default": 3000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "fyOld4",
+      "label": "Unused newer year cap",
+      "default": 2000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "fyOld5",
+      "label": "Unused newest prior year cap",
+      "default": 4000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    }
+  ]
+}

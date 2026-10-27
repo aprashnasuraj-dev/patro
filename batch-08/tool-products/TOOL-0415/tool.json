@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0415",
+  "name": "GST/HST Quick Method vs Regular Method",
+  "reserved_route": "/tools/canada-gst-hst-quick-method-calculator",
+  "engineering_family_id": "F0232",
+  "engineering_family": "GST/HST Quick Method vs Regular Method",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "GST/HST Quick Method vs Regular Method | AafnaiPatro Tools",
+    "description": "Compare a Canadian GST/HST Quick Method remittance estimate with a regular-method tax-minus-ITCs estimate.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

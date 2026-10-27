@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0341",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "This is not the complete upstream twitter-text URL and emoji parser. Other platforms change limits and weighting; use the editable limit rather than treating a preset as permanent."
+}

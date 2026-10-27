@@ -1,0 +1,37 @@
+{
+  "tool_id": "TOOL-0259",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "title": "RFC 6350 — vCard Format Specification",
+      "url": "https://www.rfc-editor.org/rfc/rfc6350.html",
+      "version": "4.0 / RFC 6350",
+      "effective_date": "2011-08",
+      "retrieved_at": "2026-10-26",
+      "supports": "vCard 4.0 grammar, mandatory VERSION/FN properties and line-folding guidance.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    },
+    {
+      "title": "qr 0.7.2",
+      "url": "https://www.npmjs.com/package/qr/v/0.7.2",
+      "version": "0.7.2",
+      "effective_date": null,
+      "retrieved_at": "2026-10-26",
+      "supports": "Local QR encoder used as a lazy bundled dependency; MIT OR Apache-2.0.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    },
+    {
+      "title": "DENSO WAVE — QR Code",
+      "url": "https://www.qrcode.com/en/",
+      "version": null,
+      "effective_date": null,
+      "retrieved_at": "2026-10-26",
+      "supports": "QR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    }
+  ],
+  "no_external_source_reason": null
+}

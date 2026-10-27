@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0213",
+  "name": "Z-Score to Percentile Calculator (Normal Distribution)",
+  "route": "/tools/z-score-to-percentile-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0096",
+  "engineering_family": "Outliers and Statistical Distributions",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Z-Score to Percentile Calculator (Normal Distribution) — Browser Calculator",
+    "meta_description": "Convert a standard-normal Z-score to its left-tail percentile, right-tail probability, and symmetric two-sided tail probability.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0307",
+  "name": "ICS Calendar File Viewer and Converter to CSV",
+  "route": "/tools/ics-to-csv",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0165",
+  "engineering_family": "ICS and RRULE Calendar Studio",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "ICS Calendar File Viewer and Converter to CSV — Private Browser Tool",
+    "meta_description": "Inspect up to 5,000 VEVENT components from pasted or locally selected ICS text, unfold RFC 5545 content lines, and export a spreadsheet-safe CSV without recurrence expansion.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

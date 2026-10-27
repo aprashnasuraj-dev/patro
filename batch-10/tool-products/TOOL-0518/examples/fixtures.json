@@ -1,0 +1,9 @@
+{
+  "tool": "TOOL-0518",
+  "default_inputs": {
+    "shifts": "date,hours,meal_violations,rest_violations,paid\n2026-10-19,10,1,0,260\n2026-10-20,8,0,1,200",
+    "hourly": "25"
+  },
+  "worked_example": "A single verified missed meal period can generate a one-hour regular-rate premium for the workday.",
+  "source_status": "TEST_PENDING"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0422",
+  "related": [
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0245",
+      "title": "Break-Even Analysis Calculator with Chart",
+      "proposed_canonical": "/calculators/break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0227",
+      "title": "EMI Calculator: Flat Rate vs Reducing Balance",
+      "proposed_canonical": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0238",
+      "title": "Inflation Calculator with Custom Rate",
+      "proposed_canonical": "/calculators/inflation-calculator-custom-rate",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

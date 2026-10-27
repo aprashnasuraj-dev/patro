@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0233",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Accelerated plan is modeled as one extra monthly payment per year spread evenly across 12 months."
+  ],
+  "uncertainty": [
+    "Actual biweekly servicer programs may post payments differently and may charge fees."
+  ]
+}

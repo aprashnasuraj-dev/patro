@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0281",
+  "related": [
+    {
+      "id": "TOOL-0285",
+      "title": "Barbell Plate Loading Calculator",
+      "proposed_canonical": "/calculators/barbell-plate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0300",
+      "title": "DOTS and Wilks Score Calculator for Powerlifting",
+      "proposed_canonical": "/calculators/dots-score-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0284",
+      "title": "Heart Rate Zone Calculator (Karvonen and %Max)",
+      "proposed_canonical": "/calculators/heart-rate-zone-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0240",
+      "title": "Employer Retirement Match Calculator (Custom Formula)",
+      "proposed_canonical": "/calculators/employer-match-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0372",
+      "title": "Molar Mass Calculator from Chemical Formula",
+      "proposed_canonical": "/calculators/molar-mass-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

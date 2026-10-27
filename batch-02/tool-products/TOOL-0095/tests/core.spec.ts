@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {analyze} from '../src/core';describe('readability',()=>{it('returns six metrics',()=>expect(Object.keys(analyze('One clear sentence. Another clear sentence.').scores)).toHaveLength(6));it('rejects tiny sample',()=>expect(()=>analyze('Hi.')).toThrow())});

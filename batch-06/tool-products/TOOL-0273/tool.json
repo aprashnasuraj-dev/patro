@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0273",
+  "name": "Rental Property Cash Flow and ROI Calculator",
+  "route": "/tools/rental-property-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0143",
+  "engineering_family": "Rental Yield, Cash Flow and ROI",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Rental Property Cash Flow and ROI Calculator — Private Browser Tool",
+    "meta_description": "Estimate first-year rental cash flow, NOI, mortgage payment, debt-service coverage and cash-on-cash return from explicit financing and expense assumptions.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

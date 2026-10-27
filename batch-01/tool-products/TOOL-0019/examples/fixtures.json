@@ -1,0 +1,20 @@
+{
+  "sample_input": "{\"lockfileVersion\":3,\"packages\":{\"\":{\"name\":\"sample\"},\"node_modules/a\":{\"version\":\"1.0.0\"},\"node_modules/b/node_modules/a\":{\"version\":\"2.0.0\"}}}",
+  "intended_action": "Find duplicated packages",
+  "manual_review_cases": [
+    {
+      "input": "multiple versions",
+      "expectation": "duplicate group"
+    },
+    {
+      "input": "invalid lockfile",
+      "expectation": "reject"
+    }
+  ],
+  "limits": "Multiple versions of the same package are not automatically a vulnerability or redundant install; deduplication can break semver constraints.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "duplicatePackages"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

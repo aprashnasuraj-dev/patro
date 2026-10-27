@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0145",
+  "claims": [
+    {
+      "claim": "Apply sequential Bates labels to every PDF page with configurable prefix, zero padding, position and typography.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Bates stamping changes the file and invalidates existing digital signatures.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

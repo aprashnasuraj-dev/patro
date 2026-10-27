@@ -1,0 +1,1 @@
+import {parsePertTasks,simulatePert} from "./core";self.onmessage=(e:MessageEvent)=>{try{(self as any).postMessage({result:simulatePert(parsePertTasks(e.data.tasks),e.data.iterations,e.data.seed,e.data.lambda)});}catch(err){(self as any).postMessage({error:err instanceof Error?err.message:String(err)});}};

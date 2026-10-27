@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Count self-classified card openings inside prior rolling 24 months, not application inquiries.",
+    "supporting_urls": [
+      "https://www.chase.com/personal/credit-cards/education/basics"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Chase 5/24 is an unofficial reported practice, not guaranteed underwriting law."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "Five counted personal card openings within 24 months may trigger an additional underwriting hurdle.",
+    "status": "TEST_PENDING"
+  }
+]

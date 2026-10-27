@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0223",
+  "claims": [
+    {
+      "claim": "RSU value can create wage income/withholding consequences in U.S. contexts; final liability is not inferred from payroll withholding.",
+      "status": "SOURCE_PREPARED",
+      "source_ids": [
+        "IRS-RSU-5992",
+        "IRS-P15-2026"
+      ]
+    },
+    {
+      "claim": "User-entered rates are used so the tool does not silently assume a jurisdiction.",
+      "status": "SOURCE_PREPARED",
+      "source_ids": [
+        "IRS-RSU-5992",
+        "IRS-P15-2026"
+      ]
+    }
+  ],
+  "runtime_qa": "TEST_PENDING"
+}

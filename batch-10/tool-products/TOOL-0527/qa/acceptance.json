@@ -1,0 +1,17 @@
+{
+  "status": "TEST_PENDING",
+  "executed": false,
+  "tests_passed": null,
+  "candidate_issues": [
+    "citation recency",
+    "date/location exceptions",
+    "build and TypeScript bundling",
+    "a11y 320px",
+    "CSV injection export",
+    "integer precision",
+    "malformed and oversized inputs",
+    "unsupported branches"
+  ],
+  "license_review_required": true,
+  "publication_ready": false
+}

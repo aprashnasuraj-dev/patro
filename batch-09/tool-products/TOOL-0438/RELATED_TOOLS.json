@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0438",
+  "related": [
+    {
+      "id": "TOOL-0439",
+      "title": "Money Factor to APR & True Lease Cost",
+      "proposed_canonical": "/calculators/car-lease-money-factor-apr-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0229",
+      "title": "True APR Calculator Including Fees",
+      "proposed_canonical": "/calculators/true-apr-calculator-with-fees",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0155",
+      "title": "True PDF Redaction (Rasterize Redacted Pages)",
+      "proposed_canonical": "/utilities/redact-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0437",
+      "title": "Quarterly IFTA Fuel Tax Calculator",
+      "proposed_canonical": "/calculators/ifta-quarterly-fuel-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0433",
+      "title": "Tongue Weight, Payload & GCWR Checker",
+      "proposed_canonical": "/validators/trailer-tongue-weight-payload-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

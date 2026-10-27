@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0349",
+  "related": [
+    {
+      "id": "TOOL-0350",
+      "title": "Webcam and Microphone Test",
+      "proposed_canonical": "/validators/webcam-mic-test",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0146",
+      "title": "PDF Watermark (Text, Image, Tiled)",
+      "proposed_canonical": "/editors/pdf-watermark",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0441",
+      "title": "Social Video Safe-Zone Overlay Previewer",
+      "proposed_canonical": "/utilities/social-video-safe-zone-overlay",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0342",
+      "title": "Instagram Carousel and Grid Image Splitter",
+      "proposed_canonical": "/editors/split-image-for-instagram-carousel",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0347",
+      "title": "One Image to All Social Sizes Resizer",
+      "proposed_canonical": "/editors/social-media-image-resizer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

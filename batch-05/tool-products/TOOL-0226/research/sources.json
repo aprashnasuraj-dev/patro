@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0226",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Monthly compounding, end-of-month contributions, contribution step-up after each 12 months."
+  ],
+  "uncertainty": [
+    "Constant return assumption; fees, taxes and market volatility are excluded."
+  ]
+}

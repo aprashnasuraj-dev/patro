@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0408",
+  "claims": [
+    {
+      "claim": "Effective assembly U is the area-weighted sum of path U-factors; effective R is 1/U.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The tool does not model thermal bridges beyond the entered framing fraction/path values.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

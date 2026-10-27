@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0213",
+  "claims": [
+    {
+      "claim": "Convert a standard-normal Z-score to its left-tail percentile, right-tail probability, and symmetric two-sided tail probability.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Z is expressed in standard-deviation units under N(0,1).",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "A Z percentile assumes the standard normal model. It does not convert an arbitrary raw score unless the score was first standardized appropriately.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

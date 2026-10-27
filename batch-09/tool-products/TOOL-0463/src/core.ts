@@ -1,0 +1,7 @@
+import {N,S,D,ODate,addDays,Q,M,P,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Pure, bounded calculations; no user-data storage or network. */
+export function calculate(i:Record<string,unknown>):Result {
+const page=S(i,'page',30),rows=N(i,'lines',20,36),left=N(i,'left',.4,2),right=N(i,'right',.4,2),top=N(i,'top',.4,2),bottom=N(i,'bottom',.4,2),court=S(i,'court',100);if(!Number.isInteger(rows)||!['US Letter','A4'].includes(page)||!court)throw Error('Enter supported paper and whole line count');const w=page==='US Letter'?8.5:210/25.4,h=page==='US Letter'?11:297/25.4;if(left+right>=w-2||top+bottom>=h-2)throw Error('Margins consume printable page');const step=(h-top-bottom)/(rows-1);if(step<.15||step>1/3+1e-9)throw Error('Use approximately 3–6 numbered lines per inch for the selected ruled template; verify jurisdiction rule');
+return R([{label:'Template sheet',value:`${page}: ${Q(w,3)} × ${Q(h,3)} in`},{label:'Ruled lines',value:String(rows)},{label:'Line spacing',value:`${Q(step,3)} in`},{label:'Writable width',value:`${Q(w-left-right,3)} in`}],[`Template has no court authorization. Verify ${court} court rules, line spacing, paper size, caption formatting, margins, e-filing and current local orders. Print with browser scale 100%, not fit-to-page.`, 'This tool makes ruled writing paper, not a complete legal pleading or mandatory court form.'],['Usable width = page width − margins; evenly spaced line baselines = (page height − margins)/(line count−1).']);
+}

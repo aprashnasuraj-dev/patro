@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Searches standard resistor pairs and evaluates loaded divider output.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

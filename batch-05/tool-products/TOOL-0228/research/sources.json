@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0228",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Monthly interest and fixed payment; optional new charges are added monthly; no late fees or variable APR."
+  ],
+  "uncertainty": [
+    "Issuer minimum-payment formulas, fees, compounding conventions and rate changes can differ."
+  ]
+}

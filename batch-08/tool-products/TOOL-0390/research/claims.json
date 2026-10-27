@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Converts filter strength to stops and multiplies exposure by 2^stops.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

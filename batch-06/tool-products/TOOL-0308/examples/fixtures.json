@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0308",
+  "examples": [
+    {
+      "inputs": {
+        "start": "2026-01-31",
+        "freq": "MONTHLY",
+        "interval": 1,
+        "count": 4
+      },
+      "expected_occurrences": [
+        "2026-01-31",
+        "2026-03-31",
+        "2026-05-31",
+        "2026-07-31"
+      ]
+    }
+  ]
+}

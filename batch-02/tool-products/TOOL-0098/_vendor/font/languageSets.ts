@@ -1,0 +1,20 @@
+export const LANGUAGE_SETS:Record<string,{label:string,required:string,notes:string}>={
+'en':{label:'English',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',notes:'Basic Latin letters.'},
+'es':{label:'Spanish',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÁÉÍÓÚÜÑáéíóúüñ',notes:'Core modern Spanish letters; punctuation is reported separately.'},
+'fr':{label:'French',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸàâæçéèêëîïôœùûüÿ',notes:'Core French letters and ligatures.'},
+'de':{label:'German',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÄÖÜẞäöüß',notes:'German alphabet including ß/ẞ.'},
+'pt':{label:'Portuguese',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÁÂÃÀÇÉÊÍÓÔÕÚÜáâãàçéêíóôõúü',notes:'Core Portuguese diacritics.'},
+'it':{label:'Italian',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÈÉÌÍÎÒÓÙÚàèéìíîòóùú',notes:'Italian core Latin repertoire including common accented vowels.'},
+'pl':{label:'Polish',required:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzĄĆĘŁŃÓŚŹŻąćęłńóśźż',notes:'Polish alphabet.'},
+'tr':{label:'Turkish',required:'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZabcçdefgğhıijklmnoöprsştuüvyz',notes:'Turkish alphabet including dotted/dotless I.'},
+'ru':{label:'Russian',required:'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя',notes:'Modern Russian alphabet.'},
+'uk':{label:'Ukrainian',required:'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйклмнопрстуфхцчшщьюя',notes:'Modern Ukrainian alphabet.'},
+'el':{label:'Greek',required:'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψωΆΈΉΊΌΎΏάέήίόύώϊϋΐΰ',notes:'Modern Greek core letters and tonos/dialytika forms.'},
+'ne':{label:'Nepali (Devanagari core)',required:'अआइईउऊऋएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहािीुूृेैोौंःँ्',notes:'Core Devanagari letters and marks used for Nepali; conjunct shaping is not tested.'},
+'hi':{label:'Hindi (Devanagari core)',required:'अआइईउऊऋएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहािीुूृेैोौंःँ्',notes:'Core Devanagari letters and marks; conjunct shaping is not tested.'},
+'ar':{label:'Arabic (core)',required:'ابتثجحخدذرزسشصضطظعغفقكلمنهويءآأؤإئَُِّْ',notes:'Core Arabic letters/marks; joining and shaping behavior is not tested.'},
+'he':{label:'Hebrew (core)',required:'אבגדהוזחטיךכלםמןנסעףפץצקרשת',notes:'Core Hebrew letters and finals; niqqud optional.'},
+'ja':{label:'Japanese sample coverage',required:'あいうえおかきくけこさしすせそたちつてとなにぬねのアイウエオカキクケコサシスセソタチツテト一日本語',notes:'Representative kana/kanji sample, not full Japanese repertoire.'},
+'ko':{label:'Korean sample coverage',required:'가나다라마바사아자차카타파하한글한국어',notes:'Representative Hangul syllables, not the full 11,172-syllable block.'},
+'zh-hans':{label:'Simplified Chinese sample coverage',required:'的一是在不了有和人这中大为上个国我以要他时来用们生到作地于出就分对成会可主发年动同工也能下过子说产种面而方后多定行学法所民得经',notes:'Representative high-frequency sample only; not a full CJK repertoire certification.'}
+};

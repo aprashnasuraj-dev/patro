@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0074",
+  "name": "Title and Meta Description Pixel Width Checker",
+  "reserved_route": "/tools/title-tag-pixel-width-checker",
+  "family_id": "F0038",
+  "family": "Meta Tag and SERP Preview Tool",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Title and Meta Description Pixel Width Checker | AafnaiPatro Tools",
+    "description": "Measure title and description canvas widths and preview practical truncation risk.",
+    "h1": "Title and Meta Description Pixel Width Checker",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

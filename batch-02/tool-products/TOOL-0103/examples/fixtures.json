@@ -1,0 +1,6 @@
+{
+  "sample_input": "Choose a WOFF2 file.",
+  "expected_behavior": "A WOFF2 generated from a TrueType font decodes back to an sfnt TTF payload and can be downloaded.",
+  "qa_status": "TEST_PENDING",
+  "binary_fixtures_note": "Integration tests must supply redistributable/synthetic font fixtures; no third-party font binary is bundled in this source checkpoint."
+}

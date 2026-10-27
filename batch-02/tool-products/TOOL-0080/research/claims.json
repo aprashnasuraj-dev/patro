@@ -1,0 +1,12 @@
+{
+  "assumptions": "ISO dates/timestamps; HTTPS URLs when provided.",
+  "limitations": "Purely virtual events may not qualify for Google Event rich results.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://schema.org/Event",
+    "https://developers.google.com/search/docs/appearance/structured-data/event"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

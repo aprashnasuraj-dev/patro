@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0158",
+  "related": [
+    {
+      "id": "TOOL-0141",
+      "title": "PDF Metadata Viewer and Scrubber",
+      "proposed_canonical": "/analyzers/pdf-metadata-remover",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0157",
+      "title": "PDF Attachment Extractor",
+      "proposed_canonical": "/extractors/extract-pdf-attachments",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0160",
+      "title": "PDF Link Extractor",
+      "proposed_canonical": "/extractors/extract-links-from-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0151",
+      "title": "Images to PDF with Page Size and Margin Control",
+      "proposed_canonical": "/converters/images-to-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0153",
+      "title": "Extract Text from PDF by Page",
+      "proposed_canonical": "/extractors/pdf-text-extractor",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

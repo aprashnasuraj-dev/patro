@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0386",
+  "related": [
+    {
+      "id": "TOOL-0387",
+      "title": "UART Baud Rate Error Calculator",
+      "proposed_canonical": "/calculators/uart-baud-rate-error-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0398",
+      "title": "Coffee Brew Ratio Calculator with Brew Timer",
+      "proposed_canonical": "/calculators/coffee-ratio-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0291",
+      "title": "HIIT and Tabata Interval Timer",
+      "proposed_canonical": "/timers/tabata-interval-timer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0312",
+      "title": "Countdown Timer Generator with Shareable Link",
+      "proposed_canonical": "/timers/countdown-timer-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "proposed_canonical": "/calculators/resistor-color-code-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

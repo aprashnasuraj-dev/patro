@@ -1,0 +1,18 @@
+{
+  "sample_input": {
+    "name": "Garden soup recipe",
+    "description": "Watch how to prepare a quick vegetable soup.",
+    "thumbnail": "https://example.com/thumbnail.jpg",
+    "upload": "2026-10-20T10:00:00Z",
+    "duration": "90",
+    "content": "https://example.com/video.mp4",
+    "embed": ""
+  },
+  "worked_example": "A 90-second upload becomes duration PT1M30S.",
+  "planned_expectations": [
+    "90 seconds maps to PT1M30S.",
+    "Reject no playable URL and non-HTTPS thumbnail.",
+    "Require timezone in publication date."
+  ],
+  "execution_state": "TEST_PENDING"
+}

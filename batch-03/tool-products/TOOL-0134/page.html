@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Image Difference Comparator — Browser-Local Tool</title><meta name="description" content="Compare two same-size images pixel by pixel and export a visual diff plus quantitative mismatch metrics."><link rel="stylesheet" href="./src/styles.css"></head>
+<body><main class="tool-shell" data-tool="TOOL-0134">
+<header class="hero"><p class="eyebrow">Browser-local • TEST_PENDING</p><h1>Image Difference Comparator</h1><p>Compare two same-size images pixel by pixel and export a visual diff plus quantitative mismatch metrics.</p></header>
+<section class="workbench" aria-labelledby="work-title"><h2 id="work-title">Work area</h2><div class="controls"><label>Baseline <input id="a" type="file" accept="image/*"></label><label>Comparison <input id="b" type="file" accept="image/*"></label><label>Threshold 0–255 <input id="threshold" type="number" min="0" max="255" value="16"></label></div><button id="primary" class="primary" type="button">Run tool</button><button id="cancel" class="secondary" type="button" hidden>Cancel</button><div id="status" role="status" aria-live="polite"></div><div id="result" class="result" role="region" aria-live="polite" aria-label="Tool result"></div></section>
+<section><h2>What this tool does</h2><p>Compare two same-size images pixel by pixel and export a visual diff plus quantitative mismatch metrics.</p></section>
+<section><h2>How to use it</h2><ol><li>Choose local input files and review the task-specific controls.</li><li>Run the tool. Processing stays in this browser session.</li><li>Review warnings and previews before copying or downloading output.</li></ol></section>
+<section><h2>Worked example</h2><p>Compare baseline.png and current.png at threshold 16, then inspect mismatch percentage and amplified diff.</p></section>
+<section><h2>Supported formats and units</h2><p>PNG/JPEG/WebP/AVIF images supported by the browser.</p></section>
+<section><h2>Assumptions</h2><p>Images must be the same dimensions unless the user explicitly chooses normalization.</p></section>
+<section><h2>Limitations</h2><p>Pixel differences are sensitive to colour management, antialiasing and lossy compression and are not equivalent to perceptual similarity.</p></section>
+<section><h2>References</h2><p>Authoritative implementation references are recorded in <code>research/sources.json</code>.</p></section>
+</main><script type="module" src="./src/ui.ts"></script></body></html>

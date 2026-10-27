@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0404",
+  "claims": [
+    {
+      "claim": "Grid counts are derived from usable dimensions after the user-entered edge-cover allowance.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The tool is a takeoff estimator, not reinforcement design.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

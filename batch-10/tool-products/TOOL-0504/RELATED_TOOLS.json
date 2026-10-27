@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0504",
+  "related": [
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "proposed_canonical": "/calculators/marginal-tax-bracket-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0505",
+      "title": "UK Section 24 Landlord vs Company Tax Comparison",
+      "proposed_canonical": "/comparisons/uk-section-24-landlord-company-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "proposed_canonical": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "proposed_canonical": "/calculators/property-tax-appeal-savings-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

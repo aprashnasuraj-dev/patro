@@ -1,0 +1,13 @@
+{
+  "input": {
+    "value": "a/b & café?",
+    "context": "Path segment"
+  },
+  "worked_example": "Input a/b in a path segment produces a%2Fb; whole-path mode preserves /.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

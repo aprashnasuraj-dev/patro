@@ -1,0 +1,27 @@
+{
+  "data": [
+    [
+      1,
+      2.1
+    ],
+    [
+      2,
+      3.8
+    ],
+    [
+      3,
+      6.2
+    ],
+    [
+      4,
+      7.9
+    ],
+    [
+      5,
+      10.2
+    ]
+  ],
+  "checks": [
+    "residuals sum approximately zero with intercept"
+  ]
+}

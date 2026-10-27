@@ -1,0 +1,15 @@
+{
+  "tool": "TOOL-0528",
+  "default_inputs": {
+    "length": "90",
+    "width": "70",
+    "border": "4",
+    "fabricWidth": "42",
+    "seam": "0.5",
+    "bindingWidth": "2.5",
+    "joinLoss": "2.5",
+    "bindingExtra": "12"
+  },
+  "worked_example": "A 70×90-inch quilt with 4-inch margin requires at least 78×98 inches backing and batting.",
+  "source_status": "TEST_PENDING"
+}

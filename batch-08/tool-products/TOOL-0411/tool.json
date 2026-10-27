@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0411",
+  "name": "Gutter & Downspout Sizing by City Rainfall",
+  "reserved_route": "/tools/gutter-downspout-sizing-calculator",
+  "engineering_family_id": "F0229",
+  "engineering_family": "Gutter & Downspout Sizing by City Rainfall",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Gutter & Downspout Sizing by City Rainfall | AafnaiPatro Tools",
+    "description": "Convert city-specific design rainfall and roof area into drainage flow demand, then compare it with a verified downspout capacity.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

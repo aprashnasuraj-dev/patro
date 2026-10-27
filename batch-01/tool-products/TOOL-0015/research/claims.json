@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0015",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Convert line-delimited JSON records into one JSON array without skipping malformed lines.",
+      "evidence_urls": [
+        "https://jsonlines.org/",
+        "https://www.rfc-editor.org/rfc/rfc8259"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Parsing uses a bounded in-browser string; very large NDJSON files require a streaming integration. Empty lines optionally ignored.",
+      "evidence_urls": [
+        "https://jsonlines.org/",
+        "https://www.rfc-editor.org/rfc/rfc8259"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

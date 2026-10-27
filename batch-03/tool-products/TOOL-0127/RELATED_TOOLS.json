@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0127",
+  "related": [
+    {
+      "id": "TOOL-0126",
+      "title": "Favicon Generator (ICO, PNG Set, Manifest)",
+      "proposed_canonical": "/generators/favicon-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0018",
+      "title": "Helm values.yaml to --set Flags",
+      "proposed_canonical": "/converters/helm-values-to-set-flags",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0113",
+      "title": "Icon Font Glyph Map Extractor",
+      "proposed_canonical": "/extractors/icon-font-glyph-map",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0128",
+      "title": "CSS Sprite Sheet Generator",
+      "proposed_canonical": "/generators/css-sprite-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

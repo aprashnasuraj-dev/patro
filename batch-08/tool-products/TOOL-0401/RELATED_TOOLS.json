@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0401",
+  "related": [
+    {
+      "id": "TOOL-0276",
+      "title": "Fence Material Calculator",
+      "proposed_canonical": "/calculators/fence-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0402",
+      "title": "Deck Joist & Beam Span Checker",
+      "proposed_canonical": "/validators/deck-joist-beam-span-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0261",
+      "title": "Concrete Slab and Footing Volume Calculator",
+      "proposed_canonical": "/calculators/concrete-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0267",
+      "title": "Deck Joist and Beam Span Reference Calculator",
+      "proposed_canonical": "/calculators/deck-material-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0008",
+  "claims": [
+    {
+      "claim": "Document Postman requests without disclosing auth content",
+      "references": [
+        "https://schema.postman.com/",
+        "https://learning.postman.com/docs/use/use-collections/collections-schemas/"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "Postman v3 folder-based exports are not supported. Auth tokens, response examples, scripts and request bodies are intentionally omitted.",
+      "references": [
+        "https://schema.postman.com/",
+        "https://learning.postman.com/docs/use/use-collections/collections-schemas/"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

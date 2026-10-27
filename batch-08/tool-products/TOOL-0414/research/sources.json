@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0414",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "HMRC: Payments on account",
+      "url": "https://www.gov.uk/understand-self-assessment-bill/payments-on-account",
+      "note": "Two half-year instalments, £1,000 and 80% exceptions, due dates."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

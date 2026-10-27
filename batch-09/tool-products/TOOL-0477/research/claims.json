@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Compare six axis-aligned orientations on standard pallet footprints",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.iso.org/standard/30542.html"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Nominal footprint only; pallet standards, allowed tolerances and rack suitability vary.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Nominal footprint only; pallet standards, allowed tolerances and rack suitability vary.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

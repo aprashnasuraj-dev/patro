@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0280",
+  "claims": [
+    {
+      "claim": "A Nepal Land Revenue Office publication lists 1 ropani=5476 ft² and 1 bigha=72900 ft², with 16 aana per ropani and 20 katha per bigha.",
+      "source_url": "https://www.dolma.gov.np/uploads/files/MLV%202079-080/%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A5%82%E0%A4%A8%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%AE%20%E0%A4%AE%E0%A5%82%E0%A4%B2%E0%A5%8D%E0%A4%AF%E0%A4%BE%E2%80%8C%E0%A4%95%E0%A4%A8%202080-81/%E0%A4%A7%E0%A4%A8%E0%A4%97%E0%A4%A2%E0%A5%80%20%E0%A4%95%E0%A5%88%E0%A4%B2%E0%A4%BE%E0%A4%B2%E0%A5%80.pdf",
+      "implementation_note": "These published relationships are the base constants for traditional-unit conversion."
+    },
+    {
+      "claim": "Metric conversion uses the international foot = 0.3048 m exactly.",
+      "source_url": "https://www.nist.gov/pml/us-surveyfoot/revised-unit-conversion-factors",
+      "implementation_note": "Square-metre output derives from the exact length definition."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0090",
+  "related": [
+    {
+      "id": "TOOL-0086",
+      "title": "Line Ending Detector and Converter (CRLF, LF, CR)",
+      "proposed_canonical": "/converters/line-ending-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0019",
+      "title": "package-lock.json Duplicate Dependency Finder",
+      "proposed_canonical": "/extractors/package-lock-duplicate-finder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0085",
+      "title": "Smart Quotes to Straight Quotes Converter",
+      "proposed_canonical": "/converters/smart-quotes-to-straight-quotes",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "proposed_canonical": "/utilities/strip-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0094",
+      "title": "Word and Google Docs HTML Cleaner",
+      "proposed_canonical": "/editors/clean-word-html",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

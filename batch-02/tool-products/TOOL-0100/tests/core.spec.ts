@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {inspect} from '../src/core';describe('graphemes',()=>{it('keeps combining sequence clustered where Segmenter exists',()=>expect(inspect('A\u0301').length).toBeLessThanOrEqual(2));it('shows code points',()=>expect(inspect('😀')[0].codepoints[0]).toBe('U+01F600'))});

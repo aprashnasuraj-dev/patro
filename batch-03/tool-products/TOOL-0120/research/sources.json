@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0120",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "google-fonts-css2",
+      "url": "https://developers.google.com/fonts/docs/css2",
+      "version": "Google Fonts CSS2 API",
+      "effective_date": null,
+      "license": "Google developer documentation terms",
+      "notes": "Axes must be alphabetically ordered; tuples must be numerically ordered. Availability of families/axes/values requires Google-side validation."
+    }
+  ],
+  "assumptions": "The family and requested axis/value combinations actually exist in Google Fonts.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "This builder does not call Google to validate availability. Google may reject unsupported families, axes, values, overlapping tuples or malformed combinations."
+}

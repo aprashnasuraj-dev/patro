@@ -1,0 +1,18 @@
+{
+  "sample_input": {
+    "text": "Hello​World — नमस्ते‍!",
+    "remove": false
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "A ZWSP between two words is shown as U+200B at its UTF-16 offset.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{text:'a\\u200bb',remove:false}",
+    "assertions": "assert.equal(result.metrics[0][1],1);assert.match(result.text,/U\\+200B/);"
+  }
+}

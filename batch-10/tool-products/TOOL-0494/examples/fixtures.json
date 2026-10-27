@@ -1,0 +1,13 @@
+{
+  "title": "Chicken Coop Size & Feed Calculator",
+  "default_inputs": {
+    "birds": "12",
+    "coop": "4",
+    "run": "10",
+    "feed": "0.25",
+    "days": "30",
+    "waste": "8"
+  },
+  "worked_example": "At 4 sq ft indoors and 10 sq ft outdoors per chicken, 12 chickens need 48 and 120 sq ft.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

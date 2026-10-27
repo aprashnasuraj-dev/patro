@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Residential rental depreciation scenarios",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "No actual placed-in-service/disposition convention, assets by recovery period, tax rates, depreciation taken/allowable or \u00a71250 computations.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "No actual placed-in-service/disposition convention, assets by recovery period, tax rates, depreciation taken/allowable or \u00a71250 computations.",
+  "authoritative_references": [
+    "https://www.irs.gov/publications/p527",
+    "https://www.irs.gov/publications/p946"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

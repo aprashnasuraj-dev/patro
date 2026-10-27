@@ -1,0 +1,6 @@
+import {num,decimal,positiveDecimal,restricted,choice,iso,addDays,addMonths,endOfMonth,dayDifference,csv,fmt,usd,gbp,cad,metric,output} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Prepared calculation source; product tests have NOT been executed. */
+export function calculate(i:Input):Result{
+  const income=num(i,'income',0,2e7),delta=num(i,'rise',0,2e7);function tax(gross:number){const pa=Math.max(0,12570-Math.max(0,gross-100000)/2),charge=Math.max(0,gross-pa);return Math.min(charge,37700)*.2+Math.min(Math.max(charge-37700,0),87440)*.4+Math.max(0,charge-125140)*.45;}const before=tax(income),after=tax(income+delta),add=after-before;return output('Effective income-tax marginal rate: '+(delta>0?fmt(100*add/delta,2)+'%':'n/a'),[metric('Incremental gross pay',gbp(delta)),metric('Additional income tax',gbp(add)),metric('Incremental take-home before other charges',gbp(delta-add)),metric('Personal allowance after rise',gbp(Math.max(0,12570-Math.max(0,income+delta-100000)/2)))],['England/Wales/Northern Ireland 2026/27 non-savings income only; Scotland, dividend/savings bands, National Insurance, pensions and child-benefit clawback excluded.','This isolates allowance taper and does not calculate total household effective marginal tax.']);
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0255",
+  "related": [
+    {
+      "id": "TOOL-0130",
+      "title": "SVG to PNG/JPG Exporter at Custom Sizes",
+      "proposed_canonical": "/converters/svg-to-png",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0371",
+      "title": "LaTeX Equation Preview and SVG/PNG Export",
+      "proposed_canonical": "/converters/latex-equation-to-image",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0256",
+      "title": "Org Chart Generator from CSV",
+      "proposed_canonical": "/generators/org-chart-generator-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0245",
+      "title": "Break-Even Analysis Calculator with Chart",
+      "proposed_canonical": "/calculators/break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

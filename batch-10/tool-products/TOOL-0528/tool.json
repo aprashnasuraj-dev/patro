@@ -1,0 +1,108 @@
+{
+  "id": "TOOL-0528",
+  "name": "Quilt Yardage, Backing and Binding Calculator",
+  "slug": "quilt-yardage-binding-batting-calculator",
+  "route": "/tools/quilt-yardage-binding-batting-calculator",
+  "family": "F0316",
+  "description": "Size quilt backing, batting and binding strips with width-of-fabric assumptions, seam allowances and edge margins.",
+  "seo": {
+    "title": "Quilt Yardage, Backing and Binding Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Size quilt backing, batting and binding strips with width-of-fabric assumptions, seam allowances and edge margins.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "craft",
+  "inputs": [
+    {
+      "key": "length",
+      "label": "Finished quilt length",
+      "default": 90,
+      "unit": "in",
+      "type": "number",
+      "min": 1,
+      "max": 400,
+      "step": "any"
+    },
+    {
+      "key": "width",
+      "label": "Finished quilt width",
+      "default": 70,
+      "unit": "in",
+      "type": "number",
+      "min": 1,
+      "max": 400,
+      "step": "any"
+    },
+    {
+      "key": "border",
+      "label": "Backing/batting safety overhang on each side",
+      "default": 4,
+      "unit": "in",
+      "type": "number",
+      "min": 0,
+      "max": 36,
+      "step": "any"
+    },
+    {
+      "key": "fabricWidth",
+      "label": "Usable fabric width after selvage removal",
+      "default": 42,
+      "unit": "in",
+      "type": "number",
+      "min": 10,
+      "max": 120,
+      "step": "any"
+    },
+    {
+      "key": "seam",
+      "label": "Backing panel seam allowance (per joined seam)",
+      "default": 0.5,
+      "unit": "in",
+      "type": "number",
+      "min": 0,
+      "max": 2,
+      "step": "any"
+    },
+    {
+      "key": "bindingWidth",
+      "label": "Cut binding strip width",
+      "default": 2.5,
+      "unit": "in",
+      "type": "number",
+      "min": 1,
+      "max": 10,
+      "step": "any"
+    },
+    {
+      "key": "joinLoss",
+      "label": "Binding strip join loss / connection",
+      "default": 2.5,
+      "unit": "in",
+      "type": "number",
+      "min": 0,
+      "max": 20,
+      "step": "any"
+    },
+    {
+      "key": "bindingExtra",
+      "label": "Binding length allowance for turning corners",
+      "default": 12,
+      "unit": "in",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    }
+  ]
+}

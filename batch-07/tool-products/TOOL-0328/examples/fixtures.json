@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0328",
+  "examples": [
+    {
+      "secret_ascii": "12345678901234567890",
+      "secret_base32": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
+      "timestamp": 59,
+      "period": 30,
+      "digits": 8,
+      "alg": "SHA-1",
+      "expected": "94287082"
+    }
+  ]
+}

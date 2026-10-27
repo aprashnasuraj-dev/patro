@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,val,guarded,dl,resultText } from '../_vendor/ui'; $('primary').textContent='Apply crop boxes';$('primary').addEventListener('click',()=>guarded(async()=>{const b=await core.cropMargins(file('file'),{top:num('top'),right:num('right'),bottom:num('bottom'),left:num('left')},val('units') as any);resultText('Crop boxes updated. This hides margins but does not delete or redact underlying content.');dl(b,'cropped.pdf')}));
+

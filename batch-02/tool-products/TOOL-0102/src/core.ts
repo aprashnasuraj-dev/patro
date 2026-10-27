@@ -1,0 +1,2 @@
+import {detectFontType,encodeWoff2} from '../_vendor/font/woff2Runtime';import {parseSfnt,getBasicMetrics} from '../_vendor/font/sfnt';
+export async function convert(buf:ArrayBuffer,name:string){const type=detectFontType(buf,name);if(type==='woff2')throw new Error('Input is already WOFF2.');const sf=parseSfnt(buf);const metrics=getBasicMetrics(sf);const output=await encodeWoff2(buf);return{output,inputBytes:buf.byteLength,outputBytes:output.byteLength,type,metrics}}

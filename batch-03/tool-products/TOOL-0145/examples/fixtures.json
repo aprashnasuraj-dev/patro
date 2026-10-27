@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0145",
+  "known_answer_examples": [
+    "Start at 1001 with prefix CASE- and six digits to produce CASE-001001, CASE-001002, and so on."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0330",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "This custom format is application-specific and should not be presented as a general standard. For very large files, a native tool with streaming output and audited standard container may be preferable."
+}

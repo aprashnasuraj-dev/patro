@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0120",
+  "claims": [
+    {
+      "claim": "Build Google Fonts CSS2 stylesheet URLs for one or more families, axis tuples/ranges, display mode and optional text optimization while enforcing the documented ordering rules.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "google-fonts-css2"
+      ]
+    },
+    {
+      "claim": "This builder does not call Google to validate availability. Google may reject unsupported families, axes, values, overlapping tuples or malformed combinations.",
+      "status": "limitation",
+      "source_ids": [
+        "google-fonts-css2"
+      ]
+    }
+  ]
+}

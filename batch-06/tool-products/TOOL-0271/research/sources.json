@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0271",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.acca.org/standards/technical-manuals/manual-j",
+      "title": "Manual J Residential Load Calculation",
+      "publisher": "ACCA",
+      "version": "ANSI/ACCA 2 Manual J - 2016",
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "ACCA standard is copyrighted/commercial; cite the official description only.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "This tool is deliberately a transparent rough estimator and is not a Manual J calculation or equipment-selection approval."
+    }
+  ],
+  "no_external_source_reason": null
+}

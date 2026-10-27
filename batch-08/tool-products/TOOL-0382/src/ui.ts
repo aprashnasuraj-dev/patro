@@ -1,0 +1,1 @@
+import{decodeSmd}from'./core';import{q,val,setError,metricGrid}from'../_vendor/ui';q('run').addEventListener('click',()=>{const o=q('result');try{const v=decodeSmd(val('code'));o.replaceChildren(metricGrid([['Resistance',v>=1e6?(v/1e6)+' MΩ':v>=1e3?(v/1e3)+' kΩ':v+' Ω'],['Raw ohms',String(v)]]))}catch(e){setError(o,e)}});

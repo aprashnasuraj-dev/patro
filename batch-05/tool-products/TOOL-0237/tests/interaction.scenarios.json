@@ -1,0 +1,22 @@
+{
+  "status": "TEST_PENDING",
+  "security_cases": [
+    "oversized input is rejected before expensive work",
+    "text supplied by users is rendered with textContent rather than injected HTML",
+    "NaN, Infinity and numeric overflow paths produce explicit errors",
+    "export names are fixed safe filenames and generated content cannot choose a filesystem path",
+    "JSON import above 200 KB is rejected",
+    "malformed snapshots are rejected without overwriting current data"
+  ],
+  "responsive_accessibility_cases": [
+    "320px viewport: controls remain single-column and primary action reachable without horizontal page scrolling",
+    "keyboard-only: all interactive controls have visible focus and usable labels",
+    "screen reader: result container uses role=status and aria-live=polite",
+    "reduced motion: no essential information depends on animation",
+    "copy/export/download behavior is user initiated and local"
+  ],
+  "performance_cases": [
+    "worst supported input remains bounded by explicit row/period limits",
+    "no network request is required for calculation"
+  ]
+}

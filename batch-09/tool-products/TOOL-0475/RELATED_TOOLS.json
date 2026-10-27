@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0475",
+  "related": [
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "proposed_canonical": "/validators/marketplace-image-size-spec-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0368",
+      "title": "Speech Length Calculator (Words to Minutes)",
+      "proposed_canonical": "/calculators/speech-length-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0392",
+      "title": "Crop Factor and Equivalent Focal Length Calculator",
+      "proposed_canonical": "/calculators/crop-factor-equivalent-focal-length",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0473",
+      "title": "Carrier Surcharge & Oversize Checker",
+      "proposed_canonical": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0480",
+      "title": "1099-K Threshold Checker by State & Platform",
+      "proposed_canonical": "/validators/1099k-state-platform-reporting-threshold-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

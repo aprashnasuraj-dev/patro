@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "2026/27 standard personal allowance £12,570 and taper £1 per £2 over £100,000.",
+    "sources": [
+      "https://www.gov.uk/income-tax-rates"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Tax results exclude NI, Scottish bands, childcare and student loans."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

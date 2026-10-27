@@ -1,0 +1,16 @@
+{
+  "sample_input": {
+    "contact": "mailto:security@example.com",
+    "expires": "2027-04-01T00:00:00Z",
+    "canonical": "https://example.com/.well-known/security.txt",
+    "policy": "https://example.com/security-policy",
+    "languages": "en"
+  },
+  "worked_example": "Contact: mailto:security@example.com and Expires: 2027-01-01T00:00:00Z.",
+  "planned_expectations": [
+    "Generate Contact and future Expires, RFC3339 output.",
+    "Reject old expiry, http canonical and invalid contact protocol.",
+    "Ensure sanitized line breaks and valid languages."
+  ],
+  "execution_state": "TEST_PENDING"
+}

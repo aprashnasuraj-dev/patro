@@ -1,0 +1,23 @@
+{
+  "default_input": {
+    "direction": "quarter → semester",
+    "credits": 45,
+    "ratio": 0.6666666666666666,
+    "round": 2
+  },
+  "hand_reference": {
+    "label": "Converted credits",
+    "value": "30.00",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

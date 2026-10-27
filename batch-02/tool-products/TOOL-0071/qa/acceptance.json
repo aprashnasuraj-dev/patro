@@ -1,0 +1,18 @@
+{
+  "status": "TEST_PENDING",
+  "product_tests_executed": 0,
+  "checks": {
+    "core_algorithm": "PENDING",
+    "typecheck": "PENDING",
+    "browser_interaction": "PENDING",
+    "keyboard_accessibility": "PENDING",
+    "security": "PENDING",
+    "responsive_320px": "PENDING",
+    "performance": "PENDING",
+    "copy_export": "PENDING"
+  },
+  "release_blocking": "Must pass task-specific edge cases, build and live browser QA before publication",
+  "known_limitations": [
+    "URL-element extensions are preserved from XML input; document-level comments and unknown root metadata are not."
+  ]
+}

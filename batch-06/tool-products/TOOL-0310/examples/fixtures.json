@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0310",
+  "examples": [
+    {
+      "input": "2026-01-01",
+      "expected": {
+        "iso_week_year": 2026,
+        "iso_week": 1,
+        "iso_weekday": 4
+      }
+    },
+    {
+      "input": "2021-01-01",
+      "expected": {
+        "iso_week_year": 2020,
+        "iso_week": 53,
+        "iso_weekday": 5
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Cost_HP = useful heat / seasonal COP × power price; cost_gas = useful heat / boiler efficiency × gas energy price.",
+    "supporting_urls": [
+      "https://www.energystar.gov/products/air_source_heat_pumps/key-product-criteria"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Apples-to-apples demand and accurate seasonal metrics required."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "16,000 kWh heat/3 COP=5,333 kWh electricity; compare 16,000/0.88 kWh gas energy.",
+    "status": "TEST_PENDING"
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "id": "TOOL-0282",
+  "name": "Running Pace Calculator with Split Export",
+  "slug": "running-pace-calculator",
+  "route": "/tools/running-pace-calculator",
+  "family": "F0150",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Running Pace Calculator with Split Export | AafnaiPatro",
+    "description": "Calculate pace, speed and evenly paced kilometer or mile splits; export training splits as CSV.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "distance",
+      "label": "Race distance",
+      "default": 10,
+      "min": 0.1,
+      "max": 500,
+      "step": "any",
+      "unit": "km"
+    },
+    {
+      "type": "number",
+      "key": "seconds",
+      "label": "Total time",
+      "default": 3000,
+      "min": 1,
+      "max": 172800,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "segment",
+      "label": "Split distance",
+      "default": 1,
+      "min": 0.1,
+      "max": 42.195,
+      "step": "any",
+      "unit": "km"
+    }
+  ],
+  "explanation": "Pace = total seconds/distance. Splits derive from exact final partial segment (not a full extra split).",
+  "limitations": "Even pacing is a theoretical target, not a prediction; road measurements and GPS differ.",
+  "related_tool_ids": [
+    "TOOL-0283",
+    "TOOL-0295",
+    "TOOL-0299"
+  ],
+  "sources": [
+    "https://worldathletics.org/disciplines/road-running"
+  ],
+  "special_notes": null
+}

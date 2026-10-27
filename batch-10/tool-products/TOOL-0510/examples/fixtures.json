@@ -1,0 +1,8 @@
+{
+  "title": "Canadian ACB and Superficial-Loss Ledger",
+  "default_inputs": {
+    "csv": "date,symbol,side,quantity,price,fee\n2026-01-02,XYZ,BUY,100,10,5\n2026-01-10,XYZ,SELL,100,8,5\n2026-01-20,XYZ,BUY,100,9,5"
+  },
+  "worked_example": "Buy 100 shares at $10, sell at $8, then repurchase within 30 days triggers a possible superficial-loss review.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

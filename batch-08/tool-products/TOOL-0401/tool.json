@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0401",
+  "name": "Fence & Deck Post Concrete Calculator",
+  "reserved_route": "/tools/fence-post-concrete-bags-calculator",
+  "engineering_family_id": "F0145",
+  "engineering_family": "Fence Materials Calculator",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Fence & Deck Post Concrete Calculator | AafnaiPatro Tools",
+    "description": "Estimate concrete volume and bag count for cylindrical post holes while subtracting square or round post displacement.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

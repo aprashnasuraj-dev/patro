@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0367",
+  "related": [
+    {
+      "id": "TOOL-0465",
+      "title": "International GPA Converter",
+      "proposed_canonical": "/converters/international-gpa-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0365",
+      "title": "GPA Calculator with Custom Grade Scale",
+      "proposed_canonical": "/calculators/gpa-calculator-custom-scale",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0366",
+      "title": "Final Grade Calculator (What Do I Need on the Final?)",
+      "proposed_canonical": "/calculators/final-grade-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0034",
+      "title": "CIDR Overlap Checker (Multiple Ranges)",
+      "proposed_canonical": "/validators/cidr-overlap-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0395",
+      "title": "Baker's Percentage Calculator",
+      "proposed_canonical": "/calculators/bakers-percentage-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

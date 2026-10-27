@@ -1,0 +1,14 @@
+{
+  "title": "UK Section 24 Landlord vs Company Tax Comparison",
+  "default_inputs": {
+    "rent": "24000",
+    "costs": "4500",
+    "interest": "8000",
+    "marginal": "40",
+    "corpRate": "25",
+    "extract": "33.75",
+    "otherInc": "50000"
+  },
+  "worked_example": "£24,000 rent less £4,500 costs and £8,000 interest creates £11,500 cash before tax.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

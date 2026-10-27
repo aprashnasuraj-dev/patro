@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest';
+import {compareDebtStrategies} from '../src/core';
+describe('TOOL-0222 known-answer and boundary plan',()=>{it('matches a simple known answer',()=>{expect(compareDebtStrategies([{name:'A',balance:1000,apr:10,minPayment:100},{name:'B',balance:500,apr:20,minPayment:50}],100).avalanche.totalInterest).toBeLessThanOrEqual(compareDebtStrategies([{name:'A',balance:1000,apr:10,minPayment:100},{name:'B',balance:500,apr:20,minPayment:50}],100).snowball.totalInterest);});it.todo('rejects malformed and out-of-domain inputs');it.todo('covers zero/near-zero and upper bounds');it.todo('verifies output formatting and rounding semantics');});

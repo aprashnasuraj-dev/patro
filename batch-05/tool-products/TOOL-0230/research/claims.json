@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0230",
+  "claims": [
+    {
+      "claim": "The result is deterministic arithmetic under the explicitly stated assumptions.",
+      "status": "MATH_DEFINED",
+      "source_ids": []
+    },
+    {
+      "claim": "No external data is fetched during normal tool use.",
+      "status": "MATH_DEFINED",
+      "source_ids": []
+    }
+  ],
+  "runtime_qa": "TEST_PENDING"
+}

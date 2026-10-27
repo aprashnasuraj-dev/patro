@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0049",
+  "scope_claim": "Build Cache-Control response directives for public assets, private responses or no-store data.",
+  "authoritative_urls": [
+    "https://www.rfc-editor.org/rfc/rfc9111.html",
+    "https://www.rfc-editor.org/rfc/rfc5861.html"
+  ],
+  "assumptions": [
+    "Nonnegative integer seconds for supported cache directives.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Caching behavior depends on CDNs and Vary; user-specific content must not be public.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

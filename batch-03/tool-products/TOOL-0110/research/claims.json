@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0110",
+  "claims": [
+    {
+      "claim": "Generate a fluid font-size clamp() from minimum/maximum sizes and viewport widths, with the linear interpolation shown explicitly and bounded by CSS clamp semantics.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "css-values-4"
+      ]
+    },
+    {
+      "claim": "Browser zoom, user minimum-font settings, container width, and design breakpoints may make viewport-linear typography inappropriate for some interfaces.",
+      "status": "limitation",
+      "source_ids": [
+        "css-values-4"
+      ]
+    }
+  ]
+}

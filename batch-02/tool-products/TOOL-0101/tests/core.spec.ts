@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('font subset deferred fixtures',()=>{it.todo('subsets a simple TrueType fixture and preserves requested cmap');it.todo('rejects fsType no-subsetting');it.todo('rejects GSUB/GPOS complex-layout fixture');it.todo('rejects malformed table offsets');it.todo('cancels/contains oversized font input at UI boundary')});

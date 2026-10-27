@@ -1,0 +1,12 @@
+{
+  "title": "HSA Contribution Limit and Midyear Eligibility Calculator",
+  "default_inputs": {
+    "months": "S,S,S,S,S,S,F,F,F,F,F,F",
+    "age55": "no",
+    "lastMonth": "no",
+    "employer": "500",
+    "own": "1000"
+  },
+  "worked_example": "Six self-only plus six family months gives (4400+8750)/2 = $6,575 before catch-up.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

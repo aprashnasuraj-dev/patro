@@ -1,0 +1,11 @@
+{
+  "tool": "TOOL-0521",
+  "default_inputs": {
+    "path": "5-year",
+    "residentSince": "2022-01-15",
+    "application": "2026-12-01",
+    "travel": "departure,return\n2025-05-01,2025-05-22\n2026-03-10,2026-03-19"
+  },
+  "worked_example": "A permanent resident five-year anniversary of January 15 gives a possible early-filing start 90 days before, only if other criteria met.",
+  "source_status": "TEST_PENDING"
+}

@@ -1,0 +1,24 @@
+{
+  "tool_id": "TOOL-0258",
+  "status": "TEST_PENDING",
+  "sample": {
+    "rows": [
+      {
+        "format": "EAN13",
+        "value": "400638133393",
+        "label": "Sample EAN"
+      },
+      {
+        "format": "UPCA",
+        "value": "03600029145",
+        "label": "Sample UPC"
+      },
+      {
+        "format": "CODE128",
+        "value": "ORDER-2026-001",
+        "label": "Order reference"
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

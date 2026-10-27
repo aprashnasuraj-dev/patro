@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0146",
+  "known_answer_examples": [
+    "Add a 30% opacity \u201cDRAFT\u201d watermark rotated 45\u00b0 across every page."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

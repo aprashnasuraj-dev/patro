@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Battery AC output models energy as capacity × depth × inverter efficiency.",
+    "sources": [
+      "https://www.energy.gov/energysaver/home-energy-storage"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Generator rate must be measured or published at specified load."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

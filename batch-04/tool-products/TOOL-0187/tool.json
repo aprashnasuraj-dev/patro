@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0187",
+  "build_sequence": 187,
+  "name": "CSV Pivot and Group-By Summarizer",
+  "route": "/tools/csv-pivot-table",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0089",
+  "engineering_family": "CSV Pivot and Group-By Summarizer",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "CSV Pivot and Group-By Summarizer — Free Local Browser Tool",
+    "meta_description": "Summarize CSV data with group-by aggregates and an optional bounded pivot column, all computed locally in the browser.",
+    "h1": "CSV Pivot and Group-By Summarizer",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

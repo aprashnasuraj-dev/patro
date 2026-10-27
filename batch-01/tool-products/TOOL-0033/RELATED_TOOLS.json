@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0033",
+  "related": [
+    {
+      "id": "TOOL-0031",
+      "title": "AWS IAM Policy Wildcard Auditor",
+      "proposed_canonical": "/validators/iam-policy-wildcard-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0051",
+      "title": "Permissions-Policy Header Generator",
+      "proposed_canonical": "/generators/permissions-policy-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0466",
+      "title": "SAT/ACT Superscore & College Policy Checker",
+      "proposed_canonical": "/calculators/sat-act-superscore-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

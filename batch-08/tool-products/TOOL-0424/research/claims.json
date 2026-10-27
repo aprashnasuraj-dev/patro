@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Deposit return and itemized deduction worksheet",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Different states use different start events, business days, mailing rules, itemization and penalties.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Different states use different start events, business days, mailing rules, itemization and penalties.",
+  "authoritative_references": [
+    "https://www.gov.uk/tenancy-deposit-protection"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

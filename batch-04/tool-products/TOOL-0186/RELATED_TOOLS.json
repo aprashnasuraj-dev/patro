@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0186",
+  "related": [
+    {
+      "id": "TOOL-0192",
+      "title": "Date Format Normalizer for CSV Columns",
+      "proposed_canonical": "/formatters/csv-date-format-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0193",
+      "title": "Phone Number Normalizer to E.164",
+      "proposed_canonical": "/converters/phone-numbers-to-e164",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0194",
+      "title": "Full Name Splitter (First, Middle, Last, Suffix)",
+      "proposed_canonical": "/editors/split-full-name-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0181",
+      "title": "Split CSV by Column Value or Row Count",
+      "proposed_canonical": "/editors/split-csv-by-column",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0182",
+      "title": "Merge CSV Files with Column Alignment",
+      "proposed_canonical": "/editors/merge-csv-files",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

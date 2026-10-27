@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0410",
+  "claims": [
+    {
+      "claim": "Volume estimates use installed plan area times user-entered compacted depths.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Polymeric sand demand is driven by a user-entered manufacturer coverage rate.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

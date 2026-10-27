@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0315",
+  "claims": [
+    {
+      "claim": "The tool implements the explicit semantics stated on the page and rejects unsupported ambiguity.",
+      "source_url": null,
+      "implementation_note": "No broader standard conformance is implied."
+    }
+  ],
+  "uncertainty": "For precision astronomy, UT1−UTC (DUT1) matters and must come from current Earth-orientation data. This tool does not fetch it."
+}

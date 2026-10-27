@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {normalizeDates} from '../src/core';describe('normalizeDates',()=>{it('rejects impossible calendar dates without guessing',()=>{const r=normalizeDates('id,date\n1,31/12/2026\n2,31/02/2026','date','DD/MM/YYYY','YYYY-MM-DD');expect(r.converted).toBe(1);expect(r.invalid).toBe(1);expect(r.csv).toContain('2026-12-31')});});

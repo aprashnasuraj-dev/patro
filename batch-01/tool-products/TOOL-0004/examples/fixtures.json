@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0004",
+  "case": "Worked example",
+  "input": "CREATE TABLE users (\n  id INTEGER PRIMARY KEY,\n  email VARCHAR(255) NOT NULL UNIQUE,\n  created_at TIMESTAMP NOT NULL\n);\nCREATE TABLE sessions (\n  id INTEGER PRIMARY KEY,\n  user_id INTEGER NOT NULL,\n  expires_at TIMESTAMP\n);\n",
+  "options": {},
+  "expected_properties": "multiple tables, SQL type mapping, uniqueness, composite keys, quoted identifiers, unsupported FKs",
+  "expected_execution": "NOT_RUN",
+  "limitations": "DDL grammars differ across vendors. This deliberately excludes foreign keys, advanced defaults, CHECK constraints and full relation reconstruction. For actual databases prefer Prisma introspection."
+}

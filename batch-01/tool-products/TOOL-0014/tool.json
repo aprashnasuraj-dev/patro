@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0014",
+  "title": "MongoDB Extended JSON to Plain JSON",
+  "slug": "mongodb-extended-json-to-json",
+  "route": "/tools/mongodb-extended-json-to-json",
+  "engineering_family": "F0007",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "MongoDB Extended JSON to Plain JSON — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Normalize Extended JSON v2 markers while explicitly preserving non-JSON BSON types in tagged wrappers. Runs locally in your browser. Review limitations and ex",
+    "h1": "BSON shape inspector: MongoDB Extended JSON to Plain JSON",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "Extended JSON v2 document",
+    "max_utf8_bytes": 250000
+  },
+  "output": "plain-json.json",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {},
+  "limits": "Plain JSON cannot preserve all BSON type semantics. Wrapper mode retains BSON markers as strings/tags; unrecognized markers stay unchanged and are warned about."
+}

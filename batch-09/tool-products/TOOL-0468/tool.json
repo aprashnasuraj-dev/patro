@@ -1,0 +1,44 @@
+{
+  "id": "TOOL-0468",
+  "name": "Continuing Education Credit & License Renewal Tracker",
+  "slug": "continuing-education-license-renewal-tracker",
+  "route": "/tools/continuing-education-license-renewal-tracker",
+  "family": "F0271",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Continuing Education Credit & License Renewal Tracker | AafnaiPatro Tools",
+    "description": "Track continuing education credits against an individually verified license requirement and renewal deadline; never assume a universal state or profession "
+  },
+  "execution": {
+    "mode": "client-side",
+    "account_required": false,
+    "network_transmission_of_user_content": false,
+    "worker_required": false,
+    "entry_route_lazy_load": true,
+    "max_persisted_data": "none"
+  },
+  "source_files": {
+    "html": "page.html",
+    "core": "src/core.ts",
+    "ui": "src/ui.ts",
+    "styles": "src/styles.css"
+  },
+  "dependencies": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css"
+  ],
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap": false,
+    "published": false
+  }
+}

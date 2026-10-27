@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0334",
+  "name": "PGP Public Key Inspector",
+  "route": "/tools/pgp-key-inspector",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0183",
+  "engineering_family": "PGP Public Key Inspector",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "PGP Public Key Inspector — Private Browser Tool",
+    "meta_description": "Inspect an ASCII-armored OpenPGP public key block locally, parse bounded public-key/user-ID packets, validate optional armor CRC24, and compute RFC 9580 v4/v6 fingerprints without asserting trust.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

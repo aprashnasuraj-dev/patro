@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0411",
+  "related": [
+    {
+      "id": "TOOL-0271",
+      "title": "BTU and HVAC Room Sizing Estimator",
+      "proposed_canonical": "/calculators/btu-calculator-room-size",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0526",
+      "title": "Generator Sizing and Starting Watts Calculator",
+      "proposed_canonical": "/calculators/generator-sizing-running-starting-watts",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0434",
+      "title": "EV Home Charging Cost & Circuit Sizing",
+      "proposed_canonical": "/utilities/ev-charging-cost-and-circuit-sizing",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0401",
+      "title": "Fence & Deck Post Concrete Calculator",
+      "proposed_canonical": "/calculators/fence-post-concrete-bags-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

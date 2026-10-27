@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0211",
+  "name": "Exponential Smoothing and Moving Average Calculator",
+  "route": "/tools/exponential-smoothing-calculator",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0097",
+  "engineering_family": "Time Series Smoothing",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Exponential Smoothing and Moving Average Calculator — Browser Calculator",
+    "meta_description": "Smooth and forecast a univariate series with simple exponential smoothing and compare it with a trailing moving average.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

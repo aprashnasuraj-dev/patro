@@ -1,0 +1,56 @@
+{
+  "id": "TOOL-0521",
+  "name": "US N-400 Physical Presence and Filing Date Calculator",
+  "slug": "us-n400-physical-presence-calculator",
+  "route": "/tools/us-n400-physical-presence-calculator",
+  "family": "F0311",
+  "description": "Count US physical-presence days from entry/exit logs and compare with standard 3-year or 5-year naturalization thresholds.",
+  "seo": {
+    "title": "US N-400 Physical Presence and Filing Date Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Count US physical-presence days from entry/exit logs and compare with standard 3-year or 5-year naturalization thresholds.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "immigration",
+  "inputs": [
+    {
+      "key": "path",
+      "label": "Application pathway",
+      "default": "5-year",
+      "type": "select",
+      "options": [
+        "5-year",
+        "3-year"
+      ]
+    },
+    {
+      "key": "residentSince",
+      "label": "Lawful permanent residence start date",
+      "default": "2022-01-15",
+      "type": "date"
+    },
+    {
+      "key": "application",
+      "label": "Proposed filing date",
+      "default": "2026-12-01",
+      "type": "date"
+    },
+    {
+      "key": "travel",
+      "label": "International trips: departure,return (US local dates)",
+      "default": "departure,return\n2025-05-01,2025-05-22\n2026-03-10,2026-03-19",
+      "type": "textarea"
+    }
+  ]
+}

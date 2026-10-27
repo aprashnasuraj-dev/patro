@@ -1,0 +1,44 @@
+{
+  "id": "TOOL-0480",
+  "name": "1099-K Threshold Checker by State & Platform",
+  "slug": "1099k-state-platform-reporting-threshold-checker",
+  "route": "/tools/1099k-state-platform-reporting-threshold-checker",
+  "family": "F0280",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "1099-K Threshold Checker by State & Platform | AafnaiPatro Tools",
+    "description": "Screen payment-app/marketplace transactions against current federal reporting thresholds; optionally compare Massachusetts reporting and manual platform po"
+  },
+  "execution": {
+    "mode": "client-side",
+    "account_required": false,
+    "network_transmission_of_user_content": false,
+    "worker_required": false,
+    "entry_route_lazy_load": true,
+    "max_persisted_data": "none"
+  },
+  "source_files": {
+    "html": "page.html",
+    "core": "src/core.ts",
+    "ui": "src/ui.ts",
+    "styles": "src/styles.css"
+  },
+  "dependencies": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css"
+  ],
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap": false,
+    "published": false
+  }
+}

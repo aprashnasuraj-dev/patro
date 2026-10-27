@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('variable font deferred fixtures',()=>{it.todo('reads fvar axes min/default/max');it.todo('handles custom axes');it.todo('rejects missing fvar');it.todo('clamps CSS control values')});

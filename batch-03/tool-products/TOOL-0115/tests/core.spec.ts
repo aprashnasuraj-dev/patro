@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('kerning deferred fixtures',()=>{it.todo('reports known A/V negative kern from fixture');it.todo('reads GPOS-resolved pair through parser');it.todo('converts design units to px using unitsPerEm');it.todo('does not claim exhaustive class-kerning list')});

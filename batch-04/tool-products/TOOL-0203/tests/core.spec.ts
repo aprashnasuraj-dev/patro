@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {wilsonInterval} from "../src/core";
+describe("Wilson interval",()=>{it("stays inside 0..1 at boundary",()=>{const r=wilsonInterval(0,10,.95);expect(r.lower).toBeGreaterThanOrEqual(0);expect(r.upper).toBeLessThanOrEqual(1);});});

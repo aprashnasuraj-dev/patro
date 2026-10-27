@@ -1,0 +1,11 @@
+{
+  "title": "Medicare IRMAA Bracket and Cliff Calculator",
+  "default_inputs": {
+    "filing": "single",
+    "magi": "150000",
+    "reduce": "1000",
+    "planD": "35"
+  },
+  "worked_example": "Single filer with 2024 MAGI $150,000 is in 2026 Part B $405.80 bracket.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

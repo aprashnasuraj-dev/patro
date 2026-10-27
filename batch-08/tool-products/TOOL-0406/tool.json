@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0406",
+  "name": "Herringbone/Diagonal Tile & Plank Waste Calculator",
+  "reserved_route": "/tools/herringbone-diagonal-tile-waste-calculator",
+  "engineering_family_id": "F0135",
+  "engineering_family": "Tile Layout and Grout Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Herringbone/Diagonal Tile & Plank Waste Calculator | AafnaiPatro Tools",
+    "description": "Estimate material area and piece count for straight, diagonal or herringbone layouts with transparent editable waste assumptions.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

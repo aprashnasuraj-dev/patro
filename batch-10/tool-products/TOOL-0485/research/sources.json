@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0485",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "USDA FSIS safe minimum temperatures",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+      "version_or_effective_date": "USDA current",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-2",
+      "title": "USDA grilling and food safety",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/grilling-and-food-safety",
+      "version_or_effective_date": "current",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

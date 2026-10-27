@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0191",
+  "build_sequence": 191,
+  "name": "CSV Validator (Ragged Rows and Quote Errors)",
+  "route": "/tools/csv-validator",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0086",
+  "engineering_family": "CSV Cleaner and Validator",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "CSV Validator (Ragged Rows and Quote Errors) — Free Local Browser Tool",
+    "meta_description": "Validate CSV quoting, ragged rows, duplicate headers, and spreadsheet-formula hazards without modifying the source file.",
+    "h1": "CSV Validator (Ragged Rows and Quote Errors)",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

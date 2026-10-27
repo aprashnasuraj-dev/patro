@@ -1,0 +1,18 @@
+{
+  "runtime_qa": "TEST_PENDING",
+  "build": "NOT_RUN",
+  "typecheck": "NOT_RUN",
+  "unit_tests": "NOT_RUN",
+  "browser_tests": "NOT_RUN",
+  "accessibility": "NOT_RUN",
+  "performance": "NOT_RUN",
+  "security": "NOT_RUN",
+  "deferred_checks": [
+    "Known answer and malformed-case fixtures",
+    "Keyboard and screen-reader handling",
+    "320px responsive interaction",
+    "Clipboard/download flow",
+    "Integration bundler must compile TypeScript",
+    "Review source-specific grammar completeness"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Extract external and internal link annotations from a PDF without uploading the document.",
+      "status": "implementation_scope",
+      "basis": "PDF.js annotation API"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Annotation extraction cannot recover plain text URLs that are not represented as PDF link annotations.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

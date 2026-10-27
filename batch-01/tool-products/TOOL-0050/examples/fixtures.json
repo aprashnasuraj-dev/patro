@@ -1,0 +1,18 @@
+{
+  "input": {
+    "maxAge": "63072000",
+    "subdomains": true,
+    "preload": true,
+    "cert": false,
+    "redirect": false,
+    "subdomainHTTPS": false,
+    "redirectHeaders": false
+  },
+  "worked_example": "max-age=63072000; includeSubDomains; preload is a typical candidate header.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

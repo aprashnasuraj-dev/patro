@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Paid-leave wage replacement with state rules supplied by the user",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "No automatic state rate table, employment eligibility assessment, federal benefit overlap, taxation or state-specific waiting rule.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.dol.gov/agencies/wb/featured-paid-leave"
+  ],
+  "assumptions": "No automatic state rate table, employment eligibility assessment, federal benefit overlap, taxation or state-specific waiting rule.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

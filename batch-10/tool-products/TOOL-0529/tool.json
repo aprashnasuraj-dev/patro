@@ -1,0 +1,68 @@
+{
+  "id": "TOOL-0529",
+  "name": "Puppy Adult Weight Estimate and Growth Curve",
+  "slug": "puppy-adult-weight-growth-predictor",
+  "route": "/tools/puppy-adult-weight-growth-predictor",
+  "family": "F0317",
+  "description": "Illustrate puppy growth uncertainty from a veterinarian-supplied fraction of mature weight; do not force breed-independent forecasts.",
+  "seo": {
+    "title": "Puppy Adult Weight Estimate and Growth Curve — Free Local Tool | AafnaiPatro",
+    "description": "Illustrate puppy growth uncertainty from a veterinarian-supplied fraction of mature weight; do not force breed-independent forecasts.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "growth",
+  "inputs": [
+    {
+      "key": "ageWeeks",
+      "label": "Puppy age at weigh-in",
+      "default": 20,
+      "unit": "weeks",
+      "type": "number",
+      "min": 2,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "key": "weight",
+      "label": "Measured weight now",
+      "default": 16,
+      "unit": "kg",
+      "type": "number",
+      "min": 0.01,
+      "max": 200,
+      "step": "any"
+    },
+    {
+      "key": "maturityFraction",
+      "label": "Estimated current fraction of adult weight",
+      "default": 55,
+      "unit": "percent",
+      "type": "number",
+      "min": 5,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "uncertainty",
+      "label": "Relative uncertainty in maturity fraction",
+      "default": 15,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 50,
+      "step": "any"
+    }
+  ]
+}

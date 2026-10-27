@@ -1,0 +1,44 @@
+{
+  "id": "TOOL-0474",
+  "name": "Tariff & Landed Cost Estimator",
+  "slug": "import-landed-cost-tariff-calculator",
+  "route": "/tools/import-landed-cost-tariff-calculator",
+  "family": "F0276",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Tariff & Landed Cost Estimator | AafnaiPatro Tools",
+    "description": "Calculate landed cost from explicit import value, tariff, freight, insurance, brokerage and a configurable local tax base; not an HS tariff lookup."
+  },
+  "execution": {
+    "mode": "client-side",
+    "account_required": false,
+    "network_transmission_of_user_content": false,
+    "worker_required": false,
+    "entry_route_lazy_load": true,
+    "max_persisted_data": "none"
+  },
+  "source_files": {
+    "html": "page.html",
+    "core": "src/core.ts",
+    "ui": "src/ui.ts",
+    "styles": "src/styles.css"
+  },
+  "dependencies": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css"
+  ],
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap": false,
+    "published": false
+  }
+}

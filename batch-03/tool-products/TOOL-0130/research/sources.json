@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0130",
+  "sources": [
+    {
+      "url": "https://www.w3.org/TR/SVG/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    }
+  ],
+  "assumptions": [
+    "External scripts/resources are removed and remote URL references are not fetched."
+  ],
+  "limitations": [
+    "Unsupported external fonts or filters may render differently from the original authoring environment."
+  ]
+}

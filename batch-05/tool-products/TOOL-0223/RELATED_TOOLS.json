@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0223",
+  "related": [
+    {
+      "id": "TOOL-0498",
+      "title": "RSU State and Employer Withholding Gap Calculator",
+      "proposed_canonical": "/calculators/rsu-state-withholding-gap-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0271",
+      "title": "BTU and HVAC Room Sizing Estimator",
+      "proposed_canonical": "/calculators/btu-calculator-room-size",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0298",
+      "title": "Hiking Time Estimator (Naismith and Tobler)",
+      "proposed_canonical": "/calculators/hiking-time-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0388",
+      "title": "G-code Print Time and Filament Estimator",
+      "proposed_canonical": "/calculators/gcode-filament-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

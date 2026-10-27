@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Peak = total steady running watts plus the largest simultaneous starting extra watts; applies user-entered reserve.",
+    "supporting_urls": [
+      "https://www.energy.gov/energysaver/using-portable-generators"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Does not size fuel tank, neutral bonding, grounding, power factor or transfer switch."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "200W refrigerator with 1200W start plus 900W pump with 2200W start: staggered peak is lower than simultaneous peak.",
+    "status": "TEST_PENDING"
+  }
+]

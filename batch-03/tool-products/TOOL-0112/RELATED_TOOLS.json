@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0112",
+  "related": [
+    {
+      "id": "TOOL-0117",
+      "title": "Text Width in Pixels Calculator",
+      "proposed_canonical": "/calculators/text-width-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0130",
+      "title": "SVG to PNG/JPG Exporter at Custom Sizes",
+      "proposed_canonical": "/converters/svg-to-png",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0200",
+      "title": "CSV to Excel with Text Columns (Keep Leading Zeros)",
+      "proposed_canonical": "/converters/csv-to-excel-keep-leading-zeros",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0371",
+      "title": "LaTeX Equation Preview and SVG/PNG Export",
+      "proposed_canonical": "/converters/latex-equation-to-image",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0310",
+  "name": "ISO Week Number Calculator and Calendar",
+  "route": "/tools/week-number-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0167",
+  "engineering_family": "ISO Weeks and Fiscal Calendar",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "ISO Week Number Calculator and Calendar — Private Browser Tool",
+    "meta_description": "Calculate ISO week-year, week number and weekday for a Gregorian date, then list every ISO week in the selected ISO week-year with Monday/Sunday boundaries.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

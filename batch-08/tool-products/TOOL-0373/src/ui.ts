@@ -1,0 +1,1 @@
+import {balance} from './core';import {q,val,setError,metricGrid} from '../_vendor/ui';q('run').addEventListener('click',()=>{const out=q('result');try{const r=balance(val('eq'));const p=document.createElement('p');p.className='output';p.textContent=r.equation;out.replaceChildren(metricGrid([['Coefficients',r.coefficients.join(' : ')]]),p)}catch(e){setError(out,e)}});

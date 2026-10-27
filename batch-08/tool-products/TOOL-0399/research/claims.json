@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Derives stitches per unit from your swatch, scales to target width, then rounds to a repeat multiple plus add-on.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

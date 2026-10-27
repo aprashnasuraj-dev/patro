@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Binomial and Poisson Probability Calculator — Browser Calculator</title>
+<meta name="description" content="Calculate binomial or Poisson point, cumulative, tail, and interval probabilities without factorial overflow.">
+<meta property="og:title" content="Binomial and Poisson Probability Calculator">
+<meta property="og:description" content="Calculate binomial or Poisson point, cumulative, tail, and interval probabilities without factorial overflow.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0214 · Local browser tool</div>
+<h1>Binomial and Poisson Probability Calculator</h1>
+<p class="lede">Calculate binomial or Poisson point, cumulative, tail, and interval probabilities without factorial overflow. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><div class="row"><label>Distribution<select id="kind"><option value="binomial">Binomial</option><option value="poisson">Poisson</option></select></label><label>Probability request<select id="relation"><option value="exact">Exactly k</option><option value="atMost">At most k</option><option value="atLeast">At least k</option><option value="between">Between a and b</option></select></label></div><div id="binomialFields" class="row"><label>Trials n<input id="n" type="number" value="20" min="0"></label><label>Success probability p<input id="p" type="number" value=".3" min="0" max="1" step=".01"></label></div><label id="poissonField" hidden>Poisson mean λ<input id="lambda" type="number" value="5" min="0" step=".1"></label><div class="row"><label>k / lower a<input id="a" type="number" value="6" min="0"></label><label>Upper b (between only)<input id="b" type="number" value="10" min="0"></label></div>
+<div class="row"><button id="run" type="button">Calculate probability</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Calculate binomial or Poisson point, cumulative, tail, and interval probabilities without factorial overflow.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Distribution parameters correspond to the mathematical binomial or Poisson model.</p></section>
+<section><h2>Limitations</h2><p>The binomial assumes fixed n, independent Bernoulli trials, and constant p. The Poisson assumes a constant event rate over the exposure interval.</p></section>
+<section><h2>FAQ</h2><details><summary>How are large factorials avoided?</summary><p>Point probabilities use log-gamma arithmetic and cumulative probabilities use regularized beta/gamma functions.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://itl.nist.gov/div898/handbook/eda/section3/eda366i.htm" rel="noopener noreferrer">NIST/SEMATECH — Binomial Distribution</a></li><li><a href="https://itl.nist.gov/div898/handbook/eda/section3/eda366j.htm" rel="noopener noreferrer">NIST/SEMATECH — Poisson Distribution</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

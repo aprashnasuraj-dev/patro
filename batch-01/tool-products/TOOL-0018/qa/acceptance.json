@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0018",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "product_tests_executed": 0,
+  "checks": {
+    "dependencies": "NOT_RUN",
+    "typecheck": "NOT_RUN",
+    "unit": "NOT_RUN",
+    "regression": "NOT_RUN",
+    "build": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "accessibility": "NOT_RUN",
+    "mobile_320": "NOT_RUN",
+    "tablet_768": "NOT_RUN",
+    "desktop_1440": "NOT_RUN",
+    "security": "NOT_RUN",
+    "download": "NOT_RUN",
+    "performance": "NOT_RUN"
+  },
+  "accepted": false
+}

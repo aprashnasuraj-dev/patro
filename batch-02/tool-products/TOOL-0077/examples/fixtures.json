@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "text": "नेपाली पात्रो — Live Time Observatory",
+    "mode": "Unicode preserving|ASCII fallback",
+    "separator": "-|_"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "\"नेपाली समय तालिका\" can retain Devanagari and be encoded as one URL segment.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{text:'नेपाली पात्रो — प्रयोग',mode:'Unicode preserving',separator:'-'}",
+    "assertions": "assert.match(result.text,/नेपाली/);assert.match(result.text,/%/);"
+  }
+}

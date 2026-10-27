@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0067",
+  "claims": [
+    {
+      "claim": "VideoObject rich results require name, thumbnailUrl and uploadDate.",
+      "supporting_url": "https://schema.org/VideoObject",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "A media URL or player URL is recommended.",
+      "supporting_url": "https://schema.org/VideoObject",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "schema.org VideoObject and Google Video rich-result documentation."
+  ],
+  "limitations": [
+    "No video metadata extraction or hosting; markup alone cannot make a video indexable."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

@@ -1,0 +1,27 @@
+{
+  "tool_id": "TOOL-0257",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "title": "Oracle NetSuite — Inventory Optimization Calculations",
+      "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_0702045810.html",
+      "version": null,
+      "effective_date": null,
+      "retrieved_at": "2026-10-26",
+      "supports": "Lead-time demand standard deviation, safety stock and reorder-point formulas; notes normal-distribution limitations.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    },
+    {
+      "title": "Oracle Inventory — Reorder Point Planning",
+      "url": "https://docs.oracle.com/cd/A60725_05/html/comnls/us/inv/roplan.htm",
+      "version": null,
+      "effective_date": null,
+      "retrieved_at": "2026-10-26",
+      "supports": "Reorder-point concept: safety stock plus lead-time demand.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    }
+  ],
+  "no_external_source_reason": null
+}

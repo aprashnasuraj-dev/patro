@@ -1,0 +1,53 @@
+{
+  "id": "TOOL-0289",
+  "name": "Sleep Cycle Bedtime Calculator",
+  "slug": "sleep-cycle-calculator",
+  "route": "/tools/sleep-cycle-calculator",
+  "family": "F0155",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Sleep Cycle Bedtime Calculator | AafnaiPatro",
+    "description": "Plan an adult bedtime around realistic total sleep duration, without treating 90-minute cycles as fixed.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "time",
+      "key": "wake",
+      "label": "Desired wake-up time",
+      "default": "07:00"
+    },
+    {
+      "type": "number",
+      "key": "latency",
+      "label": "Time normally taken to fall asleep",
+      "default": 20,
+      "min": 0,
+      "max": 120,
+      "step": "1",
+      "unit": "minutes"
+    }
+  ],
+  "explanation": "Work backward from wake time by 7, 8, or 9 hours of sleep plus individual sleep-onset latency; clock calculations wrap across midnight.",
+  "limitations": "No fixed 90-minute cycle guarantees an optimal wake time; adult needs differ; shift workers should seek tailored advice.",
+  "related_tool_ids": [
+    "TOOL-0290",
+    "TOOL-0292"
+  ],
+  "sources": [
+    "https://www.cdc.gov/sleep/about/"
+  ],
+  "special_notes": null
+}

@@ -1,0 +1,13 @@
+{
+  "lazy_dependencies": [
+    {
+      "package": "pdf-lib",
+      "version_policy": "pin during Git integration; bundle locally; no runtime CDN"
+    },
+    {
+      "package": "pdfjs-dist",
+      "version_policy": "pin during Git integration; bundle locally; no runtime CDN"
+    }
+  ],
+  "runtime_network": "none"
+}

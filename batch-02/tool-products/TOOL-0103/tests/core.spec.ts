@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('WOFF2 decode deferred fixtures',()=>{it.todo('decodes TrueType-backed WOFF2 to sfnt 0x00010000');it.todo('refuses OTTO-backed WOFF2 as TTF');it.todo('rejects corrupt WOFF2')});

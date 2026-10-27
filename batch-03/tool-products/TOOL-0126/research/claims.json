@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0126",
+  "claims": [
+    {
+      "claim": "Generate a favicon.ico, common PNG favicon sizes and a web-app manifest snippet from one square source image.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "A favicon set cannot guarantee visual clarity at tiny sizes; inspect 16\u00d716 and 32\u00d732 previews.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

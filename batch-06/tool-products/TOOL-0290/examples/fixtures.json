@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0290",
+  "sample_input": {
+    "dose": "150",
+    "halflife": "5",
+    "elapsed": "6"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

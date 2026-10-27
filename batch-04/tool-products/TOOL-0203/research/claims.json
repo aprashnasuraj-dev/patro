@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0203",
+  "claims": [
+    {
+      "claim": "Calculate a Wilson score interval for a binomial proportion, including boundary cases such as zero or all successes.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Independent Bernoulli trials with one common underlying success probability.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The interval describes repeated-sampling coverage under a binomial model. It is not a Bayesian credible interval and does not correct for clustered or dependent trials.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

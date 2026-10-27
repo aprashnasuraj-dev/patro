@@ -1,0 +1,8 @@
+{
+  "title": "Wash Sale CSV Lot Matcher and Form 8949 Helper",
+  "default_inputs": {
+    "csv": "date,symbol,side,quantity,price,account\n2026-01-02,ABC,BUY,100,10,Taxable\n2026-01-10,ABC,SELL,100,8,Taxable\n2026-01-20,ABC,BUY,100,9,Taxable"
+  },
+  "worked_example": "A $200 loss followed by a purchase of 100 identical shares 10 days later is flagged for review.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

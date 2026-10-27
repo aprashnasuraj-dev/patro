@@ -1,0 +1,40 @@
+{
+  "id": "TOOL-0003",
+  "title": "OpenAPI YAML to TypeScript Interfaces",
+  "route": "/tools/openapi-to-typescript-interfaces",
+  "slug": "openapi-to-typescript-interfaces",
+  "source": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "family_id": "F0001",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": false,
+  "published": false,
+  "seo": {
+    "title": "OpenAPI YAML to TypeScript Interfaces — Private, Browser-Based Draft Tool | AafnaiPatro",
+    "meta_description": "Paste an OpenAPI 3.x YAML document to generate typed component declarations. Unsupported external references stop conversion.",
+    "h1": "Move from OpenAPI contracts to safe TypeScript types",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "privacy": {
+    "routine_worker_requests": 0,
+    "user_content_transmission": false,
+    "file_execution": false,
+    "input_budget": 200000
+  },
+  "requirements": {
+    "runtime": "browser, compiled via existing lazy route loader",
+    "dependencies": {
+      "yaml": "2.8.1"
+    },
+    "test_dev_dependencies": {
+      "vitest": "3.2.4"
+    }
+  },
+  "input": "textarea and optional file local read",
+  "output": "openapi-types.ts",
+  "limitations": "This is a type generator, not a complete OpenAPI SDK; constraints such as minimum, pattern and format are not enforced at runtime."
+}

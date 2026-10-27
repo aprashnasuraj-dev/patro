@@ -1,0 +1,40 @@
+{
+  "tool_id": "TOOL-0347",
+  "research_scope": "Only implementation-changing formulas, platform rules, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://support.google.com/youtube/answer/72431",
+      "title": "Add custom thumbnails on YouTube",
+      "publisher": "YouTube Help",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Platform guidance and browser behavior can change after this source-preparation date.",
+      "important_limitations": "Current help recommends large 16:9 thumbnails for videos; UI crops vary by surface, so safe-zone overlays are heuristics."
+    },
+    {
+      "url": "https://www.linkedin.com/help/linkedin/answer/a527229",
+      "title": "Share photos on LinkedIn",
+      "publisher": "LinkedIn Help",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Platform guidance and browser behavior can change after this source-preparation date.",
+      "important_limitations": "Current help documents 5 MB upload limit, minimum 552×276, recommended 1080 px width, and 3:1–4:5 aspect-ratio range for photos."
+    },
+    {
+      "url": "https://www.linkedin.com/help/linkedin/answer/a426534/single-image-ads-advertising-specifications",
+      "title": "Single image ads advertising specifications",
+      "publisher": "LinkedIn Help",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Platform guidance and browser behavior can change after this source-preparation date.",
+      "important_limitations": "Used only for editable landscape/square/vertical output presets."
+    }
+  ],
+  "no_external_source_reason": null
+}

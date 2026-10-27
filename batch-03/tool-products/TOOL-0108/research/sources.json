@@ -1,0 +1,41 @@
+{
+  "tool_id": "TOOL-0108",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "css-fonts-5",
+      "url": "https://www.w3.org/TR/css-fonts-5/",
+      "version": "CSS Fonts Module Level 5 Working Draft",
+      "effective_date": "2026-09-13",
+      "license": "W3C document license",
+      "notes": "Defines size-adjust semantics and interaction with font metrics. Working Draft."
+    },
+    {
+      "id": "css-fonts-4",
+      "url": "https://www.w3.org/TR/2026/WD-css-fonts-4-20261022/",
+      "version": "CSS Fonts Module Level 4 Working Draft",
+      "effective_date": "2026-10-22",
+      "license": "W3C document license",
+      "notes": "Defines @font-face descriptors including unicode-range and font metric overrides. Working Draft; syntax may evolve."
+    },
+    {
+      "id": "opentype-os2",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/os2",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "Defines sxHeight, sCapHeight and sTypo* metrics used for fallback metric matching."
+    },
+    {
+      "id": "opentype-1.9.1",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/otff",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "General OpenType/SFNT format reference."
+    }
+  ],
+  "assumptions": "Both files expose comparable typographic metrics. x-height and cap-height matching use OS/2 metrics when available.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "Metric matching reduces geometric differences but cannot make glyph shapes, hinting, kerning, or script shaping identical. Variable-font instance metrics can differ from default metrics."
+}

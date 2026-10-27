@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0296",
+  "sample_input": {
+    "food": "Sample oats",
+    "serving": "40",
+    "servings": "10",
+    "calories": "150",
+    "fat": "3",
+    "saturated": "0.5",
+    "sodium": "0",
+    "carb": "27",
+    "fiber": "4",
+    "added": "0",
+    "protein": "5"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

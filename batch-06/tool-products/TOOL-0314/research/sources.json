@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0314",
+  "research_scope": "Only implementation-changing date/time/calendar standards or provenance were collected.",
+  "sources": [
+    {
+      "url": "https://unicode.org/reports/tr35/tr35.html",
+      "title": "Unicode Technical Standard #35 / CLDR Core",
+      "publisher": "Unicode Consortium",
+      "version": "TR35 current 2026",
+      "effective_date": "2026-10",
+      "assumptions": "Used only for implementation-changing definitions or semantics.",
+      "licensing_or_data_restrictions": "Unicode technical report is public; runtime ICU/CLDR version may vary.",
+      "uncertainty": "Low for the cited definition; later revisions may change details.",
+      "important_limitations": "Islamic calendar variants differ; generic islamic, islamic-civil and islamic-umalqura are not interchangeable."
+    },
+    {
+      "url": "https://tc39.es/ecma402/2026/",
+      "title": "ECMAScript 2026 Internationalization API Specification",
+      "publisher": "Ecma International / TC39",
+      "version": "ECMA-402 2026",
+      "effective_date": "2026",
+      "assumptions": "Used only for implementation-changing definitions or semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; cite or summarize, do not redistribute protected standard text.",
+      "uncertainty": "Low for the cited definition; later revisions may change details.",
+      "important_limitations": "Intl.DateTimeFormat available zones and behavior are implementation-defined within ECMA-402 constraints."
+    }
+  ],
+  "internal_sources": [],
+  "no_external_source_reason": null
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0486",
+  "name": "Digital Nomad Visa Eligibility Matcher",
+  "route": "/tools/digital-nomad-visa-eligibility-checker",
+  "slug": "digital-nomad-visa-eligibility-checker",
+  "family": "F0285",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Digital Nomad Visa Eligibility Matcher | AafnaiPatro Tools",
+    "description": "Compare employment, monthly EUR income and dependent-family conditions against a narrow set of official Spain/Estonia/Portugal visa references; return screen on"
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

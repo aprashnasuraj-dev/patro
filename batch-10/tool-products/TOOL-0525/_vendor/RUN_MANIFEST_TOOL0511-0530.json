@@ -1,0 +1,36 @@
+{
+  "tool_range": "TOOL-0511..TOOL-0530",
+  "batch": "BATCH-10",
+  "tool_count": 20,
+  "source_ids": [
+    "TOOL-0511",
+    "TOOL-0512",
+    "TOOL-0513",
+    "TOOL-0514",
+    "TOOL-0515",
+    "TOOL-0516",
+    "TOOL-0517",
+    "TOOL-0518",
+    "TOOL-0519",
+    "TOOL-0520",
+    "TOOL-0521",
+    "TOOL-0522",
+    "TOOL-0523",
+    "TOOL-0524",
+    "TOOL-0525",
+    "TOOL-0526",
+    "TOOL-0527",
+    "TOOL-0528",
+    "TOOL-0529",
+    "TOOL-0530"
+  ],
+  "status": "TEST_PENDING",
+  "git_imported": 0,
+  "product_tests_executed": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "as_of": "2026-10-26",
+  "notable_blockers": [
+    "TOOL-0527: NPF commercial-use rights and attribution require explicit permission before publishing"
+  ]
+}

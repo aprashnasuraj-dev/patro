@@ -1,0 +1,32 @@
+{
+  "retrieved_on": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://zod.dev/api",
+      "owner": "Zod",
+      "supports": "z.object, z.strictObject, optional, union, array",
+      "rights": "documentation linked, not reproduced"
+    },
+    {
+      "url": "https://zod.dev/basics",
+      "owner": "Zod",
+      "supports": "z.infer syntax",
+      "rights": "documentation linked, not reproduced"
+    },
+    {
+      "url": "https://zod.dev/v4/changelog",
+      "owner": "Zod",
+      "supports": "Zod 4 strictObject changes",
+      "rights": "documentation linked, not reproduced"
+    }
+  ],
+  "runtime_dependencies": [],
+  "generated_code_dependency": "zod v4",
+  "license_note": "Zod is third-party; consumers install and comply with its package license",
+  "limitations": [
+    "structural inference only",
+    "empty arrays become unknown",
+    "no literal/format refinements inferred",
+    "too many heterogeneous types blocked"
+  ]
+}

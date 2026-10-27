@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0050",
+  "name": "HSTS Header Builder and Preload Checklist",
+  "reserved_route": "/tools/hsts-header-generator",
+  "family_id": "F0023",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Construct Strict-Transport-Security and screen prerequisites for preload readiness.",
+  "seo": {
+    "title": "HSTS Header Builder and Preload Checklist | Mission Mangal Tools",
+    "meta_description": "Construct Strict-Transport-Security and screen prerequisites for preload readiness.",
+    "h1": "HSTS Header Builder and Preload Checklist",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0471",
+  "related": [
+    {
+      "id": "TOOL-0468",
+      "title": "Continuing Education Credit & License Renewal Tracker",
+      "proposed_canonical": "/planners/continuing-education-license-renewal-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0317",
+      "title": "Fiscal Quarter and Fiscal Year Calculator",
+      "proposed_canonical": "/calculators/fiscal-quarter-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0524",
+      "title": "Credit Card Application Rules and 5/24 Date Checker",
+      "proposed_canonical": "/validators/chase-5-24-credit-card-application-rules",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0362",
+      "title": "BibTeX to APA, MLA, Chicago Converter",
+      "proposed_canonical": "/converters/bibtex-to-apa",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

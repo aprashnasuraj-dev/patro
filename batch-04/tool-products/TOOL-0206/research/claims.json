@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0206",
+  "claims": [
+    {
+      "claim": "Run Welch's unequal-variance two-sample t-test from pasted observations with Welch-Satterthwaite degrees of freedom and a mean-difference confidence interval.",
+      "support": [
+        "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Two independent samples; observations within each sample are independent.",
+      "support": [
+        "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Welch's test targets a difference in means under independent sampling. Severe non-normality or dependence can invalidate small-sample inference.",
+      "support": [
+        "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

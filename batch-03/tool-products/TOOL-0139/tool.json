@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0139",
+  "name": "Image DPI Changer (72 to 300 DPI)",
+  "route": "/tools/change-image-dpi",
+  "family_id": "F0056",
+  "family": "Image Metadata and DPI Editor",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Image DPI Changer (72 to 300 DPI) — Browser-Local Tool",
+    "meta_description": "Change PNG or JPEG resolution metadata without resampling pixels, so physical print dimensions change while pixel dimensions remain constant."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "DPI is metadata only in this tool; it does not create additional image detail."
+  ],
+  "limitations": [
+    "Some software ignores or rewrites density metadata, and browser canvas export normally defaults to 96 DPI."
+  ]
+}

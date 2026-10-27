@@ -1,0 +1,24 @@
+{
+  "default_inputs": {
+    "stitchesW": 180,
+    "stitchesH": 140,
+    "count": 28,
+    "over": 2,
+    "border": 3,
+    "waste": 0
+  },
+  "known_answer": {
+    "output_label": "Finished stitched motif",
+    "expected_display": "12.86 × 10.00 in",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

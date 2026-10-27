@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0326",
+  "examples": [
+    {
+      "rfc4231_like": {
+        "hash": "SHA-256",
+        "key_hex": "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
+        "payload": "Hi There",
+        "expected_hex": "b0344c61d8db38535ca8afceaf0bf12b881dc200c9833da726e9376c2e32cff7"
+      }
+    }
+  ]
+}

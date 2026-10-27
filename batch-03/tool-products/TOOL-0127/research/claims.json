@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0127",
+  "claims": [
+    {
+      "claim": "Create browser-local iOS and Android raster icon sets plus integration manifests from a single high-resolution master.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Platform tooling evolves; generated legacy density sets complement, not replace, Xcode/Android Studio asset validation.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

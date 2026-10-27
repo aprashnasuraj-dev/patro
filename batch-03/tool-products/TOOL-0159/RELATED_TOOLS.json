@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0159",
+  "related": [
+    {
+      "id": "TOOL-0008",
+      "title": "Postman Collection to Markdown Docs",
+      "proposed_canonical": "/converters/postman-collection-to-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "proposed_canonical": "/converters/excel-to-markdown-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "proposed_canonical": "/utilities/strip-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0337",
+      "title": "Office Document Metadata Scrubber (DOCX, XLSX, PPTX)",
+      "proposed_canonical": "/editors/remove-metadata-from-word-document",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "proposed_canonical": "/converters/resize-pdf-to-a4",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

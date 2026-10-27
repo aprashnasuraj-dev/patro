@@ -1,0 +1,17 @@
+{
+  "nominal": {
+    "csv": "country,revenue\\nNP,10\\nNP,20\\nJP,5",
+    "group": [
+      "country"
+    ],
+    "measure": "revenue",
+    "op": "sum"
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

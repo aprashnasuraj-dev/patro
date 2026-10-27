@@ -1,0 +1,20 @@
+{
+  "sample_input": {
+    "name": "Example Community Bakery",
+    "category": "Bakery",
+    "url": "https://example.com",
+    "street": "123 Main Street",
+    "city": "Exampletown",
+    "region": "CA",
+    "postal": "90210",
+    "country": "US",
+    "hours": "Mon-Fri 09:00-17:00\nSat 10:00-14:00"
+  },
+  "worked_example": "Mon-Fri 09:00-17:00 becomes five openingHoursSpecification entries.",
+  "planned_expectations": [
+    "Mon-Fri 09:00-17:00 emits five schedules.",
+    "Reject overnight hours and overlapping day groups.",
+    "Reject non-ISO country code."
+  ],
+  "execution_state": "TEST_PENDING"
+}

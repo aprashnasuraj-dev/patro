@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Printable label grid geometry and X/Y calibration",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Printer nonprintable margins, manufacturer die-cut tolerances and CSS/PDF print scaling may create residual alignment error.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://helpx.adobe.com/be_en/indesign/desktop/print/page-set-up-and-printer-marks/print-bleed-and-slug-areas.html"
+  ],
+  "assumptions": "Printer nonprintable margins, manufacturer die-cut tolerances and CSS/PDF print scaling may create residual alignment error.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

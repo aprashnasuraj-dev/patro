@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,files,guarded,dl,resultText } from '../_vendor/ui'; $('primary').textContent='Merge with bookmarks';$('primary').addEventListener('click',()=>guarded(async()=>{const fs=files('files'),labels=fs.map(f=>f.name.replace(/\.pdf$/i,'')),b=await core.merge(fs,labels);resultText(`Merged ${fs.length} PDFs with one top-level bookmark per source file.`);dl(b,'merged-with-bookmarks.pdf')}));
+

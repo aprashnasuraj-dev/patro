@@ -1,0 +1,27 @@
+{
+  "default_input": {
+    "length": 30,
+    "width": 20,
+    "height": 12,
+    "weight": 25,
+    "divisor": 139,
+    "maxLongest": 108,
+    "maxGirth": 165,
+    "handling": 0
+  },
+  "hand_reference": {
+    "label": "Rounded dimensional weight",
+    "value": "52 lb",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

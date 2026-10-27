@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0510",
+  "name": "Canadian ACB and Superficial-Loss Ledger",
+  "route": "/tools/canada-adjusted-cost-base-superficial-loss-ledger",
+  "slug": "canada-adjusted-cost-base-superficial-loss-ledger",
+  "family": "F0112",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "ledger",
+  "title": "Canadian ACB and Superficial-Loss Ledger | AafnaiPatro Tools",
+  "meta_description": "Calculate weighted-average Canadian adjusted cost base and flag potentially superficial losses with acquisition/holding checks.",
+  "inputs": [
+    {
+      "key": "csv",
+      "label": "CAD transaction ledger: date,symbol,side,quantity,price,fee",
+      "default": "date,symbol,side,quantity,price,fee\n2026-01-02,XYZ,BUY,100,10,5\n2026-01-10,XYZ,SELL,100,8,5\n2026-01-20,XYZ,BUY,100,9,5",
+      "type": "textarea"
+    }
+  ]
+}

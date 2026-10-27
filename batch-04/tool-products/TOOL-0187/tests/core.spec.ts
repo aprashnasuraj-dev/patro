@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {summarize} from '../src/core';describe('summarize',()=>{it('sums by group',()=>{const r=summarize('country,revenue\nNP,10\nNP,20\nJP,5',['country'],'revenue','sum');expect(r.rows).toBe(2);expect(r.csv).toContain('NP,30')});it('rejects nonnumeric measure',()=>expect(()=>summarize('g,v\na,x',['g'],'v','sum')).toThrow());});

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0416",
+  "claims": [
+    {
+      "claim": "The built-in threshold subset is date-stamped October 2026 and includes recent removals of transaction tests where the central SST guidance reports them.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Physical presence and state-specific counting rules can create obligations outside the economic-threshold check.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

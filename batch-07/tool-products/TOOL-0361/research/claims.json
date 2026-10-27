@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0361",
+  "claims": [
+    {
+      "claim": "Build a structured APA 7 reference for common journal, book, chapter and webpage sources while keeping author, DOI and date fields explicit.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Covers common APA reference types; legal sources, datasets, audiovisual media and many edge cases require a full style engine or manual review.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

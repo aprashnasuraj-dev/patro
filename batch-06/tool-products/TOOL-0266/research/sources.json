@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0266",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.srs.fs.usda.gov/pubs/gtr/gtr_srs251.pdf",
+      "title": "Timber Products Monitoring: Unit of Measure Conversion Factors",
+      "publisher": "USDA Forest Service",
+      "version": "GTR SRS-251",
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "Public web page; cite/summary, do not redistribute copyrighted standard text.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "Board foot for sawn lumber is 12 in × 12 in × 1 in; log scaling uses separate rules."
+    }
+  ],
+  "no_external_source_reason": null
+}

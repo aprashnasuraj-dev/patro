@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0071",
+  "name": "Sitemap Splitter (50,000 URL Limit)",
+  "reserved_route": "/tools/sitemap-splitter",
+  "family_id": "F0036",
+  "family": "Sitemap Generator and Splitter",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Sitemap Splitter (50,000 URL Limit) | AafnaiPatro Tools",
+    "description": "Split a large sitemap into protocol-compliant parts and an optional index.",
+    "h1": "Sitemap Splitter (50,000 URL Limit)",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

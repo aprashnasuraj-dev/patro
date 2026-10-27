@@ -1,0 +1,44 @@
+{
+  "retrieved_date": "2026-10-26",
+  "sources": [
+    {
+      "id": "csv",
+      "url": "https://www.rfc-editor.org/rfc/rfc4180",
+      "version": "RFC 4180, October 2005",
+      "use": "CSV records, quoting and escaped quote conventions; LF/CR acceptance is a documented interoperability extension",
+      "rights": "Referenced and paraphrased; no specification text bundled"
+    },
+    {
+      "id": "graphql",
+      "url": "https://spec.graphql.org/September2025/",
+      "version": "September 2025",
+      "use": "Name grammar, built-in scalar definitions and schema validation",
+      "rights": "Specification OWFa 1.0; original implementation plus MIT graphql-js validator"
+    },
+    {
+      "id": "papa",
+      "url": "https://www.papaparse.com/docs",
+      "version": "Implementation pinned to 5.7.0",
+      "use": "Incremental step callback, abort and errors",
+      "rights": "MIT; installed package LICENSE copied verbatim"
+    },
+    {
+      "id": "graphql-js",
+      "url": "https://github.com/graphql/graphql-js/blob/16.x.x/LICENSE",
+      "version": "Implementation pinned to 16.11.0",
+      "rights": "MIT; installed package LICENSE copied verbatim"
+    },
+    {
+      "id": "papa-license",
+      "url": "https://github.com/mholt/PapaParse/blob/master/LICENSE",
+      "rights": "MIT license inspected; package-local notice retained"
+    }
+  ],
+  "not_claimed": [
+    "SEO demand volumes",
+    "benchmark scores",
+    "server resolvers",
+    "full RFC3339 coverage",
+    "complete real-world data validation"
+  ]
+}

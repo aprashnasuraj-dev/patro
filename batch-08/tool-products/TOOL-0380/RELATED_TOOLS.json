@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0380",
+  "related": [
+    {
+      "id": "TOOL-0358",
+      "title": "Printable Bingo Card Generator",
+      "proposed_canonical": "/generators/bingo-card-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "proposed_canonical": "/validators/word-level-text-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0094",
+      "title": "Word and Google Docs HTML Cleaner",
+      "proposed_canonical": "/editors/clean-word-html",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0099",
+      "title": "Word Frequency Counter with Stopword Filter",
+      "proposed_canonical": "/utilities/word-frequency-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0369",
+      "title": "Writing Word Count Goal Tracker (Local)",
+      "proposed_canonical": "/planners/word-count-goal-tracker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

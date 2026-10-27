@@ -1,0 +1,42 @@
+{
+  "id": "TOOL-0105",
+  "name": "Font Language Coverage Checker",
+  "route": "/tools/font-language-support-checker",
+  "engineering_family_id": "F0049",
+  "engineering_family": "Font Inspector",
+  "batch_id": "BATCH-02",
+  "planned_repo_path": "tool-products/TOOL-0105/",
+  "execution": "browser",
+  "lazy_load": true,
+  "normal_network_round_trips": 0,
+  "account_required": false,
+  "uploads_required": false,
+  "third_party_user_content_transmission": false,
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "runtime_qa_status": "TEST_PENDING",
+  "dependencies": [
+    {
+      "package": "fonteditor-core",
+      "version": "2.6.3",
+      "lazy": true
+    },
+    {
+      "asset": "woff2.wasm",
+      "local_path": "/assets/vendor/fonteditor-core/woff2.wasm",
+      "lazy": true
+    }
+  ],
+  "limits": {
+    "text_default_bytes": 2000000,
+    "font_bytes": 30000000
+  },
+  "notes": [
+    "Source-preparation artifact only; integration/build/runtime QA not executed."
+  ]
+}

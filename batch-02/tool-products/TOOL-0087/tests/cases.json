@@ -1,0 +1,47 @@
+[
+  {
+    "id": "known-answer",
+    "scenario": "\"great fast tool\" vs \"great secure tool\" marks fast removed and secure added.",
+    "expected": "Semantic output agrees with expected example"
+  },
+  {
+    "id": "malformed",
+    "scenario": "Truncated or malformed input",
+    "expected": "Error, no misleading partial success"
+  },
+  {
+    "id": "oversize",
+    "scenario": "Input above safe bound",
+    "expected": "Explicit refusal without UI lockup"
+  },
+  {
+    "id": "xss",
+    "scenario": "Input contains <img src=x onerror=alert(1)> and quotes",
+    "expected": "Only inert textContent; no execution"
+  },
+  {
+    "id": "copy-export",
+    "scenario": "Run tool, copy and download result",
+    "expected": "Copied data equals exported result; safe filename"
+  },
+  {
+    "id": "accessibility",
+    "scenario": "Keyboard-only navigation, screen reader result changes",
+    "expected": "Labelled controls, focus indicator and polite result region"
+  },
+  {
+    "id": "responsive",
+    "scenario": "320px viewport and desktop",
+    "expected": "Readable stacked inputs, scrollable tables, no page overflow"
+  },
+  {
+    "id": "security",
+    "scenario": "Pathological input and repeated execution",
+    "expected": "Memory/input caps, cancellation and no untrusted HTML injection"
+  },
+  {
+    "id": "domain-1",
+    "scenario": "Insert/remove with repeated tokens and max 600 tokens",
+    "expected": "Specific behavior validated manually and by automated tests at integration"
+  }
+]

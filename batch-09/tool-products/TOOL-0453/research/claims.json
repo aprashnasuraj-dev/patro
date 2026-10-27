@@ -1,0 +1,23 @@
+{
+  "claims": [
+    {
+      "statement": "Spectacle optical vertex conversion, not a contact lens prescription",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Optical model only, not patient-specific contact fitting, base curve, lens brand compatibility or clinical prescription.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://coopervision.com/practitioner/ecp-viewpoints/technicians-and-staff/contact-lenses-101-part-2-contact-lens-designs",
+    "https://www.aoa.org/healthy-eyes/vision-and-vision-correction/healthy-vision-and-contact-lenses"
+  ],
+  "assumptions": "Optical model only, not patient-specific contact fitting, base curve, lens brand compatibility or clinical prescription.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

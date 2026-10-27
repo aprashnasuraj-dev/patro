@@ -1,0 +1,96 @@
+{
+  "id": "TOOL-0507",
+  "name": "UK Pension Annual Allowance Carry-Forward Calculator",
+  "route": "/tools/uk-pension-allowance-carry-forward-calculator",
+  "slug": "uk-pension-allowance-carry-forward-calculator",
+  "family": "F0300",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "retirement",
+  "title": "UK Pension Annual Allowance Carry-Forward Calculator | AafnaiPatro Tools",
+  "meta_description": "Calculate 2026/27 pension input capacity with explicitly entered prior-year unused allowance, earliest year consumed first.",
+  "inputs": [
+    {
+      "key": "currentCap",
+      "label": "Applicable 2026/27 annual allowance (adjust if tapered)",
+      "default": 60000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 60000,
+      "step": "any"
+    },
+    {
+      "key": "currentUsed",
+      "label": "Current tax-year pension input already made",
+      "default": 18000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "y2023",
+      "label": "Unused 2023/24 allowance",
+      "default": 8000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 60000,
+      "step": "any"
+    },
+    {
+      "key": "y2024",
+      "label": "Unused 2024/25 allowance",
+      "default": 16000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 60000,
+      "step": "any"
+    },
+    {
+      "key": "y2025",
+      "label": "Unused 2025/26 allowance",
+      "default": 12000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 60000,
+      "step": "any"
+    },
+    {
+      "key": "member",
+      "label": "Member of a registered pension scheme in each prior year",
+      "default": "yes",
+      "type": "select",
+      "options": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "key": "mpaa",
+      "label": "Money purchase annual allowance triggered?",
+      "default": "no",
+      "type": "select",
+      "options": [
+        "no",
+        "yes"
+      ]
+    }
+  ]
+}

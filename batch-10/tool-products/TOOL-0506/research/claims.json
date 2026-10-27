@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Interest-only stress formula: monthly rental income / (loan balance × annual stress rate / 12).",
+    "sources": [
+      "https://www.bankofengland.co.uk/prudential-regulation/publication/2016/underwriting-standards-for-buy-to-let-mortgage-contracts-ss"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Not a lending eligibility determination."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

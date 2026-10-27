@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0477",
+  "related": [
+    {
+      "id": "TOOL-0294",
+      "title": "Endurance Fueling Calculator (Carbs per Hour)",
+      "proposed_canonical": "/calculators/endurance-fueling-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0490",
+      "title": "Firewood Volume & Cost-per-BTU Calculator",
+      "proposed_canonical": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0144",
+      "title": "Merge PDFs with Bookmarks per File",
+      "proposed_canonical": "/editors/merge-pdf-with-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0474",
+      "title": "Tariff & Landed Cost Estimator",
+      "proposed_canonical": "/calculators/import-landed-cost-tariff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0473",
+      "title": "Carrier Surcharge & Oversize Checker",
+      "proposed_canonical": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

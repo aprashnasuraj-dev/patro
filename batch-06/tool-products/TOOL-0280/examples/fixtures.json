@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0280",
+  "examples": [
+    {
+      "inputs": {
+        "value": 1,
+        "unit": "ropani"
+      },
+      "expected": {
+        "sq_ft": 5476,
+        "aana": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "default_input": {
+    "basis": "EU GDPR Article 15",
+    "name": "Alex Example",
+    "recipient": "Example Company Data Protection Team",
+    "contact": "alex@example.test",
+    "scope": "Account profile and purchase history"
+  },
+  "hand_reference": {
+    "label": "Selected legal framework",
+    "value": "EU GDPR Article 15",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

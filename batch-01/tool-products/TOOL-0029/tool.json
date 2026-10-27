@@ -1,0 +1,17 @@
+{
+  "id": "TOOL-0029",
+  "name": "systemd OnCalendar Expression Tester",
+  "route": "/tools/systemd-oncalendar-tester",
+  "family": "F0016",
+  "status": "TEST_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "systemd OnCalendar Expression Tester | Mission Mangal Tools",
+    "description": "Prepare and inspect systemd oncalendar expression tester locally in your browser. Includes a worked example, format limits, and explicit warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": "Supported subset documented in core implementation; unsupported input must produce an error."
+}

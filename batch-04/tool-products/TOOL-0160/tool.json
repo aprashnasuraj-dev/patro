@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0160",
+  "build_sequence": 160,
+  "name": "PDF Link Extractor",
+  "route": "/tools/extract-links-from-pdf",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "PDF Inspector and Metadata Scrubber",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": null,
+    "notes": "Annotation extraction cannot recover plain text URLs that are not represented as PDF link annotations."
+  },
+  "seo": {
+    "title": "PDF Link Extractor — Free Browser Tool",
+    "meta_description": "Extract external and internal link annotations from a PDF without uploading the document.",
+    "h1": "PDF Link Extractor",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0055"
+}

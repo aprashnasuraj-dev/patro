@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0004",
+  "related": [
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0003",
+      "title": "OpenAPI YAML to TypeScript Interfaces",
+      "proposed_canonical": "/converters/openapi-to-typescript-interfaces",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0005",
+      "title": "JSON to Protobuf (.proto) Generator",
+      "proposed_canonical": "/generators/json-to-protobuf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

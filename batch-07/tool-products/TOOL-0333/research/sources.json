@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0333",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://man.openbsd.org/ssh-keygen",
+      "title": "ssh-keygen manual",
+      "publisher": "OpenBSD / OpenSSH",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "OpenSSH default fingerprints use SHA256 over the decoded public-key blob; comments are not part of the blob hash."
+    }
+  ],
+  "no_external_source_reason": null
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0137",
+  "sources": [
+    {
+      "url": "https://www.w3.org/Graphics/GIF/spec-gif89a.txt",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    }
+  ],
+  "assumptions": [
+    "Frame delays are clamped to a safe minimum because some viewers ignore extremely small delays."
+  ],
+  "limitations": [
+    "Re-encoding may change palette quantization and file size; timing precision varies by GIF viewer."
+  ]
+}

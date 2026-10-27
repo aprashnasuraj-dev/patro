@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('OpenType feature detector',()=>{it.todo('reads GSUB and GPOS FeatureList tags');it.todo('deduplicates feature tags across tables');it.todo('rejects malformed feature offsets/counts');it.todo('CSS helper quotes four-character tags only')});

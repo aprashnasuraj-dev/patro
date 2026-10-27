@@ -1,0 +1,13 @@
+{
+  "tool": "TOOL-0515",
+  "default_inputs": {
+    "jurisdiction": "NSW",
+    "years": "8.5",
+    "entitlementWeeks": "0.8666667",
+    "alreadyTaken": "0",
+    "weeklyPay": "1400",
+    "termination": "no"
+  },
+  "worked_example": "At 0.8667 weeks per service year, eight years accrue roughly 6.93 weeks before leave already taken.",
+  "source_status": "TEST_PENDING"
+}

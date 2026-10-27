@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0505",
+  "related": [
+    {
+      "id": "TOOL-0503",
+      "title": "UK Section 104 Share Pool and Matching Calculator",
+      "proposed_canonical": "/calculators/uk-share-matching-section-104-pool-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0504",
+      "title": "UK Effective Marginal Tax Trap Calculator",
+      "proposed_canonical": "/calculators/uk-effective-marginal-tax-trap-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "proposed_canonical": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "proposed_canonical": "/calculators/marginal-tax-bracket-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0239",
+      "title": "Two-Loan Comparison Calculator (Total Cost)",
+      "proposed_canonical": "/calculators/compare-two-loans-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

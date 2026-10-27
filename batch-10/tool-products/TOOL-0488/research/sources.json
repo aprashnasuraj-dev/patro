@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0488",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "UMN Extension equipment calibration principles",
+      "url": "https://extension.umn.edu/agriculture/crop-production/small-grains/planting-equipment-calibration",
+      "version_or_effective_date": "reviewed 2018",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

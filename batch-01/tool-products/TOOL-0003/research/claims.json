@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0003",
+  "claims": [
+    {
+      "claim": "Trace component schemas into reviewable TypeScript",
+      "references": [
+        "https://spec.openapis.org/oas/v3.1",
+        "https://learn.openapis.org/upgrading/v3.0-to-v3.1.html",
+        "https://yaml.org/spec/1.2/"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "This is a type generator, not a complete OpenAPI SDK; constraints such as minimum, pattern and format are not enforced at runtime.",
+      "references": [
+        "https://spec.openapis.org/oas/v3.1",
+        "https://learn.openapis.org/upgrading/v3.0-to-v3.1.html",
+        "https://yaml.org/spec/1.2/"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

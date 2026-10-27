@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0047",
+  "related": [
+    {
+      "id": "TOOL-0046",
+      "title": "Query String to Nested JSON Converter",
+      "proposed_canonical": "/converters/query-string-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0076",
+      "title": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+      "proposed_canonical": "/editors/remove-tracking-parameters",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0066",
+      "title": "BreadcrumbList Schema from URL List",
+      "proposed_canonical": "/utilities/breadcrumb-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0070",
+      "title": "XML Sitemap Generator from URL List",
+      "proposed_canonical": "/generators/sitemap-from-url-list",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

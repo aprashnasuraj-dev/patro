@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0010",
+  "case": "Worked example",
+  "input": "services:\n  web:\n    image: nginx:stable-alpine\n    container_name: demo-web\n    ports:\n      - \"8080:80\"\n    environment:\n      NODE_ENV: production\n    restart: unless-stopped\n",
+  "options": {},
+  "expected_properties": "ports/volumes/env quoting, unsupported build/dependencies, invalid ports, YAML aliases",
+  "expected_execution": "NOT_RUN",
+  "limitations": "Multiple-container networking, resource orchestration, depends_on, health checks and advanced volumes are not equivalent to plain docker run."
+}

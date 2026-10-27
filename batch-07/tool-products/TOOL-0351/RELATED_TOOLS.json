@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0351",
+  "related": [
+    {
+      "id": "TOOL-0356",
+      "title": "YouTube Embed Code Builder (Start Time, Privacy Mode)",
+      "proposed_canonical": "/generators/youtube-embed-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0080",
+      "title": "Event Schema Generator (Online, Hybrid, In-Person)",
+      "proposed_canonical": "/generators/event-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0248",
+      "title": "VAT/GST Calculator with Reverse and Bulk Mode",
+      "proposed_canonical": "/calculators/vat-calculator-reverse-bulk",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "proposed_canonical": "/utilities/youtube-thumbnail-safe-zone",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

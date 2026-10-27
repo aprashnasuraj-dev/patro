@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0340",
+  "related": [
+    {
+      "id": "TOOL-0321",
+      "title": "Large File Hash Calculator (SHA-256, SHA-512, MD5, CRC32)",
+      "proposed_canonical": "/calculators/file-hash-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0322",
+      "title": "Checksum File Verifier (sha256sums Parser)",
+      "proposed_canonical": "/validators/verify-sha256sums",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0324",
+      "title": "Diceware Passphrase Generator (EFF Wordlists)",
+      "proposed_canonical": "/generators/diceware-passphrase-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0326",
+      "title": "HMAC Generator and Webhook Signature Tester",
+      "proposed_canonical": "/generators/hmac-signature-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0327",
+      "title": "PKCE Code Verifier and Challenge Generator",
+      "proposed_canonical": "/generators/pkce-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0384",
+  "name": "Capacitor Code Decoder (104, 473, and Tolerance Letters)",
+  "route": "/tools/capacitor-code-calculator",
+  "engineering_family_id": "F0215",
+  "engineering_family": "Capacitor Code Decoder",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-16",
+  "execution": "browser-local",
+  "network_required": false,
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "seo": {
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  }
+}

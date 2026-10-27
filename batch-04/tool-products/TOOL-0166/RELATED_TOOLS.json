@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0166",
+  "related": [
+    {
+      "id": "TOOL-0162",
+      "title": "Extract Audio from Video",
+      "proposed_canonical": "/extractors/extract-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0167",
+      "title": "Video Frame Extractor",
+      "proposed_canonical": "/extractors/extract-frames-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0055",
+      "title": "Browser Video and Audio Codec Support Checker",
+      "proposed_canonical": "/validators/browser-codec-support-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0161",
+      "title": "Lossless Video Trimmer (No Re-encode)",
+      "proposed_canonical": "/editors/trim-video-without-reencoding",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0165",
+      "title": "Rotate and Flip Video",
+      "proposed_canonical": "/editors/rotate-video",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

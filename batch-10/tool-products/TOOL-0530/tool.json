@@ -1,0 +1,90 @@
+{
+  "id": "TOOL-0530",
+  "name": "Card Surcharge vs Cash Discount Pricing Calculator",
+  "slug": "card-surcharge-cash-discount-calculator",
+  "route": "/tools/card-surcharge-cash-discount-calculator",
+  "family": "F0318",
+  "description": "Show merchant net revenue under a cash-discount model versus card surcharging, with mathematical break-even fee recovery.",
+  "seo": {
+    "title": "Card Surcharge vs Cash Discount Pricing Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Show merchant net revenue under a cash-discount model versus card surcharging, with mathematical break-even fee recovery.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "pricing",
+  "inputs": [
+    {
+      "key": "price",
+      "label": "Baseline merchandise price",
+      "default": 100,
+      "unit": "currency",
+      "type": "number",
+      "min": 0.01,
+      "max": 10000000.0,
+      "step": "any"
+    },
+    {
+      "key": "percentFee",
+      "label": "Card ad-valorem processing fee",
+      "default": 2.7,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 25,
+      "step": "any"
+    },
+    {
+      "key": "fixedFee",
+      "label": "Card processor per-transaction charge",
+      "default": 0.3,
+      "unit": "currency",
+      "type": "number",
+      "min": 0,
+      "max": 1000,
+      "step": "any"
+    },
+    {
+      "key": "surcharge",
+      "label": "Proposed customer card surcharge",
+      "default": 2.5,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 30,
+      "step": "any"
+    },
+    {
+      "key": "cashDiscount",
+      "label": "Cash discount on displayed price",
+      "default": 3,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 30,
+      "step": "any"
+    },
+    {
+      "key": "currency",
+      "label": "Display currency",
+      "default": "USD",
+      "type": "select",
+      "options": [
+        "USD",
+        "CAD",
+        "GBP",
+        "AUD"
+      ]
+    }
+  ]
+}

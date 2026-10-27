@@ -1,0 +1,13 @@
+{
+  "status": "TEST_PENDING",
+  "product_tests_executed": 0,
+  "browser_tests_executed": 0,
+  "checks_prepared": 12,
+  "checks_passed": 0,
+  "needs_integrator": true,
+  "deployment_status": "NOT_IMPORTED",
+  "risks": [
+    "Price, availability and ratings must reflect the live page and real customers."
+  ],
+  "release_gate": "LOCKED"
+}

@@ -1,0 +1,14 @@
+{
+  "input": {
+    "population": 100000,
+    "margin": 0.05,
+    "confidence": 0.95,
+    "proportion": 0.5,
+    "designEffect": 1,
+    "response": 0.7
+  },
+  "checks": [
+    "finite n < infinite n",
+    "invitations >= completed responses"
+  ]
+}

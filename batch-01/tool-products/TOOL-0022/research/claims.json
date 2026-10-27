@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0022",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Produce a GitLab CI draft for a strict subset of GitHub Actions jobs with explicit unsupported-feature findings.",
+      "evidence_urls": [
+        "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+        "https://docs.gitlab.com/ci/yaml/"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Not semantically equivalent for marketplace actions, permissions, secrets, matrices, expression contexts, caches or triggers. Requires manual credentials and runtime review.",
+      "evidence_urls": [
+        "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+        "https://docs.gitlab.com/ci/yaml/"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

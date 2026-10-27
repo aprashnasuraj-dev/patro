@@ -1,0 +1,23 @@
+{
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": 0,
+  "not_run": [
+    "build",
+    "typecheck",
+    "unit",
+    "browser",
+    "accessibility",
+    "performance",
+    "security",
+    "responsive",
+    "lint"
+  ],
+  "source_preparation": "prepared",
+  "publication_gate": "LOCKED",
+  "open_concerns": [
+    "Yarn gauge, grams per meter, color-lot variation, blend and wash shrinkage are not determined by length alone.",
+    "Validate integration imports and runtime client-side rendering in later Git phase"
+  ],
+  "git_imported": false,
+  "published": false
+}

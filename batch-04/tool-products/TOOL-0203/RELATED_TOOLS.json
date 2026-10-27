@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0203",
+  "related": [
+    {
+      "id": "TOOL-0204",
+      "title": "Survey Sample Size Calculator (Finite Population)",
+      "proposed_canonical": "/calculators/survey-sample-size-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0210",
+      "title": "Outlier Detector (IQR, Z-Score, MAD)",
+      "proposed_canonical": "/calculators/outlier-detection-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0213",
+      "title": "Z-Score to Percentile Calculator (Normal Distribution)",
+      "proposed_canonical": "/calculators/z-score-to-percentile-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0300",
+      "title": "DOTS and Wilks Score Calculator for Powerlifting",
+      "proposed_canonical": "/calculators/dots-score-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0095",
+      "title": "Readability Score Checker (Multi-Metric)",
+      "proposed_canonical": "/validators/readability-score-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

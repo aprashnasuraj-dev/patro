@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0485",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "protein": "Whole pork roast",
+        "serve": "2026-11-01T18:00",
+        "cookHours": 8,
+        "prep": 45,
+        "rest": 60,
+        "buffer": 90,
+        "target": 203
+      },
+      "expect": {
+        "output_label": "USDA minimum internal temperature",
+        "value_contains": "145°F"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

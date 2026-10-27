@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0042",
+  "scope_claim": "Select a defensible HTTP status code from a response outcome and request context.",
+  "authoritative_urls": [
+    "https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml",
+    "https://www.rfc-editor.org/rfc/rfc9110.html"
+  ],
+  "assumptions": [
+    "Common HTTP 4xx and 5xx error cases plus 2xx and 3xx success outcomes.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Not a substitute for protocol-specific API contracts; 404 can hide protected resources.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0150",
+  "name": "Resize PDF Pages to A4 or Letter",
+  "route": "/tools/resize-pdf-to-a4",
+  "family_id": "F0071",
+  "family": "PDF Crop and Resize Pages",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Resize PDF Pages to A4 or Letter — Browser-Local Tool",
+    "meta_description": "Place each source PDF page onto new A4 or Letter pages with contain, cover or stretch fit and configurable margins."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "Source pages are embedded into new target pages; vector content remains vector where supported by the library."
+  ],
+  "limitations": [
+    "Page resizing can alter print scale and invalidate signatures; annotations/forms may not transfer with all semantics."
+  ]
+}

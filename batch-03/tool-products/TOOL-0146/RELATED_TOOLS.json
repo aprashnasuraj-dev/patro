@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0146",
+  "related": [
+    {
+      "id": "TOOL-0145",
+      "title": "Bates Numbering for PDFs",
+      "proposed_canonical": "/utilities/bates-numbering-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0153",
+      "title": "Extract Text from PDF by Page",
+      "proposed_canonical": "/extractors/pdf-text-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0349",
+      "title": "Screen Recorder with Webcam Overlay (No Watermark)",
+      "proposed_canonical": "/editors/screen-recorder-online",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "proposed_canonical": "/validators/word-level-text-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

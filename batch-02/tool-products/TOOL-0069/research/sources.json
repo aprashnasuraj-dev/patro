@@ -1,0 +1,16 @@
+{
+  "researched_for": "TOOL-0069",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "owner": "Google Search Central",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Organize language variants by page group and build annotations for every variant."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Checks only the supplied map; cannot verify actual tags on remote pages."
+}

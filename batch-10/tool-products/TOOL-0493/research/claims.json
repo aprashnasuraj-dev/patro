@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Feed calculations use user-selected body weight and dry matter; no universal intake is implied.",
+    "sources": [
+      "https://www.nrcs.usda.gov/conservation-basics/natural-resource-concerns/land/forages"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Not an animal-health or nutrition recommendation."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

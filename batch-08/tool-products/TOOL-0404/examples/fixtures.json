@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0404",
+  "fixtures": [
+    {
+      "id": "default",
+      "input": {
+        "lengthFt": 20,
+        "widthFt": 12,
+        "spacingIn": 12,
+        "coverIn": 3,
+        "stockBarFt": 20,
+        "meshLengthFt": 10,
+        "meshWidthFt": 5,
+        "wastePct": 8
+      },
+      "purpose": "Representative valid input; expected values are asserted in source tests where stable."
+    },
+    {
+      "id": "boundary-review",
+      "input": {
+        "lengthFt": 20,
+        "widthFt": 12,
+        "spacingIn": 12,
+        "coverIn": 3,
+        "stockBarFt": 20,
+        "meshLengthFt": 10,
+        "meshWidthFt": 5,
+        "wastePct": 8
+      },
+      "purpose": "Reuse with one field at a documented min/max during deferred QA."
+    }
+  ]
+}

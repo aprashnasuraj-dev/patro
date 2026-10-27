@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {splitCsv} from '../src/core';describe('splitCsv',()=>{it('splits by rows',()=>expect(splitCsv('id,v\r\n1,a\r\n2,b\r\n3,c','rows','2').parts.map(x=>x.rows)).toEqual([2,1]));it('bounds row count',()=>expect(()=>splitCsv('id\n1','rows','0')).toThrow());});

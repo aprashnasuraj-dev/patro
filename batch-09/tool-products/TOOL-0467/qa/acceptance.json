@@ -1,0 +1,24 @@
+{
+  "runtime_status": "TEST_PENDING",
+  "source_prepared": true,
+  "product_tests_executed": 0,
+  "not_run": [
+    "build",
+    "typecheck",
+    "unit",
+    "browser",
+    "accessibility",
+    "performance",
+    "security",
+    "responsive",
+    "lint"
+  ],
+  "deferred_concerns": [
+    "Does not validate accreditation exam body requirements, topic content or real progress.",
+    "No live confirmation of output rendering",
+    "Integration bundler required for TS entrypoints"
+  ],
+  "git_imported": false,
+  "published": false,
+  "publication_gate": "LOCKED"
+}

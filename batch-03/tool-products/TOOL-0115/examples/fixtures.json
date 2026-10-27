@@ -1,0 +1,5 @@
+{
+  "qa_status": "TEST_PENDING",
+  "sample_behavior": "Upload a font and test “AVATAR To”; pairs such as A–V and T–o are listed with negative or positive spacing adjustments.",
+  "binary_fixture_note": "Deferred integration tests must supply synthetic or redistributable fonts; this checkpoint intentionally bundles no third-party font binaries."
+}

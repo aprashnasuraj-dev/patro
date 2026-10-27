@@ -1,0 +1,25 @@
+{
+  "default_input": {
+    "x": 0,
+    "y": 0,
+    "width": 288,
+    "height": 432,
+    "page": 1,
+    "rotate": "portrait"
+  },
+  "hand_reference": {
+    "label": "Output page size",
+    "value": "288 × 432 PDF points",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

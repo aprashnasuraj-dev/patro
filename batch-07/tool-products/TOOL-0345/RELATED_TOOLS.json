@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0345",
+  "related": [
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0346",
+      "title": "Fancy Unicode Text Generator with Accessibility Warnings",
+      "proposed_canonical": "/generators/unicode-text-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0354",
+      "title": "Thread Splitter for Posts (Numbered, Sentence-Aware)",
+      "proposed_canonical": "/editors/thread-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "proposed_canonical": "/validators/youtube-chapters-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0057",
+      "title": "MAC Address Formatter with Offline Vendor Lookup",
+      "proposed_canonical": "/formatters/mac-address-formatter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

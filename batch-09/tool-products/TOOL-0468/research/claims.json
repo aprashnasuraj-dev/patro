@@ -1,0 +1,18 @@
+{
+  "claims": [
+    {
+      "statement": "Credits remaining and on-time earning feasibility",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "State/profession specific rules are user-supplied, not inferred.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "State/profession specific rules are user-supplied, not inferred.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

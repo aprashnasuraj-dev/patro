@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('text width browser QA',()=>{it.todo('matches Canvas measureText baseline for known browser fixture');it.todo('adds letter spacing between grapheme clusters only');it.todo('handles combining marks and emoji clusters');it.todo('rejects extreme font sizes and huge text')});

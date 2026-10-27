@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Printable Bingo Card Generator</title><meta name="description" content="Generate reproducible 5×5 75-ball bingo cards or custom-word cards from a seed, enforce per-card uniqueness, reserve an optional free center and produce print-friendly HTML."><link rel="stylesheet" href="./src/styles.css"></head><body><main><header class="hero"><div class="eyebrow">Mission Mangal · TOOL-0358</div><h1>Printable Bingo Card Generator</h1><p class="lede">Generate reproducible 5×5 75-ball bingo cards or custom-word cards from a seed, enforce per-card uniqueness, reserve an optional free center and produce print-friendly HTML.</p></header><div class="workspace"><section class="card stack" aria-label="Tool inputs"><div class="row3"><label>Mode<select id="mode"><option value="75">75-ball</option><option value="words">Custom words</option></select></label><label>Cards<input id="cards" type="number" min="1" max="50" value="4"></label><label>Seed<input id="seed" value="school-fair-2026"></label></div><label>Custom words (25+ lines; used only in custom mode)<textarea id="words">Alpha
+Bravo
+Charlie
+Delta
+Echo
+Foxtrot
+Golf
+Hotel
+India
+Juliet
+Kilo
+Lima
+Mike
+November
+Oscar
+Papa
+Quebec
+Romeo
+Sierra
+Tango
+Uniform
+Victor
+Whiskey
+Xray
+Yankee
+Zulu</textarea></label><label><input id="free" type="checkbox" checked> Free center</label><button id="run">Generate cards</button></section><aside id="result" class="card result" role="status" aria-live="polite"><h2>Result</h2><p class="muted">Use the sample state or enter your values, then run the tool.</p></aside></div><div class="docs"><section><h2>What this tool does</h2><p>It uses a seed-derived deterministic shuffle so the same seed, mode and card index reproduce the same card while each 75-ball column respects its standard numeric range.</p></section><section><h2>How to use it</h2><p>Choose 75-ball or custom words, card count, seed and free center, generate, then print using the browser dialog.</p></section><section><h2>Worked example</h2><p>In 75-ball mode, B draws only 1–15, I 16–30, N 31–45, G 46–60 and O 61–75; the center can be replaced with FREE.</p></section><section><h2>Supported formats</h2><p>1–50 5×5 cards; 75-ball numeric or 24/25+ unique custom words.</p></section><section><h2>Assumptions</h2><p>Deterministic cards are useful for reproducibility; the calling sequence or physical ball draw is outside this generator.</p></section><section><h2>Limitations</h2><p>This does not run the game, call balls or enforce jurisdiction-specific gambling/sweepstakes rules. Browser printer margins vary.</p></section><section><h2>Privacy and security</h2><p>Normal use is browser-local. Inputs are not sent to a worker, account service, or third party by this tool.</p></section><section><h2>Authoritative references</h2><ul><li>No external standard is required for this deterministic transform.</li></ul></section></div></main><script type="module" src="./src/ui.ts"></script></body></html>

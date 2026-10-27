@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0121",
+  "name": "Bulk EXIF Viewer and Stripper",
+  "route": "/tools/remove-exif-data",
+  "family_id": "F0056",
+  "family": "Image Metadata and DPI Editor",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Bulk EXIF Viewer and Stripper — Browser-Local Tool",
+    "meta_description": "Inspect common EXIF metadata across local images, then create metadata-stripped copies without uploading originals."
+  },
+  "limits": {
+    "max_files": 100,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "Metadata removal is performed on newly encoded output; originals are never modified."
+  ],
+  "limitations": [
+    "Re-encoding can change compression and colour-profile metadata; metadata stripping is not a forensic anonymity guarantee."
+  ]
+}

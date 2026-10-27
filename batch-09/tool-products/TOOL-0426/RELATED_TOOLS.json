@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0426",
+  "related": [
+    {
+      "id": "TOOL-0430",
+      "title": "Move-Out Damage Depreciation Calculator",
+      "proposed_canonical": "/calculators/move-out-damage-depreciation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0273",
+      "title": "Rental Property Cash Flow and ROI Calculator",
+      "proposed_canonical": "/calculators/rental-property-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0418",
+      "title": "MACRS Depreciation Schedule Generator",
+      "proposed_canonical": "/calculators/macrs-depreciation-schedule-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0423",
+      "title": "Rent Increase Cap & Notice Calculator",
+      "proposed_canonical": "/calculators/rent-increase-cap-and-notice-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

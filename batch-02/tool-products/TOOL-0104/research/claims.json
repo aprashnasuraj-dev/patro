@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0104",
+  "claims": [
+    {
+      "claim": "Axes, ranges and defaults come from the OpenType fvar table.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "fvar",
+        "opentype",
+        "woff2"
+      ]
+    }
+  ]
+}

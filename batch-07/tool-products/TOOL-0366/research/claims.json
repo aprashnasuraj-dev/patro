@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0366",
+  "claims": [
+    {
+      "claim": "Solve the weighted-grade equation to show the final-exam score needed to reach a target overall grade.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Assumes the entered current grade already represents all non-final weighted work and that the final’s weight is independent.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

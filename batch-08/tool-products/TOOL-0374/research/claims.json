@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0374",
+  "claims": [
+    {
+      "claim": "Solve one missing value in C1V1 = C2V2 and plan bounded serial dilutions with explicit factors and transfer volumes.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "C1V1=C2V2 assumes the relevant concentration quantity is conserved on dilution and volumes are compatible; non-additive volume effects are ignored.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

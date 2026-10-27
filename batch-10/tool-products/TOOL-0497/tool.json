@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0497",
+  "name": "Wash Sale CSV Lot Matcher and Form 8949 Helper",
+  "route": "/tools/wash-sale-lot-matching-csv-form-8949",
+  "slug": "wash-sale-lot-matching-csv-form-8949",
+  "family": "F0112",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "ledger",
+  "title": "Wash Sale CSV Lot Matcher and Form 8949 Helper | AafnaiPatro Tools",
+  "meta_description": "Scan FIFO stock lots and identify possible ±30-calendar-day identical-security repurchases for Form 8949 review.",
+  "inputs": [
+    {
+      "key": "csv",
+      "label": "Local trade CSV: date,symbol,side,quantity,price,account",
+      "default": "date,symbol,side,quantity,price,account\n2026-01-02,ABC,BUY,100,10,Taxable\n2026-01-10,ABC,SELL,100,8,Taxable\n2026-01-20,ABC,BUY,100,9,Taxable",
+      "type": "textarea"
+    }
+  ]
+}

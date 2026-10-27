@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0417",
+  "claims": [
+    {
+      "claim": "Each built-in threshold is date-stamped and paired with its measurement window rather than treated as a universal annual-sales rule.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The India reference is intentionally labeled general because state and supply-type exceptions can change the applicable threshold.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

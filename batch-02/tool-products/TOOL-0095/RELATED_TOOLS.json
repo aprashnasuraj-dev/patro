@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0095",
+  "related": [
+    {
+      "id": "TOOL-0099",
+      "title": "Word Frequency Counter with Stopword Filter",
+      "proposed_canonical": "/utilities/word-frequency-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0203",
+      "title": "Wilson Score Confidence Interval Calculator",
+      "proposed_canonical": "/calculators/wilson-score-interval-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0210",
+      "title": "Outlier Detector (IQR, Z-Score, MAD)",
+      "proposed_canonical": "/calculators/outlier-detection-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0213",
+      "title": "Z-Score to Percentile Calculator (Normal Distribution)",
+      "proposed_canonical": "/calculators/z-score-to-percentile-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0275",
+      "title": "Room Dimension Converter (Feet-Inches to Metric)",
+      "proposed_canonical": "/converters/feet-inches-to-meters-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

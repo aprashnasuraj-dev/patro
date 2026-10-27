@@ -1,0 +1,20 @@
+[
+  {
+    "label": "HMRC gifts seven-year rule",
+    "url": "https://www.gov.uk/inheritance-tax/gifts",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  },
+  {
+    "label": "HMRC calculate gift tax",
+    "url": "https://www.gov.uk/guidance/work-out-inheritance-tax-due-on-gifts",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  }
+]

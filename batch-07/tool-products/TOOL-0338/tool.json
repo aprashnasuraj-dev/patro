@@ -1,0 +1,41 @@
+{
+  "id": "TOOL-0338",
+  "name": "QR Code Inspector with Link Safety Hints",
+  "route": "/tools/qr-code-link-inspector",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0186",
+  "engineering_family": "QR Content Inspector",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [
+    {
+      "name": "@zxing/browser",
+      "purpose": "Local QR decoding fallback when BarcodeDetector lacks QR support.",
+      "pin": "Integrator must lock an audited exact version and bundle it locally."
+    }
+  ],
+  "seo": {
+    "title": "QR Code Inspector with Link Safety Hints — Private Browser Tool",
+    "meta_description": "Decode one QR image locally using native BarcodeDetector when available or a bundled ZXing fallback, then inspect decoded text/URL structure for non-authoritative safety hints without navigating to it.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

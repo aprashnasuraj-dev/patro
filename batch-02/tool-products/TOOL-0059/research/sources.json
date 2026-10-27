@@ -1,0 +1,16 @@
+{
+  "researched_for": "TOOL-0059",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9116",
+      "owner": "IETF / RFC Editor",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Generate the required contact and expiry fields plus optional canonical and policy links."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "No file hosting, signing, ownership proof or mailbox monitoring is performed."
+}

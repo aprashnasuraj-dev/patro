@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://support.google.com/webmasters/answer/7576553",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Aggregate click and impression rows before flagging potential content overlap.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://developers.google.com/webmaster-tools/v1/searchanalytics/query",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Aggregate click and impression rows before flagging potential content overlap.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

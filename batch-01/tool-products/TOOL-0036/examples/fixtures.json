@@ -1,0 +1,11 @@
+{
+  "sample": {
+    "inventory": "[web]\nweb1 ansible_host=192.0.2.5\n[web:vars]\nansible_user=deploy"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0050",
+  "scope_claim": "Construct Strict-Transport-Security and screen prerequisites for preload readiness.",
+  "authoritative_urls": [
+    "https://www.rfc-editor.org/rfc/rfc6797.html",
+    "https://hstspreload.org/"
+  ],
+  "assumptions": [
+    "Seconds (bounded); booleans for subdomains/preload and deployment checklist.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Cannot independently verify HTTPS, redirects, certificates or preload-list inclusion.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

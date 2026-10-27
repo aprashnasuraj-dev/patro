@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0362",
+  "claims": [
+    {
+      "claim": "Parse bounded BibTeX locally and render common bibliography entries in APA 7, MLA 9 or Chicago 18 author-date forms with transparent coverage limits.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "This converter covers common BibTeX fields and source types; it is not a complete CSL processor and does not expand arbitrary TeX macros.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

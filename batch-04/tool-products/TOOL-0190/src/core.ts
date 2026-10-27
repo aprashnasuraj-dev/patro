@@ -1,0 +1,2 @@
+import {parseCsv,stringifyCsv,detectDelimiter} from '../_vendor/csv';
+export function cleanCsv(text:string,trim=true,removeBlank=true){const d=detectDelimiter(text),t=parseCsv(text,d,true),[h,...rows]=t.rows;let changed=0,removed=0;const out=[trim?h.map(x=>x.trim()):h];for(const r of rows){const nr=trim?r.map(x=>{const y=x.trim();if(y!==x)changed++;return y}):r;if(removeBlank&&nr.every(x=>x==='')){removed++;continue}out.push(nr)}return {csv:stringifyCsv(out,d),rows:out.length-1,removedRows:removed,trimmedFields:changed};}

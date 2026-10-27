@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0120",
+  "related": [
+    {
+      "id": "TOOL-0109",
+      "title": "Web-Safe CSS Font Stack Builder",
+      "proposed_canonical": "/generators/css-font-stack-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0107",
+      "title": "@font-face CSS Generator with unicode-range",
+      "proposed_canonical": "/generators/font-face-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0108",
+      "title": "Fallback Font Metrics Override Generator",
+      "proposed_canonical": "/generators/font-fallback-size-adjust-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0119",
+      "title": "PDF Embedded Fonts Lister",
+      "proposed_canonical": "/extractors/pdf-fonts-lister",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

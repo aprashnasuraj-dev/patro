@@ -1,0 +1,12 @@
+{
+  "assumptions": "Reversible 8-bit byte reinterpretation of UTF-8.",
+  "limitations": "Data replaced with � or corrupted repeatedly is not reliably recoverable.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://encoding.spec.whatwg.org/",
+    "https://www.unicode.org/versions/latest/"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

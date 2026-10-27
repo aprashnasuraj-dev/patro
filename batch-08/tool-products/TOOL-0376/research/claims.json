@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0376",
+  "claims": [
+    {
+      "claim": "Count significant figures under explicit trailing-zero assumptions and round numeric values to a requested number of significant figures.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Written-number conventions can make trailing zeros ambiguous; the UI exposes the main ambiguity rather than guessing.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0292",
+  "claim": "Box phases: inhale 4s, hold 4s, exhale 4s, hold 4s. 4-7-8: inhale 4s, hold 7s, exhale 8s. Total derived exactly from phase durations.",
+  "assumptions": [
+    "Stop if dizzy or uncomfortable. This is not a respiratory treatment or evidence of clinical benefit.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

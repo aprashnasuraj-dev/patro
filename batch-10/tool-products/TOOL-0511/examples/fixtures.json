@@ -1,0 +1,12 @@
+{
+  "tool": "TOOL-0511",
+  "default_inputs": {
+    "incomeYear": "2025",
+    "otherIncome": "81000",
+    "rrif": "23000",
+    "annualOas": "9000",
+    "openingRrif": "300000"
+  },
+  "worked_example": "2025 net income C$100,000 against C$93,454 threshold implies C$981.90 recovery before benefit cap.",
+  "source_status": "TEST_PENDING"
+}

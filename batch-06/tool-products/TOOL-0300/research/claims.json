@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0300",
+  "claim": "DOTS=500\u00d7total/(a\u00b7mass^4+b\u00b7mass\u00b3+c\u00b7mass\u00b2+d\u00b7mass+e). Wilks=500\u00d7total/(a+b\u00b7mass+c\u00b7mass\u00b2+d\u00b7mass\u00b3+e\u00b7mass\u2074+f\u00b7mass\u2075), sex-specific published coefficients.",
+  "assumptions": [
+    "Scores are not directly comparable across scoring systems or rulebooks; outside fitted ranges blocked rather than extrapolated.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/Models_Evaluation-I-2020.pdf",
+    "https://www.openpowerlifting.org/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

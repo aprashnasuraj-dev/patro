@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0254",
+  "claims": [
+    {
+      "claim": "mailto and tel are standardized URI schemes.",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc6068.html",
+      "implementation_note": "Email and telephone links are generated from validated text."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

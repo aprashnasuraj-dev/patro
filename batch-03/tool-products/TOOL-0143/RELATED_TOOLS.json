@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0143",
+  "related": [
+    {
+      "id": "TOOL-0144",
+      "title": "Merge PDFs with Bookmarks per File",
+      "proposed_canonical": "/editors/merge-pdf-with-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0142",
+      "title": "Rearrange PDF Pages (Drag Thumbnails)",
+      "proposed_canonical": "/editors/rearrange-pdf-pages",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0181",
+      "title": "Split CSV by Column Value or Row Count",
+      "proposed_canonical": "/editors/split-csv-by-column",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0188",
+      "title": "Split Excel Workbook into Separate Files by Sheet",
+      "proposed_canonical": "/editors/split-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0282",
+      "title": "Running Pace Calculator with Split Export",
+      "proposed_canonical": "/calculators/running-pace-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

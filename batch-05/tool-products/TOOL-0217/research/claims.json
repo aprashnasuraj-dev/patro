@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0217",
+  "claims": [
+    {
+      "claim": "Calculate determinant, inverse, or RREF with partial pivoting and a readable row-operation trace.",
+      "support": [
+        "https://dlmf.nist.gov/3.2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Matrix entries are finite real numbers; displayed row operations are rounded only for presentation.",
+      "support": [
+        "https://dlmf.nist.gov/3.2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Floating-point elimination can be ill-conditioned. The tool uses partial pivoting and an epsilon threshold, but it is not arbitrary-precision or symbolic algebra.",
+      "support": [
+        "https://dlmf.nist.gov/3.2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

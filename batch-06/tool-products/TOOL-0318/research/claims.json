@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0318",
+  "claims": [
+    {
+      "claim": "The tool implements the explicit semantics stated on the page and rejects unsupported ambiguity.",
+      "source_url": null,
+      "implementation_note": "No broader standard conformance is implied."
+    }
+  ],
+  "uncertainty": "Employment agreements, fatigue rules, night/day handovers and overtime are outside scope. ICS export creates all-day “Work shift” markers only."
+}

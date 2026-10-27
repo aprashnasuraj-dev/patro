@@ -1,0 +1,25 @@
+[
+  {
+    "claim": "Normalize a chosen CSV date column from an explicit source format to an explicit output format, rejecting impossible dates.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Only explicitly selected date formats are parsed; ambiguous date guessing and locale inference are intentionally avoided.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "ECMAScript date-time interchange uses a year-month-day ordering derived from ISO 8601.",
+    "status": "research_basis",
+    "support": [
+      "ECMAScript Date Time String Format"
+    ]
+  }
+]

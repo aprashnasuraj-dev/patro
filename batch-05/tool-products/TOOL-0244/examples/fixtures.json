@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0244",
+  "status": "TEST_PENDING",
+  "sample": {
+    "cost": 60,
+    "price": 100,
+    "targetMargin": 40,
+    "targetMarkup": 66.67
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {wordSearch} from '../src/core';describe('TOOL-0380 core',()=>{it('known-answer fixture',()=>{expect(wordSearch(['NEPAL'],10,1).placed).toHaveLength(1)})});

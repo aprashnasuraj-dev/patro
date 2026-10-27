@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0076",
+  "name": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+  "reserved_route": "/tools/remove-tracking-parameters",
+  "family_id": "F0026",
+  "family": "URL and Query Parameter Toolkit",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-04",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Tracking Parameter Stripper (UTM, fbclid, gclid) | AafnaiPatro Tools",
+    "description": "Strip common tracking keys while retaining meaningful URL components.",
+    "h1": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

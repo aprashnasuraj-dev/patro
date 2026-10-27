@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0109",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "css-fonts-generics",
+      "url": "https://www.w3.org/TR/2026/WD-css-fonts-4-20261022/",
+      "version": "CSS Fonts Module Level 4 Working Draft",
+      "effective_date": "2026-10-22",
+      "license": "W3C document license",
+      "notes": "Generic families provide fallback categories; named local fonts are platform-dependent and never guaranteed."
+    }
+  ],
+  "assumptions": "Named fonts may or may not exist on the visitor’s operating system; the final generic family is the only portable category guarantee.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "“Web-safe” is probabilistic for named local fonts. Rendering metrics and glyph coverage vary by platform and version."
+}

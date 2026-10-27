@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {convert} from '../src/core';describe('TOOL-0367 core',()=>{it('known-answer fixture',()=>{expect(convert(8.5,'vtu-2015-2018').percentage).toBeCloseTo(77.5)})});

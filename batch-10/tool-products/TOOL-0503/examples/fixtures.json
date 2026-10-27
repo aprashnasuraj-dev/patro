@@ -1,0 +1,8 @@
+{
+  "title": "UK Section 104 Share Pool and Matching Calculator",
+  "default_inputs": {
+    "csv": "date,side,quantity,price\n2026-01-02,BUY,100,5\n2026-01-10,SELL,40,8\n2026-01-20,BUY,20,7"
+  },
+  "worked_example": "Sell 40 shares at £8, repurchase 20 within 30 days, match those 20 at purchase cost before pool.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

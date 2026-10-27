@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0395",
+  "related": [
+    {
+      "id": "TOOL-0396",
+      "title": "Pizza Dough Calculator (Hydration, Yeast, Fermentation Time)",
+      "proposed_canonical": "/calculators/pizza-dough-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0393",
+      "title": "Cups to Grams Converter by Ingredient",
+      "proposed_canonical": "/converters/cups-to-grams-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0394",
+      "title": "Recipe Scaler with Friendly Fractions",
+      "proposed_canonical": "/utilities/recipe-scaler",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0367",
+      "title": "CGPA to Percentage Converter (Multiple University Formulas)",
+      "proposed_canonical": "/converters/cgpa-to-percentage-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0397",
+      "title": "Homebrew ABV Calculator from OG and FG",
+      "proposed_canonical": "/calculators/abv-calculator-og-fg",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

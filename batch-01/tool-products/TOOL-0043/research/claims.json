@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0043",
+  "scope_claim": "Build and inspect Set-Cookie headers with Secure, SameSite and cookie prefix validation.",
+  "authoritative_urls": [
+    "https://www.rfc-editor.org/rfc/rfc10025.html",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie"
+  ],
+  "assumptions": [
+    "One Set-Cookie header per line, cookie attributes supported by RFC 10025/MDN.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Does not simulate browser expiry precedence, public suffix lists or partition storage.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0030",
+  "related": [
+    {
+      "id": "TOOL-0017",
+      "title": "Terraform tfvars to JSON Converter",
+      "proposed_canonical": "/converters/tfvars-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0187",
+      "title": "CSV Pivot and Group-By Summarizer",
+      "proposed_canonical": "/analyzers/csv-pivot-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0512",
+      "title": "Canada FHSA and RRSP Home Buyers Plan Planner",
+      "proposed_canonical": "/planners/canada-fhsa-rrsp-home-buyers-plan",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

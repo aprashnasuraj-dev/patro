@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0242",
+  "related": [
+    {
+      "id": "TOOL-0243",
+      "title": "Quote and Estimate Generator with Validity Date",
+      "proposed_canonical": "/generators/quote-generator-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0479",
+      "title": "Commercial Invoice & CN22/CN23 Generator",
+      "proposed_canonical": "/generators/commercial-invoice-customs-forms-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0254",
+      "title": "HTML Email Signature Generator",
+      "proposed_canonical": "/generators/email-signature-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0255",
+      "title": "Gantt Chart Maker from Task Table (SVG/PNG)",
+      "proposed_canonical": "/generators/gantt-chart-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0256",
+      "title": "Org Chart Generator from CSV",
+      "proposed_canonical": "/generators/org-chart-generator-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

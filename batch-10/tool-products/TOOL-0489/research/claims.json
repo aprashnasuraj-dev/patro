@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0489",
+  "claims": [
+    {
+      "claim": "One inch of water over one square foot is 0.6233 US gallons; applied gallons = net irrigation depth × area × 0.6233 / efficiency.",
+      "source_ids": [
+        "source-1"
+      ],
+      "interpretation": "Domain-specific implementation premise; jurisdiction and product variations acknowledged"
+    },
+    {
+      "claim": "This is an equal-size zone estimate: actual run times should use catch-can precipitation-rate measurements, local evapotranspiration, soil infiltration and watering restrictions. Water balance cannot be fixed by runtime alone.",
+      "source_ids": [
+        "source-1"
+      ],
+      "interpretation": "Important unsupported cases and uncertainty"
+    }
+  ],
+  "assumptions": "This is an equal-size zone estimate: actual run times should use catch-can precipitation-rate measurements, local evapotranspiration, soil infiltration and watering restrictions. Water balance cannot be fixed by runtime alone.",
+  "last_reviewed": "2026-10-26"
+}

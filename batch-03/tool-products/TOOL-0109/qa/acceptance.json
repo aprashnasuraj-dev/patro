@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0109",
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": false,
+  "required_scenarios": [
+    "known-answer examples",
+    "boundary values",
+    "malformed input",
+    "unsupported input",
+    "oversized input",
+    "parser abuse/resource exhaustion",
+    "XSS/injection-safe rendering",
+    "copy/download/export behavior where applicable",
+    "keyboard-only interaction",
+    "screen-reader result announcements",
+    "320px responsive interaction",
+    "dark/light compatibility",
+    "reduced-motion compatibility"
+  ],
+  "tool_specific_deferred_checks": [],
+  "publication_ready": false
+}

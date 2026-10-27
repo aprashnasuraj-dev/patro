@@ -1,0 +1,43 @@
+{
+  "id": "TOOL-0258",
+  "name": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit",
+  "route": "/tools/bulk-barcode-generator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0129",
+  "engineering_family": "Barcode and Check Digit Generator",
+  "product_type": "browser_transformer",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [
+    {
+      "name": "jsbarcode",
+      "version": "3.12.3",
+      "license": "MIT",
+      "lazy": true,
+      "network_at_runtime": false
+    }
+  ],
+  "seo": {
+    "title": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit — Private Browser Tool",
+    "meta_description": "Validate or append GS1 check digits for EAN-13 and UPC-A values, generate Code 128 when requested, and render a bounded batch of browser-side barcode SVGs.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

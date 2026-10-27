@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0249",
+  "status": "TEST_PENDING",
+  "sample": {
+    "amount": "1234.56",
+    "system": "international",
+    "majorOne": "Dollar",
+    "majorMany": "Dollars",
+    "minorOne": "Cent",
+    "minorMany": "Cents"
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

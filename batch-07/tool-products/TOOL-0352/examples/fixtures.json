@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0352",
+  "examples": [
+    {
+      "source": "1920x1080",
+      "output": "1080x1920",
+      "expected_crop_width": 607.5,
+      "focus_50_sx": 656.25
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0047",
+  "name": "Context-Aware URL Encoder",
+  "reserved_route": "/tools/url-encode-path-vs-query",
+  "family_id": "F0026",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Encode URL path segments, whole paths, query keys, query values, or form values correctly.",
+  "seo": {
+    "title": "Context-Aware URL Encoder | Mission Mangal Tools",
+    "meta_description": "Encode URL path segments, whole paths, query keys, query values, or form values correctly.",
+    "h1": "Context-Aware URL Encoder",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

@@ -1,0 +1,24 @@
+{
+  "claims": [
+    {
+      "claim": "GraphQL Int uses signed 32-bit bounds",
+      "source": "graphql",
+      "tests": "core.test.mjs: GraphQL Int exact boundaries"
+    },
+    {
+      "claim": "Quoted multiline CSV is parsed",
+      "source": "csv and papa",
+      "tests": "core.test.mjs: RFC quoted commas, escaped quotes and multiline fields"
+    },
+    {
+      "claim": "ID inference and DateTime profile are product heuristics, not specification mandates",
+      "source": "Original implementation and explicit UI limitations"
+    },
+    {
+      "claim": "No user-content transmission is designed into this tool",
+      "source": "src/ui.ts, worker.ts, CSP connect-src none; full final browser acceptance pending"
+    }
+  ],
+  "assets": "Original typography/layout/CSS and letter mark; system fonts only; no image-generation or stock assets",
+  "rights": "Original private project source; no public release authorized."
+}

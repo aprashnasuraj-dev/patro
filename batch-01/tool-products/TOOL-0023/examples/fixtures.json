@@ -1,0 +1,21 @@
+{
+  "sample_input": "stages: [test]\nsmoke:\n  stage: test\n  image: node:22\n  script:\n    - echo hello",
+  "intended_action": "Draft GitHub workflow",
+  "manual_review_cases": [
+    {
+      "input": "script job",
+      "expectation": "steps"
+    },
+    {
+      "input": "extends",
+      "expectation": "reject"
+    }
+  ],
+  "limits": "Rules, needs, include, extends, artifacts, service containers, protected variables, environments and GitLab runners are not portable without manual migration.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "jobs:",
+    "smoke:"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

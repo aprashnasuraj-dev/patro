@@ -1,0 +1,24 @@
+{
+  "default_inputs": {
+    "minutes": 12,
+    "seconds": 30,
+    "videoMbps": 8,
+    "audioKbps": 192,
+    "overhead": 2,
+    "targetMB": 1000
+  },
+  "known_answer": {
+    "output_label": "Estimated decimal file size",
+    "expected_display": "783.36 MB",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

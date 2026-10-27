@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0487",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "unit": "ft",
+        "length": 8,
+        "width": 4,
+        "depth": 1,
+        "beds": 2,
+        "compost": 35,
+        "extra": 10,
+        "bag": 40
+      },
+      "expect": {
+        "output_label": "Bed fill without allowance",
+        "value_contains": "1.81 m³"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

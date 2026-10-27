@@ -1,0 +1,98 @@
+{
+  "id": "TOOL-0513",
+  "name": "Canada Vacation and Stat Holiday Pay Calculator",
+  "slug": "canada-vacation-statutory-holiday-pay-calculator",
+  "route": "/tools/canada-vacation-statutory-holiday-pay-calculator",
+  "family": "F0304",
+  "description": "Separate federal annual vacation percentage from federally regulated general-holiday pay and a distinct Ontario illustration.",
+  "seo": {
+    "title": "Canada Vacation and Stat Holiday Pay Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Separate federal annual vacation percentage from federally regulated general-holiday pay and a distinct Ontario illustration.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "payroll",
+  "inputs": [
+    {
+      "key": "jurisdiction",
+      "label": "Employment standards covered",
+      "default": "federal",
+      "type": "select",
+      "options": [
+        "federal",
+        "ontario"
+      ]
+    },
+    {
+      "key": "serviceYears",
+      "label": "Completed consecutive service years",
+      "default": 4,
+      "unit": "years",
+      "type": "number",
+      "min": 0,
+      "max": 80,
+      "step": 1
+    },
+    {
+      "key": "vacWages",
+      "label": "Vacation reference-year qualifying wages",
+      "default": 72000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "holidayWages",
+      "label": "Qualifying wages for holiday reference period",
+      "default": 4500,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "holidayVacation",
+      "label": "Vacation pay due in holiday reference period",
+      "default": 200,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "worked",
+      "label": "Hours actually worked on holiday",
+      "default": 0,
+      "unit": "hours",
+      "type": "number",
+      "min": 0,
+      "max": 24,
+      "step": "any"
+    },
+    {
+      "key": "hourly",
+      "label": "Regular hourly wage",
+      "default": 30,
+      "unit": "CAD/hour",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0059",
+  "name": "security.txt Generator",
+  "reserved_route": "/tools/security-txt-generator",
+  "family_id": "F0032",
+  "family": "security.txt Generator",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "browser_runtime": "src/ui.js",
+  "core_source": "src/core.ts",
+  "seo": {
+    "title": "security.txt Generator | AafnaiPatro Tools",
+    "description": "Produce RFC 9116 security.txt disclosure instructions.",
+    "h1": "security.txt Generator",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "client_side_only": true,
+    "no_account": true,
+    "no_upload": true,
+    "network": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

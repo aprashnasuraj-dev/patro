@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0375",
+  "claims": [
+    {
+      "claim": "Model ideal projectile motion with configurable gravity and initial height, then plot the no-air-resistance trajectory locally.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Model neglects drag, wind, spin, curvature and altitude-dependent gravity; do not use it for safety-critical ballistics.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

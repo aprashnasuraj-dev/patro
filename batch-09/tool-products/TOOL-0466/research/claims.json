@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "statement": "Best-section SAT or enhanced ACT composite, with policy verification",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.act.org/content/act/en/students-and-parents/high-school-success/testing-advice-for-the-act/superscore-faqs.html",
+        "https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Does not fetch or certify college-specific admission policy. The ACT 2025 enhanced composite must not be conflated with historic four-section reports.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Does not fetch or certify college-specific admission policy. The ACT 2025 enhanced composite must not be conflated with historic four-section reports.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

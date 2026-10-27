@@ -1,0 +1,128 @@
+{
+  "id": "TOOL-0523",
+  "name": "Airline Carry-On and Personal Item Checker",
+  "slug": "airline-carry-on-size-weight-checker",
+  "route": "/tools/airline-carry-on-size-weight-checker",
+  "family": "F0313",
+  "description": "Compare actual hand-luggage dimensions against explicitly entered airline allowance limits, with configurable dimension-rotation.",
+  "seo": {
+    "title": "Airline Carry-On and Personal Item Checker — Free Local Tool | AafnaiPatro",
+    "description": "Compare actual hand-luggage dimensions against explicitly entered airline allowance limits, with configurable dimension-rotation.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "packing",
+  "inputs": [
+    {
+      "key": "type",
+      "label": "Bag type",
+      "default": "cabin",
+      "type": "select",
+      "options": [
+        "cabin",
+        "personal"
+      ]
+    },
+    {
+      "key": "length",
+      "label": "Bag exterior length incl wheels and handles",
+      "default": 55,
+      "unit": "cm",
+      "type": "number",
+      "min": 1,
+      "max": 300,
+      "step": "any"
+    },
+    {
+      "key": "width",
+      "label": "Bag exterior width",
+      "default": 35,
+      "unit": "cm",
+      "type": "number",
+      "min": 1,
+      "max": 300,
+      "step": "any"
+    },
+    {
+      "key": "depth",
+      "label": "Bag exterior depth",
+      "default": 23,
+      "unit": "cm",
+      "type": "number",
+      "min": 1,
+      "max": 300,
+      "step": "any"
+    },
+    {
+      "key": "weight",
+      "label": "Measured packed bag weight",
+      "default": 8,
+      "unit": "kg",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "maxLength",
+      "label": "Airline allowance dimension A",
+      "default": 56,
+      "unit": "cm",
+      "type": "number",
+      "min": 1,
+      "max": 300,
+      "step": "any"
+    },
+    {
+      "key": "maxWidth",
+      "label": "Airline allowance dimension B",
+      "default": 36,
+      "unit": "cm",
+      "type": "number",
+      "min": 1,
+      "max": 300,
+      "step": "any"
+    },
+    {
+      "key": "maxDepth",
+      "label": "Airline allowance dimension C",
+      "default": 23,
+      "unit": "cm",
+      "type": "number",
+      "min": 1,
+      "max": 300,
+      "step": "any"
+    },
+    {
+      "key": "maxWeight",
+      "label": "Airline maximum weight",
+      "default": 10,
+      "unit": "kg",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "rotate",
+      "label": "Allow bag rotation",
+      "default": "yes",
+      "type": "select",
+      "options": [
+        "yes",
+        "no"
+      ]
+    }
+  ]
+}

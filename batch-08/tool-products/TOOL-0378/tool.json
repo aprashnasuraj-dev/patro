@@ -1,0 +1,46 @@
+{
+  "id": "TOOL-0378",
+  "name": "CSV to Anki Deck (.apkg) Creator",
+  "route": "/tools/csv-to-anki-deck",
+  "batch": "BATCH-08",
+  "run_id": "RUN-16",
+  "engineering_family_id": "F0211",
+  "engineering_family": "CSV to Anki Flashcard Deck",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [
+    {
+      "name": "sql.js",
+      "delivery": "build-time vendored",
+      "network_at_runtime": false
+    },
+    {
+      "name": "fflate",
+      "delivery": "build-time vendored",
+      "network_at_runtime": false
+    }
+  ],
+  "seo": {
+    "title": "CSV to Anki Deck (.apkg) Creator — Private Browser Tool",
+    "meta_description": "Turn bounded front/back/tag CSV data into a local Anki deck package using a build-time bundled SQLite and ZIP implementation.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

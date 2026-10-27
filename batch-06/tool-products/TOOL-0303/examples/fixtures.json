@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0303",
+  "examples": [
+    {
+      "inputs": {
+        "date": "2026-11-03",
+        "time": "09:00",
+        "reference_zone": "Asia/Kathmandu",
+        "zones": [
+          "Europe/London",
+          "America/New_York"
+        ]
+      },
+      "expected_note": "All participant labels refer to the same resolved instant."
+    }
+  ]
+}

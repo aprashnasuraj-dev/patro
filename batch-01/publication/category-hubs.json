@@ -1,0 +1,86 @@
+[
+  {
+    "path": "/calculators",
+    "count": 198,
+    "indexable_after_ready": true,
+    "title": "Calculators",
+    "description": "Find calculators organized by real task and topic."
+  },
+  {
+    "path": "/generators",
+    "count": 76,
+    "indexable_after_ready": true,
+    "title": "Generators",
+    "description": "Find generators organized by real task and topic."
+  },
+  {
+    "path": "/converters",
+    "count": 68,
+    "indexable_after_ready": true,
+    "title": "Converters",
+    "description": "Find converters organized by real task and topic."
+  },
+  {
+    "path": "/utilities",
+    "count": 41,
+    "indexable_after_ready": true,
+    "title": "Utilities",
+    "description": "Find utilities organized by real task and topic."
+  },
+  {
+    "path": "/validators",
+    "count": 39,
+    "indexable_after_ready": true,
+    "title": "Validators",
+    "description": "Find validators organized by real task and topic."
+  },
+  {
+    "path": "/editors",
+    "count": 35,
+    "indexable_after_ready": true,
+    "title": "Editors",
+    "description": "Find editors organized by real task and topic."
+  },
+  {
+    "path": "/planners",
+    "count": 21,
+    "indexable_after_ready": true,
+    "title": "Planners",
+    "description": "Find planners organized by real task and topic."
+  },
+  {
+    "path": "/extractors",
+    "count": 18,
+    "indexable_after_ready": true,
+    "title": "Extractors",
+    "description": "Find extractors organized by real task and topic."
+  },
+  {
+    "path": "/analyzers",
+    "count": 18,
+    "indexable_after_ready": true,
+    "title": "Analyzers",
+    "description": "Find analyzers organized by real task and topic."
+  },
+  {
+    "path": "/formatters",
+    "count": 7,
+    "indexable_after_ready": true,
+    "title": "Formatters",
+    "description": "Find formatters organized by real task and topic."
+  },
+  {
+    "path": "/comparisons",
+    "count": 6,
+    "indexable_after_ready": true,
+    "title": "Comparisons",
+    "description": "Find comparisons organized by real task and topic."
+  },
+  {
+    "path": "/timers",
+    "count": 3,
+    "indexable_after_ready": false,
+    "title": "Timers",
+    "description": "Find timers organized by real task and topic."
+  }
+]

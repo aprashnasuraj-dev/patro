@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0046",
+  "scope_claim": "Parse bounded bracket-notation query parameters into nested JSON without prototype pollution.",
+  "authoritative_urls": [
+    "https://url.spec.whatwg.org/",
+    "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"
+  ],
+  "assumptions": [
+    "URL-encoded strings; key brackets with bounded numeric array indexes.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Bracket notation is a convention, not a universal URL standard; ambiguous shapes are rejected.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

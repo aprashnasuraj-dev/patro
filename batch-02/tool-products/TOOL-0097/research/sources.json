@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0097",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "apa",
+      "url": "https://apastyle.apa.org/style-grammar-guidelines/paper-format/title-page",
+      "version": "APA Style current guidance",
+      "effective_date": null,
+      "license": "APA website terms",
+      "notes": "Confirms title case / major-word capitalization; full editorial rules are more nuanced than an offline token rule set."
+    },
+    {
+      "id": "chicago",
+      "url": "https://www.chicagomanualofstyle.org/qanda/data/faq/topics/CapitalizationTitles.html",
+      "version": "Chicago Manual of Style 18th ed. Q&A",
+      "effective_date": "2024",
+      "license": "University of Chicago terms",
+      "notes": "Chicago 18 changed treatment of prepositions longer than four letters; rule implementation is an approximation without POS tagging."
+    },
+    {
+      "id": "mla",
+      "url": "https://style.mla.org/capitalization-of-titles/",
+      "version": "MLA Style Center guidance",
+      "effective_date": null,
+      "license": "MLA website terms",
+      "notes": "Headline-style guidance; article notes eighth-edition origin and points users to ninth edition."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

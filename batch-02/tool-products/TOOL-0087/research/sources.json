@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://www.gnu.org/software/diffutils/manual/",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Highlight additions and deletions with a bounded dynamic-programming diff.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

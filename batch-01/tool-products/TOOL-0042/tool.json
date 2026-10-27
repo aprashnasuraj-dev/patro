@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0042",
+  "name": "HTTP Status Code Chooser",
+  "reserved_route": "/tools/which-http-status-code",
+  "family_id": "F0024",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Select a defensible HTTP status code from a response outcome and request context.",
+  "seo": {
+    "title": "HTTP Status Code Chooser | Mission Mangal Tools",
+    "meta_description": "Select a defensible HTTP status code from a response outcome and request context.",
+    "h1": "HTTP Status Code Chooser",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

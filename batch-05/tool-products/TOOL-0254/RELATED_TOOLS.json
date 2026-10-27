@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0254",
+  "related": [
+    {
+      "id": "TOOL-0326",
+      "title": "HMAC Generator and Webhook Signature Tester",
+      "proposed_canonical": "/generators/hmac-signature-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0060",
+      "title": "Email Header Analyzer (Local)",
+      "proposed_canonical": "/analyzers/email-header-analyzer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0195",
+      "title": "Email Extractor and Domain Summary",
+      "proposed_canonical": "/extractors/extract-emails-from-text",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0242",
+      "title": "Invoice Generator to PDF (No Signup)",
+      "proposed_canonical": "/generators/invoice-generator-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0243",
+      "title": "Quote and Estimate Generator with Validity Date",
+      "proposed_canonical": "/generators/quote-generator-pdf",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,25 @@
+{
+  "claims": [
+    {
+      "statement": "Wraparound cover width with publisher-specific restrictions",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Not filing/print-ready; IngramSpark stock-specific caliper cannot be inferred, trim-dependent limits and physical fold tolerances must be verified.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://kdp.amazon.com/en_US/help/topic/G201857950",
+    "https://kdp.amazon.com/en_US/help/topic/G201953020",
+    "https://myaccount.ingramspark.com/Portal/Tools/CoverTemplateGenerator",
+    "https://www.ingramspark.com/master-your-book-cover-design"
+  ],
+  "assumptions": "Not filing/print-ready; IngramSpark stock-specific caliper cannot be inferred, trim-dependent limits and physical fold tolerances must be verified.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

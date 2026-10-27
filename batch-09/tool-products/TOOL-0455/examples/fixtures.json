@@ -1,0 +1,23 @@
+{
+  "default_inputs": {
+    "start": "2026-11-01",
+    "trays": 18,
+    "days": 10,
+    "pause": 0,
+    "wearHours": 22
+  },
+  "known_answer": {
+    "output_label": "Total calendar-day interval",
+    "expected_display": "180 days",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

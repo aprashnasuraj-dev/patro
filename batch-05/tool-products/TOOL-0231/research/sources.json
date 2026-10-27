@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0231",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Progressive brackets are applied in ascending order to income after entered deductions."
+  ],
+  "uncertainty": [
+    "No jurisdiction, filing status, credits, phase-outs or special taxes are built in."
+  ]
+}

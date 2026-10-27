@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0449",
+  "related": [
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "proposed_canonical": "/calculators/final-paycheck-pto-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0233",
+      "title": "Biweekly Mortgage Payment Savings Calculator",
+      "proposed_canonical": "/calculators/biweekly-mortgage-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0251",
+      "title": "Late Payment Interest Calculator for Invoices",
+      "proposed_canonical": "/calculators/late-payment-interest-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0462",
+      "title": "Statute of Limitations Deadline Calculator",
+      "proposed_canonical": "/calculators/statute-of-limitations-deadline-estimator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

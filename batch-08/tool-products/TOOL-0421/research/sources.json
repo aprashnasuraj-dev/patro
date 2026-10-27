@@ -1,0 +1,38 @@
+{
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/simplified-option-for-home-office-deduction",
+      "version": "online guidance reviewed 2026-10-26",
+      "effective_date": "Varies; verify applicable tax year, jurisdiction and revision",
+      "scope": "tool-specific algorithm or regulatory caveat",
+      "license": "linked external primary source; only paraphrased formulas; no re-hosted datasets",
+      "uncertainty": "verify current updates and applicability at use"
+    },
+    {
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/completing-form-t2125/business-use-home-expenses.html",
+      "version": "online guidance reviewed 2026-10-26",
+      "effective_date": "Varies; verify applicable tax year, jurisdiction and revision",
+      "scope": "tool-specific algorithm or regulatory caveat",
+      "license": "linked external primary source; only paraphrased formulas; no re-hosted datasets",
+      "uncertainty": "verify current updates and applicability at use"
+    },
+    {
+      "url": "https://www.gov.uk/expenses-if-youre-self-employed",
+      "version": "online guidance reviewed 2026-10-26",
+      "effective_date": "Varies; verify applicable tax year, jurisdiction and revision",
+      "scope": "tool-specific algorithm or regulatory caveat",
+      "license": "linked external primary source; only paraphrased formulas; no re-hosted datasets",
+      "uncertainty": "verify current updates and applicability at use"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/working-from-home-expenses",
+      "version": "online guidance reviewed 2026-10-26",
+      "effective_date": "Varies; verify applicable tax year, jurisdiction and revision",
+      "scope": "tool-specific algorithm or regulatory caveat",
+      "license": "linked external primary source; only paraphrased formulas; no re-hosted datasets",
+      "uncertainty": "verify current updates and applicability at use"
+    }
+  ],
+  "scope_note": "No generic sources collected; user-supplied inputs where jurisdiction-specific lookups are unavailable."
+}

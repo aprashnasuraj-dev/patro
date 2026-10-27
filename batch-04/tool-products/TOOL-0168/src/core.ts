@@ -1,0 +1,3 @@
+import { finite } from '../_vendor/limits';
+export function atempoChain(speed:number):string { let s=finite(speed,'Speed',0.25,4); const parts:string[]=[]; while(s>2){parts.push('atempo=2');s/=2;} while(s<0.5){parts.push('atempo=0.5');s/=0.5;} parts.push(`atempo=${s.toFixed(6)}`); return parts.join(','); }
+export function planSpeed(speed:number,input:string,output:string):string[]{ const s=finite(speed,'Speed',0.25,4); return ['-i',input,'-filter_complex',`[0:v]setpts=PTS/${s}[v];[0:a]${atempoChain(s)}[a]`,'-map','[v]','-map','[a]','-c:v','libx264','-preset','veryfast','-crf','20','-c:a','aac','-b:a','160k','-movflags','+faststart',output]; }

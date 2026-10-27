@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0113",
+  "claims": [
+    {
+      "claim": "Extract a browser-local glyph map from an icon or symbol font, including glyph index, Unicode mappings, glyph name and Private Use Area flags, then export JSON or CSV.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "opentypejs",
+        "opentype-1.9.1"
+      ]
+    },
+    {
+      "claim": "Unencoded glyphs have no Unicode character. Icon-font naming conventions are not standardized, and some fonts intentionally omit glyph names.",
+      "status": "limitation",
+      "source_ids": [
+        "opentypejs",
+        "opentype-1.9.1"
+      ]
+    }
+  ]
+}

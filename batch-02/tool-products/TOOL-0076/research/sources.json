@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Review exactly what changes and preserve unrecognized parameters.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc3986",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Review exactly what changes and preserve unrecognized parameters.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

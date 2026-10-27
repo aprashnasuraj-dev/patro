@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0402",
+  "claims": [
+    {
+      "claim": "Joist and beam limits are transcribed from AWC DCA 6-15 tables for the combinations exposed by the tool.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The checker is not a structural design engine and does not validate connections, lateral loads, footings, snow loads, species grade exceptions, or local amendments.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

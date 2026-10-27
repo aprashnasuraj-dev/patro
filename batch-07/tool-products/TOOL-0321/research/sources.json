@@ -1,0 +1,51 @@
+{
+  "tool_id": "TOOL-0321",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+      "title": "Secure Hash Standard (SHS)",
+      "publisher": "NIST",
+      "version": "FIPS 180-4",
+      "effective_date": null,
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "SHA-256 and SHA-512 are cryptographic hashes; MD5 is included only for legacy checksum compatibility."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc1321.html",
+      "title": "The MD5 Message-Digest Algorithm",
+      "publisher": "IETF",
+      "version": "RFC 1321",
+      "effective_date": "1992-04",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "MD5 is cryptographically broken for collision resistance; never present it as a secure integrity/authentication primitive."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc6151.html",
+      "title": "Updated Security Considerations for MD5",
+      "publisher": "IETF",
+      "version": "RFC 6151",
+      "effective_date": "2011-03",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "MD5 is unsuitable where collision resistance is required."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc1952.html",
+      "title": "GZIP file format specification version 4.3 (CRC-32 reference)",
+      "publisher": "IETF",
+      "version": "RFC 1952",
+      "effective_date": "1996-05",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "CRC32 detects accidental corruption and is not cryptographic."
+    }
+  ],
+  "no_external_source_reason": null
+}

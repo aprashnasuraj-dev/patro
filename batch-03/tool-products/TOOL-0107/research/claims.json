@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0107",
+  "claims": [
+    {
+      "claim": "Build a standards-shaped @font-face block, validate unicode-range tokens, and optionally derive compact ranges from pasted sample text without sending font or text data anywhere.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "css-fonts-4"
+      ]
+    },
+    {
+      "claim": "This tool validates syntax and Unicode bounds, not whether the source font actually contains every declared code point or whether a browser will download a particular subset.",
+      "status": "limitation",
+      "source_ids": [
+        "css-fonts-4"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0326",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc2104.html",
+      "title": "HMAC: Keyed-Hashing for Message Authentication",
+      "publisher": "IETF",
+      "version": "RFC 2104",
+      "effective_date": "1997-02",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "Webhook providers may wrap HMAC outputs in provider-specific prefixes/encodings."
+    }
+  ],
+  "no_external_source_reason": null
+}

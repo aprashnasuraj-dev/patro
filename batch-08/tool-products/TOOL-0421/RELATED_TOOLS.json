@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0421",
+  "related": [
+    {
+      "id": "TOOL-0134",
+      "title": "Image Difference Comparator",
+      "proposed_canonical": "/comparisons/image-diff-comparator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0491",
+      "title": "Multi-Fuel Heating Cost Comparator",
+      "proposed_canonical": "/comparisons/multi-fuel-heating-cost-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0222",
+      "title": "Debt Snowball vs Avalanche Comparator",
+      "proposed_canonical": "/calculators/debt-snowball-vs-avalanche-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0337",
+      "title": "Office Document Metadata Scrubber (DOCX, XLSX, PPTX)",
+      "proposed_canonical": "/editors/remove-metadata-from-word-document",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

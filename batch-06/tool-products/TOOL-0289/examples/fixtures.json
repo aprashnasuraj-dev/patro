@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0289",
+  "sample_input": {
+    "wake": "07:00",
+    "latency": "20"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

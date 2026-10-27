@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0008",
+  "related": [
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "proposed_canonical": "/converters/excel-to-markdown-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0159",
+      "title": "DOCX to Markdown and HTML Converter",
+      "proposed_canonical": "/converters/docx-to-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "proposed_canonical": "/utilities/strip-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0094",
+      "title": "Word and Google Docs HTML Cleaner",
+      "proposed_canonical": "/editors/clean-word-html",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

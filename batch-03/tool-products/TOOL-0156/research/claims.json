@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Normal processing is browser-local and does not require a server round trip.",
+      "basis": "Implementation design; vendor bundles are loaded from same-origin static assets."
+    },
+    {
+      "claim": "Create a smaller rasterized PDF by downsampling pages and recompressing them at chosen DPI and JPEG quality.",
+      "basis": "Tool-specific core implementation and cited upstream APIs."
+    }
+  ],
+  "uncertainty": "Size reduction is not guaranteed for already-optimized PDFs."
+}

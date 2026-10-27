@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0309",
+  "related": [
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0049",
+      "title": "Cache-Control Header Builder",
+      "proposed_canonical": "/generators/cache-control-header-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

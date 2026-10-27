@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Solves ingredient weights from desired dough-ball count/weight and baker percentages.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

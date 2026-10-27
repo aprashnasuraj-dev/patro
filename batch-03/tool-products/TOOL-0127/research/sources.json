@@ -1,0 +1,39 @@
+{
+  "tool_id": "TOOL-0127",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://developer.apple.com/app-store/asset-best-practices/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Reference used for implementation behavior/rules only.",
+      "uncertainty": "Jurisdiction/library behavior may change; integration must re-check before publication."
+    },
+    {
+      "url": "https://developer.android.com/develop/ui/views/launch/icon_design_adaptive",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Reference used for implementation behavior/rules only.",
+      "uncertainty": "Jurisdiction/library behavior may change; integration must re-check before publication."
+    }
+  ],
+  "assumptions": [
+    "The source should be square and at least 1024\u00d71024 for high-density targets."
+  ],
+  "limitations": [
+    "Platform tooling evolves; generated legacy density sets complement, not replace, Xcode/Android Studio asset validation."
+  ]
+}

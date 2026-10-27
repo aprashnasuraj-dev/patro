@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0482",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "spend": 250,
+        "sales": 1000,
+        "margin": 45,
+        "fees": 12,
+        "fixed": 0
+      },
+      "expect": {
+        "output_label": "ACoS",
+        "value_contains": "25.00%"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

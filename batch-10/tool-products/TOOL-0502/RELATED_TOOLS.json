@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0502",
+  "related": [
+    {
+      "id": "TOOL-0496",
+      "title": "Inherited IRA 10-Year RMD Planner",
+      "proposed_canonical": "/planners/inherited-ira-rmd-10-year-rule-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0235",
+      "title": "Cost Basis Calculator (FIFO and Average) from Trade CSV",
+      "proposed_canonical": "/calculators/cost-basis-calculator-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0273",
+      "title": "Rental Property Cash Flow and ROI Calculator",
+      "proposed_canonical": "/calculators/rental-property-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "proposed_canonical": "/calculators/property-tax-appeal-savings-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0495",
+      "title": "Mega-Backdoor Roth Contribution Room Calculator",
+      "proposed_canonical": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

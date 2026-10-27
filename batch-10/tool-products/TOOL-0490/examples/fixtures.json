@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0490",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "length": 8,
+        "height": 4,
+        "depth": 4,
+        "price": 350,
+        "btu": 20,
+        "eff": 70
+      },
+      "expect": {
+        "output_label": "Equivalent full cords",
+        "value_contains": "1.00 cords"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

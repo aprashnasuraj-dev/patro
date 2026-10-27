@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0258",
+  "related": [
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "proposed_canonical": "/calculators/smd-resistor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0259",
+      "title": "vCard and Contact QR Code Generator",
+      "proposed_canonical": "/generators/vcard-qr-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0248",
+      "title": "VAT/GST Calculator with Reverse and Bulk Mode",
+      "proposed_canonical": "/calculators/vat-calculator-reverse-bulk",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0118",
+      "title": "ASCII Banner Generator for Code Comments",
+      "proposed_canonical": "/generators/ascii-banner-code-comment",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

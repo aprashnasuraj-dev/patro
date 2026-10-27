@@ -1,0 +1,13 @@
+{
+  "lazy_dependencies": [
+    {
+      "package": "gifenc",
+      "version_policy": "pin during Git integration; bundle locally; no runtime CDN"
+    },
+    {
+      "package": "upng-js",
+      "version_policy": "pin during Git integration; bundle locally; no runtime CDN"
+    }
+  ],
+  "runtime_network": "none"
+}

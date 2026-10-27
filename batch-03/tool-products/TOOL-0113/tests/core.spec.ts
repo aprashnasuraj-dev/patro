@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('glyph map deferred fixtures',()=>{it.todo('extracts PUA cmap mapping from synthetic icon font');it.todo('includes unencoded glyph only when requested');it.todo('CSV quotes glyph names safely');it.todo('handles >BMP mappings and malformed font')});

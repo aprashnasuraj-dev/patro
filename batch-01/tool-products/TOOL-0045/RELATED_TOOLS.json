@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0045",
+  "related": [
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0072",
+      "title": "robots.txt Bulk URL Tester",
+      "proposed_canonical": "/validators/robots-txt-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0121",
+      "title": "Bulk EXIF Viewer and Stripper",
+      "proposed_canonical": "/analyzers/remove-exif-data",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0007",
+      "title": "HAR to cURL Bulk Converter",
+      "proposed_canonical": "/converters/har-to-curl",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

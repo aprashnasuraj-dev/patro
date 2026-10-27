@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0316",
+  "related": [
+    {
+      "id": "TOOL-0305",
+      "title": "Bulk Epoch Timestamp Converter for Log Lines",
+      "proposed_canonical": "/converters/bulk-epoch-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0313",
+      "title": "Bikram Sambat (Nepali) to AD Date Converter",
+      "proposed_canonical": "/converters/nepali-date-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0314",
+      "title": "Hijri to Gregorian Date Converter",
+      "proposed_canonical": "/converters/hijri-to-gregorian-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

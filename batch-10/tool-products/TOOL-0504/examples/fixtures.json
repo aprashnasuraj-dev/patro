@@ -1,0 +1,9 @@
+{
+  "title": "UK Effective Marginal Tax Trap Calculator",
+  "default_inputs": {
+    "income": "110000",
+    "rise": "10000"
+  },
+  "worked_example": "£100,000–£125,140 adjusted net income often creates 60% incremental income tax.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

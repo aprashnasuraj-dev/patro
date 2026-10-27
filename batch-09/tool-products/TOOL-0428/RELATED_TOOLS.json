@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0428",
+  "related": [
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0223",
+      "title": "RSU Vesting and Withholding Estimator",
+      "proposed_canonical": "/calculators/rsu-tax-withholding-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0230",
+      "title": "Savings Goal Calculator (Date or Contribution)",
+      "proposed_canonical": "/calculators/savings-goal-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "proposed_canonical": "/calculators/marginal-tax-bracket-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0233",
+      "title": "Biweekly Mortgage Payment Savings Calculator",
+      "proposed_canonical": "/calculators/biweekly-mortgage-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

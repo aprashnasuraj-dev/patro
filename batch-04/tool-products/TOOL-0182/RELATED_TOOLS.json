@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0182",
+  "related": [
+    {
+      "id": "TOOL-0181",
+      "title": "Split CSV by Column Value or Row Count",
+      "proposed_canonical": "/editors/split-csv-by-column",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0188",
+      "title": "Split Excel Workbook into Separate Files by Sheet",
+      "proposed_canonical": "/editors/split-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0189",
+      "title": "Combine Excel Sheets into One Sheet",
+      "proposed_canonical": "/utilities/combine-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0186",
+      "title": "CSV Column Reorder, Rename and Drop Tool",
+      "proposed_canonical": "/utilities/csv-column-editor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0197",
+      "title": "Join Two CSV Files on a Key (VLOOKUP-style)",
+      "proposed_canonical": "/utilities/join-csv-files",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

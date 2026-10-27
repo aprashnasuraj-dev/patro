@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0331",
+  "examples": [
+    {
+      "inputs": {
+        "kind": "rsa",
+        "bits": 3072
+      },
+      "expected": "SPKI public PEM + PKCS8 private PEM + RSA JWKs"
+    },
+    {
+      "inputs": {
+        "kind": "p256"
+      },
+      "expected": "EC JWK crv=P-256"
+    }
+  ]
+}

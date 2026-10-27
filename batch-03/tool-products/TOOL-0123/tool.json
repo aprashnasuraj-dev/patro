@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0123",
+  "name": "PNG/JPG to AVIF and WebP with Quality Compare",
+  "route": "/tools/image-to-avif-webp-compare",
+  "family_id": "F0057",
+  "family": "Image Format Converter",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "PNG/JPG to AVIF and WebP with Quality Compare — Browser-Local Tool",
+    "meta_description": "Encode one PNG or JPEG to AVIF and WebP at comparable quality settings and show file-size savings side by side."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "Native Canvas encoders are preferred; a bundled AVIF codec can be lazy-loaded if native AVIF encoding is unavailable."
+  ],
+  "limitations": [
+    "Quality numbers are codec-specific and not visually equivalent; users must judge the preview."
+  ]
+}

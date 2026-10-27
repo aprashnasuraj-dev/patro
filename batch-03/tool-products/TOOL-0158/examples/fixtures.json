@@ -1,0 +1,16 @@
+{
+  "known_answer": {
+    "description": "A 595.2756\u00d7841.8898 pt page maps to approximately 210\u00d7297 mm A4."
+  },
+  "boundaries": [
+    "empty input",
+    "oversized file",
+    "maximum supported page/count/pixel boundary"
+  ],
+  "security": [
+    "malformed container",
+    "unsafe filename where relevant",
+    "script/event-handler content where relevant",
+    "resource exhaustion attempt"
+  ]
+}

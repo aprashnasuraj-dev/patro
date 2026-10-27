@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0409",
+  "claims": [
+    {
+      "claim": "Base stud count is derived from wall length and on-center spacing before opening adjustments.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Each listed opening adds explicit king/jack pairs and an estimated count of header cripples.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

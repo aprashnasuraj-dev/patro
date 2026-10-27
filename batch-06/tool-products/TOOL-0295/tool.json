@@ -1,0 +1,58 @@
+{
+  "id": "TOOL-0295",
+  "name": "Grade-Adjusted Pace Calculator",
+  "slug": "grade-adjusted-pace-calculator",
+  "route": "/tools/grade-adjusted-pace-calculator",
+  "family": "F0150",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Grade-Adjusted Pace Calculator | AafnaiPatro",
+    "description": "Normalize observed running pace to a flat-equivalent pace using Minetti grade energy-cost factors.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "pace",
+      "label": "Observed pace",
+      "default": 360,
+      "min": 120,
+      "max": 1800,
+      "step": "1",
+      "unit": "seconds/km"
+    },
+    {
+      "type": "number",
+      "key": "grade",
+      "label": "Route grade",
+      "default": 5,
+      "min": -20,
+      "max": 20,
+      "step": "any",
+      "unit": "%"
+    }
+  ],
+  "explanation": "Minetti cost C(g)=155.4g⁵−30.4g⁴−43.3g³+46.3g²+19.5g+3.6, g=grade/100; flat-equivalent seconds/km=observed·C(0)/C(g).",
+  "limitations": "Steep downhill, surface, terrain, cadence and course changes can invalidate energetic equivalence. Formula is a model, not an individual calibration.",
+  "related_tool_ids": [
+    "TOOL-0282",
+    "TOOL-0298",
+    "TOOL-0299"
+  ],
+  "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/12183501/"
+  ],
+  "special_notes": null
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0197",
+  "related": [
+    {
+      "id": "TOOL-0198",
+      "title": "CSV Diff (Compare Two Files by Key)",
+      "proposed_canonical": "/comparisons/csv-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0183",
+      "title": "CSV Deduplicator by Key Columns",
+      "proposed_canonical": "/utilities/csv-remove-duplicates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0182",
+      "title": "Merge CSV Files with Column Alignment",
+      "proposed_canonical": "/editors/merge-csv-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0188",
+      "title": "Split Excel Workbook into Separate Files by Sheet",
+      "proposed_canonical": "/editors/split-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0020",
+      "title": "Semantic JSON Diff (Ignore Key and Array Order)",
+      "proposed_canonical": "/utilities/json-diff-ignore-order",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

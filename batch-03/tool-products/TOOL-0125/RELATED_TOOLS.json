@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0125",
+  "related": [
+    {
+      "id": "TOOL-0124",
+      "title": "Compress Image to Exact File Size (KB)",
+      "proposed_canonical": "/converters/compress-image-to-kb",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "proposed_canonical": "/validators/marketplace-image-size-spec-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0478",
+      "title": "Shipping Label to 4x6 Thermal Cropper",
+      "proposed_canonical": "/editors/shipping-label-4x6-pdf-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0352",
+      "title": "Video Cropper for 9:16 Shorts and Reels with Safe Zones",
+      "proposed_canonical": "/converters/crop-video-to-9-16",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

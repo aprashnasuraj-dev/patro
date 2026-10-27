@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Split full names into first, middle, last, and suffix fields using transparent heuristics with strong cultural limitations.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Human names are culturally diverse and cannot be reliably decomposed with universal rules; review flags are part of the output.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

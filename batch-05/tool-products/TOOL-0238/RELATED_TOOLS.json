@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0238",
+  "related": [
+    {
+      "id": "TOOL-0225",
+      "title": "Compound Interest Calculator with Inflation-Adjusted Returns",
+      "proposed_canonical": "/calculators/compound-interest-with-inflation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0226",
+      "title": "SIP Calculator with Annual Step-Up",
+      "proposed_canonical": "/calculators/sip-calculator-with-step-up",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0236",
+      "title": "DRIP (Dividend Reinvestment) Calculator",
+      "proposed_canonical": "/calculators/drip-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0227",
+      "title": "EMI Calculator: Flat Rate vs Reducing Balance",
+      "proposed_canonical": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0240",
+      "title": "Employer Retirement Match Calculator (Custom Formula)",
+      "proposed_canonical": "/calculators/employer-match-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

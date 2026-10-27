@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Space per bird is supplied by the user; feed is an editable consumption estimate.",
+    "sources": [
+      "https://www.aphis.usda.gov/livestock-poultry-disease/avian/avian-influenza"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Not a substitute for local welfare requirements."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

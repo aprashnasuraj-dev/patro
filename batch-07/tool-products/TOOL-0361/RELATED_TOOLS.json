@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0361",
+  "related": [
+    {
+      "id": "TOOL-0362",
+      "title": "BibTeX to APA, MLA, Chicago Converter",
+      "proposed_canonical": "/converters/bibtex-to-apa",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0363",
+      "title": "RIS to BibTeX Converter",
+      "proposed_canonical": "/converters/ris-to-bibtex",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0364",
+      "title": "BibTeX Cleaner and Duplicate Remover",
+      "proposed_canonical": "/editors/bibtex-cleaner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0057",
+      "title": "MAC Address Formatter with Offline Vendor Lookup",
+      "proposed_canonical": "/formatters/mac-address-formatter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0345",
+      "title": "Accessible Hashtag Formatter (PascalCase)",
+      "proposed_canonical": "/formatters/hashtag-camelcase-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

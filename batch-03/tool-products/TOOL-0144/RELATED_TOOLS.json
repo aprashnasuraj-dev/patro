@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0144",
+  "related": [
+    {
+      "id": "TOOL-0143",
+      "title": "Split PDF by Bookmarks (Chapters)",
+      "proposed_canonical": "/editors/split-pdf-by-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0142",
+      "title": "Rearrange PDF Pages (Drag Thumbnails)",
+      "proposed_canonical": "/editors/rearrange-pdf-pages",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0145",
+      "title": "Bates Numbering for PDFs",
+      "proposed_canonical": "/utilities/bates-numbering-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0182",
+      "title": "Merge CSV Files with Column Alignment",
+      "proposed_canonical": "/editors/merge-csv-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0294",
+      "title": "Endurance Fueling Calculator (Carbs per Hour)",
+      "proposed_canonical": "/calculators/endurance-fueling-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

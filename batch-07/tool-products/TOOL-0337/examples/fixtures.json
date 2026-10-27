@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0337",
+  "examples": [
+    {
+      "package_contains": [
+        "docProps/core.xml"
+      ],
+      "expected": "creator/lastModifiedBy/timestamps blanked while package remains OOXML ZIP"
+    },
+    {
+      "zip_bomb_guard": "Reject >5000 entries, >250 MiB declared uncompressed, or >200:1 aggregate ratio before unzip."
+    }
+  ]
+}

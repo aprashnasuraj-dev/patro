@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Remove duplicate CSV rows using one or more key columns with explicit first/last retention and blank-key behavior.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Duplicate identity is exact string equality across selected key columns; no fuzzy matching is performed.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

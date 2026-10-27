@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Measured packed bag is compared in cm/kg; optional dimension rotation handles orientation changes.",
+    "supporting_urls": [
+      "https://www.iata.org/en/programs/ops-infra/baggage/check-bag/"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "No airline-specific policy database or guarantee of boarding acceptance."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "A 55×35×23 cm bag fits a 56×36×23 cm box and weighs 8 kg vs 10 kg allowance.",
+    "status": "TEST_PENDING"
+  }
+]

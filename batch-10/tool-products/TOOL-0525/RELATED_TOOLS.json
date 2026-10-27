@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0525",
+  "related": [
+    {
+      "id": "TOOL-0491",
+      "title": "Multi-Fuel Heating Cost Comparator",
+      "proposed_canonical": "/comparisons/multi-fuel-heating-cost-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0246",
+      "title": "SaaS Metrics Calculator (LTV, CAC, Payback, Churn)",
+      "proposed_canonical": "/calculators/saas-metrics-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0516",
+      "title": "Australian Home Battery Payback Calculator",
+      "proposed_canonical": "/calculators/australia-home-battery-payback-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0526",
+      "title": "Generator Sizing and Starting Watts Calculator",
+      "proposed_canonical": "/calculators/generator-sizing-running-starting-watts",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0527",
+      "title": "Astrophotography NPF Exposure Calculator",
+      "proposed_canonical": "/calculators/astrophotography-npf-exposure-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

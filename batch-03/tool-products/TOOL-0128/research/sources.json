@@ -1,0 +1,25 @@
+{
+  "tool_id": "TOOL-0128",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    }
+  ],
+  "assumptions": [
+    "A shelf-packing layout is used for predictable ordering and bounded complexity."
+  ],
+  "limitations": [
+    "Sprite sheets can hurt modern responsive/image-loading workflows; use them where a single request and CSS positioning are actually beneficial."
+  ]
+}

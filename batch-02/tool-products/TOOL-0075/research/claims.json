@@ -1,0 +1,12 @@
+{
+  "assumptions": "RFC 4180-style comma-delimited CSV with url and optional UTM columns.",
+  "limitations": "Malformed CSV and unknown columns are not auto-corrected.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://developers.google.com/analytics/devguides/collection/ga4/campaigns",
+    "https://www.rfc-editor.org/rfc/rfc4180"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

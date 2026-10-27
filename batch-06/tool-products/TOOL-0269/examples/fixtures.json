@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0269",
+  "examples": [
+    {
+      "inputs": {
+        "length_ft": 30,
+        "width_ft": 12,
+        "depth_in": 3,
+        "overage_pct": 8
+      },
+      "expected_note": "Volume converts ft³ to yd³ by 27 ft³/yd³."
+    }
+  ]
+}

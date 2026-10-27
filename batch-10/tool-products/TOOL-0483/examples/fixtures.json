@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0483",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "length": 60,
+        "width": 40,
+        "unavailable": 300,
+        "layout": "Tables and chairs",
+        "planning": 18,
+        "approved": 0
+      },
+      "expect": {
+        "output_label": "Factor-based number",
+        "value_contains": "140"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

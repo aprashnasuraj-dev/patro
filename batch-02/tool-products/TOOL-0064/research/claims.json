@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0064",
+  "claims": [
+    {
+      "claim": "Job description should be complete and represented in HTML.",
+      "supporting_url": "https://schema.org/JobPosting",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Fully remote jobs need explicit jobLocationType and applicantLocationRequirements.",
+      "supporting_url": "https://schema.org/JobPosting",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "Schema.org JobPosting and current Google job posting requirements."
+  ],
+  "limitations": [
+    "Expired, fabricated or inaccessible listings are not eligible; no listing is published here."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

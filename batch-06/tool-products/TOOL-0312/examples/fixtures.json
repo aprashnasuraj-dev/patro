@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0312",
+  "examples": [
+    {
+      "inputs": {
+        "date": "2027-01-01",
+        "time": "00:00",
+        "tz": "Asia/Kathmandu"
+      },
+      "expected_note": "Share URL stores resolved epoch milliseconds, so viewers count down to the same instant."
+    }
+  ]
+}

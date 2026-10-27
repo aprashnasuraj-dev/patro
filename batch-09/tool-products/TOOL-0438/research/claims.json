@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Delivery-driver economic income",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "No tax returns, business-use vehicle fraction, reimbursements or insurance coverage certification.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "No tax returns, business-use vehicle fraction, reimbursements or insurance coverage certification.",
+  "authoritative_references": [
+    "https://www.irs.gov/businesses/gig-economy-tax-center"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

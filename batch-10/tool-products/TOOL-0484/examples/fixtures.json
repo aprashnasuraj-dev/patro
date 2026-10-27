@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0484",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "shape": "Rectangle",
+        "unit": "in",
+        "length": 72,
+        "width": 30,
+        "drop": 10,
+        "height": 30
+      },
+      "expect": {
+        "output_label": "Cloth length",
+        "value_contains": "92.00 in"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

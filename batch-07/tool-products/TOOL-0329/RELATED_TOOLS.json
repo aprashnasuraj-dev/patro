@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0329",
+  "related": [
+    {
+      "id": "TOOL-0330",
+      "title": "File Encryptor and Decryptor in Browser (AES-GCM)",
+      "proposed_canonical": "/utilities/encrypt-file-in-browser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0323",
+      "title": "Password Strength Auditor with Pattern Breakdown",
+      "proposed_canonical": "/validators/password-strength-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "proposed_canonical": "/utilities/strip-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "proposed_canonical": "/validators/word-level-text-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

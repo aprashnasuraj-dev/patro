@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0457",
+  "related": [
+    {
+      "id": "TOOL-0458",
+      "title": "State Overtime & Fluctuating Workweek Calculator",
+      "proposed_canonical": "/calculators/state-overtime-pay-rules-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0449",
+      "title": "COBRA Election & Payment Deadline Calculator",
+      "proposed_canonical": "/calculators/cobra-election-payment-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0518",
+      "title": "California Meal Break and Overtime Wage Claim Calculator",
+      "proposed_canonical": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0366",
+      "title": "Final Grade Calculator (What Do I Need on the Final?)",
+      "proposed_canonical": "/calculators/final-grade-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

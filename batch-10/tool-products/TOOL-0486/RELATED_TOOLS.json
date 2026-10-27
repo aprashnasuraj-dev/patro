@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0486",
+  "related": [
+    {
+      "id": "TOOL-0497",
+      "title": "Wash Sale CSV Lot Matcher and Form 8949 Helper",
+      "proposed_canonical": "/utilities/wash-sale-lot-matching-csv-form-8949",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0460",
+      "title": "FMLA Eligibility & Entitlement Calculator",
+      "proposed_canonical": "/calculators/fmla-eligibility-entitlement-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0499",
+      "title": "HSA Contribution Limit and Midyear Eligibility Calculator",
+      "proposed_canonical": "/calculators/hsa-contribution-limit-monthly-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0483",
+      "title": "Event Space Capacity Calculator",
+      "proposed_canonical": "/calculators/event-room-capacity-layout-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

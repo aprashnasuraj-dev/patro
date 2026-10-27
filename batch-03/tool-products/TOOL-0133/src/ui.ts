@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,checked,guarded,dl,resultText } from '../_vendor/ui'; $('primary').addEventListener('click',()=>guarded(async()=>{const r=await core.check(file('file'),num('step'),checked('offset'));resultText(`Opposite-edge mean RGB difference — vertical: ${r.verticalEdgeMean.toFixed(2)}, horizontal: ${r.horizontalEdgeMean.toFixed(2)}. Lower is closer, but visual review is still required.`);if(r.offset)dl(r.offset,'pattern-offset.png')}));
+

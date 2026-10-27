@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0134",
+  "related": [
+    {
+      "id": "TOOL-0421",
+      "title": "Home Office Deduction Comparator (US/UK/CA/AU)",
+      "proposed_canonical": "/comparisons/home-office-deduction-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0491",
+      "title": "Multi-Fuel Heating Cost Comparator",
+      "proposed_canonical": "/comparisons/multi-fuel-heating-cost-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0222",
+      "title": "Debt Snowball vs Avalanche Comparator",
+      "proposed_canonical": "/calculators/debt-snowball-vs-avalanche-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0123",
+      "title": "PNG/JPG to AVIF and WebP with Quality Compare",
+      "proposed_canonical": "/comparisons/image-to-avif-webp-compare",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

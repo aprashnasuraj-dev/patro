@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,val,guarded,dl,resultText } from '../_vendor/ui'; $('primary').textContent='Apply Bates numbers';$('primary').addEventListener('click',()=>guarded(async()=>{const b=await core.bates(file('file'),{start:num('start'),prefix:val('prefix'),digits:num('digits'),position:val('position') as any});resultText('Bates labels were added as page content in a new PDF.');dl(b,'bates-numbered.pdf')}));
+

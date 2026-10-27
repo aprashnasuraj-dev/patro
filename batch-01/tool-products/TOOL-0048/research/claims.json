@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0048",
+  "scope_claim": "Inspect pasted HTTP response headers for common caching, security and CORS misconfigurations.",
+  "authoritative_urls": [
+    "https://www.rfc-editor.org/rfc/rfc9110.html",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers"
+  ],
+  "assumptions": [
+    "Header lines including optional status line; capped text and line lengths.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Context-dependent findings are informational, not an active audit of the server.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

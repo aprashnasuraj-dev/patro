@@ -1,0 +1,25 @@
+{
+  "default_inputs": {
+    "provider": "KDP",
+    "stock": "white",
+    "pages": 200,
+    "trimW": 6,
+    "trimH": 9,
+    "caliper": 0.0025,
+    "bleed": 0.125
+  },
+  "known_answer": {
+    "output_label": "Calculated spine width",
+    "expected_display": "0.4504 in",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

@@ -1,0 +1,24 @@
+{
+  "tool_id": "TOOL-0247",
+  "status": "TEST_PENDING",
+  "sample": {
+    "openingCash": 300000,
+    "monthlyRevenue": 40000,
+    "monthlyExpense": 90000,
+    "revenueGrowthPct": 5,
+    "expenseGrowthPct": 1,
+    "events": [
+      {
+        "month": 3,
+        "amount": -25000,
+        "label": "Equipment"
+      },
+      {
+        "month": 6,
+        "amount": 100000,
+        "label": "Funding"
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

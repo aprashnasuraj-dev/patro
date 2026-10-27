@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0286",
+  "sample_input": {
+    "t400": "450",
+    "t200": "205"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

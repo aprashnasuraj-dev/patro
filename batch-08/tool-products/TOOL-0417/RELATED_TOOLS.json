@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0417",
+  "related": [
+    {
+      "id": "TOOL-0416",
+      "title": "US Economic Nexus Tracker",
+      "proposed_canonical": "/planners/us-sales-tax-economic-nexus-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0248",
+      "title": "VAT/GST Calculator with Reverse and Bulk Mode",
+      "proposed_canonical": "/calculators/vat-calculator-reverse-bulk",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0415",
+      "title": "GST/HST Quick Method vs Regular Method",
+      "proposed_canonical": "/calculators/canada-gst-hst-quick-method-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0369",
+      "title": "Writing Word Count Goal Tracker (Local)",
+      "proposed_canonical": "/planners/word-count-goal-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0459",
+      "title": "I-9 Reverification & Retention Date Tracker",
+      "proposed_canonical": "/planners/i9-reverification-retention-date-tracker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0356",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "Player policy, age restrictions, embedding permissions, cookies/storage and future YouTube parameters remain controlled by YouTube. Privacy Enhanced Mode is not “no network/no data.”"
+}

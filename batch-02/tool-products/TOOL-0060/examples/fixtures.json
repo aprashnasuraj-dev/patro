@@ -1,0 +1,12 @@
+{
+  "sample_input": {
+    "raw": "From: Sender <sender@example.com>\nTo: Recipient <recipient@example.net>\nDate: Mon, 26 Oct 2026 12:00:00 +0000\nSubject: Sample\nAuthentication-Results: mx.example.net; spf=pass smtp.mailfrom=example.com\nReceived: from mx.example.com by mx.example.net; Mon, 26 Oct 2026 12:00:00 +0000"
+  },
+  "worked_example": "Authentication-Results: mx.example; spf=pass is a reported claim, not independent proof.",
+  "planned_expectations": [
+    "Unfold a folded Received header; parse claims as reported only.",
+    "Reject bare continuation, control bytes and overlong lines.",
+    "No message body echoed after first blank line."
+  ],
+  "execution_state": "TEST_PENDING"
+}

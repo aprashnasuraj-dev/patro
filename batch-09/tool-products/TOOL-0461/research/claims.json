@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Separate total-recordable and DART rates with a documented benchmark",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.osha.gov/itadata",
+        "https://www.bls.gov/iif/nonfatal-injuries-and-illnesses-tables.htm",
+        "https://www.bls.gov/news.release/osh.nr0.htm"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "The 2024 aggregate benchmark is not an industry-specific classification. Latest released year and NAICS breakdown must be reviewed for publication.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "The 2024 aggregate benchmark is not an industry-specific classification. Latest released year and NAICS breakdown must be reviewed for publication.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0115",
+  "claims": [
+    {
+      "claim": "Measure kerning adjustments for adjacent glyph pairs in a sample string using a local font and show design-unit and pixel adjustments at a chosen size.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "opentypejs",
+        "opentype-gpos",
+        "opentype-kern"
+      ]
+    },
+    {
+      "claim": "This is sample-pair inspection, not exhaustive expansion of all class/context kerning. Browser shaping can differ because script, language and feature resolution may affect positioning.",
+      "status": "limitation",
+      "source_ids": [
+        "opentypejs",
+        "opentype-gpos",
+        "opentype-kern"
+      ]
+    }
+  ]
+}

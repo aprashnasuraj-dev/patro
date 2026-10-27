@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0370",
+  "claims": [
+    {
+      "claim": "Read a local spreadsheet in the browser and turn the first sheet into an escaped LaTeX tabular environment.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Uses the first worksheet only in this source-prep version; formulas are read as displayed values and complex merged cells/styles are not reproduced.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

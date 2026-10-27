@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0226",
+  "related": [
+    {
+      "id": "TOOL-0225",
+      "title": "Compound Interest Calculator with Inflation-Adjusted Returns",
+      "proposed_canonical": "/calculators/compound-interest-with-inflation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0236",
+      "title": "DRIP (Dividend Reinvestment) Calculator",
+      "proposed_canonical": "/calculators/drip-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0238",
+      "title": "Inflation Calculator with Custom Rate",
+      "proposed_canonical": "/calculators/inflation-calculator-custom-rate",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0217",
+      "title": "Matrix Calculator with Step-by-Step Inverse and Determinant",
+      "proposed_canonical": "/calculators/matrix-calculator-with-steps",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0507",
+      "title": "UK Pension Annual Allowance Carry-Forward Calculator",
+      "proposed_canonical": "/calculators/uk-pension-allowance-carry-forward-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

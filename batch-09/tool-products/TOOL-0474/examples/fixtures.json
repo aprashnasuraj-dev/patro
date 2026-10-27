@@ -1,0 +1,28 @@
+{
+  "default_input": {
+    "origin": "Country of origin (verify)",
+    "destination": "Destination country (verify)",
+    "value": 1000,
+    "freight": 120,
+    "insurance": 20,
+    "duty": 10,
+    "tax": 5,
+    "taxFreight": "yes",
+    "fees": 35
+  },
+  "hand_reference": {
+    "label": "Modeled import duty",
+    "value": "$100.00",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

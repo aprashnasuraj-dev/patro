@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0305",
+  "name": "Bulk Epoch Timestamp Converter for Log Lines",
+  "route": "/tools/bulk-epoch-converter",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0164",
+  "engineering_family": "Timestamp and Spreadsheet Date Converter",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Bulk Epoch Timestamp Converter for Log Lines — Private Browser Tool",
+    "meta_description": "Extract integer Unix-style timestamps from pasted log lines, auto-detect seconds/milliseconds/microseconds/nanoseconds by magnitude, and convert them without losing integer precision.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

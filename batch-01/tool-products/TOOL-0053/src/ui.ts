@@ -1,0 +1,15 @@
+import {validateEndpoint,parseEvents} from './core.js';
+const form=document.getElementById('tool-form'),output=document.getElementById('output'),status=document.getElementById('status');
+const connect=document.getElementById('connect'),disconnect=document.getElementById('disconnect');
+const copy=document.getElementById('copy'),download=document.getElementById('download');
+form.addEventListener('submit',e=>e.preventDefault());
+let source=null,lines=[],timer=null,session=0;
+function append(kind,data){lines.push(`${new Date().toISOString()}  ${kind}  ${String(data).slice(0,8192)}`);if(lines.length>200){lines.shift();close('Stopped after 200 events to limit memory use.');}output.textContent=lines.join('\n');output.scrollTop=output.scrollHeight;copy.disabled=download.disabled=!lines.length;}
+function close(reason){session++;clearTimeout(timer);if(source){source.close();source=null;}connect.disabled=false;disconnect.disabled=true;status.textContent=reason;}
+connect.addEventListener('click',()=>{try{if(source)close('Previous stream stopped.');const url=validateEndpoint(form.elements.namedItem('endpoint').value),types=parseEvents(form.elements.namedItem('events').value),id=++session;source=new EventSource(url,{withCredentials:false});connect.disabled=true;disconnect.disabled=false;append('CONNECT',url);status.textContent='Connecting (browser may automatically reconnect)…';source.addEventListener('open',()=>{if(id!==session)return;append('OPEN','EventSource readyState=OPEN');status.textContent='Stream open. Listening for events.';});const onEvent=(type)=>(e)=>{if(id!==session)return;append(type,JSON.stringify({id:e.lastEventId||'',data:e.data}));};source.addEventListener('message',onEvent('message'));for(const event of types)source.addEventListener(event,onEvent(event));source.addEventListener('error',()=>{if(id===session){append('ERROR',`readyState=${source?.readyState} — browser may retry`);status.textContent='Stream error or reconnect; browser details limited.';if(source?.readyState===EventSource.CLOSED)close('Stream closed by browser.');}});timer=setTimeout(()=>{append('LIMIT','Five-minute stream duration reached.');close('Stream closed after five minutes.');},300000);
+}catch(e){status.textContent=e.message;append('ERROR',e.message);connect.disabled=false;disconnect.disabled=true;}});
+disconnect.addEventListener('click',()=>{append('STOP','User stopped stream.');close('Stream stopped.');});
+document.getElementById('clear').addEventListener('click',()=>{lines=[];output.textContent='Log cleared.';copy.disabled=download.disabled=true;});
+copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(lines.join('\n'));status.textContent='Log copied.';}catch{status.textContent='Copy blocked; select the log manually.';}});
+download.addEventListener('click',()=>{const b=new Blob([lines.join('\n')],{type:'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='sse-event-log.txt';a.click();setTimeout(()=>URL.revokeObjectURL(u),1500);});
+window.addEventListener('pagehide',()=>close('Page closed.'));

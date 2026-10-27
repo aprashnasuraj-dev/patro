@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0216",
+  "sources": [
+    {
+      "title": "NIST DLMF §27.19 — Methods of Computation: Factorization",
+      "url": "https://dlmf.nist.gov/27.19",
+      "publisher": "NIST Digital Library of Mathematical Functions",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "ECMAScript 2025 — BigInt Type",
+      "url": "https://262.ecma-international.org/16.0/",
+      "publisher": "Ecma International",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

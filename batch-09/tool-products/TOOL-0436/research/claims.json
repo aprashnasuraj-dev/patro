@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Compliance window planning",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Not a certified ELD/tachograph; user must verify rolling periods, breaks, rest and exceptions.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Not a certified ELD/tachograph; user must verify rolling periods, breaks, rest and exceptions.",
+  "authoritative_references": [
+    "https://www.fmcsa.dot.gov/regulations/hours-service/summary-hours-service-regulations",
+    "https://europa.eu/youreurope/citizens/work/work-abroad/rules-working-road-transport/index_en.htm"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

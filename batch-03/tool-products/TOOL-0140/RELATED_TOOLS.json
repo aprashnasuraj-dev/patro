@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0140",
+  "related": [
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "proposed_canonical": "/validators/marketplace-image-size-spec-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0124",
+      "title": "Compress Image to Exact File Size (KB)",
+      "proposed_canonical": "/converters/compress-image-to-kb",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0125",
+      "title": "Passport and ID Photo Cropper by Country",
+      "proposed_canonical": "/editors/passport-photo-size-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0121",
+      "title": "Bulk EXIF Viewer and Stripper",
+      "proposed_canonical": "/analyzers/remove-exif-data",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0007",
+      "title": "HAR to cURL Bulk Converter",
+      "proposed_canonical": "/converters/har-to-curl",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

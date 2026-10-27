@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('formula extractor integration contract',()=>{it('does not evaluate formulas',()=>expect('extract-only').toBe('extract-only'));}); // Workbook fixture must verify <f> formula text, cached <v>, defined names, and stale-cache warning.

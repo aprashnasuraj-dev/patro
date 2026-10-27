@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0112",
+  "claims": [
+    {
+      "claim": "Convert text into SVG path data locally using an uploaded font, with configurable size, fill and padding and a downloadable standalone SVG.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "opentypejs",
+        "opentype-1.9.1"
+      ]
+    },
+    {
+      "claim": "Path conversion is not a full browser shaping engine. Complex-script shaping, color glyphs, SVG-in-OpenType and variation-instance behavior may differ or be unsupported.",
+      "status": "limitation",
+      "source_ids": [
+        "opentypejs",
+        "opentype-1.9.1"
+      ]
+    }
+  ]
+}

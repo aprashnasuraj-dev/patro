@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0203",
+  "name": "Wilson Score Confidence Interval Calculator",
+  "route": "/tools/wilson-score-interval-calculator",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0093",
+  "engineering_family": "Confidence Interval and Survey Sizing",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Wilson Score Confidence Interval Calculator — Browser Calculator",
+    "meta_description": "Calculate a Wilson score interval for a binomial proportion, including boundary cases such as zero or all successes.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

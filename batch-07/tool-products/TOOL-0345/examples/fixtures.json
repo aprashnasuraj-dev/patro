@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0345",
+  "examples": [
+    {
+      "input": "digital_accessibility",
+      "output": "#DigitalAccessibility"
+    },
+    {
+      "input": "WorldMentalHealthDay",
+      "output": "#WorldMentalHealthDay"
+    }
+  ]
+}

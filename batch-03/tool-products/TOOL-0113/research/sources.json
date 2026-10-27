@@ -1,0 +1,25 @@
+{
+  "tool_id": "TOOL-0113",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "opentypejs",
+      "url": "https://github.com/opentypejs/opentype.js/releases",
+      "version": "opentype.js 2.0.0",
+      "effective_date": "2026",
+      "license": "MIT",
+      "notes": "Browser parser/path API. Complex-script shaping and rasterizer behavior should not be assumed identical to a browser shaping engine."
+    },
+    {
+      "id": "opentype-1.9.1",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/otff",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "General OpenType/SFNT format reference."
+    }
+  ],
+  "assumptions": "Unicode mapping data is present in the font cmap and glyph names, when shown, are meaningful to the font author.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "Unencoded glyphs have no Unicode character. Icon-font naming conventions are not standardized, and some fonts intentionally omit glyph names."
+}

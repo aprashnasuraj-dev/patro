@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0335",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9562.html",
+      "title": "Universally Unique IDentifiers (UUIDs)",
+      "publisher": "IETF",
+      "version": "RFC 9562",
+      "effective_date": "2024-05",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "UUIDv7 uses a 48-bit Unix millisecond timestamp and 74 non-version/variant bits available for randomness/monotonic fields."
+    },
+    {
+      "url": "https://github.com/ulid/spec",
+      "title": "ULID canonical specification",
+      "publisher": "ULID project",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "ULID is community specification, not an IETF standard; timestamp is 48-bit milliseconds and randomness is 80 bits."
+    }
+  ],
+  "no_external_source_reason": null
+}

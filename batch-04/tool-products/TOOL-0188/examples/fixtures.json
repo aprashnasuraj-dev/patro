@@ -1,0 +1,12 @@
+{
+  "nominal": {
+    "note": "Workbook fixture with two sheets and one cross-sheet formula to verify warning path."
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

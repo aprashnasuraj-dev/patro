@@ -1,0 +1,39 @@
+{
+  "tool_id": "TOOL-0096",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "rfc8259",
+      "url": "https://www.rfc-editor.org/rfc/rfc8259.html",
+      "version": "RFC 8259 / STD 90",
+      "effective_date": "2017-12",
+      "license": "IETF RFC publication",
+      "notes": "JSON string escape syntax."
+    },
+    {
+      "id": "python-lex",
+      "url": "https://docs.python.org/3/reference/lexical_analysis.html",
+      "version": "Python 3.15 documentation",
+      "effective_date": "2026",
+      "license": "PSF documentation license",
+      "notes": "Python string literal escape rules; tool supports common escapes, not named Unicode escapes."
+    },
+    {
+      "id": "jls",
+      "url": "https://docs.oracle.com/javase/specs/jls/se26/html/",
+      "version": "Java SE 26 JLS",
+      "effective_date": "2026-02-17",
+      "license": "Oracle documentation terms",
+      "notes": "Java string and escape-sequence rules."
+    },
+    {
+      "id": "postgres-sql",
+      "url": "https://www.postgresql.org/docs/current/sql-syntax-lexical.html",
+      "version": "PostgreSQL 18 docs",
+      "effective_date": "2026",
+      "license": "PostgreSQL documentation license",
+      "notes": "Used to document single-quote doubling and PostgreSQL-specific E/dollar quoting caveat; tool emits standard-style doubled single quotes only."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

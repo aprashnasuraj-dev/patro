@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "statement": "Privacy-conscious personal data access letter draft",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.edpb.europa.eu/contact/frequently-asked-questions_en",
+        "https://ico.org.uk/for-the-public/time-limits-for-responding-to-data-protection-rights-requests/"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Scope and deadlines are conditional on jurisdiction, identity verification and lawful exemptions.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Scope and deadlines are conditional on jurisdiction, identity verification and lawful exemptions.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

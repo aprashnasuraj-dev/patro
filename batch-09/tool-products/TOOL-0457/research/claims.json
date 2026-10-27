@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Final pay amount plus jurisdiction-confirmed deadline",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "No comprehensive jurisdictional rule tables, penalties or holiday adjustment; legal compliance cannot be inferred without current state-law reference.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.dol.gov/general/topic/wages/lastpaycheck"
+  ],
+  "assumptions": "No comprehensive jurisdictional rule tables, penalties or holiday adjustment; legal compliance cannot be inferred without current state-law reference.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

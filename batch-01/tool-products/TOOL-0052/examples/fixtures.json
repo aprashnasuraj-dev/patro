@@ -1,0 +1,14 @@
+{
+  "input": {
+    "endpoint": "wss://echo.example.test",
+    "protocols": "",
+    "message": "Hello from browser"
+  },
+  "worked_example": "Connecting to wss://echo.example.test requires a real reachable echo server.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

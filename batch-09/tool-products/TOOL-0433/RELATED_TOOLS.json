@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0433",
+  "related": [
+    {
+      "id": "TOOL-0287",
+      "title": "FTP Zones and Power-to-Weight Calculator",
+      "proposed_canonical": "/calculators/ftp-zones-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0529",
+      "title": "Puppy Adult Weight Estimate and Growth Curve",
+      "proposed_canonical": "/utilities/puppy-adult-weight-growth-predictor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0440",
+      "title": "Net VLT & Window Tint Law Checker",
+      "proposed_canonical": "/validators/window-tint-vlt-law-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0434",
+      "title": "EV Home Charging Cost & Circuit Sizing",
+      "proposed_canonical": "/utilities/ev-charging-cost-and-circuit-sizing",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

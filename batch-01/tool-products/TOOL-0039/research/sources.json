@@ -1,0 +1,48 @@
+{
+  "research_status": "PRIMARY_STANDARDS_WEB_VERIFIED_2026-10-26",
+  "licensing": "RFC and browser reference links only; public OpenSSL-generated test certificates; no third-party source code or private keys.",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc5280",
+      "version": "RFC 5280 (May 2008)",
+      "verified_live": true,
+      "applies_to": "Certificate structures, CA constraints, issuer/subject relationships, pathLen, validity; full RFC path validation explicitly not offered"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7468",
+      "version": "RFC 7468 (April 2015)",
+      "verified_live": true,
+      "applies_to": "PEM CERTIFICATE textual armor and base64"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4055",
+      "version": "RFC 4055 (June 2005)",
+      "verified_live": true,
+      "applies_to": "RSA-PSS signature parameters and SPKI restrictions"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8410",
+      "version": "RFC 8410 (August 2018)",
+      "verified_live": true,
+      "applies_to": "Ed25519 SPKI/signature identifiers"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify",
+      "version": "MDN documentation consulted 2026-10-26",
+      "verified_live": true,
+      "applies_to": "WebCrypto signature verification"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey",
+      "version": "MDN documentation consulted 2026-10-26",
+      "verified_live": true,
+      "applies_to": "SPKI public-key imports"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign",
+      "version": "MDN documentation consulted 2026-10-26",
+      "verified_live": true,
+      "applies_to": "ECDSA raw P1363 signatures; X.509 DER conversion required"
+    }
+  ]
+}

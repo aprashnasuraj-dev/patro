@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0248",
+  "name": "VAT/GST Calculator with Reverse and Bulk Mode",
+  "route": "/tools/vat-calculator-reverse-bulk",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0119",
+  "engineering_family": "VAT and GST Calculator",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "VAT/GST Calculator with Reverse and Bulk Mode — Private Browser Tool",
+    "meta_description": "Add or reverse VAT/GST from a gross or net amount, or process a bounded CSV batch with explicit rate and mode for each row.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

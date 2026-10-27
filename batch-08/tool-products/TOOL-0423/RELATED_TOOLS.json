@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0423",
+  "related": [
+    {
+      "id": "TOOL-0425",
+      "title": "Landlord Notice Period & Service-Date Calculator",
+      "proposed_canonical": "/calculators/landlord-notice-period-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0272",
+      "title": "Unit Rent Yield and Cap Rate Calculator",
+      "proposed_canonical": "/calculators/cap-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0432",
+      "title": "Fair Roommate Rent Splitter",
+      "proposed_canonical": "/calculators/roommate-rent-split-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0234",
+      "title": "Rent vs Buy Calculator",
+      "proposed_canonical": "/calculators/rent-vs-buy-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

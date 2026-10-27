@@ -1,0 +1,17 @@
+{
+  "status": "prepared_not_executed",
+  "cases": [
+    {
+      "name": "happy_path",
+      "description": "Slow audio to 0.8\u00d7 and lower pitch by two semitones."
+    },
+    {
+      "name": "malformed_input",
+      "description": "Reject malformed or unsupported input with an explicit error and no partial output."
+    },
+    {
+      "name": "resource_bound",
+      "description": "Reject work that exceeds declared size/frame/time limits."
+    }
+  ]
+}

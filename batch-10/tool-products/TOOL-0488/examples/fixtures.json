@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0488",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "material": "Fertilizer",
+        "target": 3,
+        "area": 250,
+        "width": 3,
+        "distance": 20,
+        "collected": 1.4
+      },
+      "expect": {
+        "output_label": "Measured application rate",
+        "value_contains": "2.33 kg / 100 m²"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

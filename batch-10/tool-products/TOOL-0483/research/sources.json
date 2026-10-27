@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0483",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "ICC 2024 International Fire Code occupant load table",
+      "url": "https://www.iccsafe.org/wp-content/uploads/IBC-Egress-2024.pdf",
+      "version_or_effective_date": "2024 IFC table 1004.5",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

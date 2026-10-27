@@ -1,0 +1,14 @@
+{
+  "source_prepared": true,
+  "product_qa": "TEST_PENDING",
+  "checks_executed": [],
+  "build": "NOT_RUN",
+  "typecheck": "NOT_RUN",
+  "unit_tests": "NOT_RUN",
+  "browser_tests": "NOT_RUN",
+  "accessibility_tests": "NOT_RUN",
+  "security_tests": "NOT_RUN",
+  "performance_tests": "NOT_RUN",
+  "publication_gate": "LOCKED",
+  "git_imported": false
+}

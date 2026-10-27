@@ -1,0 +1,1 @@
+NPF author Frédéric Michaud / Société Astronomique du Havre requests permission for commercial use and attribution. Do not publish commercially without confirming permission or replacing the algorithm with independently licensed alternative. See https://sahavre.fr/wp/regle-npf-rule/

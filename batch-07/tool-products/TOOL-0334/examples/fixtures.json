@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0334",
+  "examples": [
+    {
+      "source": "RFC 9580 Appendix v6 example",
+      "expected_primary_fingerprint": "CB186C4F0609A697E4D52DFA6C722B0C1F1E27C18A56708F6525EC27BAD9ACC9"
+    }
+  ]
+}

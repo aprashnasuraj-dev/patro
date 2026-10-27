@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0143",
+  "known_answer_examples": [
+    "A manual with bookmarks Introduction, Setup and Reference becomes three chapter PDFs in a ZIP."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

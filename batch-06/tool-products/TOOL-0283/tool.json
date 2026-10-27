@@ -1,0 +1,67 @@
+{
+  "id": "TOOL-0283",
+  "name": "Race Time Predictor (Riegel and Cameron)",
+  "slug": "race-time-predictor",
+  "route": "/tools/race-time-predictor",
+  "family": "F0150",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Race Time Predictor (Riegel and Cameron) | AafnaiPatro",
+    "description": "Compare Riegel and Cameron forecasts from one known race to a second distance.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "knownDistance",
+      "label": "Known race distance",
+      "default": 5,
+      "min": 0.4,
+      "max": 100,
+      "step": "any",
+      "unit": "km"
+    },
+    {
+      "type": "number",
+      "key": "knownSeconds",
+      "label": "Known race finish time",
+      "default": 1500,
+      "min": 60,
+      "max": 86400,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "targetDistance",
+      "label": "Target distance",
+      "default": 10,
+      "min": 0.4,
+      "max": 100,
+      "step": "any",
+      "unit": "km"
+    }
+  ],
+  "explanation": "Riegel T₂=T₁(D₂/D₁)^1.06; Cameron T₂=(T₁/D₁)D₂·a(D₁)/a(D₂), a(d)=13.49681−0.000030363d+835.7114/d^0.7905, d in metres.",
+  "limitations": "Both extrapolate from race performances; fitness, course and conditions dominate over long jumps. Model valid ranges differ.",
+  "related_tool_ids": [
+    "TOOL-0282",
+    "TOOL-0293"
+  ],
+  "sources": [
+    "https://ns2.runbundle.com/tools/race-predictors/general-race-predictors"
+  ],
+  "special_notes": null
+}

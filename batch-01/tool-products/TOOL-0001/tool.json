@@ -1,0 +1,53 @@
+{
+  "tool_id": "TOOL-0001",
+  "title": "CSV to GraphQL Schema Generator",
+  "slug": "csv-to-graphql-schema",
+  "reserved_route": "/tools/csv-to-graphql-schema",
+  "engineering_family_id": "F0001",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "publication": "NOT_RELEASED",
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "source_inventory_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "input": {
+    "csv": "UTF-8 text, header required",
+    "typeName": "GraphQL name excluding reserved names",
+    "delimiter": [
+      ",",
+      ";",
+      "tab"
+    ],
+    "nonNull": "boolean opt-in",
+    "dateTime": "boolean opt-in",
+    "overrides": "per normalized field scalar"
+  },
+  "output": {
+    "sdl": "GraphQL SDL with Query root",
+    "columns": "field map, types, empty counts, explanations",
+    "warnings": "inference and integration limits"
+  },
+  "limits": {
+    "utf8_bytes": 1048576,
+    "data_rows": 20000,
+    "columns": 100,
+    "header_characters": 120
+  },
+  "algorithm": "Papa Parse incremental record callbacks, conservative column inference, deterministic field-name normalization, graphql-js buildSchema/validateSchema. Processing in a dedicated worker on explicit Generate.",
+  "dependencies": {
+    "papaparse": "5.7.0",
+    "graphql": "16.11.0"
+  },
+  "privacy": {
+    "uploads": false,
+    "analytics": false,
+    "persistent_storage": false,
+    "runtime_network": "same-origin static assets only"
+  },
+  "seo": {
+    "title": "CSV to GraphQL Schema Generator — Inspect & Export SDL",
+    "description": "Turn CSV columns into a reviewable GraphQL schema. Inspect inferred types, empty cells and header mappings, then export validated SDL locally."
+  }
+}

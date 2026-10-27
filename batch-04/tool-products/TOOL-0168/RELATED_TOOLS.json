@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0168",
+  "related": [
+    {
+      "id": "TOOL-0173",
+      "title": "Audio Speed and Pitch Changer",
+      "proposed_canonical": "/editors/change-audio-speed-pitch",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0161",
+      "title": "Lossless Video Trimmer (No Re-encode)",
+      "proposed_canonical": "/editors/trim-video-without-reencoding",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0165",
+      "title": "Rotate and Flip Video",
+      "proposed_canonical": "/editors/rotate-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0137",
+      "title": "GIF Speed Changer and Reverser",
+      "proposed_canonical": "/editors/gif-speed-changer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0166",
+      "title": "Remove Audio from Video",
+      "proposed_canonical": "/editors/remove-audio-from-video",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

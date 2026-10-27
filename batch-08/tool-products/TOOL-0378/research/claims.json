@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0378",
+  "claims": [
+    {
+      "claim": "Turn bounded front/back/tag CSV data into a local Anki deck package using a build-time bundled SQLite and ZIP implementation.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Anki package internals can evolve. The bundled package builder must be regression-tested against supported Anki releases before publication.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    },
+    {
+      "claim": "Anki .apkg is a packaged deck format; internal SQLite/package schema is compatibility-sensitive.",
+      "basis": "Anki manual + implementation boundary",
+      "status": "VERIFIED_SOURCE"
+    }
+  ]
+}

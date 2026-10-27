@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0008",
+  "case": "Worked example",
+  "input": "{\"info\":{\"name\":\"Project API\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\"},\"item\":[{\"name\":\"Accounts\",\"item\":[{\"name\":\"List customers\",\"request\":{\"method\":\"GET\",\"url\":\"{{baseUrl}}/customers?api_key=hidden\",\"header\":[{\"key\":\"Accept\",\"value\":\"application/json\"}]}}]}]}",
+  "options": {},
+  "expected_properties": "nested folders, HTTP methods, markdown escapes, auth-body exclusion, malformed collection",
+  "expected_execution": "NOT_RUN",
+  "limitations": "Postman v3 folder-based exports are not supported. Auth tokens, response examples, scripts and request bodies are intentionally omitted."
+}

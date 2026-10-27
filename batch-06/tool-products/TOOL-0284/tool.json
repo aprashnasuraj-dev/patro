@@ -1,0 +1,67 @@
+{
+  "id": "TOOL-0284",
+  "name": "Heart Rate Zone Calculator (Karvonen and %Max)",
+  "slug": "heart-rate-zone-calculator",
+  "route": "/tools/heart-rate-zone-calculator",
+  "family": "F0151",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Heart Rate Zone Calculator (Karvonen and %Max) | AafnaiPatro",
+    "description": "Compare heart-rate reserve training ranges with percentage-of-maximum targets.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "age",
+      "label": "Age",
+      "default": 35,
+      "min": 18,
+      "max": 100,
+      "step": "1",
+      "unit": "years"
+    },
+    {
+      "type": "number",
+      "key": "resting",
+      "label": "Resting heart rate",
+      "default": 60,
+      "min": 30,
+      "max": 130,
+      "step": "1",
+      "unit": "bpm"
+    },
+    {
+      "type": "number",
+      "key": "measuredMax",
+      "label": "Measured maximum heart rate (0 = estimate)",
+      "default": 0,
+      "min": 0,
+      "max": 240,
+      "step": "1",
+      "unit": "bpm"
+    }
+  ],
+  "explanation": "Estimated HRmax=208−0.7·age unless measured maximum supplied; Karvonen target=resting+fraction·(maximum−resting); %Max=maximum·fraction.",
+  "limitations": "Medical conditions and medications can invalidate generic heart-rate zones. HRmax from age is an estimate.",
+  "related_tool_ids": [
+    "TOOL-0287",
+    "TOOL-0290"
+  ],
+  "sources": [
+    "https://www.heart.org/en/healthy-living/exercise-and-physical-activity/fitness-basics/target-heart-rates"
+  ],
+  "special_notes": null
+}

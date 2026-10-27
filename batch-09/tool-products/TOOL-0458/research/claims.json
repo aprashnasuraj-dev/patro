@@ -1,0 +1,23 @@
+{
+  "claims": [
+    {
+      "statement": "Federal overtime comparison and conditional FWW half-time",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "State-specific daily overtime, double time, bonuses and FWW restrictions require manual legal review; no universal state checker.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.dol.gov/agencies/whd/fact-sheets/82-bonus-rule",
+    "https://www.dol.gov/agencies/whd/fact-sheets/23-flsa-overtime-pay"
+  ],
+  "assumptions": "State-specific daily overtime, double time, bonuses and FWW restrictions require manual legal review; no universal state checker.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

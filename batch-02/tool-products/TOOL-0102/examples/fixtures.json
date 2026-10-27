@@ -1,0 +1,6 @@
+{
+  "sample_input": "Choose a TTF or OTF file.",
+  "expected_behavior": "A 1.2 MB TTF may compress to a materially smaller WOFF2; the exact ratio depends on the font tables and glyph data.",
+  "qa_status": "TEST_PENDING",
+  "binary_fixtures_note": "Integration tests must supply redistributable/synthetic font fixtures; no third-party font binary is bundled in this source checkpoint."
+}

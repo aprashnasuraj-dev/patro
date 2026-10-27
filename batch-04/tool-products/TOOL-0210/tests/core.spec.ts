@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {detectOutliers} from "../src/core";
+describe("outliers",()=>{it("IQR flags distant point",()=>{const r=detectOutliers([1,1,1,1,20]);expect(r.rows.at(-1)?.flags.iqr).toBe(true);});});

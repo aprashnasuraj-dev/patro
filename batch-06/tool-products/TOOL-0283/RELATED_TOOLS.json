@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0283",
+  "related": [
+    {
+      "id": "TOOL-0282",
+      "title": "Running Pace Calculator with Split Export",
+      "proposed_canonical": "/calculators/running-pace-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0295",
+      "title": "Grade-Adjusted Pace Calculator",
+      "proposed_canonical": "/calculators/grade-adjusted-pace-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0299",
+      "title": "Altitude Pace Adjustment Calculator",
+      "proposed_canonical": "/calculators/altitude-pace-adjustment-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0298",
+      "title": "Hiking Time Estimator (Naismith and Tobler)",
+      "proposed_canonical": "/calculators/hiking-time-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0180",
+      "title": "SRT Subtitle Time Shifter and VTT Converter",
+      "proposed_canonical": "/converters/srt-time-shifter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

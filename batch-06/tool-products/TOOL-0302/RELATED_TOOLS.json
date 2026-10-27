@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0302",
+  "related": [
+    {
+      "id": "TOOL-0311",
+      "title": "Add or Subtract Days, Weeks, Months from a Date",
+      "proposed_canonical": "/calculators/add-days-to-date-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0301",
+      "title": "Business Days Calculator with Custom Holidays and Weekends",
+      "proposed_canonical": "/calculators/business-days-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0315",
+      "title": "Day of Year and Julian Date Calculator",
+      "proposed_canonical": "/calculators/day-of-year-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0320",
+      "title": "Moon Phase Calculator for Any Date",
+      "proposed_canonical": "/calculators/moon-phase-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0313",
+      "title": "Bikram Sambat (Nepali) to AD Date Converter",
+      "proposed_canonical": "/converters/nepali-date-converter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

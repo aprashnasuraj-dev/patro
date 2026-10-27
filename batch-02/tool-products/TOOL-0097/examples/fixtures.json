@@ -1,0 +1,5 @@
+{
+  "sample_input": "a guide to working with data in the age of AI",
+  "expected_behavior": "Chicago 18 keeps short prepositions lowercase (unless first/last) while capitalizing prepositions longer than four letters under its updated rule.",
+  "qa_status": "TEST_PENDING"
+}

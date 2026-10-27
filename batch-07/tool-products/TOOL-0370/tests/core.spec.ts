@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {toLatex} from '../src/core';describe('TOOL-0370 core',()=>{it('known-answer fixture',()=>{expect(toLatex([['A','B'],['1','2']])).toContain('A & B')})});

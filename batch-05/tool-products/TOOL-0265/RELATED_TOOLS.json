@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0265",
+  "related": [
+    {
+      "id": "TOOL-0225",
+      "title": "Compound Interest Calculator with Inflation-Adjusted Returns",
+      "proposed_canonical": "/calculators/compound-interest-with-inflation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0128",
+      "title": "CSS Sprite Sheet Generator",
+      "proposed_canonical": "/generators/css-sprite-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0188",
+      "title": "Split Excel Workbook into Separate Files by Sheet",
+      "proposed_canonical": "/editors/split-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0189",
+      "title": "Combine Excel Sheets into One Sheet",
+      "proposed_canonical": "/utilities/combine-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0446",
+      "title": "Label Sheet Template & Alignment Printer",
+      "proposed_canonical": "/utilities/label-sheet-print-alignment-calibrator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('fallback metrics deferred fixtures',()=>{it.todo('known font pair calculates x-height ratio and typographic overrides');it.todo('falls back to hhea when OS/2 typographic fields unavailable');it.todo('rejects missing sxHeight in x-height mode');it.todo('rejects malformed sfnt and oversized WOFF2')});

@@ -1,0 +1,20 @@
+{
+  "sample_input": {
+    "pattern": "(\\w+)=(\\w+)",
+    "flags": "g",
+    "replacement": "$1: $2",
+    "text": "a=b\nx=y"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "(\\w+)=(\\w+) with $1: $2 turns a=b into a: b.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "browser-required fixture",
+    "assertions": "Browser harness required"
+  }
+}

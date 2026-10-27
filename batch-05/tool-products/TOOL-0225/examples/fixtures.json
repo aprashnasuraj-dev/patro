@@ -1,0 +1,5 @@
+{
+  "status": "TEST_PENDING",
+  "purpose": "Known-answer and demonstration inputs for deferred tests.",
+  "worked_example": "The sample projects $10,000 plus $500/month for 20 years at 7%, then discounts the result by 2.5% annual inflation."
+}

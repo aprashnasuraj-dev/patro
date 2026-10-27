@@ -1,0 +1,7 @@
+{
+  "kind": "binomial",
+  "n": 20,
+  "p": 0.3,
+  "relation": "atMost",
+  "a": 6
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0230",
+  "related": [
+    {
+      "id": "TOOL-0233",
+      "title": "Biweekly Mortgage Payment Savings Calculator",
+      "proposed_canonical": "/calculators/biweekly-mortgage-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0311",
+      "title": "Add or Subtract Days, Weeks, Months from a Date",
+      "proposed_canonical": "/calculators/add-days-to-date-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0315",
+      "title": "Day of Year and Julian Date Calculator",
+      "proposed_canonical": "/calculators/day-of-year-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0320",
+      "title": "Moon Phase Calculator for Any Date",
+      "proposed_canonical": "/calculators/moon-phase-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

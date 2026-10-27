@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "User-supplied marginal and corporation/dividend rates permit scenario comparison.",
+    "sources": [
+      "https://www.gov.uk/guidance/changes-to-tax-relief-for-residential-landlords-how-its-worked-out-including-case-studies",
+      "https://www.gov.uk/guidance/income-tax-when-you-rent-out-a-property-working-out-your-rental-income"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "No recommendation to incorporate; regulatory and transaction costs omitted."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

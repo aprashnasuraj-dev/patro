@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0474",
+  "related": [
+    {
+      "id": "TOOL-0223",
+      "title": "RSU Vesting and Withholding Estimator",
+      "proposed_canonical": "/calculators/rsu-tax-withholding-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0235",
+      "title": "Cost Basis Calculator (FIFO and Average) from Trade CSV",
+      "proposed_canonical": "/calculators/cost-basis-calculator-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0239",
+      "title": "Two-Loan Comparison Calculator (Total Cost)",
+      "proposed_canonical": "/calculators/compare-two-loans-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0252",
+      "title": "Meeting Cost Calculator",
+      "proposed_canonical": "/calculators/meeting-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0253",
+      "title": "Fully Loaded Employee Cost Calculator",
+      "proposed_canonical": "/calculators/fully-loaded-employee-cost-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

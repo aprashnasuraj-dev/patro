@@ -1,0 +1,77 @@
+{
+  "id": "TOOL-0294",
+  "name": "Endurance Fueling Calculator (Carbs per Hour)",
+  "slug": "endurance-fueling-calculator",
+  "route": "/tools/endurance-fueling-calculator",
+  "family": "F0159",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Endurance Fueling Calculator (Carbs per Hour) | AafnaiPatro",
+    "description": "Plan carbohydrate intake across an endurance event and break it into practical feeding intervals.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "duration",
+      "label": "Event duration",
+      "default": 3,
+      "min": 0.25,
+      "max": 24,
+      "step": "any",
+      "unit": "hours"
+    },
+    {
+      "type": "number",
+      "key": "target",
+      "label": "Carbohydrates per hour",
+      "default": 60,
+      "min": 0,
+      "max": 120,
+      "step": "any",
+      "unit": "g/hour"
+    },
+    {
+      "type": "number",
+      "key": "portion",
+      "label": "Carbohydrates per portion",
+      "default": 25,
+      "min": 1,
+      "max": 150,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "every",
+      "label": "Feed every",
+      "default": 30,
+      "min": 5,
+      "max": 120,
+      "step": "1",
+      "unit": "minutes"
+    }
+  ],
+  "explanation": "Total grams=hours×g/hour. Carbs per feeding interval = g/hour×minutes/60; portions=total/grams per portion.",
+  "limitations": "Sports nutrition commonly cites 30–60g/h for 1–2.5h and up to ~90g/h longer with gut training; diabetes and metabolic conditions need tailored advice.",
+  "related_tool_ids": [
+    "TOOL-0288",
+    "TOOL-0293"
+  ],
+  "sources": [
+    "https://www.usada.org/wp-content/uploads/2026-TS-Nutrition-Guide.pdf"
+  ],
+  "special_notes": null
+}

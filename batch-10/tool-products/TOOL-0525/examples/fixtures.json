@@ -1,0 +1,15 @@
+{
+  "tool": "TOOL-0525",
+  "default_inputs": {
+    "heat": "16000",
+    "cop": "3",
+    "power": "0.27",
+    "gas": "0.085",
+    "boilerEff": "0.88",
+    "heatPumpInstall": "12500",
+    "gasInstall": "5500",
+    "extraAnnual": "-120"
+  },
+  "worked_example": "16,000 kWh heat/3 COP=5,333 kWh electricity; compare 16,000/0.88 kWh gas energy.",
+  "source_status": "TEST_PENDING"
+}

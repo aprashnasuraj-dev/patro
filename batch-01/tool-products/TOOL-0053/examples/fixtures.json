@@ -1,0 +1,13 @@
+{
+  "input": {
+    "endpoint": "https://events.example.test/stream",
+    "events": "update, notice"
+  },
+  "worked_example": "An endpoint emitting event: update and data: hi appears under the update event.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

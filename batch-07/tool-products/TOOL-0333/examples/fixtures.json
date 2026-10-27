@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0333",
+  "examples": [
+    {
+      "input": "OpenSSH public key line",
+      "expected_note": "Fingerprint format SHA256:<unpadded base64 digest of binary blob>"
+    }
+  ]
+}

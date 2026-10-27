@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>A/B Test Sample Size Calculator — Browser Calculator</title>
+<meta name="description" content="Plan control and treatment sample sizes for two independent proportions using alpha, power, target effect, and allocation ratio.">
+<meta property="og:title" content="A/B Test Sample Size Calculator">
+<meta property="og:description" content="Plan control and treatment sample sizes for two independent proportions using alpha, power, target effect, and allocation ratio.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0202 · Local browser tool</div>
+<h1>A/B Test Sample Size Calculator</h1>
+<p class="lede">Plan control and treatment sample sizes for two independent proportions using alpha, power, target effect, and allocation ratio. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><div class="row"><label>Baseline conversion rate<input id="baseline" type="number" min=".0001" max=".9999" step=".001" value=".08"></label><label>Target conversion rate<input id="target" type="number" min=".0001" max=".9999" step=".001" value=".088"></label></div><div class="row"><label>Alpha<input id="alpha" type="number" value=".05" step=".001"></label><label>Power<input id="power" type="number" value=".8" step=".01"></label></div><div class="row"><label>Treatment/control allocation ratio<input id="ratio" type="number" value="1" min=".05" max="20" step=".05"></label><label>Test sidedness<select id="sided"><option value="two">Two-sided</option><option value="one">One-sided</option></select></label></div>
+<div class="row"><button id="run" type="button">Plan sample size</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Plan control and treatment sample sizes for two independent proportions using alpha, power, target effect, and allocation ratio.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Independent binary outcomes and a fixed design analyzed with a z-test after the planned sample is collected.</p></section>
+<section><h2>Limitations</h2><p>This is a normal-approximation planning formula; sequential testing, multiple metrics, clustering, CUPED/covariate adjustment, and over-dispersion require a different design.</p></section>
+<section><h2>FAQ</h2><details><summary>Is the result per variant?</summary><p>The tool reports control, treatment, and total sample sizes explicitly.</p></details><details><summary>Can I use this for sequential tests?</summary><p>No. Fixed-horizon normal-approximation planning and sequential monitoring require different error-control methods.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html" rel="noopener noreferrer">statsmodels — NormalIndPower solve_power</a></li><li><a href="https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm" rel="noopener noreferrer">NIST/SEMATECH — Selecting Sample Sizes</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

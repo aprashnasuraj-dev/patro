@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0280",
+  "related": [
+    {
+      "id": "TOOL-0275",
+      "title": "Room Dimension Converter (Feet-Inches to Metric)",
+      "proposed_canonical": "/converters/feet-inches-to-meters-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0274",
+      "title": "Square Footage Calculator for Irregular Rooms",
+      "proposed_canonical": "/calculators/square-footage-calculator-irregular-rooms",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0249",
+      "title": "Number to Words for Cheques (International and Indian Numbering)",
+      "proposed_canonical": "/converters/number-to-words-cheque",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0242",
+      "title": "Invoice Generator to PDF (No Signup)",
+      "proposed_canonical": "/generators/invoice-generator-pdf",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

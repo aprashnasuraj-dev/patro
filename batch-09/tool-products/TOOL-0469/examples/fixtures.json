@@ -1,0 +1,23 @@
+{
+  "default_input": {
+    "state": "State / class",
+    "target": 50,
+    "nightTarget": 10,
+    "sessions": "2026-09-01,90,30\n2026-09-02,120,0"
+  },
+  "hand_reference": {
+    "label": "Total logged hours",
+    "value": "3.50",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

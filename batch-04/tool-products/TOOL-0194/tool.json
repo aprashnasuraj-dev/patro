@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0194",
+  "build_sequence": 194,
+  "name": "Full Name Splitter (First, Middle, Last, Suffix)",
+  "route": "/tools/split-full-name-csv",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0088",
+  "engineering_family": "CSV Column and Data Normalizer",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Full Name Splitter (First, Middle, Last, Suffix) — Free Local Browser Tool",
+    "meta_description": "Split full names into first, middle, last, and suffix fields using transparent heuristics with strong cultural limitations.",
+    "h1": "Full Name Splitter (First, Middle, Last, Suffix)",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

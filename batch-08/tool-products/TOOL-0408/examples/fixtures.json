@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0408",
+  "fixtures": [
+    {
+      "id": "default",
+      "input": {
+        "insideFilmR": 0.68,
+        "outsideFilmR": 0.17,
+        "continuousR": 5,
+        "cavityR": 20,
+        "framingR": 6,
+        "framingPct": 23
+      },
+      "purpose": "Representative valid input; expected values are asserted in source tests where stable."
+    },
+    {
+      "id": "boundary-review",
+      "input": {
+        "insideFilmR": 0.68,
+        "outsideFilmR": 0.17,
+        "continuousR": 5,
+        "cavityR": 20,
+        "framingR": 6,
+        "framingPct": 23
+      },
+      "purpose": "Reuse with one field at a documented min/max during deferred QA."
+    }
+  ]
+}

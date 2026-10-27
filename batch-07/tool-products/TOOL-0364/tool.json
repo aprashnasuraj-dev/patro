@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0364",
+  "name": "BibTeX Cleaner and Duplicate Remover",
+  "route": "/tools/bibtex-cleaner",
+  "batch": "BATCH-07",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0202",
+  "engineering_family": "Citation Formats and Bibliography Cleanup",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "BibTeX Cleaner and Duplicate Remover — Private Browser Tool",
+    "meta_description": "Normalize BibTeX fields, canonicalize DOI values and remove likely duplicate records using DOI or normalized title-year signatures.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

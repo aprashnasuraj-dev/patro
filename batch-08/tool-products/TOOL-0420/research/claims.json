@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0420",
+  "claims": [
+    {
+      "claim": "The pro-rata denominator includes year-end traditional/SEP/SIMPLE IRA value plus distributions and conversions subject to the Form 8606 calculation.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The tool estimates the taxable share of a conversion and carried-forward basis but does not replace Form 8606 completion.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

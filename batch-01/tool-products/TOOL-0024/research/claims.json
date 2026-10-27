@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0024",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Review Dockerfile directives for common cache inefficiencies and safety concerns with line-specific citations.",
+      "evidence_urls": [
+        "https://docs.docker.com/build/cache/optimize/",
+        "https://docs.docker.com/reference/dockerfile/",
+        "https://docs.docker.com/build/building/best-practices/"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Heuristics are advisory and not a Dockerfile parser, security scanner or vulnerability database. Results depend on build context and multi-stage design.",
+      "evidence_urls": [
+        "https://docs.docker.com/build/cache/optimize/",
+        "https://docs.docker.com/reference/dockerfile/",
+        "https://docs.docker.com/build/building/best-practices/"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

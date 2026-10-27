@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0149",
+  "known_answer_examples": [
+    "Remove 12 mm white margins from all sides of a scanned report by adjusting each page crop box."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

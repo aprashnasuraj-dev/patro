@@ -1,0 +1,12 @@
+{
+  "assumptions": "HTTP(S) metadata URLs; local JPEG, PNG, WebP and other browser-decodable images.",
+  "limitations": "Remote image URL is not fetched; local reference may differ from deployed asset.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://ogp.me/",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Window/createImageBitmap"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

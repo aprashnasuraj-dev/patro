@@ -1,0 +1,25 @@
+{
+  "default_inputs": {
+    "program": "User-verified program",
+    "weekly": 1200,
+    "rate": 65,
+    "cap": 1000,
+    "weeks": 10,
+    "waiting": 0,
+    "employerPay": 0
+  },
+  "known_answer": {
+    "output_label": "Estimated public benefit",
+    "expected_display": "$7,800.00",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

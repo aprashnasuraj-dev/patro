@@ -1,0 +1,67 @@
+{
+  "id": "TOOL-0501",
+  "name": "Medicare IRMAA Bracket and Cliff Calculator",
+  "route": "/tools/irmaa-bracket-cliff-calculator",
+  "slug": "irmaa-bracket-cliff-calculator",
+  "family": "F0295",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "brackets",
+  "title": "Medicare IRMAA Bracket and Cliff Calculator | AafnaiPatro Tools",
+  "meta_description": "Compare 2026 Medicare Part B and Part D income adjustment brackets from 2024 MAGI and illustrate nearby cliff effects.",
+  "inputs": [
+    {
+      "key": "filing",
+      "label": "2024 tax filing status",
+      "default": "single",
+      "type": "select",
+      "options": [
+        "single",
+        "joint",
+        "separate"
+      ]
+    },
+    {
+      "key": "magi",
+      "label": "2024 modified adjusted gross income",
+      "default": 150000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "reduce",
+      "label": "Illustrative MAGI reduction",
+      "default": 1000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "planD",
+      "label": "Your Part D plan base premium",
+      "default": 35,
+      "unit": "USD per month",
+      "type": "number",
+      "min": 0,
+      "max": 5000,
+      "step": "any"
+    }
+  ]
+}

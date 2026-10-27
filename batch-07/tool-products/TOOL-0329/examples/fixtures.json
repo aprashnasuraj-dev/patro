@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0329",
+  "examples": [
+    {
+      "round_trip": {
+        "plaintext": "hello",
+        "password": "correct horse battery staple"
+      },
+      "expected": "decrypt(encrypt(x)) === x; ciphertext differs because salt/IV are random."
+    }
+  ]
+}

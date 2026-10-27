@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0441",
+  "related": [
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "proposed_canonical": "/utilities/youtube-thumbnail-safe-zone",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0352",
+      "title": "Video Cropper for 9:16 Shorts and Reels with Safe Zones",
+      "proposed_canonical": "/converters/crop-video-to-9-16",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "proposed_canonical": "/generators/print-bleed-and-safe-zone-templates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0445",
+      "title": "Video File Size & Bitrate Calculator",
+      "proposed_canonical": "/calculators/video-file-size-bitrate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0291",
+  "claim": "Total = warmup + sets\u00d7rounds\u00d7work + sets\u00d7(rounds\u22121)\u00d7rest +(sets\u22121)\u00d7between + cooldown. Audible notification requires user gesture.",
+  "assumptions": [
+    "High-intensity training should be scaled to fitness; browser throttling can delay timers in background.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.acsm.org/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "claim": "Normalize a CSV phone column to E.164 using current libphonenumber metadata, requiring a default country for national numbers.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "libphonenumber-js"
+    ]
+  },
+  {
+    "claim": "A default country is required for ambiguous national numbers; validity follows bundled numbering metadata and can change over time.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "libphonenumber-js"
+    ]
+  }
+]

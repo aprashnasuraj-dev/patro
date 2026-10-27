@@ -1,0 +1,14 @@
+{
+  "input": {
+    "rules": "script-src https://cdn.example.com\nimg-src https://images.example.com\nconnect-src https://api.example.com",
+    "reportOnly": true,
+    "upgrade": false
+  },
+  "worked_example": "script-src https://cdn.example.com permits scripts from that origin, not others.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

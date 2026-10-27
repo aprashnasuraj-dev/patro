@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0235",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "IRS-P550-2025",
+      "title": "Publication 550 (2025), Investment Income and Expenses",
+      "url": "https://www.irs.gov/publications/p550",
+      "publisher": "Internal Revenue Service",
+      "version": "2025",
+      "effective_date": "Tax year 2025",
+      "license_or_terms": "U.S. government publication.",
+      "uncertainty": "Tax-year rules and asset eligibility can change.",
+      "limitations": "Average basis is not generally available for every security; the tool reports a mechanical average and warns users to verify eligibility."
+    }
+  ],
+  "assumptions": [
+    "Trades are processed by date then file order; fees are added to buys/DRIP basis and subtracted from sell proceeds."
+  ],
+  "uncertainty": [
+    "Not tax filing software; corporate actions, wash sales, specific identification and jurisdiction-specific elections are unsupported."
+  ]
+}

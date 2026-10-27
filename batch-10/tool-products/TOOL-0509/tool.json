@@ -1,0 +1,106 @@
+{
+  "id": "TOOL-0509",
+  "name": "UK Shared Parental Leave and Pay Planner",
+  "route": "/tools/uk-shared-parental-leave-planner",
+  "slug": "uk-shared-parental-leave-planner",
+  "family": "F0262",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "timeline",
+  "title": "UK Shared Parental Leave and Pay Planner | AafnaiPatro Tools",
+  "meta_description": "Budget the balance of shared parental leave and statutory pay after the birth parent’s maternity leave/pay usage.",
+  "inputs": [
+    {
+      "key": "matWeeks",
+      "label": "Maternity leave weeks already used",
+      "default": 14,
+      "unit": "weeks",
+      "type": "number",
+      "min": 2,
+      "max": 52,
+      "step": 1
+    },
+    {
+      "key": "matPay",
+      "label": "Maternity pay weeks already used",
+      "default": 14,
+      "unit": "weeks",
+      "type": "number",
+      "min": 0,
+      "max": 39,
+      "step": 1
+    },
+    {
+      "key": "parentA",
+      "label": "Partner A proposed shared leave",
+      "default": 20,
+      "unit": "weeks",
+      "type": "number",
+      "min": 0,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "key": "parentB",
+      "label": "Partner B proposed shared leave",
+      "default": 15,
+      "unit": "weeks",
+      "type": "number",
+      "min": 0,
+      "max": 50,
+      "step": 1
+    },
+    {
+      "key": "paidA",
+      "label": "Partner A shared paid weeks",
+      "default": 15,
+      "unit": "weeks",
+      "type": "number",
+      "min": 0,
+      "max": 37,
+      "step": 1
+    },
+    {
+      "key": "paidB",
+      "label": "Partner B shared paid weeks",
+      "default": 12,
+      "unit": "weeks",
+      "type": "number",
+      "min": 0,
+      "max": 37,
+      "step": 1
+    },
+    {
+      "key": "wageA",
+      "label": "Partner A average weekly earnings",
+      "default": 450,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 100000.0,
+      "step": "any"
+    },
+    {
+      "key": "wageB",
+      "label": "Partner B average weekly earnings",
+      "default": 350,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 100000.0,
+      "step": "any"
+    }
+  ]
+}

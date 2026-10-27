@@ -1,0 +1,13 @@
+{
+  "title": "Inherited Property Stepped-Up Basis Calculator",
+  "default_inputs": {
+    "fmv": "400000",
+    "share": "100",
+    "improvement": "12000",
+    "adjust": "0",
+    "sale": "490000",
+    "selling": "25000"
+  },
+  "worked_example": "$400,000 inherited FMV plus $12,000 qualified improvements gives $412,000 before selling expenses.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

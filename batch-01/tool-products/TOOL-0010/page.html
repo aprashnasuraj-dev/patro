@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Docker Compose to docker run Converter — Browser-Based Draft Tool | AafnaiPatro</title>
+<meta name="description" content="Only plain image-based services with compatible fields are converted; unsupported orchestration semantics stop generation."><!-- Unpublished staging draft: canonical=null; og_url=null; date_published=null. -->
+</head><body><main class="mm-tool" data-tool="TOOL-0010">
+<header class="mm-hero"><div><div class="mm-eyebrow">Container configuration</div><h1>Extract standalone docker run commands from Compose</h1><p>Only plain image-based services with compatible fields are converted; unsupported orchestration semantics stop generation.</p></div><aside class="mm-hero-aside"><strong>Designed for</strong><p>Strict compatibility · service-aware warnings · no execution</p></aside></header>
+<div id="tool-interactive-root" data-tool-id="TOOL-0010"><p>The local browser workspace will load when this route is activated. You can read the instructions below without JavaScript.</p></div>
+<section class="mm-content" aria-labelledby="how-to"><h2 id="how-to">How to use this tool</h2><p>Paste a short Compose services mapping, convert compatible fields to docker run flags and manually review the command list.</p>
+<h2>Worked example</h2><p>Try this representative input to inspect the output and its warnings:</p><pre><code>services:
+  web:
+    image: nginx:stable-alpine
+    container_name: demo-web
+    ports:
+      - &quot;8080:80&quot;
+    environment:
+      NODE_ENV: production
+    restart: unless-stopped
+</code></pre>
+<h2>Supported formats and constraints</h2><p>Compose YAML services (supported subset); Docker CLI run syntax</p><p>Multiple-container networking, resource orchestration, depends_on, health checks and advanced volumes are not equivalent to plain docker run.</p>
+<h2>Privacy and safety</h2><p>Source is prepared for local browser execution. There is no automatic upload or third-party conversion API; verify actual behavior during the post-import testing stage. Review any exported content before sharing or executing it.</p>
+<h2>Specifications and primary references</h2><ul><li><a href="https://docs.docker.com/reference/compose-file/services/" rel="noopener noreferrer">https://docs.docker.com/reference/compose-file/services/</a></li><li><a href="https://compose-spec.io/" rel="noopener noreferrer">https://compose-spec.io/</a></li><li><a href="https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/" rel="noopener noreferrer">https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/</a></li></ul>
+</section></main></body></html>

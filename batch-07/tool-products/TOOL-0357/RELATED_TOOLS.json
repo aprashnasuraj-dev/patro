@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0357",
+  "related": [
+    {
+      "id": "TOOL-0218",
+      "title": "Random Sampler with Seed (Reproducible)",
+      "proposed_canonical": "/utilities/random-sample-generator-with-seed",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "proposed_canonical": "/utilities/youtube-thumbnail-safe-zone",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0351",
+      "title": "Online Teleprompter with Mirror Mode",
+      "proposed_canonical": "/utilities/teleprompter-utility",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0342",
+      "title": "Instagram Carousel and Grid Image Splitter",
+      "proposed_canonical": "/editors/split-image-for-instagram-carousel",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

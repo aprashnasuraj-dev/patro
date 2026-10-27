@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0407",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "Pattern-matching arithmetic",
+      "url": null,
+      "note": "Strip length is rounded up to the next repeat after trim/drop allowance."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

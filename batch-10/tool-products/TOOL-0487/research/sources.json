@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0487",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "UMN Extension raised-bed soil and compost mixture",
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/raised-bed-gardens",
+      "version_or_effective_date": "current",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

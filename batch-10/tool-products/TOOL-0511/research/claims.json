@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Recovery tax = min(OAS received,15% of annual net world income above threshold); not the total marginal tax.",
+    "supporting_urls": [
+      "https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/recovery-tax.html"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Non-resident and income-year exceptions, RRIF minimum percentages and pension splitting need external review."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "2025 net income C$100,000 against C$93,454 threshold implies C$981.90 recovery before benefit cap.",
+    "status": "TEST_PENDING"
+  }
+]

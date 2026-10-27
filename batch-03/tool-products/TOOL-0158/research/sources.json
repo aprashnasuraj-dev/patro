@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://mozilla.github.io/pdf.js/api/index.html",
+    "version": "current API docs accessed 2026-10-26",
+    "effective_date": "2026-10-26",
+    "license": "Apache-2.0 project; bundle locally and retain notices",
+    "notes": "Use display-layer API; getAttachments/getAttachmentContent are documented."
+  },
+  {
+    "url": "https://www.iso.org/standard/36631.html",
+    "version": "ISO 216:2007",
+    "effective_date": "reviewed/confirmed 2021",
+    "license": "Standard text is copyrighted; store only derived public dimensions, not standard text",
+    "notes": "Current edition remains ISO 216:2007 per ISO."
+  }
+]

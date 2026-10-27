@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>.env to Kubernetes Secret YAML — Browser-Based Draft Tool | AafnaiPatro</title>
+<meta name="description" content="Generate clear base64-encoded data and visibly warn that base64 does not encrypt anything."><!-- Unpublished staging draft: canonical=null; og_url=null; date_published=null. -->
+</head><body><main class="mm-tool" data-tool="TOOL-0009">
+<header class="mm-hero"><div><div class="mm-eyebrow">Deployment secrets</div><h1>Convert a local .env file into Kubernetes Secret YAML</h1><p>Generate clear base64-encoded data and visibly warn that base64 does not encrypt anything.</p></div><aside class="mm-hero-aside"><strong>Designed for</strong><p>No uploads · base64 is not encryption · namespace-aware</p></aside></header>
+<div id="tool-interactive-root" data-tool-id="TOOL-0009"><p>The local browser workspace will load when this route is activated. You can read the instructions below without JavaScript.</p></div>
+<section class="mm-content" aria-labelledby="how-to"><h2 id="how-to">How to use this tool</h2><p>Paste the .env source, supply a Kubernetes Secret name and namespace, export YAML and store it through a secure secret workflow.</p>
+<h2>Worked example</h2><p>Try this representative input to inspect the output and its warnings:</p><pre><code># Development-only demonstration values
+API_USER=example
+API_PASSWORD=&quot;placeholder-not-real&quot;
+LOG_LEVEL=info
+</code></pre>
+<h2>Supported formats and constraints</h2><p>Literal .env; Kubernetes v1 Secret Opaque YAML</p><p>This converter does not evaluate shell variables. Kubernetes Secrets are not encrypted simply because values are base64 encoded. Avoid committing manifests containing real credentials.</p>
+<h2>Privacy and safety</h2><p>Source is prepared for local browser execution. There is no automatic upload or third-party conversion API; verify actual behavior during the post-import testing stage. Review any exported content before sharing or executing it.</p>
+<h2>Specifications and primary references</h2><ul><li><a href="https://kubernetes.io/docs/concepts/security/secrets-good-practices/" rel="noopener noreferrer">https://kubernetes.io/docs/concepts/security/secrets-good-practices/</a></li><li><a href="https://kubernetes.io/docs/concepts/configuration/secret/" rel="noopener noreferrer">https://kubernetes.io/docs/concepts/configuration/secret/</a></li></ul>
+</section></main></body></html>

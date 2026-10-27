@@ -1,0 +1,78 @@
+{
+  "tool_id": "TOOL-0001",
+  "recorded_at": "2026-10-26T05:19:07.156478+00:00",
+  "status": "TEST_PENDING",
+  "accepted": false,
+  "workflow": "V2 source-first; owner deferred final execution to private GitHub import",
+  "checks_before_workflow_change": [
+    {
+      "command": "node --test work/tool-products/TOOL-0001/tests/core.test.mjs",
+      "status": "PASS",
+      "tests": 20,
+      "output": "unit-output.txt",
+      "sha256": "572752904533030463126204b4874cf6d268bd599c9cdbc79e665a7e9c026cc2"
+    },
+    {
+      "command": "node work/tool-products/_shared/build.mjs TOOL-0001",
+      "status": "PASS",
+      "limitation": "Build alone does not establish product acceptance."
+    },
+    {
+      "command": "node work/tool-products/_shared/node_modules/typescript/bin/tsc -p work/tool-products/TOOL-0001/tsconfig.json",
+      "status": "PASS_PREVIOUS_UI_REVISION",
+      "current_revision_status": "NOT_RUN"
+    },
+    {
+      "command": "PLAYWRIGHT_MODULE=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright CHROMIUM_EXECUTABLE=/workspace/scratch/bc7ac4cd9a3d/browser-runtime/extracted/chromium node work/tool-products/TOOL-0001/tests/browser.cjs",
+      "status": "FAIL",
+      "reason": "30-second locator.fill timeout in large-text cancellation case; final acceptance not reached",
+      "output": "browser-output.txt",
+      "sha256": "31410c5c7d27ec9cf88f3a8a6070603e6c91b99a3166f2973d2ff92195271bb1"
+    }
+  ],
+  "screenshots_captured": [
+    "desktop-1440-dark.png",
+    "desktop-1440-light.png",
+    "desktop-320-dark.png",
+    "desktop-320-light.png",
+    "desktop-768-dark.png",
+    "desktop-768-light.png"
+  ],
+  "visual_review": {
+    "reviewed": [
+      "desktop-320-light.png",
+      "desktop-1440-dark.png"
+    ],
+    "finding": "Desktop readable; narrow evidence table needs horizontal scrolling and may warrant mobile card layout. No mobile polish acceptance."
+  },
+  "final_stage_required": [
+    "Current-source typecheck and build",
+    "Core tests rerun after import",
+    "Repair/diagnose browser large-text timeout",
+    "Full successful browser test including cancellation",
+    "320/768/1440 layout and keyboard review",
+    "Contrast audit and assistive-technology review",
+    "Final copy/download/offline and no-transmission tests"
+  ],
+  "not_run": [
+    "Safari",
+    "Firefox",
+    "real mobile hardware",
+    "screen-reader speech",
+    "automated accessibility audit",
+    "production integration"
+  ],
+  "not_measured": [
+    "LCP",
+    "INP",
+    "CLS",
+    "real-device performance"
+  ],
+  "environment": {
+    "node": "24.22.1",
+    "typescript": "5.8.3",
+    "browser_attempt": "Chromium 133.0.6943.0"
+  },
+  "git_imported": 0,
+  "published": 0
+}

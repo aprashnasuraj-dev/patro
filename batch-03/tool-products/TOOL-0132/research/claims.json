@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0132",
+  "claims": [
+    {
+      "claim": "Generate compact BlurHash and ThumbHash placeholders locally and preview their decoded appearance.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Hashes are placeholders, not compression formats and not suitable for recovering original image detail.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

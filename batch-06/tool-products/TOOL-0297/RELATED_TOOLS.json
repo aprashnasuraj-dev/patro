@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0297",
+  "related": [
+    {
+      "id": "TOOL-0288",
+      "title": "TDEE Calculator Comparing Equations",
+      "proposed_canonical": "/calculators/tdee-calculator-compare-equations",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0391",
+      "title": "Hyperfocal Distance and Depth of Field Calculator",
+      "proposed_canonical": "/calculators/hyperfocal-distance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0281",
+      "title": "One-Rep Max Calculator (Multi-Formula)",
+      "proposed_canonical": "/calculators/one-rep-max-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0282",
+      "title": "Running Pace Calculator with Split Export",
+      "proposed_canonical": "/calculators/running-pace-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0283",
+      "title": "Race Time Predictor (Riegel and Cameron)",
+      "proposed_canonical": "/utilities/race-time-predictor",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

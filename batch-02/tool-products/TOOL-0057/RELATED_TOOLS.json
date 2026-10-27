@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0057",
+  "related": [
+    {
+      "id": "TOOL-0056",
+      "title": "IPv6 Address Expander and Compressor",
+      "proposed_canonical": "/editors/ipv6-expand-compress",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0068",
+      "title": "JSON-LD Validator (Offline Structure Checker)",
+      "proposed_canonical": "/validators/json-ld-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0345",
+      "title": "Accessible Hashtag Formatter (PascalCase)",
+      "proposed_canonical": "/formatters/hashtag-camelcase-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0361",
+      "title": "APA 7 Reference Formatter from Fields",
+      "proposed_canonical": "/formatters/apa-7-reference-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "proposed_canonical": "/validators/youtube-chapters-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

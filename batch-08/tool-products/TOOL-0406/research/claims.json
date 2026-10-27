@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0406",
+  "claims": [
+    {
+      "claim": "The calculator never treats pattern waste as a code or manufacturer requirement.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Users can replace the planning preset with their own project-specific waste factor.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

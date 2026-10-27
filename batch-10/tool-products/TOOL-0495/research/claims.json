@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "2026 defined-contribution annual additions limit is $72,000 or compensation if less.",
+    "sources": [
+      "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "No conversion availability or 401(k) plan eligibility can be inferred."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

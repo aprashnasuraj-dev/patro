@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0015",
+  "related": [
+    {
+      "id": "TOOL-0014",
+      "title": "MongoDB Extended JSON to Plain JSON",
+      "proposed_canonical": "/converters/mongodb-extended-json-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0020",
+      "title": "Semantic JSON Diff (Ignore Key and Array Order)",
+      "proposed_canonical": "/utilities/json-diff-ignore-order",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0003",
+      "title": "OpenAPI YAML to TypeScript Interfaces",
+      "proposed_canonical": "/converters/openapi-to-typescript-interfaces",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0004",
+      "title": "SQL DDL to Prisma Schema",
+      "proposed_canonical": "/converters/sql-to-prisma-schema",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

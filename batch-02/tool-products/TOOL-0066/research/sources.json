@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0066",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://schema.org/BreadcrumbList",
+      "owner": "Schema.org",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Create hierarchical ListItem positions and absolute URLs."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb",
+      "owner": "Google Search Central",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Create hierarchical ListItem positions and absolute URLs."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Page breadcrumbs must match the visible navigation; no live crawl is performed."
+}

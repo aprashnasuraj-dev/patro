@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0412",
+  "related": [
+    {
+      "id": "TOOL-0413",
+      "title": "Estimated Tax Safe-Harbor Planner",
+      "proposed_canonical": "/planners/estimated-tax-safe-harbor-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0147",
+      "title": "Flatten PDF Form Fields",
+      "proposed_canonical": "/editors/flatten-pdf-form",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0148",
+      "title": "PDF Form Field Lister and Filler",
+      "proposed_canonical": "/extractors/pdf-form-field-lister",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0497",
+      "title": "Wash Sale CSV Lot Matcher and Form 8949 Helper",
+      "proposed_canonical": "/utilities/wash-sale-lot-matching-csv-form-8949",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0415",
+      "title": "GST/HST Quick Method vs Regular Method",
+      "proposed_canonical": "/calculators/canada-gst-hst-quick-method-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

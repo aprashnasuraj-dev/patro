@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0382",
+  "related": [
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "proposed_canonical": "/calculators/resistor-color-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0383",
+      "title": "LED Resistor Calculator with Series and Parallel Arrays",
+      "proposed_canonical": "/calculators/led-resistor-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0385",
+      "title": "Voltage Divider Calculator with Standard Resistor Values",
+      "proposed_canonical": "/calculators/voltage-divider-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0384",
+      "title": "Capacitor Code Decoder (104, 473, and Tolerance Letters)",
+      "proposed_canonical": "/calculators/capacitor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0258",
+      "title": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit",
+      "proposed_canonical": "/generators/bulk-barcode-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

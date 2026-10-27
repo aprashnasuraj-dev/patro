@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0381",
+  "related": [
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "proposed_canonical": "/calculators/smd-resistor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0383",
+      "title": "LED Resistor Calculator with Series and Parallel Arrays",
+      "proposed_canonical": "/calculators/led-resistor-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0385",
+      "title": "Voltage Divider Calculator with Standard Resistor Values",
+      "proposed_canonical": "/calculators/voltage-divider-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0384",
+      "title": "Capacitor Code Decoder (104, 473, and Tolerance Letters)",
+      "proposed_canonical": "/calculators/capacitor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0388",
+      "title": "G-code Print Time and Filament Estimator",
+      "proposed_canonical": "/calculators/gcode-filament-cost-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

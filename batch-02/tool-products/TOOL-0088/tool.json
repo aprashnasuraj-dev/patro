@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0088",
+  "name": "Regex ReDoS (Catastrophic Backtracking) Checker",
+  "reserved_route": "/tools/regex-redos-checker",
+  "family_id": "F0043",
+  "family": "Regex and Find-Replace Lab",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-04",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Regex ReDoS (Catastrophic Backtracking) Checker | AafnaiPatro Tools",
+    "description": "Screen JavaScript regex patterns for common catastrophic backtracking structures.",
+    "h1": "Regex ReDoS (Catastrophic Backtracking) Checker",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

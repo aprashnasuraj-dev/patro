@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0393",
+  "related": [
+    {
+      "id": "TOOL-0394",
+      "title": "Recipe Scaler with Friendly Fractions",
+      "proposed_canonical": "/utilities/recipe-scaler",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0395",
+      "title": "Baker's Percentage Calculator",
+      "proposed_canonical": "/calculators/bakers-percentage-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0396",
+      "title": "Pizza Dough Calculator (Hydration, Yeast, Fermentation Time)",
+      "proposed_canonical": "/calculators/pizza-dough-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0397",
+      "title": "Homebrew ABV Calculator from OG and FG",
+      "proposed_canonical": "/calculators/abv-calculator-og-fg",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0398",
+      "title": "Coffee Brew Ratio Calculator with Brew Timer",
+      "proposed_canonical": "/calculators/coffee-ratio-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

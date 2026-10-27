@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0204",
+  "claims": [
+    {
+      "claim": "Estimate survey responses for a target margin of error, then apply finite-population correction, design effect, and response-rate inflation.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm",
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Simple random sampling before the user-supplied design-effect multiplier.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm",
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The simple random-sampling formula does not replace a full complex-survey design. Design effect and response rate are user assumptions.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm",
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

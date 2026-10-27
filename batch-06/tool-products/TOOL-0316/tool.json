@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0316",
+  "name": "Excel Serial Number to Date Converter",
+  "route": "/tools/excel-serial-number-to-date",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0164",
+  "engineering_family": "Timestamp and Spreadsheet Date Converter",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Excel Serial Number to Date Converter — Private Browser Tool",
+    "meta_description": "Convert Excel 1900- or 1904-system serial values, preserve fractional-day time, and explicitly surface Excel’s compatibility-only serial 60 phantom date.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

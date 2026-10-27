@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {determinantWithSteps,inverseWithSteps} from "../src/core";
+describe("matrix",()=>{it("computes determinant",()=>{expect(determinantWithSteps([[4,7],[2,6]]).determinant).toBeCloseTo(10);});it("computes inverse",()=>{const r=inverseWithSteps([[4,7],[2,6]]).inverse;expect(r[0][0]).toBeCloseTo(.6);});});

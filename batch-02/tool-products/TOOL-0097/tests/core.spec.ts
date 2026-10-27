@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {convertTitle} from '../src/core';describe('title case',()=>{it('Chicago 18 keeps short preposition lowercase',()=>expect(convertTitle('walk with me', 'Chicago',true).title).toBe('Walk with Me'));it('always capitalizes first and last',()=>expect(convertTitle('the end of', 'MLA',true).title).toBe('The End Of'))});

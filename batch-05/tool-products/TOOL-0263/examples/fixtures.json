@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0263",
+  "examples": [
+    {
+      "inputs": {
+        "room_ft": [
+          14,
+          12,
+          8
+        ],
+        "openings_ft2": 42,
+        "coats": 2,
+        "coverage_ft2_per_gal": 375,
+        "waste_pct": 5
+      },
+      "expected_note": "Coverage is user-configured; Sherwin-Williams cites roughly 350–400 ft²/gal as typical."
+    }
+  ]
+}

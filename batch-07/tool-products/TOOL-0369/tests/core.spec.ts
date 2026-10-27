@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {summarize} from '../src/core';describe('TOOL-0369 core',()=>{it('known-answer fixture',()=>{expect(summarize(1000,[{date:'2026-01-01',words:200}]).remaining).toBe(800)})});

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0169",
+  "related": [
+    {
+      "id": "TOOL-0170",
+      "title": "WebM to MP4 Converter",
+      "proposed_canonical": "/converters/webm-to-mp4",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0163",
+      "title": "Video to GIF Converter with Palette Optimization",
+      "proposed_canonical": "/converters/video-to-gif",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0164",
+      "title": "Compress Video to Target Size (8MB, 25MB, 50MB)",
+      "proposed_canonical": "/converters/compress-video-to-size",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0176",
+      "title": "WAV to MP3 Encoder with Bitrate Choice",
+      "proposed_canonical": "/converters/wav-to-mp3",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0180",
+      "title": "SRT Subtitle Time Shifter and VTT Converter",
+      "proposed_canonical": "/converters/srt-time-shifter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

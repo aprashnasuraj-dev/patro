@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0118",
+  "related": [
+    {
+      "id": "TOOL-0258",
+      "title": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit",
+      "proposed_canonical": "/generators/bulk-barcode-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0259",
+      "title": "vCard and Contact QR Code Generator",
+      "proposed_canonical": "/generators/vcard-qr-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0327",
+      "title": "PKCE Code Verifier and Challenge Generator",
+      "proposed_canonical": "/generators/pkce-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0356",
+      "title": "YouTube Embed Code Builder (Start Time, Privacy Mode)",
+      "proposed_canonical": "/generators/youtube-embed-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0042",
+      "title": "HTTP Status Code Chooser",
+      "proposed_canonical": "/utilities/which-http-status-code",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

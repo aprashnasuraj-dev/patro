@@ -1,0 +1,40 @@
+{
+  "tool_id": "TOOL-0332",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7517.html",
+      "title": "JSON Web Key (JWK)",
+      "publisher": "IETF",
+      "version": "RFC 7517",
+      "effective_date": "2015-05",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "JWK conversion is limited to key types supported by Web Crypto in this package."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7518.html",
+      "title": "JSON Web Algorithms (JWA)",
+      "publisher": "IETF",
+      "version": "RFC 7518",
+      "effective_date": "2015-05",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "RSA and EC JWK parameters are encoded as specified; unsupported curves/algorithms are rejected."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7468.html",
+      "title": "Textual Encodings of PKIX, PKCS, and CMS Structures",
+      "publisher": "IETF",
+      "version": "RFC 7468",
+      "effective_date": "2015-04",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "PEM labels and DER payloads must match the selected public/private key container type."
+    }
+  ],
+  "no_external_source_reason": null
+}

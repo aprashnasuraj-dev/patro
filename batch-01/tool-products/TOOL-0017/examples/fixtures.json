@@ -1,0 +1,21 @@
+{
+  "sample_input": "region = \"ap-south-1\"\nreplicas = 2\nenabled = true\nports = [80, 443]\ntags = { owner = \"infra\", env = \"dev\" }",
+  "intended_action": "Convert tfvars",
+  "manual_review_cases": [
+    {
+      "input": "x = 3",
+      "expectation": "\"x\": 3"
+    },
+    {
+      "input": "x = foo()",
+      "expectation": "reject"
+    }
+  ],
+  "limits": "HCL expressions, interpolation, function calls and complex block syntax are rejected. Comments supported; source credentials remain only in your browser.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"region\"",
+    "\"replicas\""
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

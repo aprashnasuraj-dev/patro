@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0262",
+  "status": "TEST_PENDING",
+  "product_tests_executed": false,
+  "checks_prepared": [
+    "known-answer",
+    "boundaries",
+    "malformed-input",
+    "unsupported-input",
+    "security",
+    "parser-abuse where applicable",
+    "output-formatting",
+    "copy/export/download where applicable",
+    "responsive interaction",
+    "accessibility scenarios",
+    "performance-sensitive bounds"
+  ],
+  "publication_gate": "LOCKED"
+}

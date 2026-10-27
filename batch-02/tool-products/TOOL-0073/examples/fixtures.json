@@ -1,0 +1,22 @@
+{
+  "sample_input": {
+    "title": "Introducing our new toolkit",
+    "description": "Practical, privacy-first browser tools for developers.",
+    "url": "https://example.com/tool",
+    "image": "https://example.com/assets/share.jpg",
+    "type": "website|article|product|profile",
+    "locale": "en_US"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "A 1200 × 630 image is close to the 1.91:1 sharing preview ratio.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{title:'Home',description:'Example website',url:'https://example.com/',image:'https://example.com/a.png',type:'website'}",
+    "assertions": "assert.match(result.text,/og:title/); assert.match(result.text,/og:image/);"
+  }
+}

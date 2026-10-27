@@ -1,0 +1,7 @@
+import {N,S,Q,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Domain-guarded deterministic core; does not call network, storage or DOM. */
+export function calculate(i:Record<string,unknown>):Result {
+const pool=N(i,'poolL',100,1e8),current=N(i,'current',0,30),target=N(i,'target',0,30),pct=N(i,'percent',.1,30),density=N(i,'density',.8,1.5),cya=S(i,'stabilized',3);if(!['yes','no'].includes(cya))throw Error('Unexpected stabilizer value');const delta=Math.max(0,target-current),grams=pool*delta/1000,liters=pool*delta/(pct/100*density*1e6);
+return R([{label:'Target chlorine increase',value:`${Q(delta)} ppm`},{label:'Available chlorine mass needed',value:`${Q(grams)} g`},{label:'Estimated liquid product amount',value:`${Q(liters*1000)} mL`},{label:'Stabilizer reference minimum',value:cya==='yes'?'CDC recommends ≥2 ppm for pools with CYA':'CDC recommends ≥1 ppm for pools without CYA'}],['Mathematical estimate only: chlorine demand, UV, pH, CYA, mixing, product degradation, dosing instructions and local pool code can change required treatment.','Never mix pool products or add different chemicals directly together. Read the product label and safety data sheet; keep swimmers away during hazardous treatment.','Never use this arithmetic to decide acid-base additions, shock treatment, algae control or public-pool compliance.'],[`Mass available chlorine in grams = Δppm × litres / 1000. Product litres = Δppm × litres / (mass fraction × density kg/L × 10⁶).`]);
+}

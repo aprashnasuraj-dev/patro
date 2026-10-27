@@ -1,0 +1,18 @@
+{
+  "claims": [
+    {
+      "statement": "Balanced countdown plan from available days and topic weights",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Does not validate accreditation exam body requirements, topic content or real progress.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Does not validate accreditation exam body requirements, topic content or real progress.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0076",
+  "related": [
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0046",
+      "title": "Query String to Nested JSON Converter",
+      "proposed_canonical": "/converters/query-string-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0047",
+      "title": "Context-Aware URL Encoder",
+      "proposed_canonical": "/formatters/url-encode-path-vs-query",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0121",
+      "title": "Bulk EXIF Viewer and Stripper",
+      "proposed_canonical": "/analyzers/remove-exif-data",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0481",
+      "title": "Tracking Number Carrier Identifier",
+      "proposed_canonical": "/utilities/tracking-number-carrier-identifier",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

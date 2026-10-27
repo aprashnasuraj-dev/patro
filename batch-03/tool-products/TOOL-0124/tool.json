@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0124",
+  "name": "Compress Image to Exact File Size (KB)",
+  "route": "/tools/compress-image-to-kb",
+  "family_id": "F0058",
+  "family": "Image Resizer, Cropper and Compressor",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Compress Image to Exact File Size (KB) — Browser-Local Tool",
+    "meta_description": "Iteratively compress an image to the closest safe result at or below a requested file-size budget."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "The target is treated as an upper bound, not a promise of byte-perfect equality."
+  ],
+  "limitations": [
+    "Encoder output is discrete; exact byte size may be impossible. Very small targets may require reduced dimensions."
+  ]
+}

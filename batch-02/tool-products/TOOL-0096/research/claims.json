@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0096",
+  "claims": [
+    {
+      "claim": "JSON mode follows RFC 8259 string escapes; SQL mode uses portable single-quote doubling rather than dialect-specific backslash escapes.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "rfc8259",
+        "python-lex",
+        "jls",
+        "postgres-sql"
+      ]
+    }
+  ]
+}

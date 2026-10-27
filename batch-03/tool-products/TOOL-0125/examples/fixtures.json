@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0125",
+  "known_answer_examples": [
+    "Choose UK printed passport: 35\u00d745 mm with the official head-height guide, position the portrait, then export a print-ready crop."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

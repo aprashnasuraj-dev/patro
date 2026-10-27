@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0476",
+  "related": [
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0475",
+      "title": "Marketplace Listing Length & Byte Checker",
+      "proposed_canonical": "/validators/marketplace-listing-byte-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0124",
+      "title": "Compress Image to Exact File Size (KB)",
+      "proposed_canonical": "/converters/compress-image-to-kb",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0125",
+      "title": "Passport and ID Photo Cropper by Country",
+      "proposed_canonical": "/editors/passport-photo-size-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0347",
+      "title": "One Image to All Social Sizes Resizer",
+      "proposed_canonical": "/editors/social-media-image-resizer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

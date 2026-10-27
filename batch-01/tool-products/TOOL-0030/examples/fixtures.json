@@ -1,0 +1,11 @@
+{
+  "sample": {
+    "plan": "{\"format_version\":\"1.2\",\"resource_changes\":[{\"address\":\"aws_s3_bucket.example\",\"change\":{\"actions\":[\"update\"]}}]}"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0332",
+  "related": [
+    {
+      "id": "TOOL-0331",
+      "title": "RSA and ECDSA Key Pair Generator (PEM and JWK)",
+      "proposed_canonical": "/generators/generate-rsa-key-pair",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0039",
+      "title": "PEM Certificate Chain Order Checker",
+      "proposed_canonical": "/validators/certificate-chain-order-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0321",
+      "title": "Large File Hash Calculator (SHA-256, SHA-512, MD5, CRC32)",
+      "proposed_canonical": "/calculators/file-hash-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0322",
+      "title": "Checksum File Verifier (sha256sums Parser)",
+      "proposed_canonical": "/validators/verify-sha256sums",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0323",
+      "title": "Password Strength Auditor with Pattern Breakdown",
+      "proposed_canonical": "/validators/password-strength-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

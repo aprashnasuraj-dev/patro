@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0214",
+  "claims": [
+    {
+      "claim": "Calculate binomial or Poisson point, cumulative, tail, and interval probabilities without factorial overflow.",
+      "support": [
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366j.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Distribution parameters correspond to the mathematical binomial or Poisson model.",
+      "support": [
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366j.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The binomial assumes fixed n, independent Bernoulli trials, and constant p. The Poisson assumes a constant event rate over the exposure interval.",
+      "support": [
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366j.htm"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

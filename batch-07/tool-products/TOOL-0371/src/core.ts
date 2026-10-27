@@ -1,0 +1,2 @@
+export function validateTex(tex:string){if(!tex.trim())throw new Error('Enter a LaTeX equation.');if(tex.length>20_000)throw new Error('Equation is limited to 20,000 characters.');const banned=[/\\write18\b/i,/\\input\b/i,/\\include\b/i,/\\openout\b/i,/\\read\b/i,/\\csname\b/i];if(banned.some(x=>x.test(tex)))throw new Error('File/system-oriented TeX commands are not accepted.');return tex.trim()}
+export function svgToData(svg:string){return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)}

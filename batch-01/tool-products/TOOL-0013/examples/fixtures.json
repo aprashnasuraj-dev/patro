@@ -1,0 +1,21 @@
+{
+  "sample_input": "[{\"id\":1,\"name\":\"Ada\"},{\"id\":2,\"name\":\"Lin\"}]",
+  "intended_action": "Generate upsert SQL",
+  "manual_review_cases": [
+    {
+      "input": "[{\"id\":1,\"name\":\"Ada\"}]",
+      "expectation": "ON CONFLICT"
+    },
+    {
+      "input": "duplicate record keys",
+      "expectation": "reject"
+    }
+  ],
+  "limits": "Requires a real matching unique or exclusion constraint for conflict target. Generated placeholders are not interpolated SQL literals; bind parameter values in a trusted client.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "INSERT INTO",
+    "ON CONFLICT"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

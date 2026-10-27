@@ -1,0 +1,26 @@
+{
+  "default_inputs": {
+    "species": "dog",
+    "brand": "Example Adult Maintenance",
+    "calories": 360,
+    "gramsPerCup": 100,
+    "dailyKcal": 540,
+    "bagKg": 2.5,
+    "bagCost": 30,
+    "treatPct": 10
+  },
+  "known_answer": {
+    "output_label": "Food servings per day",
+    "expected_display": "1.35 cups",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

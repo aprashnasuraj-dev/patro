@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('metadata deferred fixtures',()=>{it.todo('reads name IDs 1/2/4/5/13/14');it.todo('interprets fsType no-subsetting and embedding mode');it.todo('treats absent license metadata as unknown, not unrestricted');it.todo('rejects table offsets outside file')});

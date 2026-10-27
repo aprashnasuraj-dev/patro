@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0351",
+  "examples": [
+    {
+      "speed": 45,
+      "font": 48,
+      "mirror": false
+    }
+  ]
+}

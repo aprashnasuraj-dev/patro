@@ -1,0 +1,6 @@
+import {N,S,D,ODate,addDays,Q,M,P,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Pure, bounded calculations; no user-data storage or network. */
+export function calculate(i:Record<string,unknown>):Result {
+const x=N(i,'x',0,3000),y=N(i,'y',0,3000),w=N(i,'width',36,3000),h=N(i,'height',54,4500),page=N(i,'page',1,100),orient=S(i,'rotate',20);if(!Number.isInteger(page)||!['portrait','landscape'].includes(orient))throw Error('Select page and orientation');const expected=orient==='portrait'?2/3:3/2;if(Math.abs(w/h-expected)>.01)throw Error('Crop aspect ratio must match requested 4×6 portrait or 6×4 landscape output; stretching is unsafe for barcode labels');return R([{label:'Output page size',value:orient==='portrait'?'288 × 432 PDF points':'432 × 288 PDF points'},{label:'Crop origin in source',value:`${Q(x)} × ${Q(y)} pt`},{label:'Crop dimensions',value:`${Q(w)} × ${Q(h)} pt`}],[`Coordinates use PDF lower-left origin. Visually verify label orientation, scaling, quiet zone, barcode readability and printer scale: print at 100%.`,'Do not upload PDFs containing personal recipient information to third parties; this tool operates in local browser only once the parser dependency is bundled.'],['Clip source PDF vector drawing to selected box and embed it in 4×6-inch PDF page.']);
+}

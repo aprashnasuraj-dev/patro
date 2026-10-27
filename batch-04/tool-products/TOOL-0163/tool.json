@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0163",
+  "build_sequence": 163,
+  "name": "Video to GIF Converter with Palette Optimization",
+  "route": "/tools/video-to-gif",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Format Converter",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "GIF is limited to 120 seconds, 30 fps, and 1280 px width to bound browser memory and CPU use."
+  },
+  "seo": {
+    "title": "Video to GIF Converter with Palette Optimization — Free Browser Tool",
+    "meta_description": "Create a compact animated GIF using a generated palette, controllable frame rate, width, and dithering.",
+    "h1": "Video to GIF Converter with Palette Optimization",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0079"
+}

@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0410",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "Quantity geometry",
+      "url": null,
+      "note": "Product-specific coverage and structural base design remain user inputs."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

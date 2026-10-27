@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0402",
+  "name": "Deck Joist & Beam Span Checker",
+  "reserved_route": "/tools/deck-joist-beam-span-checker",
+  "engineering_family_id": "F0138",
+  "engineering_family": "Deck Materials and Span Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Deck Joist & Beam Span Checker | AafnaiPatro Tools",
+    "description": "Check a deck joist and common Southern Pine multi-ply beam against selected AWC DCA 6-15 prescriptive span tables.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

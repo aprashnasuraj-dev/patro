@@ -1,0 +1,72 @@
+{
+  "id": "TOOL-0499",
+  "name": "HSA Contribution Limit and Midyear Eligibility Calculator",
+  "route": "/tools/hsa-contribution-limit-monthly-calculator",
+  "slug": "hsa-contribution-limit-monthly-calculator",
+  "family": "F0293",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "calendar",
+  "title": "HSA Contribution Limit and Midyear Eligibility Calculator | AafnaiPatro Tools",
+  "meta_description": "Apply 2026 self-only/family HSA monthly eligibility limits and compare regular proration with the last-month rule.",
+  "inputs": [
+    {
+      "key": "months",
+      "label": "12 monthly coverage codes: S=self, F=family, N=ineligible (Jan–Dec)",
+      "default": "S,S,S,S,S,S,F,F,F,F,F,F",
+      "type": "textarea"
+    },
+    {
+      "key": "age55",
+      "label": "Age 55+ by year end",
+      "default": "no",
+      "type": "select",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    {
+      "key": "lastMonth",
+      "label": "Use last-month rule (requires testing period)",
+      "default": "no",
+      "type": "select",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    {
+      "key": "employer",
+      "label": "Employer HSA contributions",
+      "default": 500,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 50000,
+      "step": "any"
+    },
+    {
+      "key": "own",
+      "label": "Already contributed by individual",
+      "default": 1000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 50000,
+      "step": "any"
+    }
+  ]
+}

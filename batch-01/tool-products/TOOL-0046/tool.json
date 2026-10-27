@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0046",
+  "name": "Query String to Nested JSON Converter",
+  "reserved_route": "/tools/query-string-to-json",
+  "family_id": "F0026",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Parse bounded bracket-notation query parameters into nested JSON without prototype pollution.",
+  "seo": {
+    "title": "Query String to Nested JSON Converter | Mission Mangal Tools",
+    "meta_description": "Parse bounded bracket-notation query parameters into nested JSON without prototype pollution.",
+    "h1": "Query String to Nested JSON Converter",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

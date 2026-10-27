@@ -1,0 +1,86 @@
+{
+  "id": "TOOL-0502",
+  "name": "Inherited Property Stepped-Up Basis Calculator",
+  "route": "/tools/inherited-property-stepped-up-basis-calculator",
+  "slug": "inherited-property-stepped-up-basis-calculator",
+  "family": "F0296",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "property",
+  "title": "Inherited Property Stepped-Up Basis Calculator | AafnaiPatro Tools",
+  "meta_description": "Estimate U.S. inherited-property basis from verified estate value, inherited percentage, capital improvements and sale costs.",
+  "inputs": [
+    {
+      "key": "fmv",
+      "label": "Appraised date-of-death / elected estate value",
+      "default": 400000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 10000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "share",
+      "label": "Inherited ownership percentage",
+      "default": 100,
+      "unit": "percent",
+      "type": "number",
+      "min": 0.0001,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "improvement",
+      "label": "Post-inheritance capital improvements",
+      "default": 12000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 10000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "adjust",
+      "label": "Other verified basis adjustments",
+      "default": 0,
+      "unit": "USD signed",
+      "type": "number",
+      "min": -10000000000.0,
+      "max": 10000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "sale",
+      "label": "Sale proceeds for inherited share",
+      "default": 490000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 10000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "selling",
+      "label": "Eligible selling expenses",
+      "default": 25000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    }
+  ]
+}

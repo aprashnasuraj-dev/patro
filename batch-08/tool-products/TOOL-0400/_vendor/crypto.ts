@@ -1,0 +1,9 @@
+import {te,hex,b64u,unb64u,randomBytes,asBytes} from './encoding';
+export async function digest(name:'SHA-1'|'SHA-256'|'SHA-384'|'SHA-512',data:Uint8Array|string){const b=typeof data==='string'?te.encode(data):data;return new Uint8Array(await crypto.subtle.digest(name,b))}
+export async function hmac(hash:'SHA-1'|'SHA-256'|'SHA-384'|'SHA-512',key:Uint8Array,data:Uint8Array){const k=await crypto.subtle.importKey('raw',key,{name:'HMAC',hash},false,['sign','verify']);return new Uint8Array(await crypto.subtle.sign('HMAC',k,data))}
+export async function pbkdf2(password:string,salt:Uint8Array,iterations:number,bits=256){if(!Number.isInteger(iterations)||iterations<10000||iterations>5_000_000)throw new Error('PBKDF2 iterations out of supported range.');const base=await crypto.subtle.importKey('raw',te.encode(password),'PBKDF2',false,['deriveBits']);return new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt,iterations},base,bits))}
+export async function aesKey(raw:Uint8Array,usage:KeyUsage[]=['encrypt','decrypt']){return crypto.subtle.importKey('raw',raw,{name:'AES-GCM'},false,usage)}
+export function ctEqual(a:Uint8Array,b:Uint8Array){if(a.length!==b.length)return false;let x=0;for(let i=0;i<a.length;i++)x|=a[i]^b[i];return x===0}
+export function pem(label:string,bytes:Uint8Array){const body=Array.from({length:Math.ceil(bytes.length/48)},(_,i)=>btoa(String.fromCharCode(...bytes.subarray(i*48,i*48+48)))).join('\n');return `-----BEGIN ${label}-----\n${body}\n-----END ${label}-----`}
+export function parsePem(s:string){const m=/-----BEGIN ([A-Z0-9 ]+)-----([\s\S]*?)-----END \1-----/.exec(s.trim());if(!m)throw new Error('PEM block not found or labels do not match.');const raw=atob(m[2].replace(/\s+/g,'')),b=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)b[i]=raw.charCodeAt(i);return{label:m[1],bytes:b}}
+export {hex,b64u,unb64u,randomBytes,asBytes};

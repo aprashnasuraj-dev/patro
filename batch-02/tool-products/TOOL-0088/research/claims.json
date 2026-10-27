@@ -1,0 +1,12 @@
+{
+  "assumptions": "Regex source and JS flag letters; no sample execution.",
+  "limitations": "False negatives and positives; clean report does not certify safety.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

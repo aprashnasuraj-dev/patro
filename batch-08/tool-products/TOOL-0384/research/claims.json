@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Interprets the first two digits as significant figures and the third as the pF power-of-ten multiplier.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

@@ -1,0 +1,13 @@
+{
+  "sample_input": {
+    "csv": "group,language,url\nhome,en,https://example.com/en/\nhome,fr,https://example.com/fr/\nhome,x-default,https://example.com/",
+    "mode": "HTML link tags"
+  },
+  "worked_example": "home,en,https://example.com/en/ and home,fr,https://example.com/fr/ forms a pair.",
+  "planned_expectations": [
+    "Two rows in home cluster generate link sets for each URL.",
+    "Reject duplicate language, invalid row and conflicting cluster.",
+    "Escape ampersands in output URLs; no live-site reciprocity claim."
+  ],
+  "execution_state": "TEST_PENDING"
+}

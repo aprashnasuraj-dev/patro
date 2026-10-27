@@ -1,0 +1,23 @@
+{
+  "default_inputs": {
+    "originalSkeins": 6,
+    "originalMeters": 100,
+    "replacementMeters": 125,
+    "waste": 12,
+    "price": 6.5
+  },
+  "known_answer": {
+    "output_label": "Substitute skeins to purchase",
+    "expected_display": "6",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

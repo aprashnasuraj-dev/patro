@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0224",
+  "related": [
+    {
+      "id": "TOOL-0240",
+      "title": "Employer Retirement Match Calculator (Custom Formula)",
+      "proposed_canonical": "/calculators/employer-match-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0216",
+      "title": "Big Number Prime Factorization and GCD/LCM",
+      "proposed_canonical": "/calculators/prime-factorization-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0193",
+      "title": "Phone Number Normalizer to E.164",
+      "proposed_canonical": "/converters/phone-numbers-to-e164",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0249",
+      "title": "Number to Words for Cheques (International and Indian Numbering)",
+      "proposed_canonical": "/converters/number-to-words-cheque",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Outlier Detector (IQR, Z-Score, MAD) — Browser Calculator</title>
+<meta name="description" content="Flag potential outliers side by side using Tukey IQR fences, conventional Z-scores, and robust modified Z-scores based on MAD.">
+<meta property="og:title" content="Outlier Detector (IQR, Z-Score, MAD)">
+<meta property="og:description" content="Flag potential outliers side by side using Tukey IQR fences, conventional Z-scores, and robust modified Z-scores based on MAD.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0210 · Local browser tool</div>
+<h1>Outlier Detector (IQR, Z-Score, MAD)</h1>
+<p class="lede">Flag potential outliers side by side using Tukey IQR fences, conventional Z-scores, and robust modified Z-scores based on MAD. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>Dataset<textarea id="data">10 11 10.5 9.8 10.2 50</textarea></label><div class="row"><label>IQR multiplier<input id="iqrK" type="number" value="1.5" step=".1"></label><label>Z threshold<input id="zK" type="number" value="3" step=".1"></label></div><label>Modified-Z threshold<input id="madK" type="number" value="3.5" step=".1"></label>
+<div class="row"><button id="run" type="button">Detect potential outliers</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Flag potential outliers side by side using Tukey IQR fences, conventional Z-scores, and robust modified Z-scores based on MAD.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Thresholds are user-selectable diagnostics applied to a single numeric variable.</p></section>
+<section><h2>Limitations</h2><p>Outlier flags are diagnostics, not automatic deletion rules. Z-score methods are sensitive to distribution shape; MAD can be zero.</p></section>
+<section><h2>FAQ</h2><details><summary>Should flagged points be deleted?</summary><p>No. Flags identify observations worth investigating; deletion requires a substantive data-quality or modeling reason.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm" rel="noopener noreferrer">NIST/SEMATECH — Detection of Outliers</a></li><li><a href="https://search.r-project.org/R/refmans/stats/html/quantile.html" rel="noopener noreferrer">R stats — Sample Quantiles</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

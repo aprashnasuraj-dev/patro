@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0324",
+  "examples": [
+    {
+      "inputs": {
+        "words": 6
+      },
+      "expected_entropy_bits_approx": 77.55
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "TOOL-0495",
+  "name": "Mega-Backdoor Roth Contribution Room Calculator",
+  "route": "/tools/mega-backdoor-roth-contribution-room-calculator",
+  "slug": "mega-backdoor-roth-contribution-room-calculator",
+  "family": "F0235",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "retirement",
+  "title": "Mega-Backdoor Roth Contribution Room Calculator | AafnaiPatro Tools",
+  "meta_description": "Estimate remaining 2026 after-tax 401(k) annual-additions capacity and compare it with the employer plan limit.",
+  "inputs": [
+    {
+      "key": "compensation",
+      "label": "2026 eligible compensation",
+      "default": 190000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "employee",
+      "label": "Regular elective deferrals (not catch-up)",
+      "default": 24500,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 72000,
+      "step": "any"
+    },
+    {
+      "key": "employer",
+      "label": "Employer contributions + forfeitures",
+      "default": 11000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 72000,
+      "step": "any"
+    },
+    {
+      "key": "other",
+      "label": "Other annual additions",
+      "default": 0,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 72000,
+      "step": "any"
+    },
+    {
+      "key": "planCap",
+      "label": "Plan-permitted after-tax contribution cap",
+      "default": 40000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 72000,
+      "step": "any"
+    }
+  ]
+}

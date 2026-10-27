@@ -1,0 +1,18 @@
+{
+  "claims": [
+    {
+      "claim": "Strict object in Zod 4 uses z.strictObject",
+      "authority": "https://zod.dev/v4/changelog"
+    },
+    {
+      "claim": "Zod supports unions and optional properties",
+      "authority": "https://zod.dev/api"
+    },
+    {
+      "claim": "z.infer derives static types",
+      "authority": "https://zod.dev/basics"
+    }
+  ],
+  "assumption": "Each pasted sample is one independent JSON value; missing object keys across observed examples become optional.",
+  "privacy": "browser local input; no send or analytics in tool source"
+}

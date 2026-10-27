@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0360",
+  "examples": [
+    {
+      "frame": "browser",
+      "screenshot": "1280x720",
+      "scale": 2,
+      "expected": "generic chrome only, no trademarked device art"
+    }
+  ]
+}

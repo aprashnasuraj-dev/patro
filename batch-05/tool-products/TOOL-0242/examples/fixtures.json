@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0242",
+  "status": "TEST_PENDING",
+  "sample": {
+    "number": "INV-2026-001",
+    "currency": "USD",
+    "issueDate": "2026-10-26",
+    "dueDate": "2026-11-25",
+    "seller": "Example Studio",
+    "customer": "Example Client",
+    "notes": "Sample only",
+    "lines": [
+      {
+        "description": "Design",
+        "quantity": 2,
+        "unitPrice": 750,
+        "taxRate": 0
+      },
+      {
+        "description": "Implementation",
+        "quantity": 12,
+        "unitPrice": 125,
+        "taxRate": 0
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0182",
+  "build_sequence": 182,
+  "name": "Merge CSV Files with Column Alignment",
+  "route": "/tools/merge-csv-files",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0085",
+  "engineering_family": "Split and Merge CSV and Excel Files",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Merge CSV Files with Column Alignment — Free Local Browser Tool",
+    "meta_description": "Merge local CSV files by header name, aligning mismatched column order and optionally taking the union or intersection of columns.",
+    "h1": "Merge CSV Files with Column Alignment",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

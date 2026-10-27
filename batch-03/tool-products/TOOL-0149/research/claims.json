@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0149",
+  "claims": [
+    {
+      "claim": "Preview PDF pages and set crop boxes using explicit point/mm/inch margins without rasterizing page content.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Cropping is not redaction. Hidden content outside the crop box may still be recoverable.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

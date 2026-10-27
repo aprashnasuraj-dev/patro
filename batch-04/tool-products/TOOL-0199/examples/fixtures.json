@@ -1,0 +1,12 @@
+{
+  "nominal": {
+    "note": "Workbook fixture with SUM formula, defined name, and intentionally stale cached value."
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

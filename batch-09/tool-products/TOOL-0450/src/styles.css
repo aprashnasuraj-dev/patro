@@ -1,0 +1,3 @@
+@import url('../_vendor/ui.css');
+:root{--accent:#a35d44;}
+.visual-workbench{padding-top:18px;border-top:1px solid var(--line);margin-top:18px}.visual-preview{display:block;max-width:100%;max-height:460px;margin:12px auto;border:1px dashed var(--line);object-fit:contain;background:#eff5f9}.visual-workbench h3{margin:0;font-size:1rem}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0138",
+  "claims": [
+    {
+      "claim": "Decode APNG or animated WebP locally and convert bounded animations to GIF with explicit colour/timing limitations.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "GIF is limited to indexed colour and can be much larger or lower quality than APNG/WebP.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

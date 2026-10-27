@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0239",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Fixed-rate equal monthly payment loans; upfront fees are added to total cash cost, not financed unless reflected in principal."
+  ],
+  "uncertainty": [
+    "Does not compute legal APR, variable rates, prepayment effects or tax consequences."
+  ]
+}

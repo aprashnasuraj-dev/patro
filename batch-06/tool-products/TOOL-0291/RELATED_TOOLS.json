@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0291",
+  "related": [
+    {
+      "id": "TOOL-0292",
+      "title": "Box Breathing and 4-7-8 Breathing Pacer",
+      "proposed_canonical": "/timers/box-breathing-timer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0312",
+      "title": "Countdown Timer Generator with Shareable Link",
+      "proposed_canonical": "/timers/countdown-timer-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0203",
+      "title": "Wilson Score Confidence Interval Calculator",
+      "proposed_canonical": "/calculators/wilson-score-interval-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0386",
+      "title": "Microcontroller Timer and PWM Register Calculator",
+      "proposed_canonical": "/calculators/arduino-timer-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0398",
+      "title": "Coffee Brew Ratio Calculator with Brew Timer",
+      "proposed_canonical": "/calculators/coffee-ratio-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

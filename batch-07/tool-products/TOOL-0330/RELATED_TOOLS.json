@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0330",
+  "related": [
+    {
+      "id": "TOOL-0329",
+      "title": "Encrypt and Decrypt Text with a Password (AES-GCM)",
+      "proposed_canonical": "/utilities/encrypt-text-with-password",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0055",
+      "title": "Browser Video and Audio Codec Support Checker",
+      "proposed_canonical": "/validators/browser-codec-support-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0325",
+      "title": "Argon2 and bcrypt Cost Benchmark on Your Device",
+      "proposed_canonical": "/utilities/password-hash-cost-benchmark",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0339",
+      "title": "URL and IP Defanger/Refanger for Security Reports",
+      "proposed_canonical": "/utilities/defang-url",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0321",
+      "title": "Large File Hash Calculator (SHA-256, SHA-512, MD5, CRC32)",
+      "proposed_canonical": "/calculators/file-hash-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

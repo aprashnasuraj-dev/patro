@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0418",
+  "name": "MACRS Depreciation Schedule Generator",
+  "reserved_route": "/tools/macrs-depreciation-schedule-calculator",
+  "engineering_family_id": "F0234",
+  "engineering_family": "MACRS Depreciation Schedule Generator",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "MACRS Depreciation Schedule Generator | AafnaiPatro Tools",
+    "description": "Generate selected IRS MACRS GDS half-year percentage-table schedules with an optional separately entered bonus-depreciation percentage.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

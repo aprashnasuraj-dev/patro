@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {sampleSeeded} from "../src/core";
+describe("seeded sampler",()=>{it("repeats exactly for same seed",()=>{const a=sampleSeeded(["a","b","c","d"],3,"x"),b=sampleSeeded(["a","b","c","d"],3,"x");expect(a.items).toEqual(b.items);});});

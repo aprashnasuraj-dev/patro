@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0489",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "area": 2000,
+        "target": 1,
+        "rain": 0.25,
+        "eff": 80,
+        "flow": 8,
+        "zones": 4,
+        "cycles": 2
+      },
+      "expect": {
+        "output_label": "Net irrigation depth",
+        "value_contains": "0.75 in"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

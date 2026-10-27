@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0462",
+  "related": [
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0449",
+      "title": "COBRA Election & Payment Deadline Calculator",
+      "proposed_canonical": "/calculators/cobra-election-payment-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "proposed_canonical": "/calculators/final-paycheck-pto-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0461",
+      "title": "TRIR/DART Calculator with BLS Industry Benchmarks",
+      "proposed_canonical": "/calculators/trir-dart-incident-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0463",
+      "title": "Court Pleading Paper Generator",
+      "proposed_canonical": "/generators/court-pleading-paper-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

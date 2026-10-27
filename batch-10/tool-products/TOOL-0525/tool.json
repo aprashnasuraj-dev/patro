@@ -1,0 +1,108 @@
+{
+  "id": "TOOL-0525",
+  "name": "Heat Pump vs Gas Boiler Payback Calculator",
+  "slug": "heat-pump-vs-gas-boiler-payback-calculator",
+  "route": "/tools/heat-pump-vs-gas-boiler-payback-calculator",
+  "family": "F0288",
+  "description": "Compare delivered-space-heat cost per year for a heat pump versus a gas boiler and show incremental investment payback.",
+  "seo": {
+    "title": "Heat Pump vs Gas Boiler Payback Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Compare delivered-space-heat cost per year for a heat pump versus a gas boiler and show incremental investment payback.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "energy",
+  "inputs": [
+    {
+      "key": "heat",
+      "label": "Annual useful heating energy demand",
+      "default": 16000,
+      "unit": "kWh heat",
+      "type": "number",
+      "min": 1,
+      "max": 10000000.0,
+      "step": "any"
+    },
+    {
+      "key": "cop",
+      "label": "Seasonal heat-pump coefficient of performance",
+      "default": 3,
+      "unit": "ratio",
+      "type": "number",
+      "min": 0.5,
+      "max": 10,
+      "step": "any"
+    },
+    {
+      "key": "power",
+      "label": "Electricity import price",
+      "default": 0.27,
+      "unit": "currency/kWh",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "gas",
+      "label": "Gas fuel energy cost",
+      "default": 0.085,
+      "unit": "currency/kWh gas",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "boilerEff",
+      "label": "Gas boiler seasonal efficiency",
+      "default": 0.88,
+      "unit": "ratio",
+      "type": "number",
+      "min": 0.1,
+      "max": 1,
+      "step": "any"
+    },
+    {
+      "key": "heatPumpInstall",
+      "label": "Installed heat-pump project cost after rebates",
+      "default": 12500,
+      "unit": "currency",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "gasInstall",
+      "label": "Installed new gas boiler alternative",
+      "default": 5500,
+      "unit": "currency",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "extraAnnual",
+      "label": "Heat pump minus gas annual maintenance/standing charge",
+      "default": -120,
+      "unit": "currency/year",
+      "type": "number",
+      "min": -1000000.0,
+      "max": 1000000.0,
+      "step": "any"
+    }
+  ]
+}

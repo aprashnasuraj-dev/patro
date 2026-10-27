@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://pdf-lib.js.org/docs/api/classes/pdfdocument",
+    "version": "current published API docs accessed 2026-10-26",
+    "effective_date": "2026-10-26",
+    "license": "MIT project; bundle locally and retain notices",
+    "notes": "Browser-side PDF creation, page copying, image embedding."
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
+    "version": "MDN current page accessed 2026-10-26",
+    "effective_date": "2026-10-26",
+    "license": "MDN content terms",
+    "notes": "PNG is required; JPEG/WebP depend on browser support; encoded DPI metadata is not a reliable source of PDF physical size."
+  }
+]

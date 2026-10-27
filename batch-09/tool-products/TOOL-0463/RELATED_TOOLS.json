@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0463",
+  "related": [
+    {
+      "id": "TOOL-0464",
+      "title": "Data Access Request Letter Generator",
+      "proposed_canonical": "/generators/data-access-request-letter-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0461",
+      "title": "TRIR/DART Calculator with BLS Industry Benchmarks",
+      "proposed_canonical": "/calculators/trir-dart-incident-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0462",
+      "title": "Statute of Limitations Deadline Calculator",
+      "proposed_canonical": "/calculators/statute-of-limitations-deadline-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0005",
+      "title": "JSON to Protobuf (.proto) Generator",
+      "proposed_canonical": "/generators/json-to-protobuf",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

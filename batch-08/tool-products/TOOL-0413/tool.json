@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0413",
+  "name": "Estimated Tax Safe-Harbor Planner",
+  "reserved_route": "/tools/estimated-tax-safe-harbor-planner",
+  "engineering_family_id": "F0230",
+  "engineering_family": "US Estimated Tax and Installment Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Estimated Tax Safe-Harbor Planner | AafnaiPatro Tools",
+    "description": "Compare the general 90%-of-current-year and 100%/110%-of-prior-year estimated-tax safe-harbor targets for 2026.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

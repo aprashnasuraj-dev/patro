@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0237",
+  "related": [
+    {
+      "id": "TOOL-0369",
+      "title": "Writing Word Count Goal Tracker (Local)",
+      "proposed_canonical": "/planners/word-count-goal-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0416",
+      "title": "US Economic Nexus Tracker",
+      "proposed_canonical": "/planners/us-sales-tax-economic-nexus-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0417",
+      "title": "VAT/GST Registration Threshold Tracker",
+      "proposed_canonical": "/planners/vat-gst-registration-threshold-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0440",
+      "title": "Net VLT & Window Tint Law Checker",
+      "proposed_canonical": "/validators/window-tint-vlt-law-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0459",
+      "title": "I-9 Reverification & Retention Date Tracker",
+      "proposed_canonical": "/planners/i9-reverification-retention-date-tracker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

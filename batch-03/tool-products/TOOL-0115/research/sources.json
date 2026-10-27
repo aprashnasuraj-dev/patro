@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0115",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "opentypejs",
+      "url": "https://github.com/opentypejs/opentype.js/releases",
+      "version": "opentype.js 2.0.0",
+      "effective_date": "2026",
+      "license": "MIT",
+      "notes": "Browser parser/path API. Complex-script shaping and rasterizer behavior should not be assumed identical to a browser shaping engine."
+    },
+    {
+      "id": "opentype-gpos",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/gpos",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "Pair positioning can implement kerning; class-based and contextual positioning can be more complex than simple pair tables."
+    },
+    {
+      "id": "opentype-kern",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/kern",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "Legacy kern table stores pair adjustments; CFF fonts rely on GPOS for kerning."
+    }
+  ],
+  "assumptions": "The font parser resolves the font’s kerning implementation for the selected glyph pair.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "This is sample-pair inspection, not exhaustive expansion of all class/context kerning. Browser shaping can differ because script, language and feature resolution may affect positioning."
+}

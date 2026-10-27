@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "sphere": -6,
+    "cyl": -1.5,
+    "axis": 180,
+    "vertex": 12
+  },
+  "known_answer": {
+    "output_label": "Theoretical corneal-plane sphere",
+    "expected_display": "-5.60 D",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

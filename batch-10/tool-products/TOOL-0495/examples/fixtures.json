@@ -1,0 +1,12 @@
+{
+  "title": "Mega-Backdoor Roth Contribution Room Calculator",
+  "default_inputs": {
+    "compensation": "190000",
+    "employee": "24500",
+    "employer": "11000",
+    "other": "0",
+    "planCap": "40000"
+  },
+  "worked_example": "$72,000 − $24,500 − $11,000 = $36,500 before plan cap.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

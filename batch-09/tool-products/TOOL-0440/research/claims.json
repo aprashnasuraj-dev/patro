@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Visible light transmission compliance scenario",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Legal limits vary by window, vehicle, region, date and exemptions; film manufacturer values are nominal.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Legal limits vary by window, vehicle, region, date and exemptions; film manufacturer values are nominal.",
+  "authoritative_references": [
+    "https://www.law.cornell.edu/cfr/text/49/571.205"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

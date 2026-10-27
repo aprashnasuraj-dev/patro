@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0499",
+  "related": [
+    {
+      "id": "TOOL-0495",
+      "title": "Mega-Backdoor Roth Contribution Room Calculator",
+      "proposed_canonical": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0230",
+      "title": "Savings Goal Calculator (Date or Contribution)",
+      "proposed_canonical": "/calculators/savings-goal-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0460",
+      "title": "FMLA Eligibility & Entitlement Calculator",
+      "proposed_canonical": "/calculators/fmla-eligibility-entitlement-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0486",
+      "title": "Digital Nomad Visa Eligibility Matcher",
+      "proposed_canonical": "/utilities/digital-nomad-visa-eligibility-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

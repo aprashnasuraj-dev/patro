@@ -1,0 +1,21 @@
+{
+  "sample_input": "id,name,enabled,amount,date\n1,Ada,true,2.50,2026-01-04\n2,Lin,false,8.25,2026-03-05",
+  "intended_action": "Infer SQL table",
+  "manual_review_cases": [
+    {
+      "input": "id,name\\n1,Ada",
+      "expectation": "id"
+    },
+    {
+      "input": "empty headers",
+      "expectation": "reject"
+    }
+  ],
+  "limits": "Sample-based inference does not prove constraints or future values; defaults to nullable types and no automatically inferred primary keys. PostgreSQL DDL review required.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "CREATE TABLE",
+    "\"id\""
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0257",
+  "claims": [
+    {
+      "claim": "Lead-time demand SD may be modeled as sqrt(L*sigma_d^2 + d_bar^2*sigma_L^2), with safety stock=z*sigma and reorder point=safety stock+average lead-time demand.",
+      "source_url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_0702045810.html",
+      "implementation_note": "Calculator documents the normal approximation and its limitations."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

@@ -1,0 +1,8 @@
+import {num,decimal,positiveDecimal,restricted,choice,iso,addDays,addMonths,endOfMonth,dayDifference,csv,fmt,usd,gbp,cad,metric,output} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Prepared offline calculation. Runtime QA has not executed. */
+export function calculate(i:Input):Result {
+  const a=num(i,'assumedBalance',1,1e9),ar=num(i,'assumedRate',0,40)/1200,am=num(i,'assumedMonths',1,600),b=num(i,'newLoan',1,1e9),br=num(i,'newRate',0,40)/1200,bm=num(i,'newMonths',1,600),af=num(i,'assumptionFee',0,1e8),bf=num(i,'newFee',0,1e8),gap=num(i,'cashTopup',0,1e9);if(!Number.isInteger(am)||!Number.isInteger(bm))throw new Error('Amortization months must be integers.');
+  const pay=(principal:number,r:number,m:number)=>r===0?principal/m:principal*r/(1-Math.pow(1+r,-m));const pA=pay(a,ar,am),pB=pay(b,br,bm);const totalA=pA*am+af+gap,totalB=pB*bm+bf;
+  return output('Assumed mortgage monthly payment: '+usd(pA),[metric('Assumable payment',usd(pA)),metric('New mortgage payment',usd(pB)),metric('Monthly payment difference',usd(pB-pA)),metric('Total modeled cash outflow (assumed)',usd(totalA)),metric('Total modeled cash outflow (new)',usd(totalB))],['The two loans may finance DIFFERENT amounts of purchase price: cash equity top-up is an immediate capital outlay, not interest expense. Do not interpret lifetime totals as net present value.','Assumability needs lender approval, insurance/VA entitlement and transfer terms; many conventional loans are not assumable.','Comparisons ignore time value, mortgage insurance, taxes, rate changes, refinance, sale and opportunity cost of extra cash.']);
+}

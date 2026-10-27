@@ -1,0 +1,36 @@
+{
+  "tool_id": "TOOL-0481",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "UPS tracking formats",
+      "url": "https://www.ups.com/us/en/support/tracking-support",
+      "version_or_effective_date": "current guidance",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-2",
+      "title": "USPS tracking reference",
+      "url": "https://www.usps.com/manage/",
+      "version_or_effective_date": "current guidance",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-3",
+      "title": "UPU S10 standard",
+      "url": "https://www.upu.int/en/Postal-Solutions/Programmes-Services/Postal-Technology-Centre",
+      "version_or_effective_date": "S10 check-digit methodology",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

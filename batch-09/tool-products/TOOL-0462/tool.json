@@ -1,0 +1,45 @@
+{
+  "id": "TOOL-0462",
+  "name": "Statute of Limitations Deadline Calculator",
+  "slug": "statute-of-limitations-deadline-estimator",
+  "route": "/tools/statute-of-limitations-deadline-estimator",
+  "family": "F0266",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Statute of Limitations Deadline Calculator | AafnaiPatro Tools",
+    "description": "Advance a verified statutory period from a selected accrual or discovery date, with explicit tolling and jurisdiction notes. Gives a civil-calendar estimat"
+  },
+  "execution": {
+    "mode": "client-side",
+    "account_required": false,
+    "network_transmission_of_user_content": false,
+    "worker_required": false,
+    "entry_route_lazy_load": true,
+    "max_persisted_data": "none"
+  },
+  "source_files": {
+    "html": "page.html",
+    "core": "src/core.ts",
+    "ui": "src/ui.ts",
+    "styles": "src/styles.css"
+  },
+  "dependencies": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css",
+    "tool-products/_shared/calendar.ts"
+  ],
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap": false,
+    "published": false
+  }
+}

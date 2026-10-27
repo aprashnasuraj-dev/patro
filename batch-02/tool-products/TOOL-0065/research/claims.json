@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0065",
+  "claims": [
+    {
+      "claim": "Merchant listings require an Offer.",
+      "supporting_url": "https://schema.org/Product",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Use genuine review author/count details, never synthetic ratings.",
+      "supporting_url": "https://schema.org/Product",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "schema.org Product, Offer and Google merchant listing guidelines."
+  ],
+  "limitations": [
+    "Price, availability and ratings must reflect the live page and real customers."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

@@ -1,0 +1,14 @@
+{
+  "nominal": {
+    "csv": "id,date\\n1,31/12/2026\\n2,31/02/2026",
+    "from": "DD/MM/YYYY",
+    "to": "YYYY-MM-DD"
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

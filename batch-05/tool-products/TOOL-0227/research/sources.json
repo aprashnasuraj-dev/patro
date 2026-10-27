@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0227",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Flat-rate interest uses original principal \u00d7 rate \u00d7 years; reducing balance uses standard equal monthly payment math."
+  ],
+  "uncertainty": [
+    "Lenders may define flat rate, fees and effective rate differently; compare actual disclosures."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0342",
+  "related": [
+    {
+      "id": "TOOL-0347",
+      "title": "One Image to All Social Sizes Resizer",
+      "proposed_canonical": "/editors/social-media-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0354",
+      "title": "Thread Splitter for Posts (Numbered, Sentence-Aware)",
+      "proposed_canonical": "/editors/thread-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0194",
+      "title": "Full Name Splitter (First, Middle, Last, Suffix)",
+      "proposed_canonical": "/editors/split-full-name-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0303",
+      "title": "Time Zone Meeting Planner Grid",
+      "proposed_canonical": "/planners/time-zone-meeting-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

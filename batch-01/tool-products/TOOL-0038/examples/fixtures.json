@@ -1,0 +1,12 @@
+{
+  "sample": {
+    "patterns": "node_modules/\n*.log\n!important.log",
+    "path": "src/app.log"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

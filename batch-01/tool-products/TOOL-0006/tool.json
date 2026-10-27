@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0006",
+  "title": "HAR File Sensitive Data Redactor",
+  "route": "/tools/har-file-redactor",
+  "slug": "har-file-redactor",
+  "source": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "family_id": "F0002",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": false,
+  "published": false,
+  "seo": {
+    "title": "HAR File Sensitive Data Redactor — Private, Browser-Based Draft Tool | AafnaiPatro",
+    "meta_description": "Privacy-first reconstruction keeps timing and status metrics while discarding URLs, cookies, headers, request bodies and unknown extension fields.",
+    "h1": "Make HAR diagnostics safer to share",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "privacy": {
+    "routine_worker_requests": 0,
+    "user_content_transmission": false,
+    "file_execution": false,
+    "input_budget": 3000000
+  },
+  "requirements": {
+    "runtime": "browser, compiled via existing lazy route loader",
+    "dependencies": {},
+    "test_dev_dependencies": {
+      "vitest": "3.2.4"
+    }
+  },
+  "input": "textarea and optional file local read",
+  "output": "redacted.har",
+  "limitations": "Even stripped network timing/status data can reveal traffic patterns. Do not treat automated redaction as a legal data de-identification guarantee."
+}

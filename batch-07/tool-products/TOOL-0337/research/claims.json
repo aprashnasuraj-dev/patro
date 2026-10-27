@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0337",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Metadata can exist outside docProps. This is not a substitute for a complete hidden-content/privacy inspection, and it must never claim to remove all identifying information."
+}

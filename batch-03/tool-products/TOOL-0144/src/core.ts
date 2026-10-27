@@ -1,0 +1,4 @@
+import { loadPdfLib } from '../_vendor/pdf';
+import { addTopLevelOutlines } from '../_vendor/pdf-outline';
+export async function merge(files:File[],labels?:string[]):Promise<Blob>{if(files.length<2||files.length>50)throw new Error('Choose 2–50 PDFs.');const pdfLib=await import('pdf-lib'),out=await pdfLib.PDFDocument.create(),marks=[] as {title:string,pageIndex:number}[];let start=0;for(let i=0;i<files.length;i++){const {doc}=await loadPdfLib(files[i]);marks.push({title:(labels?.[i]||files[i].name.replace(/\.pdf$/i,'')).slice(0,120),pageIndex:start});const indices=Array.from({length:doc.getPageCount()},(_,k)=>k),pages=await out.copyPages(doc,indices);pages.forEach(p=>out.addPage(p));start+=pages.length}addTopLevelOutlines(pdfLib,out,marks);return new Blob([await out.save()],{type:'application/pdf'});}
+

@@ -1,0 +1,11 @@
+{
+  "sample": {
+    "csv": "source,destination\n/old,/new"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

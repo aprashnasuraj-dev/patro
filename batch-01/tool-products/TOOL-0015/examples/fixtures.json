@@ -1,0 +1,21 @@
+{
+  "sample_input": "{\"id\":1,\"name\":\"Ada\"}\n{\"id\":2,\"name\":\"Lin\"}",
+  "intended_action": "Build JSON array",
+  "manual_review_cases": [
+    {
+      "input": "{\"a\":1}\\n{\"a\":2}",
+      "expectation": "2 records"
+    },
+    {
+      "input": "{\"a\":1}\\n{invalid}",
+      "expectation": "reject line two"
+    }
+  ],
+  "limits": "Parsing uses a bounded in-browser string; very large NDJSON files require a streaming integration. Empty lines optionally ignored.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"id\": 1",
+    "\"id\": 2"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

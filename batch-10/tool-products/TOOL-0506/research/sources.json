@@ -1,0 +1,11 @@
+[
+  {
+    "label": "Bank of England PRA SS13/16",
+    "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2016/underwriting-standards-for-buy-to-let-mortgage-contracts-ss",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  }
+]

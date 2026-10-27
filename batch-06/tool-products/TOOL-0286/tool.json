@@ -1,0 +1,57 @@
+{
+  "id": "TOOL-0286",
+  "name": "Critical Swim Speed (CSS) Calculator",
+  "slug": "critical-swim-speed-calculator",
+  "route": "/tools/critical-swim-speed-calculator",
+  "family": "F0152",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Critical Swim Speed (CSS) Calculator | AafnaiPatro",
+    "description": "Calculate swim threshold pace from one 400-metre and one 200-metre time trial.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "t400",
+      "label": "400 m trial time",
+      "default": 450,
+      "min": 120,
+      "max": 3600,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "t200",
+      "label": "200 m trial time",
+      "default": 205,
+      "min": 60,
+      "max": 1800,
+      "step": "1",
+      "unit": "seconds"
+    }
+  ],
+  "explanation": "CSS seconds/100m = (T400−T200)/2. This is the slope of time versus distance between the two swims.",
+  "limitations": "Requires maximal swims in comparable conditions; intervals differ from training prescriptions and turns/pool length affect comparisons.",
+  "related_tool_ids": [
+    "TOOL-0282",
+    "TOOL-0287"
+  ],
+  "sources": [
+    "https://www.swimsmooth.com/"
+  ],
+  "special_notes": null
+}

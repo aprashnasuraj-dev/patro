@@ -1,0 +1,1 @@
+import {correlationMatrix} from "./core";self.onmessage=(e:MessageEvent)=>{try{(self as any).postMessage({result:correlationMatrix(e.data.text,e.data.method)});}catch(err){(self as any).postMessage({error:err instanceof Error?err.message:String(err)});}};

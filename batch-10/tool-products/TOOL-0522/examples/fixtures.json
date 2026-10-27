@@ -1,0 +1,14 @@
+{
+  "tool": "TOOL-0522",
+  "default_inputs": {
+    "scheme": "EU",
+    "distance": "1800",
+    "arrivalDelay": "230",
+    "euWithin": "no",
+    "caSize": "large",
+    "covered": "yes",
+    "reason": "yes"
+  },
+  "worked_example": "Canada large airline, controllable 6-hour final arrival delay: CAD 700 compensation band.",
+  "source_status": "TEST_PENDING"
+}

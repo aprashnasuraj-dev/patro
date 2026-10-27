@@ -1,0 +1,63 @@
+{
+  "id": "TOOL-0500",
+  "name": "Medicare Enrollment Window and Late Penalty Calculator",
+  "route": "/tools/medicare-enrollment-window-penalty-calculator",
+  "slug": "medicare-enrollment-window-penalty-calculator",
+  "family": "F0294",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "timeline",
+  "title": "Medicare Enrollment Window and Late Penalty Calculator | AafnaiPatro Tools",
+  "meta_description": "Calculate the standard age-65 initial enrollment window and illustrative Part B/Part D delay penalties.",
+  "inputs": [
+    {
+      "key": "dob",
+      "label": "Date of birth",
+      "default": "1961-09-15",
+      "type": "date"
+    },
+    {
+      "key": "partBmonths",
+      "label": "Full uncovered eligible months before Part B enrollment",
+      "default": 24,
+      "unit": "months",
+      "type": "number",
+      "min": 0,
+      "max": 600,
+      "step": 1
+    },
+    {
+      "key": "partDmonths",
+      "label": "Full Part D months without creditable coverage",
+      "default": 14,
+      "unit": "months",
+      "type": "number",
+      "min": 0,
+      "max": 600,
+      "step": 1
+    },
+    {
+      "key": "sep",
+      "label": "Qualified Part B special enrollment protection",
+      "default": "no",
+      "type": "select",
+      "options": [
+        "no",
+        "yes",
+        "unknown"
+      ]
+    }
+  ]
+}

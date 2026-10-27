@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0165",
+  "build_sequence": 165,
+  "name": "Rotate and Flip Video",
+  "route": "/tools/rotate-video",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Trim, Rotate and Speed",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "Rotation/flip changes pixels and therefore requires re-encoding; orientation metadata is cleared."
+  },
+  "seo": {
+    "title": "Rotate and Flip Video — Free Browser Tool",
+    "meta_description": "Rotate video by 90-degree steps and flip horizontally or vertically with local processing.",
+    "h1": "Rotate and Flip Video",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0077"
+}

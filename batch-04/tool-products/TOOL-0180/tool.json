@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0180",
+  "build_sequence": 180,
+  "name": "SRT Subtitle Time Shifter and VTT Converter",
+  "route": "/tools/srt-time-shifter",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family": "SRT Subtitle Time Shifter and VTT Converter",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": null,
+    "notes": "Only SRT cue blocks are parsed on input; malformed timings are rejected rather than repaired silently."
+  },
+  "seo": {
+    "title": "SRT Subtitle Time Shifter and VTT Converter — Free Browser Tool",
+    "meta_description": "Shift SRT subtitle timings safely and export normalized SRT or standards-oriented WebVTT.",
+    "h1": "SRT Subtitle Time Shifter and VTT Converter",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0084"
+}

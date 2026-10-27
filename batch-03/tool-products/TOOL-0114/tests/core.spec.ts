@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('font support deferred fixtures',()=>{it.todo('compares cmap format 4 and 12 fonts');it.todo('reports supplementary emoji mapping');it.todo('caps files at 12 and code points at 256');it.todo('does not infer language quality from cmap presence')});

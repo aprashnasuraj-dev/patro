@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0369",
+  "claims": [
+    {
+      "claim": "Track a writing project’s cumulative word-count progress in browser localStorage with no account or sync requirement.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "LocalStorage is device/browser specific and not a backup or encrypted storage system.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

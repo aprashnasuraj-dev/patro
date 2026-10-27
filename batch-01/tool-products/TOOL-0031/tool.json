@@ -1,0 +1,17 @@
+{
+  "id": "TOOL-0031",
+  "name": "AWS IAM Policy Wildcard Auditor",
+  "route": "/tools/iam-policy-wildcard-checker",
+  "family": "F0018",
+  "status": "TEST_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "AWS IAM Policy Wildcard Auditor | Mission Mangal Tools",
+    "description": "Prepare and inspect aws iam policy wildcard auditor locally in your browser. Includes a worked example, format limits, and explicit warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": "Supported subset documented in core implementation; unsupported input must produce an error."
+}

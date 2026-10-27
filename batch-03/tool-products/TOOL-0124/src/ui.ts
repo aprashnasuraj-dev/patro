@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,guarded,dl,resultText } from '../_vendor/ui'; $('primary').addEventListener('click',()=>guarded(async()=>{const f=file('file'),r=await core.compressToBudget(f,num('targetKb'),num('minQuality'));resultText(`Result: ${(r.bytes/1024).toFixed(1)} KB at quality ${r.quality.toFixed(3)}, ${r.width}×${r.height}. ${r.warning||''}`);dl(r.blob,f.name.replace(/\.[^.]+$/,'-compressed.jpg'))}));
+

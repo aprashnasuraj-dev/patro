@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0360",
+  "name": "Screenshot Device Frame Generator",
+  "route": "/tools/screenshot-device-frame-generator",
+  "batch": "BATCH-07",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0201",
+  "engineering_family": "Screenshot Device Frame Generator",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Screenshot Device Frame Generator — Private Browser Tool",
+    "meta_description": "Place a local screenshot inside clean generic phone, tablet or browser-window frames with configurable padding/background and export a high-resolution PNG without proprietary device artwork.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

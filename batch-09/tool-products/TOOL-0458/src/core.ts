@@ -1,0 +1,8 @@
+import {N,S,Q,M,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Domain-guarded deterministic core; does not call network, storage or DOM. */
+export function calculate(i:Record<string,unknown>):Result {
+const mode=S(i,'mode',30),hours=N(i,'hours',0,168),rate=N(i,'rate',.01,100000),salary=N(i,'fixed',0,1e7),bonus=N(i,'bonus',0,1e7),min=N(i,'min',0,1000),ok=S(i,'fwwOK',3);const over=Math.max(0,hours-40);if(!['hourly','fluctuating-week'].includes(mode))throw Error('Unknown pay mode');
+let regular=rate,total=0,premium=0;if(mode==='hourly'){regular=rate+(hours>0?bonus/hours:0);premium=over*regular*.5;total=hours*rate+bonus+premium;}else{if(ok!=='yes')throw Error('FWW is conditional: first confirm fixed salary for all hours, fluctuations and mutual clear understanding');if(hours<=0)throw Error('Enter hours worked');regular=(salary+bonus)/hours;if(regular<min)throw Error('FWW regular rate is below entered minimum wage');premium=over*regular*.5;total=salary+bonus+premium;}
+return R([{label:'Modeled total gross week pay',value:M(total)},{label:'Additional half-time premium component',value:M(premium)},{label:'Overtime hours above 40',value:Q(over)},{label:'Regular rate used',value:M(regular)}],['Hourly mode includes the entered non-excludable bonus in the regular rate; classify all incentives and excludable payments carefully under FLSA before payroll.','FWW is allowed only when its statutory prerequisites and jurisdiction permit it; some state overtime standards are more protective. Validate state law before payroll.'],[`FWW premium = 0.5 × ((salary + non-excludable pay)/hours worked) × max(hours−40,0). Hourly base is hours × rate.`]);
+}

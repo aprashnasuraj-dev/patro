@@ -1,0 +1,6 @@
+import {num,decimal,positiveDecimal,restricted,choice,iso,addDays,addMonths,endOfMonth,dayDifference,csv,fmt,usd,gbp,cad,metric,output} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Prepared offline calculation. Runtime QA has not executed. */
+export function calculate(i:Input):Result {
+  const f=num(i,'focal',1,2000),N=num(i,'fnumber',.5,64),p=num(i,'pixel',.3,30),delta=num(i,'declination',0,60),k=Number(choice(i,'precision',['1','2'])),cos=Math.cos(delta*Math.PI/180);const full=k*(16.856*N+.0997*f+13.713*p)/(f*cos),simplified=(35*N+30*p)/f;return output('Full NPF estimate: '+fmt(full,1)+' seconds',[metric('Full NPF exposure',fmt(full,2)+' s'),metric('Simplified NPF exposure',fmt(simplified,2)+' s'),metric('Coarse 500-rule exposure (full frame)',fmt(500/f,1)+' s'),metric('Selected k coefficient',String(k))],['NPF was developed by Frédéric Michaud, Société Astronomique du Havre; publisher credits and non-commercial-use/permission requirements must be reviewed before deployment.','Declination 0° is safest when a wide field crosses the celestial equator; high declinations above 60° are deliberately unsupported.','The result is a photographic heuristic, not an exact star-trailing threshold; sensor Bayer pattern, sky position, optical coma and output size matter.']);
+}

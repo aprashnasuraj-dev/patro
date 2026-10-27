@@ -1,0 +1,20 @@
+[
+  {
+    "claim": "Convert CSV to XLSX while forcing every imported cell to text so leading zeros and formula-like strings remain literal data.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation"
+    ]
+  },
+  {
+    "claim": "Every cell is intentionally written as text, so numeric/date semantics and formulas are not preserved—this is the tradeoff for exact textual retention.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation"
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0129",
+  "related": [
+    {
+      "id": "TOOL-0130",
+      "title": "SVG to PNG/JPG Exporter at Custom Sizes",
+      "proposed_canonical": "/converters/svg-to-png",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0020",
+      "title": "Semantic JSON Diff (Ignore Key and Array Order)",
+      "proposed_canonical": "/utilities/json-diff-ignore-order",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "proposed_canonical": "/validators/word-level-text-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0112",
+      "title": "Text to SVG Path Converter",
+      "proposed_canonical": "/converters/text-to-svg-path",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0198",
+      "title": "CSV Diff (Compare Two Files by Key)",
+      "proposed_canonical": "/comparisons/csv-diff",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0425",
+  "related": [
+    {
+      "id": "TOOL-0423",
+      "title": "Rent Increase Cap & Notice Calculator",
+      "proposed_canonical": "/calculators/rent-increase-cap-and-notice-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0419",
+      "title": "Wash Sale & Holding Period Date Calculator",
+      "proposed_canonical": "/calculators/wash-sale-holding-period-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0230",
+      "title": "Savings Goal Calculator (Date or Contribution)",
+      "proposed_canonical": "/calculators/savings-goal-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0311",
+      "title": "Add or Subtract Days, Weeks, Months from a Date",
+      "proposed_canonical": "/calculators/add-days-to-date-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

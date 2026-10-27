@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Service Canada OAS recovery tax",
+    "url": "https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/recovery-tax.html",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Recovery tax = min(OAS received,15% of annual net world income above threshold); not the total marginal tax.",
+    "uncertainty": "Non-resident and income-year exceptions, RRIF minimum percentages and pension splitting need external review."
+  }
+]

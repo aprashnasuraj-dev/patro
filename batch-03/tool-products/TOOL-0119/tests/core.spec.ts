@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('PDF fonts deferred fixtures',()=>{it.todo('lists embedded subset font encountered on text page');it.todo('labels unknown rather than no when font bytes are not exposed');it.todo('handles scanned image-only page with zero fonts');it.todo('rejects non-PDF, >50MB and >500-page fixture');it.todo('does not execute PDF JavaScript')});

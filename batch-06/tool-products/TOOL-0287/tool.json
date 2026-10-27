@@ -1,0 +1,57 @@
+{
+  "id": "TOOL-0287",
+  "name": "FTP Zones and Power-to-Weight Calculator",
+  "slug": "ftp-zones-calculator",
+  "route": "/tools/ftp-zones-calculator",
+  "family": "F0153",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "FTP Zones and Power-to-Weight Calculator | AafnaiPatro",
+    "description": "Produce cycling threshold power zones and power-to-weight ratio from a tested FTP.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "ftp",
+      "label": "Functional threshold power",
+      "default": 240,
+      "min": 20,
+      "max": 1500,
+      "step": "1",
+      "unit": "W"
+    },
+    {
+      "type": "number",
+      "key": "mass",
+      "label": "Body mass",
+      "default": 75,
+      "min": 20,
+      "max": 300,
+      "step": "any",
+      "unit": "kg"
+    }
+  ],
+  "explanation": "Coggan threshold percentage bands use 55%, 75%, 90%, 105% and 120%; Zone 6 is open-ended; neuromuscular sprint power cannot be bounded with FTP alone.",
+  "limitations": "A 20-minute trial or device estimate can misstate true FTP; zones require individualized training context.",
+  "related_tool_ids": [
+    "TOOL-0284",
+    "TOOL-0293"
+  ],
+  "sources": [
+    "https://help.trainingpeaks.com/hc/en-us/articles/360017420092-Zones-Calculator-Overview"
+  ],
+  "special_notes": null
+}

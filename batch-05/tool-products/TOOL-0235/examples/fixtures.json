@@ -1,0 +1,5 @@
+{
+  "status": "TEST_PENDING",
+  "purpose": "Known-answer and demonstration inputs for deferred tests.",
+  "worked_example": "The sample buys 100 ABC shares at $10, then 50 at $12, then sells 80 at $15 to show the difference between FIFO and pooled average basis."
+}

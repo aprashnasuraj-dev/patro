@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0054",
+  "claims": [
+    {
+      "claim": "QuotaExceededError may occur before the configured cap.",
+      "supporting_url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Temporary keys are removed in finally blocks, including aborted probes.",
+      "supporting_url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "Browser localStorage on the current origin; byte counts are UTF-16 estimates."
+  ],
+  "limitations": [
+    "Not a true maximum quota measurement: origin storage, security settings and other tabs vary."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

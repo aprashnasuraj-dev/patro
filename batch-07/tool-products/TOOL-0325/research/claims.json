@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0325",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Browser timers, thermal throttling, WASM/JIT state and tab scheduling affect results. Do not benchmark with a real password and do not copy browser parameters blindly into a production server."
+}

@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Tow-vehicle and hitch envelope",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Vehicle GVWR, axle ratings, hitch configurations, manufacturer derating and sway/brakes not assessed.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Vehicle GVWR, axle ratings, hitch configurations, manufacturer derating and sway/brakes not assessed.",
+  "authoritative_references": [
+    "https://www.nhtsa.gov/road-safety/tires",
+    "https://www.nhtsa.gov/sites/nhtsa.gov/files/documents/towing_safety.pdf"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

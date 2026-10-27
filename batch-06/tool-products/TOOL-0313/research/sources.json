@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0313",
+  "research_scope": "Only implementation-changing date/time/calendar standards or provenance were collected.",
+  "sources": [],
+  "internal_sources": [
+    {
+      "name": "Nepal Miti validated civil mapping",
+      "coverage": "BS 1883-01-01 to 2093-12-30 / 77,070 days",
+      "provenance": "Existing project handoff states BS 2033–2093 contains 22,281/22,281 validated pairs; earlier ranges have lower trust tiers.",
+      "drive_reference": "nepali miti master prompt + protected project source",
+      "restriction": "Reuse exact validated local dataset; do not substitute an approximate conversion."
+    }
+  ],
+  "no_external_source_reason": "Behavior is a declared deterministic transform with no external dataset."
+}

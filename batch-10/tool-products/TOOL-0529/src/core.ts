@@ -1,0 +1,7 @@
+import {num,decimal,positiveDecimal,restricted,choice,iso,addDays,addMonths,endOfMonth,dayDifference,csv,fmt,usd,gbp,cad,metric,output} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Prepared offline calculation. Runtime QA has not executed. */
+export function calculate(i:Input):Result {
+  const age=num(i,'ageWeeks',2,100),weight=num(i,'weight',.01,200),frac=num(i,'maturityFraction',5,100)/100,unc=num(i,'uncertainty',0,50)/100;if(!Number.isInteger(age))throw new Error('Age in weeks must be an integer.');const adult=weight/frac,lower=weight/Math.min(1,frac*(1+unc)),upper=weight/Math.max(.01,frac*(1-unc));const targets=[age,26,39,52,78].filter((v,k,a)=>v>=age&&a.indexOf(v)===k).map(w=>[String(w)+' weeks',fmt(Math.min(adult,weight+(adult-weight)*Math.min(1,(w-age)/Math.max(1,78-age))),2)+' kg']);
+  return output('Scenario-based adult weight: '+fmt(adult,1)+' kg',[metric('Current weight',fmt(weight,2)+' kg'),metric('Entered maturity fraction',fmt(frac*100,1)+'%'),metric('Central scenario',fmt(adult,1)+' kg'),metric('Sensitivity range',fmt(lower,1)+'–'+fmt(upper,1)+' kg')],['Adult weight estimate depends almost entirely on entered maturity fraction; no verified breed/parent/body-condition data are available.','Displayed future weights are a linear planning illustration NOT a biologically validated growth curve.','Rapid weight change, stunting, lameness or feeding concerns require veterinary review.'],targets);
+}

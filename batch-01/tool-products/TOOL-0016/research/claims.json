@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0016",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Parse Common and Combined access log records into structured CSV with malformed line reporting.",
+      "evidence_urls": [
+        "https://httpd.apache.org/docs/current/logs.html",
+        "https://nginx.org/en/docs/http/ngx_http_log_module.html"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Supports default CLF/Combined log formats, not custom log_format or JSON access logs. CSV values are quoted and spreadsheet-formula cells neutralized.",
+      "evidence_urls": [
+        "https://httpd.apache.org/docs/current/logs.html",
+        "https://nginx.org/en/docs/http/ngx_http_log_module.html"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

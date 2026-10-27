@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0172",
+  "build_sequence": 172,
+  "name": "Audio Joiner and Merger",
+  "route": "/tools/merge-audio-files",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Audio Editor (Cut, Join, Speed, Silence)",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "Files are normalized to 48 kHz stereo before joining; this is not a bit-perfect concatenate operation."
+  },
+  "seo": {
+    "title": "Audio Joiner and Merger — Free Browser Tool",
+    "meta_description": "Join 2–20 audio files in order after normalizing sample rate and channel layout locally.",
+    "h1": "Audio Joiner and Merger",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0081"
+}

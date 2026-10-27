@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0128",
+  "known_answer_examples": [
+    "Drop 20 32\u00d732 icons, set 4 px padding and a .icon- prefix, then export sprite.png and sprite.css."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "assumptions": "Browser Unicode normalization, matching its installed Unicode version.",
+  "limitations": "Compatibility normalization can alter apparent glyphs and meaning.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.unicode.org/reports/tr15/",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

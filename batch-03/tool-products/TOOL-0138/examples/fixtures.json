@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0138",
+  "known_answer_examples": [
+    "Open an animated WebP with 24 frames and export a looping GIF at the original timing."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Linear Regression Calculator with Residual Plot — Browser Calculator</title>
+<meta name="description" content="Fit ordinary least-squares simple linear regression and inspect slope inference, fit quality, and residuals.">
+<meta property="og:title" content="Linear Regression Calculator with Residual Plot">
+<meta property="og:description" content="Fit ordinary least-squares simple linear regression and inspect slope inference, fit quality, and residuals.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0208 · Local browser tool</div>
+<h1>Linear Regression Calculator with Residual Plot</h1>
+<p class="lede">Fit ordinary least-squares simple linear regression and inspect slope inference, fit quality, and residuals. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>x,y pairs<textarea id="data">x,y
+1,2.1
+2,3.8
+3,6.2
+4,7.9
+5,10.2</textarea></label>
+<div class="row"><button id="run" type="button">Fit regression</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Fit ordinary least-squares simple linear regression and inspect slope inference, fit quality, and residuals.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>A straight-line mean relationship is scientifically meaningful for the supplied x range.</p></section>
+<section><h2>Limitations</h2><p>OLS inference assumes an appropriate linear mean model and independent errors; residual inspection is required. Correlation or slope does not establish causation.</p></section>
+<section><h2>FAQ</h2><details><summary>What does the residual plot show?</summary><p>Residuals should be inspected for curvature, changing spread, and influential structure that a single R² value can hide.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm" rel="noopener noreferrer">NIST/SEMATECH — Linear Least Squares Regression</a></li><li><a href="https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf" rel="noopener noreferrer">NIST Technical Note 2106 — unequal variance t-test / Welch-Satterthwaite</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

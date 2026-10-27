@@ -1,0 +1,21 @@
+{
+  "sample_input": "replicaCount: 2\nimage:\n  repository: nginx\n  tag: \"1.27\"\nfeature:\n  enabled: true",
+  "intended_action": "Generate Helm flags",
+  "manual_review_cases": [
+    {
+      "input": "a: true",
+      "expectation": "--set-json"
+    },
+    {
+      "input": "a: [a,b]",
+      "expectation": "array preservation"
+    }
+  ],
+  "limits": "Uses a YAML parser at integration time; --set-json requires compatible Helm. Shell fragments contain safely quoted literal values; secrets passed in CLI arguments can appear in process lists.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "--set-json",
+    "replicaCount"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

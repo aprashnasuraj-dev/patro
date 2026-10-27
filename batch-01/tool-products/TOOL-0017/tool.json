@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0017",
+  "title": "Terraform tfvars to JSON Converter",
+  "slug": "tfvars-to-json",
+  "route": "/tools/tfvars-to-json",
+  "engineering_family": "F0004",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "Terraform tfvars to JSON Converter — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Convert a deliberately bounded literal HCL tfvars subset into terraform.tfvars.json. Runs locally in your browser. Review limitations and examples.",
+    "h1": "Infrastructure variable editor: Terraform tfvars to JSON Converter",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "Literal native .tfvars assignments",
+    "max_utf8_bytes": 250000
+  },
+  "output": "terraform.tfvars.json",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {},
+  "limits": "HCL expressions, interpolation, function calls and complex block syntax are rejected. Comments supported; source credentials remain only in your browser."
+}

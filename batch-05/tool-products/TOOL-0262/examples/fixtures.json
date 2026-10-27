@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0262",
+  "examples": [
+    {
+      "inputs": {
+        "footprint_ft": [
+          40,
+          30
+        ],
+        "pitch": "6:12",
+        "waste_pct": 12,
+        "bundle_coverage_ft2": 33.333
+      },
+      "expected_note": "Roofing squares use 100 ft² per square; bundle coverage remains editable."
+    }
+  ]
+}

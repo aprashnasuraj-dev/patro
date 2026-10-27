@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0017",
+  "related": [
+    {
+      "id": "TOOL-0009",
+      "title": ".env to Kubernetes Secret YAML",
+      "proposed_canonical": "/converters/env-to-kubernetes-secret",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0010",
+      "title": "Docker Compose to docker run Converter",
+      "proposed_canonical": "/converters/docker-compose-to-docker-run",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0018",
+      "title": "Helm values.yaml to --set Flags",
+      "proposed_canonical": "/converters/helm-values-to-set-flags",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0036",
+      "title": "Ansible Inventory INI to YAML Converter",
+      "proposed_canonical": "/converters/ansible-inventory-ini-to-yaml",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0030",
+      "title": "Terraform Plan JSON Summarizer",
+      "proposed_canonical": "/analyzers/terraform-plan-json-viewer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

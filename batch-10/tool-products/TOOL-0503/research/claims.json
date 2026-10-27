@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Same-day buys, purchases in next 30 days, then Section 104 pool in this order.",
+    "sources": [
+      "https://www.gov.uk/government/publications/shares-and-capital-gains-tax-hs284-self-assessment-helpsheet/hs284-shares-and-capital-gains-tax-2026"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Source template for one security, no corporate actions or foreign currency FX."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

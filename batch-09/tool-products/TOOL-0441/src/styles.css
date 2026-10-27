@@ -1,0 +1,5 @@
+@import url('../_vendor/ui.css');
+:root{--accent:#4262ab;}
+.visual-workbench{padding-top:18px;border-top:1px solid var(--line);margin-top:18px}.visual-preview{display:block;max-width:100%;max-height:460px;margin:12px auto;border:1px dashed var(--line);object-fit:contain;background:#eff5f9}.visual-workbench h3{margin:0;font-size:1rem}
+
+.media-stage{position:relative;max-width:360px;max-height:570px;width:min(100%,360px);background:linear-gradient(155deg,#131b38,#364675);border-radius:14px;overflow:hidden;margin:12px auto;aspect-ratio:1080/1920}.media-stage .visual-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;background:transparent;border:0;margin:0;max-height:unset;pointer-events:none}.media-stage .local-media{width:100%;height:100%;object-fit:cover;display:block}.media-stage video{pointer-events:auto}.visual-workbench input[type=file]{max-width:100%;margin-top:8px}.media-stage:has(video) .visual-preview{pointer-events:none}

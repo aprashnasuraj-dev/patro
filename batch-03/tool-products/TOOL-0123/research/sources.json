@@ -1,0 +1,39 @@
+{
+  "tool_id": "TOOL-0123",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://aomediacodec.github.io/av1-avif/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Reference used for implementation behavior/rules only.",
+      "uncertainty": "Jurisdiction/library behavior may change; integration must re-check before publication."
+    },
+    {
+      "url": "https://developers.google.com/speed/webp/docs/riff_container",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Reference used for implementation behavior/rules only.",
+      "uncertainty": "Jurisdiction/library behavior may change; integration must re-check before publication."
+    }
+  ],
+  "assumptions": [
+    "Native Canvas encoders are preferred; a bundled AVIF codec can be lazy-loaded if native AVIF encoding is unavailable."
+  ],
+  "limitations": [
+    "Quality numbers are codec-specific and not visually equivalent; users must judge the preview."
+  ]
+}

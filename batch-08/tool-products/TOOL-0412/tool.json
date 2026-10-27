@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0412",
+  "name": "Form 2210 Annualized Income Installment Calculator",
+  "reserved_route": "/tools/form-2210-annualized-income-calculator",
+  "engineering_family_id": "F0230",
+  "engineering_family": "US Estimated Tax and Installment Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Form 2210 Annualized Income Installment Calculator | AafnaiPatro Tools",
+    "description": "Model 2026 Form 2210 annualized-income periods with cumulative income, 2026 tax schedules and a regular-installment comparison.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

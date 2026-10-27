@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0136",
+  "related": [
+    {
+      "id": "TOOL-0137",
+      "title": "GIF Speed Changer and Reverser",
+      "proposed_canonical": "/editors/gif-speed-changer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0167",
+      "title": "Video Frame Extractor",
+      "proposed_canonical": "/extractors/extract-frames-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0138",
+      "title": "APNG and Animated WebP Converter",
+      "proposed_canonical": "/converters/apng-to-gif",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0131",
+      "title": "Image Color Palette Extractor with Contrast Pairs",
+      "proposed_canonical": "/extractors/image-color-palette-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0113",
+      "title": "Icon Font Glyph Map Extractor",
+      "proposed_canonical": "/extractors/icon-font-glyph-map",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "TOOL-0232",
+  "name": "Hourly to Salary Converter with Unpaid Time Off",
+  "route": "/tools/hourly-to-salary-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0110",
+  "engineering_family": "Hourly and Salary Conversion",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000.0,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Hourly to Salary Converter with Unpaid Time Off \u2014 Local Browser Tool",
+    "meta_description": "Convert an hourly wage into annual, monthly and pay-period gross pay while explicitly subtracting unpaid time off and optionally including overtime.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

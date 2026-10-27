@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0306",
+  "related": [
+    {
+      "id": "TOOL-0307",
+      "title": "ICS Calendar File Viewer and Converter to CSV",
+      "proposed_canonical": "/converters/ics-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0308",
+      "title": "RRULE Generator with Occurrence Preview",
+      "proposed_canonical": "/generators/rrule-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0318",
+      "title": "Shift Rotation Calendar Generator (Panama, 4-on-4-off)",
+      "proposed_canonical": "/generators/shift-schedule-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0309",
+      "title": "ISO 8601 Duration Builder and Parser",
+      "proposed_canonical": "/generators/iso-8601-duration-converter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

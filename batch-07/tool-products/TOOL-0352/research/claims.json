@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0352",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "Real-time export is CPU-heavy and browser-dependent. Codec/container support varies; audio preservation depends on captureStream support. It is not a frame-accurate non-linear editor."
+}

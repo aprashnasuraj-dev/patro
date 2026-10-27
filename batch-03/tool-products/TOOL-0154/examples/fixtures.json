@@ -1,0 +1,16 @@
+{
+  "known_answer": {
+    "description": "Positioned text in two y-clusters and three x-clusters yields two rows by three inferred columns."
+  },
+  "boundaries": [
+    "empty input",
+    "oversized file",
+    "maximum supported page/count/pixel boundary"
+  ],
+  "security": [
+    "malformed container",
+    "unsafe filename where relevant",
+    "script/event-handler content where relevant",
+    "resource exhaustion attempt"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Estimate total bytes and reverse-engineer bitrate",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Codec-specific VBR quality and audio channel configuration are not inferred; file-size estimate does not guarantee exact muxed output.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://support.google.com/youtube/answer/1722171"
+  ],
+  "assumptions": "Codec-specific VBR quality and audio channel configuration are not inferred; file-size estimate does not guarantee exact muxed output.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

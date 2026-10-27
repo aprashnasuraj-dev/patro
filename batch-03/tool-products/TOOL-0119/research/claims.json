@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0119",
+  "claims": [
+    {
+      "claim": "Inspect a PDF locally with PDF.js and list fonts encountered in page text, including family/name signals and whether embedded binary data is positively exposed by the parser.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "pdfjs",
+        "pdfjs-pageproxy"
+      ]
+    },
+    {
+      "claim": "Unused resource fonts, some XFA/content paths, scanned-image PDFs and parser-internal font details may be absent. “Unknown” embedded status must not be treated as “not embedded”.",
+      "status": "limitation",
+      "source_ids": [
+        "pdfjs",
+        "pdfjs-pageproxy"
+      ]
+    }
+  ]
+}

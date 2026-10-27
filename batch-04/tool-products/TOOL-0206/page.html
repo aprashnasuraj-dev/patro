@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Welch t-Test Calculator from Pasted Data — Browser Calculator</title>
+<meta name="description" content="Run Welch's unequal-variance two-sample t-test from pasted observations with Welch-Satterthwaite degrees of freedom and a mean-difference confidence interval.">
+<meta property="og:title" content="Welch t-Test Calculator from Pasted Data">
+<meta property="og:description" content="Run Welch's unequal-variance two-sample t-test from pasted observations with Welch-Satterthwaite degrees of freedom and a mean-difference confidence interval.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0206 · Local browser tool</div>
+<h1>Welch t-Test Calculator from Pasted Data</h1>
+<p class="lede">Run Welch's unequal-variance two-sample t-test from pasted observations with Welch-Satterthwaite degrees of freedom and a mean-difference confidence interval. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><div class="row"><label>Group A values<textarea id="a">12 13 11 16 14 15</textarea></label><label>Group B values<textarea id="b">9 10 11 8 12 10</textarea></label></div><label>Confidence<input id="confidence" type="number" value=".95" step=".001"></label>
+<div class="row"><button id="run" type="button">Run Welch test</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Run Welch's unequal-variance two-sample t-test from pasted observations with Welch-Satterthwaite degrees of freedom and a mean-difference confidence interval.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Two independent samples; observations within each sample are independent.</p></section>
+<section><h2>Limitations</h2><p>Welch's test targets a difference in means under independent sampling. Severe non-normality or dependence can invalidate small-sample inference.</p></section>
+<section><h2>FAQ</h2><details><summary>Why Welch instead of pooled t-test?</summary><p>Welch does not require equal population variances and adjusts the degrees of freedom accordingly.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf" rel="noopener noreferrer">NIST Technical Note 2106 — unequal variance t-test / Welch-Satterthwaite</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

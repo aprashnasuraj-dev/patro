@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {risToBib} from '../src/core';describe('TOOL-0363 core',()=>{it('known-answer fixture',()=>{expect(risToBib('TY  - JOUR\nTI  - T\nER  - ')).toContain('@article')})});

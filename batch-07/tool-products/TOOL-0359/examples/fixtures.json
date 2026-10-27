@@ -1,0 +1,24 @@
+{
+  "tool_id": "TOOL-0359",
+  "examples": [
+    {
+      "preset": "us",
+      "trim_mm": [
+        88.9,
+        50.8
+      ],
+      "bleed_mm": 3,
+      "page_mm": [
+        94.9,
+        56.8
+      ]
+    },
+    {
+      "preset": "eu",
+      "trim_mm": [
+        85,
+        55
+      ]
+    }
+  ]
+}

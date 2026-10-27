@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('WOFF2 encode deferred fixtures',()=>{it.todo('encodes TrueType sfnt to WOFF2 and preserves table identity after decode');it.todo('encodes an OTTO/CFF fixture or returns explicit encoder unsupported error');it.todo('rejects malformed/oversized input')});

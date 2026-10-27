@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0285",
+  "sample_input": {
+    "target": "100",
+    "bar": "20",
+    "collars": "0",
+    "inventory": "25:2\n20:2\n15:1\n10:2\n5:2\n2.5:2\n1.25:2"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

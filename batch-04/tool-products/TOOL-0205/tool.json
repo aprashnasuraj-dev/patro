@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0205",
+  "name": "Chi-Square Test of Independence Calculator",
+  "route": "/tools/chi-square-test-calculator",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0094",
+  "engineering_family": "Hypothesis Testing Lab",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Chi-Square Test of Independence Calculator — Browser Calculator",
+    "meta_description": "Analyze an RxC contingency table with Pearson chi-square, degrees of freedom, expected counts, standardized residuals, and Cramér's V.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

@@ -1,0 +1,23 @@
+{
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": 0,
+  "not_run": [
+    "build",
+    "typecheck",
+    "unit",
+    "browser",
+    "accessibility",
+    "performance",
+    "security",
+    "responsive",
+    "lint"
+  ],
+  "source_preparation": "prepared",
+  "publication_gate": "LOCKED",
+  "open_concerns": [
+    "Not an orthodontic treatment recommendation. The generic interval is explicitly user-supplied and clinical suitability is not established.",
+    "Validate integration imports and runtime client-side rendering in later Git phase"
+  ],
+  "git_imported": false,
+  "published": false
+}

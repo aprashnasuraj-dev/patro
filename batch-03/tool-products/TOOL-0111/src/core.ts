@@ -1,0 +1,3 @@
+const MAX=30_000_000;let active:FontFace|null=null;let activeFamily='';
+export async function loadLocalFont(buf:ArrayBuffer,name:string){if(buf.byteLength<12||buf.byteLength>MAX)throw new Error('Font must be between 12 bytes and 30 MB.');if(typeof FontFace==='undefined'||!document.fonts)throw new Error('CSS Font Loading API is unavailable in this browser.');if(active){try{document.fonts.delete(active)}catch{} active=null}activeFamily=`MM-Local-${Math.random().toString(36).slice(2)}`;const face=new FontFace(activeFamily,buf);await face.load();document.fonts.add(face);active=face;return{family:activeFamily,status:face.status,fileName:name,bytes:buf.byteLength}}
+export function cleanup(){if(active){try{document.fonts.delete(active)}catch{}active=null}activeFamily=''}

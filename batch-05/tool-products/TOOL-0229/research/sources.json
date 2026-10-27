@@ -1,0 +1,34 @@
+{
+  "tool_id": "TOOL-0229",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "CFPB-APR",
+      "title": "What is the difference between a loan interest rate and the APR?",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "version": "current",
+      "effective_date": null,
+      "license_or_terms": "Official U.S. government consumer guidance.",
+      "uncertainty": "Which charges are finance charges is transaction-specific.",
+      "limitations": "Tool uses user-entered fees and does not classify legal finance charges."
+    },
+    {
+      "id": "CFPB-REGZ-J",
+      "title": "Appendix J to Part 1026 \u2014 Annual Percentage Rate Computations for Closed-End Credit Transactions",
+      "url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/j/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "version": "current accessed 2026-10-26",
+      "effective_date": "2026",
+      "license_or_terms": "Official regulation text.",
+      "uncertainty": "Irregular periods, dates and fee classification require full Regulation Z treatment.",
+      "limitations": "Implementation only covers equal monthly periods and therefore labels output a cash-flow APR estimate."
+    }
+  ],
+  "assumptions": [
+    "Single advance, equal monthly periods, equal payments, fees exactly as entered; no legal fee classification."
+  ],
+  "uncertainty": [
+    "Not a legal APR disclosure engine; irregular dates, multiple advances and regulatory fee classification are unsupported."
+  ]
+}

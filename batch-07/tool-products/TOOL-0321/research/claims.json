@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0321",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Hashing speed depends on browser/device and file-system streaming. A matching hash proves byte equality only to the security strength of the selected algorithm; it does not authenticate who supplied the expected hash."
+}

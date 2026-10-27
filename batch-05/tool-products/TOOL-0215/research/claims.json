@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0215",
+  "claims": [
+    {
+      "claim": "Explain diagnostic-test Bayes calculations with prevalence, sensitivity, specificity, predictive values, and natural frequencies.",
+      "support": [
+        "https://www.ncbi.nlm.nih.gov/books/NBK383/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Prevalence is the pre-test probability and sensitivity/specificity are conditional test characteristics.",
+      "support": [
+        "https://www.ncbi.nlm.nih.gov/books/NBK383/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Predictive values are prevalence-dependent. Sensitivity/specificity supplied from one population may not transport to another population.",
+      "support": [
+        "https://www.ncbi.nlm.nih.gov/books/NBK383/"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

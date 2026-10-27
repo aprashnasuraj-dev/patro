@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {chiSquareIndependence} from "../src/core";
+describe("chi-square",()=>{it("is zero for exactly independent table",()=>{const r=chiSquareIndependence([[10,10],[20,20]]);expect(r.chiSquare).toBeCloseTo(0);expect(r.pValue).toBeCloseTo(1);});});

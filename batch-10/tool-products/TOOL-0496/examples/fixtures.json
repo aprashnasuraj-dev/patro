@@ -1,0 +1,12 @@
+{
+  "title": "Inherited IRA 10-Year RMD Planner",
+  "default_inputs": {
+    "deathYear": "2022",
+    "currentYear": "2026",
+    "balance": "100000",
+    "afterRBD": "yes",
+    "factor": "25.4"
+  },
+  "worked_example": "An owner who died in 2022 ordinarily has a 10-year distribution deadline of Dec 31, 2032.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

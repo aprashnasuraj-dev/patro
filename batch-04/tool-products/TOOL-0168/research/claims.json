@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Change video speed from 0.25\u00d7 to 4\u00d7 while using audio tempo filtering to preserve pitch.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg setpts and atempo filters"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Pitch preservation uses FFmpeg atempo; extreme speed changes may still produce artifacts.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

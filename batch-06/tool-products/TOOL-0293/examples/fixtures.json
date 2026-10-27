@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0293",
+  "sample_input": {
+    "start": "20",
+    "weeks": "12",
+    "increase": "5",
+    "cutback": "4",
+    "drop": "15"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

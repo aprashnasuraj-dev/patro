@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0359",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "Not PDF/X and not color-managed for commercial press. It does not embed logos/images or custom fonts in this source package. Printer bleed/crop-mark requirements vary. The current checkpoint deliberately rejects non-ASCII card text because its standard PDF font is WinAnsi-limited; a licensed Unicode font should be embedded during integration for multilingual output."
+}

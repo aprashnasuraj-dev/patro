@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0205",
+  "claims": [
+    {
+      "claim": "Analyze an RxC contingency table with Pearson chi-square, degrees of freedom, expected counts, standardized residuals, and Cramér's V.",
+      "support": [
+        "https://itl.nist.gov/div898/software/dataplot/refman1/auxillar/chistest.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Counts are mutually exclusive classifications of independent observations.",
+      "support": [
+        "https://itl.nist.gov/div898/software/dataplot/refman1/auxillar/chistest.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Pearson chi-square relies on adequate expected counts and independent observations. Sparse tables may require exact or Monte Carlo methods.",
+      "support": [
+        "https://itl.nist.gov/div898/software/dataplot/refman1/auxillar/chistest.htm"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

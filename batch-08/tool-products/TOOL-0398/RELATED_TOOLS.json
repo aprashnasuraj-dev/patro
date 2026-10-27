@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0398",
+  "related": [
+    {
+      "id": "TOOL-0400",
+      "title": "Bicycle Gear Inches, Gain Ratio and Speed at Cadence Calculator",
+      "proposed_canonical": "/calculators/bike-gear-ratio-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0386",
+      "title": "Microcontroller Timer and PWM Register Calculator",
+      "proposed_canonical": "/calculators/arduino-timer-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0291",
+      "title": "HIIT and Tabata Interval Timer",
+      "proposed_canonical": "/timers/tabata-interval-timer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0312",
+      "title": "Countdown Timer Generator with Shareable Link",
+      "proposed_canonical": "/timers/countdown-timer-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0395",
+      "title": "Baker's Percentage Calculator",
+      "proposed_canonical": "/calculators/bakers-percentage-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0210",
+  "name": "Outlier Detector (IQR, Z-Score, MAD)",
+  "route": "/tools/outlier-detection-calculator",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0096",
+  "engineering_family": "Outliers and Statistical Distributions",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Outlier Detector (IQR, Z-Score, MAD) — Browser Calculator",
+    "meta_description": "Flag potential outliers side by side using Tukey IQR fences, conventional Z-scores, and robust modified Z-scores based on MAD.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

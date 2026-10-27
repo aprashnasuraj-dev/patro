@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {analyzeAB} from "../src/core";
+describe("A/B significance",()=>{it("returns no difference for equal rates",()=>{const r=analyzeAB({controlN:1000,controlConv:100,treatN:1000,treatConv:100,expectedTreatShare:.5,alpha:.05});expect(r.z).toBeCloseTo(0);expect(r.pValue).toBeCloseTo(1);});it("flags severe SRM",()=>{const r=analyzeAB({controlN:900,controlConv:90,treatN:100,treatConv:10,expectedTreatShare:.5,alpha:.05});expect(r.srm.pValue).toBeLessThan(.01);});});

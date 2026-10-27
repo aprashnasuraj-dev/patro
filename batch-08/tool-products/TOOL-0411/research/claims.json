@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0411",
+  "claims": [
+    {
+      "claim": "The tool computes rainfall inflow demand but deliberately does not reproduce proprietary gutter-capacity tables.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Users enter the verified capacity of the selected downspout/profile and current local rainfall intensity.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Estimate a bitrate budget from duration and compress video toward a practical upload-size target.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg bitrate-controlled H.264/AAC encoding"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Target size is estimated rather than guaranteed; very low bit budgets are rejected instead of producing unusable output.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

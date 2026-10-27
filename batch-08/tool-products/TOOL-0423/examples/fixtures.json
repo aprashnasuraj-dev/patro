@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "jurisdiction": "User-verified rule",
+    "current": 1500,
+    "proposed": 1600,
+    "capPct": 5,
+    "minDays": 60,
+    "served": "2026-11-01",
+    "starts": "2027-01-01"
+  },
+  "known_answer": {
+    "output_label": "Rule-entered maximum rent",
+    "expected_value": "$1,575.00"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

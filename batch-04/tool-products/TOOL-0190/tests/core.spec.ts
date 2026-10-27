@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {cleanCsv} from '../src/core';describe('cleanCsv',()=>{it('trims and drops blank rows',()=>{const r=cleanCsv('id,name\n 001 , Ada \n,\n002,Ben');expect(r.removedRows).toBe(1);expect(r.trimmedFields).toBeGreaterThan(0);expect(r.csv).toContain('001,Ada')});});

@@ -1,0 +1,9 @@
+{
+  "tool": "TOOL-0524",
+  "default_inputs": {
+    "application": "2026-12-15",
+    "openings": "date,counted,note\n2025-01-10,yes,Card A\n2025-06-10,yes,Card B\n2026-02-01,yes,Card C\n2026-05-15,yes,Card D\n2026-09-02,yes,Card E"
+  },
+  "worked_example": "Five counted personal card openings within 24 months may trigger an additional underwriting hurdle.",
+  "source_status": "TEST_PENDING"
+}

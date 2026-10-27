@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "pdf-lib": "1.17.1"
+  },
+  "notes": "Bundler must include package in same-origin route chunk; no CDN runtime import."
+}

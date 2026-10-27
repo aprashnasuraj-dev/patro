@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0005",
+  "claims": [
+    {
+      "claim": "Infer protobuf messages from a JSON sample",
+      "references": [
+        "https://protobuf.dev/reference/protobuf/proto3-spec/",
+        "https://protobuf.dev/programming-guides/editions/"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "Sample inference cannot establish absent fields, int64 precision, enums, map intent or safe future field numbers; do not reorder tags after deployment.",
+      "references": [
+        "https://protobuf.dev/reference/protobuf/proto3-spec/",
+        "https://protobuf.dev/programming-guides/editions/"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

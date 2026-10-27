@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0319",
+  "examples": [
+    {
+      "inputs": {
+        "date": "2026-10-26",
+        "lat": 27.7172,
+        "lon": 85.324,
+        "tz": "Asia/Kathmandu",
+        "low": -4,
+        "high": 6
+      },
+      "expected_note": "Four crossings are normally expected outside polar regions."
+    }
+  ]
+}

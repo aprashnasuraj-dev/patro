@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0407",
+  "related": [
+    {
+      "id": "TOOL-0240",
+      "title": "Employer Retirement Match Calculator (Custom Formula)",
+      "proposed_canonical": "/calculators/employer-match-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0270",
+      "title": "Wire Gauge and Voltage Drop Calculator",
+      "proposed_canonical": "/calculators/voltage-drop-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0484",
+      "title": "Tablecloth Size & Drop Calculator",
+      "proposed_canonical": "/calculators/tablecloth-size-drop-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0025",
+      "title": "Nginx Location Block Match Tester",
+      "proposed_canonical": "/validators/nginx-location-match-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0037",
+      "title": "CODEOWNERS Pattern Tester",
+      "proposed_canonical": "/validators/codeowners-tester",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

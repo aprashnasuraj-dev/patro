@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0309",
+  "examples": [
+    {
+      "input": "P1Y2M3DT4H5M6.5S",
+      "expected": {
+        "years": 1,
+        "months": 2,
+        "days": 3,
+        "hours": 4,
+        "minutes": 5,
+        "seconds": 6.5
+      }
+    },
+    {
+      "input": "P2W",
+      "expected_exact_seconds": 1209600
+    }
+  ]
+}

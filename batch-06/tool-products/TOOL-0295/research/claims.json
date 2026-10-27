@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0295",
+  "claim": "Minetti cost C(g)=155.4g\u2075\u221230.4g\u2074\u221243.3g\u00b3+46.3g\u00b2+19.5g+3.6, g=grade/100; flat-equivalent seconds/km=observed\u00b7C(0)/C(g).",
+  "assumptions": [
+    "Steep downhill, surface, terrain, cadence and course changes can invalidate energetic equivalence. Formula is a model, not an individual calibration.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/12183501/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

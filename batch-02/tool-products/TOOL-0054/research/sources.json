@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0054",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+      "owner": "MDN / Mozilla",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Probe localStorage writes only in the current origin, then remove every temporary key."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate",
+      "owner": "MDN / Mozilla",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Probe localStorage writes only in the current origin, then remove every temporary key."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Not a true maximum quota measurement: origin storage, security settings and other tabs vary."
+}

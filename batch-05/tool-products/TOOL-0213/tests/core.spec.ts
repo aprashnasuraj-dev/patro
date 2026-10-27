@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {zToPercentile} from "../src/core";
+describe("z percentile",()=>{it("z=0 is median",()=>{const r=zToPercentile(0);expect(r.leftProbability).toBeCloseTo(.5);});});

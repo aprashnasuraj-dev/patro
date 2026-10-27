@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0150",
+  "known_answer_examples": [
+    "Normalize mixed-size scans onto A4 portrait pages with 10 mm margins using contain mode."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

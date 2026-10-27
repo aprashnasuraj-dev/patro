@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0139",
+  "known_answer_examples": [
+    "Set a 3000\u00d72400 JPEG from 72 DPI to 300 DPI; pixel dimensions stay 3000\u00d72400 while nominal print size becomes 10\u00d78 inches."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

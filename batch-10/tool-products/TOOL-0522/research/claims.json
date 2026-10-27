@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "EU/UK compensation uses distance bands with long-flight sub-4-hour reduction; Canadian uses arrival delay and carrier size.",
+    "supporting_urls": [
+      "https://europa.eu/youreurope/citizens/travel/passenger-rights/air/",
+      "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/flight-delays-and-cancellations/delays/",
+      "https://protection-passager-passenger.otc-cta.gc.ca/en/refunds-and-compensation/flight-delays-cancellations-rebooking-refunds-compensation"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Connections, rerouting, claims windows and the airline fault category may materially change compensation."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "Canada large airline, controllable 6-hour final arrival delay: CAD 700 compensation band.",
+    "status": "TEST_PENDING"
+  }
+]

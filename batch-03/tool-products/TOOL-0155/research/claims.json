@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Normal processing is browser-local and does not require a server round trip.",
+      "basis": "Implementation design; vendor bundles are loaded from same-origin static assets."
+    },
+    {
+      "claim": "Apply irreversible local redactions by rasterizing redacted pages into a newly created PDF.",
+      "basis": "Tool-specific core implementation and cited upstream APIs."
+    }
+  ],
+  "uncertainty": "Rasterization is destructive by design; annotations/forms on redacted pages are not preserved."
+}

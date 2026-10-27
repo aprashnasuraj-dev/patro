@@ -1,0 +1,16 @@
+{
+  "known_answer": {
+    "description": "A marked page is recreated from pixels and no original content stream is copied for that page."
+  },
+  "boundaries": [
+    "empty input",
+    "oversized file",
+    "maximum supported page/count/pixel boundary"
+  ],
+  "security": [
+    "malformed container",
+    "unsafe filename where relevant",
+    "script/event-handler content where relevant",
+    "resource exhaustion attempt"
+  ]
+}

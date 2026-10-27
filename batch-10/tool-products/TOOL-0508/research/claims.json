@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Assumes full net list of non-exempt potentially exempt gifts and hypothetical date of death.",
+    "sources": [
+      "https://www.gov.uk/inheritance-tax/gifts",
+      "https://www.gov.uk/guidance/work-out-inheritance-tax-due-on-gifts"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Does not model 14-year trap, chargeable transfers or estate-level residence NRB."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "id": "TOOL-0492",
+  "status": "TEST_PENDING",
+  "product_test_results": null,
+  "suite_execution_count": 0,
+  "manual_review": "REQUIRED",
+  "acceptance_gates": [
+    "correct figures and rule year",
+    "malformed, overflow, parser-abuse handling",
+    "keyboard/a11y/responsive checks",
+    "copy/export CSV formula-injection guard",
+    "zero third-party data flow",
+    "source policy recency",
+    "uniqueness and SEO"
+  ]
+}

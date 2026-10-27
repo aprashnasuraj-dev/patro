@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0514",
+  "related": [
+    {
+      "id": "TOOL-0507",
+      "title": "UK Pension Annual Allowance Carry-Forward Calculator",
+      "proposed_canonical": "/calculators/uk-pension-allowance-carry-forward-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0515",
+      "title": "Australian Long Service Leave Calculator",
+      "proposed_canonical": "/calculators/australia-long-service-leave-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0516",
+      "title": "Australian Home Battery Payback Calculator",
+      "proposed_canonical": "/calculators/australia-home-battery-payback-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0523",
+      "title": "Airline Carry-On and Personal Item Checker",
+      "proposed_canonical": "/validators/airline-carry-on-size-weight-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0040",
+      "title": "Semver Range Calculator",
+      "proposed_canonical": "/calculators/semver-range-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

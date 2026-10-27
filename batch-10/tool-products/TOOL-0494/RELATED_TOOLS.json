@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0494",
+  "related": [
+    {
+      "id": "TOOL-0348",
+      "title": "Podcast RSS Feed Validator (Paste XML)",
+      "proposed_canonical": "/validators/podcast-rss-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0489",
+      "title": "Irrigation Run-Time Calculator",
+      "proposed_canonical": "/calculators/sprinkler-irrigation-runtime-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0490",
+      "title": "Firewood Volume & Cost-per-BTU Calculator",
+      "proposed_canonical": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0492",
+      "title": "Power Station & Generator Runtime Calculator",
+      "proposed_canonical": "/calculators/portable-power-station-runtime-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0493",
+      "title": "Horse & Livestock Hay Needs Calculator",
+      "proposed_canonical": "/calculators/livestock-hay-feed-needs-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

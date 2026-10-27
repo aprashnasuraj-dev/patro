@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest'; import {parseSrt,shift,toVtt} from '../src/core'; describe('subtitles',()=>{it('shifts and converts',()=>{const c=shift(parseSrt('1\n00:00:01,000 --> 00:00:02,000\nHi'),500);expect(toVtt(c)).toContain('00:00:01.500');});});

@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0114",
+  "claims": [
+    {
+      "claim": "Check which of several local font files cover each requested Unicode character and report complete, partial, or missing coverage without transmitting the fonts.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "opentype-1.9.1"
+      ]
+    },
+    {
+      "claim": "A cmap entry does not guarantee visually correct shaping, mark positioning, emoji presentation, or language-quality support.",
+      "status": "limitation",
+      "source_ids": [
+        "opentype-1.9.1"
+      ]
+    }
+  ]
+}

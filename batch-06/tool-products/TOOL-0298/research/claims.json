@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0298",
+  "claim": "Naismith: distance/5km/h+ascent/600m/h. Tobler speed=6 exp(\u22123.5\u00b7abs(slope+0.05)), slope\u2248(ascent\u2212descent)/(distance\u00d71000).",
+  "assumptions": [
+    "Tobler requires local slopes along the route; using net slope is a rough proxy and can badly underestimate rolling terrain, breaks and hazards.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.geog.ucsb.edu/~waldo/tobler/",
+    "https://www.mountaineering.scot/safety-and-skills/essential-skills/navigation/route-planning"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

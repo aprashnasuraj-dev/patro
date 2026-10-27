@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0137",
+  "known_answer_examples": [
+    "Set speed to 1.5\u00d7 and reverse a reaction GIF while preserving its loop setting."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

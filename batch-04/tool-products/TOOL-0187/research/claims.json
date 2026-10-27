@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Summarize CSV data with group-by aggregates and an optional bounded pivot column, all computed locally in the browser.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Numeric aggregates require finite numeric measure values; pivot cardinality is capped at 100 values.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

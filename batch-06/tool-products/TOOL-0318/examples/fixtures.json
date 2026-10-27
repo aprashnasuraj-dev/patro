@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0318",
+  "examples": [
+    {
+      "inputs": {
+        "preset": "4x4",
+        "start": "2026-11-01",
+        "days": 8,
+        "phase": 0
+      },
+      "expected_states": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "X",
+        "X",
+        "X",
+        "X"
+      ]
+    },
+    {
+      "inputs": {
+        "preset": "panama",
+        "days": 14
+      },
+      "expected_pattern": "O,O,X,X,O,O,O,X,X,O,O,X,X,X"
+    }
+  ]
+}

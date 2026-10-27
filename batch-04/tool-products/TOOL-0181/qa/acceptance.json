@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0181",
+  "status": "TEST_PENDING",
+  "executed": false,
+  "checks": {
+    "build": false,
+    "typecheck": false,
+    "unit": false,
+    "browser": false,
+    "accessibility": false,
+    "responsive": false,
+    "performance": false,
+    "security": false
+  },
+  "storage_checks_are_not_product_qa": true,
+  "notes": [
+    "Prepared test scenarios only; none executed in this checkpoint.",
+    "Splitting by high-cardinality columns is capped at 250 parts; files are generated in memory and not streamed to disk."
+  ]
+}

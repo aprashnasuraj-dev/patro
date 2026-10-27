@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0342",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "Platform upload limits, cropping and carousel behavior can change. Very large decoded images are rejected to protect browser memory."
+}

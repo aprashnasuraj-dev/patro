@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Exponential Smoothing and Moving Average Calculator — Browser Calculator</title>
+<meta name="description" content="Smooth and forecast a univariate series with simple exponential smoothing and compare it with a trailing moving average.">
+<meta property="og:title" content="Exponential Smoothing and Moving Average Calculator">
+<meta property="og:description" content="Smooth and forecast a univariate series with simple exponential smoothing and compare it with a trailing moving average.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0211 · Local browser tool</div>
+<h1>Exponential Smoothing and Moving Average Calculator</h1>
+<p class="lede">Smooth and forecast a univariate series with simple exponential smoothing and compare it with a trailing moving average. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>Time series values<textarea id="data">12 14 13 16 18 17 19 21 20 23</textarea></label><div class="row"><label>SES alpha<input id="alpha" type="number" min=".01" max="1" step=".01" value=".2"></label><label>Moving-average window<input id="window" type="number" min="1" value="3"></label></div>
+<div class="row"><button id="run" type="button">Smooth series</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Smooth and forecast a univariate series with simple exponential smoothing and compare it with a trailing moving average.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Observations are ordered in time and equally spaced for moving-average interpretation.</p></section>
+<section><h2>Limitations</h2><p>Simple exponential smoothing is appropriate for level-only series without explicit trend or seasonality. This tool does not fit Holt/Holt-Winters models.</p></section>
+<section><h2>FAQ</h2><details><summary>Does SES model trend?</summary><p>No. This implementation is level-only simple exponential smoothing.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc431.htm" rel="noopener noreferrer">NIST/SEMATECH — Single Exponential Smoothing</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

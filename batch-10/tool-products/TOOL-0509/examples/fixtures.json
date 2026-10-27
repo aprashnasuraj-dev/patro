@@ -1,0 +1,15 @@
+{
+  "title": "UK Shared Parental Leave and Pay Planner",
+  "default_inputs": {
+    "matWeeks": "14",
+    "matPay": "14",
+    "parentA": "20",
+    "parentB": "15",
+    "paidA": "15",
+    "paidB": "12",
+    "wageA": "450",
+    "wageB": "350"
+  },
+  "worked_example": "With 14 maternity leave weeks used, maximum remainder is 38 shared leave weeks.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0278",
+  "examples": [
+    {
+      "inputs": {
+        "area_ft2": 1000,
+        "existing_R": 19,
+        "target_R": 49,
+        "product_R_per_in": 3.5,
+        "reference_thickness_in": 5.5,
+        "coverage_ft2": 40
+      },
+      "expected_note": "Target R-value and product R/in are explicit inputs; DOE values are not silently selected."
+    }
+  ]
+}

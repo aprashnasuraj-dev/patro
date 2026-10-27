@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0325",
+  "examples": [
+    {
+      "inputs": {
+        "memoryMiB": 64,
+        "passes": 3,
+        "parallelism": 1,
+        "cost": 12,
+        "runs": 3
+      },
+      "expected_note": "Latency is device-dependent; no fixed milliseconds are asserted."
+    }
+  ]
+}

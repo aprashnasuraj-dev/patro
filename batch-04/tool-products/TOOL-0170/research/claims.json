@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Convert WebM video to an H.264/AAC MP4 with user-controlled quality.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg transcoding"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "H.264/AAC output depends on the production FFmpeg/WASM build including the required encoders and compliant licensing.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

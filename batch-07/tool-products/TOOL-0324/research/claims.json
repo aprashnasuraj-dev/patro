@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0324",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "The exact EFF list is not reproduced in this checkpoint. Integration must vendor the upstream list with attribution and lock its bytes before this tool can be marked source-complete."
+}

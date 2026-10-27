@@ -1,0 +1,36 @@
+{
+  "tool_id": "TOOL-0486",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Spanish consulate telework visa",
+      "url": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Telework-Visa.aspx",
+      "version_or_effective_date": "2026 EUR income amounts",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-2",
+      "title": "Estonia MFA long-stay D visa financial means",
+      "url": "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-long-stay-d-visa",
+      "version_or_effective_date": "2026 displayed digital nomad means",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-3",
+      "title": "Portugal AIMA remote work permit",
+      "url": "https://aima.gov.pt/pt/trabalhar/autorizacao-de-residencia-para-o-exercicio-de-atividade-profissional-prestada-de-forma-remota-com-visto-de-residencia-para-o-exe",
+      "version_or_effective_date": "current official guidance",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

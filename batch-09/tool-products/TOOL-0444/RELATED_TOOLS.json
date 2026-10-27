@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0444",
+  "related": [
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "proposed_canonical": "/generators/print-bleed-and-safe-zone-templates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0121",
+      "title": "Bulk EXIF Viewer and Stripper",
+      "proposed_canonical": "/analyzers/remove-exif-data",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0139",
+      "title": "Image DPI Changer (72 to 300 DPI)",
+      "proposed_canonical": "/editors/change-image-dpi",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0117",
+      "title": "Text Width in Pixels Calculator",
+      "proposed_canonical": "/calculators/text-width-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0281",
+      "title": "One-Rep Max Calculator (Multi-Formula)",
+      "proposed_canonical": "/calculators/one-rep-max-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

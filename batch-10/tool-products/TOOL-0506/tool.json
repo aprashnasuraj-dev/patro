@@ -1,0 +1,66 @@
+{
+  "id": "TOOL-0506",
+  "name": "Buy-to-Let Interest Coverage Stress Test",
+  "route": "/tools/buy-to-let-icr-stress-test-calculator",
+  "slug": "buy-to-let-icr-stress-test-calculator",
+  "family": "F0299",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "stress",
+  "title": "Buy-to-Let Interest Coverage Stress Test | AafnaiPatro Tools",
+  "meta_description": "Stress a UK buy-to-let mortgage against lender-defined ICR and assumed interest rate to compute a maximum supportable loan.",
+  "inputs": [
+    {
+      "key": "rent",
+      "label": "Monthly contractual rent",
+      "default": 1500,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "loan",
+      "label": "Proposed mortgage balance",
+      "default": 200000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 1,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "stress",
+      "label": "Lender stress interest rate",
+      "default": 5.5,
+      "unit": "percent annual",
+      "type": "number",
+      "min": 0.01,
+      "max": 40,
+      "step": "any"
+    },
+    {
+      "key": "target",
+      "label": "Required interest coverage ratio",
+      "default": 145,
+      "unit": "percent",
+      "type": "number",
+      "min": 100,
+      "max": 300,
+      "step": "any"
+    }
+  ]
+}

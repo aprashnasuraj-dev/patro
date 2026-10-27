@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0291",
+  "sample_input": {
+    "work": "20",
+    "rest": "10",
+    "rounds": "8",
+    "sets": "1",
+    "between": "60",
+    "warmup": "0",
+    "cooldown": "0"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

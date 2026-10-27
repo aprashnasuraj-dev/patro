@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0365",
+  "claims": [
+    {
+      "claim": "Calculate credit-weighted GPA with a fully editable grade scale instead of assuming one institution’s grading policy.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "GPA policy differs by institution; excluded/repeated/pass-fail courses must be represented according to the user’s own rules.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

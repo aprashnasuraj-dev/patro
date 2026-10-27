@@ -1,0 +1,46 @@
+{
+  "id": "TOOL-0478",
+  "name": "Shipping Label to 4x6 Thermal Cropper",
+  "slug": "shipping-label-4x6-pdf-cropper",
+  "route": "/tools/shipping-label-4x6-pdf-cropper",
+  "family": "F0071",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Shipping Label to 4x6 Thermal Cropper | AafnaiPatro Tools",
+    "description": "Crop a user-uploaded label PDF by an explicitly selected 2:3 source rectangle and export at exactly 288×432 PDF points using a locally bundled PDF parser."
+  },
+  "execution": {
+    "mode": "client-side",
+    "account_required": false,
+    "network_transmission_of_user_content": false,
+    "worker_required": false,
+    "entry_route_lazy_load": true,
+    "max_persisted_data": "none"
+  },
+  "source_files": {
+    "html": "page.html",
+    "core": "src/core.ts",
+    "ui": "src/ui.ts",
+    "styles": "src/styles.css"
+  },
+  "dependencies": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css",
+    "npm:pdf-lib@1.17.1 (lazy browser bundle)",
+    "src/pdf-workbench.ts"
+  ],
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap": false,
+    "published": false
+  }
+}

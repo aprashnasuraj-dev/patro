@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0210",
+  "sources": [
+    {
+      "title": "NIST/SEMATECH — Detection of Outliers",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "R stats — Sample Quantiles",
+      "url": "https://search.r-project.org/R/refmans/stats/html/quantile.html",
+      "publisher": "R Core Team",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

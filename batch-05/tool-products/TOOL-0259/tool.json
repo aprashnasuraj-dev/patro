@@ -1,0 +1,43 @@
+{
+  "id": "TOOL-0259",
+  "name": "vCard and Contact QR Code Generator",
+  "route": "/tools/vcard-qr-code-generator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0130",
+  "engineering_family": "vCard and Contact QR Generator",
+  "product_type": "browser_transformer",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [
+    {
+      "name": "qr",
+      "version": "0.7.2",
+      "license": "MIT OR Apache-2.0",
+      "lazy": true,
+      "network_at_runtime": false
+    }
+  ],
+  "seo": {
+    "title": "vCard and Contact QR Code Generator — Private Browser Tool",
+    "meta_description": "Build a standards-oriented vCard 4.0 payload from contact fields, fold long UTF-8 content lines, render a local QR code, and export VCF, SVG or PNG.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

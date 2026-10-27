@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {dedupeCsv} from '../src/core';describe('dedupeCsv',()=>{it('keeps first duplicate key',()=>expect(dedupeCsv('id,email\n1,a@x\n2,a@x',['email']).removed).toBe(1));it('can keep blank keys unique',()=>expect(dedupeCsv('id,email\n1,\n2,',['email'],'first','unique').removed).toBe(0));});

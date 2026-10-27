@@ -1,0 +1,24 @@
+{
+  "claims": [
+    {
+      "claim": "Trim compatible video containers with stream copy so video and audio are not re-encoded.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg stream copy and seeking"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Stream-copy trim is fast and lossless but can preserve media before the requested start when the nearest seek point is earlier.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    },
+    {
+      "claim": "FFmpeg stream-copy seeking can preserve media from the nearest seek point rather than cutting frame-exactly.",
+      "status": "verified",
+      "basis": "FFmpeg -ss documentation"
+    }
+  ]
+}

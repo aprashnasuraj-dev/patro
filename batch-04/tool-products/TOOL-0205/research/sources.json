@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0205",
+  "sources": [
+    {
+      "title": "NIST Dataplot — Chi-Square Independence Test",
+      "url": "https://itl.nist.gov/div898/software/dataplot/refman1/auxillar/chistest.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('text to SVG deferred fixtures',()=>{it.todo('simple Latin text produces non-empty path and fitted viewBox');it.todo('missing glyph stays explicit rather than injecting text HTML');it.todo('rejects invalid fill and oversized text');it.todo('downloads standalone SVG without script nodes')});

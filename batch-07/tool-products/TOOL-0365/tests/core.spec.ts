@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {calculateGPA} from '../src/core';describe('TOOL-0365 core',()=>{it('known-answer fixture',()=>{expect(calculateGPA([{name:'x',credits:3,grade:'A'}],[{min:0,letter:'A',points:4}]).gpa).toBe(4)})});

@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0131",
+  "name": "Image Color Palette Extractor with Contrast Pairs",
+  "route": "/tools/image-color-palette-extractor",
+  "family_id": "F0062",
+  "family": "Image Color Palette Extractor",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Image Color Palette Extractor with Contrast Pairs — Browser-Local Tool",
+    "meta_description": "Extract dominant colours from a local image and rank palette pairs by WCAG-style contrast ratio."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "Pixels are downsampled before quantization to bound CPU and memory."
+  ],
+  "limitations": [
+    "Dominant-colour clustering is approximate; contrast ratio alone does not guarantee overall interface accessibility."
+  ]
+}

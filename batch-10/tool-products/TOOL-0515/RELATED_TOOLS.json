@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0515",
+  "related": [
+    {
+      "id": "TOOL-0514",
+      "title": "Australian Super Concessional Carry-Forward Calculator",
+      "proposed_canonical": "/calculators/australia-super-concessional-carry-forward-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0516",
+      "title": "Australian Home Battery Payback Calculator",
+      "proposed_canonical": "/calculators/australia-home-battery-payback-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0260",
+      "title": "Pro Rata Salary and Leave Calculator",
+      "proposed_canonical": "/calculators/pro-rata-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0425",
+      "title": "Landlord Notice Period & Service-Date Calculator",
+      "proposed_canonical": "/calculators/landlord-notice-period-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0456",
+      "title": "Paid Family & Maternity Leave Pay Estimator",
+      "proposed_canonical": "/calculators/paid-family-leave-benefits-estimator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

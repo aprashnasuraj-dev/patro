@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0236",
+  "related": [
+    {
+      "id": "TOOL-0225",
+      "title": "Compound Interest Calculator with Inflation-Adjusted Returns",
+      "proposed_canonical": "/calculators/compound-interest-with-inflation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0226",
+      "title": "SIP Calculator with Annual Step-Up",
+      "proposed_canonical": "/calculators/sip-calculator-with-step-up",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0238",
+      "title": "Inflation Calculator with Custom Rate",
+      "proposed_canonical": "/calculators/inflation-calculator-custom-rate",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0222",
+      "title": "Debt Snowball vs Avalanche Comparator",
+      "proposed_canonical": "/calculators/debt-snowball-vs-avalanche-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

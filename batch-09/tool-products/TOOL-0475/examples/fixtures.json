@@ -1,0 +1,23 @@
+{
+  "default_input": {
+    "platform": "Custom / verify product rules",
+    "title": "Sample title",
+    "limit": 200,
+    "byteLimit": 0
+  },
+  "hand_reference": {
+    "label": "UTF-8 bytes",
+    "value": "12",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

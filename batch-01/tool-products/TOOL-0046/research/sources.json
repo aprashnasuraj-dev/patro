@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://url.spec.whatwg.org/",
+    "type": "official-documentation",
+    "retrieved_date": "2026-10-26",
+    "version": "current as inspected on 2026-10-26; web references may change",
+    "effective_date": "See underlying standard; do not assume cross-browser uniformity",
+    "license_or_data_restriction": "Link only; no standards text bundled",
+    "notes": "Normative or project documentation; review version during integration"
+  },
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+    "type": "primary-or-official-reference",
+    "retrieved_date": "2026-10-26",
+    "version": "source maintained by publisher",
+    "effective_date": "not separately verified",
+    "license_or_data_restriction": "Link only; no third-party code or dataset shipped",
+    "notes": "Used to constrain syntax or warn about unsupported behavior"
+  }
+]

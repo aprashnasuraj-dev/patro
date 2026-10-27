@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0095",
+  "claims": [
+    {
+      "claim": "Flesch and Flesch-Kincaid formulas match the published Microsoft Support formulas; other metrics are labeled estimates because tokenization/syllable policy varies.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "ms-readability",
+        "eric-smog"
+      ]
+    }
+  ]
+}

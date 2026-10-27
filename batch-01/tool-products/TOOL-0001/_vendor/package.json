@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@types/node": "24.0.0",
+    "@types/papaparse": "5.3.16",
+    "esbuild": "0.25.10",
+    "graphql": "16.11.0",
+    "papaparse": "5.7.0",
+    "typescript": "5.8.3",
+    "zod": "4.1.12"
+  }
+}

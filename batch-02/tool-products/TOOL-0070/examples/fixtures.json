@@ -1,0 +1,13 @@
+{
+  "sample_input": {
+    "urls": "https://example.com/\nhttps://example.com/about,2026-10-01\nhttps://example.com/contact",
+    "policy": "Keep first"
+  },
+  "worked_example": "https://example.com/about,2026-10-01 becomes one urlset entry.",
+  "planned_expectations": [
+    "Three URL inputs produce exactly three loc elements.",
+    "Reject mixed origins and invalid leap dates.",
+    "Deduplicate or reject by policy; XML escapes query ampersands."
+  ],
+  "execution_state": "TEST_PENDING"
+}

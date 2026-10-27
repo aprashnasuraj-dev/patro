@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0186",
+  "build_sequence": 186,
+  "name": "CSV Column Reorder, Rename and Drop Tool",
+  "route": "/tools/csv-column-editor",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0088",
+  "engineering_family": "CSV Column and Data Normalizer",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "CSV Column Reorder, Rename and Drop Tool — Free Local Browser Tool",
+    "meta_description": "Reorder, rename, or drop CSV columns using an explicit column plan, preserving row data without silent field guessing.",
+    "h1": "CSV Column Reorder, Rename and Drop Tool",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

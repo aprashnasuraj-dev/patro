@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0059",
+  "claims": [
+    {
+      "claim": "Contact and Expires are mandatory.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc9116",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Expires must be in the future; one year or less is recommended.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc9116",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "UTF-8 text for /.well-known/security.txt over HTTPS."
+  ],
+  "limitations": [
+    "No file hosting, signing, ownership proof or mailbox monitoring is performed."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

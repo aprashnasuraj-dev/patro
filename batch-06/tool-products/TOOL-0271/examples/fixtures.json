@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0271",
+  "examples": [
+    {
+      "inputs": {
+        "room_ft": [
+          20,
+          15,
+          8
+        ],
+        "base_btu_per_h_ft2": 20,
+        "adjustment_pct": 0,
+        "extra_occupants": 0
+      },
+      "expected_note": "20 BTU/h·ft² is an editable illustrative default, not a code or ACCA value."
+    }
+  ]
+}

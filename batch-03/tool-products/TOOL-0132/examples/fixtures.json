@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0132",
+  "known_answer_examples": [
+    "Open a product image, generate a 4\u00d73 BlurHash plus ThumbHash, then copy strings/data for application use."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

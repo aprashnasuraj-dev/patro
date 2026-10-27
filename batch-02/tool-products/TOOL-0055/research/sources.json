@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0055",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType",
+      "owner": "MDN / Mozilla",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Compare playback support reported by the live browser for video and audio MIME strings."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/isTypeSupported",
+      "owner": "MDN / Mozilla",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Compare playback support reported by the live browser for video and audio MIME strings."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Support claims do not guarantee actual successful decoding, hardware acceleration or DRM."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0355",
+  "name": "Text-on-Image Contrast Checker (WCAG and APCA)",
+  "route": "/tools/contrast-checker-apca",
+  "batch": "BATCH-07",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0196",
+  "engineering_family": "Text-on-Image Contrast Auditor",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Text-on-Image Contrast Checker (WCAG and APCA) — Private Browser Tool",
+    "meta_description": "Measure WCAG 2.x contrast ratio and APCA lightness contrast for a chosen text color against a solid background or clicked pixels from a local image, including a small neighborhood worst-case sample.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

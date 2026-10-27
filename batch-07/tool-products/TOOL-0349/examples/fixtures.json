@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0349",
+  "examples": [
+    {
+      "capability": "requires secure context + getDisplayMedia + MediaRecorder"
+    },
+    {
+      "privacy": "no upload; browser permission prompt required"
+    }
+  ]
+}

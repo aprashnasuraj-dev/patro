@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Remove fully blank CSV rows and trim field whitespace with a previewable, deterministic cleanup pass.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Trimming all fields can alter intentionally significant leading/trailing spaces; the option is user-controlled.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

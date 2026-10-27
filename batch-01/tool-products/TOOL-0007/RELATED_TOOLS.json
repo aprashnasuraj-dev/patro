@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0007",
+  "related": [
+    {
+      "id": "TOOL-0006",
+      "title": "HAR File Sensitive Data Redactor",
+      "proposed_canonical": "/editors/har-file-redactor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0305",
+      "title": "Bulk Epoch Timestamp Converter for Log Lines",
+      "proposed_canonical": "/converters/bulk-epoch-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0045",
+      "title": "Bulk User-Agent Parser",
+      "proposed_canonical": "/analyzers/bulk-user-agent-parser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0072",
+      "title": "robots.txt Bulk URL Tester",
+      "proposed_canonical": "/validators/robots-txt-tester",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

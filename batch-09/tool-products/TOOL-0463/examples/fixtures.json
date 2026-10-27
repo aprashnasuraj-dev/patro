@@ -1,0 +1,26 @@
+{
+  "default_input": {
+    "page": "US Letter",
+    "lines": 28,
+    "left": 1.0,
+    "right": 0.65,
+    "top": 1.0,
+    "bottom": 1.0,
+    "court": "California civil trial (illustrative)"
+  },
+  "hand_reference": {
+    "label": "Ruled lines",
+    "value": "28",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0419",
+  "fixtures": [
+    {
+      "id": "default",
+      "input": {
+        "originalBuyDate": "2026-01-15",
+        "saleDate": "2026-10-01",
+        "replacementDate": "2026-10-20",
+        "sharesSold": 100,
+        "replacementShares": 60,
+        "lossAmount": 2000
+      },
+      "purpose": "Representative valid input; expected values are asserted in source tests where stable."
+    },
+    {
+      "id": "boundary-review",
+      "input": {
+        "originalBuyDate": "2026-01-15",
+        "saleDate": "2026-10-01",
+        "replacementDate": "2026-10-20",
+        "sharesSold": 100,
+        "replacementShares": 60,
+        "lossAmount": 2000
+      },
+      "purpose": "Reuse with one field at a documented min/max during deferred QA."
+    }
+  ]
+}

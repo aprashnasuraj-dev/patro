@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0367",
+  "claims": [
+    {
+      "claim": "Convert CGPA using scheme-labelled official formulas or a custom formula, without implying that one conversion applies to every university.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Only the named scheme/version formulas shown are claimed. Users must verify their exact programme/regulation before using an equivalence.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    },
+    {
+      "claim": "VIT and Anna University cited formulas are CGPA × 10 for the cited documents; VTU 2015/2017/2018 cited formula is (CGPA − 0.75) × 10.",
+      "basis": "institution-primary",
+      "status": "VERIFIED_SOURCE"
+    }
+  ]
+}

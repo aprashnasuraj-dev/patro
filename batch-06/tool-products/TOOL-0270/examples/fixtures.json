@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0270",
+  "examples": [
+    {
+      "inputs": {
+        "awg": 12,
+        "material": "copper",
+        "temperature_C": 75,
+        "one_way_ft": 100,
+        "amps": 15,
+        "volts": 120,
+        "phase": "single"
+      },
+      "expected_note": "Result is resistive voltage-drop only; 3% is an informational target, not an ampacity rule."
+    }
+  ]
+}

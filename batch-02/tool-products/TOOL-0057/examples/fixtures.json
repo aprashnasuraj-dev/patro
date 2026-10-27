@@ -1,0 +1,12 @@
+{
+  "sample_input": {
+    "mac": "02:00:00:00:00:01"
+  },
+  "worked_example": "02:00:00:00:00:01 is locally administered; it has no reliable manufacturer OUI.",
+  "planned_expectations": [
+    "02:00:00:00:00:01 flags local administration.",
+    "IEEE CSV MA-L 24-bit and MA-M 28-bit prefix longest-match; vendor names containing comma.",
+    "Oversize file and invalid hex must fail; no file transfer."
+  ],
+  "execution_state": "TEST_PENDING"
+}

@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0273",
+  "examples": [
+    {
+      "inputs": {
+        "price": 350000,
+        "down_pct": 25,
+        "apr_pct": 6.5,
+        "term_years": 30,
+        "rent_monthly": 2800,
+        "vacancy_pct": 5
+      },
+      "expected_note": "Cash-on-cash uses first-year pre-tax cash flow divided by entered initial cash."
+    }
+  ]
+}

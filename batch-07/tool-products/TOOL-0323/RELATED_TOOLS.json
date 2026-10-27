@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0323",
+  "related": [
+    {
+      "id": "TOOL-0324",
+      "title": "Diceware Passphrase Generator (EFF Wordlists)",
+      "proposed_canonical": "/generators/diceware-passphrase-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0329",
+      "title": "Encrypt and Decrypt Text with a Password (AES-GCM)",
+      "proposed_canonical": "/utilities/encrypt-text-with-password",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0031",
+      "title": "AWS IAM Policy Wildcard Auditor",
+      "proposed_canonical": "/validators/iam-policy-wildcard-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0037",
+      "title": "CODEOWNERS Pattern Tester",
+      "proposed_canonical": "/validators/codeowners-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0038",
+      "title": ".gitignore Pattern Tester",
+      "proposed_canonical": "/validators/gitignore-tester",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

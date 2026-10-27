@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0207",
+  "sources": [
+    {
+      "title": "NIST Dataplot — Rank Sum Test",
+      "url": "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/ranksum.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "SciPy — mannwhitneyu documentation",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html",
+      "publisher": "SciPy",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

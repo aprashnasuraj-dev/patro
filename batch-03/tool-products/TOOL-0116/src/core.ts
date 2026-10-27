@@ -1,0 +1,3 @@
+import {toSfnt} from '../_vendor/font/woff2Runtime';import {parseSfnt,getNames,bestName} from '../_vendor/font/sfnt';import {featureTags,FEATURE_HELP,cssFeatureSettings} from '../_vendor/font/layout';
+export async function detect(buf:ArrayBuffer,name:string){const sf=parseSfnt(await toSfnt(buf,name));const names=getNames(sf),gsub=featureTags(sf,'GSUB'),gpos=featureTags(sf,'GPOS');const all=[...new Set([...gsub,...gpos])].sort();return{family:bestName(names,16)||bestName(names,1)||name,gsub,gpos,features:all.map(tag=>({tag,meaning:FEATURE_HELP[tag]||'font-defined OpenType feature'}))}}
+export {cssFeatureSettings};

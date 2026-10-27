@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Correlation Matrix from CSV (Pearson and Spearman) — Browser Calculator</title>
+<meta name="description" content="Build a Pearson or Spearman correlation matrix from numeric CSV columns using pairwise-complete observations.">
+<meta property="og:title" content="Correlation Matrix from CSV (Pearson and Spearman)">
+<meta property="og:description" content="Build a Pearson or Spearman correlation matrix from numeric CSV columns using pairwise-complete observations.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0209 · Local browser tool</div>
+<h1>Correlation Matrix from CSV (Pearson and Spearman)</h1>
+<p class="lede">Build a Pearson or Spearman correlation matrix from numeric CSV columns using pairwise-complete observations. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>CSV numeric columns<textarea id="data">A,B,C
+1,2,5
+2,4,4
+3,5,3
+4,8,2
+5,10,1</textarea></label><label>Correlation method<select id="method"><option value="pearson">Pearson</option><option value="spearman">Spearman rank</option></select></label>
+<div class="row"><button id="run" type="button">Build correlation matrix</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Build a Pearson or Spearman correlation matrix from numeric CSV columns using pairwise-complete observations.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Headers identify numeric variables; missing values are blank; non-missing pairs are used per matrix cell.</p></section>
+<section><h2>Limitations</h2><p>Pairwise deletion can produce different N for each cell and a matrix that is not positive semidefinite. Correlation does not imply causation.</p></section>
+<section><h2>FAQ</h2><details><summary>Why do N values vary by cell?</summary><p>Missing values are handled pairwise, so each correlation can use a different subset of complete pairs.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html" rel="noopener noreferrer">SciPy — pearsonr documentation</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html" rel="noopener noreferrer">SciPy — spearmanr documentation</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

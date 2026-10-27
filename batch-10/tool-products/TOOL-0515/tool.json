@@ -1,0 +1,95 @@
+{
+  "id": "TOOL-0515",
+  "name": "Australian Long Service Leave Calculator",
+  "slug": "australia-long-service-leave-calculator",
+  "route": "/tools/australia-long-service-leave-calculator",
+  "family": "F0306",
+  "description": "Calculate an auditable long-service-leave accrual scenario only after entering the relevant state, award or contract rate.",
+  "seo": {
+    "title": "Australian Long Service Leave Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Calculate an auditable long-service-leave accrual scenario only after entering the relevant state, award or contract rate.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "leave",
+  "inputs": [
+    {
+      "key": "jurisdiction",
+      "label": "Law/award to verify",
+      "default": "NSW",
+      "type": "select",
+      "options": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "WA",
+        "SA",
+        "TAS",
+        "ACT",
+        "NT",
+        "award-or-agreement"
+      ]
+    },
+    {
+      "key": "years",
+      "label": "Credited continuous employment service",
+      "default": 8.5,
+      "unit": "years",
+      "type": "number",
+      "min": 0,
+      "max": 70,
+      "step": "any"
+    },
+    {
+      "key": "entitlementWeeks",
+      "label": "Full leave weeks per service year under verified instrument",
+      "default": 0.8666667,
+      "unit": "weeks/year",
+      "type": "number",
+      "min": 0,
+      "max": 3,
+      "step": "any"
+    },
+    {
+      "key": "alreadyTaken",
+      "label": "Long service leave already used",
+      "default": 0,
+      "unit": "weeks",
+      "type": "number",
+      "min": 0,
+      "max": 150,
+      "step": "any"
+    },
+    {
+      "key": "weeklyPay",
+      "label": "Ordinary weekly pay for estimate",
+      "default": 1400,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 10000000.0,
+      "step": "any"
+    },
+    {
+      "key": "termination",
+      "label": "Employment ending now?",
+      "default": "no",
+      "type": "select",
+      "options": [
+        "no",
+        "yes"
+      ]
+    }
+  ]
+}

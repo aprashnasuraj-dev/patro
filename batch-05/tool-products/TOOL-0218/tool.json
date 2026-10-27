@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0218",
+  "name": "Random Sampler with Seed (Reproducible)",
+  "route": "/tools/random-sample-generator-with-seed",
+  "batch": "BATCH-05",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0101",
+  "engineering_family": "Reproducible Random Sampling",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Random Sampler with Seed (Reproducible) — Browser Calculator",
+    "meta_description": "Draw a reproducible seeded sample with or without replacement using a documented non-cryptographic PRNG.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

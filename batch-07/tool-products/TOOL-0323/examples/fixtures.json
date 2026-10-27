@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0323",
+  "examples": [
+    {
+      "input": "aaaaaaaa",
+      "expected_issue": "repeated character run"
+    },
+    {
+      "input": "correct horse battery staple",
+      "expected_note": "Length 28; score is heuristic, not crack-time proof."
+    }
+  ]
+}

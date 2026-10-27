@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0275",
+  "name": "Room Dimension Converter (Feet-Inches to Metric)",
+  "route": "/tools/feet-inches-to-meters-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0144",
+  "engineering_family": "Floor, Room and Land Area Converter",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Room Dimension Converter (Feet-Inches to Metric) — Private Browser Tool",
+    "meta_description": "Convert room length, width and height from separate feet-and-inches fields to exact metric dimensions, floor area and room volume without ambiguous free-text parsing.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

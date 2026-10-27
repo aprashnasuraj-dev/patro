@@ -1,0 +1,112 @@
+{
+  "id": "TOOL-0288",
+  "name": "TDEE Calculator Comparing Equations",
+  "slug": "tdee-calculator-compare-equations",
+  "route": "/tools/tdee-calculator-compare-equations",
+  "family": "F0154",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "TDEE Calculator Comparing Equations | AafnaiPatro",
+    "description": "Compare two basal metabolic-rate equations and an activity-factor estimate of daily expenditure.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "select",
+      "key": "sex",
+      "label": "Equation coefficient group",
+      "options": [
+        [
+          "male",
+          "Male coefficients"
+        ],
+        [
+          "female",
+          "Female coefficients"
+        ]
+      ],
+      "default": "male"
+    },
+    {
+      "type": "number",
+      "key": "mass",
+      "label": "Body mass",
+      "default": 75,
+      "min": 20,
+      "max": 350,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "number",
+      "key": "height",
+      "label": "Height",
+      "default": 175,
+      "min": 100,
+      "max": 230,
+      "step": "any",
+      "unit": "cm"
+    },
+    {
+      "type": "number",
+      "key": "age",
+      "label": "Age",
+      "default": 30,
+      "min": 18,
+      "max": 100,
+      "step": "1",
+      "unit": "years"
+    },
+    {
+      "type": "select",
+      "key": "activity",
+      "label": "Activity level",
+      "options": [
+        [
+          "1.2",
+          "Sedentary (×1.2)"
+        ],
+        [
+          "1.375",
+          "Light (×1.375)"
+        ],
+        [
+          "1.55",
+          "Moderate (×1.55)"
+        ],
+        [
+          "1.725",
+          "Very active (×1.725)"
+        ],
+        [
+          "1.9",
+          "Extremely active (×1.9)"
+        ]
+      ],
+      "default": "1.55"
+    }
+  ],
+  "explanation": "Mifflin-St Jeor 10W+6.25H−5A+(5 male/−161 female); revised Harris–Benedict alternative; TDEE≈BMR×user-chosen factor.",
+  "limitations": "Population estimates, not measured metabolism or personalized nutrition targets; binary coefficients may not fit all people.",
+  "related_tool_ids": [
+    "TOOL-0297",
+    "TOOL-0294"
+  ],
+  "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "https://pubmed.ncbi.nlm.nih.gov/368378/"
+  ],
+  "special_notes": null
+}

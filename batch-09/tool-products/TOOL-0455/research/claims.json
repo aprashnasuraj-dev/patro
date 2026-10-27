@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Dentist-approved clear aligner change calendar",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Not an orthodontic treatment recommendation. The generic interval is explicitly user-supplied and clinical suitability is not established.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.aaoinfo.org/blog/clear-aligners/"
+  ],
+  "assumptions": "Not an orthodontic treatment recommendation. The generic interval is explicitly user-supplied and clinical suitability is not established.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

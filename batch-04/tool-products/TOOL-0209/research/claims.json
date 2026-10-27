@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0209",
+  "claims": [
+    {
+      "claim": "Build a Pearson or Spearman correlation matrix from numeric CSV columns using pairwise-complete observations.",
+      "support": [
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Headers identify numeric variables; missing values are blank; non-missing pairs are used per matrix cell.",
+      "support": [
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Pairwise deletion can produce different N for each cell and a matrix that is not positive semidefinite. Correlation does not imply causation.",
+      "support": [
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

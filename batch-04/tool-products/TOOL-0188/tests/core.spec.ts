@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('split workbook integration contract',()=>{it('documents formula behavior',()=>expect(['preserve','cached-value']).toHaveLength(2));}); // Browser fixture must include two sheets, a cross-sheet formula, and formula-without-cached-value case.

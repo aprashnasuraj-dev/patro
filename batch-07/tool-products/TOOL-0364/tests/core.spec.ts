@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {cleanBib} from '../src/core';describe('TOOL-0364 core',()=>{it('known-answer fixture',()=>{expect(cleanBib('@article{a,title={T},year={2026}}\n@article{b,title={T},year={2026}}').kept).toBe(1)})});

@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0338",
+  "examples": [
+    {
+      "payload": "https://example.com/path",
+      "expected": "absolute HTTPS URL; no mandatory warning"
+    },
+    {
+      "payload": "http://user@example.com/",
+      "expected_hints": [
+        "Unencrypted HTTP URL.",
+        "URL contains userinfo before @; this can obscure the real host."
+      ]
+    }
+  ]
+}

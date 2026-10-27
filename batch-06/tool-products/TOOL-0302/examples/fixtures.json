@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0302",
+  "examples": [
+    {
+      "inputs": {
+        "start": "2024-01-31",
+        "end": "2024-03-01"
+      },
+      "expected": {
+        "years": 0,
+        "months": 1,
+        "days": 1,
+        "total_days": 30
+      }
+    }
+  ]
+}

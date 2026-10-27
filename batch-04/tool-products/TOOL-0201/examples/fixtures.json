@@ -1,0 +1,14 @@
+{
+  "input": {
+    "controlN": 10000,
+    "controlConv": 800,
+    "treatN": 10000,
+    "treatConv": 880,
+    "expectedTreatShare": 0.5,
+    "alpha": 0.05
+  },
+  "checks": [
+    "treatment rate > control rate",
+    "SRM p-value should not indicate mismatch for equal n"
+  ]
+}

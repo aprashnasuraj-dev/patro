@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Backing panels = ceil((quilt width + overhang) / (usable fabric width net seams)); strip count uses perimeter and diagonal joins.",
+    "supporting_urls": [
+      "https://www.americanquilter.com/"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "No motif-match, shrinkage or bias-binding algorithms."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "A 70×90-inch quilt with 4-inch margin requires at least 78×98 inches backing and batting.",
+    "status": "TEST_PENDING"
+  }
+]

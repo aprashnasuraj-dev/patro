@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Federal annual vacation 4%, 6%, 8% based on completed service; Ontario ordinarily 4% or 6%. Enter legal qualifying wages.",
+    "supporting_urls": [
+      "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/vacations-holidays.html",
+      "https://www.ontario.ca/document/your-guide-employment-standards-act-0/public-holidays"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "This is not an automatically validated province-wide entitlement calculator."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "Federal worker after 6 years: C$72,000 qualifying wages × 6% = C$4,320 vacation pay.",
+    "status": "TEST_PENDING"
+  }
+]

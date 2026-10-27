@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0167",
+  "build_sequence": 167,
+  "name": "Video Frame Extractor",
+  "route": "/tools/extract-frames-from-video",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Audio and Frame Extractor",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "At most 500 frames are extracted per run; long videos require a larger interval."
+  },
+  "seo": {
+    "title": "Video Frame Extractor — Free Browser Tool",
+    "meta_description": "Extract bounded PNG or JPEG frames at a chosen interval and download them as a ZIP.",
+    "h1": "Video Frame Extractor",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0078"
+}

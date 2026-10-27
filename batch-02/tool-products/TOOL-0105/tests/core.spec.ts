@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('coverage deferred fixtures',()=>{it.todo('reads cmap format 4 Latin coverage');it.todo('reads cmap format 12 supplementary coverage');it.todo('reports missing Devanagari characters');it.todo('rejects pathological cmap ranges')});

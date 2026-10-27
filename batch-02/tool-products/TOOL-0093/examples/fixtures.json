@@ -1,0 +1,5 @@
+{
+  "sample_input": "# Release notes",
+  "expected_behavior": "“**Fast** and [private](https://example.com)” becomes “Fast and private” (optionally including the URL).",
+  "qa_status": "TEST_PENDING"
+}

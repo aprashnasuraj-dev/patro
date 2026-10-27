@@ -1,0 +1,12 @@
+{
+  "tool": "TOOL-0527",
+  "default_inputs": {
+    "focal": "20",
+    "fnumber": "2.8",
+    "pixel": "5.9",
+    "declination": "0",
+    "precision": "1"
+  },
+  "worked_example": "20 mm, f/2.8, 5.9-micron sensor at celestial equator gives an exposure estimate rather than an exposure guarantee.",
+  "source_status": "TEST_PENDING"
+}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0135",
+  "claims": [
+    {
+      "claim": "Draw local redaction regions and flatten blur, pixelation or solid-fill effects into a new image.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Blur and pixelation can leak information and are not secure redaction methods. Use solid fill for sensitive data.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

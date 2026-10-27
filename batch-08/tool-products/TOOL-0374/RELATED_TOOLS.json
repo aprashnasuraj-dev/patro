@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0374",
+  "related": [
+    {
+      "id": "TOOL-0316",
+      "title": "Excel Serial Number to Date Converter",
+      "proposed_canonical": "/converters/excel-serial-number-to-date",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0372",
+      "title": "Molar Mass Calculator from Chemical Formula",
+      "proposed_canonical": "/calculators/molar-mass-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0375",
+      "title": "Projectile Motion Calculator with Trajectory Plot",
+      "proposed_canonical": "/calculators/projectile-motion-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0376",
+      "title": "Significant Figures Counter and Rounder",
+      "proposed_canonical": "/calculators/significant-figures-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0373",
+      "title": "Chemical Equation Balancer",
+      "proposed_canonical": "/utilities/chemical-equation-balancer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

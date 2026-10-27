@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0368",
+  "name": "Speech Length Calculator (Words to Minutes)",
+  "route": "/tools/speech-length-calculator",
+  "batch": "BATCH-07",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0204",
+  "engineering_family": "Writing Length and Goal Tracker",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Speech Length Calculator (Words to Minutes) — Private Browser Tool",
+    "meta_description": "Count words locally and estimate speaking duration from an explicit words-per-minute rate plus optional pause allowance.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

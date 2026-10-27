@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.cheque-output{font-family:Georgia,serif;font-size:1.35rem;line-height:1.7;border:1px dashed var(--border);border-radius:12px;padding:18px}.formula-card{border-left:4px solid var(--accent);padding:10px 12px;background:color-mix(in srgb,var(--accent) 6%,transparent)}

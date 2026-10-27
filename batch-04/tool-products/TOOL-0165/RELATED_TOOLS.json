@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0165",
+  "related": [
+    {
+      "id": "TOOL-0161",
+      "title": "Lossless Video Trimmer (No Re-encode)",
+      "proposed_canonical": "/editors/trim-video-without-reencoding",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0168",
+      "title": "Video Speed Changer with Pitch Correction",
+      "proposed_canonical": "/editors/change-video-speed",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0166",
+      "title": "Remove Audio from Video",
+      "proposed_canonical": "/editors/remove-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0162",
+      "title": "Extract Audio from Video",
+      "proposed_canonical": "/extractors/extract-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0163",
+      "title": "Video to GIF Converter with Palette Optimization",
+      "proposed_canonical": "/converters/video-to-gif",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

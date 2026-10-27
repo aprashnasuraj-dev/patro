@@ -1,0 +1,27 @@
+{
+  "id": "TOOL-0039",
+  "name": "PEM Certificate Chain Order Checker",
+  "route": "/tools/certificate-chain-order-checker",
+  "family": "F0022",
+  "status": "TEST_PARTIAL_BROWSER_QA_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "PEM Certificate Chain Order Checker | Mission Mangal Tools",
+    "description": "Check PEM X.509 certificate order with WebCrypto signatures, issuer/subject matching, CA constraints and explicit trust limitations. Runs privately in your browser.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": {
+    "input": "Up to 20 RFC 7468 CERTIFICATE PEM blocks, max 512000 characters",
+    "output": "Issuer DN match, RSA/EC/Ed25519 signatures, CA checks, pathLen, dates, SHA-256 fingerprints",
+    "algorithms": [
+      "RSA PKCS1 SHA1/256/384/512",
+      "RSA PSS compatible MGF1 digest",
+      "ECDSA P-256/384/521",
+      "Ed25519"
+    ],
+    "limits": "Not trust-chain/hostname/revocation validation. Unknown critical extensions cause UNSUPPORTED."
+  }
+}

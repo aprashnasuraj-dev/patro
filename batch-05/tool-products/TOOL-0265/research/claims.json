@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0265",
+  "claims": [
+    {
+      "claim": "USG guidance estimates panels from wall/ceiling area after subtracting large openings.",
+      "source_url": "https://www.usg.com/content/dam/USG/United%20States/Product%20Related/Interior%20Panels/Sheetrock%20Brand%20Gypsum%20Panels/documents/language/english/Product%20Literature/sheetrock-gypsum-panels-installation-guide-en-J371.pdf",
+      "implementation_note": "The calculator follows that takeoff structure."
+    },
+    {
+      "claim": "USG UltraLightweight joint compound guidance is about two 4.5-gal pails per 1,000 ft².",
+      "source_url": "https://assemblies-tools.usg.com/content/usgcom/en/resource-center/faqs/1977.html",
+      "implementation_note": "9 gal/1,000 ft² is an editable product example, not a universal constant."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

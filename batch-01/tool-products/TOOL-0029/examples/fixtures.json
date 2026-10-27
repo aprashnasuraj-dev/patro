@@ -1,0 +1,12 @@
+{
+  "sample": {
+    "expression": "Mon..Fri *-*-* 09:00:00",
+    "from": "2026-10-26T00:00"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

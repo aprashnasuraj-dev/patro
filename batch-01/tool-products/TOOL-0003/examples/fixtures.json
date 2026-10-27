@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0003",
+  "case": "Worked example",
+  "input": "openapi: 3.1.0\ninfo:\n  title: Store API\n  version: 1.0.0\npaths: {}\ncomponents:\n  schemas:\n    Product:\n      type: object\n      required: [id, price]\n      properties:\n        id: {type: string}\n        price: {type: number}\n        tags: {type: array, items: {type: string}}\n        archived: {type: [boolean, 'null']}\n",
+  "options": {},
+  "expected_properties": "simple fields, nullable union, local refs, unresolved and external refs, YAML alias rejection",
+  "expected_execution": "NOT_RUN",
+  "limitations": "This is a type generator, not a complete OpenAPI SDK; constraints such as minimum, pattern and format are not enforced at runtime."
+}

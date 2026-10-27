@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Cut a precise audio region and apply bounded fade-in and fade-out durations.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg atrim and afade filters"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Fade durations are capped at half the retained clip duration.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

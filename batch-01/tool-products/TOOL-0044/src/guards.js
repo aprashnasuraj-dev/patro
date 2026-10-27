@@ -1,0 +1,4 @@
+export function limit(value,max){const str=String(value??'');if(str.length>max)throw Error('Input limit exceeded ('+max+' characters).');return str;}
+export function origin(v){const s=limit(v,256);let url;try{url=new URL(s);}catch{throw Error('Invalid origin '+s);}if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash||url.pathname!=='/'||url.origin==='null')throw Error('Expected a web origin (scheme, host, optional port): '+s);return url.origin;}
+export function tokens(v,max){const raw=limit(v,2048);const out=raw.split(',').map(s=>s.trim()).filter(Boolean);if(out.length>max)throw Error('Too many comma-separated tokens.');return [...new Set(out)];}
+export function nonneg(value,max){if(!/^(0|[1-9]\d*)$/.test(String(value)))throw Error('Provide an integer >= 0.');const n=Number(value);if(!Number.isSafeInteger(n)||n>max)throw Error('Integer must be <= '+max);return n;}

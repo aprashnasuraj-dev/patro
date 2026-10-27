@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0329",
+  "name": "Encrypt and Decrypt Text with a Password (AES-GCM)",
+  "route": "/tools/encrypt-text-with-password",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0180",
+  "engineering_family": "AES-GCM Text and File Encryption",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Encrypt and Decrypt Text with a Password (AES-GCM) — Private Browser Tool",
+    "meta_description": "Encrypt or decrypt bounded UTF-8 text locally with AES-256-GCM and PBKDF2-HMAC-SHA-256, using a versioned JSON envelope with random salt and nonce.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

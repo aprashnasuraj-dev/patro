@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0244",
+  "related": [
+    {
+      "id": "TOOL-0245",
+      "title": "Break-Even Analysis Calculator with Chart",
+      "proposed_canonical": "/calculators/break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0151",
+      "title": "Images to PDF with Page Size and Margin Control",
+      "proposed_canonical": "/converters/images-to-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0246",
+      "title": "SaaS Metrics Calculator (LTV, CAC, Payback, Churn)",
+      "proposed_canonical": "/calculators/saas-metrics-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

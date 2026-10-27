@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0268",
+  "related": [
+    {
+      "id": "TOOL-0403",
+      "title": "Stair Rise/Run & Code Compliance Checker",
+      "proposed_canonical": "/validators/stair-code-compliance-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0454",
+      "title": "Prescription Run-Out & Refill Date Calculator",
+      "proposed_canonical": "/calculators/prescription-refill-runout-date-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0489",
+      "title": "Irrigation Run-Time Calculator",
+      "proposed_canonical": "/calculators/sprinkler-irrigation-runtime-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0010",
+      "title": "Docker Compose to docker run Converter",
+      "proposed_canonical": "/converters/docker-compose-to-docker-run",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

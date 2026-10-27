@@ -1,0 +1,17 @@
+{
+  "id": "TOOL-0037",
+  "name": "CODEOWNERS Pattern Tester",
+  "route": "/tools/codeowners-tester",
+  "family": "F0021",
+  "status": "TEST_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "CODEOWNERS Pattern Tester | Mission Mangal Tools",
+    "description": "Prepare and inspect codeowners pattern tester locally in your browser. Includes a worked example, format limits, and explicit warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": "Supported subset documented in core implementation; unsupported input must produce an error."
+}

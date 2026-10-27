@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0121",
+  "claims": [
+    {
+      "claim": "Inspect common EXIF metadata across local images, then create metadata-stripped copies without uploading originals.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Re-encoding can change compression and colour-profile metadata; metadata stripping is not a forensic anonymity guarantee.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

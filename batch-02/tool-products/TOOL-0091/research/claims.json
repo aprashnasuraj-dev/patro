@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0091",
+  "claims": [
+    {
+      "claim": "CSV output follows RFC 4180 quoting conventions where practical; RFC 4180 is informational rather than a universal CSV standard.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "rfc4180"
+      ]
+    }
+  ]
+}

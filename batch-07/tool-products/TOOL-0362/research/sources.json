@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0362",
+  "sources": [
+    {
+      "title": "APA Style Reference Examples",
+      "url": "https://apastyle.apa.org/style-grammar-guidelines/references/examples",
+      "authority": "American Psychological Association"
+    },
+    {
+      "title": "Works Cited: A Quick Guide",
+      "url": "https://style.mla.org/works-cited/works-cited-a-quick-guide/",
+      "authority": "Modern Language Association"
+    },
+    {
+      "title": "Chicago-Style Citation Quick Guide",
+      "url": "https://www.chicagomanualofstyle.org/tools_citationguide.html",
+      "authority": "University of Chicago Press"
+    }
+  ]
+}

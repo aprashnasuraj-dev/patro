@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0322",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "This does not verify detached signatures on the checksum list; an attacker who can alter both a file and its expected hash can still produce a match."
+}

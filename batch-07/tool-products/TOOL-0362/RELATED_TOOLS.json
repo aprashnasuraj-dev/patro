@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0362",
+  "related": [
+    {
+      "id": "TOOL-0363",
+      "title": "RIS to BibTeX Converter",
+      "proposed_canonical": "/converters/ris-to-bibtex",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0097",
+      "title": "Title Case Converter by Style Guide (AP, APA, Chicago, MLA)",
+      "proposed_canonical": "/converters/title-case-converter-style-guides",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0361",
+      "title": "APA 7 Reference Formatter from Fields",
+      "proposed_canonical": "/formatters/apa-7-reference-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0364",
+      "title": "BibTeX Cleaner and Duplicate Remover",
+      "proposed_canonical": "/editors/bibtex-cleaner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0367",
+      "title": "CGPA to Percentage Converter (Multiple University Formulas)",
+      "proposed_canonical": "/converters/cgpa-to-percentage-converter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

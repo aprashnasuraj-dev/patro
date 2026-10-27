@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0316",
+  "examples": [
+    {
+      "inputs": {
+        "serial": 1,
+        "system": "1900"
+      },
+      "expected": "1900-01-01T00:00:00Z"
+    },
+    {
+      "inputs": {
+        "serial": 60,
+        "system": "1900"
+      },
+      "expected": "1900-02-29 phantom"
+    },
+    {
+      "inputs": {
+        "serial": 61,
+        "system": "1900"
+      },
+      "expected": "1900-03-01T00:00:00Z"
+    },
+    {
+      "inputs": {
+        "serial": 1,
+        "system": "1904"
+      },
+      "expected": "1904-01-02T00:00:00Z"
+    }
+  ]
+}

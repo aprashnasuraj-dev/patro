@@ -1,0 +1,12 @@
+{
+  "assumptions": "Text robots.txt rules and up to 2,000 absolute same-origin URLs.",
+  "limitations": "Does not fetch server files, emulate every crawler or prove crawl eligibility.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.rfc-editor.org/rfc/rfc9309",
+    "https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

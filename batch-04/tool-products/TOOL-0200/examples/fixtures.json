@@ -1,0 +1,13 @@
+{
+  "nominal": {
+    "csv": "sku,value\\n00123,=1+1\\n00007,+SUM(A1:A2)",
+    "expect": "all XLSX cells type string"
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

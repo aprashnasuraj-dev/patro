@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0232",
+  "related": [
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0180",
+      "title": "SRT Subtitle Time Shifter and VTT Converter",
+      "proposed_canonical": "/converters/srt-time-shifter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0260",
+      "title": "Pro Rata Salary and Leave Calculator",
+      "proposed_canonical": "/calculators/pro-rata-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0283",
+      "title": "Race Time Predictor (Riegel and Cameron)",
+      "proposed_canonical": "/utilities/race-time-predictor",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

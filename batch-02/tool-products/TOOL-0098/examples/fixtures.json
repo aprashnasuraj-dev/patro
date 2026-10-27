@@ -1,0 +1,5 @@
+{
+  "sample_input": "Order 123 — status pending",
+  "expected_behavior": "A literal rule pending→ready changes both rows; a second regex rule can then rewrite order numbers.",
+  "qa_status": "TEST_PENDING"
+}

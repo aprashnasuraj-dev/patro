@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0249",
+  "related": [
+    {
+      "id": "TOOL-0193",
+      "title": "Phone Number Normalizer to E.164",
+      "proposed_canonical": "/converters/phone-numbers-to-e164",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0316",
+      "title": "Excel Serial Number to Date Converter",
+      "proposed_canonical": "/converters/excel-serial-number-to-date",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0465",
+      "title": "International GPA Converter",
+      "proposed_canonical": "/converters/international-gpa-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0145",
+      "title": "Bates Numbering for PDFs",
+      "proposed_canonical": "/utilities/bates-numbering-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0216",
+      "title": "Big Number Prime Factorization and GCD/LCM",
+      "proposed_canonical": "/calculators/prime-factorization-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

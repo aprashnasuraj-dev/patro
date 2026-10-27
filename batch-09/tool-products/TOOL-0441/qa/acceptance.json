@@ -1,0 +1,23 @@
+{
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": 0,
+  "not_run": [
+    "build",
+    "typecheck",
+    "unit",
+    "browser",
+    "accessibility",
+    "performance",
+    "security",
+    "responsive",
+    "lint"
+  ],
+  "source_preparation": "prepared",
+  "publication_gate": "LOCKED",
+  "open_concerns": [
+    "Platform overlay offsets are user-selected guidance values; no vendor-safe-zone geometry is hard-coded as current official compliance.",
+    "Validate integration imports and runtime client-side rendering in later Git phase"
+  ],
+  "git_imported": false,
+  "published": false
+}

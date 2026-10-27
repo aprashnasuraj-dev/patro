@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4632",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4291",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    }
+  ],
+  "research_status": "SOURCE_IDENTIFIED_NOT_LIVE_VERIFIED",
+  "licensing": "Link to documentation; no external source code or datasets bundled."
+}

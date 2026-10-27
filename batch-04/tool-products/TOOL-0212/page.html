@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Percentile and Quantile Calculator for a Dataset — Browser Calculator</title>
+<meta name="description" content="Calculate dataset percentiles using explicit quantile definitions, including R/Hyndman–Fan Type 7, Type 8, and nearest-rank.">
+<meta property="og:title" content="Percentile and Quantile Calculator for a Dataset">
+<meta property="og:description" content="Calculate dataset percentiles using explicit quantile definitions, including R/Hyndman–Fan Type 7, Type 8, and nearest-rank.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0212 · Local browser tool</div>
+<h1>Percentile and Quantile Calculator for a Dataset</h1>
+<p class="lede">Calculate dataset percentiles using explicit quantile definitions, including R/Hyndman–Fan Type 7, Type 8, and nearest-rank. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>Dataset<textarea id="data">1 2 3 4 5 6 7 8 9 10</textarea></label><label>Percentiles (0–100, comma separated)<input id="probs" value="25,50,75,90,95"></label><label>Method<select id="method"><option value="type7">Hyndman–Fan / R Type 7</option><option value="type8">Hyndman–Fan Type 8</option><option value="nearest">Nearest rank</option></select></label>
+<div class="row"><button id="run" type="button">Calculate percentiles</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Calculate dataset percentiles using explicit quantile definitions, including R/Hyndman–Fan Type 7, Type 8, and nearest-rank.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>All pasted values are treated as one empirical sample.</p></section>
+<section><h2>Limitations</h2><p>Percentile values vary across statistical packages because quantile definitions differ; the selected definition is always shown.</p></section>
+<section><h2>FAQ</h2><details><summary>Why can software disagree on percentiles?</summary><p>There are multiple accepted sample-quantile definitions. The tool makes the selected algorithm explicit.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://search.r-project.org/R/refmans/stats/html/quantile.html" rel="noopener noreferrer">R stats — Sample Quantiles</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

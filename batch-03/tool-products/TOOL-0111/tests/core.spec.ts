@@ -1,0 +1,1 @@
+import {describe,it} from 'vitest';describe('local font tester browser QA',()=>{it.todo('loads synthetic TTF from ArrayBuffer with FontFace');it.todo('removes previous face on replacement');it.todo('rejects >30MB');it.todo('keyboard file selection and screen-reader status')});

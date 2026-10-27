@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0056",
+  "name": "IPv6 Address Expander and Compressor",
+  "reserved_route": "/tools/ipv6-expand-compress",
+  "family_id": "F0029",
+  "family": "IPv6 Notation Formatter",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "browser_runtime": "src/ui.js",
+  "core_source": "src/core.ts",
+  "seo": {
+    "title": "IPv6 Address Expander and Compressor | AafnaiPatro Tools",
+    "description": "Canonicalize IPv6 under RFC 5952 and inspect 128-bit groups.",
+    "h1": "IPv6 Address Expander and Compressor",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "client_side_only": true,
+    "no_account": true,
+    "no_upload": true,
+    "network": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

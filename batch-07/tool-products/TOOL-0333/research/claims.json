@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0333",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "This does not validate whether the key is authorized, revoked, weak, or associated with a trusted host/user."
+}

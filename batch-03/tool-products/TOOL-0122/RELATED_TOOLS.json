@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0122",
+  "related": [
+    {
+      "id": "TOOL-0123",
+      "title": "PNG/JPG to AVIF and WebP with Quality Compare",
+      "proposed_canonical": "/comparisons/image-to-avif-webp-compare",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0130",
+      "title": "SVG to PNG/JPG Exporter at Custom Sizes",
+      "proposed_canonical": "/converters/svg-to-png",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0124",
+      "title": "Compress Image to Exact File Size (KB)",
+      "proposed_canonical": "/converters/compress-image-to-kb",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0138",
+      "title": "APNG and Animated WebP Converter",
+      "proposed_canonical": "/converters/apng-to-gif",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

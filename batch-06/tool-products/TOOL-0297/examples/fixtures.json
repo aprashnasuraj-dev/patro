@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0297",
+  "sample_input": {
+    "steps": "10000",
+    "stride": "0.75",
+    "cadence": "110",
+    "weight": "70",
+    "met": "3.5"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

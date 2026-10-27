@@ -1,0 +1,5 @@
+{
+  "qa_status": "TEST_PENDING",
+  "sample_behavior": "Upload three fonts and paste “A नेपाल 😀”; the matrix shows exactly which file maps each distinct Unicode code point.",
+  "binary_fixture_note": "Deferred integration tests must supply synthetic or redistributable fonts; this checkpoint intentionally bundles no third-party font binaries."
+}

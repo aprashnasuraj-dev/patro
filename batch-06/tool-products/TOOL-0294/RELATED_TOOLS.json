@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0294",
+  "related": [
+    {
+      "id": "TOOL-0319",
+      "title": "Golden Hour and Sun Position Calculator",
+      "proposed_canonical": "/calculators/golden-hour-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0477",
+      "title": "Cartons per Pallet Calculator (US/UK/AU Pallets)",
+      "proposed_canonical": "/calculators/pallet-carton-packing-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0490",
+      "title": "Firewood Volume & Cost-per-BTU Calculator",
+      "proposed_canonical": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0144",
+      "title": "Merge PDFs with Bookmarks per File",
+      "proposed_canonical": "/editors/merge-pdf-with-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0281",
+      "title": "One-Rep Max Calculator (Multi-Formula)",
+      "proposed_canonical": "/calculators/one-rep-max-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

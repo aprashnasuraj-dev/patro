@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0238",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Constant annual custom inflation rate with annual compounding."
+  ],
+  "uncertainty": [
+    "No external inflation index is used; a constant rate is an abstraction."
+  ]
+}

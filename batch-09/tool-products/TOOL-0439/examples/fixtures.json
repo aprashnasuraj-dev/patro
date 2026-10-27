@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "cap": 36000,
+    "residual": 24000,
+    "factor": 0.002,
+    "months": 36,
+    "taxPct": 8,
+    "upfront": 2500,
+    "endFee": 395
+  },
+  "known_answer": {
+    "output_label": "Approximate APR equivalent",
+    "expected_value": "4.80%"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

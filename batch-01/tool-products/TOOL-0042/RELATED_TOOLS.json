@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0042",
+  "related": [
+    {
+      "id": "TOOL-0048",
+      "title": "HTTP Response Header Analyzer",
+      "proposed_canonical": "/analyzers/http-response-header-analyzer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0118",
+      "title": "ASCII Banner Generator for Code Comments",
+      "proposed_canonical": "/generators/ascii-banner-code-comment",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0185",
+      "title": "Excel to JSON with Header Row Chooser",
+      "proposed_canonical": "/converters/excel-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0258",
+      "title": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit",
+      "proposed_canonical": "/generators/bulk-barcode-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0259",
+      "title": "vCard and Contact QR Code Generator",
+      "proposed_canonical": "/generators/vcard-qr-code-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

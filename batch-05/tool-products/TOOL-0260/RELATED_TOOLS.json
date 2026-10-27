@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0260",
+  "related": [
+    {
+      "id": "TOOL-0420",
+      "title": "Backdoor Roth Pro-Rata Calculator",
+      "proposed_canonical": "/calculators/backdoor-roth-pro-rata-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0456",
+      "title": "Paid Family & Maternity Leave Pay Estimator",
+      "proposed_canonical": "/calculators/paid-family-leave-benefits-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0515",
+      "title": "Australian Long Service Leave Calculator",
+      "proposed_canonical": "/calculators/australia-long-service-leave-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0232",
+      "title": "Hourly to Salary Converter with Unpaid Time Off",
+      "proposed_canonical": "/converters/hourly-to-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0509",
+      "title": "UK Shared Parental Leave and Pay Planner",
+      "proposed_canonical": "/planners/uk-shared-parental-leave-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

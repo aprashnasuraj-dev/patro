@@ -1,0 +1,11 @@
+{
+  "assumptions": "At most 600 tokens per revision.",
+  "limitations": "Diff is token-oriented and does not infer document semantics.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.gnu.org/software/diffutils/manual/"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

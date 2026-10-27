@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0287",
+  "claim": "Coggan threshold percentage bands use 55%, 75%, 90%, 105% and 120%; Zone 6 is open-ended; neuromuscular sprint power cannot be bounded with FTP alone.",
+  "assumptions": [
+    "A 20-minute trial or device estimate can misstate true FTP; zones require individualized training context.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://help.trainingpeaks.com/hc/en-us/articles/360017420092-Zones-Calculator-Overview"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

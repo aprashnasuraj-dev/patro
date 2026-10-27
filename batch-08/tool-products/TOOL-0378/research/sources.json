@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0378",
+  "sources": [
+    {
+      "title": "Anki Manual: Exporting / Packaged Decks",
+      "url": "https://docs.ankiweb.net/exporting.html",
+      "authority": "Anki"
+    },
+    {
+      "title": "sql.js Database API",
+      "url": "https://sql.js.org/documentation/Database.html",
+      "authority": "sql.js"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0524",
+  "related": [
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0521",
+      "title": "US N-400 Physical Presence and Filing Date Calculator",
+      "proposed_canonical": "/calculators/us-n400-physical-presence-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0192",
+      "title": "Date Format Normalizer for CSV Columns",
+      "proposed_canonical": "/formatters/csv-date-format-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0230",
+      "title": "Savings Goal Calculator (Date or Contribution)",
+      "proposed_canonical": "/calculators/savings-goal-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0243",
+      "title": "Quote and Estimate Generator with Validity Date",
+      "proposed_canonical": "/generators/quote-generator-pdf",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0101",
+  "claims": [
+    {
+      "claim": "Subsetting is blocked when OS/2 fsType sets the no-subsetting bit or when complex OpenType layout tables are present.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "opentype",
+        "os2",
+        "woff2",
+        "fonteditor",
+        "fonteditor-layout-limit"
+      ]
+    }
+  ]
+}

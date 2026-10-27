@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0348",
+  "name": "Podcast RSS Feed Validator (Paste XML)",
+  "route": "/tools/podcast-rss-validator",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0192",
+  "engineering_family": "Podcast RSS Validator",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Podcast RSS Feed Validator (Paste XML) — Private Browser Tool",
+    "meta_description": "Parse pasted podcast RSS XML locally and check a bounded Apple-oriented technical subset: RSS 2.0 root, channel metadata, artwork, required episode enclosure/GUID fields, duplicate identifiers and date syntax.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

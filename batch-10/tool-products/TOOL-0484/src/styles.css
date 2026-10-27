@@ -1,0 +1,17 @@
+@import url('../_vendor/ui.css');
+:root{--product-accent:#aa6b1e;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+.page-intro{border-top:6px solid var(--product-accent);}
+.tool-form .primary-action{background:var(--product-accent);color:#fff;}
+.tool-form .primary-action:hover{filter:brightness(.95);}
+.tool-form .primary-action:focus-visible,.secondary-action:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--product-accent);outline-offset:3px;}
+.output-column .metric.primary{border-left:4px solid var(--product-accent);}
+.special-visual{margin-top:1rem;padding:1rem;border:1px solid #8996a54a;border-radius:14px;}
+.special-visual h3{margin:.1rem 0 1rem;font-size:1rem;}
+.visual-line{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);align-items:center;gap:1rem;margin:.6rem 0;}
+.visual-line>span{font-size:.88rem;}
+.visual-track{height:1rem;border-radius:1rem;background:color-mix(in srgb,var(--product-accent) 15%,transparent);overflow:hidden;}
+.visual-fill{display:block;background:var(--product-accent);height:100%;border-radius:1rem;}
+.reading{max-width:66rem;}
+@media(max-width:540px){.visual-line{grid-template-columns:1fr;gap:.3rem;}.page-intro h1{overflow-wrap:anywhere;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important;}}

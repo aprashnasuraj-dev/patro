@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0307",
+  "related": [
+    {
+      "id": "TOOL-0306",
+      "title": "ICS Calendar File Generator with Recurrence and Alarms",
+      "proposed_canonical": "/generators/ics-file-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0308",
+      "title": "RRULE Generator with Occurrence Preview",
+      "proposed_canonical": "/generators/rrule-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0318",
+      "title": "Shift Rotation Calendar Generator (Panama, 4-on-4-off)",
+      "proposed_canonical": "/generators/shift-schedule-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0106",
+      "title": "Font File Metadata and License Viewer",
+      "proposed_canonical": "/analyzers/font-metadata-viewer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

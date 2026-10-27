@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {binomialPMF,poissonPMF,probability} from "../src/core";
+describe("probability",()=>{it("binomial n=1 matches Bernoulli",()=>{expect(binomialPMF(1,1,.3)).toBeCloseTo(.3);});it("poisson lambda=0 puts mass at 0",()=>{expect(poissonPMF(0,0)).toBe(1);});it("tails remain bounded",()=>{expect(probability("binomial","atLeast",2,0,{n:10,p:.2}).probability).toBeGreaterThanOrEqual(0);});});

@@ -1,0 +1,23 @@
+{
+  "default_inputs": {
+    "start": "2026-11-01",
+    "units": 60,
+    "daily": 2,
+    "lead": 7,
+    "other": 0
+  },
+  "known_answer": {
+    "output_label": "Full days of supply",
+    "expected_display": "30",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

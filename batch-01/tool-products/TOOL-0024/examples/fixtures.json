@@ -1,0 +1,20 @@
+{
+  "sample_input": "FROM node:22-alpine\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD [\"node\", \"app.js\"]",
+  "intended_action": "Inspect Dockerfile",
+  "manual_review_cases": [
+    {
+      "input": "COPY before npm install",
+      "expectation": "cache suggestion"
+    },
+    {
+      "input": "root user",
+      "expectation": "warn"
+    }
+  ],
+  "limits": "Heuristics are advisory and not a Dockerfile parser, security scanner or vulnerability database. Results depend on build context and multi-stage design.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "LATE_INSTALL"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

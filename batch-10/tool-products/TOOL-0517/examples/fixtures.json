@@ -1,0 +1,16 @@
+{
+  "tool": "TOOL-0517",
+  "default_inputs": {
+    "assumedBalance": "220000",
+    "assumedRate": "2.85",
+    "assumedMonths": "264",
+    "newLoan": "350000",
+    "newRate": "6.75",
+    "newMonths": "360",
+    "assumptionFee": "3000",
+    "newFee": "6500",
+    "cashTopup": "130000"
+  },
+  "worked_example": "An assumed 2.85% mortgage can have lower monthly debt service but require an upfront equity gap.",
+  "source_status": "TEST_PENDING"
+}

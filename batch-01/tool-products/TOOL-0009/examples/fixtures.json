@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0009",
+  "case": "Worked example",
+  "input": "# Development-only demonstration values\nAPI_USER=example\nAPI_PASSWORD=\"placeholder-not-real\"\nLOG_LEVEL=info\n",
+  "options": {
+    "name": "app-credentials",
+    "namespace": "default"
+  },
+  "expected_properties": "base64 UTF-8, quoted values, duplicate names, interpolation refusal, DNS-1123 checks",
+  "expected_execution": "NOT_RUN",
+  "limitations": "This converter does not evaluate shell variables. Kubernetes Secrets are not encrypted simply because values are base64 encoded. Avoid committing manifests containing real credentials."
+}

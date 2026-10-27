@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0420",
+  "name": "Backdoor Roth Pro-Rata Calculator",
+  "reserved_route": "/tools/backdoor-roth-pro-rata-calculator",
+  "engineering_family_id": "F0235",
+  "engineering_family": "Backdoor Roth Pro-Rata Calculator",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Backdoor Roth Pro-Rata Calculator | AafnaiPatro Tools",
+    "description": "Estimate the Form 8606 pro-rata taxable and nontaxable portions of a Roth conversion using total IRA basis and year-end traditional IRA values.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

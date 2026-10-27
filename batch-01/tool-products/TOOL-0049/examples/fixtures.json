@@ -1,0 +1,16 @@
+{
+  "input": {
+    "profile": "Public asset",
+    "maxAge": "3600",
+    "sMaxAge": "7200",
+    "stale": "60",
+    "immutable": false
+  },
+  "worked_example": "Public immutable asset: public, max-age=31536000, immutable when URL is content-hashed.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

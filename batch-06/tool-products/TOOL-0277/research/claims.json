@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0277",
+  "claims": [
+    {
+      "claim": "CMHA notes engineered design is recommended for total design height exceeding 4 ft where more specific requirements do not exist.",
+      "source_url": "https://www.cmha.org/resource/srw-tec-004/",
+      "implementation_note": "The calculator emits a review flag; it does not attempt structural design."
+    },
+    {
+      "claim": "CMHA guidance describes free-draining aggregate behind SRW units and drainage as site-specific design considerations.",
+      "source_url": "https://www.cmha.org/resource/srw-tec-004/",
+      "implementation_note": "Drainage-zone depth is visible/editable and treated only as a materials volume."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

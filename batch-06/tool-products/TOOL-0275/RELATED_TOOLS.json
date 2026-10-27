@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0275",
+  "related": [
+    {
+      "id": "TOOL-0280",
+      "title": "Land Area Converter (Bigha, Katha, Ropani, Acre, Sq Ft)",
+      "proposed_canonical": "/converters/land-area-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0274",
+      "title": "Square Footage Calculator for Irregular Rooms",
+      "proposed_canonical": "/calculators/square-footage-calculator-irregular-rooms",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0271",
+      "title": "BTU and HVAC Room Sizing Estimator",
+      "proposed_canonical": "/calculators/btu-calculator-room-size",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0095",
+      "title": "Readability Score Checker (Multi-Metric)",
+      "proposed_canonical": "/validators/readability-score-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0400",
+      "title": "Bicycle Gear Inches, Gain Ratio and Speed at Cadence Calculator",
+      "proposed_canonical": "/calculators/bike-gear-ratio-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

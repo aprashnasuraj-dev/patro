@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0246",
+  "status": "TEST_PENDING",
+  "sample": {
+    "startCustomers": 1000,
+    "lostCustomers": 40,
+    "newCustomers": 100,
+    "acqSpend": 10000,
+    "arpa": 50,
+    "grossMarginPct": 80,
+    "startMrr": 50000,
+    "churnMrr": 2000,
+    "contractionMrr": 500,
+    "expansionMrr": 1500,
+    "newMrr": 5000
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

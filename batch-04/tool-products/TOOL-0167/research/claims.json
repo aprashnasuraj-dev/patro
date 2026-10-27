@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Extract bounded PNG or JPEG frames at a chosen interval and download them as a ZIP.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg fps filter"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "At most 500 frames are extracted per run; long videos require a larger interval.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0251",
+  "name": "Late Payment Interest Calculator for Invoices",
+  "route": "/tools/late-payment-interest-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0122",
+  "engineering_family": "Invoice Late Interest Calculator",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Late Payment Interest Calculator for Invoices — Private Browser Tool",
+    "meta_description": "Estimate invoice late-payment interest from a user-supplied annual rate, day-count basis, grace period, compounding choice and dated payments.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

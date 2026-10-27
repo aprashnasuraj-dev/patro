@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0419",
+  "name": "Wash Sale & Holding Period Date Calculator",
+  "reserved_route": "/tools/wash-sale-holding-period-calculator",
+  "engineering_family_id": "F0112",
+  "engineering_family": "Investment Trade Cost Basis",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Wash Sale & Holding Period Date Calculator | AafnaiPatro Tools",
+    "description": "Check the 30-days-before/after wash-sale window, estimate proportional disallowed loss, basis adjustment and a tacked holding-period anchor.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

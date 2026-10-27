@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0252",
+  "related": [
+    {
+      "id": "TOOL-0253",
+      "title": "Fully Loaded Employee Cost Calculator",
+      "proposed_canonical": "/calculators/fully-loaded-employee-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0235",
+      "title": "Cost Basis Calculator (FIFO and Average) from Trade CSV",
+      "proposed_canonical": "/calculators/cost-basis-calculator-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0239",
+      "title": "Two-Loan Comparison Calculator (Total Cost)",
+      "proposed_canonical": "/calculators/compare-two-loans-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0427",
+      "title": "Lease Termination Cost Calculator",
+      "proposed_canonical": "/calculators/lease-break-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0439",
+      "title": "Money Factor to APR & True Lease Cost",
+      "proposed_canonical": "/calculators/car-lease-money-factor-apr-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,7 @@
+import {N,S,D,ODate,addDays,Q,M,P,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Pure, bounded calculations; no user-data storage or network. */
+export function calculate(i:Record<string,unknown>):Result {
+const origin=S(i,'origin',100),dest=S(i,'destination',100),v=N(i,'value',0,1e9),freight=N(i,'freight',0,1e9),ins=N(i,'insurance',0,1e9),d=N(i,'duty',0,300),tax=N(i,'tax',0,100),f=N(i,'fees',0,1e9),include=S(i,'taxFreight',5);if(!origin||!dest||!['yes','no'].includes(include))throw Error('Declare origin, destination and tax basis');const duty=v*d/100,base=v+duty+(include==='yes'?freight+ins:0),vat=base*tax/100,total=v+freight+ins+duty+vat+f;if(total>1e12)throw Error('Cost exceeds safe arithmetic scope');
+return R([{label:'Estimated landed cost',value:M(total)},{label:'Modeled import duty',value:M(duty)},{label:'Modeled VAT/sales tax',value:M(vat)},{label:'Freight + insurance',value:M(freight+ins)},{label:'Other fees',value:M(f)},{label:'Tax basis',value:M(base)}],[`Tariff classification, preferential origin, antidumping, quotas, excise, customs valuation, de minimis policy and currency conversion are NOT validated for ${origin} → ${dest}.`,'The user-provided goods value must already follow the destination customs valuation method; avoid double-counting freight if it is inside assessable goods value.'],['Duty = entered assessable value × duty%; tax base = value + duty + optional freight/insurance; total adds all components.']);
+}

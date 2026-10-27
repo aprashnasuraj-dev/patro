@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0419",
+  "claims": [
+    {
+      "claim": "A wash sale can arise from acquiring substantially identical securities within 30 days before or after a loss sale.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "For ordinary replacement shares, disallowed loss is added to basis and the prior holding period carries over; special IRA rules require separate treatment.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

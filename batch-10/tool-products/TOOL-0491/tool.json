@@ -1,0 +1,126 @@
+{
+  "id": "TOOL-0491",
+  "name": "Multi-Fuel Heating Cost Comparator",
+  "route": "/tools/multi-fuel-heating-cost-comparison",
+  "slug": "multi-fuel-heating-cost-comparison",
+  "family": "F0288",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "comparison",
+  "title": "Multi-Fuel Heating Cost Comparator | AafnaiPatro Tools",
+  "meta_description": "Compare delivered heat costs across electricity, heat pumps, natural gas, propane and firewood using explicit fuel prices and device efficiencies.",
+  "inputs": [
+    {
+      "key": "demand",
+      "label": "Annual delivered heat",
+      "default": 12000,
+      "unit": "kWh",
+      "type": "number",
+      "min": 1,
+      "max": 5000000.0,
+      "step": "any"
+    },
+    {
+      "key": "electric",
+      "label": "Electricity tariff",
+      "default": 0.18,
+      "unit": "per kWh",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "cop",
+      "label": "Heat pump seasonal COP",
+      "default": 3,
+      "unit": "ratio",
+      "type": "number",
+      "min": 0.5,
+      "max": 10,
+      "step": "any"
+    },
+    {
+      "key": "gas",
+      "label": "Natural gas price",
+      "default": 1.7,
+      "unit": "per therm",
+      "type": "number",
+      "min": 0,
+      "max": 500,
+      "step": "any"
+    },
+    {
+      "key": "afue",
+      "label": "Gas furnace AFUE",
+      "default": 0.9,
+      "unit": "fraction",
+      "type": "number",
+      "min": 0.1,
+      "max": 1,
+      "step": "any"
+    },
+    {
+      "key": "propane",
+      "label": "Propane price",
+      "default": 3.1,
+      "unit": "per US gallon",
+      "type": "number",
+      "min": 0,
+      "max": 500,
+      "step": "any"
+    },
+    {
+      "key": "propEff",
+      "label": "Propane furnace efficiency",
+      "default": 0.85,
+      "unit": "fraction",
+      "type": "number",
+      "min": 0.1,
+      "max": 1,
+      "step": "any"
+    },
+    {
+      "key": "wood",
+      "label": "Wood cord price",
+      "default": 350,
+      "unit": "per full cord",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "woodMBtu",
+      "label": "Firewood heat content",
+      "default": 20,
+      "unit": "MMBtu per cord",
+      "type": "number",
+      "min": 1,
+      "max": 40,
+      "step": "any"
+    },
+    {
+      "key": "woodEff",
+      "label": "Wood stove efficiency",
+      "default": 0.65,
+      "unit": "fraction",
+      "type": "number",
+      "min": 0.1,
+      "max": 1,
+      "step": "any"
+    }
+  ]
+}

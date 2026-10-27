@@ -1,0 +1,16 @@
+{
+  "input": {
+    "kind": "journal",
+    "authors": [
+      "Smith, Jane A.",
+      "Lee, Ming"
+    ],
+    "year": "2026",
+    "title": "A practical example",
+    "container": "Example Journal",
+    "volume": "12",
+    "issue": "3",
+    "pages": "10–25",
+    "doi": "10.1234/example"
+  }
+}

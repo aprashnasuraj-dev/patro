@@ -1,0 +1,41 @@
+{
+  "id": "TOOL-0322",
+  "name": "Checksum File Verifier (sha256sums Parser)",
+  "route": "/tools/verify-sha256sums",
+  "batch": "BATCH-07",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0175",
+  "engineering_family": "File Hashes and Integrity Checks",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [
+    {
+      "name": "@noble/hashes",
+      "purpose": "Incremental SHA-256 bundled into the application.",
+      "pin": "Lock an audited host version."
+    }
+  ],
+  "seo": {
+    "title": "Checksum File Verifier (sha256sums Parser) — Private Browser Tool",
+    "meta_description": "Parse a bounded GNU-style SHA-256 checksum list, match expected names to user-selected local files, and stream-verify each file without uploading it.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0333",
+  "related": [
+    {
+      "id": "TOOL-0334",
+      "title": "PGP Public Key Inspector",
+      "proposed_canonical": "/analyzers/pgp-key-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0331",
+      "title": "RSA and ECDSA Key Pair Generator (PEM and JWK)",
+      "proposed_canonical": "/generators/generate-rsa-key-pair",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0335",
+      "title": "API Key and Token Generator (Hex, Base62, UUIDv7, ULID)",
+      "proposed_canonical": "/generators/api-key-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0020",
+      "title": "Semantic JSON Diff (Ignore Key and Array Order)",
+      "proposed_canonical": "/utilities/json-diff-ignore-order",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0183",
+      "title": "CSV Deduplicator by Key Columns",
+      "proposed_canonical": "/utilities/csv-remove-duplicates",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

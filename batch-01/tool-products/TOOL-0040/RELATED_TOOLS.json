@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0040",
+  "related": [
+    {
+      "id": "TOOL-0019",
+      "title": "package-lock.json Duplicate Dependency Finder",
+      "proposed_canonical": "/extractors/package-lock-duplicate-finder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0107",
+      "title": "@font-face CSS Generator with unicode-range",
+      "proposed_canonical": "/generators/font-face-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0003",
+      "title": "OpenAPI YAML to TypeScript Interfaces",
+      "proposed_canonical": "/converters/openapi-to-typescript-interfaces",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

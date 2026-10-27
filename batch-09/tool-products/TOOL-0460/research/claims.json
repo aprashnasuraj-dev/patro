@@ -1,0 +1,23 @@
+{
+  "claims": [
+    {
+      "statement": "Federal FMLA threshold and remaining standard entitlement",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Qualifying medical/family conditions, FMLA leave-year definition, military caregiver 26 weeks and special flight crew eligibility are not modeled.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.dol.gov/agencies/whd/fmla/faq",
+    "https://www.dol.gov/agencies/whd/fact-sheets/28i-fmla-leave-calculation"
+  ],
+  "assumptions": "Qualifying medical/family conditions, FMLA leave-year definition, military caregiver 26 weeks and special flight crew eligibility are not modeled.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

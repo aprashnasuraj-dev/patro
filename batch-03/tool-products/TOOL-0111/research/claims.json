@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0111",
+  "claims": [
+    {
+      "claim": "Load a local font file directly into the browser with the CSS Font Loading API and preview it beside a fallback sample without uploading the font.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "css-font-loading-3"
+      ]
+    },
+    {
+      "claim": "A successful load proves browser parse/render support in this browser only; it does not validate licensing, all glyphs, or other browsers.",
+      "status": "limitation",
+      "source_ids": [
+        "css-font-loading-3"
+      ]
+    }
+  ]
+}

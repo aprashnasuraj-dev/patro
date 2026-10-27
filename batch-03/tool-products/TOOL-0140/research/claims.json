@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0140",
+  "claims": [
+    {
+      "claim": "Resize a bounded batch of images with contain/cover/stretch modes and optionally convert formats before ZIP download.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Animated inputs are treated as still images unless the animation-specific tools are used.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

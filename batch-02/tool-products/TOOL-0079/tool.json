@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0079",
+  "name": "Keyword Cannibalization Finder from GSC Export",
+  "reserved_route": "/tools/keyword-cannibalization-finder",
+  "family_id": "F0040",
+  "family": "Keyword Cannibalization Finder",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-04",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Keyword Cannibalization Finder from GSC Export | AafnaiPatro Tools",
+    "description": "Find queries that appear against multiple URLs in a Search Console CSV export.",
+    "h1": "Keyword Cannibalization Finder from GSC Export",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

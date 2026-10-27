@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0209",
+  "name": "Correlation Matrix from CSV (Pearson and Spearman)",
+  "route": "/tools/correlation-matrix-calculator",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0095",
+  "engineering_family": "Regression and Correlation Studio",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": true
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Correlation Matrix from CSV (Pearson and Spearman) — Browser Calculator",
+    "meta_description": "Build a Pearson or Spearman correlation matrix from numeric CSV columns using pairwise-complete observations.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

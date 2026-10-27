@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0366",
+  "related": [
+    {
+      "id": "TOOL-0365",
+      "title": "GPA Calculator with Custom Grade Scale",
+      "proposed_canonical": "/calculators/gpa-calculator-custom-scale",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0367",
+      "title": "CGPA to Percentage Converter (Multiple University Formulas)",
+      "proposed_canonical": "/converters/cgpa-to-percentage-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0465",
+      "title": "International GPA Converter",
+      "proposed_canonical": "/converters/international-gpa-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0295",
+      "title": "Grade-Adjusted Pace Calculator",
+      "proposed_canonical": "/calculators/grade-adjusted-pace-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "proposed_canonical": "/calculators/final-paycheck-pto-deadline-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

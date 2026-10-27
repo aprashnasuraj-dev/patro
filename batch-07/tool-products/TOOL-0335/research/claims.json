@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0335",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "UUIDv7 and ULID expose creation time and are not designed to hide timing metadata. API keys also need safe storage, rotation, scope and server-side verification."
+}

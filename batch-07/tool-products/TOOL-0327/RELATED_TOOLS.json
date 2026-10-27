@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0327",
+  "related": [
+    {
+      "id": "TOOL-0326",
+      "title": "HMAC Generator and Webhook Signature Tester",
+      "proposed_canonical": "/generators/hmac-signature-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0322",
+      "title": "Checksum File Verifier (sha256sums Parser)",
+      "proposed_canonical": "/validators/verify-sha256sums",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0338",
+      "title": "QR Code Inspector with Link Safety Hints",
+      "proposed_canonical": "/analyzers/qr-code-link-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0118",
+      "title": "ASCII Banner Generator for Code Comments",
+      "proposed_canonical": "/generators/ascii-banner-code-comment",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0258",
+      "title": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit",
+      "proposed_canonical": "/generators/bulk-barcode-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

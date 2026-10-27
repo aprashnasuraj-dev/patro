@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0248",
+  "related": [
+    {
+      "id": "TOOL-0417",
+      "title": "VAT/GST Registration Threshold Tracker",
+      "proposed_canonical": "/planners/vat-gst-registration-threshold-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0258",
+      "title": "Bulk Barcode Generator (EAN-13, UPC-A, Code 128) with Check Digit",
+      "proposed_canonical": "/generators/bulk-barcode-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0415",
+      "title": "GST/HST Quick Method vs Regular Method",
+      "proposed_canonical": "/calculators/canada-gst-hst-quick-method-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0007",
+      "title": "HAR to cURL Bulk Converter",
+      "proposed_canonical": "/converters/har-to-curl",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0045",
+      "title": "Bulk User-Agent Parser",
+      "proposed_canonical": "/analyzers/bulk-user-agent-parser",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

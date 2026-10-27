@@ -1,0 +1,16 @@
+{
+  "tool": "TOOL-0516",
+  "default_inputs": {
+    "installed": "13000",
+    "rebate": "3500",
+    "dailyShift": "8",
+    "rtEfficiency": "0.9",
+    "retail": "0.34",
+    "feedIn": "0.07",
+    "annualExtra": "70",
+    "fade": "2",
+    "life": "12"
+  },
+  "worked_example": "8 kWh/day × 365 × (0.9×A$0.34 − A$0.07) minus A$70 ≈ A$619/year before degradation.",
+  "source_status": "TEST_PENDING"
+}

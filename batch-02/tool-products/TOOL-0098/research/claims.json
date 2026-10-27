@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0098",
+  "claims": [
+    {
+      "claim": "Core behavior is deterministic browser-local transformation and does not depend on an external domain specification.",
+      "status": "implementation-basis",
+      "source_ids": []
+    }
+  ]
+}

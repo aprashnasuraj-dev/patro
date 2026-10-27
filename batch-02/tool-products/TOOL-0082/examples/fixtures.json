@@ -1,0 +1,18 @@
+{
+  "sample_input": {
+    "text": "pаypal",
+    "reference": "paypal"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "Cyrillic р in рaypal maps approximately to Latin p.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{text:'pаypal',reference:'paypal'}",
+    "assertions": "assert.ok(result.metrics[0][1]>0);"
+  }
+}

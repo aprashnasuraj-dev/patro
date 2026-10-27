@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0241",
+  "related": [
+    {
+      "id": "TOOL-0422",
+      "title": "Contractor Break-Even Rate Calculator",
+      "proposed_canonical": "/calculators/w2-vs-1099-contractor-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0247",
+      "title": "Startup Runway and Burn Rate Calculator",
+      "proposed_canonical": "/calculators/startup-runway-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0272",
+      "title": "Unit Rent Yield and Cap Rate Calculator",
+      "proposed_canonical": "/calculators/cap-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0227",
+      "title": "EMI Calculator: Flat Rate vs Reducing Balance",
+      "proposed_canonical": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0238",
+      "title": "Inflation Calculator with Custom Rate",
+      "proposed_canonical": "/calculators/inflation-calculator-custom-rate",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

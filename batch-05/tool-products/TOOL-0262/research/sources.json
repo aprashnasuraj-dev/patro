@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0262",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.gaf.com/en-us/blog/your-home/how-many-bundles-of-shingles-are-in-a-square---63a47862-f7e1-4e73-abcf-8d09917a8b8d",
+      "title": "How Many Bundles of Shingles Are in a Square?",
+      "publisher": "GAF",
+      "version": "2026 article",
+      "effective_date": "2026-08-24",
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "Public web page; cite/summary, do not redistribute copyrighted standard text.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "A roofing square is 100 ft²; bundles per square vary by product. Product packaging/specification controls."
+    }
+  ],
+  "no_external_source_reason": null
+}

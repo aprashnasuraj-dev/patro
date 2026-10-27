@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {convertBib} from '../src/core';describe('TOOL-0362 core',()=>{it('known-answer fixture',()=>{expect(convertBib('@article{x,title={T},author={Smith, Jane},year={2026}}','apa')[0]).toContain('2026')})});

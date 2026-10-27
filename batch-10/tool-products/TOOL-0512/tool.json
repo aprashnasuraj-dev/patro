@@ -1,0 +1,88 @@
+{
+  "id": "TOOL-0512",
+  "name": "Canada FHSA and RRSP Home Buyers Plan Planner",
+  "slug": "canada-fhsa-rrsp-home-buyers-plan",
+  "route": "/tools/canada-fhsa-rrsp-home-buyers-plan",
+  "family": "F0303",
+  "description": "Compare first-home savings account remaining room and RRSP Home Buyers’ Plan withdrawal capacity with a repayment preview.",
+  "seo": {
+    "title": "Canada FHSA and RRSP Home Buyers Plan Planner — Free Local Tool | AafnaiPatro",
+    "description": "Compare first-home savings account remaining room and RRSP Home Buyers’ Plan withdrawal capacity with a repayment preview.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "two-path",
+  "inputs": [
+    {
+      "key": "yearsOpen",
+      "label": "FHSA calendar years including opening year",
+      "default": 3,
+      "unit": "years",
+      "type": "number",
+      "min": 1,
+      "max": 15,
+      "step": 1
+    },
+    {
+      "key": "contributed",
+      "label": "Cumulative FHSA contributions and RRSP-to-FHSA transfers",
+      "default": 16000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "unusedLast",
+      "label": "Eligible unused FHSA participation room carried from previous year",
+      "default": 8000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 8000,
+      "step": "any"
+    },
+    {
+      "key": "thisYear",
+      "label": "FHSA amounts already contributed this year",
+      "default": 0,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 50000,
+      "step": "any"
+    },
+    {
+      "key": "hbpPrior",
+      "label": "Cumulative HBP withdrawals toward available cap",
+      "default": 0,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 60000,
+      "step": "any"
+    },
+    {
+      "key": "hbpPlanned",
+      "label": "Planned HBP withdrawal",
+      "default": 35000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 60000,
+      "step": "any"
+    }
+  ]
+}

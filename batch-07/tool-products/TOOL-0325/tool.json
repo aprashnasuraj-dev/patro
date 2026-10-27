@@ -1,0 +1,46 @@
+{
+  "id": "TOOL-0325",
+  "name": "Argon2 and bcrypt Cost Benchmark on Your Device",
+  "route": "/tools/password-hash-cost-benchmark",
+  "batch": "BATCH-07",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0177",
+  "engineering_family": "Password Hash Cost Benchmark",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [
+    {
+      "name": "argon2-browser",
+      "purpose": "Locally bundled Argon2id WASM implementation.",
+      "pin": "Integrator must lock and review exact version."
+    },
+    {
+      "name": "bcryptjs",
+      "purpose": "Locally bundled bcrypt implementation.",
+      "pin": "Integrator must lock and review exact version."
+    }
+  ],
+  "seo": {
+    "title": "Argon2 and bcrypt Cost Benchmark on Your Device — Private Browser Tool",
+    "meta_description": "Benchmark bounded Argon2id and bcrypt configurations on the current device using synthetic input, reporting measured latency without treating a browser benchmark as a server recommendation.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

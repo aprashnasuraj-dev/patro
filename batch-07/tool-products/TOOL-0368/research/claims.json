@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0368",
+  "claims": [
+    {
+      "claim": "Count words locally and estimate speaking duration from an explicit words-per-minute rate plus optional pause allowance.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Speaking rate varies by language, speaker, emphasis, audience interaction and slide/pause behavior.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

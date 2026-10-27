@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0460",
+  "related": [
+    {
+      "id": "TOOL-0456",
+      "title": "Paid Family & Maternity Leave Pay Estimator",
+      "proposed_canonical": "/calculators/paid-family-leave-benefits-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0509",
+      "title": "UK Shared Parental Leave and Pay Planner",
+      "proposed_canonical": "/planners/uk-shared-parental-leave-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0499",
+      "title": "HSA Contribution Limit and Midyear Eligibility Calculator",
+      "proposed_canonical": "/calculators/hsa-contribution-limit-monthly-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0486",
+      "title": "Digital Nomad Visa Eligibility Matcher",
+      "proposed_canonical": "/utilities/digital-nomad-visa-eligibility-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0449",
+      "title": "COBRA Election & Payment Deadline Calculator",
+      "proposed_canonical": "/calculators/cobra-election-payment-deadline-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

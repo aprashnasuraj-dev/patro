@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0144",
+  "runtime_status": "TEST_PENDING",
+  "product_tests_executed": 0,
+  "acceptance_scenarios": [
+    "known-answer fixture",
+    "boundary values",
+    "malformed input",
+    "unsupported input",
+    "security/parser-abuse case",
+    "output formatting and download behavior",
+    "320px responsive interaction",
+    "keyboard navigation and visible focus",
+    "screen-reader result announcement",
+    "performance-sensitive upper-bound case"
+  ],
+  "notes": "Prepared only. Do not interpret as PASS."
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0155",
+  "related": [
+    {
+      "id": "TOOL-0142",
+      "title": "Rearrange PDF Pages (Drag Thumbnails)",
+      "proposed_canonical": "/editors/rearrange-pdf-pages",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "proposed_canonical": "/converters/resize-pdf-to-a4",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0135",
+      "title": "Blur and Pixelate Redaction Tool",
+      "proposed_canonical": "/editors/blur-image-redact",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0229",
+      "title": "True APR Calculator Including Fees",
+      "proposed_canonical": "/calculators/true-apr-calculator-with-fees",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0438",
+      "title": "Gig Driver True Profit Calculator",
+      "proposed_canonical": "/calculators/gig-driver-profit-per-mile-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

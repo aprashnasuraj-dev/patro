@@ -1,0 +1,12 @@
+{
+  "sample": {
+    "owners": "*.js @frontend\n/docs/ @docs-team",
+    "path": "docs/readme.md"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

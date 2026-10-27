@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0239",
+  "related": [
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0227",
+      "title": "EMI Calculator: Flat Rate vs Reducing Balance",
+      "proposed_canonical": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0229",
+      "title": "True APR Calculator Including Fees",
+      "proposed_canonical": "/calculators/true-apr-calculator-with-fees",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0233",
+      "title": "Biweekly Mortgage Payment Savings Calculator",
+      "proposed_canonical": "/calculators/biweekly-mortgage-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0517",
+      "title": "Assumable Mortgage vs New Loan Comparison",
+      "proposed_canonical": "/calculators/assumable-mortgage-comparison-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

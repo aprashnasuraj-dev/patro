@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0070",
+  "related": [
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0066",
+      "title": "BreadcrumbList Schema from URL List",
+      "proposed_canonical": "/utilities/breadcrumb-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0077",
+      "title": "Multilingual URL Slug Generator",
+      "proposed_canonical": "/generators/url-slug-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0047",
+      "title": "Context-Aware URL Encoder",
+      "proposed_canonical": "/formatters/url-encode-path-vs-query",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

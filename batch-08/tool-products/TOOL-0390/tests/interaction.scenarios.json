@@ -1,0 +1,12 @@
+{
+  "status": "TEST_PENDING",
+  "not_executed": true,
+  "scenarios": [
+    "keyboard-only input and action flow",
+    "malformed/empty/boundary input handling",
+    "mobile narrow viewport layout",
+    "screen-reader result announcement",
+    "large-but-bounded input behavior",
+    "no unexpected network request during normal use"
+  ]
+}

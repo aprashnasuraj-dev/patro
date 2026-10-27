@@ -1,0 +1,7 @@
+import {N,Q,R} from '../_vendor/guard';
+export function calculate(x:Record<string,unknown>){
+ const area=N(x,'area',10,1e7),target=N(x,'target',0,10),rain=N(x,'rain',0,10),eff=N(x,'eff',20,100),flow=N(x,'flow',0.1,10000),zones=N(x,'zones',1,100),cycles=N(x,'cycles',1,24);
+ if(!Number.isInteger(zones)||!Number.isInteger(cycles))throw Error('Zones and cycles must be whole numbers.');
+ const net=Math.max(0,target-rain),gallons=net*area*0.6233/(eff/100),minPerZone=gallons/zones/flow,cycleMin=minPerZone/cycles;
+ return R([{label:'Net irrigation depth',value:`${Q(net,3)} in`},{label:'Estimated weekly withdrawal',value:`${Q(gallons)} US gal`},{label:'Runtime per zone per week',value:`${Q(minPerZone)} minutes`},{label:'Time per cycle per zone',value:`${Q(cycleMin)} minutes`},{label:'Total active-system minutes (zones sequential)',value:`${Q(minPerZone*zones)} minutes`}],['Estimate assumes all zones are equal-area and no zones run simultaneously.','Measure actual catch-can precipitation rate and check soil absorption, runoff, rain sensors, municipal rules and weather before programming.','Zero runtime means effective rain meets the entered target, not that plants necessarily need zero water.'],['Net irrigation = max(target depth − effective rainfall, 0).','Gallons = 0.6233 × net depth (in) × planted area (ft²) ÷ assumed application efficiency.','Divide total withdrawal by per-zone gallons/min and number of equally sized zones.']);
+}

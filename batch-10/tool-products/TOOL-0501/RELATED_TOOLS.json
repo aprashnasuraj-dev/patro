@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0501",
+  "related": [
+    {
+      "id": "TOOL-0500",
+      "title": "Medicare Enrollment Window and Late Penalty Calculator",
+      "proposed_canonical": "/calculators/medicare-enrollment-window-penalty-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "proposed_canonical": "/calculators/marginal-tax-bracket-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0495",
+      "title": "Mega-Backdoor Roth Contribution Room Calculator",
+      "proposed_canonical": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0498",
+      "title": "RSU State and Employer Withholding Gap Calculator",
+      "proposed_canonical": "/calculators/rsu-state-withholding-gap-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0499",
+      "title": "HSA Contribution Limit and Midyear Eligibility Calculator",
+      "proposed_canonical": "/calculators/hsa-contribution-limit-monthly-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

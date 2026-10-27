@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0152",
+  "related": [
+    {
+      "id": "TOOL-0151",
+      "title": "Images to PDF with Page Size and Margin Control",
+      "proposed_canonical": "/converters/images-to-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0049",
+      "title": "Cache-Control Header Builder",
+      "proposed_canonical": "/generators/cache-control-header-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0139",
+      "title": "Image DPI Changer (72 to 300 DPI)",
+      "proposed_canonical": "/editors/change-image-dpi",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "proposed_canonical": "/converters/resize-pdf-to-a4",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0154",
+      "title": "PDF Table Extractor to CSV",
+      "proposed_canonical": "/converters/pdf-table-to-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

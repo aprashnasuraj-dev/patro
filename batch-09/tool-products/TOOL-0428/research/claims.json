@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Assessment challenge payoff",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Taxes assessed and appeal filing are locality-dependent. No guarantee assessment drops.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Taxes assessed and appeal filing are locality-dependent. No guarantee assessment drops.",
+  "authoritative_references": [
+    "https://www.irs.gov/taxtopics/tc503"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

@@ -1,0 +1,7 @@
+import {N,Q,R,S} from '../_vendor/guard';
+export function calculate(x:Record<string,unknown>){
+ const material=S(x,'material',20),target=N(x,'target',0.01,100),area=N(x,'area',1,1e6),width=N(x,'width',0.1,30),distance=N(x,'distance',1,1000),collected=N(x,'collected',0.001,500);
+ if(!['Seed','Fertilizer'].includes(material))throw Error('Unsupported material.');
+ const calibrationArea=width*distance,measured=100*collected/calibrationArea,required=area*target/100,current=area*measured/100,multiplier=target/measured;
+ return R([{label:'Measured application rate',value:`${Q(measured,3)} kg / 100 m²`},{label:'Intended product for entire area',value:`${Q(required,3)} kg`},{label:'Projected product at observed calibration',value:`${Q(current,3)} kg`},{label:'Flow change ratio (not dial setting)',value:`${Q(multiplier,3)}×`},{label:'Deviation from target',value:`${Q((measured/target-1)*100)}%`},{label:'Trial strip area',value:`${Q(calibrationArea)} m²`}],['Do not treat flow change ratio as a numbered spreader setting; manufacturer dial scales are nonlinear. Re-measure after adjustment.','Actual swath overlap, ground speed, granule size and humidity affect application rate; apply fertilizer only as directed on product label and soil test.'],['Observed rate = collected kg ÷ (effective swath width × travel distance) × 100 m².','Target material = required kg per 100 m² × treated area ÷ 100.','Flow ratio is target rate ÷ observed rate; confirm by repeating a physical calibration pass.']);
+}

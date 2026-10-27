@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Random Sampler with Seed (Reproducible) — Browser Calculator</title>
+<meta name="description" content="Draw a reproducible seeded sample with or without replacement using a documented non-cryptographic PRNG.">
+<meta property="og:title" content="Random Sampler with Seed (Reproducible)">
+<meta property="og:description" content="Draw a reproducible seeded sample with or without replacement using a documented non-cryptographic PRNG.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0218 · Local browser tool</div>
+<h1>Random Sampler with Seed (Reproducible)</h1>
+<p class="lede">Draw a reproducible seeded sample with or without replacement using a documented non-cryptographic PRNG. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>Items (one per line)<textarea id="items">alpha
+beta
+gamma
+delta
+epsilon</textarea></label><div class="row"><label>Sample size<input id="count" type="number" value="3" min="1"></label><label>Seed<input id="seed" value="mission-mangal"></label></div><label><input id="replacement" type="checkbox" style="width:auto"> Sample with replacement</label>
+<div class="row"><button id="run" type="button">Draw reproducible sample</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Draw a reproducible seeded sample with or without replacement using a documented non-cryptographic PRNG.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Input order is part of reproducibility; duplicate lines are distinct sampling units.</p></section>
+<section><h2>Limitations</h2><p>The PRNG is reproducible but not cryptographically secure. The same seed and same ordered input are required for identical results.</p></section>
+<section><h2>FAQ</h2><details><summary>Can this be used for passwords or tokens?</summary><p>No. The generator is deliberately reproducible and is not cryptographically secure.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://prng.di.unimi.it/" rel="noopener noreferrer">Blackman/Vigna xoshiro reference family</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

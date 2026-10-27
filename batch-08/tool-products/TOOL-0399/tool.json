@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0399",
+  "name": "Knitting Gauge and Cast-On Calculator",
+  "route": "/tools/knitting-gauge-calculator",
+  "engineering_family_id": "F0222",
+  "engineering_family": "Knitting Gauge and Yarn Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-16",
+  "execution": "browser-local",
+  "network_required": false,
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "seo": {
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  }
+}

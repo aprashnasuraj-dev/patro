@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0261",
+  "examples": [
+    {
+      "inputs": {
+        "unit": "ft",
+        "slab": [
+          20,
+          16,
+          0.3333
+        ],
+        "strip": [
+          72,
+          1.5,
+          0.75
+        ],
+        "pads": [
+          4,
+          2,
+          2,
+          1
+        ],
+        "waste_pct": 5
+      },
+      "expected_note": "Result decomposes slab, strip and pads before adding overage."
+    }
+  ]
+}

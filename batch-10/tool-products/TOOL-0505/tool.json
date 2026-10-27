@@ -1,0 +1,96 @@
+{
+  "id": "TOOL-0505",
+  "name": "UK Section 24 Landlord vs Company Tax Comparison",
+  "route": "/tools/uk-section-24-landlord-company-comparison",
+  "slug": "uk-section-24-landlord-company-comparison",
+  "family": "F0298",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "comparison",
+  "title": "UK Section 24 Landlord vs Company Tax Comparison | AafnaiPatro Tools",
+  "meta_description": "Compare simplified individual landlord finance-cost restriction against company interest deduction and dividend extraction.",
+  "inputs": [
+    {
+      "key": "rent",
+      "label": "Annual gross rental receipts",
+      "default": 24000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "costs",
+      "label": "Annual allowable non-finance expenses",
+      "default": 4500,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "interest",
+      "label": "Annual qualifying finance costs",
+      "default": 8000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "marginal",
+      "label": "Illustrative individual tax marginal rate",
+      "default": 40,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 50,
+      "step": "any"
+    },
+    {
+      "key": "corpRate",
+      "label": "Illustrative company Corporation Tax rate",
+      "default": 25,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 40,
+      "step": "any"
+    },
+    {
+      "key": "extract",
+      "label": "Illustrative additional tax rate on dividend extraction",
+      "default": 33.75,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 50,
+      "step": "any"
+    },
+    {
+      "key": "otherInc",
+      "label": "Individual adjusted total income usable for reduction",
+      "default": 50000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    }
+  ]
+}

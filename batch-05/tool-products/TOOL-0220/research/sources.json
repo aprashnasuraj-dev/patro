@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0220",
+  "sources": [
+    {
+      "title": "NIST Dataplot — Hedges g",
+      "url": "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/hedgeg.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "Campbell Collaboration Effect Size Calculator — equations",
+      "url": "https://www.campbellcollaboration.org/calculator/equations",
+      "publisher": "Campbell Collaboration",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

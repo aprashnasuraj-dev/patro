@@ -1,0 +1,16 @@
+{
+  "job": "Turn sampled CSV into a reviewable GraphQL contract with column-level reasons, avoiding opaque inference.",
+  "differentiation": "GraphQL name normalization and type limits, explicit ID heuristic, scalar overrides validated against supplied data and a resolver mapping table.",
+  "layout": "Two-pane input/SDL desktop; stacked mobile; evidence table below; static worked example and limits. Green design tokens derived from read-only Patro tokens.",
+  "processing": "O(input cells) scanning; bounded records retained; worker terminated on cancel/input changes. No sampled truncation.",
+  "failure_modes": [
+    "Malformed quoting",
+    "Ragged records",
+    "Invalid type name",
+    "Incompatible override",
+    "Oversize data",
+    "Invalid UTF-8",
+    "Worker unavailable"
+  ],
+  "tradeoff": "GraphQL-js validator increases worker bytes but checks emitted schema; loaded only after Generate. DateTime support intentionally bounded."
+}

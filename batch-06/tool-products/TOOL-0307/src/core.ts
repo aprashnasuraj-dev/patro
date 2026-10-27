@@ -1,0 +1,1 @@
+import {parseIcs,csv} from '../_vendor/ical';export function icsToCsv(text:string){const events=parseIcs(text);const rows=[['summary','dtstart','dtend','timezone','location','rrule','uid','description'],...events.map(e=>[e.summary,e.dtstart,e.dtend,e.timezone,e.location,e.rrule,e.uid,e.description])];return{events,csv:csv(rows)}}

@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0395",
+  "name": "Baker's Percentage Calculator",
+  "route": "/tools/bakers-percentage-calculator",
+  "engineering_family_id": "F0219",
+  "engineering_family": "Recipe Scaling and Bakers Ratios",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-16",
+  "execution": "browser-local",
+  "network_required": false,
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "seo": {
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  }
+}

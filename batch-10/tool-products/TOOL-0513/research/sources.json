@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Canada Labour Code annual vacations and holidays",
+    "url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/vacations-holidays.html",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Federal annual vacation 4%, 6%, 8% based on completed service; Ontario ordinarily 4% or 6%. Enter legal qualifying wages.",
+    "uncertainty": "This is not an automatically validated province-wide entitlement calculator."
+  },
+  {
+    "name": "Ontario public holiday pay",
+    "url": "https://www.ontario.ca/document/your-guide-employment-standards-act-0/public-holidays",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Federal annual vacation 4%, 6%, 8% based on completed service; Ontario ordinarily 4% or 6%. Enter legal qualifying wages.",
+    "uncertainty": "This is not an automatically validated province-wide entitlement calculator."
+  }
+]

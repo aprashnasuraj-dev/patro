@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.result svg{max-width:100%;height:auto;display:block}.canvas-scroll{overflow:auto;max-width:100%}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}

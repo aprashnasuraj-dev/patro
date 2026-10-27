@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0263",
+  "claims": [
+    {
+      "claim": "Sherwin-Williams states a gallon typically covers about 350–400 ft², with actual requirements varying by application method and surface.",
+      "source_url": "https://www.sherwin-williams.com/en-us/color/color-tools/paint-calculator",
+      "implementation_note": "375 ft²/gal is only the editable sample default."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

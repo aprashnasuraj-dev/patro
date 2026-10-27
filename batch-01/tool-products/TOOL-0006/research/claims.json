@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0006",
+  "claims": [
+    {
+      "claim": "Strip potentially sensitive HAR fields before support sharing",
+      "references": [
+        "https://w3c.github.io/web-performance/specs/HAR/Overview.html",
+        "https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "Even stripped network timing/status data can reveal traffic patterns. Do not treat automated redaction as a legal data de-identification guarantee.",
+      "references": [
+        "https://w3c.github.io/web-performance/specs/HAR/Overview.html",
+        "https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

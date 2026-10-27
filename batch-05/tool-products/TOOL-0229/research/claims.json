@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0229",
+  "claims": [
+    {
+      "claim": "APR is intended to reflect credit cost including relevant fees, but legal fee classification and irregular periods are transaction-specific.",
+      "status": "SOURCE_PREPARED",
+      "source_ids": [
+        "CFPB-APR",
+        "CFPB-REGZ-J"
+      ]
+    },
+    {
+      "claim": "The implemented model solves an implied monthly rate from net proceeds and equal monthly payments, then multiplies by 12.",
+      "status": "SOURCE_PREPARED",
+      "source_ids": [
+        "CFPB-APR",
+        "CFPB-REGZ-J"
+      ]
+    }
+  ],
+  "runtime_qa": "TEST_PENDING"
+}

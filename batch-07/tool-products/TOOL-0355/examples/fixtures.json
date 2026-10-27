@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0355",
+  "examples": [
+    {
+      "fg": "#000000",
+      "bg": "#ffffff",
+      "wcag": 21,
+      "apca_polarity": "positive dark-on-light"
+    },
+    {
+      "wcag_normal_threshold": 4.5,
+      "wcag_large_threshold": 3
+    }
+  ]
+}

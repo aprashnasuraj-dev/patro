@@ -1,0 +1,12 @@
+{
+  "sample_input": {
+    "crumbs": "Home | https://example.com/\nGuides | https://example.com/guides/\nIPv6 | https://example.com/guides/ipv6"
+  },
+  "worked_example": "Home | https://example.com and Docs | https://example.com/docs become positions 1 and 2.",
+  "planned_expectations": [
+    "Three breadcrumbs have positions 1, 2, 3.",
+    "Reject duplicate URL and relative URL.",
+    "Escape HTML injection in names for JSON-LD."
+  ],
+  "execution_state": "TEST_PENDING"
+}

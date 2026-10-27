@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Join two CSV files on selected key columns with explicit join type and duplicate-key safeguards to prevent accidental row explosions.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Duplicate join keys are blocked by default; choosing first/last is lossy and no many-to-many Cartesian join is generated.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

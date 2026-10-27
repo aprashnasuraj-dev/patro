@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0522",
+  "related": [
+    {
+      "id": "TOOL-0512",
+      "title": "Canada FHSA and RRSP Home Buyers Plan Planner",
+      "proposed_canonical": "/planners/canada-fhsa-rrsp-home-buyers-plan",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0513",
+      "title": "Canada Vacation and Stat Holiday Pay Calculator",
+      "proposed_canonical": "/calculators/canada-vacation-statutory-holiday-pay-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0523",
+      "title": "Airline Carry-On and Personal Item Checker",
+      "proposed_canonical": "/validators/airline-carry-on-size-weight-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0524",
+      "title": "Credit Card Application Rules and 5/24 Date Checker",
+      "proposed_canonical": "/validators/chase-5-24-credit-card-application-rules",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0517",
+      "title": "Assumable Mortgage vs New Loan Comparison",
+      "proposed_canonical": "/calculators/assumable-mortgage-comparison-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

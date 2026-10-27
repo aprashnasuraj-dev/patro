@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.card fieldset{border:1px solid var(--border);border-radius:14px;padding:12px}.card legend{font-weight:800}.result table td:first-child{font-weight:700}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0082",
+  "related": [
+    {
+      "id": "TOOL-0081",
+      "title": "Zero-Width and Invisible Character Detector",
+      "proposed_canonical": "/analyzers/invisible-character-detector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0083",
+      "title": "Unicode Normalization Comparer (NFC, NFD, NFKC, NFKD)",
+      "proposed_canonical": "/utilities/unicode-normalization-comparer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0084",
+      "title": "Mojibake Repair Tool",
+      "proposed_canonical": "/editors/fix-mojibake",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0100",
+      "title": "Emoji and Grapheme Cluster Inspector",
+      "proposed_canonical": "/analyzers/emoji-unicode-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0114",
+      "title": "Character to Font Support Finder",
+      "proposed_canonical": "/extractors/which-font-supports-character",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

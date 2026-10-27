@@ -1,0 +1,11 @@
+{
+  "title": "Medicare Enrollment Window and Late Penalty Calculator",
+  "default_inputs": {
+    "dob": "1961-09-15",
+    "partBmonths": "24",
+    "partDmonths": "14",
+    "sep": "no"
+  },
+  "worked_example": "Someone turning 65 in September generally sees an enrollment window June–December.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

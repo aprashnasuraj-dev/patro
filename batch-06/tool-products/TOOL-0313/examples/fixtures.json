@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0313",
+  "examples": [
+    {
+      "inputs": {
+        "bs": "2083-01-01"
+      },
+      "expected_integration_pair": "2026-04-14",
+      "status": "DEFERRED_DATASET_VERIFICATION"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0250",
+  "claims": [
+    {
+      "claim": "U.S. FLSA overtime for covered nonexempt workers is generally over 40 hours in a workweek at not less than 1.5× regular rate.",
+      "source_url": "https://www.dol.gov/agencies/whd/overtime",
+      "implementation_note": "Not hard-coded as universal law; thresholds/multiplier remain configurable."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

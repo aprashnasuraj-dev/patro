@@ -1,0 +1,33 @@
+{
+  "id": "TOOL-0239",
+  "name": "Two-Loan Comparison Calculator (Total Cost)",
+  "route": "/tools/compare-two-loans-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0103",
+  "engineering_family": "Loan, APR and Mortgage Comparisons",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000.0,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Two-Loan Comparison Calculator (Total Cost) \u2014 Local Browser Tool",
+    "meta_description": "Compare two fixed-rate installment loans on monthly payment, interest, fees and total cash cost using consistent assumptions.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Break-lease settlement comparison",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Excludes local landlord duty to mitigate, legal early-exit restrictions, subletting, insurance and utilities.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Excludes local landlord duty to mitigate, legal early-exit restrictions, subletting, insurance and utilities.",
+  "authoritative_references": [
+    "https://www.gov.uk/private-renting"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

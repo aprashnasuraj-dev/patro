@@ -1,0 +1,1 @@
+export function mediaType(){for(const t of ['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'])if(MediaRecorder.isTypeSupported(t))return t;throw new Error('No supported WebM MediaRecorder type found.')}export function bounds(size:number){if(!Number.isFinite(size)||size<10||size>40)throw new Error('Webcam size must be 10–40%.');return size/100}

@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0055",
+  "name": "Browser Video and Audio Codec Support Checker",
+  "reserved_route": "/tools/browser-codec-support-checker",
+  "family_id": "F0028",
+  "family": "Browser Capability Tester",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "browser_runtime": "src/ui.js",
+  "core_source": "src/core.ts",
+  "seo": {
+    "title": "Browser Video and Audio Codec Support Checker | AafnaiPatro Tools",
+    "description": "Discover browser codec declarations without uploading media.",
+    "h1": "Browser Video and Audio Codec Support Checker",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "client_side_only": true,
+    "no_account": true,
+    "no_upload": true,
+    "network": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

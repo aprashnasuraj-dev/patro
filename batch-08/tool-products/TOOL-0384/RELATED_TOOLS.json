@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0384",
+  "related": [
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "proposed_canonical": "/calculators/smd-resistor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "proposed_canonical": "/calculators/resistor-color-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0388",
+      "title": "G-code Print Time and Filament Estimator",
+      "proposed_canonical": "/calculators/gcode-filament-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0503",
+      "title": "UK Section 104 Share Pool and Matching Calculator",
+      "proposed_canonical": "/calculators/uk-share-matching-section-104-pool-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0042",
+      "title": "HTTP Status Code Chooser",
+      "proposed_canonical": "/utilities/which-http-status-code",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0073",
+  "related": [
+    {
+      "id": "TOOL-0074",
+      "title": "Title and Meta Description Pixel Width Checker",
+      "proposed_canonical": "/validators/title-tag-pixel-width-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0069",
+      "title": "hreflang Tag Generator and Reciprocity Checker",
+      "proposed_canonical": "/generators/hreflang-generator-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0068",
+      "title": "JSON-LD Validator (Offline Structure Checker)",
+      "proposed_canonical": "/validators/json-ld-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0191",
+      "title": "CSV Validator (Ragged Rows and Quote Errors)",
+      "proposed_canonical": "/validators/csv-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "proposed_canonical": "/validators/youtube-chapters-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

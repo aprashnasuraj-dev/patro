@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0053",
+  "scope_claim": "Connect to an SSE endpoint and inspect message, event, retry and ID fields in real time.",
+  "authoritative_urls": [
+    "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events",
+    "https://html.spec.whatwg.org/multipage/server-sent-events.html"
+  ],
+  "assumptions": [
+    "Browser EventSource GET connections to HTTP(S) endpoints only.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "EventSource cannot send arbitrary headers or POST and may reconnect automatically.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

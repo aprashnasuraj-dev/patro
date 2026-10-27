@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0117",
+  "claims": [
+    {
+      "claim": "Measure text width with the browser canvas text engine, including font style, weight and optional letter spacing, and visualize the measured inline box.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "css-font-loading-3"
+      ]
+    },
+    {
+      "claim": "Results are browser-, OS-, font-availability- and rasterizer-dependent. CSS layout can add effects not represented by a simple canvas measurement.",
+      "status": "limitation",
+      "source_ids": [
+        "css-font-loading-3"
+      ]
+    }
+  ]
+}

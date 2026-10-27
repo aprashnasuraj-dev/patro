@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0016",
+  "title": "Nginx / Apache Access Log to CSV",
+  "slug": "access-log-to-csv",
+  "route": "/tools/access-log-to-csv",
+  "engineering_family": "F0008",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "Nginx / Apache Access Log to CSV — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Parse Common and Combined access log records into structured CSV with malformed line reporting. Runs locally in your browser. Review limitations and examples.",
+    "h1": "Traffic log analyzer: Nginx / Apache Access Log to CSV",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "Apache/Nginx common or combined access logs",
+    "max_utf8_bytes": 1200000
+  },
+  "output": "access-log.csv",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {},
+  "limits": "Supports default CLF/Combined log formats, not custom log_format or JSON access logs. CSV values are quoted and spreadsheet-formula cells neutralized."
+}

@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Parses binary or ASCII STL triangles and integrates signed tetrahedron volumes.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

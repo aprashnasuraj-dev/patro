@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0060",
+  "claims": [
+    {
+      "claim": "Unfold continuation lines before analyzing fields.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc5322",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Authentication-Results fields can be forged; trust only validated inbound gateways.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc5322",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "RFC 5322 header fields with folding, and reported SPF/DKIM/DMARC status."
+  ],
+  "limitations": [
+    "Cannot establish origin authenticity, validate cryptography or prove sender identity."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0337",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://ecma-international.org/publications-and-standards/standards/ecma-376/",
+      "title": "Office Open XML File Formats",
+      "publisher": "Ecma International",
+      "version": "ECMA-376 5th edition",
+      "effective_date": "2021-12",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "Scrubber targets common document-property parts only; comments, tracked changes, hidden content and embedded objects require separate inspection."
+    }
+  ],
+  "no_external_source_reason": null
+}

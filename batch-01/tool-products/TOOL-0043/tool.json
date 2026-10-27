@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0043",
+  "name": "Set-Cookie Builder and Parser",
+  "reserved_route": "/tools/set-cookie-builder",
+  "family_id": "F0023",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Build and inspect Set-Cookie headers with Secure, SameSite and cookie prefix validation.",
+  "seo": {
+    "title": "Set-Cookie Builder and Parser | Mission Mangal Tools",
+    "meta_description": "Build and inspect Set-Cookie headers with Secure, SameSite and cookie prefix validation.",
+    "h1": "Set-Cookie Builder and Parser",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

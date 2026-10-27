@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "domain": "example.com",
+    "policy": "none",
+    "subpolicy": "inherit",
+    "pct": "100",
+    "dkim": "r",
+    "spf": "r",
+    "rua": "dmarc@example.com",
+    "ruf": ""
+  },
+  "worked_example": "v=DMARC1; p=none; rua=mailto:dmarc@example.com monitors aggregate reports.",
+  "planned_expectations": [
+    "Default DNS host _dmarc.example.com, v tag first and p=none.",
+    "Reject pct=101, invalid mailboxes and newline injection.",
+    "Verify p=reject and sp=quarantine distinct."
+  ],
+  "execution_state": "TEST_PENDING"
+}

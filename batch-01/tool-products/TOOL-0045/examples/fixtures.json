@@ -1,0 +1,12 @@
+{
+  "input": {
+    "uas": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+  },
+  "worked_example": "Mozilla/5.0 ... Chrome/124.0 identifies a claimed Chromium UA, not trusted identity.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

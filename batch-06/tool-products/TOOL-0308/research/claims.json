@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0308",
+  "claims": [
+    {
+      "claim": "The tool implements the explicit semantics stated on the page and rejects unsupported ambiguity.",
+      "source_url": null,
+      "implementation_note": "No broader standard conformance is implied."
+    }
+  ],
+  "uncertainty": "It does not implement BYSETPOS, BYMONTH, BYWEEKNO, BYYEARDAY, WKST, UNTIL, EXDATE/RDATE or full RFC recurrence-set interactions."
+}

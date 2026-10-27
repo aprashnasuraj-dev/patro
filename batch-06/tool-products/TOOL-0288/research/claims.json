@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0288",
+  "claim": "Mifflin-St Jeor 10W+6.25H\u22125A+(5 male/\u2212161 female); revised Harris\u2013Benedict alternative; TDEE\u2248BMR\u00d7user-chosen factor.",
+  "assumptions": [
+    "Population estimates, not measured metabolism or personalized nutrition targets; binary coefficients may not fit all people.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/2305711/",
+    "https://pubmed.ncbi.nlm.nih.gov/368378/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

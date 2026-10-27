@@ -1,0 +1,11 @@
+{
+  "sample": {
+    "config": "Redirect 301 /old /new\nRedirectMatch 301 ^/archive/(.*)$ /news/$1"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

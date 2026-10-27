@@ -1,0 +1,5 @@
+{
+  "sample_input": "👩🏽‍🚀 Á 🇳🇵",
+  "expected_behavior": "The astronaut sequence is one grapheme cluster but multiple code points joined with ZWJ.",
+  "qa_status": "TEST_PENDING"
+}

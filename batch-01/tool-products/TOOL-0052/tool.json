@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0052",
+  "name": "WebSocket Tester",
+  "reserved_route": "/tools/websocket-tester",
+  "family_id": "F0027",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-03",
+  "description": "Interactively connect, send and inspect WebSocket frames using the browser API.",
+  "seo": {
+    "title": "WebSocket Tester | Mission Mangal Tools",
+    "meta_description": "Interactively connect, send and inspect WebSocket frames using the browser API.",
+    "h1": "WebSocket Tester",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": "Only deliberate user-initiated remote endpoint connections for TOOL-0052/0053"
+  },
+  "qa_status": "TEST_PENDING"
+}
