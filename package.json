@@ -115,7 +115,8 @@
     "graphql": "16.11.0",
     "commonmark": "0.31.2",
     "@noble/hashes": "2.4.0",
-    "fflate": "0.8.3"
+    "fflate": "0.8.3",
+    "pdf-lib": "1.17.1"
   },
   "devDependencies": {
     "@types/react": "19.1.2",
