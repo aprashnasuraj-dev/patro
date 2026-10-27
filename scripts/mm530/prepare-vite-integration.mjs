@@ -39,6 +39,9 @@ function extractDescription(html,title,categoryLabel){
  return boundedDescription(value,title,categoryLabel);
 }
 function sanitizeProductionHtml(html){
+ // Remove QA-only FAQ fragments without deleting adjacent user-facing FAQ answers.
+ html=html.replace(/<strong>\s*Is the result already QA-approved\?\s*<\/strong>\s*No\s*[—-]\s*this source checkpoint is TEST_PENDING\.?/gi,"");
+ html=html.replace(/<strong>\s*Is this result already QA-approved\?\s*<\/strong>\s*No\s*[—-]\s*this source checkpoint is TEST_PENDING\.?/gi,"");
  // Internal source paths are build metadata, never user-facing documentation.
  html=html.replace(/Representative expected-result scenarios are recorded in\s*<code>examples\/fixtures\.json<\/code>\.?/gi,"");
  html=html.replace(/(?:See|Review)\s*<code>examples\/fixtures\.json<\/code>[^.<]*\.?/gi,"");
