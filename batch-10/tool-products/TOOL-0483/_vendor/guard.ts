@@ -17,7 +17,7 @@ export function D(x:Record<string,unknown>,key:string):string {
 }
 export function ODate(x:Record<string,unknown>,key:string):string|null {return x[key]===''||x[key]===undefined?null:D(x,key)}
 export function addDays(iso:string,days:number):string {if(!Number.isInteger(days)||days<0||days>1000)throw Error('Unsupported calendar-day increment');const y=+iso.slice(0,4),m=+iso.slice(5,7),d=+iso.slice(8,10); const t=new Date(Date.UTC(y,m-1,d+days));if(t.getUTCFullYear()>2100)throw Error('Calendar result beyond 2100 unsupported');return t.toISOString().slice(0,10)}
-export function Q(n:number,dp=2):string {if(!Number.isFinite(n)||Math.abs(n)>1e13)throw Error('Unsafe output magnitude');return n.toLocaleString('en-US',{maximumFractionDigits:dp,minimumFractionDigits:dp===0?0:2});}
+export function Q(n:number,dp=2):string {if(!Number.isFinite(n)||Math.abs(n)>1e13)throw Error('Unsafe output magnitude');if(!Number.isInteger(dp)||dp<0||dp>20)throw Error('Unsafe decimal precision');return n.toLocaleString('en-US',{maximumFractionDigits:dp,minimumFractionDigits:Math.min(dp,2)});}
 export function M(n:number,sym='$'):string {return `${sym}${Q(n)}`;}
 export function P(n:number):string{return Q(n*100)+'%'}
 export function R(outputs:Output[],warnings:string[]=[],steps:string[]=[]):Result{if(outputs.length>65)throw Error('Too many outputs');return{outputs,warnings,steps};}
