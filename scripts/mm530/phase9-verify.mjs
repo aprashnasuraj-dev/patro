@@ -88,7 +88,7 @@ for(const tool of registry){
  const previous=titles.get(title);if(previous)assert(false,"DUPLICATE_TITLE",`${tool.id} and ${previous}: ${title}`);else titles.set(title,tool.id);
  const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
- assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
+ const h1Count=(leafHtml.match(/<h1\\b/gi)||[]).length;assert(h1Count===1,"STATIC_H1_COUNT",tool.id+": "+h1Count);\n assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
  const retainedSignals=[];
  const leafVisible=visible(leafHtml),leafStat=await fs.stat(leafPath);
  const frameMatches=[...leafHtml.matchAll(/<iframe\b[^>]*class=["'][^"']*mm530-frame[^"']*["'][^>]*>/gi)];
@@ -96,7 +96,7 @@ for(const tool of registry){
  assert(frameMatches[0]?.[0]?.includes('/_mm530/'+tool.id+'/page.html'),"CRAWLER_RUNTIME_TARGET",tool.id);
  const outerModuleScripts=[...leafHtml.matchAll(/<script\b[^>]*type=["']module["'][^>]*src=/gi)];
  assert(outerModuleScripts.length===0,"CRAWLER_SPA_BOOT",tool.id+": canonical leaf still requires outer SPA JavaScript");
- assert(leafVisible.length>=220,"CRAWLER_VISIBLE_CONTENT_THIN",tool.id+": "+leafVisible.length+" visible characters");
+ assert(leafVisible.length>=900,"CRAWLER_VISIBLE_CONTENT_THIN",tool.id+": "+leafVisible.length+" visible characters");
  assert(leafStat.size<180*1024,"CRAWLER_HTML_BUDGET",tool.id+": "+leafStat.size+" bytes");
  assert(!internal.test(leafVisible),"CRAWLER_INTERNAL_COPY",tool.id);
  assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(leafVisible),"CRAWLER_INTERNAL_REFERENCE",tool.id);
