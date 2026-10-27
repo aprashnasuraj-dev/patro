@@ -1,5 +1,6 @@
 import{el,button,output}from"../common.mjs";
 import{calculate,money,pct}from"../cores/finance350-core.mjs";
+export const SUPPORTED_OPERATIONS=["mortgage-recast","refinance-break-even","pmi-removal-date","arm-payment-adjustment","heloc-vs-cash-out-refinance","barista-fire","roth-conversion-tax","rule-55-withdrawal-penalty","required-minimum-distribution","social-security-break-even","freelancer-quarterly-tax","hourly-to-salary-benefits","lease-vs-buy-car","balance-transfer-fee","mortgage-points-break-even","house-hacking-rent-offset","rsu-sell-to-cover","iso-amt-estimator","inflation-adjusted-salary","1099-vs-w2-take-home"];
 const S={
 "mortgage-recast":[["balance","Remaining balance",250000],["rate","Annual rate %",6.5],["months","Remaining months",300],["lump","Lump-sum principal",50000]],
 "refinance-break-even":[["balance","Loan balance",350000],["oldRate","Current rate %",7],["oldMonths","Current remaining months",300],["newRate","New rate %",5.9],["newMonths","New term months",360],["cost","Closing costs",7000]],

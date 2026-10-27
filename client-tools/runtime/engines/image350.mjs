@@ -1,5 +1,6 @@
 import{el,button,output,downloadBlob,bytes}from"../common.mjs";
 import{boundedDimensions,targetBytes,passportCrop,safeBaseName}from"../cores/image350-core.mjs";
+export const SUPPORTED_OPERATIONS=["heic-to-pdf","heic-to-jpg-under-1mb","heic-to-webp","heic-viewer","heic-exif-viewer","avif-to-jpg","live-photo-to-gif","heic-to-passport-photo-jpg","heic-to-png","avif-to-png"];
 const heicWorkerUrl="/client-tools/workers/heic350-worker.js",pdfWorkerUrl="/client-tools/workers/pdf350-worker.mjs",gifWorkerUrl="/client-tools/workers/gif350-worker.mjs";
 const workerCall=(url,payload,transfer=[])=>new Promise((resolve,reject)=>{const w=new Worker(url,{type:url.endsWith(".mjs")?"module":"classic"}),id=crypto.randomUUID();const timer=setTimeout(()=>{w.terminate();reject(new Error("Processing timed out."))},45000);w.onmessage=e=>{if(e.data?.id!==id)return;clearTimeout(timer);w.terminate();e.data.error?reject(new Error(e.data.error)):resolve(e.data)};w.onerror=e=>{clearTimeout(timer);w.terminate();reject(new Error(e.message||"Worker failed."))};w.postMessage({id,...payload},transfer)});
 async function decodeHeic(file){if(file.size>40*1024*1024)throw new Error("HEIC file exceeds the 40 MB safety limit.");const buffer=await file.arrayBuffer();const r=await workerCall(heicWorkerUrl,{buffer},[buffer]);return{width:r.width,height:r.height,rgba:new Uint8ClampedArray(r.rgba)}}
