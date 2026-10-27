@@ -17,7 +17,7 @@ const attr=(tag,name)=>{
  return decodeAttr(m?.[1]??m?.[2]??"").trim();
 };
 const tagContent=(html,selector)=>{
- if(selector==="title")return decodeAttr(html.match(/<title>([\\s\\S]*?)<\\/title>/i)?.[1]||"").trim();
+ if(selector==="title")return decodeAttr(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||"").trim();
  const specs={
   description:["meta","name","description","content"],
   canonical:["link","rel","canonical","href"],
