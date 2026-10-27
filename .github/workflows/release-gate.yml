@@ -92,6 +92,11 @@ jobs:
         id: build
         continue-on-error: true
         run: npm run build
+      - name: MM530 Phase 9 production artifact audit
+        id: mm530_phase9
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
+        run: node scripts/mm530/phase9-verify.mjs
       - name: Core, focused feature and release-safety tests
         id: product_tests
         continue-on-error: true
@@ -183,6 +188,21 @@ jobs:
           mkdir -p .lighthouseci
           openssl req -x509 -newkey rsa:2048 -nodes -keyout .lighthouseci/localhost.key -out .lighthouseci/localhost.crt -days 1 -subj "/CN=127.0.0.1" -addext "subjectAltName=IP:127.0.0.1"
 
+      - name: MM530 consolidated production browser acceptance
+        id: mm530_phase10
+        if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success' && steps.mm530_phase9.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-dist.mjs >/tmp/mm530-release-http.log 2>&1 &
+          server=$!
+          trap 'kill $server 2>/dev/null || true' EXIT
+          for i in {1..30}; do if curl -fsS http://127.0.0.1:4173/advancetools/web-tools/ >/dev/null; then break; fi; sleep 1; done
+          NODE_PATH="$PWD/node_modules" node scripts/mm530/phase10-browser-gate.mjs
+          node scripts/mm530/final-acceptance.mjs
+          kill "$server" 2>/dev/null || true
+          trap - EXIT
       - name: Homepage first-paint, API-failure and offline PWA checks
         id: home_pwa_checks
         if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
@@ -239,6 +259,8 @@ jobs:
         env:
           MIGRATION: ${{ steps.migration.outcome }}
           BUILD: ${{ steps.build.outcome }}
+          MM530_PHASE9: ${{ steps.mm530_phase9.outcome }}
+          MM530_PHASE10: ${{ steps.mm530_phase10.outcome }}
           PRODUCT_TESTS: ${{ steps.product_tests.outcome }}
           CLOUDFLARE: ${{ steps.cloudflare.outcome }}
           ROUTER_BOUNDARIES: ${{ steps.router_boundaries.outcome }}
@@ -262,6 +284,7 @@ jobs:
             echo "migration=skipped (no archive-sensitive changes)"
           fi
           check build "$BUILD"
+          check mm530_phase9 "$MM530_PHASE9"
           check product_tests "$PRODUCT_TESTS"
           check cloudflare "$CLOUDFLARE"
           check router_boundaries "$ROUTER_BOUNDARIES"
@@ -275,11 +298,13 @@ jobs:
           check secret_scan "$SECRET_SCAN"
           if [[ "$HEAVY_REQUIRED" == "true" ]]; then
             check browser_runtime "$BROWSER_RUNTIME"
+            check mm530_phase10 "$MM530_PHASE10"
             check home_pwa_checks "$HOME_PWA_CHECKS"
             check mobile_checks "$MOBILE_CHECKS"
             check lighthouse "$LIGHTHOUSE"
           else
             echo "browser_runtime=skipped (focused release)"
+            echo "mm530_phase10=skipped (focused release)"
             echo "home_pwa_checks=skipped (focused release)"
             echo "mobile_checks=skipped (focused release)"
             echo "lighthouse=skipped (focused release)"
@@ -367,9 +392,13 @@ jobs:
           ARCHIVE_CHANGED: ${{ steps.scope.outputs.archive }}
         run: |
           set -euo pipefail
-          for path in / /tools /convert /time-machine /on-this-day /tools/astro /janmapatro/ /janmapatro/milan.html /jyotish/china /jyotish/matchmaking; do
+          for path in / /tools /convert /time-machine /on-this-day /tools/astro /janmapatro/ /janmapatro/milan.html /jyotish/china /jyotish/matchmaking /advancetools/ /advancetools/web-tools/ /calculators/semver-range-calculator /generators/cors-config-generator /converters/json-to-zod-schema /validators/webcam-mic-test; do
             curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com${path}" >/dev/null
           done
+          mm530_sitemap="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/sitemap-mm530.xml)"
+          mm530_count="$(grep -o '<url>' <<<"$mm530_sitemap" | wc -l | tr -d ' ')"
+          [[ "$mm530_count" == "530" ]] || { echo "::error::MM530 sitemap expected 530 URLs, got $mm530_count"; exit 1; }
+          curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/_mm530/TOOL-0001/page.html >/dev/null
 
           while IFS='|' read -r path marker; do
             html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsSL "https://aafnaipatro.com${path}")"
