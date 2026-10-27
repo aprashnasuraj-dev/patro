@@ -149,6 +149,7 @@ for(const category of [...new Set(registry.map(x=>x.category))]){
 }
 assert(/^<\?xml\s+version=["']1\.0["']\s+encoding=["']UTF-8["']\?>/i.test(mmSitemap.trim()),"SITEMAP_XML_DECLARATION","MM530 sitemap must start with an XML declaration");
 assert(/<urlset\b[^>]*xmlns=["']http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9["']/i.test(mmSitemap),"SITEMAP_XML_NAMESPACE","MM530 sitemap must use the standard sitemap namespace");
+assert(/<\/urlset>\s*$/.test(mmSitemap),"SITEMAP_TRAILING_CONTENT","MM530 sitemap contains non-whitespace content after </urlset>");
 const sitemapLocs=[...mmSitemap.matchAll(/<loc>([^<]+)<\/loc>/gi)].map(x=>x[1].trim());
 assert(sitemapLocs.length===530,"SITEMAP_URL_COUNT",`expected 530 <loc> entries, got ${sitemapLocs.length}`);
 assert(new Set(sitemapLocs).size===530,"SITEMAP_DUPLICATE_URLS","MM530 sitemap contains duplicate <loc> entries");
