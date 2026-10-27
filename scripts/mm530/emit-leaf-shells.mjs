@@ -124,7 +124,9 @@ for(const tool of registry){
  editorialStats.push({id:tool.id,route:tool.route,editorialTextChars:visible(editorial).length,hasEditorial:Boolean(editorial)});
  urls.push(origin+tool.route);
 }
-await fs.writeFile(path.join(dist,"sitemap-mm530.xml"),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url=>`<url><loc>${url}</loc></url>`).join("")}</urlset>\\n`);
+const xmlEscape=value=>String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&apos;");
+const sitemapXml=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url=>`  <url><loc>${xmlEscape(url)}</loc></url>`).join("\n")}\n</urlset>\n`;
+await fs.writeFile(path.join(dist,"sitemap-mm530.xml"),sitemapXml);
 await fs.mkdir(path.join(root,"reports"),{recursive:true});
 await fs.writeFile(path.join(root,"reports/mm530-editorial-retention.json"),JSON.stringify({schema_version:"MM530_EDITORIAL_RETENTION_V1",tools:editorialStats.length,with_editorial:editorialStats.filter(x=>x.hasEditorial).length,rows:editorialStats},null,2)+"\n");
 console.log(`MM530 static leaf shells emitted: ${urls.length}/530 with direct runtime, crawlable editorial content, related links, and no SPA bootstrap`);

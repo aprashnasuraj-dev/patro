@@ -147,8 +147,17 @@ const headersSource=await read(path.join(root,"public/_headers")).catch(()=>"");
 for(const category of [...new Set(registry.map(x=>x.category))]){
  assert(headersSource.includes("/"+category+"/*")&&headersSource.includes("s-maxage=86400"),"CRAWLER_CACHE_POLICY_MISSING",category);
 }
-for(const tool of registry){const url=origin+tool.route;const occurrences=mmSitemap.split(url).length-1;assert(occurrences===1,"SITEMAP_CANONICAL_COUNT",`${tool.id}: ${occurrences}`)}
-assert(rootSitemap.includes(origin+"/sitemap-mm530.xml"),"ROOT_SITEMAP_INTEGRATION","root sitemap index missing MM530 child");
+assert(/^<\?xml\s+version=["']1\.0["']\s+encoding=["']UTF-8["']\?>/i.test(mmSitemap.trim()),"SITEMAP_XML_DECLARATION","MM530 sitemap must start with an XML declaration");
+assert(/<urlset\b[^>]*xmlns=["']http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9["']/i.test(mmSitemap),"SITEMAP_XML_NAMESPACE","MM530 sitemap must use the standard sitemap namespace");
+assert(/<\/urlset>\s*$/.test(mmSitemap),"SITEMAP_TRAILING_CONTENT","MM530 sitemap contains non-whitespace content after </urlset>");
+const sitemapLocs=[...mmSitemap.matchAll(/<loc>([^<]+)<\/loc>/gi)].map(x=>x[1].trim());
+assert(sitemapLocs.length===530,"SITEMAP_URL_COUNT",`expected 530 <loc> entries, got ${sitemapLocs.length}`);
+assert(new Set(sitemapLocs).size===530,"SITEMAP_DUPLICATE_URLS","MM530 sitemap contains duplicate <loc> entries");
+assert(sitemapLocs.every(url=>url.startsWith(origin+"/")),"SITEMAP_ABSOLUTE_HTTPS","every MM530 sitemap URL must be an absolute aafnaipatro.com HTTPS URL");
+for(const tool of registry){const url=origin+tool.route;const occurrences=sitemapLocs.filter(x=>x===url).length;assert(occurrences===1,"SITEMAP_CANONICAL_COUNT",`${tool.id}: ${occurrences}`)}
+const rootMmOccurrences=rootSitemap.split(origin+"/sitemap-mm530.xml").length-1;
+assert(rootMmOccurrences===1,"ROOT_SITEMAP_INTEGRATION",`root sitemap must include MM530 child exactly once; found ${rootMmOccurrences}`);
+assert(headersSource.includes("/sitemap-mm530.xml")&&/Content-Type:\s*application\/xml;\s*charset=utf-8/i.test(headersSource),"SITEMAP_XML_CONTENT_TYPE","public/_headers must force application/xml; charset=utf-8 for sitemap-mm530.xml");
 assert(!hub?.includes("/_mm530/"),"DISCOVERY_EAGER_RUNTIME","web-tools hub references runtime assets directly");
 const ffmpegDir=path.join(dist,"assets/vendor/ffmpeg"),ffmpegOriginal=path.join(ffmpegDir,"ffmpeg-core.wasm"),ffmpegManifestPath=path.join(ffmpegDir,"ffmpeg-core.wasm.parts.json");
 assert(!(await exists(ffmpegOriginal)),"FFMPEG_ASSET_TOO_LARGE","unsplit ffmpeg-core.wasm must not be emitted");
