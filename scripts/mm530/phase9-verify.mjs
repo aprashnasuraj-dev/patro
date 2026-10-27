@@ -73,6 +73,10 @@ const advancedLandingHtmlBytes=(await fs.stat(path.join(dist,"advancetools/index
 const advancedSharedAssetBytes=await dirBytes(path.join(dist,advanced.assetPrefix.replace(/^\//,"")));
 const viteAssetsDir=path.join(dist,"assets");let viteChunks=[];try{for(const name of await fs.readdir(viteAssetsDir)){const p=path.join(viteAssetsDir,name),st=await fs.stat(p);if(st.isFile()&&/\.(?:m?js|css)$/.test(name))viteChunks.push({file:name,bytes:st.size})}}catch{}viteChunks.sort((a,b)=>b.bytes-a.bytes);
 const perf={advancedLandingHtmlBytes,webToolsHubHtmlBytes,advancedSharedAssetBytes,advancedLandingPayloadBytes:advancedLandingHtmlBytes+advancedSharedAssetBytes,webToolsHubPayloadBytes:webToolsHubHtmlBytes+advancedSharedAssetBytes,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,viteTopChunks:viteChunks.slice(0,20),representative:{},sharedVendorBytes:{}};
+const fiveMb=5*1024*1024;
+assert(perf.advancedLandingPayloadBytes<fiveMb,"ADVANCED_LANDING_PAYLOAD",`${perf.advancedLandingPayloadBytes} bytes >= 5 MB`);
+assert(perf.webToolsHubPayloadBytes<fiveMb,"WEB_TOOLS_HUB_PAYLOAD",`${perf.webToolsHubPayloadBytes} bytes >= 5 MB`);
+for(const chunk of viteChunks)assert(chunk.bytes<fiveMb,"VITE_CHUNK_OVER_5MB",`${chunk.file}: ${chunk.bytes} bytes`);
 for(const [kind,id] of Object.entries(representative))perf.representative[kind]={id,bytes:await dirBytes(path.join(dist,"_mm530",id))};
 for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-lib",ffmpeg:"assets/vendor/ffmpeg",sqljs:"assets/vendor/sqljs",mathjax:"vendor/mathjax",sheetjs:"assets/vendor/sheetjs"}))perf.sharedVendorBytes[name]=await dirBytes(path.join(dist,p));
 
