@@ -181,10 +181,23 @@ root.dataset.toolMounted="true";`
     : `import ${modulePath};`;
   await fs.writeFile(bootstrap,bootSource);
   try{
-    await build({entryPoints:[bootstrap],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
+    await build({entryPoints:{tool:bootstrap},bundle:true,format:"esm",platform:"browser",target:"es2022",outdir:dst,entryNames:"[name]",chunkNames:"chunks/[name]-[hash]",assetNames:"chunks/[name]-[hash]",splitting:true,logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
   }finally{await fs.rm(bootstrap,{force:true})}
-  const builtJsPath=path.join(dst,"tool.js");let builtJs=await fs.readFile(builtJsPath,"utf8");
-  if(builtJs.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){builtJs=builtJs.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");await fs.writeFile(builtJsPath,builtJs);}
+  const builtJsPath=path.join(dst,"tool.js");
+  if(!await exists(builtJsPath))throw new Error("production entry tool.js was not emitted");
+  async function rewriteRuntimeJs(dir){
+   for(const ent of await fs.readdir(dir,{withFileTypes:true})){
+    const target=path.join(dir,ent.name);
+    if(ent.isDirectory()){await rewriteRuntimeJs(target);continue}
+    if(!ent.name.endsWith(".js"))continue;
+    let js=await fs.readFile(target,"utf8");
+    if(js.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){
+     js=js.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");
+     await fs.writeFile(target,js);
+    }
+   }
+  }
+  await rewriteRuntimeJs(dst);
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title,tool.categoryLabel);
   let html=sanitizeProductionHtml(original);
   html=await presentReferences(html,srcDir);
