@@ -1,4 +1,6 @@
 import {finite,roundTo} from './business';
+
+export {finite};
 export type LengthUnit='m'|'cm'|'mm'|'ft'|'in';
 export const M_PER:Record<LengthUnit,number>={m:1,cm:.01,mm:.001,ft:.3048,in:.0254};
 export function toM(v:number,u:LengthUnit,label='Length'){return finite(v,label,0,1e7)*M_PER[u]}
