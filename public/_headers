@@ -142,6 +142,33 @@
   Cache-Control: public, max-age=3600
   X-Robots-Tag: noindex
 
+# MM530 canonical tool pages: short browser cache, durable edge cache.
+# These pages are immutable within a deployment and are replaced atomically on release.
+/calculators/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/generators/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/converters/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/editors/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/formatters/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/validators/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/analyzers/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/security/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/media/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/documents/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/network/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+/developer/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+
 # MM530 browser-local runtimes: same-origin only, with scoped WASM/worker support.
 /_mm530/*
   ! Content-Security-Policy
