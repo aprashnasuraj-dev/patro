@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0353 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {parseLinks,build} from '../src/core';
+describe('TOOL-0353',()=>{it('parses allowed absolute link schemes',()=>{const r=parseLinks('Site | https://example.test/a\nMail | mailto:test@example.test');expect(r).toHaveLength(2);expect(r[0].url).toBe('https://example.test/a')});it('escapes user-controlled HTML and avatar attributes',()=>{const html=build('<b>A</b>','x',[{label:'<script>',url:'https://example.test/'}],'#112233','data:image/png;base64,x" onerror=alert(1)');expect(html).toContain('&lt;b&gt;A&lt;/b&gt;');expect(html).toContain('&quot; onerror=alert(1)');expect(html).not.toContain('src="data:image/png;base64,x" onerror=')});it('rejects javascript links',()=>expect(()=>parseLinks('Bad | javascript:alert(1)')).toThrow())});

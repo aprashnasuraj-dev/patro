@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0354 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {splitThread} from '../src/core';
+describe('TOOL-0354',()=>{it('splits and numbers text while keeping every part within the limit',()=>{const r=splitThread('One sentence. Two sentence. Three sentence. Four sentence.',25,'plain','suffix');expect(r.length).toBeGreaterThan(1);for(const x of r)expect([...x].length).toBeLessThanOrEqual(25);expect(r[0]).toMatch(/1\/\d+$/)});it('rejects unsafe limits',()=>expect(()=>splitThread('x',19,'plain','none')).toThrow())});
