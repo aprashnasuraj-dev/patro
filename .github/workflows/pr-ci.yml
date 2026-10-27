@@ -272,6 +272,7 @@ jobs:
           # Verify the exact downloaded production artifact; do not rebuild it.
           node scripts/mm530/phase9-verify.mjs
           node scripts/mm530/phase10-browser-gate.mjs
+          node scripts/mm530/production-functional-sweep.mjs
           node scripts/mm530/final-acceptance.mjs
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
