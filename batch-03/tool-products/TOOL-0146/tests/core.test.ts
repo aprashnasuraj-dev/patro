@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0146 PDF Watermark (Text, Image, Tiled)', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {watermark} from '../src/core';describe('TOOL-0146 watermark parser guards',()=>{it('rejects an empty PDF before watermark rendering',async()=>{await expect(watermark(new File([],'empty.pdf',{type:'application/pdf'}),{text:'DRAFT',opacity:.3,rotation:45,tiled:false})).rejects.toThrow()});it.todo('verifies tiled/single watermark placement on a reviewed PDF fixture')});

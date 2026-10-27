@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0153 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {extractPdfText} from '../src/core';describe('TOOL-0153 PDF text guards',()=>{it('rejects an empty PDF before text extraction',async()=>{await expect(extractPdfText(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('verifies page-order text reconstruction using a reviewed positioned-text fixture')});

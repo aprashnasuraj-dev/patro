@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0137 GIF Speed Changer and Reverser', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {transform} from '../src/core';describe('TOOL-0137 GIF speed bounds',()=>{it('rejects speed below 0.1× before decoding',async()=>{const f=new File(['x'],'a.gif',{type:'image/gif'});await expect(transform(f,0)).rejects.toThrow(/0.1–10/)});it('rejects speed above 10×',async()=>{const f=new File(['x'],'a.gif',{type:'image/gif'});await expect(transform(f,11)).rejects.toThrow(/0.1–10/)});it.todo('verifies delay scaling/reversal using a reviewed animated GIF fixture')});

@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0127 App Icon Set Generator (iOS and Android)', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {generate} from '../src/core';describe('TOOL-0127 app icon generator guards',()=>{it('rejects an empty source image before producing icon sets',async()=>{await expect(generate(new File([],'empty.png',{type:'image/png'}))).rejects.toThrow()});it.todo('verifies square/1024 master requirements and generated iOS/Android paths with a reviewed fixture')});

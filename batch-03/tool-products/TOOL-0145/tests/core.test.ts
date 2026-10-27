@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0145 Bates Numbering for PDFs', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {bates} from '../src/core';describe('TOOL-0145 Bates-numbering parser guards',()=>{it('rejects an empty PDF before stamping',async()=>{await expect(bates(new File([],'empty.pdf',{type:'application/pdf'}),{start:1,prefix:'B-',digits:6,position:'bottom-right'})).rejects.toThrow()});it.todo('verifies numbering sequence/placement on a reviewed multipage PDF fixture')});

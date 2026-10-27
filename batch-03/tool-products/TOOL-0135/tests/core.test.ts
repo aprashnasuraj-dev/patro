@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0135 Blur and Pixelate Redaction Tool', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {redact} from '../src/core';describe('TOOL-0135 redaction input guards',()=>{it('rejects an empty source image before any redaction render',async()=>{await expect(redact(new File([],'empty.png',{type:'image/png'}),[{x:0,y:0,width:1,height:1}])).rejects.toThrow()});it.todo('verifies in-bounds solid/pixelate/blur output against reviewed raster fixtures')});

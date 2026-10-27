@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0139 Image DPI Changer (72 to 300 DPI)', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {changeDpi} from '../src/core';describe('TOOL-0139 DPI metadata bounds',()=>{it('rejects DPI below 36 before reading file bytes',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(changeDpi(f,20)).rejects.toThrow(/36–2400/)});it('rejects DPI above 2400',async()=>{const f=new File(['x'],'a.jpg',{type:'image/jpeg'});await expect(changeDpi(f,2500)).rejects.toThrow(/36–2400/)});it.todo('verifies PNG pHYs/JPEG JFIF density metadata on reviewed fixtures')});

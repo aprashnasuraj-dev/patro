@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0149 Crop PDF Margins Visually', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {cropMargins} from '../src/core';describe('TOOL-0149 PDF crop parser guards',()=>{it('rejects an empty PDF before crop-box changes',async()=>{await expect(cropMargins(new File([],'empty.pdf',{type:'application/pdf'}),{top:1,right:1,bottom:1,left:1})).rejects.toThrow()});it.todo('verifies unit conversion and non-empty crop boxes on a reviewed PDF fixture')});

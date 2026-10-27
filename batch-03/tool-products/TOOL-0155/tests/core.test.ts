@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0155 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {redactPdf} from '../src/core';describe('TOOL-0155 true-redaction guards',()=>{it('rejects an empty PDF before any rasterization',async()=>{await expect(redactPdf(new File([],'empty.pdf',{type:'application/pdf'}),[{page:1,x:0,y:0,width:10,height:10}],{dpi:150,fill:'black'})).rejects.toThrow()});it.todo('verifies reviewed redaction rectangles are rasterized and no underlying text remains')});

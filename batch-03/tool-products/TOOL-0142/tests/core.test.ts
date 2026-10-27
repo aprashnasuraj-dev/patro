@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0142 Rearrange PDF Pages (Drag Thumbnails)', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {reorder} from '../src/core';describe('TOOL-0142 PDF reorder guards',()=>{it('rejects an empty PDF before page copying',async()=>{await expect(reorder(new File([],'empty.pdf',{type:'application/pdf'}),[1])).rejects.toThrow()});it.todo('reorders a reviewed multipage PDF and rejects duplicate/out-of-range page orders')});

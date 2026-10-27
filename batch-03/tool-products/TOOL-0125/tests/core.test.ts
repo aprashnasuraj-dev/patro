@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0125 Passport and ID Photo Cropper by Country', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {outputPixels,PRESETS} from '../src/core';describe('TOOL-0125 passport photo geometry',()=>{it('converts the US 2×2 inch preset to 600×600 at 300 DPI',()=>expect(outputPixels('US',300)).toEqual({width:600,height:600}));it('rejects DPI outside 150–600',()=>expect(()=>outputPixels('US',100)).toThrow(/150–600/));it('keeps source metadata attached to regulated presets',()=>expect(PRESETS.US.source).toMatch(/^https:/));it.todo('browser-crops a reviewed image fixture while preserving official-rule caveats')});

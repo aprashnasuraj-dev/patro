@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0132 BlurHash and ThumbHash Generator', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {generate} from '../src/core';describe('TOOL-0132 BlurHash/ThumbHash bounds',()=>{it('rejects BlurHash component counts outside 1–9 before decode',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(generate(f,0,3)).rejects.toThrow(/1–9/)});it.todo('verifies both hashes against a reviewed raster fixture')});

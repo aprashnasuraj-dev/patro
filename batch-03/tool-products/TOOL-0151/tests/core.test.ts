@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0151 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {imagesToPdf} from '../src/core';describe('TOOL-0151 images-to-PDF bounds',()=>{it('requires 1–80 images before loading pdf-lib',async()=>{await expect(imagesToPdf([],{pageSize:'A4',marginPt:18,fit:'contain'})).rejects.toThrow(/1–80/)});it.todo('embeds reviewed PNG/JPEG/WebP fixtures with page-size and margin geometry')});

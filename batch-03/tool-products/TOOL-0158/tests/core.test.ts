@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0158 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {inspectPageSizes} from '../src/core';describe('TOOL-0158 page-size parser guards',()=>{it('rejects an empty PDF before page geometry inspection',async()=>{await expect(inspectPageSizes(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('classifies reviewed A4/Letter/rotated/custom page fixtures with userUnit handling')});

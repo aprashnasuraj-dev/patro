@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0131 Image Color Palette Extractor with Contrast Pairs', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {extract} from '../src/core';describe('TOOL-0131 palette bounds',()=>{it('rejects palette sizes outside 2–16 before image decode',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(extract(f,1)).rejects.toThrow(/2–16/)});it.todo('verifies deterministic palette/contrast output from a reviewed image fixture')});

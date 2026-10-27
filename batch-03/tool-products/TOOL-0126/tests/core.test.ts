@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0126 Favicon Generator (ICO, PNG Set, Manifest)', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {generate} from '../src/core';describe('TOOL-0126 favicon generator guards',()=>{it('rejects an empty source image before rendering icons',async()=>{await expect(generate(new File([],'empty.png',{type:'image/png'}))).rejects.toThrow()});it.todo('verifies ICO directory offsets and generated PNG/manifest files from a reviewed image fixture')});

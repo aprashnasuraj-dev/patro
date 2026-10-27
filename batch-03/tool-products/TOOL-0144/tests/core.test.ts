@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0144 Merge PDFs with Bookmarks per File', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {merge} from '../src/core';describe('TOOL-0144 PDF merge bounds',()=>{it('requires at least two PDFs before loading pdf-lib',async()=>{const f=new File(['x'],'a.pdf',{type:'application/pdf'});await expect(merge([f])).rejects.toThrow(/2–50/)});it('rejects more than 50 inputs',async()=>{const f=new File(['x'],'a.pdf',{type:'application/pdf'});await expect(merge(Array.from({length:51},()=>f))).rejects.toThrow(/2–50/)});it.todo('merges reviewed PDFs and verifies top-level outline page indices')});

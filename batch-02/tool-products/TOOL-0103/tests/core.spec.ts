@@ -1,1 +1,1 @@
-import {describe,it} from 'vitest';describe('WOFF2 decode deferred fixtures',()=>{it.todo('decodes TrueType-backed WOFF2 to sfnt 0x00010000');it.todo('refuses OTTO-backed WOFF2 as TTF');it.todo('rejects corrupt WOFF2')});
+import {describe,it,expect} from 'vitest';import {convert} from '../src/core';describe('TOOL-0103 WOFF2 decode unit guards',()=>{it('rejects non-WOFF2 input',async()=>{await expect(convert(new ArrayBuffer(0),'bad.ttf')).rejects.toThrow()});it.todo('decodes a reviewed TrueType-backed WOFF2 fixture and rejects OTTO-backed output')});

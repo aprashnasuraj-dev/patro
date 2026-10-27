@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0123 PNG/JPG to AVIF and WebP with Quality Compare', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {compare} from '../src/core';describe('TOOL-0123 image compare guards',()=>{it('rejects an empty image before canvas/codec work',async()=>{const f=new File([],'empty.png',{type:'image/png'});await expect(compare(f)).rejects.toThrow()});it.todo('compares WebP/AVIF byte sizes and dimensions using a reviewed raster fixture')});

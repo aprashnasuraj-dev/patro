@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0129 SVG Optimizer with Visual Diff', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {optimize} from '../src/core';describe('TOOL-0129 SVG optimizer bounds',()=>{it('rejects SVG above the 5 MiB local limit before DOM/raster work',async()=>{await expect(optimize('x'.repeat(5*1024*1024+1))).rejects.toThrow(/size limit/)});it.todo('verifies sanitization and visual-diff equivalence with reviewed SVG fixtures')});

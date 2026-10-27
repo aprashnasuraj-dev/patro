@@ -75,7 +75,8 @@ async function unit(t,esbuild){
  if(!files.length){flag(t,'unit','NOT_RUN','No unit fixture supplied');return}
  if(!esbuild){flag(t,'unit','NOT_RUN','esbuild unavailable');return}
  const executable=s=>{const clean=s.replace(/\b(?:it|test)\.todo\s*\([^)]*\)/gs,'');return /\b(?:it|test)(?:\.each\([^)]*\))?\s*\(/s.test(clean)};
- const nodeFiles=classified.filter(x=>x.framework==='node-test'&&executable(x.contents)),vitestFiles=classified.filter(x=>x.framework!=='node-test'&&executable(x.contents)),deferred=classified.filter(x=>!executable(x.contents)).map(x=>({framework:'no-executable-unit-tests',file:x.file,note:'fixture contains no executable test; TODO-only suites are not PASS'}));
+ const planFiles=classified.filter(x=>!executable(x.contents)&&/^(?:interaction|security)\.test\./i.test(x.file)).map(x=>({framework:/^interaction/i.test(x.file)?'phase5-interaction-plan':'security-test-plan',file:x.file,note:'non-executable plan retained for later browser/security verification'}));t.unitPlans=planFiles;const candidates=classified.filter(x=>!planFiles.some(p=>p.file===x.file));
+ const nodeFiles=candidates.filter(x=>x.framework==='node-test'&&executable(x.contents)),vitestFiles=candidates.filter(x=>x.framework!=='node-test'&&executable(x.contents)),deferred=candidates.filter(x=>!executable(x.contents)).map(x=>({framework:'no-executable-unit-tests',file:x.file,note:'fixture contains no executable unit test; TODO-only suites are not PASS'}));
  let passed=0,failed=[];
  for(const item of nodeFiles)try{
   const input=path.join(t.dir,'tests',item.file);

@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0134 Image Difference Comparator', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {compare} from '../src/core';describe('TOOL-0134 image-diff threshold guards',()=>{it('rejects threshold above 255 before image decode',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(compare(f,f,300)).rejects.toThrow(/0–255/)});it.todo('verifies mismatch percentage, MAE and diff bitmap against reviewed image fixtures')});

@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0138 APNG and Animated WebP Converter', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {toGif} from '../src/core';describe('TOOL-0138 animation loop bounds',()=>{it('rejects negative loop count before browser decoder access',async()=>{const f=new File(['x'],'a.apng',{type:'image/png'});await expect(toGif(f,-1)).rejects.toThrow(/Loop count/)});it('rejects loop count above 65535',async()=>{const f=new File(['x'],'a.apng',{type:'image/png'});await expect(toGif(f,70000)).rejects.toThrow(/Loop count/)});it.todo('converts a reviewed APNG/animated-WebP fixture with frame timing preserved')});

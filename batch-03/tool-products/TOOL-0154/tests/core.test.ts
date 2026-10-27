@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0154 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {csvEscape,extractTables} from '../src/core';describe('TOOL-0154 table CSV logic',()=>{it('escapes commas and quotes per CSV rules',()=>{expect(csvEscape('a,"b"')).toBe('"a,""b"""');expect(csvEscape('plain')).toBe('plain')});it('rejects an empty PDF before table extraction',async()=>{await expect(extractTables(new File([],'empty.pdf',{type:'application/pdf'}),{rowTolerance:3,columnTolerance:10})).rejects.toThrow()});it.todo('clusters reviewed positioned-text table fixtures into deterministic rows/columns')});

@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0130 SVG to PNG/JPG Exporter at Custom Sizes', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {exportSvg} from '../src/core';describe('TOOL-0130 SVG export geometry guards',()=>{it('rejects zero-width output before SVG/image decoding',async()=>{await expect(exportSvg('<svg xmlns="http://www.w3.org/2000/svg"/>',0,100,'image/png')).rejects.toThrow(/1 to 8192/)});it('rejects dimensions above 8192',async()=>{await expect(exportSvg('<svg xmlns="http://www.w3.org/2000/svg"/>',9000,100,'image/png')).rejects.toThrow(/1 to 8192/)});it.todo('renders reviewed SVG fixtures to PNG/JPEG in the browser harness')});

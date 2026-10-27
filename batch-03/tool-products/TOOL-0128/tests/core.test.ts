@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0128 CSS Sprite Sheet Generator', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {build} from '../src/core';describe('TOOL-0128 sprite layout guards',()=>{it('rejects an unsafe CSS class prefix before image decoding',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(build([f],4,'1bad')).rejects.toThrow(/prefix/)});it('rejects padding above 64px',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(build([f],65,'icon-')).rejects.toThrow(/0–64/)});it.todo('verifies sprite packing coordinates and CSS against reviewed image fixtures')});

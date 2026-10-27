@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0122 HEIC to JPG Batch Converter', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {convert} from '../src/core';describe('TOOL-0122 HEIC conversion guards',()=>{it('rejects out-of-range JPEG quality before loading the codec',async()=>{const f=new File(['x'],'a.heic',{type:'image/heic'});await expect(convert([f],.1)).rejects.toThrow(/0.4–1.0/)});it.todo('converts a reviewed HEIC fixture and verifies dimensions/output type')});

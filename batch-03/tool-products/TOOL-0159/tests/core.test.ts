@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0159 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {convertDocx} from '../src/core';describe('TOOL-0159 DOCX input guards',()=>{it('rejects an empty DOCX before vendor modules load',async()=>{await expect(convertDocx(new File([],'empty.docx',{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}),{imageMode:'omit'})).rejects.toThrow(/1 byte–50 MB/)});it('rejects a non-DOCX extension before reading ZIP content',async()=>{await expect(convertDocx(new File(['PK\u0003\u0004'],'notes.txt'),{imageMode:'omit'})).rejects.toThrow(/\.docx/)});it.todo('converts a reviewed OOXML fixture and verifies sanitised HTML/Markdown')});

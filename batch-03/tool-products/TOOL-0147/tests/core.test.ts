@@ -1,12 +1,1 @@
-// TEST_PENDING — prepared for later integration; intentionally not executed in staging.
-import { describe, it, expect } from 'vitest';
-import * as core from '../src/core';
-
-describe('TOOL-0147 Flatten PDF Form Fields', () => {
-  it.todo('matches the known-answer fixture');
-  it.todo('rejects malformed and oversized input');
-  it.todo('handles unsupported cases with an explicit warning');
-  it.todo('sanitizes filenames and generated text/markup');
-  it.todo('keeps output bounded under pathological input');
-  it.todo('produces deterministic output formatting where applicable');
-});
+import {describe,it,expect} from 'vitest';import {flatten} from '../src/core';describe('TOOL-0147 form flatten parser guards',()=>{it('rejects an empty PDF before form access',async()=>{await expect(flatten(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('flattens a reviewed AcroForm fixture and preserves visible field appearances')});

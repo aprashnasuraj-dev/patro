@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0157 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {extractAttachments} from '../src/core';describe('TOOL-0157 attachment parser guards',()=>{it('rejects an empty PDF before attachment enumeration',async()=>{await expect(extractAttachments(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('extracts reviewed attachments with safe filenames and byte-count limits')});

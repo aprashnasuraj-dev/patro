@@ -1,8 +1,1 @@
-import { describe, it, expect } from 'vitest';
-// DEFERRED: TEST_PENDING. Do not execute during source preparation.
-describe('TOOL-0152 core',()=>{
- it.todo('matches known-answer fixture');
- it.todo('rejects malformed and oversized input');
- it.todo('enforces page/pixel/count resource bounds');
- it.todo('formats exports deterministically');
-});
+import {describe,it,expect} from 'vitest';import {pdfToImages} from '../src/core';describe('TOOL-0152 PDF-to-images guards',()=>{it('rejects an empty PDF before loading the PDF.js runtime',async()=>{await expect(pdfToImages(new File([],'empty.pdf',{type:'application/pdf'}),{dpi:150,format:'png'})).rejects.toThrow()});it.todo('renders reviewed pages at deterministic DPI and dimensions')});
