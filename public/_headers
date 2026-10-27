@@ -141,3 +141,30 @@
   Content-Type: text/calendar; charset=utf-8
   Cache-Control: public, max-age=3600
   X-Robots-Tag: noindex
+
+# MM530 browser-local runtimes: same-origin only, with scoped WASM/worker support.
+/_mm530/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' blob:; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+  Cache-Control: public, max-age=300, s-maxage=86400
+  X-Robots-Tag: noindex, nofollow
+
+# Device permissions are enabled only for the two tools whose functions require them.
+/editors/screen-recorder-online
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(self), display-capture=(self), payment=(), usb=(), browsing-topics=()
+
+/_mm530/TOOL-0349/*
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(self), display-capture=(self), payment=(), usb=(), browsing-topics=()
+
+/validators/webcam-mic-test
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(self), payment=(), usb=(), browsing-topics=()
+
+/_mm530/TOOL-0350/*
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(self), payment=(), usb=(), browsing-topics=()
+
+/sitemap-mm530.xml
+  Cache-Control: public, max-age=3600
