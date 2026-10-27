@@ -181,7 +181,7 @@ root.dataset.toolMounted="true";`
     : `import ${modulePath};`;
   await fs.writeFile(bootstrap,bootSource);
   try{
-    await build({entryPoints:[bootstrap],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
+    await build({entryPoints:[bootstrap],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
   }finally{await fs.rm(bootstrap,{force:true})}
   const builtJsPath=path.join(dst,"tool.js");let builtJs=await fs.readFile(builtJsPath,"utf8");
   if(builtJs.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){builtJs=builtJs.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");await fs.writeFile(builtJsPath,builtJs);}
