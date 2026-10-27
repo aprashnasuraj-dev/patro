@@ -66,6 +66,14 @@ const mmSitemap=await read(path.join(dist,"sitemap-mm530.xml")).catch(()=>"");co
 for(const tool of registry){const url=origin+tool.route;const occurrences=mmSitemap.split(url).length-1;assert(occurrences===1,"SITEMAP_CANONICAL_COUNT",`${tool.id}: ${occurrences}`)}
 assert(rootSitemap.includes(origin+"/sitemap-mm530.xml"),"ROOT_SITEMAP_INTEGRATION","root sitemap index missing MM530 child");
 assert(!hub?.includes("/_mm530/"),"DISCOVERY_EAGER_RUNTIME","web-tools hub references runtime assets directly");
+const ffmpegDir=path.join(dist,"assets/vendor/ffmpeg"),ffmpegOriginal=path.join(ffmpegDir,"ffmpeg-core.wasm"),ffmpegManifestPath=path.join(ffmpegDir,"ffmpeg-core.wasm.parts.json");
+assert(!(await exists(ffmpegOriginal)),"FFMPEG_ASSET_TOO_LARGE","unsplit ffmpeg-core.wasm must not be emitted");
+assert(await exists(ffmpegManifestPath),"FFMPEG_PART_MANIFEST_MISSING","split FFmpeg manifest missing");
+if(await exists(ffmpegManifestPath)){
+ const manifest=JSON.parse(await read(ffmpegManifestPath));assert(Array.isArray(manifest.parts)&&manifest.parts.length>=2,"FFMPEG_PARTS_INVALID","expected at least two FFmpeg parts");
+ let sum=0;for(const part of manifest.parts||[]){const rel=String(part.url||"").replace(/^\/+/, ""),p=path.join(dist,rel);const st=await fs.stat(p).catch(()=>null);assert(Boolean(st),"FFMPEG_PART_MISSING",String(part.url));if(st){assert(st.size<25*1024*1024,"FFMPEG_PART_TOO_LARGE",`${part.url}: ${st.size}`);assert(st.size===Number(part.bytes),"FFMPEG_PART_SIZE_MISMATCH",String(part.url));sum+=st.size}}
+ assert(sum===Number(manifest.totalBytes),"FFMPEG_TOTAL_SIZE_MISMATCH",`${sum} != ${manifest.totalBytes}`);
+}
 
 async function dirBytes(p){let total=0;try{for(const e of await fs.readdir(p,{withFileTypes:true})){const x=path.join(p,e.name);total+=e.isDirectory()?await dirBytes(x):(await fs.stat(x)).size}}catch{}return total}
 const representative={light:"TOOL-0001",pdf:"TOOL-0151",spreadsheet:"TOOL-0370",media:"TOOL-0164"};
