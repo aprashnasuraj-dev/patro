@@ -1,2 +1,3 @@
 export const ING:any={'all-purpose flour':120,'bread flour':120,'granulated sugar':198,'brown sugar packed':213,'butter':226,'cocoa powder':84,'rolled oats':89,'long-grain rice dry':198,'table salt':288,'water':227,'heavy cream':227,'olive oil':200};
-export function cupsToGrams(cups:number,gramsPerCup:number){if(!(cups>=0&&gramsPerCup>0))throw new Error('Cups must be nonnegative and grams per cup positive.');return cups*gramsPerCup}\n
+export function cupsToGrams(cups:number,gramsPerCup:number){if(!(cups>=0&&gramsPerCup>0))throw new Error('Cups must be nonnegative and grams per cup positive.');return cups*gramsPerCup}
+
