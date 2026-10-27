@@ -73,6 +73,7 @@ for(const tool of registry){
  const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
  assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
+ const retainedSignals=[];
  const leafVisible=visible(leafHtml),leafStat=await fs.stat(leafPath);
  const frameMatches=[...leafHtml.matchAll(/<iframe\b[^>]*class=["'][^"']*mm530-frame[^"']*["'][^>]*>/gi)];
  assert(frameMatches.length===1,"CRAWLER_DIRECT_RUNTIME",tool.id+": expected exactly one tool iframe, found "+frameMatches.length);
@@ -100,7 +101,7 @@ for(const tool of registry){
  if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
  if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
  const sourceVisible=visible(sourceHtml),canonicalVisible=visible(leafHtml);
- const retainedSignals=[];
+
  for(const [signal,re] of editorialSignals){
   if(re.test(sourceVisible)){
    editorialSignalsExpected++;
