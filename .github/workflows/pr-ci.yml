@@ -324,6 +324,19 @@ jobs:
           path: reports/mm530-phase4/
           if-no-files-found: error
           retention-days: 30
+      - name: Run Phase 5 functional Chromium and responsive validation
+        id: phase5
+        if: steps.phase4.outcome == 'success'
+        continue-on-error: true
+        run: node scripts/mm530/phase5-browser-gate.mjs
+      - name: Preserve Phase 5 browser evidence
+        if: always() && steps.phase5.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-phase5-browser
+          path: reports/mm530-phase5/
+          if-no-files-found: error
+          retention-days: 30
       - name: Close Phase 1 with no-regression baseline
         if: always()
         run: node scripts/mm530/phase1-regression-gate.mjs
@@ -375,6 +388,11 @@ jobs:
         if: steps.phase4.outcome != 'success'
         run: |
           echo 'Phase 4 authoritative unit gate has unresolved failures or NOT_RUN suites. Review mm530-phase4-unit.'
+          exit 1
+      - name: Surface Phase 5 browser failure after artifacts
+        if: steps.phase5.outcome == 'failure'
+        run: |
+          echo 'Phase 5 Chromium/responsive validation has unresolved failures. Review mm530-phase5-browser.'
           exit 1
       - name: Surface fleet failure after artifacts
         if: steps.fleet.outcome != 'success'
