@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "GitLab CI to GitHub Actions Converter — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Translate a narrow subset of GitLab CI jobs into a GitHub Actions draft, without executing arbitrary scripts. Runs locally in your browser. Review limitations",
+    "meta_description": "Translate a narrow subset of GitLab CI jobs into a GitHub Actions draft, without executing arbitrary scripts. Runs locally in your browser.",
     "h1": "Job portability studio: GitLab CI to GitHub Actions Converter",
     "robots": "noindex",
     "canonical": null,
