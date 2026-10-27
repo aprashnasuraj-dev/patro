@@ -66,7 +66,10 @@ assert(!hub?.includes("/_mm530/"),"DISCOVERY_EAGER_RUNTIME","web-tools hub refer
 
 async function dirBytes(p){let total=0;try{for(const e of await fs.readdir(p,{withFileTypes:true})){const x=path.join(p,e.name);total+=e.isDirectory()?await dirBytes(x):(await fs.stat(x)).size}}catch{}return total}
 const representative={light:"TOOL-0001",pdf:"TOOL-0151",spreadsheet:"TOOL-0370",media:"TOOL-0164"};
-const perf={advancedLandingHtmlBytes:(await fs.stat(path.join(dist,"advancetools/index.html"))).size,webToolsHubHtmlBytes:(await fs.stat(hubPath)).size,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,representative:{},sharedVendorBytes:{}};
+const advancedLandingHtmlBytes=(await fs.stat(path.join(dist,"advancetools/index.html"))).size,webToolsHubHtmlBytes=(await fs.stat(hubPath)).size;
+const advancedSharedAssetBytes=await dirBytes(path.join(dist,advanced.assetPrefix.replace(/^\//,"")));
+const viteAssetsDir=path.join(dist,"assets");let viteChunks=[];try{for(const name of await fs.readdir(viteAssetsDir)){const p=path.join(viteAssetsDir,name),st=await fs.stat(p);if(st.isFile()&&/\.(?:m?js|css)$/.test(name))viteChunks.push({file:name,bytes:st.size})}}catch{}viteChunks.sort((a,b)=>b.bytes-a.bytes);
+const perf={advancedLandingHtmlBytes,webToolsHubHtmlBytes,advancedSharedAssetBytes,advancedLandingPayloadBytes:advancedLandingHtmlBytes+advancedSharedAssetBytes,webToolsHubPayloadBytes:webToolsHubHtmlBytes+advancedSharedAssetBytes,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,viteTopChunks:viteChunks.slice(0,20),representative:{},sharedVendorBytes:{}};
 for(const [kind,id] of Object.entries(representative))perf.representative[kind]={id,bytes:await dirBytes(path.join(dist,"_mm530",id))};
 for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-lib",ffmpeg:"assets/vendor/ffmpeg",sqljs:"assets/vendor/sqljs",mathjax:"vendor/mathjax",sheetjs:"assets/vendor/sheetjs"}))perf.sharedVendorBytes[name]=await dirBytes(path.join(dist,p));
 
