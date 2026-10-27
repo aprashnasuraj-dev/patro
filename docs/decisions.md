@@ -69,3 +69,11 @@ The repository already contains a 530-tool master catalog plus the 300-tool clie
 - Browser-only tool leaves use `/tool/<slug>`; no tool canonical lives under `/advancetools/`.
 - Related links and sitemap entries point directly to `/tool/<slug>`.
 - Category browsing uses ordinary anchors, so deep links and browser back/forward work without SPA history shims.
+
+## Advanced Tools discovery integration
+- `/advancetools/` is the discovery dashboard, not a parent URL for tool leaves.
+- The dashboard uses semantic task categories rather than exposing internal fleet sizes or generic implementation types.
+- Existing specialist areas (craft, music, workshop, font conversion and printable paper) are entries inside the same category system.
+- Legacy MM530 leaves keep their established direct canonical routes; the browser-only suite uses `/tool/<slug>`.
+- Category pages use ordinary links and real URLs, so deep-link refresh, browser back and browser forward work natively.
+- Production build fails if a client tool is missing its emitted page, engine, canonical, sitemap entry, or Advanced Tools link; Advanced Tools verification also requires every legacy MM530 route to remain discoverable.
