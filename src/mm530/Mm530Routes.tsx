@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { MM530_TOOLS, mm530ToolForRoute } from "./registry";
 import "./mm530.css";
 
+const SITE_ORIGIN="https://aafnaipatro.com";
+
 type RuntimeSeo={id:string;route:string;title:string;description:string;category:string;categoryLabel:string};
 type RuntimeManifest={schemaVersion:number;routes?:RuntimeSeo[]};
 
@@ -16,12 +18,12 @@ function useRouteSeo(tool:ReturnType<typeof mm530ToolForRoute>,description:strin
   const canonicalWas=canonical?.href||"";
   const canonicalNode=canonical||document.head.appendChild(Object.assign(document.createElement("link"),{rel:"canonical"}));
   canonicalNode.dataset.mm530Owned=canonical?"false":"true";
-  canonicalNode.href=location.origin+tool.route;
+  canonicalNode.href=SITE_ORIGIN+tool.route;
   const metaSpecs:[string,string,string][]=[
    ["name","description",description],
    ["property","og:title",tool.title],
    ["property","og:description",description],
-   ["property","og:url",location.origin+tool.route],
+   ["property","og:url",SITE_ORIGIN+tool.route],
    ["name","twitter:card","summary"],
    ["name","twitter:title",tool.title],
    ["name","twitter:description",description]
@@ -36,12 +38,12 @@ function useRouteSeo(tool:ReturnType<typeof mm530ToolForRoute>,description:strin
   }
   document.title=`${tool.title} | Aafnai Patro`;
   const breadcrumbs={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-   {"@type":"ListItem","position":1,"name":"Advanced tools","item":location.origin+"/advancetools/"},
-   {"@type":"ListItem","position":2,"name":"Web tools","item":location.origin+"/advancetools/web-tools/"},
-   {"@type":"ListItem","position":3,"name":tool.categoryLabel,"item":location.origin+`/advancetools/web-tools/${tool.category}/`},
-   {"@type":"ListItem","position":4,"name":tool.title,"item":location.origin+tool.route}
+   {"@type":"ListItem","position":1,"name":"Advanced tools","item":SITE_ORIGIN+"/advancetools/"},
+   {"@type":"ListItem","position":2,"name":"Web tools","item":SITE_ORIGIN+"/advancetools/web-tools/"},
+   {"@type":"ListItem","position":3,"name":tool.categoryLabel,"item":SITE_ORIGIN+`/advancetools/web-tools/${tool.category}/`},
+   {"@type":"ListItem","position":4,"name":tool.title,"item":SITE_ORIGIN+tool.route}
   ]};
-  const application={"@context":"https://schema.org","@type":"WebApplication","name":tool.title,"url":location.origin+tool.route,"description":description,"applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isPartOf":{"@type":"WebSite","name":"Aafnai Patro","url":location.origin}};
+  const application={"@context":"https://schema.org","@type":"WebApplication","name":tool.title,"url":SITE_ORIGIN+tool.route,"description":description,"applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isPartOf":{"@type":"WebSite","name":"Aafnai Patro","url":SITE_ORIGIN}};
   const scripts=[breadcrumbs,application].map(data=>{const x=document.createElement("script");x.type="application/ld+json";x.dataset.mm530Seo="1";x.textContent=JSON.stringify(data);document.head.appendChild(x);return x});
   return()=>{document.title=previousTitle;for(const fn of restores.reverse())fn();for(const x of scripts)x.remove();if(canonicalNode.dataset.mm530Owned==="true")canonicalNode.remove();else canonicalNode.href=canonicalWas};
  },[tool,description]);
