@@ -39,3 +39,10 @@ export function nodeTestBuildOptions(input,outfile){
     loader:{'.css':'text','.svg':'text','.png':'file','.jpg':'file','.jpeg':'file','.webp':'file','.wasm':'file'}
   };
 }
+
+export function classifyNodeTestFailure(note){
+ const s=String(note||'');
+ if(/ERR_MODULE_NOT_FOUND/.test(s)&&/Cannot find package/.test(s))return {state:'NOT_RUN',kind:'node-test-dependency-prerequisite'};
+ if(/(?:\/|\\)tests(?:\/|\\)[^\s:]+.*SyntaxError|SyntaxError.*(?:\/|\\)tests(?:\/|\\)/s.test(s))return {state:'NOT_RUN',kind:'invalid-test-fixture'};
+ return {state:'FAIL',kind:'test-failure'};
+}

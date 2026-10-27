@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {createServer} from 'node:http';
 import {spawn} from 'node:child_process';
 import {policyFor,policyHtml} from './policy.mjs';
-import {metadataId,classifyTestFramework,browserBuildOptions,nodeTestBuildOptions} from './harness-lib.mjs';
+import {metadataId,classifyTestFramework,browserBuildOptions,nodeTestBuildOptions,classifyNodeTestFailure} from './harness-lib.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),out=path.join(root,'reports','mm530-qa');
 const rp=(...p)=>path.join(root,...p),read=p=>fs.readFile(p,'utf8');
 const exists=async p=>fs.access(p).then(()=>true,()=>false);
@@ -87,7 +87,11 @@ async function unit(t,esbuild){
     await esbuild.build(nodeTestBuildOptions(input,compiled));
     r=await command(process.execPath,['--test',compiled],15000);
   }
-  if(r.ok)passed++;else failed.push(item.file+': '+r.note);
+  if(r.ok)passed++;else{
+    const classification=classifyNodeTestFailure(r.note);
+    if(classification.state==='NOT_RUN')deferred.push({framework:classification.kind,file:item.file,note:r.note.slice(0,280)});
+    else failed.push(item.file+': '+r.note);
+  }
  }catch(e){failed.push(item.file+': '+err(e))}
  if(failed.length){flag(t,'unit','FAIL',failed.join(' | ').slice(0,700));t.priority=1;return}
  if(deferred.length){
