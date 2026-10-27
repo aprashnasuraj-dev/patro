@@ -40,10 +40,10 @@ jobs:
       - name: Download exact verified Phase 2 artifact
         uses: actions/download-artifact@v4
         with:
-          name: \${{ steps.source.outputs.artifact_name }}
+          name: ${{ steps.source.outputs.artifact_name }}
           path: .mm530-phase2-freeze
-          github-token: \${{ secrets.GITHUB_TOKEN }}
-          run-id: \${{ steps.source.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ steps.source.outputs.run_id }}
 
       - name: Verify and compact durable canonical inventory
         shell: bash
