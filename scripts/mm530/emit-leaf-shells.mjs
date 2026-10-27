@@ -48,7 +48,7 @@ function leafHtml(tool,row){
 const urls=[];
 for(const tool of registry){
  const row=runtimeById.get(tool.id);if(!row)throw new Error(`Missing runtime SEO for ${tool.id}`);
- const target=path.join(dist,tool.route.replace(/^\//,""),"index.html");
+ const target=path.join(dist,tool.route.replace(/^\//,"")+".html");
  await fs.mkdir(path.dirname(target),{recursive:true});
  await fs.writeFile(target,leafHtml(tool,row));
  urls.push(origin+tool.route);
