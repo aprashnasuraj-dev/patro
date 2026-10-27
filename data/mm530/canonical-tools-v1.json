@@ -1,14 +1,14 @@
 {
   "schema_version": "MM530_CANONICAL_INDEX_V1",
   "source": {
-    "workflow_run_id": 40438862112,
-    "source_commit": "265430149b986efcb4eeb3cdf06d9ca31b19306b",
+    "workflow_run_id": 40439401859,
+    "source_commit": "38897382ed34167cddbc0620b1d7bbb33472f082",
     "artifact_name": "mm530-phase2-inventory",
-    "artifact_digest": "sha256:7d4686c9f579bfd24c86a0146268c21f921fbb2ba4bdbd052fa0042ae605ceae"
+    "artifact_digest": "sha256:4ac58d7d3b49ab7c63e4ad473d36164279fe01a46f6a58bb10298a49a70088a4"
   },
   "summary": {
     "schema_version": "MM530_INVENTORY_SUMMARY_V1",
-    "generated_at": "2026-10-27T02:31:42.252Z",
+    "generated_at": "2026-10-27T02:37:28.675Z",
     "records": 530,
     "unique_ids": 530,
     "exact_expected_id_sequence": true,
@@ -44,7 +44,7 @@
     "phase1_source": {
       "tested": 530,
       "failed": 142,
-      "at": "2026-10-27T02:31:40.732Z"
+      "at": "2026-10-27T02:37:27.203Z"
     },
     "hard_gate": {
       "expected_530": true,
@@ -98,7 +98,7 @@
         "runtime_network": "same-origin static assets only",
         "has_worker": true,
         "has_browser_test": true,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -149,7 +149,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -206,7 +206,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -259,7 +259,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -312,7 +312,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -365,7 +365,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -418,7 +418,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -471,7 +471,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -524,7 +524,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -581,7 +581,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -632,7 +632,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -683,7 +683,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -734,7 +734,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -785,7 +785,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -836,7 +836,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -887,7 +887,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -938,7 +938,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -993,7 +993,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1044,7 +1044,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1095,7 +1095,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1146,7 +1146,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1201,7 +1201,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1256,7 +1256,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1307,7 +1307,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1358,7 +1358,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1409,7 +1409,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1460,7 +1460,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1511,7 +1511,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1562,7 +1562,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1613,7 +1613,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1664,7 +1664,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1715,7 +1715,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1766,7 +1766,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1817,7 +1817,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1868,7 +1868,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1919,7 +1919,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -1970,7 +1970,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2021,7 +2021,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2072,7 +2072,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2123,7 +2123,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2174,7 +2174,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2225,7 +2225,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2276,7 +2276,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2327,7 +2327,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2378,7 +2378,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2429,7 +2429,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2480,7 +2480,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2531,7 +2531,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2582,7 +2582,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2633,7 +2633,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2684,7 +2684,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2735,7 +2735,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2786,7 +2786,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2837,7 +2837,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2888,7 +2888,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2939,7 +2939,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -2990,7 +2990,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3041,7 +3041,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3092,7 +3092,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3143,7 +3143,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3194,7 +3194,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3245,7 +3245,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3296,7 +3296,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3347,7 +3347,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3398,7 +3398,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3449,7 +3449,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3500,7 +3500,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3551,7 +3551,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3602,7 +3602,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3653,7 +3653,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3704,7 +3704,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3755,7 +3755,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3806,7 +3806,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3857,7 +3857,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3908,7 +3908,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -3959,7 +3959,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4010,7 +4010,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4061,7 +4061,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4112,7 +4112,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4163,7 +4163,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4214,7 +4214,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4265,7 +4265,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4316,7 +4316,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4367,7 +4367,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4418,7 +4418,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4469,7 +4469,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4520,7 +4520,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4571,7 +4571,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4622,7 +4622,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4673,7 +4673,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4724,7 +4724,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4775,7 +4775,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4830,7 +4830,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4884,7 +4884,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4935,7 +4935,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -4986,7 +4986,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5037,7 +5037,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5088,7 +5088,7 @@
         "runtime_network": null,
         "has_worker": true,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5139,7 +5139,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5190,7 +5190,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5245,7 +5245,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5299,7 +5299,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5350,7 +5350,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5401,7 +5401,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5452,7 +5452,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5503,7 +5503,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -5556,7 +5556,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5607,7 +5607,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5658,7 +5658,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5709,7 +5709,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5760,7 +5760,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5811,7 +5811,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5862,7 +5862,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5913,7 +5913,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -5964,7 +5964,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6015,7 +6015,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6066,7 +6066,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6117,7 +6117,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6168,7 +6168,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6219,7 +6219,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6274,7 +6274,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6332,7 +6332,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6390,7 +6390,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6444,7 +6444,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6495,7 +6495,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6546,7 +6546,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6597,7 +6597,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6648,7 +6648,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6699,7 +6699,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6750,7 +6750,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6801,7 +6801,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6858,7 +6858,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6912,7 +6912,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -6963,7 +6963,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7014,7 +7014,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7065,7 +7065,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7120,7 +7120,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7180,7 +7180,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7234,7 +7234,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7285,7 +7285,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7340,7 +7340,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7394,7 +7394,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7445,7 +7445,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7500,7 +7500,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7554,7 +7554,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7609,7 +7609,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7663,7 +7663,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7718,7 +7718,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7772,7 +7772,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7823,7 +7823,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7875,7 +7875,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7927,7 +7927,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -7979,7 +7979,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8031,7 +8031,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8083,7 +8083,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8135,7 +8135,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8187,7 +8187,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8239,7 +8239,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8291,7 +8291,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8346,7 +8346,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8400,7 +8400,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8451,7 +8451,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8502,7 +8502,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8553,7 +8553,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8604,7 +8604,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8655,7 +8655,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8710,7 +8710,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8764,7 +8764,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8815,7 +8815,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8866,7 +8866,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8917,7 +8917,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -8968,7 +8968,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9019,7 +9019,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9070,7 +9070,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9121,7 +9121,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9172,7 +9172,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9223,7 +9223,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9274,7 +9274,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9325,7 +9325,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9376,7 +9376,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9427,7 +9427,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9478,7 +9478,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9529,7 +9529,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9580,7 +9580,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9633,7 +9633,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9684,7 +9684,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9735,7 +9735,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9788,7 +9788,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9841,7 +9841,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9892,7 +9892,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9943,7 +9943,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -9994,7 +9994,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10047,7 +10047,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10098,7 +10098,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10149,7 +10149,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10200,7 +10200,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10251,7 +10251,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10302,7 +10302,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10355,7 +10355,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10408,7 +10408,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10465,7 +10465,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10522,7 +10522,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10579,7 +10579,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10636,7 +10636,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10693,7 +10693,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10750,7 +10750,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10807,7 +10807,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10864,7 +10864,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10921,7 +10921,7 @@
         "runtime_network": null,
         "has_worker": true,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -10978,7 +10978,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11035,7 +11035,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11092,7 +11092,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11149,7 +11149,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11206,7 +11206,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11263,7 +11263,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11320,7 +11320,7 @@
         "runtime_network": null,
         "has_worker": true,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11377,7 +11377,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11434,7 +11434,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11491,7 +11491,7 @@
         "runtime_network": null,
         "has_worker": true,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11548,7 +11548,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11607,7 +11607,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -11668,7 +11668,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -11729,7 +11729,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -11790,7 +11790,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11849,7 +11849,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11908,7 +11908,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -11967,7 +11967,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12026,7 +12026,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -12087,7 +12087,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -12148,7 +12148,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12207,7 +12207,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -12268,7 +12268,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12327,7 +12327,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -12388,7 +12388,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12447,7 +12447,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12506,7 +12506,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12565,7 +12565,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12624,7 +12624,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12683,7 +12683,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -12744,7 +12744,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12803,7 +12803,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12862,7 +12862,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -12923,7 +12923,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -12982,7 +12982,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13041,7 +13041,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13100,7 +13100,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13159,7 +13159,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13218,7 +13218,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -13279,7 +13279,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13338,10 +13338,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -13397,7 +13399,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13456,7 +13458,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13515,7 +13517,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13574,7 +13576,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13633,7 +13635,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13692,7 +13694,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13751,7 +13753,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13814,7 +13816,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13880,7 +13882,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -13942,7 +13944,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14001,7 +14003,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14060,7 +14062,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14119,7 +14121,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14178,7 +14180,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14237,7 +14239,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14296,7 +14298,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14355,7 +14357,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14414,7 +14416,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14473,7 +14475,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14532,7 +14534,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14591,7 +14593,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14650,7 +14652,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14709,7 +14711,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14768,7 +14770,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14827,7 +14829,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14886,7 +14888,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -14945,7 +14947,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15004,7 +15006,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15063,7 +15065,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15122,7 +15124,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15173,7 +15175,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15224,7 +15226,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15275,7 +15277,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15326,7 +15328,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15377,7 +15379,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15428,7 +15430,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15479,7 +15481,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15530,7 +15532,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15581,7 +15583,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15632,7 +15634,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15683,7 +15685,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15734,7 +15736,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15785,7 +15787,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15836,7 +15838,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15887,7 +15889,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15938,7 +15940,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -15989,7 +15991,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16040,7 +16042,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16091,7 +16093,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16142,7 +16144,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16201,7 +16203,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16260,7 +16262,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16319,7 +16321,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16378,7 +16380,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16437,7 +16439,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16496,7 +16498,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16555,7 +16557,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16614,7 +16616,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16673,7 +16675,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16732,7 +16734,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16791,7 +16793,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16850,7 +16852,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16909,7 +16911,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -16968,7 +16970,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17027,7 +17029,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17086,7 +17088,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17145,7 +17147,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17204,7 +17206,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17263,7 +17265,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17322,7 +17324,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17385,7 +17387,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17451,7 +17453,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17513,7 +17515,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17572,7 +17574,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17637,7 +17639,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17699,7 +17701,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17758,7 +17760,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17817,7 +17819,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17876,7 +17878,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17935,7 +17937,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -17994,7 +17996,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18053,7 +18055,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18112,7 +18114,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18171,7 +18173,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18230,7 +18232,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18289,7 +18291,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18352,7 +18354,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18418,7 +18420,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18480,7 +18482,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18539,7 +18541,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18598,7 +18600,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18657,7 +18659,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18716,7 +18718,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18775,7 +18777,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18834,7 +18836,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18893,7 +18895,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -18952,7 +18954,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19011,7 +19013,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19070,7 +19072,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19129,7 +19131,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19188,7 +19190,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19247,7 +19249,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19306,7 +19308,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19365,7 +19367,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19424,7 +19426,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19483,7 +19485,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19542,7 +19544,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19601,7 +19603,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19664,7 +19666,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19726,7 +19728,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19785,7 +19787,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19844,7 +19846,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19903,7 +19905,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -19962,7 +19964,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20021,7 +20023,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20080,7 +20082,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20139,7 +20141,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20198,7 +20200,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20257,7 +20259,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20316,7 +20318,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20375,7 +20377,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20434,7 +20436,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20493,7 +20495,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20552,7 +20554,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20611,7 +20613,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20670,7 +20672,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20729,7 +20731,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20794,7 +20796,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20860,7 +20862,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20922,7 +20924,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -20973,7 +20975,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21024,7 +21026,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21075,7 +21077,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21126,7 +21128,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21177,7 +21179,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21228,7 +21230,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21279,7 +21281,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21330,7 +21332,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21381,7 +21383,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21432,7 +21434,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21483,7 +21485,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21534,7 +21536,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21585,7 +21587,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21636,7 +21638,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21687,7 +21689,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21738,7 +21740,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21789,7 +21791,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21840,7 +21842,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21891,7 +21893,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21942,7 +21944,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -21993,7 +21995,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22044,7 +22046,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22095,7 +22097,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22148,7 +22150,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22199,7 +22201,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22250,7 +22252,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22301,7 +22303,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22352,7 +22354,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22403,7 +22405,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22454,7 +22456,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22505,7 +22507,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -22556,7 +22558,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22609,7 +22611,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22662,7 +22664,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22715,7 +22717,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22768,7 +22770,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22821,7 +22823,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22874,7 +22876,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22927,7 +22929,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -22980,7 +22982,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -23033,7 +23035,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -23086,7 +23088,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -23139,7 +23141,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23190,7 +23192,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23241,10 +23243,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -23292,7 +23296,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23343,10 +23347,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -23394,7 +23400,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -23447,7 +23453,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23498,7 +23504,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23549,7 +23555,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -23602,7 +23608,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23653,7 +23659,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23704,7 +23710,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23755,7 +23761,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23806,7 +23812,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23857,7 +23863,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -23910,7 +23916,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -23961,10 +23967,11 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
+          "regulatory",
           "finance"
         ],
         "license_review_required": false
@@ -24014,7 +24021,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -24067,7 +24074,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24118,7 +24125,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24169,7 +24176,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24220,7 +24227,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24271,7 +24278,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24322,7 +24329,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24373,7 +24380,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24424,7 +24431,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -24475,10 +24482,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24526,10 +24535,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24577,10 +24588,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24628,10 +24641,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24679,10 +24694,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24730,10 +24747,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24781,10 +24800,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24832,10 +24853,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24883,10 +24906,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24934,10 +24959,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -24985,10 +25012,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
-        "risk_classes": [],
+        "risk_classes": [
+          "regulatory"
+        ],
         "license_review_required": false
       },
       "qa": {
@@ -25036,7 +25065,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25094,7 +25123,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25152,7 +25181,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25210,7 +25239,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25267,7 +25296,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25324,7 +25353,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25380,7 +25409,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25435,7 +25464,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25490,7 +25519,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25547,7 +25576,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25602,7 +25631,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25657,7 +25686,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25712,7 +25741,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25769,7 +25798,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25826,7 +25855,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -25883,7 +25912,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25939,7 +25968,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -25995,7 +26024,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26056,7 +26085,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26114,7 +26143,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -26171,7 +26200,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -26224,7 +26253,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26275,7 +26304,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26326,7 +26355,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26377,7 +26406,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26428,7 +26457,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26479,7 +26508,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -26532,7 +26561,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26583,7 +26612,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26634,7 +26663,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26685,7 +26714,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26738,7 +26767,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26791,7 +26820,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26844,7 +26873,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26897,7 +26926,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -26950,7 +26979,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27005,11 +27034,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
-          "tax"
+          "tax",
+          "regulatory"
         ],
         "license_review_required": false
       },
@@ -27060,7 +27090,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27115,7 +27145,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27170,7 +27200,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27226,11 +27256,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
-          "tax"
+          "tax",
+          "regulatory"
         ],
         "license_review_required": false
       },
@@ -27281,11 +27312,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
-          "tax"
+          "tax",
+          "regulatory"
         ],
         "license_review_required": false
       },
@@ -27336,7 +27368,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27391,7 +27423,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27446,7 +27478,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27501,11 +27533,12 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
-          "tax"
+          "tax",
+          "regulatory"
         ],
         "license_review_required": false
       },
@@ -27556,7 +27589,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27611,7 +27644,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27667,7 +27700,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27722,7 +27755,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27777,7 +27810,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27830,7 +27863,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27883,7 +27916,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27936,7 +27969,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -27989,7 +28022,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28040,7 +28073,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28091,7 +28124,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28142,7 +28175,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28196,7 +28229,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28249,7 +28282,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28302,7 +28335,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28355,7 +28388,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28408,7 +28441,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28461,7 +28494,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28514,7 +28547,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
@@ -28568,7 +28601,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28619,7 +28652,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28670,7 +28703,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28721,7 +28754,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28772,7 +28805,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [],
@@ -28823,7 +28856,7 @@
         "runtime_network": null,
         "has_worker": false,
         "has_browser_test": false,
-        "has_page_html": false
+        "has_page_html": true
       },
       "policy": {
         "risk_classes": [
