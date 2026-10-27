@@ -70,31 +70,31 @@ function sanitizeProductionHtml(html){
 }
 function readableReference(url){
  try{
-  const u=new URL(url),host=u.hostname.replace(/^www\\./,"");
-  const last=decodeURIComponent(u.pathname.split("/").filter(Boolean).slice(-2).join(" / ")).replace(/[-_]+/g," ").replace(/\\.(?:md|html?|pdf)$/i,"").trim();
-  if(/\\bhar-spec\\b/i.test(url))return "HAR 1.2 specification";
-  if(/w3c\\.github\\.io/.test(host))return "W3C technical specification";
-  if(/rfc-editor\\.org/.test(host))return "RFC specification "+(u.pathname.match(/rfc\\d+/i)?.[0]||"");
-  if(/mozilla\\.github\\.io/.test(host))return "Mozilla PDF.js API documentation";
-  if(/pdf-lib\\.js\\.org/.test(host))return "PDF-lib documentation";
-  if(/opensource\\.adobe\\.com/.test(host))return "Adobe PDF reference";
-  if(/github\\.com/.test(host))return (last||"Upstream project")+" — upstream documentation";
+  const u=new URL(url),host=u.hostname.replace(/^www\./,"");
+  const last=decodeURIComponent(u.pathname.split("/").filter(Boolean).slice(-2).join(" / ")).replace(/[-_]+/g," ").replace(/\.(?:md|html?|pdf)$/i,"").trim();
+  if(/\bhar-spec\b/i.test(url))return "HAR 1.2 specification";
+  if(/w3c\.github\.io/.test(host))return "W3C technical specification";
+  if(/rfc-editor\.org/.test(host))return "RFC specification "+(u.pathname.match(/rfc\d+/i)?.[0]||"");
+  if(/mozilla\.github\.io/.test(host))return "Mozilla PDF.js API documentation";
+  if(/pdf-lib\.js\.org/.test(host))return "PDF-lib documentation";
+  if(/opensource\.adobe\.com/.test(host))return "Adobe PDF reference";
+  if(/github\.com/.test(host))return (last||"Upstream project")+" — upstream documentation";
   return (last||host)+" — "+host;
  }catch{return "Reference documentation"}
 }
 async function presentReferences(html,srcDir){
- const placeholder=/<p>\\s*Authoritative implementation references are recorded in\\s*<code>research\\/sources\\.json<\\/code>\\.?\\s*<\\/p>/gi;
+ const placeholder=new RegExp("<p>\\s*Authoritative implementation references are recorded in\\s*<code>research/sources\\.json</code>\\.?\\s*</p>","gi");
  if(placeholder.test(html)){
   let sources=[];try{
    const data=JSON.parse(await fs.readFile(path.join(srcDir,"research/sources.json"),"utf8"));
-   sources=[...(data.sources||data.authorities||[])].map(row=>row.url).filter(url=>/^https?:\\/\\//i.test(String(url))).slice(0,8);
+   sources=[...(data.sources||data.authorities||[])].map(row=>row.url).filter(url=>/^https?:\/\//i.test(String(url))).slice(0,8);
   }catch{}
   const list=sources.length?'<ul>'+sources.map(url=>'<li><a href="'+escapeAttr(url)+'" rel="noopener noreferrer">'+escapeAttr(readableReference(url))+'</a></li>').join('')+'</ul>':
      '<p>Review the tool-specific method and limitations before applying its results.</p>';
   html=html.replace(placeholder,list);
  }
- // Never display naked repository URLs as link text. Preserve each original destination.
- html=html.replace(/<a\\b([^>]*?)href=(["'])(https?:\\/\\/[^"']+)\\2([^>]*)>\\s*https?:\\/\\/[^<]+<\\/a>/gi,
+ // Preserve authoritative destinations, but replace naked URLs with readable labels.
+ html=html.replace(/<a\b([^>]*?)href=(["'])(https?:\/\/[^"']+)\2([^>]*)>\s*https?:\/\/[^<]+<\/a>/gi,
   (_match,before,_q,url,after)=>'<a '+before+'href="'+escapeAttr(url)+'"'+after+'>'+escapeAttr(readableReference(url))+'</a>');
  return html;
 }
