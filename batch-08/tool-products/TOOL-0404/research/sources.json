@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0404",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "Takeoff geometry",
+      "url": null,
+      "note": "Pure quantity geometry. Structural design and lap/development rules are intentionally outside scope."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0097",
+  "claims": [
+    {
+      "claim": "Chicago profile reflects the 18th-edition change for prepositions longer than four letters; all profiles are documented approximations, not editorial certification.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "apa",
+        "chicago",
+        "mla"
+      ]
+    }
+  ]
+}

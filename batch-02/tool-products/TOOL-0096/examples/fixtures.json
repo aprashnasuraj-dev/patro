@@ -1,0 +1,5 @@
+{
+  "sample_input": "Line 1\n\"quoted\"",
+  "expected_behavior": "JSON mode converts a newline into \\n and a quote into \\\"; unescape reverses valid JSON escapes.",
+  "qa_status": "TEST_PENDING"
+}

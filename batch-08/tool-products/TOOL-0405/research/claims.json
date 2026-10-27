@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0405",
+  "claims": [
+    {
+      "claim": "For crown cut flat, the tool uses miter = atan(sin(S)/tan(C/2)) and bevel = asin(cos(S)·cos(C/2)).",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Results are angle magnitudes; saw-side orientation depends on inside/outside corner and left/right piece.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

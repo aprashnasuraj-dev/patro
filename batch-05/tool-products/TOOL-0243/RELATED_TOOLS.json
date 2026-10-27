@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0243",
+  "related": [
+    {
+      "id": "TOOL-0242",
+      "title": "Invoice Generator to PDF (No Signup)",
+      "proposed_canonical": "/generators/invoice-generator-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0191",
+      "title": "CSV Validator (Ragged Rows and Quote Errors)",
+      "proposed_canonical": "/validators/csv-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0192",
+      "title": "Date Format Normalizer for CSV Columns",
+      "proposed_canonical": "/formatters/csv-date-format-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0219",
+      "title": "Monte Carlo Project Estimate Simulator (PERT)",
+      "proposed_canonical": "/utilities/monte-carlo-project-estimate",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0230",
+      "title": "Savings Goal Calculator (Date or Contribution)",
+      "proposed_canonical": "/calculators/savings-goal-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

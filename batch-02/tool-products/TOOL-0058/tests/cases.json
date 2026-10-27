@@ -1,0 +1,22 @@
+{
+  "qa_status": "TEST_PENDING",
+  "core_cases": [
+    "Default DNS host _dmarc.example.com, v tag first and p=none.",
+    "Reject pct=101, invalid mailboxes and newline injection.",
+    "Verify p=reject and sp=quarantine distinct."
+  ],
+  "security_cases": [
+    "Reject oversized or malicious input and control characters.",
+    "No untrusted HTML insertion: use textContent and escaped JSON/XML.",
+    "Reject unsafe URLs and paths; disallow accidental network requests."
+  ],
+  "ui_cases": [
+    "On 320px viewport no horizontal page scrolling.",
+    "Tab order, visible focus ring, Enter submits, Escape/cancel where applicable.",
+    "Result is announced through aria-live; copy/download content matches generated result.",
+    "Light/dark and reduced-motion compatibility."
+  ],
+  "performance_cases": [
+    "Large valid input stays responsive or explicitly fails within configured bounds."
+  ]
+}

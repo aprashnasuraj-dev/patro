@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>SQL DDL to Prisma Schema — Browser-Based Draft Tool | AafnaiPatro</title>
+<meta name="description" content="Conservative conversion deliberately rejects unsupported SQL constructs rather than producing subtly broken relations."><!-- Unpublished staging draft: canonical=null; og_url=null; date_published=null. -->
+</head><body><main class="mm-tool" data-tool="TOOL-0004">
+<header class="mm-hero"><div><div class="mm-eyebrow">Data model migration</div><h1>Convert plain CREATE TABLE SQL into Prisma models</h1><p>Conservative conversion deliberately rejects unsupported SQL constructs rather than producing subtly broken relations.</p></div><aside class="mm-hero-aside"><strong>Designed for</strong><p>Strict SQL subset · Prisma ORM v7 · manual relation review</p></aside></header>
+<div id="tool-interactive-root" data-tool-id="TOOL-0004"><p>The local browser workspace will load when this route is activated. You can read the instructions below without JavaScript.</p></div>
+<section class="mm-content" aria-labelledby="how-to"><h2 id="how-to">How to use this tool</h2><p>Paste simple PostgreSQL CREATE TABLE statements, review any conversion limitations and copy the draft into a Prisma v7 schema project.</p>
+<h2>Worked example</h2><p>Try this representative input to inspect the output and its warnings:</p><pre><code>CREATE TABLE users (
+  id INTEGER PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  created_at TIMESTAMP NOT NULL
+);
+CREATE TABLE sessions (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  expires_at TIMESTAMP
+);
+</code></pre>
+<h2>Supported formats and constraints</h2><p>PostgreSQL CREATE TABLE subset; Prisma ORM v7 fields</p><p>DDL grammars differ across vendors. This deliberately excludes foreign keys, advanced defaults, CHECK constraints and full relation reconstruction. For actual databases prefer Prisma introspection.</p>
+<h2>Privacy and safety</h2><p>Source is prepared for local browser execution. There is no automatic upload or third-party conversion API; verify actual behavior during the post-import testing stage. Review any exported content before sharing or executing it.</p>
+<h2>Specifications and primary references</h2><ul><li><a href="https://www.prisma.io/docs/orm/v7/reference/prisma-schema-reference" rel="noopener noreferrer">https://www.prisma.io/docs/orm/v7/reference/prisma-schema-reference</a></li><li><a href="https://docs.prisma.io/docs/orm/v6/prisma-schema/introspection" rel="noopener noreferrer">https://docs.prisma.io/docs/orm/v6/prisma-schema/introspection</a></li></ul>
+</section></main></body></html>

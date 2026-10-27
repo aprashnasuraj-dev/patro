@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0009",
+  "claims": [
+    {
+      "claim": "Encode literal .env assignments as a Kubernetes Opaque Secret manifest",
+      "references": [
+        "https://kubernetes.io/docs/concepts/security/secrets-good-practices/",
+        "https://kubernetes.io/docs/concepts/configuration/secret/"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "This converter does not evaluate shell variables. Kubernetes Secrets are not encrypted simply because values are base64 encoded. Avoid committing manifests containing real credentials.",
+      "references": [
+        "https://kubernetes.io/docs/concepts/security/secrets-good-practices/",
+        "https://kubernetes.io/docs/concepts/configuration/secret/"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

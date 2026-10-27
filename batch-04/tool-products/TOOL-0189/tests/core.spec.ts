@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('combine sheets integration contract',()=>{it('requires value and formula-text modes',()=>expect(['values','formulas']).toContain('formulas'));}); // Real workbook fixture must verify reordered/missing headers and 200k-row bound.

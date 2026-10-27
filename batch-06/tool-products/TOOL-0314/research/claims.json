@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0314",
+  "claims": [
+    {
+      "claim": "The tool implements the explicit semantics stated on the page and rejects unsupported ambiguity.",
+      "source_url": null,
+      "implementation_note": "No broader standard conformance is implied."
+    }
+  ],
+  "uncertainty": "Religious observance may be based on local moon sighting and can differ by one or more days. Generic “islamic” is explicitly not a named algorithmic variant."
+}

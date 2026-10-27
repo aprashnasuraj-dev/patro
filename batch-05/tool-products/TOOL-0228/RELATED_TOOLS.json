@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0228",
+  "related": [
+    {
+      "id": "TOOL-0222",
+      "title": "Debt Snowball vs Avalanche Comparator",
+      "proposed_canonical": "/calculators/debt-snowball-vs-avalanche-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0524",
+      "title": "Credit Card Application Rules and 5/24 Date Checker",
+      "proposed_canonical": "/validators/chase-5-24-credit-card-application-rules",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0232",
+      "title": "Hourly to Salary Converter with Unpaid Time Off",
+      "proposed_canonical": "/converters/hourly-to-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0298",
+      "title": "Hiking Time Estimator (Naismith and Tobler)",
+      "proposed_canonical": "/calculators/hiking-time-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

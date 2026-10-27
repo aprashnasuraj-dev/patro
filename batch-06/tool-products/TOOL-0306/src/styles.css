@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.ics-preview{max-height:330px;overflow:auto;white-space:pre-wrap;border:1px solid var(--border);padding:12px;border-radius:12px;font-size:.78rem}

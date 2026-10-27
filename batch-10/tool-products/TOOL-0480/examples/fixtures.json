@@ -1,0 +1,25 @@
+{
+  "default_input": {
+    "year": 2026,
+    "type": "Third-party app or marketplace",
+    "gross": 21000,
+    "transactions": 205,
+    "state": "Other / not verified",
+    "platform": "Marketplace / app"
+  },
+  "hand_reference": {
+    "label": "Federal 1099-K reporting trigger",
+    "value": "Meets baseline",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0052",
+  "scope_claim": "Interactively connect, send and inspect WebSocket frames using the browser API.",
+  "authoritative_urls": [
+    "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket",
+    "https://www.rfc-editor.org/rfc/rfc6455.html"
+  ],
+  "assumptions": [
+    "ws:// on HTTP pages; wss:// everywhere; text frames and subprotocol tokens.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "Connecting sends network traffic to the entered endpoint; no custom headers or backpressure API.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

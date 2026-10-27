@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {compare} from '../src/core';describe('TOOL-0123 image compare guards',()=>{it('rejects an empty image before canvas/codec work',async()=>{const f=new File([],'empty.png',{type:'image/png'});await expect(compare(f)).rejects.toThrow()});it.todo('compares WebP/AVIF byte sizes and dimensions using a reviewed raster fixture')});

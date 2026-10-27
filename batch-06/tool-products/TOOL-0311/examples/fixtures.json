@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0311",
+  "examples": [
+    {
+      "inputs": {
+        "date": "2024-01-31",
+        "amount": 1,
+        "unit": "months",
+        "op": "add"
+      },
+      "expected": "2024-02-29"
+    },
+    {
+      "inputs": {
+        "date": "2026-01-01",
+        "amount": 2,
+        "unit": "weeks",
+        "op": "sub"
+      },
+      "expected": "2025-12-18"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0102",
+  "claims": [
+    {
+      "claim": "WOFF2 encoding is performed on original SFNT bytes through the bundled Google WOFF2-derived WASM path.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "woff2",
+        "fonteditor-woff2",
+        "opentype"
+      ]
+    }
+  ]
+}

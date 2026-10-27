@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0385",
+  "related": [
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "proposed_canonical": "/calculators/resistor-color-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "proposed_canonical": "/calculators/smd-resistor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0383",
+      "title": "LED Resistor Calculator with Series and Parallel Arrays",
+      "proposed_canonical": "/calculators/led-resistor-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0270",
+      "title": "Wire Gauge and Voltage Drop Calculator",
+      "proposed_canonical": "/calculators/voltage-drop-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0018",
+      "title": "Helm values.yaml to --set Flags",
+      "proposed_canonical": "/converters/helm-values-to-set-flags",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

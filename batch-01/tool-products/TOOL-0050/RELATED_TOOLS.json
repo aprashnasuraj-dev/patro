@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0050",
+  "related": [
+    {
+      "id": "TOOL-0049",
+      "title": "Cache-Control Header Builder",
+      "proposed_canonical": "/generators/cache-control-header-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0051",
+      "title": "Permissions-Policy Header Generator",
+      "proposed_canonical": "/generators/permissions-policy-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0048",
+      "title": "HTTP Response Header Analyzer",
+      "proposed_canonical": "/analyzers/http-response-header-analyzer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

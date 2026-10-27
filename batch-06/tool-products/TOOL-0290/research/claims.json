@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0290",
+  "claim": "Residual caffeine dose=initial\u00b72^(\u2212hours/half-life), representing single-compartment first-order elimination.",
+  "assumptions": [
+    "Real absorption, interactions, smoking, pregnancy and genetics alter half-life; not blood concentration or clearance advice.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.ncbi.nlm.nih.gov/books/NBK223808/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

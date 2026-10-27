@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0466",
+  "related": [
+    {
+      "id": "TOOL-0031",
+      "title": "AWS IAM Policy Wildcard Auditor",
+      "proposed_canonical": "/validators/iam-policy-wildcard-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0033",
+      "title": "S3 Bucket Policy Generator for CloudFront OAC",
+      "proposed_canonical": "/generators/s3-bucket-policy-cloudfront-oac",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0051",
+      "title": "Permissions-Policy Header Generator",
+      "proposed_canonical": "/generators/permissions-policy-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0365",
+      "title": "GPA Calculator with Custom Grade Scale",
+      "proposed_canonical": "/calculators/gpa-calculator-custom-scale",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0366",
+      "title": "Final Grade Calculator (What Do I Need on the Final?)",
+      "proposed_canonical": "/calculators/final-grade-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

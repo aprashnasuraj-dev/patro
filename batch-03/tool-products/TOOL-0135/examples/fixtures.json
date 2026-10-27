@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0135",
+  "known_answer_examples": [
+    "Drag a box over a licence plate, choose solid fill for strongest concealment, then export the flattened JPEG."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Split a local CSV into bounded downloadable parts by a selected column value or by a fixed row count, without uploading the data.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Splitting by high-cardinality columns is capped at 250 parts; files are generated in memory and not streamed to disk.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "claim": "Extract syntactically plausible email addresses from local text and summarize domains without DNS, MX, or deliverability checks.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Regex extraction identifies plausible syntax only; it does not verify mailbox existence, DNS, MX, ownership, or deliverability.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Internet addr-spec syntax consists of a local-part, @ sign, and domain.",
+    "status": "research_basis",
+    "support": [
+      "RFC 5322 Internet Message Format"
+    ]
+  }
+]

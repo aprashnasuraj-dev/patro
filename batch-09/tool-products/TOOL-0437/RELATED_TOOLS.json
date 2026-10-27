@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0437",
+  "related": [
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "proposed_canonical": "/calculators/marginal-tax-bracket-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "proposed_canonical": "/calculators/property-tax-appeal-savings-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0504",
+      "title": "UK Effective Marginal Tax Trap Calculator",
+      "proposed_canonical": "/calculators/uk-effective-marginal-tax-trap-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0413",
+      "title": "Estimated Tax Safe-Harbor Planner",
+      "proposed_canonical": "/planners/estimated-tax-safe-harbor-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

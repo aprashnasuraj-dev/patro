@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0381",
+  "name": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+  "route": "/tools/resistor-color-code-calculator",
+  "engineering_family_id": "F0214",
+  "engineering_family": "Resistor, LED and Voltage Divider Lab",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-16",
+  "execution": "browser-local",
+  "network_required": false,
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "seo": {
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  }
+}

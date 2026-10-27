@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0183",
+  "related": [
+    {
+      "id": "TOOL-0184",
+      "title": "CSV Delimiter and Encoding Fixer",
+      "proposed_canonical": "/utilities/csv-delimiter-encoding-fixer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0190",
+      "title": "Clean CSV: Remove Blank Rows and Trim Whitespace",
+      "proposed_canonical": "/utilities/clean-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0191",
+      "title": "CSV Validator (Ragged Rows and Quote Errors)",
+      "proposed_canonical": "/validators/csv-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0197",
+      "title": "Join Two CSV Files on a Key (VLOOKUP-style)",
+      "proposed_canonical": "/utilities/join-csv-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0192",
+      "title": "Date Format Normalizer for CSV Columns",
+      "proposed_canonical": "/formatters/csv-date-format-converter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

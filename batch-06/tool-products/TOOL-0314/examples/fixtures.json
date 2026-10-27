@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0314",
+  "examples": [
+    {
+      "inputs": {
+        "hijri": "1448-05-15",
+        "calendar": "islamic-civil"
+      },
+      "expected_note": "Exact Gregorian result is deferred to runtime ICU/CLDR test because calendar data is browser-supplied."
+    }
+  ]
+}

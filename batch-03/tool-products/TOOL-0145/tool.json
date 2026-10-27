@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0145",
+  "name": "Bates Numbering for PDFs",
+  "route": "/tools/bates-numbering-pdf",
+  "family_id": "F0069",
+  "family": "PDF Watermark and Bates Numbering",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Bates Numbering for PDFs — Browser-Local Tool",
+    "meta_description": "Apply sequential Bates labels to every PDF page with configurable prefix, zero padding, position and typography."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "Numbers are drawn into page content on a newly saved PDF."
+  ],
+  "limitations": [
+    "Bates stamping changes the file and invalidates existing digital signatures."
+  ]
+}

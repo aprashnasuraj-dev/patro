@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {weekInfo} from '../src/core';describe('TOOL-0310',()=>{it('identifies 2021-01-04 as ISO week 1',()=>{const r=weekInfo('2021-01-04');expect(r.week).toBe(1);expect(r.weekYear).toBe(2021);expect(r.rows[0].monday).toBe('2021-01-04')});it('rejects an impossible date',()=>expect(()=>weekInfo('2021-02-30')).toThrow())});

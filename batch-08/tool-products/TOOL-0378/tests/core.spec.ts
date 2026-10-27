@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {cardsFromCsv} from '../src/core';describe('TOOL-0378 core',()=>{it('known-answer fixture',()=>{expect(cardsFromCsv('front,back\na,b',true)).toHaveLength(1)})});

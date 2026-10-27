@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0110",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "css-values-4",
+      "url": "https://www.w3.org/TR/css-values/",
+      "version": "CSS Values and Units Level 4",
+      "effective_date": null,
+      "license": "W3C document license",
+      "notes": "Defines clamp(), min(), max() and math-function semantics."
+    }
+  ],
+  "assumptions": "The desired scale is linear between the two viewport widths and non-decreasing.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "Browser zoom, user minimum-font settings, container width, and design breakpoints may make viewport-linear typography inappropriate for some interfaces."
+}

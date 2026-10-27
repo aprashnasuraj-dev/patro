@@ -1,0 +1,21 @@
+{
+  "sample_input": "location = /health { return 200; }\nlocation ^~ /assets/ { root /srv/www; }\nlocation ~* \\.(png|jpg)$ { root /srv/img; }\nlocation / { proxy_pass http://backend; }",
+  "intended_action": "Evaluate location match",
+  "manual_review_cases": [
+    {
+      "input": "exact over prefix",
+      "expectation": "exact"
+    },
+    {
+      "input": "longest prefix and regex precedence",
+      "expectation": "regex versus ^~"
+    }
+  ],
+  "limits": "This models documented initial location selection only, not nested locations, rewrite/internal redirects, named locations or upstream runtime configuration.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"selected\"",
+    "\"priority-prefix\""
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

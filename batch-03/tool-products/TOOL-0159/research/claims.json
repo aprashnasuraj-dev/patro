@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Normal processing is browser-local and does not require a server round trip.",
+      "basis": "Implementation design; vendor bundles are loaded from same-origin static assets."
+    },
+    {
+      "claim": "Convert a local DOCX to sanitized HTML and Markdown without uploading the document.",
+      "basis": "Tool-specific core implementation and cited upstream APIs."
+    }
+  ],
+  "uncertainty": "DOCX-to-HTML is semantic rather than pixel-layout faithful."
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Tax gap uses user-entered rates, rather than an assumed universal state withholding table.",
+    "sources": [
+      "https://www.irs.gov/taxtopics/tc427"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "No state apportionment for multi-state work; no tax filing instruction."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

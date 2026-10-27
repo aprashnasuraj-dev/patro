@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0169",
+  "build_sequence": 169,
+  "name": "MOV to MP4 Remuxer",
+  "route": "/tools/mov-to-mp4",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Format Converter",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "This is intentionally a remuxer, not a codec converter. Unsupported streams fail closed."
+  },
+  "seo": {
+    "title": "MOV to MP4 Remuxer — Free Browser Tool",
+    "meta_description": "Remux compatible MOV streams into MP4 without transcoding and fail clearly on incompatible codecs.",
+    "h1": "MOV to MP4 Remuxer",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0079"
+}

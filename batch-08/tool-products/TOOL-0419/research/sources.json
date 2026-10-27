@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0419",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "IRS Publication 550 (2025) — Wash Sales",
+      "url": "https://www.irs.gov/publications/p550",
+      "note": "30-day before/after rule, basis adjustment and holding-period tacking."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

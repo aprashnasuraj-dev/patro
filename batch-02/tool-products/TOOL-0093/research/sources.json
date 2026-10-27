@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0093",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "commonmark0312",
+      "url": "https://spec.commonmark.org/0.31.2/",
+      "version": "CommonMark 0.31.2",
+      "effective_date": "2024-01-28",
+      "license": "CC BY-SA 4.0",
+      "notes": "Defines CommonMark syntax; extensions such as tables are outside core CommonMark."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

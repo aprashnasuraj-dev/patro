@@ -1,0 +1,20 @@
+[
+  {
+    "label": "GOV.UK Shared Parental Leave",
+    "url": "https://www.gov.uk/shared-parental-leave-and-pay/what-youll-get",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  },
+  {
+    "label": "2026/27 ShPP rate",
+    "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  }
+]

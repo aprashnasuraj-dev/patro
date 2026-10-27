@@ -1,0 +1,87 @@
+{
+  "id": "TOOL-0293",
+  "name": "Weekly Mileage Progression Planner",
+  "slug": "weekly-mileage-planner",
+  "route": "/tools/weekly-mileage-planner",
+  "family": "F0158",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Weekly Mileage Progression Planner | AafnaiPatro",
+    "description": "Draft a progressive running-volume plan with optional cutback weeks and rounded weekly totals.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "start",
+      "label": "Starting weekly mileage",
+      "default": 20,
+      "min": 0.5,
+      "max": 500,
+      "step": "any",
+      "unit": "km"
+    },
+    {
+      "type": "number",
+      "key": "weeks",
+      "label": "Plan length",
+      "default": 12,
+      "min": 1,
+      "max": 52,
+      "step": "1",
+      "unit": "weeks"
+    },
+    {
+      "type": "number",
+      "key": "increase",
+      "label": "Regular weekly growth",
+      "default": 5,
+      "min": 0,
+      "max": 20,
+      "step": "any",
+      "unit": "%"
+    },
+    {
+      "type": "number",
+      "key": "cutback",
+      "label": "Every Nth week a cutback (0 = none)",
+      "default": 4,
+      "min": 0,
+      "max": 12,
+      "step": "1",
+      "unit": "weeks"
+    },
+    {
+      "type": "number",
+      "key": "drop",
+      "label": "Cutback from previous week",
+      "default": 15,
+      "min": 0,
+      "max": 60,
+      "step": "any",
+      "unit": "%"
+    }
+  ],
+  "explanation": "For regular weeks volume←previous×(1+growth/100); every cutback week volume←previous×(1−drop/100). No automatic rebound spike.",
+  "limitations": "Load tolerance varies by injury history, terrain and intensity; the “10% rule” is not a universal safety threshold.",
+  "related_tool_ids": [
+    "TOOL-0282",
+    "TOOL-0294"
+  ],
+  "sources": [
+    "https://www.acsm.org/"
+  ],
+  "special_notes": null
+}

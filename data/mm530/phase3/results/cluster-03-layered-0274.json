@@ -1,0 +1,6 @@
+{
+  "tool": "TOOL-0274",
+  "firstLayer": "malformed-line-split-regex repaired",
+  "secondLayer": "construction finite export exposed and repaired",
+  "observedRegexClusterAfterBeforeLayer2": 1
+}

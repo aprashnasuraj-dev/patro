@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {diffCsv} from '../src/core';describe('diffCsv',()=>{it('reports added removed changed',()=>{const r=diffCsv('id,name\n1,Ada\n2,Ben','id,name\n1,Ada L.\n3,Cam','id');expect([r.added,r.removed,r.changed]).toEqual([1,1,1])});it('blocks duplicate keys',()=>expect(()=>diffCsv('id\n1\n1','id\n1','id')).toThrow());});

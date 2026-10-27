@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Remux compatible MOV streams into MP4 without transcoding and fail clearly on incompatible codecs.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg stream copy/remux"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "This is intentionally a remuxer, not a codec converter. Unsupported streams fail closed.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+import {transform} from './core';
+const form=document.querySelector<HTMLFormElement>('#tool-form')!;
+const output=document.querySelector<HTMLElement>('#result')!;
+const warnings=document.querySelector<HTMLElement>('#warnings')!;
+const copy=document.querySelector<HTMLButtonElement>('#copy')!;
+const download=document.querySelector<HTMLButtonElement>('#download')!;
+let current='';
+form.addEventListener('submit',e=>{e.preventDefault();try{const values:Record<string,string>={};for(const el of Array.from(form.elements)){if(el instanceof HTMLInputElement||el instanceof HTMLTextAreaElement||el instanceof HTMLSelectElement){if(el.name){if(el.value.length>1000000)throw Error('Input exceeds 1MB limit');values[el.name]=el.value;}}}const result=transform(values);current=result.text;output.textContent=result.heading+'\n\n'+result.text;warnings.textContent=result.warnings.join('\n');copy.disabled=false;download.disabled=false;}catch(err){current='';output.textContent=err instanceof Error?err.message:'Invalid input';warnings.textContent='No output generated';copy.disabled=true;download.disabled=true;}});
+copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(current)}catch{warnings.textContent+='\nClipboard access unavailable; select result text manually.'}});
+download.addEventListener('click',()=>{if(!current)return;const blob=new Blob([current],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tool-output.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});

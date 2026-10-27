@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0122",
+  "claims": [
+    {
+      "claim": "Convert HEIC/HEIF photos to JPEG locally in the browser with bounded batch processing.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "HDR/wide-gamut source data may be tone-mapped to the browser canvas colour space; metadata is not preserved by default.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

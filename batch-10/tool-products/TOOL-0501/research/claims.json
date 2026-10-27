@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "2026 bracket thresholds sourced to CMS; 2024 MAGI used for 2026 premiums.",
+    "sources": [
+      "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Annualized cliff illustration is not advice to alter income or tax filing."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0092",
+  "related": [
+    {
+      "id": "TOOL-0196",
+      "title": "CSV to Sortable HTML Table",
+      "proposed_canonical": "/converters/csv-to-html-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0370",
+      "title": "Excel to LaTeX Table Generator",
+      "proposed_canonical": "/generators/excel-to-latex-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0089",
+      "title": "Regex Replace Preview with Capture Group Table",
+      "proposed_canonical": "/utilities/regex-replace-preview",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "proposed_canonical": "/utilities/strip-markdown",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

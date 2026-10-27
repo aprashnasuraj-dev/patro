@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {smoothSeries} from "../src/core";
+describe("SES",()=>{it("alpha=1 tracks latest observation",()=>{const r=smoothSeries([1,2,3],1,2);expect(r.ses).toEqual([1,2,3]);expect(r.nextForecast).toBe(3);});});

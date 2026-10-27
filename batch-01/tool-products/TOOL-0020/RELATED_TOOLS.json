@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0020",
+  "related": [
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "proposed_canonical": "/validators/word-level-text-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0198",
+      "title": "CSV Diff (Compare Two Files by Key)",
+      "proposed_canonical": "/comparisons/csv-diff",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0015",
+      "title": "JSONL / NDJSON to JSON Array Converter",
+      "proposed_canonical": "/converters/jsonl-to-json-array",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0039",
+      "title": "PEM Certificate Chain Order Checker",
+      "proposed_canonical": "/validators/certificate-chain-order-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0183",
+      "title": "CSV Deduplicator by Key Columns",
+      "proposed_canonical": "/utilities/csv-remove-duplicates",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

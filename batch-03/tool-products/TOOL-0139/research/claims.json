@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0139",
+  "claims": [
+    {
+      "claim": "Change PNG or JPEG resolution metadata without resampling pixels, so physical print dimensions change while pixel dimensions remain constant.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Some software ignores or rewrites density metadata, and browser canvas export normally defaults to 96 DPI.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "claims": [
+    {
+      "statement": "Verified trade-license apprenticeship hour ledger",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "License class, employer verification, exam eligibility, and state-law effective dates not automated.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "License class, employer verification, exam eligibility, and state-law effective dates not automated.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0432",
+  "related": [
+    {
+      "id": "TOOL-0423",
+      "title": "Rent Increase Cap & Notice Calculator",
+      "proposed_canonical": "/calculators/rent-increase-cap-and-notice-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0234",
+      "title": "Rent vs Buy Calculator",
+      "proposed_canonical": "/calculators/rent-vs-buy-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0272",
+      "title": "Unit Rent Yield and Cap Rate Calculator",
+      "proposed_canonical": "/calculators/cap-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0194",
+      "title": "Full Name Splitter (First, Middle, Last, Suffix)",
+      "proposed_canonical": "/editors/split-full-name-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

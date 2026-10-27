@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0200",
+  "status": "TEST_PENDING",
+  "executed": false,
+  "checks": {
+    "build": false,
+    "typecheck": false,
+    "unit": false,
+    "browser": false,
+    "accessibility": false,
+    "responsive": false,
+    "performance": false,
+    "security": false
+  },
+  "storage_checks_are_not_product_qa": true,
+  "notes": [
+    "Prepared test scenarios only; none executed in this checkpoint.",
+    "Every cell is intentionally written as text, so numeric/date semantics and formulas are not preserved—this is the tradeoff for exact textual retention."
+  ]
+}

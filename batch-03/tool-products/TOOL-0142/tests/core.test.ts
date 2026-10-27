@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {reorder} from '../src/core';describe('TOOL-0142 PDF reorder guards',()=>{it('rejects an empty PDF before page copying',async()=>{await expect(reorder(new File([],'empty.pdf',{type:'application/pdf'}),[1])).rejects.toThrow()});it.todo('reorders a reviewed multipage PDF and rejects duplicate/out-of-range page orders')});

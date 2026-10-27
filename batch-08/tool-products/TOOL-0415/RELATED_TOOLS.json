@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0415",
+  "related": [
+    {
+      "id": "TOOL-0417",
+      "title": "VAT/GST Registration Threshold Tracker",
+      "proposed_canonical": "/planners/vat-gst-registration-threshold-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0248",
+      "title": "VAT/GST Calculator with Reverse and Bulk Mode",
+      "proposed_canonical": "/calculators/vat-calculator-reverse-bulk",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0412",
+      "title": "Form 2210 Annualized Income Installment Calculator",
+      "proposed_canonical": "/calculators/form-2210-annualized-income-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0418",
+      "title": "MACRS Depreciation Schedule Generator",
+      "proposed_canonical": "/calculators/macrs-depreciation-schedule-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0419",
+      "title": "Wash Sale & Holding Period Date Calculator",
+      "proposed_canonical": "/calculators/wash-sale-holding-period-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

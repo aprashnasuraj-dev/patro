@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0253",
+  "status": "TEST_PENDING",
+  "sample": {
+    "salary": 100000,
+    "bonusPct": 10,
+    "payrollPct": 12,
+    "retirementPct": 5,
+    "benefits": 12000,
+    "insurance": 6000,
+    "equipment": 2500,
+    "training": 2000,
+    "monthlySoftwareWorkspace": 500,
+    "recruitingCost": 12000,
+    "recruitingAmortMonths": 24,
+    "productivePct": 75,
+    "weeks": 48,
+    "hoursPerWeek": 40
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

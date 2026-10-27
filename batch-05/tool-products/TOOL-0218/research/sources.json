@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0218",
+  "sources": [
+    {
+      "title": "Blackman/Vigna xoshiro reference family",
+      "url": "https://prng.di.unimi.it/",
+      "publisher": "David Blackman and Sebastiano Vigna",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

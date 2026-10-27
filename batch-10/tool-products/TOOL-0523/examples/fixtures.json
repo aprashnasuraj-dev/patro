@@ -1,0 +1,17 @@
+{
+  "tool": "TOOL-0523",
+  "default_inputs": {
+    "type": "cabin",
+    "length": "55",
+    "width": "35",
+    "depth": "23",
+    "weight": "8",
+    "maxLength": "56",
+    "maxWidth": "36",
+    "maxDepth": "23",
+    "maxWeight": "10",
+    "rotate": "yes"
+  },
+  "worked_example": "A 55×35×23 cm bag fits a 56×36×23 cm box and weighs 8 kg vs 10 kg allowance.",
+  "source_status": "TEST_PENDING"
+}

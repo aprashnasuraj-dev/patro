@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0061",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://schema.org/FAQPage",
+      "owner": "Schema.org",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Structure publicly visible Q&A text as Schema.org mainEntity Question objects."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/faqpage",
+      "owner": "Google Search Central",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Structure publicly visible Q&A text as Schema.org mainEntity Question objects."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Google largely restricts FAQ rich results to authoritative government and health sites."
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "FIFO opening lots assumed complete; exact symbols screened as possible identical securities.",
+    "sources": [
+      "https://www.irs.gov/publications/p550"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "No final wash-sale adjusted basis or final Form 8949 values without full account histories."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

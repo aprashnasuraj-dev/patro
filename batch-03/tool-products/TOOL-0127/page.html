@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>App Icon Set Generator (iOS and Android) — Browser-Local Tool</title><meta name="description" content="Create browser-local iOS and Android raster icon sets plus integration manifests from a single high-resolution master."><link rel="stylesheet" href="./src/styles.css"></head>
+<body><main class="tool-shell" data-tool="TOOL-0127">
+<header class="hero"><p class="eyebrow">Browser-local • TEST_PENDING</p><h1>App Icon Set Generator (iOS and Android)</h1><p>Create browser-local iOS and Android raster icon sets plus integration manifests from a single high-resolution master.</p></header>
+<section class="workbench" aria-labelledby="work-title"><h2 id="work-title">Work area</h2><div class="controls"><label>1024px+ master <input id="file" type="file" accept="image/png,image/jpeg,image/webp"></label><label><input id="ios" type="checkbox" checked> iOS set</label><label><input id="android" type="checkbox" checked> Android set</label></div><button id="primary" class="primary" type="button">Run tool</button><button id="cancel" class="secondary" type="button" hidden>Cancel</button><div id="status" role="status" aria-live="polite"></div><div id="result" class="result" role="region" aria-live="polite" aria-label="Tool result"></div></section>
+<section><h2>What this tool does</h2><p>Create browser-local iOS and Android raster icon sets plus integration manifests from a single high-resolution master.</p></section>
+<section><h2>How to use it</h2><ol><li>Choose local input files and review the task-specific controls.</li><li>Run the tool. Processing stays in this browser session.</li><li>Review warnings and previews before copying or downloading output.</li></ol></section>
+<section><h2>Worked example</h2><p>Use a 1024 px master to produce iOS marketing artwork and Android density assets, then download one ZIP.</p></section>
+<section><h2>Supported formats and units</h2><p>PNG/JPEG/WebP source; PNG outputs.</p></section>
+<section><h2>Assumptions</h2><p>The source should be square and at least 1024×1024 for high-density targets.</p></section>
+<section><h2>Limitations</h2><p>Platform tooling evolves; generated legacy density sets complement, not replace, Xcode/Android Studio asset validation.</p></section>
+<section><h2>References</h2><p>Authoritative implementation references are recorded in <code>research/sources.json</code>.</p></section>
+</main><script type="module" src="./src/ui.ts"></script></body></html>

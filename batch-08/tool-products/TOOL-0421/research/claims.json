@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Four-country workspace expense comparison",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Employment/self-employment status, allowable expense categories, records and year-specific AU rate are not checked. US part-year square-foot averaging is simplified.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Employment/self-employment status, allowable expense categories, records and year-specific AU rate are not checked. US part-year square-foot averaging is simplified.",
+  "authoritative_references": [
+    "https://www.irs.gov/businesses/small-businesses-self-employed/simplified-option-for-home-office-deduction",
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/sole-proprietorships-partnerships/report-business-income-expenses/completing-form-t2125/business-use-home-expenses.html",
+    "https://www.gov.uk/expenses-if-youre-self-employed",
+    "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/working-from-home-expenses"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

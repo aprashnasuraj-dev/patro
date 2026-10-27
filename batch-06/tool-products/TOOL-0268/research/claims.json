@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0268",
+  "claims": [
+    {
+      "claim": "2021 IRC R311.7.5.1 limits residential risers to 7 3/4 in and R311.7.5.2 requires at least 10 in tread depth.",
+      "source_url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning",
+      "implementation_note": "Those values populate one preset; users can select custom limits for other jurisdictions."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Searches classic AVR prescalers for the lowest frequency error.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

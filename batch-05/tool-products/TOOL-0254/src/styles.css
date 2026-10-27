@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+iframe.signature-preview{width:100%;min-height:260px;background:#fff;border:1px solid var(--border);border-radius:12px}.code-box{white-space:pre-wrap;overflow-wrap:anywhere;font:12px ui-monospace,monospace;background:color-mix(in srgb,var(--border) 35%,transparent);padding:10px;border-radius:10px}

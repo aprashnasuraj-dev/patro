@@ -1,0 +1,32 @@
+{
+  "tool_id": "TOOL-0146",
+  "sources": [
+    {
+      "url": "https://mozilla.github.io/pdf.js/api/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://pdf-lib.js.org/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.7old.pdf",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    }
+  ],
+  "assumptions": [
+    "Watermarks are added as new page content, not as annotations."
+  ],
+  "limitations": [
+    "Watermarks are deterrents, not access controls; recipients with PDF-editing tools may be able to remove them."
+  ]
+}

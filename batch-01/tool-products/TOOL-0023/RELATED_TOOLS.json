@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0023",
+  "related": [
+    {
+      "id": "TOOL-0022",
+      "title": "GitHub Actions to GitLab CI Converter",
+      "proposed_canonical": "/converters/github-actions-to-gitlab-ci",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0011",
+      "title": "Cron to GitHub Actions Schedule Generator",
+      "proposed_canonical": "/planners/cron-to-github-actions-schedule",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0003",
+      "title": "OpenAPI YAML to TypeScript Interfaces",
+      "proposed_canonical": "/converters/openapi-to-typescript-interfaces",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0004",
+      "title": "SQL DDL to Prisma Schema",
+      "proposed_canonical": "/converters/sql-to-prisma-schema",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

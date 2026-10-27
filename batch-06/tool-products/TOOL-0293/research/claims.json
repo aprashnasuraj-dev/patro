@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0293",
+  "claim": "For regular weeks volume\u2190previous\u00d7(1+growth/100); every cutback week volume\u2190previous\u00d7(1\u2212drop/100). No automatic rebound spike.",
+  "assumptions": [
+    "Load tolerance varies by injury history, terrain and intensity; the \u201c10% rule\u201d is not a universal safety threshold.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.acsm.org/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

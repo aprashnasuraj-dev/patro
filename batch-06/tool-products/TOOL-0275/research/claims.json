@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0275",
+  "claims": [
+    {
+      "claim": "NIST gives the international foot as exactly 0.3048 m; the inch is exactly 25.4 mm.",
+      "source_url": "https://www.nist.gov/pml/us-surveyfoot/revised-unit-conversion-factors",
+      "implementation_note": "All length, area and volume conversions derive from the exact length factor."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

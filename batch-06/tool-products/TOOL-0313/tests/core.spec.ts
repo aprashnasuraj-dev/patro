@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest';import {convertBs,type BsDataset} from '../src/core';
+const data:BsDataset={startBs:{y:2080,m:1,d:1},startAd:'2023-04-14',monthLengths:{'2080':Array(12).fill(30)},trustTier:()=> 'synthetic-test'};
+describe('TOOL-0313',()=>{it('keeps deterministic dataset injection for isolated tests',()=>{const r=convertBs(2080,1,2,data);expect(r.ad).toBe('2023-04-15');expect(r.trust).toBe('synthetic-test')});it('uses the validated AafnaiPatro core by default',()=>{const r=convertBs(2083,1,1);expect(r.ad).toBe('2026-04-14');expect(r.trust).toBe('validated-project-archive')});it('rejects impossible dates',()=>expect(()=>convertBs(2083,1,32)).toThrow(/Invalid BS date/i))});

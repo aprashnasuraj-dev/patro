@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0265",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.usg.com/content/dam/USG/United%20States/Product%20Related/Interior%20Panels/Sheetrock%20Brand%20Gypsum%20Panels/documents/language/english/Product%20Literature/sheetrock-gypsum-panels-installation-guide-en-J371.pdf",
+      "title": "Sheetrock Gypsum Panels Installation Guide",
+      "publisher": "USG",
+      "version": "J371",
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "Public web page; cite/summary, do not redistribute copyrighted standard text.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "Panel takeoff subtracts large openings; panel sizes and finishing quantities depend on system/product."
+    },
+    {
+      "url": "https://assemblies-tools.usg.com/content/usgcom/en/resource-center/faqs/1977.html",
+      "title": "Joint finishing coverage rate",
+      "publisher": "USG",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "Public web page; cite/summary, do not redistribute copyrighted standard text.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "USG UltraLightweight example is approximately two 4.5-gallon pails per 1,000 ft²; other compounds differ."
+    }
+  ],
+  "no_external_source_reason": null
+}

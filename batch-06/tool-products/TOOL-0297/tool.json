@@ -1,0 +1,88 @@
+{
+  "id": "TOOL-0297",
+  "name": "Steps to Distance and Calories Converter",
+  "slug": "steps-to-km-calculator",
+  "route": "/tools/steps-to-km-calculator",
+  "family": "F0154",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Steps to Distance and Calories Converter | AafnaiPatro",
+    "description": "Convert a step count into an estimated distance, elapsed time and activity energy.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "steps",
+      "label": "Recorded steps",
+      "default": 10000,
+      "min": 1,
+      "max": 200000,
+      "step": "1",
+      "unit": "steps"
+    },
+    {
+      "type": "number",
+      "key": "stride",
+      "label": "Average step length",
+      "default": 0.75,
+      "min": 0.2,
+      "max": 2,
+      "step": "any",
+      "unit": "m/step"
+    },
+    {
+      "type": "number",
+      "key": "cadence",
+      "label": "Steps per minute",
+      "default": 110,
+      "min": 30,
+      "max": 220,
+      "step": "any",
+      "unit": "steps/min"
+    },
+    {
+      "type": "number",
+      "key": "weight",
+      "label": "Body mass",
+      "default": 70,
+      "min": 20,
+      "max": 350,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "number",
+      "key": "met",
+      "label": "Estimated MET",
+      "default": 3.5,
+      "min": 1,
+      "max": 14,
+      "step": "any",
+      "unit": "MET"
+    }
+  ],
+  "explanation": "Distance=steps×step length. Minutes=steps/cadence. kcal≈MET×3.5×bodyweight×minutes/200.",
+  "limitations": "Activity calories are gross estimates including resting expenditure; trackers vary; MET assumes constant effort and cadence.",
+  "related_tool_ids": [
+    "TOOL-0288",
+    "TOOL-0293"
+  ],
+  "sources": [
+    "https://pacompendium.com/",
+    "https://www.cdc.gov/physical-activity-basics/"
+  ],
+  "special_notes": null
+}

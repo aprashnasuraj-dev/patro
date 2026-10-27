@@ -1,0 +1,5 @@
+{
+  "sample_input": "Product\tUnits\tRevenue",
+  "expected_behavior": "A 3×3 spreadsheet selection becomes a Markdown header row, separator row, and two data rows.",
+  "qa_status": "TEST_PENDING"
+}

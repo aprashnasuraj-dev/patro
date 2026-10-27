@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {convertNotation} from '../src/core';describe('TOOL-0377 core',()=>{it('known-answer fixture',()=>{expect(convertNotation('1234','engineering').exponent).toBe(3)})});

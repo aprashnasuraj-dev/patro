@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {optimize} from '../src/core';describe('TOOL-0129 SVG optimizer bounds',()=>{it('rejects SVG above the 5 MiB local limit before DOM/raster work',async()=>{await expect(optimize('x'.repeat(5*1024*1024+1))).rejects.toThrow(/size limit/)});it.todo('verifies sanitization and visual-diff equivalence with reviewed SVG fixtures')});

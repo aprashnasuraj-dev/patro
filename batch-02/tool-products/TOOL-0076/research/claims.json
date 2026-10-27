@@ -1,0 +1,12 @@
+{
+  "assumptions": "Absolute URLs, one per line.",
+  "limitations": "Removing functional query parameters can change application state; preview first.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+    "https://www.rfc-editor.org/rfc/rfc3986"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

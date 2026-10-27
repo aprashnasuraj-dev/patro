@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {speechTimes} from '../src/core';describe('TOOL-0368 core',()=>{it('known-answer fixture',()=>{expect(speechTimes(130,130).minutes).toBeCloseTo(1)})});

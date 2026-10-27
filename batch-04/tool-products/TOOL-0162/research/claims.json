@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Extract the first audio stream from a video and export MP3, WAV, or M4A entirely in the browser.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg audio mapping and encoding"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Only the first audio stream is selected; users needing alternate language tracks must use a full editor.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

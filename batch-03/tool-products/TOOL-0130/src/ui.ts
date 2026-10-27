@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,val,guarded,dl,resultText } from '../_vendor/ui'; $('primary').addEventListener('click',()=>guarded(async()=>{const f=file('file'),type=val('format') as 'image/png'|'image/jpeg',b=await core.exportSvg(await f.text(),num('width'),num('height'),type,val('background'));resultText(`Rendered ${num('width')}×${num('height')} ${type}.`);dl(b,f.name.replace(/\.svg$/i,type==='image/png'?'.png':'.jpg'))}));
+

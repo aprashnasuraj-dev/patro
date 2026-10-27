@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Printable ruled pleading-paper guide with editable numbering",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://courts.ca.gov/cms/rules/index/two/rule2_108"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "California numbered lines requirements do not establish acceptance elsewhere; arbitrary user values must be checked against local court rules.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "California numbered lines requirements do not establish acceptance elsewhere; arbitrary user values must be checked against local court rules.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

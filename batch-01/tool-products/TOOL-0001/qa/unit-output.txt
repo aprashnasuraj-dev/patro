@@ -1,0 +1,28 @@
+✔ known answer with identifiers, booleans and strings (16.673523ms)
+✔ RFC quoted commas, escaped quotes and multiline fields (2.259303ms)
+✔ BOM, LF and CR interoperability (4.579317ms)
+✔ explicit semicolon and tab separators (6.492608ms)
+✔ GraphQL Int exact boundaries (1.142721ms)
+✔ precision, leading zeros and non-finite values preserve strings (6.5534ms)
+✔ mixed numeric types widen while mixed text falls back (1.847783ms)
+✔ nullable blank cells with opt-in non-null (1.442493ms)
+✔ entirely empty quoted cells retain nullable String (1.255551ms)
+✔ deterministic collisions, invalid and reserved field names (2.714608ms)
+✔ invalid and reserved type names cannot inject SDL (0.648767ms)
+✔ ragged and broken quoted rows rejected (1.509623ms)
+✔ empty input, header only, null bytes and unsupported delimiter rejected (0.854146ms)
+✔ data limits enforced in UTF-8 bytes and row/column counts (33.530221ms)
+✔ header length limit enforced (1.070502ms)
+✔ custom UTC dates reject impossible calendar dates and leap seconds (2.07159ms)
+✔ type override verified against all values, stale overrides rejected (0.850311ms)
+✔ untrusted headers cannot create SDL directives or HTML (1.143913ms)
+✔ formula-like cells are never executed or copied into SDL (0.541596ms)
+✔ deterministic schemas across generated samples and renames (123.346482ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 562.245195

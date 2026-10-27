@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0130",
+  "claims": [
+    {
+      "claim": "Rasterize a sanitized SVG to exact PNG or JPEG dimensions entirely in the browser.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Unsupported external fonts or filters may render differently from the original authoring environment.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

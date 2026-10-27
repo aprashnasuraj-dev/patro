@@ -1,0 +1,25 @@
+[
+  {
+    "claim": "Turn CSV into a standalone sortable HTML table that escapes cell content and provides accessible column sort controls.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Interactive standalone output is capped at 5,000 rows to avoid freezing browsers; sorting is lexical/numeric-aware but not domain-specific.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Sortable native HTML tables can expose sort state with aria-sort on the active header and use real buttons in sortable headers.",
+    "status": "research_basis",
+    "support": [
+      "WAI-ARIA APG Sortable Table Example"
+    ]
+  }
+]

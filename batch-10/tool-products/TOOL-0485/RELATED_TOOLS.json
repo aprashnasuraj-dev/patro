@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0485",
+  "related": [
+    {
+      "id": "TOOL-0455",
+      "title": "Clear Aligner Schedule Planner",
+      "proposed_canonical": "/planners/clear-aligner-schedule-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0011",
+      "title": "Cron to GitHub Actions Schedule Generator",
+      "proposed_canonical": "/planners/cron-to-github-actions-schedule",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0293",
+      "title": "Weekly Mileage Progression Planner",
+      "proposed_canonical": "/planners/weekly-mileage-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0303",
+      "title": "Time Zone Meeting Planner Grid",
+      "proposed_canonical": "/planners/time-zone-meeting-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0413",
+      "title": "Estimated Tax Safe-Harbor Planner",
+      "proposed_canonical": "/planners/estimated-tax-safe-harbor-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "TOOL-0237",
+  "name": "Local-Only Net Worth Tracker",
+  "route": "/tools/net-worth-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0113",
+  "engineering_family": "Local Net Worth Tracker",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000.0,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Local-Only Net Worth Tracker \u2014 Local Browser Tool",
+    "meta_description": "Track assets and liabilities entirely in the browser, calculate net worth and category totals, and export or re-import a local JSON snapshot.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

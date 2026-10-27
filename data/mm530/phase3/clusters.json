@@ -1,0 +1,482 @@
+{
+  "schemaVersion": "MM530_PHASE3_CLUSTERS_V1",
+  "generatedAt": "2026-10-27",
+  "baseline": {
+    "flaggedTools": 142,
+    "compileFailures": 65,
+    "unitFailures": 5,
+    "mobilePreviewFailures": 81,
+    "undeclaredExternalImportRecords": 25,
+    "noRuntimeDependencyDeclaration": 24
+  },
+  "clusters": [
+    {
+      "cluster": "compile:escaped-newline-source",
+      "rootCause": "Generator emitted literal \\\\n separators outside strings",
+      "toolCount": 25,
+      "tools": [
+        "TOOL-0101",
+        "TOOL-0102",
+        "TOOL-0103",
+        "TOOL-0104",
+        "TOOL-0105",
+        "TOOL-0106",
+        "TOOL-0381",
+        "TOOL-0383",
+        "TOOL-0384",
+        "TOOL-0385",
+        "TOOL-0386",
+        "TOOL-0387",
+        "TOOL-0388",
+        "TOOL-0389",
+        "TOOL-0390",
+        "TOOL-0391",
+        "TOOL-0392",
+        "TOOL-0393",
+        "TOOL-0394",
+        "TOOL-0395",
+        "TOOL-0396",
+        "TOOL-0397",
+        "TOOL-0398",
+        "TOOL-0399",
+        "TOOL-0400"
+      ],
+      "proposedSharedFix": "Normalize only code-boundary literal newline tokens; compile whole family",
+      "risk": "low"
+    },
+    {
+      "cluster": "compile:construction-finite-export",
+      "rootCause": "Shared construction helper imports but does not re-export finite",
+      "toolCount": 18,
+      "tools": [
+        "TOOL-0262",
+        "TOOL-0263",
+        "TOOL-0264",
+        "TOOL-0265",
+        "TOOL-0266",
+        "TOOL-0267",
+        "TOOL-0268",
+        "TOOL-0269",
+        "TOOL-0270",
+        "TOOL-0271",
+        "TOOL-0272",
+        "TOOL-0273",
+        "TOOL-0275",
+        "TOOL-0276",
+        "TOOL-0277",
+        "TOOL-0278",
+        "TOOL-0279",
+        "TOOL-0280"
+      ],
+      "proposedSharedFix": "Re-export the existing finite validator from each copied family helper; no formula change",
+      "risk": "low"
+    },
+    {
+      "cluster": "compile:malformed-line-split-regex",
+      "rootCause": "Generation corrupted CRLF/LF split regex",
+      "toolCount": 7,
+      "tools": [
+        "TOOL-0274",
+        "TOOL-0465",
+        "TOOL-0466",
+        "TOOL-0469",
+        "TOOL-0470",
+        "TOOL-0472",
+        "TOOL-0479"
+      ],
+      "proposedSharedFix": "Restore /\\\\r?\\\\n/ and preserve parsing semantics",
+      "risk": "medium"
+    },
+    {
+      "cluster": "compile:missing-call-close",
+      "rootCause": "Generated UI lost one closing call parenthesis",
+      "toolCount": 5,
+      "tools": [
+        "TOOL-0142",
+        "TOOL-0143",
+        "TOOL-0211",
+        "TOOL-0212",
+        "TOOL-0248"
+      ],
+      "proposedSharedFix": "Restore missing parenthesis only; no behavior weakening",
+      "risk": "medium"
+    },
+    {
+      "cluster": "compile:try-brace",
+      "rootCause": "Generated UI has a misplaced brace before catch",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0221"
+      ],
+      "proposedSharedFix": "Restore intended try/catch structure",
+      "risk": "medium"
+    },
+    {
+      "cluster": "compile:shared-helper-brace",
+      "rootCause": "Copied shared helper has brace imbalance",
+      "toolCount": 4,
+      "tools": [
+        "TOOL-0114",
+        "TOOL-0306",
+        "TOOL-0307",
+        "TOOL-0318"
+      ],
+      "proposedSharedFix": "Repair shared helper syntax and recompile affected family",
+      "risk": "medium"
+    },
+    {
+      "cluster": "compile:missing-eff-wordlist-asset",
+      "rootCause": "Exact EFF 7,776-word build asset intentionally absent",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0324"
+      ],
+      "proposedSharedFix": "Keep documented blocker; do not invent/substitute wordlist",
+      "risk": "high-data-review"
+    },
+    {
+      "cluster": "compile:missing-xlsx-build-asset",
+      "rootCause": "Self-hosted spreadsheet parser bundle absent",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0370"
+      ],
+      "proposedSharedFix": "Pin/verify local parser before wiring; otherwise documented blocker",
+      "risk": "medium-build"
+    },
+    {
+      "cluster": "compile:missing-mathjax-build-asset",
+      "rootCause": "Self-hosted MathJax SVG bundle absent",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0371"
+      ],
+      "proposedSharedFix": "Pin/verify local MathJax component before wiring; otherwise documented blocker",
+      "risk": "medium-build"
+    },
+    {
+      "cluster": "compile:computed-property-syntax",
+      "rootCause": "Template literal used as invalid object property syntax",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0413"
+      ],
+      "proposedSharedFix": "Use a valid computed key only",
+      "risk": "low"
+    },
+    {
+      "cluster": "compile:reserved-identifier",
+      "rootCause": "Reserved identifier used as local variable",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0429"
+      ],
+      "proposedSharedFix": "Rename local variable without changing calculation",
+      "risk": "low"
+    },
+    {
+      "cluster": "unit:known-five",
+      "rootCause": "Five current Node test contract failures",
+      "toolCount": 5,
+      "tools": [
+        "TOOL-0048",
+        "TOOL-0066",
+        "TOOL-0073",
+        "TOOL-0080",
+        "TOOL-0087"
+      ],
+      "proposedSharedFix": "Repair result contract, validation copy and whole-input resource bounds without weakening assertions.",
+      "risk": "low"
+    },
+    {
+      "cluster": "ui:mobile-overflow",
+      "rootCause": "81 source-stage pages overflow at 375px across shared template families",
+      "toolCount": 81,
+      "tools": [
+        "TOOL-0003",
+        "TOOL-0004",
+        "TOOL-0005",
+        "TOOL-0006",
+        "TOOL-0007",
+        "TOOL-0008",
+        "TOOL-0009",
+        "TOOL-0011",
+        "TOOL-0012",
+        "TOOL-0013",
+        "TOOL-0014",
+        "TOOL-0016",
+        "TOOL-0017",
+        "TOOL-0018",
+        "TOOL-0019",
+        "TOOL-0021",
+        "TOOL-0022",
+        "TOOL-0023",
+        "TOOL-0024",
+        "TOOL-0025",
+        "TOOL-0068",
+        "TOOL-0100",
+        "TOOL-0101",
+        "TOOL-0102",
+        "TOOL-0103",
+        "TOOL-0104",
+        "TOOL-0105",
+        "TOOL-0106",
+        "TOOL-0108",
+        "TOOL-0111",
+        "TOOL-0112",
+        "TOOL-0113",
+        "TOOL-0114",
+        "TOOL-0115",
+        "TOOL-0116",
+        "TOOL-0119",
+        "TOOL-0121",
+        "TOOL-0122",
+        "TOOL-0123",
+        "TOOL-0124",
+        "TOOL-0125",
+        "TOOL-0126",
+        "TOOL-0127",
+        "TOOL-0128",
+        "TOOL-0129",
+        "TOOL-0130",
+        "TOOL-0131",
+        "TOOL-0132",
+        "TOOL-0133",
+        "TOOL-0134",
+        "TOOL-0135",
+        "TOOL-0136",
+        "TOOL-0137",
+        "TOOL-0138",
+        "TOOL-0139",
+        "TOOL-0140",
+        "TOOL-0141",
+        "TOOL-0142",
+        "TOOL-0143",
+        "TOOL-0144",
+        "TOOL-0145",
+        "TOOL-0146",
+        "TOOL-0147",
+        "TOOL-0148",
+        "TOOL-0149",
+        "TOOL-0150",
+        "TOOL-0281",
+        "TOOL-0282",
+        "TOOL-0283",
+        "TOOL-0284",
+        "TOOL-0288",
+        "TOOL-0290",
+        "TOOL-0295",
+        "TOOL-0297",
+        "TOOL-0298",
+        "TOOL-0300",
+        "TOOL-0305",
+        "TOOL-0340",
+        "TOOL-0432",
+        "TOOL-0437",
+        "TOOL-0518"
+      ],
+      "proposedSharedFix": "One reusable shell containment layer; verify 360/390/768 without per-page mobile hacks.",
+      "risk": "medium"
+    },
+    {
+      "cluster": "dependency:commonmark",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0093"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:fonteditor-core",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0101"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:exifr",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0121"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:libheif-js",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0122"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "license-review"
+    },
+    {
+      "cluster": "dependency:@jsquash/avif",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0123"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:blurhash",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0132"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:thumbhash",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0132"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:gifenc",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 2,
+      "tools": [
+        "TOOL-0137",
+        "TOOL-0138"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:upng-js",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0138"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:pdf-lib",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 7,
+      "tools": [
+        "TOOL-0141",
+        "TOOL-0144",
+        "TOOL-0146",
+        "TOOL-0148",
+        "TOOL-0359",
+        "TOOL-0379",
+        "TOOL-0478"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:pdfjs-dist",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0160"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:fflate",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 3,
+      "tools": [
+        "TOOL-0167",
+        "TOOL-0337",
+        "TOOL-0378"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:jsbarcode",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0258"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:qr",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0259"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:@noble/hashes",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 2,
+      "tools": [
+        "TOOL-0321",
+        "TOOL-0322"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:argon2-browser",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0325"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "license-review"
+    },
+    {
+      "cluster": "dependency:bcryptjs",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0325"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:@zxing/browser",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0338"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    },
+    {
+      "cluster": "dependency:sql.js",
+      "rootCause": "External import not normalized into exact dependency metadata",
+      "toolCount": 1,
+      "tools": [
+        "TOOL-0378"
+      ],
+      "proposedSharedFix": "Declare exact version, purpose, license, lazy/local-runtime metadata; flag licensing concerns.",
+      "risk": "low"
+    }
+  ]
+}

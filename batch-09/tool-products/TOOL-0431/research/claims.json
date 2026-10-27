@@ -1,0 +1,17 @@
+{
+  "claims": [
+    {
+      "statement": "City-specific occupancy tax worksheet",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "No live city rate lookup. Exemptions, tiers, taxable fee definitions, local taxes and periodic filing vary.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "No live city rate lookup. Exemptions, tiers, taxable fee definitions, local taxes and periodic filing vary.",
+  "authoritative_references": [],
+  "runtime_verification": "TEST_PENDING"
+}

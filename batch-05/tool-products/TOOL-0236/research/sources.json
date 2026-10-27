@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0236",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Dividend yield is converted to annual dividend per share at the starting price, then dividend/share and price grow independently."
+  ],
+  "uncertainty": [
+    "Dividends, dividend growth and share prices can fall; taxes and brokerage constraints are excluded."
+  ]
+}

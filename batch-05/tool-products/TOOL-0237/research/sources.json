@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0237",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Entries are nonnegative values classified as assets or liabilities; optional persistence uses localStorage only."
+  ],
+  "uncertainty": [
+    "Browser storage can be cleared; no encryption is added by this tool; do not store secrets."
+  ]
+}

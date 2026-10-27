@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0454",
+  "related": [
+    {
+      "id": "TOOL-0453",
+      "title": "Glasses to Contact Lens Prescription Converter",
+      "proposed_canonical": "/converters/glasses-to-contact-lens-vertex-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0459",
+      "title": "I-9 Reverification & Retention Date Tracker",
+      "proposed_canonical": "/planners/i9-reverification-retention-date-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0230",
+      "title": "Savings Goal Calculator (Date or Contribution)",
+      "proposed_canonical": "/calculators/savings-goal-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0268",
+      "title": "Stair Rise, Run and Stringer Calculator",
+      "proposed_canonical": "/calculators/stair-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

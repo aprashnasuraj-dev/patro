@@ -1,0 +1,5 @@
+{
+  "sample_input": "<p class=\"MsoNormal\"><b>Hello</b> world</p>",
+  "expected_behavior": "A Word paragraph with Mso classes/styles becomes a plain <p> with semantic <strong>/<em> formatting preserved.",
+  "qa_status": "TEST_PENDING"
+}

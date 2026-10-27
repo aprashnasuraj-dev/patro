@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {mannWhitney} from "../src/core";
+describe("Mann Whitney",()=>{it("uses exact for small no-tie samples",()=>{const r=mannWhitney([1,2,3],[4,5,6]);expect(r.method).toContain("exact");expect(r.U1).toBe(0);});it("uses asymptotic with ties",()=>{expect(mannWhitney([1,1,2],[1,2,2]).method).toContain("normal");});});

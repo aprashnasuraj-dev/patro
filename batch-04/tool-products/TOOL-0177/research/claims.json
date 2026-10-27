@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Estimate tempo from audio using onset-energy autocorrelation and show confidence plus half/double-tempo alternatives.",
+      "status": "implementation_scope",
+      "basis": "Web Audio decoding plus local signal analysis"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "BPM is a heuristic estimate, not a beat-grid transcription. Half/double-tempo ambiguity is explicitly surfaced.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

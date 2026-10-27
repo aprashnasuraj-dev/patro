@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0322",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+      "title": "Secure Hash Standard (SHS)",
+      "publisher": "NIST",
+      "version": "FIPS 180-4",
+      "effective_date": null,
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "SHA-256 and SHA-512 are cryptographic hashes; MD5 is included only for legacy checksum compatibility."
+    }
+  ],
+  "no_external_source_reason": null
+}

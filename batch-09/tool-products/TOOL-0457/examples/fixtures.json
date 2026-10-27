@@ -1,0 +1,26 @@
+{
+  "default_inputs": {
+    "jurisdiction": "User verified",
+    "end": "2026-10-31",
+    "method": "regular-payday",
+    "payday": "2026-11-06",
+    "days": 0,
+    "unpaid": 2000,
+    "ptoHours": 20,
+    "ptoRate": 25
+  },
+  "known_answer": {
+    "output_label": "User-confirmed payable PTO",
+    "expected_display": "$500.00",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

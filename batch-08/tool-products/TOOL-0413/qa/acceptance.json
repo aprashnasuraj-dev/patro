@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0413",
+  "qa_status": "TEST_PENDING",
+  "product_tests_executed": 0,
+  "checks": {
+    "required_source_files": "PREPARED",
+    "single_h1": "PREPARED_STATIC_CHECK_ONLY",
+    "robots_noindex": "PREPARED_STATIC_CHECK_ONLY",
+    "canonical_null": "PREPARED",
+    "browser_local_intent": "PREPARED",
+    "unit_tests": "TEST_PENDING",
+    "browser_tests": "TEST_PENDING",
+    "accessibility_tests": "TEST_PENDING",
+    "responsive_tests": "TEST_PENDING",
+    "security_tests": "TEST_PENDING",
+    "performance_tests": "TEST_PENDING"
+  },
+  "publication_gate": "LOCKED"
+}

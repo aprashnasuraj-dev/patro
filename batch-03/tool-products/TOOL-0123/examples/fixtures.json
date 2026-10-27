@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0123",
+  "known_answer_examples": [
+    "Open a 2.4 MB PNG, compare WebP quality 82 and AVIF quality 55, then download the smaller acceptable result."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

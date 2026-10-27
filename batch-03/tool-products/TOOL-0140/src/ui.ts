@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,files,num,val,guarded,dl,resultText } from '../_vendor/ui'; let ctl:AbortController|null=null;$('primary').addEventListener('click',()=>guarded(async()=>{ctl=new AbortController();$('cancel').hidden=false;$('cancel').onclick=()=>ctl?.abort();const fs=files('files'),b=await core.resizeBatch(fs,num('width'),num('height'),val('fit') as any,val('format'),.82,ctl.signal);resultText(`Processed ${fs.length} image(s) sequentially.`);dl(b,'resized-images.zip');$('cancel').hidden=true;ctl=null}));
+

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0255",
+  "name": "Gantt Chart Maker from Task Table (SVG/PNG)",
+  "route": "/tools/gantt-chart-maker",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0126",
+  "engineering_family": "Gantt Schedule Creator",
+  "product_type": "interactive_visualizer",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Gantt Chart Maker from Task Table (SVG/PNG) — Private Browser Tool",
+    "meta_description": "Turn a bounded task table into a chronological Gantt chart, validate task dates and progress, and export the resulting SVG or PNG.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

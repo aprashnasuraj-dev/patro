@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0279",
+  "name": "Septic Tank and Water Tank Capacity Calculator",
+  "route": "/tools/tank-volume-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-12",
+  "engineering_family_id": "F0148",
+  "engineering_family": "Tank Capacity Calculator",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Septic Tank and Water Tank Capacity Calculator — Private Browser Tool",
+    "meta_description": "Calculate full and partial liquid capacity for rectangular, vertical cylindrical and horizontal cylindrical tanks, with litre and gallon conversions.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

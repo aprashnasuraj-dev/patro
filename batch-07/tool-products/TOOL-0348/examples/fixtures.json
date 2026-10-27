@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0348",
+  "examples": [
+    {
+      "minimal_valid_subset": [
+        "rss 2.0",
+        "channel title/description/language/itunes:explicit/itunes:image",
+        ">=1 item title/guid/enclosure"
+      ]
+    },
+    {
+      "duplicate_guid": "error"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0355",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "A single pixel/neighborhood does not prove contrast across an entire text bounding box or dynamic image/video. APCA remains evolving guidance; current WCAG 2.x conformance uses WCAG ratios."
+}

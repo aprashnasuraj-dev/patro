@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0442",
+  "related": [
+    {
+      "id": "TOOL-0359",
+      "title": "Business Card Maker with Print-Ready PDF and Bleed",
+      "proposed_canonical": "/generators/business-card-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0441",
+      "title": "Social Video Safe-Zone Overlay Previewer",
+      "proposed_canonical": "/utilities/social-video-safe-zone-overlay",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "proposed_canonical": "/utilities/youtube-thumbnail-safe-zone",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0443",
+      "title": "KDP/IngramSpark Spine Width & Cover Template",
+      "proposed_canonical": "/calculators/book-spine-width-cover-template-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0444",
+      "title": "Max Print Size from Pixels",
+      "proposed_canonical": "/calculators/max-print-size-from-pixels-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

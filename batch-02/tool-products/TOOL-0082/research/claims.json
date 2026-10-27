@@ -1,0 +1,12 @@
+{
+  "assumptions": "Unicode text and optional official confusables.txt file selected locally; bundled fallback is limited.",
+  "limitations": "Full Unicode mapping is available only when a local official data file is selected; skeleton comparison remains approximate.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.unicode.org/reports/tr39/",
+    "https://www.unicode.org/Public/18.0.0/security/confusables.txt"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

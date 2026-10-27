@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0429",
+  "related": [
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0430",
+      "title": "Move-Out Damage Depreciation Calculator",
+      "proposed_canonical": "/calculators/move-out-damage-depreciation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0500",
+      "title": "Medicare Enrollment Window and Late Penalty Calculator",
+      "proposed_canonical": "/calculators/medicare-enrollment-window-penalty-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0423",
+      "title": "Rent Increase Cap & Notice Calculator",
+      "proposed_canonical": "/calculators/rent-increase-cap-and-notice-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0425",
+      "title": "Landlord Notice Period & Service-Date Calculator",
+      "proposed_canonical": "/calculators/landlord-notice-period-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

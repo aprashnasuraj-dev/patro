@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0370",
+  "related": [
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "proposed_canonical": "/converters/excel-to-markdown-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0371",
+      "title": "LaTeX Equation Preview and SVG/PNG Export",
+      "proposed_canonical": "/converters/latex-equation-to-image",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0255",
+      "title": "Gantt Chart Maker from Task Table (SVG/PNG)",
+      "proposed_canonical": "/generators/gantt-chart-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0089",
+      "title": "Regex Replace Preview with Capture Group Table",
+      "proposed_canonical": "/utilities/regex-replace-preview",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

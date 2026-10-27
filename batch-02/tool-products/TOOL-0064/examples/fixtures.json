@@ -1,0 +1,21 @@
+{
+  "sample_input": {
+    "title": "Frontend Engineer",
+    "org": "Example Works",
+    "description": "Develop accessible frontend components.\nExperience with JavaScript and CSS is required.",
+    "posted": "2026-10-20",
+    "valid": "2026-12-01",
+    "type": "FULL_TIME",
+    "remote": false,
+    "country": "US",
+    "city": "Seattle",
+    "street": ""
+  },
+  "worked_example": "A US on-site engineering job includes a country-specific PostalAddress.",
+  "planned_expectations": [
+    "Fully remote job emits TELECOMMUTE and applicant country.",
+    "On-site job requires city; reject date after validThrough.",
+    "Escape HTML tags in plain-text description."
+  ],
+  "execution_state": "TEST_PENDING"
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0241",
+  "status": "TEST_PENDING",
+  "sample": {
+    "takeHome": 80000,
+    "overhead": 12000,
+    "taxReservePct": 25,
+    "uncollectiblePct": 5,
+    "workingWeeks": 46,
+    "billableHoursPerWeek": 25,
+    "billableHoursPerDay": 7
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

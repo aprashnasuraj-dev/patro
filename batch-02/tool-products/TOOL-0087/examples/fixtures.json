@@ -1,0 +1,18 @@
+{
+  "sample_input": {
+    "before": "Our tool processes data very quickly.",
+    "after": "Our tool processes data securely and quickly."
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "\"great fast tool\" vs \"great secure tool\" marks fast removed and secure added.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{before:'red blue',after:'red green'}",
+    "assertions": "assert.ok(result.changes.some(v=>v.kind==='removed'));assert.ok(result.changes.some(v=>v.kind==='added'));"
+  }
+}

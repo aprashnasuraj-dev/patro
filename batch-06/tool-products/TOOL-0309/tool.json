@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0309",
+  "name": "ISO 8601 Duration Builder and Parser",
+  "route": "/tools/iso-8601-duration-converter",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0166",
+  "engineering_family": "ISO Duration Converter",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "ISO 8601 Duration Builder and Parser — Private Browser Tool",
+    "meta_description": "Build and parse a conservative ISO 8601 duration subset, preserving years and months as calendar components instead of pretending they have fixed seconds.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

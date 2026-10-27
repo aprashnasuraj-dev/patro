@@ -1,0 +1,26 @@
+{
+  "sample_input": {
+    "name": "Community Developer Meetup",
+    "mode": "In person|Hybrid|Online",
+    "start": "2026-11-15T18:00:00+05:45",
+    "end": "2026-11-15T20:00:00+05:45",
+    "description": "A hands-on technical workshop.",
+    "venue": "City Hall",
+    "address": "Main Road, Kathmandu, Nepal",
+    "online": "https://example.com/live",
+    "url": "https://example.com/events/workshop",
+    "image": "https://example.com/event.jpg"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "An in-person event uses Place; hybrid combines Place and VirtualLocation.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{name:'Meetup',start:'2026-11-15T18:00:00+05:45',end:'2026-11-15T20:00:00+05:45',mode:'Hybrid',venue:'Hall',address:'City, NP',online:'https://example.com/live'}",
+    "assertions": "assert.equal(JSON.parse(result.text).location.length,2);"
+  }
+}

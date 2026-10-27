@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0054",
+  "name": "localStorage Quota Tester",
+  "reserved_route": "/tools/localstorage-size-limit-test",
+  "family_id": "F0028",
+  "family": "Browser Capability Tester",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "browser_runtime": "src/ui.js",
+  "core_source": "src/core.ts",
+  "seo": {
+    "title": "localStorage Quota Tester | AafnaiPatro Tools",
+    "description": "Measure browser storage with a bounded, reversible write probe.",
+    "h1": "localStorage Quota Tester",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "client_side_only": true,
+    "no_account": true,
+    "no_upload": true,
+    "network": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

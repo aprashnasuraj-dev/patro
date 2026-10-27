@@ -1,0 +1,21 @@
+{
+  "schema_version": "MM530_PHASE8_INTEGRATION_MANIFEST_V1",
+  "tools": 530,
+  "adapter": "src/mm530/Mm530Routes.tsx",
+  "registry": "src/mm530/mm530-registry.json",
+  "asset_builder": "scripts/mm530/prepare-vite-integration.mjs",
+  "runtime_asset_root": "/_mm530/<TOOL-ID>/page.html",
+  "lazy_runtime": true,
+  "dashboard_routes": [
+    "/advancetools/",
+    "/advancetools/web-tools/",
+    "/advancetools/web-tools/<category>/"
+  ],
+  "canonical_route_source": "data/mm530/phase4/all-tools.json",
+  "verification": "DEFERRED_UNTIL_INTEGRATION_SWEEP",
+  "dashboard_generator": "tools/advancetools/scripts/build.mjs",
+  "existing_advanced_collections_preserved": true,
+  "patro_tools_namespace_untouched": true,
+  "production_copy_sanitizer": "scripts/mm530/prepare-vite-integration.mjs",
+  "batch_seo_preservation": "title/description/content/references retained; canonical and social metadata bound to frozen leaf route"
+}

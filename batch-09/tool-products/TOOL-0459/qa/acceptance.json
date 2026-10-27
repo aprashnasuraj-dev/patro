@@ -1,0 +1,23 @@
+{
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": 0,
+  "not_run": [
+    "build",
+    "typecheck",
+    "unit",
+    "browser",
+    "accessibility",
+    "performance",
+    "security",
+    "responsive",
+    "lint"
+  ],
+  "source_preparation": "prepared",
+  "publication_gate": "LOCKED",
+  "open_concerns": [
+    "No E-Verify, automatic status extensions, 540-day EAD automatic extensions, Form I-94 class specifics or remote document inspection rules.",
+    "Validate integration imports and runtime client-side rendering in later Git phase"
+  ],
+  "git_imported": false,
+  "published": false
+}

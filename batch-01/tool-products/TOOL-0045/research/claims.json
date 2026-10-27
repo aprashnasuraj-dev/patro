@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0045",
+  "scope_claim": "Classify browser, operating system and automation indicators from multiple User-Agent strings.",
+  "authoritative_urls": [
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent",
+    "https://developer.chrome.com/docs/privacy-security/user-agent-client-hints"
+  ],
+  "assumptions": [
+    "Heuristic common desktop/mobile UA families; one per line up to 200.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "User-Agent is forgeable and reduced in modern browsers; use Client Hints when available.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

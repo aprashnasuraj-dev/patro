@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0364",
+  "related": [
+    {
+      "id": "TOOL-0362",
+      "title": "BibTeX to APA, MLA, Chicago Converter",
+      "proposed_canonical": "/converters/bibtex-to-apa",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0363",
+      "title": "RIS to BibTeX Converter",
+      "proposed_canonical": "/converters/ris-to-bibtex",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0361",
+      "title": "APA 7 Reference Formatter from Fields",
+      "proposed_canonical": "/formatters/apa-7-reference-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0094",
+      "title": "Word and Google Docs HTML Cleaner",
+      "proposed_canonical": "/editors/clean-word-html",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0175",
+      "title": "Silence Remover for Audio",
+      "proposed_canonical": "/editors/remove-silence-from-audio",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

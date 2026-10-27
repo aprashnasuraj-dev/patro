@@ -1,0 +1,106 @@
+{
+  "id": "TOOL-0498",
+  "name": "RSU State and Employer Withholding Gap Calculator",
+  "route": "/tools/rsu-state-withholding-gap-calculator",
+  "slug": "rsu-state-withholding-gap-calculator",
+  "family": "F0105",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "withholding",
+  "title": "RSU State and Employer Withholding Gap Calculator | AafnaiPatro Tools",
+  "meta_description": "Separate vest-date compensation, supplemental wage withholding and your estimated tax liability on RSU compensation.",
+  "inputs": [
+    {
+      "key": "shares",
+      "label": "Vesting shares",
+      "default": 100,
+      "unit": "shares",
+      "type": "number",
+      "min": 1,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "fmv",
+      "label": "Vest-date fair market value",
+      "default": 90,
+      "unit": "USD/share",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "federalW",
+      "label": "Federal withholding rate",
+      "default": 22,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "stateW",
+      "label": "State withholding rate",
+      "default": 5,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "ficaW",
+      "label": "FICA/other payroll withholding",
+      "default": 7.65,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "fedTrue",
+      "label": "Estimated effective incremental federal tax",
+      "default": 32,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "stateTrue",
+      "label": "Estimated incremental state/local tax",
+      "default": 8,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "otherTrue",
+      "label": "Incremental other taxes",
+      "default": 7.65,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0319",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Crossing times are numerical approximations and “golden hour” is an artistic convention, not an astronomical standard. Near the poles some or all threshold crossings may not occur."
+}

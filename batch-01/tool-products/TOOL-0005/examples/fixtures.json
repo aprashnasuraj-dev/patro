@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0005",
+  "case": "Worked example",
+  "input": "{\n  \"customer_id\": 12,\n  \"active\": true,\n  \"name\": \"Mira\",\n  \"addresses\": [{\"city\": \"Kathmandu\", \"zip\": 44600}],\n  \"labels\": [\"regular\", \"email\"]\n}",
+  "options": {
+    "rootName": "Customer",
+    "packageName": "app.models"
+  },
+  "expected_properties": "nested messages, safe field tags, package restrictions, scalar arrays, collisions, null warnings",
+  "expected_execution": "NOT_RUN",
+  "limitations": "Sample inference cannot establish absent fields, int64 precision, enums, map intent or safe future field numbers; do not reorder tags after deployment."
+}

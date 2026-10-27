@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Rent proposal compliance scenario",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "No automated jurisdiction cap lookup; statutory process, exemptions and service validity not checked.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "No automated jurisdiction cap lookup; statutory process, exemptions and service validity not checked.",
+  "authoritative_references": [
+    "https://www.gov.uk/private-renting/rent-increases"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

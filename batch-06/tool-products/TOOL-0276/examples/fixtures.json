@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0276",
+  "examples": [
+    {
+      "inputs": {
+        "length_ft": 120,
+        "runs": 1,
+        "gate_count": 1,
+        "gate_width_total_ft": 4,
+        "max_post_spacing_ft": 8,
+        "rails_per_bay": 2,
+        "picket_in": 5.5,
+        "gap_in": 0.5
+      },
+      "expected_note": "Gate posts are explicit and clear fence length excludes total gate width."
+    }
+  ]
+}

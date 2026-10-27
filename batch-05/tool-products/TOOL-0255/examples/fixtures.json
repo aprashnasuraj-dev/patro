@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0255",
+  "status": "TEST_PENDING",
+  "sample": {
+    "tasks": [
+      {
+        "task": "Research",
+        "start": "2026-10-26",
+        "end": "2026-10-29",
+        "group": "Discovery",
+        "progress": 100
+      },
+      {
+        "task": "Prototype",
+        "start": "2026-10-30",
+        "end": "2026-11-05",
+        "group": "Build",
+        "progress": 65
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

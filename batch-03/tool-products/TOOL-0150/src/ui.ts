@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,val,guarded,dl,resultText } from '../_vendor/ui'; $('primary').textContent='Resize PDF pages';$('primary').addEventListener('click',()=>guarded(async()=>{const b=await core.resizePages(file('file'),val('target') as any,val('orientation') as any,val('fit') as any,num('margin'));resultText(`Placed source pages onto ${val('target')} ${val('orientation')} pages.`);dl(b,'resized-pages.pdf')}));
+

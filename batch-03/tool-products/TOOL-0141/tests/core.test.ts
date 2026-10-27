@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {inspect} from '../src/core';describe('TOOL-0141 PDF metadata parser guards',()=>{it('rejects an empty PDF before loading pdf-lib',async()=>{await expect(inspect(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('reads and scrubs metadata from a reviewed PDF fixture while preserving page content')});

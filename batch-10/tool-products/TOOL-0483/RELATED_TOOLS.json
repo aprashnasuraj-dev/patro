@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0483",
+  "related": [
+    {
+      "id": "TOOL-0279",
+      "title": "Septic Tank and Water Tank Capacity Calculator",
+      "proposed_canonical": "/calculators/tank-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0080",
+      "title": "Event Schema Generator (Online, Hybrid, In-Person)",
+      "proposed_canonical": "/generators/event-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0484",
+      "title": "Tablecloth Size & Drop Calculator",
+      "proposed_canonical": "/calculators/tablecloth-size-drop-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0487",
+      "title": "Raised Bed Soil & Compost Calculator",
+      "proposed_canonical": "/calculators/raised-bed-soil-compost-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

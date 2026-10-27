@@ -1,0 +1,26 @@
+{
+  "default_inputs": {
+    "shape": "rectangular",
+    "length": 80,
+    "width": 35,
+    "height": 40,
+    "displacement": 8,
+    "change": 25,
+    "dosePer100": 10,
+    "doseScope": "new-water"
+  },
+  "known_answer": {
+    "output_label": "Estimated actual water volume",
+    "expected_display": "103.04 L",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

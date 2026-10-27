@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0183",
+  "build_sequence": 183,
+  "name": "CSV Deduplicator by Key Columns",
+  "route": "/tools/csv-remove-duplicates",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0086",
+  "engineering_family": "CSV Cleaner and Validator",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "CSV Deduplicator by Key Columns — Free Local Browser Tool",
+    "meta_description": "Remove duplicate CSV rows using one or more key columns with explicit first/last retention and blank-key behavior.",
+    "h1": "CSV Deduplicator by Key Columns",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

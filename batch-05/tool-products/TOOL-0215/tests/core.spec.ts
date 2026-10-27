@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {bayesTest} from "../src/core";
+describe("Bayes test",()=>{it("perfect test has perfect predictive values",()=>{const r=bayesTest(.2,1,1,1000);expect(r.ppv).toBe(1);expect(r.npv).toBe(1);});});

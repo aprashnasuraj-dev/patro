@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0116",
+  "claims": [
+    {
+      "claim": "Detect four-character OpenType feature tags in GSUB and GPOS tables and generate a conservative CSS font-feature-settings helper for selected features.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "opentype-feature-tags",
+        "opentype-gpos",
+        "opentype-1.9.1"
+      ]
+    },
+    {
+      "claim": "The tool does not execute shaping or prove that enabling a tag is typographically appropriate. Prefer higher-level font-variant properties where suitable.",
+      "status": "limitation",
+      "source_ids": [
+        "opentype-feature-tags",
+        "opentype-gpos",
+        "opentype-1.9.1"
+      ]
+    }
+  ]
+}

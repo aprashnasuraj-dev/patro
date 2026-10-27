@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {effectSizes} from "../src/core";
+describe("effect sizes",()=>{it("zero mean difference gives zero standardized effects",()=>{const r=effectSizes(20,10,2,20,10,3);expect(r.cohensD).toBeCloseTo(0);expect(r.hedgesG).toBeCloseTo(0);expect(r.glassDelta).toBeCloseTo(0);});});

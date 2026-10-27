@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {check} from '../src/core';describe('TOOL-0133 seamless-tile input guards',()=>{it('rejects an empty image before pixel analysis',async()=>{await expect(check(new File([],'empty.png',{type:'image/png'}))).rejects.toThrow()});it.todo('verifies edge-difference metrics and offset preview from a reviewed tile fixture')});

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0350",
+  "examples": [
+    {
+      "mic_rms_silence_128_bytes": "0.0"
+    },
+    {
+      "permissions": "explicit user gesture"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0341",
+  "research_scope": "Only implementation-changing formulas, platform rules, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://github.com/twitter/twitter-text/blob/master/config/v3.json",
+      "title": "twitter-text v3 configuration",
+      "publisher": "Twitter/X open-source twitter-text",
+      "version": "v3",
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Platform guidance and browser behavior can change after this source-preparation date.",
+      "important_limitations": "Used for the 280 weighted-length / transformedURLLength=23 model. URL recognition and emoji parsing in this local implementation are intentionally bounded approximations rather than a copy of the full upstream parser."
+    }
+  ],
+  "no_external_source_reason": null
+}

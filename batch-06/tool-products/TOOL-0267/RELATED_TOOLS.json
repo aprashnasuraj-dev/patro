@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0267",
+  "related": [
+    {
+      "id": "TOOL-0402",
+      "title": "Deck Joist & Beam Span Checker",
+      "proposed_canonical": "/validators/deck-joist-beam-span-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0401",
+      "title": "Fence & Deck Post Concrete Calculator",
+      "proposed_canonical": "/calculators/fence-post-concrete-bags-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0361",
+      "title": "APA 7 Reference Formatter from Fields",
+      "proposed_canonical": "/formatters/apa-7-reference-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0378",
+      "title": "CSV to Anki Deck (.apkg) Creator",
+      "proposed_canonical": "/generators/csv-to-anki-deck",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

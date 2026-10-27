@@ -1,0 +1,86 @@
+{
+  "id": "TOOL-0494",
+  "name": "Chicken Coop Size & Feed Calculator",
+  "route": "/tools/chicken-coop-size-feed-calculator",
+  "slug": "chicken-coop-size-feed-calculator",
+  "family": "F0291",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "livestock",
+  "title": "Chicken Coop Size & Feed Calculator | AafnaiPatro Tools",
+  "meta_description": "Plan minimum indoor coop and outdoor run using customizable square-feet-per-bird assumptions and feed consumption.",
+  "inputs": [
+    {
+      "key": "birds",
+      "label": "Number of chickens",
+      "default": 12,
+      "unit": "birds",
+      "type": "number",
+      "min": 1,
+      "max": 100000,
+      "step": 1
+    },
+    {
+      "key": "coop",
+      "label": "Indoor area allowance",
+      "default": 4,
+      "unit": "sq ft/bird",
+      "type": "number",
+      "min": 0.5,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "run",
+      "label": "Outdoor run allowance",
+      "default": 10,
+      "unit": "sq ft/bird",
+      "type": "number",
+      "min": 1,
+      "max": 500,
+      "step": "any"
+    },
+    {
+      "key": "feed",
+      "label": "Daily feed per bird",
+      "default": 0.25,
+      "unit": "lb/bird/day",
+      "type": "number",
+      "min": 0.01,
+      "max": 5,
+      "step": "any"
+    },
+    {
+      "key": "days",
+      "label": "Feed stock horizon",
+      "default": 30,
+      "unit": "days",
+      "type": "number",
+      "min": 1,
+      "max": 365,
+      "step": 1
+    },
+    {
+      "key": "waste",
+      "label": "Feed waste allowance",
+      "default": 8,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 80,
+      "step": "any"
+    }
+  ]
+}

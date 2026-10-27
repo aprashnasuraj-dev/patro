@@ -1,0 +1,118 @@
+{
+  "id": "TOOL-0517",
+  "name": "Assumable Mortgage vs New Loan Comparison",
+  "slug": "assumable-mortgage-comparison-calculator",
+  "route": "/tools/assumable-mortgage-comparison-calculator",
+  "family": "F0308",
+  "description": "Compare remaining cash flows for an assumable fixed-rate mortgage against a replacement purchase mortgage without hiding the equity gap.",
+  "seo": {
+    "title": "Assumable Mortgage vs New Loan Comparison — Free Local Tool | AafnaiPatro",
+    "description": "Compare remaining cash flows for an assumable fixed-rate mortgage against a replacement purchase mortgage without hiding the equity gap.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "loan",
+  "inputs": [
+    {
+      "key": "assumedBalance",
+      "label": "Remaining assumable mortgage principal",
+      "default": 220000,
+      "unit": "USD",
+      "type": "number",
+      "min": 1,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "assumedRate",
+      "label": "Assumed mortgage annual nominal interest rate",
+      "default": 2.85,
+      "unit": "%",
+      "type": "number",
+      "min": 0,
+      "max": 40,
+      "step": "any"
+    },
+    {
+      "key": "assumedMonths",
+      "label": "Remaining amortization on assumed loan",
+      "default": 264,
+      "unit": "months",
+      "type": "number",
+      "min": 1,
+      "max": 600,
+      "step": 1
+    },
+    {
+      "key": "newLoan",
+      "label": "Principal of new comparable loan",
+      "default": 350000,
+      "unit": "USD",
+      "type": "number",
+      "min": 1,
+      "max": 1000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "newRate",
+      "label": "New loan annual nominal interest rate",
+      "default": 6.75,
+      "unit": "%",
+      "type": "number",
+      "min": 0,
+      "max": 40,
+      "step": "any"
+    },
+    {
+      "key": "newMonths",
+      "label": "New loan amortization",
+      "default": 360,
+      "unit": "months",
+      "type": "number",
+      "min": 1,
+      "max": 600,
+      "step": 1
+    },
+    {
+      "key": "assumptionFee",
+      "label": "Assumption closing fees",
+      "default": 3000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "newFee",
+      "label": "New mortgage origination/closing fees",
+      "default": 6500,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "cashTopup",
+      "label": "Extra upfront cash needed for assumption equity gap",
+      "default": 130000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    }
+  ]
+}

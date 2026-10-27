@@ -1,0 +1,158 @@
+{
+  "schema_version": "MM530_PHASE6_REVIEW_V1",
+  "reviewed_on": "2026-10-27",
+  "scope": "Narrow time-sensitive factual/dependency review only",
+  "tools_entered": 530,
+  "priority_factual_review": {
+    "count": 22,
+    "status": "PASS",
+    "unresolved_blockers": 0,
+    "items": [
+      [
+        "TOOL-0413",
+        "PASS",
+        "2026 IRS estimated-tax 90% current / 100% prior / 110% higher-income rule and $150k/$75k threshold verified."
+      ],
+      [
+        "TOOL-0415",
+        "PASS",
+        "CRA Quick Method 1% credit on first CAD 30,000 and current method structure verified; remittance rate remains user-selected from CRA table."
+      ],
+      [
+        "TOOL-0417",
+        "PASS",
+        "Headline VAT/GST thresholds retained as dated reference set; UK 90k, Canada 30k, NZ 60k, Singapore 1m verified; AU/India remain explicitly caveated reference values."
+      ],
+      [
+        "TOOL-0420",
+        "PASS",
+        "Form 8606 pro-rata aggregation/formula relationship remains consistent with IRS guidance; no annual statutory threshold embedded."
+      ],
+      [
+        "TOOL-0431",
+        "PASS",
+        "No city tax database embedded; user must enter verified local rates."
+      ],
+      [
+        "TOOL-0437",
+        "PASS",
+        "No IFTA tax-rate table embedded; quarterly jurisdiction rates are user-entered from official matrix."
+      ],
+      [
+        "TOOL-0456",
+        "PASS",
+        "No state paid-leave table embedded; replacement rate/cap/weeks are user-entered and explicitly unverified by tool."
+      ],
+      [
+        "TOOL-0458",
+        "PASS",
+        "Federal >40-hour overtime/FWW abstraction remains caveated; state law/minimum wage is user-entered, not hard-coded as a state rule."
+      ],
+      [
+        "TOOL-0486",
+        "PASS",
+        "Spain 2026 EUR 2,442 + 916 + 306 and Estonia EUR 3,960/month verified; Portugal threshold intentionally requires verified user input."
+      ],
+      [
+        "TOOL-0495",
+        "PASS",
+        "IRS 2026 §415(c) annual-additions limit USD 72,000 and USD 24,500 elective deferral reference verified."
+      ],
+      [
+        "TOOL-0496",
+        "PASS",
+        "Post-2019 inherited-IRA 10-year scope is limited to non-eligible designated beneficiaries; after-RBD annual-RMD caveat retained."
+      ],
+      [
+        "TOOL-0498",
+        "PASS",
+        "No statutory withholding rate embedded; all federal/state/FICA and estimated true rates are user inputs."
+      ],
+      [
+        "TOOL-0500",
+        "PASS",
+        "2026 Part B standard premium USD 202.90, 10% per full 12-month Part B penalty model, and Part D USD 38.99 base/1% per month verified."
+      ],
+      [
+        "TOOL-0501",
+        "PASS",
+        "2026 CMS IRMAA thresholds, Part B premiums and Part D IRMAA amounts match current CMS table."
+      ],
+      [
+        "TOOL-0502",
+        "PASS",
+        "Stepped-up/date-of-death FMV basis is presented as an abstraction with special-rule caveats; no changing threshold embedded."
+      ],
+      [
+        "TOOL-0504",
+        "PASS",
+        "2026/27 England/Wales/NI personal allowance GBP 12,570 and 20/40/45% bands through GBP 37,700/125,140 verified."
+      ],
+      [
+        "TOOL-0505",
+        "PASS",
+        "Section 24 20% basic-rate reducer model remains caveated; corporation/dividend rates are user inputs rather than hard-coded current rates."
+      ],
+      [
+        "TOOL-0507",
+        "PASS",
+        "2026/27 pension annual allowance GBP 60,000 and carry-forward years 2023/24–2025/26 verified; tapered/MPAA cases explicitly excluded or user-supplied."
+      ],
+      [
+        "TOOL-0508",
+        "PASS",
+        "UK seven-year gift rule and taper tax rates 40/32/24/16/8% verified."
+      ],
+      [
+        "TOOL-0509",
+        "PASS",
+        "2026/27 ShPP GBP 194.32/week or 90% earnings, 50 leave weeks and 37 pay weeks verified."
+      ],
+      [
+        "TOOL-0515",
+        "PASS",
+        "No state entitlement rate embedded; user must enter applicable legally verified accrual rate."
+      ],
+      [
+        "TOOL-0518",
+        "PASS",
+        "California daily >8h 1.5x, >12h 2x and meal-period structure retained with explicit exclusions; claim validity is not inferred."
+      ]
+    ]
+  },
+  "formula_first_nonblocking": {
+    "count": 7,
+    "status": "PASS",
+    "items": [
+      "TOOL-0050",
+      "TOOL-0223",
+      "TOOL-0231",
+      "TOOL-0248",
+      "TOOL-0250",
+      "TOOL-0260",
+      "TOOL-0428"
+    ]
+  },
+  "dependencies_assets": {
+    "status": "PASS",
+    "note": "Phase 8 integration vendors actual browser runtimes; no new theoretical 530-tool licensing queue created. External authoritative sources are linked/paraphrased, not redistributed."
+  },
+  "primary_sources": [
+    "https://www.irs.gov/publications/p505",
+    "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4058/quick-method-accounting-gst-hst.html",
+    "https://www.gov.uk/how-vat-works/vat-thresholds",
+    "https://www.ird.govt.nz/gst/registering-for-gst",
+    "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/do-i-need-to-register-for-gst",
+    "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Telework-Visa.aspx",
+    "https://vm.ee/en/consular-visa-and-travel-information/visa-information/application-long-stay-d-visa",
+    "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits",
+    "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+    "https://www.medicare.gov/health-drug-plans/part-d/basics/costs",
+    "https://www.gov.uk/government/publications/rates-and-allowances-pension-schemes/pension-schemes-rates",
+    "https://www.gov.uk/shared-parental-leave-and-pay/what-youll-get",
+    "https://www.gov.uk/inheritance-tax/gifts",
+    "https://www.dir.ca.gov/dlse/faq_overtime.htm",
+    "https://www.dir.ca.gov/dlse/faq_mealperiods.html"
+  ],
+  "status": "PHASE_6_PASS"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Fair Work long service leave state and industry boundaries",
+    "url": "https://www.fairwork.gov.au/leave/long-service-leave",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Accrued weeks = eligible service years × legally verified accrual rate; pay at entered ordinary weekly rate.",
+    "uncertainty": "Entitlement vesting and pro-rata payout cannot be inferred solely from service years."
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "source_prepared": true,
+  "tests_executed": false,
+  "typecheck": "NOT_RUN",
+  "unit": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "a11y": "NOT_RUN",
+  "performance": "NOT_MEASURED",
+  "git_imported": false,
+  "publication_gate": "LOCKED"
+}

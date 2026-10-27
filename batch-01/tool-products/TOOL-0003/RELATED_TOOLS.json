@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0003",
+  "related": [
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0004",
+      "title": "SQL DDL to Prisma Schema",
+      "proposed_canonical": "/converters/sql-to-prisma-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0005",
+      "title": "JSON to Protobuf (.proto) Generator",
+      "proposed_canonical": "/generators/json-to-protobuf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0009",
+      "title": ".env to Kubernetes Secret YAML",
+      "proposed_canonical": "/converters/env-to-kubernetes-secret",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

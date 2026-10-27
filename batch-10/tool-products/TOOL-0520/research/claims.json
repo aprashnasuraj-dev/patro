@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Whole days outside UK counted between departure/return. ILR uses rolling 12 calendar months; citizenship uses 3/5-year total and final 12 months.",
+    "supporting_urls": [
+      "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-continuous-residence",
+      "https://www.gov.uk/government/publications/form-an-guidance/form-an-guidance-accessible"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Applications with exempt absences, special routes or overlapping trips require review."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "For standard five-year nationality route, normally <=450 total days and <=90 days in final 12 months.",
+    "status": "TEST_PENDING"
+  }
+]

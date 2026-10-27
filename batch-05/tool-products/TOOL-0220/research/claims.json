@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0220",
+  "claims": [
+    {
+      "claim": "Calculate Cohen's d, bias-corrected Hedges' g, and Glass's delta from two-group summary statistics with approximate confidence intervals.",
+      "support": [
+        "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/hedgeg.htm",
+        "https://www.campbellcollaboration.org/calculator/equations"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Two independent groups summarized by sample size, arithmetic mean, and sample SD.",
+      "support": [
+        "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/hedgeg.htm",
+        "https://www.campbellcollaboration.org/calculator/equations"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Standardized mean differences depend on study design and denominator choice. Generic magnitude labels are intentionally omitted because interpretation is context-specific.",
+      "support": [
+        "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/hedgeg.htm",
+        "https://www.campbellcollaboration.org/calculator/equations"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

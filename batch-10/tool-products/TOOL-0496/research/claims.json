@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Only traditional IRA, ordinary designated beneficiary, and confirmed factor supported.",
+    "sources": [
+      "https://www.irs.gov/publications/p590b",
+      "https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Factor cannot be computed automatically without beneficiary classification and age table."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "status": "TEST_PENDING",
+  "runtime_tests_executed": false,
+  "build_executed": false,
+  "typecheck_executed": false,
+  "unit_tests_executed": false,
+  "browser_tests_executed": false,
+  "a11y_tests_executed": false,
+  "performance_tests_executed": false,
+  "security_tests_executed": false,
+  "responsive_tests_executed": false,
+  "prepared_acceptance": [
+    "Single H1 and staging noindex metadata",
+    "Task-specific controls and explainable result/status region",
+    "Keyboard-focusable native controls and aria-live status",
+    "Responsive layout from ~320px",
+    "Light/dark and reduced-motion support",
+    "Bounded input and explicit unsupported/limitation behavior",
+    "No normal-use third-party transmission"
+  ],
+  "integration_gates": [
+    "Pin local dependencies and worker/WASM URLs",
+    "Verify CSP and worker loading",
+    "Run typecheck/unit/browser/a11y/perf/security/responsive QA",
+    "Verify codec availability and licensing where FFmpeg is used",
+    "Replace noindex/canonical-null only at publication gate"
+  ]
+}

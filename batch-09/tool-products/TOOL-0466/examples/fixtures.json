@@ -1,0 +1,23 @@
+{
+  "default_input": {
+    "exam": "SAT",
+    "attempts": "650,700\n720,680",
+    "school": "Specific admissions office",
+    "policy": "Unknown — must verify"
+  },
+  "hand_reference": {
+    "label": "Computed section superscore",
+    "value": "1420",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

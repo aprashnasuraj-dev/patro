@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0272",
+  "related": [
+    {
+      "id": "TOOL-0273",
+      "title": "Rental Property Cash Flow and ROI Calculator",
+      "proposed_canonical": "/calculators/rental-property-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0423",
+      "title": "Rent Increase Cap & Notice Calculator",
+      "proposed_canonical": "/calculators/rent-increase-cap-and-notice-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0247",
+      "title": "Startup Runway and Burn Rate Calculator",
+      "proposed_canonical": "/calculators/startup-runway-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0227",
+      "title": "EMI Calculator: Flat Rate vs Reducing Balance",
+      "proposed_canonical": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

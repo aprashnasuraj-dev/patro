@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {roofing} from '../src/core';describe('TOOL-0262',()=>{it('computes a flat 100 ft² roof',()=>{const r=roofing(10,10,0,0,25,0);expect(r.surfaceFt2).toBe(100);expect(r.squares).toBe(1);expect(r.bundles).toBe(4)});it('rejects zero footprint',()=>expect(()=>roofing(0,10,0,0,25,0)).toThrow())});

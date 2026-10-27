@@ -1,0 +1,77 @@
+{
+  "id": "TOOL-0496",
+  "name": "Inherited IRA 10-Year RMD Planner",
+  "route": "/tools/inherited-ira-rmd-10-year-rule-planner",
+  "slug": "inherited-ira-rmd-10-year-rule-planner",
+  "family": "F0292",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "timeline",
+  "title": "Inherited IRA 10-Year RMD Planner | AafnaiPatro Tools",
+  "meta_description": "Show the ten-year depletion deadline and, where the owner died after the required beginning date, estimate annual RMDs from a user-confirmed factor.",
+  "inputs": [
+    {
+      "key": "deathYear",
+      "label": "Owner death year",
+      "default": 2022,
+      "unit": "year",
+      "type": "number",
+      "min": 2020,
+      "max": 2100,
+      "step": 1
+    },
+    {
+      "key": "currentYear",
+      "label": "Distribution year",
+      "default": 2026,
+      "unit": "year",
+      "type": "number",
+      "min": 2025,
+      "max": 2110,
+      "step": 1
+    },
+    {
+      "key": "balance",
+      "label": "Prior December 31 inherited IRA balance",
+      "default": 100000,
+      "unit": "USD",
+      "type": "number",
+      "min": 0,
+      "max": 10000000000.0,
+      "step": "any"
+    },
+    {
+      "key": "afterRBD",
+      "label": "Owner died on/after required beginning date",
+      "default": "yes",
+      "type": "select",
+      "options": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    {
+      "key": "factor",
+      "label": "Confirmed IRS single-life denominator for entered year",
+      "default": 25.4,
+      "unit": "years",
+      "type": "number",
+      "min": 0.1,
+      "max": 100,
+      "step": "any"
+    }
+  ]
+}

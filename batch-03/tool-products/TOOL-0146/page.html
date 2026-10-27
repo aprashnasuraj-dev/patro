@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>PDF Watermark (Text, Image, Tiled) — Browser-Local Tool</title><meta name="description" content="Apply text or image watermarks to PDF pages locally, including centred and tiled layouts."><link rel="stylesheet" href="./src/styles.css"></head>
+<body><main class="tool-shell" data-tool="TOOL-0146">
+<header class="hero"><p class="eyebrow">Browser-local • TEST_PENDING</p><h1>PDF Watermark (Text, Image, Tiled)</h1><p>Apply text or image watermarks to PDF pages locally, including centred and tiled layouts.</p></header>
+<section class="workbench" aria-labelledby="work-title"><h2 id="work-title">Work area</h2><div class="controls"><label>PDF <input id="file" type="file" accept="application/pdf,.pdf"></label><label>Watermark text <input id="text" maxlength="100" value="DRAFT"></label><label>Opacity <input id="opacity" type="range" min="0.05" max="1" step="0.05" value="0.3"></label><label>Rotation ° <input id="rotation" type="number" min="-180" max="180" value="45"></label><label><input id="tiled" type="checkbox"> Tile across page</label></div><button id="primary" class="primary" type="button">Process PDF</button><button id="cancel" class="secondary" type="button" hidden>Cancel</button><div id="status" role="status" aria-live="polite"></div><div id="result" class="result" role="region" aria-live="polite" aria-label="Tool result"></div></section>
+<section><h2>What this tool does</h2><p>Apply text or image watermarks to PDF pages locally, including centred and tiled layouts.</p></section>
+<section><h2>How to use it</h2><ol><li>Choose local input files and review the task-specific controls.</li><li>Run the tool. Processing stays in this browser session.</li><li>Review warnings and previews before copying or downloading output.</li></ol></section>
+<section><h2>Worked example</h2><p>Add a 30% opacity “DRAFT” watermark rotated 45° across every page.</p></section>
+<section><h2>Supported formats and units</h2><p>PDF input; optional PNG/JPEG watermark image; PDF output.</p></section>
+<section><h2>Assumptions</h2><p>Watermarks are added as new page content, not as annotations.</p></section>
+<section><h2>Limitations</h2><p>Watermarks are deterrents, not access controls; recipients with PDF-editing tools may be able to remove them.</p></section>
+<section><h2>References</h2><p>Authoritative implementation references are recorded in <code>research/sources.json</code>.</p></section>
+</main><script type="module" src="./src/ui.ts"></script></body></html>

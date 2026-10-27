@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0093",
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": false,
+  "required_scenarios": [
+    "known-answer examples",
+    "empty/minimal input",
+    "maximum bounded input",
+    "malformed input",
+    "unsupported input",
+    "XSS/injection payloads where applicable",
+    "keyboard-only interaction",
+    "screen-reader result announcement",
+    "320px responsive layout",
+    "copy/download/export behavior",
+    "reduced-motion behavior",
+    "dark/light color compatibility"
+  ],
+  "tool_specific_deferred_checks": [],
+  "publication_ready": false
+}

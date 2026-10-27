@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0124",
+  "related": [
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0125",
+      "title": "Passport and ID Photo Cropper by Country",
+      "proposed_canonical": "/editors/passport-photo-size-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "proposed_canonical": "/validators/marketplace-image-size-spec-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0164",
+      "title": "Compress Video to Target Size (8MB, 25MB, 50MB)",
+      "proposed_canonical": "/converters/compress-video-to-size",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

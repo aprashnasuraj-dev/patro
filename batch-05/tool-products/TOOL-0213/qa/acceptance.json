@@ -1,0 +1,24 @@
+{
+  "tool_id": "TOOL-0213",
+  "status": "TEST_PENDING",
+  "executed": {
+    "build": false,
+    "typecheck": false,
+    "unit": false,
+    "browser": false,
+    "accessibility": false,
+    "performance": false,
+    "security": false,
+    "responsive": false
+  },
+  "prepared_checks": [
+    "Nominal sample/default input",
+    "Malformed/non-finite input rejection",
+    "Boundary and degenerate-case behavior",
+    "Resource-limit enforcement",
+    "Keyboard/focus and live-result semantics",
+    "320px mobile and desktop layout",
+    "Copy/export result behavior"
+  ],
+  "acceptance_note": "Source preparation only. No product/runtime test has been executed."
+}

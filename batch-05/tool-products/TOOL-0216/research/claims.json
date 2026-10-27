@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0216",
+  "claims": [
+    {
+      "claim": "Factor bounded large integers in a worker using BigInt Miller–Rabin and Pollard rho, and compute exact GCD/LCM.",
+      "support": [
+        "https://dlmf.nist.gov/27.19",
+        "https://262.ecma-international.org/16.0/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Input is a base-10 integer within the documented browser-safe bit bound.",
+      "support": [
+        "https://dlmf.nist.gov/27.19",
+        "https://262.ecma-international.org/16.0/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Factorization is deliberately capped at 128 bits and a fixed iteration budget. Values above 64 bits use probable-prime testing; this is not a proof-oriented computer algebra system.",
+      "support": [
+        "https://dlmf.nist.gov/27.19",
+        "https://262.ecma-international.org/16.0/"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

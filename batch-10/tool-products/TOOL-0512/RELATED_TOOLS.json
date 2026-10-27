@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0512",
+  "related": [
+    {
+      "id": "TOOL-0496",
+      "title": "Inherited IRA 10-Year RMD Planner",
+      "proposed_canonical": "/planners/inherited-ira-rmd-10-year-rule-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "proposed_canonical": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0509",
+      "title": "UK Shared Parental Leave and Pay Planner",
+      "proposed_canonical": "/planners/uk-shared-parental-leave-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0511",
+      "title": "Canadian OAS Clawback and RRIF Planner",
+      "proposed_canonical": "/planners/canada-oas-clawback-rrif-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0513",
+      "title": "Canada Vacation and Stat Holiday Pay Calculator",
+      "proposed_canonical": "/calculators/canada-vacation-statutory-holiday-pay-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

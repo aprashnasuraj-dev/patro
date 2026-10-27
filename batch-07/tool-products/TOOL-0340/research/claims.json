@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0340",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "SRI does not make a compromised first-party page trustworthy and cross-origin integrity-protected requests can require compatible CORS headers."
+}

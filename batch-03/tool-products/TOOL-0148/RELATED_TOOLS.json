@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0148",
+  "related": [
+    {
+      "id": "TOOL-0147",
+      "title": "Flatten PDF Form Fields",
+      "proposed_canonical": "/editors/flatten-pdf-form",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0119",
+      "title": "PDF Embedded Fonts Lister",
+      "proposed_canonical": "/extractors/pdf-fonts-lister",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0391",
+      "title": "Hyperfocal Distance and Depth of Field Calculator",
+      "proposed_canonical": "/calculators/hyperfocal-distance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0412",
+      "title": "Form 2210 Annualized Income Installment Calculator",
+      "proposed_canonical": "/calculators/form-2210-annualized-income-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0497",
+      "title": "Wash Sale CSV Lot Matcher and Form 8949 Helper",
+      "proposed_canonical": "/utilities/wash-sale-lot-matching-csv-form-8949",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

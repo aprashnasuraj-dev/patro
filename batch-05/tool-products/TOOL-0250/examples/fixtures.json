@@ -1,0 +1,24 @@
+{
+  "tool_id": "TOOL-0250",
+  "status": "TEST_PENDING",
+  "sample": {
+    "dailyThreshold": 8,
+    "weeklyThreshold": 40,
+    "multiplier": 1.5,
+    "shifts": [
+      {
+        "date": "2026-10-26",
+        "start": "09:00",
+        "end": "18:00",
+        "breakMinutes": 60
+      },
+      {
+        "date": "2026-10-27",
+        "start": "09:00",
+        "end": "19:00",
+        "breakMinutes": 60
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

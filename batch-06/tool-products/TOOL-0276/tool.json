@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0276",
+  "name": "Fence Material Calculator",
+  "route": "/tools/fence-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-12",
+  "engineering_family_id": "F0145",
+  "engineering_family": "Fence Materials Calculator",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Fence Material Calculator — Private Browser Tool",
+    "meta_description": "Estimate fence posts, bays, rails and pickets from clear fence length, independent runs, gate openings, maximum post spacing and picket geometry.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

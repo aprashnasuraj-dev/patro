@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0492",
+  "related": [
+    {
+      "id": "TOOL-0526",
+      "title": "Generator Sizing and Starting Watts Calculator",
+      "proposed_canonical": "/calculators/generator-sizing-running-starting-watts",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0287",
+      "title": "FTP Zones and Power-to-Weight Calculator",
+      "proposed_canonical": "/calculators/ftp-zones-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0489",
+      "title": "Irrigation Run-Time Calculator",
+      "proposed_canonical": "/calculators/sprinkler-irrigation-runtime-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0490",
+      "title": "Firewood Volume & Cost-per-BTU Calculator",
+      "proposed_canonical": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0493",
+      "title": "Horse & Livestock Hay Needs Calculator",
+      "proposed_canonical": "/calculators/livestock-hay-feed-needs-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

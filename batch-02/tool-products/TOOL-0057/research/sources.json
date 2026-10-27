@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0057",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://standards.ieee.org/products-programs/regauth/",
+      "owner": "IEEE Registration Authority",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Compare MAC notation, scope bits and optional IEEE vendor assignments entirely offline."
+    },
+    {
+      "url": "https://standards.ieee.org/wp-content/uploads/import/documents/tutorials/eui.pdf",
+      "owner": "IEEE Registration Authority",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Compare MAC notation, scope bits and optional IEEE vendor assignments entirely offline."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "No vendor database is redistributed; lookups only work after importing your own registry CSV."
+}

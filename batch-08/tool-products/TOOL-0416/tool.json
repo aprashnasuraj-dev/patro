@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0416",
+  "name": "US Economic Nexus Tracker",
+  "reserved_route": "/tools/us-sales-tax-economic-nexus-tracker",
+  "engineering_family_id": "F0233",
+  "engineering_family": "Sales Tax and VAT Registration Thresholds",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "US Economic Nexus Tracker | AafnaiPatro Tools",
+    "description": "Track remote-seller economic-nexus thresholds with a dated reference snapshot plus custom rules for jurisdictions not encoded.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

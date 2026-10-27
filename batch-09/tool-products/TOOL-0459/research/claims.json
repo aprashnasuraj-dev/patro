@@ -1,0 +1,24 @@
+{
+  "claims": [
+    {
+      "statement": "I-9 retention and exception-aware reverification checklist",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "No E-Verify, automatic status extensions, 540-day EAD automatic extensions, Form I-94 class specifics or remote document inspection rules.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.uscis.gov/sites/default/files/document/guides/E3en.pdf",
+    "https://www.uscis.gov/sites/default/files/document/forms/i-9.pdf",
+    "https://www.uscis.gov/sites/default/files/document/questions-and-answers/QAsFormI9Teleconference.pdf"
+  ],
+  "assumptions": "No E-Verify, automatic status extensions, 540-day EAD automatic extensions, Form I-94 class specifics or remote document inspection rules.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

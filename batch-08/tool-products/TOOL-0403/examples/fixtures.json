@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0403",
+  "fixtures": [
+    {
+      "id": "default",
+      "input": {
+        "totalRiseIn": 108,
+        "treadDepthIn": 10,
+        "headroomIn": 80,
+        "maxRiserIn": 7.75,
+        "minTreadIn": 10,
+        "minHeadroomIn": 80
+      },
+      "purpose": "Representative valid input; expected values are asserted in source tests where stable."
+    },
+    {
+      "id": "boundary-review",
+      "input": {
+        "totalRiseIn": 108,
+        "treadDepthIn": 10,
+        "headroomIn": 80,
+        "maxRiserIn": 7.75,
+        "minTreadIn": 10,
+        "minHeadroomIn": 80
+      },
+      "purpose": "Reuse with one field at a documented min/max during deferred QA."
+    }
+  ]
+}

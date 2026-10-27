@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0390",
+  "examples": [
+    {
+      "name": "default-page-example",
+      "purpose": "manual integration smoke scenario"
+    }
+  ],
+  "note": "Fixtures are source-preparation inputs only; they were not executed in this checkpoint."
+}

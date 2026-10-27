@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Chase credit card education",
+    "url": "https://www.chase.com/personal/credit-cards/education/basics",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Count self-classified card openings inside prior rolling 24 months, not application inquiries.",
+    "uncertainty": "Chase 5/24 is an unofficial reported practice, not guaranteed underwriting law."
+  }
+]

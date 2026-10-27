@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0056",
+  "related": [
+    {
+      "id": "TOOL-0057",
+      "title": "MAC Address Formatter with Offline Vendor Lookup",
+      "proposed_canonical": "/formatters/mac-address-formatter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0076",
+      "title": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+      "proposed_canonical": "/editors/remove-tracking-parameters",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0041",
+      "title": "CORS Configuration Generator (Nginx, Express, Apache, S3)",
+      "proposed_canonical": "/generators/cors-config-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0042",
+      "title": "HTTP Status Code Chooser",
+      "proposed_canonical": "/utilities/which-http-status-code",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

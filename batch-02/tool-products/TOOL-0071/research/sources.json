@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.sitemaps.org/protocol.html",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Split by URL count and uncompressed XML size while keeping each generated file on-device.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Split by URL count and uncompressed XML size while keeping each generated file on-device.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

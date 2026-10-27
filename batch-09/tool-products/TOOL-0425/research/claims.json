@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Service-aware deadline planner",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Legally valid grounds, form, delivery, deemed service and date computation conventions must be checked against current legislation.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Legally valid grounds, form, delivery, deemed service and date computation conventions must be checked against current legislation.",
+  "authoritative_references": [
+    "https://www.gov.uk/guidance/repossessing-your-privately-rented-property-after-1-may-2026"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

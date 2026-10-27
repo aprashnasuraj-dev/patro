@@ -1,0 +1,24 @@
+{
+  "sample_input": {
+    "name": "Canvas tote bag",
+    "image": "https://example.com/images/tote.jpg",
+    "description": "Reusable cotton canvas tote with handles.",
+    "brand": "Example Goods",
+    "sku": "TOTE-001",
+    "url": "https://example.com/products/tote",
+    "currency": "USD",
+    "price": "25.99",
+    "availability": "InStock",
+    "reviewAuthor": "",
+    "reviewRating": "",
+    "shippingCountry": "",
+    "shippingPrice": ""
+  },
+  "worked_example": "Product with USD 25.99 Offer and InStock represents actual current store inventory.",
+  "planned_expectations": [
+    "USD 25.99 product includes priceCurrency, Offer, InStock.",
+    "Reject negative price, unsupported stock, or fake incomplete review.",
+    "Shipping country/rate must both be supplied."
+  ],
+  "execution_state": "TEST_PENDING"
+}

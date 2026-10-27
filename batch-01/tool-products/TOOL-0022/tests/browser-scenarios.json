@@ -1,0 +1,55 @@
+{
+  "tool": "TOOL-0022",
+  "status": "NOT_RUN",
+  "scenarios": [
+    {
+      "viewport": [
+        320,
+        640
+      ],
+      "actions": [
+        "focus source",
+        "load sample",
+        "submit",
+        "copy output",
+        "download output",
+        "open error"
+      ],
+      "expect": "keyboard accessible, status announced, no horizontal body overflow"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "actions": [
+        "submit valid",
+        "submit malformed"
+      ],
+      "expect": "responsive two-panel workspace, redacted/escaped error text"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "actions": [
+        "submit",
+        "copy",
+        "download"
+      ],
+      "expect": "correct output and accessible focus states"
+    },
+    {
+      "viewport": [
+        375,
+        800
+      ],
+      "actions": [
+        "enable reduced motion",
+        "switch dark mode"
+      ],
+      "expect": "legible contrast without animation"
+    }
+  ]
+}

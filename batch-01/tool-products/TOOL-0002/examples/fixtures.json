@@ -1,0 +1,12 @@
+{
+  "samples": [
+    "{\"id\":1,\"name\":\"Asha\"}",
+    "{\"id\":2,\"active\":true}"
+  ],
+  "expected_fragments": [
+    "\"active\": z.boolean().optional()",
+    "\"id\": z.number()",
+    "\"name\": z.string().optional()"
+  ],
+  "output": "TypeScript Zod v4 schema"
+}

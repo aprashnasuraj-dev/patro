@@ -1,0 +1,37 @@
+{
+  "tool_id": "TOOL-0417",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "UK VAT thresholds",
+      "url": "https://www.gov.uk/how-vat-works/vat-thresholds",
+      "note": "£90,000 registration threshold."
+    },
+    {
+      "title": "Canada GST/HST registration",
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html",
+      "note": "$30,000 small-supplier threshold for most businesses."
+    },
+    {
+      "title": "Australian Taxation Office GST registration",
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst",
+      "note": "A$75,000 business threshold."
+    },
+    {
+      "title": "New Zealand Inland Revenue GST registration",
+      "url": "https://www.ird.govt.nz/gst/registering-for-gst",
+      "note": "NZ$60,000 last/next 12-month threshold."
+    },
+    {
+      "title": "Singapore IRAS GST registration",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-%28gst%29/gst-registration-deregistration/do-i-need-to-register-for-gst",
+      "note": "S$1 million retrospective/prospective threshold."
+    },
+    {
+      "title": "India CGST Act section 22",
+      "url": "https://taxinformation.cbic.gov.in/content-page/explore-act/1000291/1000001",
+      "note": "General ₹20 lakh threshold with exceptions and possible enhanced goods thresholds."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

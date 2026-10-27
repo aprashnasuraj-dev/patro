@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0270",
+  "name": "Wire Gauge and Voltage Drop Calculator",
+  "route": "/tools/voltage-drop-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0141",
+  "engineering_family": "Wire Gauge and Voltage Drop Calculator",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Wire Gauge and Voltage Drop Calculator — Private Browser Tool",
+    "meta_description": "Estimate resistive voltage drop for a selected AWG, material, current, one-way length and circuit type while keeping ampacity and code sizing explicitly out of scope.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

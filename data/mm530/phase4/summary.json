@@ -1,0 +1,33 @@
+{
+  "schema_version": "MM530_PHASE4_DURABLE_SUMMARY_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "actions_source_commit": "c9a8d07eacec50641d165ae45f24739256ec7a13",
+    "workflow_run_id": 40453367367,
+    "workflow_run_url": "https://github.com/aprashnasuraj-dev/patro/actions/runs/40453367367",
+    "artifact": {
+      "id": 12711621150,
+      "name": "mm530-phase4-unit",
+      "digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+    }
+  },
+  "status": "PASS_WITH_DOCUMENTED_BLOCKERS",
+  "tools": 530,
+  "identity_ok": true,
+  "compile": {
+    "PASS": 527,
+    "BLOCKED": 3,
+    "FAIL": 0,
+    "NOT_RUN": 0
+  },
+  "unit": {
+    "PASS": 530,
+    "BLOCKED": 0,
+    "FAIL": 0,
+    "NOT_RUN": 0
+  },
+  "unacceptable": 0,
+  "blocked": 3,
+  "physical_device_tests_executed": 0,
+  "phase5_mm530_browser_started": false
+}

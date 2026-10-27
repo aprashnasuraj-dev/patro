@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "User-defined limitations period; no invented state law",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.law.cornell.edu/wex/statute_of_limitations"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Rules differ by claim and jurisdiction. Even correct interval arithmetic cannot determine accrual or whether a weekend rule applies.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Rules differ by claim and jurisdiction. Even correct interval arithmetic cannot determine accrual or whether a weekend rule applies.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

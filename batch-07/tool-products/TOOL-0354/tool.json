@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0354",
+  "name": "Thread Splitter for Posts (Numbered, Sentence-Aware)",
+  "route": "/tools/thread-splitter",
+  "batch": "BATCH-07",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0188",
+  "engineering_family": "Social Writing, Character and Threads",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Thread Splitter for Posts (Numbered, Sentence-Aware) — Private Browser Tool",
+    "meta_description": "Split long text into numbered social-thread parts using sentence/word boundaries, optional X-like weighted counting, and iterative suffix sizing so every emitted part stays within the selected limit.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

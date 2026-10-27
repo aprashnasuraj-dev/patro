@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0068",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://www.w3.org/TR/json-ld11/",
+      "owner": "W3C",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Find malformed JSON and missing @context/@type on local nodes."
+    },
+    {
+      "url": "https://schema.org/docs/validator.html",
+      "owner": "Schema.org",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Find malformed JSON and missing @context/@type on local nodes."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Cannot validate Schema.org vocabulary, JSON-LD expansion or Google rich-result eligibility."
+}

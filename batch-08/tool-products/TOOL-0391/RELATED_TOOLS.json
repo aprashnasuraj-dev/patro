@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0391",
+  "related": [
+    {
+      "id": "TOOL-0390",
+      "title": "ND Filter Exposure Calculator",
+      "proposed_canonical": "/calculators/nd-filter-exposure-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0392",
+      "title": "Crop Factor and Equivalent Focal Length Calculator",
+      "proposed_canonical": "/calculators/crop-factor-equivalent-focal-length",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0148",
+      "title": "PDF Form Field Lister and Filler",
+      "proposed_canonical": "/extractors/pdf-form-field-lister",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0297",
+      "title": "Steps to Distance and Calories Converter",
+      "proposed_canonical": "/converters/steps-to-km-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "proposed_canonical": "/calculators/resistor-color-code-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

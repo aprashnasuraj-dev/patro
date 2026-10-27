@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0483",
+  "name": "Event Space Capacity Calculator",
+  "route": "/tools/event-room-capacity-layout-calculator",
+  "slug": "event-room-capacity-layout-calculator",
+  "family": "F0282",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Event Space Capacity Calculator | AafnaiPatro Tools",
+    "description": "Compare usable event-space area, arrangement load factors and an independently verified occupancy limit without implying fire-code approval."
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

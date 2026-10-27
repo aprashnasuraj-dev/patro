@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0211",
+  "sources": [
+    {
+      "title": "NIST/SEMATECH — Single Exponential Smoothing",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc431.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

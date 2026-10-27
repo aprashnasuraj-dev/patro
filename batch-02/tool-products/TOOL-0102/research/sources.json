@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0102",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "woff2",
+      "url": "https://www.w3.org/TR/WOFF2/",
+      "version": "W3C Recommendation",
+      "effective_date": "2024-08-08",
+      "license": "W3C document license",
+      "notes": "WOFF2 is a compressed representation of SFNT fonts."
+    },
+    {
+      "id": "fonteditor-woff2",
+      "url": "https://github.com/kekee000/fonteditor-core/blob/master/woff2src/Readme.md",
+      "version": "repository documentation",
+      "effective_date": null,
+      "license": "MIT / upstream Google WOFF2 license obligations apply",
+      "notes": "Documents woff2Enc and woff2Dec APIs used for lossless compression/decompression."
+    },
+    {
+      "id": "opentype",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/otff",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "SFNT/OpenType table structure reference."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

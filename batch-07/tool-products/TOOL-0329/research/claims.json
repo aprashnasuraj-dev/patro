@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0329",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Password-based encryption inherits password strength. This tool has no recovery key. Losing the password loses access; changing any authenticated field causes decryption failure."
+}

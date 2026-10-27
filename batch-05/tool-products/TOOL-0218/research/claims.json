@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0218",
+  "claims": [
+    {
+      "claim": "Draw a reproducible seeded sample with or without replacement using a documented non-cryptographic PRNG.",
+      "support": [
+        "https://prng.di.unimi.it/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Input order is part of reproducibility; duplicate lines are distinct sampling units.",
+      "support": [
+        "https://prng.di.unimi.it/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The PRNG is reproducible but not cryptographically secure. The same seed and same ordered input are required for identical results.",
+      "support": [
+        "https://prng.di.unimi.it/"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

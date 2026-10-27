@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0350",
+  "name": "Webcam and Microphone Test",
+  "route": "/tools/webcam-mic-test",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0193",
+  "engineering_family": "Browser Screen and Webcam Studio",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Webcam and Microphone Test — Private Browser Tool",
+    "meta_description": "Test camera preview, negotiated track settings, device labels and live microphone RMS/peak levels locally after explicit browser permission.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

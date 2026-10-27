@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0136",
+  "claims": [
+    {
+      "claim": "Decode an animated GIF locally, inspect frame delays and export selected composited frames as PNGs or a ZIP.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Very large animations are capped by file, frame and pixel limits to avoid browser memory exhaustion.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

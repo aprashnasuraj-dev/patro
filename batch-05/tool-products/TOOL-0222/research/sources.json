@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0222",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Monthly interest, fixed total budget, minimum payments applied before targeted extra funds, no new borrowing."
+  ],
+  "uncertainty": [
+    "Does not model credit-score effects, balance transfers, promotional rates or behavioral changes."
+  ]
+}

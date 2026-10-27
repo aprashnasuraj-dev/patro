@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0409",
+  "name": "Stud Wall Layout & Cut List Generator",
+  "reserved_route": "/tools/stud-wall-layout-cut-list-generator",
+  "engineering_family_id": "F0227",
+  "engineering_family": "Stud Wall Layout & Cut List Generator",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Stud Wall Layout & Cut List Generator | AafnaiPatro Tools",
+    "description": "Generate a stud-layout materials estimate and opening-specific king/jack/cripple cut-list quantities.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

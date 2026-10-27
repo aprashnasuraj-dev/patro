@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://developers.google.com/analytics/devguides/collection/ga4/campaigns",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Keep query keys and fragments intact while replacing explicit campaign fields.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc4180",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Keep query keys and fragments intact while replacing explicit campaign fields.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0468",
+  "related": [
+    {
+      "id": "TOOL-0472",
+      "title": "Trade Licence Hours Tracker by State",
+      "proposed_canonical": "/planners/journeyman-apprenticeship-hours-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0369",
+      "title": "Writing Word Count Goal Tracker (Local)",
+      "proposed_canonical": "/planners/word-count-goal-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0471",
+      "title": "Quarter-to-Semester Credit Converter",
+      "proposed_canonical": "/converters/quarter-semester-credit-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0416",
+      "title": "US Economic Nexus Tracker",
+      "proposed_canonical": "/planners/us-sales-tax-economic-nexus-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0417",
+      "title": "VAT/GST Registration Threshold Tracker",
+      "proposed_canonical": "/planners/vat-gst-registration-threshold-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

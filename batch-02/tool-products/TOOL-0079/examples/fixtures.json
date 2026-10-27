@@ -1,0 +1,18 @@
+{
+  "sample_input": {
+    "csv": "Query,Page,Clicks,Impressions\norganic gardening,https://example.com/a,30,100\norganic gardening,https://example.com/b,12,80\nsite design,https://example.com/c,4,30",
+    "min": "20"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "\"how to garden\" showing two pages over 100 impressions may warrant review.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{csv:'Query,Page,Clicks,Impressions\\nq,https://a.test/x,1,30\\nq,https://a.test/y,2,45',min:'20'}",
+    "assertions": "assert.equal(result.metrics[1][1],1);"
+  }
+}

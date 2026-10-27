@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0213",
+  "related": [
+    {
+      "id": "TOOL-0210",
+      "title": "Outlier Detector (IQR, Z-Score, MAD)",
+      "proposed_canonical": "/calculators/outlier-detection-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0212",
+      "title": "Percentile and Quantile Calculator for a Dataset",
+      "proposed_canonical": "/calculators/percentile-calculator-from-data",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0203",
+      "title": "Wilson Score Confidence Interval Calculator",
+      "proposed_canonical": "/calculators/wilson-score-interval-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0300",
+      "title": "DOTS and Wilks Score Calculator for Powerlifting",
+      "proposed_canonical": "/calculators/dots-score-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0095",
+      "title": "Readability Score Checker (Multi-Metric)",
+      "proposed_canonical": "/validators/readability-score-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

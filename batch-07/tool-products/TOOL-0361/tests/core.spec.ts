@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {formatAPA} from '../src/core';describe('TOOL-0361 core',()=>{it('known-answer fixture',()=>{expect(formatAPA({kind:'journal',authors:['Smith, Jane'],year:'2026',title:'Test',container:'J'} as any)).toContain('(2026)')})});

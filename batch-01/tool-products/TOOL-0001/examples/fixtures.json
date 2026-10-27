@@ -1,0 +1,14 @@
+{
+  "worked_example": {
+    "input": "id,name,active\n001,Asha,true\n002,Ravi,false",
+    "options": {
+      "typeName": "Record",
+      "delimiter": ",",
+      "nonNull": false,
+      "dateTime": false
+    },
+    "expected_sdl": "type Record {\n  id: ID\n  name: String\n  active: Boolean\n}\n\ntype Query {\n  rows: [Record!]!\n}\n",
+    "explanation": "ID inferred from header; names are strings; lowercase booleans recognized; all fields nullable by default."
+  },
+  "counterexample": "Two complete rows do not prove future data is complete. Review before applying non-null."
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0222",
+  "related": [
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0134",
+      "title": "Image Difference Comparator",
+      "proposed_canonical": "/comparisons/image-diff-comparator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0421",
+      "title": "Home Office Deduction Comparator (US/UK/CA/AU)",
+      "proposed_canonical": "/comparisons/home-office-deduction-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0491",
+      "title": "Multi-Fuel Heating Cost Comparator",
+      "proposed_canonical": "/comparisons/multi-fuel-heating-cost-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

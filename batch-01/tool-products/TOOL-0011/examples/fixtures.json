@@ -1,0 +1,25 @@
+{
+  "sample_input": "15 3 * * 1-5",
+  "intended_action": "Generate workflow",
+  "manual_review_cases": [
+    {
+      "input": "15 3 * * 1-5",
+      "expectation": "cron: 15 3 * * 1-5"
+    },
+    {
+      "input": "*/2 * * * *",
+      "expectation": "reject: minimum five-minute interval"
+    },
+    {
+      "input": "0 12 * * 0",
+      "expectation": "cron: 0 12 * * 0"
+    }
+  ],
+  "limits": "Only five-field cron, numeric ranges/lists/steps; no Quartz seconds. GitHub schedules may be delayed or skipped under load. Timezone uses supported IANA names.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "on:",
+    "schedule:"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

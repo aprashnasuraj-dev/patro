@@ -1,0 +1,118 @@
+{
+  "id": "TOOL-0516",
+  "name": "Australian Home Battery Payback Calculator",
+  "slug": "australia-home-battery-payback-calculator",
+  "route": "/tools/australia-home-battery-payback-calculator",
+  "family": "F0307",
+  "description": "Compare a home battery’s net installation expense with displaced grid imports and foregone feed-in tariffs using annual cash flows.",
+  "seo": {
+    "title": "Australian Home Battery Payback Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Compare a home battery’s net installation expense with displaced grid imports and foregone feed-in tariffs using annual cash flows.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "cashflow",
+  "inputs": [
+    {
+      "key": "installed",
+      "label": "Installed battery cost before incentives",
+      "default": 13000,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 500000,
+      "step": "any"
+    },
+    {
+      "key": "rebate",
+      "label": "Confirmed retailer/STC rebate",
+      "default": 3500,
+      "unit": "AUD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "dailyShift",
+      "label": "Daily solar energy shifted to battery",
+      "default": 8,
+      "unit": "kWh/day",
+      "type": "number",
+      "min": 0,
+      "max": 150,
+      "step": "any"
+    },
+    {
+      "key": "rtEfficiency",
+      "label": "Round-trip efficiency",
+      "default": 0.9,
+      "unit": "fraction",
+      "type": "number",
+      "min": 0.2,
+      "max": 1,
+      "step": "any"
+    },
+    {
+      "key": "retail",
+      "label": "Grid import tariff",
+      "default": 0.34,
+      "unit": "AUD/kWh",
+      "type": "number",
+      "min": 0,
+      "max": 5,
+      "step": "any"
+    },
+    {
+      "key": "feedIn",
+      "label": "Foregone feed-in tariff",
+      "default": 0.07,
+      "unit": "AUD/kWh",
+      "type": "number",
+      "min": 0,
+      "max": 5,
+      "step": "any"
+    },
+    {
+      "key": "annualExtra",
+      "label": "Annual battery-specific operating cost",
+      "default": 70,
+      "unit": "AUD/year",
+      "type": "number",
+      "min": 0,
+      "max": 10000,
+      "step": "any"
+    },
+    {
+      "key": "fade",
+      "label": "Annual effective output degradation",
+      "default": 2,
+      "unit": "percent/year",
+      "type": "number",
+      "min": 0,
+      "max": 20,
+      "step": "any"
+    },
+    {
+      "key": "life",
+      "label": "Planning horizon",
+      "default": 12,
+      "unit": "years",
+      "type": "number",
+      "min": 1,
+      "max": 30,
+      "step": 1
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0109",
+  "claims": [
+    {
+      "claim": "Compose a practical CSS font-family stack from a category template, optional preferred fonts, and a standards-defined generic fallback.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "css-fonts-generics"
+      ]
+    },
+    {
+      "claim": "“Web-safe” is probabilistic for named local fonts. Rendering metrics and glyph coverage vary by platform and version.",
+      "status": "limitation",
+      "source_ids": [
+        "css-fonts-generics"
+      ]
+    }
+  ]
+}

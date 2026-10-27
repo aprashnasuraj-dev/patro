@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Effect Size Calculator (Cohen's d, Hedges' g, Glass's delta) — Browser Calculator</title>
+<meta name="description" content="Calculate Cohen's d, bias-corrected Hedges' g, and Glass's delta from two-group summary statistics with approximate confidence intervals.">
+<meta property="og:title" content="Effect Size Calculator (Cohen's d, Hedges' g, Glass's delta)">
+<meta property="og:description" content="Calculate Cohen's d, bias-corrected Hedges' g, and Glass's delta from two-group summary statistics with approximate confidence intervals.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0220 · Local browser tool</div>
+<h1>Effect Size Calculator (Cohen's d, Hedges' g, Glass's delta)</h1>
+<p class="lede">Calculate Cohen's d, bias-corrected Hedges' g, and Glass's delta from two-group summary statistics with approximate confidence intervals. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><div class="row"><label>Group 1 n<input id="n1" type="number" value="30" min="2"></label><label>Group 1 mean<input id="mean1" type="number" value="105" step=".01"></label></div><label>Group 1 SD<input id="sd1" type="number" value="15" min=".000001" step=".01"></label><div class="row"><label>Group 2 n<input id="n2" type="number" value="28" min="2"></label><label>Group 2 mean<input id="mean2" type="number" value="98" step=".01"></label></div><label>Group 2 SD<input id="sd2" type="number" value="14" min=".000001" step=".01"></label><div class="row"><label>Glass Δ control group<select id="control"><option value="group2">Group 2</option><option value="group1">Group 1</option></select></label><label>Confidence<input id="confidence" type="number" value=".95" step=".001"></label></div>
+<div class="row"><button id="run" type="button">Calculate effect sizes</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Calculate Cohen's d, bias-corrected Hedges' g, and Glass's delta from two-group summary statistics with approximate confidence intervals.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Two independent groups summarized by sample size, arithmetic mean, and sample SD.</p></section>
+<section><h2>Limitations</h2><p>Standardized mean differences depend on study design and denominator choice. Generic magnitude labels are intentionally omitted because interpretation is context-specific.</p></section>
+<section><h2>FAQ</h2><details><summary>Which effect size should I report?</summary><p>That depends on design and variance assumptions. Hedges' g corrects small-sample bias; Glass's delta uses the selected control SD.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/hedgeg.htm" rel="noopener noreferrer">NIST Dataplot — Hedges g</a></li><li><a href="https://www.campbellcollaboration.org/calculator/equations" rel="noopener noreferrer">Campbell Collaboration Effect Size Calculator — equations</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

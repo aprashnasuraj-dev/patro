@@ -1,0 +1,17 @@
+{
+  "claims": [
+    {
+      "statement": "Split an apartment fairly",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Amenity values are subjective; enforceability and shared utilities are not determined. Data is calculated locally and not uploaded.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Amenity values are subjective; enforceability and shared utilities are not determined. Data is calculated locally and not uploaded.",
+  "authoritative_references": [],
+  "runtime_verification": "TEST_PENDING"
+}

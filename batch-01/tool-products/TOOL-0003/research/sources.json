@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0003",
+  "retrieved_on": "2026-10-26",
+  "authorities": [
+    {
+      "url": "https://spec.openapis.org/oas/v3.1",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    },
+    {
+      "url": "https://learn.openapis.org/upgrading/v3.0-to-v3.1.html",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    },
+    {
+      "url": "https://yaml.org/spec/1.2/",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    }
+  ],
+  "external_code_or_assets_reused": false,
+  "license_notes": "Generated code, page and style authored as original source; vendor specifications used solely as references. npm yaml package requires its license obligations to be respected at Git integration; confirm dependency license and pinned version then."
+}

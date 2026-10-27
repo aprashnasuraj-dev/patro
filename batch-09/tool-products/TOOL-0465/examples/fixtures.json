@@ -1,0 +1,23 @@
+{
+  "default_input": {
+    "system": "4.0 course-point entries",
+    "data": "Math|3|3.7\nScience|4|3.3",
+    "scale": 4,
+    "map": "90:4,80:3,70:2,60:1,0:0"
+  },
+  "hand_reference": {
+    "label": "Total credits",
+    "value": "7.00",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

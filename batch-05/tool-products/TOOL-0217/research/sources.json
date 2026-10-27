@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0217",
+  "sources": [
+    {
+      "title": "NIST DLMF §3.2 — Linear Algebra / Gaussian elimination with partial pivoting",
+      "url": "https://dlmf.nist.gov/3.2",
+      "publisher": "NIST Digital Library of Mathematical Functions",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

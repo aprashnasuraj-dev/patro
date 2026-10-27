@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0283",
+  "sample_input": {
+    "knownDistance": "5",
+    "knownSeconds": "1500",
+    "targetDistance": "10"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

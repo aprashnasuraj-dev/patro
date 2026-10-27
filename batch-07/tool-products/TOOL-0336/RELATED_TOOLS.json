@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0336",
+  "related": [
+    {
+      "id": "TOOL-0335",
+      "title": "API Key and Token Generator (Hex, Base62, UUIDv7, ULID)",
+      "proposed_canonical": "/generators/api-key-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0305",
+      "title": "Bulk Epoch Timestamp Converter for Log Lines",
+      "proposed_canonical": "/converters/bulk-epoch-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "proposed_canonical": "/validators/youtube-chapters-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "proposed_canonical": "/calculators/smd-resistor-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0384",
+      "title": "Capacitor Code Decoder (104, 473, and Tolerance Letters)",
+      "proposed_canonical": "/calculators/capacitor-code-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

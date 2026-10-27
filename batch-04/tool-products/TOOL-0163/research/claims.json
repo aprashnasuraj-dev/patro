@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Create a compact animated GIF using a generated palette, controllable frame rate, width, and dithering.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg palettegen and paletteuse filters"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "GIF is limited to 120 seconds, 30 fps, and 1280 px width to bound browser memory and CPU use.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

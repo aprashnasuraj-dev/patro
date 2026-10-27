@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0304",
+  "examples": [
+    {
+      "inputs": {
+        "year": 2026,
+        "zone": "America/New_York"
+      },
+      "expected_note": "Typical browsers should report spring/fall offset changes; exact runtime result depends on embedded tzdb."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0068",
+  "claims": [
+    {
+      "claim": "No remote contexts are dereferenced.",
+      "supporting_url": "https://www.w3.org/TR/json-ld11/",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Structure-only warnings are not normative JSON-LD validation.",
+      "supporting_url": "https://www.w3.org/TR/json-ld11/",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "JSON-LD 1.1 local syntax/shape, without remote context resolution."
+  ],
+  "limitations": [
+    "Cannot validate Schema.org vocabulary, JSON-LD expansion or Google rich-result eligibility."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

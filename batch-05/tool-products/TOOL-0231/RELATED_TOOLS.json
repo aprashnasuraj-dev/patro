@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0231",
+  "related": [
+    {
+      "id": "TOOL-0504",
+      "title": "UK Effective Marginal Tax Trap Calculator",
+      "proposed_canonical": "/calculators/uk-effective-marginal-tax-trap-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "proposed_canonical": "/calculators/property-tax-appeal-savings-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0437",
+      "title": "Quarterly IFTA Fuel Tax Calculator",
+      "proposed_canonical": "/calculators/ifta-quarterly-fuel-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0501",
+      "title": "Medicare IRMAA Bracket and Cliff Calculator",
+      "proposed_canonical": "/calculators/irmaa-bracket-cliff-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

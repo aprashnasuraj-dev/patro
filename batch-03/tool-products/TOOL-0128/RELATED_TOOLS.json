@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0128",
+  "related": [
+    {
+      "id": "TOOL-0104",
+      "title": "Variable Font Axes Inspector and CSS Generator",
+      "proposed_canonical": "/generators/variable-font-axes-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0107",
+      "title": "@font-face CSS Generator with unicode-range",
+      "proposed_canonical": "/generators/font-face-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0109",
+      "title": "Web-Safe CSS Font Stack Builder",
+      "proposed_canonical": "/generators/css-font-stack-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0116",
+      "title": "OpenType Features Detector and CSS Helper",
+      "proposed_canonical": "/analyzers/opentype-features-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0188",
+      "title": "Split Excel Workbook into Separate Files by Sheet",
+      "proposed_canonical": "/editors/split-excel-sheets",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

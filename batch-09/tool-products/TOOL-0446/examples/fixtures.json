@@ -1,0 +1,30 @@
+{
+  "default_inputs": {
+    "sheetW": 210,
+    "sheetH": 297,
+    "cols": 3,
+    "rows": 8,
+    "labelW": 63.5,
+    "labelH": 33.9,
+    "left": 7,
+    "top": 12,
+    "gapX": 2.5,
+    "gapY": 0,
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "known_answer": {
+    "output_label": "Total labels per sheet",
+    "expected_display": "24",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

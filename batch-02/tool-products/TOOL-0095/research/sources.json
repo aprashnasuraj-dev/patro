@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0095",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "ms-readability",
+      "url": "https://support.microsoft.com/en-us/word/get-your-document-s-readability-and-level-statistics-in-microsoft-word",
+      "version": "current Microsoft Support",
+      "effective_date": null,
+      "license": "Microsoft support terms",
+      "notes": "Publishes Flesch Reading Ease and Flesch-Kincaid formulas."
+    },
+    {
+      "id": "eric-smog",
+      "url": "https://eric.ed.gov/?id=EJ004016",
+      "version": "McLaughlin 1969 bibliographic record",
+      "effective_date": "1969",
+      "license": "bibliographic record",
+      "notes": "Primary publication record for SMOG. Formula implementation follows the commonly used regression form and is labeled an estimate because syllable counting is heuristic."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

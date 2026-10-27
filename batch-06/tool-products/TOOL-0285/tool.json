@@ -1,0 +1,74 @@
+{
+  "id": "TOOL-0285",
+  "name": "Barbell Plate Loading Calculator",
+  "slug": "barbell-plate-calculator",
+  "route": "/tools/barbell-plate-calculator",
+  "family": "F0149",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Barbell Plate Loading Calculator | AafnaiPatro",
+    "description": "Build a balanced barbell loading plan from available matched plate pairs, including collars.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "target",
+      "label": "Desired loaded total",
+      "default": 100,
+      "min": 0.5,
+      "max": 1000,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "number",
+      "key": "bar",
+      "label": "Bar weight",
+      "default": 20,
+      "min": 0,
+      "max": 50,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "number",
+      "key": "collars",
+      "label": "Combined collar weight",
+      "default": 0,
+      "min": 0,
+      "max": 20,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "textarea",
+      "key": "inventory",
+      "label": "Plate mass: available matching pairs, one pair per line",
+      "default": "25:2\n20:2\n15:1\n10:2\n5:2\n2.5:2\n1.25:2",
+      "maxlength": 500
+    }
+  ],
+  "explanation": "Bounded pair-count subset sum in quarter-kilogram precision, target=(total−bar−collars)/2 per side; exact combinations favored over greedy.",
+  "limitations": "Requires symmetric matching pairs; fractional plate increments below 0.25 kg and uneven specialty bars are unsupported.",
+  "related_tool_ids": [
+    "TOOL-0281",
+    "TOOL-0300"
+  ],
+  "sources": [
+    "https://www.iwf.sport/"
+  ],
+  "special_notes": null
+}

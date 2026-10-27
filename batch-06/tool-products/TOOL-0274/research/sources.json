@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0274",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.nist.gov/pml/us-surveyfoot/revised-unit-conversion-factors",
+      "title": "U.S. Survey Foot: Revised Unit Conversion Factors",
+      "publisher": "NIST",
+      "version": "international foot effective 2023",
+      "effective_date": "2023-01-01",
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "Public web page; cite/summary, do not redistribute copyrighted standard text.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "International foot is exactly 0.3048 m; legacy U.S. survey foot is obsolete for new work."
+    }
+  ],
+  "no_external_source_reason": null
+}

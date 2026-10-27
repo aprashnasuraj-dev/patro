@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0489",
+  "status": "TEST_PENDING",
+  "test_executed": false,
+  "checks": [
+    "Known-answer sample",
+    "Input boundaries and finite values",
+    "Unsupported combinations and zero denominators",
+    "Malicious or oversized text",
+    "Copy JSON export and clipboard-denied state",
+    "Keyboard controls, focus indicators and screen-reader output",
+    "320px mobile / wide desktop / dark theme / reduced motion",
+    "Lazy route and offline local execution",
+    "Non-transmission of user data",
+    "Source freshness and domain correctness"
+  ],
+  "release_blocked_until": "Integration runs full QA and verifies official conditions",
+  "claimed_passes": 0
+}

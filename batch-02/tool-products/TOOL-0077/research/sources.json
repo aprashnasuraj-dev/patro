@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.rfc-editor.org/rfc/rfc3987",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Choose Unicode-preserving slugs or a conservative ASCII fallback.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://unicode.org/reports/tr15/",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Choose Unicode-preserving slugs or a conservative ASCII fallback.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

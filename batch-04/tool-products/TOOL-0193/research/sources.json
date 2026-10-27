@@ -1,0 +1,33 @@
+[
+  {
+    "name": "RFC 4180",
+    "url": "https://www.rfc-editor.org/rfc/rfc4180",
+    "version": "October 2005; updated by RFC 7111",
+    "authority": "IETF informational RFC",
+    "claims": [
+      "CSV uses quoted fields, doubled quotes, and records separated by line breaks; fields containing delimiter, quotes, or line breaks require quoting."
+    ],
+    "limitations": "CSV implementations vary; RFC 4180 is informational rather than a universal mandatory standard."
+  },
+  {
+    "name": "OWASP CSV Injection",
+    "url": "https://owasp.org/www-community/attacks/CSV_Injection",
+    "version": "retrieved 2026-10-26",
+    "authority": "OWASP",
+    "claims": [
+      "Spreadsheet applications may interpret cells beginning with formula-triggering prefixes as formulas."
+    ],
+    "limitations": "No universal escaping scheme is safe for every spreadsheet workflow; exact preservation and mitigation can conflict."
+  },
+  {
+    "name": "libphonenumber-js",
+    "url": "https://github.com/catamphetamine/libphonenumber-js",
+    "version": "metadata tracks Google libphonenumber; source observed 2026-10-26",
+    "authority": "library documentation",
+    "claims": [
+      "The library parses, validates, and formats international phone numbers using regularly updated Google numbering metadata."
+    ],
+    "license": "MIT",
+    "limitations": "Numbering plans change; local deployment must update metadata periodically and parsing cannot infer a missing country reliably for ambiguous national numbers."
+  }
+]

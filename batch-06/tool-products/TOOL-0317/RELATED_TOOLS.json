@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0317",
+  "related": [
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0315",
+      "title": "Day of Year and Julian Date Calculator",
+      "proposed_canonical": "/calculators/day-of-year-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0471",
+      "title": "Quarter-to-Semester Credit Converter",
+      "proposed_canonical": "/converters/quarter-semester-credit-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0496",
+      "title": "Inherited IRA 10-Year RMD Planner",
+      "proposed_canonical": "/planners/inherited-ira-rmd-10-year-rule-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "proposed_canonical": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

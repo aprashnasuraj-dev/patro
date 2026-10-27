@@ -1,0 +1,13 @@
+{
+  "inspection_date": "2026-10-26",
+  "repository": "aprashnasuraj-dev/patro",
+  "read_only": true,
+  "files": {
+    "src/PatroRouter.tsx": "c7d8d5ca4a65bb6ab05c36f59da063b5d69c8dc7",
+    "src/patro-tools-integration/toolSlugs.ts": "46826b494fa6aabb2b5fb19c6f894f7f1e977bda",
+    "src/utilities/UtilitySuite.tsx": "b159c9a481431212ec64717820c815e9dd106eda",
+    "src/design-tokens.css": "f456c303e2a76fe638e375393b8ae5889d8d2e40"
+  },
+  "finding": "No exact route or functional CSV/GraphQL tool in inspected router/registries. Generic /tools/* falls through to UtilitySuite; explicit integration needed later.",
+  "production_build_and_live_browser": "NOT_RUN; no release/collision acceptance asserted"
+}

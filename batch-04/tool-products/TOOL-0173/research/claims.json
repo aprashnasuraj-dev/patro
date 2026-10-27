@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Adjust playback speed and pitch independently with explicit quality limitations.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg resampling and atempo"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Pitch shifting is resampling-based and does not preserve vocal formants like specialist studio software.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

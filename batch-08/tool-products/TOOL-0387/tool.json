@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0387",
+  "name": "UART Baud Rate Error Calculator",
+  "route": "/tools/uart-baud-rate-error-calculator",
+  "engineering_family_id": "F0216",
+  "engineering_family": "Microcontroller PWM and UART Timing",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-16",
+  "execution": "browser-local",
+  "network_required": false,
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "seo": {
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  }
+}

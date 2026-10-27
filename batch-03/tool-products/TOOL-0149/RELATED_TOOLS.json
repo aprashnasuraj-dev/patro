@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0149",
+  "related": [
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "proposed_canonical": "/converters/resize-pdf-to-a4",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0478",
+      "title": "Shipping Label to 4x6 Thermal Cropper",
+      "proposed_canonical": "/editors/shipping-label-4x6-pdf-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0392",
+      "title": "Crop Factor and Equivalent Focal Length Calculator",
+      "proposed_canonical": "/calculators/crop-factor-equivalent-focal-length",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0142",
+      "title": "Rearrange PDF Pages (Drag Thumbnails)",
+      "proposed_canonical": "/editors/rearrange-pdf-pages",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0143",
+      "title": "Split PDF by Bookmarks (Chapters)",
+      "proposed_canonical": "/editors/split-pdf-by-bookmarks",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

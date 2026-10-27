@@ -1,0 +1,3 @@
+const E24=[10,11,12,13,15,16,18,20,22,24,27,30,33,36,39,43,47,51,56,62,68,75,82,91];function nextE24(r:number){let best=Infinity;for(let d=-1;d<=8;d++)for(const b of E24){const x=b*10**d;if(x>=r&&x<best)best=x}return best}
+export function led(vs:number,vf:number,ma:number,series:number,strings:number){if(!(vs>0&&vf>0&&ma>0&&series>=1&&strings>=1))throw new Error('All values must be positive.');const head=vs-vf*series;if(head<=0)throw new Error('Supply voltage must exceed total LED forward voltage.');const i=ma/1000,ideal=head/i,std=nextE24(ideal),actual=head/std,p=actual*actual*std,total=actual*strings;return{ideal,std,actualMa:actual*1000,resistorW:p,totalMa:total*1000,supplyW:vs*total}}
+

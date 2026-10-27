@@ -1,0 +1,78 @@
+{
+  "id": "TOOL-0527",
+  "name": "Astrophotography NPF Exposure Calculator",
+  "slug": "astrophotography-npf-exposure-calculator",
+  "route": "/tools/astrophotography-npf-exposure-calculator",
+  "family": "F0315",
+  "description": "Estimate untracked star-exposure duration from focal length, aperture, pixel pitch and declination using explicitly attributed NPF formulas.",
+  "seo": {
+    "title": "Astrophotography NPF Exposure Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Estimate untracked star-exposure duration from focal length, aperture, pixel pitch and declination using explicitly attributed NPF formulas.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "optics",
+  "inputs": [
+    {
+      "key": "focal",
+      "label": "Physical lens focal length",
+      "default": 20,
+      "unit": "mm",
+      "type": "number",
+      "min": 1,
+      "max": 2000,
+      "step": "any"
+    },
+    {
+      "key": "fnumber",
+      "label": "Lens f-number",
+      "default": 2.8,
+      "unit": "f/",
+      "type": "number",
+      "min": 0.5,
+      "max": 64,
+      "step": "any"
+    },
+    {
+      "key": "pixel",
+      "label": "Sensor pixel pitch",
+      "default": 5.9,
+      "unit": "microns",
+      "type": "number",
+      "min": 0.3,
+      "max": 30,
+      "step": "any"
+    },
+    {
+      "key": "declination",
+      "label": "Absolute sky declination",
+      "default": 0,
+      "unit": "degrees",
+      "type": "number",
+      "min": 0,
+      "max": 60,
+      "step": "any"
+    },
+    {
+      "key": "precision",
+      "label": "Full formula image-trail coefficient k",
+      "default": "1",
+      "type": "select",
+      "options": [
+        "1",
+        "2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0106",
+  "claims": [
+    {
+      "claim": "License Description is name ID 13; License Info URL is name ID 14; fsType is an embedding-rights field and not a full EULA.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "name",
+        "os2",
+        "opentype",
+        "woff2"
+      ]
+    }
+  ]
+}

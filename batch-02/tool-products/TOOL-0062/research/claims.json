@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0062",
+  "claims": [
+    {
+      "claim": "Google requires name and image for Recipe rich-result eligibility.",
+      "supporting_url": "https://schema.org/Recipe",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Durations use ISO 8601 periods.",
+      "supporting_url": "https://schema.org/Recipe",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "schema.org Recipe and Google Recipe documentation."
+  ],
+  "limitations": [
+    "Generated markup must reflect visible page content; images must be real and indexable."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

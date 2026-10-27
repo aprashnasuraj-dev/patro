@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0067",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://schema.org/VideoObject",
+      "owner": "Schema.org",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Describe thumbnails, upload date, duration and actual media/player URLs."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/video",
+      "owner": "Google Search Central",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Describe thumbnails, upload date, duration and actual media/player URLs."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "No video metadata extraction or hosting; markup alone cannot make a video indexable."
+}

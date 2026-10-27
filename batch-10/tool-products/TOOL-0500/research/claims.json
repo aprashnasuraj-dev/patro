@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Uses standard age-65 IEP; excludes disability, ESRD and ALS pathways.",
+    "sources": [
+      "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-can-i-sign-up-for-medicare",
+      "https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "2026 Part B premium and Part D base benchmark will change annually."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

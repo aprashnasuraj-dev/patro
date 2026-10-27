@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0275",
+  "examples": [
+    {
+      "inputs": {
+        "length": "12 ft 6 in",
+        "width": "10 ft 3 in",
+        "height": "8 ft"
+      },
+      "expected_note": "1 international foot = 0.3048 m exactly and 1 inch = 25.4 mm exactly."
+    }
+  ]
+}

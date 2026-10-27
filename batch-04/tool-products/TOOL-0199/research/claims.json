@@ -1,0 +1,22 @@
+[
+  {
+    "claim": "List formulas stored in Excel cells, their addresses, sheets, and cached values without calculating or executing formulas.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation",
+      "Microsoft Open XML formulas documentation"
+    ]
+  },
+  {
+    "claim": "The tool extracts stored formulas and cached values; it never evaluates formulas and cached values can be stale.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation",
+      "Microsoft Open XML formulas documentation"
+    ]
+  }
+]

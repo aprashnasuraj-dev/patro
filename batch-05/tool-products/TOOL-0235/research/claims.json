@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0235",
+  "claims": [
+    {
+      "claim": "FIFO consumes oldest lots first.",
+      "status": "SOURCE_PREPARED",
+      "source_ids": [
+        "IRS-P550-2025"
+      ]
+    },
+    {
+      "claim": "Average basis shown is a pooled mechanical method and is not represented as legally eligible for all assets.",
+      "status": "SOURCE_PREPARED",
+      "source_ids": [
+        "IRS-P550-2025"
+      ]
+    }
+  ],
+  "runtime_qa": "TEST_PENDING"
+}

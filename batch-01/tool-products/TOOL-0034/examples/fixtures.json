@@ -1,0 +1,11 @@
+{
+  "sample": {
+    "ranges": "10.0.0.0/24\n10.0.0.128/25\n192.168.1.0/24"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

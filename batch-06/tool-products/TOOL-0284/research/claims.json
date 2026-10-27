@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0284",
+  "claim": "Estimated HRmax=208\u22120.7\u00b7age unless measured maximum supplied; Karvonen target=resting+fraction\u00b7(maximum\u2212resting); %Max=maximum\u00b7fraction.",
+  "assumptions": [
+    "Medical conditions and medications can invalidate generic heart-rate zones. HRmax from age is an estimate.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.heart.org/en/healthy-living/exercise-and-physical-activity/fitness-basics/target-heart-rates"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

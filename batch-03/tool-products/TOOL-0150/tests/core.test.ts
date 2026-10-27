@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {resizePages} from '../src/core';describe('TOOL-0150 PDF resize parser guards',()=>{it('rejects an empty PDF before embedding pages',async()=>{await expect(resizePages(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('verifies A4/Letter contain/cover geometry on reviewed PDF fixtures')});

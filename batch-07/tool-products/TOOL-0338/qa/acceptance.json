@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0338",
+  "status": "TEST_PENDING",
+  "product_tests_executed": false,
+  "source_preparation_complete": true,
+  "blocked_reason": null,
+  "checks_prepared": [
+    "known-answer",
+    "malformed-input",
+    "oversized-input",
+    "browser-locality",
+    "security-boundaries",
+    "copy/export/download",
+    "responsive interaction",
+    "accessibility scenarios",
+    "performance-sensitive bounds"
+  ],
+  "publication_gate": "LOCKED"
+}

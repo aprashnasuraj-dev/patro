@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0114",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "opentype-1.9.1",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/otff",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "General OpenType/SFNT format reference."
+    }
+  ],
+  "assumptions": "A cmap mapping is treated as font support for the code point.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "A cmap entry does not guarantee visually correct shaping, mark positioning, emoji presentation, or language-quality support."
+}

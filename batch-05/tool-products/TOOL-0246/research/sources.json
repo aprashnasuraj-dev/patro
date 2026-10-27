@@ -1,0 +1,37 @@
+{
+  "tool_id": "TOOL-0246",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "title": "Stripe — CAC payback period",
+      "url": "https://stripe.com/resources/more/what-is-the-cac-payback-period",
+      "version": null,
+      "effective_date": "2024-09-10",
+      "retrieved_at": "2026-10-26",
+      "supports": "Definitions for CAC and payback-period mechanics.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    },
+    {
+      "title": "Stripe — Customer lifetime value",
+      "url": "https://stripe.com/resources/more/customer-lifetime-value",
+      "version": null,
+      "effective_date": "2026-04-17",
+      "retrieved_at": "2026-10-26",
+      "supports": "Background on CLV/LTV as a business metric; implementation uses an explicitly simplified formula.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    },
+    {
+      "title": "Stripe — Customer churn 101",
+      "url": "https://stripe.com/resources/more/customer-churn-101-what-it-is-why-it-happens-and-what-businesses-can-do-about-it",
+      "version": null,
+      "effective_date": null,
+      "retrieved_at": "2026-10-26",
+      "supports": "Churn-rate definition context.",
+      "licensing_or_data_restrictions": "Reference-only unless package/library license is stated; do not reproduce copyrighted tables or datasets.",
+      "uncertainty": "Implementation scope is narrower than the full source standard or guidance; jurisdiction-specific rules remain user responsibility."
+    }
+  ],
+  "no_external_source_reason": null
+}

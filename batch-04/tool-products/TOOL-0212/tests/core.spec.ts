@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {quantiles} from "../src/core";
+describe("quantiles",()=>{it("type7 median is correct",()=>{expect(quantiles([1,2,3,4],[.5],"type7").results[0].value).toBeCloseTo(2.5);});});

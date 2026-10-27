@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0269",
+  "related": [
+    {
+      "id": "TOOL-0487",
+      "title": "Raised Bed Soil & Compost Calculator",
+      "proposed_canonical": "/calculators/raised-bed-soil-compost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0261",
+      "title": "Concrete Slab and Footing Volume Calculator",
+      "proposed_canonical": "/calculators/concrete-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0451",
+      "title": "Aquarium Volume, Water Change & Dose Calculator",
+      "proposed_canonical": "/calculators/aquarium-volume-water-change-dosing",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0490",
+      "title": "Firewood Volume & Cost-per-BTU Calculator",
+      "proposed_canonical": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

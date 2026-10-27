@@ -1,0 +1,20 @@
+{
+  "default_inputs": {
+    "purchase": 400000,
+    "land": 100000,
+    "improvements": 0,
+    "years": 5,
+    "sale": 450000
+  },
+  "known_answer": {
+    "output_label": "Full-year straight-line depreciation",
+    "expected_value": "$10,909.09"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

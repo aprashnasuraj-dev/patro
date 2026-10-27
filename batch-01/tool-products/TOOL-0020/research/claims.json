@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0020",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Compare JSON documents by deep semantics: unordered object keys and optionally unordered arrays with duplicate counts preserved.",
+      "evidence_urls": [
+        "https://www.rfc-editor.org/rfc/rfc8259"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Unordered arrays implement multiset semantics (duplicates matter); array sorting may erase meaningful sequence semantics. Large nested values are bounded to prevent resource exhaustion.",
+      "evidence_urls": [
+        "https://www.rfc-editor.org/rfc/rfc8259"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

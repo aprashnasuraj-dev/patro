@@ -1,0 +1,33 @@
+{
+  "id": "TOOL-0235",
+  "name": "Cost Basis Calculator (FIFO and Average) from Trade CSV",
+  "route": "/tools/cost-basis-calculator-csv",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0112",
+  "engineering_family": "Investment Trade Cost Basis",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000.0,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Cost Basis Calculator (FIFO and Average) from Trade CSV \u2014 Local Browser Tool",
+    "meta_description": "Parse a bounded trade CSV locally and compute mechanical FIFO and moving-average cost-basis results, with a warning that tax eligibility varies by asset and jurisdiction.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

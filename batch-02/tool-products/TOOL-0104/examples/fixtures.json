@@ -1,0 +1,6 @@
+{
+  "sample_input": "Choose a variable TTF/OTF/WOFF2 file.",
+  "expected_behavior": "A font with wght 300–900 and wdth 75–125 yields range controls and matching @font-face / font-variation-settings snippets.",
+  "qa_status": "TEST_PENDING",
+  "binary_fixtures_note": "Integration tests must supply redistributable/synthetic font fixtures; no third-party font binary is bundled in this source checkpoint."
+}

@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Local image dimensions and deterministic canvas export",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Browser encoder quality, color profile, EXIF, animation and resolution limits are platform-dependent.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Browser encoder quality, color profile, EXIF, animation and resolution limits are platform-dependent.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

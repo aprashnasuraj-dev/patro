@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.result .metrics{grid-template-columns:repeat(3,minmax(0,1fr))}

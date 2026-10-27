@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0398",
+  "name": "Coffee Brew Ratio Calculator with Brew Timer",
+  "route": "/tools/coffee-ratio-calculator",
+  "engineering_family_id": "F0221",
+  "engineering_family": "Coffee Brew Ratio and Timer",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-16",
+  "execution": "browser-local",
+  "network_required": false,
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "seo": {
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  }
+}

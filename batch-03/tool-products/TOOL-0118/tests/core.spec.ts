@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {banner} from '../src/core';describe('ASCII banner',()=>{it('wraps JavaScript comments',()=>expect(banner('A','js').split('\n')[0]).toMatch(/^\/\//));it('rejects non-ASCII',()=>expect(()=>banner('नेपाल','plain')).toThrow());it('uses fallback glyph',()=>expect(banner('@','plain')).toContain('#'))});

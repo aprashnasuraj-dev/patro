@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0363",
+  "claims": [
+    {
+      "claim": "Parse Clarivate-style RIS records locally and convert common bibliographic tags into portable BibTeX entries.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "RIS is permissive and vendor-specific. Unknown tags are ignored rather than guessed.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

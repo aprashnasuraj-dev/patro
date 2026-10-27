@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0208",
+  "claims": [
+    {
+      "claim": "Fit ordinary least-squares simple linear regression and inspect slope inference, fit quality, and residuals.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm",
+        "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "A straight-line mean relationship is scientifically meaningful for the supplied x range.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm",
+        "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "OLS inference assumes an appropriate linear mean model and independent errors; residual inspection is required. Correlation or slope does not establish causation.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm",
+        "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

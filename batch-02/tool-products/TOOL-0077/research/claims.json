@@ -1,0 +1,12 @@
+{
+  "assumptions": "Unicode letters, numbers, combining marks and conventional separators.",
+  "limitations": "ASCII fallback does not transliterate all scripts; avoid silent loss.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.rfc-editor.org/rfc/rfc3987",
+    "https://unicode.org/reports/tr15/"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

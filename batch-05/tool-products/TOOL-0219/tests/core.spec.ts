@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {parsePertTasks,simulatePert} from "../src/core";
+describe("PERT",()=>{it("is reproducible",()=>{const tasks=parsePertTasks("A,1,2,4");const a=simulatePert(tasks,1000,"s"),b=simulatePert(tasks,1000,"s");expect(a.p90).toBeCloseTo(b.p90,12);});});

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0365",
+  "related": [
+    {
+      "id": "TOOL-0366",
+      "title": "Final Grade Calculator (What Do I Need on the Final?)",
+      "proposed_canonical": "/calculators/final-grade-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0465",
+      "title": "International GPA Converter",
+      "proposed_canonical": "/converters/international-gpa-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0367",
+      "title": "CGPA to Percentage Converter (Multiple University Formulas)",
+      "proposed_canonical": "/converters/cgpa-to-percentage-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0470",
+      "title": "Transcript & GPA Builder",
+      "proposed_canonical": "/generators/homeschool-transcript-gpa-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0238",
+      "title": "Inflation Calculator with Custom Rate",
+      "proposed_canonical": "/calculators/inflation-calculator-custom-rate",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

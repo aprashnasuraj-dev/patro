@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0057",
+  "claims": [
+    {
+      "claim": "Locally administered addresses do not reliably identify hardware vendors.",
+      "supporting_url": "https://standards.ieee.org/products-programs/regauth/",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "CSV files are read locally, not sent to an API.",
+      "supporting_url": "https://standards.ieee.org/products-programs/regauth/",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "EUI-48 and EUI-64; local IEEE RA CSV assignments with 24/28/36-bit prefixes."
+  ],
+  "limitations": [
+    "No vendor database is redistributed; lookups only work after importing your own registry CSV."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

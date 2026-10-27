@@ -1,0 +1,20 @@
+[
+  {
+    "label": "HMRC finance cost restriction",
+    "url": "https://www.gov.uk/guidance/changes-to-tax-relief-for-residential-landlords-how-its-worked-out-including-case-studies",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  },
+  {
+    "label": "UK rental tax",
+    "url": "https://www.gov.uk/guidance/income-tax-when-you-rent-out-a-property-working-out-your-rental-income",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  }
+]

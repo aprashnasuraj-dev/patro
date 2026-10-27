@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>RIS to BibTeX Converter</title><meta name="description" content="Parse Clarivate-style RIS records locally and convert common bibliographic tags into portable BibTeX entries."><link rel="stylesheet" href="./src/styles.css"></head><body><main><header class="hero"><div class="eyebrow">Mission Mangal · TOOL-0363</div><h1>RIS to BibTeX Converter</h1><p class="lede">Parse Clarivate-style RIS records locally and convert common bibliographic tags into portable BibTeX entries.</p></header><div class="workspace"><section class="card stack" aria-label="Tool inputs"><label>RIS text<textarea id="src" rows="16">TY  - JOUR
+AU  - Smith, Jane
+AU  - Lee, Ming
+TI  - A useful paper
+JO  - Example Journal
+PY  - 2026
+VL  - 12
+IS  - 3
+SP  - 10
+EP  - 25
+DO  - 10.1234/example
+ER  - </textarea></label><button id="run">Convert to BibTeX</button></section><aside id="result" class="card result" role="status" aria-live="polite"><h2>Result</h2><p class="muted">Enter or load data, then run the tool.</p></aside></div><div class="docs"><section><h2>What this tool does</h2><p>Parse Clarivate-style RIS records locally and convert common bibliographic tags into portable BibTeX entries.</p></section><section><h2>How to use it</h2><p>Enter the requested fields, review assumptions, and run the calculation locally.</p></section><section><h2>Worked example</h2><p>The included fixture demonstrates a representative input for TOOL-0363.</p></section><section><h2>Supported formats</h2><p>The page documents supported input types and enforces bounded parsing/resource limits.</p></section><section><h2>Assumptions</h2><p>All calculations follow the explicit fields/presets shown in the UI; hidden institution/server defaults are avoided.</p></section><section><h2>Limitations</h2><p>RIS is permissive and vendor-specific. Unknown tags are ignored rather than guessed.</p></section><section><h2>Privacy and security</h2><p>Normal use is browser-local. Inputs are not sent to a worker, account service, or third party by this tool.</p></section><section><h2>Authoritative references</h2><p>Clarivate / EndNote: RIS Tagged Output Format</p></section></div></main><script type="module" src="./src/ui.ts"></script></body></html>

@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {surveySampleSize} from "../src/core";
+describe("survey sample",()=>{it("finite correction does not exceed infinite n",()=>{const r=surveySampleSize(1000,.05,.95,.5);expect(r.finitePopulation).toBeLessThan(r.infinitePopulation);});});

@@ -1,0 +1,12 @@
+{
+  "sample_input": {
+    "qa": "Q: What is HTTP?\nA: Hypertext Transfer Protocol is used for web communication.\n\nQ: Does this run offline?\nA: Yes, the markup is produced in your browser."
+  },
+  "worked_example": "Q: What is TTL? / A: Time to live → one Question and acceptedAnswer.",
+  "planned_expectations": [
+    "Two Q/A blocks create two distinct Question objects.",
+    "Reject missing answer, duplicates and injected </script> markup.",
+    "Google eligibility note remains visible."
+  ],
+  "execution_state": "TEST_PENDING"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0193",
+  "related": [
+    {
+      "id": "TOOL-0192",
+      "title": "Date Format Normalizer for CSV Columns",
+      "proposed_canonical": "/formatters/csv-date-format-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0186",
+      "title": "CSV Column Reorder, Rename and Drop Tool",
+      "proposed_canonical": "/utilities/csv-column-editor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0194",
+      "title": "Full Name Splitter (First, Middle, Last, Suffix)",
+      "proposed_canonical": "/editors/split-full-name-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0249",
+      "title": "Number to Words for Cheques (International and Indian Numbering)",
+      "proposed_canonical": "/converters/number-to-words-cheque",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0316",
+      "title": "Excel Serial Number to Date Converter",
+      "proposed_canonical": "/converters/excel-serial-number-to-date",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

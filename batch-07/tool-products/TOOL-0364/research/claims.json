@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0364",
+  "claims": [
+    {
+      "claim": "Normalize BibTeX fields, canonicalize DOI values and remove likely duplicate records using DOI or normalized title-year signatures.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Duplicate detection is conservative: DOI first, otherwise normalized title + year. Similar-but-distinct works can require manual review.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

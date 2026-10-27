@@ -1,0 +1,12 @@
+{
+  "items": [
+    "alpha",
+    "beta",
+    "gamma",
+    "delta",
+    "epsilon"
+  ],
+  "count": 3,
+  "seed": "mission-mangal",
+  "replacement": false
+}

@@ -1,0 +1,23 @@
+{
+  "claims": [
+    {
+      "statement": "Concentration-driven pool chlorine dosing",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Does not account for chlorination chemistry demand, unstabilized vs stabilized concentration dynamics, actual product-specific treatment directions or shock/dosing safety.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.cdc.gov/healthy-swimming/about/home-pool-and-hot-tub-water-treatment-and-testing.html",
+    "https://www.cdc.gov/healthy-swimming/safety/what-you-can-do-to-stay-healthy-in-swimming-pools.html"
+  ],
+  "assumptions": "Does not account for chlorination chemistry demand, unstabilized vs stabilized concentration dynamics, actual product-specific treatment directions or shock/dosing safety.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

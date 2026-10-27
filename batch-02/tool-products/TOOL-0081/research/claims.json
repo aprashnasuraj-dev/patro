@@ -1,0 +1,12 @@
+{
+  "assumptions": "Plain Unicode text, up to 350,000 UTF-16 units.",
+  "limitations": "Some invisible characters are essential to native-script shaping and emoji.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.unicode.org/reports/tr44/",
+    "https://www.unicode.org/reports/tr9/"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

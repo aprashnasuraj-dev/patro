@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0207",
+  "claims": [
+    {
+      "claim": "Run a Mann–Whitney U test with exact enumeration for small no-tie samples and a tie-corrected normal approximation otherwise.",
+      "support": [
+        "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/ranksum.htm",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Independent ordinal/continuous observations; for a location interpretation, group distributions should have compatible shapes.",
+      "support": [
+        "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/ranksum.htm",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The exact branch is only used for small samples without ties. With ties, especially in small samples, a permutation method is preferable.",
+      "support": [
+        "https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/ranksum.htm",
+        "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

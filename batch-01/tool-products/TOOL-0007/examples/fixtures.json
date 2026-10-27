@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0007",
+  "case": "Worked example",
+  "input": "{\"log\":{\"version\":\"1.2\",\"entries\":[{\"request\":{\"method\":\"GET\",\"url\":\"https://example.com/api/users?api_key=TOPSECRET\",\"headers\":[{\"name\":\"Accept\",\"value\":\"application/json\"},{\"name\":\"Authorization\",\"value\":\"Bearer secret\"}]}}]}}",
+  "options": {
+    "includeBodies": false,
+    "keepQuery": false
+  },
+  "expected_properties": "authorization stripping, URL query omission, single quote escaping, POST body opt-in and malformed URLs",
+  "expected_execution": "NOT_RUN",
+  "limitations": "Security tokens, replay-order dependencies, cookies, multipart/binary bodies and browser session state are not automatically reconstructed."
+}

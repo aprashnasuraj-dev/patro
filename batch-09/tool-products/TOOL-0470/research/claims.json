@@ -1,0 +1,18 @@
+{
+  "claims": [
+    {
+      "statement": "Homeschool transcript rows, credits and GPA",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Unofficial transcript planning only; records are not signed or independently verified.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Unofficial transcript planning only; records are not signed or independently verified.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

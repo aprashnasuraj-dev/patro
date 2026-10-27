@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0240",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Tier bands are non-overlapping percentages of salary contribution; employer match may be capped then optionally reduced by vesting percentage."
+  ],
+  "uncertainty": [
+    "Plan documents can include eligibility, compensation definitions, caps, true-up rules and vesting conditions not represented here."
+  ]
+}

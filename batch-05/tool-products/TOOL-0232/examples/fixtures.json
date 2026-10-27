@@ -1,0 +1,5 @@
+{
+  "status": "TEST_PENDING",
+  "purpose": "Known-answer and demonstration inputs for deferred tests.",
+  "worked_example": "At $25/hour, 40 hours/week, 10 unpaid 8-hour days and 2 overtime hours/week, the tool shows gross annual pay and the cost of unpaid time."
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "Standard allowance £60,000 in 2026/27; user may lower for taper.",
+    "sources": [
+      "https://www.gov.uk/government/publications/rates-and-allowances-pension-schemes/pension-schemes-rates",
+      "https://www.gov.uk/guidance/pension-administrators-check-your-members-annual-allowance"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "No MPAA, DB growth, or tax-relief earnings constraints included."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

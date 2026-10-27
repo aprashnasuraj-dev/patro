@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0371",
+  "sources": [
+    {
+      "title": "MathJax SVG Support",
+      "url": "https://docs.mathjax.org/en/latest/output/svg.html",
+      "authority": "MathJax"
+    }
+  ]
+}

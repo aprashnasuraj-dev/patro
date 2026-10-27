@@ -1,0 +1,1 @@
+import{scale}from'./core';import{q,val,num,setError,table}from'../_vendor/ui';q('run').addEventListener('click',()=>{const o=q('result');try{const r=scale(val('recipe'),num('factor'));o.replaceChildren(table(['Ingredient','Scaled quantity','Friendly fraction'],r.map(x=>[x.ingredient,x.quantity.toFixed(4),x.friendly])))}catch(e){setError(o,e)}});

@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0404",
+  "name": "Rebar & Welded Mesh Slab Takeoff",
+  "reserved_route": "/tools/rebar-mesh-slab-takeoff-calculator",
+  "engineering_family_id": "F0224",
+  "engineering_family": "Rebar & Welded Mesh Slab Takeoff",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Rebar & Welded Mesh Slab Takeoff | AafnaiPatro Tools",
+    "description": "Create a materials-only slab takeoff for orthogonal rebar grids and welded mesh sheets.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

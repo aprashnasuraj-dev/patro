@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0300",
+  "related": [
+    {
+      "id": "TOOL-0281",
+      "title": "One-Rep Max Calculator (Multi-Formula)",
+      "proposed_canonical": "/calculators/one-rep-max-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0285",
+      "title": "Barbell Plate Loading Calculator",
+      "proposed_canonical": "/calculators/barbell-plate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0203",
+      "title": "Wilson Score Confidence Interval Calculator",
+      "proposed_canonical": "/calculators/wilson-score-interval-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0210",
+      "title": "Outlier Detector (IQR, Z-Score, MAD)",
+      "proposed_canonical": "/calculators/outlier-detection-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0213",
+      "title": "Z-Score to Percentile Calculator (Normal Distribution)",
+      "proposed_canonical": "/calculators/z-score-to-percentile-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

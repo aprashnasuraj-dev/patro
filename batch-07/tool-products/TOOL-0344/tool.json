@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0344",
+  "name": "YouTube Chapters Timestamp Formatter and Validator",
+  "route": "/tools/youtube-chapters-generator",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0191",
+  "engineering_family": "YouTube Chapters Formatter",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "YouTube Chapters Timestamp Formatter and Validator — Private Browser Tool",
+    "meta_description": "Parse, normalize and validate YouTube chapter timestamps against current manual-chapter rules, with optional video-duration boundary checking.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

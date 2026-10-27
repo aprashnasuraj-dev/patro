@@ -1,0 +1,14 @@
+{
+  "sample_input": {
+    "cap": "512",
+    "step": "16",
+    "ack": false
+  },
+  "worked_example": "A 512 KiB probe reports at least 512 KiB writable if all temporary writes succeed.",
+  "planned_expectations": [
+    "Set ack and 1 KiB cap; verify storage cleanup after success.",
+    "Induce QuotaExceededError; assert all temporary keys removed.",
+    "Abort probe midway; ensure cleanup; verify other localStorage keys untouched."
+  ],
+  "execution_state": "TEST_PENDING"
+}

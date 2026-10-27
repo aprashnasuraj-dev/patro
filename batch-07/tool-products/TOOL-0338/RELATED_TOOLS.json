@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0338",
+  "related": [
+    {
+      "id": "TOOL-0334",
+      "title": "PGP Public Key Inspector",
+      "proposed_canonical": "/analyzers/pgp-key-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0327",
+      "title": "PKCE Code Verifier and Challenge Generator",
+      "proposed_canonical": "/generators/pkce-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0100",
+      "title": "Emoji and Grapheme Cluster Inspector",
+      "proposed_canonical": "/analyzers/emoji-unicode-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0158",
+      "title": "PDF Page Size Inspector",
+      "proposed_canonical": "/analyzers/pdf-page-size-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0042",
+      "title": "HTTP Status Code Chooser",
+      "proposed_canonical": "/utilities/which-http-status-code",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,25 @@
+{
+  "default_input": {
+    "sender": "Exporter Ltd; Address; Country",
+    "recipient": "Importer Inc; Address; Country",
+    "currency": "USD",
+    "invoice": "INV-001",
+    "items": "Cotton shirt|3|12.5|610910|NP|0.75",
+    "reason": "sale"
+  },
+  "hand_reference": {
+    "label": "Invoice goods value",
+    "value": "USD 37.50",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "MM530_PHASE1_BASELINE_V1",
+  "source_run_id": 40437618730,
+  "source_commit": "16e0f9ec17652a3f010623063adb8218814b1e08",
+  "expected_tools": 530,
+  "maximum_regression": {
+    "failed_tools": 142,
+    "metadata_failures": 0,
+    "compile_failures": 65,
+    "unit_failures": 5,
+    "browser_source_failures": 81,
+    "global_errors": 0
+  },
+  "exact_invariants": {
+    "registry_pass": 530,
+    "metadata_pass": 530,
+    "html_pass": 530,
+    "source_pass": 530
+  },
+  "note": "Later phases may reduce failures. These maxima prevent the QA harness from reintroducing Phase-1 false negatives."
+}

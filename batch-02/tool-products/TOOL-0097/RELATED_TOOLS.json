@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0097",
+  "related": [
+    {
+      "id": "TOOL-0362",
+      "title": "BibTeX to APA, MLA, Chicago Converter",
+      "proposed_canonical": "/converters/bibtex-to-apa",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0074",
+      "title": "Title and Meta Description Pixel Width Checker",
+      "proposed_canonical": "/validators/title-tag-pixel-width-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0197",
+      "title": "Join Two CSV Files on a Key (VLOOKUP-style)",
+      "proposed_canonical": "/utilities/join-csv-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0361",
+      "title": "APA 7 Reference Formatter from Fields",
+      "proposed_canonical": "/formatters/apa-7-reference-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0085",
+      "title": "Smart Quotes to Straight Quotes Converter",
+      "proposed_canonical": "/converters/smart-quotes-to-straight-quotes",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

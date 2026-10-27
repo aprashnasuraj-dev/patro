@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0246",
+  "claims": [
+    {
+      "claim": "Customer churn is modeled as lost customers divided by starting customers.",
+      "source_url": "https://stripe.com/resources/more/customer-churn-101-what-it-is-why-it-happens-and-what-businesses-can-do-about-it",
+      "implementation_note": "Monthly interval is supplied by the UI context."
+    },
+    {
+      "claim": "CAC payback compares CAC with monthly gross profit per customer.",
+      "source_url": "https://stripe.com/resources/more/what-is-the-cac-payback-period",
+      "implementation_note": "The calculator exposes the formula instead of assigning a benchmark."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

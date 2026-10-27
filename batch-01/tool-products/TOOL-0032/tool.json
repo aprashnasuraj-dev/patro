@@ -1,0 +1,17 @@
+{
+  "id": "TOOL-0032",
+  "name": "AWS ARN Parser and Builder",
+  "route": "/tools/aws-arn-parser",
+  "family": "F0018",
+  "status": "TEST_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "AWS ARN Parser and Builder | Mission Mangal Tools",
+    "description": "Prepare and inspect aws arn parser and builder locally in your browser. Includes a worked example, format limits, and explicit warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": "Supported subset documented in core implementation; unsupported input must produce an error."
+}

@@ -1,0 +1,13 @@
+{
+  "tool": "TOOL-0530",
+  "default_inputs": {
+    "price": "100",
+    "percentFee": "2.7",
+    "fixedFee": "0.3",
+    "surcharge": "2.5",
+    "cashDiscount": "3",
+    "currency": "USD"
+  },
+  "worked_example": "A $100 sale with 2.7% plus $0.30 fees costs $3.00 before any surcharge; fee-on-fee changes full recovery.",
+  "source_status": "TEST_PENDING"
+}

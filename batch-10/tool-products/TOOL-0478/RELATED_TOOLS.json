@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0478",
+  "related": [
+    {
+      "id": "TOOL-0149",
+      "title": "Crop PDF Margins Visually",
+      "proposed_canonical": "/editors/crop-pdf-margins",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "proposed_canonical": "/converters/resize-pdf-to-a4",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0125",
+      "title": "Passport and ID Photo Cropper by Country",
+      "proposed_canonical": "/editors/passport-photo-size-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0065",
+      "title": "Product Schema Generator (Offer, Reviews, Shipping)",
+      "proposed_canonical": "/generators/product-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0296",
+      "title": "Nutrition Facts Label Generator",
+      "proposed_canonical": "/generators/nutrition-facts-label-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

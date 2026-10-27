@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0346",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "Some mathematical alphabets have historical code-point exceptions or missing glyphs in fonts. The source intentionally avoids broad “fancy” homoglyph substitutions."
+}

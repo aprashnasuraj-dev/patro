@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0266",
+  "examples": [
+    {
+      "inputs": {
+        "inches": [
+          2,
+          8
+        ],
+        "length_ft": 12,
+        "quantity": 10
+      },
+      "expected": {
+        "board_feet": 160
+      }
+    }
+  ]
+}

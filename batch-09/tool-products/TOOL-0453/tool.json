@@ -1,0 +1,49 @@
+{
+  "id": "TOOL-0453",
+  "name": "Glasses to Contact Lens Prescription Converter",
+  "slug": "glasses-to-contact-lens-vertex-calculator",
+  "route": "/tools/glasses-to-contact-lens-vertex-calculator",
+  "family": "F0259",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Glasses to Contact Lens Prescription Converter — Interactive Local Tool | AafnaiPatro",
+    "description": "Apply the back vertex power equation independently to two principal spectacle meridians. Explain exact results without selecting medical device parameters."
+  },
+  "execution": {
+    "mode": "client-only",
+    "account_required": false,
+    "worker_required": false,
+    "third_party_content_transmission": false,
+    "lazy_load_route_module": true
+  },
+  "entrypoints": {
+    "html": "page.html",
+    "typescript": "src/ui.ts",
+    "css": "src/styles.css"
+  },
+  "shared_imports": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css"
+  ],
+  "security": {
+    "bounded_inputs": true,
+    "reject_nonfinite": true,
+    "no_user_content_upload": true,
+    "safe_text_rendering": true,
+    "no_untrusted_html": true
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "published": false,
+    "sitemap": false
+  }
+}

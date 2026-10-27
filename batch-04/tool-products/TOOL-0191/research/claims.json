@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Validate CSV quoting, ragged rows, duplicate headers, and spreadsheet-formula hazards without modifying the source file.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Validation checks syntax/shape and formula-like prefixes but cannot prove downstream spreadsheet safety.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

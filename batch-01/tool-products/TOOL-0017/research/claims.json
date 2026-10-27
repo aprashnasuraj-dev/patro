@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0017",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Convert a deliberately bounded literal HCL tfvars subset into terraform.tfvars.json.",
+      "evidence_urls": [
+        "https://developer.hashicorp.com/terraform/language/values/variables",
+        "https://developer.hashicorp.com/terraform/language/syntax/json"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "HCL expressions, interpolation, function calls and complex block syntax are rejected. Comments supported; source credentials remain only in your browser.",
+      "evidence_urls": [
+        "https://developer.hashicorp.com/terraform/language/values/variables",
+        "https://developer.hashicorp.com/terraform/language/syntax/json"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

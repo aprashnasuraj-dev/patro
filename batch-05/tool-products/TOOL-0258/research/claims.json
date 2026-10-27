@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0258",
+  "claims": [
+    {
+      "claim": "GS1 check digits use alternating 3/1 weighting with subtraction from the next multiple of ten; GTIN check digit is the final digit.",
+      "source_url": "https://ref.gs1.org/standards/genspecs/26.0.0/",
+      "implementation_note": "Tool validates/appends EAN-13 and UPC-A check digits but does not verify number allocation."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

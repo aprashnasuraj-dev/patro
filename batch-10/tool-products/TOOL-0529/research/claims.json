@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Adult weight = current measured weight divided by user-supplied estimate of fraction of mature weight.",
+    "supporting_urls": [
+      "https://www.akc.org/expert-advice/health/puppy-growth-timeline/"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "This tool does not diagnose growth, nutritional status or orthopedic risk."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "If a 16 kg puppy is assumed 55% grown, central adult estimate is about 29.1 kg, with broad uncertainty.",
+    "status": "TEST_PENDING"
+  }
+]

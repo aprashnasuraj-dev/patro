@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0096",
+  "related": [
+    {
+      "id": "TOOL-0089",
+      "title": "Regex Replace Preview with Capture Group Table",
+      "proposed_canonical": "/utilities/regex-replace-preview",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0088",
+      "title": "Regex ReDoS (Catastrophic Backtracking) Checker",
+      "proposed_canonical": "/validators/regex-redos-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0004",
+      "title": "SQL DDL to Prisma Schema",
+      "proposed_canonical": "/converters/sql-to-prisma-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0046",
+      "title": "Query String to Nested JSON Converter",
+      "proposed_canonical": "/converters/query-string-to-json",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

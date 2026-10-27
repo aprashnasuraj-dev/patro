@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0371",
+  "claims": [
+    {
+      "claim": "Render bounded LaTeX math through a self-hosted MathJax SVG pipeline and export the result as SVG or PNG.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "TeX support is limited to MathJax’s configured math subset; this is not a general TeX engine and file/system commands are rejected.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

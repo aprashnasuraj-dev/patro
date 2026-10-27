@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0011",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Validate POSIX cron expressions and draft a GitHub Actions workflow without external services.",
+      "evidence_urls": [
+        "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+        "https://en.wikipedia.org/wiki/Cron"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Only five-field cron, numeric ranges/lists/steps; no Quartz seconds. GitHub schedules may be delayed or skipped under load. Timezone uses supported IANA names.",
+      "evidence_urls": [
+        "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+        "https://en.wikipedia.org/wiki/Cron"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

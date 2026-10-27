@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0431",
+  "related": [
+    {
+      "id": "TOOL-0426",
+      "title": "Rental Depreciation & Recapture Calculator",
+      "proposed_canonical": "/calculators/rental-depreciation-recapture-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "proposed_canonical": "/calculators/property-tax-appeal-savings-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "proposed_canonical": "/calculators/marginal-tax-bracket-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0273",
+      "title": "Rental Property Cash Flow and ROI Calculator",
+      "proposed_canonical": "/calculators/rental-property-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0411",
+      "title": "Gutter & Downspout Sizing by City Rainfall",
+      "proposed_canonical": "/calculators/gutter-downspout-sizing-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

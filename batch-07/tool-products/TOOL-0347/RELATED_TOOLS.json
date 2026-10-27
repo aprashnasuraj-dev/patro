@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0347",
+  "related": [
+    {
+      "id": "TOOL-0342",
+      "title": "Instagram Carousel and Grid Image Splitter",
+      "proposed_canonical": "/editors/split-image-for-instagram-carousel",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0130",
+      "title": "SVG to PNG/JPG Exporter at Custom Sizes",
+      "proposed_canonical": "/converters/svg-to-png",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0189",
+      "title": "Combine Excel Sheets into One Sheet",
+      "proposed_canonical": "/utilities/combine-excel-sheets",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

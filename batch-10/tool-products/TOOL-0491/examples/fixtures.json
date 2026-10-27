@@ -1,0 +1,17 @@
+{
+  "title": "Multi-Fuel Heating Cost Comparator",
+  "default_inputs": {
+    "demand": "12000",
+    "electric": "0.18",
+    "cop": "3",
+    "gas": "1.7",
+    "afue": "0.9",
+    "propane": "3.1",
+    "propEff": "0.85",
+    "wood": "350",
+    "woodMBtu": "20",
+    "woodEff": "0.65"
+  },
+  "worked_example": "For 12,000 kWh delivered, a COP 3 heat pump uses 4,000 kWh electricity.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

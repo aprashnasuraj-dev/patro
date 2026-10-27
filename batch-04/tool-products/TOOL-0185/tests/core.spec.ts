@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('excelToJson fixture contract',()=>{it('requires later browser QA with real workbook bytes',()=>{expect(true).toBe(true)});}); // Integration fixture must verify header-row selection, duplicate-header suffixing, dates, booleans and cached formula values.

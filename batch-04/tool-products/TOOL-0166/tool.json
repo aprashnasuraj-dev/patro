@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0166",
+  "build_sequence": 166,
+  "name": "Remove Audio from Video",
+  "route": "/tools/remove-audio-from-video",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Audio and Frame Extractor",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "Container/codec compatibility is not changed because the video stream is copied."
+  },
+  "seo": {
+    "title": "Remove Audio from Video — Free Browser Tool",
+    "meta_description": "Remove audio streams while copying the original video stream whenever the container permits it.",
+    "h1": "Remove Audio from Video",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0078"
+}

@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Automotive lease payment waterfall",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Tax timing, acquisition/disposition charges, mileage and wear penalties, trade allowances, purchase option, financing markups not fully modeled.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Tax timing, acquisition/disposition charges, mileage and wear penalties, trade allowances, purchase option, financing markups not fully modeled.",
+  "authoritative_references": [
+    "https://www.ag.state.mn.us/consumer/handbooks/Cars/CH07.asp"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

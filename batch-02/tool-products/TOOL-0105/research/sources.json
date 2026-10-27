@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0105",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "cmap",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/cmap",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "Character-to-glyph mappings; formats 4 and 12 cover common Unicode fonts."
+    },
+    {
+      "id": "opentype",
+      "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/otff",
+      "version": "OpenType 1.9.1",
+      "effective_date": null,
+      "license": "Microsoft documentation terms",
+      "notes": "SFNT/OpenType table structure reference."
+    },
+    {
+      "id": "woff2",
+      "url": "https://www.w3.org/TR/WOFF2/",
+      "version": "W3C Recommendation",
+      "effective_date": "2024-08-08",
+      "license": "W3C document license",
+      "notes": "WOFF2 is a compressed representation of SFNT fonts."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

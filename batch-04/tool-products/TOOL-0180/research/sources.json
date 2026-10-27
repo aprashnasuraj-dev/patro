@@ -1,0 +1,14 @@
+{
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "name": "W3C WebVTT",
+      "url": "https://www.w3.org/TR/webvtt1/",
+      "version": "WebVTT1 current Recommendation-track document",
+      "effective_date": "2026-05-20 CRD",
+      "license": "W3C document license",
+      "use": "Cue/timestamp syntax and ordering"
+    }
+  ],
+  "licensing_note": null
+}

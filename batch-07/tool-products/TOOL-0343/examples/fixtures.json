@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0343",
+  "examples": [
+    {
+      "recommended_video_thumbnail_current": "3840x2160 / 16:9",
+      "safe_inset": "user-defined heuristic"
+    }
+  ]
+}

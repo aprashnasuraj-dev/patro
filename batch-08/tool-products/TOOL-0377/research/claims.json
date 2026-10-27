@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0377",
+  "claims": [
+    {
+      "claim": "Convert decimal/scientific input to scientific or engineering notation while retaining a bounded number of digits.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "This is a notation formatter, not arbitrary-precision arithmetic; it preserves entered significant digits but does not perform math on them.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

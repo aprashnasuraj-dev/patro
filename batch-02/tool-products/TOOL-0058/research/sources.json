@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0058",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7489",
+      "owner": "IETF / RFC Editor",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Build RFC 7489 policies with constrained tags and an implementation checklist."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9091",
+      "owner": "IETF / RFC Editor",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Build RFC 7489 policies with constrained tags and an implementation checklist."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "The generator cannot verify DNS publication, SPF/DKIM alignment or external reporting authorization."
+}

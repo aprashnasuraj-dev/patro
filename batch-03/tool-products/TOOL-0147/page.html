@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Flatten PDF Form Fields — Browser-Local Tool</title><meta name="description" content="Flatten AcroForm field appearances into page content and export a non-editable form copy."><link rel="stylesheet" href="./src/styles.css"></head>
+<body><main class="tool-shell" data-tool="TOOL-0147">
+<header class="hero"><p class="eyebrow">Browser-local • TEST_PENDING</p><h1>Flatten PDF Form Fields</h1><p>Flatten AcroForm field appearances into page content and export a non-editable form copy.</p></header>
+<section class="workbench" aria-labelledby="work-title"><h2 id="work-title">Work area</h2><div class="controls"><label>PDF form <input id="file" type="file" accept="application/pdf,.pdf"></label><label><input id="updateAppearances" type="checkbox" checked> Refresh supported field appearances first</label></div><button id="primary" class="primary" type="button">Process PDF</button><button id="cancel" class="secondary" type="button" hidden>Cancel</button><div id="status" role="status" aria-live="polite"></div><div id="result" class="result" role="region" aria-live="polite" aria-label="Tool result"></div></section>
+<section><h2>What this tool does</h2><p>Flatten AcroForm field appearances into page content and export a non-editable form copy.</p></section>
+<section><h2>How to use it</h2><ol><li>Choose local input files and review the task-specific controls.</li><li>Run the tool. Processing stays in this browser session.</li><li>Review warnings and previews before copying or downloading output.</li></ol></section>
+<section><h2>Worked example</h2><p>Fill a form elsewhere, open it here, flatten all fields, and download the final submission copy.</p></section>
+<section><h2>Supported formats and units</h2><p>PDF AcroForm input and PDF output.</p></section>
+<section><h2>Assumptions</h2><p>The form library updates field appearances before flattening where supported.</p></section>
+<section><h2>Limitations</h2><p>XFA forms and unsupported widgets may not flatten correctly; flattening invalidates signatures.</p></section>
+<section><h2>References</h2><p>Authoritative implementation references are recorded in <code>research/sources.json</code>.</p></section>
+</main><script type="module" src="./src/ui.ts"></script></body></html>

@@ -1,0 +1,16 @@
+{
+  "known_answer": {
+    "description": "A DOCX heading and paragraph become semantic HTML and Markdown."
+  },
+  "boundaries": [
+    "empty input",
+    "oversized file",
+    "maximum supported page/count/pixel boundary"
+  ],
+  "security": [
+    "malformed container",
+    "unsafe filename where relevant",
+    "script/event-handler content where relevant",
+    "resource exhaustion attempt"
+  ]
+}

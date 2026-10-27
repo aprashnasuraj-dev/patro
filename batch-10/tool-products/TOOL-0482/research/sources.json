@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0482",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Amazon Ads ACoS official guide",
+      "url": "https://advertising.amazon.com/en-us/library/guides/acos-advertising-cost-of-sales",
+      "version_or_effective_date": "2026",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

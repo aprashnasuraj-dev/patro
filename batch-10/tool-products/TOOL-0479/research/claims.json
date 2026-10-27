@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "statement": "Local printable commercial invoice and customs worksheet",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.help.cbp.gov/s/article/Article-1175?language=en_US",
+        "https://www.upu.int/UPU/media/upu/files/postalSolutions/programmesAndServices/postalSupplyChain/customs/guideWcoUPUCustomsEn.pdf"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Official UPU postal form selection and destination-country customs requirements are not determined automatically.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Official UPU postal form selection and destination-country customs requirements are not determined automatically.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

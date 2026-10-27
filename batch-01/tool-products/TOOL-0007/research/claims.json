@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0007",
+  "claims": [
+    {
+      "claim": "Create inspectable curl commands from recorded HAR requests",
+      "references": [
+        "https://curl.se/docs/manpage.html",
+        "https://w3c.github.io/web-performance/specs/HAR/Overview.html"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "Security tokens, replay-order dependencies, cookies, multipart/binary bodies and browser session state are not automatically reconstructed.",
+      "references": [
+        "https://curl.se/docs/manpage.html",
+        "https://w3c.github.io/web-performance/specs/HAR/Overview.html"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

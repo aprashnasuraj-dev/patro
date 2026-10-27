@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Monte Carlo Project Estimate Simulator (PERT) — Browser Calculator</title>
+<meta name="description" content="Simulate sequential project duration from optimistic, most-likely, and pessimistic Beta-PERT task estimates with a reproducible seed.">
+<meta property="og:title" content="Monte Carlo Project Estimate Simulator (PERT)">
+<meta property="og:description" content="Simulate sequential project duration from optimistic, most-likely, and pessimistic Beta-PERT task estimates with a reproducible seed.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0219 · Local browser tool</div>
+<h1>Monte Carlo Project Estimate Simulator (PERT)</h1>
+<p class="lede">Simulate sequential project duration from optimistic, most-likely, and pessimistic Beta-PERT task estimates with a reproducible seed. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><label>Tasks: name, optimistic, most likely, pessimistic<textarea id="tasks">Design,3,5,9
+Build,8,12,20
+QA,2,4,8</textarea></label><div class="row"><label>Iterations<input id="iterations" type="number" min="1000" max="100000" step="1000" value="20000"></label><label>Seed<input id="seed" value="project-1"></label></div><label>PERT lambda<input id="lambda" type="number" value="4" min=".1" max="20" step=".1"></label>
+<div class="row"><button id="run" type="button">Run PERT simulation</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Simulate sequential project duration from optimistic, most-likely, and pessimistic Beta-PERT task estimates with a reproducible seed.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Each row is a sequential task with optimistic ≤ most likely ≤ pessimistic and a non-zero range.</p></section>
+<section><h2>Limitations</h2><p>Tasks are modeled as independent and sequentially additive. Dependencies, parallel branches, resource constraints, and critical-path logic are not modeled.</p></section>
+<section><h2>FAQ</h2><details><summary>Does this calculate a critical path?</summary><p>No. It sums independent sequential task durations; network dependencies and resource constraints are outside this tool.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://docs.oracle.com/cd/E52437_01/en/crystal_ball_users_guide/betapert_distribution.htm" rel="noopener noreferrer">Oracle Crystal Ball — BetaPERT Distribution</a></li><li><a href="https://itl.nist.gov/div898/handbook/eda/section3/eda366h.htm" rel="noopener noreferrer">NIST/SEMATECH — Beta Distribution</a></li><li><a href="https://prng.di.unimi.it/" rel="noopener noreferrer">Blackman/Vigna xoshiro reference family</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

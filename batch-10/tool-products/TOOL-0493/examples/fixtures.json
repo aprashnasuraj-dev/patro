@@ -1,0 +1,14 @@
+{
+  "title": "Horse & Livestock Hay Needs Calculator",
+  "default_inputs": {
+    "heads": "4",
+    "weight": "1000",
+    "intake": "2",
+    "share": "100",
+    "hayDM": "0.88",
+    "days": "30",
+    "loss": "10"
+  },
+  "worked_example": "Four 1000-lb animals at 2% DM intake need 80 lb total dry matter/day before losses.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

@@ -1,0 +1,21 @@
+{
+  "sample_input": "127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://example.test/start\" \"TestAgent/1.0\"",
+  "intended_action": "Extract CSV",
+  "manual_review_cases": [
+    {
+      "input": "common log format",
+      "expectation": "CSV header"
+    },
+    {
+      "input": "CSV formula payload",
+      "expectation": "neutralized"
+    }
+  ],
+  "limits": "Supports default CLF/Combined log formats, not custom log_format or JSON access logs. CSV values are quoted and spreadsheet-formula cells neutralized.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"ip\"",
+    "\"127.0.0.1\""
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

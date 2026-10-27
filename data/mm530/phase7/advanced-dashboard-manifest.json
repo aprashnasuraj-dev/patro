@@ -1,0 +1,32 @@
+{
+  "schema_version": "MM530_PHASE7_ADVANCED_DASHBOARD_V1",
+  "dashboard_root": "/advancetools/",
+  "existing_collections": [
+    {
+      "route": "/advancetools/knittingcalculators/",
+      "label": "Knitting & crochet"
+    },
+    {
+      "route": "/advancetools/chordlibrary/",
+      "label": "Instrument chord library"
+    },
+    {
+      "route": "/advancetools/workshopreference/",
+      "label": "Workshop reference"
+    },
+    {
+      "route": "/advancetools/fontconverters/",
+      "label": "Legacy font converters"
+    },
+    {
+      "route": "/advancetools/printablepaper/",
+      "label": "Printable paper studio"
+    }
+  ],
+  "web_tool_hub": "/advancetools/web-tools/",
+  "web_tool_category_pattern": "/advancetools/web-tools/<category>/",
+  "web_tool_count": 530,
+  "canonical_leaf_policy": "PRESERVE_FROZEN_INVENTORY_ROUTES",
+  "existing_patro_tools_policy": "SEPARATE_UNCHANGED",
+  "dashboard_load_policy": "METADATA_ONLY_UNTIL_CANONICAL_TOOL_OPEN"
+}

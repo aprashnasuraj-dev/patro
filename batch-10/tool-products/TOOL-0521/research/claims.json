@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "30 months/913 days in 5 years or 18 months/548 days in 3 years; USCIS counts departure and return days in US.",
+    "supporting_urls": [
+      "https://www.uscis.gov/sites/default/files/document/forms/n-400instr.pdf"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Continuous residence, tax and morality conditions not certified."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "A permanent resident five-year anniversary of January 15 gives a possible early-filing start 90 days before, only if other criteria met.",
+    "status": "TEST_PENDING"
+  }
+]

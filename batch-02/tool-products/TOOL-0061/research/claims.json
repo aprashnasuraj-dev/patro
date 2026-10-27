@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0061",
+  "claims": [
+    {
+      "claim": "The page must actually display all questions and answers.",
+      "supporting_url": "https://schema.org/FAQPage",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "JSON-LD validity never guarantees search feature eligibility.",
+      "supporting_url": "https://schema.org/FAQPage",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "schema.org/FAQPage and Google FAQ rich-result guidance."
+  ],
+  "limitations": [
+    "Google largely restricts FAQ rich results to authoritative government and health sites."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

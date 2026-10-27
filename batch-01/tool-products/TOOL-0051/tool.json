@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0051",
+  "name": "Permissions-Policy Header Generator",
+  "reserved_route": "/tools/permissions-policy-generator",
+  "family_id": "F0023",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-03",
+  "description": "Compose Permissions-Policy allowlists for camera, microphone, geolocation and other features.",
+  "seo": {
+    "title": "Permissions-Policy Header Generator | Mission Mangal Tools",
+    "meta_description": "Compose Permissions-Policy allowlists for camera, microphone, geolocation and other features.",
+    "h1": "Permissions-Policy Header Generator",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

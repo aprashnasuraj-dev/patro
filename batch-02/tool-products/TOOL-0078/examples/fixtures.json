@@ -1,0 +1,17 @@
+{
+  "sample_input": {
+    "csv": "source,target\nhttps://example.com/old,https://example.com/new\nhttps://example.com/new,https://example.com/final\nhttps://example.com/x,https://example.com/y\nhttps://example.com/y,https://example.com/x"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "a → b → c is a chain; a → b → a is a loop.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{csv:'source,target\\nhttps://example.com/a,https://example.com/b\\nhttps://example.com/b,https://example.com/c\\nhttps://example.com/x,https://example.com/y\\nhttps://example.com/y,https://example.com/x'}",
+    "assertions": "assert.equal(result.metrics[2][1],2);assert.ok(result.rows.some(x=>x.status==='CHAIN'));"
+  }
+}

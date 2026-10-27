@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0484",
+  "related": [
+    {
+      "id": "TOOL-0270",
+      "title": "Wire Gauge and Voltage Drop Calculator",
+      "proposed_canonical": "/calculators/voltage-drop-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0407",
+      "title": "Pattern Repeat & Drop Match Calculator",
+      "proposed_canonical": "/calculators/wallpaper-pattern-repeat-roll-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0186",
+      "title": "CSV Column Reorder, Rename and Drop Tool",
+      "proposed_canonical": "/utilities/csv-column-editor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0483",
+      "title": "Event Space Capacity Calculator",
+      "proposed_canonical": "/calculators/event-room-capacity-layout-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

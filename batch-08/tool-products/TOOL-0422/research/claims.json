@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Salary-to-contract conversion",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Tax status, benefit value, overtime and client nonpayment must be independently assessed.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Tax status, benefit value, overtime and client nonpayment must be independently assessed.",
+  "authoritative_references": [
+    "https://www.dol.gov/agencies/whd/flsa/misclassification/myths/detail",
+    "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

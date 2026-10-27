@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0277",
+  "examples": [
+    {
+      "inputs": {
+        "length_ft": 30,
+        "exposed_height_ft": 3,
+        "block_face_in": [
+          16,
+          6
+        ],
+        "buried_courses": 1,
+        "drainage_depth_in": 12,
+        "base_in": [
+          28,
+          6
+        ]
+      },
+      "expected_note": "Backfill uses an explicit drainage-zone width; structure is not sized."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "RSU State and Employer Withholding Gap Calculator",
+  "default_inputs": {
+    "shares": "100",
+    "fmv": "90",
+    "federalW": "22",
+    "stateW": "5",
+    "ficaW": "7.65",
+    "fedTrue": "32",
+    "stateTrue": "8",
+    "otherTrue": "7.65"
+  },
+  "worked_example": "100 shares × $90 creates $9,000 vesting wages before withholding.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

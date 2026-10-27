@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0257",
+  "status": "TEST_PENDING",
+  "sample": {
+    "averageDailyDemand": 100,
+    "dailyDemandSd": 15,
+    "averageLeadTimeDays": 7,
+    "leadTimeSdDays": 1,
+    "serviceLevelPct": 95,
+    "roundWholeUnits": true
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

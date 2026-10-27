@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0324",
+  "related": [
+    {
+      "id": "TOOL-0323",
+      "title": "Password Strength Auditor with Pattern Breakdown",
+      "proposed_canonical": "/validators/password-strength-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0326",
+      "title": "HMAC Generator and Webhook Signature Tester",
+      "proposed_canonical": "/generators/hmac-signature-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0327",
+      "title": "PKCE Code Verifier and Challenge Generator",
+      "proposed_canonical": "/generators/pkce-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0331",
+      "title": "RSA and ECDSA Key Pair Generator (PEM and JWK)",
+      "proposed_canonical": "/generators/generate-rsa-key-pair",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0335",
+      "title": "API Key and Token Generator (Hex, Base62, UUIDv7, ULID)",
+      "proposed_canonical": "/generators/api-key-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

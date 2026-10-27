@@ -1,0 +1,2 @@
+import * as core from './core'; import { $,file,num,val,checked,guarded,dl,resultText } from '../_vendor/ui'; $('primary').textContent='Apply watermark';$('primary').addEventListener('click',()=>guarded(async()=>{const b=await core.watermark(file('file'),{text:val('text'),opacity:num('opacity'),rotation:num('rotation'),tiled:checked('tiled')});resultText('Watermark added as new PDF page content.');dl(b,'watermarked.pdf')}));
+

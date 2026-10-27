@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0210",
+  "related": [
+    {
+      "id": "TOOL-0213",
+      "title": "Z-Score to Percentile Calculator (Normal Distribution)",
+      "proposed_canonical": "/calculators/z-score-to-percentile-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0212",
+      "title": "Percentile and Quantile Calculator for a Dataset",
+      "proposed_canonical": "/calculators/percentile-calculator-from-data",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0203",
+      "title": "Wilson Score Confidence Interval Calculator",
+      "proposed_canonical": "/calculators/wilson-score-interval-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0300",
+      "title": "DOTS and Wilks Score Calculator for Powerlifting",
+      "proposed_canonical": "/calculators/dots-score-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0081",
+      "title": "Zero-Width and Invisible Character Detector",
+      "proposed_canonical": "/analyzers/invisible-character-detector",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

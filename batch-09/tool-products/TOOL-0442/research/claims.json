@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Trim, bleed and safe artwork measurements",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "No printer ICC profile, fold/gutter binding, imposed sheet, crop mark rules or PDF/X standard is certified.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://helpx.adobe.com/be_en/indesign/desktop/print/page-set-up-and-printer-marks/print-bleed-and-slug-areas.html"
+  ],
+  "assumptions": "No printer ICC profile, fold/gutter binding, imposed sheet, crop mark rules or PDF/X standard is certified.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0134",
+  "claims": [
+    {
+      "claim": "Compare two same-size images pixel by pixel and export a visual diff plus quantitative mismatch metrics.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Pixel differences are sensitive to colour management, antialiasing and lossy compression and are not equivalent to perceptual similarity.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

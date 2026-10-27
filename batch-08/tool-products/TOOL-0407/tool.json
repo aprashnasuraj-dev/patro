@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0407",
+  "name": "Pattern Repeat & Drop Match Calculator",
+  "reserved_route": "/tools/wallpaper-pattern-repeat-roll-calculator",
+  "engineering_family_id": "F0226",
+  "engineering_family": "Pattern Repeat & Drop Match Calculator",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Pattern Repeat & Drop Match Calculator | AafnaiPatro Tools",
+    "description": "Estimate wallpaper strip cut lengths and roll count while accounting for vertical repeat and an editable drop-match offset.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

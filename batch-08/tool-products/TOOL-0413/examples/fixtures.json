@@ -1,0 +1,27 @@
+{
+  "tool_id": "TOOL-0413",
+  "fixtures": [
+    {
+      "id": "default",
+      "input": {
+        "filingStatus": "single",
+        "currentTax": 20000,
+        "priorTax": 18000,
+        "priorAgi": 120000,
+        "withholding": 8000
+      },
+      "purpose": "Representative valid input; expected values are asserted in source tests where stable."
+    },
+    {
+      "id": "boundary-review",
+      "input": {
+        "filingStatus": "single",
+        "currentTax": 20000,
+        "priorTax": 18000,
+        "priorAgi": 120000,
+        "withholding": 8000
+      },
+      "purpose": "Reuse with one field at a documented min/max during deferred QA."
+    }
+  ]
+}

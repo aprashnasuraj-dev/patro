@@ -1,0 +1,101 @@
+{
+  "id": "TOOL-0522",
+  "name": "UK EU and Canada Flight Delay Compensation Checker",
+  "slug": "flight-delay-compensation-uk-eu-canada",
+  "route": "/tools/flight-delay-compensation-uk-eu-canada",
+  "family": "F0312",
+  "description": "Screen eligible flight-arrival delay compensation using distinct EU, UK and Canadian regimes and carrier-control assumptions.",
+  "seo": {
+    "title": "UK EU and Canada Flight Delay Compensation Checker — Free Local Tool | AafnaiPatro",
+    "description": "Screen eligible flight-arrival delay compensation using distinct EU, UK and Canadian regimes and carrier-control assumptions.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "travel",
+  "inputs": [
+    {
+      "key": "scheme",
+      "label": "Relevant passenger rights regime",
+      "default": "EU",
+      "type": "select",
+      "options": [
+        "EU",
+        "UK",
+        "CA"
+      ]
+    },
+    {
+      "key": "distance",
+      "label": "Great-circle flight distance",
+      "default": 1800,
+      "unit": "km",
+      "type": "number",
+      "min": 1,
+      "max": 25000,
+      "step": "any"
+    },
+    {
+      "key": "arrivalDelay",
+      "label": "Arrival delay at final ticketed destination",
+      "default": 230,
+      "unit": "minutes",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "euWithin",
+      "label": "Flight entirely within EU",
+      "default": "no",
+      "type": "select",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    {
+      "key": "caSize",
+      "label": "Canadian airline category",
+      "default": "large",
+      "type": "select",
+      "options": [
+        "large",
+        "small"
+      ]
+    },
+    {
+      "key": "covered",
+      "label": "Confirmed geographic/carrier scope",
+      "default": "yes",
+      "type": "select",
+      "options": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    },
+    {
+      "key": "reason",
+      "label": "Delay within airline control / no extraordinary circumstances",
+      "default": "yes",
+      "type": "select",
+      "options": [
+        "yes",
+        "no",
+        "unknown"
+      ]
+    }
+  ]
+}

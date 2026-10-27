@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0331",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Web Crypto algorithm labels/purposes matter. This is not a certificate generator, SSH key generator or OpenPGP key generator."
+}

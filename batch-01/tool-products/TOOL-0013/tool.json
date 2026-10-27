@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0013",
+  "title": "JSON to PostgreSQL Upsert Generator",
+  "slug": "json-to-postgres-upsert",
+  "route": "/tools/json-to-postgres-upsert",
+  "engineering_family": "F0006",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "JSON to PostgreSQL Upsert Generator — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Generate reviewable parameter placeholders plus values manifest for PostgreSQL INSERT ON CONFLICT. Runs locally in your browser. Review limitations and exampl",
+    "h1": "Conflict plan builder: JSON to PostgreSQL Upsert Generator",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "JSON object or array of records",
+    "max_utf8_bytes": 250000
+  },
+  "output": "upsert.sql",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {},
+  "limits": "Requires a real matching unique or exclusion constraint for conflict target. Generated placeholders are not interpolated SQL literals; bind parameter values in a trusted client."
+}

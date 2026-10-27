@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>JSON to Protobuf (.proto) Generator — Browser-Based Draft Tool | AafnaiPatro</title>
+<meta name="description" content="Generate nested messages and sample-based scalar fields, with warnings about long-term field tag stability."><!-- Unpublished staging draft: canonical=null; og_url=null; date_published=null. -->
+</head><body><main class="mm-tool" data-tool="TOOL-0005">
+<header class="mm-hero"><div><div class="mm-eyebrow">Protocol schema design</div><h1>Build an editable proto3 message draft from JSON</h1><p>Generate nested messages and sample-based scalar fields, with warnings about long-term field tag stability.</p></div><aside class="mm-hero-aside"><strong>Designed for</strong><p>Wire-format ID awareness · proto3 syntax · schema evolution caution</p></aside></header>
+<div id="tool-interactive-root" data-tool-id="TOOL-0005"><p>The local browser workspace will load when this route is activated. You can read the instructions below without JavaScript.</p></div>
+<section class="mm-content" aria-labelledby="how-to"><h2 id="how-to">How to use this tool</h2><p>Paste representative JSON, choose a root message and protobuf package, then inspect field types and stable numeric tags before adoption.</p>
+<h2>Worked example</h2><p>Try this representative input to inspect the output and its warnings:</p><pre><code>{
+  &quot;customer_id&quot;: 12,
+  &quot;active&quot;: true,
+  &quot;name&quot;: &quot;Mira&quot;,
+  &quot;addresses&quot;: [{&quot;city&quot;: &quot;Kathmandu&quot;, &quot;zip&quot;: 44600}],
+  &quot;labels&quot;: [&quot;regular&quot;, &quot;email&quot;]
+}</code></pre>
+<h2>Supported formats and constraints</h2><p>JSON input; Protocol Buffers proto3 message and field grammar</p><p>Sample inference cannot establish absent fields, int64 precision, enums, map intent or safe future field numbers; do not reorder tags after deployment.</p>
+<h2>Privacy and safety</h2><p>Source is prepared for local browser execution. There is no automatic upload or third-party conversion API; verify actual behavior during the post-import testing stage. Review any exported content before sharing or executing it.</p>
+<h2>Specifications and primary references</h2><ul><li><a href="https://protobuf.dev/reference/protobuf/proto3-spec/" rel="noopener noreferrer">https://protobuf.dev/reference/protobuf/proto3-spec/</a></li><li><a href="https://protobuf.dev/programming-guides/editions/" rel="noopener noreferrer">https://protobuf.dev/programming-guides/editions/</a></li></ul>
+</section></main></body></html>

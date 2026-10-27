@@ -1,0 +1,13 @@
+{
+  "sample_input": {
+    "ip": "2001:0db8:0:0:0:0:2:1"
+  },
+  "worked_example": "2001:0DB8:0:0:0:0:0:1 → 2001:db8::1.",
+  "planned_expectations": [
+    "2001:0db8:0:0:0:0:2:1 compresses to 2001:db8::2:1.",
+    "0:0:0:0:0:0:0:0 compresses to ::.",
+    "Equal-length runs choose earliest; single zero field is not compressed.",
+    "Reject malformed IPv4, triple-colon, scope ID and trailing CIDR."
+  ],
+  "execution_state": "TEST_PENDING"
+}

@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Trim edge silence or shorten repeated silent pauses using configurable dB and duration thresholds.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg silenceremove filter"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Threshold-based silence removal can cut quiet breaths or ambience; audition output before publishing.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

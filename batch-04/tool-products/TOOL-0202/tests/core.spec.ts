@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {sampleSizeTwoProportions} from "../src/core";
+describe("sample size",()=>{it("grows as MDE shrinks",()=>{const a=sampleSizeTwoProportions({baseline:.1,target:.12,alpha:.05,power:.8,ratio:1,sided:"two"}),b=sampleSizeTwoProportions({baseline:.1,target:.11,alpha:.05,power:.8,ratio:1,sided:"two"});expect(b.total).toBeGreaterThan(a.total);});});

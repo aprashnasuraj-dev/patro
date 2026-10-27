@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0401",
+  "claims": [
+    {
+      "claim": "Concrete demand is hole volume minus embedded post volume, multiplied by post count and waste factor.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Bag counts use the user-entered manufacturer yield and round up to whole bags.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

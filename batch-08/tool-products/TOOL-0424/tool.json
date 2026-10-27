@@ -1,0 +1,41 @@
+{
+  "id": "TOOL-0424",
+  "name": "Security Deposit Return Deadline & Deduction Calculator",
+  "route": "/tools/security-deposit-return-deadline-calculator",
+  "family": "F0238",
+  "batch": "BATCH-08",
+  "stage": "SOURCE_PREPARED",
+  "execution": "browser-local",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Security Deposit Return Deadline & Deduction Calculator | AafnaiPatro Tools",
+    "description": "Estimate a refund and counting-day deadline using the deadline supplied for the property and a clearly itemized damages total."
+  },
+  "ui": {
+    "variant": "timeline",
+    "responsive_min_width_px": 320,
+    "supports_dark_mode": true,
+    "supports_reduced_motion": true
+  },
+  "security": {
+    "no_content_upload": true,
+    "no_account_required": true,
+    "no_server_roundtrip": true,
+    "bounded_inputs": true,
+    "untrusted_content_rendered_as_text": true
+  },
+  "integration": {
+    "entry_html": "page.html",
+    "entry_module": "src/ui.ts",
+    "shared_imports": [
+      "tool-products/_shared/guard.ts",
+      "tool-products/_shared/ui.ts"
+    ]
+  },
+  "qa_runtime_status": "TEST_PENDING"
+}

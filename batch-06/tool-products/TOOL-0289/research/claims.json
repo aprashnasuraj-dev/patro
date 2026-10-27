@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0289",
+  "claim": "Work backward from wake time by 7, 8, or 9 hours of sleep plus individual sleep-onset latency; clock calculations wrap across midnight.",
+  "assumptions": [
+    "No fixed 90-minute cycle guarantees an optimal wake time; adult needs differ; shift workers should seek tailored advice.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.cdc.gov/sleep/about/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    }
+  ],
+  "research_status": "SOURCE_IDENTIFIED_NOT_LIVE_VERIFIED",
+  "licensing": "Link to documentation; no external source code or datasets bundled."
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0171",
+  "related": [
+    {
+      "id": "TOOL-0172",
+      "title": "Audio Joiner and Merger",
+      "proposed_canonical": "/editors/merge-audio-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0173",
+      "title": "Audio Speed and Pitch Changer",
+      "proposed_canonical": "/editors/change-audio-speed-pitch",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0175",
+      "title": "Silence Remover for Audio",
+      "proposed_canonical": "/editors/remove-silence-from-audio",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0162",
+      "title": "Extract Audio from Video",
+      "proposed_canonical": "/extractors/extract-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0166",
+      "title": "Remove Audio from Video",
+      "proposed_canonical": "/editors/remove-audio-from-video",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

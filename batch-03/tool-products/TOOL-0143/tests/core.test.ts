@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {bookmarkPoints} from '../src/core';describe('TOOL-0143 bookmark split guards',()=>{it('rejects an empty PDF before outline parsing',async()=>{await expect(bookmarkPoints(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('resolves reviewed nested bookmark destinations and split ranges')});

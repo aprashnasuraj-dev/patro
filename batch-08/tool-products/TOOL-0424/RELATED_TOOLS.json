@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0424",
+  "related": [
+    {
+      "id": "TOOL-0429",
+      "title": "UK Tenancy Deposit Protection Penalty Calculator",
+      "proposed_canonical": "/calculators/uk-tenancy-deposit-protection-penalty",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0430",
+      "title": "Move-Out Damage Depreciation Calculator",
+      "proposed_canonical": "/calculators/move-out-damage-depreciation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0449",
+      "title": "COBRA Election & Payment Deadline Calculator",
+      "proposed_canonical": "/calculators/cobra-election-payment-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "proposed_canonical": "/calculators/final-paycheck-pto-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0462",
+      "title": "Statute of Limitations Deadline Calculator",
+      "proposed_canonical": "/calculators/statute-of-limitations-deadline-estimator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

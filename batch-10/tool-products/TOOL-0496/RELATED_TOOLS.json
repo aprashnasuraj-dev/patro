@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0496",
+  "related": [
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "proposed_canonical": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0509",
+      "title": "UK Shared Parental Leave and Pay Planner",
+      "proposed_canonical": "/planners/uk-shared-parental-leave-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0511",
+      "title": "Canadian OAS Clawback and RRIF Planner",
+      "proposed_canonical": "/planners/canada-oas-clawback-rrif-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0512",
+      "title": "Canada FHSA and RRSP Home Buyers Plan Planner",
+      "proposed_canonical": "/planners/canada-fhsa-rrsp-home-buyers-plan",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0502",
+      "title": "Inherited Property Stepped-Up Basis Calculator",
+      "proposed_canonical": "/calculators/inherited-property-stepped-up-basis-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

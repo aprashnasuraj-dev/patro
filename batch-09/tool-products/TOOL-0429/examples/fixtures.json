@@ -1,0 +1,18 @@
+{
+  "default_inputs": {
+    "deposit": 1200,
+    "received": "2026-06-01",
+    "protected": ""
+  },
+  "known_answer": {
+    "output_label": "Illustrative maximum award (3×)",
+    "expected_value": "£3,600.00"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

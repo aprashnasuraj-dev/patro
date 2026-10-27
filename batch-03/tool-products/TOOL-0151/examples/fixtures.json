@@ -1,0 +1,16 @@
+{
+  "known_answer": {
+    "description": "Two 100\u00d750 images on Letter preserve aspect ratio within margins."
+  },
+  "boundaries": [
+    "empty input",
+    "oversized file",
+    "maximum supported page/count/pixel boundary"
+  ],
+  "security": [
+    "malformed container",
+    "unsafe filename where relevant",
+    "script/event-handler content where relevant",
+    "resource exhaustion attempt"
+  ]
+}

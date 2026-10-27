@@ -1,0 +1,144 @@
+{
+  "id": "TOOL-0296",
+  "name": "Nutrition Facts Label Generator",
+  "slug": "nutrition-facts-label-generator",
+  "route": "/tools/nutrition-facts-label-generator",
+  "family": "F0160",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Nutrition Facts Label Generator | AafnaiPatro",
+    "description": "Create a browser-only illustrative Nutrition Facts panel from per-serving user-entered nutrients.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "text",
+      "key": "food",
+      "label": "Food name",
+      "default": "Sample oats",
+      "maxlength": 70
+    },
+    {
+      "type": "number",
+      "key": "serving",
+      "label": "Serving weight",
+      "default": 40,
+      "min": 0.1,
+      "max": 10000,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "servings",
+      "label": "Servings per container",
+      "default": 10,
+      "min": 1,
+      "max": 10000,
+      "step": "any",
+      "unit": "servings"
+    },
+    {
+      "type": "number",
+      "key": "calories",
+      "label": "Calories per serving",
+      "default": 150,
+      "min": 0,
+      "max": 30000,
+      "step": "any",
+      "unit": "kcal"
+    },
+    {
+      "type": "number",
+      "key": "fat",
+      "label": "Total fat",
+      "default": 3,
+      "min": 0,
+      "max": 3000,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "saturated",
+      "label": "Saturated fat",
+      "default": 0.5,
+      "min": 0,
+      "max": 3000,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "sodium",
+      "label": "Sodium",
+      "default": 0,
+      "min": 0,
+      "max": 30000,
+      "step": "any",
+      "unit": "mg"
+    },
+    {
+      "type": "number",
+      "key": "carb",
+      "label": "Total carbohydrate",
+      "default": 27,
+      "min": 0,
+      "max": 3000,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "fiber",
+      "label": "Dietary fiber",
+      "default": 4,
+      "min": 0,
+      "max": 3000,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "added",
+      "label": "Added sugars",
+      "default": 0,
+      "min": 0,
+      "max": 3000,
+      "step": "any",
+      "unit": "g"
+    },
+    {
+      "type": "number",
+      "key": "protein",
+      "label": "Protein",
+      "default": 5,
+      "min": 0,
+      "max": 3000,
+      "step": "any",
+      "unit": "g"
+    }
+  ],
+  "explanation": "Daily Value percentages use current US FDA adult reference amounts (fat 78g, sat fat 20g, sodium 2300mg, carb 275g, fiber 28g, added sugar 50g).",
+  "limitations": "Preview/mockup ONLY; not FDA-compliant labeling. Mandatory fields, approved rounding, RACC, allergens, declarations and lab evidence are outside this calculator.",
+  "related_tool_ids": [
+    "TOOL-0288",
+    "TOOL-0294"
+  ],
+  "sources": [
+    "https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label"
+  ],
+  "special_notes": "Requires standard/federation verification at integration."
+}

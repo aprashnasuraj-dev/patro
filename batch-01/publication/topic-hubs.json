@@ -1,0 +1,233 @@
+[
+  {
+    "path": "/utilities/developer-and-devops",
+    "topic": "Developer & DevOps",
+    "count": 40,
+    "indexable_after_ready": true,
+    "title": "Developer & DevOps Tools & Guides"
+  },
+  {
+    "path": "/utilities/web-seo-and-infrastructure",
+    "topic": "Web, SEO & Infrastructure",
+    "count": 40,
+    "indexable_after_ready": true,
+    "title": "Web, SEO & Infrastructure Tools & Guides"
+  },
+  {
+    "path": "/utilities/business-and-construction",
+    "topic": "Business & Construction",
+    "count": 40,
+    "indexable_after_ready": true,
+    "title": "Business & Construction Tools & Guides"
+  },
+  {
+    "path": "/utilities/text-and-writing",
+    "topic": "Text & Writing",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Text & Writing Tools & Guides"
+  },
+  {
+    "path": "/utilities/typography-and-fonts",
+    "topic": "Typography & Fonts",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Typography & Fonts Tools & Guides"
+  },
+  {
+    "path": "/utilities/images-and-design",
+    "topic": "Images & Design",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Images & Design Tools & Guides"
+  },
+  {
+    "path": "/utilities/pdf-and-documents",
+    "topic": "PDF & Documents",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "PDF & Documents Tools & Guides"
+  },
+  {
+    "path": "/utilities/video-and-audio",
+    "topic": "Video & Audio",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Video & Audio Tools & Guides"
+  },
+  {
+    "path": "/utilities/data-and-spreadsheets",
+    "topic": "Data & Spreadsheets",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Data & Spreadsheets Tools & Guides"
+  },
+  {
+    "path": "/utilities/statistics-and-mathematics",
+    "topic": "Statistics & Mathematics",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Statistics & Mathematics Tools & Guides"
+  },
+  {
+    "path": "/utilities/personal-finance",
+    "topic": "Personal Finance",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Personal Finance Tools & Guides"
+  },
+  {
+    "path": "/utilities/fitness-and-wellness",
+    "topic": "Fitness & Wellness",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Fitness & Wellness Tools & Guides"
+  },
+  {
+    "path": "/utilities/science-and-utilities",
+    "topic": "Science & Utilities",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Science & Utilities Tools & Guides"
+  },
+  {
+    "path": "/utilities/security-and-privacy",
+    "topic": "Security & Privacy",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Security & Privacy Tools & Guides"
+  },
+  {
+    "path": "/utilities/content-creation",
+    "topic": "Content Creation",
+    "count": 20,
+    "indexable_after_ready": true,
+    "title": "Content Creation Tools & Guides"
+  },
+  {
+    "path": "/utilities/learning-and-education",
+    "topic": "Learning & Education",
+    "count": 19,
+    "indexable_after_ready": true,
+    "title": "Learning & Education Tools & Guides"
+  },
+  {
+    "path": "/utilities/tax-and-retirement",
+    "topic": "Tax & Retirement",
+    "count": 19,
+    "indexable_after_ready": true,
+    "title": "Tax & Retirement Tools & Guides"
+  },
+  {
+    "path": "/utilities/electronics-and-photography",
+    "topic": "Electronics & Photography",
+    "count": 12,
+    "indexable_after_ready": true,
+    "title": "Electronics & Photography Tools & Guides"
+  },
+  {
+    "path": "/utilities/health-and-employment",
+    "topic": "Health & Employment",
+    "count": 12,
+    "indexable_after_ready": true,
+    "title": "Health & Employment Tools & Guides"
+  },
+  {
+    "path": "/utilities/home-and-construction",
+    "topic": "Home & Construction",
+    "count": 11,
+    "indexable_after_ready": true,
+    "title": "Home & Construction Tools & Guides"
+  },
+  {
+    "path": "/utilities/tax-and-accounting",
+    "topic": "Tax & Accounting",
+    "count": 11,
+    "indexable_after_ready": true,
+    "title": "Tax & Accounting Tools & Guides"
+  },
+  {
+    "path": "/utilities/property-and-renting",
+    "topic": "Property & Renting",
+    "count": 10,
+    "indexable_after_ready": true,
+    "title": "Property & Renting Tools & Guides"
+  },
+  {
+    "path": "/utilities/science-and-education",
+    "topic": "Science & Education",
+    "count": 9,
+    "indexable_after_ready": true,
+    "title": "Science & Education Tools & Guides"
+  },
+  {
+    "path": "/utilities/shipping-and-commerce",
+    "topic": "Shipping & Commerce",
+    "count": 9,
+    "indexable_after_ready": true,
+    "title": "Shipping & Commerce Tools & Guides"
+  },
+  {
+    "path": "/utilities/cooking-and-crafts",
+    "topic": "Cooking & Crafts",
+    "count": 8,
+    "indexable_after_ready": true,
+    "title": "Cooking & Crafts Tools & Guides"
+  },
+  {
+    "path": "/utilities/vehicle-and-transport",
+    "topic": "Vehicle & Transport",
+    "count": 8,
+    "indexable_after_ready": true,
+    "title": "Vehicle & Transport Tools & Guides"
+  },
+  {
+    "path": "/utilities/print-and-crafts",
+    "topic": "Print & Crafts",
+    "count": 8,
+    "indexable_after_ready": true,
+    "title": "Print & Crafts Tools & Guides"
+  },
+  {
+    "path": "/utilities/law-travel-and-immigration",
+    "topic": "Law, Travel & Immigration",
+    "count": 8,
+    "indexable_after_ready": true,
+    "title": "Law, Travel & Immigration Tools & Guides"
+  },
+  {
+    "path": "/utilities/events-and-lifestyle",
+    "topic": "Events & Lifestyle",
+    "count": 7,
+    "indexable_after_ready": true,
+    "title": "Events & Lifestyle Tools & Guides"
+  },
+  {
+    "path": "/utilities/home-and-agriculture",
+    "topic": "Home & Agriculture",
+    "count": 6,
+    "indexable_after_ready": true,
+    "title": "Home & Agriculture Tools & Guides"
+  },
+  {
+    "path": "/utilities/home-and-lifestyle",
+    "topic": "Home & Lifestyle",
+    "count": 6,
+    "indexable_after_ready": true,
+    "title": "Home & Lifestyle Tools & Guides"
+  },
+  {
+    "path": "/utilities/legal-and-compliance",
+    "topic": "Legal & Compliance",
+    "count": 4,
+    "indexable_after_ready": false,
+    "title": "Legal & Compliance Tools & Guides"
+  },
+  {
+    "path": "/utilities/australia-finance-and-home",
+    "topic": "Australia Finance & Home",
+    "count": 3,
+    "indexable_after_ready": false,
+    "title": "Australia Finance & Home Tools & Guides"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0286",
+  "claim": "CSS seconds/100m = (T400\u2212T200)/2. This is the slope of time versus distance between the two swims.",
+  "assumptions": [
+    "Requires maximal swims in comparable conditions; intervals differ from training prescriptions and turns/pool length affect comparisons.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.swimsmooth.com/"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

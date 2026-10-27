@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0070",
+  "name": "XML Sitemap Generator from URL List",
+  "reserved_route": "/tools/sitemap-from-url-list",
+  "family_id": "F0036",
+  "family": "Sitemap Generator and Splitter",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "browser_runtime": "src/ui.js",
+  "core_source": "src/core.ts",
+  "seo": {
+    "title": "XML Sitemap Generator from URL List | AafnaiPatro Tools",
+    "description": "Generate a standards-compatible sitemap.xml from local URL lists.",
+    "h1": "XML Sitemap Generator from URL List",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "client_side_only": true,
+    "no_account": true,
+    "no_upload": true,
+    "network": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0250",
+  "related": [
+    {
+      "id": "TOOL-0458",
+      "title": "State Overtime & Fluctuating Workweek Calculator",
+      "proposed_canonical": "/calculators/state-overtime-pay-rules-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0518",
+      "title": "California Meal Break and Overtime Wage Claim Calculator",
+      "proposed_canonical": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0063",
+      "title": "LocalBusiness Schema with Opening Hours Builder",
+      "proposed_canonical": "/generators/local-business-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0436",
+      "title": "Hours-of-Service Planner (US FMCSA & UK/EU)",
+      "proposed_canonical": "/planners/drivers-hours-of-service-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0472",
+      "title": "Trade Licence Hours Tracker by State",
+      "proposed_canonical": "/planners/journeyman-apprenticeship-hours-tracker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,20 @@
+{
+  "sample_input": "{\"a\":1,\"items\":[3,1,3]}\n---JSON-DIFF---\n{\"items\":[1,3,3],\"a\":1}",
+  "intended_action": "Compare JSON",
+  "manual_review_cases": [
+    {
+      "input": "unordered arrays with duplicates",
+      "expectation": "same"
+    },
+    {
+      "input": "mismatched multiplicity",
+      "expectation": "changed"
+    }
+  ],
+  "limits": "Unordered arrays implement multiset semantics (duplicates matter); array sorting may erase meaningful sequence semantics. Large nested values are bounded to prevent resource exhaustion.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"equal\": true"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

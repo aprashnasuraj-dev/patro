@@ -1,0 +1,2 @@
+export function uart(clock:number,baud:number,max=4095){if(!(clock>0&&baud>0))throw new Error('Clock and baud must be positive.');return[16,8].map(div=>{const ideal=clock/(div*baud)-1;const ubrr=Math.max(0,Math.min(max,Math.round(ideal)));const actual=clock/(div*(ubrr+1)),error=(actual-baud)/baud*100;return{mode:div===16?'normal (16×)':'double speed (8×)',ubrr,actual,error}}).sort((a,b)=>Math.abs(a.error)-Math.abs(b.error))}
+

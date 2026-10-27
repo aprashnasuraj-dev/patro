@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0264",
+  "name": "Tile Calculator with Grout and Layout Waste",
+  "route": "/tools/tile-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0135",
+  "engineering_family": "Tile Layout and Grout Planner",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Tile Calculator with Grout and Layout Waste — Private Browser Tool",
+    "meta_description": "Estimate tile pieces, boxes and grout-joint volume from floor dimensions, tile size, joint width, grout depth and user-selected waste.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

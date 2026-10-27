@@ -1,0 +1,12 @@
+{
+  "sample_input": {
+    "raw": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Person\",\n  \"name\": \"Ada\"\n}"
+  },
+  "worked_example": "{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Ada\"} passes basic structural checks.",
+  "planned_expectations": [
+    "Schema.org Person has one type and one context.",
+    "Malformed JSON rejected; huge nested input bounded.",
+    "Warnings for unknown remote contexts, not false rich-result validation."
+  ],
+  "execution_state": "TEST_PENDING"
+}

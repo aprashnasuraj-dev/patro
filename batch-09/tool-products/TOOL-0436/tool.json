@@ -1,0 +1,41 @@
+{
+  "id": "TOOL-0436",
+  "name": "Hours-of-Service Planner (US FMCSA & UK/EU)",
+  "route": "/tools/drivers-hours-of-service-planner",
+  "family": "F0247",
+  "batch": "BATCH-09",
+  "stage": "SOURCE_PREPARED",
+  "execution": "browser-local",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Hours-of-Service Planner (US FMCSA & UK/EU) | AafnaiPatro Tools",
+    "description": "Show remaining straight-line driving and duty headroom under a selected baseline US property-carrier or EU/UK driving-rule scenario."
+  },
+  "ui": {
+    "variant": "timeline",
+    "responsive_min_width_px": 320,
+    "supports_dark_mode": true,
+    "supports_reduced_motion": true
+  },
+  "security": {
+    "no_content_upload": true,
+    "no_account_required": true,
+    "no_server_roundtrip": true,
+    "bounded_inputs": true,
+    "untrusted_content_rendered_as_text": true
+  },
+  "integration": {
+    "entry_html": "page.html",
+    "entry_module": "src/ui.ts",
+    "shared_imports": [
+      "tool-products/_shared/guard.ts",
+      "tool-products/_shared/ui.ts"
+    ]
+  },
+  "qa_runtime_status": "TEST_PENDING"
+}

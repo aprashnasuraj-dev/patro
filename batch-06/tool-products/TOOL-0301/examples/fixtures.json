@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0301",
+  "examples": [
+    {
+      "inputs": {
+        "start": "2026-11-02",
+        "end": "2026-11-13",
+        "weekend": "0,6",
+        "holidays": [
+          "2026-11-05"
+        ],
+        "inclusive": true
+      },
+      "expected": {
+        "business_days": 9
+      }
+    }
+  ]
+}

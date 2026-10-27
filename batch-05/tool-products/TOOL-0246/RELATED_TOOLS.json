@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0246",
+  "related": [
+    {
+      "id": "TOOL-0516",
+      "title": "Australian Home Battery Payback Calculator",
+      "proposed_canonical": "/calculators/australia-home-battery-payback-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0525",
+      "title": "Heat Pump vs Gas Boiler Payback Calculator",
+      "proposed_canonical": "/calculators/heat-pump-vs-gas-boiler-payback-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0108",
+      "title": "Fallback Font Metrics Override Generator",
+      "proposed_canonical": "/generators/font-fallback-size-adjust-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0244",
+      "title": "Margin vs Markup Calculator with Price Solver",
+      "proposed_canonical": "/calculators/margin-vs-markup-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

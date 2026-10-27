@@ -1,0 +1,18 @@
+// @ts-nocheck
+import {bounded,rows,webURL} from '../_vendor/guards.js';
+// Offline Google-style model of REP; no HTTP fetching, indexing checks, or encoding reinterpretation.
+function groups(input){const out=[],warnings=[];let agents=[],rules=[],begun=false;const flush=()=>{if(agents.length)out.push({agents:[...agents],rules:[...rules]});agents=[];rules=[];begun=false;};for(const raw of bounded(input,100000).split(/\r?\n/)){const line=raw.replace(/\s*#.*$/,'').trim();if(!line)continue;const m=line.match(/^([\w-]+)\s*:\s*(.*)$/);if(!m){if(warnings.length<5)warnings.push('Unrecognized directive omitted.');continue;}const k=m[1].toLowerCase(),val=m[2].trim();if(k==='user-agent'){if(begun)flush();agents.push(val.toLowerCase());}else if(k==='allow'||k==='disallow'){if(!agents.length)continue;begun=true;if(val){if(val.length>2048)throw Error('robots.txt rule exceeds 2,048 characters.');rules.push({kind:k,path:val});if(rules.length>500)throw Error('Maximum 500 rules per group.');}}else if(!['sitemap','host','crawl-delay'].includes(k)&&warnings.length<5)warnings.push('Unsupported directive '+k+'.');}flush();return {out,warnings};}
+function matchRule(path,r){
+ const pattern=r.path; if(pattern.length>2048)return false;
+ const anchored=pattern.endsWith('$'),body=anchored?pattern.slice(0,-1):pattern;
+ const parts=body.split('*');let pos=parts[0].length;
+ if(!path.startsWith(parts[0]))return false;
+ const last=parts[parts.length-1],terminalStart=anchored&&last?path.length-last.length:path.length;
+ if(terminalStart<pos)return false;
+ for(let i=1;i<parts.length;i++){const piece=parts[i];if(!piece)continue;
+  if(anchored&&i===parts.length-1){if(!path.endsWith(piece)||terminalStart<pos)return false;pos=path.length;}
+  else{const found=path.indexOf(piece,pos);if(found<0||found+piece.length>terminalStart)return false;pos=found+piece.length;}
+ }
+ return !anchored||body.endsWith('*')||pos===path.length;
+}
+export function compute(x){const {out,warnings}=groups(x.robots);const agent=bounded(x.agent||'Googlebot',120).trim().toLowerCase();if(!agent)throw Error('Specify a crawler user-agent token.');const list=rows(x.urls,2000,250000);if(!list.length)throw Error('Enter URLs to evaluate.');if(list.length>2000)throw Error('Too many URLs.');const matches=out.map(g=>({g,score:Math.max(...g.agents.map(a=>a==='*'?0:(agent.includes(a)?a.length:-1)))}));const best=Math.max(-1,...matches.map(m=>m.score));const active=matches.filter(m=>m.score===best&&best>=0).flatMap(m=>m.g.rules);const records=[];let origin='';for(const str of list){const u=new URL(webURL(str));if(!origin)origin=u.origin;if(u.origin!==origin)throw Error('The offline rules apply to one origin only.');const path=u.pathname+u.search;const hits=active.filter(r=>matchRule(path,r)).sort((a,b)=>b.path.length-a.path.length||(a.kind==='allow'?-1:1));const selected=hits[0];records.push({url:u.href,status:selected?.kind==='disallow'?'BLOCK':'ALLOW',matching_rule:selected?`${selected.kind}: ${selected.path}`:'Default allow'});}const blocked=records.filter(r=>r.status==='BLOCK').length;return {summary:`${list.length-blocked} allowed · ${blocked} blocked for ${agent}`,metrics:[['Allowed',list.length-blocked],['Blocked',blocked],['Active rules',active.length]],rows:records,visual:{type:'bars',label:'robots.txt effective decision split',items:[{label:'Allowed URLs',value:list.length-blocked,max:list.length},{label:'Blocked URLs',value:blocked,max:list.length}]},text:records.map(r=>`${r.status}\t${r.url}\t${r.matching_rule}`).join('\n'),warnings:[...warnings,'Offline Google-style preview only; different crawlers may interpret unsupported directives or URL encoding differently.','Rules do not establish that a live robots.txt is served at the correct origin.']};}

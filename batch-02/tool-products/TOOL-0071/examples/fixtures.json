@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "urls": "https://example.com/\nhttps://example.com/about\nhttps://example.com/blog",
+    "chunk": "50000",
+    "base": "https://example.com/"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "https://example.com/a and /b form sitemap-001.xml; published base URL enables an index.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{urls:'https://example.com/a\\nhttps://example.com/b',chunk:'1',base:'https://example.com/'}",
+    "assertions": "assert.equal(result.files.length,3); assert.equal(result.metrics[1][1],2); assert.match(result.text,/sitemap-001\\.xml/);"
+  }
+}

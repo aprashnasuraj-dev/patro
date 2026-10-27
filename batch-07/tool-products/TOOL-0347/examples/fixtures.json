@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0347",
+  "examples": [
+    {
+      "preset": "YouTube thumbnail",
+      "current_guidance": "16:9, high resolution; default 3840x2160"
+    },
+    {
+      "preset": "LinkedIn landscape",
+      "dimensions": "1200x628"
+    }
+  ]
+}

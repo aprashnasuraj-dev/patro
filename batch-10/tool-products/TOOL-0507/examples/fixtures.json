@@ -1,0 +1,14 @@
+{
+  "title": "UK Pension Annual Allowance Carry-Forward Calculator",
+  "default_inputs": {
+    "currentCap": "60000",
+    "currentUsed": "18000",
+    "y2023": "8000",
+    "y2024": "16000",
+    "y2025": "12000",
+    "member": "yes",
+    "mpaa": "no"
+  },
+  "worked_example": "£60,000 allowance minus £18,000 already used leaves £42,000 before prior carry-forward.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

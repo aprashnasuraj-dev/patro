@@ -1,0 +1,57 @@
+{
+  "id": "TOOL-0281",
+  "name": "One-Rep Max Calculator (Multi-Formula)",
+  "slug": "one-rep-max-calculator",
+  "route": "/tools/one-rep-max-calculator",
+  "family": "F0149",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "One-Rep Max Calculator (Multi-Formula) | AafnaiPatro",
+    "description": "Compare three established equations for predicting an estimated single maximal repetition from a weight and completed reps.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "weight",
+      "label": "Weight lifted",
+      "default": 80,
+      "min": 1,
+      "max": 1000,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "number",
+      "key": "reps",
+      "label": "Successful repetitions",
+      "default": 5,
+      "min": 1,
+      "max": 15,
+      "step": "1",
+      "unit": "reps"
+    }
+  ],
+  "explanation": "Epley = W(1+reps/30); Brzycki = 36W/(37−reps); Lombardi = W·reps^0.1. One actual repetition returns W.",
+  "limitations": "These are estimates, not safe lifting prescriptions; results weaken for many repetitions and different lifts.",
+  "related_tool_ids": [
+    "TOOL-0285",
+    "TOOL-0300"
+  ],
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11435939/"
+  ],
+  "special_notes": null
+}

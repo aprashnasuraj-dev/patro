@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {balance} from '../src/core';describe('TOOL-0373 core',()=>{it('known-answer fixture',()=>{expect(balance('H2 + O2 -> H2O').coefficients).toEqual(['2','1','2'])})});

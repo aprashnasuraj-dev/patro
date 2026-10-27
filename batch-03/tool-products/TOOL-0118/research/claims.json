@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0118",
+  "claims": [
+    {
+      "claim": "Turn a short heading into deterministic block-letter ASCII art and wrap it as a JavaScript, Python, SQL, CSS/Java or HTML comment banner.",
+      "status": "implementation-basis",
+      "source_ids": []
+    },
+    {
+      "claim": "This intentionally uses a compact built-in bitmap alphabet, not FIGlet fonts, so output styles are limited but dependency-free.",
+      "status": "limitation",
+      "source_ids": []
+    }
+  ]
+}

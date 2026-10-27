@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0402",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "AWC DCA 6-15 Table 2 and Table 3A",
+      "url": "https://awc.org/wp-content/uploads/2022/02/AWC-DCA62015-DeckGuide-1804.pdf",
+      "note": "Prescriptive residential deck reference based on 2015 IRC."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

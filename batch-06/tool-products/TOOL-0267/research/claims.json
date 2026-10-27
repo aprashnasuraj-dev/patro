@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0267",
+  "claims": [
+    {
+      "claim": "DCA 6 Table 2 supplies joist span/overhang values and states 40 psf live, 10 psf dead, No. 2 grade, wet service assumptions.",
+      "source_url": "https://awc.org/wp-content/uploads/2022/02/AWC-DCA62015-DeckGuide-1804.pdf",
+      "implementation_note": "The embedded table is intentionally limited to the displayed DCA 6 combinations."
+    },
+    {
+      "claim": "DCA 6 Table 3A supplies dimension-lumber beam spans by joist-span category.",
+      "source_url": "https://awc.org/wp-content/uploads/2022/02/AWC-DCA62015-DeckGuide-1804.pdf",
+      "implementation_note": "Only common 2-ply/3-ply dimension lumber rows are embedded."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

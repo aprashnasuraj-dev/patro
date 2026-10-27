@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0408",
+  "related": [
+    {
+      "id": "TOOL-0278",
+      "title": "Insulation R-Value and Coverage Calculator",
+      "proposed_canonical": "/calculators/insulation-calculator-r-value",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0409",
+      "title": "Stud Wall Layout & Cut List Generator",
+      "proposed_canonical": "/generators/stud-wall-layout-cut-list-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0277",
+      "title": "Retaining Wall Block and Backfill Calculator",
+      "proposed_canonical": "/calculators/retaining-wall-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

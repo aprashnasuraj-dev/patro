@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0188",
+  "build_sequence": 188,
+  "name": "Split Excel Workbook into Separate Files by Sheet",
+  "route": "/tools/split-excel-sheets",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0085",
+  "engineering_family": "Split and Merge CSV and Excel Files",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Split Excel Workbook into Separate Files by Sheet — Free Local Browser Tool",
+    "meta_description": "Split one Excel workbook into one workbook per worksheet while warning when formulas reference other sheets.",
+    "h1": "Split Excel Workbook into Separate Files by Sheet",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": 26214400,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": [
+    "/assets/vendor/sheetjs/xlsx-0.20.3/xlsx.mjs"
+  ]
+}

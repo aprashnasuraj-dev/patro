@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/TextMetrics/width",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Check real browser font measurements instead of using character counts alone.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://developers.google.com/search/docs/appearance/title-link",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Check real browser font measurements instead of using character counts alone.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

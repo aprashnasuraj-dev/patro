@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    [
+      "Design",
+      3,
+      5,
+      9
+    ],
+    [
+      "Build",
+      8,
+      12,
+      20
+    ],
+    [
+      "QA",
+      2,
+      4,
+      8
+    ]
+  ],
+  "iterations": 20000,
+  "seed": "project-1",
+  "lambda": 4
+}

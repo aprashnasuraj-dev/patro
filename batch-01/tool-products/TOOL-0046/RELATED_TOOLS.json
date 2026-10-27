@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0046",
+  "related": [
+    {
+      "id": "TOOL-0047",
+      "title": "Context-Aware URL Encoder",
+      "proposed_canonical": "/formatters/url-encode-path-vs-query",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0076",
+      "title": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+      "proposed_canonical": "/editors/remove-tracking-parameters",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0096",
+      "title": "String Escape and Unescape for JSON, Java, Python, SQL, Regex",
+      "proposed_canonical": "/utilities/string-escape-unescape",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0041",
+      "title": "CORS Configuration Generator (Nginx, Express, Apache, S3)",
+      "proposed_canonical": "/generators/cors-config-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,601 @@
+{
+  "schema_version": "MM530_PHASE4_BATCH_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "workflow_run_id": 40453367367,
+    "artifact_id": 12711621150,
+    "artifact_digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+  },
+  "batch": "BATCH-09",
+  "count": 53,
+  "summary": {
+    "unit_PASS": 53,
+    "compile_PASS": 53,
+    "compile_BLOCKED": 0
+  },
+  "tools": [
+    {
+      "id": "TOOL-0425",
+      "title": "Landlord Notice Period & Service-Date Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0426",
+      "title": "Rental Depreciation & Recapture Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0427",
+      "title": "Lease Termination Cost Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0429",
+      "title": "UK Tenancy Deposit Protection Penalty Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0430",
+      "title": "Move-Out Damage Depreciation Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0432",
+      "title": "Fair Roommate Rent Splitter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0433",
+      "title": "Tongue Weight, Payload & GCWR Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0434",
+      "title": "EV Home Charging Cost & Circuit Sizing",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0435",
+      "title": "Load Index & Speed Rating Decoder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0436",
+      "title": "Hours-of-Service Planner (US FMCSA & UK/EU)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0437",
+      "title": "Quarterly IFTA Fuel Tax Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0438",
+      "title": "Gig Driver True Profit Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0439",
+      "title": "Money Factor to APR & True Lease Cost",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0440",
+      "title": "Net VLT & Window Tint Law Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0441",
+      "title": "Social Video Safe-Zone Overlay Previewer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0443",
+      "title": "KDP/IngramSpark Spine Width & Cover Template",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0444",
+      "title": "Max Print Size from Pixels",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0445",
+      "title": "Video File Size & Bitrate Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0446",
+      "title": "Label Sheet Template & Alignment Printer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "SKIPPED_EXTERNAL_DEVICE"
+    },
+    {
+      "id": "TOOL-0447",
+      "title": "Cross-Stitch Fabric Size Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0448",
+      "title": "Yarn Yardage & Substitution Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0449",
+      "title": "COBRA Election & Payment Deadline Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0450",
+      "title": "Dog & Cat Food Portion and Cost Calculator by Brand",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0451",
+      "title": "Aquarium Volume, Water Change & Dose Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0452",
+      "title": "Pool Chemical Dosing Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0453",
+      "title": "Glasses to Contact Lens Prescription Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0454",
+      "title": "Prescription Run-Out & Refill Date Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0455",
+      "title": "Clear Aligner Schedule Planner",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0456",
+      "title": "Paid Family & Maternity Leave Pay Estimator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0458",
+      "title": "State Overtime & Fluctuating Workweek Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0459",
+      "title": "I-9 Reverification & Retention Date Tracker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0460",
+      "title": "FMLA Eligibility & Entitlement Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0461",
+      "title": "TRIR/DART Calculator with BLS Industry Benchmarks",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0462",
+      "title": "Statute of Limitations Deadline Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0463",
+      "title": "Court Pleading Paper Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0464",
+      "title": "Data Access Request Letter Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0465",
+      "title": "International GPA Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0466",
+      "title": "SAT/ACT Superscore & College Policy Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0467",
+      "title": "Professional Exam Study Schedule Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0468",
+      "title": "Continuing Education Credit & License Renewal Tracker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0469",
+      "title": "Supervised Driving Log by State",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0470",
+      "title": "Transcript & GPA Builder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0471",
+      "title": "Quarter-to-Semester Credit Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0472",
+      "title": "Trade Licence Hours Tracker by State",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0473",
+      "title": "Carrier Surcharge & Oversize Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0474",
+      "title": "Tariff & Landed Cost Estimator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0475",
+      "title": "Marketplace Listing Length & Byte Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0477",
+      "title": "Cartons per Pallet Calculator (US/UK/AU Pallets)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    }
+  ]
+}

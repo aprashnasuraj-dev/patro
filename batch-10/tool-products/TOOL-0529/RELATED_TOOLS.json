@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0529",
+  "related": [
+    {
+      "id": "TOOL-0219",
+      "title": "Monte Carlo Project Estimate Simulator (PERT)",
+      "proposed_canonical": "/utilities/monte-carlo-project-estimate",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0243",
+      "title": "Quote and Estimate Generator with Validity Date",
+      "proposed_canonical": "/generators/quote-generator-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0287",
+      "title": "FTP Zones and Power-to-Weight Calculator",
+      "proposed_canonical": "/calculators/ftp-zones-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0433",
+      "title": "Tongue Weight, Payload & GCWR Checker",
+      "proposed_canonical": "/validators/trailer-tongue-weight-payload-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

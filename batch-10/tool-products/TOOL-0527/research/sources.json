@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Original NPF rule by Frédéric Michaud, Société Astronomique du Havre",
+    "url": "https://sahavre.fr/wp/regle-npf-rule/",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Attributed full NPF: k(16.856N +0.0997f +13.713p)/(f cos δ); simplified estimate (35N+30p)/f.",
+    "uncertainty": "NPF developer lists attribution and permission restrictions; no commercial publication without licensing review."
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0413",
+  "related": [
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "proposed_canonical": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0412",
+      "title": "Form 2210 Annualized Income Installment Calculator",
+      "proposed_canonical": "/calculators/form-2210-annualized-income-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0414",
+      "title": "UK Payments on Account Planner",
+      "proposed_canonical": "/planners/uk-payments-on-account-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0293",
+      "title": "Weekly Mileage Progression Planner",
+      "proposed_canonical": "/planners/weekly-mileage-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0303",
+      "title": "Time Zone Meeting Planner Grid",
+      "proposed_canonical": "/planners/time-zone-meeting-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0304",
+  "name": "DST Transition Dates Finder by Time Zone",
+  "route": "/tools/dst-transition-dates",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0163",
+  "engineering_family": "Time Zone and DST Planner",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "DST Transition Dates Finder by Time Zone — Private Browser Tool",
+    "meta_description": "Find offset changes for an IANA time zone by scanning the browser’s time-zone implementation and binary-searching each detected transition to minute precision.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

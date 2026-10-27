@@ -21,6 +21,17 @@ const types = {
   ".json": "application/json; charset=utf-8",
   ".svg": "image/svg+xml",
   ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".gif": "image/gif",
+  ".wasm": "application/wasm",
+  ".woff": "font/woff",
+  ".woff2": "font/woff2",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
+  ".mp3": "audio/mpeg",
+  ".wav": "audio/wav",
   ".webmanifest": "application/manifest+json; charset=utf-8",
   ".xml": "application/xml; charset=utf-8",
   ".txt": "text/plain; charset=utf-8"
@@ -186,12 +197,35 @@ const handler = async (req, res) => {
     res.end('{"error":"static_audit_server"}');
     return;
   }
+  if (url.pathname === "/mm530-runtime/ffmpeg-core.wasm" && (req.method === "GET" || req.method === "HEAD")) {
+    const manifestPath = join(root, "assets/vendor/ffmpeg/ffmpeg-core.wasm.parts.json");
+    try {
+      const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+      const parts = Array.isArray(manifest.parts) ? manifest.parts : [];
+      const total = Number(manifest.totalBytes);
+      if (!Number.isInteger(total) || total <= 0 || parts.length < 2) throw new Error("invalid ffmpeg manifest");
+      const headers = { "content-type": "application/wasm", "content-length": String(total), "cache-control": "public, max-age=86400", ...headersForPath(url.pathname) };
+      res.writeHead(200, headers);
+      if (req.method === "HEAD") { res.end(); return; }
+      for (const part of parts) {
+        const rel = String(part.url || "").replace(/^\/+/, "");
+        if (!rel.startsWith("assets/vendor/ffmpeg/ffmpeg-core.wasm.part")) throw new Error("invalid ffmpeg part path");
+        res.write(await readFile(join(root, rel)));
+      }
+      res.end(); return;
+    } catch (error) {
+      res.writeHead(503, { "content-type": "text/plain; charset=utf-8" });
+      res.end("FFmpeg runtime unavailable");
+      return;
+    }
+  }
   const decoded = decodeURIComponent(url.pathname);
   const safe = normalize(decoded).replace(/^([.][.][/\\])+/, "").replace(/^[/\\]+/, "");
   let file = join(root, safe || "index.html");
   if (!(await existing(file))) {
+    const htmlCandidate = file + ".html";
     const indexCandidate = join(file, "index.html");
-    file = (await existing(indexCandidate)) ? indexCandidate : join(root, "index.html");
+    file = (await existing(htmlCandidate)) ? htmlCandidate : (await existing(indexCandidate)) ? indexCandidate : join(root, "index.html");
   }
   if (!(await existing(file))) {
     res.writeHead(404); res.end("Not found"); return;

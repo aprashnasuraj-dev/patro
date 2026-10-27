@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0174",
+  "related": [
+    {
+      "id": "TOOL-0176",
+      "title": "WAV to MP3 Encoder with Bitrate Choice",
+      "proposed_canonical": "/converters/wav-to-mp3",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0162",
+      "title": "Extract Audio from Video",
+      "proposed_canonical": "/extractors/extract-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0166",
+      "title": "Remove Audio from Video",
+      "proposed_canonical": "/editors/remove-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0171",
+      "title": "Audio Cutter with Fade In and Out",
+      "proposed_canonical": "/utilities/audio-cutter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0172",
+      "title": "Audio Joiner and Merger",
+      "proposed_canonical": "/editors/merge-audio-files",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

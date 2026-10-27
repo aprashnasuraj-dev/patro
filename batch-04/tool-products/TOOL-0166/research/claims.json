@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Remove audio streams while copying the original video stream whenever the container permits it.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg stream mapping"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Container/codec compatibility is not changed because the video stream is copied.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

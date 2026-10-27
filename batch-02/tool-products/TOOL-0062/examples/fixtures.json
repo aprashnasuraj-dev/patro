@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "name": "Garden vegetable soup",
+    "image": "https://example.com/soup.jpg",
+    "description": "A simple vegetable soup for a weekday lunch.",
+    "ingredients": "2 carrots\n1 onion\n500 ml vegetable stock",
+    "steps": "Chop the vegetables.\nSimmer everything for 20 minutes.",
+    "prep": "10",
+    "cook": "20",
+    "yield": "4 servings"
+  },
+  "worked_example": "A 25-minute vegetable soup can have prepTime PT10M and cookTime PT15M.",
+  "planned_expectations": [
+    "Known two-step recipe includes cookTime=PT20M and ingredients.",
+    "Reject invalid or HTTP-only image URL and oversized steps.",
+    "Escape raw </script> injected into description."
+  ],
+  "execution_state": "TEST_PENDING"
+}

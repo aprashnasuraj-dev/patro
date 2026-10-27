@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.result section{border-top:1px solid var(--border);padding-top:10px}

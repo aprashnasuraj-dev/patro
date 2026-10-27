@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0490",
+  "name": "Firewood Volume & Cost-per-BTU Calculator",
+  "route": "/tools/firewood-cord-volume-cost-btu-calculator",
+  "slug": "firewood-cord-volume-cost-btu-calculator",
+  "family": "F0287",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Firewood Volume & Cost-per-BTU Calculator | AafnaiPatro Tools",
+    "description": "Calculate cord fractions from a measured, well-stowed stack and cost per million useful BTU using explicitly provided heat content and stove efficiency assumpti"
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

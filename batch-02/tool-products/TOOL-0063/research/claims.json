@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0063",
+  "claims": [
+    {
+      "claim": "Address country should be ISO 3166-1 alpha-2.",
+      "supporting_url": "https://schema.org/LocalBusiness",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Hours are local wall time and do not encode timezone or holiday exceptions.",
+      "supporting_url": "https://schema.org/LocalBusiness",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "Schema.org LocalBusiness, PostalAddress and OpeningHoursSpecification."
+  ],
+  "limitations": [
+    "Does not validate real business existence, special holidays or overnight schedules."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

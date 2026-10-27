@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0448",
+  "related": [
+    {
+      "id": "TOOL-0399",
+      "title": "Knitting Gauge and Cast-On Calculator",
+      "proposed_canonical": "/calculators/knitting-gauge-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0528",
+      "title": "Quilt Yardage, Backing and Binding Calculator",
+      "proposed_canonical": "/calculators/quilt-yardage-binding-batting-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0443",
+      "title": "KDP/IngramSpark Spine Width & Cover Template",
+      "proposed_canonical": "/calculators/book-spine-width-cover-template-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0444",
+      "title": "Max Print Size from Pixels",
+      "proposed_canonical": "/calculators/max-print-size-from-pixels-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0445",
+      "title": "Video File Size & Bitrate Calculator",
+      "proposed_canonical": "/calculators/video-file-size-bitrate-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0415",
+  "claims": [
+    {
+      "claim": "Quick Method remittance is based on tax-included eligible revenue multiplied by the applicable CRA remittance rate, with the qualified 1% credit handled separately.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Regular Method comparison deducts user-entered eligible ITCs from estimated tax collected.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

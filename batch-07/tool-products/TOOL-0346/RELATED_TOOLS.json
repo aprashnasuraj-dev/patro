@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0346",
+  "related": [
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0345",
+      "title": "Accessible Hashtag Formatter (PascalCase)",
+      "proposed_canonical": "/formatters/hashtag-camelcase-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0354",
+      "title": "Thread Splitter for Posts (Numbered, Sentence-Aware)",
+      "proposed_canonical": "/editors/thread-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0355",
+      "title": "Text-on-Image Contrast Checker (WCAG and APCA)",
+      "proposed_canonical": "/validators/contrast-checker-apca",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0107",
+      "title": "@font-face CSS Generator with unicode-range",
+      "proposed_canonical": "/generators/font-face-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

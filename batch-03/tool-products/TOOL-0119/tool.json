@@ -1,0 +1,43 @@
+{
+  "id": "TOOL-0119",
+  "name": "PDF Embedded Fonts Lister",
+  "route": "/tools/pdf-fonts-lister",
+  "engineering_family_id": "F0055",
+  "engineering_family": "PDF Inspector and Metadata Scrubber",
+  "batch_id": "BATCH-03",
+  "planned_repo_path": "tool-products/TOOL-0119/",
+  "execution": "browser",
+  "lazy_load": true,
+  "normal_network_round_trips": 0,
+  "account_required": false,
+  "uploads_required": false,
+  "third_party_user_content_transmission": false,
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "runtime_qa_status": "TEST_PENDING",
+  "dependencies": [
+    {
+      "package": "pdfjs-dist",
+      "version": "6.4.299",
+      "lazy": true
+    },
+    {
+      "asset": "pdf.worker.min.mjs",
+      "local_path": "/assets/vendor/pdfjs/pdf.worker.min.mjs",
+      "lazy": true
+    }
+  ],
+  "limits": {
+    "text_default_bytes": 2000000,
+    "pdf_bytes": 50000000,
+    "pdf_pages": 500
+  },
+  "notes": [
+    "Source-preparation artifact only; integration/build/runtime QA not executed."
+  ]
+}

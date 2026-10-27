@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0212",
+  "name": "Percentile and Quantile Calculator for a Dataset",
+  "route": "/tools/percentile-calculator-from-data",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0096",
+  "engineering_family": "Outliers and Statistical Distributions",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Percentile and Quantile Calculator for a Dataset — Browser Calculator",
+    "meta_description": "Calculate dataset percentiles using explicit quantile definitions, including R/Hyndman–Fan Type 7, Type 8, and nearest-rank.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

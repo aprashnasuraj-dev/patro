@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0461",
+  "related": [
+    {
+      "id": "TOOL-0462",
+      "title": "Statute of Limitations Deadline Calculator",
+      "proposed_canonical": "/calculators/statute-of-limitations-deadline-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0463",
+      "title": "Court Pleading Paper Generator",
+      "proposed_canonical": "/generators/court-pleading-paper-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0464",
+      "title": "Data Access Request Letter Generator",
+      "proposed_canonical": "/generators/data-access-request-letter-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0040",
+      "title": "Semver Range Calculator",
+      "proposed_canonical": "/calculators/semver-range-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0117",
+      "title": "Text Width in Pixels Calculator",
+      "proposed_canonical": "/calculators/text-width-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

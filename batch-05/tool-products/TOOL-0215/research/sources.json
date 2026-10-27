@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0215",
+  "sources": [
+    {
+      "title": "NCBI Bookshelf — Sensitivity, Specificity, and Predictive Value",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK383/",
+      "publisher": "National Center for Biotechnology Information",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

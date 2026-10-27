@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0344",
+  "related": [
+    {
+      "id": "TOOL-0348",
+      "title": "Podcast RSS Feed Validator (Paste XML)",
+      "proposed_canonical": "/validators/podcast-rss-validator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "proposed_canonical": "/utilities/youtube-thumbnail-safe-zone",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0345",
+      "title": "Accessible Hashtag Formatter (PascalCase)",
+      "proposed_canonical": "/formatters/hashtag-camelcase-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0356",
+      "title": "YouTube Embed Code Builder (Start Time, Privacy Mode)",
+      "proposed_canonical": "/generators/youtube-embed-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0068",
+      "title": "JSON-LD Validator (Offline Structure Checker)",
+      "proposed_canonical": "/validators/json-ld-validator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

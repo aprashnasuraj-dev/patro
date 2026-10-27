@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "User supplies the estate-accepted valuation; no automatic estate appraisal.",
+    "sources": [
+      "https://www.irs.gov/publications/p551"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Qualified personal-residence and depreciated real-property treatment not computed."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

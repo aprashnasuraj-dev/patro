@@ -1,0 +1,22 @@
+{
+  "input": {
+    "mode": "Build",
+    "name": "__Host-session",
+    "value": "abc123",
+    "domain": "",
+    "path": "/",
+    "samesite": "Lax",
+    "secure": true,
+    "httpOnly": true,
+    "partitioned": false,
+    "maxAge": "3600",
+    "raw": "__Host-session=abc123; Path=/; Secure; HttpOnly; SameSite=Lax"
+  },
+  "worked_example": "__Host-session=abc; Path=/; Secure; HttpOnly; SameSite=Lax is host-only.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

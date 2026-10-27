@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Normal processing is browser-local and does not require a server round trip.",
+      "basis": "Implementation design; vendor bundles are loaded from same-origin static assets."
+    },
+    {
+      "claim": "Render selected PDF pages locally to PNG or JPEG at a bounded DPI.",
+      "basis": "Tool-specific core implementation and cited upstream APIs."
+    }
+  ],
+  "uncertainty": "See core.ts warnings and acceptance criteria."
+}

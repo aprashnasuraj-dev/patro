@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Merge local CSV files by header name, aligning mismatched column order and optionally taking the union or intersection of columns.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "Column alignment is name-based and blocks duplicate headers; it does not infer semantic equivalence between differently named columns.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

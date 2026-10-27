@@ -1,0 +1,46 @@
+{
+  "id": "TOOL-0359",
+  "name": "Business Card Maker with Print-Ready PDF and Bleed",
+  "route": "/tools/business-card-maker",
+  "batch": "BATCH-07",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0200",
+  "engineering_family": "Business Card and Print Bleed Studio",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [
+    {
+      "name": "pdf-lib",
+      "purpose": "Browser-side vector PDF generation, bundled at build time.",
+      "pin": "Lock a reviewed version in the host application."
+    },
+    {
+      "name": "Unicode font asset (integration optional)",
+      "purpose": "Embed a licensed Unicode font if multilingual business-card text is required.",
+      "pin": "Host application must supply a licensed local font asset; this checkpoint does not bundle one."
+    }
+  ],
+  "seo": {
+    "title": "Business Card Maker with Print-Ready PDF and Bleed — Private Browser Tool",
+    "meta_description": "Create a vector business-card PDF with selectable trim preset, configurable bleed, crop marks and plain-text contact layout entirely in the browser; explicitly reports commercial-print limitations.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

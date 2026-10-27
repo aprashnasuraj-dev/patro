@@ -1,0 +1,25 @@
+{
+  "default_input": {
+    "jurisdiction": "Verified licensing board",
+    "target": 30,
+    "earned": 12,
+    "renewal": "2027-06-30",
+    "asof": "2026-10-26",
+    "monthly": 3
+  },
+  "hand_reference": {
+    "label": "Accepted credit deficit",
+    "value": "18.00 credits",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

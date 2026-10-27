@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0303",
+  "claims": [
+    {
+      "claim": "IANA tzdb 2026e was released 2026-09-29 and time-zone rules can change due to political decisions.",
+      "source_url": "https://www.iana.org/time-zones",
+      "implementation_note": "The UI warns that runtime browser data may lag upstream."
+    },
+    {
+      "claim": "Intl.DateTimeFormat time-zone behavior is supplied by the ECMAScript internationalization implementation.",
+      "source_url": "https://tc39.es/ecma402/2026/",
+      "implementation_note": "No server-side time-zone API is called."
+    }
+  ],
+  "uncertainty": "Political time-zone changes can be announced with little notice. A stale browser can therefore disagree with the latest IANA tzdb. Historical pre-1970 fidelity also varies by platform."
+}

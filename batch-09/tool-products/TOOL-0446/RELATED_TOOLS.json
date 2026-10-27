@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0446",
+  "related": [
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "proposed_canonical": "/generators/print-bleed-and-safe-zone-templates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0443",
+      "title": "KDP/IngramSpark Spine Width & Cover Template",
+      "proposed_canonical": "/calculators/book-spine-width-cover-template-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0189",
+      "title": "Combine Excel Sheets into One Sheet",
+      "proposed_canonical": "/utilities/combine-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0128",
+      "title": "CSS Sprite Sheet Generator",
+      "proposed_canonical": "/generators/css-sprite-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0182",
+      "title": "Merge CSV Files with Column Alignment",
+      "proposed_canonical": "/editors/merge-csv-files",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

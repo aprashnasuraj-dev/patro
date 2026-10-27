@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0343",
+  "related": [
+    {
+      "id": "TOOL-0441",
+      "title": "Social Video Safe-Zone Overlay Previewer",
+      "proposed_canonical": "/utilities/social-video-safe-zone-overlay",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0352",
+      "title": "Video Cropper for 9:16 Shorts and Reels with Safe Zones",
+      "proposed_canonical": "/converters/crop-video-to-9-16",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "proposed_canonical": "/generators/print-bleed-and-safe-zone-templates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "proposed_canonical": "/validators/youtube-chapters-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0356",
+      "title": "YouTube Embed Code Builder (Start Time, Privacy Mode)",
+      "proposed_canonical": "/generators/youtube-embed-code-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

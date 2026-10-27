@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0145",
+  "related": [
+    {
+      "id": "TOOL-0146",
+      "title": "PDF Watermark (Text, Image, Tiled)",
+      "proposed_canonical": "/editors/pdf-watermark",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0144",
+      "title": "Merge PDFs with Bookmarks per File",
+      "proposed_canonical": "/editors/merge-pdf-with-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0249",
+      "title": "Number to Words for Cheques (International and Indian Numbering)",
+      "proposed_canonical": "/converters/number-to-words-cheque",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0155",
+      "title": "True PDF Redaction (Rasterize Redacted Pages)",
+      "proposed_canonical": "/utilities/redact-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0156",
+      "title": "Reduce PDF Size by Image Downsampling",
+      "proposed_canonical": "/utilities/reduce-pdf-size",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0374",
+  "name": "Dilution Calculator (C1V1 = C2V2) with Serial Dilutions",
+  "route": "/tools/dilution-calculator",
+  "batch": "BATCH-08",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0208",
+  "engineering_family": "Solution Dilution Calculator",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Dilution Calculator (C1V1 = C2V2) with Serial Dilutions — Private Browser Tool",
+    "meta_description": "Solve one missing value in C1V1 = C2V2 and plan bounded serial dilutions with explicit factors and transfer volumes.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

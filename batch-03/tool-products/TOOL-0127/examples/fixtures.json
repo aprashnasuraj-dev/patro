@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0127",
+  "known_answer_examples": [
+    "Use a 1024 px master to produce iOS marketing artwork and Android density assets, then download one ZIP."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

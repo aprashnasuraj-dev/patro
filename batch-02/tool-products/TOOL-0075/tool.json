@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0075",
+  "name": "Bulk UTM Link Builder from CSV",
+  "reserved_route": "/tools/bulk-utm-builder",
+  "family_id": "F0026",
+  "family": "URL and Query Parameter Toolkit",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Bulk UTM Link Builder from CSV | AafnaiPatro Tools",
+    "description": "Create UTM-tagged campaign URLs from a CSV in one pass.",
+    "h1": "Bulk UTM Link Builder from CSV",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

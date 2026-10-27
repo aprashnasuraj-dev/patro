@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://schema.org/Event",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Build attendance-specific locations and correctly offset timestamps.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://developers.google.com/search/docs/appearance/structured-data/event",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Build attendance-specific locations and correctly offset timestamps.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0332",
+  "examples": [
+    {
+      "round_trip": "Generated RSA public SPKI PEM → JWK → SPKI PEM imports to same public parameters."
+    },
+    {
+      "round_trip": "Generated P-256 private PKCS8 PEM → JWK preserves d/x/y."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0414",
+  "claims": [
+    {
+      "claim": "Under HMRC's general rule, each payment on account is half of the relevant prior-year amount.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Payments on account are generally not required if that amount is below £1,000 or more than 80% was paid outside Self Assessment.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

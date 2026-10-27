@@ -1,0 +1,33 @@
+{
+  "id": "TOOL-0231",
+  "name": "Marginal Tax Bracket Calculator with Editable Brackets",
+  "route": "/tools/marginal-tax-bracket-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0109",
+  "engineering_family": "Marginal Tax Bracket Calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000.0,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Marginal Tax Bracket Calculator with Editable Brackets \u2014 Local Browser Tool",
+    "meta_description": "Apply a user-editable progressive bracket table to taxable income and show total tax, marginal rate and effective rate without assuming a jurisdiction.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

@@ -1,0 +1,4 @@
+{
+  "qa_status": "TEST_PENDING",
+  "sample_behavior": "For a Latin subset, family “Example Sans”, source “example.woff2”, and U+0000-00FF produces a noindex-ready @font-face rule with explicit format and display descriptors."
+}

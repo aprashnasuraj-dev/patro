@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0150",
+  "claims": [
+    {
+      "claim": "Place each source PDF page onto new A4 or Letter pages with contain, cover or stretch fit and configurable margins.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Page resizing can alter print scale and invalidate signatures; annotations/forms may not transfer with all semantics.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

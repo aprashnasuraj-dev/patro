@@ -1,0 +1,25 @@
+{
+  "runtime_status": "TEST_PENDING",
+  "not_run": [
+    "build",
+    "typecheck",
+    "unit",
+    "browser",
+    "accessibility",
+    "performance",
+    "security",
+    "responsive"
+  ],
+  "manual_review_pending": true,
+  "checks_prepared": {
+    "known_answers": true,
+    "numeric_and_invalid": true,
+    "security": true,
+    "copy_export": true,
+    "responsive_a11y": true,
+    "domain_assumptions": true
+  },
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false
+}

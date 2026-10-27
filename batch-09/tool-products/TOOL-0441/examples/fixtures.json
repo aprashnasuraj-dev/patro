@@ -1,0 +1,26 @@
+{
+  "default_inputs": {
+    "platform": "Custom",
+    "w": 1080,
+    "h": 1920,
+    "top": 12,
+    "bottom": 23,
+    "left": 8,
+    "right": 16,
+    "message": "Headline appears here"
+  },
+  "known_answer": {
+    "output_label": "Safe rectangle",
+    "expected_display": "821 × 1,248 px",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

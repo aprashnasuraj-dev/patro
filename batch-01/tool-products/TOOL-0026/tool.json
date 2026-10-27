@@ -1,0 +1,17 @@
+{
+  "id": "TOOL-0026",
+  "name": "Nginx 301 Redirect Map Generator from CSV",
+  "route": "/tools/nginx-redirect-map-from-csv",
+  "family": "F0015",
+  "status": "TEST_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "Nginx 301 Redirect Map Generator from CSV | Mission Mangal Tools",
+    "description": "Prepare and inspect nginx 301 redirect map generator from csv locally in your browser. Includes a worked example, format limits, and explicit warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": "Supported subset documented in core implementation; unsupported input must produce an error."
+}

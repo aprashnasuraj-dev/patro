@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Validate RIFF/WAVE input and encode MP3 at a selected constant bitrate in the browser.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg/LAME encoding"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Input must be RIFF/WAVE. MP3 output availability and licensing depend on the bundled encoder build.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

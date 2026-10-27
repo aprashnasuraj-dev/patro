@@ -1,0 +1,2 @@
+export function countWords(text:string){if(text.length>1_000_000)throw new Error('Text is limited to 1 MB.');return text.trim()?text.trim().split(/\s+/u).length:0}
+export function speechTimes(words:number,wpm:number,pausePct=0){if(!Number.isFinite(wpm)||wpm<50||wpm>400)throw new Error('Speaking rate must be 50–400 WPM.');if(!Number.isFinite(pausePct)||pausePct<0||pausePct>100)throw new Error('Pause allowance must be 0–100%.');const base=words/wpm;return{minutes:base*(1+pausePct/100),baseMinutes:base}}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0279",
+  "examples": [
+    {
+      "inputs": {
+        "shape": "horizontal cylinder",
+        "diameter_m": 1.8,
+        "length_m": 3,
+        "liquid_depth_m": 1.2
+      },
+      "expected_note": "Horizontal-cylinder partial volume uses the circular-segment formula."
+    }
+  ]
+}

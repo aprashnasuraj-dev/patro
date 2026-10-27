@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0473",
+  "related": [
+    {
+      "id": "TOOL-0481",
+      "title": "Tracking Number Carrier Identifier",
+      "proposed_canonical": "/utilities/tracking-number-carrier-identifier",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0530",
+      "title": "Card Surcharge vs Cash Discount Pricing Calculator",
+      "proposed_canonical": "/calculators/card-surcharge-cash-discount-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0475",
+      "title": "Marketplace Listing Length & Byte Checker",
+      "proposed_canonical": "/validators/marketplace-listing-byte-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "proposed_canonical": "/validators/marketplace-image-size-spec-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0480",
+      "title": "1099-K Threshold Checker by State & Platform",
+      "proposed_canonical": "/validators/1099k-state-platform-reporting-threshold-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

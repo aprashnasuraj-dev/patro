@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0315",
+  "status": "TEST_PENDING",
+  "product_tests_executed": false,
+  "source_preparation_complete": true,
+  "blocked_reason": null,
+  "checks_prepared": [
+    "known-answer",
+    "boundaries",
+    "malformed-input",
+    "unsupported-input",
+    "security",
+    "parser-abuse",
+    "output-formatting",
+    "copy/export/download",
+    "responsive interaction",
+    "accessibility scenarios",
+    "performance-sensitive bounds"
+  ],
+  "publication_gate": "LOCKED"
+}

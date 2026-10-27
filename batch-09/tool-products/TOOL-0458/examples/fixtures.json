@@ -1,0 +1,25 @@
+{
+  "default_inputs": {
+    "mode": "hourly",
+    "hours": 48,
+    "rate": 25,
+    "fixed": 950,
+    "bonus": 0,
+    "min": 7.25,
+    "fwwOK": "no"
+  },
+  "known_answer": {
+    "output_label": "Overtime hours above 40",
+    "expected_display": "8.00",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

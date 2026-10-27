@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.room-preview{width:100%;max-height:260px;border:1px solid var(--border);border-radius:14px;margin-top:14px}

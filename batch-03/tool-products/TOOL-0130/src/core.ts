@@ -1,0 +1,4 @@
+import { sanitizeSvg } from '../_vendor/svg';
+import { makeCanvas, canvasToBlob } from '../_vendor/image';
+export async function exportSvg(source:string,width:number,height:number,type:'image/png'|'image/jpeg',background='#ffffff'):Promise<Blob>{if(!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||width>8192||height>8192)throw new Error('Dimensions must be whole pixels from 1 to 8192.');const safe=sanitizeSvg(source),blob=new Blob([safe],{type:'image/svg+xml'}),url=URL.createObjectURL(blob);try{const img=new Image();img.decoding='async';img.src=url;await img.decode();const c=makeCanvas(width,height),ctx=c.getContext('2d');if(!ctx)throw new Error('Canvas unavailable.');if(type==='image/jpeg'){ctx.fillStyle=background;ctx.fillRect(0,0,width,height)}ctx.drawImage(img,0,0,width,height);return canvasToBlob(c,type,.92)}finally{URL.revokeObjectURL(url)}}
+

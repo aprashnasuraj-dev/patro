@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0052",
+  "related": [
+    {
+      "id": "TOOL-0053",
+      "title": "Server-Sent Events (SSE) Tester",
+      "proposed_canonical": "/validators/sse-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0054",
+      "title": "localStorage Quota Tester",
+      "proposed_canonical": "/validators/localstorage-size-limit-test",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0072",
+      "title": "robots.txt Bulk URL Tester",
+      "proposed_canonical": "/validators/robots-txt-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0025",
+      "title": "Nginx Location Block Match Tester",
+      "proposed_canonical": "/validators/nginx-location-match-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0029",
+      "title": "systemd OnCalendar Expression Tester",
+      "proposed_canonical": "/validators/systemd-oncalendar-tester",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

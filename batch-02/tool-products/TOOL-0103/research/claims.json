@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0103",
+  "claims": [
+    {
+      "claim": "The tool verifies the decoded SFNT signature before offering a .ttf download.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "woff2",
+        "fonteditor-woff2",
+        "opentype"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0327",
+  "name": "PKCE Code Verifier and Challenge Generator",
+  "route": "/tools/pkce-generator",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0178",
+  "engineering_family": "HMAC and PKCE Utilities",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "PKCE Code Verifier and Challenge Generator — Private Browser Tool",
+    "meta_description": "Generate RFC 7636-compliant PKCE code verifiers and S256 challenges locally with cryptographic randomness and strict verifier syntax validation.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

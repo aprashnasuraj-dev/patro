@@ -1,0 +1,601 @@
+{
+  "schema_version": "MM530_PHASE4_BATCH_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "workflow_run_id": 40453367367,
+    "artifact_id": 12711621150,
+    "artifact_digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+  },
+  "batch": "BATCH-08",
+  "count": 53,
+  "summary": {
+    "unit_PASS": 53,
+    "compile_PASS": 53,
+    "compile_BLOCKED": 0
+  },
+  "tools": [
+    {
+      "id": "TOOL-0372",
+      "title": "Molar Mass Calculator from Chemical Formula",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0373",
+      "title": "Chemical Equation Balancer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0374",
+      "title": "Dilution Calculator (C1V1 = C2V2) with Serial Dilutions",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0375",
+      "title": "Projectile Motion Calculator with Trajectory Plot",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0376",
+      "title": "Significant Figures Counter and Rounder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0377",
+      "title": "Scientific and Engineering Notation Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0378",
+      "title": "CSV to Anki Deck (.apkg) Creator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0379",
+      "title": "Math Worksheet Generator with Answer Key (PDF)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0380",
+      "title": "Word Search Puzzle Generator (Printable)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0383",
+      "title": "LED Resistor Calculator with Series and Parallel Arrays",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0384",
+      "title": "Capacitor Code Decoder (104, 473, and Tolerance Letters)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0385",
+      "title": "Voltage Divider Calculator with Standard Resistor Values",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0386",
+      "title": "Microcontroller Timer and PWM Register Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0387",
+      "title": "UART Baud Rate Error Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0388",
+      "title": "G-code Print Time and Filament Estimator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0390",
+      "title": "ND Filter Exposure Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0391",
+      "title": "Hyperfocal Distance and Depth of Field Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0392",
+      "title": "Crop Factor and Equivalent Focal Length Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0393",
+      "title": "Cups to Grams Converter by Ingredient",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0394",
+      "title": "Recipe Scaler with Friendly Fractions",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0395",
+      "title": "Baker's Percentage Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0396",
+      "title": "Pizza Dough Calculator (Hydration, Yeast, Fermentation Time)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0397",
+      "title": "Homebrew ABV Calculator from OG and FG",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0398",
+      "title": "Coffee Brew Ratio Calculator with Brew Timer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0399",
+      "title": "Knitting Gauge and Cast-On Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0400",
+      "title": "Bicycle Gear Inches, Gain Ratio and Speed at Cadence Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0401",
+      "title": "Fence & Deck Post Concrete Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0402",
+      "title": "Deck Joist & Beam Span Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0403",
+      "title": "Stair Rise/Run & Code Compliance Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0404",
+      "title": "Rebar & Welded Mesh Slab Takeoff",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0405",
+      "title": "Crown Molding Angle Finder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0406",
+      "title": "Herringbone/Diagonal Tile & Plank Waste Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0407",
+      "title": "Pattern Repeat & Drop Match Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0408",
+      "title": "Wall & Roof U-Value / R-Value Builder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0409",
+      "title": "Stud Wall Layout & Cut List Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0410",
+      "title": "Paver, Base & Polymeric Sand Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0411",
+      "title": "Gutter & Downspout Sizing by City Rainfall",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0412",
+      "title": "Form 2210 Annualized Income Installment Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0413",
+      "title": "Estimated Tax Safe-Harbor Planner",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0414",
+      "title": "UK Payments on Account Planner",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0415",
+      "title": "GST/HST Quick Method vs Regular Method",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0416",
+      "title": "US Economic Nexus Tracker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0417",
+      "title": "VAT/GST Registration Threshold Tracker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0418",
+      "title": "MACRS Depreciation Schedule Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0419",
+      "title": "Wash Sale & Holding Period Date Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0420",
+      "title": "Backdoor Roth Pro-Rata Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0421",
+      "title": "Home Office Deduction Comparator (US/UK/CA/AU)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0422",
+      "title": "Contractor Break-Even Rate Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0423",
+      "title": "Rent Increase Cap & Notice Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0232",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Gross wage conversion only; unpaid time reduces regular hours; overtime is paid at the entered multiplier."
+  ],
+  "uncertainty": [
+    "Benefits, taxes, bonuses, shift premiums and employer-specific payroll calendars are excluded unless represented by inputs."
+  ]
+}

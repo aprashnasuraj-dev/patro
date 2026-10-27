@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0093",
+  "claims": [
+    {
+      "claim": "Core Markdown parsing targets CommonMark 0.31.2.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "commonmark0312"
+      ]
+    }
+  ]
+}

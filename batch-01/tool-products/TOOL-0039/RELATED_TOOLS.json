@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0039",
+  "related": [
+    {
+      "id": "TOOL-0020",
+      "title": "Semantic JSON Diff (Ignore Key and Array Order)",
+      "proposed_canonical": "/utilities/json-diff-ignore-order",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0078",
+      "title": "Redirect Chain and Loop Finder from CSV",
+      "proposed_canonical": "/extractors/redirect-chain-finder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0331",
+      "title": "RSA and ECDSA Key Pair Generator (PEM and JWK)",
+      "proposed_canonical": "/generators/generate-rsa-key-pair",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0332",
+      "title": "PEM to JWK and JWK to PEM Converter",
+      "proposed_canonical": "/converters/pem-to-jwk",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0024",
+      "title": "Dockerfile Linter and Layer Cache Advisor",
+      "proposed_canonical": "/validators/dockerfile-linter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

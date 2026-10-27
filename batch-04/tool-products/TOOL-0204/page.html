@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Survey Sample Size Calculator (Finite Population) — Browser Calculator</title>
+<meta name="description" content="Estimate survey responses for a target margin of error, then apply finite-population correction, design effect, and response-rate inflation.">
+<meta property="og:title" content="Survey Sample Size Calculator (Finite Population)">
+<meta property="og:description" content="Estimate survey responses for a target margin of error, then apply finite-population correction, design effect, and response-rate inflation.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0204 · Local browser tool</div>
+<h1>Survey Sample Size Calculator (Finite Population)</h1>
+<p class="lede">Estimate survey responses for a target margin of error, then apply finite-population correction, design effect, and response-rate inflation. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><div class="row"><label>Population size<input id="population" type="number" min="1" value="100000"></label><label>Margin of error<input id="margin" type="number" min=".001" max=".5" step=".001" value=".05"></label></div><div class="row"><label>Confidence<input id="confidence" type="number" value=".95" step=".001"></label><label>Expected proportion<input id="proportion" type="number" value=".5" step=".01"></label></div><div class="row"><label>Design effect<input id="designEffect" type="number" value="1" min="1" step=".1"></label><label>Expected response rate<input id="response" type="number" value=".7" min=".01" max="1" step=".01"></label></div>
+<div class="row"><button id="run" type="button">Plan survey</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Estimate survey responses for a target margin of error, then apply finite-population correction, design effect, and response-rate inflation.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Simple random sampling before the user-supplied design-effect multiplier.</p></section>
+<section><h2>Limitations</h2><p>The simple random-sampling formula does not replace a full complex-survey design. Design effect and response rate are user assumptions.</p></section>
+<section><h2>FAQ</h2><details><summary>Why is p=0.5 the default?</summary><p>For a proportion, p=0.5 maximizes p(1-p) and therefore gives the most conservative simple-random-sample size when prevalence is unknown.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm" rel="noopener noreferrer">NIST/SEMATECH — Selecting Sample Sizes</a></li><li><a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm" rel="noopener noreferrer">NIST/SEMATECH — Normal Distribution</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

@@ -1,0 +1,21 @@
+{
+  "sample_input": "{\"_id\":{\"$oid\":\"507f1f77bcf86cd799439011\"},\"balance\":{\"$numberDecimal\":\"12.30\"},\"active\":true}",
+  "intended_action": "Convert BSON markers",
+  "manual_review_cases": [
+    {
+      "input": "{\"$numberDecimal\":\"1.20\"}",
+      "expectation": "1.20"
+    },
+    {
+      "input": "{\"$oid\":\"bad\"}",
+      "expectation": "reject"
+    }
+  ],
+  "limits": "Plain JSON cannot preserve all BSON type semantics. Wrapper mode retains BSON markers as strings/tags; unrecognized markers stay unchanged and are warned about.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"_bsonType\"",
+    "ObjectId"
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

@@ -1,0 +1,27 @@
+{
+  "tool_id": "TOOL-0102",
+  "runtime_status": "TEST_PENDING",
+  "tests_executed": false,
+  "required_scenarios": [
+    "known-answer examples",
+    "empty/minimal input",
+    "maximum bounded input",
+    "malformed input",
+    "unsupported input",
+    "XSS/injection payloads where applicable",
+    "keyboard-only interaction",
+    "screen-reader result announcement",
+    "320px responsive layout",
+    "copy/download/export behavior",
+    "reduced-motion behavior",
+    "dark/light color compatibility"
+  ],
+  "tool_specific_deferred_checks": [
+    "binary fixture known-answer test",
+    "malformed sfnt/WOFF2 parser abuse",
+    "30 MB bound",
+    "file extension vs magic mismatch",
+    "download filename sanitization"
+  ],
+  "publication_ready": false
+}

@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0219",
+  "sources": [
+    {
+      "title": "Oracle Crystal Ball — BetaPERT Distribution",
+      "url": "https://docs.oracle.com/cd/E52437_01/en/crystal_ball_users_guide/betapert_distribution.htm",
+      "publisher": "Oracle",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "NIST/SEMATECH — Beta Distribution",
+      "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda366h.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "Blackman/Vigna xoshiro reference family",
+      "url": "https://prng.di.unimi.it/",
+      "publisher": "David Blackman and Sebastiano Vigna",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

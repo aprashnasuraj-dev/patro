@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0230",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Monthly compounding; contribution occurs at month end; rate stays constant."
+  ],
+  "uncertainty": [
+    "No taxes, fees, contribution timing variants or stochastic returns."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "sample_input": "cpu=250m\nmemory=512Mi",
+  "intended_action": "Convert resource quantities",
+  "manual_review_cases": [
+    {
+      "input": "cpu=250m",
+      "expectation": "250 millicores"
+    },
+    {
+      "input": "memory=1Gi",
+      "expectation": "1073741824 bytes"
+    }
+  ],
+  "limits": "Kubernetes resource quantities are decimal fixed-point or binary SI, not ordinary human-language units. Values can be extremely large; precision is preserved with integer/fraction arithmetic where feasible.",
+  "qa_status": "TEST_PENDING",
+  "expected_output_fragments": [
+    "\"resource\": \"cpu\"",
+    "\"resource\": \"memory\""
+  ],
+  "expected_output_status": "INTENDED_NOT_RUN"
+}

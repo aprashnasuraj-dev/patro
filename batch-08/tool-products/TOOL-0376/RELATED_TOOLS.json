@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0376",
+  "related": [
+    {
+      "id": "TOOL-0377",
+      "title": "Scientific and Engineering Notation Converter",
+      "proposed_canonical": "/converters/scientific-notation-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0099",
+      "title": "Word Frequency Counter with Stopword Filter",
+      "proposed_canonical": "/utilities/word-frequency-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0372",
+      "title": "Molar Mass Calculator from Chemical Formula",
+      "proposed_canonical": "/calculators/molar-mass-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0374",
+      "title": "Dilution Calculator (C1V1 = C2V2) with Serial Dilutions",
+      "proposed_canonical": "/calculators/dilution-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

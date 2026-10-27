@@ -1,0 +1,15 @@
+{
+  "tool": "TOOL-0514",
+  "default_inputs": {
+    "totalBalance": "410000",
+    "currentCap": "30000",
+    "currentContrib": "18000",
+    "fyOld1": "6000",
+    "fyOld2": "4500",
+    "fyOld3": "3000",
+    "fyOld4": "2000",
+    "fyOld5": "4000"
+  },
+  "worked_example": "A$30,000 current cap less A$18,000 already contributed leaves A$12,000 of normal current-year room.",
+  "source_status": "TEST_PENDING"
+}

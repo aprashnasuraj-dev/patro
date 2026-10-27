@@ -1,0 +1,25 @@
+{
+  "tool_id": "TOOL-0108",
+  "claims": [
+    {
+      "claim": "Compare a primary and fallback font locally and generate size-adjust plus ascent/descent/line-gap overrides designed to reduce layout shift during font fallback.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "css-fonts-5",
+        "css-fonts-4",
+        "opentype-os2",
+        "opentype-1.9.1"
+      ]
+    },
+    {
+      "claim": "Metric matching reduces geometric differences but cannot make glyph shapes, hinting, kerning, or script shaping identical. Variable-font instance metrics can differ from default metrics.",
+      "status": "limitation",
+      "source_ids": [
+        "css-fonts-5",
+        "css-fonts-4",
+        "opentype-os2",
+        "opentype-1.9.1"
+      ]
+    }
+  ]
+}

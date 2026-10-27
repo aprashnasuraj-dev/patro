@@ -1,0 +1,4 @@
+{
+  "qa_status": "TEST_PENDING",
+  "sample_behavior": "Measure “Pricing — 2026” at 32 px in a chosen font and see width, actual bounding-box metrics and the effect of 0.5 px tracking."
+}

@@ -1,0 +1,63 @@
+{
+  "id": "TOOL-0292",
+  "name": "Box Breathing and 4-7-8 Breathing Pacer",
+  "slug": "box-breathing-timer",
+  "route": "/tools/box-breathing-timer",
+  "family": "F0157",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Box Breathing and 4-7-8 Breathing Pacer | AafnaiPatro",
+    "description": "Choose box or 4-7-8 breathing and follow a paced, cancelable browser animation.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "select",
+      "key": "pattern",
+      "label": "Breathing pattern",
+      "options": [
+        [
+          "box",
+          "Box 4/4/4/4"
+        ],
+        [
+          "478",
+          "4-7-8"
+        ]
+      ],
+      "default": "box"
+    },
+    {
+      "type": "number",
+      "key": "cycles",
+      "label": "Number of cycles",
+      "default": 5,
+      "min": 1,
+      "max": 30,
+      "step": "1",
+      "unit": "cycles"
+    }
+  ],
+  "explanation": "Box phases: inhale 4s, hold 4s, exhale 4s, hold 4s. 4-7-8: inhale 4s, hold 7s, exhale 8s. Total derived exactly from phase durations.",
+  "limitations": "Stop if dizzy or uncomfortable. This is not a respiratory treatment or evidence of clinical benefit.",
+  "related_tool_ids": [
+    "TOOL-0289",
+    "TOOL-0291"
+  ],
+  "sources": [
+    "https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/"
+  ],
+  "special_notes": null
+}

@@ -1,0 +1,1 @@
+Bundle anki-apkg.bundle.ts with local sql.js WASM and fflate. Do not replace these imports with runtime CDN URLs. Regression-test generated packages against the supported Anki desktop/mobile release range before publication.

@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Annual savings = solar shifted × (round-trip efficiency × import tariff − lost export tariff) minus annual cost, with degradation.",
+    "supporting_urls": [
+      "https://www.energy.gov.au/households/solar-pv-and-batteries"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Programs, dynamic tariffs and discharge limitations can substantially change the result."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "8 kWh/day × 365 × (0.9×A$0.34 − A$0.07) minus A$70 ≈ A$619/year before degradation.",
+    "status": "TEST_PENDING"
+  }
+]

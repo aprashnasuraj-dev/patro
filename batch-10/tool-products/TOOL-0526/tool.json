@@ -1,0 +1,54 @@
+{
+  "id": "TOOL-0526",
+  "name": "Generator Sizing and Starting Watts Calculator",
+  "slug": "generator-sizing-running-starting-watts",
+  "route": "/tools/generator-sizing-running-starting-watts",
+  "family": "F0289",
+  "description": "Estimate sustained generator load plus one or more motor starting surges from an appliance roster with explicit simultaneous-start groups.",
+  "seo": {
+    "title": "Generator Sizing and Starting Watts Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Estimate sustained generator load plus one or more motor starting surges from an appliance roster with explicit simultaneous-start groups.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "sizing",
+  "inputs": [
+    {
+      "key": "loads",
+      "label": "Loads CSV: item,running_w,starting_w,start_group (same group starts together)",
+      "default": "item,running_w,starting_w,start_group\nRefrigerator,200,1200,1\nWell pump,900,2200,2\nLights,300,300,0",
+      "type": "textarea"
+    },
+    {
+      "key": "headroom",
+      "label": "Continuous load reserve margin",
+      "default": 20,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    },
+    {
+      "key": "surgeHeadroom",
+      "label": "Starting surge reserve margin",
+      "default": 10,
+      "unit": "percent",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": "any"
+    }
+  ]
+}

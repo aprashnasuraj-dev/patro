@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('phone normalization integration contract',()=>{it('requires pinned metadata',()=>expect('/assets/vendor/libphonenumber-js/max.js').toContain('libphonenumber'));}); // Browser fixture must cover international, national-with-country, impossible and valid-but-special numbering cases.

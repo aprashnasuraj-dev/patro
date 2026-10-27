@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0277",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.cmha.org/resource/srw-tec-004/",
+      "title": "Segmental Retaining Wall Design",
+      "publisher": "Concrete Masonry & Hardscapes Association",
+      "version": "SRW-TEC-004-10",
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "Public web page; cite/summary, do not redistribute copyrighted standard text.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "CMHA recommends engineered design where design height exceeds 4 ft when no more specific requirement exists; drainage and site conditions are design-critical."
+    }
+  ],
+  "no_external_source_reason": null
+}

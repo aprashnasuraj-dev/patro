@@ -1,0 +1,7 @@
+import {N,S,D,addDays,M,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Domain-guarded deterministic core; does not call network, storage or DOM. */
+export function calculate(i:Record<string,unknown>):Result {
+const place=S(i,'jurisdiction',100),end=D(i,'end'),method=S(i,'method',30),payday=D(i,'payday'),days=N(i,'days',0,180),wage=N(i,'unpaid',0,1e8),pto=N(i,'ptoHours',0,2000),rate=N(i,'ptoRate',0,10000);if(!place||!Number.isInteger(days))throw Error('Jurisdiction and whole calendar-day rule needed');let due='';if(method==='calendar-days')due=addDays(end,days);else if(method==='regular-payday'){if(payday<end)throw Error('Payday precedes final employment date');due=payday;}else throw Error('Unsupported due-date method');
+return R([{label:'Entered-law/policy deadline',value:due},{label:'Gross wage amount',value:M(wage)},{label:'User-confirmed payable PTO',value:M(pto*rate)},{label:'Modeled total before tax',value:M(wage+pto*rate)}],[`The final-pay rule for ${place} is NOT automatically checked. Federal FLSA alone does not require immediate payment after termination; local wage laws may.`, 'PTO payout is modeled only if the employee is legally or contractually entitled. Commissions, deductions, offset rules, holidays and business-day delivery can change due dates.'],[`Total = outstanding gross wages + verified payable PTO hours × hourly conversion rate.`]);
+}

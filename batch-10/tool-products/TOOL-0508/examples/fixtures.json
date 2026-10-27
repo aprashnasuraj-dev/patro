@@ -1,0 +1,10 @@
+{
+  "title": "UK Inheritance Tax Seven-Year Gift Planner",
+  "default_inputs": {
+    "death": "2026-12-31",
+    "gifts": "2021-01-10,250000\n2023-04-15,150000\n2025-09-01,50000",
+    "nrb": "325000"
+  },
+  "worked_example": "A £100,000 gift over the nil-rate band made 4–5 years before death faces illustrative tax at 24%.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

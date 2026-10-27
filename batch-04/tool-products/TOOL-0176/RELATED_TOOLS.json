@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0176",
+  "related": [
+    {
+      "id": "TOOL-0174",
+      "title": "Audio Loudness Normalizer (LUFS)",
+      "proposed_canonical": "/formatters/audio-loudness-normalizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0047",
+      "title": "Context-Aware URL Encoder",
+      "proposed_canonical": "/formatters/url-encode-path-vs-query",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0445",
+      "title": "Video File Size & Bitrate Calculator",
+      "proposed_canonical": "/calculators/video-file-size-bitrate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0163",
+      "title": "Video to GIF Converter with Palette Optimization",
+      "proposed_canonical": "/converters/video-to-gif",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0164",
+      "title": "Compress Video to Target Size (8MB, 25MB, 50MB)",
+      "proposed_canonical": "/converters/compress-video-to-size",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

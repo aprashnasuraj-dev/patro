@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0009",
+  "related": [
+    {
+      "id": "TOOL-0018",
+      "title": "Helm values.yaml to --set Flags",
+      "proposed_canonical": "/converters/helm-values-to-set-flags",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0036",
+      "title": "Ansible Inventory INI to YAML Converter",
+      "proposed_canonical": "/converters/ansible-inventory-ini-to-yaml",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0010",
+      "title": "Docker Compose to docker run Converter",
+      "proposed_canonical": "/converters/docker-compose-to-docker-run",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0017",
+      "title": "Terraform tfvars to JSON Converter",
+      "proposed_canonical": "/converters/tfvars-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0003",
+      "title": "OpenAPI YAML to TypeScript Interfaces",
+      "proposed_canonical": "/converters/openapi-to-typescript-interfaces",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

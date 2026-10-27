@@ -1,0 +1,9 @@
+[
+  {
+    "url": "https://github.com/mwilliamson/mammoth.js/blob/master/README.md",
+    "version": "master README accessed 2026-10-26",
+    "effective_date": "2026-10-26",
+    "license": "BSD-2-Clause project; bundle locally and retain notices",
+    "notes": "Browser ArrayBuffer input is supported; output is not sanitized."
+  }
+]

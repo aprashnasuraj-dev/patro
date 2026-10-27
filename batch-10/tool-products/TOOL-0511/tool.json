@@ -1,0 +1,78 @@
+{
+  "id": "TOOL-0511",
+  "name": "Canadian OAS Clawback and RRIF Planner",
+  "slug": "canada-oas-clawback-rrif-planner",
+  "route": "/tools/canada-oas-clawback-rrif-planner",
+  "family": "F0302",
+  "description": "Estimate Canadian OAS recovery tax and the incremental effect of an RRIF withdrawal, keeping the income year and payment period explicit.",
+  "seo": {
+    "title": "Canadian OAS Clawback and RRIF Planner — Free Local Tool | AafnaiPatro",
+    "description": "Estimate Canadian OAS recovery tax and the incremental effect of an RRIF withdrawal, keeping the income year and payment period explicit.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "retirement",
+  "inputs": [
+    {
+      "key": "incomeYear",
+      "label": "Income tax year",
+      "default": "2025",
+      "type": "select",
+      "options": [
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "key": "otherIncome",
+      "label": "Taxable net-world income excluding proposed RRIF income",
+      "default": 81000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "rrif",
+      "label": "Proposed gross RRIF withdrawal",
+      "default": 23000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000000.0,
+      "step": "any"
+    },
+    {
+      "key": "annualOas",
+      "label": "Annual OAS actually received",
+      "default": 9000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 100000,
+      "step": "any"
+    },
+    {
+      "key": "openingRrif",
+      "label": "RRIF balance before withdrawal",
+      "default": 300000,
+      "unit": "CAD",
+      "type": "number",
+      "min": 0,
+      "max": 1000000000.0,
+      "step": "any"
+    }
+  ]
+}

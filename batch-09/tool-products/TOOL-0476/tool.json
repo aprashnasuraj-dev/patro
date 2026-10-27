@@ -1,0 +1,45 @@
+{
+  "id": "TOOL-0476",
+  "name": "Marketplace Image Resizer & Checker",
+  "slug": "marketplace-image-size-spec-checker",
+  "route": "/tools/marketplace-image-size-spec-checker",
+  "family": "F0058",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Marketplace Image Resizer & Checker | AafnaiPatro Tools",
+    "description": "Inspect raster dimensions and transform a selected JPEG/PNG/WebP in browser memory; download a resized JPEG/PNG without network transmission."
+  },
+  "execution": {
+    "mode": "client-side",
+    "account_required": false,
+    "network_transmission_of_user_content": false,
+    "worker_required": false,
+    "entry_route_lazy_load": true,
+    "max_persisted_data": "none"
+  },
+  "source_files": {
+    "html": "page.html",
+    "core": "src/core.ts",
+    "ui": "src/ui.ts",
+    "styles": "src/styles.css"
+  },
+  "dependencies": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css",
+    "src/image-workbench.ts"
+  ],
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap": false,
+    "published": false
+  }
+}

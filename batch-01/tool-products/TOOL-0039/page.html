@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="description" content="Check PEM X.509 certificate order with WebCrypto signatures, issuer/subject matching, CA constraints and explicit trust limitations. Runs privately in your browser."><title>PEM Certificate Chain Order Checker | Mission Mangal Tools</title><link rel="stylesheet" href="./src/styles.css"></head><body><main><header><p class="eyebrow">Mission Mangal · Local developer utility</p><h1>PEM Certificate Chain Order Checker</h1><p>Paste leaf-first PEM certificates to verify cryptographic signatures and issuer relationships locally; no certificates leave your browser.</p></header><section class="workbench" aria-label="Tool workspace"><form id="tool-form"><h2>Inputs</h2><label for="chain">PEM certificate chain</label>
+<textarea id="chain" name="chain" maxlength="512000" rows="10" required placeholder="-----BEGIN CERTIFICATE-----
+(base64 DER leaf certificate)
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+(base64 DER issuer certificate)
+-----END CERTIFICATE-----">-----BEGIN CERTIFICATE-----
+MIIDQDCCAiigAwIBAgIUbqQp0IBtp3ooXKc1A73mbZufcBgwDQYJKoZIhvcNAQEL
+BQAwHjEcMBoGA1UEAwwTcnNhIGludGVybWVkaWF0ZSBDQTAeFw0yNjEwMjYwNjQ2
+MzNaFw0yNzEwMjYwNjQ2MzNaMBsxGTAXBgNVBAMMEHJzYS5leGFtcGxlLnRlc3Qw
+ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDMo6cusNC1l9ZfFMIMh5xp
++oWc3CYlLwhR3Kxk76XzObKwSQOwW5xANVK0vciTVvQeOD+1vedLUoTGfcuWHmuK
++qXknkUlEDXh/o1qiL6jXreIYL0ywh1gVC4w5FZPWPNS4mZpGW3rNOW9ty15hYYc
+61xnqXPySYUTp7wAttOs+wVHfxMwALsE33hLGvYJb9NUV5xYKULZ6Q72Swut1FED
+TzspJ08V6TsMVIRNUTX7Vhb2vs7acfpMseHyvpl3vTL1e/YDNJP08SxPAqNjXQqS
+8gNR4RyVnICsF2TFlwy5nxq9sQvAC+nWqp6MdujYYTxDDswH2461wO1Mm6Z3y9Wt
+AgMBAAGjeTB3MAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgeAMBcGA1UdEQQQ
+MA6CDGV4YW1wbGUudGVzdDAdBgNVHQ4EFgQUBfypqRs76U1urfntBk8XpAve5E4w
+HwYDVR0jBBgwFoAUl4FhlMDA4NQ6ITtL1jJno0vG5FUwDQYJKoZIhvcNAQELBQAD
+ggEBAI1HLCD2ixDduiosQRNNxuMjafVIi5PpnGIXQsxQI/gsjcrgKJiRD5s4Wl4n
+dTMkqeH4jR4hQFhxcDj07g/4jZU2LSL8l2zYOB7ZMjjkpxHSf8PWexYAIa37ivl9
+1C+b6ycHGf9Z+waJNPoy9Hkn4Xu4bPUcU1z5A32CUL3iNBRqNdGdI1mg3DjDr3e8
+5Pf7/3l++GPAsP1Zmos6EzQ/gCGCAAMi/brPca4oGTmx7P49sfQu/eNGuf8H7OiK
+T51b2jXPARkIaRDBLmFUrdHYrRSnCves/KAFV+rbanXl0g1RnqiuaIcoAVZJyFcz
+6pJPYs+wDNbAGW4atG2ikPfYRbM=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDKDCCAhCgAwIBAgIUU0nwOxFWuA3yGMMmXdXnCYW67t8wDQYJKoZIhvcNAQEL
+BQAwFjEUMBIGA1UEAwwLcnNhIHJvb3QgQ0EwHhcNMjYxMDI2MDY0NjMzWhcNMjkw
+NzIyMDY0NjMzWjAeMRwwGgYDVQQDDBNyc2EgaW50ZXJtZWRpYXRlIENBMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxV0YG9AlOUaQgU/tS+RnMIO+ceVs
+EptmkUi17Unu818oPDvv9bHkNCLibQlp1gtC4tz05FIAiLaQGnwLOBbhanIPLfep
+MR4VuwAx9IVr7+Pp4+fpoJUbgLd+kUebLYZDh9uTzkxWv4IBsyxFeZiP4UMKBwnD
+yDDkpGgmLn5VfMV0/6pYQ+We6Qf2u+T8Mi8KknX9AmoT/0dRAmEscyfH4rlkvhok
+5MQaYI0yievM8OGpfwLeuLdOR0oq0KFVr6MRddEMkuV5UDCBX05RmHaK5XQEcTty
+lFMbXex+J0DUojjGpbjWu5tzcSdiWIPF1lCt+6mJIn8/Tm+3j6soJMAc9QIDAQAB
+o2YwZDASBgNVHRMBAf8ECDAGAQH/AgEAMA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4E
+FgQUl4FhlMDA4NQ6ITtL1jJno0vG5FUwHwYDVR0jBBgwFoAU8YBi+zp7B10J4LBa
+zpOVZzWjVbQwDQYJKoZIhvcNAQELBQADggEBACLWE8T6NM/iLg3GJCdyLJl1FH+F
+zUDdjzGfW3pBV54zv41VfZwognJZez3EU1/m8GBP0sx7arhfHrsgN8YbFjyzCsPo
+p9qNmhb9YkB5RDd7+vXHt1jcLxZlH2voYI8+1hafpH4P0PGU0tfC2SIqyy0pr+HY
+YETr0dHgo6CDeYJv8Cr8H8ZZwcuTqHXKAYh3W/7JB53bhu3Fw2Xsp2L8KxZcMn27
+3jBxl5hiAtCHevx2s6JlV+c1S3NkZiM8lPMbWhUmQaBMPb6lyizwh+VMCPrpejfS
+6Q2Mi/5XM84skYSi3ZnyfG4vOCNsy+l6puiDI3l1QAJmoiFIDxE2Jrlqydc=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDIDCCAgigAwIBAgIUAS0UE07MiWR31ugTb24Daqz42N4wDQYJKoZIhvcNAQEL
+BQAwFjEUMBIGA1UEAwwLcnNhIHJvb3QgQ0EwHhcNMjYxMDI2MDY0NjMzWhcNMzYx
+MDIzMDY0NjMzWjAWMRQwEgYDVQQDDAtyc2Egcm9vdCBDQTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBALMUMrU4ZGJcipBOBRbUyBOgIH+4HX/nTMNfTu/M
+NKecsOttSTuLNbtqy8eb6MkCkVgiZHFQaPsQFU76fu2gXdU9BIIkG1whH5CFjaGK
+5HwKgQWW9QJ2WGqtU5MbluN6FMcNayKaWzfT9hJ7Vq3ej3UCSfDrnQr7KIl1Iprp
+e/75iompN7cnHKDIAsrbWZNlh+5J29B6GCxgicDYRek8TcAhT7WbNJMTFyFMgIMO
+YzYl7aCtieG7Mgre3X6d851oRQELMBr6ZnQ52Qgfb5MRgNhsO5fhq9xSqcybF0Jb
+otCjA0j1VIkhSqD2XNmykbwvK6af4dhMeFNrXTmyXjaFPbUCAwEAAaNmMGQwHwYD
+VR0jBBgwFoAU8YBi+zp7B10J4LBazpOVZzWjVbQwEgYDVR0TAQH/BAgwBgEB/wIB
+ATAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFPGAYvs6ewddCeCwWs6TlWc1o1W0
+MA0GCSqGSIb3DQEBCwUAA4IBAQCw8R96YWUaCjOQqXoxyNak/tV3OdtG2nmUBGJx
+3EVPqS+lSqjvTguCYqGBH+TdK1Bo0WFTDAOweqrV731Q/d7KGsGOIaXq0cxQthLg
+RqG6aJpRWZ3K1gKYyYO6OOdJO0maHidTlqr4WkksyIU58vzwXPdSCljnRg4ThX6z
+LS7wPNYB7FDRtw4hucP8/RcHqUMKzisI8j5t2wAMtaxMzNgrKRG2F0zooJLmBefR
+LoRgAkFEo60/2tm8fPNGWrA7fGnp8LY0OTb/Ck92HU1+PAHvX3EBcV6WOYofz9Hi
+pEbJn6ZPoTb+k7pykBGQ5fYgOHdQbS4ooiwRSoYId+958LSL
+-----END CERTIFICATE-----
+</textarea><label for="at">Inspection date (optional, ISO 8601)</label><input id="at" name="at" type="text" maxlength="36" placeholder="2026-10-26T00:00:00Z" autocomplete="off"><button type="submit">Verify certificate order</button></form><section class="results"><h2>Results</h2><div id="chain-visual" aria-label="Certificate order overview"></div><pre id="result" role="status" aria-live="polite" aria-atomic="true">Submit the sample values to inspect the output.</pre><div class="buttons"><button id="copy" type="button" disabled>Copy</button><button id="download" type="button" disabled>Download text</button></div><h3>Assumptions and limitations</h3><pre id="warnings" aria-live="polite">Result warnings appear here.</pre></section></section><section class="reading"><h2>How to use</h2><p>Copy your server’s PEM certificate chain, leaf first and intermediates after it, into the input. Use Verify certificate order. A synthetic three-certificate example is preloaded: leaf, intermediate, root. The tool verifies both signatures using the issuer public keys. If reversed, it reports incorrect order. Optional UTC inspection date enables a historical validity check. Never paste private keys.</p><h2>Supported inputs</h2><p>RFC 7468 CERTIFICATE PEM, X.509 DER, RSA PKCS#1 v1.5 SHA-1/256/384/512, RSA-PSS when MGF1 uses the same hash, ECDSA with P-256/P-384/P-521, and Ed25519 where browser support exists. Maximum 20 certificates, 128 KB DER each, 512,000 characters total. Unknown algorithms and unsupported critical extensions produce an explicit unsupported result. This is a chain order inspector—not trust-path validation.</p><h2>Privacy and performance</h2><p>The tool executes in your browser, needs no account, and sends no input to a server. The script is loaded only when this page is opened. The PEM field is limited to 512,000 characters. WebCrypto runs only in HTTPS or localhost secure contexts.</p><h2>References</h2><ul><li><a rel="noopener noreferrer" href="https://www.rfc-editor.org/rfc/rfc5280">https://www.rfc-editor.org/rfc/rfc5280</a></li><li><a rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey">https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey</a></li><li><a rel="noopener noreferrer" href="https://www.rfc-editor.org/rfc/rfc7468">RFC 7468 (PEM)</a></li><li><a rel="noopener noreferrer" href="https://www.rfc-editor.org/rfc/rfc4055">RFC 4055 (RSA-PSS)</a></li><li><a rel="noopener noreferrer" href="https://www.rfc-editor.org/rfc/rfc8410">RFC 8410 (Ed25519)</a></li></ul></section></main><script type="module" src="./dist/ui.js"></script></body></html>

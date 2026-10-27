@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0404",
+  "related": [
+    {
+      "id": "TOOL-0261",
+      "title": "Concrete Slab and Footing Volume Calculator",
+      "proposed_canonical": "/calculators/concrete-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0401",
+      "title": "Fence & Deck Post Concrete Calculator",
+      "proposed_canonical": "/calculators/fence-post-concrete-bags-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0405",
+      "title": "Crown Molding Angle Finder",
+      "proposed_canonical": "/calculators/crown-molding-miter-angle-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0406",
+      "title": "Herringbone/Diagonal Tile & Plank Waste Calculator",
+      "proposed_canonical": "/calculators/herringbone-diagonal-tile-waste-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0407",
+      "title": "Pattern Repeat & Drop Match Calculator",
+      "proposed_canonical": "/calculators/wallpaper-pattern-repeat-roll-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

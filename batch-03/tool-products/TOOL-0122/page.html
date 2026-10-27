@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>HEIC to JPG Batch Converter — Browser-Local Tool</title><meta name="description" content="Convert HEIC/HEIF photos to JPEG locally in the browser with bounded batch processing."><link rel="stylesheet" href="./src/styles.css"></head>
+<body><main class="tool-shell" data-tool="TOOL-0122">
+<header class="hero"><p class="eyebrow">Browser-local • TEST_PENDING</p><h1>HEIC to JPG Batch Converter</h1><p>Convert HEIC/HEIF photos to JPEG locally in the browser with bounded batch processing.</p></header>
+<section class="workbench" aria-labelledby="work-title"><h2 id="work-title">Work area</h2><div class="controls"><label>HEIC/HEIF images <input id="files" type="file" accept=".heic,.heif,image/heic,image/heif" multiple></label><label>JPEG quality <input id="quality" type="range" min="0.4" max="1" step="0.02" value="0.9"></label></div><button id="primary" class="primary" type="button">Run tool</button><button id="cancel" class="secondary" type="button" hidden>Cancel</button><div id="status" role="status" aria-live="polite"></div><div id="result" class="result" role="region" aria-live="polite" aria-label="Tool result"></div></section>
+<section><h2>What this tool does</h2><p>Convert HEIC/HEIF photos to JPEG locally in the browser with bounded batch processing.</p></section>
+<section><h2>How to use it</h2><ol><li>Choose local input files and review the task-specific controls.</li><li>Run the tool. Processing stays in this browser session.</li><li>Review warnings and previews before copying or downloading output.</li></ol></section>
+<section><h2>Worked example</h2><p>Drop 12 iPhone HEIC photos, choose JPEG quality 90, then download a ZIP of converted images.</p></section>
+<section><h2>Supported formats and units</h2><p>HEIC/HEIF input; JPEG output.</p></section>
+<section><h2>Assumptions</h2><p>A bundled libheif/WASM decoder is lazy-loaded only after this route opens.</p></section>
+<section><h2>Limitations</h2><p>HDR/wide-gamut source data may be tone-mapped to the browser canvas colour space; metadata is not preserved by default.</p></section>
+<section><h2>References</h2><p>Authoritative implementation references are recorded in <code>research/sources.json</code>.</p></section>
+</main><script type="module" src="./src/ui.ts"></script></body></html>

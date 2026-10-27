@@ -1,0 +1,75 @@
+{
+  "id": "TOOL-0519",
+  "name": "US Chapter 7 Bankruptcy Means Test Estimator",
+  "slug": "chapter-7-bankruptcy-means-test-estimator",
+  "route": "/tools/chapter-7-bankruptcy-means-test-estimator",
+  "family": "F0309",
+  "description": "Screen six months of household gross income against a user-verified US Trustee median table for the relevant filing date.",
+  "seo": {
+    "title": "US Chapter 7 Bankruptcy Means Test Estimator — Free Local Tool | AafnaiPatro",
+    "description": "Screen six months of household gross income against a user-verified US Trustee median table for the relevant filing date.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "screening",
+  "inputs": [
+    {
+      "key": "filing",
+      "label": "Expected case filing date",
+      "default": "2026-10-26",
+      "type": "date"
+    },
+    {
+      "key": "state",
+      "label": "State of residence",
+      "default": "CA",
+      "type": "select",
+      "options": [
+        "CA",
+        "TX",
+        "NY",
+        "FL",
+        "IL",
+        "WA",
+        "other"
+      ]
+    },
+    {
+      "key": "household",
+      "label": "Household size",
+      "default": 2,
+      "unit": "people",
+      "type": "number",
+      "min": 1,
+      "max": 20,
+      "step": 1
+    },
+    {
+      "key": "monthly",
+      "label": "Last six full calendar-month gross receipts (one number per line)",
+      "default": "5100\n4800\n5300\n5200\n5000\n4900",
+      "type": "textarea"
+    },
+    {
+      "key": "median",
+      "label": "Published DOJ median for exact state/size/filing period",
+      "default": 102797,
+      "unit": "USD annual",
+      "type": "number",
+      "min": 1,
+      "max": 1000000000.0,
+      "step": "any"
+    }
+  ]
+}

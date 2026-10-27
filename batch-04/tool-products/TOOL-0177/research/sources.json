@@ -1,0 +1,22 @@
+{
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "name": "MDN Web Audio API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API",
+      "version": "current MDN docs",
+      "effective_date": null,
+      "license": "MDN content terms",
+      "use": "Local audio decoding/analysis architecture"
+    },
+    {
+      "name": "MDN AnalyserNode",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode",
+      "version": "current MDN docs",
+      "effective_date": null,
+      "license": "MDN content terms",
+      "use": "Frequency/time-domain analysis concepts"
+    }
+  ],
+  "licensing_note": null
+}

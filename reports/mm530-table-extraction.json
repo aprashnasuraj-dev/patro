@@ -1,0 +1,88 @@
+{
+  "branch": "table",
+  "archives_verified": 10,
+  "archive_details": [
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_01.zip",
+      "compressed_bytes": 3522243,
+      "archive_sha256": "fbe9a66fd8f9d0ba87c4f4fe5ae17f0dc814f56c70985bd2472832e6be9f0dd1",
+      "member_count": 805,
+      "uncompressed_bytes": 5858696
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_02.zip",
+      "compressed_bytes": 965270,
+      "archive_sha256": "43255eccf39fb965616558a7272d1b50d7c125186992c923570c785a5a19c12b",
+      "member_count": 949,
+      "uncompressed_bytes": 2017254
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_03.zip",
+      "compressed_bytes": 884363,
+      "archive_sha256": "edf8ca338e885facf32c75bd3c37e116f7bcb51b516c1713ad99c752a93eda26",
+      "member_count": 1130,
+      "uncompressed_bytes": 1695160
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_04.zip",
+      "compressed_bytes": 783831,
+      "archive_sha256": "95adc62ab7fef5395abb4d6e7269a486623cbf42c52da7c52e1d494a8aa6ad29",
+      "member_count": 904,
+      "uncompressed_bytes": 1575107
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_05.zip",
+      "compressed_bytes": 801041,
+      "archive_sha256": "067095e0e895e6b2ade62bbc860fb0fd03c621f7caf3d01f3cf27e6bc8accbac",
+      "member_count": 886,
+      "uncompressed_bytes": 1608246
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_06.zip",
+      "compressed_bytes": 843389,
+      "archive_sha256": "c7d0e41b00d857af2ec99c7d343cc013b36f24684d7168cb6bd58494008e06cd",
+      "member_count": 879,
+      "uncompressed_bytes": 1710400
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_07.zip",
+      "compressed_bytes": 1061456,
+      "archive_sha256": "716fa8123fe93f70e6ae16eaa9c38805102f0f9ae5c16a39a781029fce60c65b",
+      "member_count": 1111,
+      "uncompressed_bytes": 2144599
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_08.zip",
+      "compressed_bytes": 869211,
+      "archive_sha256": "854a9e8ab47de1ecd22f8c1cfe452d5f4a0bd7355c2542e41483a6645460273d",
+      "member_count": 1006,
+      "uncompressed_bytes": 1736893
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_09.zip",
+      "compressed_bytes": 963668,
+      "archive_sha256": "ffe26c93314abcbe32ac004b852402aee1965a5d8951a6da1fc2bb7a2d5e0721",
+      "member_count": 861,
+      "uncompressed_bytes": 2022361
+    },
+    {
+      "archive": "MM530_GIT_IMPORT_BATCH_10.zip",
+      "compressed_bytes": 896220,
+      "archive_sha256": "6c39ede7cbcc000914d07333bf0889cb700efa843e4a3e3c123b4ebdcf13be95",
+      "member_count": 878,
+      "uncompressed_bytes": 1842840
+    }
+  ],
+  "archive_entry_count": 9409,
+  "unique_file_count": 9409,
+  "new_files_extracted": 9409,
+  "uncompressed_total_bytes": 22211556,
+  "unique_files_path_sha256_fingerprint": "6757e14cf4dfe554483d86d52e06771d4e70f4402dbcd9fe668c1713a80e2611",
+  "zip_crc": "PASS",
+  "path_safety": "PASS",
+  "overwrite_conflicts": "NONE",
+  "source_status": "EXTRACTED_TEST_PENDING",
+  "tool_tests_executed": 0,
+  "production_publication": "NOT_TRIGGERED",
+  "publication_gate": "LOCKED"
+}

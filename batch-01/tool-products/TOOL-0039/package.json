@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "mission-mangal-tool-0039-certificate-chain-order",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "build": "tsc --project tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

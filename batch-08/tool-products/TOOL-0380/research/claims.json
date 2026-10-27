@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0380",
+  "claims": [
+    {
+      "claim": "Generate seeded printable word-search puzzles with bounded backtracking, optional diagonals/backwards placement and an answer key.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Dense word sets can fail placement; increase grid size or reduce words. Normalization intentionally targets A–Z puzzle grids.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    }
+  ]
+}

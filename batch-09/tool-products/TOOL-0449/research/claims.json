@@ -1,0 +1,23 @@
+{
+  "claims": [
+    {
+      "statement": "Federal COBRA clocks with the later-event election trigger",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Federal COBRA only; no state mini-COBRA, extraordinary extensions, receipt/mail nuances or plan-specific grace calculations.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/cobra-continuation-health-coverage-workers",
+    "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/publications/workers-guide-health-benefits-cobra"
+  ],
+  "assumptions": "Federal COBRA only; no state mini-COBRA, extraordinary extensions, receipt/mail nuances or plan-specific grace calculations.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

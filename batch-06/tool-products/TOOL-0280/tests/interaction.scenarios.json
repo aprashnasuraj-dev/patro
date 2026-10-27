@@ -1,0 +1,24 @@
+{
+  "status": "TEST_PENDING",
+  "security_cases": [
+    "oversized input is rejected before expensive work",
+    "user-controlled text is rendered with textContent or escaped",
+    "NaN, Infinity, invalid dimensions and overflow produce explicit errors",
+    "downloads use fixed/sanitized filenames only"
+  ],
+  "responsive_accessibility_cases": [
+    "320px viewport has no page-level horizontal scroll",
+    "keyboard-only interaction reaches every actionable control with visible focus",
+    "result region uses role=status and aria-live=polite",
+    "labels remain programmatically associated",
+    "reduced-motion mode preserves information"
+  ],
+  "performance_cases": [
+    "normal calculation requires no server request",
+    "loops and row counts are bounded",
+    "heavy work is absent or route-lazy"
+  ],
+  "tool_specific": [
+    "Legal parcel records, cadastral survey values and document-specific rounding control real transactions. Do not replace a licensed survey or land-record measurement with this converter."
+  ]
+}

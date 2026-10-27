@@ -1,0 +1,3 @@
+const T:any={B:'±0.1 pF',C:'±0.25 pF',D:'±0.5 pF',F:'±1%',G:'±2%',J:'±5%',K:'±10%',M:'±20%',Z:'+80% / −20%'};
+export function decodeCap(raw:string){const s=raw.trim().toUpperCase().replace(/\s+/g,'');const m=s.match(/^(\d{3})([BCDFGJKMZ])?$/);if(!m)throw new Error('Use a three-digit capacitance code with optional tolerance letter, e.g. 104K.');const sig=+(m[1].slice(0,2)),exp=+m[1][2];if(exp>8)throw new Error('Multiplier digit is unreasonably large.');const pf=sig*10**exp;return{pf,nf:pf/1000,uf:pf/1e6,tolerance:m[2]?T[m[2]]:'not encoded'}}
+

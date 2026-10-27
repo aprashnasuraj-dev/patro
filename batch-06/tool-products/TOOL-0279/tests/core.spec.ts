@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {tank} from '../src/core';describe('TOOL-0279',()=>{it('computes a 2×3×4 m rectangular capacity',()=>{const r=tank('rect',2,3,4,0,0,0);expect(r.m3).toBe(24);expect(r.liters).toBe(24000);expect(r.fillPct).toBe(100)});it('rejects zero cylinder diameter',()=>expect(()=>tank('vcyl',0,0,0,0,2,0)).toThrow())});

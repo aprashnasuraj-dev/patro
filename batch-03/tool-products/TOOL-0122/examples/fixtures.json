@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0122",
+  "known_answer_examples": [
+    "Drop 12 iPhone HEIC photos, choose JPEG quality 90, then download a ZIP of converted images."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

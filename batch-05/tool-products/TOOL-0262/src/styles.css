@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.pitch{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}.pitch output{font-weight:900;font-size:1.4rem;padding:8px 0}

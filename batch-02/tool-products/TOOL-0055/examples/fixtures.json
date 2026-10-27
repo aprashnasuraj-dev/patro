@@ -1,0 +1,11 @@
+{
+  "sample_input": {
+    "mimes": "video/mp4; codecs=\"avc1.42E01E\"\nvideo/webm; codecs=\"vp9\"\naudio/ogg; codecs=\"opus\"\naudio/mp4; codecs=\"mp4a.40.2\""
+  },
+  "worked_example": "video/mp4; codecs=\"avc1.42E01E\" may report probably, maybe or empty.",
+  "planned_expectations": [
+    "Stub canPlayType=probably and MediaSource.isTypeSupported=true.",
+    "Reject MIME injection and 33 entries; verify unknown supported/unsupported signals."
+  ],
+  "execution_state": "TEST_PENDING"
+}

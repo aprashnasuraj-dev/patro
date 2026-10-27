@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0320",
+  "examples": [
+    {
+      "inputs": {
+        "date": "2000-01-06",
+        "time": "18:14:00"
+      },
+      "expected_note": "A near-new-moon phase is expected, not an exact USNO ephemeris match."
+    }
+  ]
+}

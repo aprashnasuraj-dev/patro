@@ -1,0 +1,14 @@
+{
+  "nominal": {
+    "csv": "group,value\\nA,1\\nB,2\\nA,3",
+    "mode": "column",
+    "value": "group"
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

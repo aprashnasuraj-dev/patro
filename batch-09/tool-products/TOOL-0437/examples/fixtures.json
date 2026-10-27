@@ -1,0 +1,18 @@
+{
+  "default_inputs": {
+    "quarter": "2026-Q3",
+    "fuelGallons": 1000,
+    "records": "[{\"code\":\"A\",\"miles\":3000,\"ratePerGallon\":0.4,\"taxedGallonsPurchased\":300},{\"code\":\"B\",\"miles\":4000,\"ratePerGallon\":0.5,\"taxedGallonsPurchased\":700}]"
+  },
+  "known_answer": {
+    "output_label": "Fleet quarter economy (US MPG)",
+    "expected_value": "7.00"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0485",
+  "name": "BBQ Reverse Cook Schedule Planner",
+  "route": "/tools/bbq-reverse-cook-schedule-planner",
+  "slug": "bbq-reverse-cook-schedule-planner",
+  "family": "F0284",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "BBQ Reverse Cook Schedule Planner | AafnaiPatro Tools",
+    "description": "Reverse-plan BBQ prep, cook, rest and contingency milestones with conservative food-safety thresholds and explicit uncertainty about cooking duration."
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

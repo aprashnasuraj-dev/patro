@@ -1,0 +1,48 @@
+{
+  "id": "TOOL-0508",
+  "name": "UK Inheritance Tax Seven-Year Gift Planner",
+  "route": "/tools/uk-inheritance-tax-seven-year-gift-planner",
+  "slug": "uk-inheritance-tax-seven-year-gift-planner",
+  "family": "F0301",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "timeline",
+  "title": "UK Inheritance Tax Seven-Year Gift Planner | AafnaiPatro Tools",
+  "meta_description": "Project potentially exempt transfers and available £325,000 nil-rate band using chronological gift dates and hypothetical death date.",
+  "inputs": [
+    {
+      "key": "death",
+      "label": "Hypothetical death date",
+      "default": "2026-12-31",
+      "type": "date"
+    },
+    {
+      "key": "gifts",
+      "label": "Non-exempt net gifts: YYYY-MM-DD,GBP amount (enter all gifts; after exemptions)",
+      "default": "2021-01-10,250000\n2023-04-15,150000\n2025-09-01,50000",
+      "type": "textarea"
+    },
+    {
+      "key": "nrb",
+      "label": "Available nil-rate band before these gifts",
+      "default": 325000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 2000000.0,
+      "step": "any"
+    }
+  ]
+}

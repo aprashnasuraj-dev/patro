@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0360",
+  "related": [
+    {
+      "id": "TOOL-0136",
+      "title": "GIF Frame Extractor",
+      "proposed_canonical": "/extractors/gif-frame-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0167",
+      "title": "Video Frame Extractor",
+      "proposed_canonical": "/extractors/extract-frames-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0325",
+      "title": "Argon2 and bcrypt Cost Benchmark on Your Device",
+      "proposed_canonical": "/utilities/password-hash-cost-benchmark",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0346",
+      "title": "Fancy Unicode Text Generator with Accessibility Warnings",
+      "proposed_canonical": "/generators/unicode-text-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0353",
+      "title": "Link-in-Bio Page Generator (Single HTML File)",
+      "proposed_canonical": "/generators/link-in-bio-page-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

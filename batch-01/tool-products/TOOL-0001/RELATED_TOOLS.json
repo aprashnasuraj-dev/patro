@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0001",
+  "related": [
+    {
+      "id": "TOOL-0002",
+      "title": "JSON to Zod Schema Converter",
+      "proposed_canonical": "/converters/json-to-zod-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0004",
+      "title": "SQL DDL to Prisma Schema",
+      "proposed_canonical": "/converters/sql-to-prisma-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0005",
+      "title": "JSON to Protobuf (.proto) Generator",
+      "proposed_canonical": "/generators/json-to-protobuf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0003",
+      "title": "OpenAPI YAML to TypeScript Interfaces",
+      "proposed_canonical": "/converters/openapi-to-typescript-interfaces",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0062",
+      "title": "Recipe Schema Generator",
+      "proposed_canonical": "/generators/recipe-schema-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

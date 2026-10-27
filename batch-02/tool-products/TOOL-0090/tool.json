@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0090",
+  "name": "Duplicate Line Finder with Counts",
+  "reserved_route": "/tools/find-duplicate-lines",
+  "family_id": "F0042",
+  "family": "Text Cleaner",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-04",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "Duplicate Line Finder with Counts | AafnaiPatro Tools",
+    "description": "Find repeated lines and quantify exact or normalized duplicates.",
+    "h1": "Duplicate Line Finder with Counts",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

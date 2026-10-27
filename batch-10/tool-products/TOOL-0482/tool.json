@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0482",
+  "name": "ACoS/ROAS Converter & Break-Even Calculator",
+  "route": "/tools/acos-roas-break-even-calculator",
+  "slug": "acos-roas-break-even-calculator",
+  "family": "F0116",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "ACoS/ROAS Converter & Break-Even Calculator | AafnaiPatro Tools",
+    "description": "Calculate ACoS, ROAS, contribution per attributed sale and advertising break-even from bounded advertising and variable-cost inputs."
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0430",
+  "related": [
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0429",
+      "title": "UK Tenancy Deposit Protection Penalty Calculator",
+      "proposed_canonical": "/calculators/uk-tenancy-deposit-protection-penalty",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0426",
+      "title": "Rental Depreciation & Recapture Calculator",
+      "proposed_canonical": "/calculators/rental-depreciation-recapture-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0418",
+      "title": "MACRS Depreciation Schedule Generator",
+      "proposed_canonical": "/calculators/macrs-depreciation-schedule-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0454",
+      "title": "Prescription Run-Out & Refill Date Calculator",
+      "proposed_canonical": "/calculators/prescription-refill-runout-date-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,24 @@
+{
+  "default_input": {
+    "maxPixels": 20000000,
+    "targetW": 1600,
+    "targetH": 1600,
+    "mode": "contain",
+    "format": "image/jpeg"
+  },
+  "hand_reference": {
+    "label": "Output canvas",
+    "value": "1,600 × 1,600 px",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

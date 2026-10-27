@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0420",
+  "related": [
+    {
+      "id": "TOOL-0495",
+      "title": "Mega-Backdoor Roth Contribution Room Calculator",
+      "proposed_canonical": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0260",
+      "title": "Pro Rata Salary and Leave Calculator",
+      "proposed_canonical": "/calculators/pro-rata-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0412",
+      "title": "Form 2210 Annualized Income Installment Calculator",
+      "proposed_canonical": "/calculators/form-2210-annualized-income-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0415",
+      "title": "GST/HST Quick Method vs Regular Method",
+      "proposed_canonical": "/calculators/canada-gst-hst-quick-method-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0418",
+      "title": "MACRS Depreciation Schedule Generator",
+      "proposed_canonical": "/calculators/macrs-depreciation-schedule-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

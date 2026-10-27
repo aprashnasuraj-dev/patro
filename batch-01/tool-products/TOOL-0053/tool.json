@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0053",
+  "name": "Server-Sent Events (SSE) Tester",
+  "reserved_route": "/tools/sse-tester",
+  "family_id": "F0027",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-03",
+  "description": "Connect to an SSE endpoint and inspect message, event, retry and ID fields in real time.",
+  "seo": {
+    "title": "Server-Sent Events (SSE) Tester | Mission Mangal Tools",
+    "meta_description": "Connect to an SSE endpoint and inspect message, event, retry and ID fields in real time.",
+    "h1": "Server-Sent Events (SSE) Tester",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": "Only deliberate user-initiated remote endpoint connections for TOOL-0052/0053"
+  },
+  "qa_status": "TEST_PENDING"
+}

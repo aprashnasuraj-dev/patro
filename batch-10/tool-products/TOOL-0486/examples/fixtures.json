@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0486",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "country": "Spain",
+        "employment": "Employee",
+        "external": "Yes",
+        "monthly": 4200,
+        "dependents": 0,
+        "spainClient": 0,
+        "months": 12,
+        "portugalThreshold": 0
+      },
+      "expect": {
+        "output_label": "Indicative income requirement",
+        "value_contains": "€2,442.00/month"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

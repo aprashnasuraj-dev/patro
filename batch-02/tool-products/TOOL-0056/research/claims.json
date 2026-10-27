@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0056",
+  "claims": [
+    {
+      "claim": "Longest zero run wins, and first run breaks ties.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc4291",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "A single zero field must not be compressed.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc4291",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "RFC 4291 IPv6 text format and RFC 5952 canonical lowercase compression."
+  ],
+  "limitations": [
+    "Zone identifiers, CIDR prefixes and hostnames are intentionally unsupported."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

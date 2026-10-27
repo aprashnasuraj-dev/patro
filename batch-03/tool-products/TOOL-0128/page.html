@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>CSS Sprite Sheet Generator — Browser-Local Tool</title><meta name="description" content="Pack multiple local images into a sprite sheet and generate deterministic CSS background-position rules."><link rel="stylesheet" href="./src/styles.css"></head>
+<body><main class="tool-shell" data-tool="TOOL-0128">
+<header class="hero"><p class="eyebrow">Browser-local • TEST_PENDING</p><h1>CSS Sprite Sheet Generator</h1><p>Pack multiple local images into a sprite sheet and generate deterministic CSS background-position rules.</p></header>
+<section class="workbench" aria-labelledby="work-title"><h2 id="work-title">Work area</h2><div class="controls"><label>Source images <input id="files" type="file" accept="image/*" multiple></label><label>Padding px <input id="padding" type="number" min="0" max="64" value="4"></label><label>Class prefix <input id="prefix" value="icon-" pattern="[A-Za-z_-][A-Za-z0-9_-]*"></label></div><button id="primary" class="primary" type="button">Run tool</button><button id="cancel" class="secondary" type="button" hidden>Cancel</button><div id="status" role="status" aria-live="polite"></div><div id="result" class="result" role="region" aria-live="polite" aria-label="Tool result"></div></section>
+<section><h2>What this tool does</h2><p>Pack multiple local images into a sprite sheet and generate deterministic CSS background-position rules.</p></section>
+<section><h2>How to use it</h2><ol><li>Choose local input files and review the task-specific controls.</li><li>Run the tool. Processing stays in this browser session.</li><li>Review warnings and previews before copying or downloading output.</li></ol></section>
+<section><h2>Worked example</h2><p>Drop 20 32×32 icons, set 4 px padding and a .icon- prefix, then export sprite.png and sprite.css.</p></section>
+<section><h2>Supported formats and units</h2><p>PNG/JPEG/WebP/SVG images decoded by the browser; PNG sprite output.</p></section>
+<section><h2>Assumptions</h2><p>A shelf-packing layout is used for predictable ordering and bounded complexity.</p></section>
+<section><h2>Limitations</h2><p>Sprite sheets can hurt modern responsive/image-loading workflows; use them where a single request and CSS positioning are actually beneficial.</p></section>
+<section><h2>References</h2><p>Authoritative implementation references are recorded in <code>research/sources.json</code>.</p></section>
+</main><script type="module" src="./src/ui.ts"></script></body></html>

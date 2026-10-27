@@ -1,0 +1,14 @@
+[
+  {
+    "title": "STL ASCII format",
+    "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000506.shtml",
+    "authority": "Library of Congress",
+    "use": "formula/format provenance"
+  },
+  {
+    "title": "STL binary format",
+    "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000505.shtml",
+    "authority": "Library of Congress",
+    "use": "formula/format provenance"
+  }
+]

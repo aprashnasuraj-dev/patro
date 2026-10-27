@@ -1,0 +1,24 @@
+{
+  "status": "TEST_PENDING",
+  "security_cases": [
+    "normal use performs no third-party content transmission",
+    "user-controlled strings render through textContent or escaped text",
+    "secret-bearing controls are not persisted to localStorage",
+    "file/text parsers have explicit size/count bounds",
+    "downloads use fixed/sanitized filenames and Blob URLs"
+  ],
+  "responsive_accessibility_cases": [
+    "320px viewport has no page-level horizontal scroll",
+    "keyboard-only controls retain visible focus",
+    "result region uses role=status and aria-live=polite",
+    "large tables/previews scroll inside their card"
+  ],
+  "performance_cases": [
+    "large-file operations are user-triggered and bounded",
+    "expensive crypto benchmarks use bounded parameters",
+    "no normal calculation requires a Cloudflare Worker"
+  ],
+  "tool_specific": [
+    "Polar-season dates return a warning instead of fabricated rise/set windows."
+  ]
+}

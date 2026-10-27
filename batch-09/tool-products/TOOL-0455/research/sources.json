@@ -1,0 +1,17 @@
+{
+  "reviewed_on": "2026-10-26",
+  "research_scope": "Domain-specific core rules; only relevant source links retained",
+  "sources": [
+    {
+      "url": "https://www.aaoinfo.org/blog/clear-aligners/",
+      "publisher": "www.aaoinfo.org",
+      "reviewed_on": "2026-10-26",
+      "version": "Current web guidance where accessible; effective-year rules require source recheck",
+      "effective_date": "Depends on agency, standard, edition or program",
+      "relevance": "Formula, permitted use, official limitations or design constraints",
+      "license": "external links only; no source datasets or logos reproduced",
+      "uncertainty": "Rules, product versions and vendor parameters can change"
+    }
+  ],
+  "no_external_dataset_bundled": true
+}

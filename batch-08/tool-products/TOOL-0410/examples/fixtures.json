@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0410",
+  "fixtures": [
+    {
+      "id": "default",
+      "input": {
+        "areaSqFt": 300,
+        "paverLengthIn": 8,
+        "paverWidthIn": 4,
+        "baseDepthIn": 6,
+        "beddingDepthIn": 1,
+        "jointSandLbPer100SqFt": 30,
+        "wastePct": 7
+      },
+      "purpose": "Representative valid input; expected values are asserted in source tests where stable."
+    },
+    {
+      "id": "boundary-review",
+      "input": {
+        "areaSqFt": 300,
+        "paverLengthIn": 8,
+        "paverWidthIn": 4,
+        "baseDepthIn": 6,
+        "beddingDepthIn": 1,
+        "jointSandLbPer100SqFt": 30,
+        "wastePct": 7
+      },
+      "purpose": "Reuse with one field at a documented min/max during deferred QA."
+    }
+  ]
+}

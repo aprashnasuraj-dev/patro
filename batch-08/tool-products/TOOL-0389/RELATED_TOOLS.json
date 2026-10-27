@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0389",
+  "related": [
+    {
+      "id": "TOOL-0388",
+      "title": "G-code Print Time and Filament Estimator",
+      "proposed_canonical": "/calculators/gcode-filament-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0223",
+      "title": "RSU Vesting and Withholding Estimator",
+      "proposed_canonical": "/calculators/rsu-tax-withholding-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0261",
+      "title": "Concrete Slab and Footing Volume Calculator",
+      "proposed_canonical": "/calculators/concrete-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0269",
+      "title": "Gravel, Mulch and Soil Volume Calculator",
+      "proposed_canonical": "/calculators/gravel-mulch-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0271",
+      "title": "BTU and HVAC Room Sizing Estimator",
+      "proposed_canonical": "/calculators/btu-calculator-room-size",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

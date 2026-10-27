@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0252",
+  "status": "TEST_PENDING",
+  "sample": {
+    "meetingMinutes": 60,
+    "prepMinutes": 10,
+    "followUpMinutes": 5,
+    "meetingsPerMonth": 4,
+    "groups": [
+      {
+        "role": "Engineer",
+        "count": 6,
+        "hourlyCost": 70
+      },
+      {
+        "role": "Manager",
+        "count": 2,
+        "hourlyCost": 95
+      },
+      {
+        "role": "Designer",
+        "count": 2,
+        "hourlyCost": 65
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

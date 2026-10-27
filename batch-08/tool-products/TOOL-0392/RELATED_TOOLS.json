@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0392",
+  "related": [
+    {
+      "id": "TOOL-0390",
+      "title": "ND Filter Exposure Calculator",
+      "proposed_canonical": "/calculators/nd-filter-exposure-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0391",
+      "title": "Hyperfocal Distance and Depth of Field Calculator",
+      "proposed_canonical": "/calculators/hyperfocal-distance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0368",
+      "title": "Speech Length Calculator (Words to Minutes)",
+      "proposed_canonical": "/calculators/speech-length-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0439",
+      "title": "Money Factor to APR & True Lease Cost",
+      "proposed_canonical": "/calculators/car-lease-money-factor-apr-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0149",
+      "title": "Crop PDF Margins Visually",
+      "proposed_canonical": "/editors/crop-pdf-margins",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

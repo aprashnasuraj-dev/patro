@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Length-based skein substitution with gauge caveats",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Yarn gauge, grams per meter, color-lot variation, blend and wash shrinkage are not determined by length alone.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [],
+  "assumptions": "Yarn gauge, grams per meter, color-lot variation, blend and wash shrinkage are not determined by length alone.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

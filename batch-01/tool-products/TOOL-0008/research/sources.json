@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0008",
+  "retrieved_on": "2026-10-26",
+  "authorities": [
+    {
+      "url": "https://schema.postman.com/",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    },
+    {
+      "url": "https://learning.postman.com/docs/use/use-collections/collections-schemas/",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    }
+  ],
+  "external_code_or_assets_reused": false,
+  "license_notes": "Generated code, page and style authored as original source; vendor specifications used solely as references. npm yaml package requires its license obligations to be respected at Git integration; confirm dependency license and pinned version then."
+}

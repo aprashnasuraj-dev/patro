@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0125",
+  "claims": [
+    {
+      "claim": "Crop a local portrait against officially sourced passport-photo dimensions for supported jurisdictions, or use a clearly labeled custom preset.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Government photo rules can change and some jurisdictions forbid or restrict digital alteration. Always re-check the linked official authority before submission.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

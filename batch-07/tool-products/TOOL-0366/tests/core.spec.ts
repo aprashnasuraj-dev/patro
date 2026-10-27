@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {requiredFinal} from '../src/core';describe('TOOL-0366 core',()=>{it('known-answer fixture',()=>{expect(requiredFinal(80,20,82).needed).toBeCloseTo(90)})});

@@ -1,0 +1,36 @@
+{
+  "tool_id": "TOOL-0490",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "NIST Handbook 133 measurement of a cord",
+      "url": "https://www.nist.gov/document/00-20-h133final120419webpdf",
+      "version_or_effective_date": "2020 definition",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-2",
+      "title": "National Conference on Weights and Measures buying firewood",
+      "url": "https://www.nist.gov/system/files/documents/pml/wmd/ncwm-firewood-facts.pdf",
+      "version_or_effective_date": "consumer guidance",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    },
+    {
+      "id": "source-3",
+      "title": "Bureau of Standards wood fuel values discussion",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular70.pdf",
+      "version_or_effective_date": "historical material comparison",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

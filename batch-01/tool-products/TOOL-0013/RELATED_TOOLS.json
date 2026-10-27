@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0013",
+  "related": [
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0001",
+      "title": "CSV to GraphQL Schema Generator",
+      "proposed_canonical": "/generators/csv-to-graphql-schema",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0005",
+      "title": "JSON to Protobuf (.proto) Generator",
+      "proposed_canonical": "/generators/json-to-protobuf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0026",
+      "title": "Nginx 301 Redirect Map Generator from CSV",
+      "proposed_canonical": "/generators/nginx-redirect-map-from-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0027",
+      "title": ".htaccess 301 Redirect Generator from CSV",
+      "proposed_canonical": "/generators/htaccess-redirects-from-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

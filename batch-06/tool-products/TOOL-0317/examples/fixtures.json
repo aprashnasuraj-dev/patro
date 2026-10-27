@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0317",
+  "examples": [
+    {
+      "inputs": {
+        "date": "2026-10-26",
+        "fiscal_start_month": 7,
+        "label": "ending"
+      },
+      "expected": {
+        "quarter": 2,
+        "fy_label": 2027,
+        "quarter_start": "2026-10-01",
+        "quarter_end": "2026-12-31"
+      }
+    }
+  ]
+}

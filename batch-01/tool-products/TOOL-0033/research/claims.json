@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "statement": "This tool accepts a deliberately bounded grammar and reports unsupported inputs.",
+      "basis": "Local implementation",
+      "uncertainty": "No product execution performed."
+    }
+  ],
+  "limitations": [
+    "The supported subset is narrower than the complete upstream specification.",
+    "Authoritative references need final version-specific validation before production."
+  ]
+}

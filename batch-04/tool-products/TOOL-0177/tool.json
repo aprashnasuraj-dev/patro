@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0177",
+  "build_sequence": 177,
+  "name": "BPM Detector for Audio Files",
+  "route": "/tools/bpm-detector",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family": "Audio Analyzer (BPM, Waveform, Spectrogram)",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "BPM is a heuristic estimate, not a beat-grid transcription. Half/double-tempo ambiguity is explicitly surfaced."
+  },
+  "seo": {
+    "title": "BPM Detector for Audio Files — Free Browser Tool",
+    "meta_description": "Estimate tempo from audio using onset-energy autocorrelation and show confidence plus half/double-tempo alternatives.",
+    "h1": "BPM Detector for Audio Files",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0083"
+}

@@ -1,0 +1,4 @@
+{
+  "qa_status": "TEST_PENDING",
+  "sample_behavior": "16px at 320px and 24px at 1280px becomes a clamp with a calculated vw slope and px/rem intercept."
+}

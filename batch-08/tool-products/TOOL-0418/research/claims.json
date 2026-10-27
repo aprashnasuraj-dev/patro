@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0418",
+  "claims": [
+    {
+      "claim": "Rates for the exposed 3-, 5-, 7- and 10-year half-year classes follow the IRS MACRS percentage tables.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "The tool does not choose a property class or convention for the user.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

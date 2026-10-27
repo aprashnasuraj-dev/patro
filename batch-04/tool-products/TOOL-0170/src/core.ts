@@ -1,0 +1,2 @@
+export interface WebmOptions { quality:number; audioKbps:number; }
+export function planWebmToMp4(o:WebmOptions,input:string,output:string):string[]{ const crf=Math.max(16,Math.min(35,Math.round(o.quality))); const a=Math.max(64,Math.min(320,Math.round(o.audioKbps))); return ['-i',input,'-map','0:v:0','-map','0:a:0?','-c:v','libx264','-preset','veryfast','-crf',String(crf),'-pix_fmt','yuv420p','-c:a','aac','-b:a',`${a}k`,'-movflags','+faststart',output]; }

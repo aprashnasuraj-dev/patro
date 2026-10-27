@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0069",
+  "claims": [
+    {
+      "claim": "Every variant should list itself and all peers.",
+      "supporting_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Return links cannot be verified against live pages offline.",
+      "supporting_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "Google Search Central hreflang return-link guidance and language-region conventions."
+  ],
+  "limitations": [
+    "Checks only the supplied map; cannot verify actual tags on remote pages."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

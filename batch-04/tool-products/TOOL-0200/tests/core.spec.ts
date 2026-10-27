@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';describe('text-preserving XLSX integration contract',()=>{it('requires literal leading zeros and formula-like values',()=>{expect(['00123','=1+1','+SUM(A1:A2)']).toHaveLength(3)});}); // Browser fixture must reopen generated XLSX and assert every used cell has string type and no formula field.

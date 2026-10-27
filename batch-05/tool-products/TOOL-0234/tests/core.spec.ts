@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest';
+import {rentVsBuy} from '../src/core';
+describe('TOOL-0234 known-answer and boundary plan',()=>{it('matches a simple known answer',()=>{expect(rentVsBuy({homePrice:100000,downPaymentPct:100,mortgageRatePct:0,mortgageYears:30,horizonYears:1,propertyTaxPct:0,insurancePct:0,maintenancePct:0,hoaMonthly:0,buyClosingPct:0,sellCostPct:0,appreciationPct:0,rentMonthly:0,rentGrowthPct:0,investmentReturnPct:0}).buyNetWorth).toBe(100000);});it.todo('rejects malformed and out-of-domain inputs');it.todo('covers zero/near-zero and upper bounds');it.todo('verifies output formatting and rounding semantics');});

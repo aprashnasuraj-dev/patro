@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0354",
+  "examples": [
+    {
+      "limit": 20,
+      "numbering": "none",
+      "input": "One sentence. Two sentence.",
+      "expect": "sentence-aware split when needed"
+    }
+  ]
+}

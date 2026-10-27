@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "city": "Hypothetical City (sample only)",
+    "rate": 175,
+    "nights": 4,
+    "fee": 80,
+    "localPct": 8,
+    "otherPct": 2,
+    "collected": 0
+  },
+  "known_answer": {
+    "output_label": "Taxable lodging base",
+    "expected_value": "$780.00"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

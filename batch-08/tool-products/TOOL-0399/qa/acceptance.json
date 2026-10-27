@@ -1,0 +1,16 @@
+{
+  "status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "product_tests_executed": 0,
+  "checks": {
+    "build": "TEST_PENDING",
+    "typecheck": "TEST_PENDING",
+    "unit": "TEST_PENDING",
+    "browser": "TEST_PENDING",
+    "accessibility": "TEST_PENDING",
+    "responsive": "TEST_PENDING",
+    "performance": "TEST_PENDING",
+    "security": "TEST_PENDING"
+  },
+  "storage_only_checks_allowed": true
+}

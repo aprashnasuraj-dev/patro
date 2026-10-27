@@ -1,0 +1,20 @@
+[
+  {
+    "claim": "Split one Excel workbook into one workbook per worksheet while warning when formulas reference other sheets.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation"
+    ]
+  },
+  {
+    "claim": "Cross-sheet formulas may break when a sheet is separated from its dependencies; a warning is emitted rather than rewriting formulas.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation"
+    ]
+  }
+]

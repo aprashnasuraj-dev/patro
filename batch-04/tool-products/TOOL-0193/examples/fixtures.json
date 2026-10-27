@@ -1,0 +1,13 @@
+{
+  "nominal": {
+    "csv": "id,phone\\n1,9841234567",
+    "country": "NP"
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

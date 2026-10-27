@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0307",
+  "claims": [
+    {
+      "claim": "The tool implements the explicit semantics stated on the page and rejects unsupported ambiguity.",
+      "source_url": null,
+      "implementation_note": "No broader standard conformance is implied."
+    }
+  ],
+  "uncertainty": "Recurrences are not expanded. Complex parameter quoting, custom components and non-VEVENT data are not converted. Use a standards-complete calendar library for round-trip editing."
+}

@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0070",
+  "claims": [
+    {
+      "claim": "Absolute URLs required; same-site locations required for a single sitemap.",
+      "supporting_url": "https://www.sitemaps.org/protocol.html",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "The lastmod value must represent a meaningful modification.",
+      "supporting_url": "https://www.sitemaps.org/protocol.html",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "Sitemaps protocol, Google 50,000 URL and 50MB uncompressed limits."
+  ],
+  "limitations": [
+    "Do not confuse sitemap creation with publication, crawl, indexing or canonical verification."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0126",
+  "name": "Favicon Generator (ICO, PNG Set, Manifest)",
+  "route": "/tools/favicon-generator",
+  "family_id": "F0059",
+  "family": "Favicon and App Icon Generator",
+  "batch": "BATCH-03",
+  "runtime_status": "TEST_PENDING",
+  "execution": "browser-local",
+  "network_required_for_normal_use": false,
+  "account_required": false,
+  "uploads_user_content": false,
+  "lazy_load": true,
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "seo": {
+    "title": "Favicon Generator (ICO, PNG Set, Manifest) — Browser-Local Tool",
+    "meta_description": "Generate a favicon.ico, common PNG favicon sizes and a web-app manifest snippet from one square source image."
+  },
+  "limits": {
+    "max_files": 1,
+    "oversized_input": "reject-with-explicit-message"
+  },
+  "assumptions": [
+    "ICO entries use PNG-compressed icon images for modern browser compatibility."
+  ],
+  "limitations": [
+    "A favicon set cannot guarantee visual clarity at tiny sizes; inspect 16×16 and 32×32 previews."
+  ]
+}

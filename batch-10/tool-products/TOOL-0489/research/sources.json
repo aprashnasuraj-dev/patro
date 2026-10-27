@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0489",
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "EPA WaterSense theoretical irrigation gallon conversion",
+      "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P101AIW9.txt",
+      "version_or_effective_date": "2021, factor 0.6233 gal/ft²/in",
+      "accessed_date": "2026-10-26",
+      "publisher_type": "official/primary",
+      "licensing_and_data_use": "Citations and concise derived rules only; no external data copied wholesale",
+      "uncertainty": "Verify current version before runtime/product release; guidance may change"
+    }
+  ],
+  "research_status": "SOURCE_PREPARED_NOT_QA_VERIFIED"
+}

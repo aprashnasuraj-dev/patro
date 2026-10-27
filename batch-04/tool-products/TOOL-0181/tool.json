@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0181",
+  "build_sequence": 181,
+  "name": "Split CSV by Column Value or Row Count",
+  "route": "/tools/split-csv-by-column",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0085",
+  "engineering_family": "Split and Merge CSV and Excel Files",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Split CSV by Column Value or Row Count — Free Local Browser Tool",
+    "meta_description": "Split a local CSV into bounded downloadable parts by a selected column value or by a fixed row count, without uploading the data.",
+    "h1": "Split CSV by Column Value or Row Count",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

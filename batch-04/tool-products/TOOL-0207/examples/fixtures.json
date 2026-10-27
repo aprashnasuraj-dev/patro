@@ -1,0 +1,18 @@
+{
+  "groupA": [
+    19,
+    22,
+    16,
+    29,
+    24
+  ],
+  "groupB": [
+    20,
+    11,
+    17,
+    12
+  ],
+  "checks": [
+    "small no-tie case uses exact branch"
+  ]
+}

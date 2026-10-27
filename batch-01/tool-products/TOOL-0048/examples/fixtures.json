@@ -1,0 +1,13 @@
+{
+  "input": {
+    "headers": "HTTP/1.1 200 OK\nContent-Type: text/html; charset=utf-8\nCache-Control: public, max-age=300\nX-Content-Type-Options: nosniff",
+    "scheme": "HTTPS"
+  },
+  "worked_example": "Missing HSTS on HTTPS is a deployment review item, not proof of an exploit.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

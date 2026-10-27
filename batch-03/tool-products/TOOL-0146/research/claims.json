@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0146",
+  "claims": [
+    {
+      "claim": "Apply text or image watermarks to PDF pages locally, including centred and tiled layouts.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Watermarks are deterrents, not access controls; recipients with PDF-editing tools may be able to remove them.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

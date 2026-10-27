@@ -1,0 +1,6 @@
+import {n,integer,opt,str,clock,minutesToClock,f,m,res,duration,csvSafe} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Source prepared for later integration. Tests are TEST_PENDING, not PASS. */
+export function calculate(i:Input):Result{
+const sex=opt(i,'sex',['male','female']),w=n(i,'mass',20,350),h=n(i,'height',100,230),age=integer(i,'age',18,100),act=Number(opt(i,'activity',['1.2','1.375','1.55','1.725','1.9']));const ms=10*w+6.25*h-5*age+(sex==='male'?5:-161),hb=sex==='male'?88.362+13.397*w+4.799*h-5.677*age:447.593+9.247*w+3.098*h-4.330*age;const rows=[['Mifflin–St Jeor',f(ms,0)+' kcal/day',f(ms*act,0)+' kcal/day'],['Revised Harris–Benedict',f(hb,0)+' kcal/day',f(hb*act,0)+' kcal/day']];return res('Estimated energy expenditure depends on model and activity multiplier',[m('TDEE range',f(Math.min(ms,hb)*act,0)+'–'+f(Math.max(ms,hb)*act,0)+' kcal/day'),m('Model difference',f(Math.abs(ms-hb)*act,0)+' kcal/day')],['Equations are population-based estimates; not a prescription for weight change or intake.','These published coefficients use binary sex groupings; consult an individual assessment where they do not apply.'],[['Equation','BMR','Approximate TDEE'],...rows]);
+}

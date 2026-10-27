@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0261",
+  "claims": [
+    {
+      "claim": "The implemented result follows the explicit formula/transform documented in core.ts and the page assumptions.",
+      "source_url": null,
+      "implementation_note": "Deterministic implementation claim; no external jurisdictional rule is implied."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

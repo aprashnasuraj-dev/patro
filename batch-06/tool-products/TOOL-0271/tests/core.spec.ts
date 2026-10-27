@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {hvac} from '../src/core';const x={l:10,w:10,h:8,base:20,people:0,adj:0,per:0};describe('TOOL-0271',()=>{it('computes 2,000 BTU for the baseline room',()=>{const r=hvac(x);expect(r.area).toBe(100);expect(r.totalBtu).toBe(2000)});it('rejects an invalid ceiling height',()=>expect(()=>hvac({...x,h:3})).toThrow())});

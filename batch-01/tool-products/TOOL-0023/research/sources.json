@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0023",
+  "sources": [
+    {
+      "url": "https://docs.gitlab.com/ci/yaml/",
+      "source_type": "official_or_normative",
+      "retrieved_on": "2026-10-26",
+      "licensing": "Primary documentation as factual reference only; no copied source implementation",
+      "supports": "Syntax/semantics, not an assertion of runtime correctness"
+    },
+    {
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+      "source_type": "official_or_normative",
+      "retrieved_on": "2026-10-26",
+      "licensing": "Primary documentation as factual reference only; no copied source implementation",
+      "supports": "Syntax/semantics, not an assertion of runtime correctness"
+    }
+  ],
+  "runtime_data_feeds": [],
+  "third_party_code_copied": false,
+  "bundled_assets": "none",
+  "dependency_license_review_at_import": "yaml license/version pin compatibility if used"
+}

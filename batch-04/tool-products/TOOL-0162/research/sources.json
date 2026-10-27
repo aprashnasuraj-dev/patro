@@ -1,0 +1,46 @@
+{
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "name": "ffmpeg.wasm Overview",
+      "url": "https://ffmpegwasm.netlify.app/docs/overview/",
+      "version": "current docs; @ffmpeg/ffmpeg 0.12.x API family",
+      "effective_date": null,
+      "license": "MIT wrapper; FFmpeg core follows FFmpeg/external-library licenses",
+      "use": "Browser-local WebAssembly architecture and worker behavior"
+    },
+    {
+      "name": "ffmpeg.wasm Usage",
+      "url": "https://ffmpegwasm.netlify.app/docs/getting-started/usage/",
+      "version": "docs examples reference core 0.12.10",
+      "effective_date": null,
+      "license": "documentation",
+      "use": "load/write/exec/read API and progress behavior"
+    },
+    {
+      "name": "FFmpeg Documentation",
+      "url": "https://ffmpeg.org/ffmpeg.html",
+      "version": "current online documentation",
+      "effective_date": null,
+      "license": "documentation",
+      "use": "seeking, stream mapping, stream copy, encoding behavior"
+    },
+    {
+      "name": "FFmpeg Filters Documentation",
+      "url": "https://ffmpeg.org/ffmpeg-filters.html",
+      "version": "current online documentation",
+      "effective_date": null,
+      "license": "documentation",
+      "use": "filter semantics"
+    },
+    {
+      "name": "FFmpeg Legal",
+      "url": "https://ffmpeg.org/legal.html",
+      "version": "current legal guidance",
+      "effective_date": null,
+      "license": "FFmpeg LGPL 2.1+ by default; optional GPL components change obligations",
+      "use": "Production bundle licensing gate"
+    }
+  ],
+  "licensing_note": "Production must verify the exact bundled dependency/codec build. FFmpeg notes that optional GPL components such as libx264 change the license obligations of the FFmpeg build; do not ship an unreviewed core."
+}

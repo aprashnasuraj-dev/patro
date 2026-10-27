@@ -1,0 +1,6 @@
+import {N,Q,M,R} from '../_vendor/guard';
+export function calculate(x:Record<string,unknown>){
+ const length=N(x,'length',0.1,300),height=N(x,'height',0.1,30),depth=N(x,'depth',0.1,30),price=N(x,'price',0.01,1e6),btu=N(x,'btu',1,50),eff=N(x,'eff',10,95);
+ const cf=length*height*depth,cords=cf/128,raw=cords*btu,useful=raw*eff/100,costPer=price/useful;
+ return R([{label:'Well-stowed stack volume',value:`${Q(cf,3)} ft³`},{label:'Equivalent full cords',value:`${Q(cords,4)} cords`},{label:'Delivered price per full cord',value:M(price/cords)},{label:'Assumed contained heat',value:`${Q(raw,3)} million BTU`},{label:'Estimated useful heat',value:`${Q(useful,3)} million BTU`},{label:'Cost per useful million BTU',value:M(costPer)}],['Measurement assumes ranked, well-stowed firewood; loose dumped or cross-stacked piles need a different measurement method.','BTU input depends on actual species and moisture; wet wood can lower delivered heat and increase pollution.','Useful efficiency is an estimate; local sales definitions, logs of different lengths and air gaps affect comparisons.'],['Cords = stack length × height × depth (ft³) ÷ 128 ft³/cord.','Useful million BTU = cords × user-supplied MMBTU/cord × appliance useful efficiency.','Cost per useful MMBTU = delivered price ÷ useful MMBTU.']);
+}

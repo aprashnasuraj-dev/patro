@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0318",
+  "related": [
+    {
+      "id": "TOOL-0306",
+      "title": "ICS Calendar File Generator with Recurrence and Alarms",
+      "proposed_canonical": "/generators/ics-file-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0307",
+      "title": "ICS Calendar File Viewer and Converter to CSV",
+      "proposed_canonical": "/converters/ics-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0232",
+      "title": "Hourly to Salary Converter with Unpaid Time Off",
+      "proposed_canonical": "/converters/hourly-to-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0308",
+      "title": "RRULE Generator with Occurrence Preview",
+      "proposed_canonical": "/generators/rrule-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

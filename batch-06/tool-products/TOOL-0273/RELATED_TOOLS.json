@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0273",
+  "related": [
+    {
+      "id": "TOOL-0272",
+      "title": "Unit Rent Yield and Cap Rate Calculator",
+      "proposed_canonical": "/calculators/cap-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0426",
+      "title": "Rental Depreciation & Recapture Calculator",
+      "proposed_canonical": "/calculators/rental-depreciation-recapture-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "proposed_canonical": "/calculators/property-tax-appeal-savings-estimator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "proposed_canonical": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0502",
+      "title": "Inherited Property Stepped-Up Basis Calculator",
+      "proposed_canonical": "/calculators/inherited-property-stepped-up-basis-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

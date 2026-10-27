@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mann-Whitney U Test Calculator — Browser Calculator</title>
+<meta name="description" content="Run a Mann–Whitney U test with exact enumeration for small no-tie samples and a tie-corrected normal approximation otherwise.">
+<meta property="og:title" content="Mann-Whitney U Test Calculator">
+<meta property="og:description" content="Run a Mann–Whitney U test with exact enumeration for small no-tie samples and a tie-corrected normal approximation otherwise.">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+<div class="eyebrow">TOOL-0207 · Local browser tool</div>
+<h1>Mann-Whitney U Test Calculator</h1>
+<p class="lede">Run a Mann–Whitney U test with exact enumeration for small no-tie samples and a tie-corrected normal approximation otherwise. Inputs and calculations stay in the browser during normal use.</p>
+</header>
+<div class="workspace">
+<section class="card stack" aria-labelledby="inputs-title"><h2 id="inputs-title">Inputs</h2><div class="row"><label>Sample A<textarea id="a">19 22 16 29 24</textarea></label><label>Sample B<textarea id="b">20 11 17 12</textarea></label></div>
+<div class="row"><button id="run" type="button">Run Mann–Whitney test</button><button id="copy" class="secondary" type="button">Copy results</button></div>
+<button id="download" class="secondary" type="button">Download result text</button>
+</section>
+<section class="card result" id="result" role="status" aria-live="polite"><p class="muted">Use the sample values or enter your own data, then run the tool.</p></section>
+</div>
+<div class="docs">
+<section><h2>What this tool calculates</h2><p>Run a Mann–Whitney U test with exact enumeration for small no-tie samples and a tie-corrected normal approximation otherwise.</p></section>
+<section><h2>How to use it</h2><p>Enter or paste the requested data, review the model choices shown beside the controls, run the calculation, then inspect warnings and method labels before copying or exporting the result.</p></section>
+<section><h2>Example</h2><p>The form is preloaded with a bounded example so you can see the expected input shape before replacing it with your own data.</p></section>
+<section><h2>Assumptions</h2><p>Independent ordinal/continuous observations; for a location interpretation, group distributions should have compatible shapes.</p></section>
+<section><h2>Limitations</h2><p>The exact branch is only used for small samples without ties. With ties, especially in small samples, a permutation method is preferable.</p></section>
+<section><h2>FAQ</h2><details><summary>When is the exact p-value used?</summary><p>Only for small, no-tie samples. Ties invalidate the simple exact rank distribution used here.</p></details></section>
+<section><h2>Method references</h2><ul><li><a href="https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/ranksum.htm" rel="noopener noreferrer">NIST Dataplot — Rank Sum Test</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html" rel="noopener noreferrer">SciPy — mannwhitneyu documentation</a></li></ul></section>
+</div>
+</main>
+<script type="module" src="./src/ui.ts"></script>
+</body></html>

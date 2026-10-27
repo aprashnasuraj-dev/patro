@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0294",
+  "claim": "Total grams=hours\u00d7g/hour. Carbs per feeding interval = g/hour\u00d7minutes/60; portions=total/grams per portion.",
+  "assumptions": [
+    "Sports nutrition commonly cites 30\u201360g/h for 1\u20132.5h and up to ~90g/h longer with gut training; diabetes and metabolic conditions need tailored advice.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://www.usada.org/wp-content/uploads/2026-TS-Nutrition-Guide.pdf"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

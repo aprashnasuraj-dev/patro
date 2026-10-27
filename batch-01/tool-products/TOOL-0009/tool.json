@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0009",
+  "title": ".env to Kubernetes Secret YAML",
+  "route": "/tools/env-to-kubernetes-secret",
+  "slug": "env-to-kubernetes-secret",
+  "source": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "family_id": "F0004",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": false,
+  "published": false,
+  "seo": {
+    "title": ".env to Kubernetes Secret YAML — Private, Browser-Based Draft Tool | AafnaiPatro",
+    "meta_description": "Generate clear base64-encoded data and visibly warn that base64 does not encrypt anything.",
+    "h1": "Convert a local .env file into Kubernetes Secret YAML",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "privacy": {
+    "routine_worker_requests": 0,
+    "user_content_transmission": false,
+    "file_execution": false,
+    "input_budget": 200000
+  },
+  "requirements": {
+    "runtime": "browser, compiled via existing lazy route loader",
+    "dependencies": {},
+    "test_dev_dependencies": {
+      "vitest": "3.2.4"
+    }
+  },
+  "input": "textarea and optional file local read",
+  "output": "secret.yaml",
+  "limitations": "This converter does not evaluate shell variables. Kubernetes Secrets are not encrypted simply because values are base64 encoded. Avoid committing manifests containing real credentials."
+}

@@ -1,0 +1,25 @@
+{
+  "tool_id": "TOOL-0119",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "pdfjs",
+      "url": "https://www.npmjs.com/package/pdfjs-dist",
+      "version": "pdfjs-dist 6.4.299",
+      "effective_date": "2026-10-03",
+      "license": "Apache-2.0",
+      "notes": "Browser PDF parser. The tool uses public PDFPageProxy text/font objects; unused resources may not be observed."
+    },
+    {
+      "id": "pdfjs-pageproxy",
+      "url": "https://mozilla.github.io/pdf.js/api/draft/module-pdfjsLib-PDFPageProxy.html",
+      "version": "PDF.js draft API documentation",
+      "effective_date": "2026-10",
+      "license": "Apache-2.0 project documentation",
+      "notes": "Documents PDFPageProxy.commonObjs and page processing interfaces."
+    }
+  ],
+  "assumptions": "Fonts encountered by PDF.js while extracting page text represent the fonts materially used on those pages.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "Unused resource fonts, some XFA/content paths, scanned-image PDFs and parser-internal font details may be absent. “Unknown” embedded status must not be treated as “not embedded”."
+}

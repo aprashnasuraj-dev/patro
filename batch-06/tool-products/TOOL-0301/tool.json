@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0301",
+  "name": "Business Days Calculator with Custom Holidays and Weekends",
+  "route": "/tools/business-days-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0162",
+  "engineering_family": "Date Arithmetic and Business Days",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Business Days Calculator with Custom Holidays and Weekends — Private Browser Tool",
+    "meta_description": "Count working days across a date range with explicit inclusive endpoints, configurable weekend weekdays, and a private pasted holiday list.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

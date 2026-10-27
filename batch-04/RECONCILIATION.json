@@ -1,0 +1,1926 @@
+{
+  "batch": 4,
+  "tools": [
+    {
+      "id": "TOOL-0160",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "ca6376dd621d2a4556910024cac8850ca0a1a03d2958bfd679d539828fe85762",
+        "page.html": "92f8c9b7378a73f0561f97746e45cc2d31f5a815e562d1c79b6d559e3a6ce75b",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "5ed6794b6824a49bca1e2249fa827b69df4770cdf54d5078b3daa3d7e6e84591",
+        "research/sources.json": "5c0fbf542572d429fd5d5c6a1e6987828e5cac51ccd6baea58163670cf1c8bd4",
+        "src/core.ts": "5812dea45eb45164225e0aa5082647e06171bad2914d5c7ffd3c2e69b7534d2d",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "651139b7784a2dda2dd1f71fa06157d2c3115cc87cfa1a3206372e322da26bb2",
+        "tests/core.spec.ts": "cf031b8b4118c380d0261b171abf836931af29acdf97b3686a555279e936cddd",
+        "tool.json": "33b02c3e40fec930df5d515da890414b25a20e600799e24e20e885e273fda499"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "ca6376dd621d2a4556910024cac8850ca0a1a03d2958bfd679d539828fe85762",
+        "page.html": "92f8c9b7378a73f0561f97746e45cc2d31f5a815e562d1c79b6d559e3a6ce75b",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "5ed6794b6824a49bca1e2249fa827b69df4770cdf54d5078b3daa3d7e6e84591",
+        "research/sources.json": "5c0fbf542572d429fd5d5c6a1e6987828e5cac51ccd6baea58163670cf1c8bd4",
+        "src/core.ts": "fe8ed4fb11fe85298e10244b9f2d09c7cae3017583afba21baac384ae2545344",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "4e009582e47c3c826b74bfd438a6789296c088a4c30d204589af53c45f23826e",
+        "tests/core.spec.ts": "cf031b8b4118c380d0261b171abf836931af29acdf97b3686a555279e936cddd",
+        "tool.json": "33b02c3e40fec930df5d515da890414b25a20e600799e24e20e885e273fda499"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0161",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "110d3e8d3c57b32fddea9a86e243d1081df84e41be5ab2a02b3864e5cf5e0e95",
+        "page.html": "d49c24858fb1494b00ba0dcab0bb5bdd016ee1190379fb723d0e2e19ac19bb05",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "e9452633d344ce1fec891b27d4bdb7e1be25c0dd976aedbc7c100ffadecfe792",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "497f32742cbe5c5a9be5f899662791d5548192f614d949d2eadbcb8addf2fcf2",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "ff33e459b70a29759b2ae93ad2121d6cac30be3cb51c453c4081e49d7947b5bb",
+        "tests/core.spec.ts": "c0118947a85fb56d11c9753b824f18fbcfd50f8f3f13a33515f409706b608f78",
+        "tool.json": "f2c5cb6080cc881898040dc3eff44bf10c0a69eb388b69568aff4b4aa44bbd2a"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "110d3e8d3c57b32fddea9a86e243d1081df84e41be5ab2a02b3864e5cf5e0e95",
+        "page.html": "d49c24858fb1494b00ba0dcab0bb5bdd016ee1190379fb723d0e2e19ac19bb05",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "e9452633d344ce1fec891b27d4bdb7e1be25c0dd976aedbc7c100ffadecfe792",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "dc9451a4eb9fdcd324c387c956c10bd1260110d75ea97a0cabc8a3100dac85b6",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "e1e5d18eb5cf5f79fbe973e16031a46cf811e421368c7a9d1baa6dcd17869651",
+        "tests/core.spec.ts": "c0118947a85fb56d11c9753b824f18fbcfd50f8f3f13a33515f409706b608f78",
+        "tool.json": "f2c5cb6080cc881898040dc3eff44bf10c0a69eb388b69568aff4b4aa44bbd2a"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0162",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "7e083eac14d6e69709bd5d2fb8ec881d8f4c3d83244ad0a5519e52a7083a1d2c",
+        "page.html": "755a6808dd9caa1256326f8d7b6055d6fe9cebadc571c425a892b6883b924589",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "7f789fec763b89cb11e6ca140f7d72b0b6adf548a0d1e93f4ee676c369c9d545",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "e6921546e1464d129d4a6737eefae614a63da0f74a2430cb0250b725855410d5",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "a3c0f9d036ffbabe7b905d6c9eab06f2c1d24f5d2d382a73e1500b145d11dd27",
+        "tests/core.spec.ts": "65c9a1684c03f67b7d123608b62628038cceea5bad0d2c67a2f43e1096cd17ff",
+        "tool.json": "0bd08cfbe7cacaaa45a8fa154d718784da93220a01815e0387aaff9f45423ad4"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "7e083eac14d6e69709bd5d2fb8ec881d8f4c3d83244ad0a5519e52a7083a1d2c",
+        "page.html": "755a6808dd9caa1256326f8d7b6055d6fe9cebadc571c425a892b6883b924589",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "7f789fec763b89cb11e6ca140f7d72b0b6adf548a0d1e93f4ee676c369c9d545",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "e6921546e1464d129d4a6737eefae614a63da0f74a2430cb0250b725855410d5",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "a79d24f5dc8cb04354d02c6774feaa06a23277645b603a7d21369b632bb66146",
+        "tests/core.spec.ts": "65c9a1684c03f67b7d123608b62628038cceea5bad0d2c67a2f43e1096cd17ff",
+        "tool.json": "0bd08cfbe7cacaaa45a8fa154d718784da93220a01815e0387aaff9f45423ad4"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0163",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "6df0617e936f62560eb59926f70e0ada0363469feca59a15d50f53e44c59b18e",
+        "page.html": "bd7062583e78a62215e9bfa9a1f1021307567e3f028d9abe6d49aeb00962f237",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "374836a9126db2cf269284a17c8db4bbb479fa15e145d5a21d55cb7e3b8f0447",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "50ffe401135c7a96b1625db258da19d67d98e48722e8f9811b3ed2bdaeba6cbe",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "adf803a2d28cfbfd6ca1f501d3057a22f91054fd2dc5f77fa2e91eec314058c5",
+        "tests/core.spec.ts": "993d43e982990ca8de97edfe37e164cd16c58159c2b486b1fd9a2688701f2c2c",
+        "tool.json": "150120d82ac9586d3490a6d573d279656b5c8bcb8ce8c068939943d72c283c82"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "6df0617e936f62560eb59926f70e0ada0363469feca59a15d50f53e44c59b18e",
+        "page.html": "bd7062583e78a62215e9bfa9a1f1021307567e3f028d9abe6d49aeb00962f237",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "374836a9126db2cf269284a17c8db4bbb479fa15e145d5a21d55cb7e3b8f0447",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "0c2d4ff9f82aba694d31d758cab64437c5819ad1b5a91f07a548681bbc30d284",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "b6dc754ae61887f8b494c876f5323e7e1960f18f424721c65fb473a42d7a3dc1",
+        "tests/core.spec.ts": "993d43e982990ca8de97edfe37e164cd16c58159c2b486b1fd9a2688701f2c2c",
+        "tool.json": "150120d82ac9586d3490a6d573d279656b5c8bcb8ce8c068939943d72c283c82"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0164",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "54c29f70b3da6de66180fb18841db5ca4d4aff29992683cf4ee6c208b83e206f",
+        "page.html": "52c1a0e28db2bbf0fdb00471e20629f77fda360982b00bfffa4741f2d1517779",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "00a7821cdf7b252aec84439ed776a29b1738750a65cd68dae5249a66002141f3",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "06e73b74618b9aeaec9c4a20736cb36f61ba14d0c97d8fe100aadd5fd3d91adf",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "5a578205370e97837ef3df0d439697df7115d608fe5f39fb86976681cdd6b9d1",
+        "tests/core.spec.ts": "4b64811f6d03d914d9ef5d31222ce2c0db2a924af91ec6352df1c7460d5a4c5f",
+        "tool.json": "6fe7525fd98a6cfedf854a8ad04781c23c076c25c66fb8a466074ad9d645a8db"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "54c29f70b3da6de66180fb18841db5ca4d4aff29992683cf4ee6c208b83e206f",
+        "page.html": "52c1a0e28db2bbf0fdb00471e20629f77fda360982b00bfffa4741f2d1517779",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "00a7821cdf7b252aec84439ed776a29b1738750a65cd68dae5249a66002141f3",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "816e685c859da7927f3f1d8f95e5f03194f3cbbfbb86ee0571abcbb849df7c25",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "eca1e78cd42f1e150a822953263ee0c85141cbe855e92b90963592a2b275837a",
+        "tests/core.spec.ts": "4b64811f6d03d914d9ef5d31222ce2c0db2a924af91ec6352df1c7460d5a4c5f",
+        "tool.json": "6fe7525fd98a6cfedf854a8ad04781c23c076c25c66fb8a466074ad9d645a8db"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0165",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "c67f3c0feeca20b568f4139cc9fec7214587c0df5810f010421a456bcdd070cd",
+        "page.html": "fd0e8fe611dcd325861030ca1fa989544a7d30106b8efaba74230fb203b0fe7c",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "35323b3454d9bbf0a673301eeb0e05df76fb868a386d953a892996530009607b",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "a6b03a8a69a8d193629cc526feb6f3a83efb361f366706b51bb49a3e0181f71f",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "6a7085e921cd855c3f37cd790361dc0c65e77def93a2df5f8bc8f071870a2dda",
+        "tests/core.spec.ts": "cc794a2f814f979f9fbe8e22dbe5717f757e311600fda60f5b9c5f1fb4ae7d93",
+        "tool.json": "c8e7fa73af23843bd8ead1e9ba5e999bad0f928266f3a9ec575c396d53cab95f"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "c67f3c0feeca20b568f4139cc9fec7214587c0df5810f010421a456bcdd070cd",
+        "page.html": "fd0e8fe611dcd325861030ca1fa989544a7d30106b8efaba74230fb203b0fe7c",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "35323b3454d9bbf0a673301eeb0e05df76fb868a386d953a892996530009607b",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "a6b03a8a69a8d193629cc526feb6f3a83efb361f366706b51bb49a3e0181f71f",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "6356b59dda4c7f4dfab046f016484d68f6d30eff7c7aaea490b2c9e4b57aa018",
+        "tests/core.spec.ts": "cc794a2f814f979f9fbe8e22dbe5717f757e311600fda60f5b9c5f1fb4ae7d93",
+        "tool.json": "c8e7fa73af23843bd8ead1e9ba5e999bad0f928266f3a9ec575c396d53cab95f"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0166",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "13966a43ef306c19e6203aee1d83ba0d7317e709a3c79c3ab9a853292c8b6238",
+        "page.html": "421e6aa5105c985833f78e4454d34265c2b8ce66fa3f380ad2cbbe1cc295f312",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "996f610dc51454e1a4b72983cabd7b74f8047dae270e323c09111350661e8a4c",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "807a7b8a52043869f0012566de83f3c1e5025239e26237c08443ea5ea7235a02",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "faa001c9ac77cb83ec580d28c450b72cf66a42ab00911849719bbdd0f754cf32",
+        "tests/core.spec.ts": "c82fa74f708ad2d5f71af01d321cc613e43fee7f6e2ceb4749fe89a75e4eab91",
+        "tool.json": "ad99b2ced3e99b2799d1615a806731e44900120705146cb77880d1dd0be62376"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "13966a43ef306c19e6203aee1d83ba0d7317e709a3c79c3ab9a853292c8b6238",
+        "page.html": "421e6aa5105c985833f78e4454d34265c2b8ce66fa3f380ad2cbbe1cc295f312",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "996f610dc51454e1a4b72983cabd7b74f8047dae270e323c09111350661e8a4c",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "807a7b8a52043869f0012566de83f3c1e5025239e26237c08443ea5ea7235a02",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "6872baa58bc9c834fa5b9e109b4e59d13798c78cbf14f97849c33048a89794de",
+        "tests/core.spec.ts": "c82fa74f708ad2d5f71af01d321cc613e43fee7f6e2ceb4749fe89a75e4eab91",
+        "tool.json": "ad99b2ced3e99b2799d1615a806731e44900120705146cb77880d1dd0be62376"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0167",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "09273f97be756b793b9f52c52d9791efc4880c99f7508d4024ed2f4f9a4097d7",
+        "page.html": "cc76c82b7df81d38b5f326fbe653ea1bf6c79422025087118e62626993423c03",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "b51566fd254bb141b8dd9f26629a0b0e88607adc875516df43ce889d555e0720",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "3990d9cd57997acd49ab651fc8be55134b5632e399d41be5e0ec19a8c23517b0",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "b93488dbc60ab77ec710d044983a40b3854aee2e4b4d9d779b2bee238d34432d",
+        "tests/core.spec.ts": "aee9a38c4a3b8f8887ec0af72c829767e4078481fe0551229d72aeaf109f13d4",
+        "tool.json": "d75c12eb1607f8cd5747a49cf0a6137d0b444bec4f5317135f9dfcb148a8eec7"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "09273f97be756b793b9f52c52d9791efc4880c99f7508d4024ed2f4f9a4097d7",
+        "page.html": "cc76c82b7df81d38b5f326fbe653ea1bf6c79422025087118e62626993423c03",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "b51566fd254bb141b8dd9f26629a0b0e88607adc875516df43ce889d555e0720",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "99c986b94229f7af4bfc4efff4894889790b97f9059bc50b6db9e861062ce901",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "360164f14505d023953fbda9fbe6d1c368ad773427f181323c65567f0cf10351",
+        "tests/core.spec.ts": "aee9a38c4a3b8f8887ec0af72c829767e4078481fe0551229d72aeaf109f13d4",
+        "tool.json": "d75c12eb1607f8cd5747a49cf0a6137d0b444bec4f5317135f9dfcb148a8eec7"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0168",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "9ad717f19f1074e9ef3e15084f2307108010cb43a9f433d029f8338eb745fc10",
+        "page.html": "f9dd1fad758800a2329d378b067a02f6714c949d99bdbf147b8e27112ce464c9",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "cf2ad14a72563cac1c1f232bbeb41626234de059cbc2743c5c3e213eb2134f8d",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "1eeadfe2bdf4fcb76668c92da83d565398ba7c34c92903ba9876104de127ce2a",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "a89957e1468ebce4f1be49ac96cbe4771467dd9bce69f9e9543222a4fc3698fc",
+        "tests/core.spec.ts": "26c130e23e9f4976cb04f992b4ae2b2a72cf6b30b92eef91f510c5fc51ca03da",
+        "tool.json": "b8554ac41c1b0631e7e1eb1f20351f7ac342ecea17383903d6fdf66282799470"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "9ad717f19f1074e9ef3e15084f2307108010cb43a9f433d029f8338eb745fc10",
+        "page.html": "f9dd1fad758800a2329d378b067a02f6714c949d99bdbf147b8e27112ce464c9",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "cf2ad14a72563cac1c1f232bbeb41626234de059cbc2743c5c3e213eb2134f8d",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "aea37ab2fae5f44e1a7fb94c6665fa8101a3ccce94b28c55e149beea9f6e1bfe",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "44425ce78c9b7b1bb7db6600abf3236caf81ccd32c00e161250082cd44583ae5",
+        "tests/core.spec.ts": "26c130e23e9f4976cb04f992b4ae2b2a72cf6b30b92eef91f510c5fc51ca03da",
+        "tool.json": "b8554ac41c1b0631e7e1eb1f20351f7ac342ecea17383903d6fdf66282799470"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0169",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "e53a67c338a6fbe2fd81fd532800f26accd16b9ca5b15a42e10eea1e51f35340",
+        "page.html": "5dbb13a643a81c55e51431ffdfbfd11d8109b511cbb03847d58763f0d38d98da",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "31c86f97fff1b486934e8652ec64f81c06200b429f200d9af6b7f865a8b77f1a",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "00657017cacd1f3fd2d6ab38eb7aeadbb3389cbf018e765045f1142cc57b53ff",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "8ca37489bf82abf31f5dbbe399df8ee20bd3c8b2ef45b0dadb9d4087b8ff16d5",
+        "tests/core.spec.ts": "a74031fde2488351fb5a96e1a233efb1889df7b567645ecfe5436cab8647de6a",
+        "tool.json": "772f561337d508e29533d466097b2bfb32fbc8ab34a2021795e838502f7f567d"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "e53a67c338a6fbe2fd81fd532800f26accd16b9ca5b15a42e10eea1e51f35340",
+        "page.html": "5dbb13a643a81c55e51431ffdfbfd11d8109b511cbb03847d58763f0d38d98da",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "31c86f97fff1b486934e8652ec64f81c06200b429f200d9af6b7f865a8b77f1a",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "00657017cacd1f3fd2d6ab38eb7aeadbb3389cbf018e765045f1142cc57b53ff",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "ef9037da868995d6646058f215192196d5da4981263fad8b88607e657cd7967d",
+        "tests/core.spec.ts": "a74031fde2488351fb5a96e1a233efb1889df7b567645ecfe5436cab8647de6a",
+        "tool.json": "772f561337d508e29533d466097b2bfb32fbc8ab34a2021795e838502f7f567d"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0170",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "d2936350ab4fe99c61135da5a160c61659bdbf2b7f39cf1d41cbf64674f444b6",
+        "page.html": "e8abbc28c5e0f11355d2f64cc773cd3b668630d5c9e7443ed425ea689f2e167e",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "4fc5b2141148b79711fcc803914b737e5d30080c84f33739ea654818c64c075b",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "e829795c7b4e03b339f1a4ab61aaf54e2a0a6ea42910760d63e7d33014170fa5",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "2a1ff05f188491d5cf9640952331d29f392768ea9b76e53b689e97ae50ef07bd",
+        "tests/core.spec.ts": "afa0f4f66e03b4f8ae5bd785f3a1996b5f276ef0344d3f9def94ba99ef8c65b6",
+        "tool.json": "283692bb6d3ebb8b0155494f200938e4cab3596ccc78ac4db3f9ba7b07a093f0"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "d2936350ab4fe99c61135da5a160c61659bdbf2b7f39cf1d41cbf64674f444b6",
+        "page.html": "e8abbc28c5e0f11355d2f64cc773cd3b668630d5c9e7443ed425ea689f2e167e",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "4fc5b2141148b79711fcc803914b737e5d30080c84f33739ea654818c64c075b",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "e829795c7b4e03b339f1a4ab61aaf54e2a0a6ea42910760d63e7d33014170fa5",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "bf5590201077d7043d47122f8a07bc42f49a0e8fc5413f09231a5b87a3a59d80",
+        "tests/core.spec.ts": "afa0f4f66e03b4f8ae5bd785f3a1996b5f276ef0344d3f9def94ba99ef8c65b6",
+        "tool.json": "283692bb6d3ebb8b0155494f200938e4cab3596ccc78ac4db3f9ba7b07a093f0"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0171",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "3ea7866562b708e03641287fc9bb445478bd6f8d8942b05c7c9deb9436e40cd1",
+        "page.html": "1a72c407b6b192e2f7d6e33ff21da1571c4a198db3aeb66f70c74c4d924be264",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "7a6e0c347390df63171ed145ab78ea56adfd6b593ed61d72613b056c8a5de0f5",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "d933ee633a5cce829008419aa74713a53650c243ec78cbe1c7e83e2bf48fc6bb",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "f4bd122f68e02b3fad698cc1ba5e98ad46ce4f6cc411d10319a197b99c3b9688",
+        "tests/core.spec.ts": "9e0d43fc2b33c6afd5de18daa227bc28abbd1948f9727a2c20284def50a1d755",
+        "tool.json": "716ca634e7cb71fa36d38ffefef309d4cd5070090aa5eab8c8738c16e3f85202"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "3ea7866562b708e03641287fc9bb445478bd6f8d8942b05c7c9deb9436e40cd1",
+        "page.html": "1a72c407b6b192e2f7d6e33ff21da1571c4a198db3aeb66f70c74c4d924be264",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "7a6e0c347390df63171ed145ab78ea56adfd6b593ed61d72613b056c8a5de0f5",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "28240edc3e65aa74409d78daa6a28785ea21e1fa5e10a255048c4beed3c5ac7d",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "2670f2a25feccd3f3ac96b14f57687a898bd65eb265ae8a7082f87afc61a3f1a",
+        "tests/core.spec.ts": "9e0d43fc2b33c6afd5de18daa227bc28abbd1948f9727a2c20284def50a1d755",
+        "tool.json": "716ca634e7cb71fa36d38ffefef309d4cd5070090aa5eab8c8738c16e3f85202"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0172",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "329559232e8f900d41cb6b2ae38b11dc7f6d2a7a52ea5872d52f5184b8710f26",
+        "page.html": "531115af45c02aee2db511ee9150b4b9a6a2372e957b33e36765337bfcba8df3",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "5fc3fc33a08d7bd5d512925f852152ab043adfd29a50261c3074dc76951e9dcb",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "0880c64e5f394c9e4e10c281241b35371c4c1d551fee524fa6abf935f9bb6b4b",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "03ef8b11665e3dcf36bc9a23abdf83b3ca231a7f03916c80d73950f91aa8619a",
+        "tests/core.spec.ts": "809dabdeb2e926f47b78b4fb9800fc235eac03ea75111ee166d7f5223c497722",
+        "tool.json": "60d2882efb5f31ab4b2e6234f4c34a4b919123b91b1e0b31b019cfeca7c3c18c"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "329559232e8f900d41cb6b2ae38b11dc7f6d2a7a52ea5872d52f5184b8710f26",
+        "page.html": "531115af45c02aee2db511ee9150b4b9a6a2372e957b33e36765337bfcba8df3",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "5fc3fc33a08d7bd5d512925f852152ab043adfd29a50261c3074dc76951e9dcb",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "0880c64e5f394c9e4e10c281241b35371c4c1d551fee524fa6abf935f9bb6b4b",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "a79e89b5a1cbc1df666b54797690295dfab8777f5e4a74396e413507296a45d2",
+        "tests/core.spec.ts": "809dabdeb2e926f47b78b4fb9800fc235eac03ea75111ee166d7f5223c497722",
+        "tool.json": "60d2882efb5f31ab4b2e6234f4c34a4b919123b91b1e0b31b019cfeca7c3c18c"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0173",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "c3b497468902f633b1691caa8333c3b748a3060cbf97c0bf095c2e0bbaf90e79",
+        "page.html": "6858cf6ada39109df1e12f1429b0684dded05cb1f3dffa884d102e641a5355ad",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "d6a060f12d5d3497f9b762e32957a512f91dfde49e9da5d5dfb050261a975dfb",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "4abf3d7e1ab6bb29c2d3508b738c06399b252dba51cf51d6f5d284a02b0fac24",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "37fda8efda7b94ec792675e8392beb6ad742d5d39d26c5f76d56b4e37a5ef523",
+        "tests/core.spec.ts": "e7e85420f3ca443e49bf671ebea57dddf089162c4ded4ec88e38fd97c205e0e1",
+        "tool.json": "6ef762062a465ba4d9f721c8657af1c7e15bfe6751d84da6083c55ff1b64ec60"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "c3b497468902f633b1691caa8333c3b748a3060cbf97c0bf095c2e0bbaf90e79",
+        "page.html": "6858cf6ada39109df1e12f1429b0684dded05cb1f3dffa884d102e641a5355ad",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "d6a060f12d5d3497f9b762e32957a512f91dfde49e9da5d5dfb050261a975dfb",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "3d754b22f4a52d65e32348a53f8a02c2f747b1ffd04aac229c74be1d00af3d6f",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "05703bbc1724ab7bfa3df7a0dde9b6856ef0aee835a13ea1051ca6c9f2fa6724",
+        "tests/core.spec.ts": "e7e85420f3ca443e49bf671ebea57dddf089162c4ded4ec88e38fd97c205e0e1",
+        "tool.json": "6ef762062a465ba4d9f721c8657af1c7e15bfe6751d84da6083c55ff1b64ec60"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0174",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "022c62d40443bd5533050abf005c4b1459c9dc3c62b03afacc68ec7f1330c31e",
+        "page.html": "bdc5684582b626eeb9a3bc17180dd330b0e75794ecc24812c6f62e9d6263d10f",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "9b2e982b32483fcc166ac8f11c88bfb05fa63d9301e16f6dfa61aa55448a9f8b",
+        "research/sources.json": "c0a610e9bcb5270c8d50d8fb63f2747bcb1823227d23a3870ce05ae46b730590",
+        "src/core.ts": "fab01e1f2055524352afce5cc8f0a2258db75010eccdfb057629e59bf38f0f97",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "4c63772924a26acd2c01356465104ea0c2967e9791406e6f47744a511a4fb7d7",
+        "tests/core.spec.ts": "674b90c02c63f79452f7e13fc9e6f4057ac866cb36ba4b4f583428cc257a2e18",
+        "tool.json": "d50761460338b8c0f0a03ec1aa0deddd4a71d7313f89c655441551767d9b125a"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "022c62d40443bd5533050abf005c4b1459c9dc3c62b03afacc68ec7f1330c31e",
+        "page.html": "bdc5684582b626eeb9a3bc17180dd330b0e75794ecc24812c6f62e9d6263d10f",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "9b2e982b32483fcc166ac8f11c88bfb05fa63d9301e16f6dfa61aa55448a9f8b",
+        "research/sources.json": "c0a610e9bcb5270c8d50d8fb63f2747bcb1823227d23a3870ce05ae46b730590",
+        "src/core.ts": "82538937c655ac05bf8763a0fe7fd2e20ec75fc3983bbcc2a4700f176cb6714c",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "99777331e0a48d46fd165835dc7ed2a8d9bc5d06ff6c68168954dc45ea577d82",
+        "tests/core.spec.ts": "674b90c02c63f79452f7e13fc9e6f4057ac866cb36ba4b4f583428cc257a2e18",
+        "tool.json": "d50761460338b8c0f0a03ec1aa0deddd4a71d7313f89c655441551767d9b125a"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0175",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "f07ce92e34787049a816990728cec976509776e0e5cfb2cd7cc064fd437832aa",
+        "page.html": "40a807e1e0899b89ae1d0d54fc6ec50c6c9fd97afb6da3ae1a18fe87fd3443df",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "1b7535c0d762435e32c4c51a0ae247903ab24009703458a5280272eb9f23d90d",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "51cd4f6c0efaaf6a0ed95dd69be623474333d34def8a5befbef54750f83c827e",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "709337553ffbeebfba7bae68d30d260bf0a7f58d0c3681df02a6c8695dd8d84f",
+        "tests/core.spec.ts": "f0cb764383ff8635b3a1c9d69b6abb0a6c8807214260a21d83226e5d51f51840",
+        "tool.json": "6a12ee51d6a1c998344f250d34e1f423312601b87fca3600a8ab026c74ed877b"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "f07ce92e34787049a816990728cec976509776e0e5cfb2cd7cc064fd437832aa",
+        "page.html": "40a807e1e0899b89ae1d0d54fc6ec50c6c9fd97afb6da3ae1a18fe87fd3443df",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "1b7535c0d762435e32c4c51a0ae247903ab24009703458a5280272eb9f23d90d",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "c28cb1f2d1f729e097f03490a291964163fc5ff62f7661382da43fc4687eb7c2",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "54528f347dcf27b32ce0f79d5eea7d807587c3dcd896b25b3f34672675fd5c63",
+        "tests/core.spec.ts": "f0cb764383ff8635b3a1c9d69b6abb0a6c8807214260a21d83226e5d51f51840",
+        "tool.json": "6a12ee51d6a1c998344f250d34e1f423312601b87fca3600a8ab026c74ed877b"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0176",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "e20049996d7b98358fb2f4f3ebaaf02013f9a93f47e8527415fcb198230f7cf9",
+        "page.html": "e4757dd9664e9844adbd24a131aa5381e5b0a2fc42d78bf7ea1b47e3fd304eb7",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "4a99f80928585fc53b657965b216964c7c6a4c39ba81c7880d9b079eee06b3a3",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "c91837b357235e99686f35381f6f326ddbb7a9358450a9e441252e93db54938c",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "be897fb56bc1454bef8e18fa2ba9f2063486a194072ddf21d37734d2756452f1",
+        "tests/core.spec.ts": "90cc3f16db5e535ef89b76cc4bc18f924f959208914fafafa96bdeb8a311eaad",
+        "tool.json": "16fbadb004795725c12c0d975ba1fe4a84fba5077c29995b40d222c8af1c258e"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "e20049996d7b98358fb2f4f3ebaaf02013f9a93f47e8527415fcb198230f7cf9",
+        "page.html": "e4757dd9664e9844adbd24a131aa5381e5b0a2fc42d78bf7ea1b47e3fd304eb7",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "4a99f80928585fc53b657965b216964c7c6a4c39ba81c7880d9b079eee06b3a3",
+        "research/sources.json": "b83667eaac4b65ce48969e42cbd5c94481dbde69dfbf522b16ffb34adf4ce6f9",
+        "src/core.ts": "c91837b357235e99686f35381f6f326ddbb7a9358450a9e441252e93db54938c",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "6fd5fc4f46cfec4ddd5f0b5c1a9166e4cb985224e786cac80a9106dc504012b5",
+        "tests/core.spec.ts": "90cc3f16db5e535ef89b76cc4bc18f924f959208914fafafa96bdeb8a311eaad",
+        "tool.json": "16fbadb004795725c12c0d975ba1fe4a84fba5077c29995b40d222c8af1c258e"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0177",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "77bd92aced3924f7eb13f92c42aff70d5301f55b7c86929526eac49bba5aa109",
+        "page.html": "0336b8bacad8e8bb0dc5e2897537c94a660159301f4661fcc9be2fb342697b67",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "4906ce7c9e8736d9cc7166c87dd3b7ac3228b55012282982662160fe65b21d9d",
+        "research/sources.json": "ccafbaa5ff5e2fd7e4b55dc165d83d8ffee8f30540093995e98aedf33e9828fb",
+        "src/core.ts": "f7edcaed553bd0a5a76a7812897f8dd26ae0e7f6822d1c08d71ece47da7744ad",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "bf2c55882ae06a195d34f895e612f673c73b803671ffb096e53f8c4115c3d4b6",
+        "tests/core.spec.ts": "7c95b278ff135f4d7629d69912467cc8f2a04a84e46c4e33a470f5a92d405dab",
+        "tool.json": "b3942c52381cd5fa7bd9591d982eb1de2437ae482f238f08f182c9c87f3fa3af"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "77bd92aced3924f7eb13f92c42aff70d5301f55b7c86929526eac49bba5aa109",
+        "page.html": "0336b8bacad8e8bb0dc5e2897537c94a660159301f4661fcc9be2fb342697b67",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "4906ce7c9e8736d9cc7166c87dd3b7ac3228b55012282982662160fe65b21d9d",
+        "research/sources.json": "ccafbaa5ff5e2fd7e4b55dc165d83d8ffee8f30540093995e98aedf33e9828fb",
+        "src/core.ts": "f7edcaed553bd0a5a76a7812897f8dd26ae0e7f6822d1c08d71ece47da7744ad",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "9e12fc56cd06ae7b89c9db4c71f99c3626af596cfba97413bee0d2e2cbca4304",
+        "tests/core.spec.ts": "7c95b278ff135f4d7629d69912467cc8f2a04a84e46c4e33a470f5a92d405dab",
+        "tool.json": "b3942c52381cd5fa7bd9591d982eb1de2437ae482f238f08f182c9c87f3fa3af"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0178",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "36562f3117624b5c4996b6a32df270c5a55a8d2e78ae77ca59b35f74842c4a4f",
+        "page.html": "b551485e533088469a685a7c112bc64899f466ea64b3417c9694424ba13a4ba9",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "2a8d6c4145c4ffe5d070c7866a3b4b5d045c3a0843e7cef11b2c2a1bda791921",
+        "research/sources.json": "ccafbaa5ff5e2fd7e4b55dc165d83d8ffee8f30540093995e98aedf33e9828fb",
+        "src/core.ts": "e86e2d5d5af77ade019e1eb1ba8fca10fe834beda86dfa5e1afa3142c34242c3",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "baba17c69b56434ac21d338e38583780999f62841c7be18d8e4bd866735d054b",
+        "tests/core.spec.ts": "5f0e1bab0acb7b8377238a5a9b10c68254de251006c16894380c720bc42e9405",
+        "tool.json": "e02231f09ca310a11863f254f54dec3c13402011e48643990774f05740fbcab5"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "36562f3117624b5c4996b6a32df270c5a55a8d2e78ae77ca59b35f74842c4a4f",
+        "page.html": "b551485e533088469a685a7c112bc64899f466ea64b3417c9694424ba13a4ba9",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "2a8d6c4145c4ffe5d070c7866a3b4b5d045c3a0843e7cef11b2c2a1bda791921",
+        "research/sources.json": "ccafbaa5ff5e2fd7e4b55dc165d83d8ffee8f30540093995e98aedf33e9828fb",
+        "src/core.ts": "e86e2d5d5af77ade019e1eb1ba8fca10fe834beda86dfa5e1afa3142c34242c3",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "34b687cec7ac77cb0389cbd8dc6ba7b43518eeaa482d7355529f98af7ab3fd51",
+        "tests/core.spec.ts": "5f0e1bab0acb7b8377238a5a9b10c68254de251006c16894380c720bc42e9405",
+        "tool.json": "e02231f09ca310a11863f254f54dec3c13402011e48643990774f05740fbcab5"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0179",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "0cdd57e7e77725864f93e36a5d92c78e8e1a626d01d4cad447d84ea8f8847756",
+        "page.html": "0abddc64503ef12036618365e666d87690807f1ac9a20ff0006a9173049c0ef1",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "360d0b2615bff7eb4cf9d1a39deb0bcb04f1e9fb593e9e7cc89f7f1c6f0ee3e7",
+        "research/sources.json": "ccafbaa5ff5e2fd7e4b55dc165d83d8ffee8f30540093995e98aedf33e9828fb",
+        "src/core.ts": "38c40badafdac66285f2c7377852dbe68af4ccc908c30b9a8ef492d67523a874",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "5292d8e22a43973fb89ebe2e88daeeb7b55869a5e5ca707ea02c368c1bc9af68",
+        "tests/core.spec.ts": "1de381edcc1da80494ec3bc91bf9733a82bcfb4a28f61be8d4d8949264830049",
+        "tool.json": "cfa15ca111f1c2a1bd999ee45143592e97e56447e65ac6708c5a717d34b0a71e"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "0cdd57e7e77725864f93e36a5d92c78e8e1a626d01d4cad447d84ea8f8847756",
+        "page.html": "0abddc64503ef12036618365e666d87690807f1ac9a20ff0006a9173049c0ef1",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "360d0b2615bff7eb4cf9d1a39deb0bcb04f1e9fb593e9e7cc89f7f1c6f0ee3e7",
+        "research/sources.json": "ccafbaa5ff5e2fd7e4b55dc165d83d8ffee8f30540093995e98aedf33e9828fb",
+        "src/core.ts": "bbe59d4741094ac2742af97025fd8f6a51021b7177159d177de56449a06edcdc",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "51a701eb44f5c6f3d1c2c4ce0efe3a023e235b0eed01d0ce7632ae3c913dfbad",
+        "tests/core.spec.ts": "1de381edcc1da80494ec3bc91bf9733a82bcfb4a28f61be8d4d8949264830049",
+        "tool.json": "cfa15ca111f1c2a1bd999ee45143592e97e56447e65ac6708c5a717d34b0a71e"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0180",
+      "source_zip": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "5523aa34f1c12a959a46815e9a884fa3ff143a4d951444a1c1bdff2ed9434a36",
+        "page.html": "c625ee1857714a0fedca0547cb51a7ed52c66c4175d1a18682ae7ddba60eaa7c",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "cfed7cf92a5f6615447c6e3753706f948a9ca8d6b49f6ca5adb810f9c2b16910",
+        "research/sources.json": "f5dbbcf1baa38e2f3df4fc9156715caa6d187038a6823f59053dc6a1171b3662",
+        "src/core.ts": "08a72dddba4fb3053341fa85df84ac5089bfc7a2d857ad33450a8d6d101453ea",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "45c96ef9b92bc6f2b01e00d75ef50aac07f6c9db787abc20f2e5e461a92863e7",
+        "tests/core.spec.ts": "ea1f2e5e752da4be824b056dc2b4a405270561187fd2b80f0d0dbd25e1e5d991",
+        "tool.json": "f4995b209fd9674882327fe18eb781b8d23b351b0f29503e243dfdd5c6291dfa"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "5523aa34f1c12a959a46815e9a884fa3ff143a4d951444a1c1bdff2ed9434a36",
+        "page.html": "c625ee1857714a0fedca0547cb51a7ed52c66c4175d1a18682ae7ddba60eaa7c",
+        "qa/acceptance.json": "bdb76dfcee4a364ab8c2e1538f6b29d80ef9f742f884a9e5d740c7902c092db8",
+        "research/claims.json": "cfed7cf92a5f6615447c6e3753706f948a9ca8d6b49f6ca5adb810f9c2b16910",
+        "research/sources.json": "f5dbbcf1baa38e2f3df4fc9156715caa6d187038a6823f59053dc6a1171b3662",
+        "src/core.ts": "08a72dddba4fb3053341fa85df84ac5089bfc7a2d857ad33450a8d6d101453ea",
+        "src/styles.css": "8d0c278c6f498bf8703cd837fb45c35643ecb3ed06e3b9d2237108312e3cbfc6",
+        "src/ui.ts": "e084359c87a8897aaeec16e46ed0b69b38f285762c3807890ce38c8cd39077bb",
+        "tests/core.spec.ts": "ea1f2e5e752da4be824b056dc2b4a405270561187fd2b80f0d0dbd25e1e5d991",
+        "tool.json": "f4995b209fd9674882327fe18eb781b8d23b351b0f29503e243dfdd5c6291dfa"
+      },
+      "vendor_files": 8,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0181",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "b9426fdab929e9b02782bfac05a4c1d5bc019f0d8ad0bc203e9fdd54397bd3b7",
+        "page.html": "7aabdf9f96306f87398132bc716cc8e9fb4b52987721ec4a08ae9f752008bcac",
+        "qa/acceptance.json": "a3c4e41446f3f88d3c0f157a4291d93fdc7f22405c9098f3f9530ba389ae097b",
+        "research/claims.json": "3e52075421e796c4c7586e994aa61c9baf6aa18183e2bdc97779890a0f29de5f",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "646ed7487cd66a44ace5258559850fd00653d9f48c8ceb2e04f542a0dd5043b1",
+        "src/styles.css": "f49e6f6e45cba1c635cc846746b434bc9398d40a7a33e4b0d3ff71defde3a058",
+        "src/ui.ts": "22095bf342eae3e477f2a65f7d00194a302425317aef6100e4a38d4fb10f2cef",
+        "tests/core.spec.ts": "7add4c9ffee05fb56bdddd1b29c01df323880d0ba4466df64c4732b9219beb95",
+        "tool.json": "f20e8ab8a5e99dceb7dff2ef5641841550a520645a2b2c0c2ef6df942c4a12f8"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "b9426fdab929e9b02782bfac05a4c1d5bc019f0d8ad0bc203e9fdd54397bd3b7",
+        "page.html": "a3e83a6ef6790cd5568d95c7758786bf88797703e4fcd924b88e88c9fa8366a5",
+        "qa/acceptance.json": "a3c4e41446f3f88d3c0f157a4291d93fdc7f22405c9098f3f9530ba389ae097b",
+        "research/claims.json": "3e52075421e796c4c7586e994aa61c9baf6aa18183e2bdc97779890a0f29de5f",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "80a062022a332d1464345e817a729f608d03ff582be8954062566f4587932bb8",
+        "src/styles.css": "3be38f72978b9abadbcf34aaf2d17335ea807ea96e77595c3e7b8e0a7fb6b510",
+        "src/ui.ts": "635e3ab087d29e83985bfdbeed31a898fca93ea2b3931ba1bac890a009e27133",
+        "tests/core.spec.ts": "7add4c9ffee05fb56bdddd1b29c01df323880d0ba4466df64c4732b9219beb95",
+        "tool.json": "f20e8ab8a5e99dceb7dff2ef5641841550a520645a2b2c0c2ef6df942c4a12f8"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0182",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "715b05dac590d15ec02213caccad13b88df5ac6f62493a96e28cf19b5dbcf553",
+        "page.html": "5818c4700046b40bdbd34d70f12cfeaf300074f6d0cc9c53be667c7db888b116",
+        "qa/acceptance.json": "7d6b5f58012ab734936f878448fe6e60fa662a9b72c13fd4dde75549768e6010",
+        "research/claims.json": "d28334d6cbf117118571cf818bae11e91d5ac64cfdb1121cb8ac843d6d52ef5d",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "f9aaa8d49736a671d3f3054f7e727160319556856673c30d64bdff450232e5c7",
+        "src/styles.css": "d22957cccfc8ef87d9489db60bcca377004645a708b251b2048c44eabdd06128",
+        "src/ui.ts": "d273e849b4be9f5d76030f5f487576685113911e8f0d4b139f3822e03f011b4d",
+        "tests/core.spec.ts": "d7b2799b89d84259d9d5c779bd8250048393b5aad5c5bce8b8a4082f7c2a724f",
+        "tool.json": "21452d35fa720e9cfbc2de7db9f253cd62146b0d3854eceb60ed09cc9515003c"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "715b05dac590d15ec02213caccad13b88df5ac6f62493a96e28cf19b5dbcf553",
+        "page.html": "91d11736591d59acfcdbc02a1a5f12daa616cdd4aebc079f37f132da5e8065b1",
+        "qa/acceptance.json": "7d6b5f58012ab734936f878448fe6e60fa662a9b72c13fd4dde75549768e6010",
+        "research/claims.json": "d28334d6cbf117118571cf818bae11e91d5ac64cfdb1121cb8ac843d6d52ef5d",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "1faeff3fb19391f91010232dc16da6a1ecf5d39c8c2efd649b0070c3e4dab37d",
+        "src/styles.css": "83a6ed844d0d4458a73b1d0a3973dc94736080d9879be8a0ec70c8fe1bc0b416",
+        "src/ui.ts": "5b6109ca35cc87a03443029cc33b9bb6e9a11506e6cf25b877d0c53991d1e8db",
+        "tests/core.spec.ts": "d7b2799b89d84259d9d5c779bd8250048393b5aad5c5bce8b8a4082f7c2a724f",
+        "tool.json": "21452d35fa720e9cfbc2de7db9f253cd62146b0d3854eceb60ed09cc9515003c"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0183",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "633a08c4f26bc0d07dea6c3f2bff78fcf1e866c848d54c0547403c27d6385c65",
+        "page.html": "650c1115d3d358d92c1c2346a12f0d24a2b74817cb6185f3596be7e1a23823cb",
+        "qa/acceptance.json": "6c6d94c7ab7bd8a6eb771a05e167f67fed1d12d7ab42faf99c9733282d0e0361",
+        "research/claims.json": "4d20c6837f7523100b3bef7816f8d8052f33952d1e1a830abfe0d19389e4debd",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "d4656676c502e63b26630912ffd79c9eda724b90a6698bee5b464d58b88f48b5",
+        "src/styles.css": "249c95e83cbe8928f83c0549b434d9ae8ddcd38d4ba498d2bf4929389ce710d3",
+        "src/ui.ts": "de4d7fd610b41bed59f9a4b527cd4ac95261d0548583553305a435bca9d035c9",
+        "tests/core.spec.ts": "73c6cf14bd6d84e4a8ef9438f6139c04ca29802189ea6f8570f2c483101afea2",
+        "tool.json": "e295150cb042dbf6f04ed7c2818b5f0b3e4871816303b2dccafa5114a8236d7c"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "633a08c4f26bc0d07dea6c3f2bff78fcf1e866c848d54c0547403c27d6385c65",
+        "page.html": "241f1b42a0b3bf9fd7bbd61b1dddb3551005b9f74679d4306805e97e54a9f8d7",
+        "qa/acceptance.json": "6c6d94c7ab7bd8a6eb771a05e167f67fed1d12d7ab42faf99c9733282d0e0361",
+        "research/claims.json": "4d20c6837f7523100b3bef7816f8d8052f33952d1e1a830abfe0d19389e4debd",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "f06839695ed7d4a971b05eda444eb256c25af9aa20d3b4b59287837d8cf3f437",
+        "src/styles.css": "f6da60872c7b4629927f5850987105e8a65d0a17336038f5f4c604df37407c3e",
+        "src/ui.ts": "41cfe161c07238619a4ccef4c233c517df51cb6b8cdbd8e3a1793014680febe5",
+        "tests/core.spec.ts": "73c6cf14bd6d84e4a8ef9438f6139c04ca29802189ea6f8570f2c483101afea2",
+        "tool.json": "e295150cb042dbf6f04ed7c2818b5f0b3e4871816303b2dccafa5114a8236d7c"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0184",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "5f071e4c6e63068e0e82acd07ff9da353ef68f15805bed20c3239b7f6f13fa0b",
+        "page.html": "441e5c74e84d188215886ff6b7cceece3b6c700e369814a5d57a38c6f82e128e",
+        "qa/acceptance.json": "9a46c0c807a95fcb0cd1fe342a97967fa63516c9e7a696241036ed498cf3b7db",
+        "research/claims.json": "7c50853a1c03fe5f88531b98154e53aa8a6798f7aff5275df6eaddcd57f5cac1",
+        "research/sources.json": "2570a948c5cabf299f7fd09b469467f11ca69f538c5daf636dabcef813c35a21",
+        "src/core.ts": "e80f408804052643f4687b4a69dd2b3fa29048ab0a362256f3fd9f4c130f13bb",
+        "src/styles.css": "991df625092dfee2ae78362b0cca84cf912473cfad99d84d0ae9dd872ba65502",
+        "src/ui.ts": "9c47209ab9bb6f66bc44a1efcc17a8ac3dfe266a6783e335daae5f788ae0cde2",
+        "tests/core.spec.ts": "68042b82a120b5a4969a72a930517fad31afcc2f30c8d371cf5cfac982c7bb26",
+        "tool.json": "4aa04c6cf0c20d01e470363276cd29ecdf9d877ec72365eeabb52bf1a8fa1ba4"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "5f071e4c6e63068e0e82acd07ff9da353ef68f15805bed20c3239b7f6f13fa0b",
+        "page.html": "1b239fafe814aba5ec430d07337d67075615c322f6f95f25c02f53ce510afaf0",
+        "qa/acceptance.json": "9a46c0c807a95fcb0cd1fe342a97967fa63516c9e7a696241036ed498cf3b7db",
+        "research/claims.json": "7c50853a1c03fe5f88531b98154e53aa8a6798f7aff5275df6eaddcd57f5cac1",
+        "research/sources.json": "2570a948c5cabf299f7fd09b469467f11ca69f538c5daf636dabcef813c35a21",
+        "src/core.ts": "6c5aa1cdafcacad1ddceeb2cb252a2475136a1e4ea284bb3f0a9719f471eabb9",
+        "src/styles.css": "20d9ce17ae6b43333dc98ed8b510fc83d9766b36742ecc8f66ce171392b0a11d",
+        "src/ui.ts": "fe9aa9480e0dfb2b8117af3184a750e06e9a212d389c19dce2899374c2526dba",
+        "tests/core.spec.ts": "68042b82a120b5a4969a72a930517fad31afcc2f30c8d371cf5cfac982c7bb26",
+        "tool.json": "4aa04c6cf0c20d01e470363276cd29ecdf9d877ec72365eeabb52bf1a8fa1ba4"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0185",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "10be8350fada94ca28baf8327c1b17b60cdbc7ce357469c6b097463ba4fcd481",
+        "page.html": "1a1e621d5935376c6da8f402cc590848824297702dfbeb15c500ede7427ffcb1",
+        "qa/acceptance.json": "07c36820cbd1cacf1dc495400c65ace027e3b313b22945f85f17e2eb0e6b7ce5",
+        "research/claims.json": "b8f85f290c183ae6533dbd18489040a6ef9567922fa42220764b7c0c3618b7aa",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "f23df374e24a6bd6c3af06aab3f564ec0fa8f89ede65860714b930a97d3a26e7",
+        "src/styles.css": "1893526c689d6ccac0b779308c185de57e67f52df345be345c017d0a6c4d878a",
+        "src/ui.ts": "76bffa3794782df5db018ed868faf23f02e51b05edeb4393f99b739267972917",
+        "tests/core.spec.ts": "9d0c359092647b73c9a6672dc7241bee767564119d1e5be1e4278ec29cc55d28",
+        "tool.json": "0cf8719a87dd518f667d249837f171d941af472bc18cc04db02c90616e409e37"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "10be8350fada94ca28baf8327c1b17b60cdbc7ce357469c6b097463ba4fcd481",
+        "page.html": "43d5a003f155a4bc23b9e968fad408ab763ecec9b1a658f93f6356ac18414d11",
+        "qa/acceptance.json": "07c36820cbd1cacf1dc495400c65ace027e3b313b22945f85f17e2eb0e6b7ce5",
+        "research/claims.json": "b8f85f290c183ae6533dbd18489040a6ef9567922fa42220764b7c0c3618b7aa",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "8995b3e7bd7910969e1d0e6ba80db9cf8f1b1b56a7bbf906b2f6a6ae1a293c50",
+        "src/styles.css": "bdc7cc4fa6617c952d9a4a204b0e3be7afe331d177348b3b7f1b5d90903c1e6e",
+        "src/ui.ts": "db17567268451ad60ec22e437f200338233edd713be76aad51f7077e4227c218",
+        "tests/core.spec.ts": "9d0c359092647b73c9a6672dc7241bee767564119d1e5be1e4278ec29cc55d28",
+        "tool.json": "0cf8719a87dd518f667d249837f171d941af472bc18cc04db02c90616e409e37"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0186",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "d46a3a699679b14a082d237d22907d7ce05a93d615033961856636c64664213e",
+        "page.html": "32d252bb3a779dd195a5f12a4ef1c2c91abd1bf6677679744ddd085604f25f41",
+        "qa/acceptance.json": "c6b8750b8c778ad269fd1b8a9929232e591eb719219c829d905b9d9ac9bedc42",
+        "research/claims.json": "99efb9841b7d40986fd1a5a3a7b93ff74854c4e919fdd58f669955b9782e6920",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "09a365213de71bdd642056b9ee0a5d5879ec5a78a7c68b546a5c702606b965d6",
+        "src/styles.css": "a867c946d2d8c4bb24f3e9bfe10fd7f17898a4bdbee7f53bc3611724218d6de6",
+        "src/ui.ts": "40d746b63c0f7582d617a3a3f9731967414bd3f7b38941675d59f885990e420d",
+        "tests/core.spec.ts": "807b0e2b849595b334bbc80fa6821822de713cbdaefa9e181f3f7cc56729c3d1",
+        "tool.json": "6f394c1fc2fcfb5dff28e50c3dbcdff0c1cba8d56768e75f60d1e7a1df83dcfd"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "d46a3a699679b14a082d237d22907d7ce05a93d615033961856636c64664213e",
+        "page.html": "6b123bfc1718acb4d8e6c0f9cc02094b5cd3979312be19106da017f82d89a1a0",
+        "qa/acceptance.json": "c6b8750b8c778ad269fd1b8a9929232e591eb719219c829d905b9d9ac9bedc42",
+        "research/claims.json": "99efb9841b7d40986fd1a5a3a7b93ff74854c4e919fdd58f669955b9782e6920",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "8efcb7f951ecd3a3f7ba864731194782ee8f3dbf3b517f8fb095e0486b2c8568",
+        "src/styles.css": "7dc5af40a8ba43c4677c5aa7bfc997196d531b544c377c907071a7d66ce9f549",
+        "src/ui.ts": "490785ed7016878cbbcb4a3fd875f4c26bb707ef30a697e4506c06eeaafcbfb7",
+        "tests/core.spec.ts": "807b0e2b849595b334bbc80fa6821822de713cbdaefa9e181f3f7cc56729c3d1",
+        "tool.json": "6f394c1fc2fcfb5dff28e50c3dbcdff0c1cba8d56768e75f60d1e7a1df83dcfd"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0187",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "3197a2f5fc8963136f080e74955d8237fb5dcb786b611133170874e0a1cff464",
+        "page.html": "b15e0aa78845d0b2a6ad139d485968332995f4dbfd8bbf62831df2aa3ea80322",
+        "qa/acceptance.json": "1e5358067ba7cf83907efef6460c7a20e88a814d48587704025ac89942c6ebd0",
+        "research/claims.json": "6a554b1f3d45d70a123750ee4256492f988847a03eb57dc10b07735eb7a486a2",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "7c7d3f01840bbabc9bda10983aaaa704d0e220cf0b375e6bff64cc2f9d08f43c",
+        "src/styles.css": "9222d912439efbc779323de63d6179dc3cdfc9af5a9cae418705d4253c4dce03",
+        "src/ui.ts": "d1578c245b76117635fd8513b175135c94859ab0615d56fe79055db607fcf5bd",
+        "tests/core.spec.ts": "a76db0f012157659898a52b0211f1e890c909037a61244b6e15ac93fdc71a953",
+        "tool.json": "78fc1ef846e334d2edd9c91acbb99cbd852736f6e2b247810bc1032cec7302fb"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "3197a2f5fc8963136f080e74955d8237fb5dcb786b611133170874e0a1cff464",
+        "page.html": "af9074d734fb35cd983ef0156ccc9d71d5342a97b8e101ede9ee38f7855fc1fa",
+        "qa/acceptance.json": "1e5358067ba7cf83907efef6460c7a20e88a814d48587704025ac89942c6ebd0",
+        "research/claims.json": "6a554b1f3d45d70a123750ee4256492f988847a03eb57dc10b07735eb7a486a2",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "6dcf7d424ebf4e97e7f0d2a262ffbf7c38cc7cf97cb23e6a16076e22e8b04c87",
+        "src/styles.css": "05285be062f70d97889fc30b4093173ea05a7d62aea077df04a79c5ae6801ac1",
+        "src/ui.ts": "6169f8930bccf1f52bfc8656a0c217d86e424096246884d514a4cee039f13409",
+        "tests/core.spec.ts": "a76db0f012157659898a52b0211f1e890c909037a61244b6e15ac93fdc71a953",
+        "tool.json": "78fc1ef846e334d2edd9c91acbb99cbd852736f6e2b247810bc1032cec7302fb"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0188",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "dc832d04e65117746d0f51838e130d763b629dd1b856a2135be29ebc97c35b29",
+        "page.html": "76b601bed4e7f86d5c1f1f18ee2670b5ff2fccbf70252d0b1814b6adaefb9c77",
+        "qa/acceptance.json": "dfc44c9c651ca3defbf63fadf66c970c4cfb44f21b9a4f28b34dd064ee812b00",
+        "research/claims.json": "ea84e5ca688cb8ab431b8e7c346252c2fe4def39b88967a03f3a71d1618d6d7d",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "3749fbb43b9d100cb139fcd896c74b972f4df5fbde21a5e695ffb86aef244284",
+        "src/styles.css": "4caf5d221a8b675043cdc793bf3541864944f523ce5e776562c8b391ea18ed26",
+        "src/ui.ts": "a51529681e45397db939589553392f8ede0303cc9b91144402d9d00c736d728a",
+        "tests/core.spec.ts": "838d00f81f7976f4c5de6a742e19f0bddeec1cbd36703d274a1f3bef2aaec037",
+        "tool.json": "b6f0720227cb4d8bd01f1f652abc5f31e8aef04c69f0e802243fb233958b0491"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "dc832d04e65117746d0f51838e130d763b629dd1b856a2135be29ebc97c35b29",
+        "page.html": "fe15ca4b366b713ea4b166c3157278e8250a735d83d9297c8d973046627bff06",
+        "qa/acceptance.json": "dfc44c9c651ca3defbf63fadf66c970c4cfb44f21b9a4f28b34dd064ee812b00",
+        "research/claims.json": "ea84e5ca688cb8ab431b8e7c346252c2fe4def39b88967a03f3a71d1618d6d7d",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "0197142774f062249b4bd18215a230f2fc73ca9849dfd87c7d3c7e573cb8e7fe",
+        "src/styles.css": "46d909cd52f401d4de9fb2a13f0824303baccfd3378b1fc8eb196f014daf1b4f",
+        "src/ui.ts": "7637dd64ce95ac1680efe5833378a086070754aa55693063e0cec65ba3d39ecb",
+        "tests/core.spec.ts": "838d00f81f7976f4c5de6a742e19f0bddeec1cbd36703d274a1f3bef2aaec037",
+        "tool.json": "b6f0720227cb4d8bd01f1f652abc5f31e8aef04c69f0e802243fb233958b0491"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0189",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "6fee0d4680917186e8ee35cda3e3e9772a3e7e0f710895f8bb5a3392e45f99f7",
+        "page.html": "3b92f2e67a7a05fbce7fa429cb632b451569329c08a9c2e6d282686cccdffed5",
+        "qa/acceptance.json": "cb5fb0543482721696a7d416d92c075444e4f3e8e5ee165f5179e075ac67b057",
+        "research/claims.json": "d256ea31635f2e4fa05d67f8ed115156a3d4f4c0833f0e66386a25eb66a7ab7d",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "aec5ec6757b1086dd67b05f7116009995e6a7f7cbfbbfd029f07023969926fde",
+        "src/styles.css": "bcfd71bc53518701bd23badda78d49004660f2de49fe9da83442b33b537b5277",
+        "src/ui.ts": "94e82bef2545022915c348e510d9d6f40b90fabe44db1b10d7bb8e5db22a3a95",
+        "tests/core.spec.ts": "b912458e8721592f41034616663750b23b3fcfc244598b44049920baa2ee180f",
+        "tool.json": "237a115eac7223798c5fa2173c07bb9af4caffe178e9684b27817ca4affcd89b"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "6fee0d4680917186e8ee35cda3e3e9772a3e7e0f710895f8bb5a3392e45f99f7",
+        "page.html": "50c91864875aafbe39579c69d93dfd8e39a203bbd129cedf408cc4b62c7383d7",
+        "qa/acceptance.json": "cb5fb0543482721696a7d416d92c075444e4f3e8e5ee165f5179e075ac67b057",
+        "research/claims.json": "d256ea31635f2e4fa05d67f8ed115156a3d4f4c0833f0e66386a25eb66a7ab7d",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "db1e1b02a0a188d95fdc08d5fce591b427e6e2929aed52dea2e5a614f95ec597",
+        "src/styles.css": "17a48853462914d2ff3acbde233619086d9d0a2c375499b5ff99901fc7a1f4d0",
+        "src/ui.ts": "988d3de33685e180ab28116f05c9a06dc4eff85ffaa77d964543e189779c942c",
+        "tests/core.spec.ts": "b912458e8721592f41034616663750b23b3fcfc244598b44049920baa2ee180f",
+        "tool.json": "237a115eac7223798c5fa2173c07bb9af4caffe178e9684b27817ca4affcd89b"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0190",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "440e31029e9f8b4952878181ddd479566529a05ef9e6409234862844c5f39493",
+        "page.html": "084addbc46bda4502670f2a2a7936de4cb07bab4ea1b71c75ee9bd4982868053",
+        "qa/acceptance.json": "ff6df35b4a2742f756df38fa2657fe5838e39ef804ed894c23c5b02c2e8c7cfb",
+        "research/claims.json": "c4f3c859aad25d19131885aa766e716525de17316f1f648ffdacdd35b26ac0d7",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "182f28e2ecf713ddf40107062616de2ac4fedde005aea04f99aa505ec55a7219",
+        "src/styles.css": "30f53e16418b27f9b1f94082a5cebe5d4d3d1bca4f14c5c72bba9b3e9211fe5d",
+        "src/ui.ts": "63d40e4aee798cf4ca3e6a2e535c8864816d2e3f83d86afb9133ce77e071e61a",
+        "tests/core.spec.ts": "5916b7ecbd98f9ae051c597a687326bc3fa6981d2c6db4a34aa94574b253d9e9",
+        "tool.json": "b30278530254e1ccb966a2b2413d9fd348bee88e67cc7ce604feff992097d949"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "440e31029e9f8b4952878181ddd479566529a05ef9e6409234862844c5f39493",
+        "page.html": "e5585c04df1fba5972de6301bd51f8e56f0fa7258370259479a114ac88d70088",
+        "qa/acceptance.json": "ff6df35b4a2742f756df38fa2657fe5838e39ef804ed894c23c5b02c2e8c7cfb",
+        "research/claims.json": "c4f3c859aad25d19131885aa766e716525de17316f1f648ffdacdd35b26ac0d7",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "7e8ab83efe7295ad94f16964e85eedb9e02a1eeea3ef853175a487d80947ff5a",
+        "src/styles.css": "f722516b0c97701cfbebff4bf199532366c5e6e53d049b37b1d4bbb9909da42f",
+        "src/ui.ts": "5b4ec482405c7dcaae550a67ed1007ecf7852a7f5ce00b166a8e7de8646653ae",
+        "tests/core.spec.ts": "5916b7ecbd98f9ae051c597a687326bc3fa6981d2c6db4a34aa94574b253d9e9",
+        "tool.json": "b30278530254e1ccb966a2b2413d9fd348bee88e67cc7ce604feff992097d949"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0191",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "1f2372050b0aefb7c4b97105a73f3f8e76e52c1735792b1181ca2a7ddf78ab57",
+        "page.html": "5950fc309509bfe92794bc887fb2aa15a96d3ca0f849316614e7c6d8d3cd5a28",
+        "qa/acceptance.json": "5fb819d51d1fa01361d18a6e0f9be610b8666c80f0d714cd511f211cb1677a9d",
+        "research/claims.json": "1558132d3ebebbb76860c87a13fa9b57e68a025f287977e10b500f24b982aaf6",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "a48dcbc02d87c8f512a616a45e93bf24d9a4d641c86b222358851fa51d4684f1",
+        "src/styles.css": "4b8d961cc20a07ba92673f0d50235c0ff176f5a11ac28c1e59f044d9a53e80a6",
+        "src/ui.ts": "3e42154f93d3cbb3e12f3df0b6532612f25eeddc4b48acfe20e5a3b2b928a8e8",
+        "tests/core.spec.ts": "d1d827113b4f25451e688cf3e37a0827516c2cf3882d516b318ff43a8377c453",
+        "tool.json": "ea5fe54e4f8baa7abd4cc841c1f8f54c552157bf32079524b0314816b26899f1"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "1f2372050b0aefb7c4b97105a73f3f8e76e52c1735792b1181ca2a7ddf78ab57",
+        "page.html": "c6c5ff0125333a31c7939cee76205bf980c9ba71d45cfa579052fb7b40eee516",
+        "qa/acceptance.json": "5fb819d51d1fa01361d18a6e0f9be610b8666c80f0d714cd511f211cb1677a9d",
+        "research/claims.json": "1558132d3ebebbb76860c87a13fa9b57e68a025f287977e10b500f24b982aaf6",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "5517d8e4d1fcda1995d7966913d8736484b87ffeaeea279a765667facbb09ced",
+        "src/styles.css": "87a969d80d005012ab372bc5d3749d38a0413f4497b38de82117385b712bde13",
+        "src/ui.ts": "3afdc8b4b6e467aca6a8c8f659af79dae65557efbc923f8efa306996a875c31a",
+        "tests/core.spec.ts": "d1d827113b4f25451e688cf3e37a0827516c2cf3882d516b318ff43a8377c453",
+        "tool.json": "ea5fe54e4f8baa7abd4cc841c1f8f54c552157bf32079524b0314816b26899f1"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0192",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "1f02ed8652dcc6b137e4acf0e65c43bfaabe079003e0b3c5c94b2490bd840e13",
+        "page.html": "4b02b5d89c47dad2e25810f7e9c35f36899afb64e534832eda54649a6e66275b",
+        "qa/acceptance.json": "eb6bd67156d58e6e07df551382172335737eb9b3043c737b0f65762125b15166",
+        "research/claims.json": "4d69ca77f15111e3c8fbf5905240eb576b96ae8c54aad8b6cc174ab7d61649a9",
+        "research/sources.json": "1f2295d6b2d75c1d0e5e202c30bd7e002203dfc6301eaa56119be5734d641df0",
+        "src/core.ts": "60611fd39fe80244df2d060b5b445b56ea427e80eca0217fb57ea29b2982bacd",
+        "src/styles.css": "395723b1db3b73eabb25c368b226f31ab07a4808d7ee021794616dc097d39ffe",
+        "src/ui.ts": "d7e3f9729dcacf996df1a40e55acff299816a9df55d6932d278b5a16eec84f90",
+        "tests/core.spec.ts": "ea5523c2e45503a8bf047dd5cabd07035d2d07ccb80c421f6881c0d7ba454187",
+        "tool.json": "da211e24efe359dbd09b3f36239182bc9d480da1f79170e95ce12abd8fa230fe"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "1f02ed8652dcc6b137e4acf0e65c43bfaabe079003e0b3c5c94b2490bd840e13",
+        "page.html": "dbf313665fe3b88ed8cab49416b32e71e4b7ce94aca1e99f67c9d16b2da653bc",
+        "qa/acceptance.json": "eb6bd67156d58e6e07df551382172335737eb9b3043c737b0f65762125b15166",
+        "research/claims.json": "4d69ca77f15111e3c8fbf5905240eb576b96ae8c54aad8b6cc174ab7d61649a9",
+        "research/sources.json": "1f2295d6b2d75c1d0e5e202c30bd7e002203dfc6301eaa56119be5734d641df0",
+        "src/core.ts": "27f9512346cfab56cc08842197932b2babb012383a0920cc9133c2178c590391",
+        "src/styles.css": "88832fb0da14446455bd1b8c9fbcc3d4ced21cf26b131e4f5f0893cd8cc63467",
+        "src/ui.ts": "f568b170b79516f7b27c1381fd95c888710ed2989b83313c5bda58311f2cec73",
+        "tests/core.spec.ts": "ea5523c2e45503a8bf047dd5cabd07035d2d07ccb80c421f6881c0d7ba454187",
+        "tool.json": "da211e24efe359dbd09b3f36239182bc9d480da1f79170e95ce12abd8fa230fe"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0193",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "83e5739408e2b360b58a4040c971889902e5ef4fed2f3aa9111b38543c8103d6",
+        "page.html": "966b1542745596454a21264bddb5dd919f0f0e5dbb79294aa16b9b52b3ffa726",
+        "qa/acceptance.json": "05a3a3f3f0e775f1612638f83e2a3bed8a3dbd4d86a0b5882ffa4087287776b4",
+        "research/claims.json": "1e4e14c4214ec1ecbcf0da381f0f8c043204719d9d99b4d7bd73e4a533cec734",
+        "research/sources.json": "84c26d7fe8b4da41e1dbe23a4d20070865609eda69248bf8e7e590e69553ce73",
+        "src/core.ts": "f0870116aadff5760188972213f380a3f10b5623dba72f2f90545a41f13b8361",
+        "src/styles.css": "956a94410c7732e75d55ccf9eec7718f3efa4032421d9c39695ac8f8ee20ed9c",
+        "src/ui.ts": "cdbeee09a6117122b8f1d78cdbc11f9b0c79fb288b364c017bf0bbed0780043e",
+        "tests/core.spec.ts": "931c8b433df56f47371bc49bc59701dab18a7d1e01c113462b3f9e663b50d95b",
+        "tool.json": "22eac312eb708442e6f064c08a076e5352f94ef3a6f685c320d70da519ab7814"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "83e5739408e2b360b58a4040c971889902e5ef4fed2f3aa9111b38543c8103d6",
+        "page.html": "73a9d2820b86d86ad3ff1765a37d980d35a90f8036f29742974e410c2485ae9f",
+        "qa/acceptance.json": "05a3a3f3f0e775f1612638f83e2a3bed8a3dbd4d86a0b5882ffa4087287776b4",
+        "research/claims.json": "1e4e14c4214ec1ecbcf0da381f0f8c043204719d9d99b4d7bd73e4a533cec734",
+        "research/sources.json": "84c26d7fe8b4da41e1dbe23a4d20070865609eda69248bf8e7e590e69553ce73",
+        "src/core.ts": "74d432f641b77de7b5f68e35a00b3f8430bdf24caf2477ea3c216c002fdd18e5",
+        "src/styles.css": "b9ce480584a8ec3afbc23f90a6d9944a5e102c95fd280e33fc580124ef68c619",
+        "src/ui.ts": "1804f7c720b9fb7b7ec285481f77df8136f83f72abb879a655bc18dd71d7ea09",
+        "tests/core.spec.ts": "931c8b433df56f47371bc49bc59701dab18a7d1e01c113462b3f9e663b50d95b",
+        "tool.json": "22eac312eb708442e6f064c08a076e5352f94ef3a6f685c320d70da519ab7814"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0194",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "473743f02ea708ad63f705b5e7c8d97eb1e3c4989122814c09d40cfb270d8331",
+        "page.html": "b34aaf2633869cf9fee070b6a6a25c4ad30f6bc8d7f6611c63f5241e14227a3f",
+        "qa/acceptance.json": "8d3efa98276a48acea43f544a54b103f03635df9e8bfec23e63c461277f31d64",
+        "research/claims.json": "96cc7268cd5dc271d64069b38ed5cc8f25264133e4e58d4792fe7487367cf45c",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "775f6498316d033327ef2de0772bf679928b0b89f717e6c9c58fe7a06e290afb",
+        "src/styles.css": "7ad40ba46d0b4c6d7b34b08c878261f6e11f9db10ebefd430be1323000cad6c5",
+        "src/ui.ts": "7bcc814b156176b81e3e36fa6b2b93e59fba0041eee415aeacec413987975742",
+        "tests/core.spec.ts": "d419cda8faaea30c461adff1e030f1bdb37fac00ae7c29dec7152d813458c755",
+        "tool.json": "170889586606b61d72165fe94f30425a3a549353489cdc77bfe87ecd368ebff9"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "473743f02ea708ad63f705b5e7c8d97eb1e3c4989122814c09d40cfb270d8331",
+        "page.html": "a8d534cda153dc8db31f64f4901e6e6b448c2000b2df581bf3861042cb46ae43",
+        "qa/acceptance.json": "8d3efa98276a48acea43f544a54b103f03635df9e8bfec23e63c461277f31d64",
+        "research/claims.json": "96cc7268cd5dc271d64069b38ed5cc8f25264133e4e58d4792fe7487367cf45c",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "a7ba83b99ce3ba259182f19c84796d23a65fb9d50ff24f295c896bd47148e3c5",
+        "src/styles.css": "309653b7f215ef7e4f03706a33aa62384ca7376f8339648ab69e11d29d6bc4b5",
+        "src/ui.ts": "c5337653b59f122081f0e9cca967ffd072ad78e9686ef3d9089cbca82014cacf",
+        "tests/core.spec.ts": "d419cda8faaea30c461adff1e030f1bdb37fac00ae7c29dec7152d813458c755",
+        "tool.json": "170889586606b61d72165fe94f30425a3a549353489cdc77bfe87ecd368ebff9"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0195",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "60dbf0582cc4999d47e56aed8d2f7c5bb819477929b335aa602cb977d6cee18c",
+        "page.html": "b63f59d0bb77a8c09c9cfd732cbb5139a6ed3d82f8772c2ccdee13ef1206a557",
+        "qa/acceptance.json": "b8355b852a080d9bb77f88116a47ef8e616d8b7f2a4a33df83581a83ecd53746",
+        "research/claims.json": "431c8af1aa6834d4ac93e41a613c9bb58d9239b1a87489f6ce72065893dc671b",
+        "research/sources.json": "3b1b7d9e574f16958e1c663bb503a337ff467e12d40fd9db24d91a1450626741",
+        "src/core.ts": "2eabf56dbc9027439c9b9a234685dbf46ddfd2bf6590272c403c4cfda3995b8f",
+        "src/styles.css": "3f57a8c7c65fe3781bca57f35c5d7307dea74e8e42774b94ed05e10f5baca328",
+        "src/ui.ts": "25cee6941d2993112d9a3d49b1edcfd7c28b4640fe184925fff50b63ba94b16e",
+        "tests/core.spec.ts": "efd9feb40e34e03c905d83548d42fb9ab3352459b6f444e8983543609d744a28",
+        "tool.json": "3aefc8e965fe3b2f4889c70815a150f7b508837390fdb3dd75a74000f9488e20"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "60dbf0582cc4999d47e56aed8d2f7c5bb819477929b335aa602cb977d6cee18c",
+        "page.html": "162333b06edb318d8920d07622e9695a72227a3dafdd9b24647ad07d4546ede4",
+        "qa/acceptance.json": "b8355b852a080d9bb77f88116a47ef8e616d8b7f2a4a33df83581a83ecd53746",
+        "research/claims.json": "431c8af1aa6834d4ac93e41a613c9bb58d9239b1a87489f6ce72065893dc671b",
+        "research/sources.json": "3b1b7d9e574f16958e1c663bb503a337ff467e12d40fd9db24d91a1450626741",
+        "src/core.ts": "2eabf56dbc9027439c9b9a234685dbf46ddfd2bf6590272c403c4cfda3995b8f",
+        "src/styles.css": "e63f989f40902d0fb09bad7faec5e99b987ef0bfac9704df41b7d746803aebeb",
+        "src/ui.ts": "6def980b64510f9d9a54a199bbd86a3b507f86cc5e50bfb5ac01f64d23d92f9c",
+        "tests/core.spec.ts": "efd9feb40e34e03c905d83548d42fb9ab3352459b6f444e8983543609d744a28",
+        "tool.json": "3aefc8e965fe3b2f4889c70815a150f7b508837390fdb3dd75a74000f9488e20"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0196",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "7e216360bb9c0bd51a851d3720bb25d4c24a86094a07d2c6f574e3161adca46d",
+        "page.html": "8c5993df552f3513567ba607213729454773905db7bdf0670c5d3bc2f979af00",
+        "qa/acceptance.json": "1a5e582ae47753a2637021529750f1a29ba943b860e2b1f4ac0391c2da37d6a6",
+        "research/claims.json": "55489e15f6f53d8295c6c50423ccd397e98be62e5ca690979a832be3e4b79e4f",
+        "research/sources.json": "d1b7a63f9ce79baf2fae2f1443ac3671d096ecd17ba512732b08b116ec10b5f3",
+        "src/core.ts": "ecfa6b05006cd56f8a1dd528805c7d563bd4dd90f2a21a4f1221180a3cd7fe4e",
+        "src/styles.css": "a57c331a732f7f61492cf6ba55d33c604a6e28425e6ec4f7ae23785fa2085d64",
+        "src/ui.ts": "7a2fbd530b8918fe2b6473e6b17f4ea2f954b992e0a2e60d572134e4245c428c",
+        "tests/core.spec.ts": "985cd2775fd0684e7ea0b9544a0e462cbbe0f2b7b9cfba16bb492bbf8379259f",
+        "tool.json": "9f7c211242ea0caad61683dd4ef9ea1b50b9ce82186c5917beba43a53a5cdafe"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "7e216360bb9c0bd51a851d3720bb25d4c24a86094a07d2c6f574e3161adca46d",
+        "page.html": "3b198648cca6bfcc7a7c00879831e6d638ae3878a7877ea5085ca6fc820efa3d",
+        "qa/acceptance.json": "1a5e582ae47753a2637021529750f1a29ba943b860e2b1f4ac0391c2da37d6a6",
+        "research/claims.json": "55489e15f6f53d8295c6c50423ccd397e98be62e5ca690979a832be3e4b79e4f",
+        "research/sources.json": "d1b7a63f9ce79baf2fae2f1443ac3671d096ecd17ba512732b08b116ec10b5f3",
+        "src/core.ts": "71e96a2326d1feefb8fe2181cb18f6d19fc6af493c61660d60afac434148ebbd",
+        "src/styles.css": "cbd5f095b4931b2bfbbf1944804ea60232f51676c03b8d58137ee3daa4459c00",
+        "src/ui.ts": "c5a940bda03cc5dcc4b4ac50c8528f8b39cc26b707aeda813f4fdda60774f4af",
+        "tests/core.spec.ts": "985cd2775fd0684e7ea0b9544a0e462cbbe0f2b7b9cfba16bb492bbf8379259f",
+        "tool.json": "9f7c211242ea0caad61683dd4ef9ea1b50b9ce82186c5917beba43a53a5cdafe"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0197",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "5fe80576ee05d490ec83031b73d0c22ec9cb0e2b8a9e4326ea5e19e12d3406f0",
+        "page.html": "b84414157d6d97c3127841a696dabf7b4f201b47b8b7d45b0f28fcb4fad5a63c",
+        "qa/acceptance.json": "b501aa88e1f2fc3ad7b2a44b8b11205f9bfd805da3f4894b53ae1edd1cf8ef50",
+        "research/claims.json": "04bb2df858295497adb2f81764a869360b2f72b243948ad4fdcf9f982365f25d",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "0ea3f56c18bebb12bbffb6f36c5e9bb31cbe018c72f91839db1e4e02b2018b3f",
+        "src/styles.css": "68d9d761e6972ed72d534c6d8bbea93cef113ec8b32029176697626b5a810c53",
+        "src/ui.ts": "a3704bc55aff9bcbaf5113e6700384c3e217e5167726f4d70419a55ce83a90a5",
+        "tests/core.spec.ts": "510b7a74063a10bdbb39f8b5a8085f3451ceaacfe3922e472b9a675f587cc495",
+        "tool.json": "b3e25a8b900865de932912fa0d3e06b67403d6ac4227a3b9a803309f6e4ec23f"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "5fe80576ee05d490ec83031b73d0c22ec9cb0e2b8a9e4326ea5e19e12d3406f0",
+        "page.html": "88e3ce0b41db2fb3efd4f0ec5d83570901bd5ccdadffcd2c375f9142994ffd70",
+        "qa/acceptance.json": "b501aa88e1f2fc3ad7b2a44b8b11205f9bfd805da3f4894b53ae1edd1cf8ef50",
+        "research/claims.json": "04bb2df858295497adb2f81764a869360b2f72b243948ad4fdcf9f982365f25d",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "38dcc7de20dcc731a4b6dd23263a084d200e3ca9ead1a0ea268d18a7221ae25f",
+        "src/styles.css": "599aed3618b92cfea7d62522b8eb2b6c6543594b8f8d83ddd93548fb34de59eb",
+        "src/ui.ts": "e9703a33d9b3f52f60215cdd83508ad4d426a35617a9bf06364bdd8b58ae6c0a",
+        "tests/core.spec.ts": "510b7a74063a10bdbb39f8b5a8085f3451ceaacfe3922e472b9a675f587cc495",
+        "tool.json": "b3e25a8b900865de932912fa0d3e06b67403d6ac4227a3b9a803309f6e4ec23f"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0198",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "ef4cd2c91ab80bf4aefbb1652e18a23c3b3cb070da59f9eca9359f400af4148b",
+        "page.html": "d9958629d49ddfb3af03a363b8f493a846fe8274aa66a903b093ba407b438e5f",
+        "qa/acceptance.json": "656fa183b395623b60e5753c44a29eb1ee0cc90663c92aecf9ef5deb9afe45a9",
+        "research/claims.json": "1efe109b91964f2d16de22083658587fc637d57ecd7704d507e0f4a7f1891325",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "39a8d46d18f6687fb81fe4c50c8f990f2370963ea53d4a4c787bd1bfe3855011",
+        "src/styles.css": "3fae75701a9d2c871cb59d58c69b3ec6e8d1e99020e8b28a1ed7cf3de6f6d5df",
+        "src/ui.ts": "3d832bd92ee6f5ee749754c09cf69be0812c8fad4aa40f77faba059f9d265c80",
+        "tests/core.spec.ts": "81edc8382bbe4b7301e9355339c3ccf2dd9cd1e748f7becaf87b7982d8a21d1e",
+        "tool.json": "f99acea4b81cc253f1af8ca5d66e278c6f88bbcdc315008985f2a3161be6f7c8"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "ef4cd2c91ab80bf4aefbb1652e18a23c3b3cb070da59f9eca9359f400af4148b",
+        "page.html": "f83b18d7cad8d6d948e14515d6bc85799a380884e82bee98520d1b8eb5613e8f",
+        "qa/acceptance.json": "656fa183b395623b60e5753c44a29eb1ee0cc90663c92aecf9ef5deb9afe45a9",
+        "research/claims.json": "1efe109b91964f2d16de22083658587fc637d57ecd7704d507e0f4a7f1891325",
+        "research/sources.json": "0addcd54bee3b3514a56471a342fbfb7a964047bba0ebf07ff881c655da951a4",
+        "src/core.ts": "84543f9cf9138405b5213ef8fc94ab682ac6ec21a710b6125c0a2c2a31c2aa6f",
+        "src/styles.css": "39e7fc0eed2c6ed000dccc5c6b829108533f0a5852d5736ef461fcc979ed074c",
+        "src/ui.ts": "ed3d7d7fc8e2f306824e8139a67f793b876b1dded6bb0f7a72b2565285f5d45f",
+        "tests/core.spec.ts": "81edc8382bbe4b7301e9355339c3ccf2dd9cd1e748f7becaf87b7982d8a21d1e",
+        "tool.json": "f99acea4b81cc253f1af8ca5d66e278c6f88bbcdc315008985f2a3161be6f7c8"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0199",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "a422d02cbf1f5a69de50f66b126e3623ae3cbe738a8b41e35257267dcf48eb21",
+        "page.html": "5836344929705cdce5f975131fcf6334b0ac36e400d8ce87824329fc15a18c4e",
+        "qa/acceptance.json": "807ac2e4e4d6979f63324fa7b2c46104e04945bd0f4339f31b1a668e73a6c61c",
+        "research/claims.json": "b308ab3919411d31172464814cb8595ec7390f6dd4bc3a820f36a8a6a6a72366",
+        "research/sources.json": "943ce76f98e9f6e0dcba338f15106527d0af5fa06872d9b9c32da795827e66c7",
+        "src/core.ts": "5e8dcb0a1747d2cd4829c3467550bc818b6fc89e73b4ec73f9d1a2f064f72e7f",
+        "src/styles.css": "6b94ef925273ea2cd58edc2913b4903c7b507a28cc58c9682ee2d1acd4e25682",
+        "src/ui.ts": "3238bc6af779fd0027dceb83ed0ec3a7a43a4fc5a97019afcdaf90cc3e4ee0f0",
+        "tests/core.spec.ts": "e345e52eb51b8147aab7fba6cc368c34ffc357623a5d5a512736e51bf2284de4",
+        "tool.json": "112b88128976a7291368125022163b747148c641f07da46ed74e96e3717f2db0"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "a422d02cbf1f5a69de50f66b126e3623ae3cbe738a8b41e35257267dcf48eb21",
+        "page.html": "83c521c25d0e7931679dd37fb8f6231a74a679d7e704d1a06cff7e97be25f41b",
+        "qa/acceptance.json": "807ac2e4e4d6979f63324fa7b2c46104e04945bd0f4339f31b1a668e73a6c61c",
+        "research/claims.json": "b308ab3919411d31172464814cb8595ec7390f6dd4bc3a820f36a8a6a6a72366",
+        "research/sources.json": "943ce76f98e9f6e0dcba338f15106527d0af5fa06872d9b9c32da795827e66c7",
+        "src/core.ts": "3bffadd67e16a06b6bdb3abcc9bfd1c3b75a92d30472fccef5664aae06caba0c",
+        "src/styles.css": "2ff1fa542f705d5116e9c060b0bafd428500c2b671d44b5ef3da3d6e8c778a12",
+        "src/ui.ts": "9019397b5e47a2b855eba132fdf9e5e82641182fe4260e1fd80abed5485d06eb",
+        "tests/core.spec.ts": "e345e52eb51b8147aab7fba6cc368c34ffc357623a5d5a512736e51bf2284de4",
+        "tool.json": "112b88128976a7291368125022163b747148c641f07da46ed74e96e3717f2db0"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0200",
+      "source_zip": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "page.html",
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "44a11d9b7db9d5648614f45d86f045607c9a4a8377818dbfab219766f16a6f23",
+        "page.html": "d0b1f2d099bde320c4a4e28fb5b0a41d4492c350250cda6b5dc3330f30f86282",
+        "qa/acceptance.json": "73c964b60cced323886d76b250be8d13b2590c05c8d4d126db9d3e93de69e047",
+        "research/claims.json": "1360c1746ebb0faed9827c6207a916c18f4ae56b0292f6d915560d0877740e34",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "b25e42613f062128496b9adf72da6d8d7df85d7e553c5ae851b901959c112145",
+        "src/styles.css": "01621c73478bbccd13e89a3ef76da1cc536476a2903f95dfb2a5db850c9f5e40",
+        "src/ui.ts": "34551712d5cb5fa69eb1a847c7c91b91543f89279c0db11be8382103a34a8ca3",
+        "tests/core.spec.ts": "503fd91b86289b569179084b6c23065df9bc8f534f213300029ec747df3add86",
+        "tool.json": "bdc8965e69d78e84295054da9f2020873d015103b7f42d7a47a5ed8c864a76b8"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "44a11d9b7db9d5648614f45d86f045607c9a4a8377818dbfab219766f16a6f23",
+        "page.html": "a691066c939125699dbfcde96c86f24e1f03912ea125efeb992901063f6830dc",
+        "qa/acceptance.json": "73c964b60cced323886d76b250be8d13b2590c05c8d4d126db9d3e93de69e047",
+        "research/claims.json": "1360c1746ebb0faed9827c6207a916c18f4ae56b0292f6d915560d0877740e34",
+        "research/sources.json": "01b8c50bb23d3919e1d2ea48d0ec73fb92b17242a32b0ea7c5a05b5f70ec571f",
+        "src/core.ts": "e76c87c39dee0dc207d3870a94e719d4bf708a5e93ff23d8431f204d6c5c92f7",
+        "src/styles.css": "de30864c255ae339e85c3698883ac156bc3414a64ca3bfccdf9f2b5b67177adc",
+        "src/ui.ts": "2be4a9d4c0b1817340f725607fb6ff4552f75cdc6e868ae2e0be396e3b61ba56",
+        "tests/core.spec.ts": "503fd91b86289b569179084b6c23065df9bc8f534f213300029ec747df3add86",
+        "tool.json": "bdc8965e69d78e84295054da9f2020873d015103b7f42d7a47a5ed8c864a76b8"
+      },
+      "vendor_files": 5,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0201",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "c2b95bcb2eed9609e619315e9fc73116ae548c87258171405e950d94bbd537bb",
+        "page.html": "f3d90c6270acda0f919e0d4c0aec91625592060b5a4a7019741583dacbe2db74",
+        "qa/acceptance.json": "3b83173332dac01376e9fbcd1dfea171e3dea7a1603f0cf964a32717c26fff4b",
+        "research/claims.json": "75c0aae5dcf96cfcf1665903caf9d7f80fa572defa2435d56edaff7dcd0752d1",
+        "research/sources.json": "931b0caf3b6ce9c61ec9b5d1d3d3dd3ae5c0e4b3cc0e46999fca8dd3cb66eb74",
+        "src/core.ts": "fb592b793e599aa1214f33e7bb843c95888c0459f1d7e0ecc048a495456fc5a7",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "04be540ebadb2c42f1fd42a78b824788403ac4dcf5d2a98f4b93331e030ad971",
+        "tests/core.spec.ts": "86c93e4ed0cc9c9343653976516dab0c86b1128a58f792acd284f2f17fd3af4e",
+        "tool.json": "4ce20db9dc7a7bcd80637f8b633f1b5b66ebb359b0d074087f0ff7cbecd28e84"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "c2b95bcb2eed9609e619315e9fc73116ae548c87258171405e950d94bbd537bb",
+        "page.html": "f3d90c6270acda0f919e0d4c0aec91625592060b5a4a7019741583dacbe2db74",
+        "qa/acceptance.json": "3b83173332dac01376e9fbcd1dfea171e3dea7a1603f0cf964a32717c26fff4b",
+        "research/claims.json": "75c0aae5dcf96cfcf1665903caf9d7f80fa572defa2435d56edaff7dcd0752d1",
+        "research/sources.json": "931b0caf3b6ce9c61ec9b5d1d3d3dd3ae5c0e4b3cc0e46999fca8dd3cb66eb74",
+        "src/core.ts": "a0c1ea6a4ddb2e7cb0504c91510e57d947fcd0e3b7dbcf678d13c801ace62a50",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "d4a7e63ac6946a3afb6ab072fef369327a206a0cac1810d4da252455a6997d4b",
+        "tests/core.spec.ts": "86c93e4ed0cc9c9343653976516dab0c86b1128a58f792acd284f2f17fd3af4e",
+        "tool.json": "4ce20db9dc7a7bcd80637f8b633f1b5b66ebb359b0d074087f0ff7cbecd28e84"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0202",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "75986f346d80bb9b7171501cde4117e71ceac05ea3b5c728db0b504f6e39af34",
+        "page.html": "f540532dfd2253288f6bf474b9c429a8c22a96354a03c14c3be483b02a3bb6c6",
+        "qa/acceptance.json": "3893fce9fe23f24019017e38da09955412697de79a591fb7daea4db258b600ce",
+        "research/claims.json": "3bfcdcf0dc66679d25058aef869ea92bf2f05df5afd552037983c17e3603be4c",
+        "research/sources.json": "300d34559ff5cc01ad51566bc40c1b020d440e6959946a5435701d6ba89644b0",
+        "src/core.ts": "eb76b1101b33f6a436600c8e59d72af4718265c0ccd7cefa0baf04533cfb6bb0",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "a1f6e5beae9e5b1fd72c778f14c86b9dfdf1f8fb0384e761bf1191e8f3f24dd8",
+        "tests/core.spec.ts": "d84e79ede8f197eaf0899419978ae3bb71c3222e956755023847f448a1de2c7b",
+        "tool.json": "8a2f686dbde1673f7452ad5d8ff3cd61211f7cd1cee85f749e1c3757cf31174e"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "75986f346d80bb9b7171501cde4117e71ceac05ea3b5c728db0b504f6e39af34",
+        "page.html": "f540532dfd2253288f6bf474b9c429a8c22a96354a03c14c3be483b02a3bb6c6",
+        "qa/acceptance.json": "3893fce9fe23f24019017e38da09955412697de79a591fb7daea4db258b600ce",
+        "research/claims.json": "3bfcdcf0dc66679d25058aef869ea92bf2f05df5afd552037983c17e3603be4c",
+        "research/sources.json": "300d34559ff5cc01ad51566bc40c1b020d440e6959946a5435701d6ba89644b0",
+        "src/core.ts": "e00123b2a88d9e9c6d7d73cca06cc79ca2dcd23a2f3776e62da0276f328bec3b",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "56a14a422f3cfa5b5f0fcfbc6332b90b4249d337719a643476e9b37f44a44ff3",
+        "tests/core.spec.ts": "d84e79ede8f197eaf0899419978ae3bb71c3222e956755023847f448a1de2c7b",
+        "tool.json": "8a2f686dbde1673f7452ad5d8ff3cd61211f7cd1cee85f749e1c3757cf31174e"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0203",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "2704f595201e9826ba15cd2d0baf0383b75a18ebcec432bc3078edda8ee0aca1",
+        "page.html": "1601b9d0b656dd97531468be5aadf121c2c70eda627d40c3d0c8642eb00ff700",
+        "qa/acceptance.json": "93b26ee08cf760f175bd32dedd3d64cb8224ac0bec749700e6ac630931a0638f",
+        "research/claims.json": "294d9c4e88c6a3c3d267b9dd9326eb5dd5b95d3127ed02226a0e865a594a1de9",
+        "research/sources.json": "35d82c9b46dba642a7b955bda929435215fe28eaf10f344dc926d689c84880af",
+        "src/core.ts": "2100b914352e51f9b23d771f91c7e4052238d399395e83dd264d137db09ebfa9",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "527162a4c5fee810af779f2b4ccde1f92fefe2bc5dcef2e9c73d096eefe4a39f",
+        "tests/core.spec.ts": "84cdb8c6e03cae0737fe40633eacb7157d47b0ad1b0988fdccbe899629129a48",
+        "tool.json": "a5bfb39cb5df5e279ccf075b31b830c43b77a86d21a8daaf1b64ed9a3316a5fd"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "2704f595201e9826ba15cd2d0baf0383b75a18ebcec432bc3078edda8ee0aca1",
+        "page.html": "1601b9d0b656dd97531468be5aadf121c2c70eda627d40c3d0c8642eb00ff700",
+        "qa/acceptance.json": "93b26ee08cf760f175bd32dedd3d64cb8224ac0bec749700e6ac630931a0638f",
+        "research/claims.json": "294d9c4e88c6a3c3d267b9dd9326eb5dd5b95d3127ed02226a0e865a594a1de9",
+        "research/sources.json": "35d82c9b46dba642a7b955bda929435215fe28eaf10f344dc926d689c84880af",
+        "src/core.ts": "b3148fa85d2d0b5d7d5b4a14d5eb69a487e6d3214504a4fb468dc8502b6d0ca8",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "88a3fd59d505874a7666556020c6bf3d18b65e6458b459d576bb37700dfc64ac",
+        "tests/core.spec.ts": "84cdb8c6e03cae0737fe40633eacb7157d47b0ad1b0988fdccbe899629129a48",
+        "tool.json": "a5bfb39cb5df5e279ccf075b31b830c43b77a86d21a8daaf1b64ed9a3316a5fd"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0204",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "1023fb02cbee14d6a5dfe087aa44f0d8ea155765fa58257f93b8bbb5ef312f5a",
+        "page.html": "f8b3884047321dbe441624a0d5163568c6faa33a02d883cc77376037511884b7",
+        "qa/acceptance.json": "7a2397226da65dd39bb933eae0e97a6d3077b5e5300bcb5e35ef9fe2be8f5b34",
+        "research/claims.json": "ba4976a77c3412b0639609e84b08c8d73284520b2e4ea5f800223d54d34f7b74",
+        "research/sources.json": "e9d9e3cd9ae353f5645941e4450c0fe7217dc5fc3872dc5c6cb500dad96d9b7f",
+        "src/core.ts": "1673379dd16f59273cd775b022c0df99b4944b1e7a4ff3ce10d14d61024d50ab",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "b38e4a39e37d776275c1f5c7f68e1a4097f63782c891198ae69c00680f863a19",
+        "tests/core.spec.ts": "5e513ac9e0afc90aa219048de0b845a9cd25eda716af1b4dace76887d3fa176f",
+        "tool.json": "9f79f73bab79d0f1655fffc6165e9402df53772d60c6adb221604e51d321c2ca"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "1023fb02cbee14d6a5dfe087aa44f0d8ea155765fa58257f93b8bbb5ef312f5a",
+        "page.html": "f8b3884047321dbe441624a0d5163568c6faa33a02d883cc77376037511884b7",
+        "qa/acceptance.json": "7a2397226da65dd39bb933eae0e97a6d3077b5e5300bcb5e35ef9fe2be8f5b34",
+        "research/claims.json": "ba4976a77c3412b0639609e84b08c8d73284520b2e4ea5f800223d54d34f7b74",
+        "research/sources.json": "e9d9e3cd9ae353f5645941e4450c0fe7217dc5fc3872dc5c6cb500dad96d9b7f",
+        "src/core.ts": "b1aeb51b439301b89b697f3b34fbecf28f0b5b17e43cd18853e0ab4f42205e3f",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "0991206dc8d504ab1ce2da348e1d3b996601c3426afda89cf3ec27d2c7476b68",
+        "tests/core.spec.ts": "5e513ac9e0afc90aa219048de0b845a9cd25eda716af1b4dace76887d3fa176f",
+        "tool.json": "9f79f73bab79d0f1655fffc6165e9402df53772d60c6adb221604e51d321c2ca"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0205",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "9bb78a26a3e5240b7fcdef09e6d03e76c3931848d3ea7c08e43c47079f5aac3e",
+        "page.html": "a5f5f2c118014474411027f725abea6012d0bbda835d378150e2873911abacb3",
+        "qa/acceptance.json": "fcfa496f4eeac6dfed2e6645c981f153827e856d7ea271ad405e5106939d7915",
+        "research/claims.json": "97fcb373cc2d7f14bb6844b2059014dced41a9150a607cace4f005bb3d642bb9",
+        "research/sources.json": "362afe0a0ba5a1ebd001d7f47d1e3d7ead2423cb81fb8c31e83ce1726f475215",
+        "src/core.ts": "a06051352e39d150ad69e064acafdf478291d2e4d01d42f2ffab2a8278227427",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "d386c45007c7752ed23c9a65659ffbe683a2af11a9e8d1bd81ee107cb3ac0bfc",
+        "tests/core.spec.ts": "485868911929c25c8865ed211bafdc473affc18b349cafeabba65455176beeb3",
+        "tool.json": "4d38ac24af7e3a0fada547ce5a89db17d4010228c38f695cfab010d39bed4165"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "9bb78a26a3e5240b7fcdef09e6d03e76c3931848d3ea7c08e43c47079f5aac3e",
+        "page.html": "a5f5f2c118014474411027f725abea6012d0bbda835d378150e2873911abacb3",
+        "qa/acceptance.json": "fcfa496f4eeac6dfed2e6645c981f153827e856d7ea271ad405e5106939d7915",
+        "research/claims.json": "97fcb373cc2d7f14bb6844b2059014dced41a9150a607cace4f005bb3d642bb9",
+        "research/sources.json": "362afe0a0ba5a1ebd001d7f47d1e3d7ead2423cb81fb8c31e83ce1726f475215",
+        "src/core.ts": "0f5ab8c8fea980a1d5d01f6c32459087e4110aadbb2426eabe549eac09e819b2",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "6b790561e100829c5c1b8ad3a2fe6799cd158db45ee5585b5597a102af02846d",
+        "tests/core.spec.ts": "485868911929c25c8865ed211bafdc473affc18b349cafeabba65455176beeb3",
+        "tool.json": "4d38ac24af7e3a0fada547ce5a89db17d4010228c38f695cfab010d39bed4165"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0206",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "5941f6edd4757c8090b1d32a85e5803094e0750b97975cafc8aa7409b9c6751a",
+        "page.html": "5350d269419c2d20a9d5756f274e3b70c9925d3fc7f802ed9f868c2faa6f1204",
+        "qa/acceptance.json": "e09bd78dcb8bfe8351aadf89084202725aa8ee4a9b2656035663e70db322b822",
+        "research/claims.json": "67f31d02a69c2672883f145e159fc40ddb0dc7f5dc2ddaf596cd6b831d14ed66",
+        "research/sources.json": "b676d980aa7698449316b94af88f55b7cae59f20055a9485abf57c3604443144",
+        "src/core.ts": "278132ffe4e018ade37059966ad90f98aa2ede294f8ab4cb96ec68a4e59af217",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "f37104b73bd16ab095d459f6041910195589fbfefc0072a9ba444b95c5d69202",
+        "tests/core.spec.ts": "fc01f395e8d6ffe5196e8c5aaab701d035eaca3fb1d84d06c127cd763e57291d",
+        "tool.json": "8c540e55ead7f81fa01d31066fba70bdd7b87408f36b92fb9b9e65bff4a46e91"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "5941f6edd4757c8090b1d32a85e5803094e0750b97975cafc8aa7409b9c6751a",
+        "page.html": "5350d269419c2d20a9d5756f274e3b70c9925d3fc7f802ed9f868c2faa6f1204",
+        "qa/acceptance.json": "e09bd78dcb8bfe8351aadf89084202725aa8ee4a9b2656035663e70db322b822",
+        "research/claims.json": "67f31d02a69c2672883f145e159fc40ddb0dc7f5dc2ddaf596cd6b831d14ed66",
+        "research/sources.json": "b676d980aa7698449316b94af88f55b7cae59f20055a9485abf57c3604443144",
+        "src/core.ts": "9d89ef03efe866d9cf09877a8b7b5cb31e7c9d5d1a28742c858b069214a0c7b3",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "cbf939d44671a2ee32c4e7596e9bff6815f58a5f36f1fd4a974e6d24ad69f67b",
+        "tests/core.spec.ts": "fc01f395e8d6ffe5196e8c5aaab701d035eaca3fb1d84d06c127cd763e57291d",
+        "tool.json": "8c540e55ead7f81fa01d31066fba70bdd7b87408f36b92fb9b9e65bff4a46e91"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0207",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "f2591341dcf2d0fdfc3d136031803061f927f9b764d3a6286f33d63c6966db25",
+        "page.html": "e9dfe1836a290179d29017e7cc768258bcc642804654a6ea81c6b3762187ce3c",
+        "qa/acceptance.json": "64df6b820b36afdd3e5539a253bbf1d6634fca96958297b96d5d4d09a41993cc",
+        "research/claims.json": "93e7e9d88fc5553e802070b90af8d57aaa123d1487cb30ff2d48eaf92fbbce38",
+        "research/sources.json": "e49ef0a22ea2d5d0df29d8e4dcebe62eb05c85e5df6273d066c7f68f2f751fff",
+        "src/core.ts": "dc7bcee171a78520f9e171315c16356a7c422a1f0a9d75817789a02ec4a4b3cc",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "7c59dc8711fade5805e448ad8726ac08ee4c13897154b0c9d6d630eb4c6a8560",
+        "tests/core.spec.ts": "318049426d0b8779a1fe7d5308f736dab1e4791d05f589dbfd9c3ebda578f492",
+        "tool.json": "3ed0c747863472fc9e3dbde51427aa9966434f40e5b7fcff327460594cd1d4a1"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "f2591341dcf2d0fdfc3d136031803061f927f9b764d3a6286f33d63c6966db25",
+        "page.html": "e9dfe1836a290179d29017e7cc768258bcc642804654a6ea81c6b3762187ce3c",
+        "qa/acceptance.json": "64df6b820b36afdd3e5539a253bbf1d6634fca96958297b96d5d4d09a41993cc",
+        "research/claims.json": "93e7e9d88fc5553e802070b90af8d57aaa123d1487cb30ff2d48eaf92fbbce38",
+        "research/sources.json": "e49ef0a22ea2d5d0df29d8e4dcebe62eb05c85e5df6273d066c7f68f2f751fff",
+        "src/core.ts": "6fbe06552242eac74858cc75923b23b0593905493bb6fad4ddebce85829c890c",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "b1ce1155e6767fba1a305101cb7436879b35d4ab93fa93ec93a73ff906dba356",
+        "tests/core.spec.ts": "318049426d0b8779a1fe7d5308f736dab1e4791d05f589dbfd9c3ebda578f492",
+        "tool.json": "3ed0c747863472fc9e3dbde51427aa9966434f40e5b7fcff327460594cd1d4a1"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0208",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "4460830c4217d5e60024b0eeb382058074c655e1cdf87ab6856b60c910c044bb",
+        "page.html": "1a333d700838c91cea20b3a34988a3faceee7e84408b654b7cb95a9346535ead",
+        "qa/acceptance.json": "7986f62c8091ddd714fc3b3e24ba76e8ff03c908db52ca7f28666baf8e55e8f1",
+        "research/claims.json": "195dff2359f3ca5eddf7c50d3eace771c89a01c6ba32f26ea741958e5806ca0a",
+        "research/sources.json": "cbcb0fcd765da5409c0250dc42c21e16c90816dd867aef20b4e9189e1c591877",
+        "src/core.ts": "6ed3530f7ae27ceb6f03e1e68d9c1d120d02519a5eb0a50eb74a6858e969e030",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "59d88ff8953dbd8f9b63d4759a4990940237fa0b3311b12e69020b2f232b7313",
+        "tests/core.spec.ts": "8d7f60675d5ab7230d5bb05326b882f6caadf66d16d8f1b030faa13efbf0e2d2",
+        "tool.json": "4a2c766ac9d6563d5462f9357b7383f9e830f44c1d1076d0603b2c1a0561b3e9"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "4460830c4217d5e60024b0eeb382058074c655e1cdf87ab6856b60c910c044bb",
+        "page.html": "1a333d700838c91cea20b3a34988a3faceee7e84408b654b7cb95a9346535ead",
+        "qa/acceptance.json": "7986f62c8091ddd714fc3b3e24ba76e8ff03c908db52ca7f28666baf8e55e8f1",
+        "research/claims.json": "195dff2359f3ca5eddf7c50d3eace771c89a01c6ba32f26ea741958e5806ca0a",
+        "research/sources.json": "cbcb0fcd765da5409c0250dc42c21e16c90816dd867aef20b4e9189e1c591877",
+        "src/core.ts": "fb4d71a058323540ccb85c97f31153d962b2007f199eb9c85e90cb5b75c93c72",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "032407f2a33a7526eba961d5befcdee9b76dbc304dd47c98a267f38e228654c9",
+        "tests/core.spec.ts": "8d7f60675d5ab7230d5bb05326b882f6caadf66d16d8f1b030faa13efbf0e2d2",
+        "tool.json": "4a2c766ac9d6563d5462f9357b7383f9e830f44c1d1076d0603b2c1a0561b3e9"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0209",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 11,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "0ffe010aaa2845ea8c41d50d53bccdd8bb2798c4125c843665e81bc21b104322",
+        "page.html": "fa4ab4166898ab020ddb194d4fa3fcf08368ab15c6bf2d6a0a1b4cc81e372b5c",
+        "qa/acceptance.json": "a8e686b377b726661987b198afeb0167dbabf87aee481f36fc6fb677550bf9e7",
+        "research/claims.json": "f04d166170e65ee3dc841ed66e3e545c588cd39c5abe95586690af1fc1ac3c14",
+        "research/sources.json": "e58444f66ae90c5974681d1aff47b6fb34f37e8d0f00b1e3d014accd136a99f3",
+        "src/core.ts": "5b5e231609d7f250650da9e9f15a79d8c19955d325087edcf2821239ce646550",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "4a7bfbff69f9e80810c827605e4f88820f01a8db296414effd79a0c1e6bcdf30",
+        "src/worker.ts": "95a11abddd73854b397eb4ecb96f910b7fe68d4640b278a248f64854919622f9",
+        "tests/core.spec.ts": "2cf758f77d4ff83a731d6532fc15b765842c99bbac9603cbc97a6e9e9e8c44be",
+        "tool.json": "033512858a0889d8af6c2e13c672cdf7c2ecdb2cf3d8fb5e4affb02ac3af29b4"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "0ffe010aaa2845ea8c41d50d53bccdd8bb2798c4125c843665e81bc21b104322",
+        "page.html": "fa4ab4166898ab020ddb194d4fa3fcf08368ab15c6bf2d6a0a1b4cc81e372b5c",
+        "qa/acceptance.json": "a8e686b377b726661987b198afeb0167dbabf87aee481f36fc6fb677550bf9e7",
+        "research/claims.json": "f04d166170e65ee3dc841ed66e3e545c588cd39c5abe95586690af1fc1ac3c14",
+        "research/sources.json": "e58444f66ae90c5974681d1aff47b6fb34f37e8d0f00b1e3d014accd136a99f3",
+        "src/core.ts": "84cd16bbe9fa178f7c2883d901bc52b9edcff5e917aa90de83fdf3fd086db570",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "7f52882d3fbf4cca0c18a942f8c63bdd8d322e80e09f59f3b1f5514c75165a9f",
+        "src/worker.ts": "95a11abddd73854b397eb4ecb96f910b7fe68d4640b278a248f64854919622f9",
+        "tests/core.spec.ts": "2cf758f77d4ff83a731d6532fc15b765842c99bbac9603cbc97a6e9e9e8c44be",
+        "tool.json": "033512858a0889d8af6c2e13c672cdf7c2ecdb2cf3d8fb5e4affb02ac3af29b4"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0210",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "0c469736f7b049e2002751eac2dfcf87ad10aa334782c3a5b58cbec159e135a0",
+        "page.html": "933fec3d6d3677d94a1015fb9aaed25e5fc7669e5def9af005f6bbcdcb9957ae",
+        "qa/acceptance.json": "d33a4ce03394cb4eca89537a5f141ed8ae76f24a5a2b0609fdc1f7678b2b0f2c",
+        "research/claims.json": "f6e4148ca3e05f3057ee112fc4d5ba2f291633009edef775959a57288d067a8d",
+        "research/sources.json": "cd2f55ea5fce97d548c0adfcf8052c2987988712886227106abb52e804cf820d",
+        "src/core.ts": "88eaeb09afc53d363cd1fa70d4b34eef62b6ebac79f40c7422075d2f36fe0597",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "1d5bf94b46482178c2155e2368876ad98dcfef97dfc423df1886880ec54f2fbf",
+        "tests/core.spec.ts": "1c8925d81ff05a7db0662a1c580aa27e986fe6bf05ad44e991c10cad2cb45e17",
+        "tool.json": "356dca813ef98360bf7cb2c05e3e4e4a0451a890f8cbad33f3d9a425cb9445d0"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "0c469736f7b049e2002751eac2dfcf87ad10aa334782c3a5b58cbec159e135a0",
+        "page.html": "933fec3d6d3677d94a1015fb9aaed25e5fc7669e5def9af005f6bbcdcb9957ae",
+        "qa/acceptance.json": "d33a4ce03394cb4eca89537a5f141ed8ae76f24a5a2b0609fdc1f7678b2b0f2c",
+        "research/claims.json": "f6e4148ca3e05f3057ee112fc4d5ba2f291633009edef775959a57288d067a8d",
+        "research/sources.json": "cd2f55ea5fce97d548c0adfcf8052c2987988712886227106abb52e804cf820d",
+        "src/core.ts": "e418d7a25c9b729b1e1566d61351ef41260599f8add9130173f15ef06096c47e",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "bbd13949ebe44aa0398c22c3b5afccfc5776176e0a55e270db0ca25697d5fdae",
+        "tests/core.spec.ts": "1c8925d81ff05a7db0662a1c580aa27e986fe6bf05ad44e991c10cad2cb45e17",
+        "tool.json": "356dca813ef98360bf7cb2c05e3e4e4a0451a890f8cbad33f3d9a425cb9445d0"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0211",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "f0a54c297f1c32e123f589967fb5a57e6db88c1a22171a134ce29689eeb27c41",
+        "page.html": "1034df8d3c71427dd3d4ed08ae93d2ef7e7a783bd70a350f37d2ef1e4afa0b9a",
+        "qa/acceptance.json": "21d775a6032e9f7db17e8881882893a2ca94a432e2a1d15b65dd5af71e0ece66",
+        "research/claims.json": "52e411270deb201a56817a5a453b87b281e7cc12910640d972db94932165840a",
+        "research/sources.json": "1058f3e0ceb0a1dcc34c7f786893c62fdb436aa3480a9621046808e38549872f",
+        "src/core.ts": "665855f40cd3247cb6cf6b57b6d300ea23bf4ee288a52d85386e1247897e917e",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "5f39dad18b88b4b1fde6966df01325337594f1b1032ce2a57b67e2db300d1699",
+        "tests/core.spec.ts": "4fb4c0ba23a008347728b2473d382190ff29551c32691ce9bfae4e20f96cc5ad",
+        "tool.json": "219dc9c3e89d678f0b5f4ab5eb40c3b9fa2975314bd70e65e11f8795a6033335"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "f0a54c297f1c32e123f589967fb5a57e6db88c1a22171a134ce29689eeb27c41",
+        "page.html": "1034df8d3c71427dd3d4ed08ae93d2ef7e7a783bd70a350f37d2ef1e4afa0b9a",
+        "qa/acceptance.json": "21d775a6032e9f7db17e8881882893a2ca94a432e2a1d15b65dd5af71e0ece66",
+        "research/claims.json": "52e411270deb201a56817a5a453b87b281e7cc12910640d972db94932165840a",
+        "research/sources.json": "1058f3e0ceb0a1dcc34c7f786893c62fdb436aa3480a9621046808e38549872f",
+        "src/core.ts": "2b52063249f7358e194300d5ace6e68935d8b5ce45067d7247a91c258e5c7f8a",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "f48013c640016e56a0f095a6e3c67ab52ba6218120022649f7083b2a2ec064fb",
+        "tests/core.spec.ts": "4fb4c0ba23a008347728b2473d382190ff29551c32691ce9bfae4e20f96cc5ad",
+        "tool.json": "219dc9c3e89d678f0b5f4ab5eb40c3b9fa2975314bd70e65e11f8795a6033335"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    },
+    {
+      "id": "TOOL-0212",
+      "source_zip": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "original_files": 10,
+      "transformed_files": [
+        "src/core.ts",
+        "src/styles.css",
+        "src/ui.ts"
+      ],
+      "original_sha256_by_file": {
+        "examples/fixtures.json": "70908d0950e117034fb534b88782a5a5230aef875d29e9f8d8f47bf08fc416b4",
+        "page.html": "99725ed732fa270542d24210bc12f490bb8002c458d5b4baf322db40ce2a8380",
+        "qa/acceptance.json": "de0acd59df0c056d1da61eab726469aaa84411748c252d5a3bcbea87409cd1e4",
+        "research/claims.json": "0ede74949e37767220186e27668fd725965a50ba7c407eda8a96502659e309fa",
+        "research/sources.json": "5b41095114df833e08bb185fb3846ce597786de0a08bfa7065222f34590c8935",
+        "src/core.ts": "eccd5c1a98c5ba54117e0e7ccfbe16441c624b5230ad1d0443a5285bd7ccb4b6",
+        "src/styles.css": "53061e9d1f8a43b0c511219c23b1c2bb808fd1a5abf399d47429b2a960fe402d",
+        "src/ui.ts": "9b51c8785ac4c5b7a2c818f3ba36ff61b90f30ddc5e6a7dd0d6e8be8c9e6e0ee",
+        "tests/core.spec.ts": "72660a9eb1f6b101865b846c868996829be987fca780274905a42a73999dbe94",
+        "tool.json": "3a8fcc46e3686e4d8f94178e5564f69e5097cc21ad9720668c8b362b27e78711"
+      },
+      "result_sha256_by_file": {
+        "examples/fixtures.json": "70908d0950e117034fb534b88782a5a5230aef875d29e9f8d8f47bf08fc416b4",
+        "page.html": "99725ed732fa270542d24210bc12f490bb8002c458d5b4baf322db40ce2a8380",
+        "qa/acceptance.json": "de0acd59df0c056d1da61eab726469aaa84411748c252d5a3bcbea87409cd1e4",
+        "research/claims.json": "0ede74949e37767220186e27668fd725965a50ba7c407eda8a96502659e309fa",
+        "research/sources.json": "5b41095114df833e08bb185fb3846ce597786de0a08bfa7065222f34590c8935",
+        "src/core.ts": "06c461bd8ebf5e7182534419f1c716eafc297503acf51245deb53b6ee9a3c33e",
+        "src/styles.css": "f0e64a331053f320b2e921bc5eac5256d0461ec9d0317b87fb1795d30737eaa2",
+        "src/ui.ts": "9e2fad991afaccb1b8ce447eff2f1781dec3d8609605b1a22e3ca2cd6fc1d148",
+        "tests/core.spec.ts": "72660a9eb1f6b101865b846c868996829be987fca780274905a42a73999dbe94",
+        "tool.json": "3a8fcc46e3686e4d8f94178e5564f69e5097cc21ad9720668c8b362b27e78711"
+      },
+      "vendor_files": 4,
+      "preview_not_public": true
+    }
+  ],
+  "source_archives": [
+    {
+      "archive": "MM530_B04_TOOL0160-0180_CHECKPOINT_TEST_PENDING.zip",
+      "sha256": "55d1ae84122798e56caa4a96ccbad0a2219b8eea4ff65da6a4478c83e0629058",
+      "bytes": 169208
+    },
+    {
+      "archive": "MM530_B04_TOOL0181-0200_CHECKPOINT_TEST_PENDING.zip",
+      "sha256": "aa3dcd0fd9e0498f1a7928cc179347daf8c185a10b8e29467a404e4c06852897",
+      "bytes": 131437
+    },
+    {
+      "archive": "MM530_B04_TOOL0201-0212_CHECKPOINT_TEST_PENDING.zip",
+      "sha256": "f50324c34f93931e905d0a66b577d5b744cf3cefae346615cec141684eabf101",
+      "bytes": 80093
+    }
+  ],
+  "unresolved_dependencies": [],
+  "source_conflicts": [],
+  "vendor_patch_count": 147,
+  "tool_count": 53,
+  "source_conflict_count": 0,
+  "unresolved_dependency_count": 0
+}

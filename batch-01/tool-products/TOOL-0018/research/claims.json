@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0018",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Flatten Helm values with safe --set-json flags, keeping booleans, arrays and strings distinct.",
+      "evidence_urls": [
+        "https://helm.sh/docs/helm/helm_install/",
+        "https://helm.sh/docs/helm/helm_upgrade/"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Uses a YAML parser at integration time; --set-json requires compatible Helm. Shell fragments contain safely quoted literal values; secrets passed in CLI arguments can appear in process lists.",
+      "evidence_urls": [
+        "https://helm.sh/docs/helm/helm_install/",
+        "https://helm.sh/docs/helm/helm_upgrade/"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

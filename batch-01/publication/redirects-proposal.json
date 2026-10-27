@@ -1,0 +1,4242 @@
+[
+  {
+    "id": "TOOL-0001",
+    "from": "/tools/csv-to-graphql-schema",
+    "to": "/generators/csv-to-graphql-schema",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0002",
+    "from": "/tools/json-to-zod-schema",
+    "to": "/converters/json-to-zod-schema",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0003",
+    "from": "/tools/openapi-to-typescript-interfaces",
+    "to": "/converters/openapi-to-typescript-interfaces",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0004",
+    "from": "/tools/sql-to-prisma-schema",
+    "to": "/converters/sql-to-prisma-schema",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0005",
+    "from": "/tools/json-to-protobuf",
+    "to": "/generators/json-to-protobuf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0006",
+    "from": "/tools/har-file-redactor",
+    "to": "/editors/har-file-redactor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0007",
+    "from": "/tools/har-to-curl",
+    "to": "/converters/har-to-curl",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0008",
+    "from": "/tools/postman-collection-to-markdown",
+    "to": "/converters/postman-collection-to-markdown",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0009",
+    "from": "/tools/env-to-kubernetes-secret",
+    "to": "/converters/env-to-kubernetes-secret",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0010",
+    "from": "/tools/docker-compose-to-docker-run",
+    "to": "/converters/docker-compose-to-docker-run",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0011",
+    "from": "/tools/cron-to-github-actions-schedule",
+    "to": "/planners/cron-to-github-actions-schedule",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0012",
+    "from": "/tools/csv-to-create-table",
+    "to": "/generators/csv-to-create-table",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0013",
+    "from": "/tools/json-to-postgres-upsert",
+    "to": "/generators/json-to-postgres-upsert",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0014",
+    "from": "/tools/mongodb-extended-json-to-json",
+    "to": "/converters/mongodb-extended-json-to-json",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0015",
+    "from": "/tools/jsonl-to-json-array",
+    "to": "/converters/jsonl-to-json-array",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0016",
+    "from": "/tools/access-log-to-csv",
+    "to": "/converters/access-log-to-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0017",
+    "from": "/tools/tfvars-to-json",
+    "to": "/converters/tfvars-to-json",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0018",
+    "from": "/tools/helm-values-to-set-flags",
+    "to": "/converters/helm-values-to-set-flags",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0019",
+    "from": "/tools/package-lock-duplicate-finder",
+    "to": "/extractors/package-lock-duplicate-finder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0020",
+    "from": "/tools/json-diff-ignore-order",
+    "to": "/utilities/json-diff-ignore-order",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0021",
+    "from": "/tools/kubernetes-resource-units-converter",
+    "to": "/converters/kubernetes-resource-units-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0022",
+    "from": "/tools/github-actions-to-gitlab-ci",
+    "to": "/converters/github-actions-to-gitlab-ci",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0023",
+    "from": "/tools/gitlab-ci-to-github-actions",
+    "to": "/converters/gitlab-ci-to-github-actions",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0024",
+    "from": "/tools/dockerfile-linter",
+    "to": "/validators/dockerfile-linter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0025",
+    "from": "/tools/nginx-location-match-tester",
+    "to": "/validators/nginx-location-match-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0026",
+    "from": "/tools/nginx-redirect-map-from-csv",
+    "to": "/generators/nginx-redirect-map-from-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0027",
+    "from": "/tools/htaccess-redirects-from-csv",
+    "to": "/generators/htaccess-redirects-from-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0028",
+    "from": "/tools/htaccess-to-nginx",
+    "to": "/converters/htaccess-to-nginx",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0029",
+    "from": "/tools/systemd-oncalendar-tester",
+    "to": "/validators/systemd-oncalendar-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0030",
+    "from": "/tools/terraform-plan-json-viewer",
+    "to": "/analyzers/terraform-plan-json-viewer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0031",
+    "from": "/tools/iam-policy-wildcard-checker",
+    "to": "/validators/iam-policy-wildcard-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0032",
+    "from": "/tools/aws-arn-parser",
+    "to": "/generators/aws-arn-parser",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0033",
+    "from": "/tools/s3-bucket-policy-cloudfront-oac",
+    "to": "/generators/s3-bucket-policy-cloudfront-oac",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0034",
+    "from": "/tools/cidr-overlap-checker",
+    "to": "/validators/cidr-overlap-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0035",
+    "from": "/tools/ufw-to-iptables",
+    "to": "/converters/ufw-to-iptables",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0036",
+    "from": "/tools/ansible-inventory-ini-to-yaml",
+    "to": "/converters/ansible-inventory-ini-to-yaml",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0037",
+    "from": "/tools/codeowners-tester",
+    "to": "/validators/codeowners-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0038",
+    "from": "/tools/gitignore-tester",
+    "to": "/validators/gitignore-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0039",
+    "from": "/tools/certificate-chain-order-checker",
+    "to": "/validators/certificate-chain-order-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0040",
+    "from": "/tools/semver-range-calculator",
+    "to": "/calculators/semver-range-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0041",
+    "from": "/tools/cors-config-generator",
+    "to": "/generators/cors-config-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0042",
+    "from": "/tools/which-http-status-code",
+    "to": "/utilities/which-http-status-code",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0043",
+    "from": "/tools/set-cookie-builder",
+    "to": "/generators/set-cookie-builder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0044",
+    "from": "/tools/csp-builder",
+    "to": "/generators/csp-builder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0045",
+    "from": "/tools/bulk-user-agent-parser",
+    "to": "/analyzers/bulk-user-agent-parser",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0046",
+    "from": "/tools/query-string-to-json",
+    "to": "/converters/query-string-to-json",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0047",
+    "from": "/tools/url-encode-path-vs-query",
+    "to": "/formatters/url-encode-path-vs-query",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0048",
+    "from": "/tools/http-response-header-analyzer",
+    "to": "/analyzers/http-response-header-analyzer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0049",
+    "from": "/tools/cache-control-header-generator",
+    "to": "/generators/cache-control-header-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0050",
+    "from": "/tools/hsts-header-generator",
+    "to": "/generators/hsts-header-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0051",
+    "from": "/tools/permissions-policy-generator",
+    "to": "/generators/permissions-policy-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0052",
+    "from": "/tools/websocket-tester",
+    "to": "/validators/websocket-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0053",
+    "from": "/tools/sse-tester",
+    "to": "/validators/sse-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0054",
+    "from": "/tools/localstorage-size-limit-test",
+    "to": "/validators/localstorage-size-limit-test",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0055",
+    "from": "/tools/browser-codec-support-checker",
+    "to": "/validators/browser-codec-support-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0056",
+    "from": "/tools/ipv6-expand-compress",
+    "to": "/editors/ipv6-expand-compress",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0057",
+    "from": "/tools/mac-address-formatter",
+    "to": "/formatters/mac-address-formatter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0058",
+    "from": "/tools/dmarc-record-generator",
+    "to": "/generators/dmarc-record-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0059",
+    "from": "/tools/security-txt-generator",
+    "to": "/generators/security-txt-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0060",
+    "from": "/tools/email-header-analyzer",
+    "to": "/analyzers/email-header-analyzer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0061",
+    "from": "/tools/faq-schema-generator",
+    "to": "/generators/faq-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0062",
+    "from": "/tools/recipe-schema-generator",
+    "to": "/generators/recipe-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0063",
+    "from": "/tools/local-business-schema-generator",
+    "to": "/generators/local-business-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0064",
+    "from": "/tools/jobposting-schema-generator",
+    "to": "/generators/jobposting-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0065",
+    "from": "/tools/product-schema-generator",
+    "to": "/generators/product-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0066",
+    "from": "/tools/breadcrumb-schema-generator",
+    "to": "/utilities/breadcrumb-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0067",
+    "from": "/tools/video-schema-generator",
+    "to": "/generators/video-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0068",
+    "from": "/tools/json-ld-validator",
+    "to": "/validators/json-ld-validator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0069",
+    "from": "/tools/hreflang-generator-csv",
+    "to": "/generators/hreflang-generator-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0070",
+    "from": "/tools/sitemap-from-url-list",
+    "to": "/generators/sitemap-from-url-list",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0071",
+    "from": "/tools/sitemap-splitter",
+    "to": "/editors/sitemap-splitter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0072",
+    "from": "/tools/robots-txt-tester",
+    "to": "/validators/robots-txt-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0073",
+    "from": "/tools/open-graph-generator",
+    "to": "/generators/open-graph-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0074",
+    "from": "/tools/title-tag-pixel-width-checker",
+    "to": "/validators/title-tag-pixel-width-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0075",
+    "from": "/tools/bulk-utm-builder",
+    "to": "/generators/bulk-utm-builder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0076",
+    "from": "/tools/remove-tracking-parameters",
+    "to": "/editors/remove-tracking-parameters",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0077",
+    "from": "/tools/url-slug-generator",
+    "to": "/generators/url-slug-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0078",
+    "from": "/tools/redirect-chain-finder",
+    "to": "/extractors/redirect-chain-finder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0079",
+    "from": "/tools/keyword-cannibalization-finder",
+    "to": "/extractors/keyword-cannibalization-finder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0080",
+    "from": "/tools/event-schema-generator",
+    "to": "/generators/event-schema-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0081",
+    "from": "/tools/invisible-character-detector",
+    "to": "/analyzers/invisible-character-detector",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0082",
+    "from": "/tools/homoglyph-checker",
+    "to": "/validators/homoglyph-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0083",
+    "from": "/tools/unicode-normalization-comparer",
+    "to": "/utilities/unicode-normalization-comparer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0084",
+    "from": "/tools/fix-mojibake",
+    "to": "/editors/fix-mojibake",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0085",
+    "from": "/tools/smart-quotes-to-straight-quotes",
+    "to": "/converters/smart-quotes-to-straight-quotes",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0086",
+    "from": "/tools/line-ending-converter",
+    "to": "/converters/line-ending-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0087",
+    "from": "/tools/word-level-text-diff",
+    "to": "/validators/word-level-text-diff",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0088",
+    "from": "/tools/regex-redos-checker",
+    "to": "/validators/regex-redos-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0089",
+    "from": "/tools/regex-replace-preview",
+    "to": "/utilities/regex-replace-preview",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0090",
+    "from": "/tools/find-duplicate-lines",
+    "to": "/extractors/find-duplicate-lines",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0091",
+    "from": "/tools/fixed-width-to-csv",
+    "to": "/converters/fixed-width-to-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0092",
+    "from": "/tools/excel-to-markdown-table",
+    "to": "/converters/excel-to-markdown-table",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0093",
+    "from": "/tools/strip-markdown",
+    "to": "/utilities/strip-markdown",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0094",
+    "from": "/tools/clean-word-html",
+    "to": "/editors/clean-word-html",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0095",
+    "from": "/tools/readability-score-checker",
+    "to": "/validators/readability-score-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0096",
+    "from": "/tools/string-escape-unescape",
+    "to": "/utilities/string-escape-unescape",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0097",
+    "from": "/tools/title-case-converter-style-guides",
+    "to": "/converters/title-case-converter-style-guides",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0098",
+    "from": "/tools/bulk-find-and-replace",
+    "to": "/utilities/bulk-find-and-replace",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0099",
+    "from": "/tools/word-frequency-counter",
+    "to": "/utilities/word-frequency-counter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0100",
+    "from": "/tools/emoji-unicode-inspector",
+    "to": "/analyzers/emoji-unicode-inspector",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0101",
+    "from": "/tools/font-subsetter",
+    "to": "/utilities/font-subsetter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0102",
+    "from": "/tools/ttf-to-woff2",
+    "to": "/converters/ttf-to-woff2",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0103",
+    "from": "/tools/woff2-to-ttf",
+    "to": "/converters/woff2-to-ttf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0104",
+    "from": "/tools/variable-font-axes-tester",
+    "to": "/generators/variable-font-axes-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0105",
+    "from": "/tools/font-language-support-checker",
+    "to": "/validators/font-language-support-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0106",
+    "from": "/tools/font-metadata-viewer",
+    "to": "/analyzers/font-metadata-viewer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0107",
+    "from": "/tools/font-face-generator",
+    "to": "/generators/font-face-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0108",
+    "from": "/tools/font-fallback-size-adjust-generator",
+    "to": "/generators/font-fallback-size-adjust-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0109",
+    "from": "/tools/css-font-stack-builder",
+    "to": "/generators/css-font-stack-builder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0110",
+    "from": "/tools/fluid-typography-clamp-generator",
+    "to": "/generators/fluid-typography-clamp-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0111",
+    "from": "/tools/test-local-font-file",
+    "to": "/validators/test-local-font-file",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0112",
+    "from": "/tools/text-to-svg-path",
+    "to": "/converters/text-to-svg-path",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0113",
+    "from": "/tools/icon-font-glyph-map",
+    "to": "/extractors/icon-font-glyph-map",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0114",
+    "from": "/tools/which-font-supports-character",
+    "to": "/extractors/which-font-supports-character",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0115",
+    "from": "/tools/kerning-pairs-viewer",
+    "to": "/analyzers/kerning-pairs-viewer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0116",
+    "from": "/tools/opentype-features-checker",
+    "to": "/analyzers/opentype-features-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0117",
+    "from": "/tools/text-width-calculator",
+    "to": "/calculators/text-width-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0118",
+    "from": "/tools/ascii-banner-code-comment",
+    "to": "/generators/ascii-banner-code-comment",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0119",
+    "from": "/tools/pdf-fonts-lister",
+    "to": "/extractors/pdf-fonts-lister",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0120",
+    "from": "/tools/google-fonts-css2-url-builder",
+    "to": "/generators/google-fonts-css2-url-builder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0121",
+    "from": "/tools/remove-exif-data",
+    "to": "/analyzers/remove-exif-data",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0122",
+    "from": "/tools/heic-to-jpg",
+    "to": "/converters/heic-to-jpg",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0123",
+    "from": "/tools/image-to-avif-webp-compare",
+    "to": "/comparisons/image-to-avif-webp-compare",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0124",
+    "from": "/tools/compress-image-to-kb",
+    "to": "/converters/compress-image-to-kb",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0125",
+    "from": "/tools/passport-photo-size-cropper",
+    "to": "/editors/passport-photo-size-cropper",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0126",
+    "from": "/tools/favicon-generator",
+    "to": "/generators/favicon-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0127",
+    "from": "/tools/app-icon-generator",
+    "to": "/generators/app-icon-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0128",
+    "from": "/tools/css-sprite-generator",
+    "to": "/generators/css-sprite-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0129",
+    "from": "/tools/svg-optimizer",
+    "to": "/editors/svg-optimizer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0130",
+    "from": "/tools/svg-to-png",
+    "to": "/converters/svg-to-png",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0131",
+    "from": "/tools/image-color-palette-extractor",
+    "to": "/extractors/image-color-palette-extractor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0132",
+    "from": "/tools/blurhash-generator",
+    "to": "/generators/blurhash-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0133",
+    "from": "/tools/seamless-pattern-checker",
+    "to": "/generators/seamless-pattern-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0134",
+    "from": "/tools/image-diff-comparator",
+    "to": "/comparisons/image-diff-comparator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0135",
+    "from": "/tools/blur-image-redact",
+    "to": "/editors/blur-image-redact",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0136",
+    "from": "/tools/gif-frame-extractor",
+    "to": "/extractors/gif-frame-extractor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0137",
+    "from": "/tools/gif-speed-changer",
+    "to": "/editors/gif-speed-changer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0138",
+    "from": "/tools/apng-to-gif",
+    "to": "/converters/apng-to-gif",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0139",
+    "from": "/tools/change-image-dpi",
+    "to": "/editors/change-image-dpi",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0140",
+    "from": "/tools/bulk-image-resizer",
+    "to": "/converters/bulk-image-resizer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0141",
+    "from": "/tools/pdf-metadata-remover",
+    "to": "/analyzers/pdf-metadata-remover",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0142",
+    "from": "/tools/rearrange-pdf-pages",
+    "to": "/editors/rearrange-pdf-pages",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0143",
+    "from": "/tools/split-pdf-by-bookmarks",
+    "to": "/editors/split-pdf-by-bookmarks",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0144",
+    "from": "/tools/merge-pdf-with-bookmarks",
+    "to": "/editors/merge-pdf-with-bookmarks",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0145",
+    "from": "/tools/bates-numbering-pdf",
+    "to": "/utilities/bates-numbering-pdf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0146",
+    "from": "/tools/pdf-watermark",
+    "to": "/editors/pdf-watermark",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0147",
+    "from": "/tools/flatten-pdf-form",
+    "to": "/editors/flatten-pdf-form",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0148",
+    "from": "/tools/pdf-form-field-lister",
+    "to": "/extractors/pdf-form-field-lister",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0149",
+    "from": "/tools/crop-pdf-margins",
+    "to": "/editors/crop-pdf-margins",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0150",
+    "from": "/tools/resize-pdf-to-a4",
+    "to": "/converters/resize-pdf-to-a4",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0151",
+    "from": "/tools/images-to-pdf",
+    "to": "/converters/images-to-pdf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0152",
+    "from": "/tools/pdf-to-images",
+    "to": "/converters/pdf-to-images",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0153",
+    "from": "/tools/pdf-text-extractor",
+    "to": "/extractors/pdf-text-extractor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0154",
+    "from": "/tools/pdf-table-to-csv",
+    "to": "/converters/pdf-table-to-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0155",
+    "from": "/tools/redact-pdf",
+    "to": "/utilities/redact-pdf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0156",
+    "from": "/tools/reduce-pdf-size",
+    "to": "/utilities/reduce-pdf-size",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0157",
+    "from": "/tools/extract-pdf-attachments",
+    "to": "/extractors/extract-pdf-attachments",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0158",
+    "from": "/tools/pdf-page-size-checker",
+    "to": "/analyzers/pdf-page-size-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0159",
+    "from": "/tools/docx-to-markdown",
+    "to": "/converters/docx-to-markdown",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0160",
+    "from": "/tools/extract-links-from-pdf",
+    "to": "/extractors/extract-links-from-pdf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0161",
+    "from": "/tools/trim-video-without-reencoding",
+    "to": "/editors/trim-video-without-reencoding",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0162",
+    "from": "/tools/extract-audio-from-video",
+    "to": "/extractors/extract-audio-from-video",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0163",
+    "from": "/tools/video-to-gif",
+    "to": "/converters/video-to-gif",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0164",
+    "from": "/tools/compress-video-to-size",
+    "to": "/converters/compress-video-to-size",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0165",
+    "from": "/tools/rotate-video",
+    "to": "/editors/rotate-video",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0166",
+    "from": "/tools/remove-audio-from-video",
+    "to": "/editors/remove-audio-from-video",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0167",
+    "from": "/tools/extract-frames-from-video",
+    "to": "/extractors/extract-frames-from-video",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0168",
+    "from": "/tools/change-video-speed",
+    "to": "/editors/change-video-speed",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0169",
+    "from": "/tools/mov-to-mp4",
+    "to": "/converters/mov-to-mp4",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0170",
+    "from": "/tools/webm-to-mp4",
+    "to": "/converters/webm-to-mp4",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0171",
+    "from": "/tools/audio-cutter",
+    "to": "/utilities/audio-cutter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0172",
+    "from": "/tools/merge-audio-files",
+    "to": "/editors/merge-audio-files",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0173",
+    "from": "/tools/change-audio-speed-pitch",
+    "to": "/editors/change-audio-speed-pitch",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0174",
+    "from": "/tools/audio-loudness-normalizer",
+    "to": "/formatters/audio-loudness-normalizer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0175",
+    "from": "/tools/remove-silence-from-audio",
+    "to": "/editors/remove-silence-from-audio",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0176",
+    "from": "/tools/wav-to-mp3",
+    "to": "/converters/wav-to-mp3",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0177",
+    "from": "/tools/bpm-detector",
+    "to": "/analyzers/bpm-detector",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0178",
+    "from": "/tools/audio-waveform-image-generator",
+    "to": "/generators/audio-waveform-image-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0179",
+    "from": "/tools/audio-spectrogram-viewer",
+    "to": "/analyzers/audio-spectrogram-viewer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0180",
+    "from": "/tools/srt-time-shifter",
+    "to": "/converters/srt-time-shifter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0181",
+    "from": "/tools/split-csv-by-column",
+    "to": "/editors/split-csv-by-column",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0182",
+    "from": "/tools/merge-csv-files",
+    "to": "/editors/merge-csv-files",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0183",
+    "from": "/tools/csv-remove-duplicates",
+    "to": "/utilities/csv-remove-duplicates",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0184",
+    "from": "/tools/csv-delimiter-encoding-fixer",
+    "to": "/utilities/csv-delimiter-encoding-fixer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0185",
+    "from": "/tools/excel-to-json",
+    "to": "/converters/excel-to-json",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0186",
+    "from": "/tools/csv-column-editor",
+    "to": "/utilities/csv-column-editor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0187",
+    "from": "/tools/csv-pivot-table",
+    "to": "/analyzers/csv-pivot-table",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0188",
+    "from": "/tools/split-excel-sheets",
+    "to": "/editors/split-excel-sheets",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0189",
+    "from": "/tools/combine-excel-sheets",
+    "to": "/utilities/combine-excel-sheets",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0190",
+    "from": "/tools/clean-csv",
+    "to": "/utilities/clean-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0191",
+    "from": "/tools/csv-validator",
+    "to": "/validators/csv-validator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0192",
+    "from": "/tools/csv-date-format-converter",
+    "to": "/formatters/csv-date-format-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0193",
+    "from": "/tools/phone-numbers-to-e164",
+    "to": "/converters/phone-numbers-to-e164",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0194",
+    "from": "/tools/split-full-name-csv",
+    "to": "/editors/split-full-name-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0195",
+    "from": "/tools/extract-emails-from-text",
+    "to": "/extractors/extract-emails-from-text",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0196",
+    "from": "/tools/csv-to-html-table",
+    "to": "/converters/csv-to-html-table",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0197",
+    "from": "/tools/join-csv-files",
+    "to": "/utilities/join-csv-files",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0198",
+    "from": "/tools/csv-diff",
+    "to": "/comparisons/csv-diff",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0199",
+    "from": "/tools/excel-formula-extractor",
+    "to": "/extractors/excel-formula-extractor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0200",
+    "from": "/tools/csv-to-excel-keep-leading-zeros",
+    "to": "/converters/csv-to-excel-keep-leading-zeros",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0201",
+    "from": "/tools/ab-test-significance-calculator",
+    "to": "/calculators/ab-test-significance-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0202",
+    "from": "/tools/ab-test-sample-size-calculator",
+    "to": "/calculators/ab-test-sample-size-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0203",
+    "from": "/tools/wilson-score-interval-calculator",
+    "to": "/calculators/wilson-score-interval-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0204",
+    "from": "/tools/survey-sample-size-calculator",
+    "to": "/calculators/survey-sample-size-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0205",
+    "from": "/tools/chi-square-test-calculator",
+    "to": "/calculators/chi-square-test-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0206",
+    "from": "/tools/welch-t-test-calculator",
+    "to": "/calculators/welch-t-test-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0207",
+    "from": "/tools/mann-whitney-u-test-calculator",
+    "to": "/calculators/mann-whitney-u-test-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0208",
+    "from": "/tools/linear-regression-calculator",
+    "to": "/calculators/linear-regression-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0209",
+    "from": "/tools/correlation-matrix-calculator",
+    "to": "/calculators/correlation-matrix-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0210",
+    "from": "/tools/outlier-detection-calculator",
+    "to": "/calculators/outlier-detection-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0211",
+    "from": "/tools/exponential-smoothing-calculator",
+    "to": "/calculators/exponential-smoothing-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0212",
+    "from": "/tools/percentile-calculator-from-data",
+    "to": "/calculators/percentile-calculator-from-data",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0213",
+    "from": "/tools/z-score-to-percentile-calculator",
+    "to": "/calculators/z-score-to-percentile-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0214",
+    "from": "/tools/binomial-poisson-probability-calculator",
+    "to": "/calculators/binomial-poisson-probability-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0215",
+    "from": "/tools/bayes-theorem-calculator",
+    "to": "/calculators/bayes-theorem-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0216",
+    "from": "/tools/prime-factorization-calculator",
+    "to": "/calculators/prime-factorization-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0217",
+    "from": "/tools/matrix-calculator-with-steps",
+    "to": "/calculators/matrix-calculator-with-steps",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0218",
+    "from": "/tools/random-sample-generator-with-seed",
+    "to": "/utilities/random-sample-generator-with-seed",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0219",
+    "from": "/tools/monte-carlo-project-estimate",
+    "to": "/utilities/monte-carlo-project-estimate",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0220",
+    "from": "/tools/effect-size-calculator-cohens-d",
+    "to": "/calculators/effect-size-calculator-cohens-d",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0221",
+    "from": "/tools/loan-payoff-extra-payments-calculator",
+    "to": "/calculators/loan-payoff-extra-payments-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0222",
+    "from": "/tools/debt-snowball-vs-avalanche-calculator",
+    "to": "/calculators/debt-snowball-vs-avalanche-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0223",
+    "from": "/tools/rsu-tax-withholding-calculator",
+    "to": "/calculators/rsu-tax-withholding-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0224",
+    "from": "/tools/coast-fire-calculator",
+    "to": "/calculators/coast-fire-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0225",
+    "from": "/tools/compound-interest-with-inflation-calculator",
+    "to": "/calculators/compound-interest-with-inflation-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0226",
+    "from": "/tools/sip-calculator-with-step-up",
+    "to": "/calculators/sip-calculator-with-step-up",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0227",
+    "from": "/tools/emi-flat-vs-reducing-balance-calculator",
+    "to": "/calculators/emi-flat-vs-reducing-balance-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0228",
+    "from": "/tools/credit-card-payoff-calculator",
+    "to": "/calculators/credit-card-payoff-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0229",
+    "from": "/tools/true-apr-calculator-with-fees",
+    "to": "/calculators/true-apr-calculator-with-fees",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0230",
+    "from": "/tools/savings-goal-calculator",
+    "to": "/calculators/savings-goal-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0231",
+    "from": "/tools/marginal-tax-bracket-calculator",
+    "to": "/calculators/marginal-tax-bracket-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0232",
+    "from": "/tools/hourly-to-salary-calculator",
+    "to": "/converters/hourly-to-salary-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0233",
+    "from": "/tools/biweekly-mortgage-calculator",
+    "to": "/calculators/biweekly-mortgage-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0234",
+    "from": "/tools/rent-vs-buy-calculator",
+    "to": "/calculators/rent-vs-buy-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0235",
+    "from": "/tools/cost-basis-calculator-csv",
+    "to": "/calculators/cost-basis-calculator-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0236",
+    "from": "/tools/drip-calculator",
+    "to": "/calculators/drip-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0237",
+    "from": "/tools/net-worth-calculator",
+    "to": "/calculators/net-worth-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0238",
+    "from": "/tools/inflation-calculator-custom-rate",
+    "to": "/calculators/inflation-calculator-custom-rate",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0239",
+    "from": "/tools/compare-two-loans-calculator",
+    "to": "/calculators/compare-two-loans-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0240",
+    "from": "/tools/employer-match-calculator",
+    "to": "/calculators/employer-match-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0241",
+    "from": "/tools/freelance-hourly-rate-calculator",
+    "to": "/calculators/freelance-hourly-rate-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0242",
+    "from": "/tools/invoice-generator-pdf",
+    "to": "/generators/invoice-generator-pdf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0243",
+    "from": "/tools/quote-generator-pdf",
+    "to": "/generators/quote-generator-pdf",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0244",
+    "from": "/tools/margin-vs-markup-calculator",
+    "to": "/calculators/margin-vs-markup-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0245",
+    "from": "/tools/break-even-calculator",
+    "to": "/calculators/break-even-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0246",
+    "from": "/tools/saas-metrics-calculator",
+    "to": "/calculators/saas-metrics-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0247",
+    "from": "/tools/startup-runway-calculator",
+    "to": "/calculators/startup-runway-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0248",
+    "from": "/tools/vat-calculator-reverse-bulk",
+    "to": "/calculators/vat-calculator-reverse-bulk",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0249",
+    "from": "/tools/number-to-words-cheque",
+    "to": "/converters/number-to-words-cheque",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0250",
+    "from": "/tools/timesheet-calculator",
+    "to": "/calculators/timesheet-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0251",
+    "from": "/tools/late-payment-interest-calculator",
+    "to": "/calculators/late-payment-interest-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0252",
+    "from": "/tools/meeting-cost-calculator",
+    "to": "/calculators/meeting-cost-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0253",
+    "from": "/tools/fully-loaded-employee-cost-calculator",
+    "to": "/calculators/fully-loaded-employee-cost-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0254",
+    "from": "/tools/email-signature-generator",
+    "to": "/generators/email-signature-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0255",
+    "from": "/tools/gantt-chart-maker",
+    "to": "/generators/gantt-chart-maker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0256",
+    "from": "/tools/org-chart-generator-csv",
+    "to": "/generators/org-chart-generator-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0257",
+    "from": "/tools/reorder-point-calculator",
+    "to": "/calculators/reorder-point-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0258",
+    "from": "/tools/bulk-barcode-generator",
+    "to": "/generators/bulk-barcode-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0259",
+    "from": "/tools/vcard-qr-code-generator",
+    "to": "/generators/vcard-qr-code-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0260",
+    "from": "/tools/pro-rata-salary-calculator",
+    "to": "/calculators/pro-rata-salary-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0261",
+    "from": "/tools/concrete-volume-calculator",
+    "to": "/calculators/concrete-volume-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0262",
+    "from": "/tools/roofing-calculator-shingle-bundles",
+    "to": "/calculators/roofing-calculator-shingle-bundles",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0263",
+    "from": "/tools/paint-calculator",
+    "to": "/calculators/paint-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0264",
+    "from": "/tools/tile-calculator",
+    "to": "/calculators/tile-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0265",
+    "from": "/tools/drywall-calculator",
+    "to": "/calculators/drywall-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0266",
+    "from": "/tools/board-foot-calculator",
+    "to": "/calculators/board-foot-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0267",
+    "from": "/tools/deck-material-calculator",
+    "to": "/calculators/deck-material-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0268",
+    "from": "/tools/stair-calculator",
+    "to": "/calculators/stair-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0269",
+    "from": "/tools/gravel-mulch-calculator",
+    "to": "/calculators/gravel-mulch-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0270",
+    "from": "/tools/voltage-drop-calculator",
+    "to": "/calculators/voltage-drop-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0271",
+    "from": "/tools/btu-calculator-room-size",
+    "to": "/calculators/btu-calculator-room-size",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0272",
+    "from": "/tools/cap-rate-calculator",
+    "to": "/calculators/cap-rate-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0273",
+    "from": "/tools/rental-property-calculator",
+    "to": "/calculators/rental-property-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0274",
+    "from": "/tools/square-footage-calculator-irregular-rooms",
+    "to": "/calculators/square-footage-calculator-irregular-rooms",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0275",
+    "from": "/tools/feet-inches-to-meters-calculator",
+    "to": "/converters/feet-inches-to-meters-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0276",
+    "from": "/tools/fence-calculator",
+    "to": "/calculators/fence-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0277",
+    "from": "/tools/retaining-wall-calculator",
+    "to": "/calculators/retaining-wall-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0278",
+    "from": "/tools/insulation-calculator-r-value",
+    "to": "/calculators/insulation-calculator-r-value",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0279",
+    "from": "/tools/tank-volume-calculator",
+    "to": "/calculators/tank-volume-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0280",
+    "from": "/tools/land-area-converter",
+    "to": "/converters/land-area-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0281",
+    "from": "/tools/one-rep-max-calculator",
+    "to": "/calculators/one-rep-max-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0282",
+    "from": "/tools/running-pace-calculator",
+    "to": "/calculators/running-pace-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0283",
+    "from": "/tools/race-time-predictor",
+    "to": "/utilities/race-time-predictor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0284",
+    "from": "/tools/heart-rate-zone-calculator",
+    "to": "/calculators/heart-rate-zone-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0285",
+    "from": "/tools/barbell-plate-calculator",
+    "to": "/calculators/barbell-plate-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0286",
+    "from": "/tools/critical-swim-speed-calculator",
+    "to": "/calculators/critical-swim-speed-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0287",
+    "from": "/tools/ftp-zones-calculator",
+    "to": "/calculators/ftp-zones-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0288",
+    "from": "/tools/tdee-calculator-compare-equations",
+    "to": "/calculators/tdee-calculator-compare-equations",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0289",
+    "from": "/tools/sleep-cycle-calculator",
+    "to": "/calculators/sleep-cycle-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0290",
+    "from": "/tools/caffeine-half-life-calculator",
+    "to": "/calculators/caffeine-half-life-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0291",
+    "from": "/tools/tabata-interval-timer",
+    "to": "/timers/tabata-interval-timer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0292",
+    "from": "/tools/box-breathing-timer",
+    "to": "/timers/box-breathing-timer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0293",
+    "from": "/tools/weekly-mileage-planner",
+    "to": "/planners/weekly-mileage-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0294",
+    "from": "/tools/endurance-fueling-calculator",
+    "to": "/calculators/endurance-fueling-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0295",
+    "from": "/tools/grade-adjusted-pace-calculator",
+    "to": "/calculators/grade-adjusted-pace-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0296",
+    "from": "/tools/nutrition-facts-label-generator",
+    "to": "/generators/nutrition-facts-label-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0297",
+    "from": "/tools/steps-to-km-calculator",
+    "to": "/converters/steps-to-km-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0298",
+    "from": "/tools/hiking-time-calculator",
+    "to": "/calculators/hiking-time-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0299",
+    "from": "/tools/altitude-pace-adjustment-calculator",
+    "to": "/calculators/altitude-pace-adjustment-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0300",
+    "from": "/tools/dots-score-calculator",
+    "to": "/calculators/dots-score-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0301",
+    "from": "/tools/business-days-calculator",
+    "to": "/calculators/business-days-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0302",
+    "from": "/tools/date-difference-calculator",
+    "to": "/calculators/date-difference-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0303",
+    "from": "/tools/time-zone-meeting-planner",
+    "to": "/planners/time-zone-meeting-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0304",
+    "from": "/tools/dst-transition-dates",
+    "to": "/extractors/dst-transition-dates",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0305",
+    "from": "/tools/bulk-epoch-converter",
+    "to": "/converters/bulk-epoch-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0306",
+    "from": "/tools/ics-file-generator",
+    "to": "/generators/ics-file-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0307",
+    "from": "/tools/ics-to-csv",
+    "to": "/converters/ics-to-csv",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0308",
+    "from": "/tools/rrule-generator",
+    "to": "/generators/rrule-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0309",
+    "from": "/tools/iso-8601-duration-converter",
+    "to": "/generators/iso-8601-duration-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0310",
+    "from": "/tools/week-number-calculator",
+    "to": "/calculators/week-number-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0311",
+    "from": "/tools/add-days-to-date-calculator",
+    "to": "/calculators/add-days-to-date-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0312",
+    "from": "/tools/countdown-timer-generator",
+    "to": "/timers/countdown-timer-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0313",
+    "from": "/tools/nepali-date-converter",
+    "to": "/converters/nepali-date-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0314",
+    "from": "/tools/hijri-to-gregorian-converter",
+    "to": "/converters/hijri-to-gregorian-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0315",
+    "from": "/tools/day-of-year-calculator",
+    "to": "/calculators/day-of-year-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0316",
+    "from": "/tools/excel-serial-number-to-date",
+    "to": "/converters/excel-serial-number-to-date",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0317",
+    "from": "/tools/fiscal-quarter-calculator",
+    "to": "/calculators/fiscal-quarter-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0318",
+    "from": "/tools/shift-schedule-generator",
+    "to": "/generators/shift-schedule-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0319",
+    "from": "/tools/golden-hour-calculator",
+    "to": "/calculators/golden-hour-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0320",
+    "from": "/tools/moon-phase-calculator",
+    "to": "/calculators/moon-phase-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0321",
+    "from": "/tools/file-hash-calculator",
+    "to": "/calculators/file-hash-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0322",
+    "from": "/tools/verify-sha256sums",
+    "to": "/validators/verify-sha256sums",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0323",
+    "from": "/tools/password-strength-checker",
+    "to": "/validators/password-strength-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0324",
+    "from": "/tools/diceware-passphrase-generator",
+    "to": "/generators/diceware-passphrase-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0325",
+    "from": "/tools/password-hash-cost-benchmark",
+    "to": "/utilities/password-hash-cost-benchmark",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0326",
+    "from": "/tools/hmac-signature-tester",
+    "to": "/generators/hmac-signature-tester",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0327",
+    "from": "/tools/pkce-generator",
+    "to": "/generators/pkce-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0328",
+    "from": "/tools/totp-debugger",
+    "to": "/analyzers/totp-debugger",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0329",
+    "from": "/tools/encrypt-text-with-password",
+    "to": "/utilities/encrypt-text-with-password",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0330",
+    "from": "/tools/encrypt-file-in-browser",
+    "to": "/utilities/encrypt-file-in-browser",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0331",
+    "from": "/tools/generate-rsa-key-pair",
+    "to": "/generators/generate-rsa-key-pair",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0332",
+    "from": "/tools/pem-to-jwk",
+    "to": "/converters/pem-to-jwk",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0333",
+    "from": "/tools/ssh-key-fingerprint-calculator",
+    "to": "/calculators/ssh-key-fingerprint-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0334",
+    "from": "/tools/pgp-key-inspector",
+    "to": "/analyzers/pgp-key-inspector",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0335",
+    "from": "/tools/api-key-generator",
+    "to": "/generators/api-key-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0336",
+    "from": "/tools/uuid-v7-generator-decoder",
+    "to": "/generators/uuid-v7-generator-decoder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0337",
+    "from": "/tools/remove-metadata-from-word-document",
+    "to": "/editors/remove-metadata-from-word-document",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0338",
+    "from": "/tools/qr-code-link-inspector",
+    "to": "/analyzers/qr-code-link-inspector",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0339",
+    "from": "/tools/defang-url",
+    "to": "/utilities/defang-url",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0340",
+    "from": "/tools/sri-hash-generator",
+    "to": "/generators/sri-hash-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0341",
+    "from": "/tools/social-character-counter",
+    "to": "/utilities/social-character-counter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0342",
+    "from": "/tools/split-image-for-instagram-carousel",
+    "to": "/editors/split-image-for-instagram-carousel",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0343",
+    "from": "/tools/youtube-thumbnail-safe-zone",
+    "to": "/utilities/youtube-thumbnail-safe-zone",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0344",
+    "from": "/tools/youtube-chapters-generator",
+    "to": "/validators/youtube-chapters-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0345",
+    "from": "/tools/hashtag-camelcase-generator",
+    "to": "/formatters/hashtag-camelcase-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0346",
+    "from": "/tools/unicode-text-generator",
+    "to": "/generators/unicode-text-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0347",
+    "from": "/tools/social-media-image-resizer",
+    "to": "/editors/social-media-image-resizer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0348",
+    "from": "/tools/podcast-rss-validator",
+    "to": "/validators/podcast-rss-validator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0349",
+    "from": "/tools/screen-recorder-online",
+    "to": "/editors/screen-recorder-online",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0350",
+    "from": "/tools/webcam-mic-test",
+    "to": "/validators/webcam-mic-test",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0351",
+    "from": "/tools/teleprompter",
+    "to": "/utilities/teleprompter-utility",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0352",
+    "from": "/tools/crop-video-to-9-16",
+    "to": "/converters/crop-video-to-9-16",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0353",
+    "from": "/tools/link-in-bio-page-generator",
+    "to": "/generators/link-in-bio-page-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0354",
+    "from": "/tools/thread-splitter",
+    "to": "/editors/thread-splitter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0355",
+    "from": "/tools/contrast-checker-apca",
+    "to": "/validators/contrast-checker-apca",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0356",
+    "from": "/tools/youtube-embed-code-generator",
+    "to": "/generators/youtube-embed-code-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0357",
+    "from": "/tools/random-giveaway-picker",
+    "to": "/utilities/random-giveaway-picker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0358",
+    "from": "/tools/bingo-card-generator",
+    "to": "/generators/bingo-card-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0359",
+    "from": "/tools/business-card-maker",
+    "to": "/generators/business-card-maker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0360",
+    "from": "/tools/screenshot-device-frame-generator",
+    "to": "/generators/screenshot-device-frame-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0361",
+    "from": "/tools/apa-7-reference-generator",
+    "to": "/formatters/apa-7-reference-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0362",
+    "from": "/tools/bibtex-to-apa",
+    "to": "/converters/bibtex-to-apa",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0363",
+    "from": "/tools/ris-to-bibtex",
+    "to": "/converters/ris-to-bibtex",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0364",
+    "from": "/tools/bibtex-cleaner",
+    "to": "/editors/bibtex-cleaner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0365",
+    "from": "/tools/gpa-calculator-custom-scale",
+    "to": "/calculators/gpa-calculator-custom-scale",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0366",
+    "from": "/tools/final-grade-calculator",
+    "to": "/calculators/final-grade-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0367",
+    "from": "/tools/cgpa-to-percentage-converter",
+    "to": "/converters/cgpa-to-percentage-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0368",
+    "from": "/tools/speech-length-calculator",
+    "to": "/calculators/speech-length-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0369",
+    "from": "/tools/word-count-goal-tracker",
+    "to": "/planners/word-count-goal-tracker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0370",
+    "from": "/tools/excel-to-latex-table",
+    "to": "/generators/excel-to-latex-table",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0371",
+    "from": "/tools/latex-equation-to-image",
+    "to": "/converters/latex-equation-to-image",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0372",
+    "from": "/tools/molar-mass-calculator",
+    "to": "/calculators/molar-mass-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0373",
+    "from": "/tools/chemical-equation-balancer",
+    "to": "/utilities/chemical-equation-balancer",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0374",
+    "from": "/tools/dilution-calculator",
+    "to": "/calculators/dilution-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0375",
+    "from": "/tools/projectile-motion-calculator",
+    "to": "/calculators/projectile-motion-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0376",
+    "from": "/tools/significant-figures-calculator",
+    "to": "/calculators/significant-figures-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0377",
+    "from": "/tools/scientific-notation-converter",
+    "to": "/converters/scientific-notation-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0378",
+    "from": "/tools/csv-to-anki-deck",
+    "to": "/generators/csv-to-anki-deck",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0379",
+    "from": "/tools/math-worksheet-generator",
+    "to": "/generators/math-worksheet-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0380",
+    "from": "/tools/word-search-generator",
+    "to": "/generators/word-search-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0381",
+    "from": "/tools/resistor-color-code-calculator",
+    "to": "/calculators/resistor-color-code-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0382",
+    "from": "/tools/smd-resistor-code-calculator",
+    "to": "/calculators/smd-resistor-code-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0383",
+    "from": "/tools/led-resistor-calculator",
+    "to": "/calculators/led-resistor-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0384",
+    "from": "/tools/capacitor-code-calculator",
+    "to": "/calculators/capacitor-code-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0385",
+    "from": "/tools/voltage-divider-calculator",
+    "to": "/calculators/voltage-divider-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0386",
+    "from": "/tools/arduino-timer-calculator",
+    "to": "/calculators/arduino-timer-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0387",
+    "from": "/tools/uart-baud-rate-error-calculator",
+    "to": "/calculators/uart-baud-rate-error-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0388",
+    "from": "/tools/gcode-filament-cost-calculator",
+    "to": "/calculators/gcode-filament-cost-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0389",
+    "from": "/tools/stl-volume-calculator",
+    "to": "/calculators/stl-volume-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0390",
+    "from": "/tools/nd-filter-exposure-calculator",
+    "to": "/calculators/nd-filter-exposure-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0391",
+    "from": "/tools/hyperfocal-distance-calculator",
+    "to": "/calculators/hyperfocal-distance-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0392",
+    "from": "/tools/crop-factor-equivalent-focal-length",
+    "to": "/calculators/crop-factor-equivalent-focal-length",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0393",
+    "from": "/tools/cups-to-grams-converter",
+    "to": "/converters/cups-to-grams-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0394",
+    "from": "/tools/recipe-scaler",
+    "to": "/utilities/recipe-scaler",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0395",
+    "from": "/tools/bakers-percentage-calculator",
+    "to": "/calculators/bakers-percentage-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0396",
+    "from": "/tools/pizza-dough-calculator",
+    "to": "/calculators/pizza-dough-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0397",
+    "from": "/tools/abv-calculator-og-fg",
+    "to": "/calculators/abv-calculator-og-fg",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0398",
+    "from": "/tools/coffee-ratio-calculator",
+    "to": "/calculators/coffee-ratio-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0399",
+    "from": "/tools/knitting-gauge-calculator",
+    "to": "/calculators/knitting-gauge-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0400",
+    "from": "/tools/bike-gear-ratio-calculator",
+    "to": "/calculators/bike-gear-ratio-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0401",
+    "from": "/tools/fence-post-concrete-bags-calculator",
+    "to": "/calculators/fence-post-concrete-bags-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0402",
+    "from": "/tools/deck-joist-beam-span-checker",
+    "to": "/validators/deck-joist-beam-span-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0403",
+    "from": "/tools/stair-code-compliance-checker",
+    "to": "/validators/stair-code-compliance-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0404",
+    "from": "/tools/rebar-mesh-slab-takeoff-calculator",
+    "to": "/calculators/rebar-mesh-slab-takeoff-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0405",
+    "from": "/tools/crown-molding-miter-angle-calculator",
+    "to": "/calculators/crown-molding-miter-angle-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0406",
+    "from": "/tools/herringbone-diagonal-tile-waste-calculator",
+    "to": "/calculators/herringbone-diagonal-tile-waste-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0407",
+    "from": "/tools/wallpaper-pattern-repeat-roll-calculator",
+    "to": "/calculators/wallpaper-pattern-repeat-roll-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0408",
+    "from": "/tools/wall-roof-u-value-calculator",
+    "to": "/calculators/wall-roof-u-value-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0409",
+    "from": "/tools/stud-wall-layout-cut-list-generator",
+    "to": "/generators/stud-wall-layout-cut-list-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0410",
+    "from": "/tools/paver-base-and-sand-calculator",
+    "to": "/calculators/paver-base-and-sand-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0411",
+    "from": "/tools/gutter-downspout-sizing-calculator",
+    "to": "/calculators/gutter-downspout-sizing-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0412",
+    "from": "/tools/form-2210-annualized-income-calculator",
+    "to": "/calculators/form-2210-annualized-income-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0413",
+    "from": "/tools/estimated-tax-safe-harbor-planner",
+    "to": "/planners/estimated-tax-safe-harbor-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0414",
+    "from": "/tools/uk-payments-on-account-planner",
+    "to": "/planners/uk-payments-on-account-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0415",
+    "from": "/tools/canada-gst-hst-quick-method-calculator",
+    "to": "/calculators/canada-gst-hst-quick-method-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0416",
+    "from": "/tools/us-sales-tax-economic-nexus-tracker",
+    "to": "/planners/us-sales-tax-economic-nexus-tracker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0417",
+    "from": "/tools/vat-gst-registration-threshold-checker",
+    "to": "/planners/vat-gst-registration-threshold-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0418",
+    "from": "/tools/macrs-depreciation-schedule-calculator",
+    "to": "/calculators/macrs-depreciation-schedule-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0419",
+    "from": "/tools/wash-sale-holding-period-calculator",
+    "to": "/calculators/wash-sale-holding-period-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0420",
+    "from": "/tools/backdoor-roth-pro-rata-calculator",
+    "to": "/calculators/backdoor-roth-pro-rata-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0421",
+    "from": "/tools/home-office-deduction-comparison",
+    "to": "/comparisons/home-office-deduction-comparison",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0422",
+    "from": "/tools/w2-vs-1099-contractor-rate-calculator",
+    "to": "/calculators/w2-vs-1099-contractor-rate-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0423",
+    "from": "/tools/rent-increase-cap-and-notice-checker",
+    "to": "/calculators/rent-increase-cap-and-notice-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0424",
+    "from": "/tools/security-deposit-return-deadline-calculator",
+    "to": "/calculators/security-deposit-return-deadline-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0425",
+    "from": "/tools/landlord-notice-period-calculator",
+    "to": "/calculators/landlord-notice-period-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0426",
+    "from": "/tools/rental-depreciation-recapture-calculator",
+    "to": "/calculators/rental-depreciation-recapture-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0427",
+    "from": "/tools/lease-break-cost-calculator",
+    "to": "/calculators/lease-break-cost-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0428",
+    "from": "/tools/property-tax-appeal-savings-estimator",
+    "to": "/calculators/property-tax-appeal-savings-estimator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0429",
+    "from": "/tools/uk-tenancy-deposit-protection-penalty",
+    "to": "/calculators/uk-tenancy-deposit-protection-penalty",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0430",
+    "from": "/tools/move-out-damage-depreciation-calculator",
+    "to": "/calculators/move-out-damage-depreciation-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0431",
+    "from": "/tools/short-term-rental-occupancy-tax-calculator",
+    "to": "/calculators/short-term-rental-occupancy-tax-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0432",
+    "from": "/tools/roommate-rent-split-calculator",
+    "to": "/calculators/roommate-rent-split-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0433",
+    "from": "/tools/trailer-tongue-weight-payload-checker",
+    "to": "/validators/trailer-tongue-weight-payload-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0434",
+    "from": "/tools/ev-charging-cost-and-circuit-sizing",
+    "to": "/utilities/ev-charging-cost-and-circuit-sizing",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0435",
+    "from": "/tools/tire-load-index-speed-rating-decoder",
+    "to": "/formatters/tire-load-index-speed-rating-decoder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0436",
+    "from": "/tools/drivers-hours-of-service-planner",
+    "to": "/planners/drivers-hours-of-service-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0437",
+    "from": "/tools/ifta-quarterly-fuel-tax-calculator",
+    "to": "/calculators/ifta-quarterly-fuel-tax-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0438",
+    "from": "/tools/gig-driver-profit-per-mile-calculator",
+    "to": "/calculators/gig-driver-profit-per-mile-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0439",
+    "from": "/tools/car-lease-money-factor-apr-calculator",
+    "to": "/calculators/car-lease-money-factor-apr-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0440",
+    "from": "/tools/window-tint-vlt-law-checker",
+    "to": "/validators/window-tint-vlt-law-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0441",
+    "from": "/tools/social-video-safe-zone-overlay",
+    "to": "/utilities/social-video-safe-zone-overlay",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0442",
+    "from": "/tools/print-bleed-and-safe-zone-templates",
+    "to": "/generators/print-bleed-and-safe-zone-templates",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0443",
+    "from": "/tools/book-spine-width-cover-template-calculator",
+    "to": "/calculators/book-spine-width-cover-template-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0444",
+    "from": "/tools/max-print-size-from-pixels-calculator",
+    "to": "/calculators/max-print-size-from-pixels-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0445",
+    "from": "/tools/video-file-size-bitrate-calculator",
+    "to": "/calculators/video-file-size-bitrate-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0446",
+    "from": "/tools/label-sheet-print-alignment-calibrator",
+    "to": "/utilities/label-sheet-print-alignment-calibrator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0447",
+    "from": "/tools/cross-stitch-fabric-size-calculator",
+    "to": "/calculators/cross-stitch-fabric-size-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0448",
+    "from": "/tools/yarn-yardage-substitution-calculator",
+    "to": "/calculators/yarn-yardage-substitution-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0449",
+    "from": "/tools/cobra-election-payment-deadline-calculator",
+    "to": "/calculators/cobra-election-payment-deadline-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0450",
+    "from": "/tools/dog-cat-food-portion-cost-calculator",
+    "to": "/calculators/dog-cat-food-portion-cost-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0451",
+    "from": "/tools/aquarium-volume-water-change-dosing",
+    "to": "/calculators/aquarium-volume-water-change-dosing",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0452",
+    "from": "/tools/pool-chemical-dosing-calculator",
+    "to": "/calculators/pool-chemical-dosing-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0453",
+    "from": "/tools/glasses-to-contact-lens-vertex-calculator",
+    "to": "/converters/glasses-to-contact-lens-vertex-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0454",
+    "from": "/tools/prescription-refill-runout-date-calculator",
+    "to": "/calculators/prescription-refill-runout-date-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0455",
+    "from": "/tools/clear-aligner-schedule-planner",
+    "to": "/planners/clear-aligner-schedule-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0456",
+    "from": "/tools/paid-family-leave-benefits-estimator",
+    "to": "/calculators/paid-family-leave-benefits-estimator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0457",
+    "from": "/tools/final-paycheck-pto-deadline-calculator",
+    "to": "/calculators/final-paycheck-pto-deadline-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0458",
+    "from": "/tools/state-overtime-pay-rules-calculator",
+    "to": "/calculators/state-overtime-pay-rules-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0459",
+    "from": "/tools/i9-reverification-retention-date-tracker",
+    "to": "/planners/i9-reverification-retention-date-tracker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0460",
+    "from": "/tools/fmla-eligibility-entitlement-calculator",
+    "to": "/calculators/fmla-eligibility-entitlement-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0461",
+    "from": "/tools/trir-dart-incident-rate-calculator",
+    "to": "/calculators/trir-dart-incident-rate-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0462",
+    "from": "/tools/statute-of-limitations-deadline-estimator",
+    "to": "/calculators/statute-of-limitations-deadline-estimator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0463",
+    "from": "/tools/court-pleading-paper-generator",
+    "to": "/generators/court-pleading-paper-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0464",
+    "from": "/tools/data-access-request-letter-generator",
+    "to": "/generators/data-access-request-letter-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0465",
+    "from": "/tools/international-gpa-converter",
+    "to": "/converters/international-gpa-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0466",
+    "from": "/tools/sat-act-superscore-calculator",
+    "to": "/calculators/sat-act-superscore-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0467",
+    "from": "/tools/professional-exam-study-scheduler",
+    "to": "/planners/professional-exam-study-scheduler",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0468",
+    "from": "/tools/continuing-education-license-renewal-tracker",
+    "to": "/planners/continuing-education-license-renewal-tracker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0469",
+    "from": "/tools/supervised-driving-hours-log",
+    "to": "/planners/supervised-driving-hours-log",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0470",
+    "from": "/tools/homeschool-transcript-gpa-builder",
+    "to": "/generators/homeschool-transcript-gpa-builder",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0471",
+    "from": "/tools/quarter-semester-credit-converter",
+    "to": "/converters/quarter-semester-credit-converter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0472",
+    "from": "/tools/journeyman-apprenticeship-hours-tracker",
+    "to": "/planners/journeyman-apprenticeship-hours-tracker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0473",
+    "from": "/tools/shipping-carrier-oversize-surcharge-checker",
+    "to": "/validators/shipping-carrier-oversize-surcharge-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0474",
+    "from": "/tools/import-landed-cost-tariff-calculator",
+    "to": "/calculators/import-landed-cost-tariff-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0475",
+    "from": "/tools/marketplace-listing-byte-character-counter",
+    "to": "/validators/marketplace-listing-byte-character-counter",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0476",
+    "from": "/tools/marketplace-image-size-spec-checker",
+    "to": "/validators/marketplace-image-size-spec-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0477",
+    "from": "/tools/pallet-carton-packing-calculator",
+    "to": "/calculators/pallet-carton-packing-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0478",
+    "from": "/tools/shipping-label-4x6-pdf-cropper",
+    "to": "/editors/shipping-label-4x6-pdf-cropper",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0479",
+    "from": "/tools/commercial-invoice-customs-forms-generator",
+    "to": "/generators/commercial-invoice-customs-forms-generator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0480",
+    "from": "/tools/1099k-state-platform-reporting-threshold-checker",
+    "to": "/validators/1099k-state-platform-reporting-threshold-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0481",
+    "from": "/tools/tracking-number-carrier-identifier",
+    "to": "/utilities/tracking-number-carrier-identifier",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0482",
+    "from": "/tools/acos-roas-break-even-calculator",
+    "to": "/calculators/acos-roas-break-even-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0483",
+    "from": "/tools/event-room-capacity-layout-calculator",
+    "to": "/calculators/event-room-capacity-layout-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0484",
+    "from": "/tools/tablecloth-size-drop-calculator",
+    "to": "/calculators/tablecloth-size-drop-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0485",
+    "from": "/tools/bbq-reverse-cook-schedule-planner",
+    "to": "/planners/bbq-reverse-cook-schedule-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0486",
+    "from": "/tools/digital-nomad-visa-eligibility-checker",
+    "to": "/utilities/digital-nomad-visa-eligibility-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0487",
+    "from": "/tools/raised-bed-soil-compost-calculator",
+    "to": "/calculators/raised-bed-soil-compost-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0488",
+    "from": "/tools/fertilizer-seed-spreader-settings-calculator",
+    "to": "/calculators/fertilizer-seed-spreader-settings-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0489",
+    "from": "/tools/sprinkler-irrigation-runtime-calculator",
+    "to": "/calculators/sprinkler-irrigation-runtime-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0490",
+    "from": "/tools/firewood-cord-volume-cost-btu-calculator",
+    "to": "/calculators/firewood-cord-volume-cost-btu-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0491",
+    "from": "/tools/multi-fuel-heating-cost-comparison",
+    "to": "/comparisons/multi-fuel-heating-cost-comparison",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0492",
+    "from": "/tools/portable-power-station-runtime-calculator",
+    "to": "/calculators/portable-power-station-runtime-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0493",
+    "from": "/tools/livestock-hay-feed-needs-calculator",
+    "to": "/calculators/livestock-hay-feed-needs-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0494",
+    "from": "/tools/chicken-coop-size-feed-calculator",
+    "to": "/calculators/chicken-coop-size-feed-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0495",
+    "from": "/tools/mega-backdoor-roth-contribution-room-calculator",
+    "to": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0496",
+    "from": "/tools/inherited-ira-rmd-10-year-rule-planner",
+    "to": "/planners/inherited-ira-rmd-10-year-rule-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0497",
+    "from": "/tools/wash-sale-lot-matching-csv-form-8949",
+    "to": "/utilities/wash-sale-lot-matching-csv-form-8949",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0498",
+    "from": "/tools/rsu-state-withholding-gap-calculator",
+    "to": "/calculators/rsu-state-withholding-gap-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0499",
+    "from": "/tools/hsa-contribution-limit-monthly-calculator",
+    "to": "/calculators/hsa-contribution-limit-monthly-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0500",
+    "from": "/tools/medicare-enrollment-window-penalty-calculator",
+    "to": "/calculators/medicare-enrollment-window-penalty-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0501",
+    "from": "/tools/irmaa-bracket-cliff-calculator",
+    "to": "/calculators/irmaa-bracket-cliff-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0502",
+    "from": "/tools/inherited-property-stepped-up-basis-calculator",
+    "to": "/calculators/inherited-property-stepped-up-basis-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0503",
+    "from": "/tools/uk-share-matching-section-104-pool-calculator",
+    "to": "/calculators/uk-share-matching-section-104-pool-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0504",
+    "from": "/tools/uk-effective-marginal-tax-trap-calculator",
+    "to": "/calculators/uk-effective-marginal-tax-trap-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0505",
+    "from": "/tools/uk-section-24-landlord-company-comparison",
+    "to": "/comparisons/uk-section-24-landlord-company-comparison",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0506",
+    "from": "/tools/buy-to-let-icr-stress-test-calculator",
+    "to": "/calculators/buy-to-let-icr-stress-test-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0507",
+    "from": "/tools/uk-pension-allowance-carry-forward-calculator",
+    "to": "/calculators/uk-pension-allowance-carry-forward-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0508",
+    "from": "/tools/uk-inheritance-tax-seven-year-gift-planner",
+    "to": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0509",
+    "from": "/tools/uk-shared-parental-leave-planner",
+    "to": "/planners/uk-shared-parental-leave-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0510",
+    "from": "/tools/canada-adjusted-cost-base-superficial-loss-ledger",
+    "to": "/utilities/canada-adjusted-cost-base-superficial-loss-ledger",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0511",
+    "from": "/tools/canada-oas-clawback-rrif-planner",
+    "to": "/planners/canada-oas-clawback-rrif-planner",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0512",
+    "from": "/tools/canada-fhsa-rrsp-home-buyers-plan",
+    "to": "/planners/canada-fhsa-rrsp-home-buyers-plan",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0513",
+    "from": "/tools/canada-vacation-statutory-holiday-pay-calculator",
+    "to": "/calculators/canada-vacation-statutory-holiday-pay-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0514",
+    "from": "/tools/australia-super-concessional-carry-forward-calculator",
+    "to": "/calculators/australia-super-concessional-carry-forward-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0515",
+    "from": "/tools/australia-long-service-leave-calculator",
+    "to": "/calculators/australia-long-service-leave-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0516",
+    "from": "/tools/australia-home-battery-payback-calculator",
+    "to": "/calculators/australia-home-battery-payback-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0517",
+    "from": "/tools/assumable-mortgage-comparison-calculator",
+    "to": "/calculators/assumable-mortgage-comparison-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0518",
+    "from": "/tools/california-meal-rest-break-wage-claim-calculator",
+    "to": "/calculators/california-meal-rest-break-wage-claim-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0519",
+    "from": "/tools/chapter-7-bankruptcy-means-test-estimator",
+    "to": "/calculators/chapter-7-bankruptcy-means-test-estimator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0520",
+    "from": "/tools/uk-ilr-citizenship-absence-calculator",
+    "to": "/calculators/uk-ilr-citizenship-absence-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0521",
+    "from": "/tools/us-n400-physical-presence-calculator",
+    "to": "/calculators/us-n400-physical-presence-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0522",
+    "from": "/tools/flight-delay-compensation-uk-eu-canada",
+    "to": "/validators/flight-delay-compensation-uk-eu-canada",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0523",
+    "from": "/tools/airline-carry-on-size-weight-checker",
+    "to": "/validators/airline-carry-on-size-weight-checker",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0524",
+    "from": "/tools/chase-5-24-credit-card-application-rules",
+    "to": "/validators/chase-5-24-credit-card-application-rules",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0525",
+    "from": "/tools/heat-pump-vs-gas-boiler-payback-calculator",
+    "to": "/calculators/heat-pump-vs-gas-boiler-payback-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0526",
+    "from": "/tools/generator-sizing-running-starting-watts",
+    "to": "/calculators/generator-sizing-running-starting-watts",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0527",
+    "from": "/tools/astrophotography-npf-exposure-calculator",
+    "to": "/calculators/astrophotography-npf-exposure-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0528",
+    "from": "/tools/quilt-yardage-binding-batting-calculator",
+    "to": "/calculators/quilt-yardage-binding-batting-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0529",
+    "from": "/tools/puppy-adult-weight-growth-predictor",
+    "to": "/utilities/puppy-adult-weight-growth-predictor",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  },
+  {
+    "id": "TOOL-0530",
+    "from": "/tools/card-surcharge-cash-discount-calculator",
+    "to": "/calculators/card-surcharge-cash-discount-calculator",
+    "activate_only_if_legacy_exists": true,
+    "redirect_status": 301,
+    "do_not_activate_if_existing_unrelated_page": true
+  }
+]

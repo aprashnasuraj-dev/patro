@@ -1,0 +1,15 @@
+{
+  "cluster": "compile:malformed-line-split-regex",
+  "before": 7,
+  "targetAfter": 0,
+  "ids": [
+    "TOOL-0274",
+    "TOOL-0465",
+    "TOOL-0466",
+    "TOOL-0469",
+    "TOOL-0470",
+    "TOOL-0472",
+    "TOOL-0479"
+  ],
+  "filesChanged": 7
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0506",
+  "related": [
+    {
+      "id": "TOOL-0201",
+      "title": "A/B Test Significance Calculator with SRM Check",
+      "proposed_canonical": "/calculators/ab-test-significance-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0202",
+      "title": "A/B Test Sample Size Calculator",
+      "proposed_canonical": "/calculators/ab-test-sample-size-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0205",
+      "title": "Chi-Square Test of Independence Calculator",
+      "proposed_canonical": "/calculators/chi-square-test-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0206",
+      "title": "Welch t-Test Calculator from Pasted Data",
+      "proposed_canonical": "/calculators/welch-t-test-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0207",
+      "title": "Mann-Whitney U Test Calculator",
+      "proposed_canonical": "/calculators/mann-whitney-u-test-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

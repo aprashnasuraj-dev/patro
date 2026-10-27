@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0193",
+  "build_sequence": 193,
+  "name": "Phone Number Normalizer to E.164",
+  "route": "/tools/phone-numbers-to-e164",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0088",
+  "engineering_family": "CSV Column and Data Normalizer",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Phone Number Normalizer to E.164 — Free Local Browser Tool",
+    "meta_description": "Normalize a CSV phone column to E.164 using current libphonenumber metadata, requiring a default country for national numbers.",
+    "h1": "Phone Number Normalizer to E.164",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": [
+    "/assets/vendor/libphonenumber-js/max.js"
+  ]
+}

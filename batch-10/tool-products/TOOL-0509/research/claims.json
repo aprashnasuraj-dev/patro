@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "England/Wales/Scotland shared parental leave theoretical maximum 50 leave weeks and 37 pay weeks, subject to maternity leave used.",
+    "sources": [
+      "https://www.gov.uk/shared-parental-leave-and-pay/what-youll-get",
+      "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Eligibility and employer notice cannot be derived from pay and weeks alone."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

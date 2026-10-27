@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Quarterly fuel allocation ledger",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Not filing-ready; jurisdiction surcharge, credit limitations and historical quarter table must be reconciled.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Not filing-ready; jurisdiction surcharge, credit limitations and historical quarter table must be reconciled.",
+  "authoritative_references": [
+    "https://www.iftach.org/taxmatrix4/TaxDownload.php",
+    "https://www.dmv.sc.gov/business-customers/motor-carriers/international-fuel-tax-agreement/ifta-tax-returns"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

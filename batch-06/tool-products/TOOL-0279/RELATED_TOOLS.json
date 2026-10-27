@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0279",
+  "related": [
+    {
+      "id": "TOOL-0451",
+      "title": "Aquarium Volume, Water Change & Dose Calculator",
+      "proposed_canonical": "/calculators/aquarium-volume-water-change-dosing",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0483",
+      "title": "Event Space Capacity Calculator",
+      "proposed_canonical": "/calculators/event-room-capacity-layout-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0241",
+      "title": "Freelance Hourly Rate Calculator",
+      "proposed_canonical": "/calculators/freelance-hourly-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0244",
+      "title": "Margin vs Markup Calculator with Price Solver",
+      "proposed_canonical": "/calculators/margin-vs-markup-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0245",
+      "title": "Break-Even Analysis Calculator with Chart",
+      "proposed_canonical": "/calculators/break-even-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

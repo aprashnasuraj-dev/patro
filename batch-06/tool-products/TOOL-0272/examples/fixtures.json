@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0272",
+  "examples": [
+    {
+      "inputs": {
+        "units": 4,
+        "monthly_rent": 1200,
+        "vacancy_pct": 5,
+        "other_income": 2400,
+        "opex": 18000,
+        "value": 650000
+      },
+      "expected_note": "Cap rate is modeled as annual NOI divided by property value."
+    }
+  ]
+}

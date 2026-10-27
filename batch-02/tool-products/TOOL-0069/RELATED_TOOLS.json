@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0069",
+  "related": [
+    {
+      "id": "TOOL-0073",
+      "title": "Open Graph Tag Generator with Image Size Validator",
+      "proposed_canonical": "/generators/open-graph-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0041",
+      "title": "CORS Configuration Generator (Nginx, Express, Apache, S3)",
+      "proposed_canonical": "/generators/cors-config-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0049",
+      "title": "Cache-Control Header Builder",
+      "proposed_canonical": "/generators/cache-control-header-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

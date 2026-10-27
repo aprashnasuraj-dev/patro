@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0105",
+  "claims": [
+    {
+      "claim": "Coverage is based on Unicode cmap mappings and is reported as a codepoint check, not a shaping certification.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "cmap",
+        "opentype",
+        "woff2"
+      ]
+    }
+  ]
+}

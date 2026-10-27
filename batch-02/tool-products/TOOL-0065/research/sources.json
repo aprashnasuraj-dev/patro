@@ -1,0 +1,23 @@
+{
+  "researched_for": "TOOL-0065",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://schema.org/Product",
+      "owner": "Schema.org",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Compose merchant metadata without inventing review ratings or availability."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "owner": "Google Search Central",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Compose merchant metadata without inventing review ratings or availability."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Price, availability and ratings must reflect the live page and real customers."
+}

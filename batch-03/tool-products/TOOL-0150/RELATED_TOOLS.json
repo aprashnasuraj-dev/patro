@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0150",
+  "related": [
+    {
+      "id": "TOOL-0149",
+      "title": "Crop PDF Margins Visually",
+      "proposed_canonical": "/editors/crop-pdf-margins",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0142",
+      "title": "Rearrange PDF Pages (Drag Thumbnails)",
+      "proposed_canonical": "/editors/rearrange-pdf-pages",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0155",
+      "title": "True PDF Redaction (Rasterize Redacted Pages)",
+      "proposed_canonical": "/utilities/redact-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0478",
+      "title": "Shipping Label to 4x6 Thermal Cropper",
+      "proposed_canonical": "/editors/shipping-label-4x6-pdf-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0464",
+      "title": "Data Access Request Letter Generator",
+      "proposed_canonical": "/generators/data-access-request-letter-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

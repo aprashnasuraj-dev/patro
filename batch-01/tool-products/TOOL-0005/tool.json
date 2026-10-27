@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0005",
+  "title": "JSON to Protobuf (.proto) Generator",
+  "route": "/tools/json-to-protobuf",
+  "slug": "json-to-protobuf",
+  "source": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "family_id": "F0001",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": false,
+  "published": false,
+  "seo": {
+    "title": "JSON to Protobuf (.proto) Generator — Private, Browser-Based Draft Tool | AafnaiPatro",
+    "meta_description": "Generate nested messages and sample-based scalar fields, with warnings about long-term field tag stability.",
+    "h1": "Build an editable proto3 message draft from JSON",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "privacy": {
+    "routine_worker_requests": 0,
+    "user_content_transmission": false,
+    "file_execution": false,
+    "input_budget": 200000
+  },
+  "requirements": {
+    "runtime": "browser, compiled via existing lazy route loader",
+    "dependencies": {},
+    "test_dev_dependencies": {
+      "vitest": "3.2.4"
+    }
+  },
+  "input": "textarea and optional file local read",
+  "output": "schema.proto",
+  "limitations": "Sample inference cannot establish absent fields, int64 precision, enums, map intent or safe future field numbers; do not reorder tags after deployment."
+}

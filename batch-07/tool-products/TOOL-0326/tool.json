@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0326",
+  "name": "HMAC Generator and Webhook Signature Tester",
+  "route": "/tools/hmac-signature-tester",
+  "batch": "BATCH-07",
+  "run_id": "RUN-14",
+  "engineering_family_id": "F0178",
+  "engineering_family": "HMAC and PKCE Utilities",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "HMAC Generator and Webhook Signature Tester — Private Browser Tool",
+    "meta_description": "Generate or verify HMAC-SHA-256/384/512 signatures with explicit key and signature encodings using native Web Crypto, suitable for debugging webhook signing conventions locally.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

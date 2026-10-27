@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0458",
+  "related": [
+    {
+      "id": "TOOL-0518",
+      "title": "California Meal Break and Overtime Wage Claim Calculator",
+      "proposed_canonical": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "proposed_canonical": "/calculators/final-paycheck-pto-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0250",
+      "title": "Timesheet Hours Calculator with Breaks and Overtime",
+      "proposed_canonical": "/calculators/timesheet-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0498",
+      "title": "RSU State and Employer Withholding Gap Calculator",
+      "proposed_canonical": "/calculators/rsu-state-withholding-gap-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0469",
+      "title": "Supervised Driving Log by State",
+      "proposed_canonical": "/planners/supervised-driving-hours-log",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

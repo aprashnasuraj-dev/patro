@@ -1,0 +1,4 @@
+/* Mojibake Repair Tool: task-specific skin extends shared accessible composition. */
+.hero{background:linear-gradient(120deg,#0f766e,#102033 92%)}
+.workbench .panel:first-child{border-top:4px solid #0f766e}
+.result-code::selection{background:#3dd4c2;color:#071a2a}

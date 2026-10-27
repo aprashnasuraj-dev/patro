@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "statement": "Federal TPSO reportability and one verified state overlay",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.irs.gov/newsroom/form-1099-k-faqs-general-information",
+        "https://www.mass.gov/info-details/form-1099-filing-requirements"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Federal and Massachusetts primary sources are retained; other states intentionally marked not verified, not silently mapped to federal requirements.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Federal and Massachusetts primary sources are retained; other states intentionally marked not verified, not silently mapped to federal requirements.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

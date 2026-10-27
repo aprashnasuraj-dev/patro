@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0212",
+  "claims": [
+    {
+      "claim": "Calculate dataset percentiles using explicit quantile definitions, including R/Hyndman–Fan Type 7, Type 8, and nearest-rank.",
+      "support": [
+        "https://search.r-project.org/R/refmans/stats/html/quantile.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "All pasted values are treated as one empirical sample.",
+      "support": [
+        "https://search.r-project.org/R/refmans/stats/html/quantile.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Percentile values vary across statistical packages because quantile definitions differ; the selected definition is always shown.",
+      "support": [
+        "https://search.r-project.org/R/refmans/stats/html/quantile.html"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

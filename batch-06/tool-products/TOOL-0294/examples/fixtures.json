@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0294",
+  "sample_input": {
+    "duration": "3",
+    "target": "60",
+    "portion": "25",
+    "every": "30"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

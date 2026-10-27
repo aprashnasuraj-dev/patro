@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0245",
+  "status": "TEST_PENDING",
+  "sample": {
+    "fixedCost": 20000,
+    "price": 80,
+    "variableCost": 45,
+    "targetProfit": 10000,
+    "chartVolume": 1500
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

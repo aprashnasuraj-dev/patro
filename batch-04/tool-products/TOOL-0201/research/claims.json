@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0201",
+  "claims": [
+    {
+      "claim": "Compare two independent conversion rates with a pooled two-proportion z-test, confidence interval, uplift, and sample-ratio-mismatch check.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm",
+        "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Two independent variants; conversions are binary; assignment proportion is known in advance.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm",
+        "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "The z-test is an asymptotic approximation and assumes independent observations and stable random assignment. A significant SRM check is diagnostic, not proof of a specific instrumentation bug.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm",
+        "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

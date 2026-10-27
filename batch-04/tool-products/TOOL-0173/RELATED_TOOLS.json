@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0173",
+  "related": [
+    {
+      "id": "TOOL-0168",
+      "title": "Video Speed Changer with Pitch Correction",
+      "proposed_canonical": "/editors/change-video-speed",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0172",
+      "title": "Audio Joiner and Merger",
+      "proposed_canonical": "/editors/merge-audio-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0175",
+      "title": "Silence Remover for Audio",
+      "proposed_canonical": "/editors/remove-silence-from-audio",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0171",
+      "title": "Audio Cutter with Fade In and Out",
+      "proposed_canonical": "/utilities/audio-cutter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0137",
+      "title": "GIF Speed Changer and Reverser",
+      "proposed_canonical": "/editors/gif-speed-changer",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

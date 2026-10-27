@@ -1,0 +1,30 @@
+{
+  "researched_for": "TOOL-0060",
+  "reviewed_as_of": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc5322",
+      "owner": "IETF / RFC Editor",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Inspect Received hops, Authentication-Results claims, and suspicious header anomalies locally."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7601",
+      "owner": "IETF / RFC Editor",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Inspect Received hops, Authentication-Results claims, and suspicious header anomalies locally."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8601",
+      "owner": "IETF / RFC Editor",
+      "version_or_standard": null,
+      "effective_date": null,
+      "purpose": "Inspect Received hops, Authentication-Results claims, and suspicious header anomalies locally."
+    }
+  ],
+  "source_data_included": false,
+  "licenses": "No third-party vendor data or images redistributed; standards are referenced by links, not republished.",
+  "uncertainty": "Cannot establish origin authenticity, validate cryptography or prove sender identity."
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0206",
+  "sources": [
+    {
+      "title": "NIST Technical Note 2106 — unequal variance t-test / Welch-Satterthwaite",
+      "url": "https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2106.pdf",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

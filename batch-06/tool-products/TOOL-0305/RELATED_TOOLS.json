@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0305",
+  "related": [
+    {
+      "id": "TOOL-0316",
+      "title": "Excel Serial Number to Date Converter",
+      "proposed_canonical": "/converters/excel-serial-number-to-date",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0007",
+      "title": "HAR to cURL Bulk Converter",
+      "proposed_canonical": "/converters/har-to-curl",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0016",
+      "title": "Nginx / Apache Access Log to CSV",
+      "proposed_canonical": "/converters/access-log-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "proposed_canonical": "/converters/bulk-image-resizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0045",
+      "title": "Bulk User-Agent Parser",
+      "proposed_canonical": "/analyzers/bulk-user-agent-parser",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

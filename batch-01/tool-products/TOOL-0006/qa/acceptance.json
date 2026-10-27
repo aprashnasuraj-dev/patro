@@ -1,0 +1,27 @@
+{
+  "tool_id": "TOOL-0006",
+  "qa_status": "TEST_PENDING",
+  "product_tests_executed": 0,
+  "checks": {
+    "install": "NOT_RUN",
+    "build": "NOT_RUN",
+    "typecheck": "NOT_RUN",
+    "unit": "NOT_RUN",
+    "invalid_inputs": "NOT_RUN",
+    "security": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "copy_download": "NOT_RUN",
+    "320px": "NOT_RUN",
+    "tablet": "NOT_RUN",
+    "desktop": "NOT_RUN",
+    "keyboard": "NOT_RUN",
+    "screen_reader": "NOT_RUN",
+    "reduced_motion": "NOT_RUN",
+    "performance": "NOT_RUN"
+  },
+  "test_source": "tests/core.test.ts",
+  "test_intents": "nested auth headers, bearer/cookie removal, content removal, unknown extension stripping, malformed records",
+  "execution_stage": "AFTER_OWNER_CONTROLLED_GIT_IMPORT",
+  "runtime_evidence": null,
+  "integration_risk": "TypeScript/Vite imports, external yaml dependency for YAML tools, and UI layout must be integrated and tested in Git."
+}

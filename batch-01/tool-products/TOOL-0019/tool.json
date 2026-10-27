@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0019",
+  "title": "package-lock.json Duplicate Dependency Finder",
+  "slug": "package-lock-duplicate-finder",
+  "route": "/tools/package-lock-duplicate-finder",
+  "engineering_family": "F0009",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "package-lock.json Duplicate Dependency Finder — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Report package versions appearing at multiple package-lock v2/v3 locations and expose path-level evidence. Runs locally in your browser. Review limitations an",
+    "h1": "Dependency version atlas: package-lock.json Duplicate Dependency Finder",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "npm package-lock.json v2 or v3",
+    "max_utf8_bytes": 1200000
+  },
+  "output": "dependency-duplicates.json",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {},
+  "limits": "Multiple versions of the same package are not automatically a vulnerability or redundant install; deduplication can break semver constraints."
+}

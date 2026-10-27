@@ -1,0 +1,1 @@
+export function settings(speed:number,font:number,line:number){if(!Number.isFinite(speed)||speed<5||speed>300)throw new Error('Speed must be 5–300 px/s.');if(!Number.isFinite(font)||font<18||font>120)throw new Error('Font size must be 18–120 px.');if(!Number.isFinite(line)||line<1||line>2.5)throw new Error('Line height must be 1–2.5.');return{speed,font,line}}

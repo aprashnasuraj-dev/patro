@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0225",
+  "related": [
+    {
+      "id": "TOOL-0238",
+      "title": "Inflation Calculator with Custom Rate",
+      "proposed_canonical": "/calculators/inflation-calculator-custom-rate",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0226",
+      "title": "SIP Calculator with Annual Step-Up",
+      "proposed_canonical": "/calculators/sip-calculator-with-step-up",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0236",
+      "title": "DRIP (Dividend Reinvestment) Calculator",
+      "proposed_canonical": "/calculators/drip-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0251",
+      "title": "Late Payment Interest Calculator for Invoices",
+      "proposed_canonical": "/calculators/late-payment-interest-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0265",
+      "title": "Drywall Sheet and Joint Compound Calculator",
+      "proposed_canonical": "/calculators/drywall-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

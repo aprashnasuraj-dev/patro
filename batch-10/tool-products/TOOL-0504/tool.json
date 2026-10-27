@@ -1,0 +1,46 @@
+{
+  "id": "TOOL-0504",
+  "name": "UK Effective Marginal Tax Trap Calculator",
+  "route": "/tools/uk-effective-marginal-tax-trap-calculator",
+  "slug": "uk-effective-marginal-tax-trap-calculator",
+  "family": "F0297",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "implementation": "local-browser-esm-typescript",
+  "dependencies": [
+    "../../_shared/runtime.ts"
+  ],
+  "lazy_loading": "route_open_only",
+  "execution": "browser-local",
+  "external_content_transfer": false,
+  "quality_status": "TEST_PENDING",
+  "variant": "tax-band",
+  "title": "UK Effective Marginal Tax Trap Calculator | AafnaiPatro Tools",
+  "meta_description": "Isolate how personal allowance taper increases England/Wales/NI income tax on an incremental salary increase.",
+  "inputs": [
+    {
+      "key": "income",
+      "label": "Current adjusted net earnings",
+      "default": 110000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 20000000.0,
+      "step": "any"
+    },
+    {
+      "key": "rise",
+      "label": "Gross income increase",
+      "default": 10000,
+      "unit": "GBP",
+      "type": "number",
+      "min": 0,
+      "max": 20000000.0,
+      "step": "any"
+    }
+  ]
+}

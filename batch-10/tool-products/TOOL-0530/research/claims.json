@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Card proceeds = sticker price×(1+surcharge)×(1−processor %) − flat processing fee; cash proceeds = sticker×(1−cash discount).",
+    "supporting_urls": [
+      "https://usa.visa.com/support/small-business/regulations-fees.html",
+      "https://www.consumerfinance.gov/"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Legal compliance cannot be inferred solely from numeric economics or processor contracts."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "A $100 sale with 2.7% plus $0.30 fees costs $3.00 before any surcharge; fee-on-fee changes full recovery.",
+    "status": "TEST_PENDING"
+  }
+]

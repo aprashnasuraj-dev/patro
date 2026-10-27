@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0133",
+  "related": [
+    {
+      "id": "TOOL-0255",
+      "title": "Gantt Chart Maker from Task Table (SVG/PNG)",
+      "proposed_canonical": "/generators/gantt-chart-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0359",
+      "title": "Business Card Maker with Print-Ready PDF and Bleed",
+      "proposed_canonical": "/generators/business-card-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0037",
+      "title": "CODEOWNERS Pattern Tester",
+      "proposed_canonical": "/validators/codeowners-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0038",
+      "title": ".gitignore Pattern Tester",
+      "proposed_canonical": "/validators/gitignore-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0264",
+      "title": "Tile Calculator with Grout and Layout Waste",
+      "proposed_canonical": "/calculators/tile-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

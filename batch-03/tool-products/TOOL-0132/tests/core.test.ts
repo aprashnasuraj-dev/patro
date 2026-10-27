@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {generate} from '../src/core';describe('TOOL-0132 BlurHash/ThumbHash bounds',()=>{it('rejects BlurHash component counts outside 1–9 before decode',async()=>{const f=new File(['x'],'a.png',{type:'image/png'});await expect(generate(f,0,3)).rejects.toThrow(/1–9/)});it.todo('verifies both hashes against a reviewed raster fixture')});

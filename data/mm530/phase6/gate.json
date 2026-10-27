@@ -1,0 +1,13 @@
+{
+  "schema_version": "MM530_PHASE6_GATE_V1",
+  "phase5_entry_accepted": true,
+  "tools_entered": 530,
+  "hard_exclusions": 0,
+  "status": "PHASE_6_PASS",
+  "priority_factual_review": 22,
+  "formula_first_nonblocking": 7,
+  "unresolved_factual_blockers": 0,
+  "dependency_asset_blockers": 0,
+  "reviewed_on": "2026-10-27",
+  "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_INTEGRATION_SWEEP"
+}

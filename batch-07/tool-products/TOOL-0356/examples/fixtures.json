@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0356",
+  "examples": [
+    {
+      "input": "https://youtu.be/dQw4w9WgXcQ",
+      "video_id": "dQw4w9WgXcQ"
+    },
+    {
+      "privacy_host": "www.youtube-nocookie.com"
+    }
+  ]
+}

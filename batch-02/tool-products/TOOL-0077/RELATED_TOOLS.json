@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0077",
+  "related": [
+    {
+      "id": "TOOL-0070",
+      "title": "XML Sitemap Generator from URL List",
+      "proposed_canonical": "/generators/sitemap-from-url-list",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0047",
+      "title": "Context-Aware URL Encoder",
+      "proposed_canonical": "/formatters/url-encode-path-vs-query",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0066",
+      "title": "BreadcrumbList Schema from URL List",
+      "proposed_canonical": "/utilities/breadcrumb-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0072",
+      "title": "robots.txt Bulk URL Tester",
+      "proposed_canonical": "/validators/robots-txt-tester",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

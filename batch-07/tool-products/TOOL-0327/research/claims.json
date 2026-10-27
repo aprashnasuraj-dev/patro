@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0327",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "PKCE protects authorization-code interception in supported OAuth flows; it does not replace state/nonce validation, redirect-URI validation or secure token handling."
+}

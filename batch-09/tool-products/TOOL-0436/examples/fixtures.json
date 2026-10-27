@@ -1,0 +1,23 @@
+{
+  "default_inputs": {
+    "regime": "US",
+    "driveToday": 6,
+    "sinceBreak": 3,
+    "shiftElapsed": 9,
+    "dutyCycleBefore": 42,
+    "dutyThisShift": 9,
+    "weekDrive": 29,
+    "fortnightDrive": 64
+  },
+  "known_answer": {
+    "output_label": "Conservative next uninterrupted driving window",
+    "expected_value": "5.00 h"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

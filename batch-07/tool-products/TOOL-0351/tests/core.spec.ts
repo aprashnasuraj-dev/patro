@@ -1,0 +1,2 @@
+import {describe,it,expect} from 'vitest';import {settings} from '../src/core';
+describe('TOOL-0351',()=>{it('returns bounded teleprompter settings unchanged',()=>expect(settings(120,48,1.5)).toEqual({speed:120,font:48,line:1.5}));it('rejects settings outside bounds',()=>{expect(()=>settings(4,48,1.5)).toThrow();expect(()=>settings(120,121,1.5)).toThrow();expect(()=>settings(120,48,.9)).toThrow()})});

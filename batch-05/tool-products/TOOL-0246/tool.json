@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0246",
+  "name": "SaaS Metrics Calculator (LTV, CAC, Payback, Churn)",
+  "route": "/tools/saas-metrics-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0117",
+  "engineering_family": "SaaS Unit Economics Studio",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "SaaS Metrics Calculator (LTV, CAC, Payback, Churn) — Private Browser Tool",
+    "meta_description": "Calculate a clearly defined set of SaaS unit-economics metrics: customer churn, CAC, simplified LTV, CAC payback, NRR, ending MRR and ARR.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

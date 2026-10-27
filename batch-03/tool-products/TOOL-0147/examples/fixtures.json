@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0147",
+  "known_answer_examples": [
+    "Fill a form elsewhere, open it here, flatten all fields, and download the final submission copy."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

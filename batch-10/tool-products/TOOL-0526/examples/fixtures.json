@@ -1,0 +1,10 @@
+{
+  "tool": "TOOL-0526",
+  "default_inputs": {
+    "loads": "item,running_w,starting_w,start_group\nRefrigerator,200,1200,1\nWell pump,900,2200,2\nLights,300,300,0",
+    "headroom": "20",
+    "surgeHeadroom": "10"
+  },
+  "worked_example": "200W refrigerator with 1200W start plus 900W pump with 2200W start: staggered peak is lower than simultaneous peak.",
+  "source_status": "TEST_PENDING"
+}

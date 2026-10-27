@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0100",
+  "claims": [
+    {
+      "claim": "Default grapheme-cluster semantics are grounded in UAX #29; emoji sequence semantics reference UTS #51.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "uax29",
+        "uts51"
+      ]
+    }
+  ]
+}

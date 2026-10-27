@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.unicode.org/reports/tr44/",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Inspect zero-width marks, bidi controls, variation selectors and word joiners.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  },
+  {
+    "url": "https://www.unicode.org/reports/tr9/",
+    "version": "Unpinned public reference; confirm applicable version during integration",
+    "effective_date": "See upstream standard/version when relevant",
+    "license": "Official website content; reference only, not bundled",
+    "scope": "Inspect zero-width marks, bidi controls, variation selectors and word joiners.",
+    "verification": "Reference URL recorded; claims require integration QA; no on-run source download was performed"
+  }
+]

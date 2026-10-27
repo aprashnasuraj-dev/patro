@@ -1,0 +1,30 @@
+{
+  "tool_id": "TOOL-0010",
+  "claims": [
+    {
+      "claim": "Map safe Compose service fields into inspectable docker run commands",
+      "references": [
+        "https://docs.docker.com/reference/compose-file/services/",
+        "https://compose-spec.io/",
+        "https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "Multiple-container networking, resource orchestration, depends_on, health checks and advanced volumes are not equivalent to plain docker run.",
+      "references": [
+        "https://docs.docker.com/reference/compose-file/services/",
+        "https://compose-spec.io/",
+        "https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

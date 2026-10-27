@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0481",
+  "fixtures": [
+    {
+      "name": "Documented deterministic sample",
+      "input": {
+        "number": "1Z999AA10123456784"
+      },
+      "expect": {
+        "output_label": "Identification result",
+        "value_contains": "UPS"
+      },
+      "runtime_status": "TEST_PENDING"
+    }
+  ]
+}

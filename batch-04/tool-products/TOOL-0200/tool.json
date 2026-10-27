@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0200",
+  "build_sequence": 200,
+  "name": "CSV to Excel with Text Columns (Keep Leading Zeros)",
+  "route": "/tools/csv-to-excel-keep-leading-zeros",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0087",
+  "engineering_family": "Excel and CSV Converter",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "CSV to Excel with Text Columns (Keep Leading Zeros) — Free Local Browser Tool",
+    "meta_description": "Convert CSV to XLSX while forcing every imported cell to text so leading zeros and formula-like strings remain literal data.",
+    "h1": "CSV to Excel with Text Columns (Keep Leading Zeros)",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": 26214400,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": [
+    "/assets/vendor/sheetjs/xlsx-0.20.3/xlsx.mjs"
+  ]
+}

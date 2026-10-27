@@ -1,0 +1,2 @@
+import {describe,it,expect} from 'vitest';import {wcag,result} from '../src/core';
+describe('TOOL-0355',()=>{it('matches WCAG black/white contrast ratio 21:1',()=>{expect(wcag('#000000','#ffffff')).toBeCloseTo(21,8);const r=result('#000000','#ffffff');expect(r.wcagNormal).toBe(true);expect(r.wcagLarge).toBe(true)});it('returns 1:1 for identical colors',()=>expect(wcag('#123456','#123456')).toBeCloseTo(1,8));it('rejects malformed colors',()=>expect(()=>wcag('#fff','#000000')).toThrow())});

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0321",
+  "related": [
+    {
+      "id": "TOOL-0340",
+      "title": "Subresource Integrity (SRI) Hash Generator",
+      "proposed_canonical": "/generators/sri-hash-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0322",
+      "title": "Checksum File Verifier (sha256sums Parser)",
+      "proposed_canonical": "/validators/verify-sha256sums",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0333",
+      "title": "SSH Public Key Fingerprint Calculator",
+      "proposed_canonical": "/calculators/ssh-key-fingerprint-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0323",
+      "title": "Password Strength Auditor with Pattern Breakdown",
+      "proposed_canonical": "/validators/password-strength-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0324",
+      "title": "Diceware Passphrase Generator (EFF Wordlists)",
+      "proposed_canonical": "/generators/diceware-passphrase-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

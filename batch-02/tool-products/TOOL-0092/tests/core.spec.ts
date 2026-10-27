@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {parseTSV,toMarkdown} from '../src/core';describe('excel paste',()=>{it('parses tabs',()=>expect(parseTSV('a\tb\n1\t2')).toEqual([['a','b'],['1','2']]));it('escapes pipes',()=>expect(toMarkdown([['a|b']], 'generate','left')).toContain('a\\|b'));it('supports quoted newline',()=>expect(parseTSV('\"a\nb\"\tc')[0][0]).toBe('a\nb'))});

@@ -1,0 +1,24 @@
+{
+  "id": "TOOL-0153",
+  "name": "Extract Text from PDF by Page",
+  "route": "/tools/pdf-text-extractor",
+  "family_id": "F0073",
+  "execution": "browser",
+  "lazy_load": true,
+  "network_required": false,
+  "uploads_required": false,
+  "third_party_transmission": false,
+  "qa_status": "TEST_PENDING",
+  "seo": {
+    "title": "Extract Text from PDF by Page | Local Browser Tool",
+    "meta_description": "Extract page-scoped text from a local PDF, preserving page boundaries and explicit extraction warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "limits": {
+    "single_file_bytes": 125829120,
+    "notes": "See core.ts for operation-specific page, pixel, attachment and output limits."
+  }
+}

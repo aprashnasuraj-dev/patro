@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0066",
+  "claims": [
+    {
+      "claim": "ListItem.position must increase from 1.",
+      "supporting_url": "https://schema.org/BreadcrumbList",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "Use absolute fully-qualified URLs.",
+      "supporting_url": "https://schema.org/BreadcrumbList",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "schema.org BreadcrumbList and Google breadcrumb guidance."
+  ],
+  "limitations": [
+    "Page breadcrumbs must match the visible navigation; no live crawl is performed."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

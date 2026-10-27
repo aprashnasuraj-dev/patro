@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0254",
+  "name": "HTML Email Signature Generator",
+  "route": "/tools/email-signature-generator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0125",
+  "engineering_family": "Email Signature Designer",
+  "product_type": "structured_document_generator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "HTML Email Signature Generator — Private Browser Tool",
+    "meta_description": "Generate a compact, table-based HTML email signature with validated links, a sandboxed preview, copyable HTML/plain text and an HTML download.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

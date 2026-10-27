@@ -1,0 +1,17 @@
+{
+  "id": "TOOL-0036",
+  "name": "Ansible Inventory INI to YAML Converter",
+  "route": "/tools/ansible-inventory-ini-to-yaml",
+  "family": "F0004",
+  "status": "TEST_PENDING",
+  "execution": "browser",
+  "seo": {
+    "title": "Ansible Inventory INI to YAML Converter | Mission Mangal Tools",
+    "description": "Prepare and inspect ansible inventory ini to yaml converter locally in your browser. Includes a worked example, format limits, and explicit warnings.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "supports": "Supported subset documented in core implementation; unsupported input must produce an error."
+}

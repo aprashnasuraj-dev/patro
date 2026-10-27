@@ -1,0 +1,601 @@
+{
+  "schema_version": "MM530_PHASE4_BATCH_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "workflow_run_id": 40453367367,
+    "artifact_id": 12711621150,
+    "artifact_digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+  },
+  "batch": "BATCH-02",
+  "count": 53,
+  "summary": {
+    "unit_PASS": 53,
+    "compile_PASS": 53,
+    "compile_BLOCKED": 0
+  },
+  "tools": [
+    {
+      "id": "TOOL-0054",
+      "title": "localStorage Quota Tester",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0055",
+      "title": "Browser Video and Audio Codec Support Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0056",
+      "title": "IPv6 Address Expander and Compressor",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0057",
+      "title": "MAC Address Formatter with Offline Vendor Lookup",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0058",
+      "title": "DMARC Record Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0059",
+      "title": "security.txt Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0060",
+      "title": "Email Header Analyzer (Local)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0061",
+      "title": "FAQPage JSON-LD Generator from Pasted Q&A",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0062",
+      "title": "Recipe Schema Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0063",
+      "title": "LocalBusiness Schema with Opening Hours Builder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0064",
+      "title": "JobPosting Schema Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0065",
+      "title": "Product Schema Generator (Offer, Reviews, Shipping)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0066",
+      "title": "BreadcrumbList Schema from URL List",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0067",
+      "title": "VideoObject Schema Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0068",
+      "title": "JSON-LD Validator (Offline Structure Checker)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0069",
+      "title": "hreflang Tag Generator and Reciprocity Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0070",
+      "title": "XML Sitemap Generator from URL List",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0072",
+      "title": "robots.txt Bulk URL Tester",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0073",
+      "title": "Open Graph Tag Generator with Image Size Validator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0074",
+      "title": "Title and Meta Description Pixel Width Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0076",
+      "title": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0077",
+      "title": "Multilingual URL Slug Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0078",
+      "title": "Redirect Chain and Loop Finder from CSV",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0079",
+      "title": "Keyword Cannibalization Finder from GSC Export",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0080",
+      "title": "Event Schema Generator (Online, Hybrid, In-Person)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0081",
+      "title": "Zero-Width and Invisible Character Detector",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0082",
+      "title": "Homoglyph and Confusable Character Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0083",
+      "title": "Unicode Normalization Comparer (NFC, NFD, NFKC, NFKD)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0084",
+      "title": "Mojibake Repair Tool",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0085",
+      "title": "Smart Quotes to Straight Quotes Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0086",
+      "title": "Line Ending Detector and Converter (CRLF, LF, CR)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0088",
+      "title": "Regex ReDoS (Catastrophic Backtracking) Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0089",
+      "title": "Regex Replace Preview with Capture Group Table",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0090",
+      "title": "Duplicate Line Finder with Counts",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0094",
+      "title": "Word and Google Docs HTML Cleaner",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0095",
+      "title": "Readability Score Checker (Multi-Metric)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0096",
+      "title": "String Escape and Unescape for JSON, Java, Python, SQL, Regex",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0097",
+      "title": "Title Case Converter by Style Guide (AP, APA, Chicago, MLA)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0098",
+      "title": "Bulk Find and Replace with Rule Table",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0099",
+      "title": "Word Frequency Counter with Stopword Filter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0100",
+      "title": "Emoji and Grapheme Cluster Inspector",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0101",
+      "title": "Font Subsetter (TTF/OTF/WOFF2)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0102",
+      "title": "TTF/OTF to WOFF2 Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0103",
+      "title": "WOFF2 to TTF Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0104",
+      "title": "Variable Font Axes Inspector and CSS Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0105",
+      "title": "Font Language Coverage Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0106",
+      "title": "Font File Metadata and License Viewer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    }
+  ]
+}

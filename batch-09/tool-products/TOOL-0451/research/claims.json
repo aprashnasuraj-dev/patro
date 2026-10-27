@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Aquarium geometric volume and water-treatment math",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "Chemicals, livestock sensitivity, salinity compensation and actual hydraulic displacement are not automatically determined.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://www.cdc.gov/healthy-pets/about/fish.html"
+  ],
+  "assumptions": "Chemicals, livestock sensitivity, salinity compensation and actual hydraulic displacement are not automatically determined.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

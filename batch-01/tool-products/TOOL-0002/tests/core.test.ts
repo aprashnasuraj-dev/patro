@@ -1,0 +1,10 @@
+import {test} from 'node:test';import {strict as assert} from 'node:assert';import {compileSamples} from '../src/core';
+const opts={strict:false,typeAlias:true,name:'RecordSchema'};
+test('sample missing keys become optional',()=>{const x=compileSamples(['{"a":1,"b":"hi"}','{"a":2,"c":true}'],opts).code;assert.match(x,/"b": z.string\(\).optional\(\)/);assert.match(x,/"a": z.number\(\)/);assert.match(x,/"c": z.boolean\(\).optional\(\)/)});
+test('array items union',()=>assert.match(compileSamples(['[1,"x"]'],opts).code,/z.array\(z.union\(/));
+test('strict uses Zod 4 API',()=>assert.match(compileSamples(['{}'],{...opts,strict:true}).code,/z.strictObject\(/));
+test('malformed JSON rejected',()=>assert.throws(()=>compileSamples(['{bad'],opts),/Invalid JSON/));
+test('identifier injection rejected',()=>assert.throws(()=>compileSamples(['{}'],{...opts,name:'x;alert(1)'}),/identifier/));
+test('overlarge sample rejected',()=>assert.throws(()=>compileSamples(['"'+('x'.repeat(270000))+'"'],opts),/256 KiB/));
+test('nested data bounded',()=>assert.throws(()=>compileSamples(['['.repeat(40)+'0'+']'.repeat(40)],opts),/35 levels/));
+test('null union',()=>assert.match(compileSamples(['{"a":null}','{"a":1}'],opts).code,/z.union/));

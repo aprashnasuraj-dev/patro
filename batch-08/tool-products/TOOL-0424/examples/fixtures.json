@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "jurisdiction": "Local rule required",
+    "deposit": 1800,
+    "damage": 150,
+    "arrears": 0,
+    "other": 0,
+    "days": 30,
+    "trigger": "2026-11-01"
+  },
+  "known_answer": {
+    "output_label": "Estimated amount to return",
+    "expected_value": "$1,650.00"
+  },
+  "boundary_inputs": {
+    "oversized_numeric": 1e+100,
+    "malformed_date": "2026-02-30",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "oversized_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "format": "numeric display in en-US style, 2 decimal places for currencies"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "FHSA annual room $8,000 plus up to $8,000 carryforward; $40,000 lifetime combined contributions/transfers. HBP cap $60,000.",
+    "supporting_urls": [
+      "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/contributing-your-fhsa.html",
+      "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan/participate-home-buyers-plan.html"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Complex excess FHSA repairs, withdrawal year exemptions and RRSP qualification excluded."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "A new FHSA starts with C$8,000 participation room; HBP withdrawal ceiling is C$60,000 subject to eligibility.",
+    "status": "TEST_PENDING"
+  }
+]

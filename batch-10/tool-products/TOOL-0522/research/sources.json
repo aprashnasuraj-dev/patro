@@ -1,0 +1,29 @@
+[
+  {
+    "name": "EU air passenger rights",
+    "url": "https://europa.eu/youreurope/citizens/travel/passenger-rights/air/",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "EU/UK compensation uses distance bands with long-flight sub-4-hour reduction; Canadian uses arrival delay and carrier size.",
+    "uncertainty": "Connections, rerouting, claims windows and the airline fault category may materially change compensation."
+  },
+  {
+    "name": "UK CAA delayed flights",
+    "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/flight-delays-and-cancellations/delays/",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "EU/UK compensation uses distance bands with long-flight sub-4-hour reduction; Canadian uses arrival delay and carrier size.",
+    "uncertainty": "Connections, rerouting, claims windows and the airline fault category may materially change compensation."
+  },
+  {
+    "name": "Canadian Transportation Agency APPR",
+    "url": "https://protection-passager-passenger.otc-cta.gc.ca/en/refunds-and-compensation/flight-delays-cancellations-rebooking-refunds-compensation",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "EU/UK compensation uses distance bands with long-flight sub-4-hour reduction; Canadian uses arrival delay and carrier size.",
+    "uncertainty": "Connections, rerouting, claims windows and the airline fault category may materially change compensation."
+  }
+]

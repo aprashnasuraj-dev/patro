@@ -1,0 +1,14 @@
+{
+  "input": {
+    "scenario": "created",
+    "method": "POST",
+    "resource": "/api/items/42"
+  },
+  "worked_example": "A POST that created a resource returns 201 with Location when possible.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

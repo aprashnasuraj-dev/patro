@@ -1,0 +1,50 @@
+{
+  "id": "TOOL-0451",
+  "name": "Aquarium Volume, Water Change & Dose Calculator",
+  "slug": "aquarium-volume-water-change-dosing",
+  "route": "/tools/aquarium-volume-water-change-dosing",
+  "family": "F0257",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Aquarium Volume, Water Change & Dose Calculator — Interactive Local Tool | AafnaiPatro",
+    "description": "Measure actual filled tank water, change volumes, replacement temperatures and label-directed conditioner amounts with explicit displacement adjustment."
+  },
+  "execution": {
+    "mode": "client-only",
+    "account_required": false,
+    "worker_required": false,
+    "third_party_content_transmission": false,
+    "lazy_load_route_module": true
+  },
+  "entrypoints": {
+    "html": "page.html",
+    "typescript": "src/ui.ts",
+    "css": "src/styles.css"
+  },
+  "shared_imports": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css",
+    "tool-products/_shared/visual.ts"
+  ],
+  "security": {
+    "bounded_inputs": true,
+    "reject_nonfinite": true,
+    "no_user_content_upload": true,
+    "safe_text_rendering": true,
+    "no_untrusted_html": true
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "published": false,
+    "sitemap": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0530",
+  "related": [
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0273",
+      "title": "Rental Property Cash Flow and ROI Calculator",
+      "proposed_canonical": "/calculators/rental-property-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0358",
+      "title": "Printable Bingo Card Generator",
+      "proposed_canonical": "/generators/bingo-card-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0359",
+      "title": "Business Card Maker with Print-Ready PDF and Bleed",
+      "proposed_canonical": "/generators/business-card-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0473",
+      "title": "Carrier Surcharge & Oversize Checker",
+      "proposed_canonical": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

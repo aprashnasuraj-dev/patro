@@ -1,0 +1,7 @@
+import {num,decimal,positiveDecimal,restricted,choice,iso,addDays,addMonths,endOfMonth,dayDifference,csv,fmt,usd,gbp,cad,metric,output} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Prepared offline calculation. Runtime QA has not executed. */
+export function calculate(i:Input):Result {
+  const total=num(i,'totalBalance',0,1e9),cap=num(i,'currentCap',0,100000),made=num(i,'currentContrib',0,1e9),prior=['fyOld1','fyOld2','fyOld3','fyOld4','fyOld5'].map(k=>num(i,k,0,100000));const eligible=total<500000,unused=Math.max(0,cap-made),extra=eligible?prior.reduce((a,b)=>a+b,0):0;const exceeded=Math.max(0,made-cap);let need=exceeded;const used=prior.map(p=>{const u=eligible?Math.min(p,need):0;need-=u;return u});
+  return output('Additional concessional room: A$'+fmt(unused+Math.max(0,extra-exceeded),2),[metric('Current cap remaining','A$'+fmt(unused,2)),metric('Carry-forward eligible',eligible?'Yes':'No — balance ≥ A$500,000'),metric('Potential previous-year carry-forward','A$'+fmt(extra,2)),metric('Prior-year usage (oldest first)','A$'+fmt(used.reduce((a,b)=>a+b,0),2)),metric('Uncovered current excess','A$'+fmt(need,2))],['Enter the actual available unused amounts for each of the prior five years from ATO records; age of each unused amount matters.','The cap can change by financial year and individual circumstances; plan-contribution receipt timing, division 293, personal deductible notices and cap indexation are outside scope.']);
+}

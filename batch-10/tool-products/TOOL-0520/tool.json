@@ -1,0 +1,51 @@
+{
+  "id": "TOOL-0520",
+  "name": "UK ILR and Citizenship Absence Calculator",
+  "slug": "uk-ilr-citizenship-absence-calculator",
+  "route": "/tools/uk-ilr-citizenship-absence-calculator",
+  "family": "F0310",
+  "description": "Check whole-day UK absences against a rolling 12-month ILR screen or nationality total/last-year limits.",
+  "seo": {
+    "title": "UK ILR and Citizenship Absence Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Check whole-day UK absences against a rolling 12-month ILR screen or nationality total/last-year limits.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "calendar",
+  "inputs": [
+    {
+      "key": "path",
+      "label": "Residence route",
+      "default": "ILR-current",
+      "type": "select",
+      "options": [
+        "ILR-current",
+        "citizenship-5",
+        "citizenship-3"
+      ]
+    },
+    {
+      "key": "application",
+      "label": "Target application date",
+      "default": "2026-12-01",
+      "type": "date"
+    },
+    {
+      "key": "trips",
+      "label": "Foreign travel periods: departure,return dates",
+      "default": "departure,return\n2025-06-01,2025-06-21\n2026-08-10,2026-09-05",
+      "type": "textarea"
+    }
+  ]
+}

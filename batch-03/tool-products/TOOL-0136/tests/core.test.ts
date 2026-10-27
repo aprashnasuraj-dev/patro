@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {extract} from '../src/core';describe('TOOL-0136 GIF extraction guards',()=>{it('rejects an empty GIF before frame decoding',async()=>{await expect(extract(new File([],'empty.gif',{type:'image/gif'}),'all')).rejects.toThrow()});it.todo('verifies composited frame pixels/delays and every-10 selection with a reviewed GIF fixture')});

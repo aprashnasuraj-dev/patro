@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0335",
+  "related": [
+    {
+      "id": "TOOL-0336",
+      "title": "UUID v4/v7 and ULID Generator with Timestamp Decoder",
+      "proposed_canonical": "/generators/uuid-v7-generator-decoder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0331",
+      "title": "RSA and ECDSA Key Pair Generator (PEM and JWK)",
+      "proposed_canonical": "/generators/generate-rsa-key-pair",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0333",
+      "title": "SSH Public Key Fingerprint Calculator",
+      "proposed_canonical": "/calculators/ssh-key-fingerprint-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0334",
+      "title": "PGP Public Key Inspector",
+      "proposed_canonical": "/analyzers/pgp-key-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0379",
+      "title": "Math Worksheet Generator with Answer Key (PDF)",
+      "proposed_canonical": "/generators/math-worksheet-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

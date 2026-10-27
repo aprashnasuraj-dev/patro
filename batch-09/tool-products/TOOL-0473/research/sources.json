@@ -1,0 +1,17 @@
+{
+  "research_scope": "Only tool-specific authoritative inputs and formulas",
+  "reviewed_on": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://www.ups.com/us/en/support/shipping-support/shipping-dimensions-weight",
+      "publisher": "www.ups.com",
+      "retrieved_context_date": "2026-10-26",
+      "version_or_year": "2026 guidance unless otherwise stated; 2024 BLS baseline explicit for TOOL-0461",
+      "effective_date": "Source-dependent; authoritative effective period must be checked before publication",
+      "license": "Reference hyperlinks only; no proprietary table or brand imagery bundled",
+      "key_role": "Relevant domain formula, eligibility boundary or document rule",
+      "uncertainty": "Statutes, tariff rates, source tables and vendor rules can be revised"
+    }
+  ],
+  "third_party_content_bundled": false
+}

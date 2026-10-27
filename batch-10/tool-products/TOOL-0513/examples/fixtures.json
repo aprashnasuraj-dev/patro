@@ -1,0 +1,14 @@
+{
+  "tool": "TOOL-0513",
+  "default_inputs": {
+    "jurisdiction": "federal",
+    "serviceYears": "4",
+    "vacWages": "72000",
+    "holidayWages": "4500",
+    "holidayVacation": "200",
+    "worked": "0",
+    "hourly": "30"
+  },
+  "worked_example": "Federal worker after 6 years: C$72,000 qualifying wages × 6% = C$4,320 vacation pay.",
+  "source_status": "TEST_PENDING"
+}

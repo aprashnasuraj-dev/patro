@@ -1,0 +1,27 @@
+{
+  "default_input": {
+    "start": "2026-11-01",
+    "exam": "2027-01-31",
+    "weekdays": "123456",
+    "hours": 2,
+    "topic1": 50,
+    "topic2": 30,
+    "topic3": 20,
+    "needed": 120
+  },
+  "hand_reference": {
+    "label": "Eligible study days",
+    "value": "78",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0102",
+  "related": [
+    {
+      "id": "TOOL-0101",
+      "title": "Font Subsetter (TTF/OTF/WOFF2)",
+      "proposed_canonical": "/utilities/font-subsetter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0103",
+      "title": "WOFF2 to TTF Converter",
+      "proposed_canonical": "/converters/woff2-to-ttf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0112",
+      "title": "Text to SVG Path Converter",
+      "proposed_canonical": "/converters/text-to-svg-path",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0104",
+      "title": "Variable Font Axes Inspector and CSS Generator",
+      "proposed_canonical": "/generators/variable-font-axes-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0105",
+      "title": "Font Language Coverage Checker",
+      "proposed_canonical": "/validators/font-language-support-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

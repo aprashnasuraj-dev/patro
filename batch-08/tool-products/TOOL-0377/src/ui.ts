@@ -1,0 +1,1 @@
+import {convertNotation} from './core';import {q,val,num,setError,metricGrid} from '../_vendor/ui';q('run').addEventListener('click',()=>{const out=q('result');try{const r=convertNotation(val('value'),val('mode') as any,Math.trunc(num('sig')));out.replaceChildren(metricGrid([['Coefficient',r.coefficient],['Exponent',r.exponent],['Notation',r.text]]))}catch(e){setError(out,e)}});

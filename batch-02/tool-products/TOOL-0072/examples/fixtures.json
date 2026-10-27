@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "robots": "User-agent: *\nDisallow: /private/\nAllow: /private/public/",
+    "agent": "Googlebot",
+    "urls": "https://example.com/private/a\nhttps://example.com/private/public/a\nhttps://example.com/"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "Disallow: /admin blocks /admin/settings; Allow: /admin/public can override.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{robots:'User-agent: *\\nDisallow: /secret\\nAllow: /secret/open',agent:'Googlebot',urls:'https://example.com/secret\\nhttps://example.com/secret/open'}",
+    "assertions": "assert.equal(result.metrics[1][1],1); assert.match(result.text,/BLOCK/); assert.match(result.text,/ALLOW/);"
+  }
+}

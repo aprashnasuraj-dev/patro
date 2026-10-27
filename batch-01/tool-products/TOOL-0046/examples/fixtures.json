@@ -1,0 +1,13 @@
+{
+  "input": {
+    "query": "user[name]=Ana&tags[0]=red&tags[1]=blue",
+    "duplicate": "Array"
+  },
+  "worked_example": "user[name]=Ana&tags[0]=red yields {\"user\":{\"name\":\"Ana\"},\"tags\":[\"red\"]}.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

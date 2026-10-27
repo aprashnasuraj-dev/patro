@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0339",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Obfuscated indicators can have many forms; this bounded transform does not decode nested percent-encoding, Unicode escapes or arbitrary malware-analysis syntax."
+}

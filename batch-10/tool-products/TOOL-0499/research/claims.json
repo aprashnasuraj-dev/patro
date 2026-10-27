@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Method and boundaries",
+    "details": "2026 annual limits $4,400 self-only, $8,750 family; catch-up $1,000 when age eligible.",
+    "sources": [
+      "https://www.irs.gov/irb/2025-21_IRB",
+      "https://www.irs.gov/publications/p969"
+    ],
+    "status": "REFERENCE_PREPARED",
+    "uncertainty": "Last-month eligibility testing period requires separate verification."
+  },
+  {
+    "claim": "Staging assurance",
+    "details": "Source package only; not runtime tested. All inputs local.",
+    "status": "TEST_PENDING"
+  }
+]

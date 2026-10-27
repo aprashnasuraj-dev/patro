@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0268",
+  "examples": [
+    {
+      "inputs": {
+        "total_rise_in": 108,
+        "profile": "2021 IRC residential",
+        "max_riser_in": 7.75,
+        "min_tread_in": 10
+      },
+      "expected_note": "Riser count is rounded upward so actual riser does not exceed the selected maximum."
+    }
+  ]
+}

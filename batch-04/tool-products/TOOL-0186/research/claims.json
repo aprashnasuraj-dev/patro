@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "Reorder, rename, or drop CSV columns using an explicit column plan, preserving row data without silent field guessing.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  },
+  {
+    "claim": "The plan is explicit and name-based; duplicate output names are blocked.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0336",
+  "examples": [
+    {
+      "uuid7_layout": "first 48 bits Unix epoch milliseconds; version nibble 7; variant 10xx"
+    },
+    {
+      "ulid_layout": "10 Crockford Base32 timestamp chars + 16 randomness chars"
+    }
+  ]
+}

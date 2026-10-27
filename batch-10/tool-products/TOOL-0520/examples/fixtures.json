@@ -1,0 +1,10 @@
+{
+  "tool": "TOOL-0520",
+  "default_inputs": {
+    "path": "ILR-current",
+    "application": "2026-12-01",
+    "trips": "departure,return\n2025-06-01,2025-06-21\n2026-08-10,2026-09-05"
+  },
+  "worked_example": "For standard five-year nationality route, normally <=450 total days and <=90 days in final 12 months.",
+  "source_status": "TEST_PENDING"
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0283",
+  "claim": "Riegel T\u2082=T\u2081(D\u2082/D\u2081)^1.06; Cameron T\u2082=(T\u2081/D\u2081)D\u2082\u00b7a(D\u2081)/a(D\u2082), a(d)=13.49681\u22120.000030363d+835.7114/d^0.7905, d in metres.",
+  "assumptions": [
+    "Both extrapolate from race performances; fitness, course and conditions dominate over long jumps. Model valid ranges differ.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://ns2.runbundle.com/tools/race-predictors/general-race-predictors"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

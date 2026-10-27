@@ -1,0 +1,38 @@
+{
+  "id": "TOOL-0487",
+  "name": "Raised Bed Soil & Compost Calculator",
+  "route": "/tools/raised-bed-soil-compost-calculator",
+  "slug": "raised-bed-soil-compost-calculator",
+  "family": "F0140",
+  "batch": "BATCH-10",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Raised Bed Soil & Compost Calculator | AafnaiPatro Tools",
+    "description": "Compute raised-bed fill volume, topsoil/compost proportions, bag count, and ordering buffer in metric or imperial inputs."
+  },
+  "execution": {
+    "mode": "browser",
+    "lazy_load_on_route": true,
+    "server_required": false,
+    "account_required": false,
+    "upload_required": false,
+    "user_data_transmission": false,
+    "dependencies": [
+      "../_shared/guard",
+      "../_shared/ui",
+      "../_shared/ui.css"
+    ]
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "sitemap_entry": false,
+    "published": false
+  }
+}

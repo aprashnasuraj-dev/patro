@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0011",
+  "related": [
+    {
+      "id": "TOOL-0022",
+      "title": "GitHub Actions to GitLab CI Converter",
+      "proposed_canonical": "/converters/github-actions-to-gitlab-ci",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0023",
+      "title": "GitLab CI to GitHub Actions Converter",
+      "proposed_canonical": "/converters/gitlab-ci-to-github-actions",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0455",
+      "title": "Clear Aligner Schedule Planner",
+      "proposed_canonical": "/planners/clear-aligner-schedule-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0467",
+      "title": "Professional Exam Study Schedule Generator",
+      "proposed_canonical": "/planners/professional-exam-study-scheduler",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0485",
+      "title": "BBQ Reverse Cook Schedule Planner",
+      "proposed_canonical": "/planners/bbq-reverse-cook-schedule-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

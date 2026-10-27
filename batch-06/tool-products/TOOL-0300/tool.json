@@ -1,0 +1,74 @@
+{
+  "id": "TOOL-0300",
+  "name": "DOTS and Wilks Score Calculator for Powerlifting",
+  "slug": "dots-score-calculator",
+  "route": "/tools/dots-score-calculator",
+  "family": "F0149",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "DOTS and Wilks Score Calculator for Powerlifting | AafnaiPatro",
+    "description": "Compare DOTS and original Wilks scores for a supported powerlifting bodyweight and competition total.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "select",
+      "key": "sex",
+      "label": "Coefficients",
+      "options": [
+        [
+          "men",
+          "Men"
+        ],
+        [
+          "women",
+          "Women"
+        ]
+      ],
+      "default": "men"
+    },
+    {
+      "type": "number",
+      "key": "mass",
+      "label": "Body mass",
+      "default": 75,
+      "min": 40,
+      "max": 210,
+      "step": "any",
+      "unit": "kg"
+    },
+    {
+      "type": "number",
+      "key": "total",
+      "label": "Best total",
+      "default": 500,
+      "min": 1,
+      "max": 1400,
+      "step": "any",
+      "unit": "kg"
+    }
+  ],
+  "explanation": "DOTS=500×total/(a·mass^4+b·mass³+c·mass²+d·mass+e). Wilks=500×total/(a+b·mass+c·mass²+d·mass³+e·mass⁴+f·mass⁵), sex-specific published coefficients.",
+  "limitations": "Scores are not directly comparable across scoring systems or rulebooks; outside fitted ranges blocked rather than extrapolated.",
+  "related_tool_ids": [
+    "TOOL-0281",
+    "TOOL-0285"
+  ],
+  "sources": [
+    "https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/Models_Evaluation-I-2020.pdf",
+    "https://www.openpowerlifting.org/"
+  ],
+  "special_notes": "Requires standard/federation verification at integration."
+}

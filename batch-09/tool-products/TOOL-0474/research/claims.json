@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "statement": "Separate product value, duty, taxes and freight",
+      "evidence_type": "explicit arithmetic/formula and sourced constraints",
+      "source_urls": [
+        "https://www.help.cbp.gov/s/article/Article-1175?language=en_US",
+        "https://www.help.cbp.gov/s/article/Article-1902?language=en_US"
+      ],
+      "verification_status": "SOURCE_PREPARED_NOT_TESTED"
+    },
+    {
+      "statement": "Government tariff rates change rapidly; this is not a binding tariff determination.",
+      "evidence_type": "limitation/uncertainty",
+      "verification_status": "TEST_PENDING"
+    }
+  ],
+  "assumptions": "Government tariff rates change rapidly; this is not a binding tariff determination.",
+  "claimed_certification": false,
+  "staleness_review_required": true
+}

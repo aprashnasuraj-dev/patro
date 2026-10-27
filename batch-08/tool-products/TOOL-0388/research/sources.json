@@ -1,0 +1,8 @@
+[
+  {
+    "title": "G0/G1 Linear Move",
+    "url": "https://marlinfw.org/docs/gcode/G000-G001.html",
+    "authority": "Marlin Firmware",
+    "use": "formula/format provenance"
+  }
+]

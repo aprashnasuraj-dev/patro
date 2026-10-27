@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {inspect} from '../src/core';describe('TOOL-0106 font metadata guards',()=>{it('rejects malformed font bytes',async()=>{await expect(inspect(new ArrayBuffer(0),'bad.ttf')).rejects.toThrow()});it.todo('reads reviewed name-table and OS/2 fsType fixtures without treating absent license metadata as unrestricted')});

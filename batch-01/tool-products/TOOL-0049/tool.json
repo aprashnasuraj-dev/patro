@@ -1,0 +1,28 @@
+{
+  "id": "TOOL-0049",
+  "name": "Cache-Control Header Builder",
+  "reserved_route": "/tools/cache-control-header-generator",
+  "family_id": "F0023",
+  "batch_id": "BATCH-01",
+  "run_id": "RUN-02",
+  "description": "Build Cache-Control response directives for public assets, private responses or no-store data.",
+  "seo": {
+    "title": "Cache-Control Header Builder | Mission Mangal Tools",
+    "meta_description": "Build Cache-Control response directives for public assets, private responses or no-store data.",
+    "h1": "Cache-Control Header Builder",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "mode": "client-side",
+    "lazy_route": true,
+    "cloudflare_worker_required": false,
+    "account_required": false,
+    "data_upload_required": false,
+    "third_party_data_transmission": false
+  },
+  "qa_status": "TEST_PENDING"
+}

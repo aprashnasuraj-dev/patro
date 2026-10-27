@@ -1,0 +1,26 @@
+{
+  "default_input": {
+    "jurisdiction": "Jurisdiction + claim type (verify law)",
+    "accrual": "2025-01-15",
+    "years": 2,
+    "months": 0,
+    "days": 0,
+    "tolling": 0,
+    "filingRule": "none"
+  },
+  "hand_reference": {
+    "label": "Unadjusted civil-date estimate",
+    "value": "2027-01-15",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

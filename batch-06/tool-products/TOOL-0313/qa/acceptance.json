@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0313",
+  "status": "TEST_PENDING",
+  "product_tests_executed": false,
+  "source_preparation_complete": false,
+  "blocked_reason": "The standalone package does not yet contain the existing validated 77,070-day BS\u2194AD month/day dataset. Reusing that exact local dataset is required; an approximate \u201c+56/57 years\u201d conversion would be misleading.",
+  "checks_prepared": [
+    "known-answer",
+    "boundaries",
+    "malformed-input",
+    "unsupported-input",
+    "security",
+    "parser-abuse",
+    "output-formatting",
+    "copy/export/download",
+    "responsive interaction",
+    "accessibility scenarios",
+    "performance-sensitive bounds"
+  ],
+  "publication_gate": "LOCKED"
+}

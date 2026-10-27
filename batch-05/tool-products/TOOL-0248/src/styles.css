@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.formula-card{border-left:4px solid var(--accent);padding:10px 12px;background:color-mix(in srgb,var(--accent) 6%,transparent);border-radius:10px}.result h2{margin-top:0}

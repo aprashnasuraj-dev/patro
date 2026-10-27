@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0092",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "gfm",
+      "url": "https://github.github.com/gfm/",
+      "version": "GitHub Flavored Markdown Spec",
+      "effective_date": null,
+      "license": "Specification terms per GitHub",
+      "notes": "Used only for pipe-table escaping/output conventions."
+    },
+    {
+      "id": "rfc4180",
+      "url": "https://www.rfc-editor.org/rfc/rfc4180.html",
+      "version": "RFC 4180",
+      "effective_date": "2005-10",
+      "license": "IETF RFC publication",
+      "notes": "Informational common CSV format; not a universal CSV standard."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

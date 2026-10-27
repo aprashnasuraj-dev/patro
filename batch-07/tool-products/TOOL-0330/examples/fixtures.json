@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0330",
+  "examples": [
+    {
+      "round_trip": {
+        "bytes": "00 01 02 ff",
+        "password": "test"
+      },
+      "expected": "Every chunk authenticates and decrypted bytes equal input."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "default_input": {
+    "pallet": "US GMA 48×40 in",
+    "cartonL": 16,
+    "cartonW": 12,
+    "cartonH": 10,
+    "cartonWeight": 20,
+    "maxHeight": 60,
+    "palletHeight": 6,
+    "payload": 2000
+  },
+  "hand_reference": {
+    "label": "Maximum modeled cartons",
+    "value": "48",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

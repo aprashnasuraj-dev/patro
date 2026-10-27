@@ -1,0 +1,11 @@
+[
+  {
+    "name": "US DOE Energy Saver generators",
+    "url": "https://www.energy.gov/energysaver/using-portable-generators",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Peak = total steady running watts plus the largest simultaneous starting extra watts; applies user-entered reserve.",
+    "uncertainty": "Does not size fuel tank, neutral bonding, grounding, power factor or transfer switch."
+  }
+]

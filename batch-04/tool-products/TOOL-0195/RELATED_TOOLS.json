@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0195",
+  "related": [
+    {
+      "id": "TOOL-0199",
+      "title": "Excel Formula Extractor",
+      "proposed_canonical": "/extractors/excel-formula-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0113",
+      "title": "Icon Font Glyph Map Extractor",
+      "proposed_canonical": "/extractors/icon-font-glyph-map",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0131",
+      "title": "Image Color Palette Extractor with Contrast Pairs",
+      "proposed_canonical": "/extractors/image-color-palette-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0136",
+      "title": "GIF Frame Extractor",
+      "proposed_canonical": "/extractors/gif-frame-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0157",
+      "title": "PDF Attachment Extractor",
+      "proposed_canonical": "/extractors/extract-pdf-attachments",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

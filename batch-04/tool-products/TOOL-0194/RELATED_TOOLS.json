@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0194",
+  "related": [
+    {
+      "id": "TOOL-0186",
+      "title": "CSV Column Reorder, Rename and Drop Tool",
+      "proposed_canonical": "/utilities/csv-column-editor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0192",
+      "title": "Date Format Normalizer for CSV Columns",
+      "proposed_canonical": "/formatters/csv-date-format-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0193",
+      "title": "Phone Number Normalizer to E.164",
+      "proposed_canonical": "/converters/phone-numbers-to-e164",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0071",
+      "title": "Sitemap Splitter (50,000 URL Limit)",
+      "proposed_canonical": "/editors/sitemap-splitter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0342",
+      "title": "Instagram Carousel and Grid Image Splitter",
+      "proposed_canonical": "/editors/split-image-for-instagram-carousel",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

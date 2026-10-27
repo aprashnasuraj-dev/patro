@@ -1,0 +1,3185 @@
+{
+  "schema_version": "MM530_PHASE6_STAGE_V1",
+  "tools": [
+    {
+      "id": "TOOL-0001",
+      "canonical_url": "/generators/csv-to-graphql-schema",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0002",
+      "canonical_url": "/converters/json-to-zod-schema",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0003",
+      "canonical_url": "/converters/openapi-to-typescript-interfaces",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0004",
+      "canonical_url": "/converters/sql-to-prisma-schema",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0005",
+      "canonical_url": "/generators/json-to-protobuf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0006",
+      "canonical_url": "/editors/har-file-redactor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0007",
+      "canonical_url": "/converters/har-to-curl",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0008",
+      "canonical_url": "/converters/postman-collection-to-markdown",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0009",
+      "canonical_url": "/converters/env-to-kubernetes-secret",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0010",
+      "canonical_url": "/converters/docker-compose-to-docker-run",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0011",
+      "canonical_url": "/planners/cron-to-github-actions-schedule",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0012",
+      "canonical_url": "/generators/csv-to-create-table",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0013",
+      "canonical_url": "/generators/json-to-postgres-upsert",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0014",
+      "canonical_url": "/converters/mongodb-extended-json-to-json",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0015",
+      "canonical_url": "/converters/jsonl-to-json-array",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0016",
+      "canonical_url": "/converters/access-log-to-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0017",
+      "canonical_url": "/converters/tfvars-to-json",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0018",
+      "canonical_url": "/converters/helm-values-to-set-flags",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0019",
+      "canonical_url": "/extractors/package-lock-duplicate-finder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0020",
+      "canonical_url": "/utilities/json-diff-ignore-order",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0021",
+      "canonical_url": "/converters/kubernetes-resource-units-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0022",
+      "canonical_url": "/converters/github-actions-to-gitlab-ci",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0023",
+      "canonical_url": "/converters/gitlab-ci-to-github-actions",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0024",
+      "canonical_url": "/validators/dockerfile-linter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0025",
+      "canonical_url": "/validators/nginx-location-match-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0026",
+      "canonical_url": "/generators/nginx-redirect-map-from-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0027",
+      "canonical_url": "/generators/htaccess-redirects-from-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0028",
+      "canonical_url": "/converters/htaccess-to-nginx",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0029",
+      "canonical_url": "/validators/systemd-oncalendar-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0030",
+      "canonical_url": "/analyzers/terraform-plan-json-viewer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0031",
+      "canonical_url": "/validators/iam-policy-wildcard-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0032",
+      "canonical_url": "/generators/aws-arn-parser",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0033",
+      "canonical_url": "/generators/s3-bucket-policy-cloudfront-oac",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0034",
+      "canonical_url": "/validators/cidr-overlap-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0035",
+      "canonical_url": "/converters/ufw-to-iptables",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0036",
+      "canonical_url": "/converters/ansible-inventory-ini-to-yaml",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0037",
+      "canonical_url": "/validators/codeowners-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0038",
+      "canonical_url": "/validators/gitignore-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0039",
+      "canonical_url": "/validators/certificate-chain-order-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0040",
+      "canonical_url": "/calculators/semver-range-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0041",
+      "canonical_url": "/generators/cors-config-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0042",
+      "canonical_url": "/utilities/which-http-status-code",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0043",
+      "canonical_url": "/generators/set-cookie-builder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0044",
+      "canonical_url": "/generators/csp-builder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0045",
+      "canonical_url": "/analyzers/bulk-user-agent-parser",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0046",
+      "canonical_url": "/converters/query-string-to-json",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0047",
+      "canonical_url": "/formatters/url-encode-path-vs-query",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0048",
+      "canonical_url": "/analyzers/http-response-header-analyzer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0049",
+      "canonical_url": "/generators/cache-control-header-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0050",
+      "canonical_url": "/generators/hsts-header-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0051",
+      "canonical_url": "/generators/permissions-policy-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0052",
+      "canonical_url": "/validators/websocket-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0053",
+      "canonical_url": "/validators/sse-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0054",
+      "canonical_url": "/validators/localstorage-size-limit-test",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0055",
+      "canonical_url": "/validators/browser-codec-support-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0056",
+      "canonical_url": "/editors/ipv6-expand-compress",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0057",
+      "canonical_url": "/formatters/mac-address-formatter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0058",
+      "canonical_url": "/generators/dmarc-record-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0059",
+      "canonical_url": "/generators/security-txt-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0060",
+      "canonical_url": "/analyzers/email-header-analyzer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0061",
+      "canonical_url": "/generators/faq-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0062",
+      "canonical_url": "/generators/recipe-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0063",
+      "canonical_url": "/generators/local-business-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0064",
+      "canonical_url": "/generators/jobposting-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0065",
+      "canonical_url": "/generators/product-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0066",
+      "canonical_url": "/utilities/breadcrumb-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0067",
+      "canonical_url": "/generators/video-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0068",
+      "canonical_url": "/validators/json-ld-validator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0069",
+      "canonical_url": "/generators/hreflang-generator-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0070",
+      "canonical_url": "/generators/sitemap-from-url-list",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0071",
+      "canonical_url": "/editors/sitemap-splitter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0072",
+      "canonical_url": "/validators/robots-txt-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0073",
+      "canonical_url": "/generators/open-graph-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0074",
+      "canonical_url": "/validators/title-tag-pixel-width-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0075",
+      "canonical_url": "/generators/bulk-utm-builder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0076",
+      "canonical_url": "/editors/remove-tracking-parameters",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0077",
+      "canonical_url": "/generators/url-slug-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0078",
+      "canonical_url": "/extractors/redirect-chain-finder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0079",
+      "canonical_url": "/extractors/keyword-cannibalization-finder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0080",
+      "canonical_url": "/generators/event-schema-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0081",
+      "canonical_url": "/analyzers/invisible-character-detector",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0082",
+      "canonical_url": "/validators/homoglyph-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0083",
+      "canonical_url": "/utilities/unicode-normalization-comparer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0084",
+      "canonical_url": "/editors/fix-mojibake",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0085",
+      "canonical_url": "/converters/smart-quotes-to-straight-quotes",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0086",
+      "canonical_url": "/converters/line-ending-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0087",
+      "canonical_url": "/validators/word-level-text-diff",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0088",
+      "canonical_url": "/validators/regex-redos-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0089",
+      "canonical_url": "/utilities/regex-replace-preview",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0090",
+      "canonical_url": "/extractors/find-duplicate-lines",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0091",
+      "canonical_url": "/converters/fixed-width-to-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0092",
+      "canonical_url": "/converters/excel-to-markdown-table",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0093",
+      "canonical_url": "/utilities/strip-markdown",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0094",
+      "canonical_url": "/editors/clean-word-html",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0095",
+      "canonical_url": "/validators/readability-score-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0096",
+      "canonical_url": "/utilities/string-escape-unescape",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0097",
+      "canonical_url": "/converters/title-case-converter-style-guides",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0098",
+      "canonical_url": "/utilities/bulk-find-and-replace",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0099",
+      "canonical_url": "/utilities/word-frequency-counter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0100",
+      "canonical_url": "/analyzers/emoji-unicode-inspector",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0101",
+      "canonical_url": "/utilities/font-subsetter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0102",
+      "canonical_url": "/converters/ttf-to-woff2",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0103",
+      "canonical_url": "/converters/woff2-to-ttf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0104",
+      "canonical_url": "/generators/variable-font-axes-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0105",
+      "canonical_url": "/validators/font-language-support-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0106",
+      "canonical_url": "/analyzers/font-metadata-viewer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0107",
+      "canonical_url": "/generators/font-face-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0108",
+      "canonical_url": "/generators/font-fallback-size-adjust-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0109",
+      "canonical_url": "/generators/css-font-stack-builder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0110",
+      "canonical_url": "/generators/fluid-typography-clamp-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0111",
+      "canonical_url": "/validators/test-local-font-file",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0112",
+      "canonical_url": "/converters/text-to-svg-path",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0113",
+      "canonical_url": "/extractors/icon-font-glyph-map",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0114",
+      "canonical_url": "/extractors/which-font-supports-character",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0115",
+      "canonical_url": "/analyzers/kerning-pairs-viewer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0116",
+      "canonical_url": "/analyzers/opentype-features-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0117",
+      "canonical_url": "/calculators/text-width-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0118",
+      "canonical_url": "/generators/ascii-banner-code-comment",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0119",
+      "canonical_url": "/extractors/pdf-fonts-lister",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0120",
+      "canonical_url": "/generators/google-fonts-css2-url-builder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0121",
+      "canonical_url": "/analyzers/remove-exif-data",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0122",
+      "canonical_url": "/converters/heic-to-jpg",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0123",
+      "canonical_url": "/comparisons/image-to-avif-webp-compare",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0124",
+      "canonical_url": "/converters/compress-image-to-kb",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0125",
+      "canonical_url": "/editors/passport-photo-size-cropper",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0126",
+      "canonical_url": "/generators/favicon-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0127",
+      "canonical_url": "/generators/app-icon-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0128",
+      "canonical_url": "/generators/css-sprite-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0129",
+      "canonical_url": "/editors/svg-optimizer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0130",
+      "canonical_url": "/converters/svg-to-png",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0131",
+      "canonical_url": "/extractors/image-color-palette-extractor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0132",
+      "canonical_url": "/generators/blurhash-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0133",
+      "canonical_url": "/generators/seamless-pattern-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0134",
+      "canonical_url": "/comparisons/image-diff-comparator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0135",
+      "canonical_url": "/editors/blur-image-redact",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0136",
+      "canonical_url": "/extractors/gif-frame-extractor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0137",
+      "canonical_url": "/editors/gif-speed-changer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0138",
+      "canonical_url": "/converters/apng-to-gif",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0139",
+      "canonical_url": "/editors/change-image-dpi",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0140",
+      "canonical_url": "/converters/bulk-image-resizer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0141",
+      "canonical_url": "/analyzers/pdf-metadata-remover",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0142",
+      "canonical_url": "/editors/rearrange-pdf-pages",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0143",
+      "canonical_url": "/editors/split-pdf-by-bookmarks",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0144",
+      "canonical_url": "/editors/merge-pdf-with-bookmarks",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0145",
+      "canonical_url": "/utilities/bates-numbering-pdf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0146",
+      "canonical_url": "/editors/pdf-watermark",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0147",
+      "canonical_url": "/editors/flatten-pdf-form",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0148",
+      "canonical_url": "/extractors/pdf-form-field-lister",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0149",
+      "canonical_url": "/editors/crop-pdf-margins",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0150",
+      "canonical_url": "/converters/resize-pdf-to-a4",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0151",
+      "canonical_url": "/converters/images-to-pdf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0152",
+      "canonical_url": "/converters/pdf-to-images",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0153",
+      "canonical_url": "/extractors/pdf-text-extractor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0154",
+      "canonical_url": "/converters/pdf-table-to-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0155",
+      "canonical_url": "/utilities/redact-pdf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0156",
+      "canonical_url": "/utilities/reduce-pdf-size",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0157",
+      "canonical_url": "/extractors/extract-pdf-attachments",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0158",
+      "canonical_url": "/analyzers/pdf-page-size-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0159",
+      "canonical_url": "/converters/docx-to-markdown",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0160",
+      "canonical_url": "/extractors/extract-links-from-pdf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0161",
+      "canonical_url": "/editors/trim-video-without-reencoding",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0162",
+      "canonical_url": "/extractors/extract-audio-from-video",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0163",
+      "canonical_url": "/converters/video-to-gif",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0164",
+      "canonical_url": "/converters/compress-video-to-size",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0165",
+      "canonical_url": "/editors/rotate-video",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0166",
+      "canonical_url": "/editors/remove-audio-from-video",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0167",
+      "canonical_url": "/extractors/extract-frames-from-video",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0168",
+      "canonical_url": "/editors/change-video-speed",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0169",
+      "canonical_url": "/converters/mov-to-mp4",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0170",
+      "canonical_url": "/converters/webm-to-mp4",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0171",
+      "canonical_url": "/utilities/audio-cutter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0172",
+      "canonical_url": "/editors/merge-audio-files",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0173",
+      "canonical_url": "/editors/change-audio-speed-pitch",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0174",
+      "canonical_url": "/formatters/audio-loudness-normalizer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0175",
+      "canonical_url": "/editors/remove-silence-from-audio",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0176",
+      "canonical_url": "/converters/wav-to-mp3",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0177",
+      "canonical_url": "/analyzers/bpm-detector",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0178",
+      "canonical_url": "/generators/audio-waveform-image-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0179",
+      "canonical_url": "/analyzers/audio-spectrogram-viewer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0180",
+      "canonical_url": "/converters/srt-time-shifter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0181",
+      "canonical_url": "/editors/split-csv-by-column",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0182",
+      "canonical_url": "/editors/merge-csv-files",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0183",
+      "canonical_url": "/utilities/csv-remove-duplicates",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0184",
+      "canonical_url": "/utilities/csv-delimiter-encoding-fixer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0185",
+      "canonical_url": "/converters/excel-to-json",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0186",
+      "canonical_url": "/utilities/csv-column-editor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0187",
+      "canonical_url": "/analyzers/csv-pivot-table",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0188",
+      "canonical_url": "/editors/split-excel-sheets",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0189",
+      "canonical_url": "/utilities/combine-excel-sheets",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0190",
+      "canonical_url": "/utilities/clean-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0191",
+      "canonical_url": "/validators/csv-validator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0192",
+      "canonical_url": "/formatters/csv-date-format-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0193",
+      "canonical_url": "/converters/phone-numbers-to-e164",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0194",
+      "canonical_url": "/editors/split-full-name-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0195",
+      "canonical_url": "/extractors/extract-emails-from-text",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0196",
+      "canonical_url": "/converters/csv-to-html-table",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0197",
+      "canonical_url": "/utilities/join-csv-files",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0198",
+      "canonical_url": "/comparisons/csv-diff",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0199",
+      "canonical_url": "/extractors/excel-formula-extractor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0200",
+      "canonical_url": "/converters/csv-to-excel-keep-leading-zeros",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0201",
+      "canonical_url": "/calculators/ab-test-significance-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0202",
+      "canonical_url": "/calculators/ab-test-sample-size-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0203",
+      "canonical_url": "/calculators/wilson-score-interval-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0204",
+      "canonical_url": "/calculators/survey-sample-size-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0205",
+      "canonical_url": "/calculators/chi-square-test-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0206",
+      "canonical_url": "/calculators/welch-t-test-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0207",
+      "canonical_url": "/calculators/mann-whitney-u-test-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0208",
+      "canonical_url": "/calculators/linear-regression-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0209",
+      "canonical_url": "/calculators/correlation-matrix-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0210",
+      "canonical_url": "/calculators/outlier-detection-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0211",
+      "canonical_url": "/calculators/exponential-smoothing-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0212",
+      "canonical_url": "/calculators/percentile-calculator-from-data",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0213",
+      "canonical_url": "/calculators/z-score-to-percentile-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0214",
+      "canonical_url": "/calculators/binomial-poisson-probability-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0215",
+      "canonical_url": "/calculators/bayes-theorem-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0216",
+      "canonical_url": "/calculators/prime-factorization-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0217",
+      "canonical_url": "/calculators/matrix-calculator-with-steps",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0218",
+      "canonical_url": "/utilities/random-sample-generator-with-seed",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0219",
+      "canonical_url": "/utilities/monte-carlo-project-estimate",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0220",
+      "canonical_url": "/calculators/effect-size-calculator-cohens-d",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0221",
+      "canonical_url": "/calculators/loan-payoff-extra-payments-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0222",
+      "canonical_url": "/calculators/debt-snowball-vs-avalanche-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0223",
+      "canonical_url": "/calculators/rsu-tax-withholding-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0224",
+      "canonical_url": "/calculators/coast-fire-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0225",
+      "canonical_url": "/calculators/compound-interest-with-inflation-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0226",
+      "canonical_url": "/calculators/sip-calculator-with-step-up",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0227",
+      "canonical_url": "/calculators/emi-flat-vs-reducing-balance-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0228",
+      "canonical_url": "/calculators/credit-card-payoff-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0229",
+      "canonical_url": "/calculators/true-apr-calculator-with-fees",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0230",
+      "canonical_url": "/calculators/savings-goal-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0231",
+      "canonical_url": "/calculators/marginal-tax-bracket-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0232",
+      "canonical_url": "/converters/hourly-to-salary-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0233",
+      "canonical_url": "/calculators/biweekly-mortgage-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0234",
+      "canonical_url": "/calculators/rent-vs-buy-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0235",
+      "canonical_url": "/calculators/cost-basis-calculator-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0236",
+      "canonical_url": "/calculators/drip-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0237",
+      "canonical_url": "/calculators/net-worth-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0238",
+      "canonical_url": "/calculators/inflation-calculator-custom-rate",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0239",
+      "canonical_url": "/calculators/compare-two-loans-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0240",
+      "canonical_url": "/calculators/employer-match-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0241",
+      "canonical_url": "/calculators/freelance-hourly-rate-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0242",
+      "canonical_url": "/generators/invoice-generator-pdf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0243",
+      "canonical_url": "/generators/quote-generator-pdf",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0244",
+      "canonical_url": "/calculators/margin-vs-markup-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0245",
+      "canonical_url": "/calculators/break-even-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0246",
+      "canonical_url": "/calculators/saas-metrics-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0247",
+      "canonical_url": "/calculators/startup-runway-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0248",
+      "canonical_url": "/calculators/vat-calculator-reverse-bulk",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0249",
+      "canonical_url": "/converters/number-to-words-cheque",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0250",
+      "canonical_url": "/calculators/timesheet-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0251",
+      "canonical_url": "/calculators/late-payment-interest-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0252",
+      "canonical_url": "/calculators/meeting-cost-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0253",
+      "canonical_url": "/calculators/fully-loaded-employee-cost-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0254",
+      "canonical_url": "/generators/email-signature-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0255",
+      "canonical_url": "/generators/gantt-chart-maker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0256",
+      "canonical_url": "/generators/org-chart-generator-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0257",
+      "canonical_url": "/calculators/reorder-point-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0258",
+      "canonical_url": "/generators/bulk-barcode-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0259",
+      "canonical_url": "/generators/vcard-qr-code-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0260",
+      "canonical_url": "/calculators/pro-rata-salary-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0261",
+      "canonical_url": "/calculators/concrete-volume-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0262",
+      "canonical_url": "/calculators/roofing-calculator-shingle-bundles",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0263",
+      "canonical_url": "/calculators/paint-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0264",
+      "canonical_url": "/calculators/tile-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0265",
+      "canonical_url": "/calculators/drywall-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0266",
+      "canonical_url": "/calculators/board-foot-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0267",
+      "canonical_url": "/calculators/deck-material-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0268",
+      "canonical_url": "/calculators/stair-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0269",
+      "canonical_url": "/calculators/gravel-mulch-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0270",
+      "canonical_url": "/calculators/voltage-drop-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0271",
+      "canonical_url": "/calculators/btu-calculator-room-size",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0272",
+      "canonical_url": "/calculators/cap-rate-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0273",
+      "canonical_url": "/calculators/rental-property-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0274",
+      "canonical_url": "/calculators/square-footage-calculator-irregular-rooms",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0275",
+      "canonical_url": "/converters/feet-inches-to-meters-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0276",
+      "canonical_url": "/calculators/fence-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0277",
+      "canonical_url": "/calculators/retaining-wall-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0278",
+      "canonical_url": "/calculators/insulation-calculator-r-value",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0279",
+      "canonical_url": "/calculators/tank-volume-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0280",
+      "canonical_url": "/converters/land-area-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0281",
+      "canonical_url": "/calculators/one-rep-max-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0282",
+      "canonical_url": "/calculators/running-pace-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0283",
+      "canonical_url": "/utilities/race-time-predictor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0284",
+      "canonical_url": "/calculators/heart-rate-zone-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0285",
+      "canonical_url": "/calculators/barbell-plate-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0286",
+      "canonical_url": "/calculators/critical-swim-speed-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0287",
+      "canonical_url": "/calculators/ftp-zones-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0288",
+      "canonical_url": "/calculators/tdee-calculator-compare-equations",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0289",
+      "canonical_url": "/calculators/sleep-cycle-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0290",
+      "canonical_url": "/calculators/caffeine-half-life-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0291",
+      "canonical_url": "/timers/tabata-interval-timer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0292",
+      "canonical_url": "/timers/box-breathing-timer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0293",
+      "canonical_url": "/planners/weekly-mileage-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0294",
+      "canonical_url": "/calculators/endurance-fueling-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0295",
+      "canonical_url": "/calculators/grade-adjusted-pace-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0296",
+      "canonical_url": "/generators/nutrition-facts-label-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0297",
+      "canonical_url": "/converters/steps-to-km-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0298",
+      "canonical_url": "/calculators/hiking-time-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0299",
+      "canonical_url": "/calculators/altitude-pace-adjustment-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0300",
+      "canonical_url": "/calculators/dots-score-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0301",
+      "canonical_url": "/calculators/business-days-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0302",
+      "canonical_url": "/calculators/date-difference-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0303",
+      "canonical_url": "/planners/time-zone-meeting-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0304",
+      "canonical_url": "/extractors/dst-transition-dates",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0305",
+      "canonical_url": "/converters/bulk-epoch-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0306",
+      "canonical_url": "/generators/ics-file-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0307",
+      "canonical_url": "/converters/ics-to-csv",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0308",
+      "canonical_url": "/generators/rrule-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0309",
+      "canonical_url": "/generators/iso-8601-duration-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0310",
+      "canonical_url": "/calculators/week-number-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0311",
+      "canonical_url": "/calculators/add-days-to-date-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0312",
+      "canonical_url": "/timers/countdown-timer-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0313",
+      "canonical_url": "/converters/nepali-date-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0314",
+      "canonical_url": "/converters/hijri-to-gregorian-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0315",
+      "canonical_url": "/calculators/day-of-year-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0316",
+      "canonical_url": "/converters/excel-serial-number-to-date",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0317",
+      "canonical_url": "/calculators/fiscal-quarter-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0318",
+      "canonical_url": "/generators/shift-schedule-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0319",
+      "canonical_url": "/calculators/golden-hour-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0320",
+      "canonical_url": "/calculators/moon-phase-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0321",
+      "canonical_url": "/calculators/file-hash-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0322",
+      "canonical_url": "/validators/verify-sha256sums",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0323",
+      "canonical_url": "/validators/password-strength-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0324",
+      "canonical_url": "/generators/diceware-passphrase-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0325",
+      "canonical_url": "/utilities/password-hash-cost-benchmark",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0326",
+      "canonical_url": "/generators/hmac-signature-tester",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0327",
+      "canonical_url": "/generators/pkce-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0328",
+      "canonical_url": "/analyzers/totp-debugger",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0329",
+      "canonical_url": "/utilities/encrypt-text-with-password",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0330",
+      "canonical_url": "/utilities/encrypt-file-in-browser",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0331",
+      "canonical_url": "/generators/generate-rsa-key-pair",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0332",
+      "canonical_url": "/converters/pem-to-jwk",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0333",
+      "canonical_url": "/calculators/ssh-key-fingerprint-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0334",
+      "canonical_url": "/analyzers/pgp-key-inspector",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0335",
+      "canonical_url": "/generators/api-key-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0336",
+      "canonical_url": "/generators/uuid-v7-generator-decoder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0337",
+      "canonical_url": "/editors/remove-metadata-from-word-document",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0338",
+      "canonical_url": "/analyzers/qr-code-link-inspector",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0339",
+      "canonical_url": "/utilities/defang-url",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0340",
+      "canonical_url": "/generators/sri-hash-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0341",
+      "canonical_url": "/utilities/social-character-counter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0342",
+      "canonical_url": "/editors/split-image-for-instagram-carousel",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0343",
+      "canonical_url": "/utilities/youtube-thumbnail-safe-zone",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0344",
+      "canonical_url": "/validators/youtube-chapters-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0345",
+      "canonical_url": "/formatters/hashtag-camelcase-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0346",
+      "canonical_url": "/generators/unicode-text-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0347",
+      "canonical_url": "/editors/social-media-image-resizer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0348",
+      "canonical_url": "/validators/podcast-rss-validator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0349",
+      "canonical_url": "/editors/screen-recorder-online",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0350",
+      "canonical_url": "/validators/webcam-mic-test",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0351",
+      "canonical_url": "/utilities/teleprompter-utility",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0352",
+      "canonical_url": "/converters/crop-video-to-9-16",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0353",
+      "canonical_url": "/generators/link-in-bio-page-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0354",
+      "canonical_url": "/editors/thread-splitter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0355",
+      "canonical_url": "/validators/contrast-checker-apca",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0356",
+      "canonical_url": "/generators/youtube-embed-code-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0357",
+      "canonical_url": "/utilities/random-giveaway-picker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0358",
+      "canonical_url": "/generators/bingo-card-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0359",
+      "canonical_url": "/generators/business-card-maker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0360",
+      "canonical_url": "/generators/screenshot-device-frame-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0361",
+      "canonical_url": "/formatters/apa-7-reference-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0362",
+      "canonical_url": "/converters/bibtex-to-apa",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0363",
+      "canonical_url": "/converters/ris-to-bibtex",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0364",
+      "canonical_url": "/editors/bibtex-cleaner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0365",
+      "canonical_url": "/calculators/gpa-calculator-custom-scale",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0366",
+      "canonical_url": "/calculators/final-grade-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0367",
+      "canonical_url": "/converters/cgpa-to-percentage-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0368",
+      "canonical_url": "/calculators/speech-length-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0369",
+      "canonical_url": "/planners/word-count-goal-tracker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0370",
+      "canonical_url": "/generators/excel-to-latex-table",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0371",
+      "canonical_url": "/converters/latex-equation-to-image",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0372",
+      "canonical_url": "/calculators/molar-mass-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0373",
+      "canonical_url": "/utilities/chemical-equation-balancer",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0374",
+      "canonical_url": "/calculators/dilution-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0375",
+      "canonical_url": "/calculators/projectile-motion-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0376",
+      "canonical_url": "/calculators/significant-figures-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0377",
+      "canonical_url": "/converters/scientific-notation-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0378",
+      "canonical_url": "/generators/csv-to-anki-deck",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0379",
+      "canonical_url": "/generators/math-worksheet-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0380",
+      "canonical_url": "/generators/word-search-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0381",
+      "canonical_url": "/calculators/resistor-color-code-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0382",
+      "canonical_url": "/calculators/smd-resistor-code-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0383",
+      "canonical_url": "/calculators/led-resistor-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0384",
+      "canonical_url": "/calculators/capacitor-code-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0385",
+      "canonical_url": "/calculators/voltage-divider-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0386",
+      "canonical_url": "/calculators/arduino-timer-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0387",
+      "canonical_url": "/calculators/uart-baud-rate-error-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0388",
+      "canonical_url": "/calculators/gcode-filament-cost-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0389",
+      "canonical_url": "/calculators/stl-volume-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0390",
+      "canonical_url": "/calculators/nd-filter-exposure-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0391",
+      "canonical_url": "/calculators/hyperfocal-distance-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0392",
+      "canonical_url": "/calculators/crop-factor-equivalent-focal-length",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0393",
+      "canonical_url": "/converters/cups-to-grams-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0394",
+      "canonical_url": "/utilities/recipe-scaler",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0395",
+      "canonical_url": "/calculators/bakers-percentage-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0396",
+      "canonical_url": "/calculators/pizza-dough-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0397",
+      "canonical_url": "/calculators/abv-calculator-og-fg",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0398",
+      "canonical_url": "/calculators/coffee-ratio-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0399",
+      "canonical_url": "/calculators/knitting-gauge-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0400",
+      "canonical_url": "/calculators/bike-gear-ratio-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0401",
+      "canonical_url": "/calculators/fence-post-concrete-bags-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0402",
+      "canonical_url": "/validators/deck-joist-beam-span-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0403",
+      "canonical_url": "/validators/stair-code-compliance-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0404",
+      "canonical_url": "/calculators/rebar-mesh-slab-takeoff-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0405",
+      "canonical_url": "/calculators/crown-molding-miter-angle-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0406",
+      "canonical_url": "/calculators/herringbone-diagonal-tile-waste-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0407",
+      "canonical_url": "/calculators/wallpaper-pattern-repeat-roll-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0408",
+      "canonical_url": "/calculators/wall-roof-u-value-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0409",
+      "canonical_url": "/generators/stud-wall-layout-cut-list-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0410",
+      "canonical_url": "/calculators/paver-base-and-sand-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0411",
+      "canonical_url": "/calculators/gutter-downspout-sizing-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0412",
+      "canonical_url": "/calculators/form-2210-annualized-income-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0413",
+      "canonical_url": "/planners/estimated-tax-safe-harbor-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0414",
+      "canonical_url": "/planners/uk-payments-on-account-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0415",
+      "canonical_url": "/calculators/canada-gst-hst-quick-method-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0416",
+      "canonical_url": "/planners/us-sales-tax-economic-nexus-tracker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0417",
+      "canonical_url": "/planners/vat-gst-registration-threshold-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0418",
+      "canonical_url": "/calculators/macrs-depreciation-schedule-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0419",
+      "canonical_url": "/calculators/wash-sale-holding-period-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0420",
+      "canonical_url": "/calculators/backdoor-roth-pro-rata-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0421",
+      "canonical_url": "/comparisons/home-office-deduction-comparison",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0422",
+      "canonical_url": "/calculators/w2-vs-1099-contractor-rate-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0423",
+      "canonical_url": "/calculators/rent-increase-cap-and-notice-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0424",
+      "canonical_url": "/calculators/security-deposit-return-deadline-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0425",
+      "canonical_url": "/calculators/landlord-notice-period-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0426",
+      "canonical_url": "/calculators/rental-depreciation-recapture-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0427",
+      "canonical_url": "/calculators/lease-break-cost-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0428",
+      "canonical_url": "/calculators/property-tax-appeal-savings-estimator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0429",
+      "canonical_url": "/calculators/uk-tenancy-deposit-protection-penalty",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0430",
+      "canonical_url": "/calculators/move-out-damage-depreciation-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0431",
+      "canonical_url": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0432",
+      "canonical_url": "/calculators/roommate-rent-split-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0433",
+      "canonical_url": "/validators/trailer-tongue-weight-payload-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0434",
+      "canonical_url": "/utilities/ev-charging-cost-and-circuit-sizing",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0435",
+      "canonical_url": "/formatters/tire-load-index-speed-rating-decoder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0436",
+      "canonical_url": "/planners/drivers-hours-of-service-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0437",
+      "canonical_url": "/calculators/ifta-quarterly-fuel-tax-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0438",
+      "canonical_url": "/calculators/gig-driver-profit-per-mile-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0439",
+      "canonical_url": "/calculators/car-lease-money-factor-apr-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0440",
+      "canonical_url": "/validators/window-tint-vlt-law-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0441",
+      "canonical_url": "/utilities/social-video-safe-zone-overlay",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0442",
+      "canonical_url": "/generators/print-bleed-and-safe-zone-templates",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0443",
+      "canonical_url": "/calculators/book-spine-width-cover-template-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0444",
+      "canonical_url": "/calculators/max-print-size-from-pixels-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0445",
+      "canonical_url": "/calculators/video-file-size-bitrate-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0446",
+      "canonical_url": "/utilities/label-sheet-print-alignment-calibrator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0447",
+      "canonical_url": "/calculators/cross-stitch-fabric-size-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0448",
+      "canonical_url": "/calculators/yarn-yardage-substitution-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0449",
+      "canonical_url": "/calculators/cobra-election-payment-deadline-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0450",
+      "canonical_url": "/calculators/dog-cat-food-portion-cost-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0451",
+      "canonical_url": "/calculators/aquarium-volume-water-change-dosing",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0452",
+      "canonical_url": "/calculators/pool-chemical-dosing-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0453",
+      "canonical_url": "/converters/glasses-to-contact-lens-vertex-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0454",
+      "canonical_url": "/calculators/prescription-refill-runout-date-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0455",
+      "canonical_url": "/planners/clear-aligner-schedule-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0456",
+      "canonical_url": "/calculators/paid-family-leave-benefits-estimator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0457",
+      "canonical_url": "/calculators/final-paycheck-pto-deadline-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0458",
+      "canonical_url": "/calculators/state-overtime-pay-rules-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0459",
+      "canonical_url": "/planners/i9-reverification-retention-date-tracker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0460",
+      "canonical_url": "/calculators/fmla-eligibility-entitlement-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0461",
+      "canonical_url": "/calculators/trir-dart-incident-rate-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0462",
+      "canonical_url": "/calculators/statute-of-limitations-deadline-estimator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0463",
+      "canonical_url": "/generators/court-pleading-paper-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0464",
+      "canonical_url": "/generators/data-access-request-letter-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0465",
+      "canonical_url": "/converters/international-gpa-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0466",
+      "canonical_url": "/calculators/sat-act-superscore-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0467",
+      "canonical_url": "/planners/professional-exam-study-scheduler",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0468",
+      "canonical_url": "/planners/continuing-education-license-renewal-tracker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0469",
+      "canonical_url": "/planners/supervised-driving-hours-log",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0470",
+      "canonical_url": "/generators/homeschool-transcript-gpa-builder",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0471",
+      "canonical_url": "/converters/quarter-semester-credit-converter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0472",
+      "canonical_url": "/planners/journeyman-apprenticeship-hours-tracker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0473",
+      "canonical_url": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0474",
+      "canonical_url": "/calculators/import-landed-cost-tariff-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0475",
+      "canonical_url": "/validators/marketplace-listing-byte-character-counter",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0476",
+      "canonical_url": "/validators/marketplace-image-size-spec-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0477",
+      "canonical_url": "/calculators/pallet-carton-packing-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0478",
+      "canonical_url": "/editors/shipping-label-4x6-pdf-cropper",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0479",
+      "canonical_url": "/generators/commercial-invoice-customs-forms-generator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0480",
+      "canonical_url": "/validators/1099k-state-platform-reporting-threshold-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0481",
+      "canonical_url": "/utilities/tracking-number-carrier-identifier",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0482",
+      "canonical_url": "/calculators/acos-roas-break-even-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0483",
+      "canonical_url": "/calculators/event-room-capacity-layout-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0484",
+      "canonical_url": "/calculators/tablecloth-size-drop-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0485",
+      "canonical_url": "/planners/bbq-reverse-cook-schedule-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0486",
+      "canonical_url": "/utilities/digital-nomad-visa-eligibility-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0487",
+      "canonical_url": "/calculators/raised-bed-soil-compost-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0488",
+      "canonical_url": "/calculators/fertilizer-seed-spreader-settings-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0489",
+      "canonical_url": "/calculators/sprinkler-irrigation-runtime-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0490",
+      "canonical_url": "/calculators/firewood-cord-volume-cost-btu-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0491",
+      "canonical_url": "/comparisons/multi-fuel-heating-cost-comparison",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0492",
+      "canonical_url": "/calculators/portable-power-station-runtime-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0493",
+      "canonical_url": "/calculators/livestock-hay-feed-needs-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0494",
+      "canonical_url": "/calculators/chicken-coop-size-feed-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0495",
+      "canonical_url": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0496",
+      "canonical_url": "/planners/inherited-ira-rmd-10-year-rule-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0497",
+      "canonical_url": "/utilities/wash-sale-lot-matching-csv-form-8949",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0498",
+      "canonical_url": "/calculators/rsu-state-withholding-gap-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0499",
+      "canonical_url": "/calculators/hsa-contribution-limit-monthly-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0500",
+      "canonical_url": "/calculators/medicare-enrollment-window-penalty-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0501",
+      "canonical_url": "/calculators/irmaa-bracket-cliff-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0502",
+      "canonical_url": "/calculators/inherited-property-stepped-up-basis-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0503",
+      "canonical_url": "/calculators/uk-share-matching-section-104-pool-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0504",
+      "canonical_url": "/calculators/uk-effective-marginal-tax-trap-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0505",
+      "canonical_url": "/comparisons/uk-section-24-landlord-company-comparison",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0506",
+      "canonical_url": "/calculators/buy-to-let-icr-stress-test-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0507",
+      "canonical_url": "/calculators/uk-pension-allowance-carry-forward-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0508",
+      "canonical_url": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0509",
+      "canonical_url": "/planners/uk-shared-parental-leave-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0510",
+      "canonical_url": "/utilities/canada-adjusted-cost-base-superficial-loss-ledger",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0511",
+      "canonical_url": "/planners/canada-oas-clawback-rrif-planner",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0512",
+      "canonical_url": "/planners/canada-fhsa-rrsp-home-buyers-plan",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0513",
+      "canonical_url": "/calculators/canada-vacation-statutory-holiday-pay-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0514",
+      "canonical_url": "/calculators/australia-super-concessional-carry-forward-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0515",
+      "canonical_url": "/calculators/australia-long-service-leave-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0516",
+      "canonical_url": "/calculators/australia-home-battery-payback-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0517",
+      "canonical_url": "/calculators/assumable-mortgage-comparison-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0518",
+      "canonical_url": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0519",
+      "canonical_url": "/calculators/chapter-7-bankruptcy-means-test-estimator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0520",
+      "canonical_url": "/calculators/uk-ilr-citizenship-absence-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0521",
+      "canonical_url": "/calculators/us-n400-physical-presence-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0522",
+      "canonical_url": "/validators/flight-delay-compensation-uk-eu-canada",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0523",
+      "canonical_url": "/validators/airline-carry-on-size-weight-checker",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0524",
+      "canonical_url": "/validators/chase-5-24-credit-card-application-rules",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0525",
+      "canonical_url": "/calculators/heat-pump-vs-gas-boiler-payback-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0526",
+      "canonical_url": "/calculators/generator-sizing-running-starting-watts",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0527",
+      "canonical_url": "/calculators/astrophotography-npf-exposure-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0528",
+      "canonical_url": "/calculators/quilt-yardage-binding-batting-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0529",
+      "canonical_url": "/utilities/puppy-adult-weight-growth-predictor",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    },
+    {
+      "id": "TOOL-0530",
+      "canonical_url": "/calculators/card-surcharge-cash-discount-calculator",
+      "state": "ENTERED_PHASE6",
+      "browser_revalidation": "DEFERRED_TO_CONSOLIDATED_ACCEPTANCE"
+    }
+  ]
+}

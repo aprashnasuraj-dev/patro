@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Render a high-resolution min/max waveform image from locally decoded audio and export PNG.",
+      "status": "implementation_scope",
+      "basis": "Web Audio decoding and Canvas"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "The rendered image summarizes min/max sample amplitude per horizontal bucket; it is not a sample-level editor.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

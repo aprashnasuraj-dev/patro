@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0170",
+  "build_sequence": 170,
+  "name": "WebM to MP4 Converter",
+  "route": "/tools/webm-to-mp4",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Format Converter",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "H.264/AAC output depends on the production FFmpeg/WASM build including the required encoders and compliant licensing."
+  },
+  "seo": {
+    "title": "WebM to MP4 Converter — Free Browser Tool",
+    "meta_description": "Convert WebM video to an H.264/AAC MP4 with user-controlled quality.",
+    "h1": "WebM to MP4 Converter",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0079"
+}

@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0367",
+  "sources": [
+    {
+      "title": "CGPA to percentage conversion",
+      "url": "https://vit.ac.in/files/CGPA-Conversion.pdf",
+      "authority": "Vellore Institute of Technology"
+    },
+    {
+      "title": "CGPA to Percentage Conversion",
+      "url": "https://acoe.annauniv.edu/download_forms/student_forms/CGPA_TO_PERCENTAGE_CONVERSION.pdf",
+      "authority": "Anna University"
+    },
+    {
+      "title": "CGPA Standard Formula",
+      "url": "https://vtu.ac.in/cgpa-standard-formula/",
+      "authority": "Visvesvaraya Technological University"
+    }
+  ]
+}

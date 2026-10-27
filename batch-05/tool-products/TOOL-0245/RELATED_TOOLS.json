@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0245",
+  "related": [
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0244",
+      "title": "Margin vs Markup Calculator with Price Solver",
+      "proposed_canonical": "/calculators/margin-vs-markup-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0422",
+      "title": "Contractor Break-Even Rate Calculator",
+      "proposed_canonical": "/calculators/w2-vs-1099-contractor-rate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0255",
+      "title": "Gantt Chart Maker from Task Table (SVG/PNG)",
+      "proposed_canonical": "/generators/gantt-chart-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0256",
+      "title": "Org Chart Generator from CSV",
+      "proposed_canonical": "/generators/org-chart-generator-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

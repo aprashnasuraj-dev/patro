@@ -1,0 +1,5 @@
+{
+  "sample_input": "Data tools should make data work easier.",
+  "expected_behavior": "“data” appears twice after case-folding, while common stopwords can be excluded from the ranked list.",
+  "qa_status": "TEST_PENDING"
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0041",
+  "scope_claim": "Generate narrow-origin CORS configurations for Nginx, Express, Apache and Amazon S3.",
+  "authoritative_urls": [
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+    "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html"
+  ],
+  "assumptions": [
+    "A single explicit origin or * (without credentials). S3 supports multiple listed origins.",
+    "Browser-native capabilities are available in a modern secure context where applicable."
+  ],
+  "limitations": [
+    "CORS is not authorization. Credentials require a reflected/exact origin and Vary: Origin.",
+    "Runtime behavior must be validated against final host configuration."
+  ],
+  "uncertainty": "No comprehensive cross-browser or protocol conformance claim; integration and tests pending.",
+  "license": "No external runtime dependency, vendor database or externally transmitted user input included."
+}

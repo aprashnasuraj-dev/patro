@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0453",
+  "related": [
+    {
+      "id": "TOOL-0454",
+      "title": "Prescription Run-Out & Refill Date Calculator",
+      "proposed_canonical": "/calculators/prescription-refill-runout-date-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0259",
+      "title": "vCard and Contact QR Code Generator",
+      "proposed_canonical": "/generators/vcard-qr-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0449",
+      "title": "COBRA Election & Payment Deadline Calculator",
+      "proposed_canonical": "/calculators/cobra-election-payment-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0450",
+      "title": "Dog & Cat Food Portion and Cost Calculator by Brand",
+      "proposed_canonical": "/calculators/dog-cat-food-portion-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0451",
+      "title": "Aquarium Volume, Water Change & Dose Calculator",
+      "proposed_canonical": "/calculators/aquarium-volume-water-change-dosing",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

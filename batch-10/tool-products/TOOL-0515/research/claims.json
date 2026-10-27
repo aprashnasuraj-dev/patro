@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Accrued weeks = eligible service years × legally verified accrual rate; pay at entered ordinary weekly rate.",
+    "supporting_urls": [
+      "https://www.fairwork.gov.au/leave/long-service-leave"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Entitlement vesting and pro-rata payout cannot be inferred solely from service years."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "At 0.8667 weeks per service year, eight years accrue roughly 6.93 weeks before leave already taken.",
+    "status": "TEST_PENDING"
+  }
+]

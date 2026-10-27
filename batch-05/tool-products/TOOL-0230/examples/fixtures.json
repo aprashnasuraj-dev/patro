@@ -1,0 +1,5 @@
+{
+  "status": "TEST_PENDING",
+  "purpose": "Known-answer and demonstration inputs for deferred tests.",
+  "worked_example": "The sample can solve the monthly contribution needed to move from $5,000 to $30,000 in 36 months at the entered return."
+}

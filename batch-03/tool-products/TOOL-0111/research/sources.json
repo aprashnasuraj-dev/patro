@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0111",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "css-font-loading-3",
+      "url": "https://www.w3.org/TR/css-font-loading/",
+      "version": "CSS Font Loading Module Level 3 Working Draft",
+      "effective_date": "2023-04-06",
+      "license": "W3C document license",
+      "notes": "Defines FontFace from ArrayBuffer and FontFaceSet behavior for local browser testing."
+    }
+  ],
+  "assumptions": "The current browser can parse the selected font and supports FontFace from binary data.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "A successful load proves browser parse/render support in this browser only; it does not validate licensing, all glyphs, or other browsers."
+}

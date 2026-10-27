@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0259",
+  "claims": [
+    {
+      "claim": "vCard 4.0 requires VERSION and FN; VERSION:4.0 appears immediately after BEGIN:VCARD; long content lines should be folded.",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc6350.html",
+      "implementation_note": "Generator emits required ordering and UTF-8-aware folding."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

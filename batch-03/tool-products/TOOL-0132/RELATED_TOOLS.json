@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0132",
+  "related": [
+    {
+      "id": "TOOL-0126",
+      "title": "Favicon Generator (ICO, PNG Set, Manifest)",
+      "proposed_canonical": "/generators/favicon-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0127",
+      "title": "App Icon Set Generator (iOS and Android)",
+      "proposed_canonical": "/generators/app-icon-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0128",
+      "title": "CSS Sprite Sheet Generator",
+      "proposed_canonical": "/generators/css-sprite-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0133",
+      "title": "Seamless Tile Pattern Maker and Checker",
+      "proposed_canonical": "/generators/seamless-pattern-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0121",
+      "title": "Bulk EXIF Viewer and Stripper",
+      "proposed_canonical": "/analyzers/remove-exif-data",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {flatten} from '../src/core';describe('TOOL-0147 form flatten parser guards',()=>{it('rejects an empty PDF before form access',async()=>{await expect(flatten(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('flattens a reviewed AcroForm fixture and preserves visible field appearances')});

@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0287",
+  "sample_input": {
+    "ftp": "240",
+    "mass": "75"
+  },
+  "expected": "Deferred expected-answer regression test should match model equations; not executed.",
+  "format": "values are serialized form strings"
+}

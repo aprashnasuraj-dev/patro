@@ -1,0 +1,11 @@
+{
+  "tool": "TOOL-0529",
+  "default_inputs": {
+    "ageWeeks": "20",
+    "weight": "16",
+    "maturityFraction": "55",
+    "uncertainty": "15"
+  },
+  "worked_example": "If a 16 kg puppy is assumed 55% grown, central adult estimate is about 29.1 kg, with broad uncertainty.",
+  "source_status": "TEST_PENDING"
+}

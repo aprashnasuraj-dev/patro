@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0271",
+  "claims": [
+    {
+      "claim": "ACCA identifies ANSI/ACCA 2 Manual J - 2016 as the residential load-calculation standard.",
+      "source_url": "https://www.acca.org/standards/technical-manuals/manual-j",
+      "implementation_note": "The tool explicitly does not implement or claim Manual J; it exposes a rough, user-controlled load-density model."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; product specifications, codes and local practices can override illustrative defaults."
+}

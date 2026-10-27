@@ -1,0 +1,10 @@
+{
+  "cluster": "compile:malformed-line-split-regex",
+  "baselineFailures": 7,
+  "verifiedFailures": 0,
+  "fleetCompileFailuresBefore": 22,
+  "fleetCompileFailuresAfter": 15,
+  "verifiedRunId": 40443654585,
+  "layeredFinding": "TOOL-0274 also required shared construction finite export after regex syntax was restored",
+  "status": "PASS"
+}

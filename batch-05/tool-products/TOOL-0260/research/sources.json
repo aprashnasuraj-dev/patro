@@ -1,0 +1,6 @@
+{
+  "tool_id": "TOOL-0260",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [],
+  "no_external_source_reason": "Core behavior is deterministic arithmetic/text transformation with explicit assumptions; no external rule or dataset is required."
+}

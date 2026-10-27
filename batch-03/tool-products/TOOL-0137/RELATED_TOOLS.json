@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0137",
+  "related": [
+    {
+      "id": "TOOL-0136",
+      "title": "GIF Frame Extractor",
+      "proposed_canonical": "/extractors/gif-frame-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0168",
+      "title": "Video Speed Changer with Pitch Correction",
+      "proposed_canonical": "/editors/change-video-speed",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0173",
+      "title": "Audio Speed and Pitch Changer",
+      "proposed_canonical": "/editors/change-audio-speed-pitch",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0138",
+      "title": "APNG and Animated WebP Converter",
+      "proposed_canonical": "/converters/apng-to-gif",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0139",
+      "title": "Image DPI Changer (72 to 300 DPI)",
+      "proposed_canonical": "/editors/change-image-dpi",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

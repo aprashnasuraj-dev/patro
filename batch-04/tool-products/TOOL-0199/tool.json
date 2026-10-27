@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0199",
+  "build_sequence": 199,
+  "name": "Excel Formula Extractor",
+  "route": "/tools/excel-formula-extractor",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0087",
+  "engineering_family": "Excel and CSV Converter",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Excel Formula Extractor — Free Local Browser Tool",
+    "meta_description": "List formulas stored in Excel cells, their addresses, sheets, and cached values without calculating or executing formulas.",
+    "h1": "Excel Formula Extractor",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": 26214400,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": [
+    "/assets/vendor/sheetjs/xlsx-0.20.3/xlsx.mjs"
+  ]
+}

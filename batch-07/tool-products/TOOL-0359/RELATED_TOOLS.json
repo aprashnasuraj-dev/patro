@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0359",
+  "related": [
+    {
+      "id": "TOOL-0442",
+      "title": "Print Bleed & Safe-Zone Template Generator",
+      "proposed_canonical": "/generators/print-bleed-and-safe-zone-templates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0358",
+      "title": "Printable Bingo Card Generator",
+      "proposed_canonical": "/generators/bingo-card-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0133",
+      "title": "Seamless Tile Pattern Maker and Checker",
+      "proposed_canonical": "/generators/seamless-pattern-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0255",
+      "title": "Gantt Chart Maker from Task Table (SVG/PNG)",
+      "proposed_canonical": "/generators/gantt-chart-maker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "CFPB Loan Estimate",
+    "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Level-payment amortization; fees and assumption equity gap displayed explicitly.",
+    "uncertainty": "Equal-house-price and equal-cash scenario require additional modeling beyond displayed lifetime totals."
+  }
+]

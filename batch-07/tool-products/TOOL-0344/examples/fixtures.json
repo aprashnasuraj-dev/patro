@@ -1,0 +1,24 @@
+{
+  "tool_id": "TOOL-0344",
+  "examples": [
+    {
+      "input": [
+        "0:00 Intro",
+        "0:45 Setup",
+        "2:10 Demo"
+      ],
+      "expected_valid": true
+    },
+    {
+      "input": [
+        "0:05 Intro",
+        "0:10 Too soon",
+        "0:15 Again"
+      ],
+      "expected_errors": [
+        "first timestamp",
+        "under 10 seconds"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0032",
+  "related": [
+    {
+      "id": "TOOL-0031",
+      "title": "AWS IAM Policy Wildcard Auditor",
+      "proposed_canonical": "/validators/iam-policy-wildcard-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0033",
+      "title": "S3 Bucket Policy Generator for CloudFront OAC",
+      "proposed_canonical": "/generators/s3-bucket-policy-cloudfront-oac",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0309",
+      "title": "ISO 8601 Duration Builder and Parser",
+      "proposed_canonical": "/generators/iso-8601-duration-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

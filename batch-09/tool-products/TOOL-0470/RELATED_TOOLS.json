@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0470",
+  "related": [
+    {
+      "id": "TOOL-0365",
+      "title": "GPA Calculator with Custom Grade Scale",
+      "proposed_canonical": "/calculators/gpa-calculator-custom-scale",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0465",
+      "title": "International GPA Converter",
+      "proposed_canonical": "/converters/international-gpa-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

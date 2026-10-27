@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {listFields} from '../src/core';describe('TOOL-0148 form-field parser guards',()=>{it('rejects an empty PDF before field enumeration',async()=>{await expect(listFields(new File([],'empty.pdf',{type:'application/pdf'}))).rejects.toThrow()});it.todo('lists/fills reviewed text, checkbox, radio, dropdown and option-list fixtures')});

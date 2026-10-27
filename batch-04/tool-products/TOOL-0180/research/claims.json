@@ -1,0 +1,24 @@
+{
+  "claims": [
+    {
+      "claim": "Shift SRT subtitle timings safely and export normalized SRT or standards-oriented WebVTT.",
+      "status": "implementation_scope",
+      "basis": "WebVTT timing model"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Only SRT cue blocks are parsed on input; malformed timings are rejected rather than repaired silently.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    },
+    {
+      "claim": "WebVTT timestamps use a dot before milliseconds and cue timing is ordered by start time.",
+      "status": "verified",
+      "basis": "W3C WebVTT"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "hire": "2022-04-15",
+    "termination": "2026-10-20",
+    "category": "EAD / expiring employment authorization",
+    "expires": "2026-12-01"
+  },
+  "known_answer": {
+    "output_label": "Retain I-9 through at least",
+    "expected_display": "2027-10-20",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

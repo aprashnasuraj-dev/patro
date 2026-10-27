@@ -1,0 +1,3 @@
+@import '../_vendor/workbench.css';
+.mm-tool[data-tool='TOOL-0006']{--mm-accent:#9c3b50;--mm-tint:#fff0f1}
+.mm-tool[data-tool='TOOL-0006'] .mm-warnings{border-left:3px solid #b24747;padding-left:22px;background:color-mix(in srgb, var(--mm-panel),#b24747 7%)}

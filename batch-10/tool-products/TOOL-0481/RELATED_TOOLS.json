@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0481",
+  "related": [
+    {
+      "id": "TOOL-0473",
+      "title": "Carrier Surcharge & Oversize Checker",
+      "proposed_canonical": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0076",
+      "title": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+      "proposed_canonical": "/editors/remove-tracking-parameters",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0193",
+      "title": "Phone Number Normalizer to E.164",
+      "proposed_canonical": "/converters/phone-numbers-to-e164",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0216",
+      "title": "Big Number Prime Factorization and GCD/LCM",
+      "proposed_canonical": "/calculators/prime-factorization-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0224",
+      "title": "Coast FIRE and FIRE Number Calculator",
+      "proposed_canonical": "/calculators/coast-fire-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

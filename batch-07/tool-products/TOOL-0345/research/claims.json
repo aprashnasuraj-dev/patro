@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0345",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader platform or standards conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported or heuristic cases are rejected or explicitly labeled."
+    }
+  ],
+  "uncertainty": "PascalCase improves visual parsing but does not guarantee every screen reader will pronounce a hashtag perfectly, especially for names, acronyms or mixed scripts."
+}

@@ -1,0 +1,32 @@
+{
+  "tool_id": "TOOL-0219",
+  "claims": [
+    {
+      "claim": "Simulate sequential project duration from optimistic, most-likely, and pessimistic Beta-PERT task estimates with a reproducible seed.",
+      "support": [
+        "https://docs.oracle.com/cd/E52437_01/en/crystal_ball_users_guide/betapert_distribution.htm",
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366h.htm",
+        "https://prng.di.unimi.it/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Each row is a sequential task with optimistic ≤ most likely ≤ pessimistic and a non-zero range.",
+      "support": [
+        "https://docs.oracle.com/cd/E52437_01/en/crystal_ball_users_guide/betapert_distribution.htm",
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366h.htm",
+        "https://prng.di.unimi.it/"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Tasks are modeled as independent and sequentially additive. Dependencies, parallel branches, resource constraints, and critical-path logic are not modeled.",
+      "support": [
+        "https://docs.oracle.com/cd/E52437_01/en/crystal_ball_users_guide/betapert_distribution.htm",
+        "https://itl.nist.gov/div898/handbook/eda/section3/eda366h.htm",
+        "https://prng.di.unimi.it/"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

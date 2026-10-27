@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0282",
+  "claim": "Pace = total seconds/distance. Splits derive from exact final partial segment (not a full extra split).",
+  "assumptions": [
+    "Even pacing is a theoretical target, not a prediction; road measurements and GPS differ.",
+    "Calculation runs entirely on user device after the tool route bundle is loaded."
+  ],
+  "supporting_sources": [
+    "https://worldathletics.org/disciplines/road-running"
+  ],
+  "release_status": "UNVERIFIED",
+  "calculation_version": "local-v1",
+  "research_date": "2026-10-27"
+}

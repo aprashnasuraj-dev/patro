@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0328",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "This is a debugger, not an authenticator vault. It does not store secrets or enforce verifier-side throttling/replay protection."
+}

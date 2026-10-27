@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0023",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Translate a narrow subset of GitLab CI jobs into a GitHub Actions draft, without executing arbitrary scripts.",
+      "evidence_urls": [
+        "https://docs.gitlab.com/ci/yaml/",
+        "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Rules, needs, include, extends, artifacts, service containers, protected variables, environments and GitLab runners are not portable without manual migration.",
+      "evidence_urls": [
+        "https://docs.gitlab.com/ci/yaml/",
+        "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

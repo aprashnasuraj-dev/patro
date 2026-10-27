@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0316",
+  "claims": [
+    {
+      "claim": "The tool implements the explicit semantics stated on the page and rejects unsupported ambiguity.",
+      "source_url": null,
+      "implementation_note": "No broader standard conformance is implied."
+    }
+  ],
+  "uncertainty": "Excel’s serial 60 cannot be represented as a real Gregorian JavaScript Date. The tool preserves it as an explicit labeled compatibility value."
+}

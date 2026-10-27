@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0260",
+  "status": "TEST_PENDING",
+  "sample": {
+    "salary": 60000,
+    "fullTimeWeeklyHours": 40,
+    "employeeWeeklyHours": 30,
+    "fullTimeDaysPerWeek": 5,
+    "employeeDaysPerWeek": 4,
+    "fullAnnualLeaveDays": 25,
+    "start": "2026-07-01",
+    "end": "2026-12-31",
+    "basis": "calendar"
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

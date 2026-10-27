@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0092",
+  "claims": [
+    {
+      "claim": "Markdown output escapes pipe and backslash characters and normalizes embedded cell newlines to <br>.",
+      "status": "implementation-basis",
+      "source_ids": [
+        "gfm",
+        "rfc4180"
+      ]
+    }
+  ]
+}

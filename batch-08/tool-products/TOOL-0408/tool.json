@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0408",
+  "name": "Wall & Roof U-Value / R-Value Builder",
+  "reserved_route": "/tools/wall-roof-u-value-calculator",
+  "engineering_family_id": "F0147",
+  "engineering_family": "Insulation Coverage and R-Value Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "Wall & Roof U-Value / R-Value Builder | AafnaiPatro Tools",
+    "description": "Build an effective wall or roof R-value from parallel framing and insulated paths and report the corresponding U-factor.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0403",
+  "claims": [
+    {
+      "claim": "The default stair preset uses 2021 IRC model-code tread/riser limits.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "All code values are editable so local amendments can replace the preset.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

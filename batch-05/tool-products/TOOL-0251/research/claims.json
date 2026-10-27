@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0251",
+  "claims": [
+    {
+      "claim": "Late-payment interest rules can be statutory and jurisdiction-specific.",
+      "source_url": "https://www.gov.uk/late-commercial-payments-interest-debt-recovery",
+      "implementation_note": "No statutory rate is hard-coded; all policy inputs are explicit."
+    }
+  ],
+  "uncertainty": "See sources.json and page limitations; no hidden jurisdictional defaults."
+}

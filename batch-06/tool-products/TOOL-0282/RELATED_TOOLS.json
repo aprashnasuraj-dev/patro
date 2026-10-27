@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0282",
+  "related": [
+    {
+      "id": "TOOL-0295",
+      "title": "Grade-Adjusted Pace Calculator",
+      "proposed_canonical": "/calculators/grade-adjusted-pace-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0299",
+      "title": "Altitude Pace Adjustment Calculator",
+      "proposed_canonical": "/calculators/altitude-pace-adjustment-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0283",
+      "title": "Race Time Predictor (Riegel and Cameron)",
+      "proposed_canonical": "/utilities/race-time-predictor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0079",
+      "title": "Keyword Cannibalization Finder from GSC Export",
+      "proposed_canonical": "/extractors/keyword-cannibalization-finder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

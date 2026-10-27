@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0418",
+  "related": [
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0426",
+      "title": "Rental Depreciation & Recapture Calculator",
+      "proposed_canonical": "/calculators/rental-depreciation-recapture-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0430",
+      "title": "Move-Out Damage Depreciation Calculator",
+      "proposed_canonical": "/calculators/move-out-damage-depreciation-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0011",
+      "title": "Cron to GitHub Actions Schedule Generator",
+      "proposed_canonical": "/planners/cron-to-github-actions-schedule",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0455",
+      "title": "Clear Aligner Schedule Planner",
+      "proposed_canonical": "/planners/clear-aligner-schedule-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

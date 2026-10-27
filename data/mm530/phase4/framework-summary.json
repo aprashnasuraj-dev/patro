@@ -1,0 +1,29 @@
+{
+  "schema_version": "MM530_PHASE4_FRAMEWORK_SUMMARY_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "actions_source_commit": "c9a8d07eacec50641d165ae45f24739256ec7a13",
+    "workflow_run_id": 40453367367,
+    "workflow_run_url": "https://github.com/aprashnasuraj-dev/patro/actions/runs/40453367367",
+    "artifact": {
+      "id": 12711621150,
+      "name": "mm530-phase4-unit",
+      "digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+    }
+  },
+  "observed_unit_files": {
+    "vitest": 497,
+    "node-test": 53,
+    "later-phase-plan-files": 18
+  },
+  "runnable_tool_unit_state": {
+    "PASS": 530,
+    "FAIL": 0,
+    "NOT_RUN": 0
+  },
+  "notes": [
+    "18 interaction/security plan files are retained as later-phase plans and are not unit suites.",
+    "Vitest and node:test fixtures were executed through the Phase 4 fleet harness.",
+    "No physical-device interaction was executed."
+  ]
+}

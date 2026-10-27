@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0326",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "A correct HMAC can still fail a webhook check if the provider signs a timestamp prefix, raw HTTP body bytes or another framing convention. Consult that provider’s specification."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0249",
+  "name": "Number to Words for Cheques (International and Indian Numbering)",
+  "route": "/tools/number-to-words-cheque",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0120",
+  "engineering_family": "Number to Words for Cheques",
+  "product_type": "browser_transformer",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Number to Words for Cheques (International and Indian Numbering) — Private Browser Tool",
+    "meta_description": "Convert a decimal cheque amount into English words using either international short-scale grouping or Indian lakh/crore grouping, with configurable currency labels.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

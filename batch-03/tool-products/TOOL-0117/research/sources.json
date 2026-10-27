@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0117",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "css-font-loading-3",
+      "url": "https://www.w3.org/TR/css-font-loading/",
+      "version": "CSS Font Loading Module Level 3 Working Draft",
+      "effective_date": "2023-04-06",
+      "license": "W3C document license",
+      "notes": "Defines FontFace from ArrayBuffer and FontFaceSet behavior for local browser testing."
+    }
+  ],
+  "assumptions": "Canvas TextMetrics in the current browser is representative of the target rendering environment.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "Results are browser-, OS-, font-availability- and rasterizer-dependent. CSS layout can add effects not represented by a simple canvas measurement."
+}

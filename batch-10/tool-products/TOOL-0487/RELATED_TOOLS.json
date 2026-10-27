@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0487",
+  "related": [
+    {
+      "id": "TOOL-0269",
+      "title": "Gravel, Mulch and Soil Volume Calculator",
+      "proposed_canonical": "/calculators/gravel-mulch-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0482",
+      "title": "ACoS/ROAS Converter & Break-Even Calculator",
+      "proposed_canonical": "/calculators/acos-roas-break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0483",
+      "title": "Event Space Capacity Calculator",
+      "proposed_canonical": "/calculators/event-room-capacity-layout-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0484",
+      "title": "Tablecloth Size & Drop Calculator",
+      "proposed_canonical": "/calculators/tablecloth-size-drop-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0488",
+      "title": "Fertilizer & Seed Spreader Settings Calculator",
+      "proposed_canonical": "/calculators/fertilizer-seed-spreader-settings-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

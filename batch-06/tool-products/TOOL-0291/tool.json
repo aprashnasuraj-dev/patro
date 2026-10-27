@@ -1,0 +1,107 @@
+{
+  "id": "TOOL-0291",
+  "name": "HIIT and Tabata Interval Timer",
+  "slug": "tabata-interval-timer",
+  "route": "/tools/tabata-interval-timer",
+  "family": "F0157",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "HIIT and Tabata Interval Timer | AafnaiPatro",
+    "description": "Build and run a customizable high-intensity interval workout with warm-up, repeats and cool-down.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "work",
+      "label": "Work interval",
+      "default": 20,
+      "min": 1,
+      "max": 600,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "rest",
+      "label": "Rest interval",
+      "default": 10,
+      "min": 0,
+      "max": 600,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "rounds",
+      "label": "Intervals per set",
+      "default": 8,
+      "min": 1,
+      "max": 100,
+      "step": "1",
+      "unit": "rounds"
+    },
+    {
+      "type": "number",
+      "key": "sets",
+      "label": "Sets",
+      "default": 1,
+      "min": 1,
+      "max": 20,
+      "step": "1",
+      "unit": "sets"
+    },
+    {
+      "type": "number",
+      "key": "between",
+      "label": "Recovery between sets",
+      "default": 60,
+      "min": 0,
+      "max": 1800,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "warmup",
+      "label": "Warm-up",
+      "default": 0,
+      "min": 0,
+      "max": 1800,
+      "step": "1",
+      "unit": "seconds"
+    },
+    {
+      "type": "number",
+      "key": "cooldown",
+      "label": "Cool-down",
+      "default": 0,
+      "min": 0,
+      "max": 1800,
+      "step": "1",
+      "unit": "seconds"
+    }
+  ],
+  "explanation": "Total = warmup + sets×rounds×work + sets×(rounds−1)×rest +(sets−1)×between + cooldown. Audible notification requires user gesture.",
+  "limitations": "High-intensity training should be scaled to fitness; browser throttling can delay timers in background.",
+  "related_tool_ids": [
+    "TOOL-0292",
+    "TOOL-0293"
+  ],
+  "sources": [
+    "https://www.acsm.org/"
+  ],
+  "special_notes": null
+}

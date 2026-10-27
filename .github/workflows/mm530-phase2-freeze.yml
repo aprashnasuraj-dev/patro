@@ -1,0 +1,102 @@
+name: MM530 Phase 2 freeze canonical inventory
+
+on:
+  push:
+    branches: [table]
+    paths:
+      - config/mm530-phase2-freeze-trigger.json
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout table
+        uses: actions/checkout@v4
+        with:
+          ref: table
+          fetch-depth: 0
+
+      - name: Read freeze source
+        id: source
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs');
+          const x=JSON.parse(fs.readFileSync('config/mm530-phase2-freeze-trigger.json','utf8'));
+          for(const k of ['run_id','source_commit','artifact_name','artifact_digest']){
+            if(!x[k])throw new Error('Missing '+k);
+          }
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'run_id='+x.run_id+'\n');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'source_commit='+x.source_commit+'\n');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'artifact_name='+x.artifact_name+'\n');
+          NODE
+
+      - name: Download exact verified Phase 2 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.source.outputs.artifact_name }}
+          path: .mm530-phase2-freeze
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ steps.source.outputs.run_id }}
+
+      - name: Verify and compact durable canonical inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs'),path=require('path'),crypto=require('crypto');
+          const trigger=JSON.parse(fs.readFileSync('config/mm530-phase2-freeze-trigger.json','utf8'));
+          const base='.mm530-phase2-freeze';
+          const full=JSON.parse(fs.readFileSync(path.join(base,'canonical-tools.json'),'utf8'));
+          const summary=JSON.parse(fs.readFileSync(path.join(base,'inventory-summary.json'),'utf8'));
+          if(summary.status!=='PASS'||summary.records!==530||summary.unique_ids!==530||summary.identity_ambiguity_count!==0||summary.duplicate_canonical_count!==0)throw new Error('Phase 2 hard gate not PASS');
+          if(!Object.values(summary.hard_gate||{}).every(Boolean))throw new Error('Phase 2 hard gate contains false');
+          if(full.tools?.length!==530)throw new Error('Canonical inventory is not 530 tools');
+          const ids=full.tools.map(x=>x.id),expected=Array.from({length:530},(_,i)=>'TOOL-'+String(i+1).padStart(4,'0'));
+          if(ids.some((x,i)=>x!==expected[i]))throw new Error('Tool sequence mismatch');
+          const compact=full.tools.map(t=>({
+            id:t.id,sequence:t.sequence,title:t.title,batch:t.batch,source_dir:t.source_dir,
+            primary_group:t.primary_group,topic_group:t.topic_group,engineering_family:t.engineering_family,
+            routes:t.routes,dependencies:t.dependencies,tests:{framework_counts:t.tests.framework_counts},
+            browser:t.browser,policy:t.policy,
+            qa:{source_state:t.qa.source_state,qa_status:t.qa.qa_status,publication_status:t.qa.publication_status,published:t.qa.published,git_imported:t.qa.git_imported},
+            inventory_issues:t.inventory_issues
+          }));
+          const durable={schema_version:'MM530_CANONICAL_INDEX_V1',source:{workflow_run_id:trigger.run_id,source_commit:trigger.source_commit,artifact_name:trigger.artifact_name,artifact_digest:trigger.artifact_digest},summary,tools:compact};
+          fs.mkdirSync('data/mm530',{recursive:true});
+          fs.writeFileSync('data/mm530/canonical-tools-v1.json',JSON.stringify(durable,null,2)+'\n');
+          for(const name of ['inventory-summary.json','inventory-issues.json','phase2-summary.md'])fs.copyFileSync(path.join(base,name),path.join('data/mm530',name));
+          const digest=crypto.createHash('sha256').update(fs.readFileSync('data/mm530/canonical-tools-v1.json')).digest('hex');
+          fs.writeFileSync('data/mm530/README.md',[
+            '# MM530 canonical inventory',
+            '',
+            'Generated from verified Phase 2 workflow run '+trigger.run_id+' at source commit '+trigger.source_commit+'.',
+            '',
+            '- canonical-tools-v1.json: durable normalized index for TOOL-0001..TOOL-0530.',
+            '- inventory-summary.json: Phase 2 hard-gate results.',
+            '- inventory-issues.json: explicit review queues; these are not silently treated as PASS.',
+            '- phase2-summary.md: concise generated summary.',
+            '',
+            'Canonical index SHA-256: '+digest+'.',
+            '',
+            'This inventory does not publish routes or change tool behavior.'
+          ].join('\n')+'\n');
+          console.log('CANONICAL_INDEX_SHA256='+digest);
+          NODE
+
+      - name: Commit durable Phase 2 inventory to table
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/mm530/
+          git diff --cached --quiet && { echo "Inventory already frozen"; exit 0; }
+          git commit -m "chore(mm530): freeze verified phase 2 canonical inventory"
+          git push origin HEAD:table

@@ -1,0 +1,27 @@
+{
+  "tool_id": "TOOL-0256",
+  "status": "TEST_PENDING",
+  "sample": {
+    "rows": [
+      {
+        "id": "1",
+        "name": "Ada Example",
+        "title": "CEO",
+        "managerId": ""
+      },
+      {
+        "id": "2",
+        "name": "Lee Example",
+        "title": "Engineering Director",
+        "managerId": "1"
+      },
+      {
+        "id": "3",
+        "name": "Kim Example",
+        "title": "Engineer",
+        "managerId": "2"
+      }
+    ]
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

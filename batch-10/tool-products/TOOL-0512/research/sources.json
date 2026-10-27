@@ -1,0 +1,20 @@
+[
+  {
+    "name": "CRA FHSA participation room",
+    "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/contributing-your-fhsa.html",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "FHSA annual room $8,000 plus up to $8,000 carryforward; $40,000 lifetime combined contributions/transfers. HBP cap $60,000.",
+    "uncertainty": "Complex excess FHSA repairs, withdrawal year exemptions and RRSP qualification excluded."
+  },
+  {
+    "name": "CRA Home Buyers Plan",
+    "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan/participate-home-buyers-plan.html",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "FHSA annual room $8,000 plus up to $8,000 carryforward; $40,000 lifetime combined contributions/transfers. HBP cap $60,000.",
+    "uncertainty": "Complex excess FHSA repairs, withdrawal year exemptions and RRSP qualification excluded."
+  }
+]

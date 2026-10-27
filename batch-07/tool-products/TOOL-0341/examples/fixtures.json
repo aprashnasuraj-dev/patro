@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0341",
+  "examples": [
+    {
+      "text": "Hi http://test.co",
+      "x_weighted_expected": 26
+    },
+    {
+      "text": "故",
+      "x_weighted_expected": 2
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0407",
+  "status": "TEST_PENDING",
+  "scenarios": [
+    "Keyboard-only: reach every input, submit, and read results.",
+    "Malformed numeric input: show a human-readable error without throwing into the page.",
+    "Very large but bounded input: complete without unbounded loops or DOM growth.",
+    "Mobile width: fields and result tables remain usable without clipped controls.",
+    "No user-controlled value is inserted through innerHTML.",
+    "No runtime network request is required for the normal calculation path."
+  ]
+}

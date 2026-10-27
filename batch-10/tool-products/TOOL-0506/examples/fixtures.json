@@ -1,0 +1,11 @@
+{
+  "title": "Buy-to-Let Interest Coverage Stress Test",
+  "default_inputs": {
+    "rent": "1500",
+    "loan": "200000",
+    "stress": "5.5",
+    "target": "145"
+  },
+  "worked_example": "£1,500 per month rent with £200k at 5.5% stress implies ~163.6% ICR.",
+  "expected_assertions": "Qualitative example only; execute tests after Git integration."
+}

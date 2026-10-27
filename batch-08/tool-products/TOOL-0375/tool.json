@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0375",
+  "name": "Projectile Motion Calculator with Trajectory Plot",
+  "route": "/tools/projectile-motion-calculator",
+  "batch": "BATCH-08",
+  "run_id": "RUN-15",
+  "engineering_family_id": "F0209",
+  "engineering_family": "Projectile Trajectory Calculator",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Projectile Motion Calculator with Trajectory Plot — Private Browser Tool",
+    "meta_description": "Model ideal projectile motion with configurable gravity and initial height, then plot the no-air-resistance trajectory locally.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

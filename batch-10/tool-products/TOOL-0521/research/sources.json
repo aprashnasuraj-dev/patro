@@ -1,0 +1,11 @@
+[
+  {
+    "name": "USCIS N-400 instruction physical presence and early filing",
+    "url": "https://www.uscis.gov/sites/default/files/document/forms/n-400instr.pdf",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "30 months/913 days in 5 years or 18 months/548 days in 3 years; USCIS counts departure and return days in US.",
+    "uncertainty": "Continuous residence, tax and morality conditions not certified."
+  }
+]

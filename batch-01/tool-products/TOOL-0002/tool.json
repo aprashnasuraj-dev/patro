@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0002",
+  "name": "JSON to Zod Schema Converter",
+  "route": "/tools/json-to-zod-schema",
+  "family": "F0001",
+  "run": "RUN-01",
+  "batch": "BATCH-01",
+  "source_state": "SOURCE_PREPARED",
+  "qa_status": "TEST_PENDING",
+  "robots": "noindex",
+  "canonical": null,
+  "og_url": null,
+  "date_published": null,
+  "published": false,
+  "source_entry": "src/ui.ts",
+  "core": "src/core.ts",
+  "static_page": "page.html",
+  "framework": "browser ES modules, integration route-level dynamic import required"
+}

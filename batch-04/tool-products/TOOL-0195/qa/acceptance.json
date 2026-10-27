@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0195",
+  "status": "TEST_PENDING",
+  "executed": false,
+  "checks": {
+    "build": false,
+    "typecheck": false,
+    "unit": false,
+    "browser": false,
+    "accessibility": false,
+    "responsive": false,
+    "performance": false,
+    "security": false
+  },
+  "storage_checks_are_not_product_qa": true,
+  "notes": [
+    "Prepared test scenarios only; none executed in this checkpoint.",
+    "Regex extraction identifies plausible syntax only; it does not verify mailbox existence, DNS, MX, ownership, or deliverability."
+  ]
+}

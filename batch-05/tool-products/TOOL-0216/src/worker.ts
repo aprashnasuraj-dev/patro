@@ -1,0 +1,1 @@
+import {factorize} from "./core";self.onmessage=(e:MessageEvent)=>{try{(self as any).postMessage({result:factorize(e.data.value)});}catch(err){(self as any).postMessage({error:err instanceof Error?err.message:String(err)});}};

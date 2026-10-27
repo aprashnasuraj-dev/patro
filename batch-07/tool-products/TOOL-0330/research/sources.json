@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0330",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://csrc.nist.gov/pubs/sp/800/38/d/final",
+      "title": "Galois/Counter Mode (GCM) and GMAC",
+      "publisher": "NIST",
+      "version": "SP 800-38D",
+      "effective_date": "2007-11",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "GCM nonce uniqueness is critical. This package uses random per-message nonces or per-file nonce-prefix + chunk-counter framing."
+    },
+    {
+      "url": "https://csrc.nist.gov/pubs/sp/800/132/final",
+      "title": "Recommendation for Password-Based Key Derivation",
+      "publisher": "NIST",
+      "version": "SP 800-132",
+      "effective_date": "2010-12",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "PBKDF2 work factor is configurable/versioned; password quality still matters."
+    }
+  ],
+  "no_external_source_reason": null
+}

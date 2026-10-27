@@ -1,0 +1,17 @@
+{
+  "schema_version": "MM530_PHASE7_GATE_V1",
+  "route_manifest_complete": true,
+  "category_manifest_complete": true,
+  "tool_count": 530,
+  "duplicate_canonical_routes": 0,
+  "known_route_collisions": 0,
+  "dashboard_outside_tool_namespace": true,
+  "verification": "SOURCE_ARCHITECTURE_PASS__BUILD_AND_BROWSER_DEFERRED_BY_OPERATOR",
+  "dashboard_root": "/advancetools/",
+  "web_tool_discovery_root": "/advancetools/web-tools/",
+  "existing_advanced_collections_preserved": true,
+  "existing_patro_tools_namespace_preserved": true,
+  "frozen_leaf_canonicals_renamed": 0,
+  "source_route_audit": "PASS",
+  "source_route_audit_head": "74720d536070dcc2954ad5ea42983b5d1de51038"
+}

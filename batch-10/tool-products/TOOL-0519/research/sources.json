@@ -1,0 +1,11 @@
+[
+  {
+    "name": "U.S. Trustee means testing and filing periods",
+    "url": "https://www.justice.gov/ust/means-testing",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Current monthly income is average of six complete calendar months before filing, ×12; compares against externally verified DOJ state table.",
+    "uncertainty": "Not a case-filing or legal eligibility decision; statutory exemptions may alter calculation."
+  }
+]

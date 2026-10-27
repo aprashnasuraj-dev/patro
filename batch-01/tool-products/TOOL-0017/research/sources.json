@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0017",
+  "sources": [
+    {
+      "url": "https://developer.hashicorp.com/terraform/language/values/variables",
+      "source_type": "official_or_normative",
+      "retrieved_on": "2026-10-26",
+      "licensing": "Primary documentation as factual reference only; no copied source implementation",
+      "supports": "Syntax/semantics, not an assertion of runtime correctness"
+    },
+    {
+      "url": "https://developer.hashicorp.com/terraform/language/syntax/json",
+      "source_type": "official_or_normative",
+      "retrieved_on": "2026-10-26",
+      "licensing": "Primary documentation as factual reference only; no copied source implementation",
+      "supports": "Syntax/semantics, not an assertion of runtime correctness"
+    }
+  ],
+  "runtime_data_feeds": [],
+  "third_party_code_copied": false,
+  "bundled_assets": "none",
+  "dependency_license_review_at_import": "No new runtime dependency declared"
+}

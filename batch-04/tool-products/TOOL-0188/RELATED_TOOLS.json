@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0188",
+  "related": [
+    {
+      "id": "TOOL-0189",
+      "title": "Combine Excel Sheets into One Sheet",
+      "proposed_canonical": "/utilities/combine-excel-sheets",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0181",
+      "title": "Split CSV by Column Value or Row Count",
+      "proposed_canonical": "/editors/split-csv-by-column",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0182",
+      "title": "Merge CSV Files with Column Alignment",
+      "proposed_canonical": "/editors/merge-csv-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0185",
+      "title": "Excel to JSON with Header Row Chooser",
+      "proposed_canonical": "/converters/excel-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0197",
+      "title": "Join Two CSV Files on a Key (VLOOKUP-style)",
+      "proposed_canonical": "/utilities/join-csv-files",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

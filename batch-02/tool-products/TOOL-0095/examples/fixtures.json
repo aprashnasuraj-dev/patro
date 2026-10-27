@@ -1,0 +1,5 @@
+{
+  "sample_input": "Clear writing uses familiar words and direct sentences.",
+  "expected_behavior": "The tool reports Flesch Reading Ease, Flesch-Kincaid grade, Gunning Fog, SMOG, Coleman-Liau and ARI from the same visible word/sentence counts.",
+  "qa_status": "TEST_PENDING"
+}

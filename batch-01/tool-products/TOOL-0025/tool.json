@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0025",
+  "title": "Nginx Location Block Match Tester",
+  "slug": "nginx-location-match-tester",
+  "route": "/tools/nginx-location-match-tester",
+  "engineering_family": "F0014",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "Nginx Location Block Match Tester — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Simulate selection among simple Nginx location directives and explain exact/prefix/regex precedence. Runs locally in your browser. Review limitations and exam",
+    "h1": "Route precedence debugger: Nginx Location Block Match Tester",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "Nginx location snippets",
+    "max_utf8_bytes": 250000
+  },
+  "output": "nginx-location-result.json",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {},
+  "limits": "This models documented initial location selection only, not nested locations, rewrite/internal redirects, named locations or upstream runtime configuration."
+}

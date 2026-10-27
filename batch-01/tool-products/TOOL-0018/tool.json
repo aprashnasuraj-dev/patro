@@ -1,0 +1,37 @@
+{
+  "id": "TOOL-0018",
+  "title": "Helm values.yaml to --set Flags",
+  "slug": "helm-values-to-set-flags",
+  "route": "/tools/helm-values-to-set-flags",
+  "engineering_family": "F0004",
+  "source_file": "source/mission_mangal_final_tool_engineering_queue_530.csv",
+  "source_sha256": "76ef428c25a1d4b586ec22454a7b1a058238cb1a39a43e7ea9a5767df5172403",
+  "source_state": "SOURCE_PREPARED",
+  "transfer_status": "NOT_ATTEMPTED",
+  "qa_status": "TEST_PENDING",
+  "git_imported": 0,
+  "published": 0,
+  "publication_gate": "LOCKED",
+  "seo": {
+    "title": "Helm values.yaml to --set Flags — Private Browser Tool | AafnaiPatro",
+    "meta_description": "Flatten Helm values with safe --set-json flags, keeping booleans, arrays and strings distinct. Runs locally in your browser. Review limitations and examples.",
+    "h1": "Release override planner: Helm values.yaml to --set Flags",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "input": {
+    "label": "Helm values.yaml (limited YAML subset)",
+    "max_utf8_bytes": 250000
+  },
+  "output": "helm-flags.sh",
+  "privacy": {
+    "routine_cloudflare_worker_calls": 0,
+    "remote_user_data_transfer": false
+  },
+  "dependencies": {
+    "yaml": "2.8.1"
+  },
+  "limits": "Uses a YAML parser at integration time; --set-json requires compatible Helm. Shell fragments contain safely quoted literal values; secrets passed in CLI arguments can appear in process lists."
+}

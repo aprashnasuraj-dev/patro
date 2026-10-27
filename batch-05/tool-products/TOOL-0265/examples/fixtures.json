@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0265",
+  "examples": [
+    {
+      "inputs": {
+        "room_ft": [
+          16,
+          12,
+          8
+        ],
+        "openings_ft2": 40,
+        "panel": "4x8",
+        "waste_pct": 10,
+        "compound_gal_per_1000ft2": 9,
+        "tape_ft_per_1000ft2": 370
+      },
+      "expected_note": "USG guidance supports subtracting large openings; finishing rates are editable."
+    }
+  ]
+}

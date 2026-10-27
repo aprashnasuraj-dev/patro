@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0234",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Same starting cash budget for renter and buyer; monthly cash-flow differences are invested at the entered return."
+  ],
+  "uncertainty": [
+    "A scenario model, not a forecast; taxes, financing changes, renovations, deposits and many transaction-specific costs are omitted."
+  ]
+}

@@ -1,0 +1,8 @@
+import {N,S,D,ODate,addDays,Q,M,P,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Pure, bounded calculations; no user-data storage or network. */
+export function calculate(i:Record<string,unknown>):Result {
+const h=N(i,'hours',1,1e9),rec=N(i,'recordable',0,1e6),dart=N(i,'dart',0,1e6);if(!Number.isInteger(rec)||!Number.isInteger(dart)||dart>rec)throw Error('DART and recordable must be whole case counts, with DART ≤ recordables');
+const trir=rec*200000/h,dartr=dart*200000/h,mode=S(i,'benchmark',50);if(!['2024 US private industry aggregate','Custom verified industry benchmark'].includes(mode))throw Error('Unknown benchmark');let tr=2.3,dr=1.4,scope='2024 private-industry aggregate';if(mode==='Custom verified industry benchmark'){scope=S(i,'industry',100);if(!scope)throw Error('Name the verified NAICS industry and year');tr=N(i,'blsTRIR',0,1000);dr=N(i,'blsDART',0,1000)}
+return R([{label:'TRIR per 100 FTE',value:Q(trir)},{label:'DART per 100 FTE',value:Q(dartr)},{label:'Benchmark TRIR',value:Q(tr)},{label:'Benchmark DART',value:Q(dr)},{label:'TRIR minus reference',value:Q(trir-tr)},{label:'DART minus reference',value:Q(dartr-dr)}],[`Comparison: ${scope}. Aggregate rates can conceal industry size, workforce, exposure and classification differences.`,'Actual employee work hours are required; paid-but-not-worked time is not the same denominator. Low-hour establishments can produce volatile incident rates.'],['Each incidence rate = case count × 200,000 / actual hours worked.','DART cases are a subset of OSHA-recordable cases, not a count of days lost.']);
+}

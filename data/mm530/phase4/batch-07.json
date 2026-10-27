@@ -1,0 +1,601 @@
+{
+  "schema_version": "MM530_PHASE4_BATCH_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "workflow_run_id": 40453367367,
+    "artifact_id": 12711621150,
+    "artifact_digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+  },
+  "batch": "BATCH-07",
+  "count": 53,
+  "summary": {
+    "unit_PASS": 53,
+    "compile_PASS": 50,
+    "compile_BLOCKED": 3
+  },
+  "tools": [
+    {
+      "id": "TOOL-0319",
+      "title": "Golden Hour and Sun Position Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0320",
+      "title": "Moon Phase Calculator for Any Date",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0321",
+      "title": "Large File Hash Calculator (SHA-256, SHA-512, MD5, CRC32)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0322",
+      "title": "Checksum File Verifier (sha256sums Parser)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0323",
+      "title": "Password Strength Auditor with Pattern Breakdown",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0324",
+      "title": "Diceware Passphrase Generator (EFF Wordlists)",
+      "compile": {
+        "state": "BLOCKED"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0325",
+      "title": "Argon2 and bcrypt Cost Benchmark on Your Device",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0326",
+      "title": "HMAC Generator and Webhook Signature Tester",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0327",
+      "title": "PKCE Code Verifier and Challenge Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0328",
+      "title": "TOTP Debugger (RFC 6238)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0329",
+      "title": "Encrypt and Decrypt Text with a Password (AES-GCM)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0330",
+      "title": "File Encryptor and Decryptor in Browser (AES-GCM)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0331",
+      "title": "RSA and ECDSA Key Pair Generator (PEM and JWK)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0332",
+      "title": "PEM to JWK and JWK to PEM Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0333",
+      "title": "SSH Public Key Fingerprint Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0334",
+      "title": "PGP Public Key Inspector",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0335",
+      "title": "API Key and Token Generator (Hex, Base62, UUIDv7, ULID)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0336",
+      "title": "UUID v4/v7 and ULID Generator with Timestamp Decoder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0337",
+      "title": "Office Document Metadata Scrubber (DOCX, XLSX, PPTX)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0338",
+      "title": "QR Code Inspector with Link Safety Hints",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0339",
+      "title": "URL and IP Defanger/Refanger for Security Reports",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0340",
+      "title": "Subresource Integrity (SRI) Hash Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0342",
+      "title": "Instagram Carousel and Grid Image Splitter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0345",
+      "title": "Accessible Hashtag Formatter (PascalCase)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0346",
+      "title": "Fancy Unicode Text Generator with Accessibility Warnings",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0347",
+      "title": "One Image to All Social Sizes Resizer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0348",
+      "title": "Podcast RSS Feed Validator (Paste XML)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0349",
+      "title": "Screen Recorder with Webcam Overlay (No Watermark)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "SKIPPED_EXTERNAL_DEVICE"
+    },
+    {
+      "id": "TOOL-0350",
+      "title": "Webcam and Microphone Test",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "SKIPPED_EXTERNAL_DEVICE"
+    },
+    {
+      "id": "TOOL-0351",
+      "title": "Online Teleprompter with Mirror Mode",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0352",
+      "title": "Video Cropper for 9:16 Shorts and Reels with Safe Zones",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0353",
+      "title": "Link-in-Bio Page Generator (Single HTML File)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0354",
+      "title": "Thread Splitter for Posts (Numbered, Sentence-Aware)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0355",
+      "title": "Text-on-Image Contrast Checker (WCAG and APCA)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0356",
+      "title": "YouTube Embed Code Builder (Start Time, Privacy Mode)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0357",
+      "title": "Verifiable Random Giveaway Picker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0358",
+      "title": "Printable Bingo Card Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0359",
+      "title": "Business Card Maker with Print-Ready PDF and Bleed",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0360",
+      "title": "Screenshot Device Frame Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0361",
+      "title": "APA 7 Reference Formatter from Fields",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0362",
+      "title": "BibTeX to APA, MLA, Chicago Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0363",
+      "title": "RIS to BibTeX Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0364",
+      "title": "BibTeX Cleaner and Duplicate Remover",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0365",
+      "title": "GPA Calculator with Custom Grade Scale",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0366",
+      "title": "Final Grade Calculator (What Do I Need on the Final?)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0367",
+      "title": "CGPA to Percentage Converter (Multiple University Formulas)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0368",
+      "title": "Speech Length Calculator (Words to Minutes)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0369",
+      "title": "Writing Word Count Goal Tracker (Local)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0370",
+      "title": "Excel to LaTeX Table Generator",
+      "compile": {
+        "state": "BLOCKED"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0371",
+      "title": "LaTeX Equation Preview and SVG/PNG Export",
+      "compile": {
+        "state": "BLOCKED"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    }
+  ]
+}

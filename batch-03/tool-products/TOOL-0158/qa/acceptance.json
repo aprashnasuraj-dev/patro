@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0158",
+  "runtime_status": "TEST_PENDING",
+  "prepared_checks": [
+    "known-answer source test",
+    "boundary source test",
+    "malformed input source test",
+    "security source test",
+    "export/download source test",
+    "responsive interaction scenario",
+    "accessibility scenario",
+    "performance-sensitive scenario"
+  ],
+  "executed": false,
+  "pass_claimed": false
+}

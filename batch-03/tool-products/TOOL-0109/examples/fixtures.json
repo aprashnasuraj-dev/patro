@@ -1,0 +1,4 @@
+{
+  "qa_status": "TEST_PENDING",
+  "sample_behavior": "Choose “system UI”, put Inter first, and get a stack that tries Inter, platform UI fonts, then system-ui and sans-serif."
+}

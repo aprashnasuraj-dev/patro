@@ -1,0 +1,50 @@
+{
+  "id": "TOOL-0446",
+  "name": "Label Sheet Template & Alignment Printer",
+  "slug": "label-sheet-print-alignment-calibrator",
+  "route": "/tools/label-sheet-print-alignment-calibrator",
+  "family": "F0253",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Label Sheet Template & Alignment Printer — Interactive Local Tool | AafnaiPatro",
+    "description": "Lay out a verified label stock as a millimeter SVG sheet and calculate calibration offsets, preserving exact margin and pitch rather than stretching to fit"
+  },
+  "execution": {
+    "mode": "client-only",
+    "account_required": false,
+    "worker_required": false,
+    "third_party_content_transmission": false,
+    "lazy_load_route_module": true
+  },
+  "entrypoints": {
+    "html": "page.html",
+    "typescript": "src/ui.ts",
+    "css": "src/styles.css"
+  },
+  "shared_imports": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css",
+    "tool-products/_shared/visual.ts"
+  ],
+  "security": {
+    "bounded_inputs": true,
+    "reject_nonfinite": true,
+    "no_user_content_upload": true,
+    "safe_text_rendering": true,
+    "no_untrusted_html": true
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "published": false,
+    "sitemap": false
+  }
+}

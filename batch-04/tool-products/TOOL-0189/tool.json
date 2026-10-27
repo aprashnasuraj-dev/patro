@@ -1,0 +1,33 @@
+{
+  "tool_id": "TOOL-0189",
+  "build_sequence": 189,
+  "name": "Combine Excel Sheets into One Sheet",
+  "route": "/tools/combine-excel-sheets",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0085",
+  "engineering_family": "Split and Merge CSV and Excel Files",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "Combine Excel Sheets into One Sheet — Free Local Browser Tool",
+    "meta_description": "Combine Excel worksheets into one aligned table with an optional source-sheet column and transparent value/formula handling.",
+    "h1": "Combine Excel Sheets into One Sheet",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": 26214400,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": [
+    "/assets/vendor/sheetjs/xlsx-0.20.3/xlsx.mjs"
+  ]
+}

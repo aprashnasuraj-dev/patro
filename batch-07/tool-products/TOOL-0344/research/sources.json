@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0344",
+  "research_scope": "Only implementation-changing formulas, platform rules, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://support.google.com/youtube/answer/9884579",
+      "title": "Video chapters",
+      "publisher": "YouTube Help",
+      "version": null,
+      "effective_date": null,
+      "assumptions": "Used only for implementation-changing semantics.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Platform guidance and browser behavior can change after this source-preparation date.",
+      "important_limitations": "Manual chapters require first timestamp 00:00, at least three timestamps, ascending order, and chapters at least 10 seconds."
+    }
+  ],
+  "no_external_source_reason": null
+}

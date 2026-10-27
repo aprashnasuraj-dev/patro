@@ -1,0 +1,12 @@
+{
+  "tool_id": "TOOL-0307",
+  "examples": [
+    {
+      "input": "BEGIN:VCALENDAR\r\nBEGIN:VEVENT\r\nUID:x\r\nDTSTART:20260101T000000Z\r\nSUMMARY:Hello\\, world\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n",
+      "expected": {
+        "events": 1,
+        "summary": "Hello, world"
+      }
+    }
+  ]
+}

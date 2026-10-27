@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0091",
+  "related": [
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "proposed_canonical": "/converters/excel-to-markdown-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0117",
+      "title": "Text Width in Pixels Calculator",
+      "proposed_canonical": "/calculators/text-width-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0196",
+      "title": "CSV to Sortable HTML Table",
+      "proposed_canonical": "/converters/csv-to-html-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0081",
+      "title": "Zero-Width and Invisible Character Detector",
+      "proposed_canonical": "/analyzers/invisible-character-detector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0087",
+      "title": "Word-Level Text Diff Checker",
+      "proposed_canonical": "/validators/word-level-text-diff",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

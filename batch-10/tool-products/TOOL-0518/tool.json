@@ -1,0 +1,44 @@
+{
+  "id": "TOOL-0518",
+  "name": "California Meal Break and Overtime Wage Claim Calculator",
+  "slug": "california-meal-rest-break-wage-claim-calculator",
+  "route": "/tools/california-meal-rest-break-wage-claim-calculator",
+  "family": "F0263",
+  "description": "Screen California daily overtime and meal/rest premium wages using explicit non-exempt status assumptions and weekly work logs.",
+  "seo": {
+    "title": "California Meal Break and Overtime Wage Claim Calculator — Free Local Tool | AafnaiPatro",
+    "description": "Screen California daily overtime and meal/rest premium wages using explicit non-exempt status assumptions and weekly work logs.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "execution": {
+    "mode": "browser-first",
+    "network_required": false,
+    "account_required": false,
+    "uploads_required": false,
+    "lazy_load": "when_tool_route_opens",
+    "third_party_data_transmission": false
+  },
+  "status": "TEST_PENDING",
+  "ui_variant": "wages",
+  "inputs": [
+    {
+      "key": "shifts",
+      "label": "Daily shift CSV: date,hours,meal_violations,rest_violations,paid (one worker)",
+      "default": "date,hours,meal_violations,rest_violations,paid\n2026-10-19,10,1,0,260\n2026-10-20,8,0,1,200",
+      "type": "textarea"
+    },
+    {
+      "key": "hourly",
+      "label": "Regular hourly compensation rate",
+      "default": 25,
+      "unit": "USD/hour",
+      "type": "number",
+      "min": 0.01,
+      "max": 10000,
+      "step": "any"
+    }
+  ]
+}

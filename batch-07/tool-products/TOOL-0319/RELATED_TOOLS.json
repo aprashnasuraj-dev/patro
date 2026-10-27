@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0319",
+  "related": [
+    {
+      "id": "TOOL-0294",
+      "title": "Endurance Fueling Calculator (Carbs per Hour)",
+      "proposed_canonical": "/calculators/endurance-fueling-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0301",
+      "title": "Business Days Calculator with Custom Holidays and Weekends",
+      "proposed_canonical": "/calculators/business-days-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0302",
+      "title": "Exact Date Difference Calculator (Years, Months, Days)",
+      "proposed_canonical": "/calculators/date-difference-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0310",
+      "title": "ISO Week Number Calculator and Calendar",
+      "proposed_canonical": "/calculators/week-number-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0311",
+      "title": "Add or Subtract Days, Weeks, Months from a Date",
+      "proposed_canonical": "/calculators/add-days-to-date-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

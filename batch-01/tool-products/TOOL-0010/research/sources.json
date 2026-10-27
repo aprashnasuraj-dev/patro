@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0010",
+  "retrieved_on": "2026-10-26",
+  "authorities": [
+    {
+      "url": "https://docs.docker.com/reference/compose-file/services/",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    },
+    {
+      "url": "https://compose-spec.io/",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    },
+    {
+      "url": "https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/",
+      "authority": "primary specification/vendor",
+      "retrieved_on": "2026-10-26",
+      "rights": "Reference documentation; no third-party source code copied",
+      "implementation_claim": "Rules/semantics are constrained by the linked authority"
+    }
+  ],
+  "external_code_or_assets_reused": false,
+  "license_notes": "Generated code, page and style authored as original source; vendor specifications used solely as references. npm yaml package requires its license obligations to be respected at Git integration; confirm dependency license and pinned version then."
+}

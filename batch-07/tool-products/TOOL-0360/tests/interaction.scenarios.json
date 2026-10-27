@@ -1,0 +1,22 @@
+{
+  "status": "TEST_PENDING",
+  "security_cases": [
+    "normal use performs no third-party content transmission",
+    "user-controlled text renders via textContent or explicit escaping",
+    "file parsers and decoders have byte/dimension/count bounds",
+    "generated HTML/PDF/export strings do not inject raw user markup",
+    "camera/screen access occurs only after explicit user gesture"
+  ],
+  "responsive_accessibility_cases": [
+    "320px viewport has no page-level horizontal scroll",
+    "keyboard-only controls retain visible focus",
+    "result region uses role=status and aria-live=polite",
+    "canvas/media tools provide textual metrics and controls"
+  ],
+  "performance_cases": [
+    "large media operations are user-triggered and bounded",
+    "object URLs are revoked when replaced or downloaded",
+    "no normal calculation requires a Cloudflare Worker"
+  ],
+  "tool_specific": []
+}

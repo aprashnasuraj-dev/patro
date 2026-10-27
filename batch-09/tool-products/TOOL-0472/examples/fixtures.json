@@ -1,0 +1,24 @@
+{
+  "default_input": {
+    "state": "State electrician board (verify)",
+    "required": 8000,
+    "logged": 6000,
+    "entries": "2026-10-01,8,field\n2026-10-02,6,classroom",
+    "dailyCap": 16
+  },
+  "hand_reference": {
+    "label": "New field hours",
+    "value": "8.00",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

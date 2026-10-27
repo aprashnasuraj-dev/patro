@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0138",
+  "related": [
+    {
+      "id": "TOOL-0136",
+      "title": "GIF Frame Extractor",
+      "proposed_canonical": "/extractors/gif-frame-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0137",
+      "title": "GIF Speed Changer and Reverser",
+      "proposed_canonical": "/editors/gif-speed-changer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0123",
+      "title": "PNG/JPG to AVIF and WebP with Quality Compare",
+      "proposed_canonical": "/comparisons/image-to-avif-webp-compare",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0122",
+      "title": "HEIC to JPG Batch Converter",
+      "proposed_canonical": "/converters/heic-to-jpg",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0124",
+      "title": "Compress Image to Exact File Size (KB)",
+      "proposed_canonical": "/converters/compress-image-to-kb",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

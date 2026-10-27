@@ -1,0 +1,41 @@
+{
+  "id": "TOOL-0434",
+  "name": "EV Home Charging Cost & Circuit Sizing",
+  "route": "/tools/ev-charging-cost-and-circuit-sizing",
+  "family": "F0245",
+  "batch": "BATCH-09",
+  "stage": "SOURCE_PREPARED",
+  "execution": "browser-local",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "EV Home Charging Cost & Circuit Sizing | AafnaiPatro Tools",
+    "description": "Translate driving needs into delivered and grid electricity, charging time and a continuous-load circuit comparison."
+  },
+  "ui": {
+    "variant": "gauge",
+    "responsive_min_width_px": 320,
+    "supports_dark_mode": true,
+    "supports_reduced_motion": true
+  },
+  "security": {
+    "no_content_upload": true,
+    "no_account_required": true,
+    "no_server_roundtrip": true,
+    "bounded_inputs": true,
+    "untrusted_content_rendered_as_text": true
+  },
+  "integration": {
+    "entry_html": "page.html",
+    "entry_module": "src/ui.ts",
+    "shared_imports": [
+      "tool-products/_shared/guard.ts",
+      "tool-products/_shared/ui.ts"
+    ]
+  },
+  "qa_runtime_status": "TEST_PENDING"
+}

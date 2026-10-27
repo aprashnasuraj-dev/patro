@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0278",
+  "name": "Insulation R-Value and Coverage Calculator",
+  "route": "/tools/insulation-calculator-r-value",
+  "batch": "BATCH-06",
+  "run_id": "RUN-12",
+  "engineering_family_id": "F0147",
+  "engineering_family": "Insulation Coverage and R-Value Planner",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Insulation R-Value and Coverage Calculator — Private Browser Tool",
+    "meta_description": "Calculate additional R-value, insulation thickness, material volume and package count from user-selected target R-value, product R-per-inch and package coverage.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

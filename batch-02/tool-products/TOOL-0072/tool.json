@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0072",
+  "name": "robots.txt Bulk URL Tester",
+  "reserved_route": "/tools/robots-txt-tester",
+  "family_id": "F0037",
+  "family": "robots.txt Bulk URL Tester",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "core_source": "src/core.ts",
+  "browser_runtime": "src/ui.js",
+  "seo": {
+    "title": "robots.txt Bulk URL Tester | AafnaiPatro Tools",
+    "description": "Evaluate many URLs against pasted robots.txt directives without requesting pages.",
+    "h1": "robots.txt Bulk URL Tester",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "no_cloudflare_worker": true,
+    "no_account": true,
+    "no_upload": true,
+    "third_party_transmission": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

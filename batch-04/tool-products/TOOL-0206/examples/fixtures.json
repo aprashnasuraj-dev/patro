@@ -1,0 +1,22 @@
+{
+  "groupA": [
+    12,
+    13,
+    11,
+    16,
+    14,
+    15
+  ],
+  "groupB": [
+    9,
+    10,
+    11,
+    8,
+    12,
+    10
+  ],
+  "checks": [
+    "Welch df may be non-integer",
+    "CI centered on mean difference"
+  ]
+}

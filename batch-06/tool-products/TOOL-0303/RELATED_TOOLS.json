@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0303",
+  "related": [
+    {
+      "id": "TOOL-0304",
+      "title": "DST Transition Dates Finder by Time Zone",
+      "proposed_canonical": "/extractors/dst-transition-dates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0293",
+      "title": "Weekly Mileage Progression Planner",
+      "proposed_canonical": "/planners/weekly-mileage-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0413",
+      "title": "Estimated Tax Safe-Harbor Planner",
+      "proposed_canonical": "/planners/estimated-tax-safe-harbor-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0414",
+      "title": "UK Payments on Account Planner",
+      "proposed_canonical": "/planners/uk-payments-on-account-planner",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0436",
+      "title": "Hours-of-Service Planner (US FMCSA & UK/EU)",
+      "proposed_canonical": "/planners/drivers-hours-of-service-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,8 @@
+{
+  "tool_id": "TOOL-0118",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": "Unsupported characters are replaced with a visible question-mark glyph rather than silently disappearing.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "This intentionally uses a compact built-in bitmap alphabet, not FIGlet fonts, so output styles are limited but dependency-free."
+}

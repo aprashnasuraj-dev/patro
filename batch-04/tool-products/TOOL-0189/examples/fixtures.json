@@ -1,0 +1,12 @@
+{
+  "nominal": {
+    "note": "Workbook fixture with reordered sheet headers and one missing column."
+  },
+  "edge_cases": [
+    "empty input",
+    "quoted delimiter/newline where applicable",
+    "oversized/cardinality bound",
+    "duplicate/missing key or header where applicable",
+    "formula-like spreadsheet text"
+  ]
+}

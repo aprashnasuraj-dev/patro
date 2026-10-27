@@ -1,0 +1,4 @@
+import { loadPdfLib, loadPdfJs, renderPdfPageToCanvas } from '../_vendor/pdf';
+export async function thumbnails(file:File,scale=.25){const {pdf}=await loadPdfJs(file);const out=[] as {page:number,dataUrl:string}[];try{for(let i=1;i<=pdf.numPages;i++){const c=await renderPdfPageToCanvas(pdf,i,scale);out.push({page:i,dataUrl:c.toDataURL('image/jpeg',.7)});await new Promise(r=>setTimeout(r,0))}return out}finally{await pdf.destroy()}}
+export async function reorder(file:File,order:number[]):Promise<Blob>{const {doc,PDFDocument}=await loadPdfLib(file);const n=doc.getPageCount();if(order.length<1||order.some(p=>!Number.isInteger(p)||p<1||p>n)||new Set(order).size!==order.length)throw new Error('Page order contains invalid or duplicate page numbers.');const out=await PDFDocument.create();const pages=await out.copyPages(doc,order.map(p=>p-1));pages.forEach(p=>out.addPage(p));return new Blob([await out.save()],{type:'application/pdf'});}
+

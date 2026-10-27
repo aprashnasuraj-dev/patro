@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0196",
+  "related": [
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "proposed_canonical": "/converters/excel-to-markdown-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0154",
+      "title": "PDF Table Extractor to CSV",
+      "proposed_canonical": "/converters/pdf-table-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0089",
+      "title": "Regex Replace Preview with Capture Group Table",
+      "proposed_canonical": "/utilities/regex-replace-preview",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

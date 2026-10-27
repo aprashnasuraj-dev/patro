@@ -1,0 +1,12 @@
+{
+  "assumptions": "A sitemap URL list or one standard urlset XML document; up to 80,000 URLs and 8 MB of input.",
+  "limitations": "URL-element extensions are preserved from XML input; document-level comments and unknown root metadata are not.",
+  "certainty": "Source prepared, product QA pending",
+  "regulatory_claims": [],
+  "known_edge_case_warning": "No external validation or live-site behavior is claimed; see acceptance scenarios.",
+  "documented_references": [
+    "https://www.sitemaps.org/protocol.html",
+    "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+  ],
+  "research_status": "AUTHORITATIVE_REFERENCE_COLLECTED__IMPLEMENTATION_PENDING_QA"
+}

@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest'; import {classifyLink,linksToCsv} from '../src/core'; describe('links',()=>{it('rejects javascript links',()=>expect(classifyLink('javascript:alert(1)')).toBe('unsafe'));it('quotes csv',()=>expect(linksToCsv([{page:1,kind:'external',target:'https://x.test/?q="a"'}])).toContain('a'));});

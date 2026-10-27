@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0104",
+  "related": [
+    {
+      "id": "TOOL-0105",
+      "title": "Font Language Coverage Checker",
+      "proposed_canonical": "/validators/font-language-support-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0106",
+      "title": "Font File Metadata and License Viewer",
+      "proposed_canonical": "/analyzers/font-metadata-viewer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0111",
+      "title": "Local Font File Tester",
+      "proposed_canonical": "/validators/test-local-font-file",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0113",
+      "title": "Icon Font Glyph Map Extractor",
+      "proposed_canonical": "/extractors/icon-font-glyph-map",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0114",
+      "title": "Character to Font Support Finder",
+      "proposed_canonical": "/extractors/which-font-supports-character",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

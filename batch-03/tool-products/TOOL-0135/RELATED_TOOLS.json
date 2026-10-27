@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0135",
+  "related": [
+    {
+      "id": "TOOL-0155",
+      "title": "True PDF Redaction (Rasterize Redacted Pages)",
+      "proposed_canonical": "/utilities/redact-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0125",
+      "title": "Passport and ID Photo Cropper by Country",
+      "proposed_canonical": "/editors/passport-photo-size-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0129",
+      "title": "SVG Optimizer with Visual Diff",
+      "proposed_canonical": "/editors/svg-optimizer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0137",
+      "title": "GIF Speed Changer and Reverser",
+      "proposed_canonical": "/editors/gif-speed-changer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0139",
+      "title": "Image DPI Changer (72 to 300 DPI)",
+      "proposed_canonical": "/editors/change-image-dpi",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

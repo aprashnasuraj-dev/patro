@@ -1,0 +1,8 @@
+{
+  "ffmpeg_api_family": "@ffmpeg/ffmpeg 0.12.x",
+  "deployment": "same-origin single-thread core",
+  "required_filters": ["palettegen","paletteuse","transpose","hflip","vflip","setpts","atempo","atrim","afade","aresample","aformat","concat","loudnorm","silenceremove","fps","scale"],
+  "requested_encoders": ["libx264","aac","libmp3lame","pcm_s16le","gif","png","mjpeg"],
+  "license_review_required": true,
+  "reason": "libx264 and other optional external libraries can change FFmpeg build licensing obligations"
+}

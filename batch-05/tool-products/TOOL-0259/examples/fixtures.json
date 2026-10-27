@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0259",
+  "status": "TEST_PENDING",
+  "sample": {
+    "name": "Ada Example",
+    "org": "Example Studio",
+    "title": "Product Engineer",
+    "phone": "+1 555 010 0100",
+    "email": "ada@example.com",
+    "website": "https://example.com",
+    "address": "123 Example Street, Example City",
+    "note": "Contact generated locally."
+  },
+  "notes": "Illustrative fixture only; not a measured, legal, tax or accounting fact unless explicitly sourced."
+}

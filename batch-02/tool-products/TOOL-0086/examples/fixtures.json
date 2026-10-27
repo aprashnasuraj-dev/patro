@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "text": "First line\nSecond line\nThird line",
+    "style": "LF|CRLF|CR",
+    "trailing": "Preserve|Ensure|Remove"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "Two CRLFs and one LF will be reported as mixed.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{text:'a\\r\\nb\\nc\\r',style:'LF',trailing:'Preserve'}",
+    "assertions": "assert.equal(result.text,'a\\nb\\nc\\n');assert.equal(result.metrics[0][1],1);"
+  }
+}

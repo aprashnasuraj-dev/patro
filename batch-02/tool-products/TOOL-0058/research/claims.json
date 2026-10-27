@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0058",
+  "claims": [
+    {
+      "claim": "p is required; v=DMARC1 must be first.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc7489",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "External report destinations may require DNS authorization.",
+      "supporting_url": "https://www.rfc-editor.org/rfc/rfc7489",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "DMARC1 with p, sp, pct, adkim, aspf, rua, ruf."
+  ],
+  "limitations": [
+    "The generator cannot verify DNS publication, SPF/DKIM alignment or external reporting authorization."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

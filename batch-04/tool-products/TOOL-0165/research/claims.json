@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Rotate video by 90-degree steps and flip horizontally or vertically with local processing.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg transpose and flip filters"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Rotation/flip changes pixels and therefore requires re-encoding; orientation metadata is cleared.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

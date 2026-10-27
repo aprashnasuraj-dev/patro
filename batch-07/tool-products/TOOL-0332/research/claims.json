@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0332",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Encrypted private-key PEM, PKCS#1 “RSA PRIVATE KEY”, SEC1 “EC PRIVATE KEY”, X.509 certificates and unsupported curves are intentionally rejected."
+}

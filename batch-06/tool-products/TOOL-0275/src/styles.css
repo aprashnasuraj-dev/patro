@@ -1,0 +1,2 @@
+@import url('../_vendor/styles.css');
+.dimension-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:9px;align-items:center}.dimension-grid strong{font-size:.9rem}.dimension-grid input{min-width:0}

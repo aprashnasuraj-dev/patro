@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0479",
+  "related": [
+    {
+      "id": "TOOL-0242",
+      "title": "Invoice Generator to PDF (No Signup)",
+      "proposed_canonical": "/generators/invoice-generator-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0473",
+      "title": "Carrier Surcharge & Oversize Checker",
+      "proposed_canonical": "/validators/shipping-carrier-oversize-surcharge-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0474",
+      "title": "Tariff & Landed Cost Estimator",
+      "proposed_canonical": "/calculators/import-landed-cost-tariff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0475",
+      "title": "Marketplace Listing Length & Byte Checker",
+      "proposed_canonical": "/validators/marketplace-listing-byte-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0476",
+      "title": "Marketplace Image Resizer & Checker",
+      "proposed_canonical": "/validators/marketplace-image-size-spec-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

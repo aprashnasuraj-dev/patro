@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0287",
+  "related": [
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0492",
+      "title": "Power Station & Generator Runtime Calculator",
+      "proposed_canonical": "/calculators/portable-power-station-runtime-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0352",
+      "title": "Video Cropper for 9:16 Shorts and Reels with Safe Zones",
+      "proposed_canonical": "/converters/crop-video-to-9-16",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0433",
+      "title": "Tongue Weight, Payload & GCWR Checker",
+      "proposed_canonical": "/validators/trailer-tongue-weight-payload-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0529",
+      "title": "Puppy Adult Weight Estimate and Growth Curve",
+      "proposed_canonical": "/utilities/puppy-adult-weight-growth-predictor",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

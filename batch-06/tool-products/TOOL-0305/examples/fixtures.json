@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0305",
+  "examples": [
+    {
+      "inputs": {
+        "value": "0",
+        "mode": "s"
+      },
+      "expected": "1970-01-01T00:00:00.000Z"
+    },
+    {
+      "inputs": {
+        "value": "1000",
+        "mode": "ms"
+      },
+      "expected": "1970-01-01T00:00:01.000Z"
+    }
+  ]
+}

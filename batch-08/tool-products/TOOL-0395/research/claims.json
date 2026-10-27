@@ -1,0 +1,13 @@
+{
+  "claims": [
+    {
+      "claim": "Sums flour lines, then expresses every ingredient weight as a percentage of total flour.",
+      "status": "IMPLEMENTED_SOURCE_PREP"
+    },
+    {
+      "claim": "Normal use is browser-local and does not transmit tool inputs to third parties.",
+      "status": "ARCHITECTURE_INTENT"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

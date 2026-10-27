@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0089",
+  "related": [
+    {
+      "id": "TOOL-0098",
+      "title": "Bulk Find and Replace with Rule Table",
+      "proposed_canonical": "/utilities/bulk-find-and-replace",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0088",
+      "title": "Regex ReDoS (Catastrophic Backtracking) Checker",
+      "proposed_canonical": "/validators/regex-redos-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0096",
+      "title": "String Escape and Unescape for JSON, Java, Python, SQL, Regex",
+      "proposed_canonical": "/utilities/string-escape-unescape",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0092",
+      "title": "Excel Paste to Markdown Table",
+      "proposed_canonical": "/converters/excel-to-markdown-table",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0012",
+      "title": "CSV to SQL CREATE TABLE (Type-Inferred)",
+      "proposed_canonical": "/generators/csv-to-create-table",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0260",
+  "name": "Pro Rata Salary and Leave Calculator",
+  "route": "/tools/pro-rata-salary-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0131",
+  "engineering_family": "Pro-Rata Pay and Leave Calculator",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Pro Rata Salary and Leave Calculator — Private Browser Tool",
+    "meta_description": "Prorate annual salary and annual leave across part-time FTE and a selected employment period, with separate work-pattern factors for salary and leave.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

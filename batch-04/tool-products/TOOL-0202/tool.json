@@ -1,0 +1,32 @@
+{
+  "id": "TOOL-0202",
+  "name": "A/B Test Sample Size Calculator",
+  "route": "/tools/ab-test-sample-size-calculator",
+  "batch": "BATCH-04",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0092",
+  "engineering_family": "Experiment and A/B Test Lab",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "text_bytes": 5000000,
+    "numeric_values": 200000,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "A/B Test Sample Size Calculator — Browser Calculator",
+    "meta_description": "Plan control and treatment sample sizes for two independent proportions using alpha, power, target effect, and allocation ratio.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

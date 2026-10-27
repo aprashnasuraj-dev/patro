@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0034",
+  "related": [
+    {
+      "id": "TOOL-0367",
+      "title": "CGPA to Percentage Converter (Multiple University Formulas)",
+      "proposed_canonical": "/converters/cgpa-to-percentage-converter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0024",
+      "title": "Dockerfile Linter and Layer Cache Advisor",
+      "proposed_canonical": "/validators/dockerfile-linter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0025",
+      "title": "Nginx Location Block Match Tester",
+      "proposed_canonical": "/validators/nginx-location-match-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0029",
+      "title": "systemd OnCalendar Expression Tester",
+      "proposed_canonical": "/validators/systemd-oncalendar-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0031",
+      "title": "AWS IAM Policy Wildcard Auditor",
+      "proposed_canonical": "/validators/iam-policy-wildcard-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

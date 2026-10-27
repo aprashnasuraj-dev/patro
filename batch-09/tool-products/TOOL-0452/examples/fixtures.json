@@ -1,0 +1,24 @@
+{
+  "default_inputs": {
+    "poolL": 50000,
+    "current": 1,
+    "target": 3,
+    "percent": 10,
+    "density": 1.16,
+    "stabilized": "no"
+  },
+  "known_answer": {
+    "output_label": "Available chlorine mass needed",
+    "expected_display": "100.00 g",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

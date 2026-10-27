@@ -1,0 +1,39 @@
+{
+  "tool_id": "TOOL-0132",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    },
+    {
+      "url": "https://github.com/woltapp/blurhash",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Reference used for implementation behavior/rules only.",
+      "uncertainty": "Jurisdiction/library behavior may change; integration must re-check before publication."
+    },
+    {
+      "url": "https://evanw.github.io/thumbhash/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Reference used for implementation behavior/rules only.",
+      "uncertainty": "Jurisdiction/library behavior may change; integration must re-check before publication."
+    }
+  ],
+  "assumptions": [
+    "Official/reference-compatible local packages are lazy-loaded on demand."
+  ],
+  "limitations": [
+    "Hashes are placeholders, not compression formats and not suitable for recovering original image detail."
+  ]
+}

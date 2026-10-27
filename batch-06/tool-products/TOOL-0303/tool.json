@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0303",
+  "name": "Time Zone Meeting Planner Grid",
+  "route": "/tools/time-zone-meeting-planner",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0163",
+  "engineering_family": "Time Zone and DST Planner",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Time Zone Meeting Planner Grid — Private Browser Tool",
+    "meta_description": "Resolve a wall-clock meeting time in one IANA time zone, expose DST ambiguity, and compare nearby slots across multiple participant zones using browser-local time-zone data.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

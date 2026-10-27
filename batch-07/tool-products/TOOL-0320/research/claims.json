@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0320",
+  "claims": [
+    {
+      "claim": "The package implements only the bounded semantics documented on its page and does not imply broader conformance.",
+      "source_url": null,
+      "implementation_note": "Unsupported cases are rejected or explicitly warned."
+    }
+  ],
+  "uncertainty": "Do not use this estimate for occultations, eclipse prediction, precise moonrise/set or ritual/legal determinations that depend on local observation."
+}

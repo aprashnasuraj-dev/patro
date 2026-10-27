@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0346",
+  "examples": [
+    {
+      "input": "ABC abc 123",
+      "variants": [
+        "bold",
+        "italic",
+        "sans",
+        "sansBold",
+        "mono"
+      ]
+    }
+  ]
+}

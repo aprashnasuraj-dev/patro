@@ -1,0 +1,26 @@
+{
+  "status": "TEST_PENDING",
+  "security_cases": [
+    "oversized pasted/file content is rejected before parsing",
+    "user-controlled text is rendered via textContent or escaped",
+    "CSV export neutralizes formula-leading cells",
+    "download names are sanitized and fixed to tool-owned extensions",
+    "date/time loops are hard bounded"
+  ],
+  "responsive_accessibility_cases": [
+    "320px viewport has no page-level horizontal scroll",
+    "keyboard-only interaction reaches all controls with visible focus",
+    "result region is announced through role=status and aria-live=polite",
+    "tables retain headers and scroll locally",
+    "reduced-motion mode preserves all information"
+  ],
+  "performance_cases": [
+    "normal calculation requires no server request",
+    "bulk/recurrence/transition loops are capped",
+    "time-zone scans are user-triggered and bounded"
+  ],
+  "tool_specific": [
+    "Panama preset repeats after 14 days.",
+    "ICS export contains only Work-day VEVENT entries."
+  ]
+}

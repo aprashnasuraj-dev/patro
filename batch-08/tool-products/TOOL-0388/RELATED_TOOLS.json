@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0388",
+  "related": [
+    {
+      "id": "TOOL-0389",
+      "title": "STL Volume and Weight Estimator",
+      "proposed_canonical": "/calculators/stl-volume-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0298",
+      "title": "Hiking Time Estimator (Naismith and Tobler)",
+      "proposed_canonical": "/calculators/hiking-time-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0356",
+      "title": "YouTube Embed Code Builder (Start Time, Privacy Mode)",
+      "proposed_canonical": "/generators/youtube-embed-code-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0381",
+      "title": "Resistor Color Code Calculator (4, 5, 6 Band, Both Directions)",
+      "proposed_canonical": "/calculators/resistor-color-code-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0382",
+      "title": "SMD Resistor Code Decoder (3-Digit, 4-Digit, EIA-96)",
+      "proposed_canonical": "/calculators/smd-resistor-code-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

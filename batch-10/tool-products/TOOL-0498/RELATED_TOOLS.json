@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0498",
+  "related": [
+    {
+      "id": "TOOL-0223",
+      "title": "RSU Vesting and Withholding Estimator",
+      "proposed_canonical": "/calculators/rsu-tax-withholding-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0240",
+      "title": "Employer Retirement Match Calculator (Custom Formula)",
+      "proposed_canonical": "/calculators/employer-match-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0458",
+      "title": "State Overtime & Fluctuating Workweek Calculator",
+      "proposed_canonical": "/calculators/state-overtime-pay-rules-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0469",
+      "title": "Supervised Driving Log by State",
+      "proposed_canonical": "/planners/supervised-driving-hours-log",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0472",
+      "title": "Trade Licence Hours Tracker by State",
+      "proposed_canonical": "/planners/journeyman-apprenticeship-hours-tracker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

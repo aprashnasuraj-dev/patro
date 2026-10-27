@@ -1,0 +1,3 @@
+import {describe,it,expect,afterEach} from 'vitest';import {crop,recType} from '../src/core';
+const old=(globalThis as any).MediaRecorder;afterEach(()=>{(globalThis as any).MediaRecorder=old});
+describe('TOOL-0352',()=>{it('computes a centered portrait crop from a landscape source',()=>{const r=crop(1920,1080,1080,1920,50);expect(r.sy).toBe(0);expect(r.sw).toBeCloseTo(607.5);expect(r.sx).toBeCloseTo(656.25)});it('rejects zero source dimensions',()=>expect(()=>crop(0,1080,1080,1920,50)).toThrow());it('selects a supported recording type without device access',()=>{(globalThis as any).MediaRecorder={isTypeSupported:(t:string)=>t==='video/webm'};expect(recType()).toBe('video/webm')})});

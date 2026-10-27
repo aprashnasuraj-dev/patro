@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0420",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "IRS Instructions for Form 8606 (2025)",
+      "url": "https://www.irs.gov/instructions/i8606",
+      "note": "Traditional IRA aggregation, line 6 year-end value, distributions/conversions and basis tracking."
+    },
+    {
+      "title": "IRS About Form 8606",
+      "url": "https://www.irs.gov/forms-pubs/about-form-8606",
+      "note": "Form 8606 reports nondeductible contributions, distributions and conversions."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

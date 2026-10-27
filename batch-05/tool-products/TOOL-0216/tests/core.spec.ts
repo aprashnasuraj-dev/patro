@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {factorize,gcd,lcm,isProbablePrime} from "../src/core";
+describe("number theory",()=>{it("computes gcd/lcm",()=>{expect(gcd(84n,126n)).toBe(42n);expect(lcm(21n,6n)).toBe(42n);});it("factors a semiprime",()=>{expect(factorize("8051").factors).toEqual(["83","97"]);});it("rejects composite as prime",()=>{expect(isProbablePrime(221n)).toBe(false);});});

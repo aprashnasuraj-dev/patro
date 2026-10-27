@@ -1,0 +1,20 @@
+[
+  {
+    "claim": "Convert a selected Excel worksheet to JSON while choosing the header row and preserving transparent type conversion rules.",
+    "status": "implementation_intent",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation"
+    ]
+  },
+  {
+    "claim": "Formula cells expose cached values, not freshly calculated results; complex workbook features may not survive conversion.",
+    "status": "explicit_limit",
+    "support": [
+      "RFC 4180",
+      "OWASP CSV Injection",
+      "SheetJS CE documentation"
+    ]
+  }
+]

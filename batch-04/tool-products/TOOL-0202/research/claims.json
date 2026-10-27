@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0202",
+  "claims": [
+    {
+      "claim": "Plan control and treatment sample sizes for two independent proportions using alpha, power, target effect, and allocation ratio.",
+      "support": [
+        "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html",
+        "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Independent binary outcomes and a fixed design analyzed with a z-test after the planned sample is collected.",
+      "support": [
+        "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html",
+        "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "This is a normal-approximation planning formula; sequential testing, multiple metrics, clustering, CUPED/covariate adjustment, and over-dispersion require a different design.",
+      "support": [
+        "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html",
+        "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

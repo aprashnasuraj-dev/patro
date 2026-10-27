@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0340",
+  "examples": [
+    {
+      "text": "hello",
+      "sha256_sri": "sha256-LPJNul+wow4m6DsqxbninhsWHlwfp0JecwQzYpOLmCQ="
+    }
+  ]
+}

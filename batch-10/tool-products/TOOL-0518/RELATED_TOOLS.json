@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0518",
+  "related": [
+    {
+      "id": "TOOL-0458",
+      "title": "State Overtime & Fluctuating Workweek Calculator",
+      "proposed_canonical": "/calculators/state-overtime-pay-rules-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0457",
+      "title": "Final Paycheck & PTO Payout Deadline Calculator",
+      "proposed_canonical": "/calculators/final-paycheck-pto-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0245",
+      "title": "Break-Even Analysis Calculator with Chart",
+      "proposed_canonical": "/calculators/break-even-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0250",
+      "title": "Timesheet Hours Calculator with Breaks and Overtime",
+      "proposed_canonical": "/calculators/timesheet-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0422",
+      "title": "Contractor Break-Even Rate Calculator",
+      "proposed_canonical": "/calculators/w2-vs-1099-contractor-rate-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

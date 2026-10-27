@@ -1,0 +1,10 @@
+{
+  "tool_id": "TOOL-0094",
+  "claims": [
+    {
+      "claim": "Unsafe elements and event-handler/style attributes are removed before output.",
+      "status": "implementation-basis",
+      "source_ids": []
+    }
+  ]
+}

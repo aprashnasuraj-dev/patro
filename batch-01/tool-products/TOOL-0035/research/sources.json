@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "url": "https://manpages.ubuntu.com/manpages/noble/en/man8/ufw.8.html",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man8/iptables.8.html",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    }
+  ],
+  "research_status": "SOURCE_IDENTIFIED_NOT_LIVE_VERIFIED",
+  "licensing": "Link to documentation; no external source code or datasets bundled."
+}

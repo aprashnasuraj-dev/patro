@@ -1,0 +1,2 @@
+import {convertBs,supportedRange} from './core';import {q,num,setError,metricGrid,textBlock} from '../_vendor/ui';
+q('run').addEventListener('click',()=>{const out=q('result');try{const r=convertBs(num('y'),num('m'),num('d'));out.replaceChildren(metricGrid([['AD date',r.ad],['Confidence',r.trust],['Validated through',String(supportedRange.validatedThrough)+' BS']]),textBlock('Source',r.source),textBlock('Validation note',r.note));}catch(e){setError(out,e)}});

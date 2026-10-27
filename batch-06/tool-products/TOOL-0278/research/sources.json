@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0278",
+  "research_scope": "Only implementation-changing technical/domain sources were collected.",
+  "sources": [
+    {
+      "url": "https://www.energy.gov/sites/default/files/2021-11/ES-HomeInsulation_081721E-a.pdf",
+      "title": "Consumer Guide to Home Insulation",
+      "publisher": "U.S. Department of Energy",
+      "version": "DOE/EE-2476",
+      "effective_date": "2021",
+      "assumptions": "Used only for implementation-changing definitions, limits or reference values.",
+      "licensing_or_data_restrictions": "U.S. government publication; public information, retain attribution.",
+      "uncertainty": "Local codes, product specifications or later editions may differ.",
+      "important_limitations": "R-value measures resistance to heat flow; climate/code targets vary. This calculator does not select a code-required R-value."
+    }
+  ],
+  "no_external_source_reason": null
+}

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0507",
+  "related": [
+    {
+      "id": "TOOL-0514",
+      "title": "Australian Super Concessional Carry-Forward Calculator",
+      "proposed_canonical": "/calculators/australia-super-concessional-carry-forward-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0226",
+      "title": "SIP Calculator with Annual Step-Up",
+      "proposed_canonical": "/calculators/sip-calculator-with-step-up",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0523",
+      "title": "Airline Carry-On and Personal Item Checker",
+      "proposed_canonical": "/validators/airline-carry-on-size-weight-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0495",
+      "title": "Mega-Backdoor Roth Contribution Room Calculator",
+      "proposed_canonical": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0498",
+      "title": "RSU State and Employer Withholding Gap Calculator",
+      "proposed_canonical": "/calculators/rsu-state-withholding-gap-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

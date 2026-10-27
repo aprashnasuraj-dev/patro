@@ -1,0 +1,20 @@
+{
+  "sample_input": {
+    "text": "apple\nbanana\napple\nApple\norange\nbanana",
+    "trim": true,
+    "caseSensitive": false,
+    "blanks": false
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "apple, banana, apple yields apple × 2.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{text:'a\\nb\\na',trim:false,caseSensitive:true,blanks:false}",
+    "assertions": "assert.equal(result.metrics[1][1],1);assert.match(result.text,/2,\\\"a\\\"/);"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "cluster": "compile:escaped-newline-source",
+  "baselineFailures": 25,
+  "verifiedFailures": 0,
+  "fleetCompileFailuresBefore": 65,
+  "fleetCompileFailuresAfter": 40,
+  "verifiedRunId": 40442529614,
+  "verifiedCommit": "84c2f52e8263d4a5e652bae3d2e63e2a07eacb54",
+  "discoverability": "530 IDs retained by Phase 1/2 gates",
+  "status": "PASS"
+}

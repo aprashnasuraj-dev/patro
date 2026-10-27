@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0368",
+  "related": [
+    {
+      "id": "TOOL-0369",
+      "title": "Writing Word Count Goal Tracker (Local)",
+      "proposed_canonical": "/planners/word-count-goal-tracker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0392",
+      "title": "Crop Factor and Equivalent Focal Length Calculator",
+      "proposed_canonical": "/calculators/crop-factor-equivalent-focal-length",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0249",
+      "title": "Number to Words for Cheques (International and Indian Numbering)",
+      "proposed_canonical": "/converters/number-to-words-cheque",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0475",
+      "title": "Marketplace Listing Length & Byte Checker",
+      "proposed_canonical": "/validators/marketplace-listing-byte-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0365",
+      "title": "GPA Calculator with Custom Grade Scale",
+      "proposed_canonical": "/calculators/gpa-calculator-custom-scale",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

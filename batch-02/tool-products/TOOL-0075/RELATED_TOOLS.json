@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0075",
+  "related": [
+    {
+      "id": "TOOL-0076",
+      "title": "Tracking Parameter Stripper (UTM, fbclid, gclid)",
+      "proposed_canonical": "/editors/remove-tracking-parameters",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0046",
+      "title": "Query String to Nested JSON Converter",
+      "proposed_canonical": "/converters/query-string-to-json",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0047",
+      "title": "Context-Aware URL Encoder",
+      "proposed_canonical": "/formatters/url-encode-path-vs-query",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0044",
+      "title": "CSP Builder from Third-Party Domain List",
+      "proposed_canonical": "/generators/csp-builder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

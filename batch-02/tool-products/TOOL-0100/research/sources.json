@@ -1,0 +1,23 @@
+{
+  "tool_id": "TOOL-0100",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "uax29",
+      "url": "https://www.unicode.org/reports/tr29/",
+      "version": "Unicode 18.0 / UAX #29 rev. 49",
+      "effective_date": "2026-09-01",
+      "license": "Unicode terms of use",
+      "notes": "Defines default grapheme-cluster boundaries."
+    },
+    {
+      "id": "uts51",
+      "url": "https://www.unicode.org/reports/tr51/",
+      "version": "Unicode Emoji 18.0 / UTS #51 rev. 31",
+      "effective_date": "2026-08-28",
+      "license": "Unicode terms of use",
+      "notes": "Defines emoji characters and sequences; rendering varies by platform."
+    }
+  ],
+  "uncertainty": "See per-source notes and tool limitations."
+}

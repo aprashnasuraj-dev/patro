@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0198",
+  "build_sequence": 198,
+  "name": "CSV Diff (Compare Two Files by Key)",
+  "route": "/tools/csv-diff",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-08",
+  "engineering_family_id": "F0091",
+  "engineering_family": "CSV Join and Compare",
+  "execution": "browser-first",
+  "network_requirement": "none for normal operation",
+  "lazy_loading": true,
+  "state": "TEST_PENDING",
+  "seo": {
+    "title": "CSV Diff (Compare Two Files by Key) — Free Local Browser Tool",
+    "meta_description": "Compare two keyed CSV files and report added, removed, and changed records with per-field change details.",
+    "h1": "CSV Diff (Compare Two Files by Key)",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "limits": {
+    "text_bytes": 8388608,
+    "xlsx_bytes": null,
+    "rows": 100000,
+    "columns": 1000
+  },
+  "dependencies": []
+}

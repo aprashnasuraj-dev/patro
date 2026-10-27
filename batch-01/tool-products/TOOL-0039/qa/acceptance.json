@@ -1,0 +1,23 @@
+{
+  "runtime_qa": "TEST_PARTIAL_BROWSER_QA_PENDING",
+  "build": "PASS_TS_5_8_3",
+  "typecheck": "PASS_TS_STRICT",
+  "unit_tests": "PASS_19_OF_19_NODE22",
+  "independent_openssl_crosscheck": "PASS_RSA_ECDSA_ED25519_RSA_PSS_AND_INVALID_SIGNATURE",
+  "browser_tests": "BLOCKED_BY_ENVIRONMENT_LOCAL_AND_LOOPBACK_URLS_DENIED",
+  "accessibility": "SOURCE_REVIEW_ONLY_NO_RUNTIME_AUDIT",
+  "performance": "NOT_BENCHMARKED",
+  "security": "SOURCE_BOUNDARIES_AND_NEGATIVE_INPUT_TESTS_PASS_NO_EXTERNAL_AUDIT",
+  "deferred_checks": [
+    "Chromium/Firefox/Safari smoke on an HTTPS staging site",
+    "Actual 320px and desktop responsive behavior",
+    "Keyboard, focus and screen-reader end-to-end verification",
+    "Clipboard/download operation browser integration",
+    "Content Security Policy and deployment integration, HTTPS origin",
+    "Broader RFC 5280 path validation not provided (outside chain order checker scope)",
+    "Certification of full X.509 BER/DER grammar not claimed; strict bounded DER parser reports unsupported input",
+    "Certificate name equivalence is strict DER equality, which can conservatively reject semantically equal Names"
+  ],
+  "release_gate": "LOCKED",
+  "validation_date": "2026-10-26"
+}

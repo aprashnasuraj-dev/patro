@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Fair wear versus chargeable damage",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "No legal entitlement to an item replacement charge; actual repair method and tenant liability may differ.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "No legal entitlement to an item replacement charge; actual repair method and tenant liability may differ.",
+  "authoritative_references": [
+    "https://www.gov.uk/tenancy-deposit-protection/disputes-and-problems"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

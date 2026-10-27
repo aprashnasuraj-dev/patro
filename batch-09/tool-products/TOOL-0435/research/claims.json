@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "statement": "Tire service-description decoding",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "No tire pressure correction, single/dual light-truck ratings, ZR/Y parenthetical categories or high-speed load derating.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "No tire pressure correction, single/dual light-truck ratings, ZR/Y parenthetical categories or high-speed load derating.",
+  "authoritative_references": [
+    "https://www.michelin.in/auto/advice/tyre-basics/tyre-load-rating-speed-rating"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

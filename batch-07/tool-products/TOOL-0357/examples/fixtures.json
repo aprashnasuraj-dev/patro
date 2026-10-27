@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0357",
+  "examples": [
+    {
+      "protocol": "publish SHA-256(secret) before entries close; later reveal secret + canonical list to reproduce draw"
+    },
+    {
+      "bias_control": "rejection sampling in deterministic shuffle"
+    }
+  ]
+}

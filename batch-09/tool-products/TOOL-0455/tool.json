@@ -1,0 +1,49 @@
+{
+  "id": "TOOL-0455",
+  "name": "Clear Aligner Schedule Planner",
+  "slug": "clear-aligner-schedule-planner",
+  "route": "/tools/clear-aligner-schedule-planner",
+  "family": "F0261",
+  "batch": "BATCH-09",
+  "status": "SOURCE_PREPARED",
+  "qa_runtime_status": "TEST_PENDING",
+  "staging": {
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "seo": {
+    "title": "Clear Aligner Schedule Planner — Interactive Local Tool | AafnaiPatro",
+    "description": "Plan a user-specified aligner schedule by fixed days per tray; print a chronological transition list and avoid recommending changes to clinical wear requir"
+  },
+  "execution": {
+    "mode": "client-only",
+    "account_required": false,
+    "worker_required": false,
+    "third_party_content_transmission": false,
+    "lazy_load_route_module": true
+  },
+  "entrypoints": {
+    "html": "page.html",
+    "typescript": "src/ui.ts",
+    "css": "src/styles.css"
+  },
+  "shared_imports": [
+    "tool-products/_shared/guard.ts",
+    "tool-products/_shared/ui.ts",
+    "tool-products/_shared/ui.css"
+  ],
+  "security": {
+    "bounded_inputs": true,
+    "reject_nonfinite": true,
+    "no_user_content_upload": true,
+    "safe_text_rendering": true,
+    "no_untrusted_html": true
+  },
+  "publication": {
+    "gate": "LOCKED",
+    "published": false,
+    "sitemap": false
+  }
+}

@@ -1,0 +1,7 @@
+import {N,S,D,ODate,addDays,Q,M,P,R} from '../_vendor/guard';
+import type {Result} from '../_vendor/guard';
+/** Pure, bounded calculations; no user-data storage or network. */
+export function calculate(i:Record<string,unknown>):Result {
+const platform=S(i,'platform',100),title=S(i,'title',4000),cap=N(i,'limit',0,100000),byteLimit=N(i,'byteLimit',0,100000);if(!platform||!title||![cap,byteLimit].every(Number.isInteger))throw Error('Platform and listing text required');const codepoints=Array.from(title).length,bytes=new TextEncoder().encode(title).length;if(bytes>16000)throw Error('Text too long for local listing analyzer');const pass=(!cap||codepoints<=cap)&&(!byteLimit||bytes<=byteLimit);
+return R([{label:'Unicode code points',value:String(codepoints)},{label:'UTF-8 bytes',value:String(bytes)},{label:'UTF-16 code units',value:String(title.length)},{label:'User-entered limits',value:pass?'Within entered caps':'Exceeds one or more entered caps'},{label:'Remaining code points (if capped)',value:cap?String(cap-codepoints):'Not capped'}],[`The current listing rules for ${platform} are not retrieved; marketplaces may count grapheme clusters, code units, encoded entities, or East Asian display width differently.`, 'Emoji/combining marks can have multiple code points per perceived character. Product restrictions, category length rules and disallowed wording require separate checks.'],['UTF-8 bytes from native TextEncoder, code points from Array.from(text), UTF-16 units from JS string.length.']);
+}

@@ -1,0 +1,36 @@
+{
+  "id": "TOOL-0324",
+  "name": "Diceware Passphrase Generator (EFF Wordlists)",
+  "route": "/tools/diceware-passphrase-generator",
+  "batch": "BATCH-07",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0176",
+  "engineering_family": "Password Audit and Diceware",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Diceware Passphrase Generator (EFF Wordlists) — Private Browser Tool",
+    "meta_description": "Generate cryptographically random EFF Diceware passphrases from the exact 7,776-word long list once that list is vendored as a same-build static asset.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "BLOCKED_ASSET_DEPENDENCY",
+  "publication_gate": "LOCKED",
+  "blocker": "Vendor the exact EFF 7,776-word long wordlist as src/wordlist.generated.js during integration; do not substitute a shorter or approximate list."
+}

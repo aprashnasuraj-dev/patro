@@ -1,0 +1,6 @@
+{
+  "sample_input": "Choose a font file.",
+  "expected_behavior": "The report can show family, subfamily, version, vendor/designer, glyph count, units/em, fsType interpretation and embedded name IDs 13/14.",
+  "qa_status": "TEST_PENDING",
+  "binary_fixtures_note": "Integration tests must supply redistributable/synthetic font fixtures; no third-party font binary is bundled in this source checkpoint."
+}

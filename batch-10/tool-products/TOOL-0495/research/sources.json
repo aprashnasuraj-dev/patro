@@ -1,0 +1,11 @@
+[
+  {
+    "label": "IRS §415(c) contribution limits",
+    "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits",
+    "version": "web primary source, accessed 2026-10-26",
+    "effective_period": "2026 if specified, otherwise verify current text",
+    "license": "Third-party source cited; do not redistribute source content",
+    "scope": "Specific formulas and limitations only",
+    "uncertainty": "Future law/rate or jurisdictional differences require fresh review"
+  }
+]

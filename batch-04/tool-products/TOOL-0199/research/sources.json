@@ -1,0 +1,43 @@
+[
+  {
+    "name": "RFC 4180",
+    "url": "https://www.rfc-editor.org/rfc/rfc4180",
+    "version": "October 2005; updated by RFC 7111",
+    "authority": "IETF informational RFC",
+    "claims": [
+      "CSV uses quoted fields, doubled quotes, and records separated by line breaks; fields containing delimiter, quotes, or line breaks require quoting."
+    ],
+    "limitations": "CSV implementations vary; RFC 4180 is informational rather than a universal mandatory standard."
+  },
+  {
+    "name": "OWASP CSV Injection",
+    "url": "https://owasp.org/www-community/attacks/CSV_Injection",
+    "version": "retrieved 2026-10-26",
+    "authority": "OWASP",
+    "claims": [
+      "Spreadsheet applications may interpret cells beginning with formula-triggering prefixes as formulas."
+    ],
+    "limitations": "No universal escaping scheme is safe for every spreadsheet workflow; exact preservation and mitigation can conflict."
+  },
+  {
+    "name": "SheetJS CE documentation",
+    "url": "https://docs.sheetjs.com/docs/",
+    "version": "0.20.3 documentation observed 2026-10-26",
+    "authority": "vendor documentation",
+    "claims": [
+      "SheetJS Community Edition supports browser-side spreadsheet parsing and XLSX generation."
+    ],
+    "license": "Apache-2.0 for SheetJS CE distribution; deployment must pin and review exact package notices.",
+    "limitations": "CE does not evaluate spreadsheet formulas and complex workbook features may not round-trip perfectly."
+  },
+  {
+    "name": "Microsoft Open XML formulas documentation",
+    "url": "https://learn.microsoft.com/en-us/office/open-xml/spreadsheet/working-with-formulas",
+    "version": "retrieved 2026-10-26",
+    "authority": "Microsoft documentation / ISO/IEC 29500 reference",
+    "claims": [
+      "Spreadsheet formulas are stored in cell formula elements and cached values may be stored separately."
+    ],
+    "limitations": "Cached values may be stale; extracting formulas is not equivalent to recalculating them."
+  }
+]

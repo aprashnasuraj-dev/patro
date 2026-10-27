@@ -1,0 +1,6 @@
+{
+  "sample_input": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+  "expected_behavior": "A simple TrueType Latin font can be subset to the characters in a logo or landing page and exported as WOFF2.",
+  "qa_status": "TEST_PENDING",
+  "binary_fixtures_note": "Integration tests must supply redistributable/synthetic font fixtures; no third-party font binary is bundled in this source checkpoint."
+}

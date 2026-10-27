@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0024",
+  "related": [
+    {
+      "id": "TOOL-0049",
+      "title": "Cache-Control Header Builder",
+      "proposed_canonical": "/generators/cache-control-header-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0025",
+      "title": "Nginx Location Block Match Tester",
+      "proposed_canonical": "/validators/nginx-location-match-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0029",
+      "title": "systemd OnCalendar Expression Tester",
+      "proposed_canonical": "/validators/systemd-oncalendar-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0031",
+      "title": "AWS IAM Policy Wildcard Auditor",
+      "proposed_canonical": "/validators/iam-policy-wildcard-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0034",
+      "title": "CIDR Overlap Checker (Multiple Ranges)",
+      "proposed_canonical": "/validators/cidr-overlap-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

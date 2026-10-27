@@ -1,0 +1,22 @@
+{
+  "default_inputs": {
+    "coverageEnd": "2026-10-31",
+    "notice": "2026-11-10",
+    "elect": "",
+    "noticeRule": "yes"
+  },
+  "known_answer": {
+    "output_label": "60-day election deadline",
+    "expected_display": "2027-01-09",
+    "derivation": "See research/claims.json and src/core.ts; not executed"
+  },
+  "adversarial_values": [
+    "Infinity",
+    "NaN",
+    "1e100",
+    "2026-02-30",
+    "<img src=x onerror=alert(1)>",
+    "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+  ],
+  "scope": "bounded numeric ranges, dates, units, rejection of unknown program conditions"
+}

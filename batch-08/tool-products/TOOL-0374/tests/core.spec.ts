@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {singleDilution} from '../src/core';describe('TOOL-0374 core',()=>{it('known-answer fixture',()=>{expect(singleDilution(10,5,1,undefined).v2).toBe(50)})});

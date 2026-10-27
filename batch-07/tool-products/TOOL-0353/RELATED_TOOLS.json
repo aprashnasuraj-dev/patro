@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0353",
+  "related": [
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0151",
+      "title": "Images to PDF with Page Size and Margin Control",
+      "proposed_canonical": "/converters/images-to-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0153",
+      "title": "Extract Text from PDF by Page",
+      "proposed_canonical": "/extractors/pdf-text-extractor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0158",
+      "title": "PDF Page Size Inspector",
+      "proposed_canonical": "/analyzers/pdf-page-size-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

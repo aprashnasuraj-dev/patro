@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "url": "https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    },
+    {
+      "url": "https://nginx.org/en/docs/http/ngx_http_rewrite_module.html",
+      "type": "primary reference",
+      "version": "Check exact deployed version during integration",
+      "verified_live": false
+    }
+  ],
+  "research_status": "SOURCE_IDENTIFIED_NOT_LIVE_VERIFIED",
+  "licensing": "Link to documentation; no external source code or datasets bundled."
+}

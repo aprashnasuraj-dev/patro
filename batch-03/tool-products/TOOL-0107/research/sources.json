@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0107",
+  "researched_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "css-fonts-4",
+      "url": "https://www.w3.org/TR/2026/WD-css-fonts-4-20261022/",
+      "version": "CSS Fonts Module Level 4 Working Draft",
+      "effective_date": "2026-10-22",
+      "license": "W3C document license",
+      "notes": "Defines @font-face descriptors including unicode-range and font metric overrides. Working Draft; syntax may evolve."
+    }
+  ],
+  "assumptions": "The source URL is already deployable and the declared format matches the actual font resource.",
+  "licensing_data_restrictions": "No user content is transmitted by normal tool execution. Third-party libraries retain their upstream licenses; font/PDF licensing remains the user’s responsibility.",
+  "uncertainty": "This tool validates syntax and Unicode bounds, not whether the source font actually contains every declared code point or whether a browser will download a particular subset."
+}

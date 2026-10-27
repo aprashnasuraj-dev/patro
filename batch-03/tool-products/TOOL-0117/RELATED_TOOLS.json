@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0117",
+  "related": [
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0112",
+      "title": "Text to SVG Path Converter",
+      "proposed_canonical": "/converters/text-to-svg-path",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0443",
+      "title": "KDP/IngramSpark Spine Width & Cover Template",
+      "proposed_canonical": "/calculators/book-spine-width-cover-template-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0444",
+      "title": "Max Print Size from Pixels",
+      "proposed_canonical": "/calculators/max-print-size-from-pixels-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0074",
+      "title": "Title and Meta Description Pixel Width Checker",
+      "proposed_canonical": "/validators/title-tag-pixel-width-checker",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

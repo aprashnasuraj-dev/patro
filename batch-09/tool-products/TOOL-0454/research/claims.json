@@ -1,0 +1,22 @@
+{
+  "claims": [
+    {
+      "statement": "Medication stock countdown using confirmed dosage",
+      "mechanism": "Explicit deterministic calculation recorded in src/core.ts",
+      "class": "model/inference",
+      "runtime_verification": "TEST_PENDING"
+    },
+    {
+      "statement": "Current safety, health, program or production eligibility not certified",
+      "mechanism": "No refill eligibility, clinical dose changes, insurer limitations or non-daily dosing modeled.",
+      "class": "restriction",
+      "runtime_verification": "TEST_PENDING"
+    }
+  ],
+  "source_urls": [
+    "https://medlineplus.gov/medicines.html"
+  ],
+  "assumptions": "No refill eligibility, clinical dose changes, insurer limitations or non-daily dosing modeled.",
+  "reviewed_as_of": "2026-10-26",
+  "publication_review_required": true
+}

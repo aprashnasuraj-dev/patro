@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0108",
+  "related": [
+    {
+      "id": "TOOL-0107",
+      "title": "@font-face CSS Generator with unicode-range",
+      "proposed_canonical": "/generators/font-face-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0109",
+      "title": "Web-Safe CSS Font Stack Builder",
+      "proposed_canonical": "/generators/css-font-stack-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0120",
+      "title": "Google Fonts CSS2 URL Builder",
+      "proposed_canonical": "/generators/google-fonts-css2-url-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0104",
+      "title": "Variable Font Axes Inspector and CSS Generator",
+      "proposed_canonical": "/generators/variable-font-axes-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0101",
+      "title": "Font Subsetter (TTF/OTF/WOFF2)",
+      "proposed_canonical": "/utilities/font-subsetter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,26 @@
+{
+  "tool_id": "TOOL-0025",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Simulate selection among simple Nginx location directives and explain exact/prefix/regex precedence.",
+      "evidence_urls": [
+        "https://nginx.org/en/docs/http/ngx_http_core_module.html#location"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "This models documented initial location selection only, not nested locations, rewrite/internal redirects, named locations or upstream runtime configuration.",
+      "evidence_urls": [
+        "https://nginx.org/en/docs/http/ngx_http_core_module.html#location"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

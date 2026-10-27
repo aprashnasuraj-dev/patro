@@ -1,0 +1,17 @@
+{
+  "input": {
+    "server": "Nginx",
+    "origins": "https://app.example.com",
+    "methods": "GET, POST, OPTIONS",
+    "headers": "Content-Type, Authorization",
+    "credentials": true,
+    "maxAge": "600"
+  },
+  "worked_example": "One origin https://app.example.com with GET, POST and credentials allows that origin, not *.",
+  "rejection_examples": [
+    "oversized input",
+    "malformed characters",
+    "unsafe protocol or invalid configuration"
+  ],
+  "expected_qa_status": "TEST_PENDING"
+}

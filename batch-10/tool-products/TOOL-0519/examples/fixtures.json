@@ -1,0 +1,12 @@
+{
+  "tool": "TOOL-0519",
+  "default_inputs": {
+    "filing": "2026-10-26",
+    "state": "CA",
+    "household": "2",
+    "monthly": "5100\n4800\n5300\n5200\n5000\n4900",
+    "median": "102797"
+  },
+  "worked_example": "Six $5,000 monthly receipts annualize to $60,000 for initial median screening.",
+  "source_status": "TEST_PENDING"
+}

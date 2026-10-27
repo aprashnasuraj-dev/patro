@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0192",
+  "related": [
+    {
+      "id": "TOOL-0193",
+      "title": "Phone Number Normalizer to E.164",
+      "proposed_canonical": "/converters/phone-numbers-to-e164",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0186",
+      "title": "CSV Column Reorder, Rename and Drop Tool",
+      "proposed_canonical": "/utilities/csv-column-editor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0194",
+      "title": "Full Name Splitter (First, Middle, Last, Suffix)",
+      "proposed_canonical": "/editors/split-full-name-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0183",
+      "title": "CSV Deduplicator by Key Columns",
+      "proposed_canonical": "/utilities/csv-remove-duplicates",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0200",
+      "title": "CSV to Excel with Text Columns (Keep Leading Zeros)",
+      "proposed_canonical": "/converters/csv-to-excel-keep-leading-zeros",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

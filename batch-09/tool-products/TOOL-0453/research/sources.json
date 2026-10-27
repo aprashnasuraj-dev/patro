@@ -1,0 +1,27 @@
+{
+  "reviewed_on": "2026-10-26",
+  "research_scope": "Domain-specific core rules; only relevant source links retained",
+  "sources": [
+    {
+      "url": "https://coopervision.com/practitioner/ecp-viewpoints/technicians-and-staff/contact-lenses-101-part-2-contact-lens-designs",
+      "publisher": "coopervision.com",
+      "reviewed_on": "2026-10-26",
+      "version": "Current web guidance where accessible; effective-year rules require source recheck",
+      "effective_date": "Depends on agency, standard, edition or program",
+      "relevance": "Formula, permitted use, official limitations or design constraints",
+      "license": "external links only; no source datasets or logos reproduced",
+      "uncertainty": "Rules, product versions and vendor parameters can change"
+    },
+    {
+      "url": "https://www.aoa.org/healthy-eyes/vision-and-vision-correction/healthy-vision-and-contact-lenses",
+      "publisher": "www.aoa.org",
+      "reviewed_on": "2026-10-26",
+      "version": "Current web guidance where accessible; effective-year rules require source recheck",
+      "effective_date": "Depends on agency, standard, edition or program",
+      "relevance": "Formula, permitted use, official limitations or design constraints",
+      "license": "external links only; no source datasets or logos reproduced",
+      "uncertainty": "Rules, product versions and vendor parameters can change"
+    }
+  ],
+  "no_external_dataset_bundled": true
+}

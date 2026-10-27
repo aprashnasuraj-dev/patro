@@ -1,0 +1,18 @@
+{
+  "sample_input": {
+    "text": "“It’s great,” she said. ‘Yes!’",
+    "primes": "Preserve primes|Convert primes"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "“Hello” becomes \"Hello\"; it’s becomes it's.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{text:'“Hello” and it’s fine',primes:'Preserve primes'}",
+    "assertions": "assert.equal(result.text,'\"Hello\" and it's fine');"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "tool_id": "TOOL-0210",
+  "claims": [
+    {
+      "claim": "Flag potential outliers side by side using Tukey IQR fences, conventional Z-scores, and robust modified Z-scores based on MAD.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+        "https://search.r-project.org/R/refmans/stats/html/quantile.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Thresholds are user-selectable diagnostics applied to a single numeric variable.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+        "https://search.r-project.org/R/refmans/stats/html/quantile.html"
+      ],
+      "confidence": "high"
+    },
+    {
+      "claim": "Outlier flags are diagnostics, not automatic deletion rules. Z-score methods are sensitive to distribution shape; MAD can be zero.",
+      "support": [
+        "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+        "https://search.r-project.org/R/refmans/stats/html/quantile.html"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

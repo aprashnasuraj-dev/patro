@@ -1,0 +1,25 @@
+{
+  "status": "TEST_PENDING",
+  "security_cases": [
+    "oversized input is rejected before expensive work",
+    "user text is rendered via textContent or escaped before any HTML preview",
+    "NaN, Infinity, invalid dates and numeric overflow paths produce explicit errors",
+    "download names are fixed or strictly sanitized; user content cannot choose a filesystem path",
+    "CSV/parser inputs stay within documented byte, row and column bounds where applicable"
+  ],
+  "responsive_accessibility_cases": [
+    "320px viewport: controls collapse to one column without horizontal page scrolling",
+    "keyboard-only: every actionable control is reachable and has visible focus",
+    "screen reader: result region uses role=status and aria-live=polite",
+    "labels remain programmatically associated with inputs",
+    "reduced-motion mode does not remove information"
+  ],
+  "performance_cases": [
+    "worst supported row/item count remains bounded",
+    "normal calculation requires no server request",
+    "lazy dependencies are loaded only for the opened route where applicable"
+  ],
+  "tool_specific": [
+    "This is a deterministic scenario, not a forecast distribution. Financing timing, working-capital timing, taxes and unexpected costs can change actual runway."
+  ]
+}

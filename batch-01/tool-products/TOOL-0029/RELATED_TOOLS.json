@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0029",
+  "related": [
+    {
+      "id": "TOOL-0025",
+      "title": "Nginx Location Block Match Tester",
+      "proposed_canonical": "/validators/nginx-location-match-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0037",
+      "title": "CODEOWNERS Pattern Tester",
+      "proposed_canonical": "/validators/codeowners-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0038",
+      "title": ".gitignore Pattern Tester",
+      "proposed_canonical": "/validators/gitignore-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0052",
+      "title": "WebSocket Tester",
+      "proposed_canonical": "/validators/websocket-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0053",
+      "title": "Server-Sent Events (SSE) Tester",
+      "proposed_canonical": "/validators/sse-tester",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

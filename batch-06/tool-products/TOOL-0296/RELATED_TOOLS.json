@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0296",
+  "related": [
+    {
+      "id": "TOOL-0446",
+      "title": "Label Sheet Template & Alignment Printer",
+      "proposed_canonical": "/utilities/label-sheet-print-alignment-calibrator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0478",
+      "title": "Shipping Label to 4x6 Thermal Cropper",
+      "proposed_canonical": "/editors/shipping-label-4x6-pdf-cropper",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0281",
+      "title": "One-Rep Max Calculator (Multi-Formula)",
+      "proposed_canonical": "/calculators/one-rep-max-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0282",
+      "title": "Running Pace Calculator with Split Export",
+      "proposed_canonical": "/calculators/running-pace-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0283",
+      "title": "Race Time Predictor (Riegel and Cameron)",
+      "proposed_canonical": "/utilities/race-time-predictor",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

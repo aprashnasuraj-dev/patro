@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0141",
+  "related": [
+    {
+      "id": "TOOL-0158",
+      "title": "PDF Page Size Inspector",
+      "proposed_canonical": "/analyzers/pdf-page-size-checker",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0106",
+      "title": "Font File Metadata and License Viewer",
+      "proposed_canonical": "/analyzers/font-metadata-viewer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0157",
+      "title": "PDF Attachment Extractor",
+      "proposed_canonical": "/extractors/extract-pdf-attachments",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0160",
+      "title": "PDF Link Extractor",
+      "proposed_canonical": "/extractors/extract-links-from-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0337",
+      "title": "Office Document Metadata Scrubber (DOCX, XLSX, PPTX)",
+      "proposed_canonical": "/editors/remove-metadata-from-word-document",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

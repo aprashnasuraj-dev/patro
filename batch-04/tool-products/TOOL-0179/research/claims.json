@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Render a bounded short-time Fourier transform spectrogram with selectable FFT resolution.",
+      "status": "implementation_scope",
+      "basis": "Web Audio decoding and local FFT"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "STFT is capped to about 1000 time columns and 8192 FFT points to bound CPU/memory.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

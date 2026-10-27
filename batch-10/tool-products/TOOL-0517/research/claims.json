@@ -1,0 +1,16 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Level-payment amortization; fees and assumption equity gap displayed explicitly.",
+    "supporting_urls": [
+      "https://www.consumerfinance.gov/owning-a-home/loan-estimate/"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "Equal-house-price and equal-cash scenario require additional modeling beyond displayed lifetime totals."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "An assumed 2.85% mortgage can have lower monthly debt service but require an upfront equity gap.",
+    "status": "TEST_PENDING"
+  }
+]

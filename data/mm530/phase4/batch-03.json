@@ -1,0 +1,601 @@
+{
+  "schema_version": "MM530_PHASE4_BATCH_V1",
+  "source": {
+    "branch_head": "7c3ed94e3f4c06044dfc58d5b7d818487f38ca72",
+    "workflow_run_id": 40453367367,
+    "artifact_id": 12711621150,
+    "artifact_digest": "sha256:de0c135457cf03504362a77cbe022f9d1266122562988e7cf7498d6586c5c75f"
+  },
+  "batch": "BATCH-03",
+  "count": 53,
+  "summary": {
+    "unit_PASS": 53,
+    "compile_PASS": 53,
+    "compile_BLOCKED": 0
+  },
+  "tools": [
+    {
+      "id": "TOOL-0107",
+      "title": "@font-face CSS Generator with unicode-range",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0108",
+      "title": "Fallback Font Metrics Override Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0109",
+      "title": "Web-Safe CSS Font Stack Builder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0110",
+      "title": "Fluid Typography clamp() Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0111",
+      "title": "Local Font File Tester",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0112",
+      "title": "Text to SVG Path Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0113",
+      "title": "Icon Font Glyph Map Extractor",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0114",
+      "title": "Character to Font Support Finder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0115",
+      "title": "Kerning Pair Viewer",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0116",
+      "title": "OpenType Features Detector and CSS Helper",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0117",
+      "title": "Text Width in Pixels Calculator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0118",
+      "title": "ASCII Banner Generator for Code Comments",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0119",
+      "title": "PDF Embedded Fonts Lister",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0120",
+      "title": "Google Fonts CSS2 URL Builder",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0121",
+      "title": "Bulk EXIF Viewer and Stripper",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0122",
+      "title": "HEIC to JPG Batch Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0123",
+      "title": "PNG/JPG to AVIF and WebP with Quality Compare",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0124",
+      "title": "Compress Image to Exact File Size (KB)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0125",
+      "title": "Passport and ID Photo Cropper by Country",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0126",
+      "title": "Favicon Generator (ICO, PNG Set, Manifest)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0127",
+      "title": "App Icon Set Generator (iOS and Android)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0128",
+      "title": "CSS Sprite Sheet Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0129",
+      "title": "SVG Optimizer with Visual Diff",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0130",
+      "title": "SVG to PNG/JPG Exporter at Custom Sizes",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0131",
+      "title": "Image Color Palette Extractor with Contrast Pairs",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0132",
+      "title": "BlurHash and ThumbHash Generator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0133",
+      "title": "Seamless Tile Pattern Maker and Checker",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0134",
+      "title": "Image Difference Comparator",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0135",
+      "title": "Blur and Pixelate Redaction Tool",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0136",
+      "title": "GIF Frame Extractor",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0137",
+      "title": "GIF Speed Changer and Reverser",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0138",
+      "title": "APNG and Animated WebP Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0139",
+      "title": "Image DPI Changer (72 to 300 DPI)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0140",
+      "title": "Bulk Image Resizer with Format Conversion",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0141",
+      "title": "PDF Metadata Viewer and Scrubber",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0142",
+      "title": "Rearrange PDF Pages (Drag Thumbnails)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0143",
+      "title": "Split PDF by Bookmarks (Chapters)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0144",
+      "title": "Merge PDFs with Bookmarks per File",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0145",
+      "title": "Bates Numbering for PDFs",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0146",
+      "title": "PDF Watermark (Text, Image, Tiled)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0147",
+      "title": "Flatten PDF Form Fields",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0148",
+      "title": "PDF Form Field Lister and Filler",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0149",
+      "title": "Crop PDF Margins Visually",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0151",
+      "title": "Images to PDF with Page Size and Margin Control",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0152",
+      "title": "PDF to Images with DPI Control",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0153",
+      "title": "Extract Text from PDF by Page",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0154",
+      "title": "PDF Table Extractor to CSV",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0155",
+      "title": "True PDF Redaction (Rasterize Redacted Pages)",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0156",
+      "title": "Reduce PDF Size by Image Downsampling",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0157",
+      "title": "PDF Attachment Extractor",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0158",
+      "title": "PDF Page Size Inspector",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    },
+    {
+      "id": "TOOL-0159",
+      "title": "DOCX to Markdown and HTML Converter",
+      "compile": {
+        "state": "PASS"
+      },
+      "unit": {
+        "state": "PASS"
+      },
+      "external_device": "NOT_APPLICABLE"
+    }
+  ]
+}

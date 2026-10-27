@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0143",
+  "claims": [
+    {
+      "claim": "Read top-level PDF outline destinations and split the document into chapter PDFs at bookmark boundaries.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "PDF outlines do not always map cleanly to chapter boundaries; nested or out-of-order destinations may need manual review.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

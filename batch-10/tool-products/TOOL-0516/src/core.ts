@@ -1,0 +1,8 @@
+import {num,decimal,positiveDecimal,restricted,choice,iso,addDays,addMonths,endOfMonth,dayDifference,csv,fmt,usd,gbp,cad,metric,output} from '../_vendor/runtime.js';
+import type {Input,Result} from '../_vendor/runtime.js';
+/** Prepared offline calculation. Runtime QA has not executed. */
+export function calculate(i:Input):Result {
+  const capex=num(i,'installed',0,500000)-num(i,'rebate',0,100000),daily=num(i,'dailyShift',0,150),eta=num(i,'rtEfficiency',.2,1),importPrice=num(i,'retail',0,5),fit=num(i,'feedIn',0,5),opex=num(i,'annualExtra',0,10000),fade=num(i,'fade',0,20)/100,years=num(i,'life',1,30);
+  if(!Number.isInteger(years)||capex<0)throw new Error('Years must be an integer and rebate cannot exceed installation price.');let cumulative=-capex,first=0,saved=0;const rows:string[][]=[];for(let y=1;y<=years;y++){const net=daily*365*Math.pow(1-fade,y-1)*(eta*importPrice-fit)-opex;saved+=net;cumulative+=net;if(!first&&cumulative>=0)first=y;rows.push([String(y),'A$'+fmt(net,2),'A$'+fmt(cumulative,2)])}const initial=daily*365*(eta*importPrice-fit)-opex;
+  return output(first?'Simple cumulative break-even around year '+first:'No break-even within entered horizon',[metric('Net installed cost','A$'+fmt(capex,2)),metric('Year-one net savings','A$'+fmt(initial,2)),metric('Horizon net profit/loss','A$'+fmt(cumulative,2)),metric('Break-even year',first?String(first):'Not reached')],['This is undiscounted nominal cash flow. No future tariff escalation, financing, outage value, replacement, time-of-use exports or battery dispatch constraints.','Use the actual retailer quote for STCs/discount. National program terms may change.','Input daily shifted energy must be surplus solar actually available, not battery nameplate capacity.'],rows);
+}

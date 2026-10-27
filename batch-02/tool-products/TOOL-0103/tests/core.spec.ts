@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {convert} from '../src/core';describe('TOOL-0103 WOFF2 decode unit guards',()=>{it('rejects non-WOFF2 input',async()=>{await expect(convert(new ArrayBuffer(0),'bad.ttf')).rejects.toThrow()});it.todo('decodes a reviewed TrueType-backed WOFF2 fixture and rejects OTTO-backed output')});

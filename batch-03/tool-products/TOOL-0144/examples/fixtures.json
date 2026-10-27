@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0144",
+  "known_answer_examples": [
+    "Merge three reports and create bookmarks \u201cJanuary\u201d, \u201cFebruary\u201d and \u201cMarch\u201d at their starting pages."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

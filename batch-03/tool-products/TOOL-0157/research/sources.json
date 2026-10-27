@@ -1,0 +1,9 @@
+[
+  {
+    "url": "https://mozilla.github.io/pdf.js/api/index.html",
+    "version": "current API docs accessed 2026-10-26",
+    "effective_date": "2026-10-26",
+    "license": "Apache-2.0 project; bundle locally and retain notices",
+    "notes": "Use display-layer API; getAttachments/getAttachmentContent are documented."
+  }
+]

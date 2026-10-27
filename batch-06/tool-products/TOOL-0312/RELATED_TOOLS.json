@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0312",
+  "related": [
+    {
+      "id": "TOOL-0291",
+      "title": "HIIT and Tabata Interval Timer",
+      "proposed_canonical": "/timers/tabata-interval-timer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0075",
+      "title": "Bulk UTM Link Builder from CSV",
+      "proposed_canonical": "/generators/bulk-utm-builder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0160",
+      "title": "PDF Link Extractor",
+      "proposed_canonical": "/extractors/extract-links-from-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0338",
+      "title": "QR Code Inspector with Link Safety Hints",
+      "proposed_canonical": "/analyzers/qr-code-link-inspector",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0341",
+      "title": "Social Post Character Counter with Link and Emoji Weighting",
+      "proposed_canonical": "/utilities/social-character-counter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

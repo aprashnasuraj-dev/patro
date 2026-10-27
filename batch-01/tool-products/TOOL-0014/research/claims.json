@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0014",
+  "evidence_status": "DOCUMENTED_NOT_TESTED",
+  "claims": [
+    {
+      "statement": "Normalize Extended JSON v2 markers while explicitly preserving non-JSON BSON types in tagged wrappers.",
+      "evidence_urls": [
+        "https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/",
+        "https://www.mongodb.com/docs/manual/reference/bson-types/"
+      ],
+      "classification": "implementation intent"
+    },
+    {
+      "statement": "Plain JSON cannot preserve all BSON type semantics. Wrapper mode retains BSON markers as strings/tags; unrecognized markers stay unchanged and are warned about.",
+      "evidence_urls": [
+        "https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/",
+        "https://www.mongodb.com/docs/manual/reference/bson-types/"
+      ],
+      "classification": "known limitation"
+    }
+  ],
+  "measurement": {
+    "bundle": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  }
+}

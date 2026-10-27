@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0356",
+  "related": [
+    {
+      "id": "TOOL-0388",
+      "title": "G-code Print Time and Filament Estimator",
+      "proposed_canonical": "/calculators/gcode-filament-cost-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0343",
+      "title": "YouTube Thumbnail Safe Zone Previewer",
+      "proposed_canonical": "/utilities/youtube-thumbnail-safe-zone",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0344",
+      "title": "YouTube Chapters Timestamp Formatter and Validator",
+      "proposed_canonical": "/validators/youtube-chapters-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0351",
+      "title": "Online Teleprompter with Mirror Mode",
+      "proposed_canonical": "/utilities/teleprompter-utility",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

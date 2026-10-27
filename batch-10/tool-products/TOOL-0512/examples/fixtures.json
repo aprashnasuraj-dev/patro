@@ -1,0 +1,13 @@
+{
+  "tool": "TOOL-0512",
+  "default_inputs": {
+    "yearsOpen": "3",
+    "contributed": "16000",
+    "unusedLast": "8000",
+    "thisYear": "0",
+    "hbpPrior": "0",
+    "hbpPlanned": "35000"
+  },
+  "worked_example": "A new FHSA starts with C$8,000 participation room; HBP withdrawal ceiling is C$60,000 subject to eligibility.",
+  "source_status": "TEST_PENDING"
+}

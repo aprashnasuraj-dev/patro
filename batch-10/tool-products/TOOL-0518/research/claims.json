@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "Operational calculation assumptions",
+    "details": "Daily >8h at 1.5x and >12h at 2x for ordinary nonexempt schedule; premium assumption must be verified.",
+    "supporting_urls": [
+      "https://www.dir.ca.gov/dlse/faq_mealperiods.html",
+      "https://www.dir.ca.gov/dlse/faq_overtime.htm"
+    ],
+    "status": "SOURCE_PREPARED",
+    "limitations": "No automatic determination of a Labor Code violation."
+  },
+  {
+    "claim": "Exact answer example",
+    "details": "A single verified missed meal period can generate a one-hour regular-rate premium for the workday.",
+    "status": "TEST_PENDING"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0087",
+  "related": [
+    {
+      "id": "TOOL-0020",
+      "title": "Semantic JSON Diff (Ignore Key and Array Order)",
+      "proposed_canonical": "/utilities/json-diff-ignore-order",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0091",
+      "title": "Fixed-Width Text to CSV Converter",
+      "proposed_canonical": "/converters/fixed-width-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0093",
+      "title": "Strip Markdown to Plain Text",
+      "proposed_canonical": "/utilities/strip-markdown",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0094",
+      "title": "Word and Google Docs HTML Cleaner",
+      "proposed_canonical": "/editors/clean-word-html",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0099",
+      "title": "Word Frequency Counter with Stopword Filter",
+      "proposed_canonical": "/utilities/word-frequency-counter",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

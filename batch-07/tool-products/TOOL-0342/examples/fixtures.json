@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0342",
+  "examples": [
+    {
+      "source": "3000x1000",
+      "cols": 3,
+      "rows": 1,
+      "expected_tiles": [
+        "1000x1000",
+        "1000x1000",
+        "1000x1000"
+      ]
+    }
+  ]
+}

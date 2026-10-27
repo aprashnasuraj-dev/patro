@@ -1,0 +1,22 @@
+{
+  "tool": "TOOL-0055",
+  "claims": [
+    {
+      "claim": "canPlayType returns empty, maybe or probably.",
+      "supporting_url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    },
+    {
+      "claim": "MediaSource compatibility is distinct from ordinary file playback.",
+      "supporting_url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType",
+      "verified_status": "SOURCE_REVIEWED_PRODUCT_UNTESTED"
+    }
+  ],
+  "assumptions": [
+    "Browser HTMLMediaElement.canPlayType and MediaSource.isTypeSupported, when available."
+  ],
+  "limitations": [
+    "Support claims do not guarantee actual successful decoding, hardware acceleration or DRM."
+  ],
+  "uncertainty": "Implementation is not yet executed in browser or CI."
+}

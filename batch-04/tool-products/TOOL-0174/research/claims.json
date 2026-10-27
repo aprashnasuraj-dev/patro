@@ -1,0 +1,24 @@
+{
+  "claims": [
+    {
+      "claim": "Measure and normalize integrated loudness with a two-pass EBU R128/BS.1770 workflow.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg loudnorm, EBU R128, ITU-R BS.1770"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "LUFS normalization is two-pass and follows FFmpeg loudnorm behavior; output encoding can slightly alter measured values.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    },
+    {
+      "claim": "EBU R 128 v5 recommends programme loudness normalization around -23 LUFS; the tool also offers common non-broadcast targets with clear labeling.",
+      "status": "verified",
+      "basis": "EBU R 128 v5 / ITU-R BS.1770-5"
+    }
+  ]
+}

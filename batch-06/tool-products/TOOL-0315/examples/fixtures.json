@@ -1,0 +1,19 @@
+{
+  "tool_id": "TOOL-0315",
+  "examples": [
+    {
+      "inputs": {
+        "date": "1877-08-11",
+        "time_utc": "07:30:00"
+      },
+      "expected_jd": 2406842.8125
+    },
+    {
+      "inputs": {
+        "date": "2024-12-31",
+        "time_utc": "00:00:00"
+      },
+      "expected_day_of_year": 366
+    }
+  ]
+}

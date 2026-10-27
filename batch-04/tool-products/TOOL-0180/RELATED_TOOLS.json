@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0180",
+  "related": [
+    {
+      "id": "TOOL-0232",
+      "title": "Hourly to Salary Converter with Unpaid Time Off",
+      "proposed_canonical": "/converters/hourly-to-salary-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0228",
+      "title": "Credit Card Payoff Time Calculator",
+      "proposed_canonical": "/calculators/credit-card-payoff-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0283",
+      "title": "Race Time Predictor (Riegel and Cameron)",
+      "proposed_canonical": "/utilities/race-time-predictor",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0298",
+      "title": "Hiking Time Estimator (Naismith and Tobler)",
+      "proposed_canonical": "/calculators/hiking-time-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0303",
+      "title": "Time Zone Meeting Planner Grid",
+      "proposed_canonical": "/planners/time-zone-meeting-planner",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

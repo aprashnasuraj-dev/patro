@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0079",
+  "related": [
+    {
+      "id": "TOOL-0078",
+      "title": "Redirect Chain and Loop Finder from CSV",
+      "proposed_canonical": "/extractors/redirect-chain-finder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0019",
+      "title": "package-lock.json Duplicate Dependency Finder",
+      "proposed_canonical": "/extractors/package-lock-duplicate-finder",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0090",
+      "title": "Duplicate Line Finder with Counts",
+      "proposed_canonical": "/extractors/find-duplicate-lines",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0114",
+      "title": "Character to Font Support Finder",
+      "proposed_canonical": "/extractors/which-font-supports-character",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0304",
+      "title": "DST Transition Dates Finder by Time Zone",
+      "proposed_canonical": "/extractors/dst-transition-dates",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

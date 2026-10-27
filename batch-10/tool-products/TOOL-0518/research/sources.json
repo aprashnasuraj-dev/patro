@@ -1,0 +1,20 @@
+[
+  {
+    "name": "California DLSE meal periods",
+    "url": "https://www.dir.ca.gov/dlse/faq_mealperiods.html",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Daily >8h at 1.5x and >12h at 2x for ordinary nonexempt schedule; premium assumption must be verified.",
+    "uncertainty": "No automatic determination of a Labor Code violation."
+  },
+  {
+    "name": "California overtime",
+    "url": "https://www.dir.ca.gov/dlse/faq_overtime.htm",
+    "version": "Official source accessed 2026-10-26; verify updated legal version before deployment",
+    "effective_date": "2026 where applicable",
+    "license": "Citation only; no republication of original content",
+    "assumptions": "Daily >8h at 1.5x and >12h at 2x for ordinary nonexempt schedule; premium assumption must be verified.",
+    "uncertainty": "No automatic determination of a Labor Code violation."
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0004",
+  "claims": [
+    {
+      "claim": "Review PostgreSQL DDL as Prisma v7 model definitions",
+      "references": [
+        "https://www.prisma.io/docs/orm/v7/reference/prisma-schema-reference",
+        "https://docs.prisma.io/docs/orm/v6/prisma-schema/introspection"
+      ],
+      "verification": "design-intent; runtime untested"
+    },
+    {
+      "claim": "DDL grammars differ across vendors. This deliberately excludes foreign keys, advanced defaults, CHECK constraints and full relation reconstruction. For actual databases prefer Prisma introspection.",
+      "references": [
+        "https://www.prisma.io/docs/orm/v7/reference/prisma-schema-reference",
+        "https://docs.prisma.io/docs/orm/v6/prisma-schema/introspection"
+      ],
+      "verification": "documented scope; not QA"
+    }
+  ],
+  "performance": {
+    "bundle_bytes": "NOT_MEASURED",
+    "LCP": "NOT_MEASURED",
+    "INP": "NOT_MEASURED",
+    "CLS": "NOT_MEASURED"
+  },
+  "privacy_design": "Local browser processing; no network access in tool engine or UI"
+}

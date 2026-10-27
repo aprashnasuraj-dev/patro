@@ -1,0 +1,13 @@
+{
+  "tool_id": "TOOL-0339",
+  "examples": [
+    {
+      "input": "https://example.com/a.b",
+      "defanged": "hxxps://example[.]com/a.b"
+    },
+    {
+      "input": "192.0.2.10",
+      "defanged": "192[.]0[.]2[.]10"
+    }
+  ]
+}

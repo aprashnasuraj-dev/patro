@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0129",
+  "claims": [
+    {
+      "claim": "Sanitize and reduce SVG markup, then raster-compare before/after output to highlight visible differences.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "The visual diff is raster-based at selected dimensions and may not expose every semantic/accessibility change.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

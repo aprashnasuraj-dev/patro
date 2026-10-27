@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0267",
+  "examples": [
+    {
+      "inputs": {
+        "species": "Southern Pine",
+        "joist": "2x8",
+        "spacing_in": 16,
+        "actual_span_ft": 10,
+        "beam": "2-2x8"
+      },
+      "expected_note": "Reference values come from DCA 6 Table 2 and Table 3A; beam category rounds up to next tabulated joist span."
+    }
+  ]
+}

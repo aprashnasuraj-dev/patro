@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0129",
+  "sources": [
+    {
+      "url": "https://www.w3.org/TR/SVG/",
+      "version": "accessed 2026-10-26",
+      "effective_date": null,
+      "licensing_or_data_restrictions": "Public technical documentation; implementation does not transmit user files.",
+      "uncertainty": "None material for the cited behavior."
+    }
+  ],
+  "assumptions": [
+    "Optimization is conservative and prioritizes preserving rendering over maximum byte reduction."
+  ],
+  "limitations": [
+    "The visual diff is raster-based at selected dimensions and may not expose every semantic/accessibility change."
+  ]
+}

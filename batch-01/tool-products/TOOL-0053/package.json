@@ -1,0 +1,9 @@
+{
+  "name": "mission-mangal-tool-0053",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}

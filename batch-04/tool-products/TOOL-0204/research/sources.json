@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0204",
+  "sources": [
+    {
+      "title": "NIST/SEMATECH — Selecting Sample Sizes",
+      "url": "https://www.itl.nist.gov/div898/handbook/ppc/section3/ppc333.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "NIST/SEMATECH — Normal Distribution",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3661.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

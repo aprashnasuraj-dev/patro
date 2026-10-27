@@ -1,0 +1,19 @@
+{
+  "claims": [
+    {
+      "claim": "Join 2\u201320 audio files in order after normalizing sample rate and channel layout locally.",
+      "status": "implementation_scope",
+      "basis": "FFmpeg concat audio filter"
+    },
+    {
+      "claim": "Normal usage is browser-local and does not require upload or a server roundtrip.",
+      "status": "design_constraint",
+      "basis": "source architecture"
+    },
+    {
+      "claim": "Files are normalized to 48 kHz stereo before joining; this is not a bit-perfect concatenate operation.",
+      "status": "explicit_limitation",
+      "basis": "bounded implementation"
+    }
+  ]
+}

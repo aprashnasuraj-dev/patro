@@ -1,0 +1,17 @@
+{
+  "tool_id": "TOOL-0411",
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "title": "SMACNA Downspout & Gutter Sizing Calculator notes",
+      "url": "https://apps.smacna.org/dsgcal/",
+      "note": "SMACNA directs users to current NOAA PFDS intensity and local AHJ."
+    },
+    {
+      "title": "NOAA Precipitation Frequency Data Server",
+      "url": "https://hdsc.nws.noaa.gov/pfds/",
+      "note": "Source for current U.S. precipitation frequency/intensity estimates."
+    }
+  ],
+  "offline_behavior": "Sources are provenance only; the calculator does not fetch them at runtime."
+}

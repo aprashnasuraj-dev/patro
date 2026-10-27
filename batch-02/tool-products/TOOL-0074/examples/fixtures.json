@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "title": "Smart tools that run in your browser | Example",
+    "description": "Compare text length and approximate display width in a familiar browser font.",
+    "font": "System|Arial"
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "A 600px title budget is illustrative, never a Google-wide fixed limit.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "browser-required fixture",
+    "assertions": "Browser harness required"
+  }
+}

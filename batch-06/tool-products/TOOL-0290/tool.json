@@ -1,0 +1,67 @@
+{
+  "id": "TOOL-0290",
+  "name": "Caffeine Half-Life Decay Calculator",
+  "slug": "caffeine-half-life-calculator",
+  "route": "/tools/caffeine-half-life-calculator",
+  "family": "F0156",
+  "source_class": "ORIGINAL_400",
+  "batch": "BATCH-06",
+  "run": "RUN-12",
+  "status": "TEST_PENDING",
+  "quality_status": "TEST_PENDING",
+  "execution": "local-browser-esm-typescript",
+  "dependency": "../../_shared/runtime.ts",
+  "lazy_loading": "route_open_only",
+  "requires_network_for_use": false,
+  "sensitive_input_transmission": false,
+  "seo": {
+    "title": "Caffeine Half-Life Decay Calculator | AafnaiPatro",
+    "description": "Estimate remaining caffeine after elapsed hours, including multiple elapsed-time checkpoints.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null
+  },
+  "inputs": [
+    {
+      "type": "number",
+      "key": "dose",
+      "label": "Initial caffeine",
+      "default": 150,
+      "min": 0,
+      "max": 1500,
+      "step": "any",
+      "unit": "mg"
+    },
+    {
+      "type": "number",
+      "key": "halflife",
+      "label": "Elimination half-life",
+      "default": 5,
+      "min": 2,
+      "max": 12,
+      "step": "any",
+      "unit": "hours"
+    },
+    {
+      "type": "number",
+      "key": "elapsed",
+      "label": "Elapsed time",
+      "default": 6,
+      "min": 0,
+      "max": 72,
+      "step": "any",
+      "unit": "hours"
+    }
+  ],
+  "explanation": "Residual caffeine dose=initial·2^(−hours/half-life), representing single-compartment first-order elimination.",
+  "limitations": "Real absorption, interactions, smoking, pregnancy and genetics alter half-life; not blood concentration or clearance advice.",
+  "related_tool_ids": [
+    "TOOL-0289",
+    "TOOL-0292"
+  ],
+  "sources": [
+    "https://www.ncbi.nlm.nih.gov/books/NBK223808/"
+  ],
+  "special_notes": null
+}

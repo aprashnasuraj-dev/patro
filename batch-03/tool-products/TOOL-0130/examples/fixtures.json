@@ -1,0 +1,16 @@
+{
+  "tool_id": "TOOL-0130",
+  "known_answer_examples": [
+    "Export a 24\u00d724 icon SVG at 512\u00d7512 PNG and a 1200\u00d7630 JPEG social image with a chosen background."
+  ],
+  "malformed_inputs": [
+    "empty file",
+    "oversized file",
+    "wrong MIME/magic bytes"
+  ],
+  "security_cases": [
+    "unsafe filename",
+    "script-bearing SVG/HTML where relevant",
+    "path traversal attempt in generated archive names"
+  ]
+}

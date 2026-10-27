@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0322",
+  "related": [
+    {
+      "id": "TOOL-0321",
+      "title": "Large File Hash Calculator (SHA-256, SHA-512, MD5, CRC32)",
+      "proposed_canonical": "/calculators/file-hash-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0340",
+      "title": "Subresource Integrity (SRI) Hash Generator",
+      "proposed_canonical": "/generators/sri-hash-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0327",
+      "title": "PKCE Code Verifier and Challenge Generator",
+      "proposed_canonical": "/generators/pkce-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0032",
+      "title": "AWS ARN Parser and Builder",
+      "proposed_canonical": "/generators/aws-arn-parser",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

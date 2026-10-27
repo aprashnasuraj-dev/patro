@@ -1,0 +1,14 @@
+{
+  "sample": {
+    "bucket": "example-static-site",
+    "distribution": "E1234567890ABC",
+    "account": "123456789012",
+    "partition": "aws"
+  },
+  "expected_behavior": "Produces a deterministic result or a clear unsupported-case warning.",
+  "negative_cases": [
+    "oversized field",
+    "malformed grammar",
+    "unsafe characters"
+  ]
+}

@@ -1,0 +1,1 @@
+import{decodeCap}from'./core';import{q,val,setError,metricGrid}from'../_vendor/ui';q('run').addEventListener('click',()=>{const o=q('result');try{const r=decodeCap(val('code'));o.replaceChildren(metricGrid([['pF',String(r.pf)],['nF',String(r.nf)],['µF',String(r.uf)],['Tolerance',r.tolerance]]))}catch(e){setError(o,e)}});

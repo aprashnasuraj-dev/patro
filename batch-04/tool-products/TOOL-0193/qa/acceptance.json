@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0193",
+  "status": "TEST_PENDING",
+  "executed": false,
+  "checks": {
+    "build": false,
+    "typecheck": false,
+    "unit": false,
+    "browser": false,
+    "accessibility": false,
+    "responsive": false,
+    "performance": false,
+    "security": false
+  },
+  "storage_checks_are_not_product_qa": true,
+  "notes": [
+    "Prepared test scenarios only; none executed in this checkpoint.",
+    "A default country is required for ambiguous national numbers; validity follows bundled numbering metadata and can change over time."
+  ]
+}

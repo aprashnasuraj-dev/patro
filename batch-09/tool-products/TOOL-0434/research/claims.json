@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "statement": "Plan charging kWh, cost and electrical envelope",
+      "basis": "deterministic formulas documented in src/core.ts; assumptions supplied by user",
+      "status": "source-authored, runtime-unverified"
+    },
+    {
+      "statement": "No jurisdiction-wide legal compliance certified",
+      "basis": "Electrical safety and applicable NEC sections vary by jurisdiction and installation. Rate does not include demand-based pricing unless user includes it.",
+      "status": "expressly limited"
+    }
+  ],
+  "limitations": "Electrical safety and applicable NEC sections vary by jurisdiction and installation. Rate does not include demand-based pricing unless user includes it.",
+  "authoritative_references": [
+    "https://afdc.energy.gov/fuels/electricity-stations",
+    "https://www.epa.gov/greenvehicles/fuel-economy-and-ev-range-testing"
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "TOOL-0224",
+  "name": "Coast FIRE and FIRE Number Calculator",
+  "route": "/tools/coast-fire-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-09",
+  "engineering_family_id": "F0106",
+  "engineering_family": "Retirement FIRE and Employer Matching",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000.0,
+    "notes": "Tool-specific tighter bounds are enforced in core.ts."
+  },
+  "seo": {
+    "title": "Coast FIRE and FIRE Number Calculator \u2014 Local Browser Tool",
+    "meta_description": "Estimate a FIRE number in today's dollars and the invested balance needed today to coast toward that target using a real-return assumption.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

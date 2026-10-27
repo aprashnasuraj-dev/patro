@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0068",
+  "related": [
+    {
+      "id": "TOOL-0061",
+      "title": "FAQPage JSON-LD Generator from Pasted Q&A",
+      "proposed_canonical": "/generators/faq-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0062",
+      "title": "Recipe Schema Generator",
+      "proposed_canonical": "/generators/recipe-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0063",
+      "title": "LocalBusiness Schema with Opening Hours Builder",
+      "proposed_canonical": "/generators/local-business-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0064",
+      "title": "JobPosting Schema Generator",
+      "proposed_canonical": "/generators/jobposting-schema-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0065",
+      "title": "Product Schema Generator (Offer, Reviews, Shipping)",
+      "proposed_canonical": "/generators/product-schema-generator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

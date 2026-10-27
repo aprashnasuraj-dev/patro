@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0123",
+  "claims": [
+    {
+      "claim": "Encode one PNG or JPEG to AVIF and WebP at comparable quality settings and show file-size savings side by side.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Quality numbers are codec-specific and not visually equivalent; users must judge the preview.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

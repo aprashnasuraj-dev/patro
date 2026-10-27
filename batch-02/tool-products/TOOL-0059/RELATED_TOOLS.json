@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0059",
+  "related": [
+    {
+      "id": "TOOL-0072",
+      "title": "robots.txt Bulk URL Tester",
+      "proposed_canonical": "/validators/robots-txt-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0339",
+      "title": "URL and IP Defanger/Refanger for Security Reports",
+      "proposed_canonical": "/utilities/defang-url",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0424",
+      "title": "Security Deposit Return Deadline & Deduction Calculator",
+      "proposed_canonical": "/calculators/security-deposit-return-deadline-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0041",
+      "title": "CORS Configuration Generator (Nginx, Express, Apache, S3)",
+      "proposed_canonical": "/generators/cors-config-generator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0043",
+      "title": "Set-Cookie Builder and Parser",
+      "proposed_canonical": "/generators/set-cookie-builder",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

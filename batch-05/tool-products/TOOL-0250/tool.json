@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0250",
+  "name": "Timesheet Hours Calculator with Breaks and Overtime",
+  "route": "/tools/timesheet-calculator",
+  "batch": "BATCH-05",
+  "run_id": "RUN-10",
+  "engineering_family_id": "F0121",
+  "engineering_family": "Timesheet, Breaks and Overtime",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000000,
+    "notes": "Tool-specific tighter bounds, row caps, byte caps and date-span limits are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Timesheet Hours Calculator with Breaks and Overtime — Private Browser Tool",
+    "meta_description": "Calculate shift hours after breaks and classify configurable daily and weekly overtime without double-counting hours already treated as daily overtime.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

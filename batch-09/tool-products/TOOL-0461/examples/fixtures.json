@@ -1,0 +1,26 @@
+{
+  "default_input": {
+    "hours": 200000,
+    "recordable": 5,
+    "dart": 3,
+    "benchmark": "2024 US private industry aggregate",
+    "industry": "",
+    "blsTRIR": 2.3,
+    "blsDART": 1.4
+  },
+  "hand_reference": {
+    "label": "TRIR per 100 FTE",
+    "value": "5.00",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

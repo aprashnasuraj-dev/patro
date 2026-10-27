@@ -1,0 +1,31 @@
+{
+  "tool_id": "TOOL-0161",
+  "build_sequence": 161,
+  "name": "Lossless Video Trimmer (No Re-encode)",
+  "route": "/tools/trim-video-without-reencoding",
+  "batch_id": "BATCH-04",
+  "run_id": "RUN-07",
+  "engineering_family": "Video Trim, Rotate and Speed",
+  "browser_first": true,
+  "normal_usage_network_requests": 0,
+  "lazy_dependencies": true,
+  "limits": {
+    "media_bytes": 262144000,
+    "notes": "Stream-copy trim is fast and lossless but can preserve media before the requested start when the nearest seek point is earlier."
+  },
+  "seo": {
+    "title": "Lossless Video Trimmer (No Re-encode) — Free Browser Tool",
+    "meta_description": "Trim compatible video containers with stream copy so video and audio are not re-encoded.",
+    "h1": "Lossless Video Trimmer (No Re-encode)",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "git_imported": false,
+  "published": false,
+  "engineering_family_id": "F0077"
+}

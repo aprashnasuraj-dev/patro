@@ -1,0 +1,20 @@
+{
+  "tool_id": "TOOL-0379",
+  "claims": [
+    {
+      "claim": "Generate deterministic arithmetic worksheets with answer keys and a print layout suitable for browser Save-as-PDF.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Browser printing/PDF output depends on the browser print engine; direct PDF/A or accessibility-tagged PDF is not claimed.",
+      "basis": "explicit-limitation",
+      "status": "DISCLOSED"
+    },
+    {
+      "claim": "Direct PDF export uses a locally bundled PDF generator with standard Latin fonts; browser print remains a fallback.",
+      "basis": "implementation-design",
+      "status": "SOURCE_PREPARED"
+    }
+  ]
+}

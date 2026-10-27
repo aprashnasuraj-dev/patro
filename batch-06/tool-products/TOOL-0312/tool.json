@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0312",
+  "name": "Countdown Timer Generator with Shareable Link",
+  "route": "/tools/countdown-timer-generator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0168",
+  "engineering_family": "Countdown Link Generator",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Countdown Timer Generator with Shareable Link — Private Browser Tool",
+    "meta_description": "Resolve a target wall-clock time in an IANA zone, encode the resulting instant and title into a shareable same-route link, and render a live browser-side countdown.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

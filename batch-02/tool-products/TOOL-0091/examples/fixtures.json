@@ -1,0 +1,5 @@
+{
+  "sample_input": "ALICE     00042TOKYO       ",
+  "expected_behavior": "With widths 10,5,12, “ALICE     00042TOKYO       ” becomes three cells: ALICE, 00042, TOKYO.",
+  "qa_status": "TEST_PENDING"
+}

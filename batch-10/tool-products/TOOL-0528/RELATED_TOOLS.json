@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0528",
+  "related": [
+    {
+      "id": "TOOL-0448",
+      "title": "Yarn Yardage & Substitution Calculator",
+      "proposed_canonical": "/calculators/yarn-yardage-substitution-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0525",
+      "title": "Heat Pump vs Gas Boiler Payback Calculator",
+      "proposed_canonical": "/calculators/heat-pump-vs-gas-boiler-payback-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0526",
+      "title": "Generator Sizing and Starting Watts Calculator",
+      "proposed_canonical": "/calculators/generator-sizing-running-starting-watts",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0527",
+      "title": "Astrophotography NPF Exposure Calculator",
+      "proposed_canonical": "/calculators/astrophotography-npf-exposure-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0530",
+      "title": "Card Surcharge vs Cash Discount Pricing Calculator",
+      "proposed_canonical": "/calculators/card-surcharge-cash-discount-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

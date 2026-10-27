@@ -1,0 +1,22 @@
+{
+  "tool_id": "TOOL-0201",
+  "sources": [
+    {
+      "title": "NIST/SEMATECH — Chi-Square Goodness-of-Fit Test",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm",
+      "publisher": "NIST",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    },
+    {
+      "title": "statsmodels — NormalIndPower solve_power",
+      "url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.power.NormalIndPower.solve_power.html",
+      "publisher": "statsmodels",
+      "accessed": "2026-10-26",
+      "purpose": "Formula/method grounding",
+      "licensing": "Reference only; no source code copied."
+    }
+  ],
+  "researched_at": "2026-10-26"
+}

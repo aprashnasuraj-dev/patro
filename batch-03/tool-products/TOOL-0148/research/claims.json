@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0148",
+  "claims": [
+    {
+      "claim": "List common AcroForm fields, edit supported values locally and export a filled PDF.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "XFA-only forms, JavaScript-driven calculations and signed forms may not behave as expected after editing.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

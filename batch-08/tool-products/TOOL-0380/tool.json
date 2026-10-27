@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0380",
+  "name": "Word Search Puzzle Generator (Printable)",
+  "route": "/tools/word-search-generator",
+  "batch": "BATCH-08",
+  "run_id": "RUN-16",
+  "engineering_family_id": "F0213",
+  "engineering_family": "Word Search Puzzle Generator",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds are enforced in source."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Word Search Puzzle Generator (Printable) — Private Browser Tool",
+    "meta_description": "Generate seeded printable word-search puzzles with bounded backtracking, optional diagonals/backwards placement and an answer key.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

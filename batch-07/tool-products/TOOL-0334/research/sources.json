@@ -1,0 +1,18 @@
+{
+  "tool_id": "TOOL-0334",
+  "research_scope": "Only implementation-changing formulas, standards, security guidance, or data provenance were collected.",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9580.html",
+      "title": "OpenPGP",
+      "publisher": "IETF",
+      "version": "RFC 9580",
+      "effective_date": "2024-07",
+      "assumptions": "Used only for semantics that materially affect implementation.",
+      "licensing_or_data_restrictions": "Public specification/documentation; implementation is original.",
+      "uncertainty": "Later revisions or runtime implementations may change details.",
+      "important_limitations": "Inspector supports bounded v4/v6 public-key packet fingerprints and does not verify trust/signatures."
+    }
+  ],
+  "no_external_source_reason": null
+}

@@ -1,0 +1,1 @@
+import {it,expect} from 'vitest'; import {planGif} from '../src/core'; it('uses palette filters',()=>expect(planGif({start:0,duration:2,fps:10,width:320,dither:'sierra2_4a'},'i','o').join(' ')).toContain('palettegen'));

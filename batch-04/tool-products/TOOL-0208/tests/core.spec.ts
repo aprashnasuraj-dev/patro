@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {linearRegression} from "../src/core";
+describe("linear regression",()=>{it("recovers exact line",()=>{const r=linearRegression([{x:1,y:3},{x:2,y:5},{x:3,y:7}]);expect(r.slope).toBeCloseTo(2);expect(r.intercept).toBeCloseTo(1);expect(r.r2).toBeCloseTo(1);});});

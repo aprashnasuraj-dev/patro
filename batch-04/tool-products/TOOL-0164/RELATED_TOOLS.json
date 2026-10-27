@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0164",
+  "related": [
+    {
+      "id": "TOOL-0445",
+      "title": "Video File Size & Bitrate Calculator",
+      "proposed_canonical": "/calculators/video-file-size-bitrate-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0163",
+      "title": "Video to GIF Converter with Palette Optimization",
+      "proposed_canonical": "/converters/video-to-gif",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0161",
+      "title": "Lossless Video Trimmer (No Re-encode)",
+      "proposed_canonical": "/editors/trim-video-without-reencoding",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0162",
+      "title": "Extract Audio from Video",
+      "proposed_canonical": "/extractors/extract-audio-from-video",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0165",
+      "title": "Rotate and Flip Video",
+      "proposed_canonical": "/editors/rotate-video",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

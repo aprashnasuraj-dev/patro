@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0517",
+  "related": [
+    {
+      "id": "TOOL-0239",
+      "title": "Two-Loan Comparison Calculator (Total Cost)",
+      "proposed_canonical": "/calculators/compare-two-loans-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0221",
+      "title": "Loan Payoff Calculator with Extra Payments and Schedule Export",
+      "proposed_canonical": "/calculators/loan-payoff-extra-payments-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0233",
+      "title": "Biweekly Mortgage Payment Savings Calculator",
+      "proposed_canonical": "/calculators/biweekly-mortgage-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0505",
+      "title": "UK Section 24 Landlord vs Company Tax Comparison",
+      "proposed_canonical": "/comparisons/uk-section-24-landlord-company-comparison",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0518",
+      "title": "California Meal Break and Overtime Wage Claim Calculator",
+      "proposed_canonical": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

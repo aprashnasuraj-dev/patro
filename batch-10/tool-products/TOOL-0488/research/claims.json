@@ -1,0 +1,21 @@
+{
+  "tool_id": "TOOL-0488",
+  "claims": [
+    {
+      "claim": "Calibrated material delivery uses measured mass divided by actually treated strip area, then scales linearly to desired surface area.",
+      "source_ids": [
+        "source-1"
+      ],
+      "interpretation": "Domain-specific implementation premise; jurisdiction and product variations acknowledged"
+    },
+    {
+      "claim": "Actual width needs overlap correction; walk/vehicle speed and gate characteristics are equipment-specific. Rate ratios are directional only; no universal dial number or seed viability inference.",
+      "source_ids": [
+        "source-1"
+      ],
+      "interpretation": "Important unsupported cases and uncertainty"
+    }
+  ],
+  "assumptions": "Actual width needs overlap correction; walk/vehicle speed and gate characteristics are equipment-specific. Rate ratios are directional only; no universal dial number or seed viability inference.",
+  "last_reviewed": "2026-10-26"
+}

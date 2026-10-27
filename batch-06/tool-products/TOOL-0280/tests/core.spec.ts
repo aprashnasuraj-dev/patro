@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {land} from '../src/core';describe('TOOL-0280',()=>{it('preserves the acre definition',()=>{const r=land(1,'acre');expect(r.ft2).toBe(43560);expect(r.acre).toBe(1)});it('preserves the prepared ropani factor',()=>expect(land(1,'ropani').ft2).toBe(5476));it('rejects unsupported units',()=>expect(()=>land(1,'unknown')).toThrow())});

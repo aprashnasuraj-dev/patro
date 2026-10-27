@@ -135,6 +135,16 @@ jobs:
           # Release browser/SEO checks run for UI-only changes too. They require the
           # fully prerendered dist output, not a bare Vite shell.
           npm run build
+          node scripts/mm530/phase9-verify.mjs
+
+      - name: Preserve MM530 Phase 9 measured evidence
+        if: always() && (steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true')
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-phase9
+          path: reports/mm530-phase9/
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Pre-promotion feature integrity regressions
         if: steps.changes.outputs.ui == 'true' && steps.changes.outputs.full != 'true' && steps.changes.outputs.cloudflare != 'true'
@@ -259,6 +269,10 @@ jobs:
             sleep 1
           done
           if [[ "$ready" != true ]]; then echo "::error::Static audit server did not start"; exit 1; fi
+          # Verify the exact downloaded production artifact; do not rebuild it.
+          node scripts/mm530/phase9-verify.mjs
+          node scripts/mm530/phase10-browser-gate.mjs
+          node scripts/mm530/final-acceptance.mjs
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-pwa-install-ui.cjs
@@ -283,3 +297,34 @@ jobs:
           if(process.env.GITHUB_STEP_SUMMARY){const {appendFileSync}=await import("node:fs");appendFileSync(process.env.GITHUB_STEP_SUMMARY,"Mobile Lighthouse: **"+score+"/100** (goal 90+)\\n\\n"+details+"\\n");}
           if(score<90)console.log("::warning::Measured mobile homepage score "+score+" is below the 90 target; do not claim 90+ or release on this basis.");
           LHSUMMARY
+
+  mm530-continuation-gates:
+    name: MM530 remaining-phase source gates
+    if: github.head_ref == 'table'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current table branch
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify accepted progression and remaining-phase source state
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/mm530/phase6-review-scope.mjs
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const p6=JSON.parse(fs.readFileSync('data/mm530/phase6/gate.json','utf8'));
+          const p7=JSON.parse(fs.readFileSync('data/mm530/phase7/gate.json','utf8'));
+          const p8=JSON.parse(fs.readFileSync('data/mm530/phase8/gate.json','utf8'));
+          const reg=JSON.parse(fs.readFileSync('src/mm530/mm530-registry.json','utf8')).tools;
+          if(p6.status!=='PHASE_6_PASS'||p6.unresolved_factual_blockers!==0)throw new Error('Phase 6 narrow review is not closed');
+          if(reg.length!==530||new Set(reg.map(x=>x.id)).size!==530||new Set(reg.map(x=>x.route)).size!==530)throw new Error('MM530 registry identity gate failed');
+          if(p7.tool_count!==530||p7.duplicate_canonical_routes!==0||p7.known_route_collisions!==0)throw new Error('Phase 7 source route gate failed');
+          if(p8.implementation_complete_for_verification!==true)throw new Error('Phase 8 integration source is not ready for production verification');
+          console.log('MM530 continuation source gate: PASS — accepted Phase 5 is not rerun');
+          NODE
+

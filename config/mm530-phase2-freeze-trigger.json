@@ -1,0 +1,12 @@
+{
+  "phase": "PHASE_2_CANONICAL_INVENTORY_FREEZE",
+  "run_id": 40439401859,
+  "source_commit": "38897382ed34167cddbc0620b1d7bbb33472f082",
+  "artifact_name": "mm530-phase2-inventory",
+  "artifact_digest": "sha256:4ac58d7d3b49ab7c63e4ad473d36164279fe01a46f6a58bb10298a49a70088a4",
+  "expected_records": 530,
+  "expected_identity_ambiguities": 0,
+  "note": "One-shot trigger. Generated data/mm530 changes do not match this workflow's path filter.",
+  "retry": 3,
+  "retry_reason": "Freeze corrected Phase 2 inventory: browser page flag fixed and regulatory classification broadened."
+}

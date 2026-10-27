@@ -1,0 +1,28 @@
+{
+  "tool_id": "TOOL-0414",
+  "name": "UK Payments on Account Planner",
+  "reserved_route": "/tools/uk-payments-on-account-planner",
+  "engineering_family_id": "F0231",
+  "engineering_family": "UK Payments on Account Planner",
+  "batch_id": "BATCH-08",
+  "run_id": "RUN-17",
+  "runtime": "browser-local",
+  "network_required": false,
+  "normal_use_third_party_transmission": false,
+  "seo": {
+    "title": "UK Payments on Account Planner | AafnaiPatro Tools",
+    "description": "Estimate UK Self Assessment payments on account and a projected balancing payment using HMRC's general £1,000 / 80% rules.",
+    "robots": "noindex,nofollow",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED",
+  "source_prepared_at": "2026-10-26",
+  "notes": [
+    "No product/runtime tests executed during source preparation.",
+    "All dynamic output must be inserted as text, not trusted HTML."
+  ]
+}

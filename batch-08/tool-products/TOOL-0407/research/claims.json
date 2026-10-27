@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0407",
+  "claims": [
+    {
+      "claim": "The tool rounds each strip length up to a whole pattern repeat.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Manufacturer match instructions override the generic drop-offset field.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}

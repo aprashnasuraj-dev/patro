@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0268",
+  "name": "Stair Rise, Run and Stringer Calculator",
+  "route": "/tools/stair-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-11",
+  "engineering_family_id": "F0139",
+  "engineering_family": "Stair Dimensions and Code Planner",
+  "product_type": "interactive_calculator",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "numeric_input_max": 1000000000000,
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Stair Rise, Run and Stringer Calculator — Private Browser Tool",
+    "meta_description": "Lay out a straight stair from total rise, a selected maximum riser and minimum tread, with a 2021 IRC residential preset or explicit custom limits.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "publication_gate": "LOCKED"
+}

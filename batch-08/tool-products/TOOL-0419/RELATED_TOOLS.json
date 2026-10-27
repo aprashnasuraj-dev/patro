@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0419",
+  "related": [
+    {
+      "id": "TOOL-0497",
+      "title": "Wash Sale CSV Lot Matcher and Form 8949 Helper",
+      "proposed_canonical": "/utilities/wash-sale-lot-matching-csv-form-8949",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0425",
+      "title": "Landlord Notice Period & Service-Date Calculator",
+      "proposed_canonical": "/calculators/landlord-notice-period-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0235",
+      "title": "Cost Basis Calculator (FIFO and Average) from Trade CSV",
+      "proposed_canonical": "/calculators/cost-basis-calculator-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0503",
+      "title": "UK Section 104 Share Pool and Matching Calculator",
+      "proposed_canonical": "/calculators/uk-share-matching-section-104-pool-calculator",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0510",
+      "title": "Canadian ACB and Superficial-Loss Ledger",
+      "proposed_canonical": "/utilities/canada-adjusted-cost-base-superficial-loss-ledger",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

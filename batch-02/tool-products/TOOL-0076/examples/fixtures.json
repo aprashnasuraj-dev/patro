@@ -1,0 +1,19 @@
+{
+  "sample_input": {
+    "urls": "https://example.com/?utm_source=social&item=4&fbclid=123\nhttps://example.com/shop?gclid=abc&color=navy",
+    "utm": "Remove UTM|Keep UTM",
+    "additional": ""
+  },
+  "expected_shape": "Compute returns summary, text, metrics and optional rows, changes, files, warnings.",
+  "reference_case": "?utm_source=x&item=4 → ?item=4.",
+  "negative_cases": [
+    "Empty required inputs",
+    "Input above documented cap",
+    "Injection-like strings must remain inert plain text",
+    "Extreme or malformed encodings must throw explicit error"
+  ],
+  "automated_example": {
+    "input_literal": "{urls:'https://example.com/?utm_source=mail&item=4&fbclid=x',utm:'Remove UTM'}",
+    "assertions": "assert.match(result.text,/item=4/);assert.doesNotMatch(result.text,/utm_source|fbclid/);"
+  }
+}

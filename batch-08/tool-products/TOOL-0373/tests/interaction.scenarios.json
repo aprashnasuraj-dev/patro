@@ -1,0 +1,13 @@
+{
+  "status": "TEST_PENDING",
+  "scenarios": [
+    "valid representative input",
+    "empty required input",
+    "oversized/boundary input",
+    "malformed parser input where applicable",
+    "copy/download/export interaction",
+    "keyboard-only interaction",
+    "narrow/mobile layout",
+    "browser-locality/no-network assertion"
+  ]
+}

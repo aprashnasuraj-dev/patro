@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {correlationMatrix} from "../src/core";
+describe("correlation matrix",()=>{it("finds perfect correlation",()=>{const r=correlationMatrix("A,B\n1,2\n2,4\n3,6","pearson");expect(r.matrix[0][1]).toBeCloseTo(1);});});

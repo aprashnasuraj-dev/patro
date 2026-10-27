@@ -1,0 +1,18 @@
+{
+  "input": [
+    [
+      20,
+      30,
+      50
+    ],
+    [
+      30,
+      25,
+      45
+    ]
+  ],
+  "checks": [
+    "df=(r-1)(c-1)",
+    "expected table preserves margins"
+  ]
+}

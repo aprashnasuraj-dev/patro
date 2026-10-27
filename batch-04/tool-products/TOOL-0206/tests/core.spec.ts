@@ -1,0 +1,2 @@
+import {describe,it,expect} from "vitest";import {welchTest} from "../src/core";
+describe("Welch",()=>{it("has zero t for equal samples",()=>{const r=welchTest([1,2,3],[1,2,3]);expect(r.t).toBeCloseTo(0);expect(r.pValue).toBeCloseTo(1);});});

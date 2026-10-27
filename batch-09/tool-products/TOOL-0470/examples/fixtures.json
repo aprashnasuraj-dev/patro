@@ -1,0 +1,23 @@
+{
+  "default_input": {
+    "student": "Student Example",
+    "grad": 2027,
+    "courses": "Algebra II|1|A|2025\nBiology|1|B+|2025",
+    "honors": "off"
+  },
+  "hand_reference": {
+    "label": "Total credits",
+    "value": "2.00",
+    "execution": "NOT_RUN"
+  },
+  "bad_inputs": [
+    "NaN",
+    "Infinity",
+    "-1",
+    "1e309",
+    "<script>alert(1)</script>",
+    "2026-02-30",
+    "oversized repeated rows"
+  ],
+  "tests_prepared_only": true
+}

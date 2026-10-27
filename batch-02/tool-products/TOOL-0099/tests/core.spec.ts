@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {frequency} from '../src/core';describe('frequency',()=>{it('folds case',()=>expect(frequency('Data data',{case:'fold',norm:'NFKC',stop:'none'}).rows[0].count).toBe(2));it('filters stopwords',()=>expect(frequency('the data',{case:'fold',norm:'NFKC',stop:'en'}).rows.some(x=>x.word==='the')).toBe(false))});

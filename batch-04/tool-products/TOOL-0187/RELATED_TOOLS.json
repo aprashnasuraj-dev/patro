@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0187",
+  "related": [
+    {
+      "id": "TOOL-0030",
+      "title": "Terraform Plan JSON Summarizer",
+      "proposed_canonical": "/analyzers/terraform-plan-json-viewer",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0089",
+      "title": "Regex Replace Preview with Capture Group Table",
+      "proposed_canonical": "/utilities/regex-replace-preview",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0181",
+      "title": "Split CSV by Column Value or Row Count",
+      "proposed_canonical": "/editors/split-csv-by-column",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0182",
+      "title": "Merge CSV Files with Column Alignment",
+      "proposed_canonical": "/editors/merge-csv-files",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0183",
+      "title": "CSV Deduplicator by Key Columns",
+      "proposed_canonical": "/utilities/csv-remove-duplicates",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

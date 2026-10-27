@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0025",
+  "related": [
+    {
+      "id": "TOOL-0029",
+      "title": "systemd OnCalendar Expression Tester",
+      "proposed_canonical": "/validators/systemd-oncalendar-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0037",
+      "title": "CODEOWNERS Pattern Tester",
+      "proposed_canonical": "/validators/codeowners-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0038",
+      "title": ".gitignore Pattern Tester",
+      "proposed_canonical": "/validators/gitignore-tester",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0016",
+      "title": "Nginx / Apache Access Log to CSV",
+      "proposed_canonical": "/converters/access-log-to-csv",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0026",
+      "title": "Nginx 301 Redirect Map Generator from CSV",
+      "proposed_canonical": "/generators/nginx-redirect-map-from-csv",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

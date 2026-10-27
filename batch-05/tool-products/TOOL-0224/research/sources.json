@@ -1,0 +1,11 @@
+{
+  "tool_id": "TOOL-0224",
+  "researched_at": "2026-10-26",
+  "sources": [],
+  "assumptions": [
+    "Constant real return derived from nominal return and inflation; withdrawal rate is a planning input."
+  ],
+  "uncertainty": [
+    "Market returns and inflation are variable; FIRE sustainability requires broader portfolio and tax analysis."
+  ]
+}

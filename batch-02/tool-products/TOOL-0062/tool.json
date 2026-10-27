@@ -1,0 +1,31 @@
+{
+  "id": "TOOL-0062",
+  "name": "Recipe Schema Generator",
+  "reserved_route": "/tools/recipe-schema-generator",
+  "family_id": "F0034",
+  "family": "Schema Markup Generator (JSON-LD)",
+  "batch_id": "BATCH-02",
+  "run_id": "RUN-03",
+  "entry": "page.html",
+  "browser_runtime": "src/ui.js",
+  "core_source": "src/core.ts",
+  "seo": {
+    "title": "Recipe Schema Generator | AafnaiPatro Tools",
+    "description": "Describe recipes with ingredients, steps, image and preparation time.",
+    "h1": "Recipe Schema Generator",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "execution": {
+    "browser_first": true,
+    "client_side_only": true,
+    "no_account": true,
+    "no_upload": true,
+    "network": false,
+    "lazy_loaded_on_route_open": true
+  },
+  "qa_status": "TEST_PENDING"
+}

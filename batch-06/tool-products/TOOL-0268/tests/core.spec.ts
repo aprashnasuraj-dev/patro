@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {stair} from '../src/core';describe('TOOL-0268',()=>{it('computes 14 risers for 105 in at 7.75 in max',()=>{const r=stair(105,7.75,10);expect(r.risers).toBe(14);expect(r.actualRiser).toBe(7.5);expect(r.totalRun).toBe(130)});it('rejects zero total rise',()=>expect(()=>stair(0,7.75,10)).toThrow())});

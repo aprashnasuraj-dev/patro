@@ -1,0 +1,36 @@
+{
+  "source_tool_id": "TOOL-0142",
+  "related": [
+    {
+      "id": "TOOL-0143",
+      "title": "Split PDF by Bookmarks (Chapters)",
+      "proposed_canonical": "/editors/split-pdf-by-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0144",
+      "title": "Merge PDFs with Bookmarks per File",
+      "proposed_canonical": "/editors/merge-pdf-with-bookmarks",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0150",
+      "title": "Resize PDF Pages to A4 or Letter",
+      "proposed_canonical": "/converters/resize-pdf-to-a4",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0155",
+      "title": "True PDF Redaction (Rasterize Redacted Pages)",
+      "proposed_canonical": "/utilities/redact-pdf",
+      "display_when_target_published": true
+    },
+    {
+      "id": "TOOL-0146",
+      "title": "PDF Watermark (Text, Image, Tiled)",
+      "proposed_canonical": "/editors/pdf-watermark",
+      "display_when_target_published": true
+    }
+  ],
+  "activation_rule": "filter_on_published_and_valid_routes"
+}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "TOOL-0144",
+  "claims": [
+    {
+      "claim": "Merge multiple PDFs locally and add one top-level bookmark at the first page of each source file.",
+      "basis": "Local implementation design plus cited standards/project documentation.",
+      "uncertainty": "Runtime compatibility remains TEST_PENDING."
+    },
+    {
+      "claim": "Encrypted files, signatures and complex interactive features may not survive merging; outline writing uses a tested integration helper that still requires deferred QA.",
+      "basis": "Explicit product limitation to prevent misleading output.",
+      "uncertainty": "None; limitation is intentional."
+    }
+  ]
+}

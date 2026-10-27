@@ -1,0 +1,35 @@
+{
+  "id": "TOOL-0311",
+  "name": "Add or Subtract Days, Weeks, Months from a Date",
+  "route": "/tools/add-days-to-date-calculator",
+  "batch": "BATCH-06",
+  "run_id": "RUN-13",
+  "engineering_family_id": "F0162",
+  "engineering_family": "Date Arithmetic and Business Days",
+  "product_type": "interactive_tool",
+  "runtime": {
+    "mode": "browser",
+    "network_required": false,
+    "server_roundtrip": false,
+    "upload_required": false,
+    "third_party_transmission": false,
+    "lazy": true,
+    "worker": false
+  },
+  "limits": {
+    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+  },
+  "dependencies": [],
+  "seo": {
+    "title": "Add or Subtract Days, Weeks, Months from a Date — Private Browser Tool",
+    "meta_description": "Add or subtract whole days, weeks or calendar months from a Gregorian date with an explicit end-of-month clamping rule.",
+    "robots": "noindex",
+    "canonical": null,
+    "og_url": null,
+    "date_published": null,
+    "sitemap": false
+  },
+  "qa_status": "TEST_PENDING",
+  "source_status": "SOURCE_PREPARED",
+  "publication_gate": "LOCKED"
+}

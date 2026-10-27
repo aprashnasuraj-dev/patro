@@ -1,0 +1,9 @@
+{
+  "tool_id": "TOOL-0006",
+  "case": "Worked example",
+  "input": "{\"log\":{\"version\":\"1.2\",\"entries\":[{\"startedDateTime\":\"2026-10-26T00:00:00Z\",\"time\":30,\"request\":{\"method\":\"GET\",\"url\":\"https://example.com/private?token=secret\",\"headers\":[{\"name\":\"Authorization\",\"value\":\"Bearer secret\"}]},\"response\":{\"status\":200,\"content\":{\"text\":\"sensitive response\",\"size\":100},\"headers\":[{\"name\":\"Set-Cookie\",\"value\":\"session=secret\"}]},\"timings\":{\"wait\":22,\"receive\":8}}]}}",
+  "options": {},
+  "expected_properties": "nested auth headers, bearer/cookie removal, content removal, unknown extension stripping, malformed records",
+  "expected_execution": "NOT_RUN",
+  "limitations": "Even stripped network timing/status data can reveal traffic patterns. Do not treat automated redaction as a legal data de-identification guarantee."
+}

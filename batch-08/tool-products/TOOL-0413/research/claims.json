@@ -1,0 +1,14 @@
+{
+  "tool_id": "TOOL-0413",
+  "claims": [
+    {
+      "claim": "The general safe-harbor comparison uses 90% of current-year tax versus 100% of prior-year tax, increased to 110% for the higher-income threshold described by IRS guidance.",
+      "status": "SOURCE_PREPARED"
+    },
+    {
+      "claim": "Special categories are explicitly excluded from the general calculator.",
+      "status": "SOURCE_PREPARED"
+    }
+  ],
+  "runtime_verification": "TEST_PENDING"
+}
