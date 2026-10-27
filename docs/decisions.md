@@ -63,3 +63,9 @@ The repository already contains a 530-tool master catalog plus the 300-tool clie
 - Heavy decode/parse in workers; lazy-loaded category code.
 - Every field has a visible label and keyboard focus state.
 - Lighthouse release target: 95+ performance, accessibility and SEO on representative pages.
+
+## Direct public route policy
+- Advanced Tools is discovery/category navigation only.
+- Browser-only tool leaves use `/tool/<slug>`; no tool canonical lives under `/advancetools/`.
+- Related links and sitemap entries point directly to `/tool/<slug>`.
+- Category browsing uses ordinary anchors, so deep links and browser back/forward work without SPA history shims.
