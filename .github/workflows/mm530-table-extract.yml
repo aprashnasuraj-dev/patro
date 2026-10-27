@@ -1,0 +1,52 @@
+name: MM530 one-time safe extraction on table
+
+on:
+  push:
+    branches: [table]
+    paths:
+      - '.github/workflows/mm530-table-extract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mm530-table-extraction
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    if: github.ref == 'refs/heads/table'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact table revision
+        uses: actions/checkout@v4
+        with:
+          ref: table
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Safely verify and extract all ten ZIP archives
+        run: python3 scripts/mm530_extract_archives.py
+      - name: Commit extracted source and receipt on table only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = table
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --name-only | head -30
+          if git diff --cached --quiet; then
+            echo 'No new files to commit'; exit 1
+          fi
+          git commit -m 'chore(mm530): safely extract ten source ZIPs on table [mm530-extracted]'
+          git push origin HEAD:refs/heads/table
+      - name: Confirm remote branch points to extracted commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin table
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/table)"
+          test -f reports/mm530-table-extraction.json
+          echo '10 ZIPs extracted and Git-verified on table. Functionality tests remain pending.'
