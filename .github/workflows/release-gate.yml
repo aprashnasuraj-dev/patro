@@ -398,6 +398,16 @@ jobs:
           mm530_sitemap="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/sitemap-mm530.xml)"
           mm530_count="$(grep -o '<url>' <<<"$mm530_sitemap" | wc -l | tr -d ' ')"
           [[ "$mm530_count" == "530" ]] || { echo "::error::MM530 sitemap expected 530 URLs, got $mm530_count"; exit 1; }
+          root_sitemap="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/sitemap.xml)"
+          grep -Fq 'https://aafnaipatro.com/sitemap-mm530.xml' <<<"$root_sitemap"
+          hub_html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/advancetools/web-tools/)"
+          grep -Fq '/generators/cors-config-generator' <<<"$hub_html"
+          for path in /calculators/semver-range-calculator /generators/cors-config-generator /converters/json-to-zod-schema; do
+            body="/tmp/mm530-leaf-$(basename "$path").html"
+            code="$(curl --retry 5 --retry-delay 2 --retry-all-errors --max-redirs 0 -sS -o "$body" -w '%{http_code}' "https://aafnaipatro.com${path}")"
+            [[ "$code" == "200" ]] || { echo "::error::Canonical leaf ${path} redirected or failed: HTTP ${code}"; exit 1; }
+            grep -Fq "rel=\"canonical\" href=\"https://aafnaipatro.com${path}\"" "$body"
+          done
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/_mm530/TOOL-0001/page.html >/dev/null
 
           while IFS='|' read -r path marker; do
