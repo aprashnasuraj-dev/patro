@@ -198,6 +198,13 @@ root.dataset.toolMounted="true";`
    }
   }
   await rewriteRuntimeJs(dst);
+  if(uiSource.includes("@jsquash/avif")){
+    const avifSrc=path.join(root,"node_modules","@jsquash","avif","codec","enc");
+    const avifDst=path.join(dst,"chunks");await fs.mkdir(avifDst,{recursive:true});
+    for(const name of ["avif_enc.wasm","avif_enc_mt.wasm","avif_enc_mt.worker.mjs"]){
+      const src=path.join(avifSrc,name);if(await exists(src))await fs.copyFile(src,path.join(avifDst,name));
+    }
+  }
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title,tool.categoryLabel);
   let html=sanitizeProductionHtml(original);
   html=await presentReferences(html,srcDir);
