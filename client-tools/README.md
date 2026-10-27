@@ -1,13 +1,13 @@
-# Client-side SEO Tools (300)
+# Client-side Browser Tools
 
 This module is generated from the user-supplied `300_new_tool_ideas_western.csv`, which is the inventory source of truth for this build.
 
 ## Inventory policy
 
-- Final canonical tool count: **300**.
+- Current canonical browser-tool catalog: **350 direct `/tool/` pages**.
 - Removed by explicit scope rule: car-accident tools (#87, #88).
 - Removed as ultra-heavy dependency-bound tools: #148 RAW photo decode, #152 ML face blur, #160 HDR→SDR video transcode, #161 VFR→CFR video re-encode, #162 video deinterlace, #177 FLAC/ALAC/WAV transcode.
-- Added eight lightweight long-tail replacements to return to exactly 300.
+- Added eight lightweight long-tail replacements to restore the original catalog before the later duplicate-clean extension.
 - No duplicate canonical slug or primary keyword is allowed.
 - Canonical namespaces are `/tools/`, `/converter/`, and `/calculator/`.
 

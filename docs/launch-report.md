@@ -1,0 +1,426 @@
+# Browser Tools Launch Report
+
+## Release scope
+This release contains the privacy-first client-side browser-tool catalog plus the duplicate-clean image, US-finance and developer extension. All browser-tool leaves use direct canonical URLs under `/tool/<slug>`; Advanced Tools is discovery/navigation only and never owns the tool URL.
+
+The Advanced Tools dashboard also folds the existing specialist collections into the same task-based discovery taxonomy. Visible dashboard copy intentionally avoids marketing the library by tool count.
+
+## Test status
+First full PR integration run (PR #191, run 40600266371):
+- dependency/security gate: PASS
+- TypeScript + core/homepage baseline: PASS
+- Vite/product build: PASS through browser-tool generation
+- browser-tool catalog verification: PASS
+- duplicate audit: PASS
+- direct-route smoke: PASS
+- extension core tests: PASS, 50/50 declared operations covered
+- dead-tool gate: PASS — page + engine + runtime config + canonical + sitemap + Advanced Tools discovery link
+- legacy direct static leaf generation: PASS
+- SEO build verification: PASS
+- sitemap release coverage for the existing site/Advanced Tools families: PASS
+- first run stopped on one stale release assertion that still expected 300 client-tool sitemap rows; code generation itself passed. This file was corrected before the final CI run.
+
+Final merge is blocked until the subsequent PR CI run is green.
+
+## Lighthouse
+The first PR run stopped before the isolated browser/Lighthouse stage because of the stale sitemap-count assertion above. No Lighthouse score is claimed from that run.
+
+Release target: Performance 95+, Accessibility 95+, SEO 95+ on representative direct tool pages, with LCP under 2 seconds on the target mid-range mobile profile. If the repository's final browser job measures a different surface or falls below this target, that result is treated as a known release limitation rather than being invented here.
+
+## Privacy and network behavior
+- Working files, pasted content, secrets and calculator values are not sent to an AafnaiPatro tool API.
+- Shareable calculator/settings state uses URL fragments, not query strings, so state is not included in HTTP requests.
+- Heavy HEIC/PDF/GIF and selected developer workloads are lazy and worker-isolated.
+- Fixed static dependency/config module requests may occur, but user payloads are not attached to those requests.
+- No tool-input analytics are implemented.
+
+## Navigation and canonical behavior
+- Actual browser tools: `/tool/<slug>`
+- Advanced Tools: category/search discovery only.
+- No actual leaf is emitted beneath `/advancetools/tool/` or `/advancetools/tools/`.
+- Category links and tool links are ordinary anchors; the dashboard runtime does not use `pushState`, `replaceState` or a custom `popstate` router. Deep links, refresh, Back and Forward therefore use browser-native history.
+- Every browser-tool page has a canonical tag and is included in the client-tool sitemap.
+
+## Duplicate / merged requests not shipped as separate URLs
+These were intentionally not duplicated:
+- HEIC → JPG with location stripped: existing HEIC→JPG behavior already drops metadata by default; replacement slot became HEIC→PNG.
+- Batch HEIC→ZIP: overlapped the existing batch HEIC converter; replacement slot became AVIF→PNG.
+- Coast FIRE: existing catalog intent; replacement became Barista FIRE.
+- Freelancer quarterly tax + self-employment tax: merged into one freelancer quarterly-tax page with separate SE-tax/safe-harbor sections; replacement slot became 1099 vs W-2 take-home.
+- Debt snowball vs avalanche: existing intent; replacement became mortgage-points break-even.
+- Rental cap rate/cash-on-cash: existing intent; replacement became house-hacking rent offset.
+- RSU withholding gap: existing intent; replacement became RSU sell-to-cover.
+- Cron→GitHub/Kubernetes: folded into the cron explainer as export sections.
+- .env→secret, JSON→Zod, semantic JSON diff, YAML-anchor conversion, CSP builder, robots tester, UUIDv7, semver range and CSR/certificate decoder: existing/overlapping intents; each slot was replaced with a distinct long-tail tool documented in `docs/decisions.md`.
+
+## Known limitations
+- HEIC/AVIF decoding quality and color/HDR handling vary by browser and codec implementation.
+- Live Photo GIF support depends on the browser being able to decode the motion file; processing is intentionally bounded.
+- Finance calculators are estimates and do not replace lender, tax, legal or investment advice. Tax-sensitive values live in the versioned 2026 config.
+- LLM token/cost results depend on locally available tokenizer support and the timestamped pricing config; model prices can change.
+- Some existing generic tools in the original catalog intentionally use shared engines rather than bespoke per-tool bundles.
+- The launch report does not claim a Lighthouse number until one is actually measured by the release/browser gate.
+
+## Ranked next tools
+1. WebP/AVIF target-file-size converter with binary-search quality.
+2. JPEG/PNG metadata scrubber with before/after EXIF diff.
+3. 401(k) employer-match maximizer with contribution timing.
+4. HSA annual-limit prorater for mid-year eligibility changes.
+5. Mortgage extra-payment vs investment comparison with sensitivity table.
+6. RSU vest-lot tax-basis organizer with local CSV import.
+7. HTTP Cache-Control policy simulator.
+8. JSON Schema compatibility/breaking-change analyzer.
+9. GitHub Actions matrix-expansion visualizer.
+10. DNS TTL migration planner with propagation timeline.
+
+## Direct URL inventory
+- https://aafnaipatro.com/tool/ofx-qfx-to-csv-converter
+- https://aafnaipatro.com/tool/csv-to-qfx-ofx-for-quicken-and-moneydance
+- https://aafnaipatro.com/tool/qif-to-csv-and-csv-to-qif-converter
+- https://aafnaipatro.com/tool/mt940-and-camt-053-bank-statement-to-csv
+- https://aafnaipatro.com/tool/bank-csv-to-ynab-actual-budget-firefly-iii-import-formatter
+- https://aafnaipatro.com/tool/mint-style-csv-to-monarch-copilot-quicken-converter
+- https://aafnaipatro.com/tool/recurring-charge-and-subscription-detector-from-bank-csv
+- https://aafnaipatro.com/tool/spending-categorizer-with-editable-rules
+- https://aafnaipatro.com/tool/schedule-c-expense-categorizer
+- https://aafnaipatro.com/tool/hmrc-self-employed-expense-mapper
+- https://aafnaipatro.com/tool/rental-property-income-and-expense-ledger
+- https://aafnaipatro.com/tool/mileage-log-generator
+- https://aafnaipatro.com/tool/charitable-donation-log-with-non-cash-notes
+- https://aafnaipatro.com/tool/hsa-fsa-receipt-organizer-and-reimbursement-tracker
+- https://aafnaipatro.com/tool/freelancer-tax-deadline-calendar
+- https://aafnaipatro.com/tool/1099-nec-contractor-payment-tracker-with-w-9-status
+- https://aafnaipatro.com/tool/w-8ben-step-by-step-form-wizard
+- https://aafnaipatro.com/tool/fbar-maximum-balance-tracker
+- https://aafnaipatro.com/tool/feie-330-day-physical-presence-tracker
+- https://aafnaipatro.com/tool/substantial-presence-test-day-tracker
+- https://aafnaipatro.com/tool/uk-statutory-residence-test-day-tracker
+- https://aafnaipatro.com/tool/snowbird-days-tracker
+- https://aafnaipatro.com/tool/travel-document-expiry-tracker-with-renewal-lead-times
+- https://aafnaipatro.com/tool/apostille-requirement-checker
+- https://aafnaipatro.com/tool/uscis-certified-translation-certificate-generator
+- https://aafnaipatro.com/tool/visitor-invitation-letter-generator
+- https://aafnaipatro.com/tool/child-travel-consent-letter-generator
+- https://aafnaipatro.com/tool/travel-currency-cheat-sheet-wallet-card
+- https://aafnaipatro.com/tool/plug-and-voltage-compatibility-checker
+- https://aafnaipatro.com/tool/power-bank-and-battery-airline-rules-checker
+- https://aafnaipatro.com/tool/pet-travel-vaccination-and-titer-timeline-planner
+- https://aafnaipatro.com/tool/boarding-pass-barcode-decoder
+- https://aafnaipatro.com/tool/group-trip-expense-settle-up
+- https://aafnaipatro.com/tool/renter-resume-and-rental-application-packet-builder
+- https://aafnaipatro.com/tool/pet-resume-for-landlords
+- https://aafnaipatro.com/tool/tenant-repair-request-letter-with-dated-photo-log
+- https://aafnaipatro.com/tool/security-deposit-demand-letter-generator
+- https://aafnaipatro.com/tool/move-in-move-out-inspection-report-maker
+- https://aafnaipatro.com/tool/tenant-rent-ledger-and-payment-proof-generator
+- https://aafnaipatro.com/tool/late-rent-reminder-letter-series
+- https://aafnaipatro.com/tool/roommate-agreement-generator
+- https://aafnaipatro.com/tool/notice-of-intent-to-vacate-letter-generator
+- https://aafnaipatro.com/tool/noise-nuisance-diary-and-evidence-log
+- https://aafnaipatro.com/tool/house-hunting-scorecard-and-showing-notes-sheet
+- https://aafnaipatro.com/tool/home-maintenance-calendar-generator
+- https://aafnaipatro.com/tool/furnace-and-ac-filter-size-chart
+- https://aafnaipatro.com/tool/circuit-breaker-panel-directory-label-maker
+- https://aafnaipatro.com/tool/utility-meter-reading-tracker
+- https://aafnaipatro.com/tool/home-inventory-for-insurance-claims
+- https://aafnaipatro.com/tool/moving-box-label-and-room-inventory-printer
+- https://aafnaipatro.com/tool/address-change-checklist-generator
+- https://aafnaipatro.com/tool/custody-schedule-calendar-generator
+- https://aafnaipatro.com/tool/parenting-time-overnight-counter
+- https://aafnaipatro.com/tool/babysitter-info-sheet-generator
+- https://aafnaipatro.com/tool/pet-sitter-and-house-sitter-instruction-sheet
+- https://aafnaipatro.com/tool/medication-list-wallet-card
+- https://aafnaipatro.com/tool/er-medical-summary-one-pager
+- https://aafnaipatro.com/tool/medication-administration-record-for-elderly-parents
+- https://aafnaipatro.com/tool/contraction-timer-with-5-1-1-rule-alert
+- https://aafnaipatro.com/tool/baby-kick-counter
+- https://aafnaipatro.com/tool/newborn-feeding-and-diaper-log
+- https://aafnaipatro.com/tool/birth-plan-generator
+- https://aafnaipatro.com/tool/wedding-day-timeline-generator
+- https://aafnaipatro.com/tool/funeral-program-and-order-of-service-maker
+- https://aafnaipatro.com/tool/table-number-and-place-card-generator
+- https://aafnaipatro.com/tool/wedding-family-formal-photo-list-generator
+- https://aafnaipatro.com/tool/wedding-gift-and-thank-you-note-tracker
+- https://aafnaipatro.com/tool/nanny-contract-and-care-agreement-generator
+- https://aafnaipatro.com/tool/pet-vaccine-and-vet-visit-record-organizer
+- https://aafnaipatro.com/tool/homeschool-attendance-and-hours-log
+- https://aafnaipatro.com/tool/substitute-teacher-info-sheet-generator
+- https://aafnaipatro.com/tool/printable-flashcards-maker
+- https://aafnaipatro.com/tool/home-blood-pressure-and-glucose-log
+- https://aafnaipatro.com/tool/migraine-and-headache-diary-with-trigger-patterns
+- https://aafnaipatro.com/tool/food-and-symptom-diary-with-pattern-finder
+- https://aafnaipatro.com/tool/sleep-diary-for-cbt-i-with-automatic-sleep-efficiency
+- https://aafnaipatro.com/tool/pain-diary-with-body-map
+- https://aafnaipatro.com/tool/printable-snellen-eye-chart-scaled-to-your-viewing-distance
+- https://aafnaipatro.com/tool/symptom-timeline-summary-for-doctor-visits
+- https://aafnaipatro.com/tool/digital-legacy-and-account-access-planner
+- https://aafnaipatro.com/tool/executor-estate-checklist
+- https://aafnaipatro.com/tool/letter-of-last-wishes-generator
+- https://aafnaipatro.com/tool/household-emergency-plan-and-go-bag-checklist-generator
+- https://aafnaipatro.com/tool/emergency-contact-fridge-sheet-generator
+- https://aafnaipatro.com/tool/home-fire-escape-plan-maker
+- https://aafnaipatro.com/tool/insurance-claim-photo-report-maker
+- https://aafnaipatro.com/tool/data-broker-opt-out-tracker-and-deletion-request-letters
+- https://aafnaipatro.com/tool/eu261-uk261-flight-compensation-claim-letter-generator
+- https://aafnaipatro.com/tool/debt-validation-letter-generator
+- https://aafnaipatro.com/tool/mortgage-gift-letter-generator
+- https://aafnaipatro.com/tool/mortgage-letter-of-explanation-generator
+- https://aafnaipatro.com/tool/winmail-dat-opener-and-attachment-extractor
+- https://aafnaipatro.com/tool/eml-and-msg-viewer-with-attachment-extractor
+- https://aafnaipatro.com/tool/mbox-mailbox-viewer-and-message-exporter
+- https://aafnaipatro.com/tool/apple-pages-numbers-keynote-file-opener
+- https://aafnaipatro.com/tool/corrupted-docx-xlsx-text-recovery
+- https://aafnaipatro.com/tool/extract-tracked-changes-and-comments-from-word-to-a-table
+- https://aafnaipatro.com/tool/excel-workbook-inspector
+- https://aafnaipatro.com/tool/extract-all-images-from-docx-pptx-and-xlsx
+- https://aafnaipatro.com/tool/compress-powerpoint-file-size
+- https://aafnaipatro.com/tool/powerpoint-speaker-notes-extractor
+- https://aafnaipatro.com/tool/extract-tables-from-word-to-csv-excel
+- https://aafnaipatro.com/tool/chatgpt-markdown-output-to-word-with-tables
+- https://aafnaipatro.com/tool/latex-equations-to-word-converter
+- https://aafnaipatro.com/tool/pdf-copy-paste-text-cleaner
+- https://aafnaipatro.com/tool/word-count-excluding-references-quotes-and-headings
+- https://aafnaipatro.com/tool/compare-two-excel-files
+- https://aafnaipatro.com/tool/query-csv-with-sql-in-the-browser
+- https://aafnaipatro.com/tool/csv-to-parquet-converter
+- https://aafnaipatro.com/tool/parquet-file-viewer
+- https://aafnaipatro.com/tool/sqlite-database-viewer-and-query-runner
+- https://aafnaipatro.com/tool/mail-merge-generator
+- https://aafnaipatro.com/tool/bulk-certificate-generator-from-csv
+- https://aafnaipatro.com/tool/vcard-and-csv-contacts-converter-with-duplicate-merge
+- https://aafnaipatro.com/tool/bulk-csv-to-ics-calendar-converter
+- https://aafnaipatro.com/tool/pdf-booklet-maker
+- https://aafnaipatro.com/tool/n-up-pdf
+- https://aafnaipatro.com/tool/poster-printer
+- https://aafnaipatro.com/tool/pdf-to-grayscale-ink-saver
+- https://aafnaipatro.com/tool/remove-blank-pages-from-scanned-pdf
+- https://aafnaipatro.com/tool/pdf-form-data-extractor
+- https://aafnaipatro.com/tool/pdf-digital-signature-viewer-and-verifier
+- https://aafnaipatro.com/tool/pdf-visual-compare
+- https://aafnaipatro.com/tool/envelope-printer
+- https://aafnaipatro.com/tool/print-and-fold-greeting-card-maker
+- https://aafnaipatro.com/tool/giant-letter-banner-maker
+- https://aafnaipatro.com/tool/tear-off-tab-flyer-maker
+- https://aafnaipatro.com/tool/lost-pet-flyer-maker
+- https://aafnaipatro.com/tool/printable-planner-insert-generator
+- https://aafnaipatro.com/tool/one-sheet-zine-template-maker
+- https://aafnaipatro.com/tool/playing-card-sheet-maker
+- https://aafnaipatro.com/tool/battle-map-grid-overlay-and-tiled-print
+- https://aafnaipatro.com/tool/guest-wi-fi-card
+- https://aafnaipatro.com/tool/raffle-ticket-generator
+- https://aafnaipatro.com/tool/contact-sheet-maker-for-photographers
+- https://aafnaipatro.com/tool/split-scanned-photos
+- https://aafnaipatro.com/tool/straighten-and-deskew-scanned-images
+- https://aafnaipatro.com/tool/bulk-change-photo-date-taken
+- https://aafnaipatro.com/tool/photo-date-stamp-adder
+- https://aafnaipatro.com/tool/bulk-rename-photos-by-exif-date
+- https://aafnaipatro.com/tool/duplicate-and-similar-photo-finder
+- https://aafnaipatro.com/tool/google-takeout-photo-metadata-fixer
+- https://aafnaipatro.com/tool/photo-print-size-cropper
+- https://aafnaipatro.com/tool/iptc-and-xmp-copyright-metadata-editor
+- https://aafnaipatro.com/tool/convert-images-to-srgb
+- https://aafnaipatro.com/tool/psd-viewer-and-png-exporter
+- https://aafnaipatro.com/tool/jfif-to-jpg-converter-and-fix
+- https://aafnaipatro.com/tool/c2pa-content-credentials-viewer
+- https://aafnaipatro.com/tool/polaroid-and-photo-strip-frame-maker
+- https://aafnaipatro.com/tool/color-blindness-simulator-for-images
+- https://aafnaipatro.com/tool/app-store-screenshot-resizer-and-size-checker
+- https://aafnaipatro.com/tool/twitch-and-discord-emote-and-sticker-resizer
+- https://aafnaipatro.com/tool/live-photo-to-video-converter
+- https://aafnaipatro.com/tool/motion-photo-video-extractor
+- https://aafnaipatro.com/tool/tiny-planet-effect-maker
+- https://aafnaipatro.com/tool/blur-fill-background-for-vertical-video-to-16-9
+- https://aafnaipatro.com/tool/audio-to-video-for-youtube
+- https://aafnaipatro.com/tool/audiogram-maker
+- https://aafnaipatro.com/tool/gif-to-mp4-converter
+- https://aafnaipatro.com/tool/burn-subtitles-into-video
+- https://aafnaipatro.com/tool/extract-subtitles-from-mkv-and-mp4
+- https://aafnaipatro.com/tool/subtitle-frame-rate-converter
+- https://aafnaipatro.com/tool/bilingual-subtitle-merger
+- https://aafnaipatro.com/tool/srt-vtt-to-plain-transcript
+- https://aafnaipatro.com/tool/subtitle-encoding-fixer
+- https://aafnaipatro.com/tool/audiobook-builder
+- https://aafnaipatro.com/tool/split-audio-by-timestamps
+- https://aafnaipatro.com/tool/vinyl-and-cassette-rip-track-splitter
+- https://aafnaipatro.com/tool/whatsapp-voice-message-to-mp3
+- https://aafnaipatro.com/tool/mediainfo-viewer
+- https://aafnaipatro.com/tool/strip-metadata-from-video-and-audio-files
+- https://aafnaipatro.com/tool/lithophane-generator
+- https://aafnaipatro.com/tool/3d-printable-name-tag-and-keychain-generator
+- https://aafnaipatro.com/tool/filament-color-change-inserter-for-g-code
+- https://aafnaipatro.com/tool/3mf-and-stl-converter
+- https://aafnaipatro.com/tool/finger-joint-box-svg-generator
+- https://aafnaipatro.com/tool/image-to-cross-stitch-pattern-with-thread-list
+- https://aafnaipatro.com/tool/image-to-perler-and-hama-bead-pattern
+- https://aafnaipatro.com/tool/image-to-knitting-and-crochet-colorwork-chart
+- https://aafnaipatro.com/tool/paint-by-numbers-generator
+- https://aafnaipatro.com/tool/dmc-to-anchor-thread-color-converter
+- https://aafnaipatro.com/tool/sticker-sheet-layout-maker
+- https://aafnaipatro.com/tool/wall-art-size-pack-generator
+- https://aafnaipatro.com/tool/digital-download-delivery-pdf-maker
+- https://aafnaipatro.com/tool/print-on-demand-artwork-size-and-dpi-checker
+- https://aafnaipatro.com/tool/tabletop-token-maker
+- https://aafnaipatro.com/tool/mesh-gradient-generator
+- https://aafnaipatro.com/tool/noise-and-grain-texture-generator
+- https://aafnaipatro.com/tool/fantasy-draft-board-printable
+- https://aafnaipatro.com/tool/round-robin-and-doubles-rotation-scheduler
+- https://aafnaipatro.com/tool/youth-sports-playing-time-rotation-planner
+- https://aafnaipatro.com/tool/marathon-pace-band-generator
+- https://aafnaipatro.com/tool/gpx-merge-and-split
+- https://aafnaipatro.com/tool/fit-to-gpx-converter
+- https://aafnaipatro.com/tool/gpx-track-simplifier
+- https://aafnaipatro.com/tool/gpx-and-kml-elevation-profile-viewer
+- https://aafnaipatro.com/tool/band-setlist-maker-with-timings
+- https://aafnaipatro.com/tool/stage-plot-and-input-list-maker
+- https://aafnaipatro.com/tool/chordpro-to-pdf-song-sheet
+- https://aafnaipatro.com/tool/midi-key-transposer
+- https://aafnaipatro.com/tool/call-sheet-generator-for-film-and-video
+- https://aafnaipatro.com/tool/shot-list-and-storyboard-template-builder
+- https://aafnaipatro.com/tool/model-release-form-generator
+- https://aafnaipatro.com/tool/podcast-chapter-markers-editor
+- https://aafnaipatro.com/tool/screenplay-formatter
+- https://aafnaipatro.com/tool/standard-manuscript-format-generator
+- https://aafnaipatro.com/tool/holiday-dinner-timeline-planner
+- https://aafnaipatro.com/tool/sourdough-schedule-planner
+- https://aafnaipatro.com/tool/whole-recipe-us-to-metric-converter
+- https://aafnaipatro.com/tool/recipe-card-maker
+- https://aafnaipatro.com/tool/allergen-matrix-and-label-generator
+- https://aafnaipatro.com/tool/haccp-fridge-temperature-log-generator
+- https://aafnaipatro.com/tool/seed-starting-schedule-from-last-frost-date
+- https://aafnaipatro.com/tool/square-foot-garden-planner-with-companion-check
+- https://aafnaipatro.com/tool/plant-care-calendar
+- https://aafnaipatro.com/tool/car-maintenance-schedule-planner
+- https://aafnaipatro.com/tool/dot-tire-date-code-decoder
+- https://aafnaipatro.com/tool/child-car-seat-law-checker-by-state-and-country
+- https://aafnaipatro.com/tool/pet-carrier-size-checker-by-airline
+- https://aafnaipatro.com/tool/github-actions-workflow-linter
+- https://aafnaipatro.com/tool/kubernetes-manifest-validator
+- https://aafnaipatro.com/tool/aws-eventbridge-cron-expression-builder
+- https://aafnaipatro.com/tool/regex-flavor-converter
+- https://aafnaipatro.com/tool/glob-pattern-tester
+- https://aafnaipatro.com/tool/postgresql-explain-plan-visualizer
+- https://aafnaipatro.com/tool/sql-and-mongodb-query-converter
+- https://aafnaipatro.com/tool/protobuf-binary-decoder
+- https://aafnaipatro.com/tool/cbor-and-messagepack-decoder
+- https://aafnaipatro.com/tool/saml-response-and-assertion-decoder
+- https://aafnaipatro.com/tool/csr-and-certificate-decoder
+- https://aafnaipatro.com/tool/json-to-pydantic-models
+- https://aafnaipatro.com/tool/json-to-rust-serde-structs
+- https://aafnaipatro.com/tool/openapi-breaking-change-detector
+- https://aafnaipatro.com/tool/changelog-builder-from-git-log
+- https://aafnaipatro.com/tool/dockerfile-generator
+- https://aafnaipatro.com/tool/docker-compose-builder-with-service-presets
+- https://aafnaipatro.com/tool/caddyfile-generator
+- https://aafnaipatro.com/tool/systemd-service-unit-generator
+- https://aafnaipatro.com/tool/ssh-config-builder
+- https://aafnaipatro.com/tool/wireguard-config-and-qr-generator
+- https://aafnaipatro.com/tool/ffmpeg-command-builder
+- https://aafnaipatro.com/tool/imagemagick-command-builder
+- https://aafnaipatro.com/tool/rsync-command-builder
+- https://aafnaipatro.com/tool/sql-to-er-diagram
+- https://aafnaipatro.com/tool/env-vs-env-example-diff
+- https://aafnaipatro.com/tool/yaml-anchors-and-merge-keys-expander
+- https://aafnaipatro.com/tool/toml-validator-and-formatter
+- https://aafnaipatro.com/tool/robots-txt-ai-crawler-blocker-generator
+- https://aafnaipatro.com/tool/llms-txt-generator
+- https://aafnaipatro.com/tool/ads-txt-and-app-ads-txt-validator-and-builder
+- https://aafnaipatro.com/tool/fuzzy-old-to-new-url-redirect-mapper
+- https://aafnaipatro.com/tool/gsc-quick-win-finder
+- https://aafnaipatro.com/tool/branded-vs-non-branded-query-splitter
+- https://aafnaipatro.com/tool/google-disavow-file-builder-and-validator
+- https://aafnaipatro.com/tool/nap-consistency-checker
+- https://aafnaipatro.com/tool/review-request-card-maker
+- https://aafnaipatro.com/tool/screaming-frog-export-analyzer
+- https://aafnaipatro.com/tool/page-heading-outline-viewer
+- https://aafnaipatro.com/tool/html-email-size-checker
+- https://aafnaipatro.com/tool/email-subject-and-preheader-preview
+- https://aafnaipatro.com/tool/list-unsubscribe-one-click-header-generator
+- https://aafnaipatro.com/tool/bulk-sender-compliance-checklist
+- https://aafnaipatro.com/tool/linkedin-post-preview
+- https://aafnaipatro.com/tool/statement-of-work-generator
+- https://aafnaipatro.com/tool/change-order-form-generator
+- https://aafnaipatro.com/tool/client-intake-questionnaire-builder
+- https://aafnaipatro.com/tool/expense-report-generator
+- https://aafnaipatro.com/tool/lien-waiver-form-generator
+- https://aafnaipatro.com/tool/construction-daily-log-and-field-report
+- https://aafnaipatro.com/tool/punch-list-generator-with-photos
+- https://aafnaipatro.com/tool/toolbox-talk-sign-in-sheet-generator
+- https://aafnaipatro.com/tool/job-hazard-analysis-form-generator
+- https://aafnaipatro.com/tool/osha-300-log-form-filler
+- https://aafnaipatro.com/tool/petty-cash-log
+- https://aafnaipatro.com/tool/fundraiser-pledge-and-sponsor-sheet-generator
+- https://aafnaipatro.com/tool/volunteer-hours-log-and-verification-form
+- https://aafnaipatro.com/tool/carpool-schedule-generator
+- https://aafnaipatro.com/tool/garage-sale-price-tag-sheet-maker
+- https://aafnaipatro.com/tool/annotated-bibliography-generator
+- https://aafnaipatro.com/tool/apa-7-title-page-generator
+- https://aafnaipatro.com/tool/scatter-plot-and-error-bar-maker-for-lab-reports
+- https://aafnaipatro.com/tool/professional-references-page-generator
+- https://aafnaipatro.com/tool/ats-resume-text-preview
+- https://aafnaipatro.com/tool/ipa-keyboard-and-transcriber
+- https://aafnaipatro.com/tool/gedcom-viewer-and-csv-exporter
+- https://aafnaipatro.com/tool/pedigree-chart-and-family-group-sheet-generator
+- https://aafnaipatro.com/tool/auto-redact-pii-in-text
+- https://aafnaipatro.com/tool/csv-anonymizer
+- https://aafnaipatro.com/tool/password-protected-zip-creator
+- https://aafnaipatro.com/tool/zip-filename-encoding-fixer
+- https://aafnaipatro.com/tool/file-splitter-and-joiner-for-email-limits
+- https://aafnaipatro.com/tool/file-type-identifier
+- https://aafnaipatro.com/tool/json-lines-to-csv-converter
+- https://aafnaipatro.com/tool/csv-delimiter-detector-and-normalizer
+- https://aafnaipatro.com/tool/html-table-to-csv-converter
+- https://aafnaipatro.com/tool/markdown-table-to-csv-converter
+- https://aafnaipatro.com/tool/base64-file-encoder-and-decoder
+- https://aafnaipatro.com/tool/file-checksum-sha-256-generator
+- https://aafnaipatro.com/tool/url-query-parameter-cleaner-and-sorter
+- https://aafnaipatro.com/tool/time-zone-meeting-overlap-planner
+- https://aafnaipatro.com/tool/heic-to-pdf
+- https://aafnaipatro.com/tool/heic-to-jpg-under-1mb
+- https://aafnaipatro.com/tool/heic-to-webp
+- https://aafnaipatro.com/tool/heic-viewer
+- https://aafnaipatro.com/tool/heic-exif-viewer
+- https://aafnaipatro.com/tool/avif-to-jpg
+- https://aafnaipatro.com/tool/live-photo-to-gif
+- https://aafnaipatro.com/tool/heic-to-passport-photo-jpg
+- https://aafnaipatro.com/tool/heic-to-png
+- https://aafnaipatro.com/tool/avif-to-png
+- https://aafnaipatro.com/tool/mortgage-recast
+- https://aafnaipatro.com/tool/refinance-break-even
+- https://aafnaipatro.com/tool/pmi-removal-date
+- https://aafnaipatro.com/tool/arm-payment-adjustment
+- https://aafnaipatro.com/tool/heloc-vs-cash-out-refinance
+- https://aafnaipatro.com/tool/barista-fire
+- https://aafnaipatro.com/tool/roth-conversion-tax
+- https://aafnaipatro.com/tool/rule-55-withdrawal-penalty
+- https://aafnaipatro.com/tool/required-minimum-distribution
+- https://aafnaipatro.com/tool/social-security-break-even
+- https://aafnaipatro.com/tool/freelancer-quarterly-tax
+- https://aafnaipatro.com/tool/hourly-to-salary-benefits
+- https://aafnaipatro.com/tool/lease-vs-buy-car
+- https://aafnaipatro.com/tool/balance-transfer-fee
+- https://aafnaipatro.com/tool/mortgage-points-break-even
+- https://aafnaipatro.com/tool/house-hacking-rent-offset
+- https://aafnaipatro.com/tool/rsu-sell-to-cover
+- https://aafnaipatro.com/tool/iso-amt-estimator
+- https://aafnaipatro.com/tool/inflation-adjusted-salary
+- https://aafnaipatro.com/tool/1099-vs-w2-take-home
+- https://aafnaipatro.com/tool/cron-expression-explainer
+- https://aafnaipatro.com/tool/docker-run-to-docker-compose
+- https://aafnaipatro.com/tool/curl-to-fetch-axios-python
+- https://aafnaipatro.com/tool/regex-explainer
+- https://aafnaipatro.com/tool/sql-formatter-bigquery-snowflake
+- https://aafnaipatro.com/tool/ipv6-cidr-subnet
+- https://aafnaipatro.com/tool/chmod-permission
+- https://aafnaipatro.com/tool/llm-token-counter
+- https://aafnaipatro.com/tool/timestamp-time-zone-converter
+- https://aafnaipatro.com/tool/nginx-reverse-proxy-config-generator
+- https://aafnaipatro.com/tool/env-quote-escape-validator
+- https://aafnaipatro.com/tool/json-patch-generator
+- https://aafnaipatro.com/tool/json-pointer-tester
+- https://aafnaipatro.com/tool/snowflake-id-decoder
+- https://aafnaipatro.com/tool/calver-version-comparator
+- https://aafnaipatro.com/tool/spki-certificate-fingerprint
+- https://aafnaipatro.com/tool/github-actions-permissions-checker
+- https://aafnaipatro.com/tool/kubernetes-requests-limits-ratio
+- https://aafnaipatro.com/tool/urlpattern-tester
+- https://aafnaipatro.com/tool/cors-preflight-simulator
