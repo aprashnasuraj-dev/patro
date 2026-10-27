@@ -311,6 +311,17 @@ jobs:
         id: fleet
         continue-on-error: true
         run: node scripts/mm530/fleet-qa.mjs
+      - name: Close Phase 1 with no-regression baseline
+        if: always()
+        run: node scripts/mm530/phase1-regression-gate.mjs
+      - name: Verify Phase 2 canonical inventory logic
+        if: always()
+        run: node --test tests/mm530-phase2-inventory.test.mjs
+      - name: Generate Phase 2 canonical 530-tool inventory
+        id: inventory
+        if: always()
+        continue-on-error: true
+        run: node scripts/mm530/phase2-inventory.mjs
       - name: Preserve whole-fleet report and repair shortlist
         if: always()
         uses: actions/upload-artifact@v4
@@ -319,6 +330,19 @@ jobs:
           path: reports/mm530-qa/
           if-no-files-found: error
           retention-days: 30
+      - name: Preserve Phase 2 canonical inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-phase2-inventory
+          path: reports/mm530-inventory/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Enforce Phase 2 identity and inventory gate
+        if: always()
+        run: |
+          test -f reports/mm530-inventory/canonical-tools.json
+          node -e "const x=require('./reports/mm530-inventory/inventory-summary.json'); if(x.status!=='PASS'||x.records!==530||x.unique_ids!==530) process.exit(1)"
       - name: Hold promotion until all checks pass
         if: always()
         shell: bash
@@ -329,6 +353,11 @@ jobs:
             echo 'ERROR: not all 530 tools were recorded'; exit 1
           fi
           echo 'Artifacts preserved. Source preparation is not release acceptance.'
+      - name: Surface Phase 2 inventory failure after artifacts
+        if: steps.inventory.outcome != 'success'
+        run: |
+          echo 'Phase 2 inventory has unresolved identity/source gate failures. Review the preserved inventory artifact.'
+          exit 1
       - name: Surface fleet failure after artifacts
         if: steps.fleet.outcome != 'success'
         run: |
