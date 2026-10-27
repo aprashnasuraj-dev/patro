@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0263 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {paint} from '../src/core';const x={l:10,w:10,h:10,open:0,coats:1,coverage:100,waste:0,ceiling:false};describe('TOOL-0263',()=>{it('computes four gallons for 400 ft² at 100 ft²/gal',()=>{const r=paint(x);expect(r.net).toBe(400);expect(r.gallons).toBe(4)});it('rejects openings equal to gross walls',()=>expect(()=>paint({...x,open:400})).toThrow())});

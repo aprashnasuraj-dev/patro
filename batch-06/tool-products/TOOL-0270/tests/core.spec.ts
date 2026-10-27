@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0270 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {voltageDrop} from '../src/core';const x={awg:12,mat:'cu' as const,temp:20,lengthFt:100,amps:0,volts:120,phase:'single' as const};describe('TOOL-0270',()=>{it('returns zero drop at zero current',()=>{const r=voltageDrop(x);expect(r.dropV).toBe(0);expect(r.loadVoltage).toBe(120);expect(r.target3).toBe(true)});it('rejects AWG outside 0–40',()=>expect(()=>voltageDrop({...x,awg:41})).toThrow())});

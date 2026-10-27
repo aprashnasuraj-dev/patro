@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0269 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {landscape} from '../src/core';describe('TOOL-0269',()=>{it('converts a 10×10×1 ft bed to 100 ft³',()=>{const r=landscape(10,10,12,0,0);expect(r.rawFt3).toBe(100);expect(r.yd3).toBeCloseTo(3.704,3);expect(r.tons).toBeNull()});it('rejects zero depth',()=>expect(()=>landscape(10,10,0,0,0)).toThrow())});

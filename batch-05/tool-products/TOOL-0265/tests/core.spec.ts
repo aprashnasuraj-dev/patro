@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0265 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {drywall} from '../src/core';const x={l:10,w:10,h:10,open:0,waste:0,panelArea:32,ceiling:false,compoundRate:2,tapeRate:100};describe('TOOL-0265',()=>{it('computes wall area, panels and finishing materials',()=>{const r=drywall(x);expect(r.finishArea).toBe(400);expect(r.panels).toBe(13);expect(r.compoundGal).toBe(.8);expect(r.tapeFt).toBe(40)});it('rejects excessive openings',()=>expect(()=>drywall({...x,open:400})).toThrow())});

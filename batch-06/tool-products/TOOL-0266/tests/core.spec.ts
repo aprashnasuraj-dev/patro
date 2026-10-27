@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0266 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {boardFeet} from '../src/core';describe('TOOL-0266',()=>{it('computes 10 board feet for 1×12×10',()=>{const r=boardFeet(1,12,10,1,0);expect(r.perPiece).toBe(10);expect(r.total).toBe(10)});it('rejects nonpositive quantity',()=>expect(()=>boardFeet(1,12,10,0,0)).toThrow())});

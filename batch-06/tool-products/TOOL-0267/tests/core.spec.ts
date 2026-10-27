@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0267 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {deckRef} from '../src/core';describe('TOOL-0267',()=>{it('returns the prepared southern-pine reference row',()=>{const r=deckRef('sp','2x6',12,6,'2-2x6');expect(r.joistStatus).toBe('within table');expect(r.maxJoistFt).toBeCloseTo(9.917,3);expect(r.maxBeamSpanFt).toBeCloseTo(6.667,3)});it('rejects unsupported joist combinations',()=>expect(()=>deckRef('sp','2x4',12,6,'2-2x6')).toThrow())});

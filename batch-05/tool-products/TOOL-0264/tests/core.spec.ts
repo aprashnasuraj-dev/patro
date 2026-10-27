@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0264 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {tile} from '../src/core';const x={l:10,w:10,tw:12,th:12,joint:0,depth:0,perBox:10,waste:0,yieldL:10};describe('TOOL-0264',()=>{it('computes 100 one-foot tiles and 10 boxes',()=>{const r=tile(x);expect(r.baseTiles).toBe(100);expect(r.tiles).toBe(100);expect(r.boxes).toBe(10);expect(r.groutLiters).toBe(0)});it('rejects zero tile width',()=>expect(()=>tile({...x,tw:0})).toThrow())});

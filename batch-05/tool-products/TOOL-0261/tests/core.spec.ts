@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0261 deferred core plan',()=>{
-  it.todo('matches the prepared known-answer fixture');
-  it.todo('rejects malformed, NaN, Infinity and out-of-domain numeric inputs');
-  it.todo('covers lower/upper bounds and unsupported combinations');
-  it.todo('checks output rounding and unit semantics');
-  it.todo('covers parser-abuse or pathological geometry where applicable');
-});
+import {describe,it,expect} from 'vitest';import {concrete} from '../src/core';describe('TOOL-0261',()=>{it('computes a 10×10×0.5 ft slab',()=>{const r=concrete({unit:'ft',sl:10,sw:10,st:.5,fl:0,fw:0,fd:0,pc:0,pl:0,pw:0,pd:0,waste:0});expect(r.totalFt3).toBeCloseTo(50,2);expect(r.totalM3).toBeCloseTo(1.4158,4)});it('rejects an empty takeoff',()=>expect(()=>concrete({unit:'ft',sl:0,sw:0,st:0,fl:0,fw:0,fd:0,pc:0,pl:0,pw:0,pd:0,waste:0})).toThrow())});
