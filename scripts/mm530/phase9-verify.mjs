@@ -41,7 +41,7 @@ assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifes
 assert(advanced.counts?.webToolCategories===12,"ADVANCED_CATEGORY_COUNT",`module manifest says ${advanced.counts?.webToolCategories}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
-const titles=new Map(),seoRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0;
+const titles=new Map(),descriptions=new Map(),seoRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0;
 for(const tool of registry){
  const row=runtimeById.get(tool.id);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,""),"index.html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
@@ -51,6 +51,9 @@ for(const tool of registry){
  const expected=origin+tool.route,title=tagContent(leafHtml,"title"),desc=tagContent(leafHtml,"description"),canonical=tagContent(leafHtml,"canonical"),ogurl=tagContent(leafHtml,"ogurl"),robots=tagContent(leafHtml,"robots");
  assert(Boolean(title),"SEO_TITLE_MISSING",tool.id);assert(Boolean(desc),"SEO_DESCRIPTION_MISSING",tool.id);assert(canonical===expected,"CANONICAL_MISMATCH",`${tool.id}: ${canonical}`);assert(ogurl===expected,"OG_URL_MISMATCH",`${tool.id}: ${ogurl}`);assert(!/noindex/i.test(robots),"LEAF_NOINDEX",tool.id);assert(Boolean(tagContent(leafHtml,"ogtitle")),"OG_TITLE_MISSING",tool.id);assert(Boolean(tagContent(leafHtml,"twitter")),"TWITTER_TITLE_MISSING",tool.id);
  const previous=titles.get(title);if(previous)assert(false,"DUPLICATE_TITLE",`${tool.id} and ${previous}: ${title}`);else titles.set(title,tool.id);
+ const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
+ assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
+ assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
  const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
  if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
  if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
@@ -74,7 +77,7 @@ for(const [kind,id] of Object.entries(representative))perf.representative[kind]=
 for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-lib",ffmpeg:"assets/vendor/ffmpeg",sqljs:"assets/vendor/sqljs",mathjax:"vendor/mathjax",sheetjs:"assets/vendor/sheetjs"}))perf.sharedVendorBytes[name]=await dirBytes(path.join(dist,p));
 
 const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,categories:phase7.categories?.length||0,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
-const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V1",tools_checked:seoRows.length,unique_titles:titles.size,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
+const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V1",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
 const buildReport={schema_version:"MM530_PHASE9_BUILD_REPORT_V1",runtime_manifest_routes:runtime.routes?.length||0,runtime_failures:runtime.failures||[],typescript_and_vite:"PASSED_BEFORE_THIS_POSTBUILD_VERIFIER",static_leaf_shells:seoRows.length,advanced_tool_pages:advanced.pages};
 const performanceReport={schema_version:"MM530_PHASE9_PERFORMANCE_REPORT_V1",measured_from:"dist",...perf,discovery_runtime_eager:false};
 const status=blockers.length?"BLOCKED":"PHASE_9_PASS",gate={schema_version:"MM530_PHASE9_GATE_V1",status,tools:registry.length,blocker_count:blockers.length,routing:blockers.some(x=>/ROUTE|MISSING|DISCOVERY|CATEGORY/.test(x.code))?"FAIL":"PASS",seo:blockers.some(x=>/SEO|CANONICAL|TITLE|SITEMAP|REFERENCES|LIMITATIONS|INTERNAL/.test(x.code))?"FAIL":"PASS",runtime_assets:blockers.some(x=>/RUNTIME/.test(x.code))?"FAIL":"PASS",performance_measured:true,publication:false};
