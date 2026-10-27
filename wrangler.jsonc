@@ -61,6 +61,7 @@
       "!/data/*",
       "!/_mm530",
       "!/_mm530/*",
+      "!/vendor/*",
       "!/sitemap-mm530.xml",
       "!/calculators/*",
       "!/generators/*",
