@@ -1,4 +1,190 @@
 {
-  "policy": "Review only actual time-sensitive factual inputs and third-party shipping rights during Phase 6; browser QA is deferred until consolidated acceptance.",
-  "items": []
+  "schema_version": "MM530_PHASE6_REVIEW_SCOPE_V1",
+  "screened_titles": 29,
+  "priority_authoritative_review": [
+    {
+      "id": "TOOL-0413",
+      "title": "Estimated Tax Safe-Harbor Planner",
+      "route": "/planners/estimated-tax-safe-harbor-planner",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0415",
+      "title": "GST/HST Quick Method vs Regular Method",
+      "route": "/calculators/canada-gst-hst-quick-method-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0417",
+      "title": "VAT/GST Registration Threshold Tracker",
+      "route": "/planners/vat-gst-registration-threshold-checker",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0420",
+      "title": "Backdoor Roth Pro-Rata Calculator",
+      "route": "/calculators/backdoor-roth-pro-rata-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0431",
+      "title": "Short-Term Rental Occupancy Tax Calculator by City",
+      "route": "/calculators/short-term-rental-occupancy-tax-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0437",
+      "title": "Quarterly IFTA Fuel Tax Calculator",
+      "route": "/calculators/ifta-quarterly-fuel-tax-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0456",
+      "title": "Paid Family & Maternity Leave Pay Estimator",
+      "route": "/calculators/paid-family-leave-benefits-estimator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0458",
+      "title": "State Overtime & Fluctuating Workweek Calculator",
+      "route": "/calculators/state-overtime-pay-rules-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0486",
+      "title": "Digital Nomad Visa Eligibility Matcher",
+      "route": "/utilities/digital-nomad-visa-eligibility-checker",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0495",
+      "title": "Mega-Backdoor Roth Contribution Room Calculator",
+      "route": "/calculators/mega-backdoor-roth-contribution-room-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0496",
+      "title": "Inherited IRA 10-Year RMD Planner",
+      "route": "/planners/inherited-ira-rmd-10-year-rule-planner",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0498",
+      "title": "RSU State and Employer Withholding Gap Calculator",
+      "route": "/calculators/rsu-state-withholding-gap-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0500",
+      "title": "Medicare Enrollment Window and Late Penalty Calculator",
+      "route": "/calculators/medicare-enrollment-window-penalty-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0501",
+      "title": "Medicare IRMAA Bracket and Cliff Calculator",
+      "route": "/calculators/irmaa-bracket-cliff-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0502",
+      "title": "Inherited Property Stepped-Up Basis Calculator",
+      "route": "/calculators/inherited-property-stepped-up-basis-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0504",
+      "title": "UK Effective Marginal Tax Trap Calculator",
+      "route": "/calculators/uk-effective-marginal-tax-trap-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0505",
+      "title": "UK Section 24 Landlord vs Company Tax Comparison",
+      "route": "/comparisons/uk-section-24-landlord-company-comparison",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0507",
+      "title": "UK Pension Annual Allowance Carry-Forward Calculator",
+      "route": "/calculators/uk-pension-allowance-carry-forward-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0508",
+      "title": "UK Inheritance Tax Seven-Year Gift Planner",
+      "route": "/planners/uk-inheritance-tax-seven-year-gift-planner",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0509",
+      "title": "UK Shared Parental Leave and Pay Planner",
+      "route": "/planners/uk-shared-parental-leave-planner",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0515",
+      "title": "Australian Long Service Leave Calculator",
+      "route": "/calculators/australia-long-service-leave-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    },
+    {
+      "id": "TOOL-0518",
+      "title": "California Meal Break and Overtime Wage Claim Calculator",
+      "route": "/calculators/california-meal-rest-break-wage-claim-calculator",
+      "reason": "Jurisdiction/date-sensitive rule or threshold may change; verify against authoritative source or expose as user input."
+    }
+  ],
+  "formula_or_user_input_first": [
+    {
+      "id": "TOOL-0050",
+      "title": "HSTS Header Builder and Preload Checklist",
+      "route": "/generators/hsts-header-generator",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    },
+    {
+      "id": "TOOL-0223",
+      "title": "RSU Vesting and Withholding Estimator",
+      "route": "/calculators/rsu-tax-withholding-calculator",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    },
+    {
+      "id": "TOOL-0231",
+      "title": "Marginal Tax Bracket Calculator with Editable Brackets",
+      "route": "/calculators/marginal-tax-bracket-calculator",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    },
+    {
+      "id": "TOOL-0248",
+      "title": "VAT/GST Calculator with Reverse and Bulk Mode",
+      "route": "/calculators/vat-calculator-reverse-bulk",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    },
+    {
+      "id": "TOOL-0250",
+      "title": "Timesheet Hours Calculator with Breaks and Overtime",
+      "route": "/calculators/timesheet-calculator",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    },
+    {
+      "id": "TOOL-0260",
+      "title": "Pro Rata Salary and Leave Calculator",
+      "route": "/calculators/pro-rata-salary-calculator",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    },
+    {
+      "id": "TOOL-0428",
+      "title": "Property Tax Appeal Savings Estimator",
+      "route": "/calculators/property-tax-appeal-savings-estimator",
+      "disposition": "NOT_AUTOMATIC_BLOCKER",
+      "reason": "Primary behavior is user-input/formula based; review only if source contains a hard-coded changing rule."
+    }
+  ],
+  "policy": "Only priority items or tools with real hard-coded changing facts/third-party shipping constraints can block Phase 6. Generic finance/work terminology alone is not a blocker."
 }

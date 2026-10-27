@@ -3,6 +3,8 @@
   "status": "IN_PROGRESS",
   "tools": 530,
   "entry_gate": "OPERATOR_ACCEPTED",
+  "priority_factual_review": 22,
+  "formula_first_nonblocking": 7,
   "review_scope": "Only actual time-sensitive facts and real third-party assets/dependencies; no invented licensing queue.",
   "browser_revalidation": "DEFERRED"
 }
