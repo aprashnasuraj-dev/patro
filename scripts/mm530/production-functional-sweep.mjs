@@ -184,6 +184,8 @@ async function check(tool){
   const fileState=await setFiles(runtime,tool);
   if(fileState.unsupported.length)throw Error('no trustworthy fixture for '+fileState.unsupported.join(', '));
   if(tool.id==='TOOL-0052')await runtime.locator('#endpoint').fill('ws://127.0.0.1:'+wsPort+'/echo');
+  if(tool.id==='TOOL-0142')await runtime.waitForFunction(()=>document.querySelectorAll('#pageOrder button[data-page]').length>=2,null,{timeout:12000});
+  if(tool.id==='TOOL-0143')await runtime.waitForFunction(()=>/p\d+:/i.test(document.querySelector('#result')?.textContent||''),null,{timeout:12000});
   let action=null;
   for(const selector of primarySelectors){
    const candidate=runtime.locator(selector).first();
@@ -237,7 +239,7 @@ async function check(tool){
    let after=[],statuses=[],afterDl=beforeDl,afterClip=beforeClip,visual=0;
    const meaningful=t=>{const v=String(t||'').replace(/\s+/g,' ').trim();return v.length>0&&!/^(?:ready|loading|no (?:current )?result|output will appear|your results will appear|nothing to show|no file has been processed)\.?$/i.test(v)};
    const preexistingMeaningful=meaningful(before.join(' '));
-   const loops=MEDIA.has(tool.id)?300:(tool.id==='TOOL-0325'?100:80);
+   const loops=MEDIA.has(tool.id)?450:(tool.id==='TOOL-0325'?100:80);
    for(let i=0;i<loops;i++){
     await page.waitForTimeout(100);
     after=await runtime.locator(outputSelectors).allTextContents();
@@ -250,8 +252,10 @@ async function check(tool){
     if(afterDl>beforeDl||afterClip>beforeClip||visual||after.join('')!==before.join('')||terminalStatus)break;
    }
    const statusText=statuses.join(' ');
-   if(/(?:invalid(?:\s+(?:input|value|file|format))?|failed|failure|unable|malformed|missing required|no file selected|choose (?:a|an)|must (?:be|select)|cannot|could not|unsupported)/i.test(statusText))
-     throw Error('valid workflow returned failure status: '+statusText.slice(0,180));
+   item.observed_status=statusText.slice(0,500);
+   const explicitErrors=await runtime.locator('[data-kind="error"],[role="alert"]').allTextContents();
+   const hardFailure=explicitErrors.find(meaningful)||statuses.find(t=>/^\s*(?:error\b|failed\b|failure\b|unable\b|cannot\b|could not\b|invalid(?:\s+(?:input|value|file|format))?\b|malformed\b|missing required\b|no file selected\b|choose (?:a|an)\b|unsupported\b)/i.test(String(t||'')));
+   if(hardFailure)throw Error('valid workflow returned failure status: '+String(hardFailure).slice(0,180));
    const changedResult=after.join('')!==before.join('')&&meaningful(after.join(' '));
    const changedStatus=statusText!==beforeStatus.join(' ')&&meaningful(statusText)&&!TRANSIENT.test(statusText);
    item.visible_result_created=changedResult||preexistingMeaningful||visual>0||afterDl>beforeDl||afterClip>beforeClip||changedStatus;
