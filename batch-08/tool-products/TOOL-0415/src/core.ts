@@ -1,6 +1,6 @@
 import {finite,round} from "../_vendor/validation";
 export function calculate(i:any){
- const gross=finite("Eligible supplies incl tax",i.grossEligibleInclTax,0,1e12), taxRate=finite("Tax rate",i.taxRatePct,0,30)/100;
+ const gross=finite("Eligible supplies incl tax",i.grossEligibleInclTax,0,1e12), taxRate=finite("Tax rate",Number(i.taxRatePct),0,30)/100;
  const quick=finite("Quick remittance rate",i.quickRatePct,0,30)/100, itcs=finite("Regular-method ITCs",i.itcs,0,1e12);
  const ineligibleTax=finite("Tax on ineligible supplies",i.ineligibleTax,0,1e12), creditUsed=finite("Eligible revenue for 1% credit",i.creditEligibleRevenue,0,30000);
  const collected=gross*taxRate/(1+taxRate);
