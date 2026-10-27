@@ -40,6 +40,8 @@ function leafHtml(tool,row){
   {"@context":"https://schema.org","@type":"WebApplication","name":tool.title,"url":canonical,"description":description,"applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isPartOf":{"@type":"WebSite","name":"Aafnai Patro","url":origin}}
  ];
  const schemas=data.map(x=>`<script type="application/ld+json" data-mm530-static="1">${JSON.stringify(x).replaceAll("<","\\u003c")}</script>`).join("");
+ const fallback=`<main class="mm530-static-fallback" data-mm530-static-fallback="1"><nav aria-label="Breadcrumb"><a href="/advancetools/">Advanced tools</a> › <a href="/advancetools/web-tools/">Web tools</a> › <a href="/advancetools/web-tools/${esc(tool.category)}/">${esc(tool.categoryLabel)}</a></nav><h1>${esc(tool.title)}</h1><p>${esc(description)}</p><p><a href="/advancetools/web-tools/${esc(tool.category)}/">Browse more ${esc(tool.categoryLabel.toLowerCase())}</a></p></main>`;
+ html=html.replace('<div id="root"></div>',`<div id="root">${fallback}</div>`);
  return html.replace("</head>",schemas+"</head>");
 }
 
