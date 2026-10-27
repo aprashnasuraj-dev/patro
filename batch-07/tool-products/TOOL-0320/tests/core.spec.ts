@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0320 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {phase} from '../src/core';describe('TOOL-0320',()=>{it('returns a normalized UTC moon-phase result',()=>{const r=phase('2026-01-01','00:00');expect(r.utc).toBe('2026-01-01T00:00:00.000Z');expect(typeof r.waxing).toBe('boolean');expect(Number.isFinite(r.phaseAngle)).toBe(true)});it('rejects malformed date/time text',()=>expect(()=>phase('01/01/2026','midnight')).toThrow())});

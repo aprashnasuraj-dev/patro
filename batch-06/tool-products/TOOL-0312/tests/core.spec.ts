@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0312 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {parts,makeCountdown} from '../src/core';describe('TOOL-0312',()=>{it('decomposes 90,061 seconds exactly',()=>expect(parts(90061000,0)).toEqual({days:1,hours:1,minutes:1,seconds:1,done:false}));it('encodes target state into a share URL',()=>{const r=makeCountdown({title:'Launch',date:'2026-01-01',time:'12:00',tz:'UTC',dis:'reject',baseUrl:'https://example.test/countdown?old=1#x'});const u=new URL(r.url);expect(u.searchParams.get('title')).toBe('Launch');expect(u.searchParams.get('tz')).toBe('UTC');expect(u.hash).toBe('')})});

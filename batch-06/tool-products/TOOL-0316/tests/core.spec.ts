@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0316 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {excelSerial} from '../src/core';describe('TOOL-0316',()=>{it('maps serial 1 in the 1900 system to 1900-01-01',()=>expect(excelSerial(1,'1900').display).toBe('1900-01-01T00:00:00Z'));it('preserves Excel serial 60 as an explicit phantom date',()=>{const r=excelSerial(60,'1900');expect(r.phantom).toBe(true);expect(r.display).toContain('1900-02-29')});it('rejects zero serial',()=>expect(()=>excelSerial(0,'1900')).toThrow())});

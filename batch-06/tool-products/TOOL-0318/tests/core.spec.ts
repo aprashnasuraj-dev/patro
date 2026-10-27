@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0318 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {schedule,toIcs} from '../src/core';describe('TOOL-0318',()=>{it('generates one full 4-on/4-off cycle',()=>{const r=schedule({start:'2026-01-01',preset:'4x4',custom:'',days:8,phase:0});expect(r.rows.map(x=>x.state).join('')).toBe('OOOOXXXX');expect((toIcs(r.rows).match(/BEGIN:VEVENT/g)||[]).length).toBe(4)});it('rejects zero schedule days',()=>expect(()=>schedule({start:'2026-01-01',preset:'4x4',custom:'',days:0,phase:0})).toThrow())});

@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0313 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {convertBs,type BsDataset} from '../src/core';const data:BsDataset={startBs:{y:2080,m:1,d:1},startAd:'2023-04-14',monthLengths:{'2080':Array(12).fill(30)},trustTier:()=> 'synthetic-test'};describe('TOOL-0313',()=>{it('uses a synthetic contiguous dataset without inventing calendar tables',()=>{const r=convertBs(2080,1,2,data);expect(r.ad).toBe('2023-04-15');expect(r.trust).toBe('synthetic-test')});it('refuses conversion without a validated dataset',()=>expect(()=>convertBs(2080,1,1)).toThrow(/dataset/i))});

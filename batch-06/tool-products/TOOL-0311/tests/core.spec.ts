@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0311 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {shiftDate} from '../src/core';describe('TOOL-0311',()=>{it('clamps Jan 31 plus one month to leap-day 2024',()=>{const r=shiftDate('2024-01-31',1,'months','add');expect(r.date).toBe('2024-02-29')});it('rejects a negative amount',()=>expect(()=>shiftDate('2024-01-01',-1,'days','add')).toThrow())});

@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0317 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {fiscal} from '../src/core';describe('TOOL-0317',()=>{it('places 2026-10-27 in Q2 of a July-start fiscal year',()=>{const r=fiscal('2026-10-27',7,'ending');expect(r.quarter).toBe(2);expect(r.fyLabel).toBe(2027);expect(r.quarterStart).toBe('2026-10-01');expect(r.quarterEnd).toBe('2026-12-31')});it('rejects month 13',()=>expect(()=>fiscal('2026-10-27',13,'ending')).toThrow())});

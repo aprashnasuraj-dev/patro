@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0315 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {julian} from '../src/core';describe('TOOL-0315',()=>{it('matches the J2000 epoch identity',()=>{const r=julian('2000-01-01','12:00:00');expect(r.julianDate).toBe(2451545);expect(r.modifiedJulianDate).toBe(51544.5)});it('rejects pre-Gregorian dates for this bounded implementation',()=>expect(()=>julian('1500-01-01','00:00')).toThrow())});

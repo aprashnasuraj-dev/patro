@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0314 deferred core plan',()=>{
-  it.todo('matches each prepared known-answer fixture');
-  it.todo('rejects malformed, oversized and out-of-domain input');
-  it.todo('covers boundary dates, leap years, month ends and precision limits as applicable');
-  it.todo('covers ambiguity/unsupported-case warnings rather than silent guesses');
-  it.todo('verifies deterministic output formatting and export semantics');
-});
+import {describe,it,expect} from 'vitest';import {hijriToGregorian} from '../src/core';describe('TOOL-0314',()=>{it('returns a Gregorian ISO date using the requested browser calendar variant',()=>{const r=hijriToGregorian(1445,1,1,'islamic-civil');expect(r.calendar).toBe('islamic-civil');expect(r.gregorian).toMatch(/^\d{4}-\d{2}-\d{2}$/)});it('rejects impossible Hijri fields before lookup',()=>expect(()=>hijriToGregorian(1445,13,1,'islamic-civil')).toThrow())});
