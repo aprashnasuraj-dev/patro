@@ -18,5 +18,5 @@ export function convert(input:string,opts:Record<string,string|boolean>={}):Resu
  seen.add(directive);}
  if(!hasFrom)throw Error('No FROM directive found');if(!explicitUser)add(logical[logical.length-1]?.line||1,'warning','ROOT_USER','No non-root USER directive found in scanned stages.');
  if(!seen.has('HEALTHCHECK'))add(1,'info','HEALTHCHECK','Consider application-specific health signaling if orchestrator does not supply it.');
- return{text:JSON.stringify({stages:stage,findings},null,2)+'\n',details:{stages,findings:findings.length,critical:findings.filter(x=>x.severity==='critical').length},warnings:['Advisory heuristics only: parser does not implement all Dockerfile grammar or full multi-stage scope.','Not a vulnerability scanner; pinning alone does not prove an image is safe.']};
+ return{text:JSON.stringify({stages:stage,findings},null,2)+'\n',details:{stages:stage,findings:findings.length,critical:findings.filter(x=>x.severity==='critical').length},warnings:['Advisory heuristics only: parser does not implement all Dockerfile grammar or full multi-stage scope.','Not a vulnerability scanner; pinning alone does not prove an image is safe.']};
 }
