@@ -52,7 +52,8 @@
     }
   },
   "sources": [
-    "OpenAI API pricing, checked 2026-10-28",
-    "Anthropic Claude pricing, checked 2026-10-28"
+    "OpenAI API pricing — Standard, short context, checked 2026-10-28",
+    "Anthropic Claude Sonnet 5.5 / Opus 5.5 pricing, checked 2026-10-28",
+    "Anthropic Claude Haiku 5.5 pricing, checked 2026-10-28"
   ]
 }

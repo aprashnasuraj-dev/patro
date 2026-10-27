@@ -142,6 +142,7 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/client-tools/lint.mjs
+          npm run client-tools:test350
           node scripts/client-tools/verify.mjs
           node scripts/client-tools/smoke.mjs
 
