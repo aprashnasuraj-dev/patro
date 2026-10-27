@@ -25,3 +25,8 @@ test('node fixture compiler has an explicit output and static-root externals',()
  const o=nodeTestBuildOptions('/tmp/test.ts','/tmp/test.mjs');
  assert.equal(o.outfile,'/tmp/test.mjs'); assert.ok(o.external.includes('/vendor/*'));
 });
+
+test('Phase 1 preserves source-relative Node test execution assumptions',()=>{
+ const framework=classifyTestFramework('deferred.test.mjs',"import {test} from 'node:test'; const x=new URL('./cases.json',import.meta.url)");
+ assert.equal(framework,'node-test');
+});

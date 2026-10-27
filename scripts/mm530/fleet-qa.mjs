@@ -70,20 +70,30 @@ async function unit(t,esbuild){
  t.unitFiles=classified.map(x=>({file:x.file,framework:x.framework}));
  if(!files.length){flag(t,'unit','NOT_RUN','No unit fixture supplied');return}
  if(!esbuild){flag(t,'unit','NOT_RUN','esbuild unavailable');return}
- const nodeFiles=classified.filter(x=>x.framework==='node-test'),deferred=classified.filter(x=>x.framework!=='node-test');
+ const nodeFiles=classified.filter(x=>x.framework==='node-test'),deferred=classified.filter(x=>x.framework!=='node-test').map(x=>({framework:x.framework,file:x.file}));
  let passed=0,failed=[];
  for(const item of nodeFiles)try{
-  const input=path.join(t.dir,'tests',item.file),compiled=rp('.mm530-qa-temp',t.id,item.file.replace(/\.(?:ts|tsx|mjs|cjs|js)$/,'')+'.mjs');
-  await fs.mkdir(path.dirname(compiled),{recursive:true});
-  await esbuild.build(nodeTestBuildOptions(input,compiled));
-  const r=await command(process.execPath,['--test',compiled],15000);
+  const input=path.join(t.dir,'tests',item.file);
+  const distRefs=[...item.contents.matchAll(/(?:from|import\()\s*['"](\.\.\/dist\/[^'"]+)['"]/g)].map(m=>m[1]);
+  const missingDist=[];
+  for(const ref of distRefs){const target=path.resolve(path.dirname(input),ref);if(!await exists(target))missingDist.push(ref)}
+  if(missingDist.length){deferred.push({framework:'node-test-build-prerequisite',file:item.file,note:'missing '+missingDist.join(', ')});continue}
+  let r;
+  if(/\.(?:mjs|cjs|js)$/.test(item.file)){
+    r=await command(process.execPath,['--test',input],15000);
+  }else{
+    const compiled=rp('.mm530-qa-temp',t.id,item.file.replace(/\.(?:ts|tsx)$/,'')+'.mjs');
+    await fs.mkdir(path.dirname(compiled),{recursive:true});
+    await esbuild.build(nodeTestBuildOptions(input,compiled));
+    r=await command(process.execPath,['--test',compiled],15000);
+  }
   if(r.ok)passed++;else failed.push(item.file+': '+r.note);
  }catch(e){failed.push(item.file+': '+err(e))}
  if(failed.length){flag(t,'unit','FAIL',failed.join(' | ').slice(0,700));t.priority=1;return}
  if(deferred.length){
   const counts={};for(const x of deferred)counts[x.framework]=(counts[x.framework]||0)+1;
-  flag(t,'unit','NOT_RUN',(passed?passed+' node-test file(s) passed; ':'')+'deferred frameworks for Phase 4: '+Object.entries(counts).map(([k,v])=>k+'='+v).join(', '));
- }else flag(t,'unit','PASS',passed+'/'+files.length+' node-test files passed');
+  flag(t,'unit','NOT_RUN',(passed?passed+' directly executed node-test file(s) passed; ':'')+'deferred frameworks/prerequisites for Phase 4: '+Object.entries(counts).map(([k,v])=>k+'='+v).join(', '));
+ }else flag(t,'unit','PASS',passed+'/'+files.length+' node-test files passed in source location');
 }
 async function auditRoutes(){
  const names=['src/PatroRouter.tsx','src/tool-directory.ts','public/sitemap.xml'];
