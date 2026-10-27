@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0357 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {people,commitment,draw} from '../src/core';
+describe('TOOL-0357',()=>{it('deduplicates participants when requested',()=>expect(people('A\nB\nA',true)).toEqual(['A','B']));it('produces deterministic verifiable winners for the same list and secret',async()=>{const list=['A','B','C','D'],secret='0123456789abcdef0123456789abcdef';const a=await draw(list,secret,2),b=await draw(list,secret,2);expect(a.winners).toEqual(b.winners);expect(a.seedHash).toBe(b.seedHash);expect(a.commitment).toBe(await commitment(secret));expect(a.participantCount).toBe(4)});it('rejects short secrets',async()=>{await expect(commitment('short')).rejects.toThrow(/32/)})});

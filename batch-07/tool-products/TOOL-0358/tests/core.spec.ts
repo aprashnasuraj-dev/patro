@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0358 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {cards} from '../src/core';
+describe('TOOL-0358',()=>{it('creates deterministic 75-ball cards with column ranges and FREE center',async()=>{const a=await cards('75',1,'seed',[],true),b=await cards('75',1,'seed',[],true);expect(a).toEqual(b);const c=a[0];expect(c).toHaveLength(25);expect(c[12]).toBe('FREE');for(let col=0;col<5;col++)for(let row=0;row<5;row++){const v=c[row*5+col];if(v==='FREE')continue;expect(v as number).toBeGreaterThanOrEqual(col*15+1);expect(v as number).toBeLessThanOrEqual(col*15+15)}});it('rejects insufficient custom entries',async()=>{await expect(cards('custom',1,'seed',['a'],false)).rejects.toThrow(/25/)})});

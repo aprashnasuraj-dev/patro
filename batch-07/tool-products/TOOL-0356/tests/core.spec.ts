@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0356 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {build} from '../src/core';
+describe('TOOL-0356',()=>{it('builds privacy-enhanced embed parameters',()=>{const r=build('https://youtu.be/dQw4w9WgXcQ',30,null,true,true,true);expect(r.videoId).toBe('dQw4w9WgXcQ');expect(r.src).toContain('youtube-nocookie.com/embed/dQw4w9WgXcQ');expect(r.src).toContain('start=30');expect(r.src).toContain('autoplay=1');expect(r.src).toContain('playlist=dQw4w9WgXcQ')});it('rejects end not later than start',()=>expect(()=>build('dQw4w9WgXcQ',30,30,true,false,false)).toThrow())});

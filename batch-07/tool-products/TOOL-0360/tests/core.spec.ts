@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0360 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {layout} from '../src/core';
+describe('TOOL-0360',()=>{it('computes browser-frame output geometry',()=>{const r=layout(1000,600,'browser',100,1);expect(r).toEqual({bezel:16,top:60,w:1232,h:776,x:116,y:160})});it('rejects unsupported frame and scale',()=>{expect(()=>layout(100,100,'watch',100,1)).toThrow();expect(()=>layout(100,100,'phone',100,4)).toThrow()})});

@@ -1,8 +1,2 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0359 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {make} from '../src/core';
+describe('TOOL-0359',()=>{it('creates a vector PDF with requested US trim plus bleed',async()=>{const r=await make('us',3,'Alice','Engineer','alice@example.com','#ffffff','#000000');expect(r.trimMm).toEqual([88.9,50.8]);expect(r.pageMm).toEqual([94.9,56.8]);expect(new TextDecoder().decode(r.bytes.slice(0,5))).toBe('%PDF-')});it('rejects non-ASCII text until a licensed Unicode font is integrated',async()=>{await expect(make('us',0,'नेपाल','','','#ffffff','#000000')).rejects.toThrow(/ASCII/)})});
