@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {policyFor} from './policy.mjs';
-import {externalImports,declaredDependencies,identityFindings,canonicalLeaf,browserProfile,normalizedFamily,classifyTestFramework,metadataId} from './inventory-lib.mjs';
+import {externalImports,declaredDependencies,identityFindings,canonicalLeaf,browserProfile,normalizedFamily,classifyTestFramework,metadataId,normalizedTitle} from './inventory-lib.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const out=path.join(root,'reports','mm530-inventory');
@@ -40,8 +40,8 @@ for(let n=1;n<=530;n++){
  try{meta=await json(metaPath)}catch(e){metaError=String(e.message||e)}
  const srcFiles=await walk(srcDir),testFiles=await walk(testDir);
  const sourceTexts=[];
- for(const p of srcFiles)if(/\.(?:[cm]?[jt]sx?)$/.test(p))try{sourceTexts.push(await read(p))}catch{}
- const imports=[...new Set(sourceTexts.flatMap(externalImports))].sort();
+ for(const p of srcFiles)if(/\.(?:[cm]?[jt]sx?)$/.test(p))try{sourceTexts.push({path:p,text:await read(p)})}catch{}
+ const imports=[...new Set(sourceTexts.flatMap(x=>externalImports(x.text,x.path)))].sort();
  const declared=declaredDependencies(meta||{});
  const declaredAll=new Set([...declared.runtime,...declared.test]);
  const undeclared=imports.filter(x=>!declaredAll.has(x));
@@ -63,7 +63,8 @@ for(let n=1;n<=530;n++){
  const qaStatus=meta?.qa_status||meta?.qaStatus||null;
  const publicationStatus=master?.publication_status||batchRow?.publication_status||meta?.publication||meta?.publication_gate||null;
  const titleVariants=[master?.title,batchRow?.title,batchRow?.name,meta?.title,meta?.name].filter(x=>typeof x==='string'&&x.trim());
- const titleConflicts=[...new Set(titleVariants)].length>1?[...new Set(titleVariants)]:[];
+ const rawTitles=[...new Set(titleVariants)],semanticTitles=[...new Set(rawTitles.map(normalizedTitle))];
+ const titleConflicts=semanticTitles.length>1?rawTitles:[];
  const routeMeta=meta?.reserved_route||meta?.route||null,canonical=master?.canonical_proposed||batchRow?.canonical_proposed||null;
  const legacy=master?.reserved_legacy_route||batchRow?.reserved_legacy_route||routeMeta||null;
  const risk=policyFor(master||batchRow||meta||{}).map(x=>x.kind);

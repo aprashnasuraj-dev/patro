@@ -1,3 +1,4 @@
+import * as ts from 'typescript';
 import path from 'node:path';
 import {classifyTestFramework,metadataId} from './harness-lib.mjs';
 
@@ -6,15 +7,22 @@ export function packageRoot(spec){
  const parts=spec.split('/');
  return spec.startsWith('@')?parts.slice(0,2).join('/'):parts[0];
 }
-export function externalImports(source=''){
- const specs=new Set();
- for(const re of [
-   /\bfrom\s*['"]([^'"]+)['"]/g,
-   /\bimport\s*\(\s*['"]([^'"]+)['"]\s*\)/g,
-   /\brequire\s*\(\s*['"]([^'"]+)['"]\s*\)/g,
-   /^\s*import\s*['"]([^'"]+)['"]/gm
- ])for(const m of source.matchAll(re)){const p=packageRoot(m[1]);if(p)specs.add(p)}
- return [...specs].sort();
+export function externalImports(source='',fileName='source.ts'){
+ const specs=new Set(),sf=ts.createSourceFile(fileName,source,ts.ScriptTarget.Latest,true);
+ const add=node=>{if(node&&ts.isStringLiteralLike(node)){const p=packageRoot(node.text);if(p)specs.add(p)}};
+ const visit=node=>{
+   if(ts.isImportDeclaration(node)||ts.isExportDeclaration(node))add(node.moduleSpecifier);
+   else if(ts.isCallExpression(node)&&node.arguments.length){
+     const dynamic=node.expression.kind===ts.SyntaxKind.ImportKeyword;
+     const required=ts.isIdentifier(node.expression)&&node.expression.text==='require';
+     if(dynamic||required)add(node.arguments[0]);
+   }
+   ts.forEachChild(node,visit);
+ };
+ visit(sf);return [...specs].sort();
+}
+export function normalizedTitle(value=''){
+ return String(value).trim().replace(/\s*\|\s*AafnaiPatro Tools\s*$/i,'').trim();
 }
 function addDeps(set,value){
  if(!value)return;
