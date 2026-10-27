@@ -108,9 +108,27 @@ async function functional(page,t){
 }
 async function invalidInput(page){
  const p=await primary(page);if(!p)return{state:'NOT_APPLICABLE',note:'No generic primary action.'};
- const f=page.locator('input[required]:not([type="file"]):not([type="checkbox"]):not([type="radio"]),input[type="number"],textarea[required]').first();
- if(!await f.count())return{state:'NOT_APPLICABLE',note:'No deterministic invalid-input target.'};
- try{await f.fill('');await p.click({timeout:1500}).catch(()=>{});await page.waitForTimeout(100);const native=await page.locator(':invalid').count(),explicit=await page.evaluate(errorSnapshot),txt=await page.evaluate(textSnapshot);return native||explicit||STRONG_ERROR.test(txt)?{state:'PASS',note:native?'Native constraint validation rejected invalid input.':explicit?'Tool surfaced an explicit invalid-input error state.':'Tool surfaced a bounded invalid-input state.'}:{state:'REVIEW_REQUIRED',note:'Invalid input did not crash, but generic harness could not prove explicit rejection.'}}catch(e){return{state:'FAIL',note:err(e)}}
+ const before=await page.evaluate(resultSnapshot);
+ const file=page.locator('input[type="file"]').first(),password=page.locator('input[type="password"]').first(),requiredText=page.locator('input[required]:not([type="file"]):not([type="checkbox"]):not([type="radio"]):not([type="number"]),textarea[required]').first(),number=page.locator('input[type="number"]').first();
+ let target='none';
+ try{
+   if(await file.count()){await file.setInputFiles([]);target='missing file';}
+   else if(await password.count()){await password.fill('');target='blank password';}
+   else if(await requiredText.count()){await requiredText.fill('');target='blank required text';}
+   else if(await number.count()){
+     const min=await number.getAttribute('min'),max=await number.getAttribute('max');
+     if(min!==null&&Number.isFinite(Number(min))){const n=Number(min),step=Number(await number.getAttribute('step')||1)||1;await number.fill(String(n-Math.max(Math.abs(step),1)));target='below minimum';}
+     else if(max!==null&&Number.isFinite(Number(max))){const n=Number(max),step=Number(await number.getAttribute('step')||1)||1;await number.fill(String(n+Math.max(Math.abs(step),1)));target='above maximum';}
+     else {await number.fill('');target='blank number';}
+   } else return{state:'NOT_APPLICABLE',note:'No deterministic invalid-input target.'};
+   const formNoValidate=await p.evaluate(el=>{const f=(el as HTMLElement).closest('form') as HTMLFormElement|null;return !!f?.noValidate});
+   await p.click({timeout:1500}).catch(()=>{});await page.waitForTimeout(120);
+   const native=await page.locator(':invalid').count(),explicit=await page.evaluate(errorSnapshot),txt=await page.evaluate(textSnapshot),after=await page.evaluate(resultSnapshot);
+   if(explicit)return{state:'PASS',note:`Tool rejected ${target} with an explicit error state.`};
+   if(native&&!formNoValidate&&after===before)return{state:'PASS',note:`Browser constraint validation rejected ${target} before execution.`};
+   if(STRONG_ERROR.test(txt)&&after!==before)return{state:'PASS',note:`Tool rejected ${target} with bounded validation feedback.`};
+   return{state:'REVIEW_REQUIRED',note:`Invalid case (${target}) did not crash, but explicit rejection was not proven.`};
+ }catch(e){return{state:'FAIL',note:'Invalid-input path crashed: '+err(e)}}
 }
 async function optionalActions(page,t,validState){
  for(const [key,selectors] of [['copy',['#copy','button:has-text("Copy")']],['download',['#download','#export','#csv','button:has-text("Download")']],['reset',['#clear','#reset','button:has-text("Reset")','button:has-text("Restore")']],['share',['#share','button:has-text("Share")']]]){
