@@ -74,21 +74,22 @@ async function unit(t,esbuild){
  t.unitFiles=classified.map(x=>({file:x.file,framework:x.framework}));
  if(!files.length){flag(t,'unit','NOT_RUN','No unit fixture supplied');return}
  if(!esbuild){flag(t,'unit','NOT_RUN','esbuild unavailable');return}
- if(t.checks.compile?.state==='BLOCKED'){flag(t,'unit','BLOCKED','Unit execution depends on compile prerequisite: '+t.checks.compile.note);return}
- const nodeFiles=classified.filter(x=>x.framework==='node-test'),vitestFiles=classified.filter(x=>x.framework!=='node-test'),deferred=[];
+ const executable=s=>{const clean=s.replace(/\b(?:it|test)\.todo\s*\([^)]*\)/gs,'');return /\b(?:it|test)(?:\.each\([^)]*\))?\s*\(/s.test(clean)};
+ const nodeFiles=classified.filter(x=>x.framework==='node-test'&&executable(x.contents)),vitestFiles=classified.filter(x=>x.framework!=='node-test'&&executable(x.contents)),deferred=classified.filter(x=>!executable(x.contents)).map(x=>({framework:'no-executable-unit-tests',file:x.file,note:'fixture contains no executable test; TODO-only suites are not PASS'}));
  let passed=0,failed=[];
  for(const item of nodeFiles)try{
   const input=path.join(t.dir,'tests',item.file);
   const distRefs=[...item.contents.matchAll(/(?:from|import\()\s*['"](\.\.\/dist\/[^'"]+)['"]/g)].map(m=>m[1]);
   const missingDist=[];for(const ref of distRefs){const target=path.resolve(path.dirname(input),ref);if(!await exists(target))missingDist.push(ref)}
-  if(missingDist.length){deferred.push({framework:'node-test-build-prerequisite',file:item.file,note:'missing '+missingDist.join(', ')});continue}
-  let r;if(/\.(?:mjs|cjs|js)$/.test(item.file))r=await command(process.execPath,['--test',input],15000);
+  if(missingDist.length){for(const ref of missingDist){const target=path.resolve(path.dirname(input),ref),src=path.join(t.dir,'src',path.basename(ref).replace(/\.js$/,'.ts'));if(!await exists(src)){deferred.push({framework:'node-test-build-prerequisite',file:item.file,note:'missing '+ref});continue}await fs.mkdir(path.dirname(target),{recursive:true});await esbuild.build({...nodeTestBuildOptions(src,target),entryPoints:[src],outfile:target});}}
+  for(const ref of [...item.contents.matchAll(/(?:from|import\()\s*['"](\.\.\/src\/[^'"]+\.js)['"]/g)].map(m=>m[1])){const target=path.resolve(path.dirname(input),ref);if(!await exists(target)){const src=target.replace(/\.js$/,'.ts');if(await exists(src))await esbuild.build({...nodeTestBuildOptions(src,target),entryPoints:[src],outfile:target});}}
+  let r;if(/\.(?:mjs|cjs|js)$/.test(item.file))r=await command(process.execPath,['--test',input],20000);
   else{const compiled=rp('.mm530-qa-temp',t.id,item.file.replace(/\.(?:ts|tsx)$/, '')+'.mjs');await fs.mkdir(path.dirname(compiled),{recursive:true});await esbuild.build(nodeTestBuildOptions(input,compiled));r=await command(process.execPath,['--test',compiled],15000)}
   if(r.ok)passed++;else{const classification=classifyNodeTestFailure(r.note);if(classification.state==='NOT_RUN')deferred.push({framework:classification.kind,file:item.file,note:r.note.slice(0,280)});else failed.push(item.file+': '+r.note)}
  }catch(e){failed.push(item.file+': '+err(e))}
  if(vitestFiles.length){
   const inputs=vitestFiles.map(x=>path.join(t.dir,'tests',x.file));
-  const r=await command(process.execPath,[rp('node_modules','vitest','vitest.mjs'),'run',...inputs,'--reporter=basic'],45000);
+  const r=await command(process.execPath,[rp('node_modules','vitest','vitest.mjs'),'run',...inputs],45000);
   if(r.ok)passed+=vitestFiles.length;else failed.push('vitest: '+r.note);
  }
  if(failed.length){flag(t,'unit','FAIL',failed.join(' | ').slice(0,900));t.priority=1;return}
