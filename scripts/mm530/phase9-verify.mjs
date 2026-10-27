@@ -43,7 +43,7 @@ assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module
 
 const titles=new Map(),descriptions=new Map(),seoRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0;
 for(const tool of registry){
- const row=runtimeById.get(tool.id);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,""),"index.html");
+ const row=runtimeById.get(tool.id);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
  if(!(await exists(pagePath))||!(await exists(leafPath)))continue;
  const [runtimeHtml,leafHtml,sourceHtml]=await Promise.all([read(pagePath),read(leafPath),read(path.join(root,tool.sourceDir,"page.html")).catch(()=>"")]);
