@@ -4,7 +4,7 @@ export function classifyLink(raw:string): 'external'|'unsafe' { try { const u=ne
 export async function extractPdfLinks(file:File):Promise<PdfLink[]> {
   if(file.size>MAX_PDF_BYTES) throw new Error('PDF exceeds the 100 MiB limit.');
   const pdfjs=await import('pdfjs-dist');
-  (pdfjs as any).GlobalWorkerOptions.workerSrc='/assets/vendor/pdfjs/pdf.worker.min.mjs';
+  (pdfjs as any).GlobalWorkerOptions.workerSrc='/vendor/pdfjs/pdf.worker.mjs';
   const doc=await (pdfjs as any).getDocument({data:new Uint8Array(await file.arrayBuffer()),isEvalSupported:false}).promise;
   if(doc.numPages>5000) throw new Error('PDF exceeds the 5,000-page safety cap.');
   const out:PdfLink[]=[];
