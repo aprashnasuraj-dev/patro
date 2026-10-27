@@ -8,6 +8,7 @@ const phase9=await readJson(path.join(root,"reports/mm530-phase9/gate.json"));
 const routes=await readJson(path.join(root,"reports/mm530-phase9/route-report.json"));
 const seo=await readJson(path.join(root,"reports/mm530-phase9/seo-report.json"));
 const browser=await readJson(path.join(out,"browser-report.json"));
+const functional=await readJson(path.join(root,"reports/mm530-functional-gate.json"));
 const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-registry.json"),"utf8")).tools;
 const wrangler=await fs.readFile(path.join(root,"wrangler.jsonc"),"utf8"),headers=await fs.readFile(path.join(root,"public/_headers"),"utf8");
 const unresolved=[];
@@ -20,6 +21,7 @@ req(routes.categories===12&&routes.existing_advanced_collections?.length===5,"DI
 req(phase9.status==="PHASE_9_PASS"&&phase9.blocker_count===0,"PHASE9","production integration gate blocked");
 req(seo.tools_checked===530&&seo.unique_titles===530&&seo.sitemap_urls===530,"SEO","SEO/canonical audit incomplete");
 req(browser.status==="PASS"&&browser.failures.length===0,"BROWSER","consolidated browser gate blocked");
+req(functional.status==="PASS"&&functional.totals?.registered===530&&functional.totals?.pass===530&&functional.totals?.fail===0,"FUNCTIONAL_530","all 530 primary workflows have not been proven in the production browser");
 req(browser.all_leaf_routes_http_checked===530&&browser.all_runtime_entrypoints_checked===530,"HTTP_ROUTES","broad route/runtime checks incomplete");
 req(wrangler.includes('"!/_mm530/*"')&&wrangler.includes('"!/advancetools/web-tools/*"'),"CLOUDFLARE_ASSET_FIRST","MM530 static exclusions missing");
 for(const c of ["calculators","generators","converters","utilities","validators","editors","planners","extractors","analyzers","formatters","comparisons","timers"])req(wrangler.includes(`"!/${c}/*"`),"CLOUDFLARE_LEAF_ASSET_FIRST",c);
