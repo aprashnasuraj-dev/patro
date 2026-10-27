@@ -26,12 +26,36 @@ function cleanPublicText(value){
   .replace(/\s+/g," ").trim();
 }
 function extractTitle(html,fallback){return cleanPublicText(decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||fallback))||fallback}
+function descriptionIsComplete(value){
+ const text=String(value||"").trim();
+ return /[.!?…]["')\]]?$/.test(text)&&!/\b(?:and|or|an|a|the|to|for|with|of|in|on|by|from|as|at|into|via)\s*[.!?…]?["')\]]?$/i.test(text);
+}
+function finishDescription(value){
+ let text=String(value||"").replace(/\s+/g," ").trim();
+ if(!text)return text;
+ if(descriptionIsComplete(text))return text;
+ const ends=[...text.matchAll(/[.!?…](?=\s|$)/g)];
+ const last=ends.at(-1);
+ if(last&&last.index+1>=70)return text.slice(0,last.index+1).trim();
+ text=(text.replace(/\s+\S*$/,"").trim()||text).replace(/[,:;\-–—]+$/,"").trim();
+ return /[.!?…]$/.test(text)?text:text+".";
+}
 function boundedDescription(value,title,categoryLabel){
- let text=cleanPublicText(value);
- if(text.length<70)text=`Use ${title} directly in your browser. Review the inputs, method, examples, references and limitations before relying on the result. ${categoryLabel||"Web tool"}.`;
- text=text.replace(/\s+/g," ").trim();
- if(text.length>165){const cut=text.slice(0,164);text=(cut.replace(/\s+\S*$/,"").trim()||cut.trim()).replace(/[,:;\-–—]+$/,"")+"…";}
- if(text.length<70)text=(text+" Review the stated assumptions and limitations before use.").slice(0,165).trim();
+ let text=finishDescription(cleanPublicText(value));
+ if(text.length<70)text=finishDescription(`Use ${title} directly in your browser. Review the inputs, method, examples, references and limitations before relying on the result.`);
+ if(text.length>165){
+  const window=text.slice(0,165),ends=[...window.matchAll(/[.!?…](?=\s|$)/g)].filter(m=>m.index+1>=70),last=ends.at(-1);
+  if(last)text=window.slice(0,last.index+1).trim();
+  else{
+   const cut=window.slice(0,164).replace(/\s+\S*$/,"").trim().replace(/[,:;\-–—]+$/,"");
+   text=finishDescription(cut);
+  }
+ }
+ if(text.length<70)text=finishDescription(text+" Review the stated assumptions and limitations before use.");
+ if(text.length>165||!descriptionIsComplete(text)){
+  const fallback=`Use this ${String(categoryLabel||"web tool").toLowerCase()} directly in your browser. Review inputs, outputs, assumptions and limitations before relying on the result.`;
+  text=fallback.length<=165?fallback:"Use this web tool directly in your browser. Review inputs, outputs, assumptions and limitations before relying on the result.";
+ }
  return text;
 }
 function extractDescription(html,title,categoryLabel){
@@ -109,8 +133,9 @@ async function presentReferences(html,srcDir){
 function escapeAttr(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function injectSeo(html,tool,title,description){
  html=html.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi,"")
+          .replace(/<meta\b[^>]*name=["']description["'][^>]*>/gi,"")
           .replace(/<meta\b[^>]*(?:property|name)=["'](?:og:title|og:description|og:url|twitter:card|twitter:title|twitter:description)["'][^>]*>/gi,"");
- const canonical=origin+tool.route,head=`<link rel="canonical" href="${canonical}"><meta property="og:title" content="${escapeAttr(title)}"><meta property="og:description" content="${escapeAttr(description)}"><meta property="og:url" content="${canonical}"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escapeAttr(title)}"><meta name="twitter:description" content="${escapeAttr(description)}">`;
+ const canonical=origin+tool.route,head=`<meta name="description" content="${escapeAttr(description)}"><link rel="canonical" href="${canonical}"><meta property="og:title" content="${escapeAttr(title)}"><meta property="og:description" content="${escapeAttr(description)}"><meta property="og:url" content="${canonical}"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escapeAttr(title)}"><meta name="twitter:description" content="${escapeAttr(description)}">`;
  return html.replace(/<\/head>/i,head+"</head>");
 }
 function visibleText(html){return decodeHtml(html.replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ")).replace(/\s+/g," ").trim()}
