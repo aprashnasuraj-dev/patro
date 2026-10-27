@@ -91,7 +91,7 @@ for(const tool of registry){
  if(runtimeEditorialHeadings>=2)assert(hasEditorial,"CRAWLER_EDITORIAL_LOST",tool.id+": runtime has "+runtimeEditorialHeadings+" editorial headings");
  assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
  crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length,retainedEditorialSignals:retainedSignals});
- const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
+ const runtimeCanonical=tagContent(runtimeHtml,"canonical"),runtimeRobots=tagContent(runtimeHtml,"robots");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(/noindex/i.test(runtimeRobots),"RUNTIME_INDEX_LEAK",tool.id+": isolated runtime must stay noindex");assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
  const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\b[^>]*src=["']\.\/tool\.js["'][^>]*><\/script>/gi)];
  assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
  assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
