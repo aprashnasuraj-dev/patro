@@ -7,7 +7,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-registry.json"),"utf8")).tools;
 const outRoot=path.join(root,"public/_mm530");
 const origin="https://aafnaipatro.com";
-const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\\d{4}|\\bbatch\\s*0?\\d+\\b|source preparation|runtime QA|runtime validation pending|publication pending|draft research tool|source checkpoint|\\bQA-approved\\b|Staging:\\s*noindex|not published|product tests have not been executed)/i;
+const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|runtime QA|runtime validation pending|publication pending|draft research tool|source checkpoint|\bQA-approved\b|Staging:\s*noindex|not published|product tests have not been executed)/i;
 
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
 function decodeHtml(s){return String(s||"").replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,"<").replace(/&gt;/g,">")}
@@ -32,25 +32,25 @@ function extractDescription(html,title){
 }
 function sanitizeProductionHtml(html){
  // Strip only publication/internal preparation markers; preserve substantive guide copy.
- html=html.replace(/<section\\b[^>]*>\\s*<h2>Integration note<\\/h2>[\\s\\S]*?<\\/section>/gi,"");
- html=html.replace(/<span\\b[^>]*class=["'][^"']*staging[^"']*["'][^>]*>[^<]*<\\/span>/gi,"");
- html=html.replace(/<footer\\b[^>]*>(?:(?!<\\/footer>)[\\s\\S])*(?:TEST_PENDING|Client-side preparation|Reserved route)(?:(?!<\\/footer>)[\\s\\S])*<\\/footer>/gi,"");
- html=html.replace(/<(?:small|p)\\b[^>]*>(?:(?!<\\/(?:small|p)>)[\\s\\S])*(?:Source preparation status|Source preparation only|Product testing and publication pending|No runtime QA claim|Runtime validation pending|Staging mode: noindex|QA-approved\\?|source checkpoint is TEST_PENDING)(?:(?!<\\/(?:small|p)>)[\\s\\S])*<\\/(?:small|p)>/gi,"");
+ html=html.replace(/<section\b[^>]*>\s*<h2>Integration note<\/h2>[\s\S]*?<\/section>/gi,"");
+ html=html.replace(/<span\b[^>]*class=["'][^"']*staging[^"']*["'][^>]*>[^<]*<\/span>/gi,"");
+ html=html.replace(/<footer\b[^>]*>(?:(?!<\/footer>)[\s\S])*(?:TEST_PENDING|Client-side preparation|Reserved route)(?:(?!<\/footer>)[\s\S])*<\/footer>/gi,"");
+ html=html.replace(/<(?:small|p)\b[^>]*>(?:(?!<\/(?:small|p)>)[\s\S])*(?:Source preparation status|Source preparation only|Product testing and publication pending|No runtime QA claim|Runtime validation pending|Staging mode: noindex|QA-approved\?|source checkpoint is TEST_PENDING)(?:(?!<\/(?:small|p)>)[\s\S])*<\/(?:small|p)>/gi,"");
  return html
-  .replace(/Private browser utility\\s*·\\s*batch\\s*0?\\d+/gi,"Private browser utility")
-  .replace(/Source preview\\s*·\\s*Not published/gi,"")
-  .replace(/\\bbatch\\s*0?\\d+\\b/gi,"")
-  .replace(/Scope:\\s*TOOL-\\d{4}\\.\\s*/gi,"")
-  .replace(/Staging:\\s*noindex(?:,\\s*not published)?\\.\\s*/gi,"")
-  .replace(/AafnaiPatro\\s*·\\s*F\\d+\\s*·\\s*TOOL-\\d{4}/gi,"Aafnai Patro")
-  .replace(/Mission Mangal(?:\\s*·\\s*TOOL-\\d{4})?/gi,"Aafnai Patro")
-  .replace(/TOOL-\\d{4}\\s*·\\s*browser-local\\s*·\\s*TEST_PENDING/gi,"Browser-local tool")
-  .replace(/Browser-local\\s*•\\s*TEST_PENDING/gi,"Browser-local tool")
-  .replace(/Private browser tool\\s*·\\s*staging/gi,"Private browser tool")
-  .replace(/Draft research tool\\s*[—-]\\s*2026 source review/gi,"Browser-local reference tool")
-  .replace(/\\bTOOL-\\d{4}\\b/g,"")
-  .replace(/\\bTEST_PENDING\\b/gi,"")
-  .replace(/\\s+·\\s+·\\s+/g," · ");
+  .replace(/Private browser utility\s*·\s*batch\s*0?\d+/gi,"Private browser utility")
+  .replace(/Source preview\s*·\s*Not published/gi,"")
+  .replace(/\bbatch\s*0?\d+\b/gi,"")
+  .replace(/Scope:\s*TOOL-\d{4}\.\s*/gi,"")
+  .replace(/Staging:\s*noindex(?:,\s*not published)?\.\s*/gi,"")
+  .replace(/AafnaiPatro\s*·\s*F\d+\s*·\s*TOOL-\d{4}/gi,"Aafnai Patro")
+  .replace(/Mission Mangal(?:\s*·\s*TOOL-\d{4})?/gi,"Aafnai Patro")
+  .replace(/TOOL-\d{4}\s*·\s*browser-local\s*·\s*TEST_PENDING/gi,"Browser-local tool")
+  .replace(/Browser-local\s*•\s*TEST_PENDING/gi,"Browser-local tool")
+  .replace(/Private browser tool\s*·\s*staging/gi,"Private browser tool")
+  .replace(/Draft research tool\s*[—-]\s*2026 source review/gi,"Browser-local reference tool")
+  .replace(/\bTOOL-\d{4}\b/g,"")
+  .replace(/\bTEST_PENDING\b/gi,"")
+  .replace(/\s+·\s+·\s+/g," · ");
 }
 function escapeAttr(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function injectSeo(html,tool,title,description){
