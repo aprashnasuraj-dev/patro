@@ -30,6 +30,8 @@ const mimeChecks=[
  ["/assets/vendor/fonteditor-core/woff2.wasm","application/wasm"],["/assets/vendor/sqljs/sql-wasm.wasm","application/wasm"]
 ];
 for(const [url,expected] of mimeChecks){const res=await fetch(base+url);const type=res.headers.get("content-type")||"";if(!res.ok)fail("SHARED_ASSET_HTTP",`${url}: ${res.status}`);else if(!type.includes(expected))fail("SHARED_ASSET_MIME",`${url}: ${type}`)}
+const ffmpegHead=await fetch(base+"/mm530-runtime/ffmpeg-core.wasm",{method:"HEAD"});const ffmpegType=ffmpegHead.headers.get("content-type")||"",ffmpegLength=Number(ffmpegHead.headers.get("content-length")||0);
+if(!ffmpegHead.ok)fail("FFMPEG_RUNTIME_HTTP",String(ffmpegHead.status));else if(!ffmpegType.includes("application/wasm"))fail("FFMPEG_RUNTIME_MIME",ffmpegType);else if(ffmpegLength<=25*1024*1024)fail("FFMPEG_RUNTIME_LENGTH",String(ffmpegLength));
 
 const signatureGroups=new Map();
 for(const tool of registry){const js=await fs.readFile(path.join(dist,"_mm530",tool.id,"tool.js"),"utf8").catch(()=>"");const imports=[...js.matchAll(/["'](\/(?:vendor|assets\/vendor)\/[^"']+)["']/g)].map(x=>x[1]).sort();if(imports.length){const sig=imports.join("|");if(!signatureGroups.has(sig))signatureGroups.set(sig,{id:tool.id,imports})}}
