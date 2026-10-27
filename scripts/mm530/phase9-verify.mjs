@@ -51,7 +51,7 @@ assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifes
 assert(advanced.counts?.webToolCategories===12,"ADVANCED_CATEGORY_COUNT",`module manifest says ${advanced.counts?.webToolCategories}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
-const titles=new Map(),descriptions=new Map(),seoRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0;
+const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0;
 for(const tool of registry){
  const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
@@ -64,6 +64,24 @@ for(const tool of registry){
  const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
  assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
+ const leafVisible=visible(leafHtml),leafStat=await fs.stat(leafPath);
+ const frameMatches=[...leafHtml.matchAll(/<iframe\\b[^>]*class=["'][^"']*mm530-frame[^"']*["'][^>]*>/gi)];
+ assert(frameMatches.length===1,"CRAWLER_DIRECT_RUNTIME",tool.id+": expected exactly one tool iframe, found "+frameMatches.length);
+ assert(frameMatches[0]?.[0]?.includes('/_mm530/'+tool.id+'/page.html'),"CRAWLER_RUNTIME_TARGET",tool.id);
+ const outerModuleScripts=[...leafHtml.matchAll(/<script\\b[^>]*type=["']module["'][^>]*src=/gi)];
+ assert(outerModuleScripts.length===0,"CRAWLER_SPA_BOOT",tool.id+": canonical leaf still requires outer SPA JavaScript");
+ assert(leafVisible.length>=220,"CRAWLER_VISIBLE_CONTENT_THIN",tool.id+": "+leafVisible.length+" visible characters");
+ assert(leafStat.size<180*1024,"CRAWLER_HTML_BUDGET",tool.id+": "+leafStat.size+" bytes");
+ assert(!internal.test(leafVisible),"CRAWLER_INTERNAL_COPY",tool.id);
+ assert(!/research\\/sources\\.json|examples\\/fixtures\\.json/i.test(leafVisible),"CRAWLER_INTERNAL_REFERENCE",tool.id);
+ const relatedStatic=[...leafHtml.matchAll(/<a\\b[^>]*href=["']([^"']+)["'][^>]*>/gi)].map(x=>x[1]).filter(href=>registry.some(x=>x.route===href));
+ assert(relatedStatic.length>=Math.min(3,registry.filter(x=>x.category===tool.category&&x.id!==tool.id).length),"CRAWLER_RELATED_LINKS",tool.id+": "+relatedStatic.length);
+ const hasEditorial=leafHtml.includes('data-mm530-editorial="1"');
+ if(hasEditorial)editorialLeaves++;
+ const runtimeEditorialHeadings=(runtimeHtml.match(/<h[23]\\b/gi)||[]).length;
+ if(runtimeEditorialHeadings>=2)assert(hasEditorial,"CRAWLER_EDITORIAL_LOST",tool.id+": runtime has "+runtimeEditorialHeadings+" editorial headings");
+ assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
+ crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length});
  const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
  const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\\b[^>]*src=["']\\.\\/tool\\.js["'][^>]*><\\/script>/gi)];
  assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
@@ -105,10 +123,11 @@ for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-li
 
 const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,categories:phase7.categories?.length||0,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
 const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V1",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
+const crawlerReport={schema_version:"MM530_CRAWLER_SEO_GATE_V1",status:blockers.some(x=>/^CRAWLER_/.test(x.code))?"BLOCKED":"PASS",tools_checked:crawlerRows.length,standalone_static_shells:crawlerRows.filter(x=>x.outerModuleScripts===0).length,direct_runtime_iframes:crawlerRows.length,editorial_leaves:editorialLeaves,rows:crawlerRows};
 const buildReport={schema_version:"MM530_PHASE9_BUILD_REPORT_V1",runtime_manifest_routes:runtime.routes?.length||0,runtime_failures:runtime.failures||[],typescript_and_vite:"PASSED_BEFORE_THIS_POSTBUILD_VERIFIER",static_leaf_shells:seoRows.length,advanced_tool_pages:advanced.pages};
 const performanceReport={schema_version:"MM530_PHASE9_PERFORMANCE_REPORT_V1",measured_from:"dist",...perf,discovery_runtime_eager:false};
 const status=blockers.length?"BLOCKED":"PHASE_9_PASS",gate={schema_version:"MM530_PHASE9_GATE_V1",status,tools:registry.length,blocker_count:blockers.length,routing:blockers.some(x=>/ROUTE|MISSING|DISCOVERY|CATEGORY/.test(x.code))?"FAIL":"PASS",seo:blockers.some(x=>/SEO|CANONICAL|TITLE|SITEMAP|REFERENCES|LIMITATIONS|INTERNAL/.test(x.code))?"FAIL":"PASS",runtime_assets:blockers.some(x=>/RUNTIME/.test(x.code))?"FAIL":"PASS",performance_measured:true,publication:false};
 const summary={schema_version:"MM530_PHASE9_SUMMARY_V1",status,tools:registry.length,categories:phase7.categories?.length||0,existing_advanced_collections:oldCollections.length,blockers:blockers.length,publication:false};
-for(const [name,data] of Object.entries({"build-report.json":buildReport,"route-report.json":routeReport,"seo-report.json":seoReport,"performance-report.json":performanceReport,"blockers.json":blockers,"gate.json":gate,"summary.json":summary}))await fs.writeFile(path.join(out,name),JSON.stringify(data,null,2)+"\n");
+for(const [name,data] of Object.entries({"build-report.json":buildReport,"route-report.json":routeReport,"seo-report.json":seoReport,"crawler-seo-report.json":crawlerReport,"performance-report.json":performanceReport,"blockers.json":blockers,"gate.json":gate,"summary.json":summary}))await fs.writeFile(path.join(out,name),JSON.stringify(data,null,2)+"\n");
 console.log("MM530_PHASE9_RESULT="+JSON.stringify({status,blockers:blockers.length,tools:registry.length,advancedPages:advanced.pages,performance:perf}));
 if(blockers.length){console.error(JSON.stringify(blockers.slice(0,100),null,2));process.exitCode=1}
