@@ -91,7 +91,7 @@ for(const tool of registry){
  const previous=titles.get(title);if(previous)assert(false,"DUPLICATE_TITLE",`${tool.id} and ${previous}: ${title}`);else titles.set(title,tool.id);
  const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
- const h1Count=(leafHtml.match(/<h1\\b/gi)||[]).length;assert(h1Count===1,"STATIC_H1_COUNT",tool.id+": "+h1Count);
+ const h1Count=(leafHtml.match(/<h1\b/gi)||[]).length;assert(h1Count===1,"STATIC_H1_COUNT",tool.id+": "+h1Count);
  assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
  const retainedSignals=[];
  const leafVisible=visible(leafHtml),leafStat=await fs.stat(leafPath);
