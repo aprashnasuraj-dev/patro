@@ -104,7 +104,15 @@
       "!/sitemap-client-tools.xml",
       "!/converter/*",
       "!/calculator/*",
-      "!/tools/*"
+      "!/tools/*",
+      "!/client-tools",
+      "!/client-tools/",
+      "!/converter",
+      "!/converter/",
+      "!/calculator",
+      "!/calculator/",
+      "!/tools",
+      "!/tools/"
     ]
   },
   "d1_databases": [

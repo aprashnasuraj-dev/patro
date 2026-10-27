@@ -94,7 +94,8 @@
     "mm530:routes": "node scripts/mm530/phase7-route-audit.mjs",
     "client-tools:build": "node scripts/client-tools/build.mjs",
     "client-tools:verify": "node scripts/client-tools/verify.mjs",
-    "client-tools:smoke": "node scripts/client-tools/smoke.mjs"
+    "client-tools:smoke": "node scripts/client-tools/smoke.mjs",
+    "client-tools:lint": "node scripts/client-tools/lint.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",

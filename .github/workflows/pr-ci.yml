@@ -141,6 +141,7 @@ jobs:
         if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true'
         run: |
           set -euo pipefail
+          npm run client-tools:lint
           npm run client-tools:verify
           npm run client-tools:smoke
 
