@@ -34,6 +34,12 @@ function sanitizeProductionHtml(html){
  html=html.replace(/<section\b[^>]*>\s*<h2>Integration note<\/h2>[\s\S]*?<\/section>/gi,"");
  html=html.replace(/<(?:small|p|footer)\b[^>]*>[\s\S]*?(?:Source preparation status|Source preparation only|Product testing and publication pending|No runtime QA claim|Runtime validation pending|Staging mode: noindex)[\s\S]*?<\/(?:small|p|footer)>/gi,"");
  return html
+  .replace(/(?:Private browser utility|Private browser tool)\\s*·\\s*batch\\s*0?\\d+/gi,"Private browser utility")
+  .replace(/Source preview\\s*·\\s*Not published/gi,"")
+  .replace(/\\bbatch\\s*0?\\d+\\b/gi,"")
+  .replace(/Source preparation status:[^.]*\\.[^.]*\\./gi,"")
+  .replace(/\\bNo runtime QA claim[^.]*\\./gi,"")
+  .replace(/\\bsource checkpoint\\b/gi,"")
   .replace(/Scope:\s*TOOL-\d{4}\.\s*/gi,"")
   .replace(/Staging:\s*noindex(?:,\s*not published)?\.\s*/gi,"")
   .replace(/AafnaiPatro\s*·\s*F\d+\s*·\s*TOOL-\d{4}/gi,"Aafnai Patro")
@@ -86,7 +92,7 @@ for(const tool of registry){
  try{
   if(!await exists(entry)||!await exists(page))throw new Error("missing tool entry or page");
   await fs.mkdir(dst,{recursive:true});await copyTree(srcDir,dst);
-  await build({entryPoints:[entry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"]});
+  await build({entryPoints:[entry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title);
   let html=sanitizeProductionHtml(original);
   html=injectSeo(html,tool,title,description);
