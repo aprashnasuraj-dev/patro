@@ -23,8 +23,9 @@ const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const records=new Array(registry.length);
 async function check(tool){
  const context=await browser.newContext({acceptDownloads:true});
- const page=await context.newPage();const errors=[],missingAssets=[];
+ const page=await context.newPage();const errors=[],missingAssets=[];let runtimeRequested=false;
  page.on('pageerror',e=>errors.push(e.message));
+ page.on('request',r=>{if(r.url().endsWith('/tool.js'))runtimeRequested=true});
  page.on('response',r=>{if(r.status()===404)missingAssets.push(r.url())});
  const item={tool_id:tool.id,route:tool.route,runtime_script_attached:false,runtime_bundle_requested:false,
   mount_target_exists:false,runtime_mount_succeeded:false,primary_control_present:false,
@@ -32,47 +33,55 @@ async function check(tool){
   copy_checked:false,download_checked:false,console_errors:errors,missing_assets:missingAssets,
   status:'FAIL',reason:''};
  try{
-  const url=base+'/_mm530/'+tool.id+'/page.html';
+  const url=base+tool.route;
   const r=await page.goto(url,{waitUntil:'domcontentloaded',timeout:20000});
-  if(!r?.ok())throw Error('runtime page HTTP '+r?.status());
+  if(!r?.ok())throw Error('canonical tool page HTTP '+r?.status());
   const html=await r.text();
-  item.runtime_script_attached=html.includes('src="./tool.js"');
+  if(!html.includes('data-mm530-static-fallback="1"'))throw Error('canonical page lacks static crawler shell');
+  if(/<script\b[^>]*type=["']module["'][^>]*src=/i.test(html))throw Error('canonical page still boots outer SPA JavaScript');
+  if(!html.includes('/_mm530/'+tool.id+'/page.html'))throw Error('canonical page does not directly attach its runtime');
+  const iframe=page.locator('iframe.mm530-frame');
+  await iframe.waitFor({state:'attached',timeout:7000});
+  const frameEl=await iframe.elementHandle();
+  const runtime=await frameEl?.contentFrame();
+  if(!runtime)throw Error('runtime iframe frame unavailable');
+  const runtimeHtml=await runtime.locator('html').evaluate(node=>node.outerHTML);
+  item.runtime_script_attached=runtimeHtml.includes('src="./tool.js"');
   if(!item.runtime_script_attached)throw Error('tool.js not attached to runtime page');
   const deadline=Date.now()+7000;
   while(Date.now()<deadline){
-   item.runtime_bundle_requested=page.frames().some(f=>f.url().includes('/tool.js'))||
-     (await page.evaluate(()=>performance.getEntriesByType('resource').some(x=>x.name.endsWith('/tool.js'))));
-   item.mount_target_exists=await page.locator('#tool-interactive-root,#tool-app,[data-tool-id]').count()>0;
-   const count=await page.locator(actionable).count();
+   item.runtime_bundle_requested=runtimeRequested;
+   item.mount_target_exists=await runtime.locator('#tool-interactive-root,#tool-app,[data-tool-id]').count()>0;
+   const count=await runtime.locator(actionable).count();
    if(count>0){item.runtime_mount_succeeded=true;break}
    await page.waitForTimeout(100);
   }
   if(!item.runtime_bundle_requested)throw Error('runtime JS not requested');
   if(!item.runtime_mount_succeeded)throw Error('no enabled interactive workspace controls');
-  const rendered=await page.locator('body').innerText();
+  const rendered=await runtime.locator('body').innerText();
   if(knownPlaceholder.test(rendered))throw Error('placeholder/internal text remains after initialization');
   if(errors.length)throw Error('initialization exception: '+errors.join('; ').slice(0,300));
   if(missingAssets.length)throw Error('missing runtime asset: '+missingAssets[0]);
   let action=null;
   for(const selector of primarySelectors){
-   const candidate=page.locator(selector).first();
+   const candidate=runtime.locator(selector).first();
    if(await candidate.count()&&await candidate.isVisible()&&await candidate.isEnabled()){action=candidate;break}
   }
   item.primary_control_present=!!action;
   if(!action)throw Error('primary action missing or disabled; needs tool-specific fixture');
   const outputSelectors='#result,#output,.mm-result,.result,.results,#metrics,#summary,#data-rows';
   const statusSelectors='#feedback,#status,.mm-status,[role=status],[role=alert]';
-  const before=await page.locator(outputSelectors).allTextContents();
+  const before=await runtime.locator(outputSelectors).allTextContents();
   if(tool.id==='TOOL-0006'){
-   const input=page.locator('textarea.mm-source-editor').first();
+   const input=runtime.locator('textarea.mm-source-editor').first();
    if(!await input.count())throw Error('HAR input did not mount');
    await input.fill(JSON.stringify(harSample));
   }
   await action.click({timeout:2500});
   item.primary_action_executed=true;
   if(tool.id==='TOOL-0006'){
-   const output=page.locator('pre.mm-result');
-   await page.waitForFunction(()=>{const t=document.querySelector('pre.mm-result')?.textContent||'';return t.includes('redacted.invalid')},null,{timeout:7000});
+   const output=runtime.locator('pre.mm-result');
+   await runtime.waitForFunction(()=>{const t=document.querySelector('pre.mm-result')?.textContent||'';return t.includes('redacted.invalid')},null,{timeout:7000});
    const parsed=JSON.parse(await output.innerText());
    const entry=parsed.log.entries[0];
    if(entry.response.status!==200||entry.timings.wait!==22||entry.timings.receive!==8||
@@ -82,24 +91,24 @@ async function check(tool){
       entry.request.headers.length||entry.response.headers.length||entry.request.cookies.length)
      throw Error('HAR semantic redaction regression');
    item.visible_result_created=true;
-   const invalid=page.locator('textarea.mm-source-editor');
+   const invalid=runtime.locator('textarea.mm-source-editor');
    await invalid.fill('{bad json');
    await action.click();
-   const status=await page.locator('.mm-status').innerText();
+   const status=await runtime.locator('.mm-status').innerText();
    item.invalid_input_rejected=/invalid har json/i.test(status);
    if(!item.invalid_input_rejected)throw Error('HAR invalid JSON not rejected');
    await invalid.fill(JSON.stringify(harSample));await action.click();
-   await page.waitForFunction(()=>document.querySelector('pre.mm-result')?.textContent?.includes('redacted.invalid'),null,{timeout:7000});
-   const copy=page.getByRole('button',{name:'Copy output'});
-   const download=page.getByRole('button',{name:'Download output'});
+   await runtime.waitForFunction(()=>document.querySelector('pre.mm-result')?.textContent?.includes('redacted.invalid'),null,{timeout:7000});
+   const copy=runtime.getByRole('button',{name:'Copy output'});
+   const download=runtime.getByRole('button',{name:'Download output'});
    item.copy_checked=await copy.isEnabled();
    const promised=page.waitForEvent('download',{timeout:3000}).then(async d=>{const name=d.suggestedFilename();await d.cancel();return name.endsWith('.har')}).catch(()=>false);
    await download.click();item.download_checked=await promised;
    if(!item.copy_checked||!item.download_checked)throw Error('HAR export control failed');
   }else{
    await page.waitForTimeout(350);
-   const after=await page.locator(outputSelectors).allTextContents();
-   const statuses=await page.locator(statusSelectors).allTextContents();
+   const after=await runtime.locator(outputSelectors).allTextContents();
+   const statuses=await runtime.locator(statusSelectors).allTextContents();
    if(/(?:invalid|failed|error|unable|malformed|missing required|no file selected)/i.test(statuses.join(' ')))
      throw Error('valid workflow returned error status: '+statuses.join(' ').slice(0,160));
    item.visible_result_created=after.join('')!==before.join('')&&after.join('').trim().length>0
