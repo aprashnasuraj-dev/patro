@@ -61,7 +61,11 @@ async function compile(t,esbuild){
  try{
   for(const p of t.source)await esbuild.build(browserBuildOptions(p));
   flag(t,'compile','PASS','Syntax/bundle preflight passed with CSS emitted in-memory and site-root assets externalized; production integration still separate')
- }catch(e){flag(t,'compile','FAIL',err(e));t.priority=1}
+ }catch(e){
+  const note=err(e);
+  if(/wordlist\.generated\.js|vendor\/xlsx\.bundle\.js|vendor\/mathjax-tex-svg\.bundle\.js/.test(note))flag(t,'compile','BLOCKED','Required reviewed build asset is unavailable: '+note);
+  else{flag(t,'compile','FAIL',note);t.priority=1}
+ }
 }
 async function unit(t,esbuild){
  let files=[];try{files=(await fs.readdir(path.join(t.dir,'tests'))).filter(x=>/\.(?:test|spec)\.(?:ts|tsx|mjs|cjs|js)$/.test(x)&&!x.toLowerCase().includes('browser')).sort()}catch{}
@@ -70,34 +74,26 @@ async function unit(t,esbuild){
  t.unitFiles=classified.map(x=>({file:x.file,framework:x.framework}));
  if(!files.length){flag(t,'unit','NOT_RUN','No unit fixture supplied');return}
  if(!esbuild){flag(t,'unit','NOT_RUN','esbuild unavailable');return}
- const nodeFiles=classified.filter(x=>x.framework==='node-test'),deferred=classified.filter(x=>x.framework!=='node-test').map(x=>({framework:x.framework,file:x.file}));
+ if(t.checks.compile?.state==='BLOCKED'){flag(t,'unit','BLOCKED','Unit execution depends on compile prerequisite: '+t.checks.compile.note);return}
+ const nodeFiles=classified.filter(x=>x.framework==='node-test'),vitestFiles=classified.filter(x=>x.framework!=='node-test'),deferred=[];
  let passed=0,failed=[];
  for(const item of nodeFiles)try{
   const input=path.join(t.dir,'tests',item.file);
   const distRefs=[...item.contents.matchAll(/(?:from|import\()\s*['"](\.\.\/dist\/[^'"]+)['"]/g)].map(m=>m[1]);
-  const missingDist=[];
-  for(const ref of distRefs){const target=path.resolve(path.dirname(input),ref);if(!await exists(target))missingDist.push(ref)}
+  const missingDist=[];for(const ref of distRefs){const target=path.resolve(path.dirname(input),ref);if(!await exists(target))missingDist.push(ref)}
   if(missingDist.length){deferred.push({framework:'node-test-build-prerequisite',file:item.file,note:'missing '+missingDist.join(', ')});continue}
-  let r;
-  if(/\.(?:mjs|cjs|js)$/.test(item.file)){
-    r=await command(process.execPath,['--test',input],15000);
-  }else{
-    const compiled=rp('.mm530-qa-temp',t.id,item.file.replace(/\.(?:ts|tsx)$/,'')+'.mjs');
-    await fs.mkdir(path.dirname(compiled),{recursive:true});
-    await esbuild.build(nodeTestBuildOptions(input,compiled));
-    r=await command(process.execPath,['--test',compiled],15000);
-  }
-  if(r.ok)passed++;else{
-    const classification=classifyNodeTestFailure(r.note);
-    if(classification.state==='NOT_RUN')deferred.push({framework:classification.kind,file:item.file,note:r.note.slice(0,280)});
-    else failed.push(item.file+': '+r.note);
-  }
+  let r;if(/\.(?:mjs|cjs|js)$/.test(item.file))r=await command(process.execPath,['--test',input],15000);
+  else{const compiled=rp('.mm530-qa-temp',t.id,item.file.replace(/\.(?:ts|tsx)$/, '')+'.mjs');await fs.mkdir(path.dirname(compiled),{recursive:true});await esbuild.build(nodeTestBuildOptions(input,compiled));r=await command(process.execPath,['--test',compiled],15000)}
+  if(r.ok)passed++;else{const classification=classifyNodeTestFailure(r.note);if(classification.state==='NOT_RUN')deferred.push({framework:classification.kind,file:item.file,note:r.note.slice(0,280)});else failed.push(item.file+': '+r.note)}
  }catch(e){failed.push(item.file+': '+err(e))}
- if(failed.length){flag(t,'unit','FAIL',failed.join(' | ').slice(0,700));t.priority=1;return}
- if(deferred.length){
-  const counts={};for(const x of deferred)counts[x.framework]=(counts[x.framework]||0)+1;
-  flag(t,'unit','NOT_RUN',(passed?passed+' directly executed node-test file(s) passed; ':'')+'deferred frameworks/prerequisites for Phase 4: '+Object.entries(counts).map(([k,v])=>k+'='+v).join(', '));
- }else flag(t,'unit','PASS',passed+'/'+files.length+' node-test files passed in source location');
+ if(vitestFiles.length){
+  const inputs=vitestFiles.map(x=>path.join(t.dir,'tests',x.file));
+  const r=await command(process.execPath,[rp('node_modules','vitest','vitest.mjs'),'run',...inputs,'--reporter=basic'],45000);
+  if(r.ok)passed+=vitestFiles.length;else failed.push('vitest: '+r.note);
+ }
+ if(failed.length){flag(t,'unit','FAIL',failed.join(' | ').slice(0,900));t.priority=1;return}
+ if(deferred.length){const counts={};for(const x of deferred)counts[x.framework]=(counts[x.framework]||0)+1;flag(t,'unit','NOT_RUN',(passed?passed+' executed unit file(s) passed; ':'')+'deferred prerequisites: '+Object.entries(counts).map(([k,v])=>k+'='+v).join(', '));return}
+ flag(t,'unit','PASS',passed+'/'+files.length+' unit fixture files passed across detected frameworks');
 }
 async function auditRoutes(){
  const names=['src/PatroRouter.tsx','src/tool-directory.ts','public/sitemap.xml'];
@@ -179,7 +175,7 @@ async function main(){
  for(const t of results)try{await scan(t)}catch(e){flag(t,'source','FAIL',err(e))}
  const route=await auditRoutes();
  async function pool(fn,count,name){let i=0;await Promise.all(Array.from({length:count},async()=>{while(i<results.length){const t=results[i++];try{await fn(t,esbuild)}catch(e){flag(t,name,'FAIL',err(e))}}}))}
- await pool(compile,6,'compile');await pool(unit,4,'unit');await browserStage();await report(route);
+ await pool(compile,6,'compile');await pool(unit,4,'unit');if(process.env.MM530_PHASE4_ONLY==='1'){for(const t of results)flag(t,'browser_source','NOT_RUN','Phase 5 functional browser validation intentionally not started before Phase 4 gate')}else await browserStage();await report(route);
  process.exitCode=globalErrors.length||results.some(t=>Object.values(t.checks).some(x=>x.state!=='PASS'))?1:0;
 }
 main().catch(async e=>{globalErrors.push('Fatal: '+err(e));try{await report({fatal:true})}catch{};console.error(e);process.exitCode=1});
