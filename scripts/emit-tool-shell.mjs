@@ -30,3 +30,7 @@ for (const route of nativeShellRoutes) {
 }
 
 console.log("Emitted root SPA compatibility shells for /tools and native React routes.");
+
+// Build the 300 static browser-local SEO tools after the root SPA shell exists.
+await import("./client-tools/build.mjs");
+await import("./client-tools/verify.mjs");

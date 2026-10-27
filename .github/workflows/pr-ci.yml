@@ -137,13 +137,13 @@ jobs:
           npm run build
           node scripts/mm530/phase9-verify.mjs
 
-      - name: Client SEO tools: uniqueness, sitemap and category smoke
+      - name: "Client SEO tools: uniqueness, sitemap and category smoke"
         if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true'
         run: |
           set -euo pipefail
-          npm run client-tools:lint
-          npm run client-tools:verify
-          npm run client-tools:smoke
+          node scripts/client-tools/lint.mjs
+          node scripts/client-tools/verify.mjs
+          node scripts/client-tools/smoke.mjs
 
       - name: Preserve MM530 Phase 9 measured evidence
         if: always() && (steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true')
