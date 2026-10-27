@@ -311,7 +311,20 @@ jobs:
         id: fleet
         continue-on-error: true
         run: MM530_PHASE4_ONLY=1 node scripts/mm530/fleet-qa.mjs
-      - name: Enforce Phase 4 authoritative unit gate\n        id: phase4\n        if: always()\n        continue-on-error: true\n        run: node scripts/mm530/phase4-unit-gate.mjs\n      - name: Preserve Phase 4 unit evidence\n        if: always()\n        uses: actions/upload-artifact@v4\n        with:\n          name: mm530-phase4-unit\n          path: reports/mm530-phase4/\n          if-no-files-found: error\n          retention-days: 30\n      - name: Close Phase 1 with no-regression baseline
+      - name: Enforce Phase 4 authoritative unit gate
+        id: phase4
+        if: always()
+        continue-on-error: true
+        run: node scripts/mm530/phase4-unit-gate.mjs
+      - name: Preserve Phase 4 unit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-phase4-unit
+          path: reports/mm530-phase4/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Close Phase 1 with no-regression baseline
         if: always()
         run: node scripts/mm530/phase1-regression-gate.mjs
       - name: Verify Phase 2 canonical inventory logic
@@ -358,7 +371,12 @@ jobs:
         run: |
           echo 'Phase 2 inventory has unresolved identity/source gate failures. Review the preserved inventory artifact.'
           exit 1
-      - name: Surface Phase 4 unit failure after artifacts\n        if: steps.phase4.outcome != 'success'\n        run: |\n          echo 'Phase 4 authoritative unit gate has unresolved failures or NOT_RUN suites. Review mm530-phase4-unit.'\n          exit 1\n      - name: Surface fleet failure after artifacts
+      - name: Surface Phase 4 unit failure after artifacts
+        if: steps.phase4.outcome != 'success'
+        run: |
+          echo 'Phase 4 authoritative unit gate has unresolved failures or NOT_RUN suites. Review mm530-phase4-unit.'
+          exit 1
+      - name: Surface fleet failure after artifacts
         if: steps.fleet.outcome != 'success'
         run: |
           echo 'The complete repair shortlist was uploaded. Hold merge until every required gate passes.'
