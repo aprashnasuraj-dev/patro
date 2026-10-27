@@ -53,14 +53,30 @@ assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module
 
 const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;
 const editorialSignals=[
- ["how_to",/how to (?:use|use it|use this tool|use the tool|works)/i],
- ["worked_example",/worked example|example workflow/i],
+ ["how_to",/how to use|step[- ]by[- ]step|instructions?/i],
+ ["worked_example",/(?:worked|reproducible) example|example workflow/i],
  ["assumptions",/assumptions?|inputs and assumptions/i],
- ["limitations",/limitations?|supported cases and exclusions/i],
- ["privacy_safety",/privacy and safety|privacy|safety/i],
- ["references",/references|specifications and primary references/i],
- ["faq",/frequently asked|common questions|faq/i]
+ ["limitations",/limitations?|supported cases and exclusions|what .* cannot .* tell/i],
+ ["privacy_safety",/privacy|security|safety/i],
+ ["references",/references?|sources?|specifications?/i],
+ ["faq",/frequently asked|common questions|\bfaq\b/i]
 ];
+function editorialSourceBlocks(html){
+ return [...String(html).matchAll(/<(section|article)\b[^>]*>[\s\S]*?<\/\1>/gi)].map(x=>x[0]).filter(block=>{
+  const opening=block.match(/^<[^>]+>/)?.[0]?.toLowerCase()||"";
+  const docsLike=/(?:guide|reading|docs|documentation|info|notes|evidence|help|learn|reference|faq)/i.test(opening);
+  const workspaceLike=/(?:workbench|workspace|results?|controls?|input-panel|output-panel|tool(?:\s|$)|editor|preview)/i.test(opening);
+  if(workspaceLike&&!docsLike)return false;
+  return visible(block).length>=24&&/<h[23]\b/i.test(block);
+ }).join("\n");
+}
+function headingText(html){
+ return [...String(html).matchAll(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>/gi)].map(x=>visible(x[1])).join(" ");
+}
+function signalSet(html){
+ const headings=headingText(html);
+ return new Set(editorialSignals.filter(([,re])=>re.test(headings)).map(([name])=>name));
+}
 for(const tool of registry){
  const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
@@ -98,14 +114,13 @@ for(const tool of registry){
  assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
  const rawReferenceLabels=[...runtimeHtml.matchAll(/<a\b[^>]*>\s*(https?:\/\/[^<]+)<\/a>/gi)];
  assert(rawReferenceLabels.length===0,"RAW_REFERENCE_LABEL",tool.id+": "+rawReferenceLabels.length+" raw URL labels");
- if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
- if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
- const sourceVisible=visible(sourceHtml),canonicalVisible=visible(leafHtml);
-
- for(const [signal,re] of editorialSignals){
-  if(re.test(sourceVisible)){
+ const sourceEditorial=editorialSourceBlocks(sourceHtml),sourceSignals=signalSet(sourceEditorial),canonicalSignals=signalSet(leafHtml);
+ if(sourceSignals.has("references")){assert(signalSet(runtimeHtml).has("references"),"REFERENCES_LOST",tool.id);referenceRetention++}
+ if(sourceSignals.has("limitations")){assert(signalSet(runtimeHtml).has("limitations"),"LIMITATIONS_LOST",tool.id);limitationRetention++}
+ for(const [signal] of editorialSignals){
+  if(sourceSignals.has(signal)){
    editorialSignalsExpected++;
-   const kept=re.test(canonicalVisible);
+   const kept=canonicalSignals.has(signal);
    if(kept){editorialSignalsRetained++;retainedSignals.push(signal)}
    else assert(false,"EDITORIAL_SIGNAL_LOST",tool.id+": "+signal);
   }
