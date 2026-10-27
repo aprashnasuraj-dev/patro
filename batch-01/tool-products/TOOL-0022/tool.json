@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "GitHub Actions to GitLab CI Converter — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Produce a GitLab CI draft for a strict subset of GitHub Actions jobs with explicit unsupported-feature findings. Runs locally in your browser. Review limitati",
+    "meta_description": "Produce a GitLab CI draft for a strict subset of GitHub Actions jobs with explicit unsupported-feature findings. Runs locally in your browser.",
     "h1": "Pipeline migration map: GitHub Actions to GitLab CI Converter",
     "robots": "noindex",
     "canonical": null,

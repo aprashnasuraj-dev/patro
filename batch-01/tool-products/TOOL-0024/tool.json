@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "Dockerfile Linter and Layer Cache Advisor — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Review Dockerfile directives for common cache inefficiencies and safety concerns with line-specific citations. Runs locally in your browser. Review limitation",
+    "meta_description": "Review Dockerfile directives for common cache inefficiencies and safety concerns with line-specific citations. Runs locally in your browser.",
     "h1": "Layer risk review: Dockerfile Linter and Layer Cache Advisor",
     "robots": "noindex",
     "canonical": null,
