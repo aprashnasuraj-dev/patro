@@ -1,0 +1,67 @@
+{
+  "schema_version": "MM530_PHASE4_BASELINE_V1",
+  "state": "IN_PROGRESS",
+  "source_commit": "22ac8f3632cddfe2d325a74f0af234a19975aedd",
+  "source_pr": 185,
+  "observed_ci": {
+    "run_id": 40444337006,
+    "run_url": "https://github.com/aprashnasuraj-dev/patro/actions/runs/40444337006",
+    "aggregate": {
+      "tested": 530,
+      "compile": {
+        "PASS": 527,
+        "FAIL": 3
+      },
+      "unit": {
+        "PASS": 45,
+        "FAIL": 5,
+        "NOT_RUN": 480
+      },
+      "browser_source": {
+        "PASS": 449,
+        "FAIL": 81
+      },
+      "integration": {
+        "BLOCKED": 530
+      },
+      "failed_tools_union": 89
+    },
+    "existing_patro_tool_tests": {
+      "status": "FAIL",
+      "test_files": {
+        "failed": 16,
+        "passed": 162,
+        "skipped": 39
+      },
+      "assertions": {
+        "failed": 13,
+        "passed": 689,
+        "todo": 396,
+        "total": 1098
+      },
+      "observed_failure_clusters": [
+        "missing yaml package import in TOOL-0003/0010/0018/0022/0023",
+        "TOOL-0024 undefined stages variable",
+        "TOOL-0004/0459 invalid-input expectation mismatches",
+        "TOOL-0463/0465 fixture or validation mismatch",
+        "TOOL-0476 grouping formatting mismatch",
+        "TOOL-0483 RangeError on maximumFractionDigits",
+        "TOOL-0488 validation-copy mismatch",
+        "TOOL-0491 missing expected result",
+        "TOOL-0509 invalid shared leave test input"
+      ]
+    }
+  },
+  "verification": {
+    "unit_fleet_complete": false,
+    "physical_device_tests_executed": false,
+    "phase4_gate": "BLOCKED",
+    "phase5_to_phase10": "NOT_STARTED"
+  },
+  "notes": [
+    "Counts are direct CI observations, not current reruns or repaired outcomes.",
+    "Existing Patro tool tests are a distinct suite from MM530 aggregate unit results.",
+    "No tests were weakened or given false PASS states.",
+    "Phase 1 and 2 prior evidence remains as-is."
+  ]
+}
