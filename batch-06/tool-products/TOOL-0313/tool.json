@@ -17,9 +17,15 @@
     "worker": false
   },
   "limits": {
-    "notes": "Tool-specific bounds and unsupported cases are enforced in core.ts."
+    "notes": "Validated project-core conversion is exposed for BS 1970–2093; impossible dates and out-of-range years are rejected."
   },
-  "dependencies": [],
+  "dependencies": [
+    {
+      "kind": "internal",
+      "module": "packages/core/src/bsDate.ts",
+      "purpose": "Validated BS month-length conversion and trust metadata"
+    }
+  ],
   "seo": {
     "title": "Bikram Sambat (Nepali) to AD Date Converter — Private Browser Tool",
     "meta_description": "Standalone adapter for the project’s validated Bikram Sambat civil-date dataset, with trust-tier metadata and no fabricated arithmetic approximation.",
@@ -30,7 +36,6 @@
     "sitemap": false
   },
   "qa_status": "TEST_PENDING",
-  "source_status": "BLOCKED_DATA_DEPENDENCY",
-  "publication_gate": "LOCKED",
-  "blocker": "The standalone package does not yet contain the existing validated 77,070-day BS↔AD month/day dataset. Reusing that exact local dataset is required; an approximate “+56/57 years” conversion would be misleading."
+  "source_status": "READY_FOR_QA",
+  "publication_gate": "LOCKED"
 }
