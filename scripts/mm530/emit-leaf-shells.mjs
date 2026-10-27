@@ -16,19 +16,19 @@ function replaceMeta(html,attr,key,value){
  const tag=`<meta ${attr}="${key}" content="${esc(value)}">`;
  return re.test(html)?html.replace(re,tag):html.replace("</head>",tag+"</head>");
 }
-function visible(html){return String(html).replace(/<script\\b[\\s\\S]*?<\\/script>/gi," ").replace(/<style\\b[\\s\\S]*?<\\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/&(?:nbsp|#160);/gi," ").replace(/&(?:amp|#38);/gi,"&").replace(/\\s+/g," ").trim()}
+function visible(html){return String(html).replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/&(?:nbsp|#160);/gi," ").replace(/&(?:amp|#38);/gi,"&").replace(/\s+/g," ").trim()}
 function editorialFromRuntime(html){
- const blocks=[...String(html).matchAll(/<(section|article)\\b[^>]*>[\\s\\S]*?<\\/\\1>/gi)].map(x=>x[0]);
+ const blocks=[...String(html).matchAll(/<(section|article)\b[^>]*>[\s\S]*?<\/\1>/gi)].map(x=>x[0]);
  const editorial=blocks.filter(block=>{
   const text=visible(block);
-  if(text.length<90||!/<h[23]\\b/i.test(block))return false;
-  if(/<(?:form|input|textarea|select|button|canvas|video|audio)\\b/i.test(block))return false;
-  if(/\\b(?:workbench|workspace|calculator|converter|generator)\\b/i.test((block.match(/^<[^>]+>/)?.[0]||""))&&text.length<450)return false;
+  if(text.length<90||!/<h[23]\b/i.test(block))return false;
+  if(/<(?:form|input|textarea|select|button|canvas|video|audio)\b/i.test(block))return false;
+  if(/\b(?:workbench|workspace|calculator|converter|generator)\b/i.test((block.match(/^<[^>]+>/)?.[0]||""))&&text.length<450)return false;
   return true;
  }).map(block=>block
-   .replace(/<script\\b[\\s\\S]*?<\\/script>/gi,"")
-   .replace(/<style\\b[\\s\\S]*?<\\/style>/gi,"")
-   .replace(/\\s(?:data-tool|data-export-[\\w-]+)=["'][^"']*["']/gi,"")
+   .replace(/<script\b[\s\S]*?<\/script>/gi,"")
+   .replace(/<style\b[\s\S]*?<\/style>/gi,"")
+   .replace(/\s(?:data-tool|data-export-[\w-]+)=["'][^"']*["']/gi,"")
  ).join("\n");
  return editorial;
 }
@@ -63,14 +63,14 @@ const shellCss=`<style data-mm530-static-shell>
 
 function stripSpaBoot(html){
  return html
-  .replace(/<link\\b[^>]*rel=["']modulepreload["'][^>]*>\\s*/gi,"")
-  .replace(/<script\\b[^>]*type=["']module["'][^>]*src=["'][^"']+["'][^>]*>\\s*<\\/script>\\s*/gi,"")
-  .replace(/<script\\b[^>]*src=["'][^"']*\\/assets\\/[^"']+\\.js["'][^>]*>\\s*<\\/script>\\s*/gi,"");
+  .replace(/<link\b[^>]*rel=["']modulepreload["'][^>]*>\s*/gi,"")
+  .replace(/<script\b[^>]*type=["']module["'][^>]*src=["'][^"']+["'][^>]*>\s*<\/script>\s*/gi,"")
+  .replace(/<script\b[^>]*src=["'][^"']*\/assets\/[^"']+\.js["'][^>]*>\s*<\/script>\s*/gi,"");
 }
 function leafHtml(tool,row,runtimeHtml){
  const canonical=origin+tool.route,description=row.description||tool.summary||`Use ${tool.title} directly in your browser.`;
- let html=stripSpaBoot(base).replace(/<html\\b[^>]*lang=["'][^"']*["']/i,'<html lang="en"');
- html=html.replace(/<title>[\\s\\S]*?<\\/title>/i,`<title>${esc(tool.title)} | Aafnai Patro</title>`);
+ let html=stripSpaBoot(base).replace(/<html\b[^>]*lang=["'][^"']*["']/i,'<html lang="en"');
+ html=html.replace(/<title>[\s\S]*?<\/title>/i,`<title>${esc(tool.title)} | Aafnai Patro</title>`);
  html=replaceMeta(html,"name","description",description);
  html=replaceMeta(html,"name","robots","index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
  html=replaceMeta(html,"name","googlebot","index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
@@ -79,8 +79,8 @@ function leafHtml(tool,row,runtimeHtml){
  html=replaceMeta(html,"property","og:url",canonical);
  html=replaceMeta(html,"name","twitter:title",tool.title+" | Aafnai Patro");
  html=replaceMeta(html,"name","twitter:description",description);
- html=html.replace(/<link\\b[^>]*rel=["']canonical["'][^>]*>/i,`<link rel="canonical" href="${canonical}">`);
- html=html.replace(/<link\\b[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>/gi,"");
+ html=html.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/i,`<link rel="canonical" href="${canonical}">`);
+ html=html.replace(/<link\b[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>/gi,"");
  const appId=canonical+"#tool";
  const data={"@context":"https://schema.org","@graph":[
   {"@type":"WebPage","@id":canonical+"#page","url":canonical,"name":tool.title,"description":description,"mainEntity":{"@id":appId},"breadcrumb":{"@id":canonical+"#breadcrumb"}},
@@ -105,7 +105,7 @@ const urls=[],editorialStats=[];
 for(const tool of registry){
  const row=runtimeById.get(tool.id);if(!row)throw new Error(`Missing runtime SEO for ${tool.id}`);
  const runtimePath=path.join(dist,"_mm530",tool.id,"page.html"),runtimeHtml=await fs.readFile(runtimePath,"utf8");
- const target=path.join(dist,tool.route.replace(/^\\//,"")+".html");
+ const target=path.join(dist,tool.route.replace(/^\//,"")+".html");
  const leaf=leafHtml(tool,row,runtimeHtml);
  await fs.mkdir(path.dirname(target),{recursive:true});
  await fs.writeFile(target,leaf);
