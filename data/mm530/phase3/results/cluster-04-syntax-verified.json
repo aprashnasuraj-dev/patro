@@ -1,0 +1,26 @@
+{
+  "cluster": "compile:remaining-concrete-syntax",
+  "baselineConcreteFailures": 12,
+  "verifiedConcreteFailures": 0,
+  "fleetCompileFailuresBefore": 15,
+  "fleetCompileFailuresAfter": 3,
+  "documentedBlockers": [
+    {
+      "id": "TOOL-0324",
+      "blocker": "Missing exact EFF 7,776-word generated asset",
+      "reason": "Source explicitly requires the exact EFF long wordlist; substituting/approximating data is prohibited. Requires attributed, byte-locked build asset and licensing/data review."
+    },
+    {
+      "id": "TOOL-0370",
+      "blocker": "Missing self-hosted xlsx.bundle.js",
+      "reason": "Source expects a build-time vendored spreadsheet parser. Requires exact pinned parser/version/license and local bundle generation before compilation can pass."
+    },
+    {
+      "id": "TOOL-0371",
+      "blocker": "Missing self-hosted mathjax-tex-svg.bundle.js",
+      "reason": "Source expects a build-time self-hosted MathJax SVG component. Requires exact pinned MathJax component/version/license and generated local bundle."
+    }
+  ],
+  "verifiedRunId": 40444108124,
+  "status": "PASS_WITH_DOCUMENTED_BLOCKERS"
+}
