@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0338 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {analyze} from '../src/core';describe('TOOL-0338',()=>{it('surfaces multiple suspicious URL traits without declaring malware',()=>{const r=analyze('http://user:pass@127.0.0.1:8080/a');const h=r.hints.join(' ');expect(h).toMatch(/HTTP/);expect(h).toMatch(/userinfo/);expect(h).toMatch(/literal IP/);expect(h).toMatch(/8080/)});it('classifies structured non-URL QR text',()=>expect(analyze('WIFI:T:WPA;S:test;P:secret;;').hints.join(' ')).toMatch(/structured/));it('caps payload length',()=>expect(()=>analyze('x'.repeat(20001))).toThrow())});

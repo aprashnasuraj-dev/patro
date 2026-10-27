@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0336 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {generate,decode} from '../src/core';describe('TOOL-0336',()=>{it('generates canonical UUIDv4 identifiers',()=>{const xs=generate('v4',2);expect(xs).toHaveLength(2);for(const x of xs)expect(x).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/)});it('decodes a generated UUIDv7 timestamp',()=>{const x=generate('v7',1)[0],r=decode(x);expect(r.format).toBe('UUIDv7');expect(r.version).toBe(7);expect(Number(r.timestampMs)).toBeGreaterThan(0)});it('rejects noncanonical input',()=>expect(()=>decode('abc')).toThrow())});

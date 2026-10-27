@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0337 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {zipSync,strToU8,unzipSync,strFromU8} from 'fflate';import {scrubBytes} from '../src/core';describe('TOOL-0337',()=>{it('scrubs common OOXML core-property values inside a bounded ZIP',()=>{const xml='<cp:coreProperties><dc:creator>Alice</dc:creator><cp:lastModifiedBy>Bob</cp:lastModifiedBy></cp:coreProperties>';const zip=zipSync({'docProps/core.xml':strToU8(xml),'word/document.xml':strToU8('<w:document/>')});const r=scrubBytes(zip);expect(r.changed).toContain('docProps/core.xml');expect(r.preflight.entries).toBe(2);const out=strFromU8(unzipSync(r.bytes)['docProps/core.xml']);expect(out).not.toContain('Alice');expect(out).not.toContain('Bob')});it('rejects bytes that are not a ZIP package',()=>expect(()=>scrubBytes(new Uint8Array([1,2,3]))).toThrow(/central-directory/))});

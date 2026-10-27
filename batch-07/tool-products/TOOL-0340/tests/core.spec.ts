@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0340 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encodings and unsupported cases');
-  it.todo('verifies browser-local behavior and deterministic exports where applicable');
-  it.todo('checks accessibility, media capability fallbacks and security-sensitive edge cases');
-});
+import {describe,it,expect} from 'vitest';import {sri,snippet} from '../src/core';describe('TOOL-0340',()=>{it('matches the SHA-256 SRI hash for abc',async()=>{const r=await sri(new TextEncoder().encode('abc'),['SHA-256']);expect(r).toEqual(['sha256-ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=']);expect(snippet('https://example.test/app.js',r,'script')).toContain('integrity="'+r[0]+'"')});it('rejects unsupported digest algorithms and URL schemes',async()=>{await expect(sri(new Uint8Array([1]),['MD5'])).rejects.toThrow();expect(()=>snippet('ftp://example.test/x',[],'script')).toThrow()})});

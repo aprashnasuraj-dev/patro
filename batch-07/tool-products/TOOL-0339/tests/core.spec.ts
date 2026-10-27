@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0339 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {defang,refang} from '../src/core';describe('TOOL-0339',()=>{it('defangs and refangs a URL host and port',()=>{const src='https://example.com:8443/a?x=1';const d=defang(src);expect(d).toBe('hxxps://example[.]com[:]8443/a?x=1');expect(refang(d)).toBe(src)});it('defangs a bare IPv4 indicator',()=>expect(defang('192.0.2.1')).toBe('192[.]0[.]2[.]1'));it('caps input',()=>expect(()=>defang('x'.repeat(10001))).toThrow())});
