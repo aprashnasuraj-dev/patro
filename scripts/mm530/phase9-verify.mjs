@@ -74,28 +74,28 @@ for(const tool of registry){
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
  assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
  const leafVisible=visible(leafHtml),leafStat=await fs.stat(leafPath);
- const frameMatches=[...leafHtml.matchAll(/<iframe\\b[^>]*class=["'][^"']*mm530-frame[^"']*["'][^>]*>/gi)];
+ const frameMatches=[...leafHtml.matchAll(/<iframe\b[^>]*class=["'][^"']*mm530-frame[^"']*["'][^>]*>/gi)];
  assert(frameMatches.length===1,"CRAWLER_DIRECT_RUNTIME",tool.id+": expected exactly one tool iframe, found "+frameMatches.length);
  assert(frameMatches[0]?.[0]?.includes('/_mm530/'+tool.id+'/page.html'),"CRAWLER_RUNTIME_TARGET",tool.id);
- const outerModuleScripts=[...leafHtml.matchAll(/<script\\b[^>]*type=["']module["'][^>]*src=/gi)];
+ const outerModuleScripts=[...leafHtml.matchAll(/<script\b[^>]*type=["']module["'][^>]*src=/gi)];
  assert(outerModuleScripts.length===0,"CRAWLER_SPA_BOOT",tool.id+": canonical leaf still requires outer SPA JavaScript");
  assert(leafVisible.length>=220,"CRAWLER_VISIBLE_CONTENT_THIN",tool.id+": "+leafVisible.length+" visible characters");
  assert(leafStat.size<180*1024,"CRAWLER_HTML_BUDGET",tool.id+": "+leafStat.size+" bytes");
  assert(!internal.test(leafVisible),"CRAWLER_INTERNAL_COPY",tool.id);
- assert(!/research\\/sources\\.json|examples\\/fixtures\\.json/i.test(leafVisible),"CRAWLER_INTERNAL_REFERENCE",tool.id);
- const relatedStatic=[...leafHtml.matchAll(/<a\\b[^>]*href=["']([^"']+)["'][^>]*>/gi)].map(x=>x[1]).filter(href=>registry.some(x=>x.route===href));
+ assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(leafVisible),"CRAWLER_INTERNAL_REFERENCE",tool.id);
+ const relatedStatic=[...leafHtml.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)].map(x=>x[1]).filter(href=>registry.some(x=>x.route===href));
  assert(relatedStatic.length>=Math.min(3,registry.filter(x=>x.category===tool.category&&x.id!==tool.id).length),"CRAWLER_RELATED_LINKS",tool.id+": "+relatedStatic.length);
  const hasEditorial=leafHtml.includes('data-mm530-editorial="1"');
  if(hasEditorial)editorialLeaves++;
- const runtimeEditorialHeadings=(runtimeHtml.match(/<h[23]\\b/gi)||[]).length;
+ const runtimeEditorialHeadings=(runtimeHtml.match(/<h[23]\b/gi)||[]).length;
  if(runtimeEditorialHeadings>=2)assert(hasEditorial,"CRAWLER_EDITORIAL_LOST",tool.id+": runtime has "+runtimeEditorialHeadings+" editorial headings");
- assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
+ assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
  crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length,retainedEditorialSignals:retainedSignals});
  const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
- const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\\b[^>]*src=["']\\.\\/tool\\.js["'][^>]*><\\/script>/gi)];
+ const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\b[^>]*src=["']\.\/tool\.js["'][^>]*><\/script>/gi)];
  assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
- assert(!/research\\/sources\\.json|examples\\/fixtures\\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
- const rawReferenceLabels=[...runtimeHtml.matchAll(/<a\\b[^>]*>\\s*(https?:\\/\\/[^<]+)<\\/a>/gi)];
+ assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
+ const rawReferenceLabels=[...runtimeHtml.matchAll(/<a\b[^>]*>\s*(https?:\/\/[^<]+)<\/a>/gi)];
  assert(rawReferenceLabels.length===0,"RAW_REFERENCE_LABEL",tool.id+": "+rawReferenceLabels.length+" raw URL labels");
  if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
  if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
