@@ -157,7 +157,7 @@ for(const tool of registry){
   await fs.mkdir(dst,{recursive:true});await copyTree(srcDir,dst);
   // Explicitly bootstrap mount-export modules; side-effect modules run via import.
   const uiSource=await fs.readFile(entry,"utf8");
-  const mountExport=/\\bexport\\s+(?:default\\s+)?(?:function\\s+)?mount\\s*\\(|\\bexport\\s+default\\s+mount\\b/.test(uiSource);
+  const mountExport=new RegExp("\\bexport\\s+(?:default\\s+)?(?:function\\s+)?mount\\s*\\(|\\bexport\\s+default\\s+mount\\b").test(uiSource);
   const bootstrap=path.join(dst,".mm530-bootstrap.mjs");
   const modulePath=JSON.stringify(entry);
   const bootSource=mountExport
@@ -180,11 +180,14 @@ root.dataset.toolMounted="true";`
   let html=sanitizeProductionHtml(original);
   html=await presentReferences(html,srcDir);
   html=injectSeo(html,tool,title,description);
-  // Replace source UI scripts when present and append runtime script when absent.
-  html=html.replace(/<script\\b[^>]*\\bsrc=["'][^"']*(?:src\\/|dist\\/)?ui\\.(?:ts|tsx|js|mjs)["'][^>]*>\\s*<\\/script>/gi,"");
-  if(!/<\\/body>/i.test(html))throw new Error("Runtime page lacks a closing body");
-  html=html.replace(/<\\/body>/i,'<script type="module" src="./tool.js"></script></body>');
-  if((html.match(/<script type="module" src="\\.\\/tool\\.js"><\\/script>/g)||[]).length!==1)throw new Error("Runtime script must be present exactly once");
+  // Replace source UI scripts when present and append the compiled runtime exactly once.
+  const sourceUiScript=new RegExp('<script\\b[^>]*\\bsrc=["\\\'][^"\\\']*(?:src/|dist/)?ui\\.(?:ts|tsx|js|mjs)["\\\'][^>]*>\\s*</script>','gi');
+  html=html.replace(sourceUiScript,"");
+  const closeBody=new RegExp("</body>","i");
+  if(!closeBody.test(html))throw new Error("Runtime page lacks a closing body");
+  html=html.replace(closeBody,'<script type="module" src="./tool.js"></script></body>');
+  const runtimeTag='<script type="module" src="./tool.js"></script>';
+  if(html.split(runtimeTag).length-1!==1)throw new Error("Runtime script must be present exactly once");
   if(await exists(path.join(dst,"tool.css"))&&!html.includes("./tool.css"))html=html.replace(/<\/head>/i,'<link rel="stylesheet" href="./tool.css"></head>');
   const visible=visibleText(html);if(INTERNAL_VISIBLE.test(visible))throw new Error("internal QA/developer wording remains in production-visible copy");
   await fs.writeFile(path.join(dst,"page.html"),html);
