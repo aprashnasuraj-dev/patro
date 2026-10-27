@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "package-lock.json Duplicate Dependency Finder — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Report package versions appearing at multiple package-lock v2/v3 locations and expose path-level evidence. Runs locally in your browser. Review limitations an",
+    "meta_description": "Report package versions appearing at multiple package-lock v2/v3 locations and expose path-level evidence. Runs locally in your browser.",
     "h1": "Dependency version atlas: package-lock.json Duplicate Dependency Finder",
     "robots": "noindex",
     "canonical": null,
