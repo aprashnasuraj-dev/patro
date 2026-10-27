@@ -18,8 +18,8 @@ function replaceMeta(html,attr,key,value){
 }
 function leafHtml(tool,row){
  const canonical=origin+tool.route,description=row.description||tool.summary||`Use ${tool.title} directly in your browser.`;
- let html=base.replace(/<html\\b[^>]*lang=["'][^"']*["']/i,'<html lang="en"');
- html=html.replace(/<title>[\\s\\S]*?<\\/title>/i,`<title>${esc(tool.title)} | Aafnai Patro</title>`);
+ let html=base.replace(/<html\b[^>]*lang=["'][^"']*["']/i,'<html lang="en"');
+ html=html.replace(/<title>[\s\S]*?<\/title>/i,`<title>${esc(tool.title)} | Aafnai Patro</title>`);
  html=replaceMeta(html,"name","description",description);
  html=replaceMeta(html,"name","robots","index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
  html=replaceMeta(html,"name","googlebot","index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
@@ -28,8 +28,8 @@ function leafHtml(tool,row){
  html=replaceMeta(html,"property","og:url",canonical);
  html=replaceMeta(html,"name","twitter:title",tool.title+" | Aafnai Patro");
  html=replaceMeta(html,"name","twitter:description",description);
- html=html.replace(/<link\\b[^>]*rel=["']canonical["'][^>]*>/i,`<link rel="canonical" href="${canonical}">`);
- html=html.replace(/<link\\b[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>/gi,"");
+ html=html.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/i,`<link rel="canonical" href="${canonical}">`);
+ html=html.replace(/<link\b[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>/gi,"");
  const data=[
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
    {"@type":"ListItem","position":1,"name":"Advanced tools","item":origin+"/advancetools/"},
@@ -48,7 +48,7 @@ function leafHtml(tool,row){
 const urls=[];
 for(const tool of registry){
  const row=runtimeById.get(tool.id);if(!row)throw new Error(`Missing runtime SEO for ${tool.id}`);
- const target=path.join(dist,tool.route.replace(/^\\//,""),"index.html");
+ const target=path.join(dist,tool.route.replace(/^\//,""),"index.html");
  await fs.mkdir(path.dirname(target),{recursive:true});
  await fs.writeFile(target,leafHtml(tool,row));
  urls.push(origin+tool.route);
