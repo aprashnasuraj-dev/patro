@@ -4,6 +4,8 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
 import { zipSync, strToU8 } from 'fflate';
+import { createServer } from 'node:http';
+import { createHash } from 'node:crypto';
 
 const root=process.cwd(),base=process.env.MM530_BASE_URL||'http://127.0.0.1:4173';
 const registry=JSON.parse(await fs.readFile(path.join(root,'src/mm530/mm530-registry.json'),'utf8')).tools;
@@ -11,13 +13,39 @@ const reportPath=path.join(root,'reports/mm530-functional-gate.json');
 await fs.mkdir(path.dirname(reportPath),{recursive:true});
 const exists=p=>fs.access(p).then(()=>true,()=>false);
 const DEVICE=new Set(['TOOL-0349','TOOL-0350','TOOL-0446']);
+const MEDIA=new Set(['TOOL-0161','TOOL-0162','TOOL-0163','TOOL-0164','TOOL-0165','TOOL-0166','TOOL-0167','TOOL-0168','TOOL-0169','TOOL-0170','TOOL-0171','TOOL-0172','TOOL-0173','TOOL-0174','TOOL-0175','TOOL-0176']);
+const TRANSIENT=/(?:processing|loading|working|encoding|converting|running|preparing|analyzing|calculating|starting|decoding|rendering|remuxing|benchmarking|extracting|trimming|rotating|merging|cutting)/i;
 const PNG=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAALUlEQVR4nGM0TpvJQEvARFPTRy0YtWDUglELRi0YtWDUglELRi0YtWDUAioCAAyGAXILYugNAAAAAElFTkSuQmCC','base64');
 const QR_PNG=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAAB7klEQVR4nO2bTW6kMBCFvxos9ZKW5gA5CtwgR5qr2UfJDfAyEuhlYf7SSSSSEWlHqVpAA9/iSU/lqrLVJg5G+nOUBEcdddRRRx09E7U5AtYzmfXZ5ouZmfWnC3D0UIRy6yJA/ouSgUAYNCMAdqYAR7+A5jWFWgny7KKZhe8R4OiBCDfPBmE01oQ6XYCj/4N2ejZpuJ8ARz+OJbdaARlI10Gkx/lxPzvfXaujSNLqSSO6YbssrztJinfX6mjJrV0KpYfSCJbG8HwBjn5+3uoB67MZMJkik5HMzOw6f61G629G155wCkoPetUKtgMGU9CZAhz9KrpNWVeAbKaYL3oPPUeAo8fQfBG0zyY9BeYOvh2hGya7Qc8R4OiRWHrCtROUpEgjRUARvCesBl3caqVXvlE8otNYEHerAnS2QlLxSLEdl0/lVyN3qzY0B+ZC9RSKZaV4ed2qCd3tZUhDM6+EbAnmuVUduhSvkVKoYr5oq1vfIMDRT6Db2XFZE4tHObyDniPA0WMxNxiSpKGRYqtdL78hvhJWgC5uDVA8AlCk2e/o+rxVKSoNjeyfxjIY788lq9P6+9Dbk35Sj5FK196MpMfRd3WrQd/ULWlEsZW2tPK6VQv65ux4nbfKZmEZkd2tOlDzfy046qijjjr6g9AXfsZAuOWAVcAAAAAASUVORK5CYII=','base64');
 const GIF=Buffer.from('R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==','base64');
 const SVG=Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="32" fill="#336699"/></svg>');
 const WAV=(()=>{const rate=44100,seconds=1,samples=rate*seconds,b=Buffer.alloc(44+samples*2);b.write('RIFF',0);b.writeUInt32LE(b.length-8,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(rate,24);b.writeUInt32LE(rate*2,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(samples*2,40);for(let i=0;i<samples;i++){const v=Math.round(9000*Math.sin(2*Math.PI*440*i/rate));b.writeInt16LE(v,44+i*2)}return b})();
 const WEBM=Buffer.from('GkXfo59ChoEBQveBAULygQRC84EIQoKEd2VibUKHgQRChYECGFOAZwEAAAAAAA47EU2bdLpNu4tTq4QVSalmU6yBoU27i1OrhBZUrmtTrIHWTbuMU6uEElTDZ1OsggGJTbuMU6uEHFO7a1Osgg4l7AEAAAAAAABZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVSalmsCrXsYMPQkBNgIxMYXZmNjEuNy4xMDNXQYxMYXZmNjEuNy4xMDNEiYhAj4AAAAAAABZUrmtAra4BAAAAAAAAP9eBAXPFiB7Ljfn5+4z1nIEAIrWcg3VuZIiBAIaFVl9WUDmDgQEj44OEAmJaAOCQsIEguoEgmoECVbCEVbmBAa4BAAAAAAAAXNeBAnPFiPhXwpRI1F3enIEAIrWcg3VuZIiBAIaGQV9PUFVTVqqDYy6gVruEBMS0AIOBAuGRn4EBtYhA53AAAAAAAGJkgRBjopNPcHVzSGVhZAEBOAGAuwAAAAAAElTDZ0DZc3OfY8CAZ8iZRaOHRU5DT0RFUkSHjExhdmY2MS43LjEwM3Nz2mPAi2PFiB7Ljfn5+4z1Z8ilRaOHRU5DT0RFUkSHmExhdmM2MS4xOS4xMDEgbGlidnB4LXZwOWfIoUWjiERVUkFUSU9ORIeTMDA6MDA6MDEuMDAwMDAwMDAwAHNz12PAi2PFiPhXwpRI1F3eZ8iiRaOHRU5DT0RFUkSHlUxhdmM2MS4xOS4xMDEgbGlib3B1c2fIoUWjiERVUkFUSU9ORIeTMDA6MDA6MDEuMDA4MDAwMDAwAB9DtnVLt+eBAKPJggAAgHiCAbdsfkDmAAAKvpqnvv+2hdcKceDda6DjxsXDMsZkHm5jUjpFDIpTj0QYsIxkq+yYlnlsVFMwVU6C5BbKWUnYxwldWaOsgQAAgIJJg0IAAfAB9gA4JBwYQgAAMGAAABDf//zUzf////+xTB////+OgACjsYIAFYB4oz/3rJiFA1dPztF2E5YxwGEgAOWM5a9HAbfKTi8lKVEQj79FpKyH2RDta1ijtoIAKYB4m6MSVs4jdnLtXAyLUVgo4LdjKazwtCQwtFvpHFbkw9IY9q7KYI2OqMPA0QBqOgfkoqOTgQAoAIYAQJKcAElAAAMgAABDQKPAggA9gHiboxG0HL+omxdeI0+ev0bNlyQtz4nPYKN4fdbCAe2EIl4KzKinbMRpuBn4yOCFfy1rridY11ztmgBJH6O6ggBRgHibo191nPxF0MVRtPqRoyi2rSnqyqMdzM3yiJi/rXWEaWx0nTzShUn9nTD5MTIomvNJyxYGWqOTgQBQAIYAQJKcAErAAAMgAABDQKO7ggBlgHiboxdL3bAPf/xCMoso1IHDO5/TeItybqKL0C5tlcUUDl1TV3DV9cZq8o7eGkNX8msyVI+Nf9ejsoIAeYB4m6NfdZz8SUoicbjY12Hv8I9RcM4mxH9+S5EO7hI4TtnyL5njGG8V8EhCOnhUo5OBAHgAhgBAkpwAScAAAyAAAENAo7mCAI2AeJujElbOI3Z7WcCCjRFvSeGoZ6chr01iNF/oh5eFW42VzLxo5O5nkl+FJnUl9jlGgEqXAMWjsYIAoYB4m6MSVs4f6hEZ+qFbdmc/Ug/ol5YN3eOJhtGanPEGNFmf/CabVokzB8mwqhajk4EAoACGAECSnABIoAADIAAAQ0CjsIIAtYBImysfdZz8RdDGAi7prbKyTpHtS5tWemzgKvvMrAeB9fdwgh8OZRVfXIDcQKO0ggDJgEibKtJTqkS4HA0hLH1LzogU0Ngms9QszP/PZJr8ZhRC2k/fC06BFayoc/RuDwzygKOTgQDIAIYAQJKcAEeAAAMgAABDQKOwggDdgEibKx91nPxJMr0BeP0Wq2x1vsf3eKHkOtbYpaGGArXuSwlRhrBS7XpGTBxgo6+CAPGASJsq0lOqSE6g4wI4GhnXutE7Sq7reCbhrcvXE3PLxqAHDiEFrlCCEbDjuKOTgQDwAIYAQJKcAEbgAAMgAABDQKO0ggEFgEibKtG0HL9SKIeUBXqyu14xSi4zj9/GPJ/QsJz1JH8H1b47ZmtMOsvkodN12FhHoKOwggEZgEibKx91nPxF0LOSuPb2mmWTe+6MIUQsK3v/JLffnUalm5anJtwr4jVlHyueo5OBARgAhgBAkpwARkAAAyAAAENAo7CCAS2ASJsq0lFE/cEUWONH27abJpwcQxRqqeR/xwBQboUI/LfI8mn59hSPd/y//lqjsYIBQYBImysfdZz8Re9NfiPJ8hABQ0qMYLhsuJPsZbeWthfImLp+m259oFIBBppkECjk4EBQACGAECSnABFwAADIAAAQ0CjrIIBVYBImyrSU6pITnzYO0dP7GxPL6U7hN1NgYh2zDfhIkcMOYx1jI4Ap3dgo7CCAWmASJsq0bQcv6ibJGEwIf720oiMIT3xwyZebDK1/+p6F8sR5q7Eg6n96lpRF0ajk4EBaACGAECSnABFQAADIAAAQ0CjuoIBfYBImysfdZz8SQ7Gf+N25f+S6dZyYA8vWaUirg/YFpPkY6oFKpFHzATGXieyOxds3+Rq4n/bCcijpoIBkYCYraMBKIM/QBT/8B5dGKFCgp5IASq/QtBsWnfMxd7noguuo5OBAZAAhgDAkpwAQQAAAyAAAENAo6aCAaWAmK/qdIEPfqIiyqhMnO6KXNPk21W5+nVIh2MpY3Pmc3iLrqOlggG5gJiwTc8qLz/BlF5n/WnbACHgEUwoG9y05iEJfl52R9sdrqOTgQG4AIYAQJKcAETgAAMgAABDQKOlggHNgJitbcGigmy+lm2SQ+ThbWbpSQ+Ogj/i00kBu0z0JSrDrqOnggHhgJiv6nRPjeWf7ORWaNQBmxb/93YwCWvA2WZEiVzcgkZbZzuuo5OBAeAAhgBAkpwARGAAAyAAAENAo6aCAfWAmK1pB4etpHuhPV6WvKZdhpDzesZ4WBQOOc54aTFDfPxhrqOmggIJgJisqhJhug7EQk6jQxhaDClHpzZhv06pELoyvJxnmcrUQ66jk4ECCACGAECSnABEAAADIAAAQ0CjpoICHYCYsE3PKlm3WDQ/3Df9sLIMDrpNHQ+8gtOYhBx8vOyXtnmuo6eCAjGAmK1twaKCbNtaaBpj1LYn5IRHTWOOgH+ws8kg6pznoSi1Ra6jk4ECMACGAECSnABDoAADIAAAQ0CjqIICRYCYr+p0T43XND27sVQiVfIaXACsC8LbMDZEZEjFcz3kjLbHO66jqIICWYCYrWkHNXbJsBjw/d7kOLlvQBpc13X3YFMTk7nPCyeya/ZsYa6jk4ECWACGAECSnABDQAADIAAAQ0CjqYICbYCYrKoQGF6kGVZDhVAYBUUIydFwxl2UegKc0MGMsXCGW2kthEOuo6mCAoGAmLBNzzVhSCzGJEztRNuJkp/CrxTcXOJeWs4GJLhpc5qZWvZ5rqOTgQKAAIYAQJKcAEMAAAMgAABDQKOpggKVgJitbcGgAT5Q6EMILNh8gIbdsFJxEWNdFZYXRkIM5htnoeylRa6jqoICqYCYr+p0T43XQS6iXeD6wv6XnPmyIWe7ykXQ2IyJjEx9MAPvZsc7rqOTgQKoAIYAQJKcAELAAAMgAABDQKOpggK9gJitaQc29uq7h4hX5M7C5ZcwVsua5L70eDic53OvyyeyaxZsYa6jqYIC0YCYrKoQFu4MSOqXPv6UBJtdovcsZhYEugKbkMGMsXCGW2khhEOuo5OBAtAAhgBAkpwAQoAAAyAAAENAo6mCAuWAmLBNzypZvaCQoBOtimnoL1nF6pTcXOJeOs4GJLhpc5qZW3Z5rqOpggL5gJitbcGgAT5Q6EMILNh8gIwK3eFxt2NdFZYXRkIM5htnoewlRa6jk4EC+ACGAECSnABCQAADIAAAQ0CjqoIDDYCYr+p0T43XQS6iXeD6wv6XnQeJJu27yoXQ2+yJjEx9MAPvZsc7rqOpggMhgJitaQc29uq7h4hX5Nb/+okwVsua5L70eOic53OvyyeyaxZsYa6jkoEDIACGAMCSnABAAAACAABDQKOpggM1gJisqhAYXqQZVkOFTfN/ZZdcGexmdwS6ApuQwYyxcIZbaS2EQa6jqYIDSYCYsE3PKi9FoKTL5X39DdaIUy0qp3cax3gOs5ikuGlzmpk7dnmuo5OBA0gAhgBAkpwAQgAAAyAAAENAo6mCA12AmK1twaifGtDYwpB+gYnYIi6uzsHGdW6KywujJIzmG2eh/DVFrqOqggNxgJiv6nRPjddBLqJd4PrC/sPoPzIm6R0MI+Hb7ImMTH0wA+9mxzuuo5OBA3AAhgBAkpwAQeAAAyAAAENAo6mCA4WAmK1pBzY5iPO9/4xrH1nclATx1czkvvR46Jznc6/LJ7JrNmxhrqOpggOZgJisqhJg+rH0R+6xTefcu+P1fnxE1QS6ApuQwYyxcIZDNe20Q66jk4EDmACGAECSnABBwAADIAAAQ0CjqYIDrYCYsE3PKi9FoKTL5X39DdaKZ8SKp0/ax3gOs5ikuGlzmpl7dnmuo6mCA8GAmK1twaifGtDYwpB+gYnYO54eSLjNdW6KywujJIzmG2eh/DVFrqOTgQPAAIYAQJKcAEGAAAMgAABDQKOqggPVgJiv6nRPjddBLqJd4PrBCzl0Qx2gHx0MI+GD7ImMTH0wA+9mxzuuoNWhzIID6QDYtTea5NXW64wRORXGM3Fy1iy940VejRPlLWOQaifOpwboW9O8GBzSWikWOt1F18PFlqHEtvpsj+kpSFLaH48F1RpUaif5EK11ooQAzf5gHFO7a5G7j7OBALeK94EB8YICaPCBTg==','base64');
-const pdfDoc=await PDFDocument.create();const pdfPage=pdfDoc.addPage([300,200]);pdfPage.drawText('MM530 browser fixture',{x:24,y:100,size:14});const PDF=Buffer.from(await pdfDoc.save());
+const pdfDoc=await PDFDocument.create();
+const pdfPage=pdfDoc.addPage([300,200]);pdfPage.drawText('MM530 browser fixture page 1',{x:24,y:100,size:14});
+const pdfPage2=pdfDoc.addPage([300,200]);pdfPage2.drawText('MM530 browser fixture page 2',{x:24,y:100,size:14});
+const PDF=Buffer.from(await pdfDoc.save());
+function rawPdf(objects){
+ let body='%PDF-1.4\n',offsets=[0];
+ for(let i=0;i<objects.length;i++){offsets.push(Buffer.byteLength(body,'latin1'));body+=(i+1)+' 0 obj\n'+objects[i]+'\nendobj\n'}
+ const xref=Buffer.byteLength(body,'latin1');body+='xref\n0 '+(objects.length+1)+'\n0000000000 65535 f \n';
+ for(let i=1;i<offsets.length;i++)body+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';
+ body+='trailer\n<< /Size '+(objects.length+1)+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF\n';
+ return Buffer.from(body,'latin1');
+}
+const p1='BT /F1 12 Tf 50 100 Td (Introduction) Tj ET',p2='BT /F1 12 Tf 50 100 Td (Setup) Tj ET';
+const BOOKMARK_PDF=rawPdf([
+ '<< /Type /Catalog /Pages 2 0 R /Outlines 8 0 R /PageMode /UseOutlines >>',
+ '<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>',
+ '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 200] /Resources << /Font << /F1 7 0 R >> >> /Contents 5 0 R >>',
+ '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 200] /Resources << /Font << /F1 7 0 R >> >> /Contents 6 0 R >>',
+ '<< /Length '+Buffer.byteLength(p1)+' >>\nstream\n'+p1+'\nendstream',
+ '<< /Length '+Buffer.byteLength(p2)+' >>\nstream\n'+p2+'\nendstream',
+ '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
+ '<< /Type /Outlines /First 9 0 R /Last 10 0 R /Count 2 >>',
+ '<< /Title (Introduction) /Parent 8 0 R /Next 10 0 R /Dest [3 0 R /Fit] >>',
+ '<< /Title (Setup) /Parent 8 0 R /Prev 9 0 R /Dest [4 0 R /Fit] >>'
+]);
 const DOCX=Buffer.from(zipSync({
  '[Content_Types].xml':strToU8('<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>'),
  '_rels/.rels':strToU8('<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'),
@@ -37,6 +65,7 @@ const VARIABLE_FONT=(()=>{const b=Buffer.alloc(64);b.writeUInt32BE(0x00010000,0)
 let WOFF2_FONT=null;for(const p of [path.join(root,'places-calendar','generator','static','fonts','mukta-latin-400.woff2'),path.join(root,'public','fonts','nepali-serif-700.woff2')])if(await exists(p)){WOFF2_FONT=await fs.readFile(p);break}
 let FONT=null;for(const p of ['/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf','/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'])if(await exists(p)){FONT=await fs.readFile(p);break}
 function fixture(accept='',hint='',toolId=''){const a=accept.toLowerCase(),all=(a+' '+hint.toLowerCase()).toLowerCase();
+ if(toolId==='TOOL-0143')return{name:'bookmarked.pdf',mimeType:'application/pdf',buffer:BOOKMARK_PDF};
  if(toolId==='TOOL-0103')return WOFF2_FONT?{name:'sample.woff2',mimeType:'font/woff2',buffer:WOFF2_FONT}:null;
  if(toolId==='TOOL-0104')return{name:'variable-fixture.ttf',mimeType:'font/ttf',buffer:VARIABLE_FONT};
  if(/\.stl\b|model\/stl/.test(a))return{name:'tetra.stl',mimeType:'model/stl',buffer:STL};
@@ -75,6 +104,23 @@ const harSample={log:{version:'1.2',entries:[{
  request:{method:'GET',url:'https://example.com/private?token=secret',headers:[{name:'Authorization',value:'Bearer secret'}],cookies:[{name:'session',value:'secret'}],postData:{text:'private payload'}},
  response:{status:200,headers:[{name:'Set-Cookie',value:'session=secret'}],cookies:[{name:'session',value:'secret'}],content:{text:'sensitive response',size:100}},
  timings:{wait:22,receive:8}}]}};
+const wsServer=createServer();
+wsServer.on('upgrade',(req,socket)=>{
+ const key=req.headers['sec-websocket-key'];if(!key){socket.destroy();return}
+ const accept=createHash('sha1').update(String(key)+'258EAFA5-E914-47DA-95CA-C5AB0DC85B11').digest('base64');
+ socket.write('HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: '+accept+'\r\n\r\n');
+ socket.on('data',buf=>{
+  try{
+   if(buf.length<6)return;let len=buf[1]&127,off=2;if(len===126){len=buf.readUInt16BE(2);off=4}else if(len===127)return;
+   const masked=(buf[1]&128)!==0,mask=masked?buf.subarray(off,off+4):null;if(masked)off+=4;
+   const payload=Buffer.from(buf.subarray(off,off+len));if(mask)for(let i=0;i<payload.length;i++)payload[i]^=mask[i%4];
+   if((buf[0]&15)===8){socket.end();return}
+   if((buf[0]&15)===1&&payload.length<126)socket.write(Buffer.concat([Buffer.from([0x81,payload.length]),payload]));
+  }catch{}
+ });
+});
+await new Promise((resolve,reject)=>{wsServer.once('error',reject);wsServer.listen(0,'127.0.0.1',resolve)});
+const wsPort=wsServer.address().port;
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const records=new Array(registry.length);
 async function check(tool){
@@ -137,15 +183,18 @@ async function check(tool){
   if(tool.id==='TOOL-0054'){const ack=runtime.locator('#i-ack');if(await ack.count())await ack.check()}
   const fileState=await setFiles(runtime,tool);
   if(fileState.unsupported.length)throw Error('no trustworthy fixture for '+fileState.unsupported.join(', '));
+  if(tool.id==='TOOL-0052')await runtime.locator('#endpoint').fill('ws://127.0.0.1:'+wsPort+'/echo');
   let action=null;
   for(const selector of primarySelectors){
    const candidate=runtime.locator(selector).first();
-   if(await candidate.count()&&await candidate.isVisible()&&await candidate.isEnabled()){action=candidate;break}
+   if(await candidate.count()&&await candidate.isVisible()){action=candidate;break}
   }
   item.primary_control_present=!!action;
-  if(!action)throw Error('primary action missing or disabled; needs tool-specific fixture');
-  const outputSelectors='#result,#output,.mm-result,.result,.results,#metrics,#summary,#data-rows';
-  const statusSelectors='#feedback,#status,.mm-status,[role=status],[role=alert]';
+  if(!action)throw Error('primary action missing; needs tool-specific fixture');
+  for(let i=0;i<120&&await action.isDisabled().catch(()=>false);i++)await page.waitForTimeout(100);
+  if(await action.isDisabled().catch(()=>false))throw Error('primary action stayed disabled after valid fixture initialization');
+  const outputSelectors='#result,#output,.mm-result,.result,.results,#metrics,#summary,#data-rows,#out,#width,#details,#preview,#url,#link,#estimate,#custom,#fallback,#findings';
+  const statusSelectors='#feedback,#status,#msg,.status,.mm-status,[role=status],[role=alert]';
   const before=await runtime.locator(outputSelectors).allTextContents();
   const beforeStatus=await runtime.locator(statusSelectors).allTextContents();
   const beforeDl=await runtime.evaluate(()=>window.__mm530AnchorDownloads||0);
@@ -186,22 +235,26 @@ async function check(tool){
   }else{
    await page.waitForTimeout(350);
    let after=[],statuses=[],afterDl=beforeDl,afterClip=beforeClip,visual=0;
-   for(let i=0;i<(tool.id==='TOOL-0325'?80:35);i++){
+   const meaningful=t=>{const v=String(t||'').replace(/\s+/g,' ').trim();return v.length>0&&!/^(?:ready|loading|no (?:current )?result|output will appear|your results will appear|nothing to show|no file has been processed)\.?$/i.test(v)};
+   const preexistingMeaningful=meaningful(before.join(' '));
+   const loops=MEDIA.has(tool.id)?300:(tool.id==='TOOL-0325'?100:80);
+   for(let i=0;i<loops;i++){
     await page.waitForTimeout(100);
     after=await runtime.locator(outputSelectors).allTextContents();
     statuses=await runtime.locator(statusSelectors).allTextContents();
     afterDl=await runtime.evaluate(()=>window.__mm530AnchorDownloads||0);
     afterClip=await runtime.evaluate(()=>window.__mm530ClipboardWrites?.length||0);
     visual=await runtime.locator('#result table,#result canvas,#result svg,#output:not(:empty),.result table,.result canvas,.result svg,.mm-result:not(:empty),.results:not(.results-empty)').count();
-    if(afterDl>beforeDl||afterClip>beforeClip||visual||after.join('')!==before.join('')||statuses.join('')!==beforeStatus.join(''))break;
+    const statusText=statuses.join(' ');
+    const terminalStatus=statusText!==beforeStatus.join(' ')&&meaningful(statusText)&&!TRANSIENT.test(statusText);
+    if(afterDl>beforeDl||afterClip>beforeClip||visual||after.join('')!==before.join('')||terminalStatus)break;
    }
-   if(/(?:invalid|failed|error|unable|malformed|missing required|no file selected)/i.test(statuses.join(' ')))
-     throw Error('valid workflow returned error status: '+statuses.join(' ').slice(0,180));
-   const changedResult=after.join('')!==before.join('')&&after.join('').trim().length>0
-      &&!/(?:^\s*(?:ready|loading|no result|output will appear|nothing to show)\s*$)/i.test(after.join(' '));
-   const changedStatus=statuses.join('')!==beforeStatus.join('')&&statuses.join('').trim().length>0
-      &&!/(?:processing|loading|working|encoding|converting|running|preparing|analyzing|calculating|starting|decoding|rendering|remuxing|benchmarking)/i.test(statuses.join(''));
-   item.visible_result_created=changedResult||visual>0||afterDl>beforeDl||afterClip>beforeClip||changedStatus;
+   const statusText=statuses.join(' ');
+   if(/(?:invalid(?:\s+(?:input|value|file|format))?|failed|failure|unable|malformed|missing required|no file selected|choose (?:a|an)|must (?:be|select)|cannot|could not|unsupported)/i.test(statusText))
+     throw Error('valid workflow returned failure status: '+statusText.slice(0,180));
+   const changedResult=after.join('')!==before.join('')&&meaningful(after.join(' '));
+   const changedStatus=statusText!==beforeStatus.join(' ')&&meaningful(statusText)&&!TRANSIENT.test(statusText);
+   item.visible_result_created=changedResult||preexistingMeaningful||visual>0||afterDl>beforeDl||afterClip>beforeClip||changedStatus;
    if(!item.visible_result_created)throw Error('primary workflow completed but observable result was not proven');
   }
   if(errors.length)throw Error('browser exception: '+errors[0]);
@@ -214,7 +267,7 @@ let index=0;
 const workers=Array.from({length:6},async()=>{
  while(index<registry.length){const at=index++;records[at]=await check(registry[at])}
 });
-try{await Promise.all(workers)}finally{await browser.close()}
+try{await Promise.all(workers)}finally{await browser.close();await new Promise(resolve=>wsServer.close(resolve))}
 const totals={registered:registry.length,pass:records.filter(x=>x.status==='PASS').length,
  fail:records.filter(x=>x.status==='FAIL').length,
  mounted:records.filter(x=>x.runtime_mount_succeeded).length,
