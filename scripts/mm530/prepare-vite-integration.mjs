@@ -7,7 +7,6 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-registry.json"),"utf8")).tools;
 const outRoot=path.join(root,"public/_mm530");
 const origin="https://aafnaipatro.com";
-const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
 const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|prepared source|pre-publication|runtime QA|runtime validation pending|publication pending|publication action|draft research tool|source checkpoint|\bQA-approved\b|\bstaged(?:\s+only)?\b|Staging\s*:?[\s-]*noindex|not published|no product tests|product tests have not been executed|reserved tool routes?|published route|before hydration|fixtures\.json)/i;
 
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
@@ -170,22 +169,7 @@ for(const tool of registry){
   const mountExport=new RegExp("\\bexport\\s+(?:default\\s+)?(?:function\\s+)?mount\\s*\\(|\\bexport\\s+default\\s+mount\\b").test(uiSource);
   const bootstrap=path.join(dst,".mm530-bootstrap.mjs");
   const modulePath=JSON.stringify(entry);
-  const minimalBootstrap=MINIMAL_RELEASE.has(tool.id)?`
-const mm530Inputs=[...document.querySelectorAll('input[type="file"]')];
-const mm530Panel=document.querySelector('#mm530-basic-mode');
-const mm530Result=mm530Panel?.querySelector('[data-mm530-basic-result]');
-const mm530Refresh=()=>{
- const files=mm530Inputs.flatMap(input=>[...(input.files||[])]);
- if(!mm530Result)return;
- if(!files.length){mm530Result.textContent='Choose a local file to inspect it in this browser.';return}
- const bytes=files.reduce((n,file)=>n+file.size,0);
- const names=files.slice(0,3).map(file=>file.name).join(', ');
- mm530Result.textContent='Selected '+files.length+' local file'+(files.length===1?'':'s')+' · '+bytes.toLocaleString()+' bytes · '+names;
-};
-for(const input of mm530Inputs)input.addEventListener('change',mm530Refresh);
-mm530Refresh();
-`:'';
-  const bootSource=(mountExport
+  const bootSource=mountExport
     ? `import * as tool from ${modulePath};
 const explicit=document.querySelector('#tool-interactive-root,#tool-app,#${tool.id.toLowerCase()},[data-tool-id="${tool.id}"]');
 const mains=[...document.querySelectorAll('main[id]')];
@@ -196,7 +180,7 @@ if(typeof mount!=="function")throw new Error("Missing exported mount function fo
 mount(root);
 if(!root.querySelector("button,input,select,textarea,[role=button]"))throw new Error("Mount produced no interactive controls for ${tool.id}");
 root.dataset.toolMounted="true";`
-    : `import ${modulePath};`)+minimalBootstrap;
+    : `import ${modulePath};`;
   await fs.writeFile(bootstrap,bootSource);
   try{
     await build({entryPoints:{tool:bootstrap},bundle:true,format:"esm",platform:"browser",target:"es2022",outdir:dst,entryNames:"[name]",chunkNames:"chunks/[name]-[hash]",assetNames:"chunks/[name]-[hash]",splitting:true,logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
@@ -239,8 +223,7 @@ root.dataset.toolMounted="true";`
   html=html.replace(sourceUiScript,"");
   const closeBody=new RegExp("</body>","i");
   if(!closeBody.test(html))throw new Error("Runtime page lacks a closing body");
-  const minimalNote=MINIMAL_RELEASE.has(tool.id)?'<aside id="mm530-basic-mode" data-mm530-release-tier="minimal" role="note"><strong>Basic browser mode</strong><p>This tool can inspect the selected local file in every supported browser. Advanced processing remains available where the browser can load the required media, PDF or font engine.</p><p data-mm530-basic-result>Choose a local file to inspect it in this browser.</p></aside>':'';
-  html=html.replace(closeBody,minimalNote+'<script type="module" src="./tool.js"></script></body>');
+  html=html.replace(closeBody,'<script type="module" src="./tool.js"></script></body>');
   const runtimeTag='<script type="module" src="./tool.js"></script>';
   if(html.split(runtimeTag).length-1!==1)throw new Error("Runtime script must be present exactly once");
   if(await exists(path.join(dst,"tool.css"))&&!html.includes("./tool.css"))html=html.replace(/<\/head>/i,'<link rel="stylesheet" href="./tool.css"></head>');

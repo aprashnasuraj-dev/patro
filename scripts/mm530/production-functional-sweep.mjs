@@ -13,14 +13,15 @@ const reportPath=path.join(root,'reports/mm530-functional-gate.json');
 await fs.mkdir(path.dirname(reportPath),{recursive:true});
 const exists=p=>fs.access(p).then(()=>true,()=>false);
 const DEVICE=new Set(['TOOL-0349','TOOL-0350','TOOL-0446']);
-const MINIMAL_RELEASE=new Set(["TOOL-0111","TOOL-0142","TOOL-0143","TOOL-0161","TOOL-0162","TOOL-0163","TOOL-0165","TOOL-0166","TOOL-0167","TOOL-0168","TOOL-0169","TOOL-0170","TOOL-0171","TOOL-0172","TOOL-0173","TOOL-0174","TOOL-0175","TOOL-0176","TOOL-0177"]);
 const MEDIA=new Set(['TOOL-0161','TOOL-0162','TOOL-0163','TOOL-0164','TOOL-0165','TOOL-0166','TOOL-0167','TOOL-0168','TOOL-0169','TOOL-0170','TOOL-0171','TOOL-0172','TOOL-0173','TOOL-0174','TOOL-0175','TOOL-0176']);
+const FORCE_FILE=new Set(['TOOL-0111']);
 const TRANSIENT=/(?:processing|loading|working|encoding|converting|running|preparing|analyzing|calculating|starting|decoding|rendering|remuxing|benchmarking|extracting|trimming|rotating|merging|cutting)/i;
 const PNG=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAALUlEQVR4nGM0TpvJQEvARFPTRy0YtWDUglELRi0YtWDUglELRi0YtWDUAioCAAyGAXILYugNAAAAAElFTkSuQmCC','base64');
 const QR_PNG=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKAQAAAABTUiuoAAAB7klEQVR4nO2bTW6kMBCFvxos9ZKW5gA5CtwgR5qr2UfJDfAyEuhlYf7SSSSSEWlHqVpAA9/iSU/lqrLVJg5G+nOUBEcdddRRRx09E7U5AtYzmfXZ5ouZmfWnC3D0UIRy6yJA/ouSgUAYNCMAdqYAR7+A5jWFWgny7KKZhe8R4OiBCDfPBmE01oQ6XYCj/4N2ejZpuJ8ARz+OJbdaARlI10Gkx/lxPzvfXaujSNLqSSO6YbssrztJinfX6mjJrV0KpYfSCJbG8HwBjn5+3uoB67MZMJkik5HMzOw6f61G629G155wCkoPetUKtgMGU9CZAhz9KrpNWVeAbKaYL3oPPUeAo8fQfBG0zyY9BeYOvh2hGya7Qc8R4OiRWHrCtROUpEgjRUARvCesBl3caqVXvlE8otNYEHerAnS2QlLxSLEdl0/lVyN3qzY0B+ZC9RSKZaV4ed2qCd3tZUhDM6+EbAnmuVUduhSvkVKoYr5oq1vfIMDRT6Db2XFZE4tHObyDniPA0WMxNxiSpKGRYqtdL78hvhJWgC5uDVA8AlCk2e/o+rxVKSoNjeyfxjIY788lq9P6+9Dbk35Sj5FK196MpMfRd3WrQd/ULWlEsZW2tPK6VQv65ux4nbfKZmEZkd2tOlDzfy046qijjjr6g9AXfsZAuOWAVcAAAAAASUVORK5CYII=','base64');
 const GIF=Buffer.from('R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==','base64');
 const SVG=Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="32" fill="#336699"/></svg>');
 const WAV=(()=>{const rate=44100,seconds=1,samples=rate*seconds,b=Buffer.alloc(44+samples*2);b.write('RIFF',0);b.writeUInt32LE(b.length-8,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(rate,24);b.writeUInt32LE(rate*2,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(samples*2,40);for(let i=0;i<samples;i++){const v=Math.round(9000*Math.sin(2*Math.PI*440*i/rate));b.writeInt16LE(v,44+i*2)}return b})();
+const BPM_WAV=(()=>{const rate=44100,seconds=8,samples=rate*seconds,b=Buffer.alloc(44+samples*2);b.write('RIFF',0);b.writeUInt32LE(b.length-8,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(rate,24);b.writeUInt32LE(rate*2,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(samples*2,40);for(let i=0;i<samples;i++){const beat=(i%Math.floor(rate*.5))<1200?1:0.05;const v=Math.round(12000*beat*Math.sin(2*Math.PI*120*i/rate));b.writeInt16LE(v,44+i*2)}return b})();
 const WEBM=Buffer.from('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','base64');
 const pdfDoc=await PDFDocument.create();
 const pdfPage=pdfDoc.addPage([300,200]);pdfPage.drawText('MM530 browser fixture page 1',{x:24,y:100,size:14});
@@ -67,6 +68,7 @@ let WOFF2_FONT=null;for(const p of [path.join(root,'places-calendar','generator'
 let FONT=null;for(const p of ['/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf','/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf'])if(await exists(p)){FONT=await fs.readFile(p);break}
 function fixture(accept='',hint='',toolId=''){const a=accept.toLowerCase(),all=(a+' '+hint.toLowerCase()).toLowerCase();
  if(toolId==='TOOL-0143')return{name:'bookmarked.pdf',mimeType:'application/pdf',buffer:BOOKMARK_PDF};
+ if(toolId==='TOOL-0177')return{name:'bpm-eight-seconds.wav',mimeType:'audio/wav',buffer:BPM_WAV};
  if(toolId==='TOOL-0103')return WOFF2_FONT?{name:'sample.woff2',mimeType:'font/woff2',buffer:WOFF2_FONT}:null;
  if(toolId==='TOOL-0104')return{name:'variable-fixture.ttf',mimeType:'font/ttf',buffer:VARIABLE_FONT};
  if(/\.stl\b|model\/stl/.test(a))return{name:'tetra.stl',mimeType:'model/stl',buffer:STL};
@@ -91,7 +93,7 @@ function fixture(accept='',hint='',toolId=''){const a=accept.toLowerCase(),all=(
  if(/zip/.test(a))return{name:'sample.zip',mimeType:'application/zip',buffer:Buffer.from(zipSync({'hello.txt':strToU8('hello')}))};
  return{name:'sample.txt',mimeType:'text/plain',buffer:Buffer.from('alpha\nbeta\n')}}
 
-async function setFiles(page,t){const inputs=page.locator('input[type="file"]'),n=await inputs.count();let unsupported=[],set=0,skippedOptional=0;const hasPreparedText=await page.locator('textarea').evaluateAll(xs=>xs.some(x=>{const e=x,s=getComputedStyle(e);return s.display!=='none'&&s.visibility!=='hidden'&&e.value.trim().length>0}));for(let i=0;i<n;i++){const l=inputs.nth(i),required=await l.getAttribute('required')!==null;if(!required&&(hasPreparedText||t.id==='TOOL-0082')){skippedOptional++;continue}const acc=await l.getAttribute('accept')||'',f=fixture(acc,(await l.getAttribute('id')||'')+' '+t.title,t.id);if(!f){unsupported.push(acc||t.title);continue}const multiple=await l.getAttribute('multiple')!==null;await l.setInputFiles(multiple?[f,{...f,name:'second-'+f.name}]:f);set++}return{count:n,set,skippedOptional,unsupported}}
+async function setFiles(page,t){const inputs=page.locator('input[type="file"]'),n=await inputs.count();let unsupported=[],set=0,skippedOptional=0;const hasPreparedText=await page.locator('textarea').evaluateAll(xs=>xs.some(x=>{const e=x,s=getComputedStyle(e);return s.display!=='none'&&s.visibility!=='hidden'&&e.value.trim().length>0}));for(let i=0;i<n;i++){const l=inputs.nth(i),required=await l.getAttribute('required')!==null;if(!required&&!FORCE_FILE.has(t.id)&&(hasPreparedText||t.id==='TOOL-0082')){skippedOptional++;continue}const acc=await l.getAttribute('accept')||'',f=fixture(acc,(await l.getAttribute('id')||'')+' '+t.title,t.id);if(!f){unsupported.push(acc||t.title);continue}const multiple=await l.getAttribute('multiple')!==null;await l.setInputFiles(multiple?[f,{...f,name:'second-'+f.name}]:f);set++}return{count:n,set,skippedOptional,unsupported}}
 
 const knownPlaceholder=/the local browser workspace will load|source is prepared for local browser execution|no product tests executed|interactive tool will appear|source preparation only|mission mangal|test_pending/i;
 const actionable='button:not([disabled]),input:not([type=hidden]):not([disabled]),select:not([disabled]),textarea:not([disabled]),[role=button]';
@@ -185,23 +187,6 @@ async function check(tool){
   const fileState=await setFiles(runtime,tool);
   if(fileState.unsupported.length)throw Error('no trustworthy fixture for '+fileState.unsupported.join(', '));
   if(tool.id==='TOOL-0052')await runtime.locator('#endpoint').fill('ws://127.0.0.1:'+wsPort+'/echo');
-  if(MINIMAL_RELEASE.has(tool.id)){
-   if(fileState.set<1)throw Error('basic release contract requires one valid local file');
-   const panel=runtime.locator('#mm530-basic-mode[data-mm530-release-tier="minimal"]');
-   await panel.waitFor({state:'visible',timeout:4000});
-   await runtime.waitForFunction(()=>/Selected\s+\d+\s+local file/i.test(document.querySelector('#mm530-basic-mode [data-mm530-basic-result]')?.textContent||''),null,{timeout:4000});
-   let minimalAction=null;
-   for(const selector of primarySelectors){const c=runtime.locator(selector).first();if(await c.count()&&await c.isVisible()){minimalAction=c;break}}
-   item.primary_control_present=!!minimalAction;
-   if(!item.primary_control_present)throw Error('basic release contract requires a visible primary control');
-   item.minimal_contract_verified=true;
-   item.visible_result_created=true;
-   item.primary_action_executed=false;
-   item.minimal_diagnostics={page_errors_after_file_selection:[...errors],missing_assets_after_file_selection:[...missingAssets]};
-   item.reason='Basic browser mode verified: valid local file accepted and inspected; advanced processing is non-blocking for release.';
-   item.status='PASS';
-   return item;
-  }
   if(tool.id==='TOOL-0142')await runtime.waitForFunction(()=>document.querySelectorAll('#pageOrder button[data-page]').length>=2,null,{timeout:12000});
   if(tool.id==='TOOL-0143')await runtime.waitForFunction(()=>/p\d+:/i.test(document.querySelector('#result')?.textContent||''),null,{timeout:12000});
   let action=null;
@@ -252,12 +237,32 @@ async function check(tool){
    const promised=page.waitForEvent('download',{timeout:3000}).then(async d=>{const name=d.suggestedFilename();await d.cancel();return name.endsWith('.har')}).catch(()=>false);
    await download.click();item.download_checked=await promised;
    if(!item.copy_checked||!item.download_checked)throw Error('HAR export control failed');
+  }else if(MEDIA.has(tool.id)){
+   let terminal=false;
+   try{
+    await runtime.waitForFunction(()=>{
+      const node=document.getElementById('status');
+      return node?.dataset.kind==='ok'||node?.dataset.kind==='error';
+    },null,{timeout:120000});
+    terminal=true;
+   }catch{}
+   const statusNode=runtime.locator('#status');
+   const statusText=await statusNode.count()?await statusNode.innerText():'';
+   const kind=await statusNode.count()?await statusNode.getAttribute('data-kind'):null;
+   item.observed_status=statusText.slice(0,500);
+   const afterDl=await runtime.evaluate(()=>window.__mm530AnchorDownloads||0);
+   const resultText=await runtime.locator('#result').count()?await runtime.locator('#result').innerText():'';
+   if(!terminal)throw Error('media workflow did not reach terminal status: '+(statusText||'(blank)'));
+   if(kind==='error')throw Error('media workflow failed: '+statusText.slice(0,180));
+   item.visible_result_created=kind==='ok'&&(afterDl>beforeDl||resultText.trim().length>0);
+   item.download_checked=afterDl>beforeDl;
+   if(!item.visible_result_created)throw Error('media workflow reached ok without observable output/download');
   }else{
    await page.waitForTimeout(350);
    let after=[],statuses=[],afterDl=beforeDl,afterClip=beforeClip,visual=0;
    const meaningful=t=>{const v=String(t||'').replace(/\s+/g,' ').trim();return v.length>0&&!/^(?:ready|loading|no (?:current )?result|output will appear|your results will appear|nothing to show|no file has been processed)\.?$/i.test(v)};
    const preexistingMeaningful=meaningful(before.join(' '));
-   const loops=MEDIA.has(tool.id)?450:(tool.id==='TOOL-0325'?100:80);
+   const loops=tool.id==='TOOL-0325'?100:80;
    for(let i=0;i<loops;i++){
     await page.waitForTimeout(100);
     after=await runtime.locator(outputSelectors).allTextContents();
@@ -285,22 +290,22 @@ async function check(tool){
  finally{await context.close()}
  return item;
 }
+const ordinary=registry.map((tool,at)=>({tool,at})).filter(({tool})=>!MEDIA.has(tool.id));
+const heavy=registry.map((tool,at)=>({tool,at})).filter(({tool})=>MEDIA.has(tool.id));
 let index=0;
 const workers=Array.from({length:6},async()=>{
- while(index<registry.length){const at=index++;records[at]=await check(registry[at])}
+ while(index<ordinary.length){const {tool,at}=ordinary[index++];records[at]=await check(tool)}
 });
-try{await Promise.all(workers)}finally{await browser.close();await new Promise(resolve=>wsServer.close(resolve))}
+try{
+ await Promise.all(workers);
+ for(const {tool,at} of heavy)records[at]=await check(tool);
+}finally{await browser.close();await new Promise(resolve=>wsServer.close(resolve))}
 const totals={registered:registry.length,pass:records.filter(x=>x.status==='PASS').length,
  fail:records.filter(x=>x.status==='FAIL').length,
  mounted:records.filter(x=>x.runtime_mount_succeeded).length,
- primary_verified:records.filter(x=>x.visible_result_created).length,
- full_expected:registry.length-MINIMAL_RELEASE.size,
- full_pass:records.filter(x=>x.status==='PASS'&&x.release_tier==='FULL').length,
- minimal_expected:MINIMAL_RELEASE.size,
- minimal_pass:records.filter(x=>x.status==='PASS'&&x.release_tier==='MINIMAL'&&x.minimal_contract_verified).length};
-const tierPass=totals.pass===530&&totals.fail===0&&totals.full_pass===totals.full_expected&&totals.minimal_pass===totals.minimal_expected;
-const report={schema_version:'MM530_FUNCTIONAL_GATE_V3_TIERED',source_commit:process.env.GITHUB_SHA||null,
- at:new Date().toISOString(),status:tierPass?'PASS':'BLOCKED',policy:{full_tools:totals.full_expected,minimal_tools:totals.minimal_expected,minimal_ids:[...MINIMAL_RELEASE]},totals,tools:records};
+ primary_verified:records.filter(x=>x.visible_result_created).length};
+const report={schema_version:'MM530_FUNCTIONAL_GATE_V2',source_commit:process.env.GITHUB_SHA||null,
+ at:new Date().toISOString(),status:totals.pass===530?'PASS':'BLOCKED',totals,tools:records};
 await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n');
 console.log('MM530_FUNCTIONAL_GATE='+JSON.stringify({status:report.status,...totals}));
 if(report.status!=='PASS')process.exitCode=1;
