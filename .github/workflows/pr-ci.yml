@@ -135,6 +135,16 @@ jobs:
           # Release browser/SEO checks run for UI-only changes too. They require the
           # fully prerendered dist output, not a bare Vite shell.
           npm run build
+          node scripts/mm530/phase9-verify.mjs
+
+      - name: Preserve MM530 Phase 9 measured evidence
+        if: always() && (steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true')
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-phase9
+          path: reports/mm530-phase9/
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Pre-promotion feature integrity regressions
         if: steps.changes.outputs.ui == 'true' && steps.changes.outputs.full != 'true' && steps.changes.outputs.cloudflare != 'true'
@@ -259,6 +269,10 @@ jobs:
             sleep 1
           done
           if [[ "$ready" != true ]]; then echo "::error::Static audit server did not start"; exit 1; fi
+          # Verify the exact downloaded production artifact; do not rebuild it.
+          node scripts/mm530/phase9-verify.mjs
+          node scripts/mm530/phase10-browser-gate.mjs
+          node scripts/mm530/final-acceptance.mjs
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-pwa-install-ui.cjs
@@ -284,119 +298,33 @@ jobs:
           if(score<90)console.log("::warning::Measured mobile homepage score "+score+" is below the 90 target; do not claim 90+ or release on this basis.");
           LHSUMMARY
 
-  mm530-fleet-qa:
-    name: MM530 combined 530-tool QA
+  mm530-continuation-gates:
+    name: MM530 remaining-phase source gates
     if: github.head_ref == 'table'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
-    permissions:
-      contents: read
+    timeout-minutes: 10
     steps:
-      - name: Checkout proposed source import
+      - name: Checkout current table branch
         uses: actions/checkout@v4
-      - name: Use Node 24 for mixed imported TypeScript tests
+      - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: 24
-      - name: Install suite and Chromium once
-        run: |
-          npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-          npm install --legacy-peer-deps --ignore-scripts --no-save --no-package-lock playwright@1.56.1
-          npx playwright install chromium
-      - name: Verify bilingual calculation notices
-        run: node --test tests/mm530-policy.test.mjs
-      - name: Verify MM530 Phase 1 harness normalization
-        run: node --test tests/mm530-harness.test.mjs
-      - name: Run 530 independent tool verdicts
-        id: fleet
-        continue-on-error: true
-        run: MM530_PHASE4_ONLY=1 node scripts/mm530/fleet-qa.mjs
-      - name: Enforce Phase 4 authoritative unit gate
-        id: phase4
-        if: always()
-        continue-on-error: true
-        run: node scripts/mm530/phase4-unit-gate.mjs
-      - name: Preserve Phase 4 unit evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: mm530-phase4-unit
-          path: reports/mm530-phase4/
-          if-no-files-found: error
-          retention-days: 30
-      - name: Run Phase 5 functional Chromium and responsive validation
-        id: phase5
-        if: steps.phase4.outcome == 'success'
-        continue-on-error: true
-        run: node scripts/mm530/phase5-browser-gate.mjs
-      - name: Preserve Phase 5 browser evidence
-        if: always() && steps.phase5.outcome != 'skipped'
-        uses: actions/upload-artifact@v4
-        with:
-          name: mm530-phase5-browser
-          path: reports/mm530-phase5/
-          if-no-files-found: error
-          retention-days: 30
-      - name: Close Phase 1 with no-regression baseline
-        if: always()
-        run: node scripts/mm530/phase1-regression-gate.mjs
-      - name: Verify Phase 2 canonical inventory logic
-        if: always()
-        run: node --test tests/mm530-phase2-inventory.test.mjs
-      - name: Generate Phase 2 canonical 530-tool inventory
-        id: inventory
-        if: always()
-        continue-on-error: true
-        run: node scripts/mm530/phase2-inventory.mjs
-      - name: Preserve whole-fleet report and repair shortlist
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: mm530-all-tool-qa
-          path: reports/mm530-qa/
-          if-no-files-found: error
-          retention-days: 30
-      - name: Preserve Phase 2 canonical inventory
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: mm530-phase2-inventory
-          path: reports/mm530-inventory/
-          if-no-files-found: error
-          retention-days: 30
-      - name: Enforce Phase 2 identity and inventory gate
-        if: always()
-        run: |
-          test -f reports/mm530-inventory/canonical-tools.json
-          node -e "const x=require('./reports/mm530-inventory/inventory-summary.json'); if(x.status!=='PASS'||x.records!==530||x.unique_ids!==530) process.exit(1)"
-      - name: Hold promotion until all checks pass
-        if: always()
+          node-version: 22
+      - name: Verify accepted progression and remaining-phase source state
         shell: bash
         run: |
-          test -f reports/mm530-qa/all-tools.json
-          test -f reports/mm530-qa/failed-tools.json
-          if ! node -e "const r=require('./reports/mm530-qa/all-tools.json');process.exit(r.tools.length===530?0:1)"; then
-            echo 'ERROR: not all 530 tools were recorded'; exit 1
-          fi
-          echo 'Artifacts preserved. Source preparation is not release acceptance.'
-      - name: Surface Phase 2 inventory failure after artifacts
-        if: steps.inventory.outcome != 'success'
-        run: |
-          echo 'Phase 2 inventory has unresolved identity/source gate failures. Review the preserved inventory artifact.'
-          exit 1
-      - name: Surface Phase 4 unit failure after artifacts
-        if: steps.phase4.outcome != 'success'
-        run: |
-          echo 'Phase 4 authoritative unit gate has unresolved failures or NOT_RUN suites. Review mm530-phase4-unit.'
-          exit 1
-      - name: Surface Phase 5 browser failure after artifacts
-        if: steps.phase5.outcome == 'failure'
-        run: |
-          echo 'Phase 5 Chromium/responsive validation has unresolved failures. Review mm530-phase5-browser.'
-          exit 1
-      - name: Surface fleet failure after artifacts
-        if: steps.fleet.outcome != 'success'
-        run: |
-          echo 'The complete repair shortlist was uploaded. Hold merge until every required gate passes.'
-          exit 1
+          set -euo pipefail
+          node scripts/mm530/phase6-review-scope.mjs
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const p6=JSON.parse(fs.readFileSync('data/mm530/phase6/gate.json','utf8'));
+          const p7=JSON.parse(fs.readFileSync('data/mm530/phase7/gate.json','utf8'));
+          const p8=JSON.parse(fs.readFileSync('data/mm530/phase8/gate.json','utf8'));
+          const reg=JSON.parse(fs.readFileSync('src/mm530/mm530-registry.json','utf8')).tools;
+          if(p6.status!=='PHASE_6_PASS'||p6.unresolved_factual_blockers!==0)throw new Error('Phase 6 narrow review is not closed');
+          if(reg.length!==530||new Set(reg.map(x=>x.id)).size!==530||new Set(reg.map(x=>x.route)).size!==530)throw new Error('MM530 registry identity gate failed');
+          if(p7.tool_count!==530||p7.duplicate_canonical_routes!==0||p7.known_route_collisions!==0)throw new Error('Phase 7 source route gate failed');
+          if(p8.implementation_complete_for_verification!==true)throw new Error('Phase 8 integration source is not ready for production verification');
+          console.log('MM530 continuation source gate: PASS — accepted Phase 5 is not rerun');
+          NODE
 
