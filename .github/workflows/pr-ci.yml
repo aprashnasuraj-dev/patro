@@ -283,3 +283,53 @@ jobs:
           if(process.env.GITHUB_STEP_SUMMARY){const {appendFileSync}=await import("node:fs");appendFileSync(process.env.GITHUB_STEP_SUMMARY,"Mobile Lighthouse: **"+score+"/100** (goal 90+)\\n\\n"+details+"\\n");}
           if(score<90)console.log("::warning::Measured mobile homepage score "+score+" is below the 90 target; do not claim 90+ or release on this basis.");
           LHSUMMARY
+
+  mm530-fleet-qa:
+    name: MM530 combined 530-tool QA
+    if: github.head_ref == 'table'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout proposed source import
+        uses: actions/checkout@v4
+      - name: Use Node 24 for mixed imported TypeScript tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install suite and Chromium once
+        run: |
+          npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+          npm install --legacy-peer-deps --ignore-scripts --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Verify bilingual calculation notices
+        run: node --test tests/mm530-policy.test.mjs
+      - name: Run 530 independent tool verdicts
+        id: fleet
+        continue-on-error: true
+        run: node scripts/mm530/fleet-qa.mjs
+      - name: Preserve whole-fleet report and repair shortlist
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mm530-all-tool-qa
+          path: reports/mm530-qa/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Hold promotion until all checks pass
+        if: always()
+        shell: bash
+        run: |
+          test -f reports/mm530-qa/all-tools.json
+          test -f reports/mm530-qa/failed-tools.json
+          if ! node -e "const r=require('./reports/mm530-qa/all-tools.json');process.exit(r.tools.length===530?0:1)"; then
+            echo 'ERROR: not all 530 tools were recorded'; exit 1
+          fi
+          echo 'Artifacts preserved. Source preparation is not release acceptance.'
+      - name: Surface fleet failure after artifacts
+        if: steps.fleet.outcome != 'success'
+        run: |
+          echo 'The complete repair shortlist was uploaded. Hold merge until every required gate passes.'
+          exit 1
+
