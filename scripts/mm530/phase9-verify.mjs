@@ -34,6 +34,10 @@ const tagContent=(html,selector)=>{
 };
 const visible=html=>html.replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
 const internal=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|prepared source|pre-publication|runtime QA|runtime validation pending|publication pending|publication action|draft research tool|source checkpoint|\bQA-approved\b|\bstaged(?:\s+only)?\b|Staging\s*:?[\s-]*noindex|not published|no product tests|reserved tool routes?)/i;
+const descriptionComplete=value=>{
+ const text=String(value||"").trim();
+ return /[.!?…]["')\]]?$/.test(text)&&!/\b(?:and|or|an|a|the|to|for|with|of|in|on|by|from|as|at|into|via)\s*[.!?…]?["')\]]?$/i.test(text);
+};
 
 assert(registry.length===530,"REGISTRY_COUNT",`expected 530, got ${registry.length}`);
 assert(new Set(registry.map(x=>x.id)).size===530,"DUPLICATE_ID","registry IDs are not unique");
@@ -78,7 +82,7 @@ function signalSet(html){
  return new Set(editorialSignals.filter(([,re])=>re.test(headings)).map(([name])=>name));
 }
 for(const tool of registry){
- const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
+ const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);assert(descriptionComplete(row?.description),"RUNTIME_DESCRIPTION_TRUNCATED",`${tool.id}: ${row?.description||""}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
  if(!(await exists(pagePath))||!(await exists(leafPath)))continue;
  const [runtimeHtml,leafHtml,sourceHtml]=await Promise.all([read(pagePath),read(leafPath),read(path.join(root,tool.sourceDir,"page.html")).catch(()=>"")]);
@@ -87,7 +91,7 @@ for(const tool of registry){
  toolRuntimeRows.push({id:tool.id,route:tool.route,htmlBytes:runtimeHtmlStat.size,jsBytes:runtimeJsStat.size,totalBytes:runtimeHtmlStat.size+runtimeJsStat.size});
  assert(runtimeJsStat.size<1_500_000,"TOOL_RUNTIME_JS_BUDGET",tool.id+": "+runtimeJsStat.size+" bytes");
  const expected=origin+tool.route,title=tagContent(leafHtml,"title"),desc=tagContent(leafHtml,"description"),canonical=tagContent(leafHtml,"canonical"),ogurl=tagContent(leafHtml,"ogurl"),robots=tagContent(leafHtml,"robots");
- assert(Boolean(title),"SEO_TITLE_MISSING",tool.id);assert(Boolean(desc),"SEO_DESCRIPTION_MISSING",tool.id);assert(desc.length>=70&&desc.length<=165,"SEO_DESCRIPTION_LENGTH",`${tool.id}: ${desc.length}`);assert(canonical===expected,"CANONICAL_MISMATCH",`${tool.id}: ${canonical}`);assert(ogurl===expected,"OG_URL_MISMATCH",`${tool.id}: ${ogurl}`);assert(!/noindex/i.test(robots),"LEAF_NOINDEX",tool.id);assert(Boolean(tagContent(leafHtml,"ogtitle")),"OG_TITLE_MISSING",tool.id);assert(Boolean(tagContent(leafHtml,"twitter")),"TWITTER_TITLE_MISSING",tool.id);
+ assert(Boolean(title),"SEO_TITLE_MISSING",tool.id);assert(Boolean(desc),"SEO_DESCRIPTION_MISSING",tool.id);assert(desc.length>=70&&desc.length<=165,"SEO_DESCRIPTION_LENGTH",`${tool.id}: ${desc.length}`);assert(descriptionComplete(desc),"SEO_DESCRIPTION_TRUNCATED",`${tool.id}: ${desc}`);assert(canonical===expected,"CANONICAL_MISMATCH",`${tool.id}: ${canonical}`);assert(ogurl===expected,"OG_URL_MISMATCH",`${tool.id}: ${ogurl}`);assert(!/noindex/i.test(robots),"LEAF_NOINDEX",tool.id);assert(Boolean(tagContent(leafHtml,"ogtitle")),"OG_TITLE_MISSING",tool.id);assert(Boolean(tagContent(leafHtml,"twitter")),"TWITTER_TITLE_MISSING",tool.id);
  const previous=titles.get(title);if(previous)assert(false,"DUPLICATE_TITLE",`${tool.id} and ${previous}: ${title}`);else titles.set(title,tool.id);
  const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
@@ -112,7 +116,7 @@ for(const tool of registry){
  if(runtimeEditorialHeadings>=2)assert(hasEditorial,"CRAWLER_EDITORIAL_LOST",tool.id+": runtime has "+runtimeEditorialHeadings+" editorial headings");
  assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
  crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length,retainedEditorialSignals:retainedSignals});
- const runtimeCanonical=tagContent(runtimeHtml,"canonical"),runtimeRobots=tagContent(runtimeHtml,"robots");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(/noindex/i.test(runtimeRobots),"RUNTIME_INDEX_LEAK",tool.id+": isolated runtime must stay noindex");assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
+ const runtimeCanonical=tagContent(runtimeHtml,"canonical"),runtimeRobots=tagContent(runtimeHtml,"robots"),runtimeDescription=tagContent(runtimeHtml,"description");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(runtimeDescription===row.description,"RUNTIME_DESCRIPTION_MISMATCH",tool.id);assert(descriptionComplete(runtimeDescription),"RUNTIME_META_DESCRIPTION_TRUNCATED",`${tool.id}: ${runtimeDescription}`);assert(/noindex/i.test(runtimeRobots),"RUNTIME_INDEX_LEAK",tool.id+": isolated runtime must stay noindex");assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
  const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\b[^>]*src=["']\.\/tool\.js["'][^>]*><\/script>/gi)];
  assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
  assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
@@ -172,7 +176,7 @@ for(const [kind,id] of Object.entries(representative))perf.representative[kind]=
 for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-lib",ffmpeg:"assets/vendor/ffmpeg",sqljs:"assets/vendor/sqljs",mathjax:"vendor/mathjax",sheetjs:"assets/vendor/sheetjs"}))perf.sharedVendorBytes[name]=await dirBytes(path.join(dist,p));
 
 const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,categories:phase7.categories?.length||0,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
-const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V1",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
+const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V2",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,complete_descriptions:seoRows.length,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
 const crawlerReport={schema_version:"MM530_CRAWLER_SEO_GATE_V2",status:blockers.some(x=>/^CRAWLER_|EDITORIAL_/.test(x.code))?"BLOCKED":"PASS",tools_checked:crawlerRows.length,standalone_static_shells:crawlerRows.filter(x=>x.outerModuleScripts===0).length,direct_runtime_iframes:crawlerRows.length,editorial_leaves:editorialLeaves,editorial_signals_expected:editorialSignalsExpected,editorial_signals_retained:editorialSignalsRetained,rows:crawlerRows};
 const buildReport={schema_version:"MM530_PHASE9_BUILD_REPORT_V1",runtime_manifest_routes:runtime.routes?.length||0,runtime_failures:runtime.failures||[],typescript_and_vite:"PASSED_BEFORE_THIS_POSTBUILD_VERIFIER",static_leaf_shells:seoRows.length,advanced_tool_pages:advanced.pages};
 const performanceReport={schema_version:"MM530_PHASE9_PERFORMANCE_REPORT_V1",measured_from:"dist",...perf,discovery_runtime_eager:false};
