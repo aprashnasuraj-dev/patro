@@ -16,7 +16,20 @@ function download(data,name,type){const url=URL.createObjectURL(new Blob([data],
 function error(e){const el=$('#error');if(el){el.textContent=e.message||String(e);el.hidden=false;}}
 function clearError(){const el=$('#error');if(el){el.textContent='';el.hidden=true;}}
 function values(form){return Object.fromEntries(new FormData(form));}
-const search=$('#search');if(search)search.addEventListener('input',()=>{const term=search.value.toLowerCase().trim();let count=0;document.querySelectorAll('[data-search]').forEach(el=>{el.hidden=!el.dataset.search.includes(term);if(!el.hidden)count++;});$('#search-count').textContent=`${count} matching entries`;});
+const search=$('#search');
+if(search){
+ if(config.kind==='web-tools-hub'&&Array.isArray(config.tools)){
+  const results=$('#web-tool-search-results'),categories=$('#web-tool-categories'),count=$('#search-count');
+  const renderWebSearch=()=>{
+   const term=search.value.toLowerCase().trim();
+   if(!term){results.hidden=true;results.replaceChildren();categories.hidden=false;count.textContent=`Search ${config.tools.length} tools`;return}
+   const matches=config.tools.filter(t=>[t.title,t.description,t.categoryLabel].some(v=>String(v).toLowerCase().includes(term)));
+   results.replaceChildren(...matches.slice(0,60).map(t=>{const a=document.createElement('a');a.className='card web-tool-card';a.href=t.route;const tag=document.createElement('span');tag.className='card-tag';tag.textContent=t.categoryLabel;const h=document.createElement('h3');h.textContent=t.title;const p=document.createElement('p');p.textContent=t.description;const small=document.createElement('small');small.textContent='Open tool →';a.append(tag,h,p,small);return a}));
+   results.hidden=false;categories.hidden=true;count.textContent=matches.length>60?`Showing 60 of ${matches.length} matches`:`${matches.length} matching tools`;
+  };
+  search.addEventListener('input',renderWebSearch);renderWebSearch();
+ }else search.addEventListener('input',()=>{const term=search.value.toLowerCase().trim();let count=0;document.querySelectorAll('[data-search]').forEach(el=>{el.hidden=!el.dataset.search.includes(term);if(!el.hidden)count++;});$('#search-count').textContent=`${count} matching entries`;});
+}
 const sheet=$('#gauge-sheet');if(sheet)sheet.addEventListener('click',async()=>{const {pdf,gaugeWorksheet}=await loadPdf();download(pdf(gaugeWorksheet()),'aafnai-gauge-worksheet.pdf','application/pdf');});
 const print=$('#print');if(print)print.addEventListener('click',()=>window.print());
 const form=$('#tool-form');let lastResult=null,lastPaper=null,lastVoicings=[];function showResult(r){lastResult=r;$('#result-number').textContent=fmt(r.result??r.minClearance);$('#result-unit').textContent=r.unit||r.type||'mm minimum clearance';const box=$('#result-details');box.replaceChildren();for(const [key,val] of Object.entries(r)){if(['result','unit'].includes(key))continue;const p=document.createElement(Array.isArray(val)?'pre':'p');p.textContent=`${key.replace(/([A-Z])/g,' $1')}: ${Array.isArray(val)?val.map(fmt).join(', '):fmt(val)}`;box.append(p);}}

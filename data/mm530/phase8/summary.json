@@ -5,5 +5,11 @@
   "react_vite_adapter": true,
   "inventory_driven": true,
   "lazy_route_assets": true,
-  "main_bundle_tool_runtimes_eager": false
+  "main_bundle_tool_runtimes_eager": false,
+  "advanced_dashboard_integrated": true,
+  "dashboard_root": "/advancetools/",
+  "web_tool_category_discovery": true,
+  "frozen_canonical_routes_preserved": 530,
+  "developer_facing_copy_audit": true,
+  "batch_seo_content_preserved": true
 }

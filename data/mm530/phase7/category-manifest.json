@@ -4,63 +4,77 @@
     {
       "key": "calculators",
       "label": "Calculators",
-      "count": 198
+      "count": 198,
+      "discovery_route": "/advancetools/web-tools/calculators/"
     },
     {
       "key": "generators",
       "label": "Generators",
-      "count": 76
+      "count": 76,
+      "discovery_route": "/advancetools/web-tools/generators/"
     },
     {
       "key": "converters",
       "label": "Converters",
-      "count": 68
+      "count": 68,
+      "discovery_route": "/advancetools/web-tools/converters/"
     },
     {
       "key": "utilities",
       "label": "Utilities",
-      "count": 41
+      "count": 41,
+      "discovery_route": "/advancetools/web-tools/utilities/"
     },
     {
       "key": "validators",
       "label": "Validators",
-      "count": 39
+      "count": 39,
+      "discovery_route": "/advancetools/web-tools/validators/"
     },
     {
       "key": "editors",
       "label": "Editors",
-      "count": 35
+      "count": 35,
+      "discovery_route": "/advancetools/web-tools/editors/"
     },
     {
       "key": "planners",
       "label": "Planners",
-      "count": 21
+      "count": 21,
+      "discovery_route": "/advancetools/web-tools/planners/"
     },
     {
       "key": "extractors",
       "label": "Extractors",
-      "count": 18
+      "count": 18,
+      "discovery_route": "/advancetools/web-tools/extractors/"
     },
     {
       "key": "analyzers",
       "label": "Analyzers",
-      "count": 18
+      "count": 18,
+      "discovery_route": "/advancetools/web-tools/analyzers/"
     },
     {
       "key": "formatters",
       "label": "Formatters",
-      "count": 7
+      "count": 7,
+      "discovery_route": "/advancetools/web-tools/formatters/"
     },
     {
       "key": "comparisons",
       "label": "Comparisons",
-      "count": 6
+      "count": 6,
+      "discovery_route": "/advancetools/web-tools/comparisons/"
     },
     {
       "key": "timers",
       "label": "Timers",
-      "count": 3
+      "count": 3,
+      "discovery_route": "/advancetools/web-tools/timers/"
     }
   ],
-  "total": 530
+  "total": 530,
+  "discovery_root": "/advancetools/web-tools/",
+  "dashboard_root": "/advancetools/"
 }
