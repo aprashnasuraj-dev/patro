@@ -201,8 +201,9 @@ const handler = async (req, res) => {
   const safe = normalize(decoded).replace(/^([.][.][/\\])+/, "").replace(/^[/\\]+/, "");
   let file = join(root, safe || "index.html");
   if (!(await existing(file))) {
+    const htmlCandidate = file + ".html";
     const indexCandidate = join(file, "index.html");
-    file = (await existing(indexCandidate)) ? indexCandidate : join(root, "index.html");
+    file = (await existing(htmlCandidate)) ? htmlCandidate : (await existing(indexCandidate)) ? indexCandidate : join(root, "index.html");
   }
   if (!(await existing(file))) {
     res.writeHead(404); res.end("Not found"); return;
