@@ -5,6 +5,10 @@ import{baristaFire,socialSecurityBreakEven}from"../../client-tools/runtime/cores
 import{ipv6Cidr,chmodFromOctal,k8sRatio}from"../../client-tools/runtime/cores/dev350-network.mjs";
 import{dockerRunToCompose,regexExplain,resolveJsonPointer}from"../../client-tools/runtime/cores/dev350-text.mjs";
 import{jsonPatch}from"../../client-tools/runtime/cores/dev350-worker-core.mjs";
+import{SUPPORTED_OPERATIONS as IMAGE_OPS}from"../../client-tools/runtime/engines/image350.mjs";
+import{SUPPORTED_OPERATIONS as FINANCE_OPS}from"../../client-tools/runtime/engines/finance350.mjs";
+import{SUPPORTED_OPERATIONS as DEV_OPS}from"../../client-tools/runtime/engines/dev350.mjs";
+import{readFile}from"node:fs/promises";
 assert.equal(targetBytes(1),1048576);
 assert.deepEqual(passportCrop(4000,3000,600,600),{x:500,y:0,width:3000,height:3000});
 assert.ok(boundedDimensions(10000,10000).width<10000);
@@ -19,4 +23,4 @@ assert.match(dockerRunToCompose("docker run --name web -p 8080:80 nginx:latest")
 assert.ok(regexExplain("^a+$").length>=3);
 assert.equal(resolveJsonPointer({a:{b:2}},"/a/b"),2);
 assert.deepEqual(jsonPatch({a:1},{a:2}),[{op:"replace",path:"/a",value:2}]);
-console.log("Client tools 350 core tests PASS");
+const catalog=JSON.parse(await readFile("client-tools/tools.json","utf8")).filter(t=>String(t.source_id||"").startsWith("CT-"));const supported=new Set([...IMAGE_OPS,...FINANCE_OPS,...DEV_OPS]);assert.equal(catalog.length,50);for(const t of catalog)assert.ok(supported.has(t.operation),"missing implementation: "+t.operation);assert.equal(supported.size,50);console.log("Client tools 350 core tests PASS: 50/50 operations covered");
