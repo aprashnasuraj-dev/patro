@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "Nginx Location Block Match Tester — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Simulate selection among simple Nginx location directives and explain exact/prefix/regex precedence. Runs locally in your browser. Review limitations and exam",
+    "meta_description": "Simulate selection among simple Nginx location directives and explain exact/prefix/regex precedence. Runs locally in your browser. Review limitations and examples.",
     "h1": "Route precedence debugger: Nginx Location Block Match Tester",
     "robots": "noindex",
     "canonical": null,
