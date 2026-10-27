@@ -91,7 +91,8 @@
     "test:homepage": "vitest run tests/homepage-redesign.test.tsx tests/home-calendar-client.test.ts && node --test tests/home-calendar-feed.test.mjs",
     "advancetools:postbuild": "node tools/advancetools/scripts/postbuild.mjs",
     "advancetools:verify": "node tools/advancetools/scripts/verify.mjs --repo",
-    "mm530:routes": "node scripts/mm530/phase7-route-audit.mjs"
+    "mm530:routes": "node scripts/mm530/phase7-route-audit.mjs",
+    "client-tools:test350": "node scripts/client-tools/test350.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",

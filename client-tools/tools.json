@@ -10798,5 +10798,2325 @@
     "dependency": "None",
     "build_difficulty": "Medium",
     "target_market": "Global"
+  },
+  {
+    "source_id": "CT-301",
+    "slug": "/converter/heic-to-pdf",
+    "category": "converter",
+    "h1": "HEIC to PDF",
+    "title_tag": "HEIC to PDF",
+    "meta_description": "Decode HEIC locally, preserve orientation, size pages to the image, and download a PDF without uploading files. Runs locally in your browser; inputs…",
+    "target_long_tail_keyword": "heic to pdf",
+    "faqs": [
+      {
+        "question": "Does HEIC to PDF send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC to PDF support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC to PDF?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC to PDF?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/heic-to-jpg-under-1mb",
+      "/converter/heic-to-webp",
+      "/tools/heic-viewer"
+    ],
+    "engine": "image350",
+    "operation": "heic-to-pdf",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "libheif-js 1.23.5 + pdf-lib 1.17.1",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Decode HEIC locally, preserve orientation, size pages to the image, and download a PDF without uploading files.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-302",
+    "slug": "/converter/heic-to-jpg-under-1mb",
+    "category": "converter",
+    "h1": "HEIC to JPG Under 1 MB or 2 MB",
+    "title_tag": "HEIC to JPG Under 1 MB or 2 MB",
+    "meta_description": "Binary-search JPEG quality and resize only when needed to meet 1 MB or 2 MB targets. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "heic to jpg under 1mb",
+    "faqs": [
+      {
+        "question": "Does HEIC to JPG Under 1 MB or 2 MB send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC to JPG Under 1 MB or 2 MB support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC to JPG Under 1 MB or 2 MB?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC to JPG Under 1 MB or 2 MB?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/heic-to-webp",
+      "/tools/heic-viewer",
+      "/tools/heic-exif-viewer"
+    ],
+    "engine": "image350",
+    "operation": "heic-to-jpg-under-1mb",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "libheif-js 1.23.5",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Binary-search JPEG quality and resize only when needed to meet 1 MB or 2 MB targets.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-303",
+    "slug": "/converter/heic-to-webp",
+    "category": "converter",
+    "h1": "HEIC to WebP",
+    "title_tag": "HEIC to WebP",
+    "meta_description": "Decode HEIC in a worker, encode WebP in-browser, and show before/after file sizes. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "heic to webp",
+    "faqs": [
+      {
+        "question": "Does HEIC to WebP send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC to WebP support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC to WebP?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC to WebP?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/tools/heic-viewer",
+      "/tools/heic-exif-viewer",
+      "/converter/avif-to-jpg"
+    ],
+    "engine": "image350",
+    "operation": "heic-to-webp",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "libheif-js 1.23.5",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Decode HEIC in a worker, encode WebP in-browser, and show before/after file sizes.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-304",
+    "slug": "/tools/heic-viewer",
+    "category": "tools",
+    "h1": "HEIC Viewer",
+    "title_tag": "HEIC Viewer",
+    "meta_description": "Render a decoded preview locally and expose dimensions and color-space caveats. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "heic viewer",
+    "faqs": [
+      {
+        "question": "Does HEIC Viewer send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC Viewer support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC Viewer?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC Viewer?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/tools/heic-exif-viewer",
+      "/converter/avif-to-jpg",
+      "/converter/live-photo-to-gif"
+    ],
+    "engine": "image350",
+    "operation": "heic-viewer",
+    "source_category": "HEIC & Image",
+    "tool_type": "Utility",
+    "dependency": "libheif-js 1.23.5",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Render a decoded preview locally and expose dimensions and color-space caveats.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-305",
+    "slug": "/tools/heic-exif-viewer",
+    "category": "tools",
+    "h1": "HEIC Metadata and EXIF Viewer",
+    "title_tag": "HEIC Metadata and EXIF Viewer",
+    "meta_description": "Read container and EXIF fields locally, clearly separating unavailable fields from stripped data. Runs locally in your browser; inputs stay on your…",
+    "target_long_tail_keyword": "heic exif viewer",
+    "faqs": [
+      {
+        "question": "Does HEIC Metadata and EXIF Viewer send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC Metadata and EXIF Viewer support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC Metadata and EXIF Viewer?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC Metadata and EXIF Viewer?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/avif-to-jpg",
+      "/converter/live-photo-to-gif",
+      "/converter/heic-to-passport-photo-jpg"
+    ],
+    "engine": "image350",
+    "operation": "heic-exif-viewer",
+    "source_category": "HEIC & Image",
+    "tool_type": "Utility",
+    "dependency": "exifr 7.1.3",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Read container and EXIF fields locally, clearly separating unavailable fields from stripped data.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-306",
+    "slug": "/converter/avif-to-jpg",
+    "category": "converter",
+    "h1": "AVIF to JPG",
+    "title_tag": "AVIF to JPG",
+    "meta_description": "Decode with the browser where supported, fall back to a lazy codec only when needed, and export JPEG locally. Runs locally in your browser; inputs…",
+    "target_long_tail_keyword": "avif to jpg",
+    "faqs": [
+      {
+        "question": "Does AVIF to JPG send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does AVIF to JPG support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is AVIF to JPG?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of AVIF to JPG?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/live-photo-to-gif",
+      "/converter/heic-to-passport-photo-jpg",
+      "/converter/heic-to-png"
+    ],
+    "engine": "image350",
+    "operation": "avif-to-jpg",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Decode with the browser where supported, fall back to a lazy codec only when needed, and export JPEG locally.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-307",
+    "slug": "/converter/live-photo-to-gif",
+    "category": "converter",
+    "h1": "Live Photo to GIF",
+    "title_tag": "Live Photo to GIF",
+    "meta_description": "Pair or accept the motion file locally, trim a short segment, and encode a browser-only GIF with limits. Runs locally in your browser; inputs stay on…",
+    "target_long_tail_keyword": "live photo to gif",
+    "faqs": [
+      {
+        "question": "Does Live Photo to GIF send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Live Photo to GIF support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Live Photo to GIF?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of Live Photo to GIF?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/heic-to-passport-photo-jpg",
+      "/converter/heic-to-png",
+      "/converter/avif-to-png"
+    ],
+    "engine": "image350",
+    "operation": "live-photo-to-gif",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "gifenc 1.0.3",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Pair or accept the motion file locally, trim a short segment, and encode a browser-only GIF with limits.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-308",
+    "slug": "/converter/heic-to-passport-photo-jpg",
+    "category": "converter",
+    "h1": "HEIC to Passport Photo JPG",
+    "title_tag": "HEIC to Passport Photo JPG",
+    "meta_description": "Convert, crop and resize locally; the tool does not claim compliance with any specific government photo rules. Runs locally in your browser; inputs…",
+    "target_long_tail_keyword": "heic to passport photo jpg",
+    "faqs": [
+      {
+        "question": "Does HEIC to Passport Photo JPG send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC to Passport Photo JPG support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC to Passport Photo JPG?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC to Passport Photo JPG?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/heic-to-png",
+      "/converter/avif-to-png",
+      "/converter/heic-to-pdf"
+    ],
+    "engine": "image350",
+    "operation": "heic-to-passport-photo-jpg",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "libheif-js 1.23.5",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Convert, crop and resize locally; the tool does not claim compliance with any specific government photo rules.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-309",
+    "slug": "/converter/heic-to-png",
+    "category": "converter",
+    "h1": "HEIC to PNG",
+    "title_tag": "HEIC to PNG",
+    "meta_description": "Net-new replacement for a duplicate HEIC-to-JPG privacy request; decoded pixels stay on-device. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "heic to png",
+    "faqs": [
+      {
+        "question": "Does HEIC to PNG send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HEIC to PNG support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HEIC to PNG?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of HEIC to PNG?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/avif-to-png",
+      "/converter/heic-to-pdf",
+      "/converter/heic-to-jpg-under-1mb"
+    ],
+    "engine": "image350",
+    "operation": "heic-to-png",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "libheif-js 1.23.5",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for a duplicate HEIC-to-JPG privacy request; decoded pixels stay on-device.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-310",
+    "slug": "/converter/avif-to-png",
+    "category": "converter",
+    "h1": "AVIF to PNG",
+    "title_tag": "AVIF to PNG",
+    "meta_description": "Net-new replacement for duplicate batch HEIC intent; preserves alpha when the decoded AVIF provides it. Runs locally in your browser; inputs stay on…",
+    "target_long_tail_keyword": "avif to png",
+    "faqs": [
+      {
+        "question": "Does AVIF to PNG send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does AVIF to PNG support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is AVIF to PNG?",
+        "answer": "It processes the selected pixels or metadata locally; output can vary with browser codec support, color handling and source quality."
+      },
+      {
+        "question": "What are the main limits of AVIF to PNG?",
+        "answer": "Browser codec support varies by format. Large files are bounded to protect memory and responsiveness."
+      }
+    ],
+    "related_tools": [
+      "/converter/heic-to-pdf",
+      "/converter/heic-to-jpg-under-1mb",
+      "/converter/heic-to-webp"
+    ],
+    "engine": "image350",
+    "operation": "avif-to-png",
+    "source_category": "HEIC & Image",
+    "tool_type": "Converter",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for duplicate batch HEIC intent; preserves alpha when the decoded AVIF provides it.",
+    "limits": [
+      "Browser codec support varies by format.",
+      "Large files are bounded to protect memory and responsiveness.",
+      "Color, HDR and metadata behavior can differ from native photo apps."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-311",
+    "slug": "/calculator/mortgage-recast",
+    "category": "calculator",
+    "h1": "Mortgage Recast Calculator",
+    "title_tag": "Mortgage Recast Calculator",
+    "meta_description": "Re-amortize the remaining balance over the remaining term after a lump-sum principal payment. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "mortgage recast calculator",
+    "faqs": [
+      {
+        "question": "Does Mortgage Recast Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Mortgage Recast Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Mortgage Recast Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Mortgage Recast Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/refinance-break-even",
+      "/calculator/pmi-removal-date",
+      "/calculator/arm-payment-adjustment"
+    ],
+    "engine": "finance350",
+    "operation": "mortgage-recast",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Re-amortize the remaining balance over the remaining term after a lump-sum principal payment.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-312",
+    "slug": "/calculator/refinance-break-even",
+    "category": "calculator",
+    "h1": "Refinance Break-Even Calculator",
+    "title_tag": "Refinance Break-Even Calculator",
+    "meta_description": "Compare old and new payment cash flows, fees and optional points without pretending to predict rates. Runs locally in your browser; inputs stay on…",
+    "target_long_tail_keyword": "refinance break even calculator",
+    "faqs": [
+      {
+        "question": "Does Refinance Break-Even Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Refinance Break-Even Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Refinance Break-Even Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Refinance Break-Even Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/pmi-removal-date",
+      "/calculator/arm-payment-adjustment",
+      "/calculator/heloc-vs-cash-out-refinance"
+    ],
+    "engine": "finance350",
+    "operation": "refinance-break-even",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Compare old and new payment cash flows, fees and optional points without pretending to predict rates.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-313",
+    "slug": "/calculator/pmi-removal-date",
+    "category": "calculator",
+    "h1": "PMI Removal Date Calculator",
+    "title_tag": "PMI Removal Date Calculator",
+    "meta_description": "Model amortization against original value and clearly flag lender/investor exceptions. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "pmi removal date calculator",
+    "faqs": [
+      {
+        "question": "Does PMI Removal Date Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does PMI Removal Date Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is PMI Removal Date Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of PMI Removal Date Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/arm-payment-adjustment",
+      "/calculator/heloc-vs-cash-out-refinance",
+      "/calculator/barista-fire"
+    ],
+    "engine": "finance350",
+    "operation": "pmi-removal-date",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Model amortization against original value and clearly flag lender/investor exceptions.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-314",
+    "slug": "/calculator/arm-payment-adjustment",
+    "category": "calculator",
+    "h1": "ARM Payment Adjustment Calculator",
+    "title_tag": "ARM Payment Adjustment Calculator",
+    "meta_description": "Apply user-entered index, margin, periodic/lifetime caps, balance and remaining term. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "arm payment adjustment calculator",
+    "faqs": [
+      {
+        "question": "Does ARM Payment Adjustment Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does ARM Payment Adjustment Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is ARM Payment Adjustment Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of ARM Payment Adjustment Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/heloc-vs-cash-out-refinance",
+      "/calculator/barista-fire",
+      "/calculator/roth-conversion-tax"
+    ],
+    "engine": "finance350",
+    "operation": "arm-payment-adjustment",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Apply user-entered index, margin, periodic/lifetime caps, balance and remaining term.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-315",
+    "slug": "/calculator/heloc-vs-cash-out-refinance",
+    "category": "calculator",
+    "h1": "HELOC vs Cash-Out Refinance Calculator",
+    "title_tag": "HELOC vs Cash-Out Refinance Calculator",
+    "meta_description": "Show separate rate assumptions, fees, draw amount and mortgage balance effects. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "heloc vs cash out refinance calculator",
+    "faqs": [
+      {
+        "question": "Does HELOC vs Cash-Out Refinance Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does HELOC vs Cash-Out Refinance Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is HELOC vs Cash-Out Refinance Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of HELOC vs Cash-Out Refinance Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/barista-fire",
+      "/calculator/roth-conversion-tax",
+      "/calculator/rule-55-withdrawal-penalty"
+    ],
+    "engine": "finance350",
+    "operation": "heloc-vs-cash-out-refinance",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Show separate rate assumptions, fees, draw amount and mortgage balance effects.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-316",
+    "slug": "/calculator/barista-fire",
+    "category": "calculator",
+    "h1": "Barista FIRE Calculator",
+    "title_tag": "Barista FIRE Calculator",
+    "meta_description": "Net-new replacement for the existing Coast FIRE calculator. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "barista fire calculator",
+    "faqs": [
+      {
+        "question": "Does Barista FIRE Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Barista FIRE Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Barista FIRE Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Barista FIRE Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/roth-conversion-tax",
+      "/calculator/rule-55-withdrawal-penalty",
+      "/calculator/required-minimum-distribution"
+    ],
+    "engine": "finance350",
+    "operation": "barista-fire",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for the existing Coast FIRE calculator.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-317",
+    "slug": "/calculator/roth-conversion-tax",
+    "category": "calculator",
+    "h1": "Roth Conversion Tax Calculator",
+    "title_tag": "Roth Conversion Tax Calculator",
+    "meta_description": "Use tax-year configuration and filing-status brackets; state tax is user-entered rather than guessed. Runs locally in your browser; inputs stay on…",
+    "target_long_tail_keyword": "roth conversion tax calculator",
+    "faqs": [
+      {
+        "question": "Does Roth Conversion Tax Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Roth Conversion Tax Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Roth Conversion Tax Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Roth Conversion Tax Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/rule-55-withdrawal-penalty",
+      "/calculator/required-minimum-distribution",
+      "/calculator/social-security-break-even"
+    ],
+    "engine": "finance350",
+    "operation": "roth-conversion-tax",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Use tax-year configuration and filing-status brackets; state tax is user-entered rather than guessed.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-318",
+    "slug": "/calculator/rule-55-withdrawal-penalty",
+    "category": "calculator",
+    "h1": "Rule of 55 Withdrawal Penalty Calculator",
+    "title_tag": "Rule of 55 Withdrawal Penalty Calculator",
+    "meta_description": "Explain eligibility assumptions and estimate tax/penalty differences only. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "rule of 55 calculator",
+    "faqs": [
+      {
+        "question": "Does Rule of 55 Withdrawal Penalty Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Rule of 55 Withdrawal Penalty Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Rule of 55 Withdrawal Penalty Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Rule of 55 Withdrawal Penalty Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/required-minimum-distribution",
+      "/calculator/social-security-break-even",
+      "/calculator/freelancer-quarterly-tax"
+    ],
+    "engine": "finance350",
+    "operation": "rule-55-withdrawal-penalty",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Explain eligibility assumptions and estimate tax/penalty differences only.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-319",
+    "slug": "/calculator/required-minimum-distribution",
+    "category": "calculator",
+    "h1": "Required Minimum Distribution Calculator",
+    "title_tag": "Required Minimum Distribution Calculator",
+    "meta_description": "Keep tables and tax-year rules in configuration and distinguish owner RMDs from inherited-IRA rules. Runs locally in your browser; inputs stay on your…",
+    "target_long_tail_keyword": "rmd calculator",
+    "faqs": [
+      {
+        "question": "Does Required Minimum Distribution Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Required Minimum Distribution Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Required Minimum Distribution Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Required Minimum Distribution Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/social-security-break-even",
+      "/calculator/freelancer-quarterly-tax",
+      "/calculator/hourly-to-salary-benefits"
+    ],
+    "engine": "finance350",
+    "operation": "required-minimum-distribution",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Keep tables and tax-year rules in configuration and distinguish owner RMDs from inherited-IRA rules.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-320",
+    "slug": "/calculator/social-security-break-even",
+    "category": "calculator",
+    "h1": "Social Security Break-Even Calculator",
+    "title_tag": "Social Security Break-Even Calculator",
+    "meta_description": "Use user-entered monthly benefits at each claiming age; optionally apply a COLA assumption consistently. Runs locally in your browser; inputs stay on…",
+    "target_long_tail_keyword": "social security break even calculator",
+    "faqs": [
+      {
+        "question": "Does Social Security Break-Even Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Social Security Break-Even Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Social Security Break-Even Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Social Security Break-Even Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/freelancer-quarterly-tax",
+      "/calculator/hourly-to-salary-benefits",
+      "/calculator/lease-vs-buy-car"
+    ],
+    "engine": "finance350",
+    "operation": "social-security-break-even",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Use user-entered monthly benefits at each claiming age; optionally apply a COLA assumption consistently.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-321",
+    "slug": "/calculator/freelancer-quarterly-tax",
+    "category": "calculator",
+    "h1": "Freelancer Quarterly Tax Calculator",
+    "title_tag": "Freelancer Quarterly Tax Calculator",
+    "meta_description": "Merged hub for the requested quarterly-estimated-tax and self-employment-tax tools to avoid duplicate pages. Runs locally in your browser; inputs stay…",
+    "target_long_tail_keyword": "freelancer quarterly estimated tax calculator",
+    "faqs": [
+      {
+        "question": "Does Freelancer Quarterly Tax Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Freelancer Quarterly Tax Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Freelancer Quarterly Tax Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Freelancer Quarterly Tax Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/hourly-to-salary-benefits",
+      "/calculator/lease-vs-buy-car",
+      "/calculator/balance-transfer-fee"
+    ],
+    "engine": "finance350",
+    "operation": "freelancer-quarterly-tax",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Merged hub for the requested quarterly-estimated-tax and self-employment-tax tools to avoid duplicate pages.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-322",
+    "slug": "/calculator/hourly-to-salary-benefits",
+    "category": "calculator",
+    "h1": "Hourly to Salary with Benefits Calculator",
+    "title_tag": "Hourly to Salary with Benefits Calculator",
+    "meta_description": "Value PTO, employer health contribution, retirement match and other benefits separately. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "hourly to salary with benefits calculator",
+    "faqs": [
+      {
+        "question": "Does Hourly to Salary with Benefits Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Hourly to Salary with Benefits Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Hourly to Salary with Benefits Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Hourly to Salary with Benefits Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/lease-vs-buy-car",
+      "/calculator/balance-transfer-fee",
+      "/calculator/mortgage-points-break-even"
+    ],
+    "engine": "finance350",
+    "operation": "hourly-to-salary-benefits",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Value PTO, employer health contribution, retirement match and other benefits separately.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-323",
+    "slug": "/calculator/lease-vs-buy-car",
+    "category": "calculator",
+    "h1": "Lease vs Buy Car Calculator",
+    "title_tag": "Lease vs Buy Car Calculator",
+    "meta_description": "Show acquisition fees, taxes, mileage/overage assumptions, loan costs and estimated resale value. Runs locally in your browser; inputs stay on your…",
+    "target_long_tail_keyword": "lease vs buy car calculator",
+    "faqs": [
+      {
+        "question": "Does Lease vs Buy Car Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Lease vs Buy Car Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Lease vs Buy Car Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Lease vs Buy Car Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/balance-transfer-fee",
+      "/calculator/mortgage-points-break-even",
+      "/calculator/house-hacking-rent-offset"
+    ],
+    "engine": "finance350",
+    "operation": "lease-vs-buy-car",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Show acquisition fees, taxes, mileage/overage assumptions, loan costs and estimated resale value.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-324",
+    "slug": "/calculator/balance-transfer-fee",
+    "category": "calculator",
+    "h1": "Balance Transfer Fee Calculator",
+    "title_tag": "Balance Transfer Fee Calculator",
+    "meta_description": "Compare promotional APR duration, transfer fee, payment amount and fallback APR. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "balance transfer fee calculator",
+    "faqs": [
+      {
+        "question": "Does Balance Transfer Fee Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Balance Transfer Fee Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Balance Transfer Fee Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Balance Transfer Fee Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/mortgage-points-break-even",
+      "/calculator/house-hacking-rent-offset",
+      "/calculator/rsu-sell-to-cover"
+    ],
+    "engine": "finance350",
+    "operation": "balance-transfer-fee",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Compare promotional APR duration, transfer fee, payment amount and fallback APR.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-325",
+    "slug": "/calculator/mortgage-points-break-even",
+    "category": "calculator",
+    "h1": "Mortgage Points Break-Even Calculator",
+    "title_tag": "Mortgage Points Break-Even Calculator",
+    "meta_description": "Net-new replacement for the existing debt snowball/avalanche tool. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "mortgage points break even calculator",
+    "faqs": [
+      {
+        "question": "Does Mortgage Points Break-Even Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Mortgage Points Break-Even Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Mortgage Points Break-Even Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Mortgage Points Break-Even Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/house-hacking-rent-offset",
+      "/calculator/rsu-sell-to-cover",
+      "/calculator/iso-amt-estimator"
+    ],
+    "engine": "finance350",
+    "operation": "mortgage-points-break-even",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for the existing debt snowball/avalanche tool.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-326",
+    "slug": "/calculator/house-hacking-rent-offset",
+    "category": "calculator",
+    "h1": "House Hacking Rent Offset Calculator",
+    "title_tag": "House Hacking Rent Offset Calculator",
+    "meta_description": "Net-new replacement for existing rental cap-rate/cash-flow calculators. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "house hacking calculator",
+    "faqs": [
+      {
+        "question": "Does House Hacking Rent Offset Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does House Hacking Rent Offset Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is House Hacking Rent Offset Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of House Hacking Rent Offset Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/rsu-sell-to-cover",
+      "/calculator/iso-amt-estimator",
+      "/calculator/inflation-adjusted-salary"
+    ],
+    "engine": "finance350",
+    "operation": "house-hacking-rent-offset",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for existing rental cap-rate/cash-flow calculators.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-327",
+    "slug": "/calculator/rsu-sell-to-cover",
+    "category": "calculator",
+    "h1": "RSU Sell-to-Cover Calculator",
+    "title_tag": "RSU Sell-to-Cover Calculator",
+    "meta_description": "Net-new replacement for the existing RSU withholding-gap calculator. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "rsu sell to cover calculator",
+    "faqs": [
+      {
+        "question": "Does RSU Sell-to-Cover Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does RSU Sell-to-Cover Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is RSU Sell-to-Cover Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of RSU Sell-to-Cover Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/iso-amt-estimator",
+      "/calculator/inflation-adjusted-salary",
+      "/calculator/1099-vs-w2-take-home"
+    ],
+    "engine": "finance350",
+    "operation": "rsu-sell-to-cover",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for the existing RSU withholding-gap calculator.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-328",
+    "slug": "/calculator/iso-amt-estimator",
+    "category": "calculator",
+    "h1": "ISO Stock Option AMT Estimator",
+    "title_tag": "ISO Stock Option AMT Estimator",
+    "meta_description": "Use 2026 AMT exemptions/rates from config and clearly exclude state-specific rules unless entered. Runs locally in your browser; inputs stay on your…",
+    "target_long_tail_keyword": "iso stock option amt calculator",
+    "faqs": [
+      {
+        "question": "Does ISO Stock Option AMT Estimator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does ISO Stock Option AMT Estimator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is ISO Stock Option AMT Estimator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of ISO Stock Option AMT Estimator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/inflation-adjusted-salary",
+      "/calculator/1099-vs-w2-take-home",
+      "/calculator/mortgage-recast"
+    ],
+    "engine": "finance350",
+    "operation": "iso-amt-estimator",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Use 2026 AMT exemptions/rates from config and clearly exclude state-specific rules unless entered.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-329",
+    "slug": "/calculator/inflation-adjusted-salary",
+    "category": "calculator",
+    "h1": "Inflation-Adjusted Salary Calculator",
+    "title_tag": "Inflation-Adjusted Salary Calculator",
+    "meta_description": "Keep the core calculation transparent and separate inflation from location-specific cost of living. Runs locally in your browser; inputs stay on your…",
+    "target_long_tail_keyword": "inflation adjusted salary calculator",
+    "faqs": [
+      {
+        "question": "Does Inflation-Adjusted Salary Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Inflation-Adjusted Salary Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Inflation-Adjusted Salary Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of Inflation-Adjusted Salary Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/1099-vs-w2-take-home",
+      "/calculator/mortgage-recast",
+      "/calculator/refinance-break-even"
+    ],
+    "engine": "finance350",
+    "operation": "inflation-adjusted-salary",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Keep the core calculation transparent and separate inflation from location-specific cost of living.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-330",
+    "slug": "/calculator/1099-vs-w2-take-home",
+    "category": "calculator",
+    "h1": "1099 vs W-2 Take-Home Pay Calculator",
+    "title_tag": "1099 vs W-2 Take-Home Pay Calculator",
+    "meta_description": "Net-new replacement created after merging freelancer quarterly and self-employment tax into one page. Runs locally in your browser; inputs stay on…",
+    "target_long_tail_keyword": "1099 vs w2 take home calculator",
+    "faqs": [
+      {
+        "question": "Does 1099 vs W-2 Take-Home Pay Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does 1099 vs W-2 Take-Home Pay Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is 1099 vs W-2 Take-Home Pay Calculator?",
+        "answer": "It uses the formulas and 2026 configuration described on the page, but your result is still an estimate and can change with assumptions."
+      },
+      {
+        "question": "What are the main limits of 1099 vs W-2 Take-Home Pay Calculator?",
+        "answer": "Results are estimates based on the values you enter. Rates, tax rules, lender rules and benefits can change."
+      }
+    ],
+    "related_tools": [
+      "/calculator/mortgage-recast",
+      "/calculator/refinance-break-even",
+      "/calculator/pmi-removal-date"
+    ],
+    "engine": "finance350",
+    "operation": "1099-vs-w2-take-home",
+    "source_category": "US Finance",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement created after merging freelancer quarterly and self-employment tax into one page.",
+    "limits": [
+      "Results are estimates based on the values you enter.",
+      "Rates, tax rules, lender rules and benefits can change.",
+      "The calculator does not provide financial, tax, legal, investment or lending advice."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "tax_year": 2026
+  },
+  {
+    "source_id": "CT-331",
+    "slug": "/tools/cron-expression-explainer",
+    "category": "tools",
+    "h1": "Cron Expression Explainer",
+    "title_tag": "Cron Expression Explainer",
+    "meta_description": "The page also outputs GitHub Actions and Kubernetes schedule snippets so a separate duplicate cron converter is unnecessary. Runs locally in your…",
+    "target_long_tail_keyword": "cron expression explainer",
+    "faqs": [
+      {
+        "question": "Does Cron Expression Explainer send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Cron Expression Explainer support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Cron Expression Explainer?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of Cron Expression Explainer?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/converter/docker-run-to-docker-compose",
+      "/converter/curl-to-fetch-axios-python",
+      "/tools/regex-explainer"
+    ],
+    "engine": "dev350",
+    "operation": "cron-expression-explainer",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "The page also outputs GitHub Actions and Kubernetes schedule snippets so a separate duplicate cron converter is unnecessary.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-332",
+    "slug": "/converter/docker-run-to-docker-compose",
+    "category": "converter",
+    "h1": "docker run to Docker Compose Converter",
+    "title_tag": "docker run to Docker Compose Converter",
+    "meta_description": "Parse supported flags locally, preserve unknown flags as warnings, and never execute commands. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "docker run to docker compose",
+    "faqs": [
+      {
+        "question": "Does docker run to Docker Compose Converter send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does docker run to Docker Compose Converter support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is docker run to Docker Compose Converter?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of docker run to Docker Compose Converter?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/converter/curl-to-fetch-axios-python",
+      "/tools/regex-explainer",
+      "/tools/sql-formatter-bigquery-snowflake"
+    ],
+    "engine": "dev350",
+    "operation": "docker-run-to-docker-compose",
+    "source_category": "Developer Tools",
+    "tool_type": "Converter",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Parse supported flags locally, preserve unknown flags as warnings, and never execute commands.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-333",
+    "slug": "/converter/curl-to-fetch-axios-python",
+    "category": "converter",
+    "h1": "cURL to Fetch Axios Python Converter",
+    "title_tag": "cURL to Fetch Axios Python Converter",
+    "meta_description": "Parse headers, method, body and auth locally; secrets remain in the browser. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "curl to fetch axios python",
+    "faqs": [
+      {
+        "question": "Does cURL to Fetch Axios Python Converter send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does cURL to Fetch Axios Python Converter support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is cURL to Fetch Axios Python Converter?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of cURL to Fetch Axios Python Converter?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/regex-explainer",
+      "/tools/sql-formatter-bigquery-snowflake",
+      "/calculator/ipv6-cidr-subnet"
+    ],
+    "engine": "dev350",
+    "operation": "curl-to-fetch-axios-python",
+    "source_category": "Developer Tools",
+    "tool_type": "Converter",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Parse headers, method, body and auth locally; secrets remain in the browser.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-334",
+    "slug": "/tools/regex-explainer",
+    "category": "tools",
+    "h1": "Regex Explainer",
+    "title_tag": "Regex Explainer",
+    "meta_description": "Do not execute unbounded catastrophic patterns; explanation is static parsing first. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "regex explainer",
+    "faqs": [
+      {
+        "question": "Does Regex Explainer send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Regex Explainer support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Regex Explainer?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of Regex Explainer?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/sql-formatter-bigquery-snowflake",
+      "/calculator/ipv6-cidr-subnet",
+      "/calculator/chmod-permission"
+    ],
+    "engine": "dev350",
+    "operation": "regex-explainer",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Do not execute unbounded catastrophic patterns; explanation is static parsing first.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-335",
+    "slug": "/tools/sql-formatter-bigquery-snowflake",
+    "category": "tools",
+    "h1": "SQL Formatter for BigQuery and Snowflake",
+    "title_tag": "SQL Formatter for BigQuery and Snowflake",
+    "meta_description": "Formatting only; no query is sent or executed. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "bigquery snowflake sql formatter",
+    "faqs": [
+      {
+        "question": "Does SQL Formatter for BigQuery and Snowflake send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does SQL Formatter for BigQuery and Snowflake support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is SQL Formatter for BigQuery and Snowflake?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of SQL Formatter for BigQuery and Snowflake?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/calculator/ipv6-cidr-subnet",
+      "/calculator/chmod-permission",
+      "/tools/llm-token-counter"
+    ],
+    "engine": "dev350",
+    "operation": "sql-formatter-bigquery-snowflake",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Formatting only; no query is sent or executed.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-336",
+    "slug": "/calculator/ipv6-cidr-subnet",
+    "category": "calculator",
+    "h1": "IPv6 CIDR Subnet Calculator",
+    "title_tag": "IPv6 CIDR Subnet Calculator",
+    "meta_description": "Use BigInt arithmetic and canonical compressed/expanded representations. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "ipv6 cidr subnet calculator",
+    "faqs": [
+      {
+        "question": "Does IPv6 CIDR Subnet Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does IPv6 CIDR Subnet Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is IPv6 CIDR Subnet Calculator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of IPv6 CIDR Subnet Calculator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/calculator/chmod-permission",
+      "/tools/llm-token-counter",
+      "/tools/timestamp-time-zone-converter"
+    ],
+    "engine": "dev350",
+    "operation": "ipv6-cidr-subnet",
+    "source_category": "Developer Tools",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Use BigInt arithmetic and canonical compressed/expanded representations.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-337",
+    "slug": "/calculator/chmod-permission",
+    "category": "calculator",
+    "h1": "chmod Permission Calculator",
+    "title_tag": "chmod Permission Calculator",
+    "meta_description": "Explain setuid, setgid and sticky bits without running shell commands. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "chmod calculator",
+    "faqs": [
+      {
+        "question": "Does chmod Permission Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does chmod Permission Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is chmod Permission Calculator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of chmod Permission Calculator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/llm-token-counter",
+      "/tools/timestamp-time-zone-converter",
+      "/tools/nginx-reverse-proxy-config-generator"
+    ],
+    "engine": "dev350",
+    "operation": "chmod-permission",
+    "source_category": "Developer Tools",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Explain setuid, setgid and sticky bits without running shell commands.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-338",
+    "slug": "/tools/llm-token-counter",
+    "category": "tools",
+    "h1": "LLM Token Counter with Model Cost",
+    "title_tag": "LLM Token Counter with Model Cost",
+    "meta_description": "No prompt content is transmitted; exactness depends on available local tokenizer support. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "llm token counter cost calculator",
+    "faqs": [
+      {
+        "question": "Does LLM Token Counter with Model Cost send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does LLM Token Counter with Model Cost support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is LLM Token Counter with Model Cost?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of LLM Token Counter with Model Cost?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/timestamp-time-zone-converter",
+      "/tools/nginx-reverse-proxy-config-generator",
+      "/tools/env-quote-escape-validator"
+    ],
+    "engine": "dev350",
+    "operation": "llm-token-counter",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "gpt-tokenizer 4.1.0",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "No prompt content is transmitted; exactness depends on available local tokenizer support.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-339",
+    "slug": "/tools/timestamp-time-zone-converter",
+    "category": "tools",
+    "h1": "Timestamp Converter with Time Zones",
+    "title_tag": "Timestamp Converter with Time Zones",
+    "meta_description": "All date math stays local and DST offsets are shown explicitly. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "timestamp converter time zones",
+    "faqs": [
+      {
+        "question": "Does Timestamp Converter with Time Zones send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Timestamp Converter with Time Zones support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Timestamp Converter with Time Zones?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of Timestamp Converter with Time Zones?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/nginx-reverse-proxy-config-generator",
+      "/tools/env-quote-escape-validator",
+      "/tools/json-patch-generator"
+    ],
+    "engine": "dev350",
+    "operation": "timestamp-time-zone-converter",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "All date math stays local and DST offsets are shown explicitly.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-340",
+    "slug": "/tools/nginx-reverse-proxy-config-generator",
+    "category": "tools",
+    "h1": "Nginx Reverse Proxy Config Generator",
+    "title_tag": "Nginx Reverse Proxy Config Generator",
+    "meta_description": "Outputs configuration text only and marks security-sensitive directives for manual review. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "nginx reverse proxy config generator",
+    "faqs": [
+      {
+        "question": "Does Nginx Reverse Proxy Config Generator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Nginx Reverse Proxy Config Generator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Nginx Reverse Proxy Config Generator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of Nginx Reverse Proxy Config Generator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/env-quote-escape-validator",
+      "/tools/json-patch-generator",
+      "/tools/json-pointer-tester"
+    ],
+    "engine": "dev350",
+    "operation": "nginx-reverse-proxy-config-generator",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Outputs configuration text only and marks security-sensitive directives for manual review.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-341",
+    "slug": "/tools/env-quote-escape-validator",
+    "category": "tools",
+    "h1": ".env Quote and Escape Validator",
+    "title_tag": ".env Quote and Escape Validator",
+    "meta_description": "Net-new replacement for an existing .env-to-Kubernetes Secret converter. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "env quote escape validator",
+    "faqs": [
+      {
+        "question": "Does .env Quote and Escape Validator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does .env Quote and Escape Validator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is .env Quote and Escape Validator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of .env Quote and Escape Validator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/json-patch-generator",
+      "/tools/json-pointer-tester",
+      "/tools/snowflake-id-decoder"
+    ],
+    "engine": "dev350",
+    "operation": "env-quote-escape-validator",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing .env-to-Kubernetes Secret converter.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-342",
+    "slug": "/tools/json-patch-generator",
+    "category": "tools",
+    "h1": "JSON Patch RFC 6902 Generator",
+    "title_tag": "JSON Patch RFC 6902 Generator",
+    "meta_description": "Net-new replacement for an existing JSON-to-Zod tool request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "json patch generator",
+    "faqs": [
+      {
+        "question": "Does JSON Patch RFC 6902 Generator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does JSON Patch RFC 6902 Generator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is JSON Patch RFC 6902 Generator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of JSON Patch RFC 6902 Generator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/json-pointer-tester",
+      "/tools/snowflake-id-decoder",
+      "/tools/calver-version-comparator"
+    ],
+    "engine": "dev350",
+    "operation": "json-patch-generator",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing JSON-to-Zod tool request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-343",
+    "slug": "/tools/json-pointer-tester",
+    "category": "tools",
+    "h1": "JSON Pointer RFC 6901 Tester",
+    "title_tag": "JSON Pointer RFC 6901 Tester",
+    "meta_description": "Net-new replacement for an existing semantic JSON diff request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "json pointer tester",
+    "faqs": [
+      {
+        "question": "Does JSON Pointer RFC 6901 Tester send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does JSON Pointer RFC 6901 Tester support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is JSON Pointer RFC 6901 Tester?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of JSON Pointer RFC 6901 Tester?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/snowflake-id-decoder",
+      "/tools/calver-version-comparator",
+      "/tools/spki-certificate-fingerprint"
+    ],
+    "engine": "dev350",
+    "operation": "json-pointer-tester",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing semantic JSON diff request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-344",
+    "slug": "/tools/snowflake-id-decoder",
+    "category": "tools",
+    "h1": "Snowflake ID Decoder",
+    "title_tag": "Snowflake ID Decoder",
+    "meta_description": "Net-new replacement for a YAML-anchor conversion request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "snowflake id decoder",
+    "faqs": [
+      {
+        "question": "Does Snowflake ID Decoder send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Snowflake ID Decoder support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Snowflake ID Decoder?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of Snowflake ID Decoder?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/calver-version-comparator",
+      "/tools/spki-certificate-fingerprint",
+      "/tools/github-actions-permissions-checker"
+    ],
+    "engine": "dev350",
+    "operation": "snowflake-id-decoder",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for a YAML-anchor conversion request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-345",
+    "slug": "/tools/calver-version-comparator",
+    "category": "tools",
+    "h1": "CalVer Version Parser and Comparator",
+    "title_tag": "CalVer Version Parser and Comparator",
+    "meta_description": "Net-new replacement for an overlapping CSP generator request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "calver version comparator",
+    "faqs": [
+      {
+        "question": "Does CalVer Version Parser and Comparator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does CalVer Version Parser and Comparator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is CalVer Version Parser and Comparator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of CalVer Version Parser and Comparator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/spki-certificate-fingerprint",
+      "/tools/github-actions-permissions-checker",
+      "/calculator/kubernetes-requests-limits-ratio"
+    ],
+    "engine": "dev350",
+    "operation": "calver-version-comparator",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an overlapping CSP generator request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-346",
+    "slug": "/tools/spki-certificate-fingerprint",
+    "category": "tools",
+    "h1": "SPKI Certificate Fingerprint Generator",
+    "title_tag": "SPKI Certificate Fingerprint Generator",
+    "meta_description": "Net-new replacement for an existing robots.txt tester request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "spki certificate fingerprint generator",
+    "faqs": [
+      {
+        "question": "Does SPKI Certificate Fingerprint Generator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does SPKI Certificate Fingerprint Generator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is SPKI Certificate Fingerprint Generator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of SPKI Certificate Fingerprint Generator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/github-actions-permissions-checker",
+      "/calculator/kubernetes-requests-limits-ratio",
+      "/tools/urlpattern-tester"
+    ],
+    "engine": "dev350",
+    "operation": "spki-certificate-fingerprint",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing robots.txt tester request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-347",
+    "slug": "/tools/github-actions-permissions-checker",
+    "category": "tools",
+    "h1": "GitHub Actions Permissions Checker",
+    "title_tag": "GitHub Actions Permissions Checker",
+    "meta_description": "Net-new replacement for an existing UUIDv7 generator/decoder request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "github actions permissions checker",
+    "faqs": [
+      {
+        "question": "Does GitHub Actions Permissions Checker send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does GitHub Actions Permissions Checker support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is GitHub Actions Permissions Checker?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of GitHub Actions Permissions Checker?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/calculator/kubernetes-requests-limits-ratio",
+      "/tools/urlpattern-tester",
+      "/tools/cors-preflight-simulator"
+    ],
+    "engine": "dev350",
+    "operation": "github-actions-permissions-checker",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "yaml 2.8.1",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing UUIDv7 generator/decoder request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-348",
+    "slug": "/calculator/kubernetes-requests-limits-ratio",
+    "category": "calculator",
+    "h1": "Kubernetes Requests Limits Ratio Calculator",
+    "title_tag": "Kubernetes Requests Limits Ratio Calculator",
+    "meta_description": "Net-new replacement for an existing semver range calculator request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "kubernetes requests limits calculator",
+    "faqs": [
+      {
+        "question": "Does Kubernetes Requests Limits Ratio Calculator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does Kubernetes Requests Limits Ratio Calculator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is Kubernetes Requests Limits Ratio Calculator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of Kubernetes Requests Limits Ratio Calculator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/urlpattern-tester",
+      "/tools/cors-preflight-simulator",
+      "/tools/cron-expression-explainer"
+    ],
+    "engine": "dev350",
+    "operation": "kubernetes-requests-limits-ratio",
+    "source_category": "Developer Tools",
+    "tool_type": "Calculator",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing semver range calculator request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-349",
+    "slug": "/tools/urlpattern-tester",
+    "category": "tools",
+    "h1": "URLPattern Tester",
+    "title_tag": "URLPattern Tester",
+    "meta_description": "Net-new replacement for an existing CSR/certificate decoder request. Your input stays in this browser and is not sent to an AafnaiPatro tool API.",
+    "target_long_tail_keyword": "urlpattern tester",
+    "faqs": [
+      {
+        "question": "Does URLPattern Tester send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does URLPattern Tester support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is URLPattern Tester?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of URLPattern Tester?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/cors-preflight-simulator",
+      "/tools/cron-expression-explainer",
+      "/converter/docker-run-to-docker-compose"
+    ],
+    "engine": "dev350",
+    "operation": "urlpattern-tester",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for an existing CSR/certificate decoder request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+  },
+  {
+    "source_id": "CT-350",
+    "slug": "/tools/cors-preflight-simulator",
+    "category": "tools",
+    "h1": "CORS Preflight Simulator",
+    "title_tag": "CORS Preflight Simulator",
+    "meta_description": "Net-new replacement for the removed duplicate dev intents; it never makes a network request. Runs locally in your browser; inputs stay on your device.",
+    "target_long_tail_keyword": "cors preflight simulator",
+    "faqs": [
+      {
+        "question": "Does CORS Preflight Simulator send my files or values to a server?",
+        "answer": "No. Your input stays in this browser and is not sent to an AafnaiPatro tool API."
+      },
+      {
+        "question": "What inputs does CORS Preflight Simulator support?",
+        "answer": "Use the input fields or files shown above. The tool validates empty, malformed and out-of-range input before producing a result."
+      },
+      {
+        "question": "How accurate is CORS Preflight Simulator?",
+        "answer": "It applies the documented parser or transformation locally. Unsupported syntax is reported instead of silently guessed."
+      },
+      {
+        "question": "What are the main limits of CORS Preflight Simulator?",
+        "answer": "Only the documented syntax and bounded input size are supported. Generated configuration or code must be reviewed before production use."
+      }
+    ],
+    "related_tools": [
+      "/tools/cron-expression-explainer",
+      "/converter/docker-run-to-docker-compose",
+      "/converter/curl-to-fetch-axios-python"
+    ],
+    "engine": "dev350",
+    "operation": "cors-preflight-simulator",
+    "source_category": "Developer Tools",
+    "tool_type": "Utility",
+    "dependency": "None",
+    "build_difficulty": "Easy–Medium",
+    "target_market": "US-first / Western English",
+    "how_it_works": "Net-new replacement for the removed duplicate dev intents; it never makes a network request.",
+    "limits": [
+      "Only the documented syntax and bounded input size are supported.",
+      "Generated configuration or code must be reviewed before production use.",
+      "The tool does not execute pasted commands or make target-system changes."
+    ],
+    "privacy_note": "Your input stays in this browser and is not sent to an AafnaiPatro tool API."
   }
 ]
