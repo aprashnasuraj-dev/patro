@@ -11,16 +11,26 @@ const phase7=JSON.parse(await read(path.join(root,"data/mm530/phase7/category-ma
 const advanced=JSON.parse(await read(path.join(dist,"advancetools/module-manifest.json")));
 const blockers=[];
 const assert=(ok,code,detail)=>{if(!ok)blockers.push({code,detail})};
+const decodeAttr=value=>String(value||"").replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">");
+const attr=(tag,name)=>{
+ const m=String(tag||"").match(new RegExp(`\\b${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`,"i"));
+ return decodeAttr(m?.[1]??m?.[2]??"").trim();
+};
 const tagContent=(html,selector)=>{
- const patterns={
-  title:/<title>([\s\S]*?)<\/title>/i,
-  description:/<meta\b[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i,
-  canonical:/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']*)["'][^>]*>/i,
-  ogurl:/<meta\b[^>]*property=["']og:url["'][^>]*content=["']([^"']*)["'][^>]*>/i,
-  ogtitle:/<meta\b[^>]*property=["']og:title["'][^>]*content=["']([^"']*)["'][^>]*>/i,
-  twitter:/<meta\b[^>]*name=["']twitter:title["'][^>]*content=["']([^"']*)["'][^>]*>/i,
-  robots:/<meta\b[^>]*name=["']robots["'][^>]*content=["']([^"']*)["'][^>]*>/i
- };return html.match(patterns[selector])?.[1]?.trim()||"";
+ if(selector==="title")return decodeAttr(html.match(/<title>([\\s\\S]*?)<\\/title>/i)?.[1]||"").trim();
+ const specs={
+  description:["meta","name","description","content"],
+  canonical:["link","rel","canonical","href"],
+  ogurl:["meta","property","og:url","content"],
+  ogtitle:["meta","property","og:title","content"],
+  twitter:["meta","name","twitter:title","content"],
+  robots:["meta","name","robots","content"]
+ };
+ const spec=specs[selector];if(!spec)return"";
+ const [element,keyAttr,keyValue,valueAttr]=spec;
+ const tags=html.match(new RegExp(`<${element}\\b[^>]*>`,"gi"))||[];
+ const tag=tags.find(x=>attr(x,keyAttr).toLowerCase()===keyValue.toLowerCase())||"";
+ return attr(tag,valueAttr);
 };
 const visible=html=>html.replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
 const internal=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|\bbatch\s*0?\d+\b|source preparation|prepared source|pre-publication|runtime QA|runtime validation pending|publication pending|publication action|draft research tool|source checkpoint|\bQA-approved\b|\bstaged(?:\s+only)?\b|Staging\s*:?[\s-]*noindex|not published|no product tests|reserved tool routes?)/i;
@@ -43,7 +53,7 @@ assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module
 
 const titles=new Map(),descriptions=new Map(),seoRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0;
 for(const tool of registry){
- const row=runtimeById.get(tool.id);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
+ const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
  if(!(await exists(pagePath))||!(await exists(leafPath)))continue;
  const [runtimeHtml,leafHtml,sourceHtml]=await Promise.all([read(pagePath),read(leafPath),read(path.join(root,tool.sourceDir,"page.html")).catch(()=>"")]);
