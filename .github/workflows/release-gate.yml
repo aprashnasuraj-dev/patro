@@ -200,6 +200,7 @@ jobs:
           trap 'kill $server 2>/dev/null || true' EXIT
           for i in {1..30}; do if curl -fsS http://127.0.0.1:4173/advancetools/web-tools/ >/dev/null; then break; fi; sleep 1; done
           NODE_PATH="$PWD/node_modules" node scripts/mm530/phase10-browser-gate.mjs
+          NODE_PATH="$PWD/node_modules" node scripts/mm530/production-functional-sweep.mjs
           node scripts/mm530/final-acceptance.mjs
           kill "$server" 2>/dev/null || true
           trap - EXIT

@@ -51,28 +51,98 @@ assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifes
 assert(advanced.counts?.webToolCategories===12,"ADVANCED_CATEGORY_COUNT",`module manifest says ${advanced.counts?.webToolCategories}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
-const titles=new Map(),descriptions=new Map(),seoRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0;
+const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[],toolRuntimeRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;
+const editorialSignals=[
+ ["how_to",/how to use|step[- ]by[- ]step|instructions?/i],
+ ["worked_example",/(?:worked|reproducible) example|example workflow/i],
+ ["assumptions",/assumptions?|inputs and assumptions/i],
+ ["limitations",/limitations?|supported cases and exclusions|what .* cannot .* tell/i],
+ ["privacy_safety",/privacy|security|safety/i],
+ ["references",/references?|sources?|specifications?/i],
+ ["faq",/frequently asked|common questions|\bfaq\b/i]
+];
+function editorialSourceBlocks(html){
+ return [...String(html).matchAll(/<(section|article)\b[^>]*>[\s\S]*?<\/\1>/gi)].map(x=>x[0]).filter(block=>{
+  const opening=block.match(/^<[^>]+>/)?.[0]?.toLowerCase()||"";
+  const docsLike=/(?:guide|reading|docs|documentation|info|notes|evidence|help|learn|reference|faq)/i.test(opening);
+  const workspaceLike=/(?:workbench|workspace|results?|controls?|input-panel|output-panel|tool(?:\s|$)|editor|preview)/i.test(opening);
+  if(workspaceLike&&!docsLike)return false;
+  return visible(block).length>=24&&/<h[23]\b/i.test(block);
+ }).join("\n");
+}
+function headingText(html){
+ return [...String(html).matchAll(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>/gi)].map(x=>visible(x[1])).join(" ");
+}
+function signalSet(html){
+ const headings=headingText(html);
+ return new Set(editorialSignals.filter(([,re])=>re.test(headings)).map(([name])=>name));
+}
 for(const tool of registry){
  const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
  if(!(await exists(pagePath))||!(await exists(leafPath)))continue;
  const [runtimeHtml,leafHtml,sourceHtml]=await Promise.all([read(pagePath),read(leafPath),read(path.join(root,tool.sourceDir,"page.html")).catch(()=>"")]);
- runtimeBytes+=(await fs.stat(pagePath)).size+(await fs.stat(jsPath)).size;leafBytes+=(await fs.stat(leafPath)).size;
+ const runtimeHtmlStat=await fs.stat(pagePath),runtimeJsStat=await fs.stat(jsPath);
+ runtimeBytes+=runtimeHtmlStat.size+runtimeJsStat.size;leafBytes+=(await fs.stat(leafPath)).size;
+ toolRuntimeRows.push({id:tool.id,route:tool.route,htmlBytes:runtimeHtmlStat.size,jsBytes:runtimeJsStat.size,totalBytes:runtimeHtmlStat.size+runtimeJsStat.size});
+ assert(runtimeJsStat.size<1_500_000,"TOOL_RUNTIME_JS_BUDGET",tool.id+": "+runtimeJsStat.size+" bytes");
  const expected=origin+tool.route,title=tagContent(leafHtml,"title"),desc=tagContent(leafHtml,"description"),canonical=tagContent(leafHtml,"canonical"),ogurl=tagContent(leafHtml,"ogurl"),robots=tagContent(leafHtml,"robots");
  assert(Boolean(title),"SEO_TITLE_MISSING",tool.id);assert(Boolean(desc),"SEO_DESCRIPTION_MISSING",tool.id);assert(desc.length>=70&&desc.length<=165,"SEO_DESCRIPTION_LENGTH",`${tool.id}: ${desc.length}`);assert(canonical===expected,"CANONICAL_MISMATCH",`${tool.id}: ${canonical}`);assert(ogurl===expected,"OG_URL_MISMATCH",`${tool.id}: ${ogurl}`);assert(!/noindex/i.test(robots),"LEAF_NOINDEX",tool.id);assert(Boolean(tagContent(leafHtml,"ogtitle")),"OG_TITLE_MISSING",tool.id);assert(Boolean(tagContent(leafHtml,"twitter")),"TWITTER_TITLE_MISSING",tool.id);
  const previous=titles.get(title);if(previous)assert(false,"DUPLICATE_TITLE",`${tool.id} and ${previous}: ${title}`);else titles.set(title,tool.id);
  const previousDescription=descriptions.get(desc);if(previousDescription)assert(false,"DUPLICATE_DESCRIPTION",`${tool.id} and ${previousDescription}`);else descriptions.set(desc,tool.id);
  assert(leafHtml.includes('data-mm530-static-fallback="1"'),"STATIC_FALLBACK_MISSING",tool.id);
+ const h1Count=(leafHtml.match(/<h1\b/gi)||[]).length;assert(h1Count===1,"STATIC_H1_COUNT",tool.id+": "+h1Count);
  assert(leafHtml.includes(`<h1>${tool.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</h1>`)||visible(leafHtml).includes(tool.title),"STATIC_H1_MISSING",tool.id);
- const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
- if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
- if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
+ const retainedSignals=[];
+ const leafVisible=visible(leafHtml),leafStat=await fs.stat(leafPath);
+ const frameMatches=[...leafHtml.matchAll(/<iframe\b[^>]*class=["'][^"']*mm530-frame[^"']*["'][^>]*>/gi)];
+ assert(frameMatches.length===1,"CRAWLER_DIRECT_RUNTIME",tool.id+": expected exactly one tool iframe, found "+frameMatches.length);
+ assert(frameMatches[0]?.[0]?.includes('/_mm530/'+tool.id+'/page.html'),"CRAWLER_RUNTIME_TARGET",tool.id);
+ const outerModuleScripts=[...leafHtml.matchAll(/<script\b[^>]*type=["']module["'][^>]*src=/gi)];
+ assert(outerModuleScripts.length===0,"CRAWLER_SPA_BOOT",tool.id+": canonical leaf still requires outer SPA JavaScript");
+ assert(leafVisible.length>=900,"CRAWLER_VISIBLE_CONTENT_THIN",tool.id+": "+leafVisible.length+" visible characters");
+ assert(leafStat.size<180*1024,"CRAWLER_HTML_BUDGET",tool.id+": "+leafStat.size+" bytes");
+ assert(!internal.test(leafVisible),"CRAWLER_INTERNAL_COPY",tool.id);
+ assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(leafVisible),"CRAWLER_INTERNAL_REFERENCE",tool.id);
+ const relatedStatic=[...leafHtml.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)].map(x=>x[1]).filter(href=>registry.some(x=>x.route===href));
+ assert(relatedStatic.length>=Math.min(3,registry.filter(x=>x.category===tool.category&&x.id!==tool.id).length),"CRAWLER_RELATED_LINKS",tool.id+": "+relatedStatic.length);
+ const hasEditorial=leafHtml.includes('data-mm530-editorial="1"');
+ if(hasEditorial)editorialLeaves++;
+ const runtimeEditorialHeadings=(runtimeHtml.match(/<h[23]\b/gi)||[]).length;
+ if(runtimeEditorialHeadings>=2)assert(hasEditorial,"CRAWLER_EDITORIAL_LOST",tool.id+": runtime has "+runtimeEditorialHeadings+" editorial headings");
+ assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
+ crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length,retainedEditorialSignals:retainedSignals});
+ const runtimeCanonical=tagContent(runtimeHtml,"canonical"),runtimeRobots=tagContent(runtimeHtml,"robots");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(/noindex/i.test(runtimeRobots),"RUNTIME_INDEX_LEAK",tool.id+": isolated runtime must stay noindex");assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
+ const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\b[^>]*src=["']\.\/tool\.js["'][^>]*><\/script>/gi)];
+ assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
+ assert(!/research\/sources\.json|examples\/fixtures\.json/i.test(visible(runtimeHtml)),"INTERNAL_SOURCE_REFERENCE",tool.id);
+ const rawReferenceLabels=[...runtimeHtml.matchAll(/<a\b[^>]*>\s*(https?:\/\/[^<]+)<\/a>/gi)];
+ assert(rawReferenceLabels.length===0,"RAW_REFERENCE_LABEL",tool.id+": "+rawReferenceLabels.length+" raw URL labels");
+ const sourceEditorial=editorialSourceBlocks(sourceHtml),sourceSignals=signalSet(sourceEditorial),canonicalSignals=signalSet(leafHtml);
+ if(sourceSignals.has("references")){assert(signalSet(runtimeHtml).has("references"),"REFERENCES_LOST",tool.id);referenceRetention++}
+ if(sourceSignals.has("limitations")){assert(signalSet(runtimeHtml).has("limitations"),"LIMITATIONS_LOST",tool.id);limitationRetention++}
+ for(const [signal] of editorialSignals){
+  if(sourceSignals.has(signal)){
+   editorialSignalsExpected++;
+   const kept=canonicalSignals.has(signal);
+   if(kept){editorialSignalsRetained++;retainedSignals.push(signal)}
+   else assert(false,"EDITORIAL_SIGNAL_LOST",tool.id+": "+signal);
+  }
+ }
  if(hub)assert(hub.includes(tool.route),"DISCOVERY_LINK_MISSING",tool.id);
  const categoryHtml=await read(path.join(dist,"advancetools/web-tools",tool.category,"index.html")).catch(()=>"");assert(categoryHtml.includes(tool.route),"CATEGORY_LINK_MISSING",tool.id);
  seoRows.push({id:tool.id,route:tool.route,title,descriptionLength:desc.length,canonical});
 }
 
 const mmSitemap=await read(path.join(dist,"sitemap-mm530.xml")).catch(()=>"");const rootSitemap=await read(path.join(dist,"sitemap.xml")).catch(()=>"");
+const robotsTxt=await read(path.join(dist,"robots.txt")).catch(()=>"");
+assert(robotsTxt.includes("Sitemap: "+origin+"/sitemap-mm530.xml"),"CRAWLER_ROBOTS_SITEMAP","robots.txt does not advertise the MM530 sitemap directly");
+for(const agent of ["Googlebot","Bingbot","OAI-SearchBot","Claude-SearchBot","PerplexityBot","Applebot","DuckDuckBot"])assert(robotsTxt.includes("User-agent: "+agent),"CRAWLER_AGENT_POLICY_MISSING",agent);
+assert(!/Disallow:\s*\/(?:calculators|generators|converters|editors|formatters|validators|analyzers|planners|extractors|utilities|comparisons|timers)\//i.test(robotsTxt),"CRAWLER_TOOL_ROUTE_BLOCKED","robots.txt blocks a canonical MM530 family");
+const headersSource=await read(path.join(root,"public/_headers")).catch(()=>"");
+for(const category of [...new Set(registry.map(x=>x.category))]){
+ assert(headersSource.includes("/"+category+"/*")&&headersSource.includes("s-maxage=86400"),"CRAWLER_CACHE_POLICY_MISSING",category);
+}
 for(const tool of registry){const url=origin+tool.route;const occurrences=mmSitemap.split(url).length-1;assert(occurrences===1,"SITEMAP_CANONICAL_COUNT",`${tool.id}: ${occurrences}`)}
 assert(rootSitemap.includes(origin+"/sitemap-mm530.xml"),"ROOT_SITEMAP_INTEGRATION","root sitemap index missing MM530 child");
 assert(!hub?.includes("/_mm530/"),"DISCOVERY_EAGER_RUNTIME","web-tools hub references runtime assets directly");
@@ -90,7 +160,10 @@ const representative={light:"TOOL-0001",pdf:"TOOL-0151",spreadsheet:"TOOL-0370",
 const advancedLandingHtmlBytes=(await fs.stat(path.join(dist,"advancetools/index.html"))).size,webToolsHubHtmlBytes=(await fs.stat(hubPath)).size;
 const advancedSharedAssetBytes=await dirBytes(path.join(dist,advanced.assetPrefix.replace(/^\//,"")));
 const viteAssetsDir=path.join(dist,"assets");let viteChunks=[];try{for(const name of await fs.readdir(viteAssetsDir)){const p=path.join(viteAssetsDir,name),st=await fs.stat(p);if(st.isFile()&&/\.(?:m?js|css)$/.test(name))viteChunks.push({file:name,bytes:st.size})}}catch{}viteChunks.sort((a,b)=>b.bytes-a.bytes);
-const perf={advancedLandingHtmlBytes,webToolsHubHtmlBytes,advancedSharedAssetBytes,advancedLandingPayloadBytes:advancedLandingHtmlBytes+advancedSharedAssetBytes,webToolsHubPayloadBytes:webToolsHubHtmlBytes+advancedSharedAssetBytes,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,viteTopChunks:viteChunks.slice(0,20),representative:{},sharedVendorBytes:{}};
+toolRuntimeRows.sort((a,b)=>b.jsBytes-a.jsBytes);
+const jsSizes=toolRuntimeRows.map(x=>x.jsBytes).sort((a,b)=>a-b);
+const percentile=p=>jsSizes[Math.min(jsSizes.length-1,Math.floor((jsSizes.length-1)*p))]||0;
+const perf={advancedLandingHtmlBytes,webToolsHubHtmlBytes,advancedSharedAssetBytes,advancedLandingPayloadBytes:advancedLandingHtmlBytes+advancedSharedAssetBytes,webToolsHubPayloadBytes:webToolsHubHtmlBytes+advancedSharedAssetBytes,runtimeHtmlJsTotalBytes:runtimeBytes,leafShellTotalBytes:leafBytes,viteTopChunks:viteChunks.slice(0,20),toolRuntimeJs:{count:toolRuntimeRows.length,min:jsSizes[0]||0,median:percentile(.5),p90:percentile(.9),p95:percentile(.95),max:jsSizes.at(-1)||0,top20:toolRuntimeRows.slice(0,20)},representative:{},sharedVendorBytes:{}};
 const fiveMb=5*1024*1024;
 assert(perf.advancedLandingPayloadBytes<fiveMb,"ADVANCED_LANDING_PAYLOAD",`${perf.advancedLandingPayloadBytes} bytes >= 5 MB`);
 assert(perf.webToolsHubPayloadBytes<fiveMb,"WEB_TOOLS_HUB_PAYLOAD",`${perf.webToolsHubPayloadBytes} bytes >= 5 MB`);
@@ -100,10 +173,11 @@ for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-li
 
 const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,categories:phase7.categories?.length||0,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
 const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V1",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
+const crawlerReport={schema_version:"MM530_CRAWLER_SEO_GATE_V2",status:blockers.some(x=>/^CRAWLER_|EDITORIAL_/.test(x.code))?"BLOCKED":"PASS",tools_checked:crawlerRows.length,standalone_static_shells:crawlerRows.filter(x=>x.outerModuleScripts===0).length,direct_runtime_iframes:crawlerRows.length,editorial_leaves:editorialLeaves,editorial_signals_expected:editorialSignalsExpected,editorial_signals_retained:editorialSignalsRetained,rows:crawlerRows};
 const buildReport={schema_version:"MM530_PHASE9_BUILD_REPORT_V1",runtime_manifest_routes:runtime.routes?.length||0,runtime_failures:runtime.failures||[],typescript_and_vite:"PASSED_BEFORE_THIS_POSTBUILD_VERIFIER",static_leaf_shells:seoRows.length,advanced_tool_pages:advanced.pages};
 const performanceReport={schema_version:"MM530_PHASE9_PERFORMANCE_REPORT_V1",measured_from:"dist",...perf,discovery_runtime_eager:false};
 const status=blockers.length?"BLOCKED":"PHASE_9_PASS",gate={schema_version:"MM530_PHASE9_GATE_V1",status,tools:registry.length,blocker_count:blockers.length,routing:blockers.some(x=>/ROUTE|MISSING|DISCOVERY|CATEGORY/.test(x.code))?"FAIL":"PASS",seo:blockers.some(x=>/SEO|CANONICAL|TITLE|SITEMAP|REFERENCES|LIMITATIONS|INTERNAL/.test(x.code))?"FAIL":"PASS",runtime_assets:blockers.some(x=>/RUNTIME/.test(x.code))?"FAIL":"PASS",performance_measured:true,publication:false};
 const summary={schema_version:"MM530_PHASE9_SUMMARY_V1",status,tools:registry.length,categories:phase7.categories?.length||0,existing_advanced_collections:oldCollections.length,blockers:blockers.length,publication:false};
-for(const [name,data] of Object.entries({"build-report.json":buildReport,"route-report.json":routeReport,"seo-report.json":seoReport,"performance-report.json":performanceReport,"blockers.json":blockers,"gate.json":gate,"summary.json":summary}))await fs.writeFile(path.join(out,name),JSON.stringify(data,null,2)+"\n");
+for(const [name,data] of Object.entries({"build-report.json":buildReport,"route-report.json":routeReport,"seo-report.json":seoReport,"crawler-seo-report.json":crawlerReport,"performance-report.json":performanceReport,"blockers.json":blockers,"gate.json":gate,"summary.json":summary}))await fs.writeFile(path.join(out,name),JSON.stringify(data,null,2)+"\n");
 console.log("MM530_PHASE9_RESULT="+JSON.stringify({status,blockers:blockers.length,tools:registry.length,advancedPages:advanced.pages,performance:perf}));
 if(blockers.length){console.error(JSON.stringify(blockers.slice(0,100),null,2));process.exitCode=1}

@@ -13,6 +13,7 @@ export async function loadPdfLib(file: File) {
 export async function loadPdfJs(file: File) {
   assertFileSize(file, 'pdf');
   const pdfjs = await import('pdfjs-dist');
+  pdfjs.GlobalWorkerOptions.workerSrc = '/assets/vendor/pdfjs/pdf.worker.min.mjs';
   const data = new Uint8Array(await file.arrayBuffer());
   const task = pdfjs.getDocument({ data, useWorkerFetch: false, isEvalSupported: false });
   const pdf = await task.promise;
