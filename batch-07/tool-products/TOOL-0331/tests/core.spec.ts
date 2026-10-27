@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0331 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {gen} from '../src/core';describe('TOOL-0331',()=>{it('generates an extractable P-256 keypair in PEM and JWK forms',async()=>{const r=await gen('p256',0);expect(r.publicPem).toContain('BEGIN PUBLIC KEY');expect(r.privatePem).toContain('BEGIN PRIVATE KEY');expect(JSON.parse(r.publicJwk).kty).toBe('EC');expect(JSON.parse(r.privateJwk).d).toBeTruthy()});it('rejects unsupported RSA modulus sizes',async()=>{await expect(gen('rsa',2048)).rejects.toThrow(/3072 or 4096/)})});

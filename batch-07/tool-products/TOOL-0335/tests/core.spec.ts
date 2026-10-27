@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0335 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {generate} from '../src/core';describe('TOOL-0335',()=>{it('generates bounded prefixed hex tokens with stated entropy',()=>{const r=generate('hex',16,3,'id_');expect(r.rows).toHaveLength(3);for(const x of r.rows)expect(x).toMatch(/^id_[0-9a-f]{16}$/);expect(r.entropy).toBe(64)});it('rejects odd hex length and excessive count',()=>{expect(()=>generate('hex',17,1,'')).toThrow();expect(()=>generate('hex',16,1001,'')).toThrow()})});

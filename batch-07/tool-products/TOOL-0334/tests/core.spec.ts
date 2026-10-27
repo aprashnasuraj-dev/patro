@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0334 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {inspect} from '../src/core';function armor(bytes:Uint8Array){return '-----BEGIN PGP PUBLIC KEY BLOCK-----\n\n'+Buffer.from(bytes).toString('base64')+'\n-----END PGP PUBLIC KEY BLOCK-----'}describe('TOOL-0334',()=>{it('parses a bounded v4 public-key packet envelope',async()=>{const body=new Uint8Array([4,0,0,0,0,1]);const pkt=new Uint8Array([0xc6,body.length,...body]);const r=await inspect(armor(pkt));expect(r.info.version).toBe(4);expect(r.info.algorithm).toBe('RSA');expect(r.info.fingerprint).toMatch(/^[A-F0-9]{40}$/);expect(r.packetCount).toBe(1)});it('rejects armor without a public-key packet',async()=>{await expect(inspect('not pgp')).rejects.toThrow(/header/)})});

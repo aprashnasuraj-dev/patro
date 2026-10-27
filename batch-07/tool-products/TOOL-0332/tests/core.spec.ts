@@ -1,8 +1,1 @@
-import {describe,it} from 'vitest';
-describe('TOOL-0332 deferred core plan',()=>{
-  it.todo('matches every prepared known-answer fixture');
-  it.todo('rejects malformed and oversized input before expensive work');
-  it.todo('covers boundary values, encoding variants and unsupported cases');
-  it.todo('verifies local-only behavior and deterministic export framing where applicable');
-  it.todo('checks security-sensitive known vectors or round trips where applicable');
-});
+import {describe,it,expect} from 'vitest';import {jwkToPem,pemToJwk} from '../src/core';describe('TOOL-0332',()=>{it('round-trips a generated P-256 public JWK through SPKI PEM',async()=>{const pair=await crypto.subtle.generateKey({name:'ECDSA',namedCurve:'P-256'},true,['sign','verify']) as CryptoKeyPair;const jwk=await crypto.subtle.exportKey('jwk',pair.publicKey);const pem=await jwkToPem(JSON.stringify(jwk),false);expect(pem).toContain('BEGIN PUBLIC KEY');const out=JSON.parse(await pemToJwk(pem,'p256',false));expect(out.kty).toBe('EC');expect(out.crv).toBe('P-256');expect(out.x).toBe(jwk.x);expect(out.y).toBe(jwk.y)});it('rejects malformed JWK JSON',async()=>{await expect(jwkToPem('{',false)).rejects.toThrow(/Invalid JWK/)})});
