@@ -10,6 +10,12 @@ type RuntimeManifest={schemaVersion:number;routes?:RuntimeSeo[]};
 function fallbackDescription(title:string,category:string){
   return `Use ${title} directly in your browser. Review the tool's inputs, examples, references and limitations before relying on the result. Category: ${category}.`;
 }
+function iframePermissions(tool:NonNullable<ReturnType<typeof mm530ToolForRoute>>){
+ const capabilities=["clipboard-read","clipboard-write"];
+ if(tool.id==="TOOL-0349")capabilities.push("camera","microphone","display-capture");
+ if(tool.id==="TOOL-0350")capabilities.push("camera","microphone");
+ return capabilities.join("; ");
+}
 function useRouteSeo(tool:ReturnType<typeof mm530ToolForRoute>,description:string){
  useEffect(()=>{
   if(!tool)return;
@@ -69,7 +75,7 @@ export function Mm530ToolPage({path}:{path:string}){
  return <main className="mm530-page mm530-tool-page">
    <nav className="mm530-breadcrumb" aria-label="Breadcrumb"><a href="/advancetools/">Advanced tools</a><span>›</span><a href="/advancetools/web-tools/">Web tools</a><span>›</span><a href={`/advancetools/web-tools/${tool.category}/`}>{tool.categoryLabel}</a><span>›</span><b>{tool.title}</b></nav>
    <header className="mm530-tool-head"><div><span className="mm530-kicker">Browser tool · {tool.categoryLabel}</span><h1>{tool.title}</h1><p>{description}</p></div><a className="mm530-back" href={`/advancetools/web-tools/${tool.category}/`}>More {tool.categoryLabel.toLowerCase()}</a></header>
-   <div className="mm530-frame-wrap"><iframe className="mm530-frame" src={`/_mm530/${tool.id}/page.html`} title={tool.title} loading="eager" referrerPolicy="same-origin" allow="clipboard-read; clipboard-write; camera; microphone; geolocation; fullscreen"/></div>
+   <div className="mm530-frame-wrap"><iframe className="mm530-frame" src={`/_mm530/${tool.id}/page.html`} title={tool.title} loading="eager" referrerPolicy="same-origin" allow={iframePermissions(tool)}/></div>
    {related.length>0&&<section className="mm530-related" aria-labelledby="mm530-related-title"><div className="mm530-results-head"><h2 id="mm530-related-title">Related {tool.categoryLabel.toLowerCase()}</h2><a href={`/advancetools/web-tools/${tool.category}/`}>Browse category</a></div><div className="mm530-tool-grid">{related.map(item=><a className="mm530-tool-card" href={item.route} key={item.route}><strong>{item.title}</strong><small>{fallbackDescription(item.title,item.categoryLabel)}</small><b>Open tool →</b></a>)}</div></section>}
  </main>;
 }
