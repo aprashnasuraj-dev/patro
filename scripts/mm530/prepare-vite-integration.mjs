@@ -125,14 +125,35 @@ for(const tool of registry){
  try{
   if(!await exists(entry)||!await exists(page))throw new Error("missing tool entry or page");
   await fs.mkdir(dst,{recursive:true});await copyTree(srcDir,dst);
-  await build({entryPoints:[entry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
+  // Explicitly bootstrap mount-export modules; side-effect modules run via import.
+  const uiSource=await fs.readFile(entry,"utf8");
+  const mountExport=/\\bexport\\s+(?:default\\s+)?(?:function\\s+)?mount\\s*\\(|\\bexport\\s+default\\s+mount\\b/.test(uiSource);
+  const bootstrap=path.join(dst,".mm530-bootstrap.mjs");
+  const modulePath=JSON.stringify(entry);
+  const bootSource=mountExport
+    ? `import * as tool from ${modulePath};
+const root=document.querySelector('#tool-interactive-root,#tool-app,[data-tool-id="${tool.id}"]');
+if(!root)throw new Error("Missing explicit mount target for ${tool.id}");
+const mount=typeof tool.mount==="function"?tool.mount:tool.default;
+if(typeof mount!=="function")throw new Error("Missing exported mount function for ${tool.id}");
+mount(root);
+if(!root.querySelector("button,input,select,textarea,[role=button]"))throw new Error("Mount produced no interactive controls for ${tool.id}");
+root.dataset.toolMounted="true";`
+    : `import ${modulePath};`;
+  await fs.writeFile(bootstrap,bootSource);
+  try{
+    await build({entryPoints:[bootstrap],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
+  }finally{await fs.rm(bootstrap,{force:true})}
   const builtJsPath=path.join(dst,"tool.js");let builtJs=await fs.readFile(builtJsPath,"utf8");
   if(builtJs.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){builtJs=builtJs.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");await fs.writeFile(builtJsPath,builtJs);}
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title,tool.categoryLabel);
   let html=sanitizeProductionHtml(original);
   html=injectSeo(html,tool,title,description);
-  html=html.replace(/<script\b[^>]*type=["']module["'][^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
-  html=html.replace(/<script\b[^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
+  // Replace source UI scripts when present and append runtime script when absent.
+  html=html.replace(/<script\\b[^>]*\\bsrc=["'][^"']*(?:src\\/|dist\\/)?ui\\.(?:ts|tsx|js|mjs)["'][^>]*>\\s*<\\/script>/gi,"");
+  if(!/<\\/body>/i.test(html))throw new Error("Runtime page lacks a closing body");
+  html=html.replace(/<\\/body>/i,'<script type="module" src="./tool.js"></script></body>');
+  if((html.match(/<script type="module" src="\\.\\/tool\\.js"><\\/script>/g)||[]).length!==1)throw new Error("Runtime script must be present exactly once");
   if(await exists(path.join(dst,"tool.css"))&&!html.includes("./tool.css"))html=html.replace(/<\/head>/i,'<link rel="stylesheet" href="./tool.css"></head>');
   const visible=visibleText(html);if(INTERNAL_VISIBLE.test(visible))throw new Error("internal QA/developer wording remains in production-visible copy");
   await fs.writeFile(path.join(dst,"page.html"),html);
