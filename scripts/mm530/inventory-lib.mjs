@@ -18,8 +18,11 @@ export function externalImports(source=''){
 }
 function addDeps(set,value){
  if(!value)return;
- if(Array.isArray(value))for(const x of value)if(typeof x==='string')set.add(x);
- else if(typeof value==='object')for(const k of Object.keys(value))set.add(k);
+ if(Array.isArray(value)){
+   for(const x of value)if(typeof x==='string')set.add(x);
+ }else if(typeof value==='object'){
+   for(const k of Object.keys(value))set.add(k);
+ }
 }
 export function declaredDependencies(meta={}){
  const runtime=new Set(),test=new Set();
