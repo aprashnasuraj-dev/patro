@@ -25,10 +25,18 @@ function cleanPublicText(value){
   .replace(/\s+/g," ").trim();
 }
 function extractTitle(html,fallback){return cleanPublicText(decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||fallback))||fallback}
-function extractDescription(html,title){
+function boundedDescription(value,title,categoryLabel){
+ let text=cleanPublicText(value);
+ if(text.length<70)text=`Use ${title} directly in your browser. Review the inputs, method, examples, references and limitations before relying on the result. ${categoryLabel||"Web tool"}.`;
+ text=text.replace(/\s+/g," ").trim();
+ if(text.length>165){const cut=text.slice(0,164);text=(cut.replace(/\s+\S*$/,"").trim()||cut.trim()).replace(/[,:;\-–—]+$/,"")+"…";}
+ if(text.length<70)text=(text+" Review the stated assumptions and limitations before use.").slice(0,165).trim();
+ return text;
+}
+function extractDescription(html,title,categoryLabel){
  const tag=html.match(/<meta\b[^>]*name=["']description["'][^>]*>/i)?.[0]||"";
  const value=decodeHtml(tag.match(/content="([^"]*)"/i)?.[1]??tag.match(/content='([^']*)'/i)?.[1]??"").replace(/\s+/g," ").trim();
- return cleanPublicText(value)||`Use ${title} directly in your browser with clearly stated inputs, examples and limitations.`;
+ return boundedDescription(value,title,categoryLabel);
 }
 function sanitizeProductionHtml(html){
  // Strip only publication/internal preparation markers; preserve substantive guide copy.
@@ -101,7 +109,7 @@ for(const tool of registry){
   if(!await exists(entry)||!await exists(page))throw new Error("missing tool entry or page");
   await fs.mkdir(dst,{recursive:true});await copyTree(srcDir,dst);
   await build({entryPoints:[entry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"tool.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"]});
-  const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title);
+  const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title,tool.categoryLabel);
   let html=sanitizeProductionHtml(original);
   html=injectSeo(html,tool,title,description);
   html=html.replace(/<script\b[^>]*type=["']module["'][^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
