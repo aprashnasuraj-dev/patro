@@ -7,12 +7,14 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-registry.json"),"utf8")).tools;
 const outRoot=path.join(root,"public/_mm530");
 const origin="https://aafnaipatro.com";
-const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|source preparation|runtime QA|publication pending|draft research tool|staging mode|source checkpoint)/i;
+const INTERNAL_VISIBLE=/(?:TEST_PENDING|Mission Mangal|MM530|TOOL-\d{4}|source preparation|runtime QA|runtime validation pending|publication pending|draft research tool|source checkpoint|Staging:\s*noindex|not published|product tests have not been executed)/i;
 
 async function exists(p){try{await fs.access(p);return true}catch{return false}}
 function decodeHtml(s){return String(s||"").replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,"<").replace(/&gt;/g,">")}
 function cleanPublicText(value){
  return String(value||"")
+  .replace(/Scope:\s*TOOL-\d{4}\.\s*/gi,"")
+  .replace(/Staging:\s*noindex(?:,\s*not published)?\.\s*/gi,"")
   .replace(/AafnaiPatro\s*·\s*F\d+\s*·\s*TOOL-\d{4}/gi,"Aafnai Patro")
   .replace(/Mission Mangal(?:\s*·\s*TOOL-\d{4})?/gi,"Aafnai Patro")
   .replace(/\bTOOL-\d{4}\b/g," ")
@@ -25,13 +27,15 @@ function cleanPublicText(value){
 function extractTitle(html,fallback){return cleanPublicText(decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||fallback))||fallback}
 function extractDescription(html,title){
  const tag=html.match(/<meta\b[^>]*name=["']description["'][^>]*>/i)?.[0]||"";
- const value=decodeHtml(tag.match(/content=["']([^"']*)["']/i)?.[1]||"").replace(/\s+/g," ").trim();
+ const value=decodeHtml(tag.match(/content="([^"]*)"/i)?.[1]??tag.match(/content='([^']*)'/i)?.[1]??"").replace(/\s+/g," ").trim();
  return cleanPublicText(value)||`Use ${title} directly in your browser with clearly stated inputs, examples and limitations.`;
 }
 function sanitizeProductionHtml(html){
  html=html.replace(/<section\b[^>]*>\s*<h2>Integration note<\/h2>[\s\S]*?<\/section>/gi,"");
  html=html.replace(/<(?:small|p|footer)\b[^>]*>[\s\S]*?(?:Source preparation status|Source preparation only|Product testing and publication pending|No runtime QA claim|Runtime validation pending|Staging mode: noindex)[\s\S]*?<\/(?:small|p|footer)>/gi,"");
  return html
+  .replace(/Scope:\s*TOOL-\d{4}\.\s*/gi,"")
+  .replace(/Staging:\s*noindex(?:,\s*not published)?\.\s*/gi,"")
   .replace(/AafnaiPatro\s*·\s*F\d+\s*·\s*TOOL-\d{4}/gi,"Aafnai Patro")
   .replace(/Mission Mangal(?:\s*·\s*TOOL-\d{4})?/gi,"Aafnai Patro")
   .replace(/TOOL-\d{4}\s*·\s*browser-local\s*·\s*TEST_PENDING/gi,"Browser-local tool")
