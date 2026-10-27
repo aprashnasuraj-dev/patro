@@ -19,17 +19,27 @@ function replaceMeta(html,attr,key,value){
 function visible(html){return String(html).replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/&(?:nbsp|#160);/gi," ").replace(/&(?:amp|#38);/gi,"&").replace(/\s+/g," ").trim()}
 function editorialFromRuntime(html){
  const blocks=[...String(html).matchAll(/<(section|article)\b[^>]*>[\s\S]*?<\/\1>/gi)].map(x=>x[0]);
- const editorial=blocks.filter(block=>{
-  const text=visible(block);
-  if(text.length<90||!/<h[23]\b/i.test(block))return false;
-  if(/<(?:form|input|textarea|select|button|canvas|video|audio)\b/i.test(block))return false;
-  if(/\b(?:workbench|workspace|calculator|converter|generator)\b/i.test((block.match(/^<[^>]+>/)?.[0]||""))&&text.length<450)return false;
-  return true;
- }).map(block=>block
+ const editorial=blocks.map(block=>{
+  const opening=block.match(/^<[^>]+>/)?.[0]||"";
+  const attrs=opening.toLowerCase();
+  const docsLike=/(?:guide|reading|docs|documentation|info|notes|evidence|help|learn|reference|faq)/i.test(attrs);
+  const workspaceLike=/(?:workbench|workspace|results?|controls?|input-panel|output-panel|tool(?:\s|$)|editor|preview)/i.test(attrs);
+  if(workspaceLike&&!docsLike)return "";
+  let cleaned=block
+   .replace(/<form\b[\s\S]*?<\/form>/gi,"")
+   .replace(/<button\b[\s\S]*?<\/button>/gi,"")
+   .replace(/<textarea\b[\s\S]*?<\/textarea>/gi,"")
+   .replace(/<select\b[\s\S]*?<\/select>/gi,"")
+   .replace(/<input\b[^>]*>/gi,"")
+   .replace(/<(?:canvas|video|audio)\b[\s\S]*?<\/(?:canvas|video|audio)>/gi,"")
    .replace(/<script\b[\s\S]*?<\/script>/gi,"")
    .replace(/<style\b[\s\S]*?<\/style>/gi,"")
-   .replace(/\s(?:data-tool|data-export-[\w-]+)=["'][^"']*["']/gi,"")
- ).join("\n");
+   .replace(/\s(?:data-tool|data-export-[\w-]+)=["'][^"']*["']/gi,"");
+  const text=visible(cleaned);
+  if(text.length<24||!/<h[23]\b/i.test(cleaned))return "";
+  if(/^(?:results?|inputs?|work area|interactive workspace)\b/i.test(text)&&text.length<120)return "";
+  return cleaned;
+ }).filter(Boolean).join("\n");
  return editorial;
 }
 function iframePermissions(tool){
