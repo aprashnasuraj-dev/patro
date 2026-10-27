@@ -166,6 +166,54 @@ async function rootSpaResponse(request: Request, env: Env) {
   return htmlAssetResponse(request, env, "/index.html", false);
 }
 
+type Mm530PartManifest = { schemaVersion:number; totalBytes:number; parts:Array<{url:string;bytes:number}> };
+async function mm530RuntimeResponse(request: Request, env: Env, pathname: string) {
+  if (pathname !== "/mm530-runtime/ffmpeg-core.wasm" || !env.ASSETS || (request.method !== "GET" && request.method !== "HEAD")) return null;
+  const manifestUrl = new URL(request.url);
+  manifestUrl.pathname = "/assets/vendor/ffmpeg/ffmpeg-core.wasm.parts.json";
+  const manifestResponse = await env.ASSETS.fetch(new Request(manifestUrl.toString(), { method: "GET", headers: request.headers }));
+  if (!manifestResponse.ok) return new Response("FFmpeg runtime manifest unavailable", { status: 503 });
+  let manifest: Mm530PartManifest;
+  try { manifest = await manifestResponse.json() as Mm530PartManifest; } catch { return new Response("Invalid FFmpeg runtime manifest", { status: 500 }); }
+  if (manifest.schemaVersion !== 1 || !Number.isInteger(manifest.totalBytes) || manifest.totalBytes <= 0 || manifest.totalBytes > 128*1024*1024 || !Array.isArray(manifest.parts) || manifest.parts.length < 2 || manifest.parts.length > 16) {
+    return new Response("Invalid FFmpeg runtime manifest", { status: 500 });
+  }
+  const parts = manifest.parts.map((part) => {
+    const url = String(part?.url || "");
+    const bytes = Number(part?.bytes);
+    if (!url.startsWith("/assets/vendor/ffmpeg/ffmpeg-core.wasm.part") || !Number.isInteger(bytes) || bytes <= 0 || bytes >= 25*1024*1024) throw new Error("Invalid FFmpeg runtime part");
+    return { url, bytes };
+  });
+  if (parts.reduce((sum, part) => sum + part.bytes, 0) !== manifest.totalBytes) return new Response("FFmpeg runtime size mismatch", { status: 500 });
+  const headers = new Headers({
+    "content-type": "application/wasm",
+    "content-length": String(manifest.totalBytes),
+    "cache-control": "public, max-age=86400, s-maxage=604800",
+    "x-content-type-options": "nosniff",
+    "x-robots-tag": "noindex, nofollow",
+  });
+  if (request.method === "HEAD") return new Response(null, { status: 200, headers });
+  const stream = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      try {
+        for (const part of parts) {
+          const url = new URL(request.url); url.pathname = part.url;
+          const response = await env.ASSETS!.fetch(new Request(url.toString(), { method: "GET", headers: request.headers }));
+          if (!response.ok || !response.body) throw new Error(`FFmpeg runtime part unavailable: ${part.url}`);
+          const reader = response.body.getReader();
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            if (value) controller.enqueue(value);
+          }
+        }
+        controller.close();
+      } catch (error) { controller.error(error); }
+    }
+  });
+  return new Response(stream, { status: 200, headers });
+}
+
 // Self-contained tool apps shipped as folders in dist/ (e.g. /nepali-tools/). The asset store
 // answers "/x/index.html" with a 307 to "/x/", and "/x/" never reached the asset store, so the
 // Nepali Typing / Preeti tools loaded blank. Serve the folder index here, embeddable by our own pages.
@@ -296,6 +344,9 @@ const connectedWorker = {
 
     const micro = await microAppResponse(request, env, pathname);
     if (micro) return micro;
+
+    const mm530Runtime = await mm530RuntimeResponse(request, env, pathname);
+    if (mm530Runtime) return mm530Runtime;
 
     if (isSpaPath(pathname)) {
       const exact = await exactSpaAssetResponse(request, env);
