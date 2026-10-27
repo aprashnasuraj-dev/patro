@@ -3,12 +3,6 @@ import { basename, join, resolve } from "node:path";
 
 const root=process.cwd();
 const dist=resolve(root,"dist");
-let clientToolFiles=new Set();
-try{
- const catalog=JSON.parse(await readFile(resolve(root,"client-tools/tools.json"),"utf8"));
- clientToolFiles=new Set(catalog.map((tool)=>resolve(dist,...tool.slug.split("/").filter(Boolean),"index.html")));
-}catch{}
-
 
 async function htmlFiles(dir){
  const out=[];
@@ -20,12 +14,12 @@ async function htmlFiles(dir){
  return out;
 }
 
-function structuredData(html,allowClientFaq=false){
+function structuredData(html){
  return html.replace(/<script([^>]*\btype=["']application\/ld\+json["'][^>]*)>([\s\S]*?)<\/script>/gi,(whole,attrs,payload)=>{
    try{
      const data=JSON.parse(payload);
      if(Array.isArray(data?.["@graph"])){
-       data["@graph"]=data["@graph"].filter((node)=>node?.["@type"]!=="HowTo"&&(allowClientFaq||node?.["@type"]!=="FAQPage")).map((node)=>{
+       data["@graph"]=data["@graph"].filter((node)=>node?.["@type"]!=="FAQPage"&&node?.["@type"]!=="HowTo").map((node)=>{
          if(node?.["@type"]==="WebPage")delete node.keywords;
          if(node?.["@type"]==="WebApplication")delete node.alternateName;
          return node;
@@ -36,13 +30,13 @@ function structuredData(html,allowClientFaq=false){
  });
 }
 
-function cleanHtml(html,allowClientFaq=false){
+function cleanHtml(html){
  let out=html;
  out=out.replace(/<link\b[^>]*\bhreflang=["'][^"']+["'][^>]*>\s*/gi,"");
  out=out.replace(/<link\b[^>]*href=["']\/search-intents\.(?:json|txt)["'][^>]*>\s*/gi,"");
  out=out.replace(/<section\b[^>]*class=["'][^"']*seo-related-searches[^"']*["'][^>]*>[\s\S]*?<\/section>/gi,"");
  out=out.replace(/<p><strong>सम्बन्धित नामहरू:<\/strong>[\s\S]*?<\/p>/gi,"");
- out=structuredData(out,allowClientFaq);
+ out=structuredData(out);
  return out;
 }
 
@@ -50,13 +44,11 @@ const files=await htmlFiles(dist);
 let changed=0;
 for(const file of files){
  const before=await readFile(file,"utf8");
- const allowClientFaq=clientToolFiles.has(resolve(file));
- const after=cleanHtml(before,allowClientFaq);
+ const after=cleanHtml(before);
  if(after!==before){await writeFile(file,after,"utf8");changed++;}
  if(/\bhreflang=/i.test(after))throw new Error(`Invalid same-URL hreflang survived: ${file}`);
  if(/seo-related-searches|सम्बन्धित नामहरू:|यो सुविधा यस्ता नामले पनि खोजिन्छ/i.test(after))throw new Error(`Visible search-only copy survived: ${file}`);
- if(/"@type"\s*:\s*"HowTo"/.test(after))throw new Error(`Deprecated Google HowTo rich-result schema survived: ${file}`);
- if(!allowClientFaq&&/"@type"\s*:\s*"FAQPage"/.test(after))throw new Error(`FAQ rich-result schema survived outside the explicit client-tool allowlist: ${file}`);
+ if(/"@type"\s*:\s*"(?:FAQPage|HowTo)"/.test(after))throw new Error(`Deprecated Google rich-result schema survived: ${file}`);
 }
 if(files.length<100)throw new Error(`SEO sanitizer saw unexpectedly few HTML files: ${files.length}`);
 
@@ -74,4 +66,4 @@ for(const name of ["sitemap-pages.xml"]){
  await sanitizeSitemap(resolve(root,"dist",name));
 }
 
-console.log(`White-hat SEO output sanitized: ${files.length} HTML files checked; ${changed} normalized. Hreflang is withheld until distinct locale URLs exist; visible search-query blocks and HowTo markup are removed, while FAQPage schema is preserved only on the explicit 300 client-tool pages.`);
+console.log(`White-hat SEO output sanitized: ${files.length} HTML files checked; ${changed} normalized. Hreflang is withheld until distinct locale URLs exist; visible search-query blocks and deprecated FAQ/HowTo markup are removed.`);
