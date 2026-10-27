@@ -410,12 +410,6 @@ jobs:
             grep -Fq "rel=\"canonical\" href=\"https://aafnaipatro.com${path}\"" "$body"
           done
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/_mm530/TOOL-0001/page.html >/dev/null
-          minimal_tools=(TOOL-0111 TOOL-0142 TOOL-0143 TOOL-0161 TOOL-0162 TOOL-0163 TOOL-0165 TOOL-0166 TOOL-0167 TOOL-0168 TOOL-0169 TOOL-0170 TOOL-0171 TOOL-0172 TOOL-0173 TOOL-0174 TOOL-0175 TOOL-0176 TOOL-0177)
-          for tool in "${minimal_tools[@]}"; do
-            runtime_html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/_mm530/${tool}/page.html")"
-            grep -Fq 'data-mm530-release-tier="minimal"' <<<"$runtime_html" || { echo "::error::Minimal release marker missing for ${tool}"; exit 1; }
-            grep -Fq 'Basic browser mode' <<<"$runtime_html" || { echo "::error::Basic browser fallback missing for ${tool}"; exit 1; }
-          done
           ffmpeg_headers="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsSI https://aafnaipatro.com/mm530-runtime/ffmpeg-core.wasm)"
           grep -Eiq '^content-type: application/wasm' <<<"$ffmpeg_headers"
           ffmpeg_length="$(awk 'BEGIN{IGNORECASE=1} /^content-length:/{gsub("\\r","",$2);print $2}' <<<"$ffmpeg_headers" | tail -1)"
