@@ -12,3 +12,8 @@ Not all draft suites are necessarily runnable in the current runner. Vitest-spec
 Tax, legal, customs, employment and similar tools are retained. They show bilingual estimation and changes-in-law notices in staged tool previews, with clear distinction from professional legal/tax advice. The released Vite adapter MUST reuse this same policy before any regulated tool goes live. Per tool, verify applicable jurisdiction, date, official citations and formulas; check TOOL-0527 formula licensing. A disclaimer does not make a bad calculation safe or correct.
 
 Repair sequence: fix global runner/environment blockers first, then per-ID failures grouped by compile/unit/browser/URL collision. Add deterministic calculation and browser fixtures, connect approved lazy modules to existing Patro routing and Cloudflare asset generation, and re-run the whole 530-tool PR CI. No automatic merges, main commits, redirect or sitemap changes.
+
+
+## Phase 1 harness normalization
+
+The fleet runner accepts established metadata identity fields (`tool_id`, `id`, `toolId`, or matching numeric `build_sequence`), compiles CSS/static assets with an explicit in-memory output path, externalizes site-root `/vendor`, `/assets`, and `/fonts` references only for the bare-source preflight while separately flagging them for integration review, and records each test fixture's detected framework. Vitest/Jest/Bun/custom fixtures remain `NOT_RUN` until their dedicated Phase 4 runner executes them; they are never promoted to PASS. Genuine syntax, missing relative imports, and Node-test assertion failures remain FAIL.

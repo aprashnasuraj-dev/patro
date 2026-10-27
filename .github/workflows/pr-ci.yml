@@ -305,6 +305,8 @@ jobs:
           npx playwright install chromium
       - name: Verify bilingual calculation notices
         run: node --test tests/mm530-policy.test.mjs
+      - name: Verify MM530 Phase 1 harness normalization
+        run: node --test tests/mm530-harness.test.mjs
       - name: Run 530 independent tool verdicts
         id: fleet
         continue-on-error: true
