@@ -144,10 +144,12 @@ await fs.rm(path.join(root,"public/assets/vendor/ffmpeg"),{recursive:true,force:
 await Promise.all([
  copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.mjs","vendor/pdfjs/pdf.mjs"),
  copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs","vendor/pdfjs/pdf.worker.mjs"),
+ copyRuntime("node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs","assets/vendor/pdfjs/pdf.worker.min.mjs"),
  copyRuntime("node_modules/pdf-lib/dist/pdf-lib.esm.min.js","vendor/pdf-lib/pdf-lib.esm.min.js"),
  copyRuntime("node_modules/fonteditor-core/woff2/woff2.wasm","assets/vendor/fonteditor-core/woff2.wasm"),
  copyRuntime("node_modules/sql.js/dist/sql-wasm.wasm","assets/vendor/sqljs/sql-wasm.wasm"),
  copyRuntime("node_modules/@ffmpeg/core/dist/esm","assets/vendor/ffmpeg"),
+ copyRuntime("node_modules/@ffmpeg/ffmpeg/dist/esm","assets/vendor/ffmpeg-client"),
  copyRuntime("node_modules/mathjax","vendor/mathjax")
 ]);
 const ffmpegManifest=await splitCloudflareAsset("assets/vendor/ffmpeg/ffmpeg-core.wasm");
@@ -183,6 +185,10 @@ root.dataset.toolMounted="true";`
   try{
     await build({entryPoints:{tool:bootstrap},bundle:true,format:"esm",platform:"browser",target:"es2022",outdir:dst,entryNames:"[name]",chunkNames:"chunks/[name]-[hash]",assetNames:"chunks/[name]-[hash]",splitting:true,logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
   }finally{await fs.rm(bootstrap,{force:true})}
+  const workerEntry=path.join(srcDir,"src/worker.ts");
+  if(await exists(workerEntry)){
+    await build({entryPoints:[workerEntry],bundle:true,format:"esm",platform:"browser",target:"es2022",outfile:path.join(dst,"worker.js"),logLevel:"silent",conditions:["browser","module","import"],external:["/vendor/*","/assets/vendor/*"],minify:true,legalComments:"none",treeShaking:true});
+  }
   const builtJsPath=path.join(dst,"tool.js");
   if(!await exists(builtJsPath))throw new Error("production entry tool.js was not emitted");
   async function rewriteRuntimeJs(dir){
@@ -193,8 +199,11 @@ root.dataset.toolMounted="true";`
     let js=await fs.readFile(target,"utf8");
     if(js.includes("/assets/vendor/ffmpeg/ffmpeg-core.wasm")){
      js=js.replaceAll("/assets/vendor/ffmpeg/ffmpeg-core.wasm","/mm530-runtime/ffmpeg-core.wasm");
-     await fs.writeFile(target,js);
     }
+    if(js.includes('/assets/vendor/ffmpeg/ffmpeg-core.js')&&js.includes('.load({coreURL:')){
+     js=js.replaceAll('.load({coreURL:"/assets/vendor/ffmpeg/ffmpeg-core.js"','.load({classWorkerURL:"/assets/vendor/ffmpeg-client/worker.js",coreURL:"/assets/vendor/ffmpeg/ffmpeg-core.js"');
+    }
+    await fs.writeFile(target,js);
    }
   }
   await rewriteRuntimeJs(dst);
