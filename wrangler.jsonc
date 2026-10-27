@@ -80,6 +80,8 @@
       "!/advancetools/index.html",
       "!/advancetools/web-tools",
       "!/advancetools/web-tools/*",
+      "!/advancetools/category/*",
+      "!/advancetools/category",
       "!/advancetools/sitemap.xml",
       "!/advancetools/module-manifest.json",
       "!/advancetools/assets",
