@@ -96,8 +96,8 @@ for(const tool of registry){
   const original=await fs.readFile(page,"utf8"),title=extractTitle(original,tool.title),description=extractDescription(original,tool.title);
   let html=sanitizeProductionHtml(original);
   html=injectSeo(html,tool,title,description);
-  html=html.replace(/<script\b[^>]*type=["']module["'][^>]*src=["'][^"']*ui\.ts["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
-  html=html.replace(/<script\b[^>]*src=["'][^"']*ui\.ts["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
+  html=html.replace(/<script\b[^>]*type=["']module["'][^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
+  html=html.replace(/<script\b[^>]*src=["'][^"']*ui\.(?:ts|js)["'][^>]*><\/script>/i,'<script type="module" src="./tool.js"></script>');
   if(await exists(path.join(dst,"tool.css"))&&!html.includes("./tool.css"))html=html.replace(/<\/head>/i,'<link rel="stylesheet" href="./tool.css"></head>');
   const visible=visibleText(html);if(INTERNAL_VISIBLE.test(visible))throw new Error("internal QA/developer wording remains in production-visible copy");
   await fs.writeFile(path.join(dst,"page.html"),html);
