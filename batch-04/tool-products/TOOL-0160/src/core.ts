@@ -16,6 +16,6 @@ export async function extractPdfLinks(file:File):Promise<PdfLink[]> {
       else if(a.dest) out.push({page:p,kind:'internal',target:typeof a.dest==='string'?a.dest:JSON.stringify(a.dest),rect:a.rect});
     }
   }
-  await doc.destroy(); return out;
+  if(typeof (doc as any).destroy==='function') await (doc as any).destroy(); return out;
 }
 export function linksToCsv(rows:PdfLink[]):string { const q=(s:string)=>`"${s.replace(/"/g,'""')}"`; return ['page,kind,target',...rows.map(r=>`${r.page},${r.kind},${q(r.target)}`)].join('\r\n'); }
