@@ -51,7 +51,7 @@ export function mountTool(opts:MountOptions){
   const btn=el('button','primary'); btn.type='submit'; btn.textContent='Calculate';
   form.append(grid,btn);
   const alert=el('div','alert'); alert.setAttribute('role','alert');
-  const out=el('section','results'); const title=el('h2'); title.textContent=opts.resultTitle||'Results'; const body=el('div','metrics'); out.append(title,body);
+  const out=el('section','results'); out.setAttribute('role','status'); out.setAttribute('aria-live','polite'); out.setAttribute('aria-atomic','false'); const title=el('h2'); title.textContent=opts.resultTitle||'Results'; const body=el('div','metrics'); out.append(title,body);
   form.addEventListener('submit',e=>{
     e.preventDefault(); alert.textContent=''; body.replaceChildren();
     try{
