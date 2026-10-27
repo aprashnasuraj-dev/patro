@@ -99,7 +99,12 @@
       "!/advancetools/fontconverters",
       "!/advancetools/fontconverters/*",
       "!/advancetools/printablepaper",
-      "!/advancetools/printablepaper/*"
+      "!/advancetools/printablepaper/*",
+      "!/client-tools/*",
+      "!/sitemap-client-tools.xml",
+      "!/converter/*",
+      "!/calculator/*",
+      "!/tools/*"
     ]
   },
   "d1_databases": [

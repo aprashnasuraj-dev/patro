@@ -4023,7 +4023,7 @@
       "/converter/bulk-csv-to-ics-calendar-converter",
       "/converter/json-lines-to-csv-converter"
     ],
-    "engine": "converter",
+    "engine": "form",
     "operation": "mail-merge-generator",
     "source_category": "Email, Office Files & Data Rescue",
     "tool_type": "Generator",
@@ -4059,7 +4059,7 @@
       "/converter/json-lines-to-csv-converter",
       "/tools/csv-delimiter-detector-and-normalizer"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "bulk-certificate-generator-from-csv",
     "source_category": "Email, Office Files & Data Rescue",
     "tool_type": "Generator",
@@ -4275,7 +4275,7 @@
       "/tools/pdf-digital-signature-viewer-and-verifier",
       "/tools/pdf-visual-compare"
     ],
-    "engine": "converter",
+    "engine": "file",
     "operation": "pdf-to-grayscale-ink-saver",
     "source_category": "PDF & Print Layout",
     "tool_type": "File processor",
@@ -4347,7 +4347,7 @@
       "/tools/envelope-printer",
       "/tools/print-and-fold-greeting-card-maker"
     ],
-    "engine": "converter",
+    "engine": "file",
     "operation": "pdf-form-data-extractor",
     "source_category": "PDF & Print Layout",
     "tool_type": "Converter",
@@ -4455,7 +4455,7 @@
       "/tools/tear-off-tab-flyer-maker",
       "/tools/lost-pet-flyer-maker"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "envelope-printer",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4491,7 +4491,7 @@
       "/tools/lost-pet-flyer-maker",
       "/tools/printable-planner-insert-generator"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "print-and-fold-greeting-card-maker",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4527,7 +4527,7 @@
       "/tools/printable-planner-insert-generator",
       "/tools/one-sheet-zine-template-maker"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "giant-letter-banner-maker",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4563,7 +4563,7 @@
       "/tools/one-sheet-zine-template-maker",
       "/tools/playing-card-sheet-maker"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "tear-off-tab-flyer-maker",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4599,7 +4599,7 @@
       "/tools/playing-card-sheet-maker",
       "/tools/battle-map-grid-overlay-and-tiled-print"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "lost-pet-flyer-maker",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4635,7 +4635,7 @@
       "/tools/battle-map-grid-overlay-and-tiled-print",
       "/tools/guest-wi-fi-card"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "printable-planner-insert-generator",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4671,7 +4671,7 @@
       "/tools/guest-wi-fi-card",
       "/tools/raffle-ticket-generator"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "one-sheet-zine-template-maker",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4707,7 +4707,7 @@
       "/tools/raffle-ticket-generator",
       "/tools/contact-sheet-maker-for-photographers"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "playing-card-sheet-maker",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4743,7 +4743,7 @@
       "/tools/contact-sheet-maker-for-photographers",
       "/tools/pdf-booklet-maker"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "battle-map-grid-overlay-and-tiled-print",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4779,7 +4779,7 @@
       "/tools/pdf-booklet-maker",
       "/tools/n-up-pdf"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "guest-wi-fi-card",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4815,7 +4815,7 @@
       "/tools/n-up-pdf",
       "/tools/poster-printer"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "raffle-ticket-generator",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -4851,7 +4851,7 @@
       "/tools/poster-printer",
       "/converter/pdf-to-grayscale-ink-saver"
     ],
-    "engine": "file",
+    "engine": "form",
     "operation": "contact-sheet-maker-for-photographers",
     "source_category": "PDF & Print Layout",
     "tool_type": "Generator",
@@ -6363,7 +6363,7 @@
       "/tools/paint-by-numbers-generator",
       "/converter/dmc-to-anchor-thread-color-converter"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "image-to-cross-stitch-pattern-with-thread-list",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6399,7 +6399,7 @@
       "/converter/dmc-to-anchor-thread-color-converter",
       "/tools/sticker-sheet-layout-maker"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "image-to-perler-and-hama-bead-pattern",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6435,7 +6435,7 @@
       "/tools/sticker-sheet-layout-maker",
       "/tools/wall-art-size-pack-generator"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "image-to-knitting-and-crochet-colorwork-chart",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6471,7 +6471,7 @@
       "/tools/wall-art-size-pack-generator",
       "/tools/digital-download-delivery-pdf-maker"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "paint-by-numbers-generator",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6543,7 +6543,7 @@
       "/calculator/print-on-demand-artwork-size-and-dpi-checker",
       "/tools/tabletop-token-maker"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "sticker-sheet-layout-maker",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6579,7 +6579,7 @@
       "/tools/tabletop-token-maker",
       "/tools/mesh-gradient-generator"
     ],
-    "engine": "file",
+    "engine": "image",
     "operation": "wall-art-size-pack-generator",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "File processor",
@@ -6687,7 +6687,7 @@
       "/tools/lithophane-generator",
       "/tools/3d-printable-name-tag-and-keychain-generator"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "tabletop-token-maker",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6723,7 +6723,7 @@
       "/tools/3d-printable-name-tag-and-keychain-generator",
       "/tools/filament-color-change-inserter-for-g-code"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "mesh-gradient-generator",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -6759,7 +6759,7 @@
       "/tools/filament-color-change-inserter-for-g-code",
       "/converter/3mf-and-stl-converter"
     ],
-    "engine": "form",
+    "engine": "image",
     "operation": "noise-and-grain-texture-generator",
     "source_category": "Maker, Craft, 3D & Print Sellers",
     "tool_type": "Generator",
@@ -10179,7 +10179,7 @@
       "/tools/pedigree-chart-and-family-group-sheet-generator",
       "/converter/markdown-table-to-csv-converter"
     ],
-    "engine": "form",
+    "engine": "file",
     "operation": "ats-resume-text-preview",
     "source_category": "Education, Writing & Research",
     "tool_type": "Checker / validator",
@@ -10719,7 +10719,7 @@
       "/tools/password-protected-zip-creator",
       "/tools/zip-filename-encoding-fixer"
     ],
-    "engine": "form",
+    "engine": "file",
     "operation": "file-checksum-sha-256-generator",
     "source_category": "Privacy, Archives & File Hygiene",
     "tool_type": "Checker / validator",

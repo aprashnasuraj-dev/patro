@@ -32,9 +32,11 @@ const htmlSet=new Set(html);
 for(const path of advancedSet)if(!path||!htmlSet.has(path))errors.push("Advanced Tools sitemap URL not backed by HTML: "+path);
 if(advancedList.length!==advancedSet.size)errors.push("Advanced Tools duplicated sitemap locs");
 const robots=await read("dist/robots.txt");
-const roots=["sitemap.xml","sitemap-explore.xml","sitemap-places.xml","sitemap-nepalmap.xml","advancetools/sitemap.xml","sitemap-worldcal.xml","sitemap-atlas.xml"];
+const roots=["sitemap.xml","sitemap-explore.xml","sitemap-places.xml","sitemap-nepalmap.xml","advancetools/sitemap.xml","sitemap-worldcal.xml","sitemap-atlas.xml","sitemap-client-tools.xml"];
 for(const name of roots)if(!robots.includes("Sitemap: "+SITE+"/"+name))errors.push("Sitemap family missing from robots.txt: "+name);
 for(const route of ["/api/","/compat-api/","/me/","/admin/","/auth/"])if(!robots.includes("Disallow: "+route))errors.push("Private route crawl boundary missing: "+route);
 Object.assign(info,{mainChildren:seenFiles.size,mainUniquePageUrls:known.size,advancedHtml:html.length,advancedSitemap:advancedList.length,discoveryRoots:roots.length,errors:errors.length});
 console.log("Aafnai Patro sitemap release coverage:",JSON.stringify(info));
 if(errors.length){errors.slice(0,50).forEach(e=>console.error(e));process.exitCode=1}
+
+const clientTools=JSON.parse(await read("client-tools/tools.json"));const clientXml=await read("dist/sitemap-client-tools.xml");const clientLocs=locs(clientXml);if(clientTools.length!==300)errors.push("Client tool catalog must contain exactly 300 tools");if(clientLocs.length!==300||new Set(clientLocs).size!==300)errors.push("Client tool sitemap must contain 300 unique URLs");for(const tool of clientTools)if(!clientLocs.includes(SITE+tool.slug))errors.push("Client tool missing from sitemap: "+tool.slug);if(errors.length)process.exitCode=1;else console.log("Client tool sitemap coverage: PASS — 300 unique static pages");
