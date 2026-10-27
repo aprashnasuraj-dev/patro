@@ -1,0 +1,48 @@
+{
+  "schema_version": "MM530_INVENTORY_SUMMARY_V1",
+  "generated_at": "2026-10-27T02:31:42.252Z",
+  "records": 530,
+  "unique_ids": 530,
+  "exact_expected_id_sequence": true,
+  "master_rows": 530,
+  "master_duplicate_ids": [],
+  "batch_counts": {
+    "BATCH-01": 53,
+    "BATCH-02": 53,
+    "BATCH-03": 53,
+    "BATCH-04": 53,
+    "BATCH-05": 53,
+    "BATCH-06": 53,
+    "BATCH-07": 53,
+    "BATCH-08": 53,
+    "BATCH-09": 53,
+    "BATCH-10": 53
+  },
+  "batch_duplicate_ids": [],
+  "identity_ambiguity_count": 0,
+  "duplicate_canonical_count": 0,
+  "duplicate_legacy_count": 0,
+  "duplicate_canonical_leaf_count": 0,
+  "missing": {
+    "source_dirs": [],
+    "tool_json": [],
+    "page_html": [],
+    "source_entries": []
+  },
+  "issue_counts": {
+    "review:undeclared_external_imports": 25,
+    "review:no_runtime_dependency_declaration": 24
+  },
+  "phase1_source": {
+    "tested": 530,
+    "failed": 142,
+    "at": "2026-10-27T02:31:40.732Z"
+  },
+  "hard_gate": {
+    "expected_530": true,
+    "identity_unambiguous": true,
+    "canonical_unique": true,
+    "required_source_present": true
+  },
+  "status": "PASS"
+}

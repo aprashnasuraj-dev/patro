@@ -1,0 +1,169 @@
+{
+  "identity_ambiguities": [],
+  "duplicate_canonicals": [],
+  "duplicate_legacy_routes": [],
+  "duplicate_canonical_leaf_slugs": [],
+  "missing": {
+    "source_dirs": [],
+    "tool_json": [],
+    "page_html": [],
+    "source_entries": []
+  },
+  "records_with_undeclared_imports": [
+    {
+      "id": "TOOL-0093",
+      "imports": [
+        "commonmark"
+      ]
+    },
+    {
+      "id": "TOOL-0101",
+      "imports": [
+        "fonteditor-core"
+      ]
+    },
+    {
+      "id": "TOOL-0121",
+      "imports": [
+        "exifr"
+      ]
+    },
+    {
+      "id": "TOOL-0122",
+      "imports": [
+        "libheif-js"
+      ]
+    },
+    {
+      "id": "TOOL-0123",
+      "imports": [
+        "@jsquash/avif"
+      ]
+    },
+    {
+      "id": "TOOL-0132",
+      "imports": [
+        "blurhash",
+        "thumbhash"
+      ]
+    },
+    {
+      "id": "TOOL-0137",
+      "imports": [
+        "gifenc"
+      ]
+    },
+    {
+      "id": "TOOL-0138",
+      "imports": [
+        "gifenc",
+        "upng-js"
+      ]
+    },
+    {
+      "id": "TOOL-0141",
+      "imports": [
+        "pdf-lib"
+      ]
+    },
+    {
+      "id": "TOOL-0144",
+      "imports": [
+        "pdf-lib"
+      ]
+    },
+    {
+      "id": "TOOL-0146",
+      "imports": [
+        "pdf-lib"
+      ]
+    },
+    {
+      "id": "TOOL-0148",
+      "imports": [
+        "pdf-lib"
+      ]
+    },
+    {
+      "id": "TOOL-0160",
+      "imports": [
+        "pdfjs-dist"
+      ]
+    },
+    {
+      "id": "TOOL-0167",
+      "imports": [
+        "fflate"
+      ]
+    },
+    {
+      "id": "TOOL-0258",
+      "imports": [
+        "jsbarcode"
+      ]
+    },
+    {
+      "id": "TOOL-0259",
+      "imports": [
+        "qr"
+      ]
+    },
+    {
+      "id": "TOOL-0321",
+      "imports": [
+        "@noble/hashes"
+      ]
+    },
+    {
+      "id": "TOOL-0322",
+      "imports": [
+        "@noble/hashes"
+      ]
+    },
+    {
+      "id": "TOOL-0325",
+      "imports": [
+        "argon2-browser",
+        "bcryptjs"
+      ]
+    },
+    {
+      "id": "TOOL-0337",
+      "imports": [
+        "fflate"
+      ]
+    },
+    {
+      "id": "TOOL-0338",
+      "imports": [
+        "@zxing/browser"
+      ]
+    },
+    {
+      "id": "TOOL-0359",
+      "imports": [
+        "pdf-lib"
+      ]
+    },
+    {
+      "id": "TOOL-0378",
+      "imports": [
+        "fflate",
+        "sql.js"
+      ]
+    },
+    {
+      "id": "TOOL-0379",
+      "imports": [
+        "pdf-lib"
+      ]
+    },
+    {
+      "id": "TOOL-0478",
+      "imports": [
+        "pdf-lib"
+      ]
+    }
+  ],
+  "title_variants": []
+}
