@@ -7,6 +7,6 @@ describe('SQL DDL to Prisma subset',()=>{
   expect(out).toContain('model users');expect(out).toContain('id Int @id');expect(out).toContain('email String @unique');
  });
  it('fails rather than inventing FK relations',()=>expect(()=>convert('CREATE TABLE x (id INT PRIMARY KEY, owner INT REFERENCES users(id));')).toThrow(/constraints/));
- it('fails on named constraints and comments',()=>{expect(()=>convert('CREATE TABLE x (id INT, CONSTRAINT pk PRIMARY KEY (id));')).toThrow();expect(()=>convert('CREATE TABLE x (-- hello\nid INT);')).toThrow();});
+ it('supports named primary keys but still rejects comments',()=>{expect(convert('CREATE TABLE x (id INT, CONSTRAINT pk PRIMARY KEY (id));').text).toContain('id Int @id');expect(()=>convert('CREATE TABLE x (-- hello\nid INT);')).toThrow();});
  it('refuses SQL injection appended statements',()=>expect(()=>convert('CREATE TABLE x (id INT); DROP TABLE users;')).toThrow());
 });

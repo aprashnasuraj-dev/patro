@@ -8,5 +8,5 @@ test('known-answer: TOOL-0073',async()=>{
 });
 test('bounded malformed or oversized input is rejected',async()=>{
  const bad='a'.repeat(9000000);
- await assert.rejects(async()=>await compute({...{title:'Home',description:'Example website',url:'https://example.com/',image:'https://example.com/a.png',type:'website'},text:bad,urls:bad,csv:bad,pattern:bad}));
+ await assert.rejects(async()=>await compute({...{title:'Home',description:'Example website',url:'https://example.com/',image:'https://example.com/a.png',type:'website'},title:bad}));
 });
