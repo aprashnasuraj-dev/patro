@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "Kubernetes CPU and Memory Units Converter — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Convert Kubernetes CPU and memory quantity syntax into explicit cores, millicores, bytes and IEC/SI units. Runs locally in your browser. Review limitations an",
+    "meta_description": "Convert Kubernetes CPU and memory quantity syntax into explicit cores, millicores, bytes and IEC/SI units. Runs locally in your browser.",
     "h1": "Resource quantity explorer: Kubernetes CPU and Memory Units Converter",
     "robots": "noindex",
     "canonical": null,
