@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "JSON to PostgreSQL Upsert Generator — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Generate reviewable parameter placeholders plus values manifest for PostgreSQL INSERT ON CONFLICT. Runs locally in your browser. Review limitations and exampl",
+    "meta_description": "Generate reviewable parameter placeholders plus values manifest for PostgreSQL INSERT ON CONFLICT. Runs locally in your browser. Review limitations and examples.",
     "h1": "Conflict plan builder: JSON to PostgreSQL Upsert Generator",
     "robots": "noindex",
     "canonical": null,
