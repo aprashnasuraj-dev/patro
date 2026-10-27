@@ -1,0 +1,10 @@
+{
+  "cluster": "compile:construction-finite-export",
+  "baselineFailures": 18,
+  "verifiedFailures": 0,
+  "fleetCompileFailuresBefore": 40,
+  "fleetCompileFailuresAfter": 22,
+  "verifiedRunId": 40443010160,
+  "verifiedCommit": "62f9fe91027d53e8d12564606511c3290c9716c5",
+  "status": "PASS"
+}
