@@ -14,7 +14,7 @@
   "publication_gate": "LOCKED",
   "seo": {
     "title": "MongoDB Extended JSON to Plain JSON — Private Browser Tool | AafnaiPatro",
-    "meta_description": "Normalize Extended JSON v2 markers while explicitly preserving non-JSON BSON types in tagged wrappers. Runs locally in your browser. Review limitations and ex",
+    "meta_description": "Normalize Extended JSON v2 markers while explicitly preserving non-JSON BSON types in tagged wrappers. Runs locally in your browser. Review limitations and examples.",
     "h1": "BSON shape inspector: MongoDB Extended JSON to Plain JSON",
     "robots": "noindex",
     "canonical": null,
