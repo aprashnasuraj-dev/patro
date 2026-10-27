@@ -158,15 +158,15 @@
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
 /analyzers/*
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
-/security/*
+/planners/*
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
-/media/*
+/extractors/*
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
-/documents/*
+/utilities/*
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
-/network/*
+/comparisons/*
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
-/developer/*
+/timers/*
   Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
 
 # MM530 browser-local runtimes: same-origin only, with scoped WASM/worker support.
