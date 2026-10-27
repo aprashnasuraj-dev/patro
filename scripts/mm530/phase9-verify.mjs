@@ -51,7 +51,16 @@ assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifes
 assert(advanced.counts?.webToolCategories===12,"ADVANCED_CATEGORY_COUNT",`module manifest says ${advanced.counts?.webToolCategories}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
-const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0;
+const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;
+const editorialSignals=[
+ ["how_to",/how to (?:use|use it|use this tool|use the tool|works)/i],
+ ["worked_example",/worked example|example workflow/i],
+ ["assumptions",/assumptions?|inputs and assumptions/i],
+ ["limitations",/limitations?|supported cases and exclusions/i],
+ ["privacy_safety",/privacy and safety|privacy|safety/i],
+ ["references",/references|specifications and primary references/i],
+ ["faq",/frequently asked|common questions|faq/i]
+];
 for(const tool of registry){
  const row=runtimeById.get(tool.id);assert(Boolean(row?.description)&&row.description.length>=70&&row.description.length<=165,"RUNTIME_DESCRIPTION_LENGTH",`${tool.id}: ${row?.description?.length||0}`);const runtimeDir=path.join(dist,"_mm530",tool.id),pagePath=path.join(runtimeDir,"page.html"),jsPath=path.join(runtimeDir,"tool.js"),leafPath=path.join(dist,tool.route.replace(/^\//,"")+".html");
  assert(await exists(pagePath),"RUNTIME_PAGE_MISSING",tool.id);assert(await exists(jsPath),"RUNTIME_JS_MISSING",tool.id);assert(await exists(leafPath),"LEAF_SHELL_MISSING",tool.route);
@@ -81,7 +90,7 @@ for(const tool of registry){
  const runtimeEditorialHeadings=(runtimeHtml.match(/<h[23]\\b/gi)||[]).length;
  if(runtimeEditorialHeadings>=2)assert(hasEditorial,"CRAWLER_EDITORIAL_LOST",tool.id+": runtime has "+runtimeEditorialHeadings+" editorial headings");
  assert(/"@type":"WebPage"/.test(leafHtml)&&/"mainEntity":\\{"@id":/.test(leafHtml)&&/"@type":"WebApplication"/.test(leafHtml),"CRAWLER_SCHEMA_GRAPH",tool.id);
- crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length});
+ crawlerRows.push({id:tool.id,route:tool.route,htmlBytes:leafStat.size,visibleChars:leafVisible.length,relatedToolLinks:relatedStatic.length,hasEditorial,outerModuleScripts:outerModuleScripts.length,retainedEditorialSignals:retainedSignals});
  const runtimeCanonical=tagContent(runtimeHtml,"canonical");assert(runtimeCanonical===expected,"RUNTIME_CANONICAL_MISMATCH",tool.id);assert(!internal.test(visible(runtimeHtml)),"PUBLIC_INTERNAL_COPY",tool.id);
  const runtimeScriptMatches=[...runtimeHtml.matchAll(/<script\\b[^>]*src=["']\\.\\/tool\\.js["'][^>]*><\\/script>/gi)];
  assert(runtimeScriptMatches.length===1,"RUNTIME_SCRIPT_ATTACHMENT",tool.id+": "+runtimeScriptMatches.length+" runtime script tags");
@@ -90,6 +99,16 @@ for(const tool of registry){
  assert(rawReferenceLabels.length===0,"RAW_REFERENCE_LABEL",tool.id+": "+rawReferenceLabels.length+" raw URL labels");
  if(/references?/i.test(visible(sourceHtml))){assert(/references?/i.test(visible(runtimeHtml)),"REFERENCES_LOST",tool.id);referenceRetention++}
  if(/limitations?/i.test(visible(sourceHtml))){assert(/limitations?/i.test(visible(runtimeHtml)),"LIMITATIONS_LOST",tool.id);limitationRetention++}
+ const sourceVisible=visible(sourceHtml),canonicalVisible=visible(leafHtml);
+ const retainedSignals=[];
+ for(const [signal,re] of editorialSignals){
+  if(re.test(sourceVisible)){
+   editorialSignalsExpected++;
+   const kept=re.test(canonicalVisible);
+   if(kept){editorialSignalsRetained++;retainedSignals.push(signal)}
+   else assert(false,"EDITORIAL_SIGNAL_LOST",tool.id+": "+signal);
+  }
+ }
  if(hub)assert(hub.includes(tool.route),"DISCOVERY_LINK_MISSING",tool.id);
  const categoryHtml=await read(path.join(dist,"advancetools/web-tools",tool.category,"index.html")).catch(()=>"");assert(categoryHtml.includes(tool.route),"CATEGORY_LINK_MISSING",tool.id);
  seoRows.push({id:tool.id,route:tool.route,title,descriptionLength:desc.length,canonical});
@@ -123,7 +142,7 @@ for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-li
 
 const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,categories:phase7.categories?.length||0,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
 const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V1",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
-const crawlerReport={schema_version:"MM530_CRAWLER_SEO_GATE_V1",status:blockers.some(x=>/^CRAWLER_/.test(x.code))?"BLOCKED":"PASS",tools_checked:crawlerRows.length,standalone_static_shells:crawlerRows.filter(x=>x.outerModuleScripts===0).length,direct_runtime_iframes:crawlerRows.length,editorial_leaves:editorialLeaves,rows:crawlerRows};
+const crawlerReport={schema_version:"MM530_CRAWLER_SEO_GATE_V2",status:blockers.some(x=>/^CRAWLER_|EDITORIAL_/.test(x.code))?"BLOCKED":"PASS",tools_checked:crawlerRows.length,standalone_static_shells:crawlerRows.filter(x=>x.outerModuleScripts===0).length,direct_runtime_iframes:crawlerRows.length,editorial_leaves:editorialLeaves,editorial_signals_expected:editorialSignalsExpected,editorial_signals_retained:editorialSignalsRetained,rows:crawlerRows};
 const buildReport={schema_version:"MM530_PHASE9_BUILD_REPORT_V1",runtime_manifest_routes:runtime.routes?.length||0,runtime_failures:runtime.failures||[],typescript_and_vite:"PASSED_BEFORE_THIS_POSTBUILD_VERIFIER",static_leaf_shells:seoRows.length,advanced_tool_pages:advanced.pages};
 const performanceReport={schema_version:"MM530_PHASE9_PERFORMANCE_REPORT_V1",measured_from:"dist",...perf,discovery_runtime_eager:false};
 const status=blockers.length?"BLOCKED":"PHASE_9_PASS",gate={schema_version:"MM530_PHASE9_GATE_V1",status,tools:registry.length,blocker_count:blockers.length,routing:blockers.some(x=>/ROUTE|MISSING|DISCOVERY|CATEGORY/.test(x.code))?"FAIL":"PASS",seo:blockers.some(x=>/SEO|CANONICAL|TITLE|SITEMAP|REFERENCES|LIMITATIONS|INTERNAL/.test(x.code))?"FAIL":"PASS",runtime_assets:blockers.some(x=>/RUNTIME/.test(x.code))?"FAIL":"PASS",performance_measured:true,publication:false};
