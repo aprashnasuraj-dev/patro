@@ -16,8 +16,8 @@ const flag=(t,k,state,note='')=>t.checks[k]={state,note};
 const command=(cmd,args,ms=12000)=>new Promise(resolve=>{
  let ended=false,msg='',timedOut=false;const p=spawn(cmd,args,{cwd:root,stdio:['ignore','pipe','pipe'],env:{...process.env,NODE_OPTIONS:'--no-warnings'}});
  const timer=setTimeout(()=>{timedOut=true;p.kill('SIGKILL')},ms);
- p.stdout.on('data',d=>msg=(msg+d.toString()).slice(-800));p.stderr.on('data',d=>msg=(msg+d.toString()).slice(-800));
- const finish=(ok,note)=>{if(ended)return;ended=true;clearTimeout(timer);resolve({ok,note:err(note)})};
+ p.stdout.on('data',d=>msg=(msg+d.toString()).slice(-5000));p.stderr.on('data',d=>msg=(msg+d.toString()).slice(-5000));
+ const finish=(ok,note)=>{if(ended)return;ended=true;clearTimeout(timer);const clean=String(note?.message||note||'').replace(/\s+/g,' ').slice(-1800);resolve({ok,note:clean})};
  p.on('error',e=>finish(false,e));p.on('close',code=>finish(code===0&&!timedOut,timedOut?'Timeout':msg||'Exit '+code));
 });
 async function bootstrap(){
