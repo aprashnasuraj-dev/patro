@@ -16,3 +16,9 @@ This module preserves the existing `300_new_tool_ideas_western.csv` catalog and 
 Pages are emitted as static HTML. The page shell loads a tiny module, which lazy-imports exactly one client engine. Working inputs are browser-local. No tool API, D1 query, R2 read, KV call, Worker calculation, or server-side conversion is part of the normal tool execution path.
 
 Optional format parsers may fetch a capability module only after the user invokes that operation. Ultra-heavy codec/model tools are excluded rather than making every visitor carry those costs.
+
+## Audit200 release gates
+
+The audited expansion is checked by `client-tools:test200` for all 200 core operations and render smokes, and by `client-tools:quality200` for CSV-to-page SEO fidelity, canonical URLs, sitemap inclusion, FAQ/limitations/related links, runtime configuration and the no-network browser-local contract.
+
+Advanced Tools discovery is registry-backed: the main `/advancetools/` dashboard searches the full MM530 + direct-tool library and displays generated category counts so the UI cannot drift from the catalog.
