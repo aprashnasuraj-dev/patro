@@ -45,16 +45,18 @@ const { chromium } = require("playwright");
   await parquet.waitFor({state:"visible",timeout:5000});
   await parquet.click();
   await page.waitForURL("**/tool/duckdb-parquet-local-query-workbench",{timeout:10000});
+  await page.locator("#ct-tool button").waitFor({state:"visible",timeout:10000});
   const direct=await page.evaluate(()=>({
     path:location.pathname,
     canonical:document.querySelector('link[rel="canonical"]')?.href||"",
     h1:document.querySelector("h1")?.textContent?.trim()||"",
-    hasRuntime:Boolean(document.querySelector("#ct-mount")),
+    hasRuntime:Boolean(document.querySelector("#ct-tool button")),
     nested:location.pathname.includes("/advancetools/")
   }));
   if(direct.path!=="/tool/duckdb-parquet-local-query-workbench")throw new Error("Search result did not open the direct tool URL");
   if(direct.canonical!=="https://aafnaipatro.com/tool/duckdb-parquet-local-query-workbench")throw new Error("Direct tool canonical mismatch: "+direct.canonical);
   if(!/DuckDB|Parquet/.test(direct.h1))throw new Error("Direct Parquet tool H1 missing");
+  if(!direct.hasRuntime)throw new Error("Direct Parquet tool runtime controls did not mount");
   if(direct.nested)throw new Error("Direct tool was nested under Advanced Tools");
 
   await page.goBack({waitUntil:"domcontentloaded"});
