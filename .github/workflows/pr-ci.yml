@@ -240,7 +240,9 @@ jobs:
     name: Isolated production browser regressions
     needs: affected-checks
     if: needs.affected-checks.result == 'success' && needs.affected-checks.outputs.browser_required == 'true'
-    runs-on: ubuntu-latest
+    # Playwright 1.56.1 does not install Chromium on the current ubuntu-26.04 latest image.
+    # Keep this browser-regression job on the supported LTS image until Playwright is upgraded.
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - name: Checkout verified PR code
