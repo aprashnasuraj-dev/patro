@@ -28,7 +28,8 @@ const MM530_TOOLS=await loadWebTools();
 async function loadClientTools(){
  if(!repoRoot)return[];
  try{
-  const rows=JSON.parse(await readFile(join(repoRoot,'client-tools/tools.json'),'utf8'));
+  const files=['tools.json','audit200-tools-1.json','audit200-tools-2.json','audit200-tools-3.json','audit200-tools-4.json'],rows=[];
+  for(const file of files)rows.push(...JSON.parse(await readFile(join(repoRoot,'client-tools',file),'utf8')));
   return rows.map(t=>({id:String(t.source_id||t.operation),title:t.h1,route:t.slug,description:t.meta_description,sourceCategory:t.source_category||'',legacyCategory:t.category,owner:'CLIENT'}));
  }catch(error){console.warn('Client tool catalog unavailable:',error instanceof Error?error.message:String(error));return[]}
 }

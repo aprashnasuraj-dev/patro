@@ -1,3 +1,4 @@
+import{loadClientTools}from"./client-tools/catalog.mjs";
 // Build-only coverage gate. Never calls Workers, R2, Cloudflare or third parties.
 // Keeps existing sitemap exclusions for private, redirected and noindex routes.
 import {readFile,readdir} from "node:fs/promises";
@@ -39,4 +40,4 @@ Object.assign(info,{mainChildren:seenFiles.size,mainUniquePageUrls:known.size,ad
 console.log("Aafnai Patro sitemap release coverage:",JSON.stringify(info));
 if(errors.length){errors.slice(0,50).forEach(e=>console.error(e));process.exitCode=1}
 
-const clientTools=JSON.parse(await read("client-tools/tools.json"));const clientXml=await read("dist/sitemap-client-tools.xml");const clientLocs=locs(clientXml);if(clientTools.length!==350)errors.push("Client tool catalog must contain exactly 350 tools");if(clientLocs.length!==350||new Set(clientLocs).size!==350)errors.push("Client tool sitemap must contain 350 unique URLs");for(const tool of clientTools)if(!clientLocs.includes(SITE+tool.slug))errors.push("Client tool missing from sitemap: "+tool.slug);if(errors.length)process.exitCode=1;else console.log("Client tool sitemap coverage: PASS — 350 unique static pages");
+const clientTools=await loadClientTools(process.cwd());const clientXml=await read("dist/sitemap-client-tools.xml");const clientLocs=locs(clientXml);if(clientTools.length!==550)errors.push("Client tool catalog must contain exactly 550 tools");if(clientLocs.length!==550||new Set(clientLocs).size!==550)errors.push("Client tool sitemap must contain 550 unique URLs");for(const tool of clientTools)if(!clientLocs.includes(SITE+tool.slug))errors.push("Client tool missing from sitemap: "+tool.slug);if(errors.length)process.exitCode=1;else console.log("Client tool sitemap coverage: PASS — 550 unique static pages");

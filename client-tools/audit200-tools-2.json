@@ -1,0 +1,2402 @@
+[
+  {
+    "source_id": "AUDIT-051",
+    "slug": "/tool/property-tax-proration-at-closing-calculator",
+    "category": "tool",
+    "h1": "Property-Tax Proration at Closing Calculator",
+    "title_tag": "Property-Tax Proration at Closing Calculator | AafnaiPatro",
+    "meta_description": "Use property-tax proration at closing locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "property-tax proration at closing calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use loan/escrow/closing amounts, rates, dates, assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/new-construction-property-tax-reassessment-shock-estimator",
+      "/tool/seller-credit-vs-price-reduction-net-cost-comparator",
+      "/tool/escrow-shortage-catch-up-simulator"
+    ],
+    "engine": "audit200",
+    "operation": "property-tax-proration-at-closing-calculator",
+    "source_category": "Mortgage & Home Finance",
+    "tool_type": "Calculator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "loan/escrow/closing amounts, rates, dates, assumptions",
+    "expected_outputs": "payment/cash-flow scenarios, reconciliation table, break-even",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-052",
+    "slug": "/tool/bgp-best-path-attribute-comparator",
+    "category": "tool",
+    "h1": "BGP Best-Path Attribute Comparator",
+    "title_tag": "BGP Best-Path Attribute Comparator | AafnaiPatro",
+    "meta_description": "Comparator for bgp best-path attribute. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "bgp best-path attribute comparator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/pon-splitter-cascade-optical-budget-calculator",
+      "/tool/dhcp-option-121-route-encoder-decoder",
+      "/tool/wireless-ptp-fade-margin-and-fresnel-clearance-planner"
+    ],
+    "engine": "audit200",
+    "operation": "bgp-best-path-attribute-comparator",
+    "source_category": "Networking",
+    "tool_type": "Comparator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-053",
+    "slug": "/tool/mtu-mss-encapsulation-overhead-calculator",
+    "category": "tool",
+    "h1": "MTU / MSS / Encapsulation Overhead Calculator",
+    "title_tag": "MTU / MSS / Encapsulation Overhead Calculator | AafnaiPatro",
+    "meta_description": "Use mtu / mss / encapsulation overhead locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "mtu mss encapsulation overhead calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/route-table-longest-prefix-match-simulator",
+      "/tool/vlan-trunk-allowed-list-compressor-expander",
+      "/tool/ipv4-cidr-aggregation-route-summarizer"
+    ],
+    "engine": "audit200",
+    "operation": "mtu-mss-encapsulation-overhead-calculator",
+    "source_category": "Networking",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-054",
+    "slug": "/tool/aca-magi-capital-gain-roth-conversion-cliff-planner",
+    "category": "tool",
+    "h1": "ACA MAGI Capital-Gain / Roth-Conversion Cliff Planner",
+    "title_tag": "ACA MAGI Capital-Gain / Roth-Conversion | AafnaiPatro",
+    "meta_description": "Use aca magi capital-gain / roth-conversion cliff locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable",
+    "target_long_tail_keyword": "aca magi capital-gain roth-conversion cliff planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/social-security-provisional-income-tax-torpedo-calculator",
+      "/tool/409a-deferred-comp-distribution-tax-timing-planner",
+      "/tool/qcd-vs-rmd-taxable-income-planner"
+    ],
+    "engine": "audit200",
+    "operation": "aca-magi-capital-gain-roth-conversion-cliff-planner",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Planner",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-055",
+    "slug": "/tool/arc-header-chain-inspector",
+    "category": "tool",
+    "h1": "ARC Header Chain Inspector",
+    "title_tag": "ARC Header Chain Inspector | AafnaiPatro",
+    "meta_description": "Inspector for arc header chain. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "arc header chain inspector",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/dmarc-aggregate-report-period-comparator",
+      "/tool/bimi-svg-tiny-ps-repair-diff-validator",
+      "/tool/dkim-signature-canonicalization-playground"
+    ],
+    "engine": "audit200",
+    "operation": "arc-header-chain-inspector",
+    "source_category": "Security & Email Auth",
+    "tool_type": "Inspector",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-056",
+    "slug": "/tool/certificate-expiry-calendar-ics-generator-from-pem-bundle",
+    "category": "tool",
+    "h1": "Certificate Expiry Calendar / ICS Generator from PEM Bundle",
+    "title_tag": "Certificate Expiry Calendar / ICS Generator | AafnaiPatro",
+    "meta_description": "Use certificate expiry calendar / ics from pem bundle locally in your browser. Inputs stay on your device; get transparent calculations, checks and export",
+    "target_long_tail_keyword": "certificate expiry calendar ics generator from pem bundle",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/x509-san-coverage-checker",
+      "/tool/csr-vs-certificate-key-subject-match-checker",
+      "/tool/tls-rpt-report-period-comparator"
+    ],
+    "engine": "audit200",
+    "operation": "certificate-expiry-calendar-ics-generator-from-pem-bundle",
+    "source_category": "Security & Email Auth",
+    "tool_type": "Generator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-057",
+    "slug": "/tool/x509-san-coverage-checker",
+    "category": "tool",
+    "h1": "X.509 SAN Coverage Checker",
+    "title_tag": "X.509 SAN Coverage Checker | AafnaiPatro",
+    "meta_description": "Checker for x.509 san coverage. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "x.509 san coverage checker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/tls-rpt-report-period-comparator",
+      "/tool/certificate-expiry-calendar-ics-generator-from-pem-bundle",
+      "/tool/mta-sts-policy-diff-and-rollout-planner"
+    ],
+    "engine": "audit200",
+    "operation": "x509-san-coverage-checker",
+    "source_category": "Security & Email Auth",
+    "tool_type": "Checker",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "No",
+    "seo_score": 86
+  },
+  {
+    "source_id": "AUDIT-058",
+    "slug": "/tool/context-window-packing-planner",
+    "category": "tool",
+    "h1": "Context Window Packing Planner",
+    "title_tag": "Context Window Packing Planner | AafnaiPatro",
+    "meta_description": "Planner for context window packing. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "context window packing planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/kv-cache-memory-calculator",
+      "/tool/rag-chunk-size-overlap-coverage-calculator",
+      "/tool/llm-context-concurrency-memory-planner"
+    ],
+    "engine": "audit200",
+    "operation": "context-window-packing-planner",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-059",
+    "slug": "/tool/prompt-caching-savings-calculator-with-user-entered-rates",
+    "category": "tool",
+    "h1": "Prompt Caching Savings Calculator with User-Entered Rates",
+    "title_tag": "Prompt Caching Savings Calculator with | AafnaiPatro",
+    "meta_description": "Use prompt caching savings with user-entered rates locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportabl",
+    "target_long_tail_keyword": "prompt caching savings calculator with user-entered rates",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/tool-function-calling-json-schema-validator",
+      "/tool/inference-throughput-gpu-cost-break-even-calculator",
+      "/tool/jsonl-chat-training-file-validator"
+    ],
+    "engine": "audit200",
+    "operation": "prompt-caching-savings-calculator-with-user-entered-rates",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-060",
+    "slug": "/tool/affiliate-commission-reverse-margin-calculator",
+    "category": "tool",
+    "h1": "Affiliate Commission Reverse-Margin Calculator",
+    "title_tag": "Affiliate Commission Reverse-Margin | AafnaiPatro",
+    "meta_description": "Use affiliate commission reverse-margin locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "affiliate commission reverse-margin calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use prices, fees, rates, timing/volume assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/bundle-price-mix-margin-calculator",
+      "/tool/marketplace-fee-stack-profit-calculator",
+      "/tool/promotion-discount-stack-margin-guardrail-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "affiliate-commission-reverse-margin-calculator",
+    "source_category": "Creator & Ecommerce",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "prices, fees, rates, timing/volume assumptions",
+    "expected_outputs": "net margin/cash-flow/scenario comparison",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-061",
+    "slug": "/tool/chargeback-rate-and-reserve-impact-calculator",
+    "category": "tool",
+    "h1": "Chargeback Rate & Reserve Impact Calculator",
+    "title_tag": "Chargeback Rate & Reserve Impact Calculator | AafnaiPatro",
+    "meta_description": "Use chargeback rate & reserve impact locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "chargeback rate & reserve impact calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use prices, fees, rates, timing/volume assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/ecommerce-return-rate-margin-impact-calculator",
+      "/tool/promotion-discount-stack-margin-guardrail-calculator",
+      "/tool/usage-based-pricing-scenario-comparator"
+    ],
+    "engine": "audit200",
+    "operation": "chargeback-rate-and-reserve-impact-calculator",
+    "source_category": "Creator & Ecommerce",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "prices, fees, rates, timing/volume assumptions",
+    "expected_outputs": "net margin/cash-flow/scenario comparison",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-062",
+    "slug": "/tool/creator-sponsorship-cpm-deliverables-effective-rate-calculator",
+    "category": "tool",
+    "h1": "Creator Sponsorship CPM / Deliverables Effective-Rate Calculator",
+    "title_tag": "Creator Sponsorship CPM / Deliverables | AafnaiPatro",
+    "meta_description": "Use creator sponsorship cpm / deliverables effective-rate locally in your browser. Inputs stay on your device; get transparent calculations, checks and ex",
+    "target_long_tail_keyword": "creator sponsorship cpm deliverables effective-rate calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use prices, fees, rates, timing/volume assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/marketplace-fee-stack-profit-calculator",
+      "/tool/retainer-burn-down-and-effective-hourly-rate-tracker",
+      "/tool/affiliate-commission-reverse-margin-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "creator-sponsorship-cpm-deliverables-effective-rate-calculator",
+    "source_category": "Creator & Ecommerce",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "prices, fees, rates, timing/volume assumptions",
+    "expected_outputs": "net margin/cash-flow/scenario comparison",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-063",
+    "slug": "/tool/tar-tar-gz-browser-and-selective-extractor",
+    "category": "tool",
+    "h1": "TAR / TAR.GZ Browser & Selective Extractor",
+    "title_tag": "TAR / TAR.GZ Browser & Selective Extractor | AafnaiPatro",
+    "meta_description": "Use tar / tar.gz browser & selective extractor locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable re",
+    "target_long_tail_keyword": "tar tar.gz browser & selective extractor",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/zip-compression-ratio-and-zip-bomb-risk-inspector",
+      "/tool/gzip-brotli-zstd-text-compression-lab",
+      "/tool/zip-duplicate-file-finder-by-hash"
+    ],
+    "engine": "audit200",
+    "operation": "tar-tar-gz-browser-and-selective-extractor",
+    "source_category": "Data & Files",
+    "tool_type": "Browser utility",
+    "dependency": "Small archive/compression library; WASM optional",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-064",
+    "slug": "/tool/zip-duplicate-file-finder-by-hash",
+    "category": "tool",
+    "h1": "ZIP Duplicate-File Finder by Hash",
+    "title_tag": "ZIP Duplicate-File Finder by Hash | AafnaiPatro",
+    "meta_description": "Use zip duplicate-file finder by hash locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "zip duplicate-file finder by hash",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/epub-broken-link-missing-asset-checker",
+      "/tool/zip-compression-ratio-and-zip-bomb-risk-inspector",
+      "/tool/epub-chapter-extractor-to-markdown"
+    ],
+    "engine": "audit200",
+    "operation": "zip-duplicate-file-finder-by-hash",
+    "source_category": "Data & Files",
+    "tool_type": "Browser utility",
+    "dependency": "Small archive/compression library; WASM optional",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-065",
+    "slug": "/tool/avro-schema-compatibility-checker",
+    "category": "tool",
+    "h1": "Avro Schema Compatibility Checker",
+    "title_tag": "Avro Schema Compatibility Checker | AafnaiPatro",
+    "meta_description": "Checker for avro schema compatibility. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "avro schema compatibility checker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/protobuf-field-number-collision-checker",
+      "/tool/sql-migration-destructive-change-linter",
+      "/tool/json-schema-oneof-anyof-overlap-debugger"
+    ],
+    "engine": "audit200",
+    "operation": "avro-schema-compatibility-checker",
+    "source_category": "Developer Utilities",
+    "tool_type": "Checker",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-066",
+    "slug": "/tool/kafka-consumer-lag-catch-up-time-planner",
+    "category": "tool",
+    "h1": "Kafka Consumer-Lag Catch-Up Time Planner",
+    "title_tag": "Kafka Consumer-Lag Catch-Up Time Planner | AafnaiPatro",
+    "meta_description": "Use kafka consumer-lag catch-up time locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "kafka consumer-lag catch-up time planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/kafka-partition-key-murmur2-inspector",
+      "/tool/cron-collision-and-overlap-analyzer",
+      "/tool/redis-cluster-slot-calculator-and-key-tag-inspector"
+    ],
+    "engine": "audit200",
+    "operation": "kafka-consumer-lag-catch-up-time-planner",
+    "source_category": "Developer Utilities",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-067",
+    "slug": "/tool/icc-profile-inspector-and-color-space-summary",
+    "category": "tool",
+    "h1": "ICC Profile Inspector & Color-Space Summary",
+    "title_tag": "ICC Profile Inspector & Color-Space Summary | AafnaiPatro",
+    "meta_description": "Use icc profile & color-space summary locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "icc profile inspector & color-space summary",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/jpeg-quantization-chroma-subsampling-inspector",
+      "/tool/svg-accessibility-and-aria-linter",
+      "/tool/png-chunk-and-color-profile-inspector"
+    ],
+    "engine": "audit200",
+    "operation": "icc-profile-inspector-and-color-space-summary",
+    "source_category": "Media & Accessibility",
+    "tool_type": "Inspector",
+    "dependency": "Small binary/profile parser",
+    "build_difficulty": "Hard",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-068",
+    "slug": "/tool/subtitle-line-length-and-two-line-break-optimizer",
+    "category": "tool",
+    "h1": "Subtitle Line-Length & Two-Line Break Optimizer",
+    "title_tag": "Subtitle Line-Length & Two-Line Break | AafnaiPatro",
+    "meta_description": "Use subtitle line-length & two-line break locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results",
+    "target_long_tail_keyword": "subtitle line-length & two-line break optimizer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/subtitle-reading-speed-compliance-checker",
+      "/tool/subtitle-gap-overlap-flash-detector",
+      "/tool/ass-ssa-subtitle-safe-area-position-checker"
+    ],
+    "engine": "audit200",
+    "operation": "subtitle-line-length-and-two-line-break-optimizer",
+    "source_category": "Media & Accessibility",
+    "tool_type": "Optimizer",
+    "dependency": "Small subtitle/XML parser",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-069",
+    "slug": "/tool/mortgage-servicing-transfer-payment-reconciliation-tracker",
+    "category": "tool",
+    "h1": "Mortgage Servicing Transfer Payment Reconciliation Tracker",
+    "title_tag": "Mortgage Servicing Transfer Payment | AafnaiPatro",
+    "meta_description": "Use mortgage servicing transfer payment reconciliation locally in your browser. Inputs stay on your device; get transparent calculations, checks and expor",
+    "target_long_tail_keyword": "mortgage servicing transfer payment reconciliation tracker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use loan/escrow/closing amounts, rates, dates, assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/prepaid-interest-and-first-payment-date-calculator",
+      "/tool/closing-cost-cash-to-close-reconciliation-checker",
+      "/tool/mortgage-escrow-waiver-break-even-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "mortgage-servicing-transfer-payment-reconciliation-tracker",
+    "source_category": "Mortgage & Home Finance",
+    "tool_type": "Tracker",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "loan/escrow/closing amounts, rates, dates, assumptions",
+    "expected_outputs": "payment/cash-flow scenarios, reconciliation table, break-even",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-070",
+    "slug": "/tool/shared-appreciation-home-equity-exit-calculator",
+    "category": "tool",
+    "h1": "Shared-Appreciation Home Equity Exit Calculator",
+    "title_tag": "Shared-Appreciation Home Equity Exit | AafnaiPatro",
+    "meta_description": "Use shared-appreciation home equity exit locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "shared-appreciation home equity exit calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use loan/escrow/closing amounts, rates, dates, assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/heloc-draw-plus-variable-rate-payment-path-simulator",
+      "/tool/mortgage-escrow-waiver-break-even-calculator",
+      "/tool/bridge-loan-carry-cost-and-sale-delay-scenario-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "shared-appreciation-home-equity-exit-calculator",
+    "source_category": "Mortgage & Home Finance",
+    "tool_type": "Calculator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "loan/escrow/closing amounts, rates, dates, assumptions",
+    "expected_outputs": "payment/cash-flow scenarios, reconciliation table, break-even",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-071",
+    "slug": "/tool/dhcp-scope-exhaustion-and-reservation-capacity-simulator",
+    "category": "tool",
+    "h1": "DHCP Scope Exhaustion & Reservation Capacity Simulator",
+    "title_tag": "DHCP Scope Exhaustion & Reservation Capacity | AafnaiPatro",
+    "meta_description": "Use dhcp scope exhaustion & reservation capacity locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable",
+    "target_long_tail_keyword": "dhcp scope exhaustion & reservation capacity simulator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/vlsm-change-impact-reallocator",
+      "/tool/ipv4-cidr-aggregation-route-summarizer",
+      "/tool/route-table-longest-prefix-match-simulator"
+    ],
+    "engine": "audit200",
+    "operation": "dhcp-scope-exhaustion-and-reservation-capacity-simulator",
+    "source_category": "Networking",
+    "tool_type": "Simulator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-072",
+    "slug": "/tool/espp-payroll-deduction-and-purchase-period-planner",
+    "category": "tool",
+    "h1": "ESPP Payroll Deduction & Purchase-Period Planner",
+    "title_tag": "ESPP Payroll Deduction & Purchase-Period | AafnaiPatro",
+    "meta_description": "Use espp payroll deduction & purchase-period locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable resu",
+    "target_long_tail_keyword": "espp payroll deduction & purchase-period planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/espp-lookback-discount-break-even-calculator",
+      "/tool/qsbs-section-1202-holding-period-and-1045-rollover-timeline-tracker",
+      "/tool/espp-qualified-vs-disqualifying-disposition-tax-estimator"
+    ],
+    "engine": "audit200",
+    "operation": "espp-payroll-deduction-and-purchase-period-planner",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Planner",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-073",
+    "slug": "/tool/csp-nonce-hash-source-generator-for-inline-assets",
+    "category": "tool",
+    "h1": "CSP Nonce/Hash Source Generator for Inline Assets",
+    "title_tag": "CSP Nonce/Hash Source Generator for Inline | AafnaiPatro",
+    "meta_description": "Use csp nonce/hash source for inline assets locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable resul",
+    "target_long_tail_keyword": "csp nonce/hash source generator for inline assets",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/samesite-cookie-scenario-simulator",
+      "/tool/ssh-authorized-keys-options-linter-and-risk-checker",
+      "/tool/csr-vs-certificate-key-subject-match-checker"
+    ],
+    "engine": "audit200",
+    "operation": "csp-nonce-hash-source-generator-for-inline-assets",
+    "source_category": "Security & Email Auth",
+    "tool_type": "Generator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-074",
+    "slug": "/tool/samesite-cookie-scenario-simulator",
+    "category": "tool",
+    "h1": "SameSite Cookie Scenario Simulator",
+    "title_tag": "SameSite Cookie Scenario Simulator | AafnaiPatro",
+    "meta_description": "Simulator for samesite cookie scenario. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "samesite cookie scenario simulator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/ssh-authorized-keys-options-linter-and-risk-checker",
+      "/tool/csp-nonce-hash-source-generator-for-inline-assets",
+      "/tool/csr-vs-certificate-key-subject-match-checker"
+    ],
+    "engine": "audit200",
+    "operation": "samesite-cookie-scenario-simulator",
+    "source_category": "Security & Email Auth",
+    "tool_type": "Simulator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 85
+  },
+  {
+    "source_id": "AUDIT-075",
+    "slug": "/tool/lora-adapter-parameter-and-storage-calculator",
+    "category": "tool",
+    "h1": "LoRA Adapter Parameter & Storage Calculator",
+    "title_tag": "LoRA Adapter Parameter & Storage Calculator | AafnaiPatro",
+    "meta_description": "Use lora adapter parameter & storage locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "lora adapter parameter & storage calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/mixture-of-experts-active-parameter-memory-calculator",
+      "/tool/fine-tuning-dataset-token-budget-planner",
+      "/tool/vector-index-memory-estimator"
+    ],
+    "engine": "audit200",
+    "operation": "lora-adapter-parameter-and-storage-calculator",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Calculator",
+    "dependency": "Pure JS; optional tokenizer WASM for exact counts",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-076",
+    "slug": "/tool/mixture-of-experts-active-parameter-memory-calculator",
+    "category": "tool",
+    "h1": "Mixture-of-Experts Active-Parameter / Memory Calculator",
+    "title_tag": "Mixture-of-Experts Active-Parameter / Memory | AafnaiPatro",
+    "meta_description": "Use mixture-of-experts active-parameter / memory locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable",
+    "target_long_tail_keyword": "mixture-of-experts active-parameter memory calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/vector-index-memory-estimator",
+      "/tool/lora-adapter-parameter-and-storage-calculator",
+      "/tool/embedding-storage-size-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "mixture-of-experts-active-parameter-memory-calculator",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-077",
+    "slug": "/tool/subscription-annual-vs-monthly-break-even-with-cancellation-month",
+    "category": "tool",
+    "h1": "Subscription Annual-vs-Monthly Break-Even with Cancellation Month",
+    "title_tag": "Subscription Annual-vs-Monthly Break-Even | AafnaiPatro",
+    "meta_description": "Use subscription annual-vs-monthly break-even with cancellation month locally in your browser. Inputs stay on your device; get transparent calculations, c",
+    "target_long_tail_keyword": "subscription annual-vs-monthly break-even with cancellation month",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use prices, fees, rates, timing/volume assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/payment-processor-fee-gross-up-and-net-receipt-calculator",
+      "/tool/saas-seat-proration-mid-cycle-true-up-calculator",
+      "/tool/usage-based-pricing-scenario-comparator"
+    ],
+    "engine": "audit200",
+    "operation": "subscription-annual-vs-monthly-break-even-with-cancellation-month",
+    "source_category": "Creator & Ecommerce",
+    "tool_type": "Browser utility",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "prices, fees, rates, timing/volume assumptions",
+    "expected_outputs": "net margin/cash-flow/scenario comparison",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-078",
+    "slug": "/tool/camera-battery-plus-storage-shoot-time-planner",
+    "category": "tool",
+    "h1": "Camera Battery + Storage Shoot-Time Planner",
+    "title_tag": "Camera Battery + Storage Shoot-Time Planner | AafnaiPatro",
+    "meta_description": "Use camera battery + storage shoot-time locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "camera battery storage shoot-time planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/macro-effective-aperture-and-diffraction-planner",
+      "/tool/photo-print-border-and-mat-opening-calculator",
+      "/tool/flash-guide-number-aperture-distance-planner"
+    ],
+    "engine": "audit200",
+    "operation": "camera-battery-plus-storage-shoot-time-planner",
+    "source_category": "Creator & Photography",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-079",
+    "slug": "/tool/film-negative-scan-dpi-megapixel-file-size-planner",
+    "category": "tool",
+    "h1": "Film-Negative Scan DPI / Megapixel / File-Size Planner",
+    "title_tag": "Film-Negative Scan DPI / Megapixel | AafnaiPatro",
+    "meta_description": "Use film-negative scan dpi / megapixel / file-size locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportabl",
+    "target_long_tail_keyword": "film-negative scan dpi megapixel file-size planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/photo-print-border-and-mat-opening-calculator",
+      "/tool/color-checker-patch-sampling-grid-generator",
+      "/tool/camera-battery-plus-storage-shoot-time-planner"
+    ],
+    "engine": "audit200",
+    "operation": "film-negative-scan-dpi-megapixel-file-size-planner",
+    "source_category": "Creator & Photography",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-080",
+    "slug": "/tool/photo-print-border-and-mat-opening-calculator",
+    "category": "tool",
+    "h1": "Photo Print Border & Mat-Opening Calculator",
+    "title_tag": "Photo Print Border & Mat-Opening Calculator | AafnaiPatro",
+    "meta_description": "Use photo print border & mat-opening locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "photo print border & mat-opening calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/camera-battery-plus-storage-shoot-time-planner",
+      "/tool/film-negative-scan-dpi-megapixel-file-size-planner",
+      "/tool/macro-effective-aperture-and-diffraction-planner"
+    ],
+    "engine": "audit200",
+    "operation": "photo-print-border-and-mat-opening-calculator",
+    "source_category": "Creator & Photography",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-081",
+    "slug": "/tool/duckdb-parquet-local-query-workbench",
+    "category": "tool",
+    "h1": "DuckDB / Parquet Local Query Workbench",
+    "title_tag": "DuckDB / Parquet Local Query Workbench | AafnaiPatro",
+    "meta_description": "Use duckdb / parquet local query locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "duckdb parquet local query workbench",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/gzip-brotli-zstd-text-compression-lab",
+      "/tool/sqlite-schema-diff-tool",
+      "/tool/tar-tar-gz-browser-and-selective-extractor"
+    ],
+    "engine": "audit200",
+    "operation": "duckdb-parquet-local-query-workbench",
+    "source_category": "Data & Files",
+    "tool_type": "Workbench",
+    "dependency": "DuckDB-WASM",
+    "build_difficulty": "Hard",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-082",
+    "slug": "/tool/content-disposition-filename-decoder-and-encoder",
+    "category": "tool",
+    "h1": "Content-Disposition Filename Decoder & Encoder",
+    "title_tag": "Content-Disposition Filename Decoder | AafnaiPatro",
+    "meta_description": "Use content-disposition filename decoder & encoder locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportabl",
+    "target_long_tail_keyword": "content-disposition filename decoder & encoder",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/http-structured-fields-parser-and-builder",
+      "/tool/mime-multipart-request-builder-and-parser",
+      "/tool/api-pagination-link-header-parser-and-tester"
+    ],
+    "engine": "audit200",
+    "operation": "content-disposition-filename-decoder-and-encoder",
+    "source_category": "Developer Utilities",
+    "tool_type": "Decoder",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-083",
+    "slug": "/tool/cron-collision-and-overlap-analyzer",
+    "category": "tool",
+    "h1": "Cron Collision & Overlap Analyzer",
+    "title_tag": "Cron Collision & Overlap Analyzer | AafnaiPatro",
+    "meta_description": "Analyzer for cron collision & overlap. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "cron collision & overlap analyzer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/kafka-consumer-lag-catch-up-time-planner",
+      "/tool/ci-matrix-explosion-job-count-calculator",
+      "/tool/kafka-partition-key-murmur2-inspector"
+    ],
+    "engine": "audit200",
+    "operation": "cron-collision-and-overlap-analyzer",
+    "source_category": "Developer Utilities",
+    "tool_type": "Analyzer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-084",
+    "slug": "/tool/oauth-scope-set-diff-and-normalizer",
+    "category": "tool",
+    "h1": "OAuth Scope Set Diff & Normalizer",
+    "title_tag": "OAuth Scope Set Diff & Normalizer | AafnaiPatro",
+    "meta_description": "Normalizer for oauth scope set diff. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "oauth scope set diff & normalizer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/oauth-redirect-uri-exact-match-tester",
+      "/tool/webhook-retry-exponential-backoff-schedule-simulator",
+      "/tool/openapi-parameter-serialization-tester"
+    ],
+    "engine": "audit200",
+    "operation": "oauth-scope-set-diff-and-normalizer",
+    "source_category": "Developer Utilities",
+    "tool_type": "Normalizer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-085",
+    "slug": "/tool/postgresql-connection-string-parser-and-builder",
+    "category": "tool",
+    "h1": "PostgreSQL Connection String Parser & Builder",
+    "title_tag": "PostgreSQL Connection String Parser & Builder | AafnaiPatro",
+    "meta_description": "Use postgresql connection string parser locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "postgresql connection string parser & builder",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — configs/tokens can be inspected without upload. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/sql-migration-destructive-change-linter",
+      "/tool/sql-placeholder-style-converter",
+      "/tool/avro-schema-compatibility-checker"
+    ],
+    "engine": "audit200",
+    "operation": "postgresql-connection-string-parser-and-builder",
+    "source_category": "Developer Utilities",
+    "tool_type": "Parser",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "High — configs/tokens can be inspected without upload.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-086",
+    "slug": "/tool/ass-ssa-subtitle-safe-area-position-checker",
+    "category": "tool",
+    "h1": "ASS/SSA Subtitle Safe-Area Position Checker",
+    "title_tag": "ASS/SSA Subtitle Safe-Area Position Checker | AafnaiPatro",
+    "meta_description": "Use ass/ssa subtitle safe-area position locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "ass/ssa subtitle safe-area position checker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/subtitle-gap-overlap-flash-detector",
+      "/tool/webvtt-cue-settings-validator-and-previewer",
+      "/tool/subtitle-line-length-and-two-line-break-optimizer"
+    ],
+    "engine": "audit200",
+    "operation": "ass-ssa-subtitle-safe-area-position-checker",
+    "source_category": "Media & Accessibility",
+    "tool_type": "Checker",
+    "dependency": "Small subtitle/XML parser",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-087",
+    "slug": "/tool/jpeg-quantization-chroma-subsampling-inspector",
+    "category": "tool",
+    "h1": "JPEG Quantization / Chroma-Subsampling Inspector",
+    "title_tag": "JPEG Quantization / Chroma-Subsampling | AafnaiPatro",
+    "meta_description": "Use jpeg quantization / chroma-subsampling locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable result",
+    "target_long_tail_keyword": "jpeg quantization chroma-subsampling inspector",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/png-chunk-and-color-profile-inspector",
+      "/tool/icc-profile-inspector-and-color-space-summary",
+      "/tool/mp4-keyframe-gop-timeline-inspector"
+    ],
+    "engine": "audit200",
+    "operation": "jpeg-quantization-chroma-subsampling-inspector",
+    "source_category": "Media & Accessibility",
+    "tool_type": "Inspector",
+    "dependency": "Small binary/profile parser",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-088",
+    "slug": "/tool/mp4-moov-atom-fast-start-inspector",
+    "category": "tool",
+    "h1": "MP4 Moov-Atom / Fast-Start Inspector",
+    "title_tag": "MP4 Moov-Atom / Fast-Start Inspector | AafnaiPatro",
+    "meta_description": "Use mp4 moov-atom / fast-start locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "mp4 moov-atom fast-start inspector",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/podcast-chapter-duration-and-ad-marker-planner",
+      "/tool/mp4-keyframe-gop-timeline-inspector",
+      "/tool/audio-silence-map-and-cue-sheet-generator"
+    ],
+    "engine": "audit200",
+    "operation": "mp4-moov-atom-fast-start-inspector",
+    "source_category": "Media & Accessibility",
+    "tool_type": "Inspector",
+    "dependency": "mp4box/Web Audio; WebCodecs where available",
+    "build_difficulty": "Hard",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-089",
+    "slug": "/tool/construction-loan-interest-only-draw-schedule-calculator",
+    "category": "tool",
+    "h1": "Construction Loan Interest-Only Draw Schedule Calculator",
+    "title_tag": "Construction Loan Interest-Only Draw | AafnaiPatro",
+    "meta_description": "Use construction loan interest-only draw schedule locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable",
+    "target_long_tail_keyword": "construction loan interest-only draw schedule calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use loan/escrow/closing amounts, rates, dates, assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/arm-periodic-cap-lifetime-cap-payment-path-simulator",
+      "/tool/bridge-loan-carry-cost-and-sale-delay-scenario-calculator",
+      "/tool/lender-credit-vs-higher-rate-break-even-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "construction-loan-interest-only-draw-schedule-calculator",
+    "source_category": "Mortgage & Home Finance",
+    "tool_type": "Calculator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "loan/escrow/closing amounts, rates, dates, assumptions",
+    "expected_outputs": "payment/cash-flow scenarios, reconciliation table, break-even",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-090",
+    "slug": "/tool/mortgage-escrow-waiver-break-even-calculator",
+    "category": "tool",
+    "h1": "Mortgage Escrow-Waiver Break-Even Calculator",
+    "title_tag": "Mortgage Escrow-Waiver Break-Even Calculator | AafnaiPatro",
+    "meta_description": "Use mortgage escrow-waiver break-even locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "mortgage escrow-waiver break-even calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use loan/escrow/closing amounts, rates, dates, assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/shared-appreciation-home-equity-exit-calculator",
+      "/tool/closing-cost-cash-to-close-reconciliation-checker",
+      "/tool/heloc-draw-plus-variable-rate-payment-path-simulator"
+    ],
+    "engine": "audit200",
+    "operation": "mortgage-escrow-waiver-break-even-calculator",
+    "source_category": "Mortgage & Home Finance",
+    "tool_type": "Calculator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "loan/escrow/closing amounts, rates, dates, assumptions",
+    "expected_outputs": "payment/cash-flow scenarios, reconciliation table, break-even",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-091",
+    "slug": "/tool/ipv4-cidr-aggregation-route-summarizer",
+    "category": "tool",
+    "h1": "IPv4 CIDR Aggregation / Route Summarizer",
+    "title_tag": "IPv4 CIDR Aggregation / Route Summarizer | AafnaiPatro",
+    "meta_description": "Use ipv4 cidr aggregation / route locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "ipv4 cidr aggregation route summarizer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/vlsm-change-impact-reallocator",
+      "/tool/route-table-longest-prefix-match-simulator",
+      "/tool/dhcp-scope-exhaustion-and-reservation-capacity-simulator"
+    ],
+    "engine": "audit200",
+    "operation": "ipv4-cidr-aggregation-route-summarizer",
+    "source_category": "Networking",
+    "tool_type": "Summarizer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-092",
+    "slug": "/tool/route-table-longest-prefix-match-simulator",
+    "category": "tool",
+    "h1": "Route Table Longest-Prefix-Match Simulator",
+    "title_tag": "Route Table Longest-Prefix-Match Simulator | AafnaiPatro",
+    "meta_description": "Use route table longest-prefix-match locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "route table longest-prefix-match simulator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/ipv4-cidr-aggregation-route-summarizer",
+      "/tool/mtu-mss-encapsulation-overhead-calculator",
+      "/tool/vlsm-change-impact-reallocator"
+    ],
+    "engine": "audit200",
+    "operation": "route-table-longest-prefix-match-simulator",
+    "source_category": "Networking",
+    "tool_type": "Simulator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-093",
+    "slug": "/tool/capital-gains-bracket-stacking-calculator",
+    "category": "tool",
+    "h1": "Capital-Gains Bracket Stacking Calculator",
+    "title_tag": "Capital-Gains Bracket Stacking Calculator | AafnaiPatro",
+    "meta_description": "Use capital-gains bracket stacking locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "capital-gains bracket stacking calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/nqso-exercise-withholding-gap-estimator",
+      "/tool/donor-advised-fund-bunching-deduction-planner",
+      "/tool/iso-amt-credit-carryforward-tracker"
+    ],
+    "engine": "audit200",
+    "operation": "capital-gains-bracket-stacking-calculator",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Calculator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-094",
+    "slug": "/tool/espp-lookback-discount-break-even-calculator",
+    "category": "tool",
+    "h1": "ESPP Lookback Discount Break-Even Calculator",
+    "title_tag": "ESPP Lookback Discount Break-Even Calculator | AafnaiPatro",
+    "meta_description": "Use espp lookback discount break-even locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "espp lookback discount break-even calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/espp-qualified-vs-disqualifying-disposition-tax-estimator",
+      "/tool/espp-payroll-deduction-and-purchase-period-planner",
+      "/tool/401k-bonus-commission-contribution-percentage-planner"
+    ],
+    "engine": "audit200",
+    "operation": "espp-lookback-discount-break-even-calculator",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Calculator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-095",
+    "slug": "/tool/nqso-exercise-withholding-gap-estimator",
+    "category": "tool",
+    "h1": "NQSO Exercise Withholding-Gap Estimator",
+    "title_tag": "NQSO Exercise Withholding-Gap Estimator | AafnaiPatro",
+    "meta_description": "Use nqso exercise withholding-gap locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "nqso exercise withholding-gap estimator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/iso-amt-credit-carryforward-tracker",
+      "/tool/capital-gains-bracket-stacking-calculator",
+      "/tool/stock-option-early-exercise-tax-timeline-planner"
+    ],
+    "engine": "audit200",
+    "operation": "nqso-exercise-withholding-gap-estimator",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Estimator",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-096",
+    "slug": "/tool/roth-conversion-5-year-rule-ladder-tracker",
+    "category": "tool",
+    "h1": "Roth Conversion 5-Year Rule Ladder Tracker",
+    "title_tag": "Roth Conversion 5-Year Rule Ladder Tracker | AafnaiPatro",
+    "meta_description": "Use roth conversion 5-year rule ladder locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "roth conversion 5-year rule ladder tracker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/529-withdrawal-plus-aotc-coordination-calculator",
+      "/tool/solo-401k-employee-employer-contribution-optimizer",
+      "/tool/409a-deferred-comp-distribution-tax-timing-planner"
+    ],
+    "engine": "audit200",
+    "operation": "roth-conversion-5-year-rule-ladder-tracker",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Tracker",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-097",
+    "slug": "/tool/sep-ira-vs-solo-401k-contribution-comparison",
+    "category": "tool",
+    "h1": "SEP IRA vs Solo 401(k) Contribution Comparison",
+    "title_tag": "SEP IRA vs Solo 401(k) Contribution | AafnaiPatro",
+    "meta_description": "Use sep ira vs solo 401 contribution comparison locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable r",
+    "target_long_tail_keyword": "sep ira vs solo 401k contribution comparison",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/solo-401k-employee-employer-contribution-optimizer",
+      "/tool/hsa-last-month-rule-testing-period-tracker",
+      "/tool/roth-conversion-5-year-rule-ladder-tracker"
+    ],
+    "engine": "audit200",
+    "operation": "sep-ira-vs-solo-401k-contribution-comparison",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Browser utility",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 84
+  },
+  {
+    "source_id": "AUDIT-098",
+    "slug": "/tool/embedding-storage-size-calculator",
+    "category": "tool",
+    "h1": "Embedding Storage Size Calculator",
+    "title_tag": "Embedding Storage Size Calculator | AafnaiPatro",
+    "meta_description": "Calculator for embedding storage size. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "embedding storage size calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/rag-chunk-size-overlap-coverage-calculator",
+      "/tool/vector-index-memory-estimator",
+      "/tool/context-window-packing-planner"
+    ],
+    "engine": "audit200",
+    "operation": "embedding-storage-size-calculator",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Calculator",
+    "dependency": "Pure JS; optional tokenizer WASM for exact counts",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 83
+  },
+  {
+    "source_id": "AUDIT-099",
+    "slug": "/tool/tool-function-calling-json-schema-validator",
+    "category": "tool",
+    "h1": "Tool / Function-Calling JSON Schema Validator",
+    "title_tag": "Tool / Function-Calling JSON Schema Validator | AafnaiPatro",
+    "meta_description": "Use tool / function-calling json schema locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "tool function-calling json schema validator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/jsonl-chat-training-file-validator",
+      "/tool/prompt-caching-savings-calculator-with-user-entered-rates",
+      "/tool/fine-tuning-dataset-token-budget-planner"
+    ],
+    "engine": "audit200",
+    "operation": "tool-function-calling-json-schema-validator",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Validator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "No",
+    "seo_score": 83
+  },
+  {
+    "source_id": "AUDIT-100",
+    "slug": "/tool/trailer-axle-tongue-weight-from-scale-tickets-calculator",
+    "category": "tool",
+    "h1": "Trailer Axle/Tongue Weight from Scale Tickets Calculator",
+    "title_tag": "Trailer Axle/Tongue Weight from Scale | AafnaiPatro",
+    "meta_description": "Use trailer axle/tongue weight from scale tickets locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable",
+    "target_long_tail_keyword": "trailer axle/tongue weight from scale tickets calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/awd-tire-circumference-mismatch-checker",
+      "/tool/vehicle-payload-worksheet-from-door-jamb-ratings",
+      "/tool/tire-pressure-temperature-correction-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "trailer-axle-tongue-weight-from-scale-tickets-calculator",
+    "source_category": "Automotive",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 83
+  }
+]

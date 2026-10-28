@@ -1,6 +1,7 @@
 import{readFile,stat,readdir}from"node:fs/promises";
 import{resolve,join}from"node:path";
-const root=process.cwd(),dist=resolve(root,"dist"),tools=JSON.parse(await readFile(resolve(root,"client-tools/tools.json"),"utf8")),errors=[];
+import{loadClientTools}from"./catalog.mjs";
+const root=process.cwd(),dist=resolve(root,"dist"),tools=await loadClientTools(root),errors=[];
 const sitemap=await readFile(resolve(dist,"sitemap-client-tools.xml"),"utf8");
 async function exists(path){try{await stat(path);return true}catch{return false}}
 async function collectHtml(dir,out=[]){for(const e of await readdir(dir,{withFileTypes:true})){const p=join(dir,e.name);if(e.isDirectory())await collectHtml(p,out);else if(e.name.endsWith(".html"))out.push(await readFile(p,"utf8"))}return out}
