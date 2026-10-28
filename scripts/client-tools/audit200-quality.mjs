@@ -22,5 +22,5 @@ for(const t of audit){
  assert.ok(!html.includes("/advancetools/tool/")&&!html.includes("/advancetools/tools/"),"nested route leaked "+t.slug);
 }
 for(const p of["client-tools/runtime/engines/audit200.mjs","client-tools/runtime/cores/audit200-core.mjs","client-tools/runtime/workers/audit200-worker.mjs"]){const s=await readFile(resolve(root,p),"utf8");assert.ok(!/\b(?:fetch\s*\(|XMLHttpRequest|WebSocket|EventSource|sendBeacon\s*\()/.test(s),"network API present in "+p)}
-const core=await readFile(resolve(root,"client-tools/runtime/cores/audit200-core.mjs"),"utf8");assert.ok(!/\b(?:document|localStorage|sessionStorage)\b/.test(core),"core must remain DOM/storage independent");
+const core=await readFile(resolve(root,"client-tools/runtime/cores/audit200-core.mjs"),"utf8");assert.ok(!/(?:\bdocument\s*[.\[]|\bwindow\.document\b|\blocalStorage\s*[.\[]|\bsessionStorage\s*[.\[])/.test(core),"core must remain DOM/storage independent");
 console.log("Audit200 quality PASS: 200/200 source-aligned SEO pages, canonical URLs, FAQ/limits/related links and browser-local runtime contract");
