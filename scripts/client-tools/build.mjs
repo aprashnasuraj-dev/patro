@@ -1,5 +1,6 @@
 import{readFile,writeFile,mkdir,cp,readdir}from"node:fs/promises";
 import{resolve}from"node:path";
+import{build as esbuild}from"esbuild";
 import{loadClientTools}from"./catalog.mjs";
 const root=process.cwd(),dist=resolve(root,"dist"),site="https://aafnaipatro.com";
 const tools=await loadClientTools(root);
@@ -7,6 +8,9 @@ const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 const safeJson=o=>JSON.stringify(o).replace(/<\//g,"<\\/");
 await mkdir(resolve(dist,"client-tools"),{recursive:true});
 await cp(resolve(root,"client-tools/runtime"),resolve(dist,"client-tools"),{recursive:true});
+await mkdir(resolve(dist,"client-tools/vendor"),{recursive:true});
+await esbuild({entryPoints:[resolve(root,"client-tools/vendor/audit200-local-heavy.mjs")],bundle:true,format:"esm",platform:"browser",target:["es2022"],outfile:resolve(dist,"client-tools/vendor/audit200-local-heavy.mjs"),minify:true,legalComments:"none"});
+await cp(resolve(root,"node_modules/sql.js/dist/sql-wasm.wasm"),resolve(dist,"client-tools/vendor/sql-wasm.wasm"));
 await writeFile(resolve(dist,"client-tools/tools.json"),JSON.stringify(tools,null,2)+"\n");
 const bySlug=new Map(tools.map(t=>[t.slug,t]));
 function jsonLd(t){return [{"@context":"https://schema.org","@type":"SoftwareApplication","name":t.h1,"applicationCategory":"UtilitiesApplication","operatingSystem":"Any modern browser","url":site+t.slug,"description":t.meta_description,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AafnaiPatro","item":site+"/"},{"@type":"ListItem","position":2,"name":"Advanced Tools","item":site+"/advancetools/"},{"@type":"ListItem","position":3,"name":t.h1,"item":site+t.slug}]}]}
