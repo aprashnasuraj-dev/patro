@@ -3,7 +3,7 @@ import { exploreResponse } from "./explore";
 import { placesCalendarResponse } from "./places-calendar";
 import { worldcalResponse } from "./worldcal";
 import { dailyHtmlResponse } from "./daily-html";
-import connectedWorker from "./connected-entry";
+import connectedWorker, { htmlAssetResponse } from "./connected-entry";
 import { conversionPageResponse } from "./conversion-page";
 import { seoStaticResponse } from "./seo-static";
 import { fastCalendarResponse } from "./calendar-fast";
@@ -19,6 +19,18 @@ import { nativeRashifalResponse } from "./rashifal-native";
 import { dictionaryResponse } from "./dictionary";
 import { myTimeResponse } from "./my-time";
 import { googleTagResponse } from "./google-tag";
+
+const DIRECT_CLIENT_TOOL_ROUTE=/^\/tool\/[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+async function directClientToolResponse(request:Request,env:Record<string,unknown>):Promise<Response|null>{
+  if(request.method!=="GET"&&request.method!=="HEAD")return null;
+  const pathname=new URL(request.url).pathname.replace(/\/+$/,"");
+  // Dictionary has its own Worker-backed route family and must keep that ownership.
+  if(pathname==="/tool/nepalidictionary"||!DIRECT_CLIENT_TOOL_ROUTE.test(pathname))return null;
+  // Cloudflare Static Assets canonicalizes a directory request with 307. Resolve that
+  // redirect inside the Worker and return the generated HTML at the slashless canonical.
+  return htmlAssetResponse(request,env as any,`${pathname}/index.html`,false);
+}
 
 /** Canonicalize human-entered dates such as /date/2026-8-06 to /date/2026-08-06. */
 function canonicalDateRedirect(request: Request): Response | null {
@@ -53,6 +65,8 @@ const optimizedWorker = {
     if (myTime) return myTime;
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
+    const directClientTool = await directClientToolResponse(request, env);
+    if (directClientTool) return directClientTool;
     // Nepali dictionary owns /tool/nepalidictionary/<word>, /akshar/*, /anupras/<word>, /en/<word> and /api/v1/dictionary/*;
     // its fixed pages are prerendered and fall through to connected-entry. null for everything else.
     const dictionary = await dictionaryResponse(request, env as any, ctx);
