@@ -5187,8 +5187,8 @@ places:
 - id: ganesh-mandir-baluwakhani-chok
   name_en: Ganesh Mandir, Baluwakhani Chok
   name_ne: गणेश मन्दिर, बालुवाखानी चोक
-  lat: 27.743983
-  lon: 85.36186
+  lat: 27.743991
+  lon: 85.361901
   district: Kathmandu
   district_ne: काठमाडौं
   province: Bagmati
@@ -12467,8 +12467,8 @@ places:
 - id: small-stupas
   name_en: Small Stupas
   name_ne: सानो स्तूपा
-  lat: 27.742334
-  lon: 85.364327
+  lat: 27.742206
+  lon: 85.364303
   district: Kathmandu
   district_ne: काठमाडौं
   province: Bagmati
@@ -125078,6 +125078,31 @@ places:
   tips_ne: []
   festivals:
   - id: vijaya-dashami
+- id: new-stupa
+  name_en: New Stupa
+  name_ne: New Stupa
+  lat: 27.742876
+  lon: 85.363756
+  district: Kathmandu
+  district_ne: काठमाडौं
+  province: Bagmati
+  source: osm
+  osm: node/13041312013
+  curated: false
+  coord_verified: true
+  kind: stupa
+  religion: buddhist
+  deity_en: ''
+  deity_ne: ''
+  elev_m: 0
+  about_en: ''
+  about_ne: ''
+  tips_en: []
+  tips_ne: []
+  festivals:
+  - id: buddha-jayanti
+  - id: gyalpo-lhosar
+  - id: sonam-lhosar
 - id: shiva-mandir-badka-maharwa
   name_en: Shiva Mandir, Badka Maharwa
   name_ne: Shiva Mandir, Badka Maharwa
@@ -150288,8 +150313,8 @@ places:
 - id: kopan-main-gumba
   name_en: Kopan Main Gumba
   name_ne: Kopan Main Gumba
-  lat: 27.742539
-  lon: 85.364229
+  lat: 27.74241
+  lon: 85.364205
   district: Kathmandu
   district_ne: काठमाडौं
   province: Bagmati
@@ -150313,8 +150338,8 @@ places:
 - id: chenrezig-gompa
   name_en: Chenrezig Gompa
   name_ne: Chenrezig Gompa
-  lat: 27.742049
-  lon: 85.363725
+  lat: 27.741921
+  lon: 85.363701
   district: Kathmandu
   district_ne: काठमाडौं
   province: Bagmati
@@ -153798,8 +153823,8 @@ places:
 - id: big-prayer-wheel
   name_en: Big Prayer Wheel
   name_ne: Big Prayer Wheel
-  lat: 27.742798
-  lon: 85.36466
+  lat: 27.74267
+  lon: 85.364636
   district: Kathmandu
   district_ne: काठमाडौं
   province: Bagmati
@@ -157514,6 +157539,31 @@ places:
   curated: false
   coord_verified: true
   kind: stupa
+  religion: buddhist
+  deity_en: ''
+  deity_ne: ''
+  elev_m: 0
+  about_en: ''
+  about_ne: ''
+  tips_en: []
+  tips_ne: []
+  festivals:
+  - id: buddha-jayanti
+  - id: gyalpo-lhosar
+  - id: sonam-lhosar
+- id: linh-son-temple
+  name_en: Linh Son Temple
+  name_ne: Linh Son Temple
+  lat: 27.483129
+  lon: 83.271387
+  district: Rupandehi
+  district_ne: रुपन्देही
+  province: Lumbini
+  source: osm
+  osm: way/343163495
+  curated: false
+  coord_verified: true
+  kind: monastery
   religion: buddhist
   deity_en: ''
   deity_ne: ''
@@ -183383,6 +183433,31 @@ places:
   tips_ne: []
   festivals:
   - id: vijaya-dashami
+- id: india-international-centre-for-buddhist-culture-and-heritage
+  name_en: India International Centre for Buddhist Culture and Heritage
+  name_ne: India International Centre for Buddhist Culture and Heritage
+  lat: 27.486029
+  lon: 83.272366
+  district: Rupandehi
+  district_ne: रुपन्देही
+  province: Lumbini
+  source: osm
+  osm: way/1539480156
+  curated: false
+  coord_verified: true
+  kind: monastery
+  religion: buddhist
+  deity_en: ''
+  deity_ne: ''
+  elev_m: 0
+  about_en: ''
+  about_ne: ''
+  tips_en: []
+  tips_ne: []
+  festivals:
+  - id: buddha-jayanti
+  - id: gyalpo-lhosar
+  - id: sonam-lhosar
 - id: samaijee-temple
   name_en: Samaijee Temple
   name_ne: Samaijee Temple
