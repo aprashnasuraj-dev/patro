@@ -16,7 +16,9 @@ concurrency:
 jobs:
   validate:
     name: Full release validation
-    runs-on: ubuntu-latest
+    # Playwright 1.56.1 Chromium is not supported by the current ubuntu-26.04 latest image.
+    # Keep the release validation on the same supported LTS image as PR browser regressions.
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
       PUBLIC_SITE_URL: https://aafnaipatro.com
