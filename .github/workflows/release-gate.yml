@@ -422,6 +422,42 @@ jobs:
           PY
           root_sitemap="$(curl --retry 5 --retry-delay 2 --retry-all-errors --max-redirs 0 -fsS https://aafnaipatro.com/sitemap.xml)"
           [[ "$(grep -o 'https://aafnaipatro.com/sitemap-mm530.xml' <<<"$root_sitemap" | wc -l | tr -d ' ')" == "1" ]] || { echo "::error::Root sitemap must reference sitemap-mm530.xml exactly once"; exit 1; }
+          [[ "$(grep -o 'https://aafnaipatro.com/sitemap-client-tools.xml' <<<"$root_sitemap" | wc -l | tr -d ' ')" == "1" ]] || { echo "::error::Root sitemap must reference sitemap-client-tools.xml exactly once"; exit 1; }
+
+          client_sitemap_body=/tmp/sitemap-client-tools.xml
+          client_sitemap_headers=/tmp/sitemap-client-tools.headers
+          client_sitemap_code="$(curl --retry 5 --retry-delay 2 --retry-all-errors --max-redirs 0 -sS -D "$client_sitemap_headers" -o "$client_sitemap_body" -w '%{http_code}' https://aafnaipatro.com/sitemap-client-tools.xml)"
+          [[ "$client_sitemap_code" == "200" ]] || { echo "::error::Client-tool sitemap must return HTTP 200 without redirect; got $client_sitemap_code"; exit 1; }
+          grep -Eiq '^content-type:[[:space:]]*(application|text)/xml([;[:space:]]|$)' "$client_sitemap_headers" || { echo "::error::Client-tool sitemap is not served as XML"; cat "$client_sitemap_headers"; exit 1; }
+          python3 - "$client_sitemap_body" >/tmp/client-tool-live-urls.txt <<'PY'
+          import sys, xml.etree.ElementTree as ET
+          raw=open(sys.argv[1],'rb').read()
+          if not raw.lstrip().startswith(b'<?xml'):
+              raise SystemExit('Client-tool sitemap missing XML declaration')
+          root=ET.fromstring(raw)
+          ns='{http://www.sitemaps.org/schemas/sitemap/0.9}'
+          if root.tag != ns+'urlset':
+              raise SystemExit(f'Unexpected client-tool sitemap root: {root.tag}')
+          locs=[(node.text or '').strip() for node in root.findall(ns+'url/'+ns+'loc')]
+          if len(locs) != 550:
+              raise SystemExit(f'Client-tool sitemap expected 550 URLs, got {len(locs)}')
+          if len(set(locs)) != 550:
+              raise SystemExit('Client-tool sitemap contains duplicate URLs')
+          if not all(url.startswith('https://aafnaipatro.com/tool/') for url in locs):
+              raise SystemExit('Client-tool sitemap contains a non-canonical direct tool URL')
+          print('\n'.join(locs))
+          PY
+          echo "Checking all 550 direct client-tool production URLs..."
+          xargs -r -P 12 -n 1 bash -c '
+            url="$1"
+            code="$(curl --retry 3 --retry-delay 1 --retry-all-errors --max-redirs 0 -sS -o /dev/null -w "%{http_code}" "$url")"
+            if [[ "$code" != "200" ]]; then
+              echo "::error::Live client tool failed: $url HTTP $code"
+              exit 1
+            fi
+          ' _ </tmp/client-tool-live-urls.txt
+          echo "Client-tool production sweep PASS: 550/550 direct URLs returned HTTP 200 without redirects."
+
           robots_live="$(curl --retry 5 --retry-delay 2 --retry-all-errors --max-redirs 0 -fsS https://aafnaipatro.com/robots.txt)"
           grep -Fqx 'Sitemap: https://aafnaipatro.com/sitemap-mm530.xml' <<<"$robots_live" || { echo "::error::robots.txt does not advertise sitemap-mm530.xml"; exit 1; }
           hub_html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/advancetools/web-tools/)"
