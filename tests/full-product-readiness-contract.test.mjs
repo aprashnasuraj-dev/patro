@@ -177,6 +177,9 @@ test("production runtime stays on the single canonical Worker config",()=>{
   assert.equal(wrangler.assets?.not_found_handling,"none");
   assert.deepEqual(wrangler.assets?.run_worker_first.slice(0,2),["/*","!/assets/*"]);
   assert.ok(!wrangler.assets.run_worker_first.includes("!/nepal/*"),"/nepal/{district} pages need the Worker");
+  assert.ok(!wrangler.assets.run_worker_first.includes("!/tool/*"),"/tool/<slug> must reach the Worker so slashless canonicals return HTTP 200 without Cloudflare directory redirects");
+  const optimized=read("worker/optimized-entry.ts");
+  assert.ok(optimized.includes("DIRECT_CLIENT_TOOL_ROUTE")&&optimized.includes("directClientToolResponse")&&optimized.includes("htmlAssetResponse(request,env as any"),"slashless direct client-tool Worker handler missing");
   for(const path of ["!/moon","!/eclipse/*","!/nepal","!/nepal/time","!/nepal/trek-weather/*","!/weather/*","!/aap/analytics.js","!/data/*"])assert.ok(wrangler.assets.run_worker_first.includes(path));
   assert.ok((wrangler.d1_databases||[]).some((db)=>db?.binding==="DB"),"DB binding missing");
   assert.ok((wrangler.routes||[]).some((route)=>route?.pattern==="aafnaipatro.com"&&route?.custom_domain===true),"canonical custom domain missing");
