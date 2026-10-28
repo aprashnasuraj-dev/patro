@@ -11,6 +11,11 @@ await cp(resolve(root,"client-tools/runtime"),resolve(dist,"client-tools"),{recu
 await mkdir(resolve(dist,"client-tools/vendor"),{recursive:true});
 await esbuild({entryPoints:[resolve(root,"client-tools/vendor/audit200-local-heavy.mjs")],bundle:true,format:"esm",platform:"browser",target:["es2022"],outfile:resolve(dist,"client-tools/vendor/audit200-local-heavy.mjs"),minify:true,legalComments:"none"});
 await cp(resolve(root,"node_modules/sql.js/dist/sql-wasm.wasm"),resolve(dist,"client-tools/vendor/sql-wasm.wasm"));
+const duckDir=resolve(dist,"client-tools/vendor/duckdb");await mkdir(duckDir,{recursive:true});
+await cp(resolve(root,"node_modules/@duckdb/duckdb-wasm/dist/duckdb-browser-mvp.worker.js"),resolve(duckDir,"duckdb-browser-mvp.worker.js"));
+const duckWasm=await readFile(resolve(root,"node_modules/@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm")),duckParts=[],duckPartBytes=16*1024*1024;
+for(let offset=0,index=0;offset<duckWasm.length;offset+=duckPartBytes,index++){const chunk=duckWasm.subarray(offset,Math.min(offset+duckPartBytes,duckWasm.length)),name="duckdb-mvp.wasm.part"+index;await writeFile(resolve(duckDir,name),chunk);duckParts.push({url:"/client-tools/vendor/duckdb/"+name,bytes:chunk.length})}
+await writeFile(resolve(duckDir,"duckdb-mvp.wasm.parts.json"),JSON.stringify({schemaVersion:1,totalBytes:duckWasm.length,parts:duckParts},null,2)+"\n");
 await writeFile(resolve(dist,"client-tools/tools.json"),JSON.stringify(tools,null,2)+"\n");
 const bySlug=new Map(tools.map(t=>[t.slug,t]));
 function jsonLd(t){return [{"@context":"https://schema.org","@type":"SoftwareApplication","name":t.h1,"applicationCategory":"UtilitiesApplication","operatingSystem":"Any modern browser","url":site+t.slug,"description":t.meta_description,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AafnaiPatro","item":site+"/"},{"@type":"ListItem","position":2,"name":"Advanced Tools","item":site+"/advancetools/"},{"@type":"ListItem","position":3,"name":t.h1,"item":site+t.slug}]}]}
