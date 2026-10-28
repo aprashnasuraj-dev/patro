@@ -471,12 +471,15 @@ jobs:
             [[ "$code" == "200" ]] || { echo "::error::Canonical leaf ${path} redirected or failed: HTTP ${code}"; exit 1; }
             grep -Fq "rel=\"canonical\" href=\"https://aafnaipatro.com${path}\"" "$body"
           done
-          curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/_mm530/TOOL-0001/page.html >/dev/null
+          mm530_probe_code="$(curl --retry 5 --retry-delay 2 --retry-all-errors --max-redirs 0 -sS -o /dev/null -w '%{http_code}' https://aafnaipatro.com/_mm530/TOOL-0001/page)"
+          [[ "$mm530_probe_code" == "200" ]] || { echo "::error::MM530 runtime asset must return HTTP 200 without redirect; got $mm530_probe_code"; exit 1; }
           minimal_tools=(TOOL-0111 TOOL-0142 TOOL-0143 TOOL-0161 TOOL-0162 TOOL-0163 TOOL-0164 TOOL-0165 TOOL-0166 TOOL-0167 TOOL-0168 TOOL-0169 TOOL-0170 TOOL-0171 TOOL-0172 TOOL-0173 TOOL-0174 TOOL-0175 TOOL-0176 TOOL-0177)
           for tool in "${minimal_tools[@]}"; do
-            runtime_html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -H 'Cache-Control: no-cache' -fsS "https://aafnaipatro.com/_mm530/${tool}/page.html")"
-            grep -Fq 'data-mm530-release-tier="minimal"' <<<"$runtime_html" || { echo "::error::Minimal release marker missing for ${tool}"; exit 1; }
-            grep -Fq 'Basic browser mode' <<<"$runtime_html" || { echo "::error::Basic browser fallback missing for ${tool}"; exit 1; }
+            runtime_body="/tmp/mm530-${tool}-page.html"
+            runtime_code="$(curl --retry 5 --retry-delay 2 --retry-all-errors -H 'Cache-Control: no-cache' --max-redirs 0 -sS -o "$runtime_body" -w '%{http_code}' "https://aafnaipatro.com/_mm530/${tool}/page")"
+            [[ "$runtime_code" == "200" ]] || { echo "::error::Minimal runtime asset redirected or failed for ${tool}: HTTP $runtime_code"; exit 1; }
+            grep -Fq 'data-mm530-release-tier="minimal"' "$runtime_body" || { echo "::error::Minimal release marker missing for ${tool}"; exit 1; }
+            grep -Fq 'Basic browser mode' "$runtime_body" || { echo "::error::Basic browser fallback missing for ${tool}"; exit 1; }
           done
           ffmpeg_headers="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsSI https://aafnaipatro.com/mm530-runtime/ffmpeg-core.wasm)"
           grep -Eiq '^content-type: application/wasm' <<<"$ffmpeg_headers"
