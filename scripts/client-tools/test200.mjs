@@ -24,7 +24,7 @@ function fileFixture(mode){switch(mode){case"subtitle_speed":case"subtitle_lines
 const catalog=(await loadClientTools()).filter(t=>String(t.source_id||"").startsWith("AUDIT-"));
 assert.equal(catalog.length,200);assert.equal(AUDIT200_OPERATIONS.length,200);assert.deepEqual(new Set(SUPPORTED_OPERATIONS),new Set(AUDIT200_OPERATIONS));
 let corePass=0;for(const t of catalog){const s=specFor(t.operation),v={...defaultsFor(t.operation),...(s.file?fileFixture(s.mode):{})};if(t.operation==="jwt-jws-inspector-and-claim-timeline-debugger")v.nowEpoch=1793145600;const result=await runAudit200(t.operation,v);assert.ok(result&&typeof result==="object","no result "+t.operation);corePass++}
-await assert.rejects(()=>runAudit200("rag-chunk-size-overlap-coverage-calculator",{documentTokens:1000,chunkSize:100,overlap:100}),/overlap/i);
+await assert.rejects(()=>runAudit200("rag-chunk-size-overlap-coverage-calculator",{documentTokens:1000,chunkTokens:100,overlapTokens:100}),/overlap/i);
 await assert.rejects(()=>runAudit200("escrow-shortage-catch-up-simulator",{shortage:-1,months:12,currentEscrow:0,annualChange:0}),/shortage/i);
 await assert.rejects(()=>runAudit200("json-schema-oneof-anyof-overlap-debugger",{schema:"{"}),/JSON/i);
 const dom=new JSDOM('<!doctype html><div id="root"></div>',{url:"https://aafnaipatro.com"});globalThis.window=dom.window;globalThis.document=dom.window.document;globalThis.HTMLElement=dom.window.HTMLElement;
