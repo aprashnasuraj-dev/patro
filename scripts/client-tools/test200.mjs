@@ -28,6 +28,41 @@ const srt=`1\n00:00:00,000 --> 00:00:02,000\nHello world\n\n2\n00:00:02,500 --> 
 const vtt=`WEBVTT\n\n00:00:00.000 --> 00:00:02.000 line:90% align:center\nHello\n`;
 const ttml=`<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:contentProfiles="http://www.w3.org/ns/ttml/profile/imsc1.3/text"><head><styling><style xml:id="s1"/></styling><layout><region xml:id="r1"/></layout></head><body><div><p xml:id="c1" region="r1" style="s1" begin="0s" end="2s">Hi</p></div></body></tt>`;
 const gpx=`<?xml version="1.0"?><gpx><trk><trkseg><trkpt lat="27.7172" lon="85.324"><time>2026-10-28T00:00:00Z</time></trkpt><trkpt lat="28" lon="85"><time>2026-10-28T01:00:00Z</time></trkpt></trkseg></trk></gpx>`;
+const csrPem=`-----BEGIN CERTIFICATE REQUEST-----
+MIICdzCCAV8CAQAwMjEVMBMGA1UEAwwMZXhhbXBsZS50ZXN0MRkwFwYDVQQKDBBB
+YWZuYWlQYXRybyBUZXN0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+mp6ZSXNAiAcQCX/mb0DyqPDKxn5giR46g4DBIhOcW0fdjgdgomy2Yp+0OKW76WSa
+hW5CLcYyU+NmL89DJm9HhkbEdnGu/FyC2+AycpcHXqf/VdT7riedJnnfsX+9mDg2
+CMpmvRrjAGiIoe41v4VswhYqLdMJyQuocdcXf5XExOAZ4/zBvyihF5KiCwCtWeXR
+IhyWank1w0/RUCn9+/wymufxOt6VTkHvjYtfXv2GVPStmD5g+0JSfuVQ6Z3bPNa3
+7cBin8ucl67cnNCBwzpRJ9OyCWrQGAdLCN8eHyAQLnSuc3CRgPpfqTzoVkhRS/s8
+pHKsjigei4wJzRWAhR9N8wIDAQABoAAwDQYJKoZIhvcNAQELBQADggEBADuxguqP
+TQQNVMPctO5wn1JkZvlDYh7eLAEHhDHDYjq0Qze6R4f5Tag2zXJO7fdepSq5nDDc
+Jw4x1vzHLBoqJYvhEQq/ZvWKJFZzZHWShs+TXto1iWmzRilogsIkYcjHnWuvsk1L
+vjIFtk6TtRt7y7mK0vgRmcHmhwuOAZonnFdWi/l2i95XY6iY5qyCfpH3UoaMG3NS
+r9p2b+WPWqOtqsSn5CJkuOzClOV4OM7J5oZboApS6sgBXo+jmbCmQT3d51mAvIIP
+6Lgn/QA1DTos6jkYq5Bw5UT/ATKO/H5dZyN6V8K/m/Z8T8uBnnnWfDdwlZE1B7sD
+Uwdg354pGqiisYY=
+-----END CERTIFICATE REQUEST-----`;
+const certPem=`-----BEGIN CERTIFICATE-----
+MIIDEzCCAfugAwIBAgIUeQEUaY1gZ4TS9OatTjxaNw1/i40wDQYJKoZIhvcNAQEL
+BQAwMjEVMBMGA1UEAwwMZXhhbXBsZS50ZXN0MRkwFwYDVQQKDBBBYWZuYWlQYXRy
+byBUZXN0MB4XDTI2MTAyODAzMDIyNVoXDTI2MTAyOTAzMDIyNVowMjEVMBMGA1UE
+AwwMZXhhbXBsZS50ZXN0MRkwFwYDVQQKDBBBYWZuYWlQYXRybyBUZXN0MIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmp6ZSXNAiAcQCX/mb0DyqPDKxn5g
+iR46g4DBIhOcW0fdjgdgomy2Yp+0OKW76WSahW5CLcYyU+NmL89DJm9HhkbEdnGu
+/FyC2+AycpcHXqf/VdT7riedJnnfsX+9mDg2CMpmvRrjAGiIoe41v4VswhYqLdMJ
+yQuocdcXf5XExOAZ4/zBvyihF5KiCwCtWeXRIhyWank1w0/RUCn9+/wymufxOt6V
+TkHvjYtfXv2GVPStmD5g+0JSfuVQ6Z3bPNa37cBin8ucl67cnNCBwzpRJ9OyCWrQ
+GAdLCN8eHyAQLnSuc3CRgPpfqTzoVkhRS/s8pHKsjigei4wJzRWAhR9N8wIDAQAB
+oyEwHzAdBgNVHQ4EFgQUOIZH1+zg8AfoVwpqB4adG0I99icwDQYJKoZIhvcNAQEL
+BQADggEBAFcIytGdRPNKAvcUEavOhX9LCsKThq7AM/BXwHCc4ULf7rRZ5t+4p79q
+1zur40CRLAtK4WoMccZsizLXvu/AdXdR1Yg7vWlGFZB1J1zh8vMgPFTAl9oUZvNZ
+oy4J2Da32bNOVyRCMFFb4RFDnwhnELpt9Qy3CObFT9zez6Xryjxkm6/pCaEYnnAE
+4JB7pw5tdy/fxqJU3DGqNM481yVby4t6YX90oq6GX/MMITg/bdB7ad6Tz/YYdaC8
+1b4oHloBzkLMqGljj7r/6odN4JQrfA5q1XPrL1DNhM4J7MqzESedkaOqgEaJbhx5
+GgLkE8xVi5vbtWKe/XavmRNAQWjtWQE=
+-----END CERTIFICATE-----`;
 const epub=zipStored({"META-INF/container.xml":`<container><rootfiles><rootfile full-path="OEBPS/content.opf"/></rootfiles></container>`,"OEBPS/content.opf":`<package><metadata><dc:title xmlns:dc="x">Demo</dc:title><dc:creator xmlns:dc="x">Author</dc:creator></metadata><manifest><item id="c" href="c1.xhtml" media-type="application/xhtml+xml"/></manifest></package>`,"OEBPS/c1.xhtml":"<html><body><h1>Chapter</h1><p>Hello</p></body></html>"});
 function fileFixture(mode){switch(mode){case"subtitle_speed":case"subtitle_lines":case"subtitle_timing":return{fileText:srt};case"gpx_redact":case"gpx_shift":return{fileText:gpx};case"zip_inspect":case"zip_duplicates":return{fileBytes:zipStored({"a.txt":"same","b.txt":"same"})};case"fit_inspect":return{fileBytes:fit()};case"sqlite_inspect":return{fileBytes:sqlite()};case"pdf_labels":return{fileBytes:pdf()};case"shp_geojson":return{fileBytes:shpPoint()};case"mp4_boxes":return{fileBytes:mp4()};case"mp4_gop":return{fileBytes:mp4Gop()};case"png_chunks":return{fileBytes:png()};case"svg_a11y":return{fileText:'<svg role="img"><title>Demo</title><rect/></svg>'};case"ttml_validate":return{fileText:ttml};case"tar_list":return{fileBytes:tarOne("demo.txt","hello")};case"icc_inspect":return{fileBytes:icc()};case"parquet_inspect":return{fileBytes:Uint8Array.from([80,65,82,49,0,0,0,0,80,65,82,49])};case"ass_safearea":return{fileText:"[Script Info]\nPlayResX: 1920\nPlayResY: 1080\nDialogue: 0,0:00:00.00,0:00:02.00,Default,,0,0,0,,{\\pos(960,900)}Hello"};case"jpeg_inspect":return{fileBytes:jpeg()};case"epub_metadata":case"epub_links":case"epub_chapters":return{fileBytes:epub};case"vcard_strip":return{fileText:"BEGIN:VCARD\nFN:Demo\nPHOTO;ENCODING=b:AAAA\nEND:VCARD"};case"audio_silence":return{samples:new Float32Array(48000),sampleRate:48000};case"webvtt_validate":return{fileText:vtt};default:throw new Error("Missing fixture for "+mode)}}
 const catalog=(await loadClientTools()).filter(t=>String(t.source_id||"").startsWith("AUDIT-"));
@@ -42,7 +77,7 @@ const gop=await runAudit200("mp4-keyframe-gop-timeline-inspector",{fileBytes:mp4
 const repaired=await runAudit200("geojson-geometry-validator-and-repair-preview",{geojson:'{"type":"Polygon","coordinates":[[[0,0],[1,0],[1,1],[0,1]]]}' });assert.equal(repaired.valid,false);assert.equal(repaired.valid_after_repair,true);assert.equal(repaired.repair_actions.length,1);
 const shp=await runAudit200("shapefile-to-geojson-converter",{fileBytes:shpPoint()});assert.equal(shp.geojson.features[0].geometry.type,"Point");
 const fitResult=await runAudit200("fit-activity-field-inspector-and-metadata-scrubber",{fileBytes:fit()});assert.equal(fitResult.scrubbed_count,2);const scrubbed=fitResult.download.bytes,sdv=new DataView(scrubbed.buffer,scrubbed.byteOffset,scrubbed.byteLength);assert.equal(sdv.getInt32(27,true),2147483647);assert.equal(sdv.getInt32(31,true),2147483647);assert.equal(sdv.getUint16(12,true),fitCrc(scrubbed,0,12));assert.equal(sdv.getUint16(scrubbed.length-2,true),fitCrc(scrubbed,0,scrubbed.length-2));
-const ttmlResult=await runAudit200("ttml-imsc-subtitle-validator",{fileText:ttml});assert.equal(ttmlResult.valid,true);assert.equal(ttmlResult.cue_elements,1);assert.equal(ttmlResult.cues[0].duration_seconds,2);const badTtml=await runAudit200("ttml-imsc-subtitle-validator",{fileText:'<tt xmlns="http://www.w3.org/ns/ttml"><body><p region="missing" begin="2s" end="1s">Bad</p></body></tt>'});assert.equal(badTtml.valid,false);assert.ok(badTtml.errors.some(x=>/end must be after/.test(x)));assert.ok(badTtml.errors.some(x=>/missing region/.test(x)));
+const ttmlResult=await runAudit200("ttml-imsc-subtitle-validator",{fileText:ttml});assert.equal(ttmlResult.valid,true);assert.equal(ttmlResult.cue_elements,1);assert.equal(ttmlResult.cues[0].duration_seconds,2);const pemResult=await runAudit200("csr-vs-certificate-key-subject-match-checker",{csr:csrPem,certificate:certPem});assert.equal(pemResult.public_key_match,true);assert.equal(pemResult.subject_match,true);assert.match(pemResult.csr_spki_sha256,/^[0-9a-f]{64}$/);const badTtml=await runAudit200("ttml-imsc-subtitle-validator",{fileText:'<tt xmlns="http://www.w3.org/ns/ttml"><body><p region="missing" begin="2s" end="1s">Bad</p></body></tt>'});assert.equal(badTtml.valid,false);assert.ok(badTtml.errors.some(x=>/end must be after/.test(x)));assert.ok(badTtml.errors.some(x=>/missing region/.test(x)));
 const pdfDoc=await PDFDocument.create();pdfDoc.addPage();pdfDoc.addPage();const pdfBytes=await pdfDoc.save(),pdfEdited=await editPdfPageLabels(pdfBytes,5,"A-");assert.equal(pdfEdited.page_count,2);assert.equal(pdfEdited.numbering_map[0].label,"A-5");const pdfReloaded=await PDFDocument.load(pdfEdited.download.bytes);assert.ok(pdfReloaded.catalog.get(PDFName.of("PageLabels")),"saved PDF must contain PageLabels");
 const sqlWasm=resolve("node_modules/sql.js/dist/sql-wasm.wasm"),SQL=await initSqlJs({locateFile:()=>sqlWasm}),gpkgDb=new SQL.Database();gpkgDb.run("CREATE TABLE gpkg_contents (table_name TEXT PRIMARY KEY,data_type TEXT NOT NULL,identifier TEXT,description TEXT,last_change DATETIME,min_x DOUBLE,min_y DOUBLE,max_x DOUBLE,max_y DOUBLE,srs_id INTEGER); CREATE TABLE gpkg_geometry_columns (table_name TEXT,column_name TEXT,geometry_type_name TEXT,srs_id INTEGER,z TINYINT,m TINYINT); CREATE TABLE gpkg_spatial_ref_sys (srs_name TEXT,srs_id INTEGER PRIMARY KEY,organization TEXT,organization_coordsys_id INTEGER,definition TEXT,description TEXT); CREATE TABLE roads (id INTEGER PRIMARY KEY);");gpkgDb.run("INSERT INTO gpkg_contents VALUES ('roads','features','Roads','Test layer','2026-10-28T00:00:00Z',0,0,1,1,4326); INSERT INTO gpkg_geometry_columns VALUES ('roads','geom','LINESTRING',4326,0,0); INSERT INTO gpkg_spatial_ref_sys VALUES ('WGS 84',4326,'EPSG',4326,'',''); INSERT INTO roads VALUES (1),(2);");const gpkgBytes=gpkgDb.export();gpkgDb.close();const gpkg=await inspectGeoPackage(gpkgBytes,sqlWasm);assert.equal(gpkg.layer_count,1);assert.equal(gpkg.layers[0].table_name,"roads");assert.equal(gpkg.layers[0].row_count,2);assert.equal(gpkg.layers[0].geometry.geometry_type_name,"LINESTRING");assert.equal(validateLocalParquetSql("SELECT count(*) FROM input"),"SELECT count(*) FROM input");assert.throws(()=>validateLocalParquetSql("SELECT * FROM read_parquet('https://example.com/x.parquet')"),/Remote I\/O|view named/);assert.throws(()=>validateLocalParquetSql("COPY input TO 'x.csv'"),/Only SELECT/);assert.throws(()=>validateLocalParquetSql("SELECT * FROM input; SELECT 1"),/Multiple/);
 const dom=new JSDOM('<!doctype html><div id="root"></div>',{url:"https://aafnaipatro.com"});globalThis.window=dom.window;globalThis.document=dom.window.document;globalThis.HTMLElement=dom.window.HTMLElement;
