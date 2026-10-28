@@ -292,6 +292,7 @@ jobs:
           NODE_PATH="$PWD/node_modules" node scripts/check-pwa-install-ui.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-mytime-ring.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-canonical-tools.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-advancetools-dashboard.cjs
           # Measure the same mobile Lighthouse laboratory route on the exact tested
           # production artifact, not a newly rebuilt or redeployed copy.
           # This is diagnostic until 90+ is actually measured; never invent success.
