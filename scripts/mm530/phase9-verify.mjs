@@ -63,7 +63,7 @@ for(const route of discoveryCategoryRoutes){
 const discoveryCombined=discoveryCategoryHtml.join("\n");
 for(const c of oldCollections)assert(discoveryCombined.includes(`href="/advancetools/${c}/"`),"SPECIALIST_CATEGORY_LINK_MISSING",c);
 assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifest says ${advanced.counts?.webTools}`);
-assert(advanced.counts?.clientTools===350,"ADVANCED_CLIENT_TOOL_COUNT",`module manifest says ${advanced.counts?.clientTools}`);
+assert(advanced.counts?.clientTools===550,"ADVANCED_CLIENT_TOOL_COUNT",`module manifest says ${advanced.counts?.clientTools}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
 const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[],toolRuntimeRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;

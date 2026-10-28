@@ -18,17 +18,16 @@ function clearError(){const el=$('#error');if(el){el.textContent='';el.hidden=tr
 function values(form){return Object.fromEntries(new FormData(form));}
 const search=$('#search');
 if(search){
+ const clearSearch=$('#search-clear');
+ const setClear=()=>{if(clearSearch)clearSearch.hidden=!search.value;};
  if(config.kind==='web-tools-hub'&&Array.isArray(config.tools)){
   const results=$('#web-tool-search-results'),categories=$('#web-tool-categories'),count=$('#search-count');
-  const renderWebSearch=()=>{
-   const term=search.value.toLowerCase().trim();
-   if(!term){results.hidden=true;results.replaceChildren();categories.hidden=false;count.textContent="Search the library";return}
-   const matches=config.tools.filter(t=>[t.title,t.description,t.categoryLabel].some(v=>String(v).toLowerCase().includes(term)));
-   results.replaceChildren(...matches.slice(0,60).map(t=>{const a=document.createElement('a');a.className='card web-tool-card';a.href=t.route;const tag=document.createElement('span');tag.className='card-tag';tag.textContent=t.categoryLabel;const h=document.createElement('h3');h.textContent=t.title;const p=document.createElement('p');p.textContent=t.description;const small=document.createElement('small');small.textContent='Open tool →';a.append(tag,h,p,small);return a}));
-   results.hidden=false;categories.hidden=true;count.textContent=matches.length?"Matching tools":"No matching tools";
-  };
+  const score=(t,term)=>{const title=String(t.title||'').toLowerCase(),category=String(t.categoryLabel||'').toLowerCase(),description=String(t.description||'').toLowerCase();return title===term?100:title.startsWith(term)?80:title.includes(term)?60:category.includes(term)?40:description.includes(term)?20:0};
+  const renderWebSearch=()=>{const term=search.value.toLowerCase().trim();setClear();if(!term){results.hidden=true;results.replaceChildren();if(categories)categories.hidden=false;count.textContent=(config.toolCount||config.tools.length)+' tools across '+(config.categoryCount||'multiple')+' categories';return}const matches=config.tools.map(t=>({t,s:score(t,term)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s||String(a.t.title).localeCompare(String(b.t.title))).map(x=>x.t),shown=matches.slice(0,80);results.replaceChildren(...shown.map(t=>{const a=document.createElement('a');a.className='card web-tool-card';a.href=t.route;const tag=document.createElement('span');tag.className='card-tag';tag.textContent=t.categoryLabel;const h=document.createElement('h3');h.textContent=t.title;const p=document.createElement('p');p.textContent=t.description;const small=document.createElement('small');small.textContent='Open tool →';a.append(tag,h,p,small);return a}));results.hidden=false;if(categories)categories.hidden=true;count.textContent=matches.length?(matches.length+' matching '+(matches.length===1?'entry':'entries')+(matches.length>shown.length?' · showing first '+shown.length:'')):'No matching tools'};
   search.addEventListener('input',renderWebSearch);renderWebSearch();
- }else search.addEventListener('input',()=>{const term=search.value.toLowerCase().trim();let count=0;document.querySelectorAll('[data-search]').forEach(el=>{el.hidden=!el.dataset.search.includes(term);if(!el.hidden)count++;});$('#search-count').textContent=count?'Matching entries':'No matching entries';});
+ }else search.addEventListener('input',()=>{const term=search.value.toLowerCase().trim();let visible=0,total=0;document.querySelectorAll('[data-search]').forEach(node=>{total++;node.hidden=!node.dataset.search.includes(term);if(!node.hidden)visible++});setClear();$('#search-count').textContent=term?(visible?visible+' matching '+(visible===1?'entry':'entries'):'No matching entries'):total+' tools in this category'});
+ clearSearch?.addEventListener('click',()=>{search.value='';search.dispatchEvent(new Event('input'));search.focus()});
+ document.addEventListener('keydown',event=>{const target=event.target,typing=target&&/^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);if((event.key==='k'&&(event.ctrlKey||event.metaKey))||(event.key==='/'&&!typing)){event.preventDefault();search.focus();search.select()}});
 }
 const sheet=$('#gauge-sheet');if(sheet)sheet.addEventListener('click',async()=>{const {pdf,gaugeWorksheet}=await loadPdf();download(pdf(gaugeWorksheet()),'aafnai-gauge-worksheet.pdf','application/pdf');});
 const print=$('#print');if(print)print.addEventListener('click',()=>window.print());

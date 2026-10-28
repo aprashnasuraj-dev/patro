@@ -1,0 +1,2402 @@
+[
+  {
+    "source_id": "AUDIT-151",
+    "slug": "/tool/inference-throughput-gpu-cost-break-even-calculator",
+    "category": "tool",
+    "h1": "Inference Throughput / GPU Cost Break-Even Calculator",
+    "title_tag": "Inference Throughput / GPU Cost Break-Even | AafnaiPatro",
+    "meta_description": "inference throughput gpu cost break-even calculator: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "inference throughput gpu cost break-even calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/prompt-caching-savings-calculator-with-user-entered-rates",
+      "/tool/tokenizer-comparison-sandbox",
+      "/tool/tool-function-calling-json-schema-validator"
+    ],
+    "engine": "audit200",
+    "operation": "inference-throughput-gpu-cost-break-even-calculator",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-152",
+    "slug": "/tool/brake-rotor-minimum-thickness-service-tracker",
+    "category": "tool",
+    "h1": "Brake Rotor Minimum-Thickness Service Tracker",
+    "title_tag": "Brake Rotor Min Thickness Service Tracker | AafnaiPatro",
+    "meta_description": "brake rotor minimum-thickness service tracker: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "brake rotor minimum-thickness service tracker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/tire-tread-wear-rate-and-replacement-mileage-projector",
+      "/tool/tire-rotation-mileage-equalization-planner-for-awd-sets",
+      "/tool/ev-efficiency-temperature-speed-scenario-planner"
+    ],
+    "engine": "audit200",
+    "operation": "brake-rotor-minimum-thickness-service-tracker",
+    "source_category": "Automotive",
+    "tool_type": "Tracker",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-153",
+    "slug": "/tool/ev-efficiency-temperature-speed-scenario-planner",
+    "category": "tool",
+    "h1": "EV Efficiency Temperature/Speed Scenario Planner",
+    "title_tag": "EV Efficiency Temperature/Speed Scenario | AafnaiPatro",
+    "meta_description": "ev efficiency temperature/speed scenario planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "ev efficiency temperature/speed scenario planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/ev-charging-session-taper-time-estimator-from-user-entered-power-curve",
+      "/tool/tire-tread-wear-rate-and-replacement-mileage-projector",
+      "/tool/lease-early-end-remaining-payment-vs-buyout-worksheet"
+    ],
+    "engine": "audit200",
+    "operation": "ev-efficiency-temperature-speed-scenario-planner",
+    "source_category": "Automotive",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-154",
+    "slug": "/tool/tire-rotation-mileage-equalization-planner-for-awd-sets",
+    "category": "tool",
+    "h1": "Tire Rotation Mileage Equalization Planner for AWD Sets",
+    "title_tag": "Tire Rotation Mileage Equalization Planner | AafnaiPatro",
+    "meta_description": "tire rotation mileage equalization planner for awd sets: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "tire rotation mileage equalization planner for awd sets",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/brake-rotor-minimum-thickness-service-tracker",
+      "/tool/tire-tread-wear-rate-and-replacement-mileage-projector",
+      "/tool/ev-efficiency-temperature-speed-scenario-planner"
+    ],
+    "engine": "audit200",
+    "operation": "tire-rotation-mileage-equalization-planner-for-awd-sets",
+    "source_category": "Automotive",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-155",
+    "slug": "/tool/vehicle-payload-worksheet-from-door-jamb-ratings",
+    "category": "tool",
+    "h1": "Vehicle Payload Worksheet from Door-Jamb Ratings",
+    "title_tag": "Vehicle Payload Worksheet from Door-Jamb | AafnaiPatro",
+    "meta_description": "vehicle payload worksheet from door-jamb ratings: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "vehicle payload worksheet from door-jamb ratings",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/trailer-axle-tongue-weight-from-scale-tickets-calculator",
+      "/tool/lease-early-end-remaining-payment-vs-buyout-worksheet",
+      "/tool/awd-tire-circumference-mismatch-checker"
+    ],
+    "engine": "audit200",
+    "operation": "vehicle-payload-worksheet-from-door-jamb-ratings",
+    "source_category": "Automotive",
+    "tool_type": "Browser utility",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-156",
+    "slug": "/tool/flash-guide-number-aperture-distance-planner",
+    "category": "tool",
+    "h1": "Flash Guide Number / Aperture / Distance Planner",
+    "title_tag": "Flash Guide Number / Aperture / Distance | AafnaiPatro",
+    "meta_description": "flash guide number aperture distance planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "flash guide number aperture distance planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/exposure-bracketing-sequence-builder",
+      "/tool/macro-effective-aperture-and-diffraction-planner",
+      "/tool/star-trail-interval-storage-planner"
+    ],
+    "engine": "audit200",
+    "operation": "flash-guide-number-aperture-distance-planner",
+    "source_category": "Creator & Photography",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-157",
+    "slug": "/tool/epub-broken-link-missing-asset-checker",
+    "category": "tool",
+    "h1": "EPUB Broken-Link / Missing-Asset Checker",
+    "title_tag": "EPUB Broken-Link / Missing-Asset Checker | AafnaiPatro",
+    "meta_description": "Use epub broken-link / missing-asset locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "epub broken-link missing-asset checker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/epub-chapter-extractor-to-markdown",
+      "/tool/zip-duplicate-file-finder-by-hash",
+      "/tool/epub-metadata-viewer-and-editor"
+    ],
+    "engine": "audit200",
+    "operation": "epub-broken-link-missing-asset-checker",
+    "source_category": "Data & Files",
+    "tool_type": "Checker",
+    "dependency": "Small archive/compression library; WASM optional",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-158",
+    "slug": "/tool/epub-chapter-extractor-to-markdown",
+    "category": "tool",
+    "h1": "EPUB Chapter Extractor to Markdown",
+    "title_tag": "EPUB Chapter Extractor to Markdown | AafnaiPatro",
+    "meta_description": "Use epub chapter extractor to markdown locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "epub chapter extractor to markdown",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/epub-metadata-viewer-and-editor",
+      "/tool/epub-broken-link-missing-asset-checker",
+      "/tool/zip-duplicate-file-finder-by-hash"
+    ],
+    "engine": "audit200",
+    "operation": "epub-chapter-extractor-to-markdown",
+    "source_category": "Data & Files",
+    "tool_type": "Browser utility",
+    "dependency": "Small archive/compression library; WASM optional",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-159",
+    "slug": "/tool/gzip-brotli-zstd-text-compression-lab",
+    "category": "tool",
+    "h1": "GZIP / Brotli / Zstd Text Compression Lab",
+    "title_tag": "GZIP / Brotli / Zstd Text Compression Lab | AafnaiPatro",
+    "meta_description": "Use gzip brotli zstd text compression lab locally in your browser. Inputs stay on your device; get clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "gzip brotli zstd text compression lab",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/tar-tar-gz-browser-and-selective-extractor",
+      "/tool/duckdb-parquet-local-query-workbench",
+      "/tool/zip-compression-ratio-and-zip-bomb-risk-inspector"
+    ],
+    "engine": "audit200",
+    "operation": "gzip-brotli-zstd-text-compression-lab",
+    "source_category": "Data & Files",
+    "tool_type": "Browser utility",
+    "dependency": "Small archive/compression library; WASM optional",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-160",
+    "slug": "/tool/mime-eml-transfer-encoding-size-overhead-analyzer",
+    "category": "tool",
+    "h1": "MIME/EML Transfer-Encoding Size Overhead Analyzer",
+    "title_tag": "MIME/EML Transfer-Encoding Size Overhead | AafnaiPatro",
+    "meta_description": "mime/eml transfer-encoding size overhead analyzer: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "mime/eml transfer-encoding size overhead analyzer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/vcard-photo-attachment-stripper-and-size-reducer",
+      "/tool/pdf-page-label-editor-and-numbering-map",
+      "/tool/fit-activity-field-inspector-and-metadata-scrubber"
+    ],
+    "engine": "audit200",
+    "operation": "mime-eml-transfer-encoding-size-overhead-analyzer",
+    "source_category": "Data & Files",
+    "tool_type": "Analyzer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-161",
+    "slug": "/tool/exam-question-time-budget-planner-with-accommodation-multiplier",
+    "category": "tool",
+    "h1": "Exam Question Time-Budget Planner with Accommodation Multiplier",
+    "title_tag": "Exam Question Time-Budget Planner with | AafnaiPatro",
+    "meta_description": "exam question time-budget planner with accommodation multiplier: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "exam question time-budget planner with accommodation multiplier",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use tasks/dates/weights/rules or CSV. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/reading-workload-weekly-planner",
+      "/tool/research-csv-data-dictionary-generator",
+      "/tool/survey-codebook-and-missing-value-profile-builder"
+    ],
+    "engine": "audit200",
+    "operation": "exam-question-time-budget-planner-with-accommodation-multiplier",
+    "source_category": "Education & Productivity",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "tasks/dates/weights/rules or CSV",
+    "expected_outputs": "schedule/profile/assignment table with export",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-162",
+    "slug": "/tool/drawer-front-equal-gap-layout-calculator",
+    "category": "tool",
+    "h1": "Drawer Front Equal-Gap Layout Calculator",
+    "title_tag": "Drawer Front Equal-Gap Layout Calculator | AafnaiPatro",
+    "meta_description": "Use drawer front equal-gap layout locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "drawer front equal-gap layout calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/drawer-box-cut-list-from-slide-clearance",
+      "/tool/deck-board-layout-rip-width-planner",
+      "/tool/cabinet-door-overlay-reveal-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "drawer-front-equal-gap-layout-calculator",
+    "source_category": "Home & DIY",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-163",
+    "slug": "/tool/linear-board-cut-optimizer-with-kerf",
+    "category": "tool",
+    "h1": "Linear Board Cut Optimizer with Kerf",
+    "title_tag": "Linear Board Cut Optimizer with Kerf | AafnaiPatro",
+    "meta_description": "Use linear board cut with kerf locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "linear board cut optimizer with kerf",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/plywood-sheet-goods-cut-optimizer",
+      "/tool/cabinet-hinge-cup-and-plate-drilling-layout-calculator",
+      "/tool/plywood-edge-banding-length-and-waste-planner"
+    ],
+    "engine": "audit200",
+    "operation": "linear-board-cut-optimizer-with-kerf",
+    "source_category": "Home & DIY",
+    "tool_type": "Optimizer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-164",
+    "slug": "/tool/plywood-edge-banding-length-and-waste-planner",
+    "category": "tool",
+    "h1": "Plywood Edge-Banding Length & Waste Planner",
+    "title_tag": "Plywood Edge-Banding Length & Waste Planner | AafnaiPatro",
+    "meta_description": "Use plywood edge-banding length & waste locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "plywood edge-banding length & waste planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/cabinet-hinge-cup-and-plate-drilling-layout-calculator",
+      "/tool/cabinet-door-overlay-reveal-calculator",
+      "/tool/linear-board-cut-optimizer-with-kerf"
+    ],
+    "engine": "audit200",
+    "operation": "plywood-edge-banding-length-and-waste-planner",
+    "source_category": "Home & DIY",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-165",
+    "slug": "/tool/rainwater-tank-drawdown-and-first-flush-sizing-planner",
+    "category": "tool",
+    "h1": "Rainwater Tank Drawdown & First-Flush Sizing Planner",
+    "title_tag": "Rainwater Tank Drawdown & First-Flush Sizing | AafnaiPatro",
+    "meta_description": "rainwater tank drawdown & first-flush sizing planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "rainwater tank drawdown & first-flush sizing planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/battery-bank-series-parallel-wiring-planner",
+      "/tool/solar-pv-string-voltage-window-calculator",
+      "/tool/concrete-formwork-area-and-plywood-sheet-estimator"
+    ],
+    "engine": "audit200",
+    "operation": "rainwater-tank-drawdown-and-first-flush-sizing-planner",
+    "source_category": "Home & DIY",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-166",
+    "slug": "/tool/webvtt-cue-settings-validator-and-previewer",
+    "category": "tool",
+    "h1": "WebVTT Cue Settings Validator & Previewer",
+    "title_tag": "WebVTT Cue Settings Validator & Previewer | AafnaiPatro",
+    "meta_description": "Use webvtt cue settings & previewer locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "webvtt cue settings validator & previewer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Parse locally → validate/transform → preview/export. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use local file(s) or pasted structured text. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/ass-ssa-subtitle-safe-area-position-checker",
+      "/tool/ttml-imsc-subtitle-validator",
+      "/tool/subtitle-gap-overlap-flash-detector"
+    ],
+    "engine": "audit200",
+    "operation": "webvtt-cue-settings-validator-and-previewer",
+    "source_category": "Media & Accessibility",
+    "tool_type": "Validator",
+    "dependency": "Small subtitle/XML parser",
+    "build_difficulty": "Medium",
+    "how_it_works": "Parse locally → validate/transform → preview/export.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "local file(s) or pasted structured text",
+    "expected_outputs": "preview/report and optional corrected/exported file",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-167",
+    "slug": "/tool/409a-deferred-comp-distribution-tax-timing-planner",
+    "category": "tool",
+    "h1": "409A Deferred-Comp Distribution Tax-Timing Planner",
+    "title_tag": "409A Deferred-Comp Distribution Tax-Timing | AafnaiPatro",
+    "meta_description": "409a deferred-comp distribution tax-timing planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "409a deferred-comp distribution tax-timing planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/aca-magi-capital-gain-roth-conversion-cliff-planner",
+      "/tool/529-withdrawal-plus-aotc-coordination-calculator",
+      "/tool/social-security-provisional-income-tax-torpedo-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "409a-deferred-comp-distribution-tax-timing-planner",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Planner",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-168",
+    "slug": "/tool/donor-advised-fund-bunching-deduction-planner",
+    "category": "tool",
+    "h1": "Donor-Advised Fund Bunching Deduction Planner",
+    "title_tag": "Donor-Advised Fund Bunching Deduction Planner | AafnaiPatro",
+    "meta_description": "donor-advised fund bunching deduction planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "donor-advised fund bunching deduction planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/capital-gains-bracket-stacking-calculator",
+      "/tool/appreciated-stock-donation-vs-cash-comparison",
+      "/tool/nqso-exercise-withholding-gap-estimator"
+    ],
+    "engine": "audit200",
+    "operation": "donor-advised-fund-bunching-deduction-planner",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Planner",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-169",
+    "slug": "/tool/hsa-last-month-rule-testing-period-tracker",
+    "category": "tool",
+    "h1": "HSA Last-Month Rule Testing-Period Tracker",
+    "title_tag": "HSA Last-Month Rule Testing-Period Tracker | AafnaiPatro",
+    "meta_description": "Use hsa last-month rule testing-period locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "hsa last-month rule testing-period tracker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/sep-ira-vs-solo-401k-contribution-comparison",
+      "/tool/fsa-grace-period-carryover-spend-down-planner",
+      "/tool/solo-401k-employee-employer-contribution-optimizer"
+    ],
+    "engine": "audit200",
+    "operation": "hsa-last-month-rule-testing-period-tracker",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Tracker",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-170",
+    "slug": "/tool/iso-amt-credit-carryforward-tracker",
+    "category": "tool",
+    "h1": "ISO AMT Credit Carryforward Tracker",
+    "title_tag": "ISO AMT Credit Carryforward Tracker | AafnaiPatro",
+    "meta_description": "Use iso amt credit carryforward locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "iso amt credit carryforward tracker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/stock-option-early-exercise-tax-timeline-planner",
+      "/tool/nqso-exercise-withholding-gap-estimator",
+      "/tool/qsbs-section-1202-holding-period-and-1045-rollover-timeline-tracker"
+    ],
+    "engine": "audit200",
+    "operation": "iso-amt-credit-carryforward-tracker",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Tracker",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-171",
+    "slug": "/tool/qcd-vs-rmd-taxable-income-planner",
+    "category": "tool",
+    "h1": "QCD vs RMD Taxable-Income Planner",
+    "title_tag": "QCD vs RMD Taxable-Income Planner | AafnaiPatro",
+    "meta_description": "Planner for qcd vs rmd taxable-income. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "qcd vs rmd taxable-income planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/appreciated-stock-donation-vs-cash-comparison",
+      "/tool/social-security-provisional-income-tax-torpedo-calculator",
+      "/tool/donor-advised-fund-bunching-deduction-planner"
+    ],
+    "engine": "audit200",
+    "operation": "qcd-vs-rmd-taxable-income-planner",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Planner",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-172",
+    "slug": "/tool/qsbs-section-1202-holding-period-and-1045-rollover-timeline-tracker",
+    "category": "tool",
+    "h1": "QSBS Section 1202 Holding-Period & 1045 Rollover Timeline Tracker",
+    "title_tag": "QSBS Section 1202 Holding-Period & 1045 | AafnaiPatro",
+    "meta_description": "qsbs section 1202 holding-period & 1045 rollover timeline tracker: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "qsbs section 1202 holding-period & 1045 rollover timeline tracker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dates, income/basis/contribution limits, plan rules. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — sensitive financial inputs stay on-device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/espp-payroll-deduction-and-purchase-period-planner",
+      "/tool/stock-option-early-exercise-tax-timeline-planner",
+      "/tool/espp-lookback-discount-break-even-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "qsbs-section-1202-holding-period-and-1045-rollover-timeline-tracker",
+    "source_category": "Personal Finance & Benefits",
+    "tool_type": "Tracker",
+    "dependency": "Static annual config where rules/limits apply",
+    "build_difficulty": "Hard",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — sensitive financial inputs stay on-device.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "dates, income/basis/contribution limits, plan rules",
+    "expected_outputs": "scenario table, thresholds, warnings, exportable schedule",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-173",
+    "slug": "/tool/jet-lag-sleep-shift-schedule-planner",
+    "category": "tool",
+    "h1": "Jet-Lag Sleep-Shift Schedule Planner",
+    "title_tag": "Jet-Lag Sleep-Shift Schedule Planner | AafnaiPatro",
+    "meta_description": "Use jet-lag sleep-shift schedule locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "jet-lag sleep-shift schedule planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use entry/exit dates, time zones, user-supplied rule thresholds. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/international-date-line-arrival-date-calculator",
+      "/tool/per-diem-partial-travel-day-calculator",
+      "/tool/passport-validity-buffer-planner"
+    ],
+    "engine": "audit200",
+    "operation": "jet-lag-sleep-shift-schedule-planner",
+    "source_category": "Travel & Residency",
+    "tool_type": "Planner",
+    "dependency": "Temporal/Intl + versioned rule config where applicable",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "entry/exit dates, time zones, user-supplied rule thresholds",
+    "expected_outputs": "rolling-day/timeline/itinerary result with warnings",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-174",
+    "slug": "/tool/visa-free-stay-rolling-window-tracker",
+    "category": "tool",
+    "h1": "Visa-Free Stay Rolling-Window Tracker (User-Defined N-in-M)",
+    "title_tag": "Visa-Free Stay Rolling-Window Tracker | AafnaiPatro",
+    "meta_description": "Use visa-free stay rolling-window locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "visa-free stay rolling-window tracker user-defined n-in-m",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use entry/exit dates, time zones, user-supplied rule thresholds. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/schengen-90-180-rolling-day-what-if-planner",
+      "/tool/multi-country-tax-residency-travel-day-overlay",
+      "/tool/passport-validity-buffer-planner"
+    ],
+    "engine": "audit200",
+    "operation": "visa-free-stay-rolling-window-tracker",
+    "source_category": "Travel & Residency",
+    "tool_type": "Tracker",
+    "dependency": "Temporal/Intl + versioned rule config where applicable",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "entry/exit dates, time zones, user-supplied rule thresholds",
+    "expected_outputs": "rolling-day/timeline/itinerary result with warnings",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 81
+  },
+  {
+    "source_id": "AUDIT-175",
+    "slug": "/tool/lease-early-end-remaining-payment-vs-buyout-worksheet",
+    "category": "tool",
+    "h1": "Lease Early-End Remaining-Payment vs Buyout Worksheet",
+    "title_tag": "Lease Early-End Remaining-Payment vs Buyout | AafnaiPatro",
+    "meta_description": "lease early-end remaining-payment vs buyout worksheet: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "lease early-end remaining-payment vs buyout worksheet",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/vehicle-payload-worksheet-from-door-jamb-ratings",
+      "/tool/ev-charging-session-taper-time-estimator-from-user-entered-power-curve",
+      "/tool/trailer-axle-tongue-weight-from-scale-tickets-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "lease-early-end-remaining-payment-vs-buyout-worksheet",
+    "source_category": "Automotive",
+    "tool_type": "Browser utility",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-176",
+    "slug": "/tool/tire-pressure-temperature-correction-calculator",
+    "category": "tool",
+    "h1": "Tire Pressure Temperature-Correction Calculator",
+    "title_tag": "Tire Pressure Temp Correction Calculator | AafnaiPatro",
+    "meta_description": "Use tire pressure temperature-correction locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "tire pressure temperature-correction calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use vehicle/tire/lease/service measurements and assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/awd-tire-circumference-mismatch-checker",
+      "/tool/trailer-axle-tongue-weight-from-scale-tickets-calculator",
+      "/tool/vehicle-payload-worksheet-from-door-jamb-ratings"
+    ],
+    "engine": "audit200",
+    "operation": "tire-pressure-temperature-correction-calculator",
+    "source_category": "Automotive",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "vehicle/tire/lease/service measurements and assumptions",
+    "expected_outputs": "mismatch/cost/service projection with thresholds",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-177",
+    "slug": "/tool/payment-processor-fee-gross-up-and-net-receipt-calculator",
+    "category": "tool",
+    "h1": "Payment-Processor Fee Gross-Up & Net Receipt Calculator",
+    "title_tag": "Payment-Processor Fee Gross-Up & Net Receipt | AafnaiPatro",
+    "meta_description": "payment-processor fee gross-up & net receipt calculator: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "payment-processor fee gross-up & net receipt calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use prices, fees, rates, timing/volume assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/subscription-annual-vs-monthly-break-even-with-cancellation-month",
+      "/tool/saas-seat-proration-mid-cycle-true-up-calculator",
+      "/tool/usage-based-pricing-scenario-comparator"
+    ],
+    "engine": "audit200",
+    "operation": "payment-processor-fee-gross-up-and-net-receipt-calculator",
+    "source_category": "Creator & Ecommerce",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "prices, fees, rates, timing/volume assumptions",
+    "expected_outputs": "net margin/cash-flow/scenario comparison",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-178",
+    "slug": "/tool/focus-stacking-step-and-shot-count-planner",
+    "category": "tool",
+    "h1": "Focus Stacking Step & Shot-Count Planner",
+    "title_tag": "Focus Stacking Step & Shot-Count Planner | AafnaiPatro",
+    "meta_description": "Use focus stacking step & shot-count locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "focus stacking step & shot-count planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/panorama-shot-count-and-overlap-planner",
+      "/tool/star-trail-interval-storage-planner",
+      "/tool/exposure-bracketing-sequence-builder"
+    ],
+    "engine": "audit200",
+    "operation": "focus-stacking-step-and-shot-count-planner",
+    "source_category": "Creator & Photography",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-179",
+    "slug": "/tool/panorama-shot-count-and-overlap-planner",
+    "category": "tool",
+    "h1": "Panorama Shot Count & Overlap Planner",
+    "title_tag": "Panorama Shot Count & Overlap Planner | AafnaiPatro",
+    "meta_description": "Use panorama shot count & overlap locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "panorama shot count & overlap planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/focus-stacking-step-and-shot-count-planner",
+      "/tool/star-trail-interval-storage-planner",
+      "/tool/exposure-bracketing-sequence-builder"
+    ],
+    "engine": "audit200",
+    "operation": "panorama-shot-count-and-overlap-planner",
+    "source_category": "Creator & Photography",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-180",
+    "slug": "/tool/on-call-schedule-fairness-analyzer",
+    "category": "tool",
+    "h1": "On-Call Schedule Fairness Analyzer",
+    "title_tag": "On-Call Schedule Fairness Analyzer | AafnaiPatro",
+    "meta_description": "Analyzer for on-call schedule fairness. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "on-call schedule fairness analyzer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use tasks/dates/weights/rules or CSV. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/rubric-weighted-grading-sheet-builder-with-drop-cap-rules",
+      "/tool/recurring-deadline-drift-checker",
+      "/tool/block-randomization-assignment-generator-with-seed"
+    ],
+    "engine": "audit200",
+    "operation": "on-call-schedule-fairness-analyzer",
+    "source_category": "Education & Productivity",
+    "tool_type": "Analyzer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "tasks/dates/weights/rules or CSV",
+    "expected_outputs": "schedule/profile/assignment table with export",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-181",
+    "slug": "/tool/poe-n-plus-1-failover-power-budget-checker",
+    "category": "tool",
+    "h1": "PoE N+1 Failover Power-Budget Checker",
+    "title_tag": "PoE N+1 Failover Power-Budget Checker | AafnaiPatro",
+    "meta_description": "Use poe n+1 failover power-budget locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "poe n+1 failover power-budget checker",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/wifi-channel-width-center-frequency-mapper",
+      "/tool/wireless-ptp-fade-margin-and-fresnel-clearance-planner",
+      "/tool/wifi-2-4-5-6-ghz-channel-overlap-visualizer"
+    ],
+    "engine": "audit200",
+    "operation": "poe-n-plus-1-failover-power-budget-checker",
+    "source_category": "Networking",
+    "tool_type": "Checker",
+    "dependency": "Static standards/constants + user-supplied device data",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-182",
+    "slug": "/tool/wifi-2-4-5-6-ghz-channel-overlap-visualizer",
+    "category": "tool",
+    "h1": "Wi-Fi 2.4/5/6 GHz Channel Overlap Visualizer",
+    "title_tag": "Wi-Fi 2.4/5/6 GHz Channel Overlap Visualizer | AafnaiPatro",
+    "meta_description": "Use wi-fi 2.4/5/6 ghz channel overlap locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "wi-fi 2.4/5/6 ghz channel overlap visualizer",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/vlan-trunk-allowed-list-compressor-expander",
+      "/tool/wifi-channel-width-center-frequency-mapper",
+      "/tool/mtu-mss-encapsulation-overhead-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "wifi-2-4-5-6-ghz-channel-overlap-visualizer",
+    "source_category": "Networking",
+    "tool_type": "Visualizer",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-183",
+    "slug": "/tool/wireless-ptp-fade-margin-and-fresnel-clearance-planner",
+    "category": "tool",
+    "h1": "Wireless PtP Fade-Margin & Fresnel Clearance Planner",
+    "title_tag": "Wireless PtP Fade-Margin & Fresnel Clearance | AafnaiPatro",
+    "meta_description": "wireless ptp fade-margin & fresnel clearance planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "wireless ptp fade-margin & fresnel clearance planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Standards-based parse/normalize/simulate logic; no remote execution. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use pasted config/protocol values or numeric parameters. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/poe-n-plus-1-failover-power-budget-checker",
+      "/tool/pon-splitter-cascade-optical-budget-calculator",
+      "/tool/wifi-channel-width-center-frequency-mapper"
+    ],
+    "engine": "audit200",
+    "operation": "wireless-ptp-fade-margin-and-fresnel-clearance-planner",
+    "source_category": "Networking",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Standards-based parse/normalize/simulate logic; no remote execution.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "pasted config/protocol values or numeric parameters",
+    "expected_outputs": "parsed structure, validation findings, computed/encoded result",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-184",
+    "slug": "/tool/hotel-night-red-eye-day-use-itinerary-day-counter",
+    "category": "tool",
+    "h1": "Hotel Night / Red-Eye / Day-Use Itinerary Day Counter",
+    "title_tag": "Hotel Night / Red-Eye / Day-Use Itinerary | AafnaiPatro",
+    "meta_description": "hotel night red-eye day-use itinerary day counter: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "hotel night red-eye day-use itinerary day counter",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use entry/exit dates, time zones, user-supplied rule thresholds. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/per-diem-partial-travel-day-calculator",
+      "/tool/jet-lag-sleep-shift-schedule-planner",
+      "/tool/international-date-line-arrival-date-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "hotel-night-red-eye-day-use-itinerary-day-counter",
+    "source_category": "Travel & Residency",
+    "tool_type": "Browser utility",
+    "dependency": "Temporal/Intl + versioned rule config where applicable",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "entry/exit dates, time zones, user-supplied rule thresholds",
+    "expected_outputs": "rolling-day/timeline/itinerary result with warnings",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 80
+  },
+  {
+    "source_id": "AUDIT-185",
+    "slug": "/tool/vector-index-memory-estimator",
+    "category": "tool",
+    "h1": "Vector Index Memory Estimator (HNSW/IVF)",
+    "title_tag": "Vector Index Memory Estimator (HNSW/IVF) | AafnaiPatro",
+    "meta_description": "Estimator for vector index memory. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "vector index memory estimator hnsw/ivf",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use model/runtime architecture values, token counts, pricing assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/embedding-storage-size-calculator",
+      "/tool/mixture-of-experts-active-parameter-memory-calculator",
+      "/tool/rag-chunk-size-overlap-coverage-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "vector-index-memory-estimator",
+    "source_category": "AI & LLM Utilities",
+    "tool_type": "Estimator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "model/runtime architecture values, token counts, pricing assumptions",
+    "expected_outputs": "memory/token/cost/throughput table and limits",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-186",
+    "slug": "/tool/exposure-bracketing-sequence-builder",
+    "category": "tool",
+    "h1": "Exposure-Bracketing Sequence Builder",
+    "title_tag": "Exposure-Bracketing Sequence Builder | AafnaiPatro",
+    "meta_description": "Use exposure-bracketing sequence locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "exposure-bracketing sequence builder",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/star-trail-interval-storage-planner",
+      "/tool/flash-guide-number-aperture-distance-planner",
+      "/tool/panorama-shot-count-and-overlap-planner"
+    ],
+    "engine": "audit200",
+    "operation": "exposure-bracketing-sequence-builder",
+    "source_category": "Creator & Photography",
+    "tool_type": "Builder",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "No",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-187",
+    "slug": "/tool/block-randomization-assignment-generator-with-seed",
+    "category": "tool",
+    "h1": "Block Randomization Assignment Generator with Seed",
+    "title_tag": "Block Randomization Assignment Generator | AafnaiPatro",
+    "meta_description": "block randomization assignment generator with seed: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "block randomization assignment generator with seed",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use tasks/dates/weights/rules or CSV. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/survey-codebook-and-missing-value-profile-builder",
+      "/tool/rubric-weighted-grading-sheet-builder-with-drop-cap-rules",
+      "/tool/research-csv-data-dictionary-generator"
+    ],
+    "engine": "audit200",
+    "operation": "block-randomization-assignment-generator-with-seed",
+    "source_category": "Education & Productivity",
+    "tool_type": "Generator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "tasks/dates/weights/rules or CSV",
+    "expected_outputs": "schedule/profile/assignment table with export",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-188",
+    "slug": "/tool/rubric-weighted-grading-sheet-builder-with-drop-cap-rules",
+    "category": "tool",
+    "h1": "Rubric Weighted-Grading Sheet Builder with Drop/Cap Rules",
+    "title_tag": "Rubric Weighted-Grading Sheet Builder with | AafnaiPatro",
+    "meta_description": "rubric weighted-grading sheet builder with drop/cap rules: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "rubric weighted-grading sheet builder with drop/cap rules",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use tasks/dates/weights/rules or CSV. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/block-randomization-assignment-generator-with-seed",
+      "/tool/on-call-schedule-fairness-analyzer",
+      "/tool/survey-codebook-and-missing-value-profile-builder"
+    ],
+    "engine": "audit200",
+    "operation": "rubric-weighted-grading-sheet-builder-with-drop-cap-rules",
+    "source_category": "Education & Productivity",
+    "tool_type": "Builder",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "tasks/dates/weights/rules or CSV",
+    "expected_outputs": "schedule/profile/assignment table with export",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "No",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-189",
+    "slug": "/tool/battery-bank-series-parallel-wiring-planner",
+    "category": "tool",
+    "h1": "Battery Bank Series/Parallel Wiring Planner",
+    "title_tag": "Battery Bank Series/Parallel Wiring Planner | AafnaiPatro",
+    "meta_description": "Use battery bank series/parallel wiring locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "battery bank series/parallel wiring planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/solar-pv-string-voltage-window-calculator",
+      "/tool/rainwater-tank-drawdown-and-first-flush-sizing-planner",
+      "/tool/concrete-formwork-area-and-plywood-sheet-estimator"
+    ],
+    "engine": "audit200",
+    "operation": "battery-bank-series-parallel-wiring-planner",
+    "source_category": "Home & DIY",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-190",
+    "slug": "/tool/cabinet-door-overlay-reveal-calculator",
+    "category": "tool",
+    "h1": "Cabinet Door Overlay / Reveal Calculator",
+    "title_tag": "Cabinet Door Overlay / Reveal Calculator | AafnaiPatro",
+    "meta_description": "Use cabinet door overlay / reveal locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "cabinet door overlay reveal calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/plywood-edge-banding-length-and-waste-planner",
+      "/tool/drawer-box-cut-list-from-slide-clearance",
+      "/tool/cabinet-hinge-cup-and-plate-drilling-layout-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "cabinet-door-overlay-reveal-calculator",
+    "source_category": "Home & DIY",
+    "tool_type": "Calculator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-191",
+    "slug": "/tool/multi-country-tax-residency-travel-day-overlay",
+    "category": "tool",
+    "h1": "Multi-Country Tax-Residency Travel-Day Overlay",
+    "title_tag": "Multi-Country Tax-Residency Travel-Day | AafnaiPatro",
+    "meta_description": "multi-country tax-residency travel-day overlay: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "multi-country tax-residency travel-day overlay",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use entry/exit dates, time zones, user-supplied rule thresholds. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/visa-free-stay-rolling-window-tracker",
+      "/tool/passport-validity-buffer-planner",
+      "/tool/schengen-90-180-rolling-day-what-if-planner"
+    ],
+    "engine": "audit200",
+    "operation": "multi-country-tax-residency-travel-day-overlay",
+    "source_category": "Travel & Residency",
+    "tool_type": "Browser utility",
+    "dependency": "Temporal/Intl + versioned rule config where applicable",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "entry/exit dates, time zones, user-supplied rule thresholds",
+    "expected_outputs": "rolling-day/timeline/itinerary result with warnings",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 79
+  },
+  {
+    "source_id": "AUDIT-192",
+    "slug": "/tool/color-checker-patch-sampling-grid-generator",
+    "category": "tool",
+    "h1": "Color-Checker Patch Sampling Grid Generator",
+    "title_tag": "Color-Checker Patch Sampling Grid Generator | AafnaiPatro",
+    "meta_description": "Checker for color- patch sampling grid. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "color-checker patch sampling grid generator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/film-negative-scan-dpi-megapixel-file-size-planner",
+      "/tool/photo-print-border-and-mat-opening-calculator",
+      "/tool/camera-battery-plus-storage-shoot-time-planner"
+    ],
+    "engine": "audit200",
+    "operation": "color-checker-patch-sampling-grid-generator",
+    "source_category": "Creator & Photography",
+    "tool_type": "Checker",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Validate/debug a specific workflow before acting or publishing.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-193",
+    "slug": "/tool/macro-effective-aperture-and-diffraction-planner",
+    "category": "tool",
+    "h1": "Macro Effective Aperture & Diffraction Planner",
+    "title_tag": "Macro Effective Aperture & Diffraction | AafnaiPatro",
+    "meta_description": "macro effective aperture & diffraction planner: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "macro effective aperture & diffraction planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use camera/media dimensions, overlap/exposure/print assumptions. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/flash-guide-number-aperture-distance-planner",
+      "/tool/camera-battery-plus-storage-shoot-time-planner",
+      "/tool/exposure-bracketing-sequence-builder"
+    ],
+    "engine": "audit200",
+    "operation": "macro-effective-aperture-and-diffraction-planner",
+    "source_category": "Creator & Photography",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "camera/media dimensions, overlap/exposure/print assumptions",
+    "expected_outputs": "shot/exposure/print plan with computed ranges",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-194",
+    "slug": "/tool/research-csv-data-dictionary-generator",
+    "category": "tool",
+    "h1": "Research CSV Data Dictionary Generator",
+    "title_tag": "Research CSV Data Dictionary Generator | AafnaiPatro",
+    "meta_description": "Use research csv data dictionary locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "research csv data dictionary generator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use tasks/dates/weights/rules or CSV. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. High — file never leaves device. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/reading-workload-weekly-planner",
+      "/tool/survey-codebook-and-missing-value-profile-builder",
+      "/tool/exam-question-time-budget-planner-with-accommodation-multiplier"
+    ],
+    "engine": "audit200",
+    "operation": "research-csv-data-dictionary-generator",
+    "source_category": "Education & Productivity",
+    "tool_type": "Generator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "High — file never leaves device.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "tasks/dates/weights/rules or CSV",
+    "expected_outputs": "schedule/profile/assignment table with export",
+    "search_intent": "Transform or prepare data/files locally for a specific downstream workflow.",
+    "worker_needed": "Yes for large inputs",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-195",
+    "slug": "/tool/concrete-formwork-area-and-plywood-sheet-estimator",
+    "category": "tool",
+    "h1": "Concrete Formwork Area & Plywood-Sheet Estimator",
+    "title_tag": "Concrete Formwork Area & Plywood-Sheet | AafnaiPatro",
+    "meta_description": "concrete formwork area & plywood-sheet estimator: browser-local, private inputs, clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "concrete formwork area & plywood-sheet estimator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/deck-board-layout-rip-width-planner",
+      "/tool/solar-pv-string-voltage-window-calculator",
+      "/tool/drawer-front-equal-gap-layout-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "concrete-formwork-area-and-plywood-sheet-estimator",
+    "source_category": "Home & DIY",
+    "tool_type": "Estimator",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-196",
+    "slug": "/tool/deck-board-layout-rip-width-planner",
+    "category": "tool",
+    "h1": "Deck Board Layout / Rip-Width Planner",
+    "title_tag": "Deck Board Layout / Rip-Width Planner | AafnaiPatro",
+    "meta_description": "Use deck board layout / rip-width locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "deck board layout rip-width planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/drawer-front-equal-gap-layout-calculator",
+      "/tool/concrete-formwork-area-and-plywood-sheet-estimator",
+      "/tool/drawer-box-cut-list-from-slide-clearance"
+    ],
+    "engine": "audit200",
+    "operation": "deck-board-layout-rip-width-planner",
+    "source_category": "Home & DIY",
+    "tool_type": "Planner",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-197",
+    "slug": "/tool/drawer-box-cut-list-from-slide-clearance",
+    "category": "tool",
+    "h1": "Drawer Box Cut List from Slide Clearance",
+    "title_tag": "Drawer Box Cut List from Slide Clearance | AafnaiPatro",
+    "meta_description": "Use drawer box cut list from slide clearance locally in your browser. Inputs stay on your device; get clear results, validation, and stated limitations.",
+    "target_long_tail_keyword": "drawer box cut list from slide clearance",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/cabinet-door-overlay-reveal-calculator",
+      "/tool/drawer-front-equal-gap-layout-calculator",
+      "/tool/plywood-edge-banding-length-and-waste-planner"
+    ],
+    "engine": "audit200",
+    "operation": "drawer-box-cut-list-from-slide-clearance",
+    "source_category": "Home & DIY",
+    "tool_type": "Browser utility",
+    "dependency": "None / pure JS",
+    "build_difficulty": "Medium",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Complete a narrow deterministic task locally in the browser.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-198",
+    "slug": "/tool/solar-pv-string-voltage-window-calculator",
+    "category": "tool",
+    "h1": "Solar PV String Voltage Window Calculator",
+    "title_tag": "Solar PV String Voltage Window Calculator | AafnaiPatro",
+    "meta_description": "Use solar pv string voltage window locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "solar pv string voltage window calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use dimensions, stock sizes, kerf/material/device specs. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+      }
+    ],
+    "related_tools": [
+      "/tool/concrete-formwork-area-and-plywood-sheet-estimator",
+      "/tool/battery-bank-series-parallel-wiring-planner",
+      "/tool/deck-board-layout-rip-width-planner"
+    ],
+    "engine": "audit200",
+    "operation": "solar-pv-string-voltage-window-calculator",
+    "source_category": "Home & DIY",
+    "tool_type": "Calculator",
+    "dependency": "Static standards/constants + user-supplied device data",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Results depend on correct inputs and the modeled standard/workflow; large or unusual files/configs may expose unsupported edge cases."
+    ],
+    "expected_inputs": "dimensions, stock sizes, kerf/material/device specs",
+    "expected_outputs": "layout/material plan, waste/margin, downloadable cut table where relevant",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-199",
+    "slug": "/tool/passport-validity-buffer-planner",
+    "category": "tool",
+    "h1": "Passport Validity Buffer Planner",
+    "title_tag": "Passport Validity Buffer Planner | AafnaiPatro",
+    "meta_description": "Planner for passport validity buffer. Runs locally in your browser so inputs stay on your device, with clear assumptions, checks and exportable results.",
+    "target_long_tail_keyword": "passport validity buffer planner",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use entry/exit dates, time zones, user-supplied rule thresholds. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/multi-country-tax-residency-travel-day-overlay",
+      "/tool/international-date-line-arrival-date-calculator",
+      "/tool/visa-free-stay-rolling-window-tracker"
+    ],
+    "engine": "audit200",
+    "operation": "passport-validity-buffer-planner",
+    "source_category": "Travel & Residency",
+    "tool_type": "Planner",
+    "dependency": "Temporal/Intl + versioned rule config where applicable",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "entry/exit dates, time zones, user-supplied rule thresholds",
+    "expected_outputs": "rolling-day/timeline/itinerary result with warnings",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 78
+  },
+  {
+    "source_id": "AUDIT-200",
+    "slug": "/tool/per-diem-partial-travel-day-calculator",
+    "category": "tool",
+    "h1": "Per-Diem Partial-Travel-Day Calculator",
+    "title_tag": "Per-Diem Partial-Travel-Day Calculator | AafnaiPatro",
+    "meta_description": "Use per-diem partial-travel-day locally in your browser. Inputs stay on your device; get transparent calculations, checks and exportable results.",
+    "target_long_tail_keyword": "per-diem partial-travel-day calculator",
+    "faqs": [
+      {
+        "question": "How does this work?",
+        "answer": "Deterministic formulas/rules with scenario comparison and explicit assumptions. The tool validates the required inputs and reports its assumptions rather than silently guessing."
+      },
+      {
+        "question": "What inputs are required?",
+        "answer": "Use entry/exit dates, time zones, user-supplied rule thresholds. Values and files are processed locally in this browser."
+      },
+      {
+        "question": "Does any data leave my device?",
+        "answer": "No. Medium — no account or server processing required. Normal operation does not send your file, pasted content or entered values to an AafnaiPatro API."
+      },
+      {
+        "question": "What assumptions or limits should I check?",
+        "answer": "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+      }
+    ],
+    "related_tools": [
+      "/tool/jet-lag-sleep-shift-schedule-planner",
+      "/tool/hotel-night-red-eye-day-use-itinerary-day-counter",
+      "/tool/international-date-line-arrival-date-calculator"
+    ],
+    "engine": "audit200",
+    "operation": "per-diem-partial-travel-day-calculator",
+    "source_category": "Travel & Residency",
+    "tool_type": "Calculator",
+    "dependency": "Temporal/Intl + versioned rule config where applicable",
+    "build_difficulty": "Easy",
+    "how_it_works": "Deterministic formulas/rules with scenario comparison and explicit assumptions.",
+    "privacy_note": "Medium — no account or server processing required.",
+    "limits": [
+      "Planning aid only; rules and thresholds can change, so version annual configuration and link authoritative sources."
+    ],
+    "expected_inputs": "entry/exit dates, time zones, user-supplied rule thresholds",
+    "expected_outputs": "rolling-day/timeline/itinerary result with warnings",
+    "search_intent": "Model scenarios and get a deterministic decision-support result.",
+    "worker_needed": "No",
+    "seo_score": 78
+  }
+]

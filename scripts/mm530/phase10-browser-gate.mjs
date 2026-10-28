@@ -8,8 +8,8 @@ const registry=JSON.parse(await fs.readFile(path.join(root,"src/mm530/mm530-regi
 const categories=[...new Set(registry.map(x=>x.category))];
 const advanced=JSON.parse(await fs.readFile(path.join(dist,"advancetools/module-manifest.json"),"utf8"));
 const discoveryCategoryRoutes=(advanced.routes||[]).filter(x=>x.kind==="web-tools-category").map(x=>x.path);
-const clientTools=JSON.parse(await fs.readFile(path.join(root,"client-tools/tools.json"),"utf8"));
-const newClientTools=clientTools.filter(t=>String(t.source_id||"").startsWith("CT-"));
+const clientTools=[];for(const file of ["tools.json","audit200-tools-1.json","audit200-tools-2.json","audit200-tools-3.json","audit200-tools-4.json"])clientTools.push(...JSON.parse(await fs.readFile(path.join(root,"client-tools",file),"utf8")));
+const newClientTools=clientTools.filter(t=>/^(?:CT-|AUDIT-)/.test(String(t.source_id||"")));
 const failures=[],skipped=[],checks=[];
 const fail=(code,detail)=>failures.push({code,detail});
 async function mapLimit(items,limit,fn){let i=0;const workers=Array.from({length:Math.min(limit,items.length)},async()=>{while(i<items.length){const n=i++;await fn(items[n],n)}});await Promise.all(workers)}

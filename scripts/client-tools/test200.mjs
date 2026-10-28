@@ -1,0 +1,85 @@
+import assert from"node:assert/strict";
+import{JSDOM}from"jsdom";
+import{AUDIT200_OPERATIONS,specFor}from"../../client-tools/runtime/cores/audit200-specs.mjs";
+import{runAudit200,defaultsFor}from"../../client-tools/runtime/cores/audit200-core.mjs";
+import{SUPPORTED_OPERATIONS,mount}from"../../client-tools/runtime/engines/audit200.mjs";
+import{loadClientTools}from"./catalog.mjs";
+import{PDFDocument,PDFName}from"pdf-lib";
+import initSqlJs from"sql.js";
+import{resolve}from"node:path";
+import{editPdfPageLabels,inspectGeoPackage,validateLocalParquetSql}from"../../client-tools/vendor/audit200-local-heavy.mjs";
+const te=new TextEncoder();
+const u16=(a,o,v)=>{a[o]=v&255;a[o+1]=v>>>8&255},u32=(a,o,v)=>{a[o]=v&255;a[o+1]=v>>>8&255;a[o+2]=v>>>16&255;a[o+3]=v>>>24&255};
+function zipStored(files){let chunks=[],centrals=[],offset=0;for(const[name,content]of Object.entries(files)){const n=te.encode(name),d=te.encode(content),l=new Uint8Array(30+n.length+d.length);u32(l,0,0x04034b50);u16(l,4,20);u16(l,8,0);u32(l,18,d.length);u32(l,22,d.length);u16(l,26,n.length);l.set(n,30);l.set(d,30+n.length);chunks.push(l);const c=new Uint8Array(46+n.length);u32(c,0,0x02014b50);u16(c,4,20);u16(c,6,20);u16(c,10,0);u32(c,20,d.length);u32(c,24,d.length);u16(c,28,n.length);u32(c,42,offset);c.set(n,46);centrals.push(c);offset+=l.length}const centralSize=centrals.reduce((a,b)=>a+b.length,0),e=new Uint8Array(22);u32(e,0,0x06054b50);u16(e,8,centrals.length);u16(e,10,centrals.length);u32(e,12,centralSize);u32(e,16,offset);const total=chunks.reduce((a,b)=>a+b.length,0)+centralSize+e.length,out=new Uint8Array(total);let p=0;for(const x of[...chunks,...centrals,e]){out.set(x,p);p+=x.length}return out}
+function tarOne(name,content){const d=te.encode(content),h=new Uint8Array(512);h.set(te.encode(name),0);h.set(te.encode(d.length.toString(8).padStart(11,"0")+"\0"),124);h[156]=48;const out=new Uint8Array(512+Math.ceil(d.length/512)*512+1024);out.set(h);out.set(d,512);return out}
+function shpPoint(){const b=new Uint8Array(128),dv=new DataView(b.buffer);dv.setInt32(0,9994,false);dv.setInt32(24,b.length/2,false);dv.setInt32(28,1000,true);dv.setInt32(32,1,true);dv.setInt32(100,1,false);dv.setInt32(104,10,false);dv.setInt32(108,1,true);dv.setFloat64(112,85.324,true);dv.setFloat64(120,27.7172,true);return b}
+function mp4(){const box=(t,n=8)=>{const b=new Uint8Array(n);new DataView(b.buffer).setUint32(0,n,false);b.set(te.encode(t),4);return b},parts=[box("ftyp"),box("moov"),box("mdat")],out=new Uint8Array(parts.reduce((a,b)=>a+b.length,0));let p=0;for(const b of parts){out.set(b,p);p+=b.length}return out}
+const catBytes=(...parts)=>{const out=new Uint8Array(parts.reduce((n,p)=>n+p.length,0));let o=0;for(const p of parts){out.set(p,o);o+=p.length}return out};
+function mp4Box(type,payload=new Uint8Array()){const b=new Uint8Array(8+payload.length),dv=new DataView(b.buffer);dv.setUint32(0,b.length,false);b.set(te.encode(type),4);b.set(payload,8);return b}
+function mp4Gop(){const mdhd=new Uint8Array(24),mdv=new DataView(mdhd.buffer);mdv.setUint32(12,1000,false);mdv.setUint32(16,4000,false);const hdlr=new Uint8Array(20);hdlr.set(te.encode("vide"),8);const stts=new Uint8Array(16),tv=new DataView(stts.buffer);tv.setUint32(4,1,false);tv.setUint32(8,4,false);tv.setUint32(12,1000,false);const stss=new Uint8Array(16),sv=new DataView(stss.buffer);sv.setUint32(4,2,false);sv.setUint32(8,1,false);sv.setUint32(12,3,false);const stbl=mp4Box("stbl",catBytes(mp4Box("stts",stts),mp4Box("stss",stss))),minf=mp4Box("minf",stbl),mdia=mp4Box("mdia",catBytes(mp4Box("mdhd",mdhd),mp4Box("hdlr",hdlr),minf)),trak=mp4Box("trak",mdia),moov=mp4Box("moov",trak);return catBytes(mp4Box("ftyp"),moov,mp4Box("mdat"))}
+function png(){const sig=Uint8Array.from([137,80,78,71,13,10,26,10]),iend=new Uint8Array(12);iend.set(te.encode("IEND"),4);const o=new Uint8Array(20);o.set(sig);o.set(iend,8);return o}
+function icc(){const b=new Uint8Array(128);new DataView(b.buffer).setUint32(0,128,false);b.set(te.encode("acsp"),36);b.set(te.encode("mntr"),12);b.set(te.encode("RGB "),16);b.set(te.encode("XYZ "),20);b[8]=0x43;return b}
+function jpeg(){return Uint8Array.from([0xff,0xd8,0xff,0xdb,0x00,0x04,0,0,0xff,0xc0,0x00,0x0b,8,0,1,0,1,1,1,0x11,0,0xff,0xd9])}
+function fitCrc(bytes,start=0,end=bytes.length){const tab=[0x0000,0xCC01,0xD801,0x1400,0xF001,0x3C00,0x2800,0xE401,0xA001,0x6C00,0x7800,0xB401,0x5000,0x9C01,0x8801,0x4400];let crc=0;for(let i=start;i<end;i++){let tmp=tab[crc&15];crc=((crc>>4)&0x0fff)^tmp^tab[bytes[i]&15];tmp=tab[crc&15];crc=((crc>>4)&0x0fff)^tmp^tab[(bytes[i]>>4)&15]}return crc&0xffff}
+function fit(){const data=new Uint8Array(21),dv=new DataView(data.buffer);let p=0;data[p++]=0x40;data[p++]=0;data[p++]=0;data[p++]=20;data[p++]=0;data[p++]=2;data.set([0,4,0x85,1,4,0x85],p);p+=6;data[p++]=0;dv.setInt32(p,123456789,true);p+=4;dv.setInt32(p,-987654321,true);const b=new Uint8Array(14+data.length+2);b[0]=14;b[1]=0x20;u16(b,2,100);u32(b,4,data.length);b.set(te.encode(".FIT"),8);const hc=fitCrc(b,0,12);u16(b,12,hc);b.set(data,14);const fc=fitCrc(b,0,14+data.length);u16(b,14+data.length,fc);return b}
+function sqlite(){const b=new Uint8Array(256);b.set(te.encode("SQLite format 3\0CREATE TABLE demo(id INTEGER, name TEXT);"));return b}
+function pdf(){return te.encode("%PDF-1.7\n1 0 obj << /Type /Catalog >> endobj\n2 0 obj << /Type /Page >> endobj\n%%EOF")}
+const srt=`1\n00:00:00,000 --> 00:00:02,000\nHello world\n\n2\n00:00:02,500 --> 00:00:04,500\nSecond cue\n`;
+const vtt=`WEBVTT\n\n00:00:00.000 --> 00:00:02.000 line:90% align:center\nHello\n`;
+const ttml=`<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:contentProfiles="http://www.w3.org/ns/ttml/profile/imsc1.3/text"><head><styling><style xml:id="s1"/></styling><layout><region xml:id="r1"/></layout></head><body><div><p xml:id="c1" region="r1" style="s1" begin="0s" end="2s">Hi</p></div></body></tt>`;
+const gpx=`<?xml version="1.0"?><gpx><trk><trkseg><trkpt lat="27.7172" lon="85.324"><time>2026-10-28T00:00:00Z</time></trkpt><trkpt lat="28" lon="85"><time>2026-10-28T01:00:00Z</time></trkpt></trkseg></trk></gpx>`;
+const csrPem=`-----BEGIN CERTIFICATE REQUEST-----
+MIICdzCCAV8CAQAwMjEVMBMGA1UEAwwMZXhhbXBsZS50ZXN0MRkwFwYDVQQKDBBB
+YWZuYWlQYXRybyBUZXN0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+mp6ZSXNAiAcQCX/mb0DyqPDKxn5giR46g4DBIhOcW0fdjgdgomy2Yp+0OKW76WSa
+hW5CLcYyU+NmL89DJm9HhkbEdnGu/FyC2+AycpcHXqf/VdT7riedJnnfsX+9mDg2
+CMpmvRrjAGiIoe41v4VswhYqLdMJyQuocdcXf5XExOAZ4/zBvyihF5KiCwCtWeXR
+IhyWank1w0/RUCn9+/wymufxOt6VTkHvjYtfXv2GVPStmD5g+0JSfuVQ6Z3bPNa3
+7cBin8ucl67cnNCBwzpRJ9OyCWrQGAdLCN8eHyAQLnSuc3CRgPpfqTzoVkhRS/s8
+pHKsjigei4wJzRWAhR9N8wIDAQABoAAwDQYJKoZIhvcNAQELBQADggEBADuxguqP
+TQQNVMPctO5wn1JkZvlDYh7eLAEHhDHDYjq0Qze6R4f5Tag2zXJO7fdepSq5nDDc
+Jw4x1vzHLBoqJYvhEQq/ZvWKJFZzZHWShs+TXto1iWmzRilogsIkYcjHnWuvsk1L
+vjIFtk6TtRt7y7mK0vgRmcHmhwuOAZonnFdWi/l2i95XY6iY5qyCfpH3UoaMG3NS
+r9p2b+WPWqOtqsSn5CJkuOzClOV4OM7J5oZboApS6sgBXo+jmbCmQT3d51mAvIIP
+6Lgn/QA1DTos6jkYq5Bw5UT/ATKO/H5dZyN6V8K/m/Z8T8uBnnnWfDdwlZE1B7sD
+Uwdg354pGqiisYY=
+-----END CERTIFICATE REQUEST-----`;
+const certPem=`-----BEGIN CERTIFICATE-----
+MIIDEzCCAfugAwIBAgIUeQEUaY1gZ4TS9OatTjxaNw1/i40wDQYJKoZIhvcNAQEL
+BQAwMjEVMBMGA1UEAwwMZXhhbXBsZS50ZXN0MRkwFwYDVQQKDBBBYWZuYWlQYXRy
+byBUZXN0MB4XDTI2MTAyODAzMDIyNVoXDTI2MTAyOTAzMDIyNVowMjEVMBMGA1UE
+AwwMZXhhbXBsZS50ZXN0MRkwFwYDVQQKDBBBYWZuYWlQYXRybyBUZXN0MIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmp6ZSXNAiAcQCX/mb0DyqPDKxn5g
+iR46g4DBIhOcW0fdjgdgomy2Yp+0OKW76WSahW5CLcYyU+NmL89DJm9HhkbEdnGu
+/FyC2+AycpcHXqf/VdT7riedJnnfsX+9mDg2CMpmvRrjAGiIoe41v4VswhYqLdMJ
+yQuocdcXf5XExOAZ4/zBvyihF5KiCwCtWeXRIhyWank1w0/RUCn9+/wymufxOt6V
+TkHvjYtfXv2GVPStmD5g+0JSfuVQ6Z3bPNa37cBin8ucl67cnNCBwzpRJ9OyCWrQ
+GAdLCN8eHyAQLnSuc3CRgPpfqTzoVkhRS/s8pHKsjigei4wJzRWAhR9N8wIDAQAB
+oyEwHzAdBgNVHQ4EFgQUOIZH1+zg8AfoVwpqB4adG0I99icwDQYJKoZIhvcNAQEL
+BQADggEBAFcIytGdRPNKAvcUEavOhX9LCsKThq7AM/BXwHCc4ULf7rRZ5t+4p79q
+1zur40CRLAtK4WoMccZsizLXvu/AdXdR1Yg7vWlGFZB1J1zh8vMgPFTAl9oUZvNZ
+oy4J2Da32bNOVyRCMFFb4RFDnwhnELpt9Qy3CObFT9zez6Xryjxkm6/pCaEYnnAE
+4JB7pw5tdy/fxqJU3DGqNM481yVby4t6YX90oq6GX/MMITg/bdB7ad6Tz/YYdaC8
+1b4oHloBzkLMqGljj7r/6odN4JQrfA5q1XPrL1DNhM4J7MqzESedkaOqgEaJbhx5
+GgLkE8xVi5vbtWKe/XavmRNAQWjtWQE=
+-----END CERTIFICATE-----`;
+const epub=zipStored({"META-INF/container.xml":`<container><rootfiles><rootfile full-path="OEBPS/content.opf"/></rootfiles></container>`,"OEBPS/content.opf":`<package><metadata><dc:title xmlns:dc="x">Demo</dc:title><dc:creator xmlns:dc="x">Author</dc:creator></metadata><manifest><item id="c" href="c1.xhtml" media-type="application/xhtml+xml"/></manifest></package>`,"OEBPS/c1.xhtml":"<html><body><h1>Chapter</h1><p>Hello</p></body></html>"});
+function fileFixture(mode){switch(mode){case"subtitle_speed":case"subtitle_lines":case"subtitle_timing":return{fileText:srt};case"gpx_redact":case"gpx_shift":return{fileText:gpx};case"zip_inspect":case"zip_duplicates":return{fileBytes:zipStored({"a.txt":"same","b.txt":"same"})};case"fit_inspect":return{fileBytes:fit()};case"sqlite_inspect":return{fileBytes:sqlite()};case"pdf_labels":return{fileBytes:pdf()};case"shp_geojson":return{fileBytes:shpPoint()};case"mp4_boxes":return{fileBytes:mp4()};case"mp4_gop":return{fileBytes:mp4Gop()};case"png_chunks":return{fileBytes:png()};case"svg_a11y":return{fileText:'<svg role="img"><title>Demo</title><rect/></svg>'};case"ttml_validate":return{fileText:ttml};case"tar_list":return{fileBytes:tarOne("demo.txt","hello")};case"icc_inspect":return{fileBytes:icc()};case"parquet_inspect":return{fileBytes:Uint8Array.from([80,65,82,49,0,0,0,0,80,65,82,49])};case"ass_safearea":return{fileText:"[Script Info]\nPlayResX: 1920\nPlayResY: 1080\nDialogue: 0,0:00:00.00,0:00:02.00,Default,,0,0,0,,{\\pos(960,900)}Hello"};case"jpeg_inspect":return{fileBytes:jpeg()};case"epub_metadata":case"epub_links":case"epub_chapters":return{fileBytes:epub};case"vcard_strip":return{fileText:"BEGIN:VCARD\nFN:Demo\nPHOTO;ENCODING=b:AAAA\nEND:VCARD"};case"audio_silence":return{samples:new Float32Array(48000),sampleRate:48000};case"webvtt_validate":return{fileText:vtt};default:throw new Error("Missing fixture for "+mode)}}
+const catalog=(await loadClientTools()).filter(t=>String(t.source_id||"").startsWith("AUDIT-"));
+assert.equal(catalog.length,200);assert.equal(AUDIT200_OPERATIONS.length,200);assert.deepEqual(new Set(SUPPORTED_OPERATIONS),new Set(AUDIT200_OPERATIONS));
+let corePass=0;for(const t of catalog){const s=specFor(t.operation),v={...defaultsFor(t.operation),...(s.file?fileFixture(s.mode):{})};if(t.operation==="jwt-jws-inspector-and-claim-timeline-debugger")v.nowEpoch=1793145600;const result=await runAudit200(t.operation,v);assert.ok(result&&typeof result==="object","no result "+t.operation);corePass++}
+await assert.rejects(()=>runAudit200("rag-chunk-size-overlap-coverage-calculator",{documentTokens:1000,chunkTokens:100,overlapTokens:100}),/overlap/i);
+await assert.rejects(()=>runAudit200("escrow-shortage-catch-up-simulator",{shortage:-1,months:12,currentEscrow:0,annualChange:0}),/shortage/i);
+await assert.rejects(()=>runAudit200("json-schema-oneof-anyof-overlap-debugger",{schema:"{"}),/JSON/i);
+const zipHash=await runAudit200("zip-duplicate-file-finder-by-hash",{fileBytes:zipStored({"a.txt":"same","b.txt":"same"})});assert.equal(zipHash.duplicate_groups.length,1);assert.match(zipHash.duplicate_groups[0].sha256,/^[0-9a-f]{64}$/);
+const gha=await runAudit200("github-actions-expression-sandbox",{expression:"${{ github.ref == 'refs/heads/main' && inputs.deploy }}",context:'{"github":{"ref":"refs/heads/main"},"inputs":{"deploy":true}}'});assert.equal(gha.result,true);
+const gop=await runAudit200("mp4-keyframe-gop-timeline-inspector",{fileBytes:mp4Gop()});assert.equal(gop.video_tracks,1);assert.equal(gop.tracks[0].keyframe_count,2);assert.equal(gop.tracks[0].gop_duration_stats.mean_seconds,2);
+const repaired=await runAudit200("geojson-geometry-validator-and-repair-preview",{geojson:'{"type":"Polygon","coordinates":[[[0,0],[1,0],[1,1],[0,1]]]}' });assert.equal(repaired.valid,false);assert.equal(repaired.valid_after_repair,true);assert.equal(repaired.repair_actions.length,1);
+const shp=await runAudit200("shapefile-to-geojson-converter",{fileBytes:shpPoint()});assert.equal(shp.geojson.features[0].geometry.type,"Point");
+const fitResult=await runAudit200("fit-activity-field-inspector-and-metadata-scrubber",{fileBytes:fit()});assert.equal(fitResult.scrubbed_count,2);const scrubbed=fitResult.download.bytes,sdv=new DataView(scrubbed.buffer,scrubbed.byteOffset,scrubbed.byteLength);assert.equal(sdv.getInt32(27,true),2147483647);assert.equal(sdv.getInt32(31,true),2147483647);assert.equal(sdv.getUint16(12,true),fitCrc(scrubbed,0,12));assert.equal(sdv.getUint16(scrubbed.length-2,true),fitCrc(scrubbed,0,scrubbed.length-2));
+const ttmlResult=await runAudit200("ttml-imsc-subtitle-validator",{fileText:ttml});assert.equal(ttmlResult.valid,true);assert.equal(ttmlResult.cue_elements,1);assert.equal(ttmlResult.cues[0].duration_seconds,2);const pemResult=await runAudit200("csr-vs-certificate-key-subject-match-checker",{csr:csrPem,certificate:certPem});assert.equal(pemResult.public_key_match,true);assert.equal(pemResult.subject_match,true);assert.match(pemResult.csr_spki_sha256,/^[0-9a-f]{64}$/);const badTtml=await runAudit200("ttml-imsc-subtitle-validator",{fileText:'<tt xmlns="http://www.w3.org/ns/ttml"><body><p region="missing" begin="2s" end="1s">Bad</p></body></tt>'});assert.equal(badTtml.valid,false);assert.ok(badTtml.errors.some(x=>/end must be after/.test(x)));assert.ok(badTtml.errors.some(x=>/missing region/.test(x)));
+const pdfDoc=await PDFDocument.create();pdfDoc.addPage();pdfDoc.addPage();const pdfBytes=await pdfDoc.save(),pdfEdited=await editPdfPageLabels(pdfBytes,5,"A-");assert.equal(pdfEdited.page_count,2);assert.equal(pdfEdited.numbering_map[0].label,"A-5");const pdfReloaded=await PDFDocument.load(pdfEdited.download.bytes);assert.ok(pdfReloaded.catalog.get(PDFName.of("PageLabels")),"saved PDF must contain PageLabels");
+const sqlWasm=resolve("node_modules/sql.js/dist/sql-wasm.wasm"),SQL=await initSqlJs({locateFile:()=>sqlWasm}),gpkgDb=new SQL.Database();gpkgDb.run("CREATE TABLE gpkg_contents (table_name TEXT PRIMARY KEY,data_type TEXT NOT NULL,identifier TEXT,description TEXT,last_change DATETIME,min_x DOUBLE,min_y DOUBLE,max_x DOUBLE,max_y DOUBLE,srs_id INTEGER); CREATE TABLE gpkg_geometry_columns (table_name TEXT,column_name TEXT,geometry_type_name TEXT,srs_id INTEGER,z TINYINT,m TINYINT); CREATE TABLE gpkg_spatial_ref_sys (srs_name TEXT,srs_id INTEGER PRIMARY KEY,organization TEXT,organization_coordsys_id INTEGER,definition TEXT,description TEXT); CREATE TABLE roads (id INTEGER PRIMARY KEY);");gpkgDb.run("INSERT INTO gpkg_contents VALUES ('roads','features','Roads','Test layer','2026-10-28T00:00:00Z',0,0,1,1,4326); INSERT INTO gpkg_geometry_columns VALUES ('roads','geom','LINESTRING',4326,0,0); INSERT INTO gpkg_spatial_ref_sys VALUES ('WGS 84',4326,'EPSG',4326,'',''); INSERT INTO roads VALUES (1),(2);");const gpkgBytes=gpkgDb.export();gpkgDb.close();const gpkg=await inspectGeoPackage(gpkgBytes,sqlWasm);assert.equal(gpkg.layer_count,1);assert.equal(gpkg.layers[0].table_name,"roads");assert.equal(gpkg.layers[0].row_count,2);assert.equal(gpkg.layers[0].geometry.geometry_type_name,"LINESTRING");assert.equal(validateLocalParquetSql("SELECT count(*) FROM input"),"SELECT count(*) FROM input");assert.throws(()=>validateLocalParquetSql("SELECT * FROM read_parquet('https://example.com/x.parquet')"),/Remote I\/O|view named/);assert.throws(()=>validateLocalParquetSql("COPY input TO 'x.csv'"),/Only SELECT/);assert.throws(()=>validateLocalParquetSql("SELECT * FROM input; SELECT 1"),/Multiple/);
+const dom=new JSDOM('<!doctype html><div id="root"></div>',{url:"https://aafnaipatro.com"});globalThis.window=dom.window;globalThis.document=dom.window.document;globalThis.HTMLElement=dom.window.HTMLElement;
+let renderPass=0;for(const t of catalog){const root=document.getElementById("root");root.replaceChildren();await mount(root,t);assert.ok(root.querySelector("button"),"button missing "+t.operation);assert.ok(root.querySelector("input,textarea,select"),"input missing "+t.operation);const rendered=root.querySelector(".ct-output");assert.ok(rendered,"output missing "+t.operation);assert.ok(!root.querySelector(".ct-error"),"render error "+t.operation);if(!specFor(t.operation).file)assert.notEqual(rendered.textContent.trim(),"Ready.","default operation did not execute "+t.operation);if(t.source_category.match(/Finance|Benefits|Mortgage|Travel|Residency/i))assert.match(root.textContent,/not financial|not financial, tax, legal/i,"disclaimer missing "+t.operation);renderPass++}
+console.log(`Audit200 tests PASS: ${corePass}/200 core operations and ${renderPass}/200 render smokes; edge cases PASS`);
