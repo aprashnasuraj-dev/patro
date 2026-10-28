@@ -173,7 +173,7 @@
 /_mm530/*
   ! Content-Security-Policy
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' blob:; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
-  Cache-Control: public, max-age=300, s-maxage=86400
+  Cache-Control: no-cache, max-age=0, must-revalidate
   X-Robots-Tag: noindex, nofollow
 
 # Device permissions are enabled only for the two tools whose functions require them.
