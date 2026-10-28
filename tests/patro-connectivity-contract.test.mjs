@@ -41,7 +41,9 @@ test("Patro UI connectivity routes are backed by the production Worker entrypoin
   assert.ok(shim.includes('response.status !== 404'), "native Cloudflare routes must stay first choice");
   assert.ok(shim.includes('request.method !== "GET" && request.method !== "HEAD"'), "compatibility bridge must stay read-only");
   assert.ok(!shim.includes('path.startsWith("/api/v1/")'), "do not restore a generic /api/v1 catch-all proxy");
-  assert.ok(optimized.includes('import connectedWorker from "./connected-entry"'), "optimized entry must preserve the connected Worker as its base runtime");
+  assert.match(optimized,/import\s+connectedWorker\s*,?\s*(?:\{[^}]*\}\s*)?from\s+"\.\/connected-entry"/,"optimized entry must import the connected Worker runtime");
+  assert.ok(optimized.includes("...connectedWorker"),"optimized entry must preserve connected Worker exports as its base runtime");
+  assert.ok(optimized.includes("connectedWorker.fetch(request"),"optimized entry must retain connected Worker fetch as the final runtime fallback");
 
   assert.match(wranglerJson, /"main"\s*:\s*"worker\/optimized-entry\.ts"/);
   assert.match(wranglerJson, /"name"\s*:\s*"patro"/);
