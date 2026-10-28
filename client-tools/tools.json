@@ -11081,7 +11081,7 @@
     "category": "tool",
     "h1": "Live Photo to GIF",
     "title_tag": "Live Photo to GIF",
-    "meta_description": "Pair or accept the motion file locally, trim a short segment, and encode a browser-only GIF with limits. Runs locally in your browser; inputs stay on…",
+    "meta_description": "Pair or accept the motion file locally, trim a short segment, and encode a browser-only GIF with clear file and duration limits.",
     "target_long_tail_keyword": "live photo to gif",
     "faqs": [
       {
@@ -11219,7 +11219,7 @@
     "category": "tool",
     "h1": "AVIF to PNG",
     "title_tag": "AVIF to PNG",
-    "meta_description": "Net-new replacement for duplicate batch HEIC intent; preserves alpha when the decoded AVIF provides it. Runs locally in your browser; inputs stay on…",
+    "meta_description": "Convert AVIF to PNG locally in your browser while preserving alpha when available. Files stay on your device.",
     "target_long_tail_keyword": "avif to png",
     "faqs": [
       {
@@ -11312,7 +11312,7 @@
     "category": "tool",
     "h1": "Refinance Break-Even Calculator",
     "title_tag": "Refinance Break-Even Calculator",
-    "meta_description": "Compare old and new payment cash flows, fees and optional points without pretending to predict rates. Runs locally in your browser; inputs stay on…",
+    "meta_description": "Compare current and refinance payment cash flows, closing costs and break-even timing locally with explicit assumptions.",
     "target_long_tail_keyword": "refinance break even calculator",
     "faqs": [
       {
@@ -11547,7 +11547,7 @@
     "category": "tool",
     "h1": "Roth Conversion Tax Calculator",
     "title_tag": "Roth Conversion Tax Calculator",
-    "meta_description": "Use tax-year configuration and filing-status brackets; state tax is user-entered rather than guessed. Runs locally in your browser; inputs stay on…",
+    "meta_description": "Estimate incremental Roth conversion tax using configured filing-status brackets and a user-entered state rate.",
     "target_long_tail_keyword": "roth conversion tax calculator",
     "faqs": [
       {
@@ -11688,7 +11688,7 @@
     "category": "tool",
     "h1": "Social Security Break-Even Calculator",
     "title_tag": "Social Security Break-Even Calculator",
-    "meta_description": "Use user-entered monthly benefits at each claiming age; optionally apply a COLA assumption consistently. Runs locally in your browser; inputs stay on…",
+    "meta_description": "Compare user-entered Social Security claiming ages and monthly benefits, with an optional consistent COLA assumption.",
     "target_long_tail_keyword": "social security break even calculator",
     "faqs": [
       {
@@ -12158,7 +12158,7 @@
     "category": "tool",
     "h1": "1099 vs W-2 Take-Home Pay Calculator",
     "title_tag": "1099 vs W-2 Take-Home Pay Calculator",
-    "meta_description": "Net-new replacement created after merging freelancer quarterly and self-employment tax into one page. Runs locally in your browser; inputs stay on…",
+    "meta_description": "Compare 1099 and W-2 take-home scenarios locally using explicit compensation, expense, tax and benefit assumptions.",
     "target_long_tail_keyword": "1099 vs w2 take home calculator",
     "faqs": [
       {
