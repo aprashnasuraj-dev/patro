@@ -80,6 +80,8 @@
       "!/advancetools/index.html",
       "!/advancetools/web-tools",
       "!/advancetools/web-tools/*",
+      "!/advancetools/category/*",
+      "!/advancetools/category",
       "!/advancetools/sitemap.xml",
       "!/advancetools/module-manifest.json",
       "!/advancetools/assets",
@@ -99,7 +101,18 @@
       "!/advancetools/fontconverters",
       "!/advancetools/fontconverters/*",
       "!/advancetools/printablepaper",
-      "!/advancetools/printablepaper/*"
+      "!/advancetools/printablepaper/*",
+      "!/client-tools/*",
+      "!/sitemap-client-tools.xml",
+      "!/converter/*",
+      "!/calculator/*",
+      "!/tools/*",
+      "!/client-tools",
+      "!/converter",
+      "!/calculator",
+      "!/tools",
+      "!/tool/*",
+      "!/tool"
     ]
   },
   "d1_databases": [

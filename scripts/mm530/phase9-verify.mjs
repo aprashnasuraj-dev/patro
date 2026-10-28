@@ -50,9 +50,20 @@ const hubPath=path.join(dist,"advancetools/web-tools/index.html"),hub=await read
 assert(Boolean(hub),"DISCOVERY_HUB_MISSING","/advancetools/web-tools/ index missing");
 const oldCollections=["knittingcalculators","chordlibrary","workshopreference","fontconverters","printablepaper"];
 for(const c of oldCollections)assert(await exists(path.join(dist,"advancetools",c,"index.html")),"ADVANCED_COLLECTION_MISSING",c);
-for(const c of phase7.categories||[])assert(await exists(path.join(dist,"advancetools/web-tools",c.key,"index.html")),"CATEGORY_PAGE_MISSING",c.key);
+const discoveryCategoryRoutes=(advanced.routes||[]).filter(x=>x.kind==="web-tools-category").map(x=>x.path);
+assert(discoveryCategoryRoutes.length===Number(advanced.counts?.discoveryCategories||0),"ADVANCED_CATEGORY_COUNT",`manifest routes ${discoveryCategoryRoutes.length}, count ${advanced.counts?.discoveryCategories}`);
+assert(discoveryCategoryRoutes.length>0,"ADVANCED_CATEGORY_COUNT","no discovery categories emitted");
+const discoveryCategoryHtml=[];
+for(const route of discoveryCategoryRoutes){
+ const rel=route.replace(/^\/advancetools\//,"");
+ const file=path.join(dist,"advancetools",rel,"index.html");
+ assert(await exists(file),"CATEGORY_PAGE_MISSING",route);
+ if(await exists(file))discoveryCategoryHtml.push(await read(file));
+}
+const discoveryCombined=discoveryCategoryHtml.join("\n");
+for(const c of oldCollections)assert(discoveryCombined.includes(`href="/advancetools/${c}/"`),"SPECIALIST_CATEGORY_LINK_MISSING",c);
 assert(advanced.counts?.webTools===530,"ADVANCED_WEB_TOOL_COUNT",`module manifest says ${advanced.counts?.webTools}`);
-assert(advanced.counts?.webToolCategories===12,"ADVANCED_CATEGORY_COUNT",`module manifest says ${advanced.counts?.webToolCategories}`);
+assert(advanced.counts?.clientTools===350,"ADVANCED_CLIENT_TOOL_COUNT",`module manifest says ${advanced.counts?.clientTools}`);
 assert(advanced.pages>=2029,"ADVANCED_EXISTING_PAGE_REGRESSION",`advanced module has only ${advanced.pages} pages`);
 
 const titles=new Map(),descriptions=new Map(),seoRows=[],crawlerRows=[],toolRuntimeRows=[];let runtimeBytes=0,leafBytes=0,referenceRetention=0,limitationRetention=0,editorialLeaves=0,editorialSignalsExpected=0,editorialSignalsRetained=0;
@@ -134,7 +145,7 @@ for(const tool of registry){
   }
  }
  if(hub)assert(hub.includes(tool.route),"DISCOVERY_LINK_MISSING",tool.id);
- const categoryHtml=await read(path.join(dist,"advancetools/web-tools",tool.category,"index.html")).catch(()=>"");assert(categoryHtml.includes(tool.route),"CATEGORY_LINK_MISSING",tool.id);
+ assert(discoveryCombined.includes(`href="${tool.route}"`),"CATEGORY_LINK_MISSING",tool.id);
  seoRows.push({id:tool.id,route:tool.route,title,descriptionLength:desc.length,canonical});
 }
 
@@ -184,13 +195,13 @@ for(const chunk of viteChunks)assert(chunk.bytes<fiveMb,"VITE_CHUNK_OVER_5MB",`$
 for(const [kind,id] of Object.entries(representative))perf.representative[kind]={id,bytes:await dirBytes(path.join(dist,"_mm530",id))};
 for(const [name,p] of Object.entries({pdfjs:"vendor/pdfjs",pdfLib:"vendor/pdf-lib",ffmpeg:"assets/vendor/ffmpeg",sqljs:"assets/vendor/sqljs",mathjax:"vendor/mathjax",sheetjs:"assets/vendor/sheetjs"}))perf.sharedVendorBytes[name]=await dirBytes(path.join(dist,p));
 
-const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,categories:phase7.categories?.length||0,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
+const routeReport={schema_version:"MM530_PHASE9_ROUTE_REPORT_V1",registry:registry.length,unique_ids:new Set(registry.map(x=>x.id)).size,unique_routes:new Set(registry.map(x=>x.route)).size,source_categories:phase7.categories?.length||0,discovery_categories:discoveryCategoryRoutes.length,discovery_hub:Boolean(hub),existing_advanced_collections:oldCollections,advanced_pages:advanced.pages,runtime_routes:runtime.routes?.length||0,canonical_leaf_shells:seoRows.length};
 const seoReport={schema_version:"MM530_PHASE9_SEO_REPORT_V2",tools_checked:seoRows.length,unique_titles:titles.size,unique_descriptions:descriptions.size,complete_descriptions:seoRows.length,static_fallbacks:seoRows.length,reference_pages_checked:referenceRetention,limitation_pages_checked:limitationRetention,sitemap_urls:registry.length,rows:seoRows};
 const crawlerReport={schema_version:"MM530_CRAWLER_SEO_GATE_V2",status:blockers.some(x=>/^CRAWLER_|EDITORIAL_/.test(x.code))?"BLOCKED":"PASS",tools_checked:crawlerRows.length,standalone_static_shells:crawlerRows.filter(x=>x.outerModuleScripts===0).length,direct_runtime_iframes:crawlerRows.length,editorial_leaves:editorialLeaves,editorial_signals_expected:editorialSignalsExpected,editorial_signals_retained:editorialSignalsRetained,rows:crawlerRows};
 const buildReport={schema_version:"MM530_PHASE9_BUILD_REPORT_V1",runtime_manifest_routes:runtime.routes?.length||0,runtime_failures:runtime.failures||[],typescript_and_vite:"PASSED_BEFORE_THIS_POSTBUILD_VERIFIER",static_leaf_shells:seoRows.length,advanced_tool_pages:advanced.pages};
 const performanceReport={schema_version:"MM530_PHASE9_PERFORMANCE_REPORT_V1",measured_from:"dist",...perf,discovery_runtime_eager:false};
 const status=blockers.length?"BLOCKED":"PHASE_9_PASS",gate={schema_version:"MM530_PHASE9_GATE_V1",status,tools:registry.length,blocker_count:blockers.length,routing:blockers.some(x=>/ROUTE|MISSING|DISCOVERY|CATEGORY/.test(x.code))?"FAIL":"PASS",seo:blockers.some(x=>/SEO|CANONICAL|TITLE|SITEMAP|REFERENCES|LIMITATIONS|INTERNAL/.test(x.code))?"FAIL":"PASS",runtime_assets:blockers.some(x=>/RUNTIME/.test(x.code))?"FAIL":"PASS",performance_measured:true,publication:false};
-const summary={schema_version:"MM530_PHASE9_SUMMARY_V1",status,tools:registry.length,categories:phase7.categories?.length||0,existing_advanced_collections:oldCollections.length,blockers:blockers.length,publication:false};
+const summary={schema_version:"MM530_PHASE9_SUMMARY_V1",status,tools:registry.length,source_categories:phase7.categories?.length||0,discovery_categories:discoveryCategoryRoutes.length,existing_advanced_collections:oldCollections.length,blockers:blockers.length,publication:false};
 for(const [name,data] of Object.entries({"build-report.json":buildReport,"route-report.json":routeReport,"seo-report.json":seoReport,"crawler-seo-report.json":crawlerReport,"performance-report.json":performanceReport,"blockers.json":blockers,"gate.json":gate,"summary.json":summary}))await fs.writeFile(path.join(out,name),JSON.stringify(data,null,2)+"\n");
 console.log("MM530_PHASE9_RESULT="+JSON.stringify({status,blockers:blockers.length,tools:registry.length,advancedPages:advanced.pages,performance:perf}));
 if(blockers.length){console.error(JSON.stringify(blockers.slice(0,100),null,2));process.exitCode=1}

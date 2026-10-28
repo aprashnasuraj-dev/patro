@@ -1,0 +1,13 @@
+const node=document.getElementById("ct-config"),root=document.getElementById("ct-tool");
+if(!node||!root)throw new Error("Client tool configuration missing");
+const cfg=JSON.parse(node.textContent);
+const themeButton=document.getElementById("ct-theme-toggle");
+const savedTheme=localStorage.getItem("ct:theme");
+if(savedTheme)document.documentElement.dataset.theme=savedTheme;
+themeButton?.addEventListener("click",()=>{const next=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=next;localStorage.setItem("ct:theme",next);themeButton.setAttribute("aria-pressed",String(next==="dark"))});
+const privacy=document.createElement("p");
+privacy.className="ct-privacy";
+privacy.textContent="Private by default: processing happens in this browser. No file, pasted text or calculator value is sent to an AafnaiPatro tool API.";
+root.before(privacy);
+const run=async()=>{try{const mod=await import("./engines/"+cfg.engine+".mjs");await mod.mount(root,cfg)}catch(err){const box=document.createElement("div");box.className="ct-status ct-error";box.setAttribute("role","alert");box.textContent="This browser could not start the tool. "+String(err?.message||err);root.replaceChildren(box)}};
+if("requestIdleCallback"in window)requestIdleCallback(run,{timeout:500});else setTimeout(run,0);

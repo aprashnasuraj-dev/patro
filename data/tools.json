@@ -1,0 +1,1552 @@
+[
+  {
+    "id": "CT-301",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-pdf",
+    "title": "HEIC to PDF",
+    "primary_keyword": "heic to pdf",
+    "long_tail_variants": [
+      "convert heic to pdf offline",
+      "iphone heic to pdf private",
+      "heic photos to one pdf",
+      "heic to pdf browser"
+    ],
+    "search_intent": "Convert one or more HEIC photos into a local PDF.",
+    "short_description": "Decode HEIC locally, preserve orientation, size pages to the image, and download a PDF without uploading files.",
+    "faq_seeds": [
+      "Does HEIC to PDF send my files or values to a server?",
+      "What inputs does HEIC to PDF support?",
+      "How accurate is HEIC to PDF?",
+      "What are the main limits of HEIC to PDF?"
+    ],
+    "related_tool_ids": [
+      "CT-302",
+      "CT-303",
+      "CT-304"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-302",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-jpg-under-1mb",
+    "title": "HEIC to JPG Under 1 MB or 2 MB",
+    "primary_keyword": "heic to jpg under 1mb",
+    "long_tail_variants": [
+      "heic to jpg under 2mb",
+      "compress heic to jpg 1mb",
+      "iphone photo jpg under 2mb",
+      "heic upload size reducer"
+    ],
+    "search_intent": "Convert HEIC to a JPEG that fits a common upload limit.",
+    "short_description": "Binary-search JPEG quality and resize only when needed to meet 1 MB or 2 MB targets.",
+    "faq_seeds": [
+      "Does HEIC to JPG Under 1 MB or 2 MB send my files or values to a server?",
+      "What inputs does HEIC to JPG Under 1 MB or 2 MB support?",
+      "How accurate is HEIC to JPG Under 1 MB or 2 MB?",
+      "What are the main limits of HEIC to JPG Under 1 MB or 2 MB?"
+    ],
+    "related_tool_ids": [
+      "CT-303",
+      "CT-304",
+      "CT-305"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-303",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-webp",
+    "title": "HEIC to WebP",
+    "primary_keyword": "heic to webp",
+    "long_tail_variants": [
+      "convert heic to webp offline",
+      "iphone heic webp converter",
+      "heic webp browser",
+      "heif to webp private"
+    ],
+    "search_intent": "Convert HEIC/HEIF photos to WebP locally.",
+    "short_description": "Decode HEIC in a worker, encode WebP in-browser, and show before/after file sizes.",
+    "faq_seeds": [
+      "Does HEIC to WebP send my files or values to a server?",
+      "What inputs does HEIC to WebP support?",
+      "How accurate is HEIC to WebP?",
+      "What are the main limits of HEIC to WebP?"
+    ],
+    "related_tool_ids": [
+      "CT-304",
+      "CT-305",
+      "CT-306"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-304",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-viewer",
+    "title": "HEIC Viewer",
+    "primary_keyword": "heic viewer",
+    "long_tail_variants": [
+      "view heic online without upload",
+      "open heic in browser private",
+      "iphone heic viewer",
+      "heif viewer offline"
+    ],
+    "search_intent": "Open HEIC photos in the browser without making a permanent converted copy.",
+    "short_description": "Render a decoded preview locally and expose dimensions and color-space caveats.",
+    "faq_seeds": [
+      "Does HEIC Viewer send my files or values to a server?",
+      "What inputs does HEIC Viewer support?",
+      "How accurate is HEIC Viewer?",
+      "What are the main limits of HEIC Viewer?"
+    ],
+    "related_tool_ids": [
+      "CT-305",
+      "CT-306",
+      "CT-307"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-305",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-exif-viewer",
+    "title": "HEIC Metadata and EXIF Viewer",
+    "primary_keyword": "heic exif viewer",
+    "long_tail_variants": [
+      "heic metadata viewer",
+      "view iphone photo exif offline",
+      "heic gps metadata checker",
+      "heif exif reader"
+    ],
+    "search_intent": "Inspect HEIC metadata without uploading the photo.",
+    "short_description": "Read container and EXIF fields locally, clearly separating unavailable fields from stripped data.",
+    "faq_seeds": [
+      "Does HEIC Metadata and EXIF Viewer send my files or values to a server?",
+      "What inputs does HEIC Metadata and EXIF Viewer support?",
+      "How accurate is HEIC Metadata and EXIF Viewer?",
+      "What are the main limits of HEIC Metadata and EXIF Viewer?"
+    ],
+    "related_tool_ids": [
+      "CT-306",
+      "CT-307",
+      "CT-308"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-306",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/avif-to-jpg",
+    "title": "AVIF to JPG",
+    "primary_keyword": "avif to jpg",
+    "long_tail_variants": [
+      "convert avif to jpeg offline",
+      "avif jpg browser converter",
+      "avif to jpg private",
+      "avif image to jpeg"
+    ],
+    "search_intent": "Convert AVIF images to widely compatible JPEG files.",
+    "short_description": "Decode with the browser where supported, fall back to a lazy codec only when needed, and export JPEG locally.",
+    "faq_seeds": [
+      "Does AVIF to JPG send my files or values to a server?",
+      "What inputs does AVIF to JPG support?",
+      "How accurate is AVIF to JPG?",
+      "What are the main limits of AVIF to JPG?"
+    ],
+    "related_tool_ids": [
+      "CT-307",
+      "CT-308",
+      "CT-309"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-307",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/live-photo-to-gif",
+    "title": "Live Photo to GIF",
+    "primary_keyword": "live photo to gif",
+    "long_tail_variants": [
+      "iphone live photo gif offline",
+      "mov jpg live photo to gif",
+      "live photo gif converter private",
+      "apple live photo animated gif"
+    ],
+    "search_intent": "Turn the motion part of an Apple Live Photo into a GIF.",
+    "short_description": "Pair or accept the motion file locally, trim a short segment, and encode a browser-only GIF with limits.",
+    "faq_seeds": [
+      "Does Live Photo to GIF send my files or values to a server?",
+      "What inputs does Live Photo to GIF support?",
+      "How accurate is Live Photo to GIF?",
+      "What are the main limits of Live Photo to GIF?"
+    ],
+    "related_tool_ids": [
+      "CT-308",
+      "CT-309",
+      "CT-310"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-308",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-passport-photo-jpg",
+    "title": "HEIC to Passport Photo JPG",
+    "primary_keyword": "heic to passport photo jpg",
+    "long_tail_variants": [
+      "heic passport upload jpg",
+      "iphone heic visa photo jpg",
+      "heic photo resize passport upload",
+      "heic jpg visa upload"
+    ],
+    "search_intent": "Prepare a HEIC portrait as a JPEG with user-selected passport/visa pixel and file-size constraints.",
+    "short_description": "Convert, crop and resize locally; the tool does not claim compliance with any specific government photo rules.",
+    "faq_seeds": [
+      "Does HEIC to Passport Photo JPG send my files or values to a server?",
+      "What inputs does HEIC to Passport Photo JPG support?",
+      "How accurate is HEIC to Passport Photo JPG?",
+      "What are the main limits of HEIC to Passport Photo JPG?"
+    ],
+    "related_tool_ids": [
+      "CT-309",
+      "CT-310",
+      "CT-301"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-309",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/heic-to-png",
+    "title": "HEIC to PNG",
+    "primary_keyword": "heic to png",
+    "long_tail_variants": [
+      "convert heic to png offline",
+      "iphone heic png private",
+      "heif to png browser",
+      "heic lossless png converter"
+    ],
+    "search_intent": "Convert HEIC/HEIF photos to PNG locally.",
+    "short_description": "Net-new replacement for a duplicate HEIC-to-JPG privacy request; decoded pixels stay on-device.",
+    "faq_seeds": [
+      "Does HEIC to PNG send my files or values to a server?",
+      "What inputs does HEIC to PNG support?",
+      "How accurate is HEIC to PNG?",
+      "What are the main limits of HEIC to PNG?"
+    ],
+    "related_tool_ids": [
+      "CT-310",
+      "CT-301",
+      "CT-302"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-310",
+    "category": "image",
+    "url_kind": "tool",
+    "slug": "/tool/avif-to-png",
+    "title": "AVIF to PNG",
+    "primary_keyword": "avif to png",
+    "long_tail_variants": [
+      "convert avif to png offline",
+      "avif png browser converter",
+      "avif to png transparent",
+      "avif image to png"
+    ],
+    "search_intent": "Convert AVIF images to PNG locally.",
+    "short_description": "Net-new replacement for duplicate batch HEIC intent; preserves alpha when the decoded AVIF provides it.",
+    "faq_seeds": [
+      "Does AVIF to PNG send my files or values to a server?",
+      "What inputs does AVIF to PNG support?",
+      "How accurate is AVIF to PNG?",
+      "What are the main limits of AVIF to PNG?"
+    ],
+    "related_tool_ids": [
+      "CT-301",
+      "CT-302",
+      "CT-303"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-311",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/mortgage-recast",
+    "title": "Mortgage Recast Calculator",
+    "primary_keyword": "mortgage recast calculator",
+    "long_tail_variants": [
+      "mortgage recast payment calculator",
+      "recast mortgage after lump sum",
+      "mortgage recast savings",
+      "new payment after principal payment"
+    ],
+    "search_intent": "Estimate the payment and interest impact of recasting a fixed-rate mortgage.",
+    "short_description": "Re-amortize the remaining balance over the remaining term after a lump-sum principal payment.",
+    "faq_seeds": [
+      "Does Mortgage Recast Calculator send my files or values to a server?",
+      "What inputs does Mortgage Recast Calculator support?",
+      "How accurate is Mortgage Recast Calculator?",
+      "What are the main limits of Mortgage Recast Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-312",
+      "CT-313",
+      "CT-314"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-312",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/refinance-break-even",
+    "title": "Refinance Break-Even Calculator",
+    "primary_keyword": "refinance break even calculator",
+    "long_tail_variants": [
+      "mortgage refinance closing cost break even",
+      "refi break even months",
+      "refinance savings calculator fees",
+      "refinance payback period"
+    ],
+    "search_intent": "Estimate how long refinance savings take to recover closing costs.",
+    "short_description": "Compare old and new payment cash flows, fees and optional points without pretending to predict rates.",
+    "faq_seeds": [
+      "Does Refinance Break-Even Calculator send my files or values to a server?",
+      "What inputs does Refinance Break-Even Calculator support?",
+      "How accurate is Refinance Break-Even Calculator?",
+      "What are the main limits of Refinance Break-Even Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-313",
+      "CT-314",
+      "CT-315"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-313",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/pmi-removal-date",
+    "title": "PMI Removal Date Calculator",
+    "primary_keyword": "pmi removal date calculator",
+    "long_tail_variants": [
+      "when can i remove pmi calculator",
+      "pmi 80 percent date",
+      "pmi 78 percent automatic termination",
+      "mortgage pmi cancellation date"
+    ],
+    "search_intent": "Estimate scheduled dates when conventional PMI may reach 80% request or 78% automatic-termination thresholds.",
+    "short_description": "Model amortization against original value and clearly flag lender/investor exceptions.",
+    "faq_seeds": [
+      "Does PMI Removal Date Calculator send my files or values to a server?",
+      "What inputs does PMI Removal Date Calculator support?",
+      "How accurate is PMI Removal Date Calculator?",
+      "What are the main limits of PMI Removal Date Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-314",
+      "CT-315",
+      "CT-316"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-314",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/arm-payment-adjustment",
+    "title": "ARM Payment Adjustment Calculator",
+    "primary_keyword": "arm payment adjustment calculator",
+    "long_tail_variants": [
+      "adjustable rate mortgage new payment",
+      "arm reset payment calculator",
+      "mortgage rate cap payment calculator",
+      "arm rate adjustment estimate"
+    ],
+    "search_intent": "Estimate an ARM payment after an index/margin reset and contractual caps.",
+    "short_description": "Apply user-entered index, margin, periodic/lifetime caps, balance and remaining term.",
+    "faq_seeds": [
+      "Does ARM Payment Adjustment Calculator send my files or values to a server?",
+      "What inputs does ARM Payment Adjustment Calculator support?",
+      "How accurate is ARM Payment Adjustment Calculator?",
+      "What are the main limits of ARM Payment Adjustment Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-315",
+      "CT-316",
+      "CT-317"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-315",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/heloc-vs-cash-out-refinance",
+    "title": "HELOC vs Cash-Out Refinance Calculator",
+    "primary_keyword": "heloc vs cash out refinance calculator",
+    "long_tail_variants": [
+      "heloc or cash out refi",
+      "cash out refinance vs heloc cost",
+      "heloc comparison calculator",
+      "home equity borrowing comparison"
+    ],
+    "search_intent": "Compare borrowing costs between a HELOC and cash-out refinance.",
+    "short_description": "Show separate rate assumptions, fees, draw amount and mortgage balance effects.",
+    "faq_seeds": [
+      "Does HELOC vs Cash-Out Refinance Calculator send my files or values to a server?",
+      "What inputs does HELOC vs Cash-Out Refinance Calculator support?",
+      "How accurate is HELOC vs Cash-Out Refinance Calculator?",
+      "What are the main limits of HELOC vs Cash-Out Refinance Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-316",
+      "CT-317",
+      "CT-318"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-316",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/barista-fire",
+    "title": "Barista FIRE Calculator",
+    "primary_keyword": "barista fire calculator",
+    "long_tail_variants": [
+      "part time fire calculator",
+      "barista fire number",
+      "semi retirement gap calculator",
+      "part time income retirement calculator"
+    ],
+    "search_intent": "Estimate the portfolio needed when part-time income covers part of retirement spending.",
+    "short_description": "Net-new replacement for the existing Coast FIRE calculator.",
+    "faq_seeds": [
+      "Does Barista FIRE Calculator send my files or values to a server?",
+      "What inputs does Barista FIRE Calculator support?",
+      "How accurate is Barista FIRE Calculator?",
+      "What are the main limits of Barista FIRE Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-317",
+      "CT-318",
+      "CT-319"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-317",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/roth-conversion-tax",
+    "title": "Roth Conversion Tax Calculator",
+    "primary_keyword": "roth conversion tax calculator",
+    "long_tail_variants": [
+      "roth conversion bracket calculator",
+      "ira to roth conversion tax estimate",
+      "roth conversion marginal tax",
+      "roth conversion amount estimator"
+    ],
+    "search_intent": "Estimate incremental federal income tax from a Roth conversion.",
+    "short_description": "Use tax-year configuration and filing-status brackets; state tax is user-entered rather than guessed.",
+    "faq_seeds": [
+      "Does Roth Conversion Tax Calculator send my files or values to a server?",
+      "What inputs does Roth Conversion Tax Calculator support?",
+      "How accurate is Roth Conversion Tax Calculator?",
+      "What are the main limits of Roth Conversion Tax Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-318",
+      "CT-319",
+      "CT-320"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-318",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/rule-55-withdrawal-penalty",
+    "title": "Rule of 55 Withdrawal Penalty Calculator",
+    "primary_keyword": "rule of 55 calculator",
+    "long_tail_variants": [
+      "401k rule of 55 penalty",
+      "early withdrawal rule 55 calculator",
+      "401k age 55 withdrawal tax",
+      "rule 55 vs ira penalty"
+    ],
+    "search_intent": "Compare potential 10% early-withdrawal penalty treatment with a Rule of 55 scenario.",
+    "short_description": "Explain eligibility assumptions and estimate tax/penalty differences only.",
+    "faq_seeds": [
+      "Does Rule of 55 Withdrawal Penalty Calculator send my files or values to a server?",
+      "What inputs does Rule of 55 Withdrawal Penalty Calculator support?",
+      "How accurate is Rule of 55 Withdrawal Penalty Calculator?",
+      "What are the main limits of Rule of 55 Withdrawal Penalty Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-319",
+      "CT-320",
+      "CT-321"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-319",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/required-minimum-distribution",
+    "title": "Required Minimum Distribution Calculator",
+    "primary_keyword": "rmd calculator",
+    "long_tail_variants": [
+      "2026 rmd calculator",
+      "ira required minimum distribution",
+      "rmd age 73 calculator",
+      "uniform lifetime table rmd"
+    ],
+    "search_intent": "Estimate an owner RMD using the applicable IRS life-expectancy factor.",
+    "short_description": "Keep tables and tax-year rules in configuration and distinguish owner RMDs from inherited-IRA rules.",
+    "faq_seeds": [
+      "Does Required Minimum Distribution Calculator send my files or values to a server?",
+      "What inputs does Required Minimum Distribution Calculator support?",
+      "How accurate is Required Minimum Distribution Calculator?",
+      "What are the main limits of Required Minimum Distribution Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-320",
+      "CT-321",
+      "CT-322"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-320",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/social-security-break-even",
+    "title": "Social Security Break-Even Calculator",
+    "primary_keyword": "social security break even calculator",
+    "long_tail_variants": [
+      "claim social security 62 vs 67 break even",
+      "social security delay break even age",
+      "retirement benefit break even",
+      "social security claiming age comparison"
+    ],
+    "search_intent": "Compare cumulative benefits for two Social Security claiming choices.",
+    "short_description": "Use user-entered monthly benefits at each claiming age; optionally apply a COLA assumption consistently.",
+    "faq_seeds": [
+      "Does Social Security Break-Even Calculator send my files or values to a server?",
+      "What inputs does Social Security Break-Even Calculator support?",
+      "How accurate is Social Security Break-Even Calculator?",
+      "What are the main limits of Social Security Break-Even Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-321",
+      "CT-322",
+      "CT-323"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-321",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/freelancer-quarterly-tax",
+    "title": "Freelancer Quarterly Tax Calculator",
+    "primary_keyword": "freelancer quarterly estimated tax calculator",
+    "long_tail_variants": [
+      "1099 quarterly tax calculator",
+      "self employment tax calculator 2026",
+      "freelancer estimated tax payments",
+      "quarterly tax safe harbor calculator"
+    ],
+    "search_intent": "Estimate federal income tax, self-employment tax and quarterly payment targets for freelancers.",
+    "short_description": "Merged hub for the requested quarterly-estimated-tax and self-employment-tax tools to avoid duplicate pages.",
+    "faq_seeds": [
+      "Does Freelancer Quarterly Tax Calculator send my files or values to a server?",
+      "What inputs does Freelancer Quarterly Tax Calculator support?",
+      "How accurate is Freelancer Quarterly Tax Calculator?",
+      "What are the main limits of Freelancer Quarterly Tax Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-322",
+      "CT-323",
+      "CT-324"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "merged"
+  },
+  {
+    "id": "CT-322",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/hourly-to-salary-benefits",
+    "title": "Hourly to Salary with Benefits Calculator",
+    "primary_keyword": "hourly to salary with benefits calculator",
+    "long_tail_variants": [
+      "total compensation hourly vs salary",
+      "hourly wage benefits value",
+      "salary equivalent with pto health insurance",
+      "hourly to annual compensation"
+    ],
+    "search_intent": "Compare hourly pay with salary plus employer-provided benefits.",
+    "short_description": "Value PTO, employer health contribution, retirement match and other benefits separately.",
+    "faq_seeds": [
+      "Does Hourly to Salary with Benefits Calculator send my files or values to a server?",
+      "What inputs does Hourly to Salary with Benefits Calculator support?",
+      "How accurate is Hourly to Salary with Benefits Calculator?",
+      "What are the main limits of Hourly to Salary with Benefits Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-323",
+      "CT-324",
+      "CT-325"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-323",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/lease-vs-buy-car",
+    "title": "Lease vs Buy Car Calculator",
+    "primary_keyword": "lease vs buy car calculator",
+    "long_tail_variants": [
+      "car lease vs finance calculator",
+      "lease or buy vehicle cost",
+      "auto lease total cost comparison",
+      "car ownership lease comparison"
+    ],
+    "search_intent": "Compare lease cash flows with financing and resale assumptions.",
+    "short_description": "Show acquisition fees, taxes, mileage/overage assumptions, loan costs and estimated resale value.",
+    "faq_seeds": [
+      "Does Lease vs Buy Car Calculator send my files or values to a server?",
+      "What inputs does Lease vs Buy Car Calculator support?",
+      "How accurate is Lease vs Buy Car Calculator?",
+      "What are the main limits of Lease vs Buy Car Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-324",
+      "CT-325",
+      "CT-326"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-324",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/balance-transfer-fee",
+    "title": "Balance Transfer Fee Calculator",
+    "primary_keyword": "balance transfer fee calculator",
+    "long_tail_variants": [
+      "0 apr balance transfer calculator",
+      "balance transfer savings with fee",
+      "credit card transfer break even",
+      "promo apr transfer calculator"
+    ],
+    "search_intent": "Estimate whether a balance transfer saves money after its upfront fee and promo period.",
+    "short_description": "Compare promotional APR duration, transfer fee, payment amount and fallback APR.",
+    "faq_seeds": [
+      "Does Balance Transfer Fee Calculator send my files or values to a server?",
+      "What inputs does Balance Transfer Fee Calculator support?",
+      "How accurate is Balance Transfer Fee Calculator?",
+      "What are the main limits of Balance Transfer Fee Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-325",
+      "CT-326",
+      "CT-327"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-325",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/mortgage-points-break-even",
+    "title": "Mortgage Points Break-Even Calculator",
+    "primary_keyword": "mortgage points break even calculator",
+    "long_tail_variants": [
+      "buy mortgage points break even",
+      "discount points calculator months",
+      "mortgage rate points payback",
+      "points vs no points calculator"
+    ],
+    "search_intent": "Estimate how long monthly payment savings take to recover discount-point costs.",
+    "short_description": "Net-new replacement for the existing debt snowball/avalanche tool.",
+    "faq_seeds": [
+      "Does Mortgage Points Break-Even Calculator send my files or values to a server?",
+      "What inputs does Mortgage Points Break-Even Calculator support?",
+      "How accurate is Mortgage Points Break-Even Calculator?",
+      "What are the main limits of Mortgage Points Break-Even Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-326",
+      "CT-327",
+      "CT-328"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-326",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/house-hacking-rent-offset",
+    "title": "House Hacking Rent Offset Calculator",
+    "primary_keyword": "house hacking calculator",
+    "long_tail_variants": [
+      "house hack rent offset calculator",
+      "duplex mortgage rent offset",
+      "room rental mortgage offset",
+      "house hacking cash flow estimate"
+    ],
+    "search_intent": "Estimate how roommate or unit rent changes the owner's effective monthly housing cost.",
+    "short_description": "Net-new replacement for existing rental cap-rate/cash-flow calculators.",
+    "faq_seeds": [
+      "Does House Hacking Rent Offset Calculator send my files or values to a server?",
+      "What inputs does House Hacking Rent Offset Calculator support?",
+      "How accurate is House Hacking Rent Offset Calculator?",
+      "What are the main limits of House Hacking Rent Offset Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-327",
+      "CT-328",
+      "CT-329"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-327",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/rsu-sell-to-cover",
+    "title": "RSU Sell-to-Cover Calculator",
+    "primary_keyword": "rsu sell to cover calculator",
+    "long_tail_variants": [
+      "rsu shares to sell for taxes",
+      "restricted stock sell to cover",
+      "rsu withholding shares calculator",
+      "rsu net shares after tax"
+    ],
+    "search_intent": "Estimate how many vested RSU shares may need to be sold to cover entered withholding targets.",
+    "short_description": "Net-new replacement for the existing RSU withholding-gap calculator.",
+    "faq_seeds": [
+      "Does RSU Sell-to-Cover Calculator send my files or values to a server?",
+      "What inputs does RSU Sell-to-Cover Calculator support?",
+      "How accurate is RSU Sell-to-Cover Calculator?",
+      "What are the main limits of RSU Sell-to-Cover Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-328",
+      "CT-329",
+      "CT-330"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-328",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/iso-amt-estimator",
+    "title": "ISO Stock Option AMT Estimator",
+    "primary_keyword": "iso stock option amt calculator",
+    "long_tail_variants": [
+      "incentive stock option amt estimator",
+      "iso bargain element amt",
+      "exercise iso amt calculator",
+      "stock option alternative minimum tax"
+    ],
+    "search_intent": "Estimate the AMT impact of exercising incentive stock options.",
+    "short_description": "Use 2026 AMT exemptions/rates from config and clearly exclude state-specific rules unless entered.",
+    "faq_seeds": [
+      "Does ISO Stock Option AMT Estimator send my files or values to a server?",
+      "What inputs does ISO Stock Option AMT Estimator support?",
+      "How accurate is ISO Stock Option AMT Estimator?",
+      "What are the main limits of ISO Stock Option AMT Estimator?"
+    ],
+    "related_tool_ids": [
+      "CT-329",
+      "CT-330",
+      "CT-311"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-329",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/inflation-adjusted-salary",
+    "title": "Inflation-Adjusted Salary Calculator",
+    "primary_keyword": "inflation adjusted salary calculator",
+    "long_tail_variants": [
+      "salary inflation comparison",
+      "what salary equals old salary today",
+      "real wage comparison calculator",
+      "cost of living salary inflation"
+    ],
+    "search_intent": "Compare two salaries in real purchasing-power terms using a user-entered or CPI-derived rate.",
+    "short_description": "Keep the core calculation transparent and separate inflation from location-specific cost of living.",
+    "faq_seeds": [
+      "Does Inflation-Adjusted Salary Calculator send my files or values to a server?",
+      "What inputs does Inflation-Adjusted Salary Calculator support?",
+      "How accurate is Inflation-Adjusted Salary Calculator?",
+      "What are the main limits of Inflation-Adjusted Salary Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-330",
+      "CT-311",
+      "CT-312"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-330",
+    "category": "finance",
+    "url_kind": "tool",
+    "slug": "/tool/1099-vs-w2-take-home",
+    "title": "1099 vs W-2 Take-Home Pay Calculator",
+    "primary_keyword": "1099 vs w2 take home calculator",
+    "long_tail_variants": [
+      "contractor vs employee pay calculator",
+      "1099 equivalent salary calculator",
+      "w2 vs contractor after tax",
+      "self employed vs employee compensation"
+    ],
+    "search_intent": "Compare estimated take-home and benefits value for contractor and employee offers.",
+    "short_description": "Net-new replacement created after merging freelancer quarterly and self-employment tax into one page.",
+    "faq_seeds": [
+      "Does 1099 vs W-2 Take-Home Pay Calculator send my files or values to a server?",
+      "What inputs does 1099 vs W-2 Take-Home Pay Calculator support?",
+      "How accurate is 1099 vs W-2 Take-Home Pay Calculator?",
+      "What are the main limits of 1099 vs W-2 Take-Home Pay Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-311",
+      "CT-312",
+      "CT-313"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-331",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/cron-expression-explainer",
+    "title": "Cron Expression Explainer",
+    "primary_keyword": "cron expression explainer",
+    "long_tail_variants": [
+      "cron next 10 runs",
+      "cron dst explainer",
+      "cron schedule human readable",
+      "cron github actions kubernetes"
+    ],
+    "search_intent": "Explain a five-field cron expression, preview the next ten runs and flag DST/time-zone behavior.",
+    "short_description": "The page also outputs GitHub Actions and Kubernetes schedule snippets so a separate duplicate cron converter is unnecessary.",
+    "faq_seeds": [
+      "Does Cron Expression Explainer send my files or values to a server?",
+      "What inputs does Cron Expression Explainer support?",
+      "How accurate is Cron Expression Explainer?",
+      "What are the main limits of Cron Expression Explainer?"
+    ],
+    "related_tool_ids": [
+      "CT-332",
+      "CT-333",
+      "CT-334"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "merged"
+  },
+  {
+    "id": "CT-332",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/docker-run-to-docker-compose",
+    "title": "docker run to Docker Compose Converter",
+    "primary_keyword": "docker run to docker compose",
+    "long_tail_variants": [
+      "convert docker run to compose yaml",
+      "docker command to compose",
+      "docker run compose converter offline",
+      "docker run to yaml"
+    ],
+    "search_intent": "Convert a common docker run command into a Docker Compose service.",
+    "short_description": "Parse supported flags locally, preserve unknown flags as warnings, and never execute commands.",
+    "faq_seeds": [
+      "Does docker run to Docker Compose Converter send my files or values to a server?",
+      "What inputs does docker run to Docker Compose Converter support?",
+      "How accurate is docker run to Docker Compose Converter?",
+      "What are the main limits of docker run to Docker Compose Converter?"
+    ],
+    "related_tool_ids": [
+      "CT-333",
+      "CT-334",
+      "CT-335"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-333",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/curl-to-fetch-axios-python",
+    "title": "cURL to Fetch Axios Python Converter",
+    "primary_keyword": "curl to fetch axios python",
+    "long_tail_variants": [
+      "curl to javascript fetch",
+      "curl to axios converter",
+      "curl to python requests",
+      "convert curl command offline"
+    ],
+    "search_intent": "Convert a cURL request into Fetch, Axios or Python requests code.",
+    "short_description": "Parse headers, method, body and auth locally; secrets remain in the browser.",
+    "faq_seeds": [
+      "Does cURL to Fetch Axios Python Converter send my files or values to a server?",
+      "What inputs does cURL to Fetch Axios Python Converter support?",
+      "How accurate is cURL to Fetch Axios Python Converter?",
+      "What are the main limits of cURL to Fetch Axios Python Converter?"
+    ],
+    "related_tool_ids": [
+      "CT-334",
+      "CT-335",
+      "CT-336"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-334",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/regex-explainer",
+    "title": "Regex Explainer",
+    "primary_keyword": "regex explainer",
+    "long_tail_variants": [
+      "explain regex in plain english",
+      "regex breakdown tool",
+      "regex meaning explainer",
+      "javascript regex explanation"
+    ],
+    "search_intent": "Explain a regular expression token by token in plain English.",
+    "short_description": "Do not execute unbounded catastrophic patterns; explanation is static parsing first.",
+    "faq_seeds": [
+      "Does Regex Explainer send my files or values to a server?",
+      "What inputs does Regex Explainer support?",
+      "How accurate is Regex Explainer?",
+      "What are the main limits of Regex Explainer?"
+    ],
+    "related_tool_ids": [
+      "CT-335",
+      "CT-336",
+      "CT-337"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-335",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/sql-formatter-bigquery-snowflake",
+    "title": "SQL Formatter for BigQuery and Snowflake",
+    "primary_keyword": "bigquery snowflake sql formatter",
+    "long_tail_variants": [
+      "bigquery sql formatter",
+      "snowflake sql formatter",
+      "format sql dialect offline",
+      "sql pretty printer bigquery"
+    ],
+    "search_intent": "Format SQL with dialect-aware keyword and identifier handling for BigQuery and Snowflake.",
+    "short_description": "Formatting only; no query is sent or executed.",
+    "faq_seeds": [
+      "Does SQL Formatter for BigQuery and Snowflake send my files or values to a server?",
+      "What inputs does SQL Formatter for BigQuery and Snowflake support?",
+      "How accurate is SQL Formatter for BigQuery and Snowflake?",
+      "What are the main limits of SQL Formatter for BigQuery and Snowflake?"
+    ],
+    "related_tool_ids": [
+      "CT-336",
+      "CT-337",
+      "CT-338"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-336",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/ipv6-cidr-subnet",
+    "title": "IPv6 CIDR Subnet Calculator",
+    "primary_keyword": "ipv6 cidr subnet calculator",
+    "long_tail_variants": [
+      "ipv6 subnet calculator",
+      "ipv6 cidr range calculator",
+      "ipv6 prefix calculator",
+      "ipv6 network address range"
+    ],
+    "search_intent": "Calculate IPv6 network ranges, prefix size and address counts from CIDR input.",
+    "short_description": "Use BigInt arithmetic and canonical compressed/expanded representations.",
+    "faq_seeds": [
+      "Does IPv6 CIDR Subnet Calculator send my files or values to a server?",
+      "What inputs does IPv6 CIDR Subnet Calculator support?",
+      "How accurate is IPv6 CIDR Subnet Calculator?",
+      "What are the main limits of IPv6 CIDR Subnet Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-337",
+      "CT-338",
+      "CT-339"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-337",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/chmod-permission",
+    "title": "chmod Permission Calculator",
+    "primary_keyword": "chmod calculator",
+    "long_tail_variants": [
+      "linux file permission calculator",
+      "chmod 755 calculator",
+      "unix permission bits calculator",
+      "symbolic chmod converter"
+    ],
+    "search_intent": "Convert Unix permission bits between octal, symbolic and checkbox forms.",
+    "short_description": "Explain setuid, setgid and sticky bits without running shell commands.",
+    "faq_seeds": [
+      "Does chmod Permission Calculator send my files or values to a server?",
+      "What inputs does chmod Permission Calculator support?",
+      "How accurate is chmod Permission Calculator?",
+      "What are the main limits of chmod Permission Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-338",
+      "CT-339",
+      "CT-340"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-338",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/llm-token-counter",
+    "title": "LLM Token Counter with Model Cost",
+    "primary_keyword": "llm token counter cost calculator",
+    "long_tail_variants": [
+      "gpt token counter cost",
+      "claude token cost calculator",
+      "prompt token price calculator",
+      "llm input output token calculator"
+    ],
+    "search_intent": "Count/estimate tokens locally and calculate cost from a versioned model-pricing config.",
+    "short_description": "No prompt content is transmitted; exactness depends on available local tokenizer support.",
+    "faq_seeds": [
+      "Does LLM Token Counter with Model Cost send my files or values to a server?",
+      "What inputs does LLM Token Counter with Model Cost support?",
+      "How accurate is LLM Token Counter with Model Cost?",
+      "What are the main limits of LLM Token Counter with Model Cost?"
+    ],
+    "related_tool_ids": [
+      "CT-339",
+      "CT-340",
+      "CT-341"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-339",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/timestamp-time-zone-converter",
+    "title": "Timestamp Converter with Time Zones",
+    "primary_keyword": "timestamp converter time zones",
+    "long_tail_variants": [
+      "epoch timestamp timezone converter",
+      "unix timestamp iana timezone",
+      "timestamp to local time converter",
+      "convert epoch multiple time zones"
+    ],
+    "search_intent": "Convert epoch/ISO timestamps across IANA time zones.",
+    "short_description": "All date math stays local and DST offsets are shown explicitly.",
+    "faq_seeds": [
+      "Does Timestamp Converter with Time Zones send my files or values to a server?",
+      "What inputs does Timestamp Converter with Time Zones support?",
+      "How accurate is Timestamp Converter with Time Zones?",
+      "What are the main limits of Timestamp Converter with Time Zones?"
+    ],
+    "related_tool_ids": [
+      "CT-340",
+      "CT-341",
+      "CT-342"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-340",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/nginx-reverse-proxy-config-generator",
+    "title": "Nginx Reverse Proxy Config Generator",
+    "primary_keyword": "nginx reverse proxy config generator",
+    "long_tail_variants": [
+      "nginx config generator websocket",
+      "nginx reverse proxy template",
+      "nginx proxy_pass generator",
+      "nginx ssl reverse proxy config"
+    ],
+    "search_intent": "Generate a reviewable Nginx reverse-proxy server block from explicit inputs.",
+    "short_description": "Outputs configuration text only and marks security-sensitive directives for manual review.",
+    "faq_seeds": [
+      "Does Nginx Reverse Proxy Config Generator send my files or values to a server?",
+      "What inputs does Nginx Reverse Proxy Config Generator support?",
+      "How accurate is Nginx Reverse Proxy Config Generator?",
+      "What are the main limits of Nginx Reverse Proxy Config Generator?"
+    ],
+    "related_tool_ids": [
+      "CT-341",
+      "CT-342",
+      "CT-343"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "requested"
+  },
+  {
+    "id": "CT-341",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/env-quote-escape-validator",
+    "title": ".env Quote and Escape Validator",
+    "primary_keyword": "env quote escape validator",
+    "long_tail_variants": [
+      "dotenv syntax checker",
+      "env file quote validator",
+      "dotenv escape checker",
+      "env variable parser offline"
+    ],
+    "search_intent": "Validate quoting, escaping, comments and duplicate keys in .env text without exposing secrets.",
+    "short_description": "Net-new replacement for an existing .env-to-Kubernetes Secret converter.",
+    "faq_seeds": [
+      "Does .env Quote and Escape Validator send my files or values to a server?",
+      "What inputs does .env Quote and Escape Validator support?",
+      "How accurate is .env Quote and Escape Validator?",
+      "What are the main limits of .env Quote and Escape Validator?"
+    ],
+    "related_tool_ids": [
+      "CT-342",
+      "CT-343",
+      "CT-344"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-342",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/json-patch-generator",
+    "title": "JSON Patch RFC 6902 Generator",
+    "primary_keyword": "json patch generator",
+    "long_tail_variants": [
+      "rfc 6902 patch generator",
+      "json patch diff generator",
+      "create json patch offline",
+      "json patch operations tool"
+    ],
+    "search_intent": "Generate a deterministic RFC 6902-style patch between two JSON values.",
+    "short_description": "Net-new replacement for an existing JSON-to-Zod tool request.",
+    "faq_seeds": [
+      "Does JSON Patch RFC 6902 Generator send my files or values to a server?",
+      "What inputs does JSON Patch RFC 6902 Generator support?",
+      "How accurate is JSON Patch RFC 6902 Generator?",
+      "What are the main limits of JSON Patch RFC 6902 Generator?"
+    ],
+    "related_tool_ids": [
+      "CT-343",
+      "CT-344",
+      "CT-345"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-343",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/json-pointer-tester",
+    "title": "JSON Pointer RFC 6901 Tester",
+    "primary_keyword": "json pointer tester",
+    "long_tail_variants": [
+      "rfc 6901 json pointer",
+      "json pointer path tester",
+      "resolve json pointer offline",
+      "json pointer escape tool"
+    ],
+    "search_intent": "Resolve and validate RFC 6901 JSON Pointers against pasted JSON.",
+    "short_description": "Net-new replacement for an existing semantic JSON diff request.",
+    "faq_seeds": [
+      "Does JSON Pointer RFC 6901 Tester send my files or values to a server?",
+      "What inputs does JSON Pointer RFC 6901 Tester support?",
+      "How accurate is JSON Pointer RFC 6901 Tester?",
+      "What are the main limits of JSON Pointer RFC 6901 Tester?"
+    ],
+    "related_tool_ids": [
+      "CT-344",
+      "CT-345",
+      "CT-346"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-344",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/snowflake-id-decoder",
+    "title": "Snowflake ID Decoder",
+    "primary_keyword": "snowflake id decoder",
+    "long_tail_variants": [
+      "twitter snowflake decoder",
+      "discord snowflake timestamp decoder",
+      "snowflake id timestamp",
+      "64 bit snowflake parser"
+    ],
+    "search_intent": "Decode configurable Snowflake-style 64-bit IDs into timestamp, worker and sequence components.",
+    "short_description": "Net-new replacement for a YAML-anchor conversion request.",
+    "faq_seeds": [
+      "Does Snowflake ID Decoder send my files or values to a server?",
+      "What inputs does Snowflake ID Decoder support?",
+      "How accurate is Snowflake ID Decoder?",
+      "What are the main limits of Snowflake ID Decoder?"
+    ],
+    "related_tool_ids": [
+      "CT-345",
+      "CT-346",
+      "CT-347"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-345",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/calver-version-comparator",
+    "title": "CalVer Version Parser and Comparator",
+    "primary_keyword": "calver version comparator",
+    "long_tail_variants": [
+      "calendar versioning comparator",
+      "calver parser",
+      "compare calver versions",
+      "yyyy mm version comparator"
+    ],
+    "search_intent": "Parse and compare common Calendar Versioning patterns with explicit format selection.",
+    "short_description": "Net-new replacement for an overlapping CSP generator request.",
+    "faq_seeds": [
+      "Does CalVer Version Parser and Comparator send my files or values to a server?",
+      "What inputs does CalVer Version Parser and Comparator support?",
+      "How accurate is CalVer Version Parser and Comparator?",
+      "What are the main limits of CalVer Version Parser and Comparator?"
+    ],
+    "related_tool_ids": [
+      "CT-346",
+      "CT-347",
+      "CT-348"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-346",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/spki-certificate-fingerprint",
+    "title": "SPKI Certificate Fingerprint Generator",
+    "primary_keyword": "spki certificate fingerprint generator",
+    "long_tail_variants": [
+      "sha256 spki fingerprint",
+      "certificate public key pin generator",
+      "spki pin calculator",
+      "x509 public key fingerprint"
+    ],
+    "search_intent": "Derive a SHA-256 SPKI fingerprint from a pasted PEM certificate locally.",
+    "short_description": "Net-new replacement for an existing robots.txt tester request.",
+    "faq_seeds": [
+      "Does SPKI Certificate Fingerprint Generator send my files or values to a server?",
+      "What inputs does SPKI Certificate Fingerprint Generator support?",
+      "How accurate is SPKI Certificate Fingerprint Generator?",
+      "What are the main limits of SPKI Certificate Fingerprint Generator?"
+    ],
+    "related_tool_ids": [
+      "CT-347",
+      "CT-348",
+      "CT-349"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-347",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/github-actions-permissions-checker",
+    "title": "GitHub Actions Permissions Checker",
+    "primary_keyword": "github actions permissions checker",
+    "long_tail_variants": [
+      "workflow permissions least privilege",
+      "github actions token permissions audit",
+      "actions permissions validator",
+      "github workflow security checker"
+    ],
+    "search_intent": "Review workflow YAML permissions for broad or missing GITHUB_TOKEN scopes.",
+    "short_description": "Net-new replacement for an existing UUIDv7 generator/decoder request.",
+    "faq_seeds": [
+      "Does GitHub Actions Permissions Checker send my files or values to a server?",
+      "What inputs does GitHub Actions Permissions Checker support?",
+      "How accurate is GitHub Actions Permissions Checker?",
+      "What are the main limits of GitHub Actions Permissions Checker?"
+    ],
+    "related_tool_ids": [
+      "CT-348",
+      "CT-349",
+      "CT-350"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-348",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/kubernetes-requests-limits-ratio",
+    "title": "Kubernetes Requests Limits Ratio Calculator",
+    "primary_keyword": "kubernetes requests limits calculator",
+    "long_tail_variants": [
+      "k8s cpu requests limits ratio",
+      "kubernetes memory requests limits",
+      "pod resource ratio calculator",
+      "k8s request limit calculator"
+    ],
+    "search_intent": "Compare Kubernetes CPU/memory requests and limits and flag suspicious ratios.",
+    "short_description": "Net-new replacement for an existing semver range calculator request.",
+    "faq_seeds": [
+      "Does Kubernetes Requests Limits Ratio Calculator send my files or values to a server?",
+      "What inputs does Kubernetes Requests Limits Ratio Calculator support?",
+      "How accurate is Kubernetes Requests Limits Ratio Calculator?",
+      "What are the main limits of Kubernetes Requests Limits Ratio Calculator?"
+    ],
+    "related_tool_ids": [
+      "CT-349",
+      "CT-350",
+      "CT-331"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-349",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/urlpattern-tester",
+    "title": "URLPattern Tester",
+    "primary_keyword": "urlpattern tester",
+    "long_tail_variants": [
+      "browser urlpattern tester",
+      "urlpattern api playground",
+      "test urlpattern groups",
+      "url pattern matcher"
+    ],
+    "search_intent": "Test Web URLPattern expressions against URLs and inspect named groups.",
+    "short_description": "Net-new replacement for an existing CSR/certificate decoder request.",
+    "faq_seeds": [
+      "Does URLPattern Tester send my files or values to a server?",
+      "What inputs does URLPattern Tester support?",
+      "How accurate is URLPattern Tester?",
+      "What are the main limits of URLPattern Tester?"
+    ],
+    "related_tool_ids": [
+      "CT-350",
+      "CT-331",
+      "CT-332"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  },
+  {
+    "id": "CT-350",
+    "category": "dev",
+    "url_kind": "tool",
+    "slug": "/tool/cors-preflight-simulator",
+    "title": "CORS Preflight Simulator",
+    "primary_keyword": "cors preflight simulator",
+    "long_tail_variants": [
+      "cors preflight checker offline",
+      "access control allow origin evaluator",
+      "cors request response tester",
+      "preflight header simulator"
+    ],
+    "search_intent": "Simulate CORS preflight decisions from pasted request and response headers.",
+    "short_description": "Net-new replacement for the removed duplicate dev intents; it never makes a network request.",
+    "faq_seeds": [
+      "Does CORS Preflight Simulator send my files or values to a server?",
+      "What inputs does CORS Preflight Simulator support?",
+      "How accurate is CORS Preflight Simulator?",
+      "What are the main limits of CORS Preflight Simulator?"
+    ],
+    "related_tool_ids": [
+      "CT-331",
+      "CT-332",
+      "CT-333"
+    ],
+    "schema_type": "SoftwareApplication",
+    "breadcrumb_schema": true,
+    "faq_schema": false,
+    "origin": "replacement"
+  }
+]

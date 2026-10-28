@@ -46,7 +46,7 @@ function useRouteSeo(tool:ReturnType<typeof mm530ToolForRoute>,description:strin
   const breadcrumbs={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
    {"@type":"ListItem","position":1,"name":"Advanced tools","item":SITE_ORIGIN+"/advancetools/"},
    {"@type":"ListItem","position":2,"name":"Web tools","item":SITE_ORIGIN+"/advancetools/web-tools/"},
-   {"@type":"ListItem","position":3,"name":tool.categoryLabel,"item":SITE_ORIGIN+`/advancetools/web-tools/${tool.category}/`},
+   {"@type":"ListItem","position":3,"name":tool.categoryLabel,"item":SITE_ORIGIN+'/advancetools/web-tools/'},
    {"@type":"ListItem","position":4,"name":tool.title,"item":SITE_ORIGIN+tool.route}
   ]};
   const application={"@context":"https://schema.org","@type":"WebApplication","name":tool.title,"url":SITE_ORIGIN+tool.route,"description":description,"applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isPartOf":{"@type":"WebSite","name":"Aafnai Patro","url":SITE_ORIGIN}};
@@ -73,9 +73,9 @@ export function Mm530ToolPage({path}:{path:string}){
 
  if(!tool)return <main className="mm530-page mm530-missing"><b>404</b><h1>Tool not found</h1><p>We could not find a web tool at this address.</p><a href="/advancetools/web-tools/">Browse web tools</a></main>;
  return <main className="mm530-page mm530-tool-page">
-   <nav className="mm530-breadcrumb" aria-label="Breadcrumb"><a href="/advancetools/">Advanced tools</a><span>›</span><a href="/advancetools/web-tools/">Web tools</a><span>›</span><a href={`/advancetools/web-tools/${tool.category}/`}>{tool.categoryLabel}</a><span>›</span><b>{tool.title}</b></nav>
-   <header className="mm530-tool-head"><div><span className="mm530-kicker">Browser tool · {tool.categoryLabel}</span><h1>{tool.title}</h1><p>{description}</p></div><a className="mm530-back" href={`/advancetools/web-tools/${tool.category}/`}>More {tool.categoryLabel.toLowerCase()}</a></header>
+   <nav className="mm530-breadcrumb" aria-label="Breadcrumb"><a href="/advancetools/">Advanced tools</a><span>›</span><a href="/advancetools/web-tools/">Web tools</a><span>›</span><a href={'/advancetools/web-tools/'}>{tool.categoryLabel}</a><span>›</span><b>{tool.title}</b></nav>
+   <header className="mm530-tool-head"><div><span className="mm530-kicker">Browser tool · {tool.categoryLabel}</span><h1>{tool.title}</h1><p>{description}</p></div><a className="mm530-back" href={'/advancetools/web-tools/'}>Browse tools</a></header>
    <div className="mm530-frame-wrap"><iframe className="mm530-frame" src={`/_mm530/${tool.id}/page.html`} title={tool.title} loading="eager" referrerPolicy="same-origin" allow={iframePermissions(tool)}/></div>
-   {related.length>0&&<section className="mm530-related" aria-labelledby="mm530-related-title"><div className="mm530-results-head"><h2 id="mm530-related-title">Related {tool.categoryLabel.toLowerCase()}</h2><a href={`/advancetools/web-tools/${tool.category}/`}>Browse category</a></div><div className="mm530-tool-grid">{related.map(item=><a className="mm530-tool-card" href={item.route} key={item.route}><strong>{item.title}</strong><small>{fallbackDescription(item.title,item.categoryLabel)}</small><b>Open tool →</b></a>)}</div></section>}
+   {related.length>0&&<section className="mm530-related" aria-labelledby="mm530-related-title"><div className="mm530-results-head"><h2 id="mm530-related-title">Related {tool.categoryLabel.toLowerCase()}</h2><a href={'/advancetools/web-tools/'}>Browse tools</a></div><div className="mm530-tool-grid">{related.map(item=><a className="mm530-tool-card" href={item.route} key={item.route}><strong>{item.title}</strong><small>{fallbackDescription(item.title,item.categoryLabel)}</small><b>Open tool →</b></a>)}</div></section>}
  </main>;
 }

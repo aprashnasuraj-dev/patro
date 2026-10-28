@@ -1,0 +1,5 @@
+export const MAX_PIXELS=40_000_000;
+export function boundedDimensions(width,height,maxPixels=MAX_PIXELS){if(!(width>0&&height>0))throw new Error("Invalid image dimensions.");const pixels=width*height;if(pixels<=maxPixels)return{width,height,scale:1};const scale=Math.sqrt(maxPixels/pixels);return{width:Math.max(1,Math.floor(width*scale)),height:Math.max(1,Math.floor(height*scale)),scale}}
+export function targetBytes(label){const mb=Number(label);if(!Number.isFinite(mb)||mb<=0||mb>20)throw new Error("Target size must be between 0 and 20 MB.");return Math.floor(mb*1024*1024)}
+export function passportCrop(width,height,targetWidth,targetHeight){if(![width,height,targetWidth,targetHeight].every(v=>Number(v)>0))throw new Error("Invalid crop size.");const sourceRatio=width/height,targetRatio=targetWidth/targetHeight;if(sourceRatio>targetRatio){const w=height*targetRatio;return{x:(width-w)/2,y:0,width:w,height}}const h=width/targetRatio;return{x:0,y:(height-h)/2,width,height:h}}
+export function safeBaseName(name){return String(name||"image").replace(/\.[^.]+$/,"").replace(/[^a-z0-9._-]+/gi,"-").replace(/^-+|-+$/g,"")||"image"}

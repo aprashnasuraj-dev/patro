@@ -1,0 +1,18 @@
+export const $=(sel,root=document)=>root.querySelector(sel);
+export const el=(tag,attrs={},children=[])=>{const n=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")n.className=v;else if(k==="text")n.textContent=v;else if(k.startsWith("on")&&typeof v==="function")n.addEventListener(k.slice(2),v);else if(v!==undefined&&v!==null)n.setAttribute(k,String(v))}for(const c of(Array.isArray(children)?children:[children]))if(c!==undefined&&c!==null)n.append(c.nodeType?c:document.createTextNode(String(c)));return n};
+export const field=(label,type="text",value="")=>{const w=el("div",{class:"ct-field"}),id="ct-"+Math.random().toString(36).slice(2),l=el("label",{text:label,for:id}),i=type==="textarea"?el("textarea",{id}):el("input",{id,type});i.value=value;w.append(l,i);return{wrap:w,input:i}};
+export const button=(text,fn,secondary=false)=>el("button",{type:"button",class:"ct-btn"+(secondary?" secondary":""),text,onClick:fn});
+export const output=()=>el("div",{class:"ct-output","aria-live":"polite",text:"Ready."});
+export const errorState=(message)=>el("div",{class:"ct-status ct-error",role:"alert",text:String(message||"Something went wrong.")});
+export const privacyNotice=(text="Private by default: processing happens in this browser. Your files and values are not sent to AafnaiPatro.")=>el("p",{class:"ct-privacy",text});
+export const copyText=async(text)=>{await navigator.clipboard.writeText(String(text??""));return true};
+export const downloadText=(name,text,type="text/plain")=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)};
+export const downloadBlob=(name,blob)=>{const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)};
+export const parseCSV=(s)=>{const rows=[];let row=[],f="",q=false;for(let i=0;i<s.length;i++){const c=s[i],n=s[i+1];if(q){if(c=='"'&&n=='"'){f+='"';i++}else if(c=='"')q=false;else f+=c}else if(c=='"')q=true;else if(c==","){row.push(f);f=""}else if(c==="\n"){row.push(f.replace(/\r$/,""));rows.push(row);row=[];f=""}else f+=c}if(f||row.length){row.push(f.replace(/\r$/,""));rows.push(row)}return rows};
+export const csv=(rows)=>rows.map(r=>r.map(v=>{v=String(v??"");return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}).join(",")).join("\n");
+export const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+export const bytes=n=>n<1024?n+" B":n<1048576?(n/1024).toFixed(1)+" KB":(n/1048576).toFixed(1)+" MB";
+export const sha256=async b=>[...new Uint8Array(await crypto.subtle.digest("SHA-256",b))].map(x=>x.toString(16).padStart(2,"0")).join("");
+export const saveLocal=(k,v)=>localStorage.setItem("ct:"+k,JSON.stringify(v));
+export const loadLocal=(k,d)=>{try{return JSON.parse(localStorage.getItem("ct:"+k))??d}catch{return d}};
+export const slugFile=s=>s.split("/").filter(Boolean).pop()||"result";

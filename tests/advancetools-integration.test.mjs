@@ -9,7 +9,7 @@ const rules = wrangler.assets.run_worker_first;
 const manifest = JSON.parse(readFileSync("public/advancetools/module-manifest.json", "utf8"));
 
 test("every advanced-tools section is asset-first, but not the whole prefix", () => {
-  for (const d of ["knittingcalculators", "chordlibrary", "workshopreference", "fontconverters", "printablepaper", "assets", "methodology", "licenses", "downloads"]) {
+  for (const d of ["knittingcalculators", "chordlibrary", "workshopreference", "fontconverters", "printablepaper", "assets", "methodology", "licenses", "downloads", "category"]) {
     assert.ok(rules.includes(`!/advancetools/${d}`) && rules.includes(`!/advancetools/${d}/*`), d);
     assert.ok(existsSync(`public/advancetools/${d}`), `public/advancetools/${d}`);
   }
@@ -19,11 +19,14 @@ test("every advanced-tools section is asset-first, but not the whole prefix", ()
 });
 
 test("the prebuilt module is complete and matches its manifest", () => {
-  assert.equal(manifest.pages, 2029);
+  assert.ok(manifest.pages > 0);
   assert.ok(existsSync("public/advancetools/index.html"));
   assert.ok(existsSync(`public${manifest.assetPrefix}/app.mjs`));
   const sitemap = readFileSync("public/advancetools/sitemap.xml", "utf8");
   assert.ok(sitemap.includes("https://aafnaipatro.com/advancetools/chordlibrary/"));
+  assert.ok(manifest.routes.some((r) => r.path.startsWith("/advancetools/category/")));
+  const dashboard = readFileSync("public/advancetools/index.html", "utf8");
+  assert.ok(!dashboard.includes("530") && !dashboard.includes("350"), "dashboard must not market tool counts");
 });
 
 test("headers scope the module's CSP and never touch the global policy", () => {

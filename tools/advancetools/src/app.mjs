@@ -22,13 +22,13 @@ if(search){
   const results=$('#web-tool-search-results'),categories=$('#web-tool-categories'),count=$('#search-count');
   const renderWebSearch=()=>{
    const term=search.value.toLowerCase().trim();
-   if(!term){results.hidden=true;results.replaceChildren();categories.hidden=false;count.textContent=`Search ${config.tools.length} tools`;return}
+   if(!term){results.hidden=true;results.replaceChildren();categories.hidden=false;count.textContent="Search the library";return}
    const matches=config.tools.filter(t=>[t.title,t.description,t.categoryLabel].some(v=>String(v).toLowerCase().includes(term)));
    results.replaceChildren(...matches.slice(0,60).map(t=>{const a=document.createElement('a');a.className='card web-tool-card';a.href=t.route;const tag=document.createElement('span');tag.className='card-tag';tag.textContent=t.categoryLabel;const h=document.createElement('h3');h.textContent=t.title;const p=document.createElement('p');p.textContent=t.description;const small=document.createElement('small');small.textContent='Open tool →';a.append(tag,h,p,small);return a}));
-   results.hidden=false;categories.hidden=true;count.textContent=matches.length>60?`Showing 60 of ${matches.length} matches`:`${matches.length} matching tools`;
+   results.hidden=false;categories.hidden=true;count.textContent=matches.length?"Matching tools":"No matching tools";
   };
   search.addEventListener('input',renderWebSearch);renderWebSearch();
- }else search.addEventListener('input',()=>{const term=search.value.toLowerCase().trim();let count=0;document.querySelectorAll('[data-search]').forEach(el=>{el.hidden=!el.dataset.search.includes(term);if(!el.hidden)count++;});$('#search-count').textContent=`${count} matching entries`;});
+ }else search.addEventListener('input',()=>{const term=search.value.toLowerCase().trim();let count=0;document.querySelectorAll('[data-search]').forEach(el=>{el.hidden=!el.dataset.search.includes(term);if(!el.hidden)count++;});$('#search-count').textContent=count?'Matching entries':'No matching entries';});
 }
 const sheet=$('#gauge-sheet');if(sheet)sheet.addEventListener('click',async()=>{const {pdf,gaugeWorksheet}=await loadPdf();download(pdf(gaugeWorksheet()),'aafnai-gauge-worksheet.pdf','application/pdf');});
 const print=$('#print');if(print)print.addEventListener('click',()=>window.print());

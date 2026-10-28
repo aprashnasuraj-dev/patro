@@ -1,0 +1,2 @@
+import{GIFEncoder,quantize,applyPalette}from"https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm";
+self.onmessage=({data})=>{const{id,width,height,frames,delay}=data;try{const gif=GIFEncoder();for(const frame of frames){const rgba=new Uint8Array(frame);const palette=quantize(rgba,256);const index=applyPalette(rgba,palette);gif.writeFrame(index,width,height,{palette,delay})}gif.finish();const out=gif.bytes();self.postMessage({id,bytes:out.buffer},[out.buffer])}catch(error){self.postMessage({id,error:String(error?.message||error)})}};

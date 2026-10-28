@@ -16,12 +16,12 @@ const paths={
 };
 export function icon(kind='spark',className='ui-icon'){return `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths[kind]||paths.spark}</svg>`;}
 const themes={
- hub:{label:'A little more possibility.',sub:'Five collections. One creative workspace.',tone:'Creative workspace',number:'01—05'},
- knittingcalculators:{label:'From swatch to something beautiful.',sub:'Your measurements. Your next handmade piece.',tone:'The yarn studio',number:'01'},
- chordlibrary:{label:'Find the shape of your next sound.',sub:'Explore notes, tunings and complete voicings.',tone:'The sound room',number:'02'},
- workshopreference:{label:'Precision starts with a clear measure.',sub:'Practical geometry, with assumptions visible.',tone:'The workshop',number:'03'},
- fontconverters:{label:'Give old words a new life.',sub:'Legacy characters become searchable text.',tone:'The type lab',number:'04'},
- printablepaper:{label:'A blank page, made your way.',sub:'Quiet guides. Exact spacing. A clean print.',tone:'The paper studio',number:'05'}
+ hub:{label:'A little more possibility.',sub:'Five collections. One creative workspace.',tone:'Creative workspace',number:''},
+ knittingcalculators:{label:'From swatch to something beautiful.',sub:'Your measurements. Your next handmade piece.',tone:'The yarn studio',number:''},
+ chordlibrary:{label:'Find the shape of your next sound.',sub:'Explore notes, tunings and complete voicings.',tone:'The sound room',number:''},
+ workshopreference:{label:'Precision starts with a clear measure.',sub:'Practical geometry, with assumptions visible.',tone:'The workshop',number:''},
+ fontconverters:{label:'Give old words a new life.',sub:'Legacy characters become searchable text.',tone:'The type lab',number:''},
+ printablepaper:{label:'A blank page, made your way.',sub:'Quiet guides. Exact spacing. A clean print.',tone:'The paper studio',number:''}
 };
 export function theme(id){return themes[id]||themes.hub;}
 function lines(x1,y1,x2,y2,n,step,vertical=false){return Array.from({length:n},(_,i)=>`<path d="M${x1+(vertical?step*i:0)} ${y1+(vertical?0:step*i)}L${x2+(vertical?step*i:0)} ${y2+(vertical?0:step*i)}"/>`).join('');}
