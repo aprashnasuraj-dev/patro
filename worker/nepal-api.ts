@@ -1,3 +1,4 @@
+import { logDependency } from "./roadmap/ops";
 type Env = {
   ASSETS?: { fetch(request: Request): Promise<Response> };
   DB?: any;
@@ -137,13 +138,15 @@ async function emergency(request:Request,env:Env):Promise<Response>{
   target.searchParams.set("limit",String(limit));
   const ordering=url.searchParams.get("ordering");
   if(ordering&&/^-?[a-z_]{1,40}$/i.test(ordering)) target.searchParams.set("ordering",ordering);
-  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8000);
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8000),started=performance.now();
   try{
     const upstream=await fetch(target.toString(),{headers:{accept:"application/json"},signal:ctrl.signal});
+    logDependency({product:"nepalmap",dependency:"bipad",operation:kind,outcome:upstream.ok?"ok":upstream.status===429?"throttled":"error",status:upstream.status,duration_ms:performance.now()-started});
     if(!upstream.ok) return json({error:"bipad_upstream",status:upstream.status,kind},502,"no-store");
     const data=await upstream.json();
     return json({kind,source:"BIPAD Portal",source_url:target.toString(),fetched_at:new Date().toISOString(),data},200,"public, max-age=120, s-maxage=300");
   }catch(error){
+    logDependency({product:"nepalmap",dependency:"bipad",operation:kind,outcome:error instanceof DOMException&&error.name==="AbortError"?"timeout":"error",duration_ms:performance.now()-started});
     return json({error:"bipad_unavailable",kind,message:error instanceof Error?error.message:String(error)},502,"no-store");
   }finally{clearTimeout(timer);}
 }
