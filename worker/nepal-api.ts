@@ -118,12 +118,43 @@ async function correctionStatus(request:Request,env:Env,id:string):Promise<Respo
   return row?json(row,200,"no-store",{"access-control-allow-origin":"null"}):json({error:"not_found"},404,"no-store",{"access-control-allow-origin":"null"});
 }
 
+
+const BIPAD_ENDPOINTS:Record<string,string>={
+  incident:"incident",alert:"alert",earthquake:"earthquake",fire:"fire",
+  openspace:"openspace-detail",rain:"rain",river:"river"
+};
+async function emergency(request:Request,env:Env):Promise<Response>{
+  if(env.NEPAL_EMERGENCY_ENABLED!=="1") return json({error:"emergency_overlay_disabled"},503,"no-store");
+  const url=new URL(request.url),kind=(url.searchParams.get("kind")||"incident").toLowerCase();
+  const endpoint=BIPAD_ENDPOINTS[kind];
+  if(!endpoint) return json({error:"invalid_emergency_kind",allowed:Object.keys(BIPAD_ENDPOINTS)},400,"no-store");
+  const rawBase=env.BIPAD_API_BASE||"https://bipadportal.gov.np/api/v1";
+  let base:URL;
+  try{base=new URL(rawBase);}catch{return json({error:"invalid_bipad_base"},503,"no-store");}
+  if(base.protocol!=="https:"||!["bipadportal.gov.np","bipad.gov.np"].includes(base.hostname)) return json({error:"unapproved_bipad_host"},503,"no-store");
+  const target=new URL(base.toString().replace(/\/$/,"")+"/"+endpoint+"/");
+  const limit=Math.max(1,Math.min(100,Number(url.searchParams.get("limit")||50)||50));
+  target.searchParams.set("limit",String(limit));
+  const ordering=url.searchParams.get("ordering");
+  if(ordering&&/^-?[a-z_]{1,40}$/i.test(ordering)) target.searchParams.set("ordering",ordering);
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8000);
+  try{
+    const upstream=await fetch(target.toString(),{headers:{accept:"application/json"},signal:ctrl.signal});
+    if(!upstream.ok) return json({error:"bipad_upstream",status:upstream.status,kind},502,"no-store");
+    const data=await upstream.json();
+    return json({kind,source:"BIPAD Portal",source_url:target.toString(),fetched_at:new Date().toISOString(),data},200,"public, max-age=120, s-maxage=300");
+  }catch(error){
+    return json({error:"bipad_unavailable",kind,message:error instanceof Error?error.message:String(error)},502,"no-store");
+  }finally{clearTimeout(timer);}
+}
+
 export async function nepalApiResponse(request:Request,env:Env):Promise<Response|null>{
   const url=new URL(request.url);
   if(!url.pathname.startsWith(API)) return null;
   if(env.NEPAL_API_ENABLED!=="1") return json({error:"nepal_api_disabled"},503,"no-store");
   if(request.method==="OPTIONS") return new Response(null,{status:204,headers:{"access-control-allow-origin":"*","access-control-allow-methods":"GET,HEAD,POST,OPTIONS","access-control-allow-headers":"content-type","access-control-max-age":"86400"}});
-  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/manifest","/admin","/places","/place/{id}"]});
+  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/manifest","/admin","/places","/place/{id}","/emergency","/corrections"]});
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/emergency") return emergency(request,env);
   if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/manifest"){
     const data=await assetJson(env,request,"/data/nepalmap/v1/manifest.json");return data?json(data):json({error:"not_found"},404);
   }
