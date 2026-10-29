@@ -21,7 +21,8 @@ const BP = "/bali-calendar";
 const WP = "/weton";
 const BALI_TZ = "Asia/Makassar";
 const JAVA_TZ = "Asia/Jakarta";
-const RANGE = { minYear: 1929, maxYear: 2129 };
+const BALI_RANGE = { minYear: 1929, maxYear: 2129 };
+const WETON_RANGE = { minYear: 1900, maxYear: 2100 };
 const HOLIDAY_YEARS = { min: 2020, max: 2032 };
 
 const ID_DAYS = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -35,9 +36,13 @@ const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(
 const BALI_NOTE = `<p class="note">Perhitungan Pawukon memakai rumus Reingold–Dershowitz (Calendrical Calculations) dan sudah dicocokkan dengan Kalender Bali 2026. Hari raya Pawukon berulang setiap 210 hari. Untuk waktu upacara, ikuti keluarga, pemangku, atau Kalender Bali resmi — pelaksanaan bisa berbeda antardesa. Purnama, tilem dan sasih diambil dari Kalender Bali yang diterbitkan, bukan dihitung.</p>`;
 const WETON_NOTE = `<p class="note">Weton dan perhitungan neptu disajikan sebagai warisan budaya menurut tradisi primbon Jawa, bukan ramalan yang menentukan nasib. Hari Jawa berganti saat maghrib: jika lahir setelah maghrib, weton mengikuti hari berikutnya.</p>`;
 
-function inRange(iso: string) {
+function inBaliRange(iso: string) {
   const y = Number(iso.slice(0, 4));
-  return y >= RANGE.minYear && y <= RANGE.maxYear;
+  return y >= BALI_BALI_RANGE.minYear && y <= BALI_BALI_RANGE.maxYear;
+}
+function inWetonRange(iso: string) {
+  const y = Number(iso.slice(0, 4));
+  return y >= WETON_BALI_RANGE.minYear && y <= WETON_BALI_RANGE.maxYear;
 }
 const indexableDate = (iso: string, today: string) => {
   const d = isoToJdn(iso) - isoToJdn(today);
@@ -77,7 +82,7 @@ function baliSignals(iso: string): BaliSignal[] {
 }
 
 export function baliMonthModel(year: number, month: number): DayCell[] {
-  if (year < RANGE.minYear || year > RANGE.maxYear || month < 1 || month > 12) return [];
+  if (year < BALI_RANGE.minYear || year > BALI_RANGE.maxYear || month < 1 || month > 12) return [];
   const days = new Date(Date.UTC(year, month, 0)).getUTCDate();
   return Array.from({ length: days }, (_, i) => {
     const iso = `${year}-${String(month).padStart(2, "0")}-${String(i + 1).padStart(2, "0")}`;
@@ -440,7 +445,7 @@ function baliToday(ctx: Ctx): Rendered {
 }
 
 function baliDate(ctx: Ctx, iso: string): Rendered | null {
-  if (!parseIso(iso) || !inRange(iso)) return null;
+  if (!parseIso(iso) || !inBaliRange(iso)) return null;
   const today = todayIn(BALI_TZ, ctx.now);
   const p = pawukon(isoToJdn(iso));
   const ix = indexableDate(iso, today);
@@ -474,7 +479,7 @@ function baliSubscriptionSection(ctx: Ctx, year: number): string {
 }
 
 function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
-  if (gy < RANGE.minYear || gy > RANGE.maxYear) return null;
+  if (gy < BALI_RANGE.minYear || gy > BALI_RANGE.maxYear) return null;
   const rows = pawukonHolidaysInYear(gy).map((h) => `<tr><td><a href="${BP}/${jdnToIso(h.jdn)}">${esc(idDate(jdnToIso(h.jdn)))}</a></td><td>${esc(h.names.join(", "))}</td></tr>`).join("");
   const ny = NYEPI[gy];
   const pt = PURNAMA_TILEM[gy];
@@ -504,7 +509,7 @@ export type OtonanPossibility = {
 
 export function otonanPossibilities(lahir: string, today: string): OtonanPossibility[] {
   const p = parseIso(lahir);
-  if (!p || !inRange(lahir) || !parseIso(today)) return [];
+  if (!p || !inBaliRange(lahir) || !parseIso(today)) return [];
   return ([true, false] as const).map((beforeSunrise) => {
     const birthJdn = gregorianToJdn(p.y, p.m, p.d) - (beforeSunrise ? 1 : 0);
     const pw = pawukon(birthJdn);
@@ -541,7 +546,7 @@ function otonan(ctx: Ctx): Rendered {
   const today = todayIn(BALI_TZ, ctx.now);
   let result = "";
   const p = parseIso(lahir);
-  if (p && inRange(lahir)) {
+  if (p && inBaliRange(lahir)) {
     if (waktu === "unknown" && ctx.flags.baliOtonanDualResult) {
       result = `<section><h2>Dua kemungkinan karena waktu lahir tidak diketahui</h2><p>Dalam perhitungan yang dipakai AafnaiPatro, pergantian hari Bali terjadi saat matahari terbit. Karena jam lahir belum diketahui, jangan pilih satu hasil secara diam-diam: bandingkan kedua kemungkinan di bawah dan konfirmasi dengan catatan keluarga/pemangku bila diperlukan.</p></section>` +
         otonanVariant(lahir, p, true, today, ctx) + otonanVariant(lahir, p, false, today, ctx);
