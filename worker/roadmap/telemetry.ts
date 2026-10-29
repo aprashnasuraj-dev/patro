@@ -68,8 +68,30 @@ export class ConsoleSink implements TelemetrySink {
   async send(batch: readonly TelemetryEnvelope[]): Promise<void> { console.info("[roadmap-telemetry]", batch); }
 }
 
+export class HttpSink implements TelemetrySink {
+  constructor(private readonly endpoint: string) {
+    if (!endpoint.startsWith("/")) throw new Error("telemetry endpoint must be same-origin");
+  }
+  async send(batch: readonly TelemetryEnvelope[]): Promise<void> {
+    if (!batch.length) return;
+    const body = JSON.stringify({ events: batch });
+    if (typeof navigator !== "undefined" && typeof navigator.sendBeacon === "function") {
+      const ok = navigator.sendBeacon(this.endpoint, new Blob([body], { type: "application/json" }));
+      if (ok) return;
+    }
+    const response = await fetch(this.endpoint, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body,
+      keepalive: true,
+      credentials: "same-origin",
+    });
+    if (!response.ok) throw new Error(`telemetry sink returned ${response.status}`);
+  }
+}
+
 export type TelemetryClientOptions = {
-  sink?: TelemetrySink; consent?: () => boolean; sampleRate?: number; batchSize?: number; maxQueue?: number;
+  sink?: TelemetrySink; consent?: () => boolean; sampleRate?: number; batchSize?: number; maxQueue?: number; flushAfterMs?: number;
 };
 
 export class TelemetryClient {
@@ -78,13 +100,16 @@ export class TelemetryClient {
   private readonly sampleRate: number;
   private readonly batchSize: number;
   private readonly maxQueue: number;
+  private readonly flushAfterMs: number;
   private queue: TelemetryEnvelope[] = [];
+  private flushTimer: ReturnType<typeof setTimeout> | null = null;
   constructor(options: TelemetryClientOptions = {}) {
     this.sink = options.sink ?? new NoopSink();
     this.consent = options.consent ?? (() => false);
     this.sampleRate = Math.max(0, Math.min(1, options.sampleRate ?? 1));
     this.batchSize = Math.max(1, options.batchSize ?? 10);
     this.maxQueue = Math.max(this.batchSize, options.maxQueue ?? 100);
+    this.flushAfterMs = Math.max(250, options.flushAfterMs ?? 5000);
   }
   enqueue(input: Omit<TelemetryEnvelope, "schema_version" | "ts" | "session_id" | "props"> & { props?: Record<string, unknown> }): boolean {
     if (!this.consent() || Math.random() > this.sampleRate) return false;
@@ -93,10 +118,18 @@ export class TelemetryClient {
     if (errors.length) throw new Error(errors.join("; "));
     if (this.queue.length >= this.maxQueue) this.queue.shift();
     this.queue.push(event);
-    if (this.queue.length >= this.batchSize) void this.flush();
+    if (this.queue.length >= this.batchSize) {
+      void this.flush();
+    } else if (!this.flushTimer) {
+      this.flushTimer = setTimeout(() => {
+        this.flushTimer = null;
+        void this.flush().catch(() => undefined);
+      }, this.flushAfterMs);
+    }
     return true;
   }
   async flush(): Promise<void> {
+    if (this.flushTimer) { clearTimeout(this.flushTimer); this.flushTimer = null; }
     if (!this.queue.length) return;
     const batch = this.queue.splice(0, this.batchSize);
     try { await this.sink.send(batch); }
