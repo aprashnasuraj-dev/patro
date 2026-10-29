@@ -228,11 +228,41 @@ await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
   notes: OSM_SNAPSHOT ? "Snapshot date is derived from the PBF osmosis replication timestamp captured by osm_wards.py." : "OSM extract timestamp unavailable; using legacy generated date and confidence 0.",
 }, null, 2));
 
+if (ROADMAP_FLAGS.nepalOfflinePacks) {
+  const offlineDir = join(OUT, "nepalmap/offline");
+  await mkdir(offlineDir, { recursive: true });
+  const offlineIndex = [];
+  for (const d of admin.districts) {
+    const categories = {};
+    let places = 0;
+    for (const cat of CATEGORIES) {
+      const rows = rowsByCat.get(cat.id).filter((row) => row[8] === d.id);
+      categories[cat.id] = { fields, rows };
+      places += rows.length;
+    }
+    const payload = {
+      version: 1,
+      district: { id: d.id, slug: d.slug, name: d.name, ne: d.ne, province: d.province },
+      generated: LASTMOD,
+      snapshot_date: OSM_SNAPSHOT ? String(OSM_SNAPSHOT).slice(0, 10) : LASTMOD,
+      attribution: "© OpenStreetMap contributors, ODbL 1.0",
+      basemap_included: false,
+      categories,
+    };
+    const text = JSON.stringify(payload);
+    await writeFile(join(offlineDir, d.slug + ".json"), text);
+    offlineIndex.push({ slug: d.slug, name: d.name, ne: d.ne, places, bytes: Buffer.byteLength(text), url: "/nepalmap/offline/" + d.slug + ".json" });
+  }
+  await writeFile(join(offlineDir, "index.json"), JSON.stringify({ version: 1, generated: LASTMOD, basemap_included: false, districts: offlineIndex }, null, 2));
+}
+
 const appJs = await readFile(join(HERE, "map/app.js"), "utf8");
 const routingV2Js = await readFile(join(HERE, "map/routing-v2.js"), "utf8");
 const roadSafetyJs = await readFile(join(HERE, "map/road-safety.js"), "utf8");
 const pmtilesPocJs = await readFile(join(HERE, "map/pmtiles-poc.js"), "utf8");
 const terrainJs = await readFile(join(HERE, "map/terrain.js"), "utf8");
+const offlineJs = await readFile(join(HERE, "map/offline.js"), "utf8");
+const offlineSwJs = await readFile(join(HERE, "map/offline-sw.js"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -241,10 +271,12 @@ await writeFile(join(OUT, "nepalmap/routing-v2.js"), routingV2Js);
 await writeFile(join(OUT, "nepalmap/road-safety.js"), roadSafetyJs);
 await writeFile(join(OUT, "nepalmap/pmtiles-poc.js"), pmtilesPocJs);
 await writeFile(join(OUT, "nepalmap/terrain.js"), terrainJs);
+await writeFile(join(OUT, "nepalmap/offline.js"), offlineJs);
+await writeFile(join(OUT, "nepalmap/offline-sw.js"), offlineSwJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
@@ -302,7 +334,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <div class="np-explore">
 <div class="np-search"><input id="np-q" type="search" placeholder="Search a temple, peak, village, palika or ward…" autocomplete="off" aria-label="Search the map"><ul id="np-results" hidden></ul></div>
 <div class="np-scroll">
-<div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button" aria-describedby="np-location-privacy">📍 Near me</button><button id="np-reset" type="button">Reset</button></div>
+<div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button" aria-describedby="np-location-privacy">📍 Near me</button>${ROADMAP_FLAGS.nepalOfflinePacks ? `<button id="np-offline-save" type="button" disabled>Save district offline</button>` : ""}<button id="np-reset" type="button">Reset</button></div>
 <p id="np-location-privacy" class="np-note np-privacy">Privacy: “Near me” asks your browser for precise location only after a disclosure. It stays in this tab and is not sent to AafnaiPatro analytics.</p>
 <a id="np-district-link" hidden></a>
 <div id="np-cats" role="group" aria-label="What to show"></div>
@@ -322,6 +354,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 ${ROADMAP_FLAGS.nepalPmtiles ? `<script src="/vendor/nepalmap/pmtiles-4.5.0/pmtiles.js" defer></script><script src="/nepalmap/pmtiles-poc.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoadSafety ? `<script src="/nepalmap/road-safety.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalTerrain ? `<script src="/nepalmap/terrain.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalOfflinePacks ? `<script src="/nepalmap/offline.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
