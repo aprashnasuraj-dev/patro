@@ -79,6 +79,7 @@ const ROADMAP_FLAGS = {
   nepalStablePlaceIds: process.env.NEPALMAP_STABLE_IDS === "1",
   nepalVisitorMode: process.env.NEPALMAP_VISITOR_MODE === "1",
   nepalBoundaryConfidence: process.env.NEPALMAP_BOUNDARY_CONFIDENCE === "1",
+  nepalDetourRouting: process.env.NEPALMAP_DETOUR_ROUTING === "1",
 };
 
 let stablePlaceIds = null;
