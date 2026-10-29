@@ -37,7 +37,7 @@ export const idDate = (iso: string) => {
 };
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-const BALI_NOTE = `<p class="note">Perhitungan Pawukon memakai rumus Reingold–Dershowitz (Calendrical Calculations) dan sudah dicocokkan dengan Kalender Bali 2026. Hari raya Pawukon berulang setiap 210 hari. Untuk waktu upacara, ikuti keluarga, pemangku, atau Kalender Bali resmi — pelaksanaan bisa berbeda antardesa. Purnama, tilem dan sasih diambil dari Kalender Bali yang diterbitkan, bukan dihitung.</p>`;
+const BALI_NOTE = `<p class="note">Pawukon berulang dalam siklus 210 hari. Purnama, Tilem dan Sasih mengikuti kalender Bali tahunan yang tersedia. Untuk waktu dan tata upacara, tetap ikuti keluarga, desa adat, pengempon atau pemangku setempat.</p>`;
 const WETON_NOTE = `<p class="note">Weton dan perhitungan neptu disajikan sebagai warisan budaya menurut tradisi primbon Jawa, bukan ramalan yang menentukan nasib. Hari Jawa berganti saat maghrib: jika lahir setelah maghrib, weton mengikuti hari berikutnya.</p>`;
 
 function inBaliRange(iso: string) {
@@ -286,7 +286,7 @@ function astronomicalLunarContext(iso: string): string {
   const m = moonDay(iso, BALI_TZ);
   const quarter = m.events.filter((e) => ["new-moon", "first-quarter", "full-moon", "last-quarter"].includes(e.kind));
   const names: Record<string,string> = { "new-moon":"Bulan Baru", "first-quarter":"Kuartal pertama", "full-moon":"Bulan Purnama astronomis", "last-quarter":"Kuartal terakhir" };
-  return `<section class="bali-astro-lunar"><h2>Konteks Bulan astronomis</h2><div class="bali-wariga-strip"><div><span>Fase pada tengah hari Bali</span><strong>${esc(lunarPhaseLabel(m.phaseAngle))}</strong></div><div><span>Iluminasi</span><strong>${Math.round(m.illumination*100)}%</strong></div><div><span>Sudut fase</span><strong>${m.phaseAngle.toFixed(1)}°</strong></div><div><span>Peristiwa astronomis hari ini</span><strong>${quarter.length ? esc(quarter.map((e)=>names[e.kind]||e.kind).join(", ")) : "tidak ada kuartal tepat"}</strong></div></div><p class="note">Ini adalah lapisan astronomis yang dihitung untuk Asia/Makassar. Ia membantu memberi konteks pada tahun historis/masa depan, tetapi <b>tidak menggantikan penetapan Purnama, Tilem, Sasih atau hari upacara Bali yang diterbitkan</b>.</p></section>`;
+  return `<section class="bali-astro-lunar"><h2>Fase Bulan</h2><div class="bali-wariga-strip"><div><span>Fase Bulan</span><strong>${esc(lunarPhaseLabel(m.phaseAngle))}</strong></div><div><span>Cahaya Bulan</span><strong>${Math.round(m.illumination*100)}%</strong></div><div><span>Sudut fase</span><strong>${m.phaseAngle.toFixed(1)}°</strong></div><div><span>Perubahan fase hari ini</span><strong>${quarter.length ? esc(quarter.map((e)=>names[e.kind]||e.kind).join(", ")) : "tidak ada perubahan utama"}</strong></div></div><p class="note">Perhitungan fase Bulan membantu membaca keadaan langit pada tanggal ini. Penetapan Purnama, Tilem, Sasih dan hari upacara tetap mengikuti kalender Bali.</p></section>`;
 }
 
 function nextNamedPawukonEvent(fromIso: string, test: (name: string) => boolean) {
@@ -310,22 +310,22 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
   const nextKajeng = nextNamedPawukonEvent(iso, (name) => name === "Kajeng Kliwon");
   const eventHtml = events.length
     ? events.map((event) => `<span class="bali-event-chip">${esc(event)}</span>`).join("")
-    : `<span class="muted">Tidak ada rerainan besar yang terpicu pada lapisan yang tersedia.</span>`;
+    : `<span class="muted">Tidak ada rerainan besar pada tanggal ini.</span>`;
   const piodalanHtml = piodalan.length
     ? `<div class="bali-piodalan-list">${piodalan.map((record) =>
         `<article><strong>${esc(record.name)}</strong><span>${esc(record.locality)}</span><a href="${esc(record.source.url)}" rel="nofollow noopener">sumber ↗</a></article>`
       ).join("")}</div>`
-    : `<p class="muted">Tidak ada Piodalan bersumber yang cocok dengan tanggal ini. Rule Sasih tetap fail-closed jika pemetaan tahunan belum lengkap.</p>`;
+    : `<p class="muted">Belum ada Piodalan yang tercatat untuk tanggal ini. Piodalan yang mengikuti Sasih akan muncul bila tanggal tahunnya tersedia.</p>`;
   const personalActions = ctx.flags.baliPwa
     ? `<div class="bali-day-actions"><button type="button" class="bali-save-date" data-bali-save-date="${esc(iso)}" data-bali-save-label="${esc(p.combination)}">Simpan tanggal ini</button><button type="button" class="bali-share-date" data-bali-share-date="${esc(iso)}" data-bali-share-label="${esc(p.combination)}">Bagikan hari ini</button><a href="${BP}#my-bali">Buka My Bali Calendar</a></div>`
     : "";
   return `<section class="bali-day-snapshot"><div class="bali-snapshot-head"><div><span class="bali-face-kicker">Hari Bali</span><h2>${esc(p.combination)}</h2><p>${esc(idDate(iso))} · hari ${p.cycleDay}/${PAWUKON_CYCLE_DAYS} · hari ${p.dayInWuku}/7 dalam Wuku ${esc(p.wuku.name)}</p></div><a class="bali-secondary" href="${BP}/wuku/${slug(p.wuku.name)}">Wuku ${esc(p.wuku.name)}</a></div>
 <div class="bali-event-row">${eventHtml}</div>${personalActions}</section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
-<section class="bali-lintang-day"><h2>Palelintangan tanggal dipilih</h2><div class="bali-wariga-strip"><div><span>Lintang</span><strong>${esc(pal.lintang)}</strong></div><div><span>Sapta × Panca</span><strong>${esc(p.saptawara)} × ${esc(p.pancawara)}</strong></div><div><span>Patron Saptawara</span><strong>${esc(pal.patron)}</strong></div><div><span>Urip gabungan</span><strong>${pal.urip}</strong></div></div><p><a href="${BP}/palelintangan?tanggal=${encodeURIComponent(iso)}">Buka posisi ini di matriks 35 lintang →</a></p></section>
+<section class="bali-lintang-day"><h2>Palelintangan hari ini</h2><div class="bali-wariga-strip"><div><span>Lintang</span><strong>${esc(pal.lintang)}</strong><small lang="ban-Bali">${esc(pal.lintangAksara)}</small></div><div><span>Saptawara × Pancawara</span><strong>${esc(p.saptawara)} × ${esc(p.pancawara)}</strong></div><div><span>Pelindung Saptawara</span><strong>${esc(pal.patron)}</strong></div><div><span>Urip</span><strong>${pal.urip}</strong></div></div><p><a href="${BP}/palelintangan?tanggal=${encodeURIComponent(iso)}">Lihat dalam bagan 35 Lintang →</a></p></section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
 ${astronomicalLunarContext(iso)}
-${wariga ? `<section><h2>Ingkel & konteks Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan · Saptawara</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pitra restriction terpicu: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada Pitra restriction eksplisit yang terpicu pada rule set sumber saat ini."} <a href="${BP}/padewasan?tanggal=${iso}">Buka rincian Padewasan bersumber →</a></p></section>` : ""}
+${wariga ? `<section><h2>Ingkel & Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pantangan Pitra: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada pantangan Pitra khusus yang tercatat untuk kombinasi hari ini."} <a href="${BP}/padewasan?tanggal=${iso}">Lihat Padewasan hari ini →</a></p></section>` : ""}
 <section><h2>Navigasi tradisional</h2><div class="bali-traditional-nav">
 <a href="${BP}/${addDaysIso(iso, -7)}">← 1 Wuku</a><a href="${BP}/${addDaysIso(iso, 7)}">+1 Wuku →</a>
 <a href="${BP}/${addDaysIso(iso, -210)}">← 1 Oton</a><a href="${BP}/${addDaysIso(iso, 210)}">+1 Oton →</a>
@@ -399,28 +399,45 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
   const today = selectedBaliDate(ctx);
   const p = pawukon(isoToJdn(today));
   const matrix = palelintanganMatrix();
-  const headers = `<div class="pal-corner">Sapta × Panca</div>${PANCAWARA.map((name) => `<div class="pal-head">${esc(name)}</div>`).join("")}`;
+  const selected = matrix.find((x) => x.saptawara === p.saptawara && x.pancawara === p.pancawara)!;
+  const headers = `<div class="pal-corner"><span>PALĚLINTANGAN</span><small>Sapta × Panca</small></div>${PANCAWARA.map((name) => `<div class="pal-head"><span>${esc(name)}</span><small>Pancawara</small></div>`).join("")}`;
   const rows = SAPTAWARA.map((sapta) => {
     const cells = PANCAWARA.map((panca) => {
       const cell = matrix.find((x) => x.saptawara === sapta && x.pancawara === panca)!;
       const current = p.saptawara === sapta && p.pancawara === panca;
-      return `<details class="pal-cell${current ? " is-current" : ""}"><summary><span>${esc(cell.lintang)}</span><small>${cell.urip}</small></summary><p><b>${esc(sapta)} ${esc(panca)}</b></p><p>Lintang: <b>${esc(cell.lintang)}</b></p><p>Patron Saptawara: ${esc(cell.patron)}</p><p>Urip ${cell.saptawaraUrip} + ${cell.pancawaraUrip} = <b>${cell.urip}</b>.</p>${current ? `<p><b>Ini kombinasi tanggal dipilih.</b></p>` : ""}</details>`;
+      return `<article class="pal-cell${current ? " is-current" : ""}" aria-label="${esc(cell.lintang)} · ${esc(sapta)} ${esc(panca)}">
+        <div class="pal-stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="pal-cell-top"><span>${esc(panca)}</span><b>Urip ${cell.urip}</b></div>
+        <strong class="pal-lintang-name">${esc(cell.lintang)}</strong>
+        <em class="pal-lintang-aksara" lang="ban-Bali">${esc(cell.lintangAksara)}</em>
+        <span class="pal-combination">${esc(sapta)} · ${esc(panca)}</span>
+        <small class="pal-patron">${esc(cell.patron)}</small>
+        ${current ? `<span class="pal-current-mark">Tanggal dipilih</span>` : ""}
+      </article>`;
     }).join("");
-    return `<div class="pal-row-head"><strong>${esc(sapta)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[sapta])}</small></div>${cells}`;
+    return `<div class="pal-row-head"><strong>${esc(sapta)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[sapta])}</small><span>Saptawara</span></div>${cells}`;
   }).join("");
   return {
     status: 200, maxAge: "midnight", tz: BALI_TZ, indexable: false,
     html: page({
       site: ctx.site, path: `${BP}/palelintangan`, lang: "id",
-      title: "Palelintangan Bali — matriks 35 Pancawara × Saptawara",
-      description: "Palelintangan interaktif 35 kombinasi Pancawara dan Saptawara, dipisahkan secara jelas dari Tika Pawukon 210 hari.",
-      h1: "Palelintangan · 35 perpotongan hari",
-      sub: `${idDate(today)} · ${p.saptawara} ${p.pancawara}`,
+      title: `Palelintangan Bali hari ini — 35 Lintang Saptawara × Pancawara`,
+      description: `Palelintangan Bali untuk ${idDate(today)}: Lintang ${selected.lintang}, kombinasi ${p.saptawara} ${p.pancawara}, dengan bagan lengkap 35 Lintang dalam Aksara Bali.`,
+      h1: "Palelintangan Bali · Bagan 35 Lintang",
+      sub: `${idDate(today)} · ${selected.lintang} · ${p.saptawara} ${p.pancawara}`,
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/palelintangan`, label: "Palelintangan" }],
       indexable: false,
-      body: `${baliModeNav("palelintangan", today)}<section class="palelintangan-intro"><p>Palelintangan memakai perpotongan <b>7 Saptawara × 5 Pancawara = 35 kombinasi</b>. Setiap sel sekarang menampilkan nama lintang dari tabel Palelintangan yang ditelusuri ke Alfred Maaß (1929) dan kajian Museum Bali, plus patron Saptawara.</p><p class="note">Tradisi gambar dan beberapa pasangan nama dapat berbeda antar manuskrip/koleksi. Karena itu AafnaiPatro belum mengisi satwa, pohon, wayang, watak atau ramalan yang belum mempunyai sumber per-sel yang stabil. <a href="https://ase.exopla.net/index.php/Balinese_(All_Terms)" rel="nofollow noopener">Lihat tabel sumber 35 lintang ↗</a></p></section>
-<section><div class="pal-grid">${headers}${rows}</div></section>
-<section><h2>Hubungan dengan Pawukon</h2><p>Kombinasi tanggal dipilih adalah <b>${esc(p.combination)}</b>, tetapi Wuku ${esc(p.wuku.name)} dan seluruh Wewaran lain tetap berasal dari posisi 210-hari yang sama.</p><p><a href="${BP}">Lihat posisi ini di Tika Pawukon →</a></p></section>`,
+      body: `${baliModeNav("palelintangan", today)}
+<section class="pal-hero">
+  <div class="pal-hero-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="pal-hero-copy"><span class="bali-face-kicker">Lintang untuk tanggal dipilih</span><h2>${esc(selected.lintang)}</h2><div class="pal-hero-aksara" lang="ban-Bali">${esc(selected.lintangAksara)}</div><p>${esc(p.saptawara)} × ${esc(p.pancawara)} · Wuku ${esc(p.wuku.name)}</p></div>
+  <div class="pal-hero-facts"><div><span>Urip</span><strong>${selected.urip}</strong></div><div><span>Saptawara</span><strong>${esc(p.saptawara)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[p.saptawara])}</small></div><div><span>Pancawara</span><strong>${esc(p.pancawara)}</strong></div><div><span>Pelindung</span><strong>${esc(selected.patron)}</strong></div></div>
+</section>
+<form class="bali-date-jump pal-date-jump" method="get" action="${BP}/palelintangan"><label><span>Lihat Palelintangan tanggal lain</span><input type="date" name="tanggal" min="1929-01-01" max="2129-12-31" value="${esc(today)}" required></label><button type="submit">Lihat Lintang</button></form>
+<section class="palelintangan-intro"><div><span class="bali-face-kicker">35 Lintang</span><h2>Cara membaca Palelintangan Bali</h2></div><p>Palelintangan mempertemukan <b>7 Saptawara</b> dengan <b>5 Pancawara</b>, menghasilkan 35 kombinasi Lintang. Cari baris Saptawara dan kolom Pancawara untuk menemukan Lintang suatu hari.</p><p>Bagan ini menampilkan nama Lintang dalam huruf Latin dan Aksara Bali, Urip serta pelindung Saptawara. Wuku dan Wewaran lain tetap dapat dilihat pada <a href="${BP}/${today}">halaman hari Bali</a>.</p></section>
+<section class="pal-chart-section"><div class="pal-chart-title"><span>Bagan Palelintangan</span><strong>7 Saptawara × 5 Pancawara</strong></div><div class="pal-grid">${headers}${rows}</div></section>
+<section class="pal-seo-story"><h2>Palelintangan dalam Kalender Bali</h2><p>Palelintangan adalah salah satu cara tradisional membaca pertemuan hari dalam Kalender Bali. Setiap kombinasi Saptawara dan Pancawara memiliki nama Lintang. Karena siklus 7 hari dan 5 hari bertemu kembali setiap 35 hari, susunan ini membentuk bagan 35 Lintang.</p><div class="bali-quick-grid"><a href="${BP}/${today}"><strong>Tika Pawukon</strong><span>Lihat Wuku dan Wewaran tanggal ini</span></a><a href="${BP}/otonan"><strong>Otonan</strong><span>Hitung siklus 210 hari kelahiran</span></a><a href="${BP}/sasih-saka?tanggal=${encodeURIComponent(today)}"><strong>Sasih / Saka</strong><span>Lihat Purnama, Tilem dan kalender bulan Bali</span></a></div></section>
+<details class="bali-about-data"><summary>Tentang nama 35 Lintang</summary><div><p>Nama Lintang dan bentuk Aksara Bali dapat memiliki variasi ejaan pada naskah dan koleksi yang berbeda. AafnaiPatro menampilkan bentuk yang digunakan pada tabel Palelintangan yang dibandingkan dengan koleksi Museum Bali.</p><p><a href="https://ase.exopla.net/index.php/Balinese_(All_Terms)" rel="nofollow noopener">Lihat catatan nama Lintang ↗</a></p></div></details>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
   };
