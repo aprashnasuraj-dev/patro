@@ -165,3 +165,26 @@ Privacy:
 - My Bali data is not required for public calendar computation;
 - the first version does not upload the local memory object;
 - future account sync, if added, must be opt-in and separate from the local-first default.
+
+
+## Official 2026 Kemenag cross-check
+
+Ditjen Bimas Hindu Kementerian Agama publishes an official 2026 Hindu holy-day schedule (letter B-253/DJ.VI/Dt.VI.1.3/BA.03/09/2025, dated 22 September 2025). It identifies:
+- Siwa Ratri — 17 January 2026;
+- Tawur Agung Kesanga — 18 March 2026;
+- Nyepi Saka 1948 — 19 March 2026;
+- Saraswati — 4 April and 31 October 2026;
+- Pagerwesi — 8 April and 4 November 2026;
+- Penampahan Galungan — 16 June 2026;
+- Galungan — 17 June 2026;
+- Umanis Galungan — 18 June 2026;
+- Penampahan Kuningan — 26 June 2026;
+- Kuningan — 27 June 2026.
+
+Source:
+- https://bimashindu.kemenag.go.id/storage/files/Hari%20Libur%20Nasional%2C%20Libur%20Fakultatif%2C%20dan%20Cuti%20Bersama%20Tahun%202026.pdf
+
+Product implication:
+- 2026 Nyepi provenance is upgraded from a media-calendar source to official.
+- The deterministic Pawukon engine is regression-tested against the official Saraswati, Pagerwesi, Galungan and Kuningan dates.
+- This official schedule validates named holy days; it does not by itself provide a complete annual Sasih/Purnama/Tilem mapping, so the 2026 Sasih projection remains fail-closed.
