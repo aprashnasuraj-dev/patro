@@ -60,6 +60,7 @@ async function places(request:Request,env:Env):Promise<Response>{
   const q=(url.searchParams.get("q")||"").trim().toLocaleLowerCase().slice(0,80);
   const districtSlug=(url.searchParams.get("district")||"").trim().slice(0,80);
   const limit=Math.max(1,Math.min(100,Number(url.searchParams.get("limit")||25)||25));
+  const offset=Math.max(0,Math.min(10000,Number(url.searchParams.get("offset")||0)||0));
   let did:number|null=null;
   if(districtSlug){
     const admin=await assetJson(env,request,"/data/nepalmap/v1/admin.json");
@@ -68,6 +69,7 @@ async function places(request:Request,env:Env):Promise<Response>{
     did=d.id;
   }
   const out:any[]=[];
+  let matched=0;
   for(const cat of rawCats){
     const layer=await assetJson(env,request,`/data/nepalmap/v1/${cat}.json`);
     if(!layer) continue;
@@ -77,11 +79,12 @@ async function places(request:Request,env:Env):Promise<Response>{
       if(did!=null&&row[idx.district_id]!==did) continue;
       const hay=(String(row[idx.name]||"")+" "+String(row[idx.name_ne]||"")+" "+String(row[idx.sub]||"")).toLocaleLowerCase();
       if(q&&!hay.includes(q)) continue;
+      if(matched++<offset) continue;
       out.push({category:cat,...objectFromRow(layer.fields,row)});
     }
     if(out.length>=limit) break;
   }
-  return json({data:out,count:out.length,limit,attribution:ATTRIBUTION,license:"https://opendatacommons.org/licenses/odbl/1-0/"});
+  return json({data:out,count:out.length,limit,offset,next_offset:out.length===limit?offset+out.length:null,attribution:ATTRIBUTION,license:"https://opendatacommons.org/licenses/odbl/1-0/"});
 }
 
 async function correction(request:Request,env:Env):Promise<Response>{
@@ -156,7 +159,15 @@ export async function nepalApiResponse(request:Request,env:Env):Promise<Response
   if(!url.pathname.startsWith(API)) return null;
   if(env.NEPAL_API_ENABLED!=="1") return json({error:"nepal_api_disabled"},503,"no-store");
   if(request.method==="OPTIONS") return new Response(null,{status:204,headers:{"access-control-allow-origin":"*","access-control-allow-methods":"GET,HEAD,POST,OPTIONS","access-control-allow-headers":"content-type","access-control-max-age":"86400"}});
-  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/manifest","/admin","/places","/place/{id}","/emergency","/corrections"]});
+  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/health","/manifest","/admin","/places","/place/{id}","/emergency","/corrections"]});
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/health"){
+    const [manifest,index]=await Promise.all([
+      assetJson(env,request,"/data/nepalmap/v1/manifest.json"),
+      assetJson(env,request,"/data/nepalmap/v1/index/manifest.json")
+    ]);
+    const ok=!!manifest&&!!index;
+    return json({ok,dataset_id:manifest?.dataset_id||null,snapshot_date:manifest?.snapshot_date||null,index_version:index?.version||null,corrections_storage:env.DB?"bound":"unbound"},ok?200:503,"no-store");
+  }
   if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/emergency") return emergency(request,env);
   if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/manifest"){
     const data=await assetJson(env,request,"/data/nepalmap/v1/manifest.json");return data?json(data):json({error:"not_found"},404);
