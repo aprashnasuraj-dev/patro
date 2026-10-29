@@ -313,8 +313,11 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
         `<article><strong>${esc(record.name)}</strong><span>${esc(record.locality)}</span><a href="${esc(record.source.url)}" rel="nofollow noopener">sumber ↗</a></article>`
       ).join("")}</div>`
     : `<p class="muted">Tidak ada Piodalan bersumber yang cocok dengan tanggal ini. Rule Sasih tetap fail-closed jika pemetaan tahunan belum lengkap.</p>`;
+  const personalActions = ctx.flags.baliPwa
+    ? `<div class="bali-day-actions"><button type="button" class="bali-save-date" data-bali-save-date="${esc(iso)}" data-bali-save-label="${esc(p.combination)}">Simpan tanggal ini</button><button type="button" class="bali-share-date" data-bali-share-date="${esc(iso)}" data-bali-share-label="${esc(p.combination)}">Bagikan hari ini</button><a href="${BP}#my-bali">Buka My Bali Calendar</a></div>`
+    : "";
   return `<section class="bali-day-snapshot"><div class="bali-snapshot-head"><div><span class="bali-face-kicker">Hari Bali</span><h2>${esc(p.combination)}</h2><p>${esc(idDate(iso))} · hari ${p.cycleDay}/${PAWUKON_CYCLE_DAYS} · hari ${p.dayInWuku}/7 dalam Wuku ${esc(p.wuku.name)}</p></div><a class="bali-secondary" href="${BP}/wuku/${slug(p.wuku.name)}">Wuku ${esc(p.wuku.name)}</a></div>
-<div class="bali-event-row">${eventHtml}</div><div class="bali-day-actions"><button type="button" class="bali-save-date" data-bali-save-date="${esc(iso)}" data-bali-save-label="${esc(p.combination)}">Simpan tanggal ini</button><button type="button" class="bali-share-date" data-bali-share-date="${esc(iso)}" data-bali-share-label="${esc(p.combination)}">Bagikan hari ini</button><a href="${BP}#my-bali">Buka My Bali Calendar</a></div></section>
+<div class="bali-event-row">${eventHtml}</div>${personalActions}</section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
 ${astronomicalLunarContext(iso)}
