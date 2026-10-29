@@ -89,3 +89,21 @@ test("Palelintangan is visually rich and long-range pages remain culturally clea
   expect(old?.status()).toBe(200);
   await expect(page.locator("body")).toContainText("Wewaran lengkap");
 });
+
+
+test("permanent Lintang profile has human cultural copy, navigation and a mobile-safe layout", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/bali-calendar/palelintangan/kala-sungsang", { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("heading", { name: "Lintang Kala Sungsang dalam Palelintangan Bali" })).toBeVisible();
+  await expect(page.locator(".lintang-portrait")).toBeVisible();
+  await expect(page.locator(".lintang-art")).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/bali-calendar\/palelintangan\/kala-sungsang$/);
+  await expect(page.locator(".lintang-directory a")).toHaveCount(35);
+  await expect(page.getByRole("heading", { name: /Kisah lain dalam tema/ })).toBeVisible();
+  await expect(page.getByText("Sosok terbalik", { exact: false }).first()).toBeVisible();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+  await page.goto("/bali-calendar/palelintangan/hulanjar", { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("heading", { name: "Lintang Hulanjar dalam Palelintangan Bali" })).toBeVisible();
+  await expect(page.getByText("Nama dalam naskah dan koleksi")).toBeVisible();
+});

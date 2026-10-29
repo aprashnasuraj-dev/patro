@@ -17,6 +17,7 @@ import { astaDauh, merthaYoga, pancaDauh, PEWIWAHAN_SAPTAWARA, pitraImmediateRes
 import { sunriseSunset } from "../../../src/patro-tools/core/astro";
 import { moonDay } from "../engines/moon";
 import { renderTraditionalWorkspace } from "./bali-traditional";
+import { lintangProfile } from "./bali-lintang";
 
 const BP = "/bali-calendar";
 const WP = "/weton";
@@ -322,7 +323,7 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
   return `<section class="bali-day-snapshot"><div class="bali-snapshot-head"><div><span class="bali-face-kicker">Hari Bali</span><h2>${esc(p.combination)}</h2><p>${esc(idDate(iso))} · hari ${p.cycleDay}/${PAWUKON_CYCLE_DAYS} · hari ${p.dayInWuku}/7 dalam Wuku ${esc(p.wuku.name)}</p></div><a class="bali-secondary" href="${BP}/wuku/${slug(p.wuku.name)}">Wuku ${esc(p.wuku.name)}</a></div>
 <div class="bali-event-row">${eventHtml}</div>${personalActions}</section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
-<section class="bali-lintang-day"><h2>Palelintangan hari ini</h2><div class="bali-wariga-strip"><div><span>Lintang</span><strong>${esc(pal.lintang)}</strong><small lang="ban-Bali">${esc(pal.lintangAksara)}</small></div><div><span>Saptawara × Pancawara</span><strong>${esc(p.saptawara)} × ${esc(p.pancawara)}</strong></div><div><span>Pelindung Saptawara</span><strong>${esc(pal.patron)}</strong></div><div><span>Urip</span><strong>${pal.urip}</strong></div></div><p><a href="${BP}/palelintangan?tanggal=${encodeURIComponent(iso)}">Lihat dalam bagan 35 Lintang →</a></p></section>
+<section class="bali-lintang-day"><h2>Palelintangan hari ini</h2><div class="bali-wariga-strip"><div><span>Lintang</span><strong>${esc(pal.lintang)}</strong><small lang="ban-Bali">${esc(pal.lintangAksara)}</small></div><div><span>Saptawara × Pancawara</span><strong>${esc(p.saptawara)} × ${esc(p.pancawara)}</strong></div><div><span>Pelindung Saptawara</span><strong>${esc(pal.patron)}</strong></div><div><span>Urip</span><strong>${pal.urip}</strong></div></div><p><a href="${BP}/palelintangan?tanggal=${encodeURIComponent(iso)}">Lihat dalam bagan 35 Lintang →</a> · <a href="${BP}/palelintangan/${slug(pal.lintang)}">Baca kisah ${esc(pal.lintang)} →</a></p></section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
 ${astronomicalLunarContext(iso)}
 ${wariga ? `<section><h2>Ingkel & Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pantangan Pitra: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada pantangan Pitra khusus yang tercatat untuk kombinasi hari ini."} <a href="${BP}/padewasan?tanggal=${iso}">Lihat Padewasan hari ini →</a></p></section>` : ""}
@@ -408,7 +409,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
       return `<article class="pal-cell${current ? " is-current" : ""}" aria-label="${esc(cell.lintang)} · ${esc(sapta)} ${esc(panca)}">
         <div class="pal-stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <div class="pal-cell-top"><span>${esc(panca)}</span><b>Urip ${cell.urip}</b></div>
-        <strong class="pal-lintang-name">${esc(cell.lintang)}</strong>
+        <a class="pal-lintang-name" href="${BP}/palelintangan/${slug(cell.lintang)}" style="text-decoration:none">${esc(cell.lintang)}</a>
         <em class="pal-lintang-aksara" lang="ban-Bali">${esc(cell.lintangAksara)}</em>
         <span class="pal-combination">${esc(sapta)} · ${esc(panca)}</span>
         <small class="pal-patron">${esc(cell.patron)}</small>
@@ -430,13 +431,13 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
       body: `${baliModeNav("palelintangan", today)}
 <section class="pal-hero">
   <div class="pal-hero-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="pal-hero-copy"><span class="bali-face-kicker">Lintang untuk tanggal dipilih</span><h2>${esc(selected.lintang)}</h2><div class="pal-hero-aksara" lang="ban-Bali">${esc(selected.lintangAksara)}</div><p>${esc(p.saptawara)} × ${esc(p.pancawara)} · Wuku ${esc(p.wuku.name)}</p></div>
+  <div class="pal-hero-copy"><span class="bali-face-kicker">Lintang untuk tanggal dipilih</span><h2>${esc(selected.lintang)}</h2><p><a href="${BP}/palelintangan/${slug(selected.lintang)}" style="color:#f9dc96;font-weight:800">Jelajahi kisah Lintang ${esc(selected.lintang)} →</a></p><div class="pal-hero-aksara" lang="ban-Bali">${esc(selected.lintangAksara)}</div><p>${esc(p.saptawara)} × ${esc(p.pancawara)} · Wuku ${esc(p.wuku.name)}</p></div>
   <div class="pal-hero-facts"><div><span>Urip</span><strong>${selected.urip}</strong></div><div><span>Saptawara</span><strong>${esc(p.saptawara)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[p.saptawara])}</small></div><div><span>Pancawara</span><strong>${esc(p.pancawara)}</strong></div><div><span>Pelindung</span><strong>${esc(selected.patron)}</strong></div></div>
 </section>
 <form class="bali-date-jump pal-date-jump" method="get" action="${BP}/palelintangan"><label><span>Lihat Palelintangan tanggal lain</span><input type="date" name="tanggal" min="1929-01-01" max="2129-12-31" value="${esc(today)}" required></label><button type="submit">Lihat Lintang</button></form>
 <section class="palelintangan-intro"><div><span class="bali-face-kicker">35 Lintang</span><h2>Cara membaca Palelintangan Bali</h2></div><p>Palelintangan mempertemukan <b>7 Saptawara</b> dengan <b>5 Pancawara</b>, menghasilkan 35 kombinasi Lintang. Cari baris Saptawara dan kolom Pancawara untuk menemukan Lintang suatu hari.</p><p>Bagan ini menampilkan nama Lintang dalam huruf Latin dan Aksara Bali, Urip serta pelindung Saptawara. Wuku dan Wewaran lain tetap dapat dilihat pada <a href="${BP}/${today}">halaman hari Bali</a>.</p></section>
 <section class="pal-chart-section"><div class="pal-chart-title"><span>Bagan Palelintangan</span><strong>7 Saptawara × 5 Pancawara</strong></div><div class="pal-grid">${headers}${rows}</div></section>
-<section class="pal-seo-story"><h2>Palelintangan dalam Kalender Bali</h2><p>Palelintangan adalah salah satu cara tradisional membaca pertemuan hari dalam Kalender Bali. Setiap kombinasi Saptawara dan Pancawara memiliki nama Lintang. Karena siklus 7 hari dan 5 hari bertemu kembali setiap 35 hari, susunan ini membentuk bagan 35 Lintang.</p><div class="bali-quick-grid"><a href="${BP}/${today}"><strong>Tika Pawukon</strong><span>Lihat Wuku dan Wewaran tanggal ini</span></a><a href="${BP}/otonan"><strong>Otonan</strong><span>Hitung siklus 210 hari kelahiran</span></a><a href="${BP}/sasih-saka?tanggal=${encodeURIComponent(today)}"><strong>Sasih / Saka</strong><span>Lihat Purnama, Tilem dan kalender bulan Bali</span></a></div></section>
+<section class="pal-seo-story"><h2>Palelintangan dalam Kalender Bali</h2><p>Setiap Lintang mempunyai halaman khusus tentang motif budaya, ragam nama pada naskah, Aksara Bali dan tanggal berikutnya. Pilih nama Lintang pada bagan untuk membaca ceritanya.</p><p>Palelintangan adalah salah satu cara tradisional membaca pertemuan hari dalam Kalender Bali. Setiap kombinasi Saptawara dan Pancawara memiliki nama Lintang. Karena siklus 7 hari dan 5 hari bertemu kembali setiap 35 hari, susunan ini membentuk bagan 35 Lintang.</p><div class="bali-quick-grid"><a href="${BP}/${today}"><strong>Tika Pawukon</strong><span>Lihat Wuku dan Wewaran tanggal ini</span></a><a href="${BP}/otonan"><strong>Otonan</strong><span>Hitung siklus 210 hari kelahiran</span></a><a href="${BP}/sasih-saka?tanggal=${encodeURIComponent(today)}"><strong>Sasih / Saka</strong><span>Lihat Purnama, Tilem dan kalender bulan Bali</span></a></div></section>
 <details class="bali-about-data"><summary>Tentang nama 35 Lintang</summary><div><p>Nama Lintang dan bentuk Aksara Bali dapat memiliki variasi ejaan pada naskah dan koleksi yang berbeda. AafnaiPatro menampilkan bentuk yang digunakan pada tabel Palelintangan yang dibandingkan dengan koleksi Museum Bali.</p><p><a href="https://ase.exopla.net/index.php/Balinese_(All_Terms)" rel="nofollow noopener">Lihat catatan nama Lintang ↗</a></p></div></details>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
@@ -896,6 +897,7 @@ export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
   if (rest.length === 1 && rest[0] === "go") return baliJump(ctx);
   if (rest.length === 1 && rest[0] === "palelintangan") return baliPalelintanganPage(ctx);
+  if (rest.length === 2 && rest[0] === "palelintangan") return lintangProfile(ctx, rest[1]);
   if (rest.length === 1 && rest[0] === "sasih-saka") return baliSasihSakaPage(ctx);
   if (rest.length === 1 && rest[0] === "hari-raya") return baliHolidays(ctx, Number(todayIn(BALI_TZ, ctx.now).slice(0, 4)));
   if (ctx.flags.baliIcsFeeds && rest[0] === "feed") return baliFeedRoute(ctx, rest);
@@ -1026,7 +1028,7 @@ export function wetonRoute(ctx: Ctx, rest: string[]): Rendered | null {
 }
 
 export function baliUrls(now: Date, flags = ROADMAP_FLAGS): string[] {
-  const out = [BP, `${BP}/palelintangan`, `${BP}/otonan`, ...WUKU.map((w) => `${BP}/wuku/${slug(w)}`)];
+  const out = [BP, `${BP}/palelintangan`, ...palelintanganMatrix().map((x) => `${BP}/palelintangan/${slug(x.lintang)}`), `${BP}/otonan`, ...WUKU.map((w) => `${BP}/wuku/${slug(w)}`)];
   if (flags.baliRerainanSearch) out.push(`${BP}/cari`);
   if (flags.baliLearningGuides) out.push(`${BP}/wewaran`);
   if (flags.baliPiodalan) out.push(`${BP}/piodalan`, ...BALI_PIODALAN.map((x) => `${BP}/piodalan/${x.slug}`));
