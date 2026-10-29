@@ -836,6 +836,7 @@ export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
   if (rest.length === 1 && rest[0] === "palelintangan") return baliPalelintanganPage(ctx);
   if (rest.length === 1 && rest[0] === "sasih-saka") return baliSasihSakaPage(ctx);
+  if (rest.length === 1 && rest[0] === "hari-raya") return baliHolidays(ctx, Number(todayIn(BALI_TZ, ctx.now).slice(0, 4)));
   if (ctx.flags.baliIcsFeeds && rest[0] === "feed") return baliFeedRoute(ctx, rest);
   if (ctx.flags.baliRerainanSearch && rest.length === 1 && rest[0] === "cari") return baliRerainanSearch(ctx);
   if (ctx.flags.baliLearningGuides && rest.length === 1 && rest[0] === "wewaran") return wewaranGuide(ctx);
