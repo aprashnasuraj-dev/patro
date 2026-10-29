@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { isoToJdn } from "../worker/worldcal/dates";
 import { BALI_PIODALAN, matchesPiodalanRule, nextPawukonPiodalan } from "../worker/worldcal/data/bali-piodalan";
 import { astaDauh, merthaYoga, pancaDauh, pitraImmediateRestrictions, sasihReference } from "../worker/worldcal/engines/wariga";
-import { padewasanReferenceModel } from "../worker/worldcal/pages/bali-weton";
+import { padewasanReferenceModel, solarDauhWindows } from "../worker/worldcal/pages/bali-weton";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
 
 describe("Bali Wariga source-backed roadmap surfaces", () => {
@@ -62,6 +62,22 @@ describe("Bali Wariga source-backed roadmap surfaces", () => {
     expect(m?.asta_dauh).toHaveLength(8);
     expect(m?.panca_dauh).toHaveLength(5);
     expect(typeof m?.lunar.evaluated).toBe("boolean");
+  });
+
+  it("splits real Bali sunrise/sunset spans into exact 5/8 Dauh windows", () => {
+    const w = solarDauhWindows("2026-10-29", -8.65, 115.2167);
+    expect(w.sunrise.getTime()).toBeLessThan(w.sunset.getTime());
+    expect(w.sunset.getTime()).toBeLessThan(w.next_sunrise.getTime());
+    expect(w.panca.day).toHaveLength(5);
+    expect(w.panca.night).toHaveLength(5);
+    expect(w.asta.day).toHaveLength(8);
+    expect(w.asta.night).toHaveLength(8);
+    expect(w.panca.day[0].start.getTime()).toBe(w.sunrise.getTime());
+    expect(w.panca.day[4].end.getTime()).toBe(w.sunset.getTime());
+    expect(w.asta.night[0].start.getTime()).toBe(w.sunset.getTime());
+    expect(w.asta.night[7].end.getTime()).toBe(w.next_sunrise.getTime());
+    const daySizes = w.asta.day.map((x) => x.end.getTime() - x.start.getTime());
+    expect(Math.max(...daySizes) - Math.min(...daySizes)).toBeLessThanOrEqual(1);
   });
 
   it("keeps new cultural surfaces off pending verification", () => {
