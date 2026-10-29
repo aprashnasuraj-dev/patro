@@ -30,6 +30,12 @@ function published(iso:string){const y=Number(iso.slice(0,4)),out:string[]=[];if
 function important(iso:string){return [...pawukonEvents(isoToJdn(iso)).filter(x=>/Galungan|Kuningan|Saraswati|Pagerwesi|Banyu Pinaruh|Tumpek|Kajeng Kliwon/.test(x)),...published(iso)]}
 function bounds(iso:string){const p=parseIso(iso)!;const first=p.y+"-"+String(p.m).padStart(2,"0")+"-01",lastDay=new Date(Date.UTC(p.y,p.m,0)).getUTCDate(),last=p.y+"-"+String(p.m).padStart(2,"0")+"-"+String(lastDay).padStart(2,"0");return{year:p.y,month:p.m,key:first.slice(0,7),firstJdn:isoToJdn(first),lastJdn:isoToJdn(last)}}
 function starts(iso:string){const b=bounds(iso),a=pawukon(b.firstJdn),z=pawukon(b.lastJdn),first=b.firstJdn-(a.dayInWuku-1),last=b.lastJdn-(z.dayInWuku-1),out:number[]=[];for(let j=first;j<=last;j+=7)out.push(j);return{b,out}}
+export function sakaYearForDate(iso:string){
+ const p=parseIso(iso);if(!p)return null;
+ const nyepi=NYEPI[p.y]?.date;
+ if(!nyepi)return null;
+ return p.y-(iso>=nyepi?78:79);
+}
 
 export type BaliView="pawukon"|"palelintangan"|"sasih"|"gregorian";
 export function baliModeNav(active:BaliView,iso:string){
@@ -39,7 +45,7 @@ export function baliModeNav(active:BaliView,iso:string){
 
 function monthBoard(iso:string){
  const m=starts(iso),b=m.b,cols=m.out;
- const head='<div class="tika-month-corner"><span>WUKU</span><small>'+esc(ID_MONTHS[b.month-1])+" "+b.year+'</small></div>'+cols.map(j=>{const p=pawukon(j),i=ingkelForWuku(p.wuku.index);return '<a class="tika-month-wuku" href="'+BP+"/wuku/"+slug(p.wuku.name)+'"><span>'+p.wuku.index+". "+esc(p.wuku.name)+'</span><small>Ingkel '+esc(i.name)+"</small></a>"}).join("");
+ const saka=sakaYearForDate(iso),head='<div class="tika-month-corner"><span>WUKU</span><small>'+esc(ID_MONTHS[b.month-1])+" "+b.year+(saka!==null?'<b>ÇAKA '+saka+'</b>':"")+'</small></div>'+cols.map(j=>{const p=pawukon(j),i=ingkelForWuku(p.wuku.index);return '<a class="tika-month-wuku" href="'+BP+"/wuku/"+slug(p.wuku.name)+'"><span>'+p.wuku.index+". "+esc(p.wuku.name)+'</span><small>Ingkel '+esc(i.name)+"</small></a>"}).join("");
  const body=SAPTAWARA.map((sapta,row)=>{let out='<div class="tika-weekday"><strong>'+esc(sapta)+"</strong><small>"+esc(ID_DAYS[row])+"</small></div>";for(const start of cols){const jdn=start+row,date=jdnToIso(jdn),p=pawukon(jdn),events=important(date),l=lunar(date),major=events.some(x=>/Galungan|Kuningan|Saraswati|Pagerwesi|Banyu Pinaruh|Tumpek|Nyepi/.test(x)),title=p.combination+"; "+idDate(date)+(events.length?"; "+events.join(", "):"");out+='<a class="tika-month-cell'+(date.startsWith(b.key)?"":" outside")+(date===iso?" selected":"")+'" href="'+BP+"/"+date+'" title="'+esc(title)+'" aria-label="'+esc(title)+'"><div class="tika-cell-top"><span>'+esc(p.pancawara)+"</span><span>"+esc(p.triwara)+'</span></div><strong class="tika-date-number">'+Number(date.slice(-2))+'</strong><div class="tika-cell-meta"><span>'+esc(p.sadwara)+"</span><span>"+esc(p.caturwara)+'</span></div><div class="tika-cell-marks">'+(major?'<i class="major"></i>':"")+(l.purnama||l.tilem?'<i class="lunar"></i>':"")+"</div></a>"}return out}).join("");
  const ingkel='<div class="tika-ingkel-label">INGKEL</div>'+cols.map(j=>{const p=pawukon(j),i=ingkelForWuku(p.wuku.index);return '<div class="tika-ingkel"><strong>'+esc(i.name)+"</strong><small>"+esc(i.domain)+"</small></div>"}).join("");
  return '<div class="tika-board-wrap" tabindex="0"><div class="tika-month-grid" style="--tika-cols:'+cols.length+'">'+head+body+ingkel+'</div></div><div class="tika-legend"><span><i class="major"></i>rerainan utama</span><span><i class="lunar"></i>Purnama/Tilem terbit</span><span>sel redup = bulan sebelah</span></div>';
