@@ -418,7 +418,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
     return `<div class="pal-row-head"><strong>${esc(sapta)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[sapta])}</small><span>Saptawara</span></div>${cells}`;
   }).join("");
   return {
-    status: 200, maxAge: "midnight", tz: BALI_TZ, indexable: false,
+    status: 200, maxAge: "midnight", tz: BALI_TZ, indexable: true,
     html: page({
       site: ctx.site, path: `${BP}/palelintangan`, lang: "id",
       title: `Palelintangan Bali hari ini — 35 Lintang Saptawara × Pancawara`,
@@ -426,7 +426,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
       h1: "Palelintangan Bali · Bagan 35 Lintang",
       sub: `${idDate(today)} · ${selected.lintang} · ${p.saptawara} ${p.pancawara}`,
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/palelintangan`, label: "Palelintangan" }],
-      indexable: false,
+      indexable: true,
       body: `${baliModeNav("palelintangan", today)}
 <section class="pal-hero">
   <div class="pal-hero-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -866,19 +866,19 @@ function baliEnglishGuide(ctx: Ctx): Rendered {
     status: 200, maxAge: 86400 * 7, indexable: false,
     html: page({
       site: ctx.site, path: `${BP}/guide`, lang: "en",
-      title: "How the Balinese calendar works — Pawukon, Wewaran, Otonan, Piodalan and Sasih",
-      description: "An English bridge to the Balinese calendar: 210-day Pawukon, Wewaran cycles, Otonan, Piodalan, Sasih, source status and what AafnaiPatro calculates versus publishes.",
-      h1: "How the Balinese calendar works",
-      sub: "A source-aware English guide; Indonesian remains the primary product language.",
+      title: "Balinese Calendar Guide — Pawukon, Wewaran, Otonan, Piodalan & Sasih",
+      description: "A clear introduction to the Balinese calendar: the 210-day Pawukon, Wuku and Wewaran cycles, Otonan, Piodalan, Sasih, Purnama, Tilem and choosing days.",
+      h1: "A practical guide to the Balinese calendar",
+      sub: "Understand the cycles behind dates, ceremonies and family observances.",
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/guide`, label: "English guide" }],
       indexable: false,
-      body: `<section><h2>Pawukon</h2><p>Pawukon is a 210-day cycle made of 30 Wuku of seven days each. AafnaiPatro calculates this cycle deterministically and labels it calculated.</p></section>
-<section><h2>Wewaran</h2><p>Several named day cycles run together, including Saptawara (7), Pancawara (5), Triwara (3) and others. <a href="${BP}/wewaran">See the Indonesian Wewaran table.</a></p></section>
-<section><h2>Otonan</h2><p>Otonan repeats every 210 days. Because the Balinese ritual day changes at sunrise in the method used here, a birth between midnight and sunrise belongs to the previous Balinese day. If birth time is unknown, the calculator can show both possibilities rather than guessing.</p></section>
-<section><h2>Piodalan</h2><p>A temple anniversary may be tied to Pawukon (often every 210 days) or to a Sasih/lunar rule. AafnaiPatro's directory includes only entries with a government, Kemenag, legal Desa Adat or comparable official source.</p></section>
-<section><h2>Sasih, Purnama and Tilem</h2><p>Annual Sasih/lunar placement is not treated as a simple extension of the 210-day Pawukon. Published/official annual facts remain separate from calculated Pawukon values.</p></section>
-<section><h2>Padewasan / Dauh Ayu</h2><p>AafnaiPatro can show source-backed Wariga reference rules, but it does not claim that a single algorithm replaces annual TIKA deliberation, local custom or religious guidance. The official 2026 TIKA process involved Sulinggih, SKHDN, Bali government, Majelis Desa Adat and lontar observers.</p></section>
-<section><h2>Source labels</h2><p><b>Official</b> means an authoritative government/religious decision or record; <b>published</b> is a sourced annual/calendar fact; <b>calculated</b> is a deterministic rule result; <b>provisional</b> is explicitly not yet authoritative.</p></section>`,
+      body: `<section><h2>Pawukon: the 210-day cycle</h2><p>Pawukon is made of 30 Wuku, each lasting seven days. It runs independently of the Gregorian year, so the same Pawukon pattern returns every 210 days.</p></section>
+<section><h2>Wewaran: several day cycles at once</h2><p>A Balinese day can belong to several named cycles at the same time. Saptawara has seven days, Pancawara has five, Triwara has three, and other Wewaran add more layers. <a href="${BP}/wewaran">Open the Wewaran guide.</a></p></section>
+<section><h2>Otonan</h2><p>Otonan follows the 210-day Pawukon cycle and is commonly used for a person’s recurring birth-day observance. If a birth happened around sunrise, the traditional day boundary can matter, so the calculator can show both possibilities when the time is uncertain.</p><p><a href="${BP}/otonan">Calculate an Otonan →</a></p></section>
+<section><h2>Piodalan</h2><p>Piodalan is a temple anniversary. Some Piodalan dates follow a Pawukon combination and repeat every 210 days; others follow a Sasih or lunar date. <a href="${BP}/piodalan">Browse the Piodalan calendar.</a></p></section>
+<section><h2>Sasih, Purnama and Tilem</h2><p>Sasih belongs to the lunar side of the Balinese calendar. Purnama marks the full-moon observance and Tilem the dark-moon observance. Their civil dates are shown from the Balinese calendar available for the selected year.</p></section>
+<section><h2>Palelintangan</h2><p>Palelintangan combines seven Saptawara days with five Pancawara days to form 35 Lintang. The chart shows the Lintang names in Latin script and Aksara Bali.</p><p><a href="${BP}/palelintangan">Explore the 35 Lintang →</a></p></section>
+<section><h2>Padewasan and Dauh Ayu</h2><p>Choosing a suitable day or time can involve several calendar factors rather than one universal score. AafnaiPatro presents the available Wewaran, Wuku, Ingkel, Pitra, Pewiwahan and Dauh information together so the reader can understand the day in context.</p></section>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
   };
@@ -1025,7 +1025,7 @@ export function wetonRoute(ctx: Ctx, rest: string[]): Rendered | null {
 }
 
 export function baliUrls(now: Date, flags = ROADMAP_FLAGS): string[] {
-  const out = [BP, `${BP}/otonan`, ...WUKU.map((w) => `${BP}/wuku/${slug(w)}`)];
+  const out = [BP, `${BP}/palelintangan`, `${BP}/otonan`, ...WUKU.map((w) => `${BP}/wuku/${slug(w)}`)];
   if (flags.baliRerainanSearch) out.push(`${BP}/cari`);
   if (flags.baliLearningGuides) out.push(`${BP}/wewaran`);
   if (flags.baliPiodalan) out.push(`${BP}/piodalan`, ...BALI_PIODALAN.map((x) => `${BP}/piodalan/${x.slug}`));
