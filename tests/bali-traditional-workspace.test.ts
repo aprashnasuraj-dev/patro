@@ -179,7 +179,7 @@ describe("Bali traditional calendar workspace",()=>{
 
   it("keeps Palelintangan distinct and exactly 35 intersections",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/palelintangan"),["palelintangan"]);
-    expect((r.html.match(/class="pal-cell/g)||[])).toHaveLength(35);
+    expect((r.html.match(/<article class="pal-cell(?: is-current)?"/g)||[])).toHaveLength(35);
     expect(r.html).toContain('class="pal-hero"');
     expect(r.html).toContain('class="pal-lintang-aksara"');
     expect(r.html).toContain("Cara membaca Palelintangan Bali");
