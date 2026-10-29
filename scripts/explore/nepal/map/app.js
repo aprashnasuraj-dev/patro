@@ -876,13 +876,17 @@
     var el = $("#np-map");
     if (!el || !window.maplibregl) { showError(new Error("map library missing")); return; }
     if (CFG.maplibreWorker) window.maplibregl.workerUrl = CFG.maplibreWorker;
-    var opts = { container: el, style: STYLE, maxBounds: [[76, 24], [92, 33]], attributionControl: false };
+    var offlineStyle = !!(CFG.flags && CFG.flags.nepalOfflinePacks && navigator.onLine === false);
+    var mapStyle = offlineStyle ? { version: 8, sources: {}, layers: [{ id: "offline-bg", type: "background", paint: { "background-color": "#eef2ed" } }] } : STYLE;
+    var opts = { container: el, style: mapStyle, maxBounds: [[76, 24], [92, 33]], attributionControl: false };
     if (ll) { opts.center = [ll[1], ll[0]]; opts.zoom = ll[2]; } else { opts.bounds = NEPAL; opts.fitBoundsOptions = { padding: 20 }; }
     map = new maplibregl.Map(opts);
     if (CFG.flags && CFG.flags.nepalMobileSheetV2 && window.AafnaiMobileSheet) {
       mobileSheet = window.AafnaiMobileSheet.mount({ panel: document.querySelector(".np-panel"), handle: $("#np-toggle"), map: map });
     }
-    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="https://openfreemap.org">OpenFreeMap</a>' }));
+    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: offlineStyle
+      ? 'Saved places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · offline data pack (no basemap)'
+      : 'Places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="https://openfreemap.org">OpenFreeMap</a>' }));
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
     var geo = new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: false, showUserLocation: true });
     map.addControl(geo, "top-right");
@@ -906,6 +910,10 @@
 
     var styled = new Promise(function (res) { map.on("load", function () {
       styleReady = true;
+      if (offlineStyle) {
+        var head = $("#np-list-head");
+        if (head) head.textContent = "Offline district pack · no basemap tiles";
+      }
       if (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && CFG.terrain) {
         try { window.AafnaiTerrain.setup(map, CFG.terrain); } catch (e) { console.warn("terrain", e); state.terrainOn = false; }
       }
@@ -970,6 +978,7 @@
       btn.disabled = true; btn.textContent = "Saving district data…";
       window.AafnaiOffline.saveDistrict(state.district, VER).then(function (d) {
         btn.textContent = "Saved " + d.name + " offline";
+        btn.title = "Offline link: " + d.offline_url;
       }).catch(function (e) {
         console.warn("offline", e); btn.disabled = false; btn.textContent = "Offline save failed";
       });
