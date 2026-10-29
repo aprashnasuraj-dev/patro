@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { palelintanganMatrix, pawukon, pawukonCycle } from "../worker/worldcal/engines/pawukon";
 import { isoToJdn } from "../worker/worldcal/dates";
 import { baliRoute, rerainanSearch } from "../worker/worldcal/pages/bali-weton";
+import { sakaYearForDate } from "../worker/worldcal/pages/bali-traditional";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
 
 function fnv1a(text:string){
@@ -52,6 +53,14 @@ describe("Bali traditional calendar workspace",()=>{
       name:"Buda Kliwon Dungulan",
       status:"calculated",
     }));
+  });
+
+  it("uses Nyepi as the Saka-year boundary shown in the printed-style masthead",()=>{
+    expect(sakaYearForDate("2026-03-18")).toBe(1947);
+    expect(sakaYearForDate("2026-03-19")).toBe(1948);
+    expect(sakaYearForDate("2026-10-29")).toBe(1948);
+    const r:any=baliRoute(ctx(),[]);
+    expect(r.html).toContain("ÇAKA 1948");
   });
 
   it("builds a unique structural 35-cell Palelintangan matrix",()=>{
