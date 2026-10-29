@@ -2,10 +2,12 @@ import { NYEPI, OTHER_BALI_DAYS, PURNAMA_TILEM } from "../data/bali-saka";
 import { isoToJdn, jdnToIso, parseIso, todayIn } from "../dates";
 import { otonanDates, pawukon, pawukonHolidaysInYear, PAWUKON_HOLIDAYS, TUMPEK } from "../engines/pawukon";
 import { renderIcsCalendar, type IcsEvent } from "../ics";
+import { BALI_PIODALAN, nextPawukonPiodalan } from "../data/bali-piodalan";
 import type { Ctx, Rendered } from "../types";
 
 const BP = "/bali-calendar";
 const TZ = "Asia/Makassar";
+const BALI_RANGE = { minYear: 1929, maxYear: 2129 };
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 const uid = (scope: string, name: string, date: string) => `bali-${scope}-${slug(name)}-${date}@aafnaipatro.com`;
@@ -84,7 +86,7 @@ function selectedRerainan(key: string, year: number): IcsEvent[] | null {
 function otonanFeed(ctx: Ctx): Rendered | null {
   const lahir = ctx.url.searchParams.get("lahir") || "";
   const p = parseIso(lahir);
-  if (!p || p.y < 1900 || p.y > 2100) return null;
+  if (!p || p.y < BALI_RANGE.minYear || p.y > BALI_RANGE.maxYear) return null;
   const beforeSunrise = ctx.url.searchParams.get("sebelum_subuh") === "1";
   const birthJdn = isoToJdn(lahir) - (beforeSunrise ? 1 : 0);
   const today = todayIn(TZ, ctx.now);
@@ -104,10 +106,28 @@ function otonanFeed(ctx: Ctx): Rendered | null {
   return rendered("Otonan Bali", events, ctx, 3600);
 }
 
+function piodalanFeed(ctx: Ctx, rawSlug: string): Rendered | null {
+  const slugValue = rawSlug.replace(/\.ics$/, "");
+  const item = BALI_PIODALAN.find((x) => x.slug === slugValue);
+  if (!item || item.rule.type !== "pawukon") return null;
+  const today = todayIn(TZ, ctx.now);
+  const dates = nextPawukonPiodalan(item.rule, isoToJdn(today), 20);
+  const events: IcsEvent[] = dates.map((j) => {
+    const date = jdnToIso(j);
+    return {
+      uid: `bali-piodalan-${item.slug}-${date}@aafnaipatro.com`,
+      date,
+      summary: `Piodalan — ${item.name}`,
+      description: `Status rule: ${item.source.status}. Sumber: ${item.source.authority}. Pawukon ${item.rule.saptawara} ${item.rule.pancawara}, Wuku ${item.rule.wuku}; recurrence 210 hari.`,
+    };
+  });
+  return rendered(`Piodalan — ${item.name}`, events, ctx, 3600);
+}
+
 export function baliFeedRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (rest.length === 3 && rest[0] === "feed" && rest[1] === "hari-raya" && /^\d{4}\.ics$/.test(rest[2])) {
     const year = Number(rest[2].slice(0, 4));
-    if (year < 1900 || year > 2100) return null;
+    if (year < BALI_RANGE.minYear || year > BALI_RANGE.maxYear) return null;
     return rendered(`Hari Raya Bali ${year}`, majorHolidayEvents(year), ctx);
   }
   if (rest.length === 3 && rest[0] === "feed" && rest[1] === "purnama-tilem" && /^\d{4}\.ics$/.test(rest[2])) {
@@ -116,6 +136,7 @@ export function baliFeedRoute(ctx: Ctx, rest: string[]): Rendered | null {
     return events.length ? rendered(`Purnama & Tilem Bali ${year}`, events, ctx) : null;
   }
   if (rest.length === 2 && rest[0] === "feed" && rest[1] === "otonan.ics") return otonanFeed(ctx);
+  if (rest.length === 3 && rest[0] === "feed" && rest[1] === "piodalan" && /^[a-z0-9-]+\.ics$/.test(rest[2])) return piodalanFeed(ctx, rest[2]);
   if (rest.length === 4 && rest[0] === "feed" && rest[1] === "rerainan" && /^\d{4}\.ics$/.test(rest[3])) {
     const year = Number(rest[3].slice(0, 4));
     const events = selectedRerainan(rest[2], year);
@@ -128,5 +149,6 @@ export const baliFeedExamples = [
   `${BP}/feed/hari-raya/2027.ics`,
   `${BP}/feed/purnama-tilem/2027.ics`,
   `${BP}/feed/otonan.ics?lahir=2000-01-01`,
+  `${BP}/feed/piodalan/pura-luhur-batukaru.ics`,
   `${BP}/feed/rerainan/galungan/2027.ics`,
 ];
