@@ -19,6 +19,7 @@ import { nativeRashifalResponse } from "./rashifal-native";
 import { dictionaryResponse } from "./dictionary";
 import { myTimeResponse } from "./my-time";
 import { googleTagResponse } from "./google-tag";
+import { nepalApiResponse } from "./nepal-api";
 
 const DIRECT_CLIENT_TOOL_ROUTE=/^\/tool\/[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -61,6 +62,8 @@ function canonicalDateRedirect(request: Request): Response | null {
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    const nepalApi = await nepalApiResponse(request, env as any);
+    if (nepalApi) return nepalApi;
     const myTime = await myTimeResponse(request, env);
     if (myTime) return myTime;
     const normalizedDate = canonicalDateRedirect(request);
