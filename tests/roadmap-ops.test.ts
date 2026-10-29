@@ -1,11 +1,19 @@
 import { describe, expect, it, vi } from "vitest";
-import { logDependency, logRoadmapHttp, nepalPathGroup } from "../worker/roadmap/ops";
+import { logDependency, logRoadmapHttp, nepalPathGroup, roadmapPathGroup } from "../worker/roadmap/ops";
 
 describe("roadmap SLO logging", () => {
   it("normalizes high-cardinality Nepal API IDs", () => {
     expect(nepalPathGroup("/api/nepal/v1/place/01ABCDEF")).toBe("/api/nepal/v1/place/:id");
     expect(nepalPathGroup("/api/nepal/v1/corrections/1234")).toBe("/api/nepal/v1/corrections/:id");
     expect(nepalPathGroup("/api/nepal/v1/places")).toBe("/api/nepal/v1/places");
+  });
+
+  it("normalizes Bali date/month/year/Wuku/feed URL families", () => {
+    expect(roadmapPathGroup("/bali-calendar/2027-03-08")).toBe("/bali-calendar/:date");
+    expect(roadmapPathGroup("/bali-calendar/bulan/2027-03")).toBe("/bali-calendar/bulan/:month");
+    expect(roadmapPathGroup("/bali-calendar/hari-raya/2027")).toBe("/bali-calendar/hari-raya/:year");
+    expect(roadmapPathGroup("/bali-calendar/wuku/watugunung")).toBe("/bali-calendar/wuku/:wuku");
+    expect(roadmapPathGroup("/bali-calendar/feed/hari-raya/2027.ics")).toBe("/bali-calendar/feed/hari-raya/:year.ics");
   });
 
   it("logs bounded HTTP and dependency fields without raw URLs", () => {
