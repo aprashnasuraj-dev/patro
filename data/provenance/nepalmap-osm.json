@@ -1,0 +1,34 @@
+{
+  "dataset_id": "nepalmap-osm-places-v1",
+  "product": "nepalmap",
+  "source": {
+    "name": "OpenStreetMap contributors",
+    "url": "https://www.openstreetmap.org/copyright",
+    "id_namespace": "osm",
+    "license": "ODbL 1.0",
+    "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "attribution": "© OpenStreetMap contributors"
+  },
+  "snapshot_date": "2026-10-09",
+  "build_date": "2026-10-10",
+  "transformation_version": "nepalmap-v1",
+  "status": "published",
+  "confidence": 1,
+  "correction_route": {
+    "url": "/corrections",
+    "email": null
+  },
+  "notes": "Committed OSM ingest metadata reports osmosis replication timestamp 2026-10-09T20:21:04Z and generated date 2026-10-10; administrative identifiers are pinned separately in related_sources.",
+  "boundaries_version": "2026-10-09T20:21:04Z",
+  "related_sources": [
+    {
+      "role": "administrative identifiers and local-level names",
+      "name": "local-states-nepal",
+      "url": "https://github.com/sagautam5/local-states-nepal/tree/v2.1.0",
+      "version": "v2.1.0",
+      "commit": "035cb3d2ce2420ad04d7aac1d0ce4d08960c57f0",
+      "license": "MIT",
+      "verification": "All six vendored provinces/districts/municipalities en+np JSON files are byte-identical to upstream v2.1.0."
+    }
+  ]
+}

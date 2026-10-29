@@ -48,7 +48,7 @@ describe("isolation from existing routes", () => {
 
   it("is wired into the production entry through a null-returning hook", () => {
     const entry = readFileSync("worker/optimized-entry.ts", "utf8");
-    expect(entry).toMatch(/const worldcal = await worldcalResponse\(request, env as any, ctx\);\s*if \(worldcal\) return worldcal;/);
+    expect(entry).toMatch(/const worldcal = await worldcalResponse\(request, env as any, ctx\);\s*if \(worldcal\) \{[\s\S]*?return worldcal;\s*\}/);
   });
 });
 

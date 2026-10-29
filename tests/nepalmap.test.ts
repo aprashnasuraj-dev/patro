@@ -42,6 +42,8 @@ describe("Nepal map pages", () => {
   it("ships compact layer files with thousands of places, each tied to a district", () => {
     const worship = JSON.parse(readFileSync(join(out, "data/nepalmap/v1/worship.json"), "utf8"));
     expect(worship.fields.slice(0, 4)).toEqual(["name", "name_ne", "lat", "lng"]);
+    expect(worship.fields.at(-1)).toBe("source_id");
+    expect(new Set(worship.rows.map((r: unknown[]) => r[11])).size).toBe(worship.rows.length);
     expect(worship.rows.length).toBeGreaterThan(5_000);
     expect(worship.rows.filter((r: unknown[]) => r[4] === "hindu").length).toBeGreaterThan(1_000);
     expect(worship.rows.filter((r: unknown[]) => r[4] === "buddhist").length).toBeGreaterThan(300);
@@ -50,6 +52,10 @@ describe("Nepal map pages", () => {
       expect(r[2]).toBeLessThan(31);
       expect(r[8]).toBeGreaterThan(0);
     }
+    const manifest = JSON.parse(readFileSync(join(out, "data/nepalmap/v1/manifest.json"), "utf8"));
+    expect(manifest.dataset_id).toBe("nepalmap-osm-places-v1");
+    expect(manifest.source.license).toBe("ODbL 1.0");
+    expect(["0", "1"]).toContain(String(manifest.confidence));
     const admin = JSON.parse(readFileSync(join(out, "data/nepalmap/v1/admin.json"), "utf8"));
     expect(admin.districts.length).toBe(77);
     expect(Object.keys(admin.palikas).length).toBe(753);
@@ -90,5 +96,17 @@ describe("Nepal map pages", () => {
     const block = headers.slice(headers.indexOf("\n/nepalmap\n"));
     expect(block).toContain("https://routing.openstreetmap.de");
     expect(headers.split(/\n\n/)[0]).not.toContain("routing.openstreetmap.de");
+  });
+
+  it("discloses precise-location and external-route privacy before sensitive actions", () => {
+    const html = readFileSync(join(out, "nepalmap.html"), "utf8");
+    expect(html).toContain("A/B coordinates are sent to the external FOSSGIS routing service");
+    expect(html).toContain('aria-describedby="np-location-privacy"');
+    const app = readFileSync("scripts/explore/nepal/map/app.js", "utf8");
+    expect(app).toContain("confirmLocationDisclosure");
+    expect(app).toContain('confirmLocationDisclosure("nearby"');
+    expect(app).toContain('confirmLocationDisclosure("route"');
+    expect(app).toContain("not sent to AafnaiPatro analytics");
+    expect(app).toContain("Route endpoints are sent to the external FOSSGIS routing service");
   });
 });

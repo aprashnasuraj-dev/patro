@@ -1,9 +1,10 @@
 import { createServer } from "node:http";
+import { createReadStream } from "node:fs";
 import { createSecureServer } from "node:http2";
 import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 
-const root = resolve(process.cwd(), "dist");
+const root = resolve(process.cwd(), process.env.PATRO_STATIC_ROOT || "dist");
 const repoRoot = process.cwd();
 const port = Number(process.env.PORT || 4173);
 const auditApi = process.env.PATRO_AUDIT_API === "1";
@@ -230,9 +231,24 @@ const handler = async (req, res) => {
   if (!(await existing(file))) {
     res.writeHead(404); res.end("Not found"); return;
   }
-  const body = await readFile(file);
-  res.writeHead(200, { "content-type": types[extname(file)] || "application/octet-stream", ...headersForPath(url.pathname) });
-  res.end(body);
+  const info = await stat(file);
+  const range = String(req.headers.range || "");
+  const match = range.match(/^bytes=(\d*)-(\d*)$/);
+  const common = { "content-type": types[extname(file)] || "application/octet-stream", "accept-ranges": "bytes", ...headersForPath(url.pathname) };
+  if (match && info.size > 0) {
+    const start = match[1] ? Number(match[1]) : 0;
+    const end = match[2] ? Math.min(Number(match[2]), info.size - 1) : info.size - 1;
+    if (!Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end < start || start >= info.size) {
+      res.writeHead(416, { "content-range": "bytes */" + info.size }); res.end(); return;
+    }
+    res.writeHead(206, { ...common, "content-range": "bytes " + start + "-" + end + "/" + info.size, "content-length": String(end - start + 1) });
+    if (req.method === "HEAD") { res.end(); return; }
+    createReadStream(file, { start, end }).pipe(res);
+    return;
+  }
+  res.writeHead(200, { ...common, "content-length": String(info.size) });
+  if (req.method === "HEAD") { res.end(); return; }
+  createReadStream(file).pipe(res);
 };
 
 const server = tlsEnabled

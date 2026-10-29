@@ -4,7 +4,12 @@
  */
 (function () {
   "use strict";
+  var cfgMeta = document.querySelector('meta[name="aafnaipatro-nepalmap-config"]');
   var CFG = window.NEPALMAP || {};
+  if (cfgMeta && !window.NEPALMAP) {
+    try { CFG = JSON.parse(cfgMeta.getAttribute("content") || "{}"); }
+    catch (e) { console.error("Nepal Map config", e); CFG = {}; }
+  }
   var DATA = CFG.data || "/data/nepalmap/v1/";
   var VER = CFG.version || "1";
   var STYLE = CFG.style || "https://tiles.openfreemap.org/styles/liberty";
@@ -23,12 +28,16 @@
     tab: "explore",
     from: null, // {lat, lng, label}
     to: null,
+    stops: [],
     mode: "car",
+    terrainOn: true,
+    emergencyOn: false,
   };
   var layers = {}; // id -> {rows, loaded, loading}
   var admin = null;
   var map;
   var popup;
+  var mobileSheet = null;
   var styleReady = false;
   var $ = function (s) { return document.querySelector(s); };
   var esc = function (v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
@@ -45,6 +54,13 @@
   }
   var fmtKm = function (d) { return d < 1 ? Math.round(d * 1000) + " m" : (d < 10 ? d.toFixed(1) : Math.round(d)) + " km"; };
 
+  function confirmLocationDisclosure(purpose, next) {
+    var message = purpose === "route"
+      ? "Privacy: AafnaiPatro will ask your browser for your precise location to set route point A. Your location stays in this tab and is not sent to AafnaiPatro analytics. If you calculate a route, the A/B coordinates are sent to the external FOSSGIS routing service. Continue?"
+      : "Privacy: AafnaiPatro will ask your browser for your precise location to show nearby places. Your location stays in this tab and is not sent to AafnaiPatro analytics. Continue?";
+    if (window.confirm(message)) next();
+  }
+
   // ---------- URL state ----------
   function readUrl() {
     var q = new URLSearchParams(location.search);
@@ -58,6 +74,7 @@
     state.query = q.get("q") || "";
     state.from = parsePoint(q.get("from"));
     state.to = parsePoint(q.get("to"));
+    state.stops = (q.get("via") || "").split("|").map(parsePoint).filter(Boolean).slice(0, 8);
     if (/^(car|bike|foot)$/.test(q.get("mode") || "")) state.mode = q.get("mode");
     if (state.from || state.to) state.tab = "route";
     var ll = (q.get("ll") || "").split(",").map(Number);
@@ -85,6 +102,7 @@
       if (state.minEle) q.set("ele", String(state.minEle));
       if (state.from) q.set("from", pointParam(state.from));
       if (state.to) q.set("to", pointParam(state.to));
+      if (state.stops.length) q.set("via", state.stops.map(pointParam).join("|"));
       if ((state.from || state.to) && state.mode !== "car") q.set("mode", state.mode);
       if (map) { var c = map.getCenter(); q.set("ll", c.lat.toFixed(4) + "," + c.lng.toFixed(4) + "," + map.getZoom().toFixed(1)); }
       var s = q.toString();
@@ -94,7 +112,14 @@
 
   // ---------- data ----------
   function getJson(file) {
-    return fetch(DATA + file + "?v=" + VER).then(function (r) { if (!r.ok) throw new Error(file + " " + r.status); return r.json(); });
+    return fetch(DATA + file + "?v=" + VER).then(function (r) { if (!r.ok) throw new Error(file + " " + r.status); return r.json(); })
+      .catch(function (error) {
+        if (!(CFG.flags && CFG.flags.nepalOfflinePacks) || !window.AafnaiOffline || !state.district) throw error;
+        return window.AafnaiOffline.dataFallback(file, state.district).then(function (fallback) {
+          if (!fallback) throw error;
+          return fallback;
+        });
+      });
   }
   function ensure(id) {
     var L = layers[id] || (layers[id] = { rows: [], loaded: false, loading: null });
@@ -108,7 +133,7 @@
     return L.loading;
   }
   // Row: [name, name_ne, lat, lng, sub, ele, palika_id, ward, district_id, village_slug, wikipedia]
-  var R = { n: 0, ne: 1, lat: 2, lng: 3, sub: 4, ele: 5, pid: 6, ward: 7, did: 8, vs: 9, wiki: 10 };
+  var R = { n: 0, ne: 1, lat: 2, lng: 3, sub: 4, ele: 5, pid: 6, ward: 7, did: 8, vs: 9, wiki: 10, src: 11, place: (CFG.flags && CFG.flags.nepalStablePlaceIds) ? 12 : -1 };
 
   function districtId() {
     if (!state.district || !admin) return 0;
@@ -177,6 +202,77 @@
     return Promise.all(jobs).then(function () { renderChips(); renderList(); writeUrl(); }).catch(showError);
   }
 
+  function localResilienceGeojson() {
+    var did = districtId(), features = [];
+    [["health", null], ["airport", null], ["services", "police"]].forEach(function (spec) {
+      var id = spec[0], sub = spec[1], L = layers[id];
+      if (!L || !L.loaded) return;
+      for (var i = 0; i < L.rows.length; i++) {
+        var row = L.rows[i];
+        if (did && row[R.did] !== did) continue;
+        if (sub && row[R.sub] !== sub) continue;
+        features.push({ type: "Feature", geometry: { type: "Point", coordinates: [row[R.lng], row[R.lat]] }, properties: { cat: id, i: i, kind: sub || id } });
+      }
+    });
+    return { type: "FeatureCollection", features: features };
+  }
+  function ensureLocalResilience() {
+    return Promise.all(["health", "airport", "services"].map(ensure)).then(function () {
+      var data = localResilienceGeojson();
+      if (!map.getSource("np-resilience-local")) {
+        map.addSource("np-resilience-local", { type: "geojson", data: data, cluster: true, clusterRadius: 45, clusterMaxZoom: 11 });
+        map.addLayer({ id: "np-resilience-local-cluster", type: "circle", source: "np-resilience-local", filter: ["has", "point_count"],
+          paint: { "circle-color": "#b91c1c", "circle-radius": 12, "circle-stroke-color": "#fff", "circle-stroke-width": 2 } });
+        map.addLayer({ id: "np-resilience-local-point", type: "circle", source: "np-resilience-local", filter: ["!", ["has", "point_count"]],
+          paint: { "circle-color": ["match", ["get", "kind"], "health", "#dc2626", "airport", "#334155", "police", "#1d4ed8", "#b91c1c"], "circle-radius": 7, "circle-stroke-color": "#fff", "circle-stroke-width": 2 } });
+        map.on("click", "np-resilience-local-point", function (e) { var p = e.features[0].properties; openPopup(p.cat, Number(p.i)); });
+      } else map.getSource("np-resilience-local").setData(data);
+      ["np-resilience-local-cluster", "np-resilience-local-point"].forEach(function (id) { map.setLayoutProperty(id, "visibility", state.emergencyOn ? "visible" : "none"); });
+      return data.features.length;
+    });
+  }
+  function emergencyAge(seconds) {
+    if (!Number.isFinite(seconds)) return "retrieval time unavailable";
+    if (seconds < 60) return "retrieved <1 min ago";
+    if (seconds < 3600) return "retrieved " + Math.max(1, Math.round(seconds / 60)) + " min ago";
+    return "retrieved " + Math.max(1, Math.round(seconds / 3600)) + " h ago";
+  }
+  function updateEmergencyStatus(localCount, remote) {
+    var status = $("#np-emergency-status");
+    if (!status) return;
+    if (!state.emergencyOn) { status.hidden = true; status.textContent = ""; return; }
+    status.hidden = false;
+    if (!remote) {
+      status.textContent = "Local emergency facilities: " + localCount + ". Live BIPAD overlay is not available in this build.";
+      return;
+    }
+    if (remote.failed === remote.total_feeds) {
+      status.textContent = "Local emergency facilities: " + localCount + ". Live BIPAD feeds are currently unavailable (" + remote.failed + "/" + remote.total_feeds + "); resilience data is incomplete.";
+      return;
+    }
+    status.textContent = "Local emergency facilities: " + localCount + " · BIPAD mapped records: " + remote.features +
+      " · " + emergencyAge(remote.retrieval_age_seconds) +
+      (remote.failed ? " · " + remote.failed + "/" + remote.total_feeds + " BIPAD feeds unavailable; data is partial." : " · all " + remote.total_feeds + " BIPAD feed groups responded.");
+  }
+  function setEmergency(on) {
+    state.emergencyOn = !!on;
+    var button = $("#np-emergency-toggle");
+    if (button) { button.setAttribute("aria-pressed", String(state.emergencyOn)); button.textContent = state.emergencyOn ? "🛟 Resilience: on" : "🛟 Resilience"; }
+    if (!state.emergencyOn) updateEmergencyStatus(0, null);
+    return ensureLocalResilience().then(function (localCount) {
+      if (!state.emergencyOn) return null;
+      if (!window.AafnaiEmergency) { updateEmergencyStatus(localCount, null); return null; }
+      return window.AafnaiEmergency.setVisible(map, true).then(function (remote) {
+        updateEmergencyStatus(localCount, remote);
+        return remote;
+      });
+    }).catch(function (e) {
+      console.warn("emergency", e);
+      var status = $("#np-emergency-status");
+      if (status && state.emergencyOn) { status.hidden = false; status.textContent = "Local resilience remains available; live BIPAD data could not be loaded."; }
+    });
+  }
+
   // ---------- places, wards, links ----------
   function palikaInfo(pid) {
     var p = admin && admin.palikas[pid];
@@ -205,13 +301,18 @@
     var p = palikaInfo(row[R.pid]);
     var village = id === "village" && row[R.vs] && p ? p.path + "/" + row[R.vs] : "";
     var wiki = row[R.wiki] ? "https://" + row[R.wiki].split(":")[0] + ".wikipedia.org/wiki/" + encodeURIComponent(row[R.wiki].slice(3).replace(/ /g, "_")) : "";
+    var sourceId = row[R.src] || "";
+    var osmKind = sourceId.charAt(0) === "n" ? "node" : sourceId.charAt(0) === "w" ? "way" : sourceId.charAt(0) === "r" ? "relation" : "";
+    var osmObjectUrl = osmKind ? "https://www.openstreetmap.org/" + osmKind + "/" + sourceId.slice(1) : "https://www.openstreetmap.org/?mlat=" + lat + "&mlon=" + lng + "#map=17/" + lat + "/" + lng;
     var dist = state.me ? " · " + fmtKm(km(state.me[0], state.me[1], lat, lng)) + " from you" : "";
     var html = '<div class="np-pop"><strong>' + esc(row[R.n] || row[R.ne]) + "</strong>" + (row[R.n] && row[R.ne] ? ' <span lang="ne">' + esc(row[R.ne]) + "</span>" : "") +
       '<div class="np-kind">' + esc(kindText(id, row)) + esc(dist) + "</div>" +
       (where ? '<div><a href="' + esc(where.href) + '">' + esc(where.text) + "</a></div>" : "") +
       '<div class="np-actions">' +
       '<a class="np-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lng + '">Directions</a>' +
-      '<a class="np-btn" target="_blank" rel="noopener" href="https://www.openstreetmap.org/?mlat=' + lat + "&mlon=" + lng + "#map=17/" + lat + "/" + lng + '">OpenStreetMap</a>' +
+      '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(osmObjectUrl) + '">OpenStreetMap</a>' +
+      (CFG.flags && CFG.flags.nepalPoiPages && row[R.place] ? '<a class="np-btn" href="/nepalmap/place/' + esc(row[R.place]) + '">Place details</a>' : "") +
+      (CFG.flags && CFG.flags.nepalCorrectionsUi && sourceId ? '<button class="np-btn" type="button" data-correct="' + esc(sourceId) + '" data-place-id="' + esc(row[R.place] || "") + '" data-osm="' + esc(osmObjectUrl) + '" data-name="' + esc(row[R.n] || row[R.ne]) + '">Report correction</button>' : "") +
       (village ? '<a class="np-btn" href="' + esc(village) + '">Village page</a>' : "") +
       (wiki ? '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(wiki) + '">Wikipedia</a>' : "") +
       '<button class="np-btn" type="button" data-share="' + lat + "," + lng + '">Copy link</button></div>' +
@@ -221,6 +322,16 @@
     popup = new maplibregl.Popup({ maxWidth: "300px", offset: 10 }).setLngLat([lng, lat]).setHTML(html).addTo(map);
   }
   document.addEventListener("click", function (e) {
+    var correction = e.target.closest && e.target.closest("[data-correct]");
+    if (correction && window.AafnaiCorrections) {
+      window.AafnaiCorrections.open({
+        source_id: correction.getAttribute("data-correct"),
+        place_id: correction.getAttribute("data-place-id") || null,
+        osm_url: correction.getAttribute("data-osm"),
+        name: correction.getAttribute("data-name")
+      });
+      return;
+    }
     var b = e.target.closest && e.target.closest("[data-share]");
     if (!b) return;
     var ll = b.getAttribute("data-share");
@@ -280,11 +391,10 @@
 
   // ---------- search ----------
   var SEARCH_CATS = ["village", "worship", "peak", "lake", "sight", "park", "airport", "waterfall"];
-  function search(q) {
+  function searchAdmin(q) {
     var res = [];
     var nq = norm(q), sq = skel(q);
     if (nq.length < 2) return res;
-    // "jayaprithvi 11", "chainpur ward 8", "जयपृथ्वी ११"
     var wm = q.trim().match(/^(.*?)[\s-]*(?:ward|wada|वडा)?\s*(?:no\.?|नं\.?)?\s*[-\s]?([0-9०-९]{1,2})$/i);
     if (wm && wm[1]) {
       var wn = Number(wm[2].replace(/[०-९]/g, function (d) { return "०१२३४५६७८९".indexOf(d); }));
@@ -292,9 +402,8 @@
       Object.keys(admin.palikas).forEach(function (pid) {
         var p = admin.palikas[pid];
         if (wn >= 1 && wn <= p[4] && base.length >= 3 && (skel(p[1]).indexOf(base) === 0 || norm(p[2]).indexOf(norm(wm[1])) === 0)) {
-          var info = palikaInfo(pid);
-          var c = admin.wards[pid + "-" + wn];
-          res.push({ score: 0, label: info.en + " ward " + wn, sub: info.d.name + " District", href: info.path + "/ward-" + wn, ll: c });
+          var info = palikaInfo(pid), center = admin.wards[pid + "-" + wn];
+          res.push({ score: 0, label: info.en + " ward " + wn, sub: info.d.name + " District", href: info.path + "/ward-" + wn, ll: center });
         }
       });
     }
@@ -308,26 +417,81 @@
         res.push({ score: 2, label: info.en, sub: info.d.name + " District · " + p[4] + " wards", href: info.path, ll: p[5] });
       }
     });
+    return res;
+  }
+  function placeSearchResult(id, i, score) {
+    var row = layers[id].rows[i], where = placeLine(row);
+    return { score: score, label: row[R.n] || row[R.ne], ne: row[R.n] ? row[R.ne] : "", sub: kindText(id, row) + (where ? " · " + where.text : ""), cat: id, i: i };
+  }
+  function finishSearch(res) {
+    res.sort(function (a, b) { return a.score - b.score || a.label.length - b.label.length; });
+    return res.slice(0, 25);
+  }
+  function search(q) {
+    var res = searchAdmin(q);
+    var nq = norm(q), sq = skel(q);
+    if (nq.length < 2) return res;
     SEARCH_CATS.concat(Array.from(state.on)).forEach(function (id, k, all) {
       if (all.indexOf(id) !== k) return;
       var L = layers[id];
       if (!L || !L.loaded) return;
       for (var i = 0; i < L.rows.length && res.length < 400; i++) {
-        var row = L.rows[i];
-        var a = norm(row[R.n]), b = norm(row[R.ne]);
-        var s = a === nq || b === nq ? 2.5 : a.indexOf(nq) === 0 || b.indexOf(nq) === 0 ? 3 : a.indexOf(nq) > 0 || b.indexOf(nq) > 0 ? 4 : skel(row[R.n]).indexOf(sq) === 0 && sq.length > 2 ? 5 : -1;
-        if (s < 0) continue;
-        // Well-known places first: a Wikipedia article, a Nepali name, a temple/peak/sight rather than a hamlet.
-        if (row[R.wiki]) s -= 0.6;
-        if (row[R.ne]) s -= 0.1;
-        if (id === "village" && /hamlet|neighbourhood|locality|isolated_dwelling|quarter/.test(row[R.sub])) s += 0.4;
-        if (id === "village" && /city|town/.test(row[R.sub])) s -= 0.3;
-        var where = placeLine(row);
-        res.push({ score: s, label: row[R.n] || row[R.ne], ne: row[R.n] ? row[R.ne] : "", sub: kindText(id, row) + (where ? " · " + where.text : ""), cat: id, i: i });
+        var row = L.rows[i], a = norm(row[R.n]), b = norm(row[R.ne]);
+        var score = a === nq || b === nq ? 2.5 : a.indexOf(nq) === 0 || b.indexOf(nq) === 0 ? 3 : a.indexOf(nq) > 0 || b.indexOf(nq) > 0 ? 4 : skel(row[R.n]).indexOf(sq) === 0 && sq.length > 2 ? 5 : -1;
+        if (score < 0) continue;
+        if (row[R.wiki]) score -= 0.6;
+        if (row[R.ne]) score -= 0.1;
+        if (id === "village" && /hamlet|neighbourhood|locality|isolated_dwelling|quarter/.test(row[R.sub])) score += 0.4;
+        if (id === "village" && /city|town/.test(row[R.sub])) score -= 0.3;
+        res.push(placeSearchResult(id, i, score));
       }
     });
-    res.sort(function (a, b) { return a.score - b.score || a.label.length - b.label.length; });
-    return res.slice(0, 25);
+    return finishSearch(res);
+  }
+
+  var placeWorker = null, workerSeq = 0, workerPending = {}, workerLayerKey = "";
+  function workerLayerIds() {
+    return SEARCH_CATS.concat(Array.from(state.on)).filter(function (id, i, all) { return all.indexOf(id) === i && layers[id] && layers[id].loaded; });
+  }
+  function ensurePlaceWorker() {
+    if (!(CFG.flags && CFG.flags.nepalSearchWorker) || !window.Worker) return null;
+    if (!placeWorker) {
+      placeWorker = new Worker("/nepalmap/search-worker.js?v=" + VER, { type: "module" });
+      placeWorker.onmessage = function (event) {
+        var msg = event.data || {}, pending = workerPending[msg.request_id];
+        if (!pending) return;
+        delete workerPending[msg.request_id];
+        if (msg.type === "error") pending.reject(new Error(msg.message || "search worker failed"));
+        else pending.resolve(msg);
+      };
+      placeWorker.onerror = function () { placeWorker = null; workerPending = {}; };
+    }
+    var ids = workerLayerIds(), key = ids.map(function (id) { return id + ":" + layers[id].rows.length; }).join("|");
+    if (key !== workerLayerKey) {
+      workerLayerKey = key;
+      placeWorker.postMessage({ type: "init", request_id: ++workerSeq, layers: Object.fromEntries(ids.map(function (id) { return [id, layers[id].rows]; })) });
+    }
+    return placeWorker;
+  }
+  function searchAsync(q) {
+    var w = ensurePlaceWorker();
+    if (!w) return Promise.resolve(search(q));
+    var requestId = ++workerSeq;
+    Object.keys(workerPending).forEach(function (id) {
+      w.postMessage({ type: "cancel", request_id: Number(id) });
+      workerPending[id].reject(new Error("search superseded"));
+      delete workerPending[id];
+    });
+    return new Promise(function (resolve, reject) {
+      workerPending[requestId] = { resolve: resolve, reject: reject };
+      w.postMessage({ type: "query", request_id: requestId, query: q, ids: workerLayerIds(), limit: 400 });
+    }).then(function (msg) {
+      var res = searchAdmin(q);
+      (msg.matches || []).forEach(function (m) {
+        if (layers[m.id] && layers[m.id].rows[m.i]) res.push(placeSearchResult(m.id, m.i, m.score));
+      });
+      return finishSearch(res);
+    }).catch(function () { return search(q); });
   }
   var searchTimer;
   function onSearch() {
@@ -336,13 +500,14 @@
     searchTimer = setTimeout(function () {
       Promise.all(SEARCH_CATS.map(ensure)).then(function () {
         var box = $("#np-results");
-        var res = search(q);
-        box.hidden = !q.trim();
-        box.innerHTML = res.length ? res.map(function (r, k) {
-          return '<li><button type="button" data-res="' + k + '"><b>' + esc(r.label) + "</b>" + (r.ne ? ' <span lang="ne">' + esc(r.ne) + "</span>" : "") + "<small>" + esc(r.sub || "") + "</small></button>" +
-            (r.href ? '<a href="' + esc(r.href) + '" class="np-open">Page</a>' : "") + "</li>";
-        }).join("") : '<li class="np-empty">No match. Try the English or Nepali spelling, a palika with a ward number ("Jayaprithvi 11"), or turn on more categories.</li>';
-        box._res = res;
+        return searchAsync(q).then(function (res) {
+          box.hidden = !q.trim();
+          box.innerHTML = res.length ? res.map(function (r, k) {
+            return '<li><button type="button" data-res="' + k + '"><b>' + esc(r.label) + "</b>" + (r.ne ? ' <span lang="ne">' + esc(r.ne) + "</span>" : "") + "<small>" + esc(r.sub || "") + "</small></button>" +
+              (r.href ? '<a href="' + esc(r.href) + '" class="np-open">Page</a>' : "") + "</li>";
+          }).join("") : '<li class="np-empty">No match. Try the English or Nepali spelling, a palika with a ward number ("Jayaprithvi 11"), or turn on more categories.</li>';
+          box._res = res;
+        });
       }).catch(showError);
     }, 180);
   }
@@ -361,22 +526,39 @@
     else map.fitBounds(NEPAL, { padding: 20 });
     var link = $("#np-district-link");
     if (link) { link.hidden = !d; if (d) { link.href = d.path; link.textContent = d.name + " District: wards, palikas, former VDCs →"; } }
+    var offlineButton = $("#np-offline-save");
+    if (offlineButton) { offlineButton.disabled = !d; offlineButton.textContent = d ? "Save " + d.name + " offline" : "Save district offline"; }
     CATS.forEach(function (c) { if (layers[c.id] && layers[c.id].loaded && map.getSource("s-" + c.id)) map.getSource("s-" + c.id).setData(geojson(c.id)); });
+    if (state.emergencyOn && map.getSource("np-resilience-local")) map.getSource("np-resilience-local").setData(localResilienceGeojson());
     renderChips(); renderList(); writeUrl(); closePanelOnMobile();
   }
-  function closePanelOnMobile() { if (window.matchMedia("(max-width: 760px)").matches) document.body.classList.remove("np-panel-open"); }
+  function closePanelOnMobile() { if (!window.matchMedia("(max-width: 760px)").matches) return; if (mobileSheet) mobileSheet.set("peek"); else document.body.classList.remove("np-panel-open"); }
   function showError(e) { console.error(e); var h = $("#np-list-head"); if (h) h.textContent = "Could not load map data. Please reload."; }
 
 
   // ---------- From → To routes ----------
-  // Roads and trails from OpenStreetMap, routed by OSRM on the FOSSGIS servers that openstreetmap.org itself uses
-  // (CORS-enabled, no key; fair use). If routing is unavailable we still show the straight line and hand off to
-  // Google Maps for turn-by-turn navigation.
+  // Primary production target is AafnaiPatro's same-origin relay to self-hosted Valhalla.
+  // Public FOSSGIS remains an explicit development/fallback provider. Provider failure never breaks the map:
+  // the app retains straight-line context and external navigation.
   var ROUTER = CFG.router || "https://routing.openstreetmap.de/";
+  var ROUTING_PROVIDER = CFG.routingProvider || "fossgis-public";
   var PROFILES = { car: ["routed-car", "driving"], bike: ["routed-bike", "driving"], foot: ["routed-foot", "driving"] };
+  var routingProvider = CFG.flags && CFG.flags.nepalRoutingProviderV2 && window.AafnaiRoutingV2
+    ? (ROUTING_PROVIDER === "valhalla-first-party"
+        ? new window.AafnaiRoutingV2.FirstPartyValhallaProvider("/api/nepal/v1/route")
+        : new window.AafnaiRoutingV2.PublicFossgisProvider(ROUTER))
+    : null;
+  var routingV2 = routingProvider
+    ? new window.AafnaiRoutingV2.Client(routingProvider, {
+        timeoutMs: 15000,
+        rateLimit: ROUTING_PROVIDER === "valhalla-first-party" ? { capacity: 3, refillMs: 250 } : { capacity: 1, refillMs: 1000 },
+        breaker: { threshold: 3, cooldownMs: 30000 }
+      })
+    : null;
   var ALONG = ["worship", "peak", "lake", "sight", "waterfall", "park", "airport", "village"];
   var routeSeq = 0;
   var routeData = null;
+  var alongCandidates = {};
   var markers = { from: null, to: null };
   var picking = null;
 
@@ -447,6 +629,7 @@
   }
   function clearRoute() {
     routeData = null;
+    alongCandidates = {};
     if (map && styleReady) dimPlaces(false);
     if (map && map.getSource("np-route")) map.getSource("np-route").setData({ type: "FeatureCollection", features: [] });
     if (map && map.getSource("np-along")) map.getSource("np-along").setData({ type: "FeatureCollection", features: [] });
@@ -495,7 +678,9 @@
   function compass(b) { return ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"][Math.round(((b % 360) + 360) % 360 / 45) % 8]; }
   function googleUrl() {
     var tm = { car: "driving", bike: "two-wheeler", foot: "walking" }[state.mode];
-    return "https://www.google.com/maps/dir/?api=1&origin=" + state.from.lat + "," + state.from.lng + "&destination=" + state.to.lat + "," + state.to.lng + "&travelmode=" + (tm === "two-wheeler" ? "driving" : tm);
+    var url = "https://www.google.com/maps/dir/?api=1&origin=" + state.from.lat + "," + state.from.lng + "&destination=" + state.to.lat + "," + state.to.lng + "&travelmode=" + (tm === "two-wheeler" ? "driving" : tm);
+    if (state.stops.length) url += "&waypoints=" + encodeURIComponent(state.stops.map(function (p) { return p.lat + "," + p.lng; }).join("|"));
+    return url;
   }
   function computeRoute() {
     clearRoute();
@@ -506,25 +691,34 @@
     var seq = ++routeSeq;
     var a = state.from, b = state.to;
     var prof = PROFILES[state.mode];
-    msg.hidden = false; msg.textContent = "Finding the way…";
-    var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
-    var ctrl = window.AbortController ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
-    fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("router " + r.status)); })
-      .then(function (j) {
-        clearTimeout(timer);
-        if (seq !== routeSeq) return;
+    msg.hidden = false; msg.textContent = ROUTING_PROVIDER === "valhalla-first-party" ? "Finding the way… Route coordinates are processed by AafnaiPatro's same-origin routing service." : "Finding the way… Route endpoints are sent to the external FOSSGIS routing service to calculate directions.";
+    var routePromise;
+    var ctrl = null, timer = null;
+    if (routingV2) {
+      routePromise = (CFG.flags && CFG.flags.nepalDetourRouting && state.stops.length)
+        ? routingV2.routeWithStops({ from: a, to: b, stops: state.stops, mode: state.mode })
+        : routingV2.route({ from: a, to: b, mode: state.mode });
+    } else {
+      var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
+      ctrl = window.AbortController ? new AbortController() : null;
+      timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+      routePromise = fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("router " + r.status)); }).then(function (j) {
         if (!j.routes || !j.routes.length) throw new Error(j.code || "no route");
-        showRoute(j.routes[0], false);
-      })
-      .catch(function (e) {
-        clearTimeout(timer);
-        if (seq !== routeSeq) return;
-        console.warn("route", e);
-        // Straight line so the reader still sees direction and distance.
-        var d = km(a.lat, a.lng, b.lat, b.lng);
-        showRoute({ distance: d * 1000, duration: null, geometry: { type: "LineString", coordinates: [[a.lng, a.lat], [b.lng, b.lat]] }, legs: [] }, true);
+        return j.routes[0];
       });
+    }
+    routePromise.then(function (route) {
+      if (timer) clearTimeout(timer);
+      if (seq !== routeSeq) return;
+      showRoute(route, false);
+    }).catch(function (e) {
+      if (timer) clearTimeout(timer);
+      if (seq !== routeSeq) return;
+      console.warn("route", e);
+      // Provider failures never break the map: show direction/distance and retain external navigation.
+      var d = km(a.lat, a.lng, b.lat, b.lng);
+      showRoute({ distance: d * 1000, duration: null, geometry: { type: "LineString", coordinates: [[a.lng, a.lat], [b.lng, b.lat]] }, legs: [] }, true);
+    });
   }
   function showRoute(route, straight) {
     routeData = route;
@@ -542,18 +736,42 @@
     sum.hidden = false;
     sum.innerHTML = '<div class="np-sum"><b>' + fmtKm(dist) + "</b>" + (straight ? " in a straight line" : "") +
       (route.duration ? ' · about <b>' + fmtTime(route.duration * (state.mode === "car" ? 1.25 : 1)) + "</b> " + esc(modeWord) : "") + "</div>" +
-      '<div class="np-route-ends"><span class="np-dot a">A</span> ' + esc(state.from.label) + '<br><span class="np-dot b">B</span> ' + esc(state.to.label) + "</div>" +
+      '<div class="np-route-ends"><span class="np-dot a">A</span> ' + esc(state.from.label) +
+      (state.stops.length ? state.stops.map(function (p, i) { return '<br><span class="np-dot via">' + (i + 1) + '</span> ' + esc(p.label); }).join("") : "") +
+      '<br><span class="np-dot b">B</span> ' + esc(state.to.label) + "</div>" +
       (route.duration && state.mode === "car" ? '<p class="np-note">Hill roads are slow and conditions change with the season; the time includes a margin but check locally before you travel.</p>' : "") +
       (route.duration && state.mode === "foot" ? '<p class="np-note">Walking time on flat ground. On trekking trails, add time for climbs: roughly 1 hour per 300–400 m of ascent.</p>' : "") +
       '<div class="np-actions"><a class="np-btn" target="_blank" rel="noopener" href="' + esc(googleUrl()) + '">Navigate in Google Maps</a>' +
       '<button class="np-btn" type="button" id="np-route-share">Copy route link</button>' +
-      '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>';
+      (CFG.flags && CFG.flags.nepalItinerary && window.AafnaiItinerary ? '<button class="np-btn" type="button" id="np-trip-save">Save trip</button><button class="np-btn" type="button" id="np-trip-manage">Saved trips</button>' : "") +
+      (CFG.flags && CFG.flags.nepalExports ? '<button class="np-btn" type="button" data-export="gpx">GPX</button><button class="np-btn" type="button" data-export="geojson">GeoJSON</button><button class="np-btn" type="button" data-export="kml">KML</button>' : "") +
+      (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<button class="np-btn" type="button" id="np-terrain-toggle">Terrain: ' + (state.terrainOn ? "on" : "off") + "</button>" : "") +
+      '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>' +
+      (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<div id="np-elevation-profile" class="np-elevation" aria-live="polite">Loading elevation…</div>' : "") +
+      (CFG.flags && CFG.flags.nepalRoadSafety ? '<div id="np-road-safety" class="np-road-safety" aria-live="polite">Loading OSM road/trail metadata…</div>' : "");
     var steps = (route.legs[0] && route.legs[0].steps) || [];
     $("#np-steps-wrap").hidden = !steps.length;
     $("#np-steps").innerHTML = steps.map(function (st) {
       return "<li>" + esc(stepText(st)) + (st.distance > 30 && st.maneuver.type !== "arrive" ? ' <span class="np-n">' + fmtKm(st.distance / 1000) + "</span>" : "") + "</li>";
     }).join("");
     Promise.all(ALONG.map(ensure)).then(function () { alongTheWay(coords, straight); }).catch(showError);
+    if (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && state.terrainOn && !straight) {
+      map.once("idle", function () {
+        var target = $("#np-elevation-profile");
+        if (!target || routeData !== route) return;
+        var profile = window.AafnaiTerrain.sampleProfile(map, coords, 120);
+        target.innerHTML = profile ? window.AafnaiTerrain.renderProfile(profile) : '<span class="np-note">Elevation tiles are not fully available for this route yet.</span>';
+      });
+    }
+    if (CFG.flags && CFG.flags.nepalRoadSafety && window.AafnaiRoadSafety) {
+      map.once("idle", function () {
+        var target = $("#np-road-safety");
+        if (!target || routeData !== route) return;
+        var features = window.AafnaiPmtiles && CFG.pmtiles && CFG.pmtiles.roads ? window.AafnaiPmtiles.loadedRoadMetadata(map) : [];
+        var summary = window.AafnaiRoadSafety.summarizeForRoute(features, route);
+        target.innerHTML = window.AafnaiRoadSafety.renderSummary(summary);
+      });
+    }
     closePanelOnMobile();
     writeUrl();
   }
@@ -594,6 +812,15 @@
     // Spread the list along the whole route: split it into ~30 stretches and keep the best few of each
     // (a Wikipedia article or Nepali name first, then the closest to the road), plus one town per stretch.
     found.sort(function (x, y) { return x.at - y.at; });
+    var stopAts = state.stops.map(function (stop) {
+      var best = { d: Infinity, at: 0 };
+      for (var si = 0; si < samples.length; si++) {
+        var sm = samples[si], sd = km(sm[0], sm[1], stop.lat, stop.lng);
+        if (sd < best.d) best = { d: sd, at: sm[2] };
+      }
+      return best.at;
+    }).sort(function (a, b) { return a - b; });
+    found.forEach(function (f) { f.insertAt = stopAts.filter(function (at) { return at < f.at; }).length; });
     var bins = Math.max(1, Math.min(30, Math.ceil(run / 2)));
     var size = (run || 1) / bins, buckets = [];
     found.forEach(function (f) { var k = Math.min(bins - 1, Math.floor(f.at / size)); (buckets[k] = buckets[k] || []).push(f); });
@@ -616,13 +843,65 @@
     $("#np-along-head").textContent = found.length
       ? Object.keys(counts).map(function (id) { return counts[id].toLocaleString("en-IN") + " " + (CAT[id].label || id).toLowerCase(); }).join(" · ") + " within " + BUF + " km of the " + (straight ? "line" : "route") + (shown.length < found.length ? ". Showing " + shown.length + " spread along the way." : ".")
       : "";
+    alongCandidates = {};
     $("#np-along").innerHTML = shown.map(function (f) {
-      var row = layers[f.id].rows[f.i];
+      var row = layers[f.id].rows[f.i], key = f.id + ":" + f.i;
       var where = placeLine(row);
-      return '<li><button type="button" data-go="' + f.id + ":" + f.i + '"><i style="background:' + CAT[f.id].color + '"></i><span><b>' + esc(row[R.n] || row[R.ne]) + "</b>" + (row[R.n] && row[R.ne] ? ' <span lang="ne">' + esc(row[R.ne]) + "</span>" : "") +
-        "<small>" + (f.at < 0.5 ? "near A" : f.at > run - 0.5 ? "near B" : fmtKm(f.at) + " from A") + " · " + (f.off < 0.15 ? "on the way" : fmtKm(f.off) + " off the way") + " · " + esc(kindText(f.id, row)) + (where ? " · " + esc(where.text) : "") + "</small></span></button></li>";
+      alongCandidates[key] = f;
+      return '<li data-along-key="' + key + '"><button type="button" data-go="' + key + '"><i style="background:' + CAT[f.id].color + '"></i><span><b>' + esc(row[R.n] || row[R.ne]) + "</b>" + (row[R.n] && row[R.ne] ? ' <span lang="ne">' + esc(row[R.ne]) + "</span>" : "") +
+        "<small>" + (f.at < 0.5 ? "near A" : f.at > run - 0.5 ? "near B" : fmtKm(f.at) + " from A") + " · " + (f.off < 0.15 ? "on the way" : fmtKm(f.off) + " off the way") + " · " + esc(kindText(f.id, row)) + (where ? " · " + esc(where.text) : "") + "</small></span></button>" +
+        (CFG.flags && CFG.flags.nepalDetourRouting && routingV2 && routeData && routeData.duration
+          ? '<div class="np-along-actions"><span class="np-detour" data-detour-status="' + key + '">checking routed detour…</span><button class="np-btn" type="button" data-check-detour="' + key + '">Check</button><button class="np-btn" type="button" data-add-stop="' + key + '" disabled>Add stop</button></div>'
+          : "") + "</li>";
     }).join("");
+    if (CFG.flags && CFG.flags.nepalDetourRouting && routingV2 && routeData && routeData.duration) {
+      shown.slice(0, 6).reduce(function (p, f) {
+        return p.then(function () { return scoreDetour(f); });
+      }, Promise.resolve()).catch(function () {});
+    }
   }
+
+  function scoreDetour(f) {
+    if (!f || !routingV2 || !routeData || !routeData.duration || !(CFG.flags && CFG.flags.nepalDetourRouting)) return Promise.resolve(null);
+    var row = layers[f.id] && layers[f.id].rows[f.i];
+    if (!row) return Promise.resolve(null);
+    var seq = routeSeq;
+    var candidate = { lat: row[R.lat], lng: row[R.lng], label: row[R.n] || row[R.ne] };
+    return routingV2.detour({
+      from: state.from, to: state.to, stops: state.stops.slice(), mode: state.mode, insertAt: f.insertAt
+    }, routeData, candidate).then(function (d) {
+      if (seq !== routeSeq) return null;
+      f.detour = d;
+      var key = f.id + ":" + f.i;
+      var status = document.querySelector('[data-detour-status="' + key + '"]');
+      var add = document.querySelector('[data-add-stop="' + key + '"]');
+      if (status) {
+        var mins = Math.round(d.extra_seconds / 60);
+        status.textContent = (mins ? "+" + mins + " min" : "<1 min") + " · +" + fmtKm(d.extra_distance_m / 1000) +
+          (d.bucket === "10m" ? " · ≤10 min detour" : d.bucket === "30m" ? " · ≤30 min detour" : " · >30 min detour");
+      }
+      if (add) {
+        add.disabled = d.bucket === "over30m" || d.bucket === "unknown";
+        add.textContent = add.disabled ? "Long detour" : "Add stop";
+      }
+      return d;
+    }).catch(function () {
+      var key = f.id + ":" + f.i;
+      var status = document.querySelector('[data-detour-status="' + key + '"]');
+      if (status) status.textContent = "detour unavailable";
+      return null;
+    });
+  }
+
+  function addAlongStop(key) {
+    var f = alongCandidates[key], row = f && layers[f.id] && layers[f.id].rows[f.i];
+    if (!f || !row) return;
+    var point = { lat: row[R.lat], lng: row[R.lng], label: row[R.n] || row[R.ne] };
+    var at = Math.max(0, Math.min(state.stops.length, Number.isInteger(f.insertAt) ? f.insertAt : state.stops.length));
+    state.stops.splice(at, 0, point);
+    computeRoute();
+  }
+
   function startPicking(which) {
     picking = which;
     map.getCanvas().style.cursor = "crosshair";
@@ -636,19 +915,54 @@
     var ll = readUrl();
     var el = $("#np-map");
     if (!el || !window.maplibregl) { showError(new Error("map library missing")); return; }
-    var opts = { container: el, style: STYLE, maxBounds: [[76, 24], [92, 33]], attributionControl: false };
+    if (CFG.maplibreWorker) window.maplibregl.workerUrl = CFG.maplibreWorker;
+    var offlineStyle = !!(CFG.flags && CFG.flags.nepalOfflinePacks && navigator.onLine === false);
+    var mapStyle = offlineStyle ? { version: 8, sources: {}, layers: [{ id: "offline-bg", type: "background", paint: { "background-color": "#eef2ed" } }] } : STYLE;
+    var opts = { container: el, style: mapStyle, maxBounds: [[76, 24], [92, 33]], attributionControl: false };
     if (ll) { opts.center = [ll[1], ll[0]]; opts.zoom = ll[2]; } else { opts.bounds = NEPAL; opts.fitBoundsOptions = { padding: 20 }; }
     map = new maplibregl.Map(opts);
-    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="https://openfreemap.org">OpenFreeMap</a>' }));
+    if (CFG.flags && CFG.flags.nepalMobileSheetV2 && window.AafnaiMobileSheet) {
+      mobileSheet = window.AafnaiMobileSheet.mount({ panel: document.querySelector(".np-panel"), handle: $("#np-toggle"), map: map });
+    }
+    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: offlineStyle
+      ? 'Saved places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · offline data pack (no basemap)'
+      : 'Places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="https://openfreemap.org">OpenFreeMap</a>' }));
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
     var geo = new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: false, showUserLocation: true });
     map.addControl(geo, "top-right");
+    // The built-in control must pass through the disclosure before it can invoke the OS prompt.
+    setTimeout(function () {
+      var gb = document.querySelector(".maplibregl-ctrl-geolocate");
+      if (!gb) return;
+      gb.addEventListener("click", function (e) {
+        if (gb.getAttribute("data-location-approved") === "1") { gb.removeAttribute("data-location-approved"); return; }
+        e.preventDefault(); e.stopImmediatePropagation();
+        confirmLocationDisclosure("nearby", function () {
+          gb.setAttribute("data-location-approved", "1");
+          gb.click();
+        });
+      }, true);
+    }, 0);
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
     map.addControl(new maplibregl.FullscreenControl(), "top-right");
     geo.on("geolocate", function (e) { state.me = [e.coords.latitude, e.coords.longitude]; renderList(); });
-    $("#np-near").addEventListener("click", function () { geo.trigger(); });
+    $("#np-near").addEventListener("click", function () { confirmLocationDisclosure("nearby", function () { geo.trigger(); }); });
 
-    var styled = new Promise(function (res) { map.on("load", function () { styleReady = true; res(); }); });
+    var styled = new Promise(function (res) { map.on("load", function () {
+      styleReady = true;
+      if (offlineStyle) {
+        var head = $("#np-list-head");
+        if (head) head.textContent = "Offline district pack · no basemap tiles";
+      }
+      if (!offlineStyle && CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && CFG.terrain) {
+        try { window.AafnaiTerrain.setup(map, CFG.terrain); } catch (e) { console.warn("terrain", e); state.terrainOn = false; }
+      }
+      if (!offlineStyle && CFG.flags && CFG.flags.nepalPmtiles && window.AafnaiPmtiles && CFG.pmtiles) {
+        window.AafnaiPmtiles.attach(map, { places: CFG.pmtiles.places, roads: CFG.pmtiles.roads, renderPlaces: false, renderRoads: false, loadRoadsForMetadata: !!(CFG.flags && CFG.flags.nepalRoadSafety) })
+          .then(function (meta) { window.__nepalmapPmtiles = meta; }).catch(function (e) { console.warn("pmtiles", e); });
+      }
+      res();
+    }); });
     var adminP = getJson("admin.json").then(function (a) {
       admin = a;
       a.districtById = {};
@@ -661,6 +975,7 @@
     });
     Promise.all([styled, adminP]).then(function () {
       if (state.district) setDistrict(state.district);
+      if (CFG.flags && CFG.flags.nepalOfflinePacks && window.AafnaiOffline) window.AafnaiOffline.register().catch(function (e) { console.warn("offline worker", e); });
       return refresh();
     }).then(function () {
       if (state.query) { $("#np-q").value = state.query; onSearch(); }
@@ -696,6 +1011,18 @@
       renderChips(); renderList(); writeUrl();
     });
     $("#np-district").addEventListener("change", function (e) { setDistrict(e.target.value); });
+    if ($("#np-emergency-toggle")) $("#np-emergency-toggle").addEventListener("click", function () { setEmergency(!state.emergencyOn); });
+    if ($("#np-offline-save")) $("#np-offline-save").addEventListener("click", function () {
+      var btn = $("#np-offline-save");
+      if (!state.district || !window.AafnaiOffline) return;
+      btn.disabled = true; btn.textContent = "Saving district data…";
+      window.AafnaiOffline.saveDistrict(state.district, VER).then(function (d) {
+        btn.textContent = "Saved " + d.name + " offline";
+        btn.title = "Offline link: " + d.offline_url;
+      }).catch(function (e) {
+        console.warn("offline", e); btn.disabled = false; btn.textContent = "Offline save failed";
+      });
+    });
     $("#np-q").addEventListener("input", onSearch);
     $("#np-q").addEventListener("keydown", function (e) {
       if (e.key === "Enter") { var r = $("#np-results")._res; if (r && r[0]) pick(r[0]); }
@@ -735,7 +1062,20 @@
         document.querySelectorAll(".np-modes [data-mode]").forEach(function (b) { b.classList.toggle("on", b === md); });
         computeRoute();
       }
-      if (e.target.id === "np-route-clear") { setPoint("from", null, true); setPoint("to", null, true); clearRoute(); computeRoute(); }
+      if (e.target.id === "np-route-clear") { state.stops = []; setPoint("from", null, true); setPoint("to", null, true); clearRoute(); computeRoute(); }
+      if (e.target.id === "np-terrain-toggle" && window.AafnaiTerrain) {
+        state.terrainOn = !state.terrainOn;
+        window.AafnaiTerrain.setEnabled(map, state.terrainOn);
+        e.target.textContent = "Terrain: " + (state.terrainOn ? "on" : "off");
+        if (state.terrainOn && routeData && routeData.geometry) {
+          map.once("idle", function () {
+            var target = $("#np-elevation-profile");
+            if (!target) return;
+            var profile = window.AafnaiTerrain.sampleProfile(map, routeData.geometry.coordinates, 120);
+            target.innerHTML = profile ? window.AafnaiTerrain.renderProfile(profile) : '<span class="np-note">Elevation tiles are not fully available for this route yet.</span>';
+          });
+        }
+      }
       if (e.target.id === "np-route-share") {
         var btn = e.target;
         writeUrl();
@@ -744,17 +1084,42 @@
           (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(function () { btn.textContent = "Copied"; }, function () { prompt("Copy this link", link); });
         }, 450);
       }
+      if (e.target.id === "np-trip-save" && window.AafnaiItinerary) {
+        try { window.AafnaiItinerary.save({ from: state.from, to: state.to, stops: state.stops.slice(), mode: state.mode }); e.target.textContent = "Saved"; }
+        catch (err) { console.warn("itinerary", err); }
+      }
+      if (e.target.id === "np-trip-manage" && window.AafnaiItinerary) {
+        window.AafnaiItinerary.showManager(function (trip) {
+          state.stops = (trip.stops || []).slice(0, 8);
+          state.mode = trip.mode || "car";
+          setPoint("from", trip.from, true); setPoint("to", trip.to, true);
+          document.querySelectorAll(".np-modes [data-mode]").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-mode") === state.mode); });
+          computeRoute();
+        });
+      }
+      var exporter = e.target.closest("[data-export]");
+      if (exporter && window.AafnaiExports && routeData) {
+        window.AafnaiExports.exportRoute(exporter.getAttribute("data-export"), {
+          route: routeData, from: state.from, to: state.to, stops: state.stops.slice(), places: []
+        });
+      }
+      var check = e.target.closest("[data-check-detour]");
+      if (check) { var cf = alongCandidates[check.getAttribute("data-check-detour")]; if (cf) scoreDetour(cf); }
+      var add = e.target.closest("[data-add-stop]");
+      if (add && !add.disabled) addAlongStop(add.getAttribute("data-add-stop"));
       var g = e.target.closest("[data-go]");
       if (g) { var parts = g.getAttribute("data-go").split(":"); go(parts[0], Number(parts[1])); }
     });
     $("#np-swap").addEventListener("click", function () { var f = state.from; setPoint("from", state.to, true); setPoint("to", f, true); computeRoute(); });
     $("#np-me-from").addEventListener("click", function () {
       if (!navigator.geolocation) { $("#np-route-msg").textContent = "Your browser cannot share your location."; return; }
-      $("#np-route-msg").hidden = false; $("#np-route-msg").textContent = "Finding your location…";
-      navigator.geolocation.getCurrentPosition(function (pos) {
-        state.me = [pos.coords.latitude, pos.coords.longitude];
-        setPoint("from", { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "My location" });
-      }, function () { $("#np-route-msg").textContent = "Location permission was not given. Type a place for A instead, or pick it on the map with 📌."; }, { enableHighAccuracy: true, timeout: 15000 });
+      confirmLocationDisclosure("route", function () {
+        $("#np-route-msg").hidden = false; $("#np-route-msg").textContent = "Finding your location…";
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          state.me = [pos.coords.latitude, pos.coords.longitude];
+          setPoint("from", { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "My location" });
+        }, function () { $("#np-route-msg").textContent = "Location permission was not given. Type a place for A instead, or pick it on the map with 📌."; }, { enableHighAccuracy: true, timeout: 15000 });
+      });
     });
     document.addEventListener("click", function (e) {
       var b = e.target.closest && e.target.closest("[data-route]");
@@ -770,11 +1135,12 @@
       map.getCanvas().style.cursor = "";
       setPoint(which, { lat: e.lngLat.lat, lng: e.lngLat.lng, label: "Pinned point " + e.lngLat.lat.toFixed(4) + ", " + e.lngLat.lng.toFixed(4) });
     });
-    $("#np-toggle").addEventListener("click", function () { document.body.classList.toggle("np-panel-open"); });
+    if (!mobileSheet) $("#np-toggle").addEventListener("click", function () { document.body.classList.toggle("np-panel-open"); });
     $("#np-reset").addEventListener("click", function () {
       state.district = ""; state.religion.clear(); state.minEle = 0; $("#np-q").value = "";
       document.querySelectorAll("#np-religion input").forEach(function (x) { x.checked = false; });
       ele.value = "0"; $("#np-ele-out").textContent = "any height";
+      if (state.emergencyOn) setEmergency(false);
       setDistrict("");
     });
   }

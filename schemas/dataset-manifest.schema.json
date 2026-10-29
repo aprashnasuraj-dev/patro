@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aafnaipatro.com/schemas/dataset-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dataset_id","product","source","snapshot_date","build_date","transformation_version","status","confidence","correction_route"],
+  "properties": {
+    "dataset_id": {"type":"string","minLength":1},
+    "product": {"enum":["nepalmap","bali"]},
+    "source": {
+      "type":"object","additionalProperties":false,
+      "required":["name","url","id_namespace","license","license_url","attribution"],
+      "properties":{
+        "name":{"type":"string","minLength":1},"url":{"type":"string","format":"uri"},"id_namespace":{"type":"string"},
+        "license":{"type":"string","minLength":1},"license_url":{"type":"string","format":"uri"},"attribution":{"type":"string","minLength":1}
+      }
+    },
+    "snapshot_date":{"type":"string","format":"date"},
+    "build_date":{"type":"string","format":"date"},
+    "transformation_version":{"type":"string","minLength":1},
+    "status":{"enum":["official","published","calculated","provisional"]},
+    "confidence":{"type":"number","minimum":0,"maximum":1},
+    "correction_route":{"type":"object","additionalProperties":false,"required":["url","email"],"properties":{"url":{"type":"string","minLength":1},"email":{"type":["string","null"]}}},
+    "boundaries_version":{"type":"string"},
+    "related_sources":{
+      "type":"array",
+      "items":{
+        "type":"object","additionalProperties":false,
+        "required":["role","name","url","version","license"],
+        "properties":{
+          "role":{"type":"string","minLength":1},
+          "name":{"type":"string","minLength":1},
+          "url":{"type":"string","format":"uri"},
+          "version":{"type":"string","minLength":1},
+          "commit":{"type":["string","null"]},
+          "license":{"type":"string","minLength":1},
+          "verification":{"type":["string","null"]}
+        }
+      }
+    },
+    "notes":{"type":"string"},"supersedes":{"type":"string"}
+  }
+}

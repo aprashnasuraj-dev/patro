@@ -1,4 +1,6 @@
-export type Ctx = { site: string; url: URL; path: string; now: Date };
+import type { RoadmapFlags } from "../roadmap/flags";
+
+export type Ctx = { site: string; url: URL; path: string; now: Date; flags: RoadmapFlags };
 
 /** A page result. maxAge "midnight" = cache until the next local midnight in `tz` (for "today" pages). */
 export type Rendered =
