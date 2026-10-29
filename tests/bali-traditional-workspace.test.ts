@@ -62,17 +62,24 @@ describe("Bali traditional calendar workspace",()=>{
     expect(new Set(cells.map((x)=>x.pancawara)).size).toBe(5);
   });
 
-  it("renders the root as a 30 by 7 Tika rather than a Gregorian-first card",()=>{
+  it("renders a print-inspired monthly Tika with Wuku columns, Saptawara rows and Ingkel",()=>{
     const r:any=baliRoute(ctx(),[]);
-    expect((r.html.match(/class="tika-wuku"/g)||[])).toHaveLength(30);
-    expect((r.html.match(/class="tika-cell/g)||[])).toHaveLength(210);
-    expect(r.html).toContain("30 Wuku × 7 hari");
+    expect(r.html).toContain('class="bali-workspace bali-traditional-workspace"');
+    const monthCells=(r.html.match(/class="tika-month-cell/g)||[]).length;
+    expect(monthCells).toBeGreaterThanOrEqual(35);
+    expect(monthCells).toBeLessThanOrEqual(42);
+    expect((r.html.match(/class="tika-weekday"/g)||[])).toHaveLength(7);
+    expect((r.html.match(/class="tika-ingkel"/g)||[]).length).toBeGreaterThanOrEqual(5);
+    expect((r.html.match(/class="full-wuku/g)||[])).toHaveLength(30);
+    expect(r.html).toContain("Wuku sebagai kolom, Saptawara sebagai baris");
+    expect(r.html).toContain("INGKEL");
     expect(r.html).toContain("Pawukon / Tika");
     expect(r.html).toContain("Palelintangan");
     expect(r.html).toContain("Sasih / Saka");
-    expect(r.html).toContain('id="tika-overlay-rerainan"');
-    expect(r.html).toContain('id="tika-overlay-lunar"');
-    expect(r.html).toContain('id="tika-overlay-piodalan"');
+    expect(r.html).toContain('class="dewasa-grid"');
+    expect(r.html).toContain("Pewiwahan");
+    expect(r.html).toContain("Mertha Yoga");
+    expect(r.html).toContain("Ceraken Bali: Tika");
     expect(r.html).not.toContain("Jelajahi AafnaiPatro lainnya");
   });
 
