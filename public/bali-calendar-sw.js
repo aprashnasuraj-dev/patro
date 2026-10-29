@@ -1,5 +1,5 @@
-const VERSION="bali-calendar-pwa-v2";
-const CACHE="bali-calendar-shell-v2";
+const VERSION="bali-calendar-pwa-v3";
+const CACHE="bali-calendar-shell-v3";
 const SHELL=[
   "/bali-calendar",
   "/bali-calendar/palelintangan",
