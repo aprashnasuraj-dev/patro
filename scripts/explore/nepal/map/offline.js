@@ -28,11 +28,14 @@
     if(!worker){ await navigator.serviceWorker.ready; worker=(await navigator.serviceWorker.ready).active; }
     var urls=[
       d.url,INDEX,location.pathname,
-      "/nepalmap/style.css?v="+version,"/nepalmap/app.js?v="+version
+      "/nepalmap/style.css?v="+version,"/nepalmap/app.js?v="+version,"/nepalmap/offline.js?v="+version,
+      "/vendor/nepalmap/maplibre-4.7.1/maplibre-gl-csp.js",
+      "/vendor/nepalmap/maplibre-4.7.1/maplibre-gl-csp-worker.js",
+      "/vendor/nepalmap/maplibre-4.7.1/maplibre-gl.css"
     ];
     await message(worker,{type:"cache-pack",urls:urls});
     memo[slug]=null;
-    return d;
+    return { ...d, offline_url: "/nepalmap?d=" + encodeURIComponent(slug) };
   }
   async function pack(slug){
     if(memo[slug]) return memo[slug];
