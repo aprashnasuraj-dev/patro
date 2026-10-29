@@ -115,7 +115,7 @@
     return L.loading;
   }
   // Row: [name, name_ne, lat, lng, sub, ele, palika_id, ward, district_id, village_slug, wikipedia]
-  var R = { n: 0, ne: 1, lat: 2, lng: 3, sub: 4, ele: 5, pid: 6, ward: 7, did: 8, vs: 9, wiki: 10, src: 11 };
+  var R = { n: 0, ne: 1, lat: 2, lng: 3, sub: 4, ele: 5, pid: 6, ward: 7, did: 8, vs: 9, wiki: 10, src: 11, place: 12 };
 
   function districtId() {
     if (!state.district || !admin) return 0;
