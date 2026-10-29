@@ -9,22 +9,27 @@ const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"num
 const archiveBackends=new Set(["r2","static-fallback"]);
 const apiBackends=new Set(["r2","static-fallback","cloudflare-native-indexed-calendar"]);
 
-async function fetchRetry(url){
-  let response;
-  for(let attempt=1;attempt<=6;attempt++){
+async function fetchRetry(url,{attempts=6,delayMs=2000}={}){
+  let response,lastError=null;
+  for(let attempt=1;attempt<=attempts;attempt++){
     try{
       response=await fetch(url,{headers:{"user-agent":"AafnaiPatro-ReleaseGate/2.0","cache-control":"no-cache"},redirect:"follow"});
       if(response.ok)break;
-    }catch(error){if(attempt===6)throw error;}
-    if(attempt<6)await new Promise((r)=>setTimeout(r,2000));
+      console.warn(JSON.stringify({smoke_retry:true,url,attempt,status:response.status}));
+    }catch(error){
+      lastError=error;
+      console.warn(JSON.stringify({smoke_retry:true,url,attempt,error:String(error)}));
+      if(attempt===attempts)throw error;
+    }
+    if(attempt<attempts)await new Promise((r)=>setTimeout(r,Math.min(delayMs*attempt,5000)));
   }
-  if(!response?.ok)throw new Error(`${url} returned ${response?.status||"no-response"}`);
+  if(!response?.ok)throw new Error(`${url} returned ${response?.status||"no-response"} after ${attempts} attempts${lastError?`; last error ${lastError}`:""}`);
   return response;
 }
 
-async function request(path,{backends,contains,indexable=false,canonical=false}={}){
+async function request(path,{backends,contains,indexable=false,canonical=false,attempts,delayMs}={}){
   const url=base+path;
-  const response=await fetchRetry(url);
+  const response=await fetchRetry(url,{attempts,delayMs});
   const actual=response.headers.get("x-patro-backend")||"";
   if(backends&&!backends.has(actual))throw new Error(`${path} backend ${actual||"<missing>"} not in ${[...backends].join(",")}`);
   const text=await response.text();
@@ -65,8 +70,11 @@ const bsYear=calendar.bs_years?.[0];
 if(!Number.isInteger(bsYear))throw new Error("calendar manifest has no BS year");
 
 for(const date of [oldest,today,latest]){
-  await request(`/date/${date}`,{backends:archiveBackends});
-  await request(`/api/v1/sync?date=${encodeURIComponent(date)}`,{backends:apiBackends});
+  // Warm/verify the immutable archive API before rendering the public page. Immediately
+  // after a Worker deployment, the boundary shard can take longer than ordinary routes
+  // to become consistently available across Cloudflare isolates.
+  await request(`/api/v1/sync?date=${encodeURIComponent(date)}`,{backends:apiBackends,attempts:15,delayMs:2000});
+  await request(`/date/${date}`,{backends:archiveBackends,attempts:15,delayMs:2000});
 }
 await request(`/calendar/${bsYear}`,{backends:archiveBackends});
 
