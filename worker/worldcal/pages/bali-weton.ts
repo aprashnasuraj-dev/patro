@@ -866,8 +866,16 @@ function baliEnglishGuide(ctx: Ctx): Rendered {
   };
 }
 
+function baliJump(ctx: Ctx): Rendered {
+  const tanggal = ctx.url.searchParams.get("tanggal") || "";
+  return parseIso(tanggal) && inBaliRange(tanggal)
+    ? { status: 302, location: `${BP}/${tanggal}` }
+    : { status: 302, location: BP };
+}
+
 export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
+  if (rest.length === 1 && rest[0] === "go") return baliJump(ctx);
   if (rest.length === 1 && rest[0] === "palelintangan") return baliPalelintanganPage(ctx);
   if (rest.length === 1 && rest[0] === "sasih-saka") return baliSasihSakaPage(ctx);
   if (rest.length === 1 && rest[0] === "hari-raya") return baliHolidays(ctx, Number(todayIn(BALI_TZ, ctx.now).slice(0, 4)));
