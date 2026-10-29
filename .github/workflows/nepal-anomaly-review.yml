@@ -1,0 +1,58 @@
+name: "Nepal OSM anomaly review"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [wip/nepal-evidence-fix]
+    paths:
+      - ".github/workflows/nepal-anomaly-review.yml"
+      - "scripts/explore/nepal/triage-rebuild-anomalies.mjs"
+      - "scripts/explore/nepal/check-disappeared-osm.py"
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: "24" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Reconstruct historical baseline and audit
+        run: |
+          set -euo pipefail
+          PREV=.cache/nepal-anomaly-prev
+          mkdir -p "$PREV" docs/verification
+          for f in osm-pois.json osm-settlements.json osm-report.json; do
+            git show ec3be0201826a86f770f88c341388b08d2a2f487:data/explore/nepal/$f > "$PREV/$f"
+          done
+          node scripts/explore/nepal/bootstrap-place-id-map.mjs --data "$PREV" --out "$PREV/place-id-map.json"
+          cp "$PREV/place-id-map.json" /tmp/current-place-id-seed.json
+          cp /tmp/current-place-id-seed.json data/explore/nepal/place-id-map.json
+          node scripts/explore/nepal/update-place-ids.mjs
+          node scripts/explore/nepal/audit-rebuild.mjs --previous "$PREV" --current data/explore/nepal --out docs/verification/nepal-rebuild-audit-review.json
+      - name: Triage duplicate and disappeared candidates
+        run: node scripts/explore/nepal/triage-rebuild-anomalies.mjs --audit docs/verification/nepal-rebuild-audit-review.json --out docs/verification/nepal-anomaly-triage.json
+      - name: Check disappeared OSM objects against current OSM API
+        run: python3 scripts/explore/nepal/check-disappeared-osm.py --triage docs/verification/nepal-anomaly-triage.json --out docs/verification/nepal-disappeared-osm-status.json
+      - name: Summary
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          t=json.load(open("docs/verification/nepal-anomaly-triage.json"))
+          s=json.load(open("docs/verification/nepal-disappeared-osm-status.json"))
+          print("## Nepal OSM anomaly review")
+          print("- Stable ID continuity:",t["stable_id_continuity"])
+          print("- Duplicate triage:",t["duplicate_summary"])
+          print("- Disappeared object status:",s["summary"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nepal-osm-anomaly-review
+          path: docs/verification/nepal-*review*.json
+          retention-days: 30
