@@ -105,7 +105,10 @@ describe("Bali traditional calendar workspace",()=>{
 
   it("supports dynamic Bali pages from 1929 through 2129 without pretending annual lunar data exists",()=>{
     expect((baliRoute(ctx("/bali-calendar/1929-01-01"),["1929-01-01"]) as any)?.status).toBe(200);
-    expect((baliRoute(ctx("/bali-calendar/2129-12-31"),["2129-12-31"]) as any)?.status).toBe(200);
+    const far:any=baliRoute(ctx("/bali-calendar/2129-12-31"),["2129-12-31"]);
+    expect(far?.status).toBe(200);
+    expect(far?.html).toContain("Konteks Bulan astronomis");
+    expect(far?.html).toContain("tidak menggantikan penetapan Purnama, Tilem, Sasih");
     expect(baliRoute(ctx("/bali-calendar/1928-12-31"),["1928-12-31"])).toBeNull();
     expect(baliRoute(ctx("/bali-calendar/2130-01-01"),["2130-01-01"])).toBeNull();
     expect((wetonRoute(ctx("/weton/1900-01-01"),["1900-01-01"]) as any)?.status).toBe(200);
