@@ -57,6 +57,8 @@ NEPAL_BOUNDARY_LICENSE=
 NEPAL_BOUNDARY_AMBIGUOUS_KM=0.25
 NEPAL_BOUNDARY_MEDIUM_KM=1
 NEPALMAP_DETOUR_ROUTING=0
+# Production target: valhalla-first-party. Keep fossgis-public only for explicit dev/fallback use.
+NEPALMAP_ROUTING_PROVIDER=fossgis-public
 NEPALMAP_ROAD_SAFETY=0
 NEPALMAP_TERRAIN=0
 # Required and must be same-origin when NEPALMAP_TERRAIN=1.
@@ -84,4 +86,9 @@ NEPALMAP_API_BUILD=0
 NEPAL_API_ENABLED=0
 NEPAL_CORRECTIONS_ENABLED=0
 NEPAL_EMERGENCY_ENABLED=0
+# First-party routing requires NEPAL_API_ENABLED=1 as well.
+NEPAL_ROUTING_ENABLED=0
+NEPAL_ROUTING_ORIGIN=
+# Secret shared only with the HTTPS auth gateway in front of loopback Valhalla.
+NEPAL_ROUTING_TOKEN=
 BIPAD_API_BASE=https://bipadportal.gov.np/api/v1
