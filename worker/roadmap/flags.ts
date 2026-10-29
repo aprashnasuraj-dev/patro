@@ -12,6 +12,7 @@ export const ROADMAP_FLAGS = {
   nepalStablePlaceIds: false,
   baliMonthGrid: false,
   baliRerainanSearch: false,
+  baliLearningGuides: false,
   baliIcsFeeds: false,
   nepalVisitorMode: false,
   seoPolicyEngine: false,
