@@ -80,6 +80,7 @@ run_step osm_ingest python3 scripts/explore/nepal/osm_wards.py --pbf "$PBF" --ou
 run_step stable_ids node scripts/explore/nepal/update-place-ids.mjs
 run_step road_metadata python3 scripts/explore/nepal/osm_roads.py --pbf "$PBF" --out data/explore/nepal/osm-roads.geojsonseq
 run_step rebuild_audit node scripts/explore/nepal/audit-rebuild.mjs --previous "$PREVIOUS" --current data/explore/nepal --out "$WORK/rebuild-audit.json"
+cp "$WORK/rebuild-audit.json" "$ROOT/docs/verification/nepal-rebuild-audit-$RUN_ID.json"
 
 run_step vendor_runtime env NEPALMAP_VENDOR_OUT="$STAGE/vendor/nepalmap" bash scripts/explore/nepal/vendor-map-runtime.sh
 
