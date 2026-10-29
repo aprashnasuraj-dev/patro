@@ -44,6 +44,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     const js=read("public/bali-calendar/pwa.js");
     expect(js).toContain("navigator.share");
     expect(js).toContain("Sejak kunjungan terakhir");
+    expect(js).toContain("Yang terdekat untukmu");
   });
 
   it("keeps the Bali PWA runtime across Otonan and sourced Piodalan subpages",()=>{
