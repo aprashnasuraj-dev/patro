@@ -1,16 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { createUlid, emptyPlaceIdMap, reconcilePlaceIds, validatePlaceIdMap } from "../scripts/explore/nepal/place-id-core.mjs";
+import { createUlid, deterministicPlaceId, emptyPlaceIdMap, reconcilePlaceIds, validatePlaceIdMap } from "../scripts/explore/nepal/place-id-core.mjs";
 import { detectPlaceAnomalies } from "../scripts/explore/nepal/place-anomalies.mjs";
 import { newCorrection, transitionCorrection } from "../worker/roadmap/nepal-corrections";
 
 describe("Nepal durable place identity", () => {
-  it("preserves an assigned ULID across refreshes and adds only new source IDs", () => {
-    const bytes = () => new Uint8Array(10).fill(7);
-    const first = reconcilePlaceIds(emptyPlaceIdMap(), ["n1"], { now: new Date("2026-10-01T00:00:00Z"), randomBytes: bytes });
+  it("derives deterministic internal IDs from typed OSM identity and preserves mapped IDs", () => {
+    const n1 = deterministicPlaceId("n1");
+    expect(n1).toMatch(/^[0-9A-HJKMNP-TV-Z]{26}$/);
+    expect(deterministicPlaceId("n1")).toBe(n1);
+    expect(deterministicPlaceId("w1")).not.toBe(n1);
+    const first = reconcilePlaceIds(emptyPlaceIdMap(), ["n1"], { now: new Date("2026-10-01T00:00:00Z") });
     const id = first.entries.n1.place_id;
-    const second = reconcilePlaceIds(first, ["n1", "w2"], { now: new Date("2026-10-15T00:00:00Z"), randomBytes: () => new Uint8Array(10).fill(8) });
+    expect(id).toBe(n1);
+    const second = reconcilePlaceIds(first, ["n1", "w2"], { now: new Date("2026-10-15T00:00:00Z") });
     expect(second.entries.n1.place_id).toBe(id);
-    expect(second.entries.w2.place_id).not.toBe(id);
+    expect(second.entries.w2.place_id).toBe(deterministicPlaceId("w2"));
     expect(validatePlaceIdMap(second)).toEqual([]);
     expect(createUlid(0, new Uint8Array(10))).toMatch(/^[0-9A-HJKMNP-TV-Z]{26}$/);
   });
