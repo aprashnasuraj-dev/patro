@@ -1,0 +1,70 @@
+name: "Nepal first-party Valhalla runtime evidence"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [wip/roadmap-final-integration]
+    paths:
+      - ".github/workflows/nepal-valhalla-runtime.yml"
+      - "infra/nepal-routing/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nepal-valhalla-runtime-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker/runtime prerequisites
+        run: |
+          docker version
+          docker compose version
+          python3 --version
+          df -h .
+      - name: Build pinned Nepal Valhalla candidate and run direct fixtures
+        run: ./infra/nepal-routing/build-release.sh
+      - name: Start authenticated Caddy gateway over local HTTP
+        shell: bash
+        run: |
+          set -euo pipefail
+          release="$PWD/infra/nepal-routing/data/releases/2026-10-28"
+          export VALHALLA_DATA_DIR="$release"
+          export VALHALLA_PORT=18002
+          export VALHALLA_USE_TILES_IGNORE_PBF=True
+          export VALHALLA_FORCE_REBUILD=False
+          export NEPAL_ROUTING_HOST="http://localhost"
+          export NEPAL_ROUTING_TOKEN="ci-roadmap-token"
+          export CADDY_ACME_EMAIL="ci@example.invalid"
+          export NEPAL_ROUTING_HTTP_PORT=18080
+          export NEPAL_ROUTING_HTTPS_PORT=18443
+          docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway up -d
+          for i in {1..90}; do
+            code="$(curl -sS -o /tmp/health.json -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://127.0.0.1:18080/healthz || true)"
+            if [[ "$code" == "200" ]]; then break; fi
+            sleep 2
+          done
+          test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:18080/healthz)" = "401"
+          test "$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://127.0.0.1:18080/not-allowed)" = "404"
+          python3 infra/nepal-routing/verify_routes.py             --base http://127.0.0.1:18080             --token "$NEPAL_ROUTING_TOKEN"             --health-path /healthz             --output infra/nepal-routing/reports/gateway-routes-2026-10-28.json
+          docker stats --no-stream --format '{{json .}}' > infra/nepal-routing/reports/docker-stats-2026-10-28.jsonl
+          docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway ps > infra/nepal-routing/reports/gateway-ps-2026-10-28.txt
+      - name: Preserve runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nepal-valhalla-runtime-evidence
+          path: |
+            infra/nepal-routing/reports/
+            infra/nepal-routing/data/releases/2026-10-28/source-lock.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Cleanup
+        if: always()
+        run: |
+          VALHALLA_DATA_DIR="$PWD/infra/nepal-routing/data/releases/2026-10-28"           VALHALLA_PORT=18002           VALHALLA_USE_TILES_IGNORE_PBF=True           NEPAL_ROUTING_HOST="http://localhost"           NEPAL_ROUTING_TOKEN="ci-roadmap-token"           CADDY_ACME_EMAIL="ci@example.invalid"           NEPAL_ROUTING_HTTP_PORT=18080           NEPAL_ROUTING_HTTPS_PORT=18443           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway down -v || true
