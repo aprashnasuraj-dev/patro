@@ -36,6 +36,7 @@ export const ROADMAP_FLAGS = {
   baliDauhAyu: false,
   baliPadewasan: false,
   baliEnglishGuide: false,
+  baliPwa: false,
   nepalVisitorMode: false,
   seoPolicyEngine: false,
   futureNepalApi: false,
@@ -59,6 +60,7 @@ const ENV_FLAG_KEYS: Partial<Record<RoadmapFlag, string>> = {
   baliDauhAyu: "BALI_DAUH_AYU",
   baliPadewasan: "BALI_PADEWASAN",
   baliEnglishGuide: "BALI_ENGLISH_GUIDE",
+  baliPwa: "BALI_PWA",
 };
 
 export function roadmapFlagsFromEnv(env: Record<string, unknown> | null | undefined): RoadmapFlags {

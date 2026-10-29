@@ -1,0 +1,71 @@
+{
+  "id": "/bali-calendar",
+  "name": "Bali Calendar · AafnaiPatro",
+  "short_name": "Bali Calendar",
+  "description": "Kalender Bali dengan Pawukon, Wewaran, hari raya, Otonan, Piodalan dan sumber yang transparan — bagian dari AafnaiPatro.",
+  "lang": "id",
+  "dir": "ltr",
+  "start_url": "/bali-calendar?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#fbfaf5",
+  "theme_color": "#a8781c",
+  "orientation": "any",
+  "categories": [
+    "lifestyle",
+    "education",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kalender Bali hari ini",
+      "short_name": "Hari ini",
+      "url": "/bali-calendar"
+    },
+    {
+      "name": "Hitung Otonan",
+      "short_name": "Otonan",
+      "url": "/bali-calendar/otonan"
+    },
+    {
+      "name": "Piodalan Bali",
+      "short_name": "Piodalan",
+      "url": "/bali-calendar/piodalan"
+    },
+    {
+      "name": "Aafnai Tools",
+      "short_name": "Tools",
+      "url": "/tools"
+    },
+    {
+      "name": "Weton Jawa",
+      "short_name": "Weton",
+      "url": "/weton"
+    }
+  ]
+}

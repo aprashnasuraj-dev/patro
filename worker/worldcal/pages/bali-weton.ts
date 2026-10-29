@@ -254,6 +254,34 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
 <section><h2>Kalkulator otonan</h2>${otonanForm()}</section>`;
 }
 
+
+function baliAppFace(ctx: Ctx, iso: string): string {
+  if (!ctx.flags.baliPwa) return "";
+  const year = Number(iso.slice(0,4)), month = iso.slice(0,7), p = pawukon(isoToJdn(iso));
+  const featureLinks = [
+    { href: BP, icon:"◉", label:"Hari ini", detail:`${p.saptawara} ${p.pancawara} · Wuku ${p.wuku.name}` },
+    ...(ctx.flags.baliMonthGrid ? [{ href:`${BP}/bulan/${month}`, icon:"▦", label:"Kalender bulan", detail:"Rerainan, Purnama dan Tilem" }] : []),
+    { href:`${BP}/otonan`, icon:"↻", label:"Otonan", detail:"Hitung siklus 210 hari" },
+    { href:`${BP}/hari-raya/${year}`, icon:"✦", label:"Hari raya", detail:"Galungan, Kuningan, Nyepi dan Tumpek" },
+    ...(ctx.flags.baliPiodalan ? [{ href:`${BP}/piodalan`, icon:"⌂", label:"Piodalan", detail:"Pura + aturan dengan sumber resmi" }] : []),
+    ...(ctx.flags.baliPadewasan ? [{ href:`${BP}/padewasan`, icon:"☼", label:"Padewasan", detail:"Faktor Wariga yang dapat diverifikasi" }] : []),
+    ...(ctx.flags.baliDauhAyu ? [{ href:`${BP}/dauh-ayu`, icon:"⌛", label:"Dauh Ayu", detail:"Pembagian waktu berbasis matahari" }] : []),
+  ];
+  const tools = [
+    { href:"/tools", icon:"🧰", label:"Aafnai Tools" },{ href:"/nepalmap", icon:"🗺", label:"Nepal Map" },{ href:"/tools/astro", icon:"◐", label:"Astronomy" },
+    { href:"/time-machine", icon:"⌛", label:"Time Machine" },{ href:"/tools/nepali-typing", icon:"अ", label:"Nepali Typing" },{ href:WP, icon:"◫", label:"Weton Jawa" },
+  ];
+  return `<section class="bali-native-shell" aria-labelledby="bali-app-face-title">
+<div class="bali-face-hero"><div><span class="bali-face-kicker">Kalender Bali · AafnaiPatro</span><h2 class="bali-face-title" id="bali-app-face-title">Kalender Bali yang terasa seperti aplikasi sendiri</h2>
+<p class="bali-face-copy">Tampilan Bali-first untuk Pawukon, Wewaran, hari raya, Otonan, Piodalan dan sumber budaya. Instal ke homescreen untuk membuka langsung halaman Bali Calendar, tanpa memutus akses ke alat AafnaiPatro lain.</p>
+<div class="bali-face-actions"><button id="bali-install" class="bali-install" type="button">Install Bali Calendar</button>${ctx.flags.baliMonthGrid ? `<a class="bali-secondary" href="${BP}/bulan/${month}">Buka kalender bulan</a>` : `<a class="bali-secondary" href="${BP}/hari-raya/${year}">Lihat hari raya ${year}</a>`}</div>
+<p id="bali-install-status" class="bali-install-status" role="status" aria-live="polite"></p><div id="bali-install-guide" class="bali-install-guide" hidden><b>Instal manual:</b> iPhone/iPad: Safari → Share → Add to Home Screen. Android/desktop: Chrome/Edge menu → Install app atau Add to Home screen.</div></div>
+<div class="bali-emblem" aria-hidden="true"><div class="bali-emblem-ring"><div class="bali-emblem-core">Wuku<br>${esc(p.wuku.name)}</div></div><div class="bali-emblem-caption">Pawukon 210 hari · ${esc(p.saptawara)} ${esc(p.pancawara)}</div></div></div>
+<div class="bali-feature-grid">${featureLinks.map((x)=>`<a class="bali-feature-card" href="${x.href}"><span class="bali-feature-icon">${x.icon}</span><strong>${esc(x.label)}</strong><small>${esc(x.detail)}</small></a>`).join("")}</div>
+<div class="bali-tools-strip"><h3>Jelajahi AafnaiPatro lainnya</h3><div class="bali-tools-grid">${tools.map((x)=>`<a href="${x.href}"><span>${x.icon}</span>${esc(x.label)}</a>`).join("")}</div></div>
+</section>`;
+}
+
 function baliToday(ctx: Ctx): Rendered {
   const today = todayIn(BALI_TZ, ctx.now);
   const p = pawukon(isoToJdn(today));
@@ -262,7 +290,8 @@ function baliToday(ctx: Ctx): Rendered {
     html: page({
       site: ctx.site, path: BP, lang: "id", title: `Kalender Bali hari ini: ${p.saptawara} ${p.pancawara} ${p.wuku.name} — wuku, wewaran dan hari raya`,
       description: `Hari ini menurut Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}. Wewaran lengkap, hari raya Galungan, Kuningan, Saraswati dan kalkulator otonan.`,
-      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), hero: baliHero(today).art, lede: baliHero(today).lede, crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliDayBody(ctx, today, today) + baliSubscriptionSection(ctx, Number(today.slice(0, 4))), footer: BALI_NOTE,
+      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), hero: baliHero(today).art, lede: baliHero(today).lede, crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliAppFace(ctx, today) + baliDayBody(ctx, today, today) + baliSubscriptionSection(ctx, Number(today.slice(0, 4))), footer: BALI_NOTE,
+      ...(ctx.flags.baliPwa ? { pwa: { manifest: "/bali-calendar/manifest.webmanifest", appName: "Bali Calendar", script: "/bali-calendar/pwa.js" } } : {}),
     }),
   };
 }
