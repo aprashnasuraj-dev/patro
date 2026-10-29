@@ -334,16 +334,22 @@ function tikaMatrix(iso: string): string {
       const date = jdnToIso(jdn);
       const pw = pawukon(jdn);
       const events = pawukonEvents(jdn);
+      const saka = sakaFacts(date);
+      const piodalan = piodalanForDate(date);
       const isCurrent = day === current.day;
       const isMajor = events.some((name) => /Galungan|Kuningan|Saraswati|Pagerwesi|Banyu Pinaruh|Tumpek/.test(name));
-      const title = `${pw.combination} · ${idDate(date)}${events.length ? ` · ${events.join(", ")}` : ""}`;
-      cells += `<a class="tika-cell${isCurrent ? " is-today" : ""}${isMajor ? " has-major" : ""}" href="${BP}/${date}" title="${esc(title)}" aria-label="${esc(title)}"><span>${esc(pw.pancawara)}</span><small>${esc(date.slice(5).replace("-", "/"))}</small>${events.length ? `<i aria-hidden="true"></i>` : ""}</a>`;
+      const hasLunar = saka.some((name) => name === "Purnama" || name === "Tilem");
+      const hasPiodalan = piodalan.length > 0;
+      const titleParts = [pw.combination, idDate(date), ...events, ...saka, ...(hasPiodalan ? [`${piodalan.length} Piodalan bersumber`] : [])];
+      const title = titleParts.join(" · ");
+      cells += `<a class="tika-cell${isCurrent ? " is-today" : ""}${isMajor ? " has-major" : ""}${hasLunar ? " has-lunar" : ""}${hasPiodalan ? " has-piodalan" : ""}" href="${BP}/${date}" title="${esc(title)}" aria-label="${esc(title)}"><span>${esc(pw.pancawara)}</span><small>${esc(date.slice(5).replace("-", "/"))}</small><b class="tika-markers" aria-hidden="true">${isMajor ? `<i class="marker-rerainan"></i>` : ""}${hasLunar ? `<i class="marker-lunar"></i>` : ""}${hasPiodalan ? `<i class="marker-piodalan"></i>` : ""}</b></a>`;
     }
     return cells;
   }).join("");
   return `<div class="tika-meta"><span>Siklus ini: <b>${esc(idDate(jdnToIso(cycleStart)))}</b> → <b>${esc(idDate(jdnToIso(cycleEnd)))}</b></span><span>Hari ini berada pada posisi <b>${current.cycleDay}/210</b></span></div>
 <div class="tika-scroll" tabindex="0" aria-label="Tika Pawukon 30 Wuku kali 7 hari"><div class="tika-grid">${headers}${rows}</div></div>
-<div class="tika-legend"><span><i class="today"></i>hari dipilih</span><span><i class="major"></i>rerainan utama</span><span>Isi sel: Pancawara + tanggal Gregorian</span></div>`;
+<fieldset class="tika-overlays"><legend>Lapisan kalender</legend><label><input id="tika-overlay-rerainan" type="checkbox" checked> Hari Raya / Tumpek</label><label><input id="tika-overlay-lunar" type="checkbox" checked> Purnama / Tilem</label><label><input id="tika-overlay-piodalan" type="checkbox" checked> Piodalan bersumber</label></fieldset>
+<div class="tika-legend"><span><i class="today"></i>hari dipilih</span><span><i class="major"></i>hari raya/Tumpek</span><span><i class="lunar"></i>Purnama/Tilem</span><span><i class="piodalan"></i>Piodalan</span><span>Isi sel: Pancawara + tanggal Gregorian</span></div>`;
 }
 
 function baliAppFace(ctx: Ctx, iso: string): string {
