@@ -103,12 +103,23 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("ÇAKA 1948");
   });
 
+  it("supports dynamic Bali pages from 1929 through 2129 without pretending annual lunar data exists",()=>{
+    expect((baliRoute(ctx("/bali-calendar/1929-01-01"),["1929-01-01"]) as any)?.status).toBe(200);
+    expect((baliRoute(ctx("/bali-calendar/2129-12-31"),["2129-12-31"]) as any)?.status).toBe(200);
+    expect(baliRoute(ctx("/bali-calendar/1928-12-31"),["1928-12-31"])).toBeNull();
+    expect(baliRoute(ctx("/bali-calendar/2130-01-01"),["2130-01-01"])).toBeNull();
+  });
+
   it("builds a unique structural 35-cell Palelintangan matrix",()=>{
     const cells=palelintanganMatrix();
     expect(cells).toHaveLength(35);
     expect(new Set(cells.map((x)=>x.key)).size).toBe(35);
     expect(new Set(cells.map((x)=>x.saptawara)).size).toBe(7);
     expect(new Set(cells.map((x)=>x.pancawara)).size).toBe(5);
+    expect(new Set(cells.map((x)=>x.lintang)).size).toBe(35);
+    expect(cells.find((x)=>x.saptawara==="Redite"&&x.pancawara==="Umanis")?.lintang).toBe("Kala Sungsang");
+    expect(cells.find((x)=>x.saptawara==="Saniscara"&&x.pancawara==="Kliwon")?.lintang).toBe("Larung Paglangan");
+    expect(cells.find((x)=>x.saptawara==="Buda"&&x.pancawara==="Pon")?.patron).toBe("Bhatara Wisnu");
   });
 
   it("renders a print-inspired monthly Tika with Wuku columns, Saptawara rows and Ingkel",()=>{
@@ -129,6 +140,10 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("Pewiwahan");
     expect(r.html).toContain("Mertha Yoga");
     expect(r.html).toContain("Ceraken Bali: Tika");
+    expect(r.html).toContain('id="my-bali"');
+    expect(r.html).toContain("7 hari");
+    expect(r.html).toContain("35 hari");
+    expect(r.html).toContain("210 hari");
     expect(r.html).not.toContain("Jelajahi AafnaiPatro lainnya");
   });
 
