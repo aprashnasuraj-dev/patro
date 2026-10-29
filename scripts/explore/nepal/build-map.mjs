@@ -199,6 +199,14 @@ await rm(dataDir, { recursive: true, force: true });
 await mkdir(dataDir, { recursive: true });
 await mkdir(join(OUT, "nepalmap"), { recursive: true });
 const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia", "source_id", ...(ROADMAP_FLAGS.nepalStablePlaceIds ? ["place_id"] : []), ...(ROADMAP_FLAGS.nepalBoundaryConfidence ? ["admin_confidence", "boundary_distance_m", "admin_confidence_reason"] : [])];
+const ROW_INDEX = {
+  name: 0, name_ne: 1, lat: 2, lng: 3, sub: 4, ele: 5, palika_id: 6, ward: 7, district_id: 8,
+  village_slug: 9, wikipedia: 10, source_id: 11,
+  place_id: ROADMAP_FLAGS.nepalStablePlaceIds ? 12 : -1,
+  admin_confidence: ROADMAP_FLAGS.nepalBoundaryConfidence ? (ROADMAP_FLAGS.nepalStablePlaceIds ? 13 : 12) : -1,
+  boundary_distance_m: ROADMAP_FLAGS.nepalBoundaryConfidence ? (ROADMAP_FLAGS.nepalStablePlaceIds ? 14 : 13) : -1,
+  admin_confidence_reason: ROADMAP_FLAGS.nepalBoundaryConfidence ? (ROADMAP_FLAGS.nepalStablePlaceIds ? 15 : 14) : -1,
+};
 const sizes = {};
 for (const c of CATEGORIES) {
   const text = JSON.stringify({ fields, rows: rowsByCat.get(c.id) });
@@ -448,6 +456,83 @@ for (const l of LANDINGS) {
       ] },
     }),
   });
+}
+
+
+if (ROADMAP_FLAGS.nepalPoiPages) {
+  if (!ROADMAP_FLAGS.nepalStablePlaceIds) throw new Error("NEPALMAP_POI_PAGES=1 requires NEPALMAP_STABLE_IDS=1 so detail URLs never depend on mutable names or temporary row indices.");
+  const maxPoiPages = Math.max(1, Math.min(2000, Number(process.env.NEPALMAP_MAX_POI_PAGES || 500)));
+  const candidates = [];
+  for (const cat of CATEGORIES) {
+    const rows = rowsByCat.get(cat.id);
+    for (let i = 0; i < rows.length; i++) {
+      const r = rows[i];
+      if (!(r[ROW_INDEX.name] || r[ROW_INDEX.name_ne]) || !r[ROW_INDEX.source_id] || !r[ROW_INDEX.place_id]) continue;
+      let score = 0;
+      if (r[ROW_INDEX.wikipedia]) score += 5;
+      if (r[ROW_INDEX.name_ne]) score += 1;
+      if (r[ROW_INDEX.palika_id] && r[ROW_INDEX.ward]) score += 1;
+      if (ROW_INDEX.admin_confidence >= 0 && /^(high|medium)$/.test(r[ROW_INDEX.admin_confidence] || "")) score += 1;
+      if (cat.id === "peak" && Number(r[ROW_INDEX.ele]) >= 5000) score += 4;
+      if (["sight","park","lake","waterfall","airport"].includes(cat.id)) score += 1;
+      if (score < 6) continue;
+      candidates.push({ cat, row: r, score, index: i });
+    }
+  }
+  candidates.sort((a, b) => b.score - a.score || (b.row[ROW_INDEX.wikipedia] ? 1 : 0) - (a.row[ROW_INDEX.wikipedia] ? 1 : 0) || String(a.row[ROW_INDEX.place_id]).localeCompare(String(b.row[ROW_INDEX.place_id])));
+  for (const item of candidates.slice(0, maxPoiPages)) {
+    const r = item.row, cat = item.cat;
+    const placeId = r[ROW_INDEX.place_id], sourceId = r[ROW_INDEX.source_id];
+    const name = r[ROW_INDEX.name] || r[ROW_INDEX.name_ne];
+    const where = wardLink(r);
+    const pinfo = palika.get(r[ROW_INDEX.palika_id]);
+    const d = district.get(r[ROW_INDEX.district_id] || pinfo?.district_id);
+    const wiki = r[ROW_INDEX.wikipedia] ? "https://" + r[ROW_INDEX.wikipedia].split(":")[0] + ".wikipedia.org/wiki/" + encodeURIComponent(r[ROW_INDEX.wikipedia].slice(3).replace(/ /g, "_")) : "";
+    const osmType = sourceId[0] === "n" ? "node" : sourceId[0] === "w" ? "way" : sourceId[0] === "r" ? "relation" : "";
+    const osmUrl = osmType ? "https://www.openstreetmap.org/" + osmType + "/" + sourceId.slice(1) : "https://www.openstreetmap.org/";
+    const path = "/nepalmap/place/" + placeId;
+    const confidence = ROW_INDEX.admin_confidence >= 0 ? r[ROW_INDEX.admin_confidence] : "";
+    const boundaryDistance = ROW_INDEX.boundary_distance_m >= 0 ? r[ROW_INDEX.boundary_distance_m] : null;
+    const factRows = [
+      ["Type", cat.one + (r[ROW_INDEX.sub] ? " · " + (cat.subs?.[r[ROW_INDEX.sub]] || r[ROW_INDEX.sub]) : "")],
+      ["Nepali name", r[ROW_INDEX.name_ne] || ""],
+      ["Elevation", r[ROW_INDEX.ele] ? fmt(r[ROW_INDEX.ele], 0) + " m" : ""],
+      ["Administrative area", where?.text || d?.en || ""],
+      ["Coordinates", Number(r[ROW_INDEX.lat]).toFixed(5) + ", " + Number(r[ROW_INDEX.lng]).toFixed(5)],
+      ["Admin match confidence", confidence ? confidence + (boundaryDistance != null ? " · " + fmt(boundaryDistance, 0) + " m from mapped boundary" : "") : ""],
+      ["OpenStreetMap source", sourceId],
+      ["AafnaiPatro place ID", placeId],
+    ].filter((x) => x[1]).map(([k, v]) => `<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join("");
+    const graph = [
+      {
+        "@type": "Place",
+        "@id": SITE + path + "#place",
+        name,
+        ...(r[ROW_INDEX.name_ne] && r[ROW_INDEX.name_ne] !== name ? { alternateName: r[ROW_INDEX.name_ne] } : {}),
+        identifier: [{ "@type": "PropertyValue", propertyID: "AafnaiPatro place_id", value: placeId }, { "@type": "PropertyValue", propertyID: "OpenStreetMap", value: sourceId }],
+        geo: { "@type": "GeoCoordinates", latitude: r[ROW_INDEX.lat], longitude: r[ROW_INDEX.lng] },
+        ...(d ? { containedInPlace: { "@type": "AdministrativeArea", name: d.en } } : {}),
+        ...(wiki ? { sameAs: [wiki, osmUrl] } : { sameAs: [osmUrl] }),
+      },
+      { "@type": "WebPage", "@id": SITE + path, url: SITE + path, name: name + " — Nepal map", dateModified: LASTMOD, mainEntity: { "@id": SITE + path + "#place" } },
+      breadcrumb([["आफ्नै पात्रो", "/"], ["Nepal map", "/nepalmap"], [name, path]]),
+    ];
+    pages.push({
+      path,
+      html: shell({
+        path,
+        title: `${name} — map, ward, coordinates and source | आफ्नै पात्रो`,
+        description: `${name} in Nepal: map location, ${where?.text || d?.en || "administrative area"}, coordinates${r[ROW_INDEX.ele] ? ", elevation " + fmt(r[ROW_INDEX.ele], 0) + " m" : ""}, OpenStreetMap source and correction links.`,
+        h1: name,
+        intro: `${cat.one} in ${where?.text || d?.en || "Nepal"}, with source-transparent coordinates and administrative matching.`,
+        preset: { categories: [cat.id] },
+        content: `<section><h2>Place facts</h2><div class="tw"><table><tbody>${factRows}</tbody></table></div></section>
+<section><h2>Map and source</h2><p><a href="/nepalmap?c=${cat.id}&ll=${r[ROW_INDEX.lat]},${r[ROW_INDEX.lng]},15">Open this place on Nepal Map</a> · <a href="${esc(osmUrl)}" rel="noopener nofollow">OpenStreetMap object</a>${wiki ? ` · <a href="${esc(wiki)}" rel="noopener nofollow">Wikipedia</a>` : ""}</p><p><a href="/corrections?source_id=${encodeURIComponent(sourceId)}&place_id=${encodeURIComponent(placeId)}">Report a correction</a></p></section>
+<section><h2>Data confidence</h2><p>${confidence ? `Administrative match: <strong>${esc(confidence)}</strong>${boundaryDistance != null ? `; mapped point is about ${fmt(boundaryDistance, 0)} m from the assigned boundary` : ""}.` : "Boundary confidence has not yet been generated for this build."} Names and map data can change upstream; use the OpenStreetMap link to inspect the current source.</p></section>`,
+        schema: { "@context": "https://schema.org", "@graph": graph },
+      }),
+    });
+  }
 }
 
 for (const p of pages) {
