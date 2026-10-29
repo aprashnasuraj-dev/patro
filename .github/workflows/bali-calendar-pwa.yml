@@ -43,7 +43,7 @@ jobs:
       - name: Static PWA syntax and manifest
         run: |
           node --check public/bali-calendar/pwa.js
-          node -e 'const fs=require("fs"); const m=JSON.parse(fs.readFileSync("public/bali-calendar/manifest.webmanifest","utf8")); if(m.id!=="/bali-calendar"||m.start_url!=="/bali-calendar?source=pwa"||m.scope!=="/"||m.display!=="standalone") process.exit(2);'
+          node -e 'const fs=require("fs"); const m=JSON.parse(fs.readFileSync("public/bali-calendar/manifest.webmanifest","utf8")); if(m.id!=="/bali-calendar"||m.start_url!=="/bali-calendar?source=pwa"||m.scope!=="/bali-calendar"||m.display!=="standalone") process.exit(2);'
       - name: Production build
         run: npm run build
       - name: Built Bali PWA delivery contract
