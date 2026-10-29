@@ -135,8 +135,9 @@
     var steps=routeStepKeys(route),wanted={};
     steps.forEach(function(keys){keys.forEach(function(k){wanted[k]=true;});});
     var samples=routeSamples(route,0.25),hasGeometry=samples.length>0;
+    var grid=hasGeometry?routeGrid(samples):null;
     var corridor=hasGeometry
-      ? (features||[]).filter(function(f){return featureNearRoute(f,routeGrid(samples),0.5);})
+      ? (features||[]).filter(function(f){return featureNearRoute(f,grid,0.5);})
       : (features||[]);
     var candidates=corridor.filter(function(f){
       var p=f.properties||{};

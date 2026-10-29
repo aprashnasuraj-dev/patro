@@ -10,9 +10,9 @@ async function api() {
 describe("Nepal OSM road/trail metadata", () => {
   it("marks incomplete nearby metadata as metadata, not a safety guarantee", async () => {
     const R = await api();
-    const features = [{ properties:{ osm_id:"w1", highway:"track", surface:"gravel", metadata_confidence:"medium", warnings:"unpaved_surface,trail_or_track" } }];
+    const features = [{ geometry:{type:"LineString",coordinates:[[85.301,27.701],[85.309,27.709]]}, properties:{ osm_id:"w1", highway:"track", surface:"gravel", metadata_confidence:"medium", warnings:"unpaved_surface,trail_or_track" } }];
     const s = R.summarizeForRoute(features, { geometry:{type:"LineString",coordinates:[[85.30,27.70],[85.31,27.71]]}, legs:[{ steps:[{ name:"Unknown road", ref:"" }] }] });
-    expect(s.match_mode).toBe("no-route-metadata");
+    expect(s.match_mode).toBe("route-corridor-nearby-metadata");
     expect(s.warnings.unpaved_surface).toBe(1);
     expect(s.disclaimer).toContain("not a claim about the exact route");
   });
