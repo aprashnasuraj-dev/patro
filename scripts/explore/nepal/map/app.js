@@ -26,6 +26,7 @@
     stops: [],
     mode: "car",
     terrainOn: true,
+    emergencyOn: false,
   };
   var layers = {}; // id -> {rows, loaded, loading}
   var admin = null;
@@ -194,6 +195,45 @@
     });
     renderChips();
     return Promise.all(jobs).then(function () { renderChips(); renderList(); writeUrl(); }).catch(showError);
+  }
+
+  function localResilienceGeojson() {
+    var did = districtId(), features = [];
+    [["health", null], ["airport", null], ["services", "police"]].forEach(function (spec) {
+      var id = spec[0], sub = spec[1], L = layers[id];
+      if (!L || !L.loaded) return;
+      for (var i = 0; i < L.rows.length; i++) {
+        var row = L.rows[i];
+        if (did && row[R.did] !== did) continue;
+        if (sub && row[R.sub] !== sub) continue;
+        features.push({ type: "Feature", geometry: { type: "Point", coordinates: [row[R.lng], row[R.lat]] }, properties: { cat: id, i: i, kind: sub || id } });
+      }
+    });
+    return { type: "FeatureCollection", features: features };
+  }
+  function ensureLocalResilience() {
+    return Promise.all(["health", "airport", "services"].map(ensure)).then(function () {
+      var data = localResilienceGeojson();
+      if (!map.getSource("np-resilience-local")) {
+        map.addSource("np-resilience-local", { type: "geojson", data: data, cluster: true, clusterRadius: 45, clusterMaxZoom: 11 });
+        map.addLayer({ id: "np-resilience-local-cluster", type: "circle", source: "np-resilience-local", filter: ["has", "point_count"],
+          paint: { "circle-color": "#b91c1c", "circle-radius": 12, "circle-stroke-color": "#fff", "circle-stroke-width": 2 } });
+        map.addLayer({ id: "np-resilience-local-point", type: "circle", source: "np-resilience-local", filter: ["!", ["has", "point_count"]],
+          paint: { "circle-color": ["match", ["get", "kind"], "health", "#dc2626", "airport", "#334155", "police", "#1d4ed8", "#b91c1c"], "circle-radius": 7, "circle-stroke-color": "#fff", "circle-stroke-width": 2 } });
+        map.on("click", "np-resilience-local-point", function (e) { var p = e.features[0].properties; openPopup(p.cat, Number(p.i)); });
+      } else map.getSource("np-resilience-local").setData(data);
+      ["np-resilience-local-cluster", "np-resilience-local-point"].forEach(function (id) { map.setLayoutProperty(id, "visibility", state.emergencyOn ? "visible" : "none"); });
+      return data.features.length;
+    });
+  }
+  function setEmergency(on) {
+    state.emergencyOn = !!on;
+    var button = $("#np-emergency-toggle");
+    if (button) { button.setAttribute("aria-pressed", String(state.emergencyOn)); button.textContent = state.emergencyOn ? "🛟 Resilience: on" : "🛟 Resilience"; }
+    return ensureLocalResilience().then(function () {
+      if (window.AafnaiEmergency) return window.AafnaiEmergency.setVisible(map, state.emergencyOn);
+      return null;
+    }).catch(function (e) { console.warn("emergency", e); });
   }
 
   // ---------- places, wards, links ----------
@@ -451,6 +491,7 @@
     var offlineButton = $("#np-offline-save");
     if (offlineButton) { offlineButton.disabled = !d; offlineButton.textContent = d ? "Save " + d.name + " offline" : "Save district offline"; }
     CATS.forEach(function (c) { if (layers[c.id] && layers[c.id].loaded && map.getSource("s-" + c.id)) map.getSource("s-" + c.id).setData(geojson(c.id)); });
+    if (state.emergencyOn && map.getSource("np-resilience-local")) map.getSource("np-resilience-local").setData(localResilienceGeojson());
     renderChips(); renderList(); writeUrl(); closePanelOnMobile();
   }
   function closePanelOnMobile() { if (!window.matchMedia("(max-width: 760px)").matches) return; if (mobileSheet) mobileSheet.set("peek"); else document.body.classList.remove("np-panel-open"); }
@@ -916,6 +957,7 @@
       renderChips(); renderList(); writeUrl();
     });
     $("#np-district").addEventListener("change", function (e) { setDistrict(e.target.value); });
+    if ($("#np-emergency-toggle")) $("#np-emergency-toggle").addEventListener("click", function () { setEmergency(!state.emergencyOn); });
     if ($("#np-offline-save")) $("#np-offline-save").addEventListener("click", function () {
       var btn = $("#np-offline-save");
       if (!state.district || !window.AafnaiOffline) return;
@@ -1043,6 +1085,7 @@
       state.district = ""; state.religion.clear(); state.minEle = 0; $("#np-q").value = "";
       document.querySelectorAll("#np-religion input").forEach(function (x) { x.checked = false; });
       ele.value = "0"; $("#np-ele-out").textContent = "any height";
+      if (state.emergencyOn) setEmergency(false);
       setDistrict("");
     });
   }
