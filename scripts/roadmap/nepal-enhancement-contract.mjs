@@ -25,8 +25,9 @@ if(offlineClient.includes("location.pathname+location.search")) fail("offline sh
 if(/geolocation|routing\.openstreetmap|np-me-from|computeRoute/i.test(embed)) fail("read-only embed gained geolocation/routing behavior");
 if(!embed.includes("OpenStreetMap contributors")) fail("embed attribution missing");
 
+const migrationSql = migration.replace(/--.*$/gm, "");
 for(const sensitive of ["email","ip_address","user_agent","latitude","longitude"]){
-  if(new RegExp("\\b"+sensitive+"\\b","i").test(migration)) fail("correction storage contains sensitive field: "+sensitive);
+  if(new RegExp("\\b"+sensitive+"\\b","i").test(migrationSql)) fail("correction storage contains sensitive field: "+sensitive);
 }
 if(!api.includes("same_origin_required")) fail("correction same-origin guard missing");
 if(!api.includes("too_many_reports_for_place")) fail("correction per-place throttle missing");
