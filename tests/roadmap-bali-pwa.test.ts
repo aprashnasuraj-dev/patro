@@ -45,6 +45,9 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(js).toContain("navigator.share");
     expect(js).toContain("Sejak kunjungan terakhir");
     expect(js).toContain("Yang terdekat untukmu");
+    expect(js).toContain("WARM_BALI_URLS");
+    expect(js).toContain("warmPersonal");
+    expect(sw).toContain('event.data?.type==="WARM_BALI_URLS"');
   });
 
   it("keeps the Bali PWA runtime across Otonan and sourced Piodalan subpages",()=>{
@@ -76,7 +79,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(js).toContain('LAST_KEY="bali-calendar:last-path"');
     expect(js).toContain('location.replace(last)');
     expect(js).toContain('register("/bali-calendar-sw.js?rev="+REV');
-    expect(js).toContain('REV="bali-calendar-pwa-v3"');
+    expect(js).toContain('REV="bali-calendar-pwa-v4"');
     expect(js).toContain('button.addEventListener("click"');
     expect(js).toContain('DB_NAME="aafnai-bali-calendar"');
     expect(js).toContain('"indexedDB" in window');
@@ -86,7 +89,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(js).toContain("state.puras");
     expect(js).toContain('data-next');
     const sw=read("public/bali-calendar-sw.js");
-    expect(sw).toContain('const CACHE="bali-calendar-shell-v3"');
+    expect(sw).toContain('const CACHE="bali-calendar-shell-v4"');
     for(const path of ["/bali-calendar/palelintangan","/bali-calendar/sasih-saka","/bali-calendar/otonan","/bali-calendar/piodalan","/bali-calendar/hari-raya"])expect(sw).toContain('"'+path+'"');
   });
 
