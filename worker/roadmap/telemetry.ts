@@ -19,7 +19,7 @@ export type TelemetryEnvelope = {
   session_id: string; props: Record<string, unknown>;
 };
 
-const BLOCKED = /^(lat|latitude|lng|lon|longitude|bbox|bounding_?box|query|search_?text|address)$/i;
+const BLOCKED = /^(lat|latitude|lng|lon|longitude|bbox|bounding_?box|ip|ip_?address|user_?agent|referrer|full_?referrer|query|search_?text|address)$/i;
 let memorySessionId = "";
 
 export function sessionId(): string {
