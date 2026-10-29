@@ -482,7 +482,7 @@ function baliToday(ctx: Ctx): Rendered {
       site: ctx.site, path: BP, lang: "id",
       title: `Kalender Bali Tika Pawukon hari ini — ${p.saptawara} ${p.pancawara} ${p.wuku.name}`,
       description: `Tika Pawukon 210 hari: posisi hari ini ${p.cycleDay}/210, ${p.saptawara} ${p.pancawara}, Wuku ${p.wuku.name}; Palelintangan, Sasih/Saka, Otonan, Piodalan dan hari raya.`,
-      h1: "Kalender Bali · Tika Pawukon",
+      h1: "Kalender Bali Hari Ini · Tika Pawukon, Wuku & Wewaran",
       sub: `${esc(idDate(today))} · ${esc(p.combination)}`,
       crumbs: [{ href: BP, label: "Kalender Bali" }],
       indexable: true,
