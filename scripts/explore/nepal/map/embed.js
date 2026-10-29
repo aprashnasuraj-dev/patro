@@ -16,8 +16,8 @@
       if(did&&r[idx.district_id]!==did)return;
       features.push({type:"Feature",geometry:{type:"Point",coordinates:[r[idx.lng],r[idx.lat]]},properties:{i:i,name:r[idx.name]||r[idx.name_ne]||"",name_ne:r[idx.name_ne]||""}});
     });
-    var map=new maplibregl.Map({container:"map",style:C.style||"https://tiles.openfreemap.org/styles/liberty",bounds:d&&d.bbox?[[d.bbox[0],d.bbox[1]],[d.bbox[2],d.bbox[3]]]:[[80,26.3],[88.25,30.5]],fitBoundsOptions:{padding:25},attributionControl:false});
     if(C.maplibreWorker)maplibregl.workerUrl=C.maplibreWorker;
+    var map=new maplibregl.Map({container:"map",style:C.style||"https://tiles.openfreemap.org/styles/liberty",bounds:d&&d.bbox?[[d.bbox[0],d.bbox[1]],[d.bbox[2],d.bbox[3]]]:[[80,26.3],[88.25,30.5]],fitBoundsOptions:{padding:25},attributionControl:false});
     map.addControl(new maplibregl.AttributionControl({compact:true,customAttribution:'Places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="https://openfreemap.org">OpenFreeMap</a>'}));
     map.addControl(new maplibregl.NavigationControl({showCompass:false}),"top-right");
     map.on("load",function(){
