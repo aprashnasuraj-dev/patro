@@ -61,22 +61,26 @@ test("direct date jump reaches the supported historical and future window", asyn
   await expect(page.locator("body")).toContainText("Wewaran lengkap");
 });
 
-test("Palelintangan and long-range dynamic pages remain rich and fail-closed correctly", async ({ page }) => {
+test("Palelintangan is visually rich and long-range pages remain culturally clear", async ({ page }) => {
   await page.goto("/bali-calendar/palelintangan", { waitUntil: "domcontentloaded" });
   await expect(page.locator("body")).toContainText("Kala Sungsang");
   await expect(page.locator("body")).toContainText("Bhatara Wisnu");
   await expect(page.locator("body")).toContainText("ᬭᬤᬶᬢᬾ");
+  await expect(page.locator("body")).toContainText("ᬓᬮᬲᬸᬗ᭄ᬲᬂ");
+  await expect(page.locator(".pal-hero")).toBeVisible();
+  await expect(page.locator(".pal-cell")).toHaveCount(35);
+  await expect(page.locator("body")).toContainText("Cara membaca Palelintangan Bali");
 
   const r = await page.goto("/bali-calendar/2129-12-31", { waitUntil: "domcontentloaded" });
   expect(r?.status()).toBe(200);
-  await expect(page.locator("body")).toContainText("Konteks Bulan astronomis");
-  await expect(page.locator("body")).toContainText("Palelintangan tanggal dipilih");
-  await expect(page.locator("body")).toContainText("Patron Saptawara");
-  await expect(page.locator("body")).toContainText("tidak menggantikan penetapan Purnama, Tilem, Sasih");
+  await expect(page.locator("body")).toContainText("Fase Bulan");
+  await expect(page.locator("body")).toContainText("Palelintangan hari ini");
+  await expect(page.locator("body")).toContainText("Pelindung Saptawara");
+  await expect(page.locator("body")).toContainText("Penetapan Purnama, Tilem, Sasih");
   await expect(page.locator('a[href="/bali-calendar/sasih-saka?tanggal=2129-12-31"]').first()).toBeVisible();
   await page.goto("/bali-calendar/sasih-saka?tanggal=2129-12-31", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("body")).toContainText("tahun Gregorian 2129");
-  await expect(page.locator("body")).toContainText("Konteks Bulan astronomis");
+  await expect(page.locator("body")).toContainText("Kalender Sasih lengkap 2129 belum tersedia");
+  await expect(page.locator("body")).toContainText("Fase Bulan");
   await page.goto("/bali-calendar/palelintangan?tanggal=2129-12-31", { waitUntil: "domcontentloaded" });
   await expect(page.locator("body")).toContainText("2129");
   await expect(page.locator("body")).toContainText("tanggal dipilih");

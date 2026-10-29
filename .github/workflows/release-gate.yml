@@ -403,14 +403,20 @@ jobs:
           grep -Fq 'class="tika-month-grid"' <<<"$bali_root" || { echo "::error::Bali root missing monthly Tika grid"; exit 1; }
           grep -Fq 'id="my-bali"' <<<"$bali_root" || { echo "::error::Bali root missing My Bali Calendar hub"; exit 1; }
           grep -Fq '1929–2129' <<<"$bali_root" || { echo "::error::Bali root missing dynamic 1929–2129 support marker"; exit 1; }
+          grep -Fq 'Memahami Pawukon, Wuku, Wewaran dan hari raya Bali' <<<"$bali_root" || { echo "::error::Bali root missing visitor-facing SEO guide"; exit 1; }
+          ! grep -Fq 'fail-closed' <<<"$bali_root" || { echo "::error::Developer terminology leaked onto Bali root"; exit 1; }
+          ! grep -Fq 'Dasar tampilan' <<<"$bali_root" || { echo "::error::Research panel leaked into top-level Bali experience"; exit 1; }
 
           bali_palelintangan="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/palelintangan)"
           grep -Fq 'Kala Sungsang' <<<"$bali_palelintangan" || { echo "::error::Palelintangan missing sourced lintang data"; exit 1; }
           grep -Fq 'ᬭᬤᬶᬢᬾ' <<<"$bali_palelintangan" || { echo "::error::Palelintangan missing sourced Aksara Bali Saptawara label"; exit 1; }
+          grep -Fq 'ᬓᬮᬲᬸᬗ᭄ᬲᬂ' <<<"$bali_palelintangan" || { echo "::error::Palelintangan missing Lintang Aksara Bali"; exit 1; }
+          grep -Fq 'class="pal-hero"' <<<"$bali_palelintangan" || { echo "::error::Palelintangan rich selected-Lintang hero missing"; exit 1; }
+          grep -Fq 'Cara membaca Palelintangan Bali' <<<"$bali_palelintangan" || { echo "::error::Palelintangan visitor guide missing"; exit 1; }
 
           bali_far="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/2129-12-31)"
-          grep -Fq 'Konteks Bulan astronomis' <<<"$bali_far" || { echo "::error::2129 Bali page missing astronomical lunar context"; exit 1; }
-          grep -Fq 'tidak menggantikan penetapan Purnama, Tilem, Sasih' <<<"$bali_far" || { echo "::error::2129 Bali page missing fail-closed lunar disclaimer"; exit 1; }
+          grep -Fq 'Fase Bulan' <<<"$bali_far" || { echo "::error::2129 Bali page missing Moon-phase context"; exit 1; }
+          grep -Fq 'Penetapan Purnama, Tilem, Sasih' <<<"$bali_far" || { echo "::error::2129 Bali page missing calendar-boundary guidance"; exit 1; }
 
           bali_manifest="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/manifest.webmanifest)"
           grep -Fq '"id": "/bali-calendar"' <<<"$bali_manifest" || { echo "::error::Bali manifest id/scope contract missing"; exit 1; }

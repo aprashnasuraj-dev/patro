@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { palelintanganMatrix, pawukon, pawukonCycle } from "../worker/worldcal/engines/pawukon";
 import { isoToJdn } from "../worker/worldcal/dates";
-import { baliRoute, rerainanSearch, wetonRoute } from "../worker/worldcal/pages/bali-weton";
+import { baliRoute, baliUrls, rerainanSearch, wetonRoute } from "../worker/worldcal/pages/bali-weton";
 import { sakaYearForDate } from "../worker/worldcal/pages/bali-traditional";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
 
@@ -107,13 +107,13 @@ describe("Bali traditional calendar workspace",()=>{
     expect((baliRoute(ctx("/bali-calendar/1929-01-01"),["1929-01-01"]) as any)?.status).toBe(200);
     const far:any=baliRoute(ctx("/bali-calendar/2129-12-31"),["2129-12-31"]);
     expect(far?.status).toBe(200);
-    expect(far?.html).toContain("Konteks Bulan astronomis");
-    expect(far?.html).toContain("tidak menggantikan penetapan Purnama, Tilem, Sasih");
+    expect(far?.html).toContain("Fase Bulan");
+    expect(far?.html).toContain("Penetapan Purnama, Tilem, Sasih");
     expect(far?.html).toContain("/bali-calendar/sasih-saka?tanggal=2129-12-31");
     const sasihCtx:any=ctx("/bali-calendar/sasih-saka?tanggal=2129-12-31");sasihCtx.url=new URL("https://aafnaipatro.com/bali-calendar/sasih-saka?tanggal=2129-12-31");
     const sasih:any=baliRoute(sasihCtx,["sasih-saka"]);
-    expect(sasih?.html).toContain("tahun Gregorian 2129");
-    expect(sasih?.html).toContain("Konteks Bulan astronomis");
+    expect(sasih?.html).toContain("Kalender Sasih lengkap 2129 belum tersedia");
+    expect(sasih?.html).toContain("Fase Bulan");
     expect(baliRoute(ctx("/bali-calendar/1928-12-31"),["1928-12-31"])).toBeNull();
     expect(baliRoute(ctx("/bali-calendar/2130-01-01"),["2130-01-01"])).toBeNull();
     expect((wetonRoute(ctx("/weton/1900-01-01"),["1900-01-01"]) as any)?.status).toBe(200);
@@ -136,6 +136,8 @@ describe("Bali traditional calendar workspace",()=>{
     expect(cells.find((x)=>x.saptawara==="Redite"&&x.pancawara==="Umanis")?.lintang).toBe("Kala Sungsang");
     expect(cells.find((x)=>x.saptawara==="Saniscara"&&x.pancawara==="Kliwon")?.lintang).toBe("Larung Paglangan");
     expect(cells.find((x)=>x.saptawara==="Buda"&&x.pancawara==="Pon")?.patron).toBe("Bhatara Wisnu");
+    expect(cells.every((x)=>Boolean(x.lintangAksara))).toBe(true);
+    expect(cells.find((x)=>x.saptawara==="Redite"&&x.pancawara==="Umanis")?.lintangAksara).toBe("ᬓᬮᬲᬸᬗ᭄ᬲᬂ");
   });
 
   it("renders a print-inspired monthly Tika with Wuku columns, Saptawara rows and Ingkel",()=>{
@@ -147,7 +149,7 @@ describe("Bali traditional calendar workspace",()=>{
     expect((r.html.match(/class="tika-weekday"/g)||[])).toHaveLength(7);
     expect((r.html.match(/class="tika-ingkel"/g)||[]).length).toBeGreaterThanOrEqual(5);
     expect((r.html.match(/class="full-wuku(?: current)?"/g)||[])).toHaveLength(30);
-    expect(r.html).toContain("Wuku sebagai kolom, Saptawara sebagai baris");
+    expect(r.html).toContain("Kalender Wuku dan Wewaran bulan ini");
     expect(r.html).toContain("INGKEL");
     expect(r.html).toContain("Pawukon / Tika");
     expect(r.html).toContain("Palelintangan");
@@ -155,7 +157,10 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain('class="dewasa-grid"');
     expect(r.html).toContain("Pewiwahan");
     expect(r.html).toContain("Mertha Yoga");
-    expect(r.html).toContain("Ceraken Bali: Tika");
+    expect(r.html).toContain("Memahami Pawukon, Wuku, Wewaran dan hari raya Bali");
+    expect(r.html).toContain("Tentang perhitungan dan data kalender");
+    expect(r.html).not.toContain("Dasar tampilan");
+    expect(r.html).not.toContain("fail-closed");
     expect(r.html).toContain("ᬭᬤᬶᬢᬾ");
     expect(r.html).toContain("ᬰᬦᬶᬰ᭄ᬘᬭ");
     expect(r.html).toContain('id="my-bali"');
@@ -165,35 +170,44 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("data-bali-recent=");
     expect(r.html).toContain("My Pura");
     expect(r.html).toContain('id="bali-pura-form"');
-    expect(r.html).toContain("Piodalan Pawukon");
+    expect(r.html).toContain("Piodalan yang mengikuti Sasih");
     expect(r.html).toContain("7 hari");
     expect(r.html).toContain("35 hari");
     expect(r.html).toContain("210 hari");
     expect(r.html).not.toContain("Jelajahi AafnaiPatro lainnya");
   });
 
-  it("keeps Palelintangan distinct and exactly 35 intersections",()=>{
+  it("keeps Palelintangan distinct, rich and discoverable as one evergreen page",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/palelintangan"),["palelintangan"]);
-    expect((r.html.match(/class="pal-cell/g)||[])).toHaveLength(35);
-    expect(r.html).toContain("7 Saptawara × 5 Pancawara = 35 kombinasi");
-    expect(r.html).toContain("Setiap sel sekarang menampilkan nama lintang");
+    expect(r.indexable).toBe(true);
+    expect(baliUrls(new Date("2026-10-29T00:00:00Z"),fullFlags)).toContain("/bali-calendar/palelintangan");
+    expect((r.html.match(/<article class="pal-cell(?: is-current)?"/g)||[])).toHaveLength(35);
+    expect(r.html).toContain('class="pal-hero"');
+    expect(r.html).toContain('class="pal-lintang-aksara"');
+    expect(r.html).toContain("Cara membaca Palelintangan Bali");
+    expect(r.html).toContain("Bagan Palelintangan");
+    expect(r.html).toContain("Tentang nama 35 Lintang");
+    expect(r.html).not.toContain("Alfred Maaß");
     expect(r.html).toContain("Kala Sungsang");
     expect(r.html).toContain("Bhatara Wisnu");
+    expect(r.html).toContain("ᬓᬮᬲᬸᬗ᭄ᬲᬂ");
   });
 
-  it("shows Ingkel and source-backed Wariga context in the deep day view",()=>{
+  it("shows Ingkel and Wariga context in the deep day view",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/2026-06-17"),["2026-06-17"]);
     expect(r.html).toContain("Ingkel Pandakan");
     expect(r.html).toContain("Jejepan");
     expect(r.html).toContain("Mertha Yoga");
-    expect(r.html).toContain("Pewiwahan · Saptawara");
+    expect(r.html).toContain("Pewiwahan");
     expect(r.html).toContain("Buda Kliwon Dungulan");
   });
 
-  it("fails closed for incomplete 2026 Sasih mapping while exposing official anchors",()=>{
+  it("keeps incomplete 2026 Sasih dates conservative while showing available anchors",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/sasih-saka"),["sasih-saka"]);
-    expect(r.html).toContain("Fail-closed");
-    expect(r.html).toContain("Pemetaan Sasih 2026 belum lengkap");
+    expect(r.html).toContain("Kalender Sasih lengkap 2026 belum tersedia");
+    expect(r.html).toContain("AafnaiPatro hanya menampilkan tanggal Sasih");
+    expect(r.html).not.toContain("Fail-closed");
+    expect(r.html).not.toContain("mapping_complete");
     expect(r.html).toContain("2026-07-29");
     expect(r.html).toContain("2026-09-26");
   });

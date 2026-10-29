@@ -74,6 +74,7 @@ export type PalelintanganCell = {
   pancawaraUrip: number;
   urip: number;
   lintang: string;
+  lintangAksara: string;
   patron: string;
   key: string;
 };
@@ -84,6 +85,14 @@ export const PALELINTANGAN_LINTANG = [
   ["Patrem", "Hulanjar", "Asu", "Lumbung", "Bade", "Prau Pegat", "Srengenge"],
   ["Tenggala", "Lembu", "Perahu Sarat", "Kartika", "Kumba", "Rebut Utang", "Puwuh Atarung"],
   ["Laweyan", "Pedati Suung", "Sidamalung", "Atiwa-tiwa", "Naga", "Udang", "Larung Paglangan"],
+] as const;
+
+export const PALELINTANGAN_AKSARA = [
+  ["ᬓᬮᬲᬸᬗ᭄ᬲᬂ", "ᬓᭂᬮᬧᬲᬸᬦ᭄ᬤ", "ᬓᬸᬤ", "ᬢᬗᬶᬲ᭄", "ᬲᬗ᭄ᬓᬮ᭄ᬢᬶᬓᭂᬮ᭄", "ᬩᬜᬓ᭄ᬳᬗᬺᬫ᭄", "ᬤᭂᬧᬢ᭄"],
+  ["ᬕᬚᬄ", "ᬤᬸᬧ", "ᬬᬸᬬᬸ", "ᬕᬚᬫᬶᬦ", "ᬲᬮᬄᬳᬸᬓᬸᬃ", "ᬩᬸᬩᬸᬩᭀᬲᭀᬃ", "ᬧᬦᬄᬭ᭄ᬳᬸ"],
+  ["ᬧᬢᬺᬫ᭄", "ᬳᬸᬮᬜ᭄ᬚᬃ", "ᬳᬲᬸ", "ᬮᬸᬫ᭄ᬩᬸᬂ", "ᬩᬤᬾ", "ᬧᭂᬭᬳᬸᬧᭂᬕᬢ᭄", "ᬲᬺᬗᬾᬗᬾ"],
+  ["ᬢᭂᬗ᭄ᬕᬮ", "ᬍᬫ᭄ᬩᬸ", "ᬧᭂᬭᬳᬸᬲᬭᬢ᭄", "ᬓᬃᬢᬶᬓ", "ᬓᬸᬫ᭄ᬩ", "ᬋᬩᬸᬢ᭄ᬳᬸᬢᬂ", "ᬧᬸᬯᬸᬄᬳᬢᬭᬸᬂ"],
+  ["ᬮᬯᬾᬬᬦ᭄", "ᬧᭂᬤᬢᬶᬲᬸᬳᬸᬂ", "ᬲᬶᬤᬫᬮᬸᬂ", "ᬳᬢᬶᬯ ᬢᬶᬯ", "ᬦᬕ", "ᬳᬸᬤᬂ", "ᬮᬭᬸᬂᬧᬕ᭄ᬮᬗᬦ᭄"],
 ] as const;
 
 export const PALELINTANGAN_PATRON = {
@@ -165,6 +174,7 @@ export function palelintanganMatrix(): PalelintanganCell[] {
       pancawaraUrip: URIP_PANCA[pi],
       urip: URIP_SAPTA[si] + URIP_PANCA[pi],
       lintang: PALELINTANGAN_LINTANG[pi][si],
+      lintangAksara: PALELINTANGAN_AKSARA[pi][si],
       patron: PALELINTANGAN_PATRON[saptawara],
       key: `${saptawara.toLowerCase()}-${pancawara.toLowerCase()}`,
     })),
