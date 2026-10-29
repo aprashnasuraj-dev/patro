@@ -381,6 +381,11 @@
   // Google Maps for turn-by-turn navigation.
   var ROUTER = CFG.router || "https://routing.openstreetmap.de/";
   var PROFILES = { car: ["routed-car", "driving"], bike: ["routed-bike", "driving"], foot: ["routed-foot", "driving"] };
+  var routingV2 = CFG.flags && CFG.flags.nepalRoutingProviderV2 && window.AafnaiRoutingV2
+    ? new window.AafnaiRoutingV2.Client(new window.AafnaiRoutingV2.PublicFossgisProvider(ROUTER), {
+        timeoutMs: 15000, rateLimit: { capacity: 1, refillMs: 1000 }, breaker: { threshold: 3, cooldownMs: 30000 }
+      })
+    : null;
   var ALONG = ["worship", "peak", "lake", "sight", "waterfall", "park", "airport", "village"];
   var routeSeq = 0;
   var routeData = null;
@@ -514,24 +519,31 @@
     var a = state.from, b = state.to;
     var prof = PROFILES[state.mode];
     msg.hidden = false; msg.textContent = "Finding the way… Route endpoints are sent to the external FOSSGIS routing service to calculate directions.";
-    var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
-    var ctrl = window.AbortController ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
-    fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("router " + r.status)); })
-      .then(function (j) {
-        clearTimeout(timer);
-        if (seq !== routeSeq) return;
+    var routePromise;
+    var ctrl = null, timer = null;
+    if (routingV2) {
+      routePromise = routingV2.route({ from: a, to: b, mode: state.mode });
+    } else {
+      var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
+      ctrl = window.AbortController ? new AbortController() : null;
+      timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+      routePromise = fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("router " + r.status)); }).then(function (j) {
         if (!j.routes || !j.routes.length) throw new Error(j.code || "no route");
-        showRoute(j.routes[0], false);
-      })
-      .catch(function (e) {
-        clearTimeout(timer);
-        if (seq !== routeSeq) return;
-        console.warn("route", e);
-        // Straight line so the reader still sees direction and distance.
-        var d = km(a.lat, a.lng, b.lat, b.lng);
-        showRoute({ distance: d * 1000, duration: null, geometry: { type: "LineString", coordinates: [[a.lng, a.lat], [b.lng, b.lat]] }, legs: [] }, true);
+        return j.routes[0];
       });
+    }
+    routePromise.then(function (route) {
+      if (timer) clearTimeout(timer);
+      if (seq !== routeSeq) return;
+      showRoute(route, false);
+    }).catch(function (e) {
+      if (timer) clearTimeout(timer);
+      if (seq !== routeSeq) return;
+      console.warn("route", e);
+      // Provider failures never break the map: show direction/distance and retain external navigation.
+      var d = km(a.lat, a.lng, b.lat, b.lng);
+      showRoute({ distance: d * 1000, duration: null, geometry: { type: "LineString", coordinates: [[a.lng, a.lat], [b.lng, b.lat]] }, legs: [] }, true);
+    });
   }
   function showRoute(route, straight) {
     routeData = route;
