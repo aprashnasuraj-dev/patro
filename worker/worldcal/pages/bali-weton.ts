@@ -11,6 +11,8 @@ import type { Ctx, Rendered } from "../types";
 import { ROADMAP_FLAGS } from "../../roadmap/flags";
 import { sourceBadge, type SourceStatus } from "../../roadmap/provenance";
 import { baliFeedRoute } from "./bali-feeds";
+import { BALI_PIODALAN, nextPawukonPiodalan } from "../data/bali-piodalan";
+import { astaDauh, merthaYoga, pancaDauh, PEWIWAHAN_SAPTAWARA, pitraImmediateRestrictions, sasihReference, WARIGA_DAUH_SOURCE } from "../engines/wariga";
 
 const BP = "/bali-calendar";
 const WP = "/weton";
@@ -403,11 +405,194 @@ ${ROADMAP_FLAGS.baliLearningGuides ? `<section><h2>Urutan wuku</h2><p><a href="$
   };
 }
 
+
+export function padewasanReferenceModel(iso: string, sasih: number | null, phase: "penanggal" | "pangelong") {
+  if (!parseIso(iso)) return null;
+  const j = isoToJdn(iso);
+  const p = pawukon(j);
+  const year = Number(iso.slice(0, 4));
+  const lunar = PURNAMA_TILEM[year];
+  const isTilem = Boolean(lunar?.tilem.includes(iso));
+  const isPurnama = Boolean(lunar?.purnama.includes(iso));
+  const isPurwaniPurnama = Boolean(lunar?.purnama.includes(addDaysIso(iso, 1)));
+  const pitra = pitraImmediateRestrictions({
+    triwara: p.triwara,
+    saptawara: p.saptawara,
+    pancawara: p.pancawara,
+    events: pawukonEvents(j),
+    is_tilem: isTilem,
+    is_purwani_purnama: isPurwaniPurnama,
+  });
+  const marriage = PEWIWAHAN_SAPTAWARA[p.saptawara];
+  return {
+    date: iso,
+    pawukon: p,
+    lunar: { evaluated: Boolean(lunar), is_purnama: isPurnama, is_tilem: isTilem, is_purwani_purnama: isPurwaniPurnama, source: lunar?.source || null },
+    sasih: sasih ? sasihReference(sasih) : null,
+    pitra,
+    pewiwahan: { saptawara: marriage, mertha_yoga: merthaYoga(p) },
+    asta_dauh: astaDauh(p.saptawara),
+    panca_dauh: pancaDauh(p.urip, phase),
+    phase,
+    source: WARIGA_DAUH_SOURCE,
+  };
+}
+
+function piodalanIndex(ctx: Ctx): Rendered {
+  const q = (ctx.url.searchParams.get("q") || "").trim().toLocaleLowerCase("id");
+  const rows = BALI_PIODALAN.filter((x) => !q || (x.name + " " + x.locality + " " + (x.rule.type === "pawukon" ? [x.rule.saptawara, x.rule.pancawara, x.rule.wuku].join(" ") : [x.rule.lunar_day, x.rule.sasih].join(" "))).toLocaleLowerCase("id").includes(q));
+  const body = rows.map((x) => {
+    const rule = x.rule.type === "pawukon"
+      ? `${x.rule.saptawara} ${x.rule.pancawara}, Wuku ${x.rule.wuku} · berulang 210 hari`
+      : `${x.rule.lunar_day} Sasih ${x.rule.sasih} · kalender Sasih tahunan`;
+    return `<tr><td><a href="${BP}/piodalan/${x.slug}">${esc(x.name)}</a><br><span class="note">${esc(x.locality)}</span></td><td>${esc(rule)}</td><td>${ROADMAP_FLAGS.provenanceUi ? sourceBadge(x.source.status, x.source.authority) : esc(x.source.authority)}</td></tr>`;
+  }).join("");
+  return {
+    status: 200, maxAge: 86400, indexable: true,
+    html: page({
+      site: ctx.site, path: `${BP}/piodalan`, lang: "id",
+      title: "Piodalan pura Bali — direktori aturan Pawukon dan Sasih bersumber resmi",
+      description: "Direktori Piodalan Bali yang hanya memuat pura dengan sumber pemerintah, Kemenag, BPK atau dokumen Desa Adat; aturan Pawukon dihitung 210 hari, aturan Sasih tidak ditebak.",
+      h1: "Direktori Piodalan Bali",
+      sub: "Kurasi sumber resmi: bukan daftar hasil salin massal dan bukan tanggal buatan AI.",
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/piodalan`, label: "Piodalan" }],
+      indexable: true,
+      body: `<section><form class="inline" method="get" action="${BP}/piodalan"><label>Cari pura / rahina<input name="q" value="${esc(q)}" placeholder="Batukaru atau Buda Wage"></label><button>Cari</button></form></section>
+<section><h2>${rows.length} entri terverifikasi</h2><table><thead><tr><th>Pura</th><th>Aturan Piodalan</th><th>Sumber</th></tr></thead><tbody>${body}</tbody></table></section>
+<section><h2>Metode</h2><p>Aturan Pawukon diproyeksikan dari Saptawara + Pancawara + Wuku yang disebut oleh sumber resmi. Aturan Sasih hanya menampilkan tanggal Gregorian bila tabel Sasih/Purnama tahun tersebut sudah memiliki sumber terbitan; AafnaiPatro tidak mengubah “Purnama Karo” menjadi tanggal masa depan dengan perkiraan.</p></section>`,
+      footer: BALI_NOTE,
+    }),
+  };
+}
+
+function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
+  const item = BALI_PIODALAN.find((x) => x.slug === slugValue);
+  if (!item) return null;
+  const today = todayIn(BALI_TZ, ctx.now);
+  let schedule = "";
+  if (item.rule.type === "pawukon") {
+    const next = nextPawukonPiodalan(item.rule, isoToJdn(today), 6);
+    schedule = `<section><h2>Piodalan berikutnya menurut aturan Pawukon</h2><table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>${esc(item.rule.saptawara)} ${esc(item.rule.pancawara)} · Wuku ${esc(item.rule.wuku)}</td></tr>`).join("")}</tbody></table><p class="note">Status: calculated from the source-backed Pawukon recurrence rule; the temple rule itself is ${esc(item.source.status)}.</p></section>`;
+  } else {
+    const known = (item.known_occurrences || []).slice().sort().reverse();
+    schedule = `<section><h2>Aturan Sasih</h2><p><b>${esc(item.rule.lunar_day)} Sasih ${esc(item.rule.sasih)}</b>.</p>${known.length ? `<p>Occurrence(s) explicitly supported by the source record: ${known.map((d) => `<a href="${BP}/${d}">${esc(idDate(d))}</a>`).join(" · ")}.</p>` : ""}<p class="note">AafnaiPatro does not project an unsourced future Gregorian date for a Sasih-based Piodalan. Future dates appear only after the annual Sasih/Purnama mapping is sourced.</p></section>`;
+  }
+  const ruleText = item.rule.type === "pawukon"
+    ? `${item.rule.saptawara} ${item.rule.pancawara}, Wuku ${item.rule.wuku}`
+    : `${item.rule.lunar_day} Sasih ${item.rule.sasih}`;
+  return {
+    status: 200, maxAge: 86400 * 7, indexable: true,
+    html: page({
+      site: ctx.site, path: `${BP}/piodalan/${item.slug}`, lang: "id",
+      title: `${item.name}: Piodalan ${ruleText} — sumber dan tanggal berikutnya`,
+      description: `${item.name}, ${item.locality}: aturan Piodalan ${ruleText}, sumber ${item.source.authority}, dan tanggal berikutnya bila dapat dihitung tanpa menebak Sasih.`,
+      h1: esc(item.name), sub: esc(item.locality),
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/piodalan`, label: "Piodalan" }, { href: `${BP}/piodalan/${item.slug}`, label: item.name }],
+      indexable: true,
+      body: `<section><h2>Aturan yang diterbitkan</h2><p class="big">${esc(ruleText)}</p><p>${ROADMAP_FLAGS.provenanceUi ? sourceBadge(item.source.status, item.source.authority) : ""} <a href="${esc(item.source.url)}" rel="nofollow noopener">${esc(item.source.authority)} ↗</a>${item.source.published_date ? ` · ${esc(item.source.published_date)}` : ""}</p>${item.note ? `<p class="note">${esc(item.note)}</p>` : ""}</section>${schedule}
+<section><h2>Batas kepercayaan data</h2><p>Halaman ini menyatakan kapan sumber menempatkan Piodalan, bukan menetapkan tata upacara. Pelaksanaan lokal tetap mengikuti desa, kala, patra serta arahan pengempon/pemangku/sulinggih.</p></section>`,
+      footer: BALI_NOTE,
+    }),
+  };
+}
+
+function dauhAyuPage(ctx: Ctx): Rendered {
+  const today = todayIn(BALI_TZ, ctx.now);
+  const tanggal = parseIso(ctx.url.searchParams.get("tanggal") || "") ? String(ctx.url.searchParams.get("tanggal")) : today;
+  const phase = ctx.url.searchParams.get("fase") === "pangelong" ? "pangelong" : "penanggal";
+  const rawSasih = Number(ctx.url.searchParams.get("sasih") || 0);
+  const sasih = rawSasih >= 1 && rawSasih <= 12 ? rawSasih : null;
+  const model = padewasanReferenceModel(tanggal, sasih, phase)!;
+  const p = model.pawukon;
+  const astaRows = model.asta_dauh.map((x) => `<tr><td>${x.dauh}</td><td><b>${x.quality === "ayu" ? "Ayu" : "Ala"}</b></td></tr>`).join("");
+  const pancaRows = model.panca_dauh.map((x) => `<tr><td>${x.dauh}</td><td>${esc(x.name)}</td><td>${x.quality === "ayu" ? "Ayu" : x.quality === "madya" ? "Madya" : "Ala"}</td></tr>`).join("");
+  return {
+    status: 200, maxAge: 3600, indexable: false,
+    html: page({
+      site: ctx.site, path: `${BP}/dauh-ayu`, lang: "id",
+      title: "Dauh Ayu Bali — Panca Dauh Sukaranti dan Asta Dauh dengan sumber",
+      description: "Referensi Dauh Ayu dari tabel Padewasan Kemdikbud: Asta Dauh menurut Saptawara dan Panca Dauh/Sukaranti menurut urip, dengan fase Penanggal/Pangelong.",
+      h1: "Dauh Ayu — referensi Panca & Asta Dauh",
+      sub: "Perhitungan transparan dari tabel pendidikan Kemdikbud; bukan pengganti TIKA tahunan atau keputusan pemangku.",
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/dauh-ayu`, label: "Dauh Ayu" }],
+      indexable: false,
+      body: `<section><form class="inline" method="get" action="${BP}/dauh-ayu"><label>Tanggal<input type="date" name="tanggal" value="${esc(tanggal)}"></label><label>Fase<input type="select" hidden><select name="fase"><option value="penanggal"${phase === "penanggal" ? " selected" : ""}>Penanggal</option><option value="pangelong"${phase === "pangelong" ? " selected" : ""}>Pangelong</option></select></label><label>Sasih (opsional)<select name="sasih"><option value="">tidak dinilai</option>${Array.from({ length: 12 }, (_, i) => `<option value="${i + 1}"${sasih === i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></label><button>Hitung</button></form></section>
+<section><h2>Dasar hari ${esc(idDate(tanggal))}</h2><p>${esc(p.saptawara)} ${esc(p.pancawara)} · Wuku ${esc(p.wuku.name)} · urip <b>${p.urip}</b>.</p></section>
+<section><h2>Asta Dauh — ${esc(p.saptawara)}</h2><p class="note">Delapan bagian siang dihitung dari matahari terbit hingga terbenam; delapan bagian malam dari terbenam hingga terbit. Halaman ini tidak menampilkan jam tetap 06:00–18:00 sebagai fakta astronomis.</p><table><thead><tr><th>Dauh</th><th>Klasifikasi</th></tr></thead><tbody>${astaRows}</tbody></table></section>
+<section><h2>Panca Dauh / Sukaranti — urip ${p.urip}, ${phase}</h2><table><thead><tr><th>Dauh</th><th>Nama</th><th>Klasifikasi</th></tr></thead><tbody>${pancaRows}</tbody></table><p class="note">Pada Pangelong urutan 1–5 dibalik sesuai catatan sumber.</p></section>
+<section><h2>Sumber & batas penggunaan</h2><p><a href="${esc(WARIGA_DAUH_SOURCE.url)}" rel="nofollow noopener">${esc(WARIGA_DAUH_SOURCE.name)} ↗</a>. Penyusunan TIKA Bali juga melibatkan keputusan keagamaan dan lokal; gunakan hasil ini sebagai referensi Wariga yang dapat diaudit, bukan jaminan hasil upacara.</p></section>`,
+      footer: BALI_NOTE,
+    }),
+  };
+}
+
+function padewasanPage(ctx: Ctx): Rendered {
+  const today = todayIn(BALI_TZ, ctx.now);
+  const tanggal = parseIso(ctx.url.searchParams.get("tanggal") || "") ? String(ctx.url.searchParams.get("tanggal")) : today;
+  const rawSasih = Number(ctx.url.searchParams.get("sasih") || 0);
+  const sasih = rawSasih >= 1 && rawSasih <= 12 ? rawSasih : null;
+  const model = padewasanReferenceModel(tanggal, sasih, "penanggal")!;
+  const p = model.pawukon;
+  const marriage = model.pewiwahan.saptawara;
+  const sasihHtml = model.sasih ? `<table><tbody><tr><th>Sasih</th><td>${model.sasih.sasih}. ${esc(model.sasih.name)}</td></tr><tr><th>Dewa Yajña</th><td>${model.sasih.dewa_yajna ? "Ayu menurut referensi Sasih" : "Tidak ditandai Ayu pada daftar ringkas sumber"}</td></tr><tr><th>Bhuta Yajña</th><td>${model.sasih.bhuta_yajna ? "Ayu menurut referensi Sasih" : "Tidak ditandai Ayu pada daftar ringkas sumber"}</td></tr><tr><th>Pitra Yajña</th><td>${model.sasih.pitra_yajna ? "Ayu menurut referensi Sasih" : "Tidak ditandai Ayu pada daftar ringkas sumber"}</td></tr><tr><th>Memukur</th><td>${model.sasih.memukur ? "Kedasa disebut baik untuk memukur" : "Tidak ditandai"}</td></tr></tbody></table>` : '<p class="note">Sasih belum dipilih, jadi lapisan Sasih sengaja tidak dinilai.</p>';
+  const lunarText = model.lunar.evaluated
+    ? [model.lunar.is_purnama ? "Purnama" : "", model.lunar.is_tilem ? "Tilem" : "", model.lunar.is_purwani_purnama ? "Purwani Purnama" : ""].filter(Boolean).join(", ") || "Bukan Purnama/Tilem/Purwani Purnama pada tabel terbitan tahun ini"
+    : "Tabel Purnama/Tilem terbitan untuk tahun ini belum tersedia di dataset; faktor lunar tidak dinilai.";
+  return {
+    status: 200, maxAge: 3600, indexable: false,
+    html: page({
+      site: ctx.site, path: `${BP}/padewasan`, lang: "id",
+      title: "Padewasan Bali bersumber — Dewa, Pitra, Bhuta, Pewiwahan dan faktor yang dinilai",
+      description: "Referensi Padewasan yang menunjukkan aturan sumber, Pawukon, Pitra restriction, Mertha Yoga, Saptawara Pewiwahan dan Sasih opsional tanpa menyembunyikan faktor yang belum tersedia.",
+      h1: "Padewasan — referensi yang dapat diaudit",
+      sub: "AafnaiPatro menunjukkan rule yang terpicu, sumbernya, dan faktor yang belum dinilai.",
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/padewasan`, label: "Padewasan" }],
+      indexable: false,
+      body: `<section><form class="inline" method="get" action="${BP}/padewasan"><label>Tanggal<input type="date" name="tanggal" value="${esc(tanggal)}"></label><label>Sasih (opsional)<select name="sasih"><option value="">tidak dinilai</option>${Array.from({ length: 12 }, (_, i) => `<option value="${i + 1}"${sasih === i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></label><button>Evaluasi</button></form></section>
+<section><h2>Pawukon</h2><p>${esc(p.saptawara)} ${esc(p.pancawara)} · Triwara ${esc(p.triwara)} · Wuku ${esc(p.wuku.name)} · urip ${p.urip}.</p></section>
+<section><h2>Pitra Yajña — larangan atiwa-tiwa segera</h2><p>${model.pitra.restricted ? `Terpicu: <b>${esc(model.pitra.reasons.join(", "))}</b>.` : "Tidak ada larangan Pawukon/lunar yang terpicu dari faktor yang berhasil dievaluasi."}</p><p class="note">Faktor lunar: ${esc(lunarText)}</p></section>
+<section><h2>Pewiwahan / Manusa Yajña</h2><table><tbody><tr><th>Saptawara</th><td>${esc(p.saptawara)} — <b>${marriage.quality === "ayu" ? "Ayu" : "Ala"}</b> (${esc(marriage.source_summary)})</td></tr><tr><th>Mertha Yoga</th><td>${model.pewiwahan.mertha_yoga ? "<b>Cocok dengan salah satu kombinasi Mertha Yoga sumber.</b>" : "Tidak cocok dengan tujuh kombinasi Mertha Yoga yang dicantumkan sumber."}</td></tr></tbody></table></section>
+<section><h2>Lapisan Sasih</h2>${sasihHtml}</section>
+<section><h2>Dauh</h2><p><a href="${BP}/dauh-ayu?tanggal=${encodeURIComponent(tanggal)}">Buka Panca & Asta Dauh untuk tanggal ini →</a></p></section>
+<section><h2>Interpretasi</h2><p>Ini adalah mesin referensi rule, bukan satu skor “hari baik”. Buku sumber sendiri memperlakukan Padewasan sebagai gabungan Wewaran, Wuku, Penanggal/Pangelong, Sasih dan Dauh. Pelaksanaan Hindu juga mempertimbangkan desa, kala, patra. Karena itu AafnaiPatro tidak menutupi faktor yang belum tersedia dengan tebakan.</p><p><a href="${esc(WARIGA_DAUH_SOURCE.url)}" rel="nofollow noopener">Sumber Kemdikbud ↗</a></p></section>`,
+      footer: BALI_NOTE,
+    }),
+  };
+}
+
+function baliEnglishGuide(ctx: Ctx): Rendered {
+  return {
+    status: 200, maxAge: 86400 * 7, indexable: false,
+    html: page({
+      site: ctx.site, path: `${BP}/guide`, lang: "en",
+      title: "How the Balinese calendar works — Pawukon, Wewaran, Otonan, Piodalan and Sasih",
+      description: "An English bridge to the Balinese calendar: 210-day Pawukon, Wewaran cycles, Otonan, Piodalan, Sasih, source status and what AafnaiPatro calculates versus publishes.",
+      h1: "How the Balinese calendar works",
+      sub: "A source-aware English guide; Indonesian remains the primary product language.",
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/guide`, label: "English guide" }],
+      indexable: false,
+      body: `<section><h2>Pawukon</h2><p>Pawukon is a 210-day cycle made of 30 Wuku of seven days each. AafnaiPatro calculates this cycle deterministically and labels it calculated.</p></section>
+<section><h2>Wewaran</h2><p>Several named day cycles run together, including Saptawara (7), Pancawara (5), Triwara (3) and others. <a href="${BP}/wewaran">See the Indonesian Wewaran table.</a></p></section>
+<section><h2>Otonan</h2><p>Otonan repeats every 210 days. Because the Balinese ritual day changes at sunrise in the method used here, a birth between midnight and sunrise belongs to the previous Balinese day. If birth time is unknown, the calculator can show both possibilities rather than guessing.</p></section>
+<section><h2>Piodalan</h2><p>A temple anniversary may be tied to Pawukon (often every 210 days) or to a Sasih/lunar rule. AafnaiPatro's directory includes only entries with a government, Kemenag, legal Desa Adat or comparable official source.</p></section>
+<section><h2>Sasih, Purnama and Tilem</h2><p>Annual Sasih/lunar placement is not treated as a simple extension of the 210-day Pawukon. Published/official annual facts remain separate from calculated Pawukon values.</p></section>
+<section><h2>Padewasan / Dauh Ayu</h2><p>AafnaiPatro can show source-backed Wariga reference rules, but it does not claim that a single algorithm replaces annual TIKA deliberation, local custom or religious guidance. The official 2026 TIKA process involved Sulinggih, SKHDN, Bali government, Majelis Desa Adat and lontar observers.</p></section>
+<section><h2>Source labels</h2><p><b>Official</b> means an authoritative government/religious decision or record; <b>published</b> is a sourced annual/calendar fact; <b>calculated</b> is a deterministic rule result; <b>provisional</b> is explicitly not yet authoritative.</p></section>`,
+      footer: BALI_NOTE,
+    }),
+  };
+}
+
 export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
   if (ROADMAP_FLAGS.baliIcsFeeds && rest[0] === "feed") return baliFeedRoute(ctx, rest);
   if (ROADMAP_FLAGS.baliRerainanSearch && rest.length === 1 && rest[0] === "cari") return baliRerainanSearch(ctx);
   if (ROADMAP_FLAGS.baliLearningGuides && rest.length === 1 && rest[0] === "wewaran") return wewaranGuide(ctx);
+  if (ROADMAP_FLAGS.baliPiodalan && rest.length === 1 && rest[0] === "piodalan") return piodalanIndex(ctx);
+  if (ROADMAP_FLAGS.baliPiodalan && rest.length === 2 && rest[0] === "piodalan") return piodalanDetail(ctx, rest[1]);
+  if (ROADMAP_FLAGS.baliDauhAyu && rest.length === 1 && rest[0] === "dauh-ayu") return dauhAyuPage(ctx);
+  if (ROADMAP_FLAGS.baliPadewasan && rest.length === 1 && rest[0] === "padewasan") return padewasanPage(ctx);
+  if (ROADMAP_FLAGS.baliEnglishGuide && rest.length === 1 && rest[0] === "guide") return baliEnglishGuide(ctx);
   if (rest.length === 1 && rest[0] === "otonan") return otonan(ctx);
   if (ROADMAP_FLAGS.baliMonthGrid && rest.length === 2 && rest[0] === "bulan") return baliMonth(ctx, rest[1]);
   if (rest.length === 1 && /^\d{4}-\d{2}-\d{2}$/.test(rest[0])) return baliDate(ctx, rest[0]);
@@ -531,6 +716,10 @@ export function baliUrls(now: Date): string[] {
   const out = [BP, `${BP}/otonan`, ...WUKU.map((w) => `${BP}/wuku/${slug(w)}`)];
   if (ROADMAP_FLAGS.baliRerainanSearch) out.push(`${BP}/cari`);
   if (ROADMAP_FLAGS.baliLearningGuides) out.push(`${BP}/wewaran`);
+  if (ROADMAP_FLAGS.baliPiodalan) out.push(`${BP}/piodalan`, ...BALI_PIODALAN.map((x) => `${BP}/piodalan/${x.slug}`));
+  if (ROADMAP_FLAGS.baliDauhAyu) out.push(`${BP}/dauh-ayu`);
+  if (ROADMAP_FLAGS.baliPadewasan) out.push(`${BP}/padewasan`);
+  if (ROADMAP_FLAGS.baliEnglishGuide) out.push(`${BP}/guide`);
   if (ROADMAP_FLAGS.baliMonthGrid) {
     const t0 = todayIn(BALI_TZ, now);
     const y = Number(t0.slice(0, 4)), m = Number(t0.slice(5, 7));
