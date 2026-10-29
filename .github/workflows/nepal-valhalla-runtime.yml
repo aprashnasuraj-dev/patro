@@ -38,7 +38,7 @@ jobs:
           export VALHALLA_PORT=18002
           export VALHALLA_USE_TILES_IGNORE_PBF=True
           export VALHALLA_FORCE_REBUILD=False
-          export NEPAL_ROUTING_HOST="http://localhost"
+          export NEPAL_ROUTING_HOST=":80"
           export NEPAL_ROUTING_TOKEN="ci-roadmap-token"
           export CADDY_ACME_EMAIL="ci@example.invalid"
           export NEPAL_ROUTING_HTTP_PORT=18080
@@ -67,4 +67,4 @@ jobs:
       - name: Cleanup
         if: always()
         run: |
-          VALHALLA_DATA_DIR="$PWD/infra/nepal-routing/data/releases/2026-10-28"           VALHALLA_PORT=18002           VALHALLA_USE_TILES_IGNORE_PBF=True           NEPAL_ROUTING_HOST="http://localhost"           NEPAL_ROUTING_TOKEN="ci-roadmap-token"           CADDY_ACME_EMAIL="ci@example.invalid"           NEPAL_ROUTING_HTTP_PORT=18080           NEPAL_ROUTING_HTTPS_PORT=18443           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway down -v || true
+          VALHALLA_DATA_DIR="$PWD/infra/nepal-routing/data/releases/2026-10-28"           VALHALLA_PORT=18002           VALHALLA_USE_TILES_IGNORE_PBF=True           NEPAL_ROUTING_HOST=":80"           NEPAL_ROUTING_TOKEN="ci-roadmap-token"           CADDY_ACME_EMAIL="ci@example.invalid"           NEPAL_ROUTING_HTTP_PORT=18080           NEPAL_ROUTING_HTTPS_PORT=18443           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway down -v || true
