@@ -45,6 +45,13 @@
   }
   var fmtKm = function (d) { return d < 1 ? Math.round(d * 1000) + " m" : (d < 10 ? d.toFixed(1) : Math.round(d)) + " km"; };
 
+  function confirmLocationDisclosure(purpose, next) {
+    var message = purpose === "route"
+      ? "Privacy: AafnaiPatro will ask your browser for your precise location to set route point A. Your location stays in this tab and is not sent to AafnaiPatro analytics. If you calculate a route, the A/B coordinates are sent to the external FOSSGIS routing service. Continue?"
+      : "Privacy: AafnaiPatro will ask your browser for your precise location to show nearby places. Your location stays in this tab and is not sent to AafnaiPatro analytics. Continue?";
+    if (window.confirm(message)) next();
+  }
+
   // ---------- URL state ----------
   function readUrl() {
     var q = new URLSearchParams(location.search);
@@ -506,7 +513,7 @@
     var seq = ++routeSeq;
     var a = state.from, b = state.to;
     var prof = PROFILES[state.mode];
-    msg.hidden = false; msg.textContent = "Finding the way…";
+    msg.hidden = false; msg.textContent = "Finding the way… Route endpoints are sent to the external FOSSGIS routing service to calculate directions.";
     var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
@@ -643,10 +650,23 @@
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
     var geo = new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: false, showUserLocation: true });
     map.addControl(geo, "top-right");
+    // The built-in control must pass through the disclosure before it can invoke the OS prompt.
+    setTimeout(function () {
+      var gb = document.querySelector(".maplibregl-ctrl-geolocate");
+      if (!gb) return;
+      gb.addEventListener("click", function (e) {
+        if (gb.getAttribute("data-location-approved") === "1") { gb.removeAttribute("data-location-approved"); return; }
+        e.preventDefault(); e.stopImmediatePropagation();
+        confirmLocationDisclosure("nearby", function () {
+          gb.setAttribute("data-location-approved", "1");
+          gb.click();
+        });
+      }, true);
+    }, 0);
     map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
     map.addControl(new maplibregl.FullscreenControl(), "top-right");
     geo.on("geolocate", function (e) { state.me = [e.coords.latitude, e.coords.longitude]; renderList(); });
-    $("#np-near").addEventListener("click", function () { geo.trigger(); });
+    $("#np-near").addEventListener("click", function () { confirmLocationDisclosure("nearby", function () { geo.trigger(); }); });
 
     var styled = new Promise(function (res) { map.on("load", function () { styleReady = true; res(); }); });
     var adminP = getJson("admin.json").then(function (a) {
@@ -750,11 +770,13 @@
     $("#np-swap").addEventListener("click", function () { var f = state.from; setPoint("from", state.to, true); setPoint("to", f, true); computeRoute(); });
     $("#np-me-from").addEventListener("click", function () {
       if (!navigator.geolocation) { $("#np-route-msg").textContent = "Your browser cannot share your location."; return; }
-      $("#np-route-msg").hidden = false; $("#np-route-msg").textContent = "Finding your location…";
-      navigator.geolocation.getCurrentPosition(function (pos) {
-        state.me = [pos.coords.latitude, pos.coords.longitude];
-        setPoint("from", { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "My location" });
-      }, function () { $("#np-route-msg").textContent = "Location permission was not given. Type a place for A instead, or pick it on the map with 📌."; }, { enableHighAccuracy: true, timeout: 15000 });
+      confirmLocationDisclosure("route", function () {
+        $("#np-route-msg").hidden = false; $("#np-route-msg").textContent = "Finding your location…";
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          state.me = [pos.coords.latitude, pos.coords.longitude];
+          setPoint("from", { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "My location" });
+        }, function () { $("#np-route-msg").textContent = "Location permission was not given. Type a place for A instead, or pick it on the map with 📌."; }, { enableHighAccuracy: true, timeout: 15000 });
+      });
     });
     document.addEventListener("click", function (e) {
       var b = e.target.closest && e.target.closest("[data-route]");

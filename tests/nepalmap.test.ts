@@ -91,4 +91,16 @@ describe("Nepal map pages", () => {
     expect(block).toContain("https://routing.openstreetmap.de");
     expect(headers.split(/\n\n/)[0]).not.toContain("routing.openstreetmap.de");
   });
+
+  it("discloses precise-location and external-route privacy before sensitive actions", () => {
+    const html = readFileSync(join(out, "nepalmap.html"), "utf8");
+    expect(html).toContain("A/B coordinates are sent to the external FOSSGIS routing service");
+    expect(html).toContain('aria-describedby="np-location-privacy"');
+    const app = readFileSync("scripts/explore/nepal/map/app.js", "utf8");
+    expect(app).toContain("confirmLocationDisclosure");
+    expect(app).toContain('confirmLocationDisclosure("nearby"');
+    expect(app).toContain('confirmLocationDisclosure("route"');
+    expect(app).toContain("not sent to AafnaiPatro analytics");
+    expect(app).toContain("Route endpoints are sent to the external FOSSGIS routing service");
+  });
 });

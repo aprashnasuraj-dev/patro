@@ -160,6 +160,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <div class="np-field"><span class="np-dot b">B</span><input id="np-to" type="search" placeholder="To: temple, peak, lake, town…" autocomplete="off" aria-label="To"><button type="button" class="np-mini" data-pick="to" title="Pick on the map">📌</button><ul class="np-sugg" id="np-to-sugg" hidden></ul></div>
 <div class="np-modes" role="radiogroup" aria-label="Travel by"><button type="button" data-mode="car" class="on">🚗 Car / bus</button><button type="button" data-mode="bike">🏍️ Bike</button><button type="button" data-mode="foot">🚶 Walk / trek</button></div>
 <p id="np-route-msg" class="np-note">Choose where you start and where you want to go, or tap any place on the map and pick <b>From here</b> / <b>To here</b>.</p>
+<p class="np-note np-privacy"><strong>Privacy:</strong> If you calculate a route, the A/B coordinates are sent to the external FOSSGIS routing service. AafnaiPatro does not put precise coordinates in analytics.</p>
 <div id="np-route-sum" hidden></div>
 <div id="np-along-wrap" hidden><h3>Along the way · बाटोमा पर्ने ठाउँ</h3><p class="np-note" id="np-along-head"></p><ol id="np-along"></ol></div>
 <details id="np-steps-wrap" hidden><summary>Turn-by-turn directions</summary><ol id="np-steps"></ol></details>
@@ -168,7 +169,8 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <div class="np-explore">
 <div class="np-search"><input id="np-q" type="search" placeholder="Search a temple, peak, village, palika or ward…" autocomplete="off" aria-label="Search the map"><ul id="np-results" hidden></ul></div>
 <div class="np-scroll">
-<div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button">📍 Near me</button><button id="np-reset" type="button">Reset</button></div>
+<div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button" aria-describedby="np-location-privacy">📍 Near me</button><button id="np-reset" type="button">Reset</button></div>
+<p id="np-location-privacy" class="np-note np-privacy">Privacy: “Near me” asks your browser for precise location only after a disclosure. It stays in this tab and is not sent to AafnaiPatro analytics.</p>
 <a id="np-district-link" hidden></a>
 <div id="np-cats" role="group" aria-label="What to show"></div>
 <fieldset id="np-religion" hidden><legend>Religion</legend>${Object.entries(RELIGION_SUBS).filter(([k]) => k !== "bon").map(([k, v]) => `<label><input type="checkbox" value="${k}"> ${esc(k === "other" ? "Other / unknown" : v.split(" /")[0])}</label>`).join("")}</fieldset>
