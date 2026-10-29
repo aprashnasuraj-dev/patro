@@ -41,8 +41,8 @@
         map.addSource("np-pmtiles-roads", { type: "vector", url: "pmtiles://" + options.roads, attribution: "© OpenStreetMap contributors" });
         map.addLayer({
           id: "np-pmtiles-roads-meta", type: "line", source: "np-pmtiles-roads", "source-layer": "roads",
-          layout: { visibility: options.renderRoads ? "visible" : "none" },
-          paint: { "line-width": 2, "line-opacity": 0.45, "line-color": "#475569" }
+          layout: { visibility: (options.renderRoads || options.loadRoadsForMetadata) ? "visible" : "none" },
+          paint: { "line-width": 2, "line-opacity": options.renderRoads ? 0.45 : 0, "line-color": "#475569" }
         });
       }
     }
