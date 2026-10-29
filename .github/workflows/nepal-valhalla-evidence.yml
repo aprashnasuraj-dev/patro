@@ -1,0 +1,231 @@
+name: "Nepal Valhalla first-party evidence"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [wip/nepal-valhalla-evidence]
+    paths:
+      - ".github/workflows/nepal-valhalla-evidence.yml"
+      - "infra/nepal-routing/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nepal-valhalla-evidence-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Free runner disk and record starting capacity
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc || true
+          docker system prune -af || true
+          mkdir -p infra/nepal-routing/reports
+          df -h > infra/nepal-routing/reports/runner-disk-before.txt
+          free -h > infra/nepal-routing/reports/runner-memory-before.txt
+
+      - name: Build pinned Nepal graph, sample resources and run route fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd infra/nepal-routing
+          SNAPSHOT="$(python3 -c 'import json; print(json.load(open("source-manifest.json"))["snapshot_label"])')"
+          PROJECT="nepal-routing-candidate-${SNAPSHOT//-/}"
+          : > "reports/resources-${SNAPSHOT}.tsv"
+
+          monitor() {
+            local cid=""
+            for _ in $(seq 1 300); do
+              cid="$(docker ps                 --filter "label=com.docker.compose.project=$PROJECT"                 --filter "label=com.docker.compose.service=valhalla"                 --format '{{.ID}}' | head -1)"
+              [[ -n "$cid" ]] && break
+              sleep 2
+            done
+            [[ -n "$cid" ]] || return 0
+            while docker inspect "$cid" >/dev/null 2>&1; do
+              printf '%s\t' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "reports/resources-${SNAPSHOT}.tsv"
+              docker stats --no-stream --format '{{.CPUPerc}}\t{{.MemUsage}}\t{{.BlockIO}}\t{{.PIDs}}' "$cid"                 >> "reports/resources-${SNAPSHOT}.tsv" 2>/dev/null || true
+              sleep 5
+            done
+          }
+          monitor &
+          MONITOR_PID=$!
+
+          set +e
+          ./build-release.sh 2>&1 | tee "reports/build-log-${SNAPSHOT}.txt"
+          BUILD_STATUS=${PIPESTATUS[0]}
+          set -e
+          wait "$MONITOR_PID" || true
+          exit "$BUILD_STATUS"
+
+      - name: Summarize measured container resources
+        shell: bash
+        run: |
+          cd infra/nepal-routing
+          SNAPSHOT="$(python3 -c 'import json; print(json.load(open("source-manifest.json"))["snapshot_label"])')"
+          python3 - "reports/resources-${SNAPSHOT}.tsv" "reports/resources-${SNAPSHOT}.json" <<'PY'
+          import json,re,sys,datetime
+          src,out=sys.argv[1:]
+          units={"B":1,"kB":1000,"KB":1000,"KiB":1024,"MB":1000**2,"MiB":1024**2,"GB":1000**3,"GiB":1024**3}
+          def bytes_value(s):
+              m=re.search(r"([0-9.]+)\s*([A-Za-z]+)",s)
+              return int(float(m.group(1))*units.get(m.group(2),1)) if m else None
+          rows=[]
+          try:
+              for line in open(src,encoding="utf-8"):
+                  p=line.rstrip("\n").split("\t")
+                  if len(p)<5: continue
+                  cpu=float(p[1].rstrip("%") or 0)
+                  mem_used=p[2].split("/")[0].strip()
+                  rows.append({"at":p[0],"cpu_percent":cpu,"memory":p[2],"memory_used_bytes":bytes_value(mem_used),"block_io":p[3],"pids":int(p[4] or 0)})
+          except FileNotFoundError: pass
+          report={
+              "schema_version":1,
+              "generated_at":datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00","Z"),
+              "samples":len(rows),
+              "peak_cpu_percent":max((r["cpu_percent"] for r in rows),default=None),
+              "peak_memory_used_bytes":max((r["memory_used_bytes"] or 0 for r in rows),default=None),
+              "peak_pids":max((r["pids"] for r in rows),default=None),
+              "raw_samples":rows,
+              "note":"docker stats samples at ~5 s cadence during the candidate graph build/serve process; CPU percent may exceed 100% on multicore runners."
+          }
+          open(out,"w",encoding="utf-8").write(json.dumps(report,indent=2)+"\n")
+          print(json.dumps({k:v for k,v in report.items() if k!="raw_samples"},indent=2))
+          PY
+          df -h > reports/runner-disk-after-build.txt
+          du -sh data/releases/* > reports/release-disk-usage.txt
+
+      - name: Restart built graph and exercise bearer gateway over local HTTPS
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd infra/nepal-routing
+          SNAPSHOT="$(python3 -c 'import json; print(json.load(open("source-manifest.json"))["snapshot_label"])')"
+          RELEASE="$PWD/data/releases/$SNAPSHOT"
+          PROJECT="nepal-routing-gateway-evidence"
+          export VALHALLA_DATA_DIR="$RELEASE"
+          export VALHALLA_PORT=18002
+          export VALHALLA_USE_TILES_IGNORE_PBF=True
+          docker compose -p "$PROJECT" -f docker-compose.yml up -d valhalla
+          trap 'docker rm -f caddy-nepal-evidence >/dev/null 2>&1 || true; docker compose -p "$PROJECT" -f docker-compose.yml down >/dev/null 2>&1 || true' EXIT
+          for _ in $(seq 1 120); do
+            curl -fsS http://127.0.0.1:18002/status >/dev/null && break
+            sleep 2
+          done
+          curl -fsS http://127.0.0.1:18002/status > "reports/restarted-status-${SNAPSHOT}.json"
+
+          cat > /tmp/Caddyfile.nepal-evidence <<'EOF'
+          {
+            auto_https disable_redirects
+          }
+          https://localhost:18443 {
+            tls internal
+            header -Server
+            @unauthorized {
+              not header Authorization "Bearer evidence-token"
+            }
+            respond @unauthorized 401
+            handle /healthz {
+              rewrite * /status
+              reverse_proxy 127.0.0.1:18002
+            }
+            handle /route {
+              request_body {
+                max_size 64KB
+              }
+              reverse_proxy 127.0.0.1:18002
+            }
+            respond 404
+          }
+          EOF
+          docker run -d --name caddy-nepal-evidence --network host             -v /tmp/Caddyfile.nepal-evidence:/etc/caddy/Caddyfile:ro             caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+          for _ in $(seq 1 60); do
+            code="$(curl -ksS -o /dev/null -w '%{http_code}' https://localhost:18443/healthz || true)"
+            [[ "$code" == "401" ]] && break
+            sleep 1
+          done
+
+          UNAUTH_HEALTH="$(curl -ksS -o /dev/null -w '%{http_code}' https://localhost:18443/healthz)"
+          AUTH_HEALTH="$(curl -ksS -H 'Authorization: Bearer evidence-token' -D /tmp/health-headers.txt -o /tmp/health.json -w '%{http_code}' https://localhost:18443/healthz)"
+          UNAUTH_ROUTE="$(curl -ksS -o /dev/null -w '%{http_code}' -X POST -H 'Content-Type: application/json' --data '{"locations":[{"lat":27.7154,"lon":85.3123},{"lat":27.7215,"lon":85.362}],"costing":"auto","format":"osrm","shape_format":"geojson"}' https://localhost:18443/route)"
+          AUTH_ROUTE="$(curl -ksS -H 'Authorization: Bearer evidence-token' -H 'Content-Type: application/json' -D /tmp/route-headers.txt -o /tmp/route.json -w '%{http_code}' -X POST --data '{"locations":[{"lat":27.7154,"lon":85.3123},{"lat":27.7215,"lon":85.362}],"costing":"auto","format":"osrm","shape_format":"geojson"}' https://localhost:18443/route)"
+
+          [[ "$UNAUTH_HEALTH" == "401" ]]
+          [[ "$AUTH_HEALTH" == "200" ]]
+          [[ "$UNAUTH_ROUTE" == "401" ]]
+          [[ "$AUTH_ROUTE" == "200" ]]
+          ! grep -qi '^access-control-allow-origin:' /tmp/health-headers.txt
+          ! grep -qi '^access-control-allow-origin:' /tmp/route-headers.txt
+          python3 - /tmp/route.json <<'PY'
+          import json,sys
+          d=json.load(open(sys.argv[1]))
+          r=(d.get("routes") or [None])[0]
+          assert r and r.get("geometry",{}).get("type")=="LineString"
+          assert r.get("distance",0)>0 and r.get("duration",0)>0
+          PY
+          python3 - "$UNAUTH_HEALTH" "$AUTH_HEALTH" "$UNAUTH_ROUTE" "$AUTH_ROUTE" "reports/gateway-${SNAPSHOT}.json" <<'PY'
+          import json,sys,datetime
+          uh,ah,ur,ar,out=sys.argv[1:]
+          report={
+            "schema_version":1,
+            "generated_at":datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00","Z"),
+            "transport":"local HTTPS using Caddy internal CA; production ACME/DNS not claimed",
+            "unauthorized_health_status":int(uh),
+            "authorized_health_status":int(ah),
+            "unauthorized_route_status":int(ur),
+            "authorized_route_status":int(ar),
+            "cors_header_present":False,
+            "bearer_auth_ok":uh=="401" and ah=="200" and ur=="401" and ar=="200"
+          }
+          open(out,"w").write(json.dumps(report,indent=2)+"\n")
+          print(json.dumps(report,indent=2))
+          PY
+
+      - name: Validate evidence reports
+        shell: bash
+        run: |
+          cd infra/nepal-routing
+          SNAPSHOT="$(python3 -c 'import json; print(json.load(open("source-manifest.json"))["snapshot_label"])')"
+          python3 - "$SNAPSHOT" <<'PY'
+          import json,sys
+          s=sys.argv[1]
+          build=json.load(open(f"reports/build-{s}.json"))
+          routes=build["route_verification"]
+          assert routes["ok"] is True and routes["failure_count"]==0
+          assert len(routes["results"])==7
+          assert build["generation_seconds"]>0
+          assert build["release_bytes"]>0
+          resources=json.load(open(f"reports/resources-{s}.json"))
+          assert resources["samples"]>0
+          gateway=json.load(open(f"reports/gateway-{s}.json"))
+          assert gateway["bearer_auth_ok"] is True
+          print(json.dumps({
+            "generation_seconds":build["generation_seconds"],
+            "release_bytes":build["release_bytes"],
+            "fixture_count":len(routes["results"]),
+            "fixture_latencies_ms":[
+              x.get("route",x.get("via_route",{})).get("elapsed_ms")
+              for x in routes["results"]
+            ],
+            "resource_samples":resources["samples"],
+            "peak_cpu_percent":resources["peak_cpu_percent"],
+            "peak_memory_used_bytes":resources["peak_memory_used_bytes"],
+            "gateway_bearer_auth_ok":gateway["bearer_auth_ok"]
+          },indent=2))
+          PY
+
+      - name: Preserve Valhalla evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nepal-valhalla-evidence
+          path: |
+            infra/nepal-routing/reports/
+            infra/nepal-routing/data/releases/2026-10-28/source-lock.json
+            infra/nepal-routing/source-manifest.json
+          if-no-files-found: warn
+          retention-days: 30
