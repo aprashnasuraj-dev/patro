@@ -1,6 +1,6 @@
 import { NYEPI, OTHER_BALI_DAYS, PURNAMA_TILEM } from "../data/bali-saka";
 import { isoToJdn, jdnToIso, parseIso, todayIn } from "../dates";
-import { otonanDates, pawukon, pawukonEvents, pawukonHolidaysInYear, PAWUKON_HOLIDAYS, TUMPEK } from "../engines/pawukon";
+import { otonanDates, pawukon, pawukonHolidaysInYear, PAWUKON_HOLIDAYS, TUMPEK } from "../engines/pawukon";
 import { renderIcsCalendar, type IcsEvent } from "../ics";
 import type { Ctx, Rendered } from "../types";
 
