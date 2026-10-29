@@ -95,6 +95,9 @@ const ROADMAP_FLAGS = {
   nepalPmtiles: process.env.NEPALMAP_PMTILES === "1",
   nepalEmbeds: process.env.NEPALMAP_EMBEDS === "1",
 };
+const ROUTING_PROVIDER = process.env.NEPALMAP_ROUTING_PROVIDER || "fossgis-public";
+if (!["fossgis-public", "valhalla-first-party"].includes(ROUTING_PROVIDER)) throw new Error("NEPALMAP_ROUTING_PROVIDER must be fossgis-public or valhalla-first-party.");
+if (ROUTING_PROVIDER === "valhalla-first-party" && !ROADMAP_FLAGS.nepalRoutingProviderV2) throw new Error("valhalla-first-party requires NEPALMAP_ROUTING_V2=1.");
 
 if (ROADMAP_FLAGS.nepalOfflinePacks && !SELF_HOST_MAPLIBRE) {
   throw new Error("NEPALMAP_OFFLINE_PACKS=1 requires NEPALMAP_SELF_HOST_MAPLIBRE=1 so the saved map shell does not depend on a CDN runtime.");
@@ -405,7 +408,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
   if (ROADMAP_FLAGS.nepalTerrain && !terrain.tilejson) throw new Error("NEPALMAP_TERRAIN=1 requires NEPALMAP_DEM_TILEJSON.");
   if (terrain && !terrain.tilejson.startsWith("/")) throw new Error("NEPALMAP_DEM_TILEJSON must be a same-origin path so the scoped CSP remains strict.");
   const pmtiles = ROADMAP_FLAGS.nepalPmtiles ? { places: "/data/nepalmap/v2/places.pmtiles", roads: process.env.NEPALMAP_PMTILES_ROADS === "1" ? "/data/nepalmap/v2/roads.pmtiles" : null } : null;
-  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(terrain ? { terrain } : {}), ...(pmtiles ? { pmtiles } : {}), ...(preset ? { preset } : {}) };
+  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, routingProvider: ROUTING_PROVIDER, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(terrain ? { terrain } : {}), ...(pmtiles ? { pmtiles } : {}), ...(preset ? { preset } : {}) };
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
@@ -432,7 +435,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <div class="np-field"><span class="np-dot b">B</span><input id="np-to" type="search" placeholder="To: temple, peak, lake, town…" autocomplete="off" aria-label="To"><button type="button" class="np-mini" data-pick="to" title="Pick on the map">📌</button><ul class="np-sugg" id="np-to-sugg" hidden></ul></div>
 <div class="np-modes" role="radiogroup" aria-label="Travel by"><button type="button" data-mode="car" class="on">🚗 Car / bus</button><button type="button" data-mode="bike">🏍️ Bike</button><button type="button" data-mode="foot">🚶 Walk / trek</button></div>
 <p id="np-route-msg" class="np-note">Choose where you start and where you want to go, or tap any place on the map and pick <b>From here</b> / <b>To here</b>.</p>
-<p class="np-note np-privacy"><strong>Privacy:</strong> If you calculate a route, the A/B coordinates are sent to the external FOSSGIS routing service. AafnaiPatro does not put precise coordinates in analytics.</p>
+<p class="np-note np-privacy"><strong>Privacy:</strong> ${ROUTING_PROVIDER === "valhalla-first-party" ? "Route coordinates are sent to AafnaiPatro's same-origin routing endpoint and processed by AafnaiPatro's self-hosted Valhalla service; they are not put in analytics." : "If you calculate a route, the A/B coordinates are sent to the external FOSSGIS routing service. AafnaiPatro does not put precise coordinates in analytics."}</p>
 <div id="np-route-sum" hidden></div>
 <div id="np-along-wrap" hidden><h3>Along the way · बाटोमा पर्ने ठाउँ</h3><p class="np-note" id="np-along-head"></p><ol id="np-along"></ol></div>
 <details id="np-steps-wrap" hidden><summary>Turn-by-turn directions</summary><ol id="np-steps"></ol></details>
