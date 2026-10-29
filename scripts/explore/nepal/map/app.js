@@ -781,6 +781,7 @@
     var ll = readUrl();
     var el = $("#np-map");
     if (!el || !window.maplibregl) { showError(new Error("map library missing")); return; }
+    if (CFG.maplibreWorker) window.maplibregl.workerUrl = CFG.maplibreWorker;
     var opts = { container: el, style: STYLE, maxBounds: [[76, 24], [92, 33]], attributionControl: false };
     if (ll) { opts.center = [ll[1], ll[0]]; opts.zoom = ll[2]; } else { opts.bounds = NEPAL; opts.fitBoundsOptions = { padding: 20 }; }
     map = new maplibregl.Map(opts);
