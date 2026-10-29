@@ -17,6 +17,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { nepalData } from "../families/nepal.mjs";
 import { classifyBoundaryConfidence } from "./boundary-confidence.mjs";
+import { deterministicPlaceId } from "./place-id-core.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, "../../..");
@@ -124,10 +125,9 @@ if (ROADMAP_FLAGS.nepalStablePlaceIds) {
   const mappingPath = join(ROOT, "data/explore/nepal/place-id-map.json");
   try {
     const parsed = JSON.parse(await readFile(mappingPath, "utf8"));
-    if (parsed?.version !== 1 || !parsed.entries || typeof parsed.entries !== "object") throw new Error("invalid mapping envelope");
-    stablePlaceIds = parsed.entries;
-  } catch (error) {
-    throw new Error(`NEPALMAP_STABLE_IDS=1 requires a valid ${mappingPath}. Run scripts/explore/nepal/update-place-ids.mjs against the current ingest first. Cause: ${error instanceof Error ? error.message : String(error)}`);
+    if (parsed?.version === 1 && parsed.entries && typeof parsed.entries === "object") stablePlaceIds = parsed.entries;
+  } catch {
+    // Optional migration/alias map. Deterministic source IDs are the primary identity and do not require this file.
   }
 }
 
@@ -154,11 +154,13 @@ for (const s of settlements) {
 }
 for (const rows of rowsByCat.values()) rows.sort((a, b) => a[8] - b[8] || (a[0] || a[1]).localeCompare(b[0] || b[1]));
 if (ROADMAP_FLAGS.nepalStablePlaceIds) {
+  const seen = new Set();
   for (const rows of rowsByCat.values()) for (const row of rows) {
     const sourceId = row[11];
-    const mapped = stablePlaceIds?.[sourceId]?.place_id;
-    if (!mapped) throw new Error(`Stable place-ID mapping missing source ${sourceId}; refresh data/explore/nepal/place-id-map.json before enabling the flag.`);
-    row.push(mapped);
+    const placeId = stablePlaceIds?.[sourceId]?.place_id || deterministicPlaceId(sourceId);
+    if (seen.has(placeId)) throw new Error(`Stable place-ID collision: ${sourceId} -> ${placeId}`);
+    seen.add(placeId);
+    row.push(placeId);
   }
 }
 
