@@ -27,6 +27,15 @@ const UI_CSS = [
 "@media(max-width:650px){.lintang-portrait{grid-template-columns:1fr;padding:19px}.lintang-art{max-width:190px;min-height:150px}.lintang-features{grid-template-columns:1fr}.lintang-directory{grid-template-columns:repeat(3,minmax(0,1fr))}.lintang-next{grid-template-columns:repeat(2,minmax(0,1fr))}}"
 ].join("\n");
 
+const LINTANG_THEMES = [
+  { title: "Tumbuhan, tanah, dan hasil panen", names: ["Kelapa Sunda","Lumbung","Tenggala","Lembu","Pedati Suung"], description: "Lukisan tentang kehidupan yang bertumpu pada tanah, pangan, dan perjalanan hasil bumi." },
+  { title: "Hewan di sekitar kehidupan", names: ["Kuda","Gajah","Asu","Naga","Sidamalung","Banyak Angrem","Puwuh Atarung"], description: "Ragam hewan biasa dan makhluk cerita menunjukkan luasnya dunia fauna dalam kalender." },
+  { title: "Air, pelayaran, dan alat tangkap", names: ["Yuyu","Gajahmina","Bubu Bosor","Prau Pegat","Perahu Sarat","Udang"], description: "Dari kepiting sungai hingga perahu sarat, cerita tentang air muncul dalam banyak bentuk." },
+  { title: "Upacara dan benda pusaka", names: ["Dupa","Patrem","Salah Ukur","Bade","Atiwa-tiwa"], description: "Benda dan prosesi membantu memahami hubungan antara seni kalender dan kehidupan ritual." },
+  { title: "Cahaya dan cerita langit", names: ["Kala Sungsang","Ru","Srengenge","Kartika","Kumba"], description: "Lintang juga menyimpan nama langit, cahaya, dan gambar yang kemudian diperdebatkan para peneliti." },
+  { title: "Perasaan dan adegan manusia", names: ["Tangis","Sangkal Tikel","Depat","Hulanjar","Rebut Utang","Laweyan","Larung Paglangan"], description: "Sebagian petak lebih menyerupai adegan sandiwara daripada gambar benda atau hewan." },
+];
+
 const formatDate = (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
 export function lintangProfile(ctx: Ctx, pathSlug: string): Rendered | null {
@@ -45,6 +54,8 @@ export function lintangProfile(ctx: Ctx, pathSlug: string): Rendered | null {
     nextJdn++;
   }
   const upcoming = Array.from({length: 5}, (_, i) => jdnToIso(nextJdn + 35 * i));
+  const theme = LINTANG_THEMES.find((t) => t.names.includes(cell.lintang))!;
+  const companions = theme.names.filter((name) => name !== cell.lintang).slice(0, 4);
   const currentPath = BP + "/palelintangan/" + pathSlug;
   const prev = matrix[(position - 1 + matrix.length) % matrix.length];
   const next = matrix[(position + 1) % matrix.length];
@@ -65,6 +76,11 @@ export function lintangProfile(ctx: Ctx, pathSlug: string): Rendered | null {
     '<div class="lintang-features"><article><h3>Nama dan gambar</h3><p>' + esc(story.meaning) + '</p></article>',
     '<article><h3>Cerita budaya di balik motif</h3><p>' + esc(story.heritage) + '</p></article></div>',
     '<div class="lintang-inquiry"><small>Renungan untuk pengunjung · bukan ramalan</small><p>' + esc(story.question) + '</p></div></section>',
+    '<section><h2>Kisah lain dalam tema ' + esc(theme.title.toLowerCase()) + '</h2><p>' + esc(theme.description) + ' Berikut beberapa lintang yang bisa dibaca berdampingan untuk mengenali perbedaan motifnya.</p><div class="lintang-next">',
+    companions.map((name) => {
+      const s = LINTANG_STORIES[lintangSlug(name)];
+      return '<a href="' + BP + '/palelintangan/' + lintangSlug(name) + '"><span style="display:block;font-size:1.6rem">' + esc(s.emblem) + '</span>' + esc(name) + '<small>' + esc(s.motif) + '</small></a>';
+    }).join(""), '</div></section>',
     '<section><h2>Nama dalam naskah dan koleksi</h2><p>Selain bentuk ' + esc(cell.lintang) + ', terdapat penyebutan lain: <strong>' + esc(story.variants) + '</strong>. Sebutan dapat berbeda menurut naskah, daerah, dan tradisi lukisan. Aksara Bali di atas mengikuti bentuk yang dipakai dalam tabel rujukan.</p>',
     '<p>Lintang ini berada pada pertemuan <strong>' + esc(cell.saptawara) + '</strong> (' + esc(SAPTAWARA_AKSARA[cell.saptawara]) + ') dan <strong>' + esc(cell.pancawara) + '</strong>, dengan patron hari <strong>' + esc(cell.patron) + '</strong>. Dalam bagan 35 hari, kombinasi yang sama muncul tiap 35 hari; untuk Otonan, Wuku dan siklus penuh 210 hari tetap diperhitungkan tersendiri.</p></section>',
     '<section><h2>Tanggal ' + esc(cell.saptawara) + ' ' + esc(cell.pancawara) + ' berikutnya</h2><p>Pilih tanggal untuk melihat Wuku, Wewaran, Ingkel dan peristiwa Pawukon hari tersebut.</p><div class="lintang-next">',
