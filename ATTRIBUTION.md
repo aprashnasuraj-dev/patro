@@ -15,15 +15,23 @@ AafnaiPatro combines original software with third-party data/services. This file
 
 ## Nepal administrative data
 
-The current Nepal build comments identify `local-states-nepal` for local administrative levels under MIT. Exact package/repository revision and any additional upstream boundary sources must be recorded in the generated dataset manifest before the Phase 2 provenance UI can be enabled globally.
+**local-states-nepal**
+- Use: province, district and local-level identifiers/names/ward counts used by the Nepal explore/map architecture.
+- License: MIT.
+- Pinned release: `v2.1.0`, upstream commit `035cb3d2ce2420ad04d7aac1d0ce4d08960c57f0`.
+- Source: https://github.com/sagautam5/local-states-nepal/tree/v2.1.0
+- Verification: all six vendored provinces/districts/municipalities English + Nepali JSON files are byte-for-byte identical to the upstream v2.1.0 blobs.
 
-Status: **UNVERIFIED revision**.
+Status: **VERIFIED revision**.
 
-## Map renderer / basemap / routing
+## Map renderer / basemap / routing / elevation
 
-- MapLibre GL JS: renderer; upstream license applies.
+- MapLibre GL JS 4.7.1 CSP build: renderer; BSD-3-Clause, vendored same-origin for the strict-CSP rollout.
+- PMTiles 4.5.0: vector archive protocol; BSD-3-Clause, vendored same-origin for the POC.
 - OpenFreeMap: map style/tiles; service terms and required attribution apply.
-- FOSSGIS public OSRM: current routing service. It is a public fair-use service, not a contracted AafnaiPatro SLA. Route endpoint coordinates are disclosed before use.
+- **Production routing target:** self-hosted Valhalla 3.9.1 (MIT), built from the Geofabrik Nepal OSM extract. Browser coordinates go to AafnaiPatro's same-origin route endpoint; the Worker authenticates to the private routing origin.
+- FOSSGIS public OSRM remains an explicit development/fallback integration only and is not the intended high-traffic production dependency.
+- **Terrain source:** Copernicus DEM GLO-30 (30 m DSM), DOI 10.5270/ESA-c5d3d65. Derived Terrain-RGB output must retain: “produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved” plus the licence liability notice emitted by the terrain build.
 
 ## Bali Calendar sources
 
