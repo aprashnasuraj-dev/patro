@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { palelintanganMatrix, pawukon, pawukonCycle } from "../worker/worldcal/engines/pawukon";
 import { isoToJdn } from "../worker/worldcal/dates";
-import { baliRoute, rerainanSearch } from "../worker/worldcal/pages/bali-weton";
+import { baliRoute, rerainanSearch, wetonRoute } from "../worker/worldcal/pages/bali-weton";
 import { sakaYearForDate } from "../worker/worldcal/pages/bali-traditional";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
 
@@ -108,6 +108,8 @@ describe("Bali traditional calendar workspace",()=>{
     expect((baliRoute(ctx("/bali-calendar/2129-12-31"),["2129-12-31"]) as any)?.status).toBe(200);
     expect(baliRoute(ctx("/bali-calendar/1928-12-31"),["1928-12-31"])).toBeNull();
     expect(baliRoute(ctx("/bali-calendar/2130-01-01"),["2130-01-01"])).toBeNull();
+    expect((wetonRoute(ctx("/weton/1900-01-01"),["1900-01-01"]) as any)?.status).toBe(200);
+    expect(wetonRoute(ctx("/weton/1899-12-31"),["1899-12-31"])).toBeNull();
   });
 
   it("builds a unique structural 35-cell Palelintangan matrix",()=>{
