@@ -116,7 +116,13 @@
       "!/client-tools",
       "!/converter",
       "!/calculator",
-      "!/tools"
+      "!/tools",
+      "!/robots.txt",
+      "!/sitemap.xml",
+      "!/aafnai-logo.png",
+      "!/icons/*",
+      "!/fonts/*",
+      "!/nepali-tools/core/*"
     ]
   },
   "d1_databases": [

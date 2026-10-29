@@ -17,10 +17,6 @@
     {
       "pattern": "aafnaipatro.com/sitemap-atlas*",
       "zone_name": "aafnaipatro.com"
-    },
-    {
-      "pattern": "aafnaipatro.com/date/*",
-      "zone_name": "aafnaipatro.com"
     }
   ]
 }

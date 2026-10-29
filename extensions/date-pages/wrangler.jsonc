@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "patro-date-pages",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-09-30",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "../../.cloudflare/date-pages",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  },
+  "services": [{"binding": "ORIGIN", "service": "patro"}],
+  "routes": [{"pattern": "aafnaipatro.com/date/*", "zone_name": "aafnaipatro.com"}],
+  "observability": {"enabled": true}
+}

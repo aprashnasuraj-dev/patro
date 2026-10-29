@@ -52,7 +52,7 @@ const monthHtml = await read(`dist${monthPath}/index.html`);
 expect(monthHtml.includes('data-seo-prerender="true"'), "hot month page lacks semantic prerender");
 expect(monthHtml.includes(`/date/${sample.ad}`), "hot month page does not link factual day page");
 expect(monthHtml.includes(tithiText(sample.panchang)), "hot month page lacks tithi text");
-const dayHtml = await read(`dist/date/${sample.ad}/index.html`);
+const dayHtml = await read(`dist/date/${sample.ad}.html`);
 expect(dayHtml.includes('data-seo-prerender="true"'), "hot day page lacks semantic prerender");
 expect(dayHtml.includes(tithiText(sample.panchang)), "hot day page lacks tithi text");
 expect(dayHtml.includes(`rel="canonical" href="${SITE}/date/${sample.ad}"`), "hot day canonical missing");

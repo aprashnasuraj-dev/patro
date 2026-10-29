@@ -1,4 +1,5 @@
 import {ROLLUP_SCHEMA} from "./analytics-rollup";
+import { ADMIN_SCHEMA_VERSION, withSchemaVersion } from "../schema-version";
 // Aafnai Patro admin console — D1 schema + helpers.
 // Cloudflare Workers Builds runs `npm run build` + `wrangler deploy` but does NOT
 // apply D1 migrations, so the console creates its own tables idempotently on the
@@ -125,25 +126,26 @@ export const SCHEMA: string[] = [
   `create index if not exists aap_audit_ts_idx on aap_audit(ts)`,
 ];
 
-let schemaReady: Promise<void> | null = null;
+const schemaReady = new WeakMap<object, Promise<void>>();
 
 export function ensureSchema(env: AdminEnv) {
   if (!env.DB) return Promise.reject(new Error("d1_unavailable"));
-  if (!schemaReady) {
-    const db = env.DB;
-    schemaReady = db
-      .batch(SCHEMA.map((sql) => db.prepare(sql)))
-      .then(async () => {
+  const db = env.DB;
+  let ready = schemaReady.get(db);
+  if (!ready) {
+    ready = withSchemaVersion(db, "admin-console", ADMIN_SCHEMA_VERSION, async () => {
+        await db.batch(SCHEMA.map((sql) => db.prepare(sql)));
         const info=await db.prepare("pragma table_info(aap_pageviews)").all();
         if(!(info.results||[]).some((r:any)=>r.name==="weight")){try{await db.prepare("alter table aap_pageviews add column weight real not null default 1").run();}catch(e){if(!/duplicate column/i.test(String(e)))throw e;}}
         await db.batch(ROLLUP_SCHEMA.map(sql=>db.prepare(sql)));
       })
       .catch((error: unknown) => {
-        schemaReady = null; // retry on next request
+        schemaReady.delete(db); // retry on next request
         throw error;
       });
+    schemaReady.set(db, ready);
   }
-  return schemaReady as Promise<void>;
+  return ready;
 }
 
 export async function all<T = any>(env: AdminEnv, sql: string, ...binds: unknown[]): Promise<T[]> {
