@@ -145,11 +145,15 @@ await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
 
 const appJs = await readFile(join(HERE, "map/app.js"), "utf8");
 const routingV2Js = await readFile(join(HERE, "map/routing-v2.js"), "utf8");
+const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
+const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
 await writeFile(join(OUT, "nepalmap/app.js"), appJs);
 await writeFile(join(OUT, "nepalmap/routing-v2.js"), routingV2Js);
+await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
+await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
