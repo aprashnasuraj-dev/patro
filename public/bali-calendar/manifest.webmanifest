@@ -2,7 +2,7 @@
   "id": "/bali-calendar",
   "name": "Bali Calendar · AafnaiPatro",
   "short_name": "Bali Calendar",
-  "description": "Kalender Bali dengan Pawukon, Wewaran, hari raya, Otonan, Piodalan dan sumber yang transparan — bagian dari AafnaiPatro.",
+  "description": "Tika Pawukon 210 hari, Palelintangan, Sasih/Saka, Otonan, Piodalan dan Wariga dengan sumber transparan.",
   "lang": "id",
   "dir": "ltr",
   "start_url": "/bali-calendar?source=pwa",
@@ -12,8 +12,8 @@
     "standalone",
     "minimal-ui"
   ],
-  "background_color": "#fbfaf5",
-  "theme_color": "#a8781c",
+  "background_color": "#f8efd8",
+  "theme_color": "#762e24",
   "orientation": "any",
   "categories": [
     "lifestyle",
@@ -49,9 +49,19 @@
   ],
   "shortcuts": [
     {
-      "name": "Kalender Bali hari ini",
-      "short_name": "Hari ini",
+      "name": "Tika Pawukon",
+      "short_name": "Pawukon",
       "url": "/bali-calendar"
+    },
+    {
+      "name": "Palelintangan",
+      "short_name": "Palelintangan",
+      "url": "/bali-calendar/palelintangan"
+    },
+    {
+      "name": "Sasih / Saka",
+      "short_name": "Sasih",
+      "url": "/bali-calendar/sasih-saka"
     },
     {
       "name": "Hitung Otonan",
@@ -62,6 +72,16 @@
       "name": "Piodalan Bali",
       "short_name": "Piodalan",
       "url": "/bali-calendar/piodalan"
+    },
+    {
+      "name": "Hari Raya Bali",
+      "short_name": "Hari Raya",
+      "url": "/bali-calendar/hari-raya"
+    },
+    {
+      "name": "My Bali Calendar",
+      "short_name": "My Bali",
+      "url": "/bali-calendar#my-bali"
     }
   ]
 }

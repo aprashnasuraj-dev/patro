@@ -141,6 +141,16 @@
       "NEPAL_EMERGENCY_ENABLED": "0",
       "NEPAL_ROUTING_ENABLED": "0",
       "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1",
+      "BALI_MONTH_GRID": "1",
+      "BALI_RERAINAN_SEARCH": "1",
+      "BALI_LEARNING_GUIDES": "1",
+      "BALI_ICS_FEEDS": "1",
+      "BALI_OTONAN_DUAL_RESULT": "1",
+      "BALI_SUBSCRIPTION_UI": "1",
+      "BALI_PIODALAN": "1",
+      "BALI_DAUH_AYU": "1",
+      "BALI_PADEWASAN": "1",
+      "BALI_ENGLISH_GUIDE": "1",
       "BALI_PWA": "1"
     },
     "d1_databases": [
@@ -166,6 +176,16 @@
     "NEPAL_EMERGENCY_ENABLED": "0",
     "NEPAL_ROUTING_ENABLED": "0",
     "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1",
+    "BALI_MONTH_GRID": "1",
+    "BALI_RERAINAN_SEARCH": "1",
+    "BALI_LEARNING_GUIDES": "1",
+    "BALI_ICS_FEEDS": "1",
+    "BALI_OTONAN_DUAL_RESULT": "1",
+    "BALI_SUBSCRIPTION_UI": "1",
+    "BALI_PIODALAN": "1",
+    "BALI_DAUH_AYU": "1",
+    "BALI_PADEWASAN": "1",
+    "BALI_ENGLISH_GUIDE": "1",
     "BALI_PWA": "1"
   },
   "triggers": {

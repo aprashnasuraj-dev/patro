@@ -33,6 +33,30 @@ describe("Bali ICS feeds", () => {
     expect(events.every((e) => e.description?.includes("Status sumber: published"))).toBe(true);
   });
 
+  it("builds source-backed recurring Piodalan feeds and keeps unsupported Sasih rules fail-closed", () => {
+    const pawukonCtx = {
+      site: "https://aafnaipatro.com",
+      url: new URL("https://aafnaipatro.com/bali-calendar/feed/piodalan/pura-luhur-batukaru.ics"),
+      path: "/bali-calendar/feed/piodalan/pura-luhur-batukaru.ics",
+      now: new Date("2026-10-29T00:00:00Z"),
+    };
+    const feed:any = baliFeedRoute(pawukonCtx, ["feed","piodalan","pura-luhur-batukaru.ics"]);
+    expect(feed?.contentType).toContain("text/calendar");
+    expect(feed?.html).toContain("Piodalan — Pura Luhur Batukaru");
+    expect(String(feed?.html||"").replace(/\r\n /g,"")).toContain("recurrence 210 hari");
+    const sasih:any = baliFeedRoute(pawukonCtx, ["feed","piodalan","pura-jagatnatha-jembrana.ics"]);
+    expect(sasih).toBeNull();
+  });
+
+  it("accepts the supported 1929–2129 Bali feed window", () => {
+    for (const year of [1929,2129]) {
+      const ctx = {site:"https://aafnaipatro.com",url:new URL(`https://aafnaipatro.com/bali-calendar/feed/hari-raya/${year}.ics`),path:`/bali-calendar/feed/hari-raya/${year}.ics`,now:new Date("2026-10-29T00:00:00Z")};
+      expect((baliFeedRoute(ctx,["feed","hari-raya",`${year}.ics`]) as any)?.contentType).toContain("text/calendar");
+    }
+    const ctx = {site:"https://aafnaipatro.com",url:new URL("https://aafnaipatro.com/bali-calendar/feed/hari-raya/2130.ics"),path:"/bali-calendar/feed/hari-raya/2130.ics",now:new Date("2026-10-29T00:00:00Z")};
+    expect(baliFeedRoute(ctx,["feed","hari-raya","2130.ics"])).toBeNull();
+  });
+
   it("builds a private noindex Otonan feed without enabling the public flag", () => {
     const ctx = {
       site: "https://aafnaipatro.com",

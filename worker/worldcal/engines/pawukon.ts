@@ -9,6 +9,8 @@
 import { amod, gregorianToJdn, jdnToGregorian, mod } from "../dates";
 
 export const PAWUKON_EPOCH_OFFSET = 146;
+export const PAWUKON_CYCLE_DAYS = 210;
+export const WUKU_DAYS = 7;
 
 export const WUKU = [
   "Sinta", "Landep", "Ukir", "Kulantir", "Tolu", "Gumbreg", "Wariga", "Warigadean", "Julungwangi", "Sungsang",
@@ -22,9 +24,20 @@ export const CATURWARA = ["Sri", "Laba", "Jaya", "Menala"] as const;
 export const PANCAWARA = ["Umanis", "Paing", "Pon", "Wage", "Kliwon"] as const;
 export const SADWARA = ["Tungleh", "Aryang", "Urukung", "Paniron", "Was", "Maulu"] as const;
 export const SAPTAWARA = ["Redite", "Soma", "Anggara", "Buda", "Wraspati", "Sukra", "Saniscara"] as const;
+export const SAPTAWARA_AKSARA = {
+  Redite: "ᬭᬤᬶᬢᬾ",
+  Soma: "ᬲᭀᬫ",
+  Anggara: "ᬅᬗ᭄ᬕᬭ",
+  Buda: "ᬩᬸᬤ᭄ᬥ",
+  Wraspati: "ᬯᬺᬳᬲ᭄ᬧᬢᬶ",
+  Sukra: "ᬰᬸᬓ᭄ᬭ",
+  Saniscara: "ᬰᬦᬶᬰ᭄ᬘᬭ",
+} as const;
 export const ASTAWARA = ["Sri", "Indra", "Guru", "Yama", "Ludra", "Brahma", "Kala", "Uma"] as const;
 export const SANGAWARA = ["Dangu", "Jangur", "Gigis", "Nohan", "Ogan", "Erangan", "Urungan", "Tulus", "Dadi"] as const;
 export const DASAWARA = ["Pandita", "Pati", "Suka", "Duka", "Sri", "Manuh", "Manusa", "Raja", "Dewa", "Raksasa"] as const;
+export const INGKEL = ["Wong", "Sato", "Mina", "Manuk", "Taru", "Buku"] as const;
+export const JEJEPAN = ["Mina", "Taru", "Sato", "Patra", "Wong", "Paksi"] as const;
 
 /** Urip / neptu values (identical in Bali and Java). */
 export const URIP_PANCA = [5, 9, 7, 4, 8]; // Umanis/Legi, Paing/Pahing, Pon, Wage, Kliwon
@@ -44,46 +57,140 @@ export type Pawukon = {
   sangawara: (typeof SANGAWARA)[number];
   dasawara: (typeof DASAWARA)[number];
   urip: number; // pancawara urip + saptawara urip
+  ingkel: (typeof INGKEL)[number]; // weekly pandakan cycle, derived from Wuku number mod 6
+  jejepan: (typeof JEJEPAN)[number]; // daily 6-day paringkelan cycle
 };
 
-export const pawukonDay = (jdn: number) => mod(jdn - PAWUKON_EPOCH_OFFSET, 210);
+export type PawukonDay = Pawukon & {
+  cycleDay: number; // 1..210
+  dayInWuku: number; // 1..7
+  combination: string; // Saptawara + Pancawara + Wuku
+};
 
-export function pawukon(jdn: number): Pawukon {
-  const day = pawukonDay(jdn);
+export type PalelintanganCell = {
+  saptawara: (typeof SAPTAWARA)[number];
+  pancawara: (typeof PANCAWARA)[number];
+  saptawaraUrip: number;
+  pancawaraUrip: number;
+  urip: number;
+  lintang: string;
+  patron: string;
+  key: string;
+};
+
+export const PALELINTANGAN_LINTANG = [
+  ["Kala Sungsang", "Kelapa Sunda", "Kuda", "Tangis", "Sangkal Tikel", "Banyak Angrem", "Depat"],
+  ["Gajah", "Dupa", "Yuyu", "Gajahmina", "Salah Ukur", "Bubu Bosor", "Ru"],
+  ["Patrem", "Hulanjar", "Asu", "Lumbung", "Bade", "Prau Pegat", "Srengenge"],
+  ["Tenggala", "Lembu", "Perahu Sarat", "Kartika", "Kumba", "Rebut Utang", "Puwuh Atarung"],
+  ["Laweyan", "Pedati Suung", "Sidamalung", "Atiwa-tiwa", "Naga", "Udang", "Larung Paglangan"],
+] as const;
+
+export const PALELINTANGAN_PATRON = {
+  Redite: "Bhatara Indra",
+  Soma: "Bhatara Sri",
+  Anggara: "Bhatara Brahma",
+  Buda: "Bhatara Wisnu",
+  Wraspati: "Bhatara Guru / Sang Hyang Siwa",
+  Sukra: "Bhatari Uma",
+  Saniscara: "Bhatari Durga",
+} as const;
+
+/** Canonical 0..209 position of a civil JDN inside the Pawukon cycle. */
+export const pawukonDay = (jdn: number) => mod(jdn - PAWUKON_EPOCH_OFFSET, PAWUKON_CYCLE_DAYS);
+
+/**
+ * Resolve a canonical Pawukon position without going through Gregorian time.
+ *
+ * Caturwara follows Astawara rather than day%4, and Astawara/Sangawara keep
+ * the traditional exceptional/repeated positions encoded by the
+ * Reingold-Dershowitz formulas. This function is therefore the single source
+ * for every Tika cell, date page, holiday rule and Otonan calculation.
+ */
+export function pawukonFromDay(dayInput: number): PawukonDay {
+  const day = mod(dayInput, PAWUKON_CYCLE_DAYS);
   const sapta = 1 + mod(day, 7);
   const panca = amod(day + 2, 5);
-  const asta = 1 + mod(Math.max(6, 4 + mod(day - 70, 210)), 8);
+  const asta = 1 + mod(Math.max(6, 4 + mod(day - 70, PAWUKON_CYCLE_DAYS)), 8);
   const catur = amod(asta, 4);
   const sanga = 1 + mod(Math.max(0, day - 3), 9);
+  // R&D 12.9 yields 0..9; name position 0 represents Raksasa (10), while 1..9 map normally.
   const dasa = mod(1 + URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1], 10);
+  const saptawara = SAPTAWARA[sapta - 1];
+  const pancawara = PANCAWARA[panca - 1];
+  const wuku = { index: 1 + Math.floor(day / WUKU_DAYS), name: WUKU[Math.floor(day / WUKU_DAYS)] };
   return {
     day,
-    wuku: { index: 1 + Math.floor(day / 7), name: WUKU[Math.floor(day / 7)] },
+    cycleDay: day + 1,
+    dayInWuku: 1 + mod(day, WUKU_DAYS),
+    wuku,
     ekawara: dasa % 2 === 0 ? "Luang" : null,
     dwiwara: DWIWARA[amod(dasa, 2) - 1],
     triwara: TRIWARA[mod(day, 3)],
     caturwara: CATURWARA[catur - 1],
-    pancawara: PANCAWARA[panca - 1],
+    pancawara,
     sadwara: SADWARA[mod(day, 6)],
-    saptawara: SAPTAWARA[sapta - 1],
+    saptawara,
     astawara: ASTAWARA[asta - 1],
     sangawara: SANGAWARA[sanga - 1],
-    dasawara: DASAWARA[dasa],
+    dasawara: DASAWARA[amod(dasa, 10) - 1],
     urip: URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1],
+    ingkel: INGKEL[(wuku.index - 1) % INGKEL.length],
+    jejepan: JEJEPAN[day % JEJEPAN.length],
+    combination: `${saptawara} ${pancawara} ${wuku.name}`,
   };
+}
+
+export function pawukon(jdn: number): PawukonDay {
+  return pawukonFromDay(pawukonDay(jdn));
+}
+
+/** Full canonical 210-day cycle, used by the Tika UI and whole-cycle tests. */
+export function pawukonCycle(): PawukonDay[] {
+  return Array.from({ length: PAWUKON_CYCLE_DAYS }, (_, day) => pawukonFromDay(day));
+}
+
+/**
+ * Structural Palelintangan matrix: 7 Saptawara × 5 Pancawara = 35 intersections.
+ *
+ * Symbolic deity/animal/tree/wayang interpretations are deliberately not
+ * invented here; those belong in a separately sourced cultural dataset.
+ */
+export function palelintanganMatrix(): PalelintanganCell[] {
+  return SAPTAWARA.flatMap((saptawara, si) =>
+    PANCAWARA.map((pancawara, pi) => ({
+      saptawara,
+      pancawara,
+      saptawaraUrip: URIP_SAPTA[si],
+      pancawaraUrip: URIP_PANCA[pi],
+      urip: URIP_SAPTA[si] + URIP_PANCA[pi],
+      lintang: PALELINTANGAN_LINTANG[pi][si],
+      patron: PALELINTANGAN_PATRON[saptawara],
+      key: `${saptawara.toLowerCase()}-${pancawara.toLowerCase()}`,
+    })),
+  );
 }
 
 /** Pawukon-day holidays (recur every 210 days). */
 export const PAWUKON_HOLIDAYS: { day: number; key: string; id: string; en: string }[] = [
   { day: 0, key: "banyu-pinaruh", id: "Banyu Pinaruh", en: "Banyu Pinaruh (purification after Saraswati)" },
+  { day: 1, key: "soma-ribek", id: "Soma Ribek", en: "Soma Ribek" },
+  { day: 2, key: "sabuh-mas", id: "Sabuh Mas", en: "Sabuh Mas" },
   { day: 3, key: "pagerwesi", id: "Pagerwesi", en: "Pagerwesi" },
+  { day: 67, key: "sugihan-jawa", id: "Sugihan Jawa", en: "Sugihan Jawa" },
+  { day: 68, key: "sugihan-bali", id: "Sugihan Bali", en: "Sugihan Bali" },
   { day: 70, key: "penyekeban", id: "Penyekeban Galungan", en: "Penyekeban (Galungan preparations begin)" },
   { day: 71, key: "penyajaan", id: "Penyajaan Galungan", en: "Penyajaan (Galungan cakes)" },
   { day: 72, key: "penampahan", id: "Penampahan Galungan", en: "Penampahan (eve of Galungan)" },
   { day: 73, key: "galungan", id: "Hari Raya Galungan", en: "Galungan" },
   { day: 74, key: "umanis-galungan", id: "Umanis Galungan", en: "Umanis Galungan" },
+  { day: 76, key: "pemaridan-guru", id: "Pemaridan Guru", en: "Pemaridan Guru" },
+  { day: 77, key: "ulihan", id: "Ulihan", en: "Ulihan" },
+  { day: 78, key: "pemacekan-agung", id: "Pemacekan Agung", en: "Pemacekan Agung" },
+  { day: 80, key: "buda-pahing-kuningan", id: "Buda Pahing Kuningan", en: "Buda Pahing Kuningan" },
   { day: 82, key: "penampahan-kuningan", id: "Penampahan Kuningan", en: "Eve of Kuningan" },
   { day: 83, key: "kuningan", id: "Hari Raya Kuningan", en: "Kuningan" },
+  { day: 108, key: "pegat-wakan", id: "Pegat Wakan", en: "Pegat Wakan (end of the Galungan–Kuningan sequence)" },
   { day: 209, key: "saraswati", id: "Hari Raya Saraswati", en: "Saraswati (day of knowledge)" },
 ];
 export const TUMPEK = [

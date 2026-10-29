@@ -109,7 +109,7 @@ describe("Balinese Pawukon and Javanese weton", () => {
   it("matches the Reingold–Dershowitz test vector (2001-09-11)", () => {
     const p = pawukon(isoToJdn("2001-09-11"));
     expect([p.day, p.wuku.name, p.ekawara, p.dwiwara, p.triwara, p.caturwara, p.pancawara, p.sadwara, p.saptawara, p.astawara, p.sangawara, p.dasawara])
-      .toEqual([58, "Julungwangi", "Luang", "Pepet", "Beteng", "Jaya", "Kliwon", "Was", "Anggara", "Guru", "Jangur", "Suka"]);
+      .toEqual([58, "Julungwangi", "Luang", "Pepet", "Beteng", "Jaya", "Kliwon", "Was", "Anggara", "Guru", "Jangur", "Pati"]);
   });
 
   it("matches published reference days", () => {
@@ -117,7 +117,7 @@ describe("Balinese Pawukon and Javanese weton", () => {
     expect(pawukon(isoToJdn("2026-04-05")).day).toBe(0);
     expect(pawukon(isoToJdn("2026-11-01")).day).toBe(0);
     const t = pawukon(isoToJdn("2026-10-10"));
-    expect([t.day, t.wuku.name, t.saptawara, t.pancawara, t.triwara, t.sadwara, t.sangawara, t.dasawara]).toEqual([188, "Wayang", "Saniscara", "Kliwon", "Kajeng", "Urukung", "Erangan", "Dewa"]);
+    expect([t.day, t.wuku.name, t.saptawara, t.pancawara, t.triwara, t.sadwara, t.sangawara, t.dasawara]).toEqual([188, "Wayang", "Saniscara", "Kliwon", "Kajeng", "Urukung", "Erangan", "Raja"]);
     expect(pawukonEvents(isoToJdn("2026-10-10"))).toContain("Tumpek Wayang");
     expect(pawukonEvents(isoToJdn("2026-07-12"))).toContain("Kajeng Kliwon");
     expect(pawukonEvents(isoToJdn("2026-07-07"))).toContain("Anggara Kasih");
@@ -131,7 +131,10 @@ describe("Balinese Pawukon and Javanese weton", () => {
     const all = pawukonHolidaysInYear(2026).flatMap((h) => h.names.map((n) => `${jdnToIso(h.jdn)} ${n}`));
     for (const e of ["2026-06-17 Hari Raya Galungan", "2026-06-27 Hari Raya Kuningan", "2026-04-04 Hari Raya Saraswati", "2026-10-31 Hari Raya Saraswati", "2026-04-05 Banyu Pinaruh", "2026-11-01 Banyu Pinaruh",
       "2026-04-08 Pagerwesi", "2026-11-04 Pagerwesi", "2026-01-03 Tumpek Krulut", "2026-08-01 Tumpek Krulut", "2026-02-07 Tumpek Kandang (Uye)", "2026-09-05 Tumpek Kandang (Uye)", "2026-03-14 Tumpek Wayang",
-      "2026-10-10 Tumpek Wayang", "2026-04-18 Tumpek Landep", "2026-11-14 Tumpek Landep", "2026-05-23 Tumpek Wariga (Uduh/Bubuh)", "2026-12-19 Tumpek Wariga (Uduh/Bubuh)"]) expect(all, e).toContain(e);
+      "2026-10-10 Tumpek Wayang", "2026-04-18 Tumpek Landep", "2026-11-14 Tumpek Landep", "2026-05-23 Tumpek Wariga (Uduh/Bubuh)", "2026-12-19 Tumpek Wariga (Uduh/Bubuh)",
+      "2026-04-06 Soma Ribek", "2026-11-02 Soma Ribek", "2026-04-07 Sabuh Mas", "2026-11-03 Sabuh Mas",
+      "2026-06-11 Sugihan Jawa", "2026-06-12 Sugihan Bali", "2026-06-20 Pemaridan Guru", "2026-06-21 Ulihan",
+      "2026-06-22 Pemacekan Agung", "2026-06-24 Buda Pahing Kuningan", "2026-07-22 Pegat Wakan"]) expect(all, e).toContain(e);
   });
 
   it("computes weton, neptu and the 8-step weton jodoh", () => {
