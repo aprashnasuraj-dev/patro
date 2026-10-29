@@ -17,11 +17,11 @@ function d1(sqlite){
   return {calls,prepare,async batch(statements){const out=[];for(const statement of statements)out.push(await statement.run());return out;}};
 }
 
-test('real asset router serves slashless dates and public resources without executing Worker; misses and private routes retain Worker',async()=>{
+test('real date and production asset routers bypass Worker for published assets while misses and private routes retain Worker',async()=>{
   const directory=await mkdtemp(join(tmpdir(),'patro-quota-assets-'));
   let mf;
   try{
-    for(const [path,text]of Object.entries({'date/2026-10-30.html':'complete date','robots.txt':'User-agent: *','icons/calendar.svg':'<svg/>','nepali-tools/core/roman.mjs':'export {};','aap/settings.js':'must remain dynamic','me/notes.html':'must remain private'})){
+    for(const [path,text]of Object.entries({'date/2026-10-30.html':'complete date','robots.txt':'User-agent: *','sitemap.xml':'<urlset/>','aafnai-logo.png':'image','icons/calendar.svg':'<svg/>','fonts/calendar.woff2':'font','nepali-tools/core/roman.mjs':'export {};','aap/settings.js':'must remain dynamic','me/notes.html':'must remain private'})){
       await mkdir(join(directory,path,'..'),{recursive:true});await writeFile(join(directory,path),text);
     }
     const config=JSON.parse(await readFile('wrangler.jsonc','utf8'));
@@ -33,6 +33,17 @@ test('real asset router serves slashless dates and public resources without exec
     for(const path of ['/date/2026-10-30','/robots.txt','/icons/calendar.svg','/nepali-tools/core/roman.mjs']){
       const response=await mf.dispatchFetch('https://aafnaipatro.com'+path,{redirect:'manual'});
       assert.equal(response.status,200,path);assert.equal(response.headers.get('location'),null,path);assert.equal(response.headers.get('x-worker-invoked'),null,path);
+    }
+    for(const path of ['/date/1940-01-01','/date/2026-2-30','/api/v1/me','/aap/settings.js','/me/notes','/nepali-tools/index.html']){
+      const response=await mf.dispatchFetch('https://aafnaipatro.com'+path);assert.equal(response.headers.get('x-worker-invoked'),'1',path);
+    }
+    await mf.dispose();mf=undefined;
+    const production=WorkerOptionsSchema.shape?.config
+      ? {config:{name:'production-router',compatibilityDate:'2026-09-30',manifest:{mainModule:'index.mjs',modules:{'index.mjs':{type:'esm',contents:script}}},assets:{directory,hasUserWorker:true,runWorkerFirst:config.assets.run_worker_first,notFoundHandling:'none'}}}
+      : {name:'production-router',modules:true,script,compatibilityDate:'2026-09-30',assets:{directory,binding:'ASSETS',run_worker_first:config.assets.run_worker_first,assetConfig:{not_found_handling:'none'}}};
+    mf=new Miniflare({workers:[production]});
+    for(const path of ['/robots.txt','/sitemap.xml','/aafnai-logo.png','/icons/calendar.svg','/fonts/calendar.woff2','/nepali-tools/core/roman.mjs']){
+      const response=await mf.dispatchFetch('https://aafnaipatro.com'+path);assert.equal(response.status,200,path);assert.equal(response.headers.get('x-worker-invoked'),null,path);
     }
     for(const path of ['/date/1940-01-01','/date/2026-2-30','/api/v1/me','/aap/settings.js','/me/notes','/nepali-tools/index.html']){
       const response=await mf.dispatchFetch('https://aafnaipatro.com'+path);assert.equal(response.headers.get('x-worker-invoked'),'1',path);
