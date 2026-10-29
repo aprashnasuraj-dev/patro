@@ -5,6 +5,9 @@ type Env = {
   NEPAL_API_ENABLED?: string;
   NEPAL_CORRECTIONS_ENABLED?: string;
   NEPAL_EMERGENCY_ENABLED?: string;
+  NEPAL_ROUTING_ENABLED?: string;
+  NEPAL_ROUTING_ORIGIN?: string;
+  NEPAL_ROUTING_TOKEN?: string;
   BIPAD_API_BASE?: string;
 };
 
@@ -123,6 +126,103 @@ async function correctionStatus(request:Request,env:Env,id:string):Promise<Respo
 }
 
 
+
+function sameOriginRequest(request: Request): boolean {
+  const origin = request.headers.get("origin");
+  const here = new URL(request.url).origin;
+  if (origin && origin !== here) return false;
+  const secFetchSite = request.headers.get("sec-fetch-site");
+  if (secFetchSite && !["same-origin","same-site","none"].includes(secFetchSite)) return false;
+  return true;
+}
+
+function privateJson(data: unknown, status = 200, cache = "no-store", extra?: Record<string,string>): Response {
+  return json(data, status, cache, { "access-control-allow-origin":"null", ...(extra || {}) });
+}
+
+async function routeWithValhalla(request: Request, env: Env): Promise<Response> {
+  if (env.NEPAL_ROUTING_ENABLED !== "1") return privateJson({ error:"routing_disabled" }, 503);
+  if (!sameOriginRequest(request)) return privateJson({ error:"same_origin_required" }, 403);
+  const len = Number(request.headers.get("content-length") || 0);
+  if (len > 4096) return privateJson({ error:"payload_too_large" }, 413);
+
+  let body:any;
+  try { body = await request.json(); } catch { return privateJson({ error:"invalid_json" }, 400); }
+  const mode = String(body?.mode || "");
+  if (!["car","bike","foot"].includes(mode)) return privateJson({ error:"invalid_mode" }, 400);
+  const points = Array.isArray(body?.points) ? body.points.slice(0, 11) : [];
+  if (points.length < 2 || points.length > 10) return privateJson({ error:"invalid_point_count" }, 400);
+  const clean = points.map((p:any) => ({ lat:Number(p?.lat), lng:Number(p?.lng) }));
+  const valid = clean.every((p:any) =>
+    Number.isFinite(p.lat) && Number.isFinite(p.lng) &&
+    p.lat >= 25.5 && p.lat <= 31.5 && p.lng >= 79.0 && p.lng <= 89.5
+  );
+  if (!valid) return privateJson({ error:"point_outside_nepal_bounds" }, 400);
+
+  let base:URL;
+  try { base = new URL(String(env.NEPAL_ROUTING_ORIGIN || "")); }
+  catch { return privateJson({ error:"routing_not_configured" }, 503); }
+  if (base.protocol !== "https:") return privateJson({ error:"routing_origin_must_be_https" }, 503);
+  if (!env.NEPAL_ROUTING_TOKEN) return privateJson({ error:"routing_token_missing" }, 503);
+
+  const target = new URL(base.toString().replace(/\/+$/, "") + "/route");
+  const costing = mode === "car" ? "auto" : mode === "bike" ? "bicycle" : "pedestrian";
+  const payload = {
+    locations: clean.map((p:any) => ({ lat:p.lat, lon:p.lng, type:"break" })),
+    costing,
+    units:"kilometers",
+    format:"osrm",
+    shape_format:"geojson",
+    directions_type:"instructions",
+    banner_instructions:false,
+    voice_instructions:false,
+    alternates:0,
+  };
+
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 15000);
+  const started = performance.now();
+  try {
+    const upstream = await fetch(target.toString(), {
+      method:"POST",
+      headers:{
+        "content-type":"application/json",
+        "accept":"application/json",
+        "authorization":`Bearer ${env.NEPAL_ROUTING_TOKEN}`,
+      },
+      body:JSON.stringify(payload),
+      signal:ctrl.signal,
+    });
+    logDependency({
+      product:"nepalmap", dependency:"valhalla", operation:mode,
+      outcome:upstream.ok ? "ok" : upstream.status === 429 ? "throttled" : "error",
+      status:upstream.status, duration_ms:performance.now()-started,
+    });
+    const raw:any = await upstream.json().catch(() => null);
+    if (!upstream.ok) {
+      return privateJson({ error:"routing_upstream", status:upstream.status, code:raw?.error_code || raw?.code || null }, upstream.status === 429 ? 429 : 502, "no-store", upstream.status === 429 ? {"retry-after":"1"} : undefined);
+    }
+    const route = raw?.routes?.[0];
+    if (!route || route.geometry?.type !== "LineString" || !Array.isArray(route.geometry.coordinates) || !Number.isFinite(route.distance)) {
+      return privateJson({ error:"routing_malformed_response" }, 502);
+    }
+    return privateJson({
+      geometry:route.geometry,
+      distance:route.distance,
+      duration:Number.isFinite(route.duration) ? route.duration : null,
+      legs:Array.isArray(route.legs) ? route.legs : [],
+      warnings:[],
+      confidence:null,
+      provider:"aafnaipatro-valhalla",
+      waypoint_count:clean.length,
+    }, 200);
+  } catch (error) {
+    const timeout = (error as any)?.name === "AbortError";
+    logDependency({ product:"nepalmap", dependency:"valhalla", operation:mode, outcome:timeout?"timeout":"error", duration_ms:performance.now()-started });
+    return privateJson({ error:timeout ? "routing_timeout" : "routing_unavailable" }, 502);
+  } finally { clearTimeout(timer); }
+}
+
 const BIPAD_ENDPOINTS:Record<string,string>={
   incident:"incident",alert:"alert",earthquake:"earthquake",fire:"fire",
   openspace:"openspace-detail",rain:"rain",river:"river"
@@ -159,7 +259,8 @@ export async function nepalApiResponse(request:Request,env:Env):Promise<Response
   if(!url.pathname.startsWith(API)) return null;
   if(env.NEPAL_API_ENABLED!=="1") return json({error:"nepal_api_disabled"},503,"no-store");
   if(request.method==="OPTIONS") return new Response(null,{status:204,headers:{"access-control-allow-origin":"*","access-control-allow-methods":"GET,HEAD,POST,OPTIONS","access-control-allow-headers":"content-type","access-control-max-age":"86400"}});
-  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/health","/manifest","/admin","/places","/place/{id}","/emergency","/corrections"]});
+  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/health","/manifest","/admin","/places","/place/{id}","/route","/emergency","/corrections"]});
+  if(request.method==="POST"&&url.pathname===API+"/route") return routeWithValhalla(request,env);
   if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/health"){
     const [manifest,index]=await Promise.all([
       assetJson(env,request,"/data/nepalmap/v1/manifest.json"),
