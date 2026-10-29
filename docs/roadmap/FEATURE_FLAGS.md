@@ -11,6 +11,7 @@ All user-visible roadmap work is reversible and defaults OFF until its phase gat
 | nepalStablePlaceIds | off | 5 | identity stability across rebuild fixtures | disable |
 | baliMonthGrid | off | 6 | grid/date/source fixtures + a11y | disable |
 | baliRerainanSearch | off | 6 | search fixtures + noindex query behavior | disable |
+| baliLearningGuides | off | 6 | deterministic glossary/Wuku links + a11y | disable |
 | baliIcsFeeds | off | 7 | RFC 5545 parser validation | disable |
 | nepalVisitorMode | off | 8 | copy review + a11y | disable |
 | seoPolicyEngine | off | 8 | URL-family checks pass | disable |
