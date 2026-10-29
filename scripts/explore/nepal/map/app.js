@@ -105,7 +105,14 @@
 
   // ---------- data ----------
   function getJson(file) {
-    return fetch(DATA + file + "?v=" + VER).then(function (r) { if (!r.ok) throw new Error(file + " " + r.status); return r.json(); });
+    return fetch(DATA + file + "?v=" + VER).then(function (r) { if (!r.ok) throw new Error(file + " " + r.status); return r.json(); })
+      .catch(function (error) {
+        if (!(CFG.flags && CFG.flags.nepalOfflinePacks) || !window.AafnaiOffline || !state.district) throw error;
+        return window.AafnaiOffline.dataFallback(file, state.district).then(function (fallback) {
+          if (!fallback) throw error;
+          return fallback;
+        });
+      });
   }
   function ensure(id) {
     var L = layers[id] || (layers[id] = { rows: [], loaded: false, loading: null });
@@ -426,6 +433,8 @@
     else map.fitBounds(NEPAL, { padding: 20 });
     var link = $("#np-district-link");
     if (link) { link.hidden = !d; if (d) { link.href = d.path; link.textContent = d.name + " District: wards, palikas, former VDCs →"; } }
+    var offlineButton = $("#np-offline-save");
+    if (offlineButton) { offlineButton.disabled = !d; offlineButton.textContent = d ? "Save " + d.name + " offline" : "Save district offline"; }
     CATS.forEach(function (c) { if (layers[c.id] && layers[c.id].loaded && map.getSource("s-" + c.id)) map.getSource("s-" + c.id).setData(geojson(c.id)); });
     renderChips(); renderList(); writeUrl(); closePanelOnMobile();
   }
@@ -841,6 +850,7 @@
     });
     Promise.all([styled, adminP]).then(function () {
       if (state.district) setDistrict(state.district);
+      if (CFG.flags && CFG.flags.nepalOfflinePacks && window.AafnaiOffline) window.AafnaiOffline.register().catch(function (e) { console.warn("offline worker", e); });
       return refresh();
     }).then(function () {
       if (state.query) { $("#np-q").value = state.query; onSearch(); }
@@ -876,6 +886,16 @@
       renderChips(); renderList(); writeUrl();
     });
     $("#np-district").addEventListener("change", function (e) { setDistrict(e.target.value); });
+    if ($("#np-offline-save")) $("#np-offline-save").addEventListener("click", function () {
+      var btn = $("#np-offline-save");
+      if (!state.district || !window.AafnaiOffline) return;
+      btn.disabled = true; btn.textContent = "Saving district data…";
+      window.AafnaiOffline.saveDistrict(state.district, VER).then(function (d) {
+        btn.textContent = "Saved " + d.name + " offline";
+      }).catch(function (e) {
+        console.warn("offline", e); btn.disabled = false; btn.textContent = "Offline save failed";
+      });
+    });
     $("#np-q").addEventListener("input", onSearch);
     $("#np-q").addEventListener("keydown", function (e) {
       if (e.key === "Enter") { var r = $("#np-results")._res; if (r && r[0]) pick(r[0]); }
