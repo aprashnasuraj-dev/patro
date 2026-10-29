@@ -231,14 +231,46 @@
       return data.features.length;
     });
   }
+  function emergencyAge(seconds) {
+    if (!Number.isFinite(seconds)) return "retrieval time unavailable";
+    if (seconds < 60) return "retrieved <1 min ago";
+    if (seconds < 3600) return "retrieved " + Math.max(1, Math.round(seconds / 60)) + " min ago";
+    return "retrieved " + Math.max(1, Math.round(seconds / 3600)) + " h ago";
+  }
+  function updateEmergencyStatus(localCount, remote) {
+    var status = $("#np-emergency-status");
+    if (!status) return;
+    if (!state.emergencyOn) { status.hidden = true; status.textContent = ""; return; }
+    status.hidden = false;
+    if (!remote) {
+      status.textContent = "Local emergency facilities: " + localCount + ". Live BIPAD overlay is not available in this build.";
+      return;
+    }
+    if (remote.failed === remote.total_feeds) {
+      status.textContent = "Local emergency facilities: " + localCount + ". Live BIPAD feeds are currently unavailable (" + remote.failed + "/" + remote.total_feeds + "); resilience data is incomplete.";
+      return;
+    }
+    status.textContent = "Local emergency facilities: " + localCount + " · BIPAD mapped records: " + remote.features +
+      " · " + emergencyAge(remote.retrieval_age_seconds) +
+      (remote.failed ? " · " + remote.failed + "/" + remote.total_feeds + " BIPAD feeds unavailable; data is partial." : " · all " + remote.total_feeds + " BIPAD feed groups responded.");
+  }
   function setEmergency(on) {
     state.emergencyOn = !!on;
     var button = $("#np-emergency-toggle");
     if (button) { button.setAttribute("aria-pressed", String(state.emergencyOn)); button.textContent = state.emergencyOn ? "🛟 Resilience: on" : "🛟 Resilience"; }
-    return ensureLocalResilience().then(function () {
-      if (window.AafnaiEmergency) return window.AafnaiEmergency.setVisible(map, state.emergencyOn);
-      return null;
-    }).catch(function (e) { console.warn("emergency", e); });
+    if (!state.emergencyOn) updateEmergencyStatus(0, null);
+    return ensureLocalResilience().then(function (localCount) {
+      if (!state.emergencyOn) return null;
+      if (!window.AafnaiEmergency) { updateEmergencyStatus(localCount, null); return null; }
+      return window.AafnaiEmergency.setVisible(map, true).then(function (remote) {
+        updateEmergencyStatus(localCount, remote);
+        return remote;
+      });
+    }).catch(function (e) {
+      console.warn("emergency", e);
+      var status = $("#np-emergency-status");
+      if (status && state.emergencyOn) { status.hidden = false; status.textContent = "Local resilience remains available; live BIPAD data could not be loaded."; }
+    });
   }
 
   // ---------- places, wards, links ----------

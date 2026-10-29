@@ -76,7 +76,7 @@
     "test:growth-pages": "vitest run tests/growth-pages.test.ts",
     "test:explore": "vitest run tests/explore-engine.test.ts tests/nepalmap.test.ts",
     "test:worldcal": "vitest run tests/worldcal.test.ts",
-    "test:roadmap": "vitest run tests/roadmap-telemetry.test.ts tests/roadmap-provenance.test.ts tests/roadmap-bali.test.ts tests/roadmap-wariga.test.ts tests/roadmap-routing.test.ts tests/roadmap-search-worker.test.ts tests/roadmap-place-identity.test.ts tests/roadmap-boundary-confidence.test.ts tests/roadmap-export.test.ts tests/roadmap-road-safety.test.ts tests/roadmap-nepal-api.test.ts tests/roadmap-ops.test.ts tests/roadmap-ics.test.ts tests/roadmap-valhalla.test.ts tests/roadmap-data-generation.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-offline.test.ts tests/roadmap-map-quality.test.ts",
+    "test:roadmap": "vitest run tests/roadmap-telemetry.test.ts tests/roadmap-provenance.test.ts tests/roadmap-bali.test.ts tests/roadmap-wariga.test.ts tests/roadmap-routing.test.ts tests/roadmap-search-worker.test.ts tests/roadmap-place-identity.test.ts tests/roadmap-boundary-confidence.test.ts tests/roadmap-export.test.ts tests/roadmap-road-safety.test.ts tests/roadmap-nepal-api.test.ts tests/roadmap-ops.test.ts tests/roadmap-ics.test.ts tests/roadmap-valhalla.test.ts tests/roadmap-data-generation.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-offline.test.ts tests/roadmap-map-quality.test.ts tests/roadmap-emergency.test.ts",
     "roadmap:phase1-report": "node --experimental-strip-types scripts/reports/phase1.ts",
     "advancetools:test": "node --test tools/advancetools/tests/*.test.mjs tests/advancetools-integration.test.mjs",
     "advancetools:build": "node tools/advancetools/scripts/build.mjs --repo",

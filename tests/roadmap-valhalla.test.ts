@@ -47,4 +47,11 @@ describe("first-party Nepal Valhalla deployment contract", () => {
     expect(promote).toContain("promote)");
     expect(promote).toContain("rollback)");
   });
+
+  it("switches route attribution to self-hosted Valhalla when that provider is selected", () => {
+    const build = read("scripts/explore/nepal/build-map.mjs");
+    expect(build).toContain('ROUTING_PROVIDER === "valhalla-first-party"');
+    expect(build).toContain("self-hosted <a href=\"https://valhalla.github.io/valhalla/\"");
+    expect(build).toContain("FOSSGIS</a> servers");
+  });
 });

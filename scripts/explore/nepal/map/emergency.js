@@ -1,6 +1,6 @@
 (function(global){
   "use strict";
-  var KINDS=["incident","alert","earthquake","fire","openspace","rain","river"],loaded=false,visible=false;
+  var KINDS=["incident","alert","earthquake","fire","openspace","rain","river"],loaded=false,visible=false,lastStatus=null;
 
   function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
   function coords(value){
@@ -52,15 +52,16 @@
     var r=await fetch("/api/nepal/v1/emergency?kind="+encodeURIComponent(kind)+"&limit=50",{credentials:"same-origin"});
     if(!r.ok) throw new Error(kind+" "+r.status);
     var payload=await r.json();
-    return records(payload).map(function(row,i){
+    var features=records(payload).map(function(row,i){
       var ll=coords(row);if(!ll)return null;
       var meta=stationMeta(row,kind);
       return {type:"Feature",geometry:{type:"Point",coordinates:ll},properties:{
         kind:kind,title:String(title(row,kind)).slice(0,140),when:String(when(row)).slice(0,80),
         status:meta.status||"",basin:meta.basin||"",value:meta.value||"",warning:meta.warning||"",danger:meta.danger||"",unit:meta.unit||"",
-        source:"BIPAD Portal",source_url:payload.source_url||"",index:i
+        source:"BIPAD Portal",source_url:payload.source_url||"",retrieved_at:payload.fetched_at||"",index:i
       }};
     }).filter(Boolean);
+    return {kind:kind,features:features,retrieved_at:payload.fetched_at||null};
   }
   function ensure(map){
     if(map.getSource("np-emergency"))return;
@@ -85,16 +86,30 @@
   async function load(map){
     ensure(map);
     var settled=await Promise.allSettled(KINDS.map(fetchKind));
-    var all=[];
-    settled.forEach(function(x){if(x.status==="fulfilled")all=all.concat(x.value);});
+    var all=[],successfulKinds=[],failedKinds=[],retrieved=[];
+    settled.forEach(function(x,i){
+      if(x.status==="fulfilled"){
+        all=all.concat(x.value.features);
+        successfulKinds.push(x.value.kind);
+        if(x.value.retrieved_at) retrieved.push(x.value.retrieved_at);
+      }else failedKinds.push(KINDS[i]);
+    });
     map.getSource("np-emergency").setData({type:"FeatureCollection",features:all});
-    loaded=true;return {features:all.length,failed:settled.filter(function(x){return x.status==="rejected";}).length};
+    var latest=retrieved.sort().slice(-1)[0]||null;
+    var age=latest?Math.max(0,Math.round((Date.now()-Date.parse(latest))/1000)):null;
+    loaded=true;
+    lastStatus={
+      features:all.length,total_feeds:KINDS.length,successful:successfulKinds.length,failed:failedKinds.length,
+      successful_kinds:successfulKinds,failed_kinds:failedKinds,retrieved_at:latest,retrieval_age_seconds:Number.isFinite(age)?age:null,
+      degraded:failedKinds.length>0,complete:failedKinds.length===0
+    };
+    return lastStatus;
   }
   async function setVisible(map,on){
     ensure(map);visible=!!on;
     map.setLayoutProperty("np-emergency-points","visibility",visible?"visible":"none");
     if(visible&&!loaded)return load(map);
-    return {features:map.querySourceFeatures("np-emergency").length,failed:0};
+    return lastStatus||{features:0,total_feeds:KINDS.length,successful:0,failed:0,successful_kinds:[],failed_kinds:[],retrieved_at:null,retrieval_age_seconds:null,degraded:false,complete:false};
   }
-  global.AafnaiEmergency={load:load,setVisible:setVisible,get visible(){return visible;}};
+  global.AafnaiEmergency={load:load,setVisible:setVisible,get status(){return lastStatus;},get visible(){return visible;}};
 })(typeof window!=="undefined"?window:globalThis);
