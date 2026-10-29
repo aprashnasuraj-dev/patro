@@ -714,6 +714,9 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
     : item.rule.type === "sasih"
       ? `${item.rule.lunar_day} Sasih ${item.rule.sasih}`
       : `${item.rule.rahina} pada ${item.rule.date} (occurrence-only)`;
+  const favoriteAction = ctx.flags.baliPwa && item.rule.type === "pawukon"
+    ? (() => { const next = nextPawukonPiodalan(item.rule, isoToJdn(today) + 1, 1)[0]; return `<div class="bali-day-actions"><button type="button" class="bali-save-pura" data-bali-save-pura="${esc(item.slug)}" data-bali-pura-name="${esc(item.name)}" data-bali-pura-locality="${esc(item.locality)}" data-bali-pura-next="${esc(jdnToIso(next))}">Simpan ke My Pura</button><a href="${BP}#my-bali">Lihat My Bali Calendar</a></div>`; })()
+    : "";
   return {
     status: 200, maxAge: 86400 * 7, indexable: true,
     html: page({
@@ -723,7 +726,7 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
       h1: esc(item.name), sub: esc(item.locality),
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/piodalan`, label: "Piodalan" }, { href: `${BP}/piodalan/${item.slug}`, label: item.name }],
       indexable: true,
-      body: `<section><h2>Aturan yang diterbitkan</h2><p class="big">${esc(ruleText)}</p><p>${ctx.flags.provenanceUi ? sourceBadge(item.source.status, item.source.authority) : ""} <a href="${esc(item.source.url)}" rel="nofollow noopener">${esc(item.source.authority)} ↗</a>${item.source.published_date ? ` · ${esc(item.source.published_date)}` : ""}</p>${item.note ? `<p class="note">${esc(item.note)}</p>` : ""}</section>${schedule}
+      body: `<section><h2>Aturan yang diterbitkan</h2><p class="big">${esc(ruleText)}</p><p>${ctx.flags.provenanceUi ? sourceBadge(item.source.status, item.source.authority) : ""} <a href="${esc(item.source.url)}" rel="nofollow noopener">${esc(item.source.authority)} ↗</a>${item.source.published_date ? ` · ${esc(item.source.published_date)}` : ""}</p>${item.note ? `<p class="note">${esc(item.note)}</p>` : ""}${favoriteAction}</section>${schedule}
 <section><h2>Batas kepercayaan data</h2><p>Halaman ini menyatakan kapan sumber menempatkan Piodalan, bukan menetapkan tata upacara. Pelaksanaan lokal tetap mengikuti desa, kala, patra serta arahan pengempon/pemangku/sulinggih.</p></section>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
