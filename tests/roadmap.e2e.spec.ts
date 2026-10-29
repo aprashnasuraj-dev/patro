@@ -31,5 +31,6 @@ test("Bali Calendar answers the current day without client JavaScript", async ({
 test("Bali Otonan exposes the sunrise boundary option", async ({ page }) => {
   await page.goto("/bali-calendar/otonan", { waitUntil: "domcontentloaded" });
   await expect(page.locator("body")).toContainText("matahari terbit");
-  await expect(page.locator('input[name="sebelum_subuh"]')).toBeVisible();
+  await expect(page.locator('select[name="waktu"]')).toBeVisible();
+  await expect(page.locator('select[name="waktu"] option[value="before"]')).toContainText("sebelum matahari terbit");
 });
