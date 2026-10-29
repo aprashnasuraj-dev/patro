@@ -316,6 +316,8 @@ const offlineSwJs = await readFile(join(HERE, "map/offline-sw.js"), "utf8");
 const exportCoreJs = await readFile(join(HERE, "map/export-core.mjs"), "utf8");
 const exportsJs = await readFile(join(HERE, "map/exports.mjs"), "utf8");
 const mobileSheetJs = await readFile(join(HERE, "map/mobile-sheet.js"), "utf8");
+const itineraryJs = await readFile(join(HERE, "map/itinerary.js"), "utf8");
+const correctionsUiJs = await readFile(join(HERE, "map/corrections-ui.js"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -329,10 +331,12 @@ await writeFile(join(OUT, "nepalmap/offline-sw.js"), offlineSwJs);
 await writeFile(join(OUT, "nepalmap/export-core.mjs"), exportCoreJs);
 await writeFile(join(OUT, "nepalmap/exports.mjs"), exportsJs);
 await writeFile(join(OUT, "nepalmap/mobile-sheet.js"), mobileSheetJs);
+await writeFile(join(OUT, "nepalmap/itinerary.js"), itineraryJs);
+await writeFile(join(OUT, "nepalmap/corrections-ui.js"), correctionsUiJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + mobileSheetJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + mobileSheetJs + itineraryJs + correctionsUiJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
@@ -413,6 +417,8 @@ ${ROADMAP_FLAGS.nepalTerrain ? `<script src="/nepalmap/terrain.js?v=${version}" 
 ${ROADMAP_FLAGS.nepalOfflinePacks ? `<script src="/nepalmap/offline.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalExports ? `<script type="module" src="/nepalmap/exports.mjs?v=${version}"></script>` : ""}
 ${ROADMAP_FLAGS.nepalMobileSheetV2 ? `<script src="/nepalmap/mobile-sheet.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalItinerary ? `<script src="/nepalmap/itinerary.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalCorrectionsUi ? `<script src="/nepalmap/corrections-ui.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
