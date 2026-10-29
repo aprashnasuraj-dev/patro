@@ -309,6 +309,32 @@ function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
   };
 }
 
+export type OtonanPossibility = {
+  assumption: "before" | "after";
+  birth_jdn: number;
+  saptawara: string;
+  pancawara: string;
+  wuku: string;
+  next_dates: string[];
+};
+
+export function otonanPossibilities(lahir: string, today: string): OtonanPossibility[] {
+  const p = parseIso(lahir);
+  if (!p || !inRange(lahir) || !parseIso(today)) return [];
+  return ([true, false] as const).map((beforeSunrise) => {
+    const birthJdn = gregorianToJdn(p.y, p.m, p.d) - (beforeSunrise ? 1 : 0);
+    const pw = pawukon(birthJdn);
+    return {
+      assumption: beforeSunrise ? "before" : "after",
+      birth_jdn: birthJdn,
+      saptawara: pw.saptawara,
+      pancawara: pw.pancawara,
+      wuku: pw.wuku.name,
+      next_dates: otonanDates(birthJdn, isoToJdn(today), 6).map(jdnToIso),
+    };
+  });
+}
+
 function otonanVariant(lahir: string, p: NonNullable<ReturnType<typeof parseIso>>, beforeSunrise: boolean, today: string, ctx: Ctx): string {
   const birthJdn = gregorianToJdn(p.y, p.m, p.d) - (beforeSunrise ? 1 : 0);
   const pw = pawukon(birthJdn);
