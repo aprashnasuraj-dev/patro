@@ -38,11 +38,11 @@ const WETON_NOTE = `<p class="note">Weton dan perhitungan neptu disajikan sebaga
 
 function inBaliRange(iso: string) {
   const y = Number(iso.slice(0, 4));
-  return y >= BALI_BALI_RANGE.minYear && y <= BALI_BALI_RANGE.maxYear;
+  return y >= BALI_RANGE.minYear && y <= BALI_RANGE.maxYear;
 }
 function inWetonRange(iso: string) {
   const y = Number(iso.slice(0, 4));
-  return y >= WETON_BALI_RANGE.minYear && y <= WETON_BALI_RANGE.maxYear;
+  return y >= WETON_RANGE.minYear && y <= WETON_RANGE.maxYear;
 }
 const indexableDate = (iso: string, today: string) => {
   const d = isoToJdn(iso) - isoToJdn(today);
@@ -891,7 +891,7 @@ function wetonToday(ctx: Ctx): Rendered {
 }
 
 function wetonDate(ctx: Ctx, iso: string): Rendered | null {
-  if (!parseIso(iso) || !inRange(iso)) return null;
+  if (!parseIso(iso) || !inWetonRange(iso)) return null;
   const today = todayIn(JAVA_TZ, ctx.now);
   const w = weton(isoToJdn(iso));
   // Birth dates are searched far into the past, so weton date pages are indexable from 1940 to the future window.
@@ -930,13 +930,13 @@ function wetonType(ctx: Ctx, ws: string): Rendered | null {
 
 function hitung(ctx: Ctx): Rendered {
   const lahir = ctx.url.searchParams.get("lahir") || "";
-  return parseIso(lahir) && inRange(lahir) ? { status: 302, location: `${WP}/${lahir}` } : { status: 302, location: WP };
+  return parseIso(lahir) && inWetonRange(lahir) ? { status: 302, location: `${WP}/${lahir}` } : { status: 302, location: WP };
 }
 
 function jodoh(ctx: Ctx): Rendered {
   const a = ctx.url.searchParams.get("a") || "", b = ctx.url.searchParams.get("b") || "";
   let result = "";
-  if (parseIso(a) && parseIso(b) && inRange(a) && inRange(b)) {
+  if (parseIso(a) && parseIso(b) && inWetonRange(a) && inWetonRange(b)) {
     const wa = weton(isoToJdn(a)), wb = weton(isoToJdn(b));
     const r = wetonJodoh(wa.neptu, wb.neptu);
     result = `<section><h2>Hasil menurut tradisi primbon Jawa</h2><table><tbody><tr><th>Pertama</th><td>${esc(wa.hari)} ${esc(wa.pasaran)} (neptu ${wa.neptu})</td></tr><tr><th>Kedua</th><td>${esc(wb.hari)} ${esc(wb.pasaran)} (neptu ${wb.neptu})</td></tr>
