@@ -8,6 +8,8 @@ import { INDEX_WINDOW } from "../config";
 import { pawukonRing, wetonGrid } from "../visuals";
 import { PAWUKON_HOLIDAYS, TUMPEK } from "../engines/pawukon";
 import type { Ctx, Rendered } from "../types";
+import { ROADMAP_FLAGS } from "../../roadmap/flags";
+import { sourceBadge, type SourceStatus } from "../../roadmap/provenance";
 
 const BP = "/bali-calendar";
 const WP = "/weton";
@@ -45,6 +47,113 @@ function sakaFacts(iso: string): string[] {
   if (pt?.tilem.includes(iso)) out.push("Tilem");
   for (const o of OTHER_BALI_DAYS[y] || []) if (o.date === iso) out.push(o.name);
   return out;
+}
+
+export type BaliSignal = { type: "rerainan" | "nyepi" | "purnama" | "tilem" | "wuku"; priority: number; source_status: SourceStatus; ref: string };
+export type DayCell = { gregorian_date: string; signals: BaliSignal[]; primary_signal: BaliSignal | null };
+
+function baliSignals(iso: string): BaliSignal[] {
+  const j = isoToJdn(iso), y = Number(iso.slice(0, 4));
+  const out: BaliSignal[] = [];
+  for (const name of pawukonEvents(j)) {
+    const major = /Galungan|Kuningan|Saraswati|Pagerwesi|Banyu Pinaruh|Tumpek/.test(name);
+    out.push({ type: "rerainan", priority: major ? 90 : 55, source_status: "calculated", ref: name });
+  }
+  const ny = NYEPI[y];
+  if (ny?.date === iso) out.push({ type: "nyepi", priority: 100, source_status: ny.status, ref: "Hari Raya Nyepi" });
+  const pt = PURNAMA_TILEM[y];
+  if (pt?.purnama.includes(iso)) out.push({ type: "purnama", priority: 75, source_status: "published", ref: "Purnama" });
+  if (pt?.tilem.includes(iso)) out.push({ type: "tilem", priority: 75, source_status: "published", ref: "Tilem" });
+  for (const o of OTHER_BALI_DAYS[y] || []) if (o.date === iso) out.push({ type: "rerainan", priority: 80, source_status: "published", ref: o.name });
+  const p = pawukon(j);
+  if (p.day % 7 === 0) out.push({ type: "wuku", priority: 30, source_status: "calculated", ref: `Wuku ${p.wuku.name}` });
+  return out.sort((a, b) => b.priority - a.priority || a.ref.localeCompare(b.ref));
+}
+
+export function baliMonthModel(year: number, month: number): DayCell[] {
+  if (year < RANGE.minYear || year > RANGE.maxYear || month < 1 || month > 12) return [];
+  const days = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  return Array.from({ length: days }, (_, i) => {
+    const iso = `${year}-${String(month).padStart(2, "0")}-${String(i + 1).padStart(2, "0")}`;
+    const signals = baliSignals(iso);
+    return { gregorian_date: iso, signals, primary_signal: signals[0] || null };
+  });
+}
+
+export function rerainanSearch(query: string, fromIso: string, limit = 40): { date: string; name: string; status: SourceStatus }[] {
+  const needle = query.trim().toLocaleLowerCase("id").replace(/^hari raya\s+/, "");
+  if (needle.length < 2 || !parseIso(fromIso)) return [];
+  const out: { date: string; name: string; status: SourceStatus }[] = [];
+  const start = isoToJdn(fromIso) - 210;
+  for (let j = start; j <= start + 630 && out.length < limit; j++) {
+    const iso = jdnToIso(j);
+    for (const signal of baliSignals(iso)) {
+      if (signal.type === "wuku") continue;
+      const normalized = signal.ref.toLocaleLowerCase("id").replace(/^hari raya\s+/, "");
+      if (normalized.includes(needle)) out.push({ date: iso, name: signal.ref, status: signal.source_status });
+      if (out.length >= limit) break;
+    }
+  }
+  return out;
+}
+
+function ymShift(year: number, month: number, delta: number): { year: number; month: number } {
+  const d = new Date(Date.UTC(year, month - 1 + delta, 1));
+  return { year: d.getUTCFullYear(), month: d.getUTCMonth() + 1 };
+}
+
+function baliMonth(ctx: Ctx, ym: string): Rendered | null {
+  const m = ym.match(/^(\d{4})-(\d{2})$/);
+  if (!m) return null;
+  const year = Number(m[1]), month = Number(m[2]);
+  const cells = baliMonthModel(year, month);
+  if (!cells.length) return null;
+  const firstDow = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
+  const blanks = Array.from({ length: firstDow }, () => "<div aria-hidden=\"true\"></div>").join("");
+  const body = cells.map((cell) => {
+    const d = Number(cell.gregorian_date.slice(-2));
+    const primary = cell.primary_signal;
+    const label = primary ? `<span>${esc(primary.ref)}</span>` : "";
+    const source = primary && ROADMAP_FLAGS.provenanceUi ? sourceBadge(primary.source_status, primary.ref) : "";
+    return `<div><a href="${BP}/${cell.gregorian_date}"><b>${d}</b></a>${label}${source}</div>`;
+  }).join("");
+  const prev = ymShift(year, month, -1), next = ymShift(year, month, 1);
+  const key = `${year}-${String(month).padStart(2, "0")}`;
+  return {
+    status: 200, maxAge: 86400, indexable: false,
+    html: page({
+      site: ctx.site, path: `${BP}/bulan/${key}`, lang: "id",
+      title: `Kalender Bali ${ID_MONTHS[month - 1]} ${year} — Pawukon, rerainan, purnama dan tilem`,
+      description: `Kalender Bali bulan ${ID_MONTHS[month - 1]} ${year}: Pawukon, rerainan, Purnama, Tilem dan hari penting dengan status sumber.`,
+      h1: `Kalender Bali ${ID_MONTHS[month - 1]} ${year}`,
+      sub: "Ringkasan bulanan; buka tanggal untuk Wewaran lengkap.",
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/bulan/${key}`, label: key }],
+      indexable: false,
+      body: `<section><div class="cal"><div class="h">Min</div><div class="h">Sen</div><div class="h">Sel</div><div class="h">Rab</div><div class="h">Kam</div><div class="h">Jum</div><div class="h">Sab</div>${blanks}${body}</div></section>
+<section><p><a href="${BP}/bulan/${prev.year}-${String(prev.month).padStart(2, "0")}">← bulan sebelumnya</a> · <a href="${BP}/bulan/${next.year}-${String(next.month).padStart(2, "0")}">bulan berikutnya →</a></p></section>`,
+      footer: BALI_NOTE,
+    }),
+  };
+}
+
+function baliRerainanSearch(ctx: Ctx): Rendered {
+  const q = (ctx.url.searchParams.get("q") || "").trim();
+  const today = todayIn(BALI_TZ, ctx.now);
+  const results = rerainanSearch(q, today);
+  const rows = results.map((r) => `<tr><td><a href="${BP}/${r.date}">${esc(idDate(r.date))}</a></td><td>${esc(r.name)}</td><td>${ROADMAP_FLAGS.provenanceUi ? sourceBadge(r.status, r.name) : esc(r.status)}</td></tr>`).join("");
+  return {
+    status: 200, maxAge: 3600, indexable: false,
+    html: page({
+      site: ctx.site, path: `${BP}/cari`, lang: "id",
+      title: "Cari rerainan Bali — Galungan, Kuningan, Tumpek dan hari penting",
+      description: "Cari tanggal rerainan Bali dari nama hari raya dan buka tanggal untuk rincian Pawukon.",
+      h1: "Cari rerainan Bali",
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/cari`, label: "Cari rerainan" }],
+      indexable: false,
+      body: `<section><form class="inline" method="get" action="${BP}/cari"><label>Nama rerainan<input name="q" value="${esc(q)}" placeholder="Galungan" required></label><button>Cari</button></form></section>${q ? `<section><h2>Hasil untuk “${esc(q)}”</h2>${rows ? `<table><tbody>${rows}</tbody></table>` : "<p>Tidak ditemukan dalam jendela pencarian.</p>"}</section>` : ""}`,
+      footer: BALI_NOTE,
+    }),
+  };
 }
 
 function pawukonTable(iso: string): string {
@@ -141,7 +250,7 @@ function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
       site: ctx.site, path: `${BP}/hari-raya/${gy}`, lang: "id", title: `Hari raya Hindu Bali ${gy}: Galungan, Kuningan, Saraswati, Pagerwesi, Tumpek, Nyepi`,
       description: `Jadwal hari raya Bali ${gy} menurut Pawukon: Galungan, Kuningan, Saraswati, Pagerwesi, Banyu Pinaruh dan semua Tumpek${ny ? `, serta Nyepi ${idDate(ny.date)}` : ""}.`,
       h1: `Hari raya Bali ${gy}`, crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/hari-raya/${gy}`, label: `Hari raya ${gy}` }], indexable: ix,
-      body: `<section><h2>Nyepi</h2><p>${ny ? `${esc(idDate(ny.date))} <span class="note">(${ny.status === "official" ? "resmi" : ny.status === "published" ? "Kalender Bali" : "perkiraan"} — ${esc(ny.source)})</span>` : "Belum diterbitkan."}</p></section>
+      body: `<section><h2>Nyepi</h2><p>${ny ? `${esc(idDate(ny.date))} <span class="note">(${ny.status === "official" ? "resmi" : ny.status === "published" ? "Kalender Bali" : "perkiraan"} — ${esc(ny.source)})</span>${ROADMAP_FLAGS.provenanceUi ? " " + sourceBadge(ny.status, ny.source) : ""}` : "Belum diterbitkan."}</p></section>
 <section><h2>Hari raya Pawukon</h2><table><tbody>${rows}</tbody></table><p class="note">${gy > 2026 ? "Dihitung dengan rumus Pawukon; cocokkan dengan Kalender Bali tahun ini setelah terbit." : "Dicocokkan dengan Kalender Bali yang diterbitkan."}</p></section>
 <section><h2>Purnama dan Tilem</h2>${pt ? `<p><b>Purnama:</b> ${pt.purnama.map((d) => esc(d.slice(5))).join(", ")}</p><p><b>Tilem:</b> ${pt.tilem.map((d) => esc(d.slice(5))).join(", ")}</p><p class="note">Sumber: ${esc(pt.source)}</p>` : `<p>Tabel purnama/tilem ${gy} belum dimasukkan; tanggal ini mengikuti Kalender Bali yang diterbitkan.</p>`}</section>
 <section><p><a href="${BP}/hari-raya/${gy - 1}">← ${gy - 1}</a> · <a href="${BP}/hari-raya/${gy + 1}">${gy + 1} →</a></p></section>`, footer: BALI_NOTE,
@@ -201,7 +310,9 @@ function wukuPage(ctx: Ctx, wslug: string): Rendered | null {
 
 export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
+  if (ROADMAP_FLAGS.baliRerainanSearch && rest.length === 1 && rest[0] === "cari") return baliRerainanSearch(ctx);
   if (rest.length === 1 && rest[0] === "otonan") return otonan(ctx);
+  if (ROADMAP_FLAGS.baliMonthGrid && rest.length === 2 && rest[0] === "bulan") return baliMonth(ctx, rest[1]);
   if (rest.length === 1 && /^\d{4}-\d{2}-\d{2}$/.test(rest[0])) return baliDate(ctx, rest[0]);
   if (rest.length === 2 && rest[0] === "hari-raya" && /^\d{4}$/.test(rest[1])) return baliHolidays(ctx, Number(rest[1]));
   if (rest.length === 2 && rest[0] === "wuku") return wukuPage(ctx, rest[1]);
@@ -321,6 +432,15 @@ export function wetonRoute(ctx: Ctx, rest: string[]): Rendered | null {
 
 export function baliUrls(now: Date): string[] {
   const out = [BP, `${BP}/otonan`, ...WUKU.map((w) => `${BP}/wuku/${slug(w)}`)];
+  if (ROADMAP_FLAGS.baliRerainanSearch) out.push(`${BP}/cari`);
+  if (ROADMAP_FLAGS.baliMonthGrid) {
+    const t0 = todayIn(BALI_TZ, now);
+    const y = Number(t0.slice(0, 4)), m = Number(t0.slice(5, 7));
+    for (let d = -12; d <= 24; d++) {
+      const shifted = ymShift(y, m, d);
+      out.push(`${BP}/bulan/${shifted.year}-${String(shifted.month).padStart(2, "0")}`);
+    }
+  }
   for (let y = HOLIDAY_YEARS.min; y <= HOLIDAY_YEARS.max; y++) out.push(`${BP}/hari-raya/${y}`);
   const t = isoToJdn(todayIn(BALI_TZ, now));
   for (let j = t - INDEX_WINDOW.pastDays; j <= t + INDEX_WINDOW.futureDays; j++) out.push(`${BP}/${jdnToIso(j)}`);
