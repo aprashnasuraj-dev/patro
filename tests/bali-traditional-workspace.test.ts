@@ -23,10 +23,44 @@ describe("Bali traditional calendar workspace",()=>{
     const golden=cycle.map((p)=>[
       p.day,p.wuku.name,p.dayInWuku,p.saptawara,p.pancawara,p.triwara,p.sadwara,p.caturwara,p.astawara,p.sangawara,p.dasawara,p.dwiwara,p.ekawara||"-",p.urip,
     ].join("|")).join("\n");
-    expect(fnv1a(golden)).toBe(0x826577c7);
+    expect(fnv1a(golden)).toBe(0xc058b8ed);
     expect(cycle[0].wuku.name).toBe("Sinta");
     expect(cycle[209].wuku.name).toBe("Watugunung");
     for(let w=0;w<30;w++)expect(new Set(cycle.slice(w*7,w*7+7).map((p)=>p.wuku.name)).size).toBe(1);
+  });
+
+  it("matches independent published Pawukon rows including Dasawara",()=>{
+    const rows=[
+      [1,"-","Menga","Pasah","Sri","Paing","Tungleh","Redite","Sri","Dangu","Sri"],
+      [2,"Luang","Pepet","Beteng","Laba","Pon","Aryang","Soma","Indra","Dangu","Pati"],
+      [3,"Luang","Pepet","Kajeng","Jaya","Wage","Urukung","Anggara","Guru","Dangu","Raja"],
+      [4,"Luang","Pepet","Pasah","Menala","Kliwon","Paniron","Buda","Yama","Dangu","Manuh"],
+      [5,"Luang","Pepet","Beteng","Sri","Umanis","Was","Wraspati","Ludra","Jangur","Duka"],
+      [6,"Luang","Pepet","Kajeng","Laba","Paing","Maulu","Sukra","Brahma","Gigis","Manuh"],
+      [7,"-","Menga","Pasah","Jaya","Pon","Tungleh","Saniscara","Kala","Nohan","Manusa"],
+      [8,"Luang","Pepet","Beteng","Menala","Wage","Aryang","Redite","Uma","Ogan","Raksasa"],
+      [9,"-","Menga","Kajeng","Sri","Kliwon","Urukung","Soma","Sri","Erangan","Suka"],
+      [64,"Luang","Pepet","Pasah","Menala","Kliwon","Paniron","Redite","Uma","Urungan","Duka"],
+      [65,"Luang","Pepet","Beteng","Sri","Umanis","Was","Soma","Sri","Tulus","Raksasa"],
+      [70,"-","Menga","Pasah","Laba","Umanis","Paniron","Saniscara","Brahma","Nohan","Sri"],
+      [71,"-","Menga","Beteng","Jaya","Paing","Was","Redite","Kala","Ogan","Sri"],
+      [72,"Luang","Pepet","Kajeng","Jaya","Pon","Maulu","Soma","Kala","Erangan","Pati"],
+      [73,"Luang","Pepet","Pasah","Jaya","Wage","Tungleh","Anggara","Kala","Urungan","Raja"],
+      [74,"Luang","Pepet","Beteng","Menala","Kliwon","Aryang","Buda","Uma","Tulus","Manuh"],
+      [75,"Luang","Pepet","Kajeng","Sri","Umanis","Urukung","Wraspati","Sri","Dadi","Duka"],
+      [76,"Luang","Pepet","Pasah","Laba","Paing","Paniron","Sukra","Indra","Dangu","Manuh"],
+      [77,"-","Menga","Beteng","Jaya","Pon","Was","Saniscara","Guru","Jangur","Manusa"],
+      [78,"Luang","Pepet","Kajeng","Menala","Wage","Maulu","Redite","Yama","Gigis","Raksasa"],
+      [185,"-","Menga","Beteng","Jaya","Umanis","Was","Anggara","Kala","Jangur","Dewa"],
+      [204,"Luang","Pepet","Kajeng","Laba","Kliwon","Maulu","Redite","Indra","Gigis","Duka"],
+      [209,"-","Menga","Beteng","Jaya","Kliwon","Was","Sukra","Kala","Tulus","Sri"],
+      [210,"-","Menga","Kajeng","Menala","Umanis","Maulu","Saniscara","Uma","Dadi","Sri"],
+    ] as const;
+    for(const [n,eka,dwi,tri,catur,panca,sad,sapta,asta,sanga,dasa] of rows){
+      const p=pawukonCycle()[n-1];
+      expect([p.ekawara||"-",p.dwiwara,p.triwara,p.caturwara,p.pancawara,p.sadwara,p.saptawara,p.astawara,p.sangawara,p.dasawara],String(n))
+        .toEqual([eka,dwi,tri,catur,panca,sad,sapta,asta,sanga,dasa]);
+    }
   });
 
   it("preserves the exceptional repeated Astawara and Sangawara positions",()=>{
