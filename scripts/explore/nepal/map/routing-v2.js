@@ -18,9 +18,12 @@
   PublicFossgisProvider.prototype.route = async function (req, signal) {
     var profiles = { car: ["routed-car", "driving"], bike: ["routed-bike", "driving"], foot: ["routed-foot", "driving"] };
     var profile = profiles[req.mode] || profiles.car;
-    var a = req.from, b = req.to;
-    var url = this.baseUrl + profile[0] + "/route/v1/" + profile[1] + "/" +
-      a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) +
+    var points = Array.isArray(req.points) && req.points.length >= 2
+      ? req.points
+      : [req.from].concat(Array.isArray(req.stops) ? req.stops : []).concat([req.to]).filter(Boolean);
+    if (points.length < 2) throw new RoutingError("invalid_request", "routing needs at least two points");
+    var coords = points.map(function (p) { return p.lng.toFixed(6) + "," + p.lat.toFixed(6); }).join(";");
+    var url = this.baseUrl + profile[0] + "/route/v1/" + profile[1] + "/" + coords +
       "?overview=full&geometries=geojson&steps=true&alternatives=false";
     var response;
     try { response = await fetch(url, { signal: signal }); }
@@ -39,7 +42,8 @@
       legs: route.legs || [],
       warnings: [],
       confidence: null,
-      provenance: { provider: this.name, base_url: this.baseUrl, policy: "https://routing.openstreetmap.de/about.html" }
+      provenance: { provider: this.name, base_url: this.baseUrl, policy: "https://routing.openstreetmap.de/about.html" },
+      waypoint_count: points.length
     };
   };
 
@@ -121,11 +125,39 @@
     }
   };
 
+  function detourClass(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) return "unknown";
+    if (seconds <= 600) return "10m";
+    if (seconds <= 1800) return "30m";
+    return "over30m";
+  }
+
+  Client.prototype.detour = async function (baseRequest, baseRoute, candidate) {
+    if (!baseRoute || !Number.isFinite(baseRoute.duration)) throw new RoutingError("no_baseline", "detour scoring requires a timed base route");
+    var via = await this.route({
+      mode: baseRequest.mode,
+      points: [baseRequest.from].concat(baseRequest.stops || []).concat([candidate, baseRequest.to]),
+    });
+    var extraSeconds = Math.max(0, (via.duration || 0) - baseRoute.duration);
+    var extraDistance = Math.max(0, (via.distance || 0) - baseRoute.distance);
+    return {
+      extra_seconds: extraSeconds,
+      extra_distance_m: extraDistance,
+      bucket: detourClass(extraSeconds),
+      via_route: via,
+    };
+  };
+
+  Client.prototype.routeWithStops = function (req) {
+    return this.route({ mode: req.mode, points: [req.from].concat(req.stops || []).concat([req.to]) });
+  };
+
   global.AafnaiRoutingV2 = {
     RoutingError: RoutingError,
     PublicFossgisProvider: PublicFossgisProvider,
     TokenBucket: TokenBucket,
     CircuitBreaker: CircuitBreaker,
+    detourClass: detourClass,
     Client: Client
   };
 })(typeof window !== "undefined" ? window : globalThis);
