@@ -146,7 +146,7 @@ async function emergency(request:Request,env:Env):Promise<Response>{
     const data=await upstream.json();
     return json({kind,source:"BIPAD Portal",source_url:target.toString(),fetched_at:new Date().toISOString(),data},200,"public, max-age=120, s-maxage=300");
   }catch(error){
-    logDependency({product:"nepalmap",dependency:"bipad",operation:kind,outcome:error instanceof DOMException&&error.name==="AbortError"?"timeout":"error",duration_ms:performance.now()-started});
+    logDependency({product:"nepalmap",dependency:"bipad",operation:kind,outcome:(error as any)?.name==="AbortError"?"timeout":"error",duration_ms:performance.now()-started});
     return json({error:"bipad_unavailable",kind,message:error instanceof Error?error.message:String(error)},502,"no-store");
   }finally{clearTimeout(timer);}
 }
