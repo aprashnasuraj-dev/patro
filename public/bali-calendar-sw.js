@@ -1,5 +1,5 @@
-const VERSION="bali-calendar-pwa-v3";
-const CACHE="bali-calendar-shell-v3";
+const VERSION="bali-calendar-pwa-v4";
+const CACHE="bali-calendar-shell-v4";
 const SHELL=[
   "/bali-calendar",
   "/bali-calendar/palelintangan",
@@ -20,6 +20,10 @@ self.addEventListener("activate",event=>{event.waitUntil((async()=>{const names=
 self.addEventListener("message",event=>{
   if(event.data?.type==="SKIP_WAITING")self.skipWaiting();
   if(event.data?.type==="WARM_BALI_PWA")event.waitUntil(warm().then(()=>event.source?.postMessage({type:"BALI_PWA_READY",revision:VERSION})).catch(()=>event.source?.postMessage({type:"BALI_PWA_RETRY",revision:VERSION})));
+  if(event.data?.type==="WARM_BALI_URLS"&&Array.isArray(event.data.urls)){
+    const urls=[...new Set(event.data.urls.map(String).filter(url=>/^\/bali-calendar(?:\/|\?|$)/.test(url)).slice(0,30))];
+    event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(urls.map(url=>putIfOk(cache,url)))));
+  }
 });
 self.addEventListener("fetch",event=>{
   const request=event.request;if(request.method!=="GET")return;
