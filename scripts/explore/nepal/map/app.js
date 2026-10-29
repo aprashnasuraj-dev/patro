@@ -581,7 +581,9 @@
     var routePromise;
     var ctrl = null, timer = null;
     if (routingV2) {
-      routePromise = routingV2.route({ from: a, to: b, mode: state.mode });
+      routePromise = (CFG.flags && CFG.flags.nepalDetourRouting && state.stops.length)
+        ? routingV2.routeWithStops({ from: a, to: b, stops: state.stops, mode: state.mode })
+        : routingV2.route({ from: a, to: b, mode: state.mode });
     } else {
       var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
       ctrl = window.AbortController ? new AbortController() : null;
@@ -620,7 +622,9 @@
     sum.hidden = false;
     sum.innerHTML = '<div class="np-sum"><b>' + fmtKm(dist) + "</b>" + (straight ? " in a straight line" : "") +
       (route.duration ? ' · about <b>' + fmtTime(route.duration * (state.mode === "car" ? 1.25 : 1)) + "</b> " + esc(modeWord) : "") + "</div>" +
-      '<div class="np-route-ends"><span class="np-dot a">A</span> ' + esc(state.from.label) + '<br><span class="np-dot b">B</span> ' + esc(state.to.label) + "</div>" +
+      '<div class="np-route-ends"><span class="np-dot a">A</span> ' + esc(state.from.label) +
+      (state.stops.length ? state.stops.map(function (p, i) { return '<br><span class="np-dot via">' + (i + 1) + '</span> ' + esc(p.label); }).join("") : "") +
+      '<br><span class="np-dot b">B</span> ' + esc(state.to.label) + "</div>" +
       (route.duration && state.mode === "car" ? '<p class="np-note">Hill roads are slow and conditions change with the season; the time includes a margin but check locally before you travel.</p>' : "") +
       (route.duration && state.mode === "foot" ? '<p class="np-note">Walking time on flat ground. On trekking trails, add time for climbs: roughly 1 hour per 300–400 m of ascent.</p>' : "") +
       '<div class="np-actions"><a class="np-btn" target="_blank" rel="noopener" href="' + esc(googleUrl()) + '">Navigate in Google Maps</a>' +
@@ -826,7 +830,7 @@
         document.querySelectorAll(".np-modes [data-mode]").forEach(function (b) { b.classList.toggle("on", b === md); });
         computeRoute();
       }
-      if (e.target.id === "np-route-clear") { setPoint("from", null, true); setPoint("to", null, true); clearRoute(); computeRoute(); }
+      if (e.target.id === "np-route-clear") { state.stops = []; setPoint("from", null, true); setPoint("to", null, true); clearRoute(); computeRoute(); }
       if (e.target.id === "np-route-share") {
         var btn = e.target;
         writeUrl();
