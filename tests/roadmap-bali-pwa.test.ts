@@ -41,7 +41,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     const onPage:any=baliRoute(on,["2026-10-29"]);
     expect(onPage?.html).toContain("data-bali-save-date");
     expect(onPage?.html).toContain("data-bali-share-date");
-    const js=read("public/bali-calendar/pwa.js");
+    const js=read("public/bali-calendar/pwa.js"),sw=read("public/bali-calendar-sw.js");
     expect(js).toContain("navigator.share");
     expect(js).toContain("Sejak kunjungan terakhir");
     expect(js).toContain("Yang terdekat untukmu");
