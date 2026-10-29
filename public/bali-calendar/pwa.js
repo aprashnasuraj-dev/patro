@@ -92,8 +92,8 @@ function node(tag,cls,text){var el=document.createElement(tag);if(cls)el.classNa
 function button(text,action){var b=node("button","bali-memory-remove",text);b.type="button";b.dataset.action=action;return b}
 
 async function initMemory(){
-  var hub=document.getElementById("my-bali"),saveDayButtons=[].slice.call(document.querySelectorAll("[data-bali-save-date]")),shareDayButtons=[].slice.call(document.querySelectorAll("[data-bali-share-date]"));
-  if(!hub&&!saveDayButtons.length&&!shareDayButtons.length)return;
+  var hub=document.getElementById("my-bali"),saveDayButtons=[].slice.call(document.querySelectorAll("[data-bali-save-date]")),shareDayButtons=[].slice.call(document.querySelectorAll("[data-bali-share-date]")),savePuraButtons=[].slice.call(document.querySelectorAll("[data-bali-save-pura]"));
+  if(!hub&&!saveDayButtons.length&&!shareDayButtons.length&&!savePuraButtons.length)return;
   var db=await openMemoryDb(),state=await loadState(db),recentEvents=hub?safeJson(hub.dataset.baliRecent||"[]",[]):[];
   var today=hub&&hub.dataset.baliToday?hub.dataset.baliToday:(location.pathname.match(/\/(\d{4}-\d{2}-\d{2})$/)||[])[1]||new Date().toISOString().slice(0,10);
   var peopleList=document.getElementById("bali-people-list"),dateList=document.getElementById("bali-saved-dates"),puraList=document.getElementById("bali-pura-list"),summary=document.getElementById("bali-return-summary");
@@ -192,6 +192,13 @@ async function initMemory(){
       if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(shareUrl);b.textContent="Tautan disalin";return}
       var ta=document.createElement("textarea");ta.value=shareUrl;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();b.textContent="Tautan disalin";
     }catch(e){if(e&&e.name==="AbortError")return;b.textContent="Bagikan tautan"}
+  })});
+  savePuraButtons.forEach(function(b){b.addEventListener("click",async function(){
+    var slug=b.dataset.baliSavePura;if(!slug)return;
+    var existing=state.puras.find(function(x){return x.slug===slug}),entry={slug:slug,name:b.dataset.baliPuraName||slug,locality:b.dataset.baliPuraLocality||"Bali",nextDate:b.dataset.baliPuraNext||""};
+    if(existing){existing.name=entry.name;existing.locality=entry.locality;existing.nextDate=entry.nextDate}
+    else state.puras.push({id:id(),slug:entry.slug,name:entry.name,locality:entry.locality,nextDate:entry.nextDate,createdAt:Date.now()});
+    b.textContent="Tersimpan di My Pura";b.disabled=true;await persist();
   })});
   var exp=document.getElementById("bali-export-memory");
   if(exp)exp.addEventListener("click",function(){
