@@ -28,8 +28,9 @@ test("My Bali persists family Otonan and saved dates across reloads", async ({ p
 
   const puraSelect = page.locator('#bali-pura-form select[name="slug"]');
   await expect(puraSelect).toBeVisible();
-  const firstPura = await puraSelect.locator('option:not([value=""])').first().getAttribute("value");
+  const firstPura = await puraSelect.locator('option:not([value="pura-luhur-batukaru"]):not([value=""])').first().getAttribute("value");
   expect(firstPura).toBeTruthy();
+  expect(firstPura).not.toBe("pura-luhur-batukaru");
   await puraSelect.selectOption(firstPura!);
   await page.locator("#bali-pura-form button[type=submit]").click();
   await expect(page.locator("#bali-pura-list article")).toHaveCount(1);
