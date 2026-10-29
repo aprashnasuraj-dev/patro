@@ -27,4 +27,28 @@ describe("Nepal routing v2 core", () => {
     client.setProvider(b);
     expect((await client.route({ from:{lat:1,lng:1}, to:{lat:2,lng:2}, mode:"car" })).distance).toBe(2);
   });
+
+  it("classifies exact routed detour thresholds without geometric guesses", async () => {
+    const R = await api();
+    expect(R.detourClass(0)).toBe("10m");
+    expect(R.detourClass(600)).toBe("10m");
+    expect(R.detourClass(601)).toBe("30m");
+    expect(R.detourClass(1800)).toBe("30m");
+    expect(R.detourClass(1801)).toBe("over30m");
+    expect(R.detourClass(Number.NaN)).toBe("unknown");
+  });
+
+  it("inserts detour candidate at the requested ordered stop index", async () => {
+    const R = await api();
+    const calls:any[] = [];
+    const provider = { route: async (req:any) => {
+      calls.push(req);
+      return { geometry: { type: "LineString", coordinates: [] }, distance: 1200, duration: 900, legs: [], warnings: [], confidence: null, provenance: { provider: "mock" } };
+    }};
+    const client = new R.Client(provider, { rateLimit: { capacity: 10, refillMs: 1 } });
+    const from={lat:1,lng:1,label:"A"}, first={lat:2,lng:2,label:"First"}, second={lat:3,lng:3,label:"Second"}, to={lat:4,lng:4,label:"B"}, candidate={lat:2.5,lng:2.5,label:"Candidate"};
+    await client.detour({from,to,stops:[first,second],mode:"car",insertAt:1},{distance:1000,duration:600},candidate);
+    expect(calls).toHaveLength(1);
+    expect(calls[0].points.map((p:any)=>p.label)).toEqual(["A","First","Candidate","Second","B"]);
+  });
 });
