@@ -1,4 +1,4 @@
-const VERSION = "aafnai-pwa-v19";
+const VERSION = "aafnai-pwa-v20";
 const SHELL_CACHE = "aafnai-shell-v14";
 const CALENDAR_CACHE = "aafnai-calendar-v4";
 const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
@@ -18,7 +18,7 @@ const CORE = [
   "/samudaya", "/nepal-sambat/mandala", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png", "/apple-touch-icon.png"
 ];
-const INSTALL_CORE = ["/", "/today", "/manifest.webmanifest", "/favicon.svg"];
+const INSTALL_CORE = ["/", "/today", "/manifest.webmanifest", "/favicon.svg"];\nconst BALI_PWA_CORE = ["/bali-calendar", "/bali-calendar/manifest.webmanifest", "/bali-calendar/pwa.js", "/icon-192.png", "/icon-512.png", "/maskable-512.png", "/apple-touch-icon.png"];
 const LANGUAGE_TOOL_ASSETS = [
   "/nepali-tools/index.html", "/nepali-tools/styles.css", "/nepali-tools/app.mjs", "/nepali-tools/worker.mjs",
   "/nepali-tools/core/roman.mjs", "/nepali-tools/core/converter.mjs", "/nepali-tools/core/suggestions.mjs", "/nepali-tools/core/aliases.mjs",
@@ -123,6 +123,11 @@ async function warmLanguageTools(cache) {
 async function warmInstallShell() {
   const shell = await caches.open(SHELL_CACHE);
   await Promise.allSettled(INSTALL_CORE.map((url) => putIfOk(shell, new Request(url, { credentials:"same-origin" }))));
+}
+async function warmBaliPwa() {
+  const shell = await caches.open(SHELL_CACHE);
+  const results = await Promise.all(BALI_PWA_CORE.map((url) => putIfOk(shell, new Request(url, { credentials:"same-origin", cache:"reload" }))));
+  if (results.some((response) => !response || !response.ok)) throw new Error("bali_pwa_warm_incomplete");
 }
 // Install-time preparation downloads executable assets only from this build.
 // A failed asset remains retryable on the next installed-app launch or online event.
@@ -289,7 +294,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => !keep.has(key) && (key.startsWith("patro-shell-") || key.startsWith("mero-patro-shell-") || key.startsWith("meropatro-pwa-") || key.startsWith("aafnai-pwa-") || key.startsWith("aafnai-shell-") || key.startsWith("aafnai-calendar-") || key.startsWith("aafnai-public-data-") || key.startsWith("आफ्नै पात्रो-pwa-"))).map((key) => caches.delete(key)))).then(() => self.clients.claim()).then(()=>maybeMorningGreeting(false)));
 });
 self.addEventListener("message", (event) => {
-  if (event.data?.type === "WARM_LANGUAGE_TOOLS") event.waitUntil(caches.open(SHELL_CACHE).then(warmLanguageTools));
+  if (event.data?.type === "WARM_LANGUAGE_TOOLS") event.waitUntil(caches.open(SHELL_CACHE).then(warmLanguageTools));\n  if (event.data?.type === "WARM_BALI_PWA") event.waitUntil(warmBaliPwa().then(() => event.source?.postMessage({type:"BALI_PWA_READY",revision:VERSION})).catch(() => event.source?.postMessage({type:"BALI_PWA_RETRY",revision:VERSION})));
   if (event.data?.type === "WARM_FEATURE_ASSETS") event.waitUntil(warmFeatureAssets().then(() => event.source?.postMessage({type:"FEATURE_ASSETS_READY",revision:VERSION})).catch(() => event.source?.postMessage({type:"FEATURE_ASSETS_RETRY",revision:VERSION})));
   if (event.data?.type === "WARM_OFFLINE") event.waitUntil(warmOffline());
   if (event.data?.type === "WARM_CALENDAR") event.waitUntil(warmCalendar());

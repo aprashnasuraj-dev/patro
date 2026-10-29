@@ -27,7 +27,7 @@
       "!/assets/*",
       "!/manifest.webmanifest",
       "!/calendar/festivals.ics",
-      "!/pwa-install-early.js",
+      "!/pwa-install-early.js",\n      "!/bali-calendar/manifest.webmanifest",\n      "!/bali-calendar/pwa.js",
       "!/sw.js",
       "!/patro-boot-recovery.js",
       "!/icon-192.png",
@@ -136,7 +136,7 @@
       "NEPAL_CORRECTIONS_ENABLED": "0",
       "NEPAL_EMERGENCY_ENABLED": "0",
       "NEPAL_ROUTING_ENABLED": "0",
-      "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1"
+      "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1",\n    "BALI_PWA": "0",\n      "BALI_PWA": "0"
     },
     "d1_databases": [
       {
