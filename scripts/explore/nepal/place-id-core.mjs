@@ -1,4 +1,4 @@
-import { randomBytes } from "node:crypto";
+import { createHash, randomBytes } from "node:crypto";
 
 const CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
 
@@ -19,13 +19,21 @@ export function createUlid(nowMs = Date.now(), bytes = randomBytes(10)) {
   return encodeBase32(BigInt(Math.floor(nowMs)), 10) + encodeBase32(random, 16);
 }
 
+export function deterministicPlaceId(sourceId) {
+  const source = String(sourceId || "");
+  if (!/^[nwr]\d+$/.test(source)) throw new Error("invalid OSM source id: " + source);
+  const digest = createHash("sha256").update("aafnaipatro:nepal:osm:" + source).digest();
+  let value = 0n;
+  for (let i = 0; i < 16; i++) value = (value << 8n) | BigInt(digest[i]);
+  return encodeBase32(value, 26);
+}
+
 export function emptyPlaceIdMap() {
   return { version: 1, entries: {} };
 }
 
 export function reconcilePlaceIds(existing, sourceIds, options = {}) {
   const now = options.now || new Date();
-  const random = options.randomBytes || (() => randomBytes(10));
   const date = now.toISOString().slice(0, 10);
   const map = existing && existing.version === 1 ? structuredClone(existing) : emptyPlaceIdMap();
   const unique = [...new Set(sourceIds.map(String).filter(Boolean))].sort();
@@ -36,7 +44,7 @@ export function reconcilePlaceIds(existing, sourceIds, options = {}) {
       continue;
     }
     map.entries[sourceId] = {
-      place_id: createUlid(now.getTime(), random()),
+      place_id: deterministicPlaceId(sourceId),
       first_seen: date,
       last_seen: date,
     };
