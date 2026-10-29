@@ -83,6 +83,16 @@ const ROADMAP_FLAGS = {
   nepalVisitorMode: process.env.NEPALMAP_VISITOR_MODE === "1",
   nepalBoundaryConfidence: process.env.NEPALMAP_BOUNDARY_CONFIDENCE === "1",
   nepalDetourRouting: process.env.NEPALMAP_DETOUR_ROUTING === "1",
+  nepalRoadSafety: process.env.NEPALMAP_ROAD_SAFETY === "1",
+  nepalTerrain: process.env.NEPALMAP_TERRAIN === "1",
+  nepalOfflinePacks: process.env.NEPALMAP_OFFLINE_PACKS === "1",
+  nepalExports: process.env.NEPALMAP_EXPORTS === "1",
+  nepalPoiPages: process.env.NEPALMAP_POI_PAGES === "1",
+  nepalMobileSheetV2: process.env.NEPALMAP_MOBILE_SHEET_V2 === "1",
+  nepalEmergency: process.env.NEPALMAP_EMERGENCY === "1",
+  nepalItinerary: process.env.NEPALMAP_ITINERARY === "1",
+  nepalCorrectionsUi: process.env.NEPALMAP_CORRECTIONS_UI === "1",
+  nepalPmtiles: process.env.NEPALMAP_PMTILES === "1",
 };
 
 let stablePlaceIds = null;
@@ -244,7 +254,7 @@ const wardLink = (r) => {
 
 function shell({ path, title, description, h1, intro, preset, content, schema }) {
   const canonical = SITE + path;
-  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(preset ? { preset } : {}) };
+  const terrain = ROADMAP_FLAGS.nepalTerrain ? {\n    tilejson: process.env.NEPALMAP_DEM_TILEJSON || "",\n    attribution: process.env.NEPALMAP_DEM_ATTRIBUTION || "Elevation source must be configured",\n  } : null;\n  if (ROADMAP_FLAGS.nepalTerrain && !terrain.tilejson) throw new Error("NEPALMAP_TERRAIN=1 requires NEPALMAP_DEM_TILEJSON.");\n  const pmtiles = ROADMAP_FLAGS.nepalPmtiles ? { places: "/data/nepalmap/v2/places.pmtiles", roads: process.env.NEPALMAP_PMTILES_ROADS === "1" ? "/data/nepalmap/v2/roads.pmtiles" : null } : null;\n  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(terrain ? { terrain } : {}), ...(pmtiles ? { pmtiles } : {}), ...(preset ? { preset } : {}) };
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
