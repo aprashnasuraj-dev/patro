@@ -572,7 +572,14 @@ function padewasanPage(ctx: Ctx): Rendered {
   const model = padewasanReferenceModel(tanggal, sasih, "penanggal")!;
   const p = model.pawukon;
   const marriage = model.pewiwahan.saptawara;
-  const sasihHtml = model.sasih ? `<table><tbody><tr><th>Sasih</th><td>${model.sasih.sasih}. ${esc(model.sasih.name)}</td></tr><tr><th>Dewa Yajña</th><td>${model.sasih.dewa_yajna ? "Ayu menurut referensi Sasih" : "Tidak ditandai Ayu pada daftar ringkas sumber"}</td></tr><tr><th>Bhuta Yajña</th><td>${model.sasih.bhuta_yajna ? "Ayu menurut referensi Sasih" : "Tidak ditandai Ayu pada daftar ringkas sumber"}</td></tr><tr><th>Pitra Yajña</th><td>${model.sasih.pitra_yajna ? "Ayu menurut referensi Sasih" : "Tidak ditandai Ayu pada daftar ringkas sumber"}</td></tr><tr><th>Memukur</th><td>${model.sasih.memukur ? "Kedasa disebut baik untuk memukur" : "Tidak ditandai"}</td></tr></tbody></table>` : '<p class="note">Sasih belum dipilih, jadi lapisan Sasih sengaja tidak dinilai.</p>';
+  const sasihHtml = model.sasih ? `<table><tbody><tr><th>Sasih</th><td>${model.sasih.sasih}. ${esc(model.sasih.name)}</td></tr>
+<tr><th>Dewa Yajña</th><td>${model.sasih.dewa_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
+<tr><th>Pitra Yajña</th><td>${model.sasih.pitra_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
+<tr><th>Manusa Yajña</th><td>${model.sasih.manusa_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
+<tr><th>Bhuta Yajña</th><td>${model.sasih.bhuta_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
+<tr><th>Wiwaha</th><td>${model.sasih.wiwaha_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
+<tr><th>Memukur</th><td>${model.sasih.memukur ? "Kedasa disebut baik untuk memukur" : "Tidak ditandai khusus"}</td></tr></tbody></table>
+<p class="note">Sumber matriks Sasih: ${esc(model.sasih.source.name)}.</p>` : '<p class="note">Sasih belum dipilih, jadi lapisan Sasih sengaja tidak dinilai.</p>';
   const lunarText = model.lunar.evaluated
     ? [model.lunar.is_purnama ? "Purnama" : "", model.lunar.is_tilem ? "Tilem" : "", model.lunar.is_purwani_purnama ? "Purwani Purnama" : ""].filter(Boolean).join(", ") || "Bukan Purnama/Tilem/Purwani Purnama pada tabel terbitan tahun ini"
     : "Tabel Purnama/Tilem terbitan untuk tahun ini belum tersedia di dataset; faktor lunar tidak dinilai.";
