@@ -302,6 +302,7 @@ function nextNamedPawukonEvent(fromIso: string, test: (name: string) => boolean)
 function baliDayBody(ctx: Ctx, iso: string, today: string): string {
   const j = isoToJdn(iso);
   const p = pawukon(j);
+  const pal = palelintanganMatrix().find((x) => x.saptawara === p.saptawara && x.pancawara === p.pancawara)!;
   const events = [...pawukonEvents(j), ...sakaFacts(iso)];
   const piodalan = ctx.flags.baliPiodalan ? piodalanForDate(iso) : [];
   const wariga = ctx.flags.baliPadewasan ? padewasanReferenceModel(iso, null, "penanggal") : null;
@@ -321,6 +322,7 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
   return `<section class="bali-day-snapshot"><div class="bali-snapshot-head"><div><span class="bali-face-kicker">Hari Bali</span><h2>${esc(p.combination)}</h2><p>${esc(idDate(iso))} · hari ${p.cycleDay}/${PAWUKON_CYCLE_DAYS} · hari ${p.dayInWuku}/7 dalam Wuku ${esc(p.wuku.name)}</p></div><a class="bali-secondary" href="${BP}/wuku/${slug(p.wuku.name)}">Wuku ${esc(p.wuku.name)}</a></div>
 <div class="bali-event-row">${eventHtml}</div>${personalActions}</section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
+<section class="bali-lintang-day"><h2>Palelintangan tanggal dipilih</h2><div class="bali-wariga-strip"><div><span>Lintang</span><strong>${esc(pal.lintang)}</strong></div><div><span>Sapta × Panca</span><strong>${esc(p.saptawara)} × ${esc(p.pancawara)}</strong></div><div><span>Patron Saptawara</span><strong>${esc(pal.patron)}</strong></div><div><span>Urip gabungan</span><strong>${pal.urip}</strong></div></div><p><a href="${BP}/palelintangan?tanggal=${encodeURIComponent(iso)}">Buka posisi ini di matriks 35 lintang →</a></p></section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
 ${astronomicalLunarContext(iso)}
 ${wariga ? `<section><h2>Ingkel & konteks Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan · Saptawara</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pitra restriction terpicu: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada Pitra restriction eksplisit yang terpicu pada rule set sumber saat ini."} <a href="${BP}/padewasan?tanggal=${iso}">Buka rincian Padewasan bersumber →</a></p></section>` : ""}
