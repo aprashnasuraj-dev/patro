@@ -3,7 +3,7 @@ import { esc } from "../html";
 import { NYEPI, OTHER_BALI_DAYS, PURNAMA_TILEM } from "../data/bali-saka";
 import { PANCAWARA, PAWUKON_CYCLE_DAYS, SAPTAWARA, SAPTAWARA_AKSARA, WUKU, palelintanganMatrix, pawukon, pawukonEvents } from "../engines/pawukon";
 import { annualSasihReadiness } from "../data/bali-annual-sources";
-import { BALI_PIODALAN, nextPawukonPiodalan } from "../data/bali-piodalan";
+import { BALI_PIODALAN } from "../data/bali-piodalan";
 import { PEWIWAHAN_SAPTAWARA, WARIGA_DAUH_SOURCE, merthaYoga, pitraImmediateRestrictions } from "../engines/wariga";
 import type { Ctx } from "../types";
 
@@ -74,10 +74,13 @@ function horizon(iso:string){
 }
 
 function puraOptions(iso:string){
- const from=isoToJdn(iso)+1;
+ const start=isoToJdn(iso),nextByRule=new Map<string,string>();
+ for(let off=1;off<=PAWUKON_CYCLE_DAYS;off++){
+   const j=start+off,p=pawukon(j),key=p.saptawara+"|"+p.pancawara+"|"+p.wuku.name;
+   if(!nextByRule.has(key))nextByRule.set(key,jdnToIso(j));
+ }
  return BALI_PIODALAN.filter(r=>r.rule.type==="pawukon").map(r=>{
-   const j=nextPawukonPiodalan(r.rule as any,from,1)[0];
-   const next=Number.isFinite(j)?jdnToIso(j):"";
+   const key=r.rule.type==="pawukon"?r.rule.saptawara+"|"+r.rule.pancawara+"|"+r.rule.wuku:"",next=nextByRule.get(key)||"";
    return '<option value="'+esc(r.slug)+'" data-name="'+esc(r.name)+'" data-locality="'+esc(r.locality)+'" data-next="'+esc(next)+'">'+esc(r.name)+' · '+esc(r.locality)+(next?' · '+next:'')+'</option>';
  }).join("");
 }
