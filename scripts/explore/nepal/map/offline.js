@@ -43,12 +43,13 @@
     memo[slug]=await r.json();
     return memo[slug];
   }
-  async function categoryFallback(file,slug){
+  async function dataFallback(file,slug){
     if(!slug) return null;
     var p=await pack(slug);
     if(!p) return null;
+    if(String(file).replace(/\?.*$/,"")==="admin.json") return p.admin||null;
     var cat=String(file).replace(/\.json(?:\?.*)?$/,"");
     return p.categories&&p.categories[cat]||null;
   }
-  global.AafnaiOffline={register:register,index:index,saveDistrict:saveDistrict,pack:pack,categoryFallback:categoryFallback};
+  global.AafnaiOffline={register:register,index:index,saveDistrict:saveDistrict,pack:pack,dataFallback:dataFallback};
 })(typeof window!=="undefined"?window:globalThis);
