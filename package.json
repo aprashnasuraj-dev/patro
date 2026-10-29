@@ -75,7 +75,7 @@
     "seo:growth": "node scripts/prerender-growth.mjs",
     "test:growth-pages": "vitest run tests/growth-pages.test.ts",
     "test:explore": "vitest run tests/explore-engine.test.ts tests/nepalmap.test.ts",
-    "test:worldcal": "vitest run tests/worldcal.test.ts",
+    "test:worldcal": "vitest run tests/worldcal.test.ts",\n    "test:roadmap": "vitest run tests/roadmap-telemetry.test.ts tests/roadmap-provenance.test.ts",\n    "roadmap:phase1-report": "node --experimental-strip-types scripts/reports/phase1.ts",
     "advancetools:test": "node --test tools/advancetools/tests/*.test.mjs tests/advancetools-integration.test.mjs",
     "advancetools:build": "node tools/advancetools/scripts/build.mjs --repo",
     "nepalmap:build": "node scripts/explore/nepal/build-map.mjs",
