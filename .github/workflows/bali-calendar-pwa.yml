@@ -3,7 +3,7 @@ name: "Bali Calendar PWA evidence"
 on:
   workflow_dispatch: {}
   push:
-    branches: [wip/bali-native-pwa-continuation, feat/bali-traditional-workspace-v2]
+    branches: [wip/bali-native-pwa-continuation, feat/bali-traditional-workspace-v2, feat/bali-release-hardening]
     paths:
       - ".github/workflows/bali-calendar-pwa.yml"
       - "worker/worldcal/**"
