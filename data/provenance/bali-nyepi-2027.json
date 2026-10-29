@@ -1,0 +1,19 @@
+{
+  "dataset_id":"bali-nyepi-2027",
+  "product":"bali",
+  "source":{
+    "name":"Kementerian Agama RI — Bimas Hindu",
+    "url":"https://bimashindu.kemenag.go.id/berita-pusat/pemerintah-resmi-tetapkan-libur-nasional-dan-cuti-bersama-2027-melalui-skb-3-menteri-0ue5r",
+    "id_namespace":"government-notice",
+    "license":"Government publication — reuse terms UNVERIFIED",
+    "license_url":"https://bimashindu.kemenag.go.id/",
+    "attribution":"Kementerian Agama RI, Bimas Hindu"
+  },
+  "snapshot_date":"2026-09-15",
+  "build_date":"2026-10-29",
+  "transformation_version":"bali-saka-v1",
+  "status":"official",
+  "confidence":1,
+  "correction_route":{"url":"/corrections","email":null},
+  "notes":"Official source states Nyepi 2027 falls on 8 March 2027. Source-text reuse terms still require human confirmation; the product stores the factual date and source reference."
+}
