@@ -2,7 +2,7 @@ import { addDaysIso, gregorianToJdn, isoToJdn, jdnToIso, parseIso, todayIn } fro
 import { esc, page } from "../html";
 import { NYEPI, OTHER_BALI_DAYS, PURNAMA_TILEM } from "../data/bali-saka";
 import {
-  ASTAWARA, CATURWARA, DASAWARA, DWIWARA, HARI_JAWA, JODOH, NEPTU_HARI, NEPTU_PASARAN, otonanDates, PANCAWARA, PASARAN, PAWUKON_CYCLE_DAYS, palelintanganMatrix, pawukon, pawukonDay, pawukonEvents, pawukonHolidaysInYear, SADWARA, SANGAWARA, SAPTAWARA, TRIWARA, WUKU, weton, wetonJodoh,
+  ASTAWARA, CATURWARA, DASAWARA, DWIWARA, HARI_JAWA, JODOH, NEPTU_HARI, NEPTU_PASARAN, otonanDates, PANCAWARA, PASARAN, PAWUKON_CYCLE_DAYS, palelintanganMatrix, pawukon, pawukonDay, pawukonEvents, pawukonHolidaysInYear, SADWARA, SANGAWARA, SAPTAWARA, SAPTAWARA_AKSARA, TRIWARA, WUKU, weton, wetonJodoh,
 } from "../engines/pawukon";
 import { INDEX_WINDOW } from "../config";
 import { pawukonRing, wetonGrid } from "../visuals";
@@ -368,7 +368,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
       const current = p.saptawara === sapta && p.pancawara === panca;
       return `<details class="pal-cell${current ? " is-current" : ""}"><summary><span>${esc(cell.lintang)}</span><small>${cell.urip}</small></summary><p><b>${esc(sapta)} ${esc(panca)}</b></p><p>Lintang: <b>${esc(cell.lintang)}</b></p><p>Patron Saptawara: ${esc(cell.patron)}</p><p>Urip ${cell.saptawaraUrip} + ${cell.pancawaraUrip} = <b>${cell.urip}</b>.</p>${current ? `<p><b>Ini kombinasi hari ini.</b></p>` : ""}</details>`;
     }).join("");
-    return `<div class="pal-row-head">${esc(sapta)}</div>${cells}`;
+    return `<div class="pal-row-head"><strong>${esc(sapta)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[sapta])}</small></div>${cells}`;
   }).join("");
   return {
     status: 200, maxAge: "midnight", tz: BALI_TZ, indexable: false,
