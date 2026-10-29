@@ -46,7 +46,8 @@ function initInstall(){
   sync();capture();
 }
 
-function blankState(){return{key:"main",version:1,people:[],savedDates:[],lastVisit:null}}
+function blankState(){return{key:"main",version:1,people:[],savedDates:[],puras:[],lastVisit:null}}
+function normalizeState(x){if(!x||!Array.isArray(x.people)||!Array.isArray(x.savedDates))return blankState();if(!Array.isArray(x.puras))x.puras=[];return x}
 function openMemoryDb(){
   if(!("indexedDB" in window))return Promise.resolve(null);
   return new Promise(function(resolve){
@@ -56,13 +57,13 @@ function openMemoryDb(){
     req.onerror=function(){resolve(null)};
   });
 }
-function fallbackLoad(){var x=safeJson(safeStorageGet(FALLBACK_KEY)||"",null);return x&&Array.isArray(x.people)&&Array.isArray(x.savedDates)?x:blankState()}
+function fallbackLoad(){return normalizeState(safeJson(safeStorageGet(FALLBACK_KEY)||"",null))}
 function fallbackSave(state){safeStorageSet(FALLBACK_KEY,JSON.stringify(state));return Promise.resolve()}
 async function loadState(db){
   if(!db)return fallbackLoad();
   return new Promise(function(resolve){
     var tx=db.transaction(STORE,"readonly"),req=tx.objectStore(STORE).get("main");
-    req.onsuccess=function(){var x=req.result;resolve(x&&Array.isArray(x.people)&&Array.isArray(x.savedDates)?x:blankState())};
+    req.onsuccess=function(){resolve(normalizeState(req.result))};
     req.onerror=function(){resolve(fallbackLoad())};
   });
 }
@@ -94,7 +95,7 @@ async function initMemory(){
   if(!hub&&!saveDayButtons.length)return;
   var db=await openMemoryDb(),state=await loadState(db);
   var today=hub&&hub.dataset.baliToday?hub.dataset.baliToday:(location.pathname.match(/\/(\d{4}-\d{2}-\d{2})$/)||[])[1]||new Date().toISOString().slice(0,10);
-  var peopleList=document.getElementById("bali-people-list"),dateList=document.getElementById("bali-saved-dates"),summary=document.getElementById("bali-return-summary");
+  var peopleList=document.getElementById("bali-people-list"),dateList=document.getElementById("bali-saved-dates"),puraList=document.getElementById("bali-pura-list"),summary=document.getElementById("bali-return-summary");
 
   async function persist(){await saveState(db,state);render()}
   function render(){
@@ -102,7 +103,7 @@ async function initMemory(){
       summary.innerHTML="";
       var parts=[];
       if(state.lastVisit){var diff=Math.max(0,Math.floor((Date.now()-state.lastVisit)/86400000));parts.push(diff===0?"Dibuka lagi hari ini":"Terakhir dibuka "+diff+" hari lalu")}
-      parts.push(state.people.length+" orang tersimpan");parts.push(state.savedDates.length+" hari tersimpan");
+      parts.push(state.people.length+" orang tersimpan");parts.push(state.savedDates.length+" hari tersimpan");parts.push(state.puras.length+" Pura tersimpan");
       var soon=[];
       state.people.forEach(function(p){nextOton(p.birthDate,p.boundary,today).forEach(function(d){var du=daysUntil(d,today);if(du!==null)soon.push({name:p.name,date:d,days:du})})});
       soon.sort(function(a,b){return a.days-b.days});
@@ -132,6 +133,18 @@ async function initMemory(){
         head.appendChild(info);var del=button("Hapus","date");del.dataset.id=x.id;head.appendChild(del);card.appendChild(head);dateList.appendChild(card);
       });
     }
+    if(puraList){
+      puraList.innerHTML="";
+      if(!state.puras.length)puraList.appendChild(node("p","muted","Belum ada Pura tersimpan."));
+      state.puras.slice().sort(function(a,b){return String(a.nextDate||"9999").localeCompare(String(b.nextDate||"9999"))}).forEach(function(x){
+        var option=document.querySelector('#bali-pura-form option[value="'+CSS.escape(x.slug)+'"]');
+        if(option){x.name=option.dataset.name||x.name;x.locality=option.dataset.locality||x.locality;x.nextDate=option.dataset.next||x.nextDate}
+        var card=node("article","bali-memory-card"),head=node("div","bali-memory-card-head"),info=node("div","");
+        var a=node("a","",x.name||x.slug);a.href=ROOT+"/piodalan/"+encodeURIComponent(x.slug);info.appendChild(a);
+        info.appendChild(node("small","",(x.locality||"Bali")+(x.nextDate?" · berikutnya "+x.nextDate:"")));
+        head.appendChild(info);var del=button("Hapus","pura");del.dataset.id=x.id;head.appendChild(del);card.appendChild(head);puraList.appendChild(card);
+      });
+    }
   }
 
   var personForm=document.getElementById("bali-person-form");
@@ -149,10 +162,19 @@ async function initMemory(){
     if(existing)existing.label=label||existing.label;else state.savedDates.push({id:id(),date:date,label:label||"Hari Bali tersimpan",createdAt:Date.now()});
     await persist();
   });
+  var puraForm=document.getElementById("bali-pura-form");
+  if(puraForm)puraForm.addEventListener("submit",async function(e){
+    e.preventDefault();var select=puraForm.querySelector('select[name="slug"]'),option=select&&select.selectedOptions&&select.selectedOptions[0];if(!option||!option.value)return;
+    var slug=option.value,existing=state.puras.find(function(x){return x.slug===slug});
+    if(existing){existing.name=option.dataset.name||existing.name;existing.locality=option.dataset.locality||existing.locality;existing.nextDate=option.dataset.next||existing.nextDate}
+    else state.puras.push({id:id(),slug:slug,name:option.dataset.name||option.textContent||slug,locality:option.dataset.locality||"Bali",nextDate:option.dataset.next||"",createdAt:Date.now()});
+    select.value="";await persist();
+  });
   document.addEventListener("click",async function(e){
     var target=e.target&&e.target.closest?e.target.closest("[data-action]"):null;if(!target)return;
     if(target.dataset.action==="person")state.people=state.people.filter(function(x){return x.id!==target.dataset.id});
     if(target.dataset.action==="date")state.savedDates=state.savedDates.filter(function(x){return x.id!==target.dataset.id});
+    if(target.dataset.action==="pura")state.puras=state.puras.filter(function(x){return x.id!==target.dataset.id});
     await persist();
   });
   saveDayButtons.forEach(function(b){b.addEventListener("click",async function(){
@@ -163,19 +185,20 @@ async function initMemory(){
   })});
   var exp=document.getElementById("bali-export-memory");
   if(exp)exp.addEventListener("click",function(){
-    var payload={format:"aafnai-bali-calendar",version:1,exportedAt:new Date().toISOString(),people:state.people,savedDates:state.savedDates};
+    var payload={format:"aafnai-bali-calendar",version:1,exportedAt:new Date().toISOString(),people:state.people,savedDates:state.savedDates,puras:state.puras};
     var blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="aafnai-bali-calendar-backup.json";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
   });
   var imp=document.getElementById("bali-import-memory");
   if(imp)imp.addEventListener("change",function(){
     var file=imp.files&&imp.files[0];if(!file)return;var reader=new FileReader();
-    reader.onload=async function(){var x=safeJson(String(reader.result||""),null);if(!x||x.format!=="aafnai-bali-calendar"||!Array.isArray(x.people)||!Array.isArray(x.savedDates)){alert("Backup My Bali tidak valid.");return}
+    reader.onload=async function(){var x=safeJson(String(reader.result||""),null);if(!x||x.format!=="aafnai-bali-calendar"||!Array.isArray(x.people)||!Array.isArray(x.savedDates)){alert("Backup My Bali tidak valid.");return}if(!Array.isArray(x.puras))x.puras=[]
       var byId={};state.people.concat(x.people).forEach(function(v){if(v&&v.id)byId[v.id]=v});state.people=Object.keys(byId).map(function(k){return byId[k]});
-      byId={};state.savedDates.concat(x.savedDates).forEach(function(v){if(v&&v.id)byId[v.id]=v});state.savedDates=Object.keys(byId).map(function(k){return byId[k]});await persist();imp.value="";
+      byId={};state.savedDates.concat(x.savedDates).forEach(function(v){if(v&&v.id)byId[v.id]=v});state.savedDates=Object.keys(byId).map(function(k){return byId[k]});
+      byId={};state.puras.concat(x.puras).forEach(function(v){if(v&&v.id)byId[v.id]=v});state.puras=Object.keys(byId).map(function(k){return byId[k]});await persist();imp.value="";
     };reader.readAsText(file);
   });
   var clear=document.getElementById("bali-clear-memory");
-  if(clear)clear.addEventListener("click",async function(){if(confirm("Hapus semua orang dan tanggal dari My Bali Calendar di browser ini?")){state=blankState();await persist()}});
+  if(clear)clear.addEventListener("click",async function(){if(confirm("Hapus semua orang, tanggal dan Pura dari My Bali Calendar di browser ini?")){state=blankState();await persist()}});
   render();state.lastVisit=Date.now();await saveState(db,state);
 }
 
