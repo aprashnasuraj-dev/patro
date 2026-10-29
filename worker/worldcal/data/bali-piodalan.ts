@@ -42,6 +42,12 @@ const TUMBAKBAYUH_SOURCE = {
   status: "official" as const,
 };
 
+const MANUKAYA_LET_SOURCE = {
+  authority: "JIDHAT / Desa Adat Manukaya Let — Awig-Awig",
+  url: "https://jidhat.baliprov.go.id/storage/awig/1bfjwXCXOg1WSWjDMqVlm7aNNaH0zAGkxyZCeR5M.pdf",
+  status: "official" as const,
+};
+
 export const BALI_PIODALAN: PiodalanRecord[] = [
   {
     slug: "pura-luhur-pucak-padang-dawa",
@@ -438,7 +444,77 @@ export const BALI_PIODALAN: PiodalanRecord[] = [
     source:{...TUMBAKBAYUH_SOURCE,locator:"Lepihan 2, p. 121"},
   },
 
+  // Desa Adat Manukaya Let, Tampaksiring, Gianyar — explicit Piodalan schedule in the official Awig-Awig.
+  {
+    slug:"pura-dalem-manukaya-let", name:"Pura Dalem", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Tilem",sasih:"Ketiga"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+  },
+  {
+    slug:"pura-puseh-manukaya-let", name:"Pura Puseh", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kenam"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+    note:"Source spelling 'kenem' is normalized to canonical Sasih Kenam.",
+  },
+  {
+    slug:"pura-bale-agung-manukaya-let", name:"Pura Bale Agung", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kapat"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+  },
+  {
+    slug:"pura-pucak-manukaya-let", name:"Pura Pucak", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kapat"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+  },
+  {
+    slug:"pura-penataran-paiguman-manukaya-let", name:"Pura Penataran Paiguman", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kenam"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+    note:"Source spelling 'kenem' is normalized to canonical Sasih Kenam.",
+  },
+  {
+    slug:"pura-catur-manukaya-let", name:"Pura Catur", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"pawukon",saptawara:"Wraspati",pancawara:"Kliwon",wuku:"Menail"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+  },
+  {
+    slug:"pura-anyar-manukaya-let", name:"Pura Anyar", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"pawukon",saptawara:"Saniscara",pancawara:"Kliwon",wuku:"Wayang"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+    note:"The Awig-Awig explicitly states Tumpek Wayang; this is represented as Saniscara Kliwon Wayang.",
+  },
+  {
+    slug:"pura-ulun-suwi-badugul-manukaya-let", name:"Pura Ulun Suwi / Badugul", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kasa"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+  },
+  {
+    slug:"pura-jati-tatag-manukaya-let", name:"Pura Jati Tatag", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kewulu"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+    note:"Source spelling 'Kaulu' is normalized to canonical Sasih Kewulu.",
+  },
+  {
+    slug:"pura-gunung-ebek-bantas-manukaya-let", name:"Pura Gunung Ebek Bantas", locality:"Desa Adat Manukaya Let, Tampaksiring, Gianyar, Bali",
+    rule:{type:"sasih",lunar_day:"Purnama",sasih:"Kedasa"},
+    source:{...MANUKAYA_LET_SOURCE,locator:"Pawos 31(2)"},
+  },
+
   // Official occurrence evidence that does not, by itself, establish a recurrence rule.
+  {
+    slug: "padmasana-rs-mata-bali-mandara",
+    name: "Padmasana Rumah Sakit Mata Bali Mandara",
+    locality: "Denpasar, Bali",
+    rule: { type: "occurrence", date: "2026-07-29", rahina: "Purnama Sasih Karo" },
+    source: {
+      authority: "Rumah Sakit Mata Bali Mandara, Pemerintah Provinsi Bali",
+      url: "https://rsmatabalimandara.baliprov.go.id/pelaksanaan-piodalan-padmasana-rumah-sakit-mata-bali-mandara-purnama-sasih-karo-hari-rabu-tanggal-29-juli-2026",
+      published_date: "2026-07-29",
+      status: "official",
+    },
+    known_occurrences: ["2026-07-29"],
+    note: "Occurrence-only: the official hospital record establishes this 2026 Piodalan date and Sasih, but is not used to infer a recurring rule.",
+  },
   {
     slug: "pura-gede-pemayun-banyuning",
     name: "Pura Gede Pemayun Banyuning",
@@ -464,6 +540,7 @@ const TRUSTED_PIODALAN_HOSTS = new Set([
   "www.baliprov.go.id","baliprov.go.id","bapenda.baliprov.go.id","bmc.baliprov.go.id",
   "rsjiwa.baliprov.go.id","bali.kemenag.go.id","bali.bpk.go.id","dpma.baliprov.go.id",
   "jidhat.baliprov.go.id","disbud.badungkab.go.id","buleleng.bulelengkab.go.id","dpmddukcapil.baliprov.go.id",
+  "rsmatabalimandara.baliprov.go.id",
 ]);
 
 export function validatePiodalanRegistry(records: PiodalanRecord[] = BALI_PIODALAN) {
