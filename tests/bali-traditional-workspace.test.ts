@@ -148,6 +148,8 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("ᬭᬤᬶᬢᬾ");
     expect(r.html).toContain("ᬰᬦᬶᬰ᭄ᬘᬭ");
     expect(r.html).toContain('id="my-bali"');
+    expect(r.html).toContain('id="bali-pura-form"');
+    expect(r.html).toContain("Piodalan Pawukon");
     expect(r.html).toContain("7 hari");
     expect(r.html).toContain("35 hari");
     expect(r.html).toContain("210 hari");
