@@ -15,6 +15,7 @@ import { BALI_PIODALAN, matchesPiodalanRule, nextPawukonPiodalan } from "../data
 import { annualSasihReadiness, sasihGregorianDate } from "../data/bali-annual-sources";
 import { astaDauh, merthaYoga, pancaDauh, PEWIWAHAN_SAPTAWARA, pitraImmediateRestrictions, sasihReference, WARIGA_DAUH_SOURCE } from "../engines/wariga";
 import { sunriseSunset } from "../../../src/patro-tools/core/astro";
+import { moonDay } from "../engines/moon";
 import { renderTraditionalWorkspace } from "./bali-traditional";
 
 const BP = "/bali-calendar";
@@ -267,6 +268,25 @@ function piodalanForDate(iso: string) {
   });
 }
 
+function lunarPhaseLabel(angle: number): string {
+  const a = ((angle % 360) + 360) % 360;
+  if (a < 22.5 || a >= 337.5) return "dekat Bulan Baru";
+  if (a < 67.5) return "sabit membesar";
+  if (a < 112.5) return "kuartal pertama";
+  if (a < 157.5) return "cembung membesar";
+  if (a < 202.5) return "dekat Bulan Purnama";
+  if (a < 247.5) return "cembung mengecil";
+  if (a < 292.5) return "kuartal terakhir";
+  return "sabit mengecil";
+}
+
+function astronomicalLunarContext(iso: string): string {
+  const m = moonDay(iso, BALI_TZ);
+  const quarter = m.events.filter((e) => ["new-moon", "first-quarter", "full-moon", "last-quarter"].includes(e.kind));
+  const names: Record<string,string> = { "new-moon":"Bulan Baru", "first-quarter":"Kuartal pertama", "full-moon":"Bulan Purnama astronomis", "last-quarter":"Kuartal terakhir" };
+  return `<section class="bali-astro-lunar"><h2>Konteks Bulan astronomis</h2><div class="bali-wariga-strip"><div><span>Fase pada tengah hari Bali</span><strong>${esc(lunarPhaseLabel(m.phaseAngle))}</strong></div><div><span>Iluminasi</span><strong>${Math.round(m.illumination*100)}%</strong></div><div><span>Sudut fase</span><strong>${m.phaseAngle.toFixed(1)}°</strong></div><div><span>Peristiwa astronomis hari ini</span><strong>${quarter.length ? esc(quarter.map((e)=>names[e.kind]||e.kind).join(", ")) : "tidak ada kuartal tepat"}</strong></div></div><p class="note">Ini adalah lapisan astronomis yang dihitung untuk Asia/Makassar. Ia membantu memberi konteks pada tahun historis/masa depan, tetapi <b>tidak menggantikan penetapan Purnama, Tilem, Sasih atau hari upacara Bali yang diterbitkan</b>.</p></section>`;
+}
+
 function nextNamedPawukonEvent(fromIso: string, test: (name: string) => boolean) {
   const startJdn = isoToJdn(fromIso);
   for (let offset = 1; offset <= PAWUKON_CYCLE_DAYS; offset++) {
@@ -297,6 +317,7 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
 <div class="bali-event-row">${eventHtml}</div><div class="bali-day-actions"><button type="button" class="bali-save-date" data-bali-save-date="${esc(iso)}" data-bali-save-label="${esc(p.combination)}">Simpan tanggal ini</button><a href="${BP}#my-bali">Buka My Bali Calendar</a></div></section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
+${astronomicalLunarContext(iso)}
 ${wariga ? `<section><h2>Ingkel & konteks Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan · Saptawara</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pitra restriction terpicu: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada Pitra restriction eksplisit yang terpicu pada rule set sumber saat ini."} <a href="${BP}/padewasan?tanggal=${iso}">Buka rincian Padewasan bersumber →</a></p></section>` : ""}
 <section><h2>Navigasi tradisional</h2><div class="bali-traditional-nav">
 <a href="${BP}/${addDaysIso(iso, -7)}">← 1 Wuku</a><a href="${BP}/${addDaysIso(iso, 7)}">+1 Wuku →</a>
