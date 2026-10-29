@@ -139,7 +139,7 @@
       "NEPAL_EMERGENCY_ENABLED": "0",
       "NEPAL_ROUTING_ENABLED": "0",
       "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1",
-      "BALI_PWA": "0"
+      "BALI_PWA": "1"
     },
     "d1_databases": [
       {
@@ -164,7 +164,7 @@
     "NEPAL_EMERGENCY_ENABLED": "0",
     "NEPAL_ROUTING_ENABLED": "0",
     "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1",
-    "BALI_PWA": "0"
+    "BALI_PWA": "1"
   },
   "triggers": {
     "crons": [
