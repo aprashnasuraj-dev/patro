@@ -336,11 +336,11 @@ ${nextKajeng ? `<a href="${BP}/${nextKajeng.date}">Kajeng Kliwon berikutnya</a>`
 type BaliMode = "pawukon" | "palelintangan" | "sasih" | "gregorian";
 
 function baliModeNav(active: BaliMode, iso: string): string {
-  const month = iso.slice(0, 7);
+  const month = iso.slice(0, 7), q = "?tanggal=" + encodeURIComponent(iso);
   const items: Array<[BaliMode, string, string]> = [
-    ["pawukon", BP, "Pawukon / Tika"],
-    ["palelintangan", `${BP}/palelintangan`, "Palelintangan"],
-    ["sasih", `${BP}/sasih-saka`, "Sasih / Saka"],
+    ["pawukon", active === "pawukon" ? BP : `${BP}/${iso}`, "Pawukon / Tika"],
+    ["palelintangan", `${BP}/palelintangan${q}`, "Palelintangan"],
+    ["sasih", `${BP}/sasih-saka${q}`, "Sasih / Saka"],
     ["gregorian", `${BP}/bulan/${month}`, "Gregorian"],
   ];
   return `<nav class="bali-mode-nav" aria-label="Mode Kalender Bali">${items.map(([key, href, label]) =>
@@ -386,8 +386,13 @@ function baliAppFace(ctx: Ctx, iso: string): string {
   return renderTraditionalWorkspace(ctx, iso);
 }
 
+function selectedBaliDate(ctx: Ctx): string {
+  const q = ctx.url.searchParams.get("tanggal") || "";
+  return parseIso(q) && inBaliRange(q) ? q : todayIn(BALI_TZ, ctx.now);
+}
+
 function baliPalelintanganPage(ctx: Ctx): Rendered {
-  const today = todayIn(BALI_TZ, ctx.now);
+  const today = selectedBaliDate(ctx);
   const p = pawukon(isoToJdn(today));
   const matrix = palelintanganMatrix();
   const headers = `<div class="pal-corner">Sapta × Panca</div>${PANCAWARA.map((name) => `<div class="pal-head">${esc(name)}</div>`).join("")}`;
@@ -395,7 +400,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
     const cells = PANCAWARA.map((panca) => {
       const cell = matrix.find((x) => x.saptawara === sapta && x.pancawara === panca)!;
       const current = p.saptawara === sapta && p.pancawara === panca;
-      return `<details class="pal-cell${current ? " is-current" : ""}"><summary><span>${esc(cell.lintang)}</span><small>${cell.urip}</small></summary><p><b>${esc(sapta)} ${esc(panca)}</b></p><p>Lintang: <b>${esc(cell.lintang)}</b></p><p>Patron Saptawara: ${esc(cell.patron)}</p><p>Urip ${cell.saptawaraUrip} + ${cell.pancawaraUrip} = <b>${cell.urip}</b>.</p>${current ? `<p><b>Ini kombinasi hari ini.</b></p>` : ""}</details>`;
+      return `<details class="pal-cell${current ? " is-current" : ""}"><summary><span>${esc(cell.lintang)}</span><small>${cell.urip}</small></summary><p><b>${esc(sapta)} ${esc(panca)}</b></p><p>Lintang: <b>${esc(cell.lintang)}</b></p><p>Patron Saptawara: ${esc(cell.patron)}</p><p>Urip ${cell.saptawaraUrip} + ${cell.pancawaraUrip} = <b>${cell.urip}</b>.</p>${current ? `<p><b>Ini kombinasi tanggal dipilih.</b></p>` : ""}</details>`;
     }).join("");
     return `<div class="pal-row-head"><strong>${esc(sapta)}</strong><small lang="ban-Bali">${esc(SAPTAWARA_AKSARA[sapta])}</small></div>${cells}`;
   }).join("");
@@ -406,12 +411,12 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
       title: "Palelintangan Bali — matriks 35 Pancawara × Saptawara",
       description: "Palelintangan interaktif 35 kombinasi Pancawara dan Saptawara, dipisahkan secara jelas dari Tika Pawukon 210 hari.",
       h1: "Palelintangan · 35 perpotongan hari",
-      sub: `${p.saptawara} ${p.pancawara} adalah perpotongan hari ini`,
+      sub: `${idDate(today)} · ${p.saptawara} ${p.pancawara}`,
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/palelintangan`, label: "Palelintangan" }],
       indexable: false,
       body: `${baliModeNav("palelintangan", today)}<section class="palelintangan-intro"><p>Palelintangan memakai perpotongan <b>7 Saptawara × 5 Pancawara = 35 kombinasi</b>. Setiap sel sekarang menampilkan nama lintang dari tabel Palelintangan yang ditelusuri ke Alfred Maaß (1929) dan kajian Museum Bali, plus patron Saptawara.</p><p class="note">Tradisi gambar dan beberapa pasangan nama dapat berbeda antar manuskrip/koleksi. Karena itu AafnaiPatro belum mengisi satwa, pohon, wayang, watak atau ramalan yang belum mempunyai sumber per-sel yang stabil. <a href="https://ase.exopla.net/index.php/Balinese_(All_Terms)" rel="nofollow noopener">Lihat tabel sumber 35 lintang ↗</a></p></section>
 <section><div class="pal-grid">${headers}${rows}</div></section>
-<section><h2>Hubungan dengan Pawukon</h2><p>Kombinasi hari ini adalah <b>${esc(p.combination)}</b>, tetapi Wuku ${esc(p.wuku.name)} dan seluruh Wewaran lain tetap berasal dari posisi 210-hari yang sama.</p><p><a href="${BP}">Lihat posisi ini di Tika Pawukon →</a></p></section>`,
+<section><h2>Hubungan dengan Pawukon</h2><p>Kombinasi tanggal dipilih adalah <b>${esc(p.combination)}</b>, tetapi Wuku ${esc(p.wuku.name)} dan seluruh Wewaran lain tetap berasal dari posisi 210-hari yang sama.</p><p><a href="${BP}">Lihat posisi ini di Tika Pawukon →</a></p></section>`,
       footer: BALI_NOTE,
       ...(ctx.flags.baliPwa ? { pwa: { manifest: "/bali-calendar/manifest.webmanifest", appName: "Bali Calendar", script: "/bali-calendar/pwa.js" } } : {}),
     }),
@@ -419,7 +424,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
 }
 
 function baliSasihSakaPage(ctx: Ctx): Rendered {
-  const today = todayIn(BALI_TZ, ctx.now);
+  const today = selectedBaliDate(ctx);
   const year = Number(today.slice(0, 4));
   const readiness = annualSasihReadiness(year);
   const source = readiness.source;
@@ -436,12 +441,12 @@ function baliSasihSakaPage(ctx: Ctx): Rendered {
       title: `Kalender Sasih / Saka Bali ${year} — Purnama, Tilem dan sumber tahunan`,
       description: `Lapisan Sasih/Saka Bali ${year} dipisahkan dari Pawukon: Purnama, Tilem, Nyepi dan status kesiapan sumber tahunan.`,
       h1: "Sasih / Saka · lapisan lunar Bali",
-      sub: `Tahun Gregorian ${year}`,
+      sub: `${idDate(today)} · tahun Gregorian ${year}`,
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/sasih-saka`, label: "Sasih / Saka" }],
       indexable: false,
       body: `${baliModeNav("sasih", today)}<section><h2>Status sumber tahunan</h2><p><b>${readiness.ready ? "Siap digunakan" : "Fail-closed"}</b>${source ? ` · ${esc(source.publication_authority)} · ${esc(source.version)}` : ""}</p>${annual}</section>
 <section><h2>Purnama / Tilem yang diterbitkan</h2>${pt ? `<p><b>Purnama:</b> ${pt.purnama.map((d) => `<a class="chip" href="${BP}/${d}">${esc(d)}</a>`).join(" ")}</p><p><b>Tilem:</b> ${pt.tilem.map((d) => `<a class="chip" href="${BP}/${d}">${esc(d)}</a>`).join(" ")}</p><p class="note">Sumber: ${esc(pt.source)}</p>` : `<p>Belum ada tabel Purnama/Tilem terbit untuk tahun ini di dataset.</p>`}</section>
-<section><h2>Nyepi</h2><p>${NYEPI[year] ? `<a href="${BP}/${NYEPI[year].date}">${esc(idDate(NYEPI[year].date))}</a> · ${esc(NYEPI[year].status)}` : "Belum tersedia."}</p></section>`,
+${astronomicalLunarContext(today)}<section><h2>Nyepi</h2><p>${NYEPI[year] ? `<a href="${BP}/${NYEPI[year].date}">${esc(idDate(NYEPI[year].date))}</a> · ${esc(NYEPI[year].status)}` : "Belum tersedia."}</p></section>`,
       footer: BALI_NOTE,
       ...(ctx.flags.baliPwa ? { pwa: { manifest: "/bali-calendar/manifest.webmanifest", appName: "Bali Calendar", script: "/bali-calendar/pwa.js" } } : {}),
     }),
