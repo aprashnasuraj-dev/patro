@@ -12,6 +12,7 @@ import { ROADMAP_FLAGS } from "../../roadmap/flags";
 import { sourceBadge, type SourceStatus } from "../../roadmap/provenance";
 import { baliFeedRoute } from "./bali-feeds";
 import { BALI_PIODALAN, nextPawukonPiodalan } from "../data/bali-piodalan";
+import { annualSasihReadiness, sasihGregorianDate } from "../data/bali-annual-sources";
 import { astaDauh, merthaYoga, pancaDauh, PEWIWAHAN_SAPTAWARA, pitraImmediateRestrictions, sasihReference, WARIGA_DAUH_SOURCE } from "../engines/wariga";
 import { sunriseSunset } from "../../../src/patro-tools/core/astro";
 
@@ -478,7 +479,21 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
     schedule = `<section><h2>Piodalan berikutnya menurut aturan Pawukon</h2><table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>${esc(item.rule.saptawara)} ${esc(item.rule.pancawara)} · Wuku ${esc(item.rule.wuku)}</td></tr>`).join("")}</tbody></table><p class="note">Status: calculated from the source-backed Pawukon recurrence rule; the temple rule itself is ${esc(item.source.status)}.</p></section>`;
   } else if (item.rule.type === "sasih") {
     const known = (item.known_occurrences || []).slice().sort().reverse();
-    schedule = `<section><h2>Aturan Sasih</h2><p><b>${esc(item.rule.lunar_day)} Sasih ${esc(item.rule.sasih)}</b>.</p>${known.length ? `<p>Occurrence(s) explicitly supported by the source record: ${known.map((d) => `<a href="${BP}/${d}">${esc(idDate(d))}</a>`).join(" · ")}.</p>` : ""}<p class="note">AafnaiPatro does not project an unsourced future Gregorian date for a Sasih-based Piodalan. Future dates appear only after the annual Sasih/Purnama mapping is sourced.</p></section>`;
+    const year = Number(today.slice(0, 4));
+    const candidates = [year, year + 1].map((y) => {
+      const readiness = annualSasihReadiness(y);
+      const date = sasihGregorianDate(item.rule, y);
+      return { year:y, readiness, date };
+    });
+    const next = candidates.find((x) => x.date && x.date >= today);
+    const annual = next?.readiness.source || candidates[0].readiness.source;
+    const mapped = next?.date
+      ? `<p><b>Tanggal Gregorian dari sumber tahunan:</b> <a href="${BP}/${next.date}">${esc(idDate(next.date))}</a>. <span class="note">Status: published/official annual mapping, not a Pawukon extrapolation.</span></p>`
+      : `<p class="note">AafnaiPatro tidak memproyeksikan tanggal Gregorian masa depan untuk aturan Sasih ini karena tahun ${year}${candidates[1].readiness.source ? `/${year + 1}` : ""} belum memiliki pemetaan Sasih/Purnama/Tilem tahunan lengkap yang lolos syarat sumber.</p>`;
+    const annualSource = annual
+      ? `<p class="note">Lapisan tahunan: ${esc(annual.version)} · ${esc(annual.publication_authority)} · status ${esc(annual.source_status)} · mapping_complete=${annual.mapping_complete ? "yes" : "no"} · <a href="${esc(annual.source_url)}" rel="nofollow noopener">sumber ↗</a>.</p>`
+      : `<p class="note">Belum ada rekaman sumber tahunan untuk tahun ini.</p>`;
+    schedule = `<section><h2>Aturan Sasih</h2><p><b>${esc(item.rule.lunar_day)} Sasih ${esc(item.rule.sasih)}</b>.</p>${known.length ? `<p>Occurrence(s) explicitly supported by the temple source: ${known.map((d) => `<a href="${BP}/${d}">${esc(idDate(d))}</a>`).join(" · ")}.</p>` : ""}${mapped}${annualSource}</section>`;
   } else {
     schedule = `<section><h2>Occurrence terverifikasi</h2><p><a href="${BP}/${item.rule.date}">${esc(idDate(item.rule.date))}</a> · <b>${esc(item.rule.rahina)}</b>.</p><p class="note">Sumber membuktikan occurrence ini, tetapi tidak cukup untuk menyimpulkan pola recurrence. Karena itu AafnaiPatro tidak membuat tanggal berikutnya.</p></section>`;
   }

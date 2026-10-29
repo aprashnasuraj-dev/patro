@@ -67,6 +67,17 @@ Source:
 
 Therefore AafnaiPatro separates deterministic Pawukon/Wewaran calculation, source-backed annual Sasih/Purnama/Tilem/TIKA facts, source-transparent Padewasan reference rules, and local religious judgement.
 
+### Annual Sasih/Purnama/Tilem source layer
+
+The annual layer is versioned per Gregorian year and stores publication authority, publication date, effective period, source status, completeness and conflict history.
+
+- **2025 usable published mapping:** Ditjen Bimas Hindu, published 16 June 2025, supplies all 12 Sasih rows with Purnama and Tilem dates. This is labelled `published`; the article describes the table as a general reference, so AafnaiPatro does not silently relabel it as a SKHDN/TIKA decree.
+  https://bimashindu.kemenag.go.id/index.php/berita-pusat/mengenal-lebih-dekat-hari-raya-purnama-dan-tilem-dalam-tradisi-umat-hindu-dan-jadwal-2025-3TER3
+- **2026 process record, not complete mapping:** the 22 May 2026 Bimas Hindu report documents the SKHDN Pasamuhan Alit TIKA process but does not contain a complete annual date table. It remains `mapping_complete=false`.
+- **2026 official anchors retained without unlocking projection:** Bimas Hindu identifies 2 April 2026 as Purnama Sasih Kedasa in the Besakih karya schedule, and Pemerintah Provinsi Bali identifies 12 August 2026 as Tilem Sasih Karo. These are useful provenance/cross-check anchors, but two dates cannot justify arbitrary Sasih projections.
+
+Fail-closed rule: an isolated official occurrence, an annual-process article or a partial table never unlocks a future Sasih-based Piodalan date.
+
 ### Piodalan
 
 A Piodalan entry may be added only when a named temple/place has an official or government-published recurrence rule or a source-backed occurrence that can be represented without guessing.
@@ -88,6 +99,9 @@ Initial source-backed examples:
   https://rsjiwa.baliprov.go.id/piodalan-ring-pura-tirta-ganapati-rumah-sakit-jiwa-manah-shanti-mahottama
 
 A Pawukon rule can be projected deterministically every 210 days. A Sasih rule is projected only when the target year's authoritative/published Sasih/Purnama mapping exists; otherwise the UI shows the rule and known sourced occurrence, not an invented Gregorian date.
+
+The curated registry also uses the official JIDHAT-hosted **Pararem Awig-Awig Desa Adat Tumbakbayuh** dated 1 January 2017. Its Lepihan 2 (printed pp. 118–121) provides a banjar-by-banjar temple Piodalan table. Records are stored with banjar locality and page locator so same-name temples are not silently collapsed. Ambiguous rows are withheld: the duplicate "Pura Panti Bandesa Mas" identities remain a recorded conflict, and "Pura Sapu Jagat — Purnama Kapat/Kasanga" is not encoded as a fixed Sasih rule.
+https://jidhat.baliprov.go.id/storage/awig/2aHkDxzLso1yuYaEbmu1MAoUuxa9JBTKRjDDxxB8.pdf
 
 ### Dauh Ayu / Padewasan
 
