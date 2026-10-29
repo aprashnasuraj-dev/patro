@@ -12,7 +12,7 @@
     if (!config || !config.tilejson) return false;
     if (!String(config.tilejson).startsWith("/")) throw new Error("Nepal terrain TileJSON must be same-origin");
     if (!map.getSource("np-dem")) {
-      map.addSource("np-dem", { type: "raster-dem", url: config.tilejson, tileSize: 256, attribution: config.attribution || "" });
+      map.addSource("np-dem", { type: "raster-dem", url: config.tilejson, tileSize: 256, encoding: config.encoding || "mapbox", attribution: config.attribution || "" });
     }
     if (!map.getLayer("np-hillshade")) {
       map.addLayer({ id: "np-hillshade", type: "hillshade", source: "np-dem", paint: {
