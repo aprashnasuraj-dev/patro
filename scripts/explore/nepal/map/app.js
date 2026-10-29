@@ -922,10 +922,10 @@
         var head = $("#np-list-head");
         if (head) head.textContent = "Offline district pack · no basemap tiles";
       }
-      if (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && CFG.terrain) {
+      if (!offlineStyle && CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && CFG.terrain) {
         try { window.AafnaiTerrain.setup(map, CFG.terrain); } catch (e) { console.warn("terrain", e); state.terrainOn = false; }
       }
-      if (CFG.flags && CFG.flags.nepalPmtiles && window.AafnaiPmtiles && CFG.pmtiles) {
+      if (!offlineStyle && CFG.flags && CFG.flags.nepalPmtiles && window.AafnaiPmtiles && CFG.pmtiles) {
         window.AafnaiPmtiles.attach(map, { places: CFG.pmtiles.places, roads: CFG.pmtiles.roads, renderPlaces: false, renderRoads: false, loadRoadsForMetadata: !!(CFG.flags && CFG.flags.nepalRoadSafety) })
           .then(function (meta) { window.__nepalmapPmtiles = meta; }).catch(function (e) { console.warn("pmtiles", e); });
       }

@@ -15,7 +15,14 @@
   function message(worker,data){
     return new Promise(function(resolve,reject){
       var ch=new MessageChannel(),timer=setTimeout(function(){reject(new Error("offline worker timeout"));},15000);
-      ch.port1.onmessage=function(e){clearTimeout(timer);e.data&&e.data.ok?resolve(e.data):reject(new Error(e.data&&e.data.error||"offline worker failed"));};
+      ch.port1.onmessage=function(e){
+        clearTimeout(timer);
+        if(e.data&&e.data.ok) resolve(e.data);
+        else {
+          var failed=e.data&&Array.isArray(e.data.failed)?e.data.failed:[];
+          reject(new Error((e.data&&e.data.error||"offline worker failed")+(failed.length?": "+failed.join(", "):"")));
+        }
+      };
       worker.postMessage(data,[ch.port2]);
     });
   }
