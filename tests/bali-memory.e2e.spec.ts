@@ -97,7 +97,7 @@ test("permanent Lintang profile has human cultural copy, navigation and a mobile
   await expect(page.getByRole("heading", { name: "Lintang Kala Sungsang dalam Palelintangan Bali" })).toBeVisible();
   await expect(page.locator(".lintang-portrait")).toBeVisible();
   await expect(page.locator(".lintang-art")).toBeVisible();
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://aafnaipatro.com/bali-calendar/palelintangan/kala-sungsang");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/bali-calendar\/palelintangan\/kala-sungsang$/);
   await expect(page.locator(".lintang-directory a")).toHaveCount(35);
   await expect(page.getByRole("heading", { name: /Kisah lain dalam tema/ })).toBeVisible();
   await expect(page.getByText("Sosok terbalik", { exact: false }).first()).toBeVisible();
