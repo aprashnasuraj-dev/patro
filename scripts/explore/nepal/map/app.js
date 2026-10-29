@@ -279,6 +279,7 @@
       '<div class="np-actions">' +
       '<a class="np-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lng + '">Directions</a>' +
       '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(osmObjectUrl) + '">OpenStreetMap</a>' +
+      (CFG.flags && CFG.flags.nepalPoiPages && row[R.place] ? '<a class="np-btn" href="/nepalmap/place/' + esc(row[R.place]) + '">Place details</a>' : "") +
       (CFG.flags && CFG.flags.nepalCorrectionsUi && sourceId ? '<button class="np-btn" type="button" data-correct="' + esc(sourceId) + '" data-place-id="' + esc(row[R.place] || "") + '" data-osm="' + esc(osmObjectUrl) + '" data-name="' + esc(row[R.n] || row[R.ne]) + '">Report correction</button>' : "") +
       (village ? '<a class="np-btn" href="' + esc(village) + '">Village page</a>' : "") +
       (wiki ? '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(wiki) + '">Wikipedia</a>' : "") +
