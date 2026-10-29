@@ -134,9 +134,12 @@
 
   Client.prototype.detour = async function (baseRequest, baseRoute, candidate) {
     if (!baseRoute || !Number.isFinite(baseRoute.duration)) throw new RoutingError("no_baseline", "detour scoring requires a timed base route");
+    var stops = (baseRequest.stops || []).slice();
+    var insertAt = Number.isInteger(baseRequest.insertAt) ? Math.max(0, Math.min(stops.length, baseRequest.insertAt)) : stops.length;
+    stops.splice(insertAt, 0, candidate);
     var via = await this.route({
       mode: baseRequest.mode,
-      points: [baseRequest.from].concat(baseRequest.stops || []).concat([candidate, baseRequest.to]),
+      points: [baseRequest.from].concat(stops).concat([baseRequest.to]),
     });
     var extraSeconds = Math.max(0, (via.duration || 0) - baseRoute.duration);
     var extraDistance = Math.max(0, (via.distance || 0) - baseRoute.distance);
