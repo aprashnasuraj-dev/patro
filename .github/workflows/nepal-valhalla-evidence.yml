@@ -83,31 +83,33 @@ jobs:
           https://localhost {
             tls internal
             header -Server
-            @unauthorized {
-              not header Authorization "Bearer {$NEPAL_ROUTING_TOKEN}"
-            }
-            respond @unauthorized 401
-            handle /healthz {
-              rewrite * /status
-              reverse_proxy valhalla:8002 {
-                transport http {
-                  dial_timeout 2s
-                  response_header_timeout 15s
+            @authorized header Authorization "Bearer {$NEPAL_ROUTING_TOKEN}"
+            handle @authorized {
+              handle /healthz {
+                rewrite * /status
+                reverse_proxy valhalla:8002 {
+                  transport http {
+                    dial_timeout 2s
+                    response_header_timeout 15s
+                  }
                 }
               }
-            }
-            handle /route {
-              request_body {
-                max_size 64KB
-              }
-              reverse_proxy valhalla:8002 {
-                transport http {
-                  dial_timeout 2s
-                  response_header_timeout 15s
+              handle /route {
+                request_body {
+                  max_size 64KB
+                }
+                reverse_proxy valhalla:8002 {
+                  transport http {
+                    dial_timeout 2s
+                    response_header_timeout 15s
+                  }
                 }
               }
+              respond 404
             }
-            respond 404
+            handle {
+              respond 401
+            }
           }
           CADDY
 

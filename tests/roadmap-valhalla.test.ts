@@ -23,10 +23,12 @@ describe("first-party Nepal Valhalla deployment contract", () => {
 
   it("requires bearer auth before route and health proxying", () => {
     const caddy = read("infra/nepal-routing/Caddyfile");
-    expect(caddy).toContain('Authorization "Bearer {$NEPAL_ROUTING_TOKEN}"');
-    expect(caddy).toContain("respond @unauthorized 401");
+    expect(caddy).toContain('@authorized header Authorization "Bearer {$NEPAL_ROUTING_TOKEN}"');
+    expect(caddy).toContain("handle @authorized");
     expect(caddy).toContain("handle /route");
     expect(caddy).toContain("handle /healthz");
+    expect(caddy).toMatch(/handle\s*\{\s*respond 401\s*\}/);
+    expect(caddy.indexOf("handle @authorized")).toBeLessThan(caddy.lastIndexOf("respond 401"));
     expect(caddy).not.toMatch(/Access-Control-Allow-Origin/i);
   });
 
