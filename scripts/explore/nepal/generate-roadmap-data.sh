@@ -41,9 +41,21 @@ run_step() {
   printf '%s\t%s\n' "$name" "$((end-start))" >> "$TIMINGS"
 }
 
+PREVIOUS_REF="${NEPAL_PREVIOUS_REF:-}"
 for f in osm-admin.json osm-settlements.json osm-pois.json osm-report.json place-id-map.json; do
-  [[ -f "$ROOT/data/explore/nepal/$f" ]] && cp "$ROOT/data/explore/nepal/$f" "$PREVIOUS/$f"
+  if [[ -n "$PREVIOUS_REF" ]]; then
+    if git cat-file -e "$PREVIOUS_REF:data/explore/nepal/$f" 2>/dev/null; then
+      git show "$PREVIOUS_REF:data/explore/nepal/$f" > "$PREVIOUS/$f"
+    fi
+  elif [[ -f "$ROOT/data/explore/nepal/$f" ]]; then
+    cp "$ROOT/data/explore/nepal/$f" "$PREVIOUS/$f"
+  fi
 done
+if [[ -n "$PREVIOUS_REF" ]]; then
+  echo "Two-dataset persistence baseline: $PREVIOUS_REF"
+else
+  echo "Two-dataset persistence baseline: current checkout before refresh"
+fi
 for f in osm-pois.json osm-settlements.json place-id-map.json; do
   [[ -f "$PREVIOUS/$f" ]] || { echo "previous dataset missing $f; two-build persistence audit cannot run" >&2; exit 3; }
 done
