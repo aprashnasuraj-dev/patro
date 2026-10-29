@@ -75,7 +75,21 @@ const ROADMAP_FLAGS = {
   provenanceUi: process.env.ROADMAP_PROVENANCE_UI === "1",
   nepalSearchWorker: process.env.NEPALMAP_SEARCH_WORKER === "1",
   nepalRoutingProviderV2: process.env.NEPALMAP_ROUTING_V2 === "1",
+  nepalStablePlaceIds: process.env.NEPALMAP_STABLE_IDS === "1",
+  nepalVisitorMode: process.env.NEPALMAP_VISITOR_MODE === "1",
 };
+
+let stablePlaceIds = null;
+if (ROADMAP_FLAGS.nepalStablePlaceIds) {
+  const mappingPath = join(ROOT, "data/explore/nepal/place-id-map.json");
+  try {
+    const parsed = JSON.parse(await readFile(mappingPath, "utf8"));
+    if (parsed?.version !== 1 || !parsed.entries || typeof parsed.entries !== "object") throw new Error("invalid mapping envelope");
+    stablePlaceIds = parsed.entries;
+  } catch (error) {
+    throw new Error(`NEPALMAP_STABLE_IDS=1 requires a valid ${mappingPath}. Run scripts/explore/nepal/update-place-ids.mjs against the current ingest first. Cause: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
 
 // ---------- layer rows ----------
 // Row: [name, name_ne, lat, lng, sub, ele, palika_id, ward, district_id, village_slug, wikipedia]
@@ -91,6 +105,14 @@ for (const s of settlements) {
   rowsByCat.get("village").push([s.name || "", s.name_ne || "", s.lat, s.lng, s.place, s.ele || 0, s.palika_id || 0, s.ward || 0, s.did, s.slug || "", "", s.osm_id || s.id || ""]);
 }
 for (const rows of rowsByCat.values()) rows.sort((a, b) => a[8] - b[8] || (a[0] || a[1]).localeCompare(b[0] || b[1]));
+if (ROADMAP_FLAGS.nepalStablePlaceIds) {
+  for (const rows of rowsByCat.values()) for (const row of rows) {
+    const sourceId = row[11];
+    const mapped = stablePlaceIds?.[sourceId]?.place_id;
+    if (!mapped) throw new Error(`Stable place-ID mapping missing source ${sourceId}; refresh data/explore/nepal/place-id-map.json before enabling the flag.`);
+    row.push(mapped);
+  }
+}
 
 // ---------- admin ----------
 const bbox = new Map();
@@ -114,7 +136,7 @@ const dataDir = join(OUT, "data/nepalmap/v1");
 await rm(dataDir, { recursive: true, force: true });
 await mkdir(dataDir, { recursive: true });
 await mkdir(join(OUT, "nepalmap"), { recursive: true });
-const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia", "source_id"];
+const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia", "source_id", ...(ROADMAP_FLAGS.nepalStablePlaceIds ? ["place_id"] : [])];
 const sizes = {};
 for (const c of CATEGORIES) {
   const text = JSON.stringify({ fields, rows: rowsByCat.get(c.id) });
@@ -249,7 +271,7 @@ pages.push({
     content: `<section><h2>What's on the map</h2><div class="np-cards">${cards}</div></section>
 <section><h2>By province</h2><div class="tw"><table><thead><tr><th>Province</th><th>Hindu temples</th><th>Gumbas</th><th>Peaks</th><th>Lakes</th><th>Schools</th></tr></thead><tbody>${provinceRows}</tbody></table></div></section>
 <section><h2>Districts of Nepal</h2><p>Every district page lists its palikas, all wards, the former VDCs and what each old ward is now.</p><ul class="cols">${districtLinks}</ul></section>
-<section><h2>How to use the map</h2><ul><li>Type a place in English or Nepali (“Pashupatinath”, “पाथीभरा”), a palika (“Jayaprithvi”) or a palika and ward number (“Jayaprithvi 11”).</li><li>Choose a district to see only its places; the link under it opens the district's wards and former VDCs.</li><li>Tap a place for directions in Google Maps, the OpenStreetMap entry, its ward page and Wikipedia when there is one.</li><li>Share exactly what you see: the address bar keeps the filters and the map position.</li></ul></section>${ROADMAP_FLAGS.provenanceUi ? `<section id="about-data"><h2>About this data</h2><p>Places come from <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> under ODbL 1.0. ${OSM_SNAPSHOT ? `The source extract reports OSM replication timestamp <code>${esc(OSM_SNAPSHOT)}</code>.` : "The exact upstream extract timestamp is currently unverified."} Administrative matching uses the Nepal local-level datasets documented in the repository.</p><p><a href="/data/nepalmap/v1/manifest.json">Machine-readable source and freshness manifest</a> · <a href="/corrections">Report a correction</a></p></section>` : ""}`,
+<section><h2>How to use the map</h2><ul><li>Type a place in English or Nepali (“Pashupatinath”, “पाथीभरा”), a palika (“Jayaprithvi”) or a palika and ward number (“Jayaprithvi 11”).</li><li>Choose a district to see only its places; the link under it opens the district's wards and former VDCs.</li><li>Tap a place for directions in Google Maps, the OpenStreetMap entry, its ward page and Wikipedia when there is one.</li><li>Share exactly what you see: the address bar keeps the filters and the map position.</li></ul></section>${ROADMAP_FLAGS.nepalVisitorMode ? `<section id="visitor-guide"><h2>Nepal map terms for international visitors</h2><dl><dt>Province</dt><dd>Nepal's top-level federal administrative division.</dd><dt>District</dt><dd>An administrative area within a province.</dd><dt>Municipality / Rural Municipality</dt><dd>Local government level; rural municipalities are commonly called gaunpalika.</dd><dt>Ward</dt><dd>The smallest elected local-government division used on these pages.</dd><dt>Temple / Gumba</dt><dd>Temple is used for Hindu shrines; “gumba” is retained for Buddhist monasteries rather than replaced with an English-only label.</dd></dl><p>Distances are metric. Elevation is shown in metres. Road and trail conditions can change by season, so a calculated route is not a safety guarantee.</p></section>` : ""}${ROADMAP_FLAGS.provenanceUi ? `<section id="about-data"><h2>About this data</h2><p>Places come from <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> under ODbL 1.0. ${OSM_SNAPSHOT ? `The source extract reports OSM replication timestamp <code>${esc(OSM_SNAPSHOT)}</code>.` : "The exact upstream extract timestamp is currently unverified."} Administrative matching uses the Nepal local-level datasets documented in the repository.</p><p><a href="/data/nepalmap/v1/manifest.json">Machine-readable source and freshness manifest</a> · <a href="/corrections">Report a correction</a></p></section>` : ""}`,
     schema: { "@context": "https://schema.org", "@graph": [
       { "@type": "WebPage", "@id": SITE + "/nepalmap", url: SITE + "/nepalmap", name: "Nepal map", inLanguage: ["en", "ne"], dateModified: LASTMOD, about: { "@type": "Country", name: "Nepal" } },
       { "@type": "Map", name: "Nepal map: temples, gumbas, mountains, villages and wards", url: SITE + "/nepalmap", mapType: "https://schema.org/VenueMap" },
