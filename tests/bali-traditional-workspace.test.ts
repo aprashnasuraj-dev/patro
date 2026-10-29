@@ -109,6 +109,11 @@ describe("Bali traditional calendar workspace",()=>{
     expect(far?.status).toBe(200);
     expect(far?.html).toContain("Konteks Bulan astronomis");
     expect(far?.html).toContain("tidak menggantikan penetapan Purnama, Tilem, Sasih");
+    expect(far?.html).toContain("/bali-calendar/sasih-saka?tanggal=2129-12-31");
+    const sasihCtx:any=ctx("/bali-calendar/sasih-saka?tanggal=2129-12-31");sasihCtx.url=new URL("https://aafnaipatro.com/bali-calendar/sasih-saka?tanggal=2129-12-31");
+    const sasih:any=baliRoute(sasihCtx,["sasih-saka"]);
+    expect(sasih?.html).toContain("tahun Gregorian 2129");
+    expect(sasih?.html).toContain("Konteks Bulan astronomis");
     expect(baliRoute(ctx("/bali-calendar/1928-12-31"),["1928-12-31"])).toBeNull();
     expect(baliRoute(ctx("/bali-calendar/2130-01-01"),["2130-01-01"])).toBeNull();
     expect((wetonRoute(ctx("/weton/1900-01-01"),["1900-01-01"]) as any)?.status).toBe(200);
