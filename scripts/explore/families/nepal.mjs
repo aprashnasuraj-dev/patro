@@ -23,7 +23,7 @@ const SRC_DIR = "data/explore/places/source";
 const DATA_DIR = "data/explore/nepal";
 
 const SOURCES = {
-  states: { name: "local-states-nepal (MIT licence)", url: "https://github.com/sagautam5/local-states-nepal" },
+  states: { name: "local-states-nepal v2.1.0 (MIT)", url: "https://github.com/sagautam5/local-states-nepal/tree/v2.1.0", version: "v2.1.0", commit: "035cb3d2ce2420ad04d7aac1d0ce4d08960c57f0", verified: "vendored provinces/districts/municipalities en+np JSON are byte-identical to upstream v2.1.0" },
   vdc: { name: "World Bank Nepal ward mapping 2011→2018, via nepal-address-data (CC0)", url: "https://github.com/en-shushant/nepal-address-data" },
   osm: { name: "© OpenStreetMap contributors (ODbL)", url: "https://www.openstreetmap.org/copyright" },
 };
