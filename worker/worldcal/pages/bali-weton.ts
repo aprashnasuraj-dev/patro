@@ -258,7 +258,7 @@ function baliToday(ctx: Ctx): Rendered {
     html: page({
       site: ctx.site, path: BP, lang: "id", title: `Kalender Bali hari ini: ${p.saptawara} ${p.pancawara} ${p.wuku.name} — wuku, wewaran dan hari raya`,
       description: `Hari ini menurut Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}. Wewaran lengkap, hari raya Galungan, Kuningan, Saraswati dan kalkulator otonan.`,
-      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), hero: baliHero(today).art, lede: baliHero(today).lede, crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliDayBody(today, today), footer: BALI_NOTE,
+      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), hero: baliHero(today).art, lede: baliHero(today).lede, crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliDayBody(today, today) + baliSubscriptionSection(ctx, Number(today.slice(0, 4))), footer: BALI_NOTE,
     }),
   };
 }
@@ -273,9 +273,20 @@ function baliDate(ctx: Ctx, iso: string): Rendered | null {
     html: page({
       site: ctx.site, path: `${BP}/${iso}`, lang: "id", title: `Kalender Bali ${idDate(iso)}: ${p.saptawara} ${p.pancawara} ${p.wuku.name}`,
       description: `${idDate(iso)} dalam Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}${pawukonEvents(isoToJdn(iso)).length ? ", " + pawukonEvents(isoToJdn(iso)).join(", ") : ""}.`,
-      h1: esc(`Kalender Bali ${idDate(iso)}`), hero: baliHero(iso).art, lede: baliHero(iso).lede, crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/${iso}`, label: iso }], indexable: ix, body: baliDayBody(iso, today), footer: BALI_NOTE,
+      h1: esc(`Kalender Bali ${idDate(iso)}`), hero: baliHero(iso).art, lede: baliHero(iso).lede, crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/${iso}`, label: iso }], indexable: ix, body: baliDayBody(iso, today) + baliSubscriptionSection(ctx, Number(iso.slice(0, 4))), footer: BALI_NOTE,
     }),
   };
+}
+
+function baliSubscriptionSection(ctx: Ctx, year: number): string {
+  if (!(ROADMAP_FLAGS.baliSubscriptionUi && ROADMAP_FLAGS.baliIcsFeeds)) return "";
+  const holidays = `${BP}/feed/hari-raya/${year}.ics`;
+  const moon = `${BP}/feed/purnama-tilem/${year}.ics`;
+  const webcal = (path: string) => ctx.site.replace(/^https?:/, "webcal:") + path;
+  return `<section><h2>Tambahkan ke kalender</h2>
+<p><a href="${holidays}">Hari raya Bali ${year} (.ics)</a> · <a href="${webcal(holidays)}">Berlangganan hari raya</a></p>
+<p><a href="${moon}">Purnama & Tilem ${year} (.ics)</a> · <a href="${webcal(moon)}">Berlangganan Purnama & Tilem</a></p>
+<p class="note">Untuk Google Calendar, salin URL HTTPS feed lalu pilih Tambahkan kalender → Dari URL. Feed mempertahankan status sumber (official/published/calculated/provisional) pada deskripsi acara.</p></section>`;
 }
 
 function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
@@ -293,7 +304,7 @@ function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
       body: `<section><h2>Nyepi</h2><p>${ny ? `${esc(idDate(ny.date))} <span class="note">(${ny.status === "official" ? "resmi" : ny.status === "published" ? "Kalender Bali" : "perkiraan"} — ${esc(ny.source)})</span>${ROADMAP_FLAGS.provenanceUi ? " " + sourceBadge(ny.status, ny.source) : ""}` : "Belum diterbitkan."}</p></section>
 <section><h2>Hari raya Pawukon</h2><table><tbody>${rows}</tbody></table><p class="note">${gy > 2026 ? "Dihitung dengan rumus Pawukon; cocokkan dengan Kalender Bali tahun ini setelah terbit." : "Dicocokkan dengan Kalender Bali yang diterbitkan."}${ROADMAP_FLAGS.provenanceUi ? " " + sourceBadge("calculated", "Reingold–Dershowitz Pawukon calculation") : ""}</p></section>
 <section><h2>Purnama dan Tilem</h2>${pt ? `<p><b>Purnama:</b> ${pt.purnama.map((d) => esc(d.slice(5))).join(", ")}</p><p><b>Tilem:</b> ${pt.tilem.map((d) => esc(d.slice(5))).join(", ")}</p><p class="note">Sumber: ${esc(pt.source)}${ROADMAP_FLAGS.provenanceUi ? " " + sourceBadge("published", pt.source) : ""}</p>` : `<p>Tabel purnama/tilem ${gy} belum dimasukkan; tanggal ini mengikuti Kalender Bali yang diterbitkan.</p>`}</section>
-<section><p><a href="${BP}/hari-raya/${gy - 1}">← ${gy - 1}</a> · <a href="${BP}/hari-raya/${gy + 1}">${gy + 1} →</a></p></section>`, footer: BALI_NOTE,
+<section><p><a href="${BP}/hari-raya/${gy - 1}">← ${gy - 1}</a> · <a href="${BP}/hari-raya/${gy + 1}">${gy + 1} →</a></p></section>${baliSubscriptionSection(ctx, gy)}`, footer: BALI_NOTE,
     }),
   };
 }
