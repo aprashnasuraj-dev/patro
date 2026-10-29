@@ -15,15 +15,17 @@ const baseCtx=(baliPwa:boolean)=>({
 describe("Bali Calendar dedicated PWA surface",()=>{
   it("keeps the Tika workspace primary even when install capability is off",()=>{
     const r:any=baliRoute(baseCtx(false),[]);
-    expect(r?.html).toContain('class="bali-workspace"');
-    expect((r?.html.match(/class="tika-cell/g)||[])).toHaveLength(210);
+    expect(r?.html).toContain('class="bali-workspace bali-traditional-workspace"');
+    expect(r?.html).toContain('class="tika-month-grid"');
+    expect(r?.html).toContain("INGKEL");
+    expect((r?.html.match(/class="full-wuku/g)||[])).toHaveLength(30);
     expect(r?.html).not.toContain('id="bali-install"');
     expect(r?.html).not.toContain('rel="manifest" href="/bali-calendar/manifest.webmanifest"');
   });
 
   it("integrates installation without restoring generic tool promotion",()=>{
     const r:any=baliRoute(baseCtx(true),[]);
-    for(const t of ['class="bali-workspace"','class="tika-grid"','class="bali-mode-nav"','id="bali-install"','rel="manifest" href="/bali-calendar/manifest.webmanifest"','src="/bali-calendar/pwa.js"'])expect(r?.html).toContain(t);
+    for(const t of ['class="bali-workspace bali-traditional-workspace"','class="tika-month-grid"','class="bali-mode-nav"','class="dewasa-grid"','id="bali-install"','rel="manifest" href="/bali-calendar/manifest.webmanifest"','src="/bali-calendar/pwa.js"'])expect(r?.html).toContain(t);
     for(const h of ["/nepalmap","/tools/astro","/time-machine","/tools/nepali-typing"])expect(r?.html).not.toContain('href="'+h+'"');
     expect(r?.html).toContain('href="/advancetools/web-tools/"');
   });
