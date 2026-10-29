@@ -287,11 +287,10 @@
 
   // ---------- search ----------
   var SEARCH_CATS = ["village", "worship", "peak", "lake", "sight", "park", "airport", "waterfall"];
-  function search(q) {
+  function searchAdmin(q) {
     var res = [];
     var nq = norm(q), sq = skel(q);
     if (nq.length < 2) return res;
-    // "jayaprithvi 11", "chainpur ward 8", "जयपृथ्वी ११"
     var wm = q.trim().match(/^(.*?)[\s-]*(?:ward|wada|वडा)?\s*(?:no\.?|नं\.?)?\s*[-\s]?([0-9०-९]{1,2})$/i);
     if (wm && wm[1]) {
       var wn = Number(wm[2].replace(/[०-९]/g, function (d) { return "०१२३४५६७८९".indexOf(d); }));
@@ -299,9 +298,8 @@
       Object.keys(admin.palikas).forEach(function (pid) {
         var p = admin.palikas[pid];
         if (wn >= 1 && wn <= p[4] && base.length >= 3 && (skel(p[1]).indexOf(base) === 0 || norm(p[2]).indexOf(norm(wm[1])) === 0)) {
-          var info = palikaInfo(pid);
-          var c = admin.wards[pid + "-" + wn];
-          res.push({ score: 0, label: info.en + " ward " + wn, sub: info.d.name + " District", href: info.path + "/ward-" + wn, ll: c });
+          var info = palikaInfo(pid), center = admin.wards[pid + "-" + wn];
+          res.push({ score: 0, label: info.en + " ward " + wn, sub: info.d.name + " District", href: info.path + "/ward-" + wn, ll: center });
         }
       });
     }
@@ -315,26 +313,81 @@
         res.push({ score: 2, label: info.en, sub: info.d.name + " District · " + p[4] + " wards", href: info.path, ll: p[5] });
       }
     });
+    return res;
+  }
+  function placeSearchResult(id, i, score) {
+    var row = layers[id].rows[i], where = placeLine(row);
+    return { score: score, label: row[R.n] || row[R.ne], ne: row[R.n] ? row[R.ne] : "", sub: kindText(id, row) + (where ? " · " + where.text : ""), cat: id, i: i };
+  }
+  function finishSearch(res) {
+    res.sort(function (a, b) { return a.score - b.score || a.label.length - b.label.length; });
+    return res.slice(0, 25);
+  }
+  function search(q) {
+    var res = searchAdmin(q);
+    var nq = norm(q), sq = skel(q);
+    if (nq.length < 2) return res;
     SEARCH_CATS.concat(Array.from(state.on)).forEach(function (id, k, all) {
       if (all.indexOf(id) !== k) return;
       var L = layers[id];
       if (!L || !L.loaded) return;
       for (var i = 0; i < L.rows.length && res.length < 400; i++) {
-        var row = L.rows[i];
-        var a = norm(row[R.n]), b = norm(row[R.ne]);
-        var s = a === nq || b === nq ? 2.5 : a.indexOf(nq) === 0 || b.indexOf(nq) === 0 ? 3 : a.indexOf(nq) > 0 || b.indexOf(nq) > 0 ? 4 : skel(row[R.n]).indexOf(sq) === 0 && sq.length > 2 ? 5 : -1;
-        if (s < 0) continue;
-        // Well-known places first: a Wikipedia article, a Nepali name, a temple/peak/sight rather than a hamlet.
-        if (row[R.wiki]) s -= 0.6;
-        if (row[R.ne]) s -= 0.1;
-        if (id === "village" && /hamlet|neighbourhood|locality|isolated_dwelling|quarter/.test(row[R.sub])) s += 0.4;
-        if (id === "village" && /city|town/.test(row[R.sub])) s -= 0.3;
-        var where = placeLine(row);
-        res.push({ score: s, label: row[R.n] || row[R.ne], ne: row[R.n] ? row[R.ne] : "", sub: kindText(id, row) + (where ? " · " + where.text : ""), cat: id, i: i });
+        var row = L.rows[i], a = norm(row[R.n]), b = norm(row[R.ne]);
+        var score = a === nq || b === nq ? 2.5 : a.indexOf(nq) === 0 || b.indexOf(nq) === 0 ? 3 : a.indexOf(nq) > 0 || b.indexOf(nq) > 0 ? 4 : skel(row[R.n]).indexOf(sq) === 0 && sq.length > 2 ? 5 : -1;
+        if (score < 0) continue;
+        if (row[R.wiki]) score -= 0.6;
+        if (row[R.ne]) score -= 0.1;
+        if (id === "village" && /hamlet|neighbourhood|locality|isolated_dwelling|quarter/.test(row[R.sub])) score += 0.4;
+        if (id === "village" && /city|town/.test(row[R.sub])) score -= 0.3;
+        res.push(placeSearchResult(id, i, score));
       }
     });
-    res.sort(function (a, b) { return a.score - b.score || a.label.length - b.label.length; });
-    return res.slice(0, 25);
+    return finishSearch(res);
+  }
+
+  var placeWorker = null, workerSeq = 0, workerPending = {}, workerLayerKey = "";
+  function workerLayerIds() {
+    return SEARCH_CATS.concat(Array.from(state.on)).filter(function (id, i, all) { return all.indexOf(id) === i && layers[id] && layers[id].loaded; });
+  }
+  function ensurePlaceWorker() {
+    if (!(CFG.flags && CFG.flags.nepalSearchWorker) || !window.Worker) return null;
+    if (!placeWorker) {
+      placeWorker = new Worker("/nepalmap/search-worker.js?v=" + VER, { type: "module" });
+      placeWorker.onmessage = function (event) {
+        var msg = event.data || {}, pending = workerPending[msg.request_id];
+        if (!pending) return;
+        delete workerPending[msg.request_id];
+        if (msg.type === "error") pending.reject(new Error(msg.message || "search worker failed"));
+        else pending.resolve(msg);
+      };
+      placeWorker.onerror = function () { placeWorker = null; workerPending = {}; };
+    }
+    var ids = workerLayerIds(), key = ids.map(function (id) { return id + ":" + layers[id].rows.length; }).join("|");
+    if (key !== workerLayerKey) {
+      workerLayerKey = key;
+      placeWorker.postMessage({ type: "init", request_id: ++workerSeq, layers: Object.fromEntries(ids.map(function (id) { return [id, layers[id].rows]; })) });
+    }
+    return placeWorker;
+  }
+  function searchAsync(q) {
+    var w = ensurePlaceWorker();
+    if (!w) return Promise.resolve(search(q));
+    var requestId = ++workerSeq;
+    Object.keys(workerPending).forEach(function (id) {
+      w.postMessage({ type: "cancel", request_id: Number(id) });
+      workerPending[id].reject(new Error("search superseded"));
+      delete workerPending[id];
+    });
+    return new Promise(function (resolve, reject) {
+      workerPending[requestId] = { resolve: resolve, reject: reject };
+      w.postMessage({ type: "query", request_id: requestId, query: q, ids: workerLayerIds(), limit: 400 });
+    }).then(function (msg) {
+      var res = searchAdmin(q);
+      (msg.matches || []).forEach(function (m) {
+        if (layers[m.id] && layers[m.id].rows[m.i]) res.push(placeSearchResult(m.id, m.i, m.score));
+      });
+      return finishSearch(res);
+    }).catch(function () { return search(q); });
   }
   var searchTimer;
   function onSearch() {
@@ -343,13 +396,14 @@
     searchTimer = setTimeout(function () {
       Promise.all(SEARCH_CATS.map(ensure)).then(function () {
         var box = $("#np-results");
-        var res = search(q);
-        box.hidden = !q.trim();
-        box.innerHTML = res.length ? res.map(function (r, k) {
-          return '<li><button type="button" data-res="' + k + '"><b>' + esc(r.label) + "</b>" + (r.ne ? ' <span lang="ne">' + esc(r.ne) + "</span>" : "") + "<small>" + esc(r.sub || "") + "</small></button>" +
-            (r.href ? '<a href="' + esc(r.href) + '" class="np-open">Page</a>' : "") + "</li>";
-        }).join("") : '<li class="np-empty">No match. Try the English or Nepali spelling, a palika with a ward number ("Jayaprithvi 11"), or turn on more categories.</li>';
-        box._res = res;
+        return searchAsync(q).then(function (res) {
+          box.hidden = !q.trim();
+          box.innerHTML = res.length ? res.map(function (r, k) {
+            return '<li><button type="button" data-res="' + k + '"><b>' + esc(r.label) + "</b>" + (r.ne ? ' <span lang="ne">' + esc(r.ne) + "</span>" : "") + "<small>" + esc(r.sub || "") + "</small></button>" +
+              (r.href ? '<a href="' + esc(r.href) + '" class="np-open">Page</a>' : "") + "</li>";
+          }).join("") : '<li class="np-empty">No match. Try the English or Nepali spelling, a palika with a ward number ("Jayaprithvi 11"), or turn on more categories.</li>';
+          box._res = res;
+        });
       }).catch(showError);
     }, 180);
   }
