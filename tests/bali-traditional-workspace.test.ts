@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { palelintanganMatrix, pawukon, pawukonCycle } from "../worker/worldcal/engines/pawukon";
 import { isoToJdn } from "../worker/worldcal/dates";
-import { baliRoute, rerainanSearch, wetonRoute } from "../worker/worldcal/pages/bali-weton";
+import { baliRoute, baliUrls, rerainanSearch, wetonRoute } from "../worker/worldcal/pages/bali-weton";
 import { sakaYearForDate } from "../worker/worldcal/pages/bali-traditional";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
 
@@ -177,8 +177,10 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).not.toContain("Jelajahi AafnaiPatro lainnya");
   });
 
-  it("keeps Palelintangan distinct and exactly 35 intersections",()=>{
+  it("keeps Palelintangan distinct, rich and discoverable as one evergreen page",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/palelintangan"),["palelintangan"]);
+    expect(r.indexable).toBe(true);
+    expect(baliUrls(new Date("2026-10-29T00:00:00Z"),fullFlags)).toContain("/bali-calendar/palelintangan");
     expect((r.html.match(/<article class="pal-cell(?: is-current)?"/g)||[])).toHaveLength(35);
     expect(r.html).toContain('class="pal-hero"');
     expect(r.html).toContain('class="pal-lintang-aksara"');
@@ -191,7 +193,7 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("ᬓᬮᬲᬸᬗ᭄ᬲᬂ");
   });
 
-  it("shows Ingkel and source-backed Wariga context in the deep day view",()=>{
+  it("shows Ingkel and Wariga context in the deep day view",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/2026-06-17"),["2026-06-17"]);
     expect(r.html).toContain("Ingkel Pandakan");
     expect(r.html).toContain("Jejepan");
@@ -200,7 +202,7 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("Buda Kliwon Dungulan");
   });
 
-  it("fails closed for incomplete 2026 Sasih mapping while exposing official anchors",()=>{
+  it("keeps incomplete 2026 Sasih dates conservative while showing available anchors",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/sasih-saka"),["sasih-saka"]);
     expect(r.html).toContain("Kalender Sasih lengkap 2026 belum tersedia");
     expect(r.html).toContain("AafnaiPatro hanya menampilkan tanggal Sasih");
