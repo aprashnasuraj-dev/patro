@@ -16,6 +16,7 @@ import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { nepalData } from "../families/nepal.mjs";
+import { classifyBoundaryConfidence } from "./boundary-confidence.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, "../../..");
@@ -77,6 +78,7 @@ const ROADMAP_FLAGS = {
   nepalRoutingProviderV2: process.env.NEPALMAP_ROUTING_V2 === "1",
   nepalStablePlaceIds: process.env.NEPALMAP_STABLE_IDS === "1",
   nepalVisitorMode: process.env.NEPALMAP_VISITOR_MODE === "1",
+  nepalBoundaryConfidence: process.env.NEPALMAP_BOUNDARY_CONFIDENCE === "1",
 };
 
 let stablePlaceIds = null;
@@ -114,6 +116,33 @@ if (ROADMAP_FLAGS.nepalStablePlaceIds) {
   }
 }
 
+let boundaryAudit = null;
+if (ROADMAP_FLAGS.nepalBoundaryConfidence) {
+  const sourcePath = process.env.NEPAL_BOUNDARY_GEOJSON ? resolve(ROOT, process.env.NEPAL_BOUNDARY_GEOJSON) : null;
+  if (!sourcePath) throw new Error("NEPALMAP_BOUNDARY_CONFIDENCE=1 requires NEPAL_BOUNDARY_GEOJSON pointing at a pinned GeoJSON FeatureCollection.");
+  const fc = JSON.parse(await readFile(sourcePath, "utf8"));
+  if (fc?.type !== "FeatureCollection" || !Array.isArray(fc.features) || !fc.features.length) throw new Error("Boundary source must be a non-empty GeoJSON FeatureCollection.");
+  const thresholds = {
+    ambiguousKm: Number(process.env.NEPAL_BOUNDARY_AMBIGUOUS_KM || 0.25),
+    mediumKm: Number(process.env.NEPAL_BOUNDARY_MEDIUM_KM || 1),
+  };
+  const summary = { high: 0, medium: 0, low: 0, unverified: 0, mismatches: 0, near_boundary: 0 };
+  for (const rows of rowsByCat.values()) for (const row of rows) {
+    const result = classifyBoundaryConfidence([row[3], row[2]], fc.features, { palika_id: row[6], ward: row[7] }, thresholds);
+    row.push(result.confidence, result.boundary_distance_m, result.reason);
+    summary[result.confidence] = (summary[result.confidence] || 0) + 1;
+    if (result.reason === "assignment_mismatch") summary.mismatches++;
+    if (result.reason === "near_boundary") summary.near_boundary++;
+  }
+  boundaryAudit = {
+    source_path: process.env.NEPAL_BOUNDARY_GEOJSON,
+    source_revision: process.env.NEPAL_BOUNDARY_REVISION || "UNVERIFIED",
+    source_license: process.env.NEPAL_BOUNDARY_LICENSE || "UNVERIFIED",
+    thresholds,
+    summary,
+  };
+}
+
 // ---------- admin ----------
 const bbox = new Map();
 for (const rows of rowsByCat.values()) for (const r of rows) {
@@ -136,7 +165,7 @@ const dataDir = join(OUT, "data/nepalmap/v1");
 await rm(dataDir, { recursive: true, force: true });
 await mkdir(dataDir, { recursive: true });
 await mkdir(join(OUT, "nepalmap"), { recursive: true });
-const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia", "source_id", ...(ROADMAP_FLAGS.nepalStablePlaceIds ? ["place_id"] : [])];
+const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia", "source_id", ...(ROADMAP_FLAGS.nepalStablePlaceIds ? ["place_id"] : []), ...(ROADMAP_FLAGS.nepalBoundaryConfidence ? ["admin_confidence", "boundary_distance_m", "admin_confidence_reason"] : [])];
 const sizes = {};
 for (const c of CATEGORIES) {
   const text = JSON.stringify({ fields, rows: rowsByCat.get(c.id) });
@@ -144,6 +173,7 @@ for (const c of CATEGORIES) {
   sizes[c.id] = text.length;
 }
 await writeFile(join(dataDir, "admin.json"), JSON.stringify(admin));
+if (boundaryAudit) await writeFile(join(dataDir, "boundary-confidence.json"), JSON.stringify(boundaryAudit, null, 2));
 await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
   dataset_id: "nepalmap-osm-places-v1",
   product: "nepalmap",
