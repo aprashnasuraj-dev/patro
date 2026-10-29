@@ -42,7 +42,7 @@ describe("first-party Nepal Valhalla deployment contract", () => {
 
   it("makes promotion explicit and retains rollback state", () => {
     const promote = read("infra/nepal-routing/promote-release.sh");
-    expect(promote).toContain("data/previous");
+    expect(promote).toContain('$DATA/previous');
     expect(promote).toContain("health_or_revert");
     expect(promote).toContain("promote)");
     expect(promote).toContain("rollback)");

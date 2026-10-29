@@ -15,6 +15,8 @@ describe("Nepal roadmap data generation contract",()=>{
   it("audits persistent IDs and OSM object changes before reporting",()=>{
     const script=read("scripts/explore/nepal/generate-roadmap-data.sh");
     expect(script).toContain("update-place-ids.mjs");
+    expect(script).toContain("bootstrap-place-id-map.mjs");
+    expect(script).toContain("NEPAL_PREVIOUS_REF");
     expect(script).toContain("audit-rebuild.mjs");
     expect(script.indexOf("audit-rebuild.mjs")).toBeLessThan(script.indexOf("generation-report.mjs"));
   });

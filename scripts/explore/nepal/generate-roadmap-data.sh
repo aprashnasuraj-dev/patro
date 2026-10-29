@@ -56,9 +56,18 @@ if [[ -n "$PREVIOUS_REF" ]]; then
 else
   echo "Two-dataset persistence baseline: current checkout before refresh"
 fi
-for f in osm-pois.json osm-settlements.json place-id-map.json; do
+for f in osm-pois.json osm-settlements.json; do
   [[ -f "$PREVIOUS/$f" ]] || { echo "previous dataset missing $f; two-build persistence audit cannot run" >&2; exit 3; }
 done
+if [[ ! -f "$PREVIOUS/place-id-map.json" ]]; then
+  echo "Historical snapshot predates place-id-map.json; bootstrapping deterministic IDs from its OSM source identities."
+  run_step previous_place_id_bootstrap node scripts/explore/nepal/bootstrap-place-id-map.mjs --data "$PREVIOUS" --out "$PREVIOUS/place-id-map.json"
+fi
+[[ -f "$PREVIOUS/place-id-map.json" ]] || { echo "unable to construct previous place ID baseline" >&2; exit 3; }
+if [[ ! -f "$ROOT/data/explore/nepal/place-id-map.json" ]]; then
+  cp "$PREVIOUS/place-id-map.json" "$ROOT/data/explore/nepal/place-id-map.json"
+  echo "Seeded current persistent place-ID ledger from historical baseline."
+fi
 
 run_step osm_source "$ROOT/infra/nepal-routing/fetch-pinned-osm.sh" "$SOURCE"
 PBF="$SOURCE/$(python3 - <<'PY'

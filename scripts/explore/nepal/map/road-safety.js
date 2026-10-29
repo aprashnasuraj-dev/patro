@@ -168,7 +168,7 @@
     }else if(hasGeometry&&corridor.length){
       base.match_mode="route-corridor-nearby-metadata";
       base.matched_feature_count=0;
-      base.disclaimer="No road feature matched a route-step name/ref. These features are only within 500 m of the routed geometry and are nearby metadata, not claims about the exact traveled road.";
+      base.disclaimer="No road feature matched a route-step name/ref. These features are only within 500 m of the routed geometry: nearby metadata, not a claim about the exact route or traveled road.";
     }else{
       base.match_mode=hasGeometry?"no-route-metadata":"viewport-near-route";
       base.matched_feature_count=0;
