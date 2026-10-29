@@ -25,6 +25,7 @@ describe("first-party Nepal Valhalla deployment contract", () => {
     const caddy = read("infra/nepal-routing/Caddyfile");
     expect(caddy).toContain('Authorization "Bearer {$NEPAL_ROUTING_TOKEN}"');
     expect(caddy).toContain("respond @unauthorized 401");
+    expect(caddy).toMatch(/route\s*\{[\s\S]*respond @unauthorized 401[\s\S]*handle \/healthz[\s\S]*handle \/route[\s\S]*respond 404[\s\S]*\}/);
     expect(caddy).toContain("handle /route");
     expect(caddy).toContain("handle /healthz");
     expect(caddy).not.toMatch(/Access-Control-Allow-Origin/i);
