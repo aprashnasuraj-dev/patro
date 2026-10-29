@@ -641,6 +641,7 @@
       (route.duration && state.mode === "foot" ? '<p class="np-note">Walking time on flat ground. On trekking trails, add time for climbs: roughly 1 hour per 300–400 m of ascent.</p>' : "") +
       '<div class="np-actions"><a class="np-btn" target="_blank" rel="noopener" href="' + esc(googleUrl()) + '">Navigate in Google Maps</a>' +
       '<button class="np-btn" type="button" id="np-route-share">Copy route link</button>' +
+      (CFG.flags && CFG.flags.nepalExports ? '<button class="np-btn" type="button" data-export="gpx">GPX</button><button class="np-btn" type="button" data-export="geojson">GeoJSON</button><button class="np-btn" type="button" data-export="kml">KML</button>' : "") +
       (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<button class="np-btn" type="button" id="np-terrain-toggle">Terrain: ' + (state.terrainOn ? "on" : "off") + "</button>" : "") +
       '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>' +
       (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<div id="np-elevation-profile" class="np-elevation" aria-live="polite">Loading elevation…</div>' : "");
@@ -956,6 +957,12 @@
           var link = location.href;
           (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(function () { btn.textContent = "Copied"; }, function () { prompt("Copy this link", link); });
         }, 450);
+      }
+      var exporter = e.target.closest("[data-export]");
+      if (exporter && window.AafnaiExports && routeData) {
+        window.AafnaiExports.exportRoute(exporter.getAttribute("data-export"), {
+          route: routeData, from: state.from, to: state.to, stops: state.stops.slice(), places: []
+        });
       }
       var check = e.target.closest("[data-check-detour]");
       if (check) { var cf = alongCandidates[check.getAttribute("data-check-detour")]; if (cf) scoreDetour(cf); }
