@@ -43,7 +43,7 @@ describe("Bali ICS feeds", () => {
     const feed:any = baliFeedRoute(pawukonCtx, ["feed","piodalan","pura-luhur-batukaru.ics"]);
     expect(feed?.contentType).toContain("text/calendar");
     expect(feed?.html).toContain("Piodalan — Pura Luhur Batukaru");
-    expect(feed?.html).toContain("recurrence 210 hari");
+    expect(String(feed?.html||"").replace(/\r\n /g,"")).toContain("recurrence 210 hari");
     const sasih:any = baliFeedRoute(pawukonCtx, ["feed","piodalan","pura-jagatnatha-jembrana.ics"]);
     expect(sasih).toBeNull();
   });
