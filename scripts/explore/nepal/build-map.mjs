@@ -276,6 +276,8 @@ const pmtilesPocJs = await readFile(join(HERE, "map/pmtiles-poc.js"), "utf8");
 const terrainJs = await readFile(join(HERE, "map/terrain.js"), "utf8");
 const offlineJs = await readFile(join(HERE, "map/offline.js"), "utf8");
 const offlineSwJs = await readFile(join(HERE, "map/offline-sw.js"), "utf8");
+const exportCoreJs = await readFile(join(HERE, "map/export-core.mjs"), "utf8");
+const exportsJs = await readFile(join(HERE, "map/exports.mjs"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -286,10 +288,12 @@ await writeFile(join(OUT, "nepalmap/pmtiles-poc.js"), pmtilesPocJs);
 await writeFile(join(OUT, "nepalmap/terrain.js"), terrainJs);
 await writeFile(join(OUT, "nepalmap/offline.js"), offlineJs);
 await writeFile(join(OUT, "nepalmap/offline-sw.js"), offlineSwJs);
+await writeFile(join(OUT, "nepalmap/export-core.mjs"), exportCoreJs);
+await writeFile(join(OUT, "nepalmap/exports.mjs"), exportsJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
@@ -368,6 +372,7 @@ ${ROADMAP_FLAGS.nepalPmtiles ? `<script src="/vendor/nepalmap/pmtiles-4.5.0/pmti
 ${ROADMAP_FLAGS.nepalRoadSafety ? `<script src="/nepalmap/road-safety.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalTerrain ? `<script src="/nepalmap/terrain.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalOfflinePacks ? `<script src="/nepalmap/offline.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalExports ? `<script type="module" src="/nepalmap/exports.mjs?v=${version}"></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
