@@ -27,7 +27,7 @@
     var worker=reg.active||reg.waiting||reg.installing;
     if(!worker){ await navigator.serviceWorker.ready; worker=(await navigator.serviceWorker.ready).active; }
     var urls=[
-      d.url,INDEX,location.pathname+location.search,
+      d.url,INDEX,location.pathname,
       "/nepalmap/style.css?v="+version,"/nepalmap/app.js?v="+version
     ];
     await message(worker,{type:"cache-pack",urls:urls});
