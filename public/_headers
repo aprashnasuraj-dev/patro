@@ -67,7 +67,21 @@
   Cache-Control: public, max-age=3600
 
 /sitemap.xml
+  Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=3600
+
+/date/*
+  Cache-Control: public, max-age=300, s-maxage=3600
+  X-Patro-Date: static-v1
+  X-Atlas-Version: 3.0.0
+
+/nepali-tools/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
+
+/nepali-typing/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
 
 /seo-manifest.json
   Cache-Control: public, max-age=3600

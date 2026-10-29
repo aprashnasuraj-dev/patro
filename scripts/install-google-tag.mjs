@@ -1,4 +1,4 @@
-import { readFile, writeFile, readdir, stat } from "node:fs/promises";
+import { copyFile, readFile, writeFile, readdir, stat } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { createHash } from "node:crypto";
@@ -23,6 +23,13 @@ export async function installGoogleTagInBuild(root) {
   const headersPath = join(root, "_headers");
   const headers = await readFile(headersPath, "utf8");
   await writeFile(headersPath, headers.replace(/^(\s+Content-Security-Policy:\s*)(.+)$/gmi, (_, prefix, policy) => prefix + googleTagCsp(policy)));
+  // The date asset deployment must use the same final tagged bytes and CSP as main.
+  const dateAssets=resolve(root,"../.cloudflare/date-pages");
+  try {
+    await stat(dateAssets);
+    await walk(dateAssets);
+    await copyFile(headersPath,join(dateAssets,"_headers"));
+  } catch(error) {if(error.code!=="ENOENT")throw error;}
 
   // The downloadable module stays unchanged. Its deployed manifest must describe
   // the actual tagged HTML bytes, rather than the portable bundle's originals.

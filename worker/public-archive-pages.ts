@@ -1,5 +1,6 @@
 import { calendarArchiveUnavailable, loadCalendarShard, type CalendarArchiveBackend, type CalendarArchiveEnv } from "./calendar-archive";
 import { isIndexableBsYear } from "./seo-window";
+import { dateEnrichment, DATE_DISCOVERY, VERSION as ATLAS_VERSION } from "../extensions/day-atlas/date-enrichment.mjs";
 
 type R2ObjectLike = { text(): Promise<string> };
 type R2Like = { get(key: string): Promise<R2ObjectLike | null> };
@@ -55,12 +56,16 @@ async function r2Json(env:ArchiveEnv, key:string) {
   } catch { return null; }
 }
 
-function page(request:Request, env:ArchiveEnv, opts:{ title:string; description:string; body:string; index:boolean; backend:CalendarArchiveBackend; schema?:any; cache?:number }) {
+function page(request:Request, env:ArchiveEnv, opts:{ title:string; description:string; body:string; index:boolean; backend:CalendarArchiveBackend; schema?:any; cache?:number; date?:string }) {
+  if (opts.date) {
+    try { const enrichment=dateEnrichment(opts.date);opts.body+=enrichment.html;opts.index=opts.index||enrichment.index; } catch { /* Preserve archive availability if astronomy is unavailable. */ }
+  }
   const canonical = site(env) + cleanPath(new URL(request.url).pathname);
   const schema = opts.schema || { "@context":"https://schema.org", "@type":"WebPage", name:opts.title, description:opts.description, url:canonical };
   const robots = opts.index ? "index,follow,max-snippet:-1,max-image-preview:large" : "noindex,follow";
-  const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${robots}"><link rel="canonical" href="${esc(canonical)}"><meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,"\\u003c")}</script><style>body{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:980px;margin:auto;padding:28px 18px 56px}article{background:#fff;border:1px solid #dfe6df;border-radius:20px;padding:24px}a{color:#176f3b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{padding:14px;border:1px solid #e2e8e2;border-radius:14px}.badge{display:inline-block;padding:2px 8px;border:1px solid #ccd8cc;border-radius:999px;font-size:.82rem}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left;vertical-align:top}nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.meta{color:#667268;font-size:.9rem}</style></head><body><main><article>${opts.body}<nav><a href="/">आफ्नै पात्रो</a><a href="/convert">मिति रूपान्तरण</a><a href="/samudaya">समुदाय पात्रो</a><a href="/methodology">पद्धति</a></nav></article></main></body></html>`;
+  const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${robots}"><link rel="canonical" href="${esc(canonical)}"><meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,"\\u003c")}</script>${opts.date?'<link rel="alternate" type="text/plain" title="AI content discovery" href="/llms.txt">':""}<style>body{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:980px;margin:auto;padding:28px 18px 56px}article{background:#fff;border:1px solid #dfe6df;border-radius:20px;padding:24px}a{color:#176f3b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{padding:14px;border:1px solid #e2e8e2;border-radius:14px}.badge{display:inline-block;padding:2px 8px;border:1px solid #ccd8cc;border-radius:999px;font-size:.82rem}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left;vertical-align:top}nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.meta{color:#667268;font-size:.9rem}</style></head><body><main data-seo-prerender="true"><article>${opts.body}<nav><a href="/">आफ्नै पात्रो</a><a href="/convert">मिति रूपान्तरण</a><a href="/samudaya">समुदाय पात्रो</a><a href="/methodology">पद्धति</a></nav></article></main>${opts.date?DATE_DISCOVERY:""}</body></html>`;
   const headers = new Headers({ "content-type":"text/html; charset=utf-8", "cache-control":`public, max-age=300, s-maxage=${opts.cache ?? 86400}, stale-while-revalidate=604800`, "x-content-type-options":"nosniff", "x-patro-backend":opts.backend, "x-robots-tag":opts.index?"index, follow":"noindex, follow" });
+  if (opts.date) {headers.set("x-patro-date","dynamic-v1");headers.set("x-atlas-version",ATLAS_VERSION);}
   return new Response(request.method==="HEAD"?null:html,{status:200,headers});
 }
 
@@ -92,7 +97,7 @@ async function datePage(request:Request, env:ArchiveEnv, ad:string) {
     ]}
   ];
   for(const festival of festivals) graph.push({"@type":"Event",name:festival.name,startDate:ad,endDate:ad,eventStatus:"https://schema.org/EventScheduled",url:canonical});
-  return page(request,env,{title,description,body,index:isIndexableBsYear(bsYear),backend,schema:{"@context":"https://schema.org","@graph":graph}});
+  return page(request,env,{title,description,body,date:ad,cache:3600,index:isIndexableBsYear(bsYear),backend,schema:{"@context":"https://schema.org","@graph":graph}});
 }
 
 async function calendarPage(request:Request, env:ArchiveEnv, year:number, month?:number) {

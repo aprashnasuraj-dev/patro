@@ -1,4 +1,5 @@
 import { createRemoteJWKSet, jwtVerify } from "jose";
+import { AUTH_SCHEMA_VERSION, withSchemaVersion } from "./schema-version";
 
 export type AuthEnv={
   DB?:any;
@@ -34,7 +35,7 @@ export async function ensureAuthSchema(env:AuthEnv){
   const key=env.DB as object;
   let ready=AUTH_SCHEMA_READY.get(key);
   if(!ready){
-    ready=(async()=>{
+    ready=withSchemaVersion(env.DB,"auth",AUTH_SCHEMA_VERSION,async()=>{
       const statements=[
         `create table if not exists app_users (id text primary key,provider text not null,provider_subject text not null,email text,email_verified integer not null default 0,display_name text,picture_url text,created_at text not null default (datetime('now')),updated_at text not null default (datetime('now')),unique(provider,provider_subject))`,
         `create table if not exists auth_sessions (id text primary key,user_id text not null references app_users(id) on delete cascade,token_hash text not null unique,expires_at text not null,created_at text not null default (datetime('now')),last_seen_at text not null default (datetime('now')))`,
@@ -55,7 +56,7 @@ export async function ensureAuthSchema(env:AuthEnv){
         try{await env.DB.prepare("alter table user_calendar_state add column revision integer not null default 0").bind().run();}
         catch(error){if(!/duplicate column/i.test(String((error as Error)?.message||error)))throw error;}
       }
-    })().catch((error)=>{AUTH_SCHEMA_READY.delete(key);throw error;});
+    }).catch((error)=>{AUTH_SCHEMA_READY.delete(key);throw error;});
     AUTH_SCHEMA_READY.set(key,ready);
   }
   await ready;

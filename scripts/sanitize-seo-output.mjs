@@ -46,7 +46,8 @@ for(const file of files){
  const before=await readFile(file,"utf8");
  const after=cleanHtml(before);
  if(after!==before){await writeFile(file,after,"utf8");changed++;}
- if(/\bhreflang=/i.test(after))throw new Error(`Invalid same-URL hreflang survived: ${file}`);
+ // Cross-language navigation anchors point at distinct URLs and remain valid.
+ if(/<link\b[^>]*\bhreflang=/i.test(after))throw new Error(`Invalid same-URL hreflang survived: ${file}`);
  if(/seo-related-searches|सम्बन्धित नामहरू:|यो सुविधा यस्ता नामले पनि खोजिन्छ/i.test(after))throw new Error(`Visible search-only copy survived: ${file}`);
  if(/"@type"\s*:\s*"(?:FAQPage|HowTo)"/.test(after))throw new Error(`Deprecated Google rich-result schema survived: ${file}`);
 }
