@@ -60,6 +60,8 @@ test("Palelintangan and long-range dynamic pages remain rich and fail-closed cor
   const r = await page.goto("/bali-calendar/2129-12-31", { waitUntil: "domcontentloaded" });
   expect(r?.status()).toBe(200);
   await expect(page.locator("body")).toContainText("Konteks Bulan astronomis");
+  await expect(page.locator("body")).toContainText("Palelintangan tanggal dipilih");
+  await expect(page.locator("body")).toContainText("Patron Saptawara");
   await expect(page.locator("body")).toContainText("tidak menggantikan penetapan Purnama, Tilem, Sasih");
   await expect(page.locator('a[href="/bali-calendar/sasih-saka?tanggal=2129-12-31"]').first()).toBeVisible();
   await page.goto("/bali-calendar/sasih-saka?tanggal=2129-12-31", { waitUntil: "domcontentloaded" });
