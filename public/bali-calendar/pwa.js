@@ -1,6 +1,6 @@
 (function(){
 "use strict";
-var ROOT="/bali-calendar",LAST_KEY="bali-calendar:last-path",REV="bali-calendar-pwa-v3";
+var ROOT="/bali-calendar",LAST_KEY="bali-calendar:last-path",REV="bali-calendar-pwa-v4";
 var DB_NAME="aafnai-bali-calendar",DB_VERSION=1,STORE="state",FALLBACK_KEY="bali-calendar:memory-v1";
 function safeStorageGet(k){try{return localStorage.getItem(k)}catch{return null}}
 function safeStorageSet(k,v){try{localStorage.setItem(k,v)}catch{}}
@@ -98,7 +98,16 @@ async function initMemory(){
   var today=hub&&hub.dataset.baliToday?hub.dataset.baliToday:(location.pathname.match(/\/(\d{4}-\d{2}-\d{2})$/)||[])[1]||new Date().toISOString().slice(0,10);
   var peopleList=document.getElementById("bali-people-list"),dateList=document.getElementById("bali-saved-dates"),puraList=document.getElementById("bali-pura-list"),summary=document.getElementById("bali-return-summary");
 
-  async function persist(){await saveState(db,state);render()}
+  function warmPersonal(){
+    if(!("serviceWorker" in navigator))return;
+    var urls=[];
+    state.savedDates.slice(0,10).forEach(function(x){if(x.date)urls.push(ROOT+"/"+x.date)});
+    state.people.slice(0,10).forEach(function(p){var d=nextOton(p.birthDate,p.boundary,today)[0];if(d)urls.push(ROOT+"/"+d)});
+    state.puras.slice(0,10).forEach(function(p){if(p.slug)urls.push(ROOT+"/piodalan/"+encodeURIComponent(p.slug))});
+    if(!urls.length)return;
+    navigator.serviceWorker.ready.then(function(reg){var worker=navigator.serviceWorker.controller||reg.active;if(worker)worker.postMessage({type:"WARM_BALI_URLS",urls:urls})}).catch(function(){});
+  }
+  async function persist(){await saveState(db,state);render();warmPersonal()}
   function render(){
     if(summary){
       summary.innerHTML="";
@@ -220,7 +229,7 @@ async function initMemory(){
   });
   var clear=document.getElementById("bali-clear-memory");
   if(clear)clear.addEventListener("click",async function(){if(confirm("Hapus semua orang, tanggal dan Pura dari My Bali Calendar di browser ini?")){state=blankState();await persist()}});
-  render();state.lastVisit=Date.now();await saveState(db,state);
+  render();state.lastVisit=Date.now();await saveState(db,state);warmPersonal();
 }
 
 function boot(){initInstall();initMemory()}
