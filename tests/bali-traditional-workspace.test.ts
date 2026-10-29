@@ -70,7 +70,7 @@ describe("Bali traditional calendar workspace",()=>{
     expect(monthCells).toBeLessThanOrEqual(42);
     expect((r.html.match(/class="tika-weekday"/g)||[])).toHaveLength(7);
     expect((r.html.match(/class="tika-ingkel"/g)||[]).length).toBeGreaterThanOrEqual(5);
-    expect((r.html.match(/class="full-wuku/g)||[])).toHaveLength(30);
+    expect((r.html.match(/class="full-wuku(?: current)?"/g)||[])).toHaveLength(30);
     expect(r.html).toContain("Wuku sebagai kolom, Saptawara sebagai baris");
     expect(r.html).toContain("INGKEL");
     expect(r.html).toContain("Pawukon / Tika");
