@@ -134,9 +134,10 @@ function baliMonth(ctx: Ctx, ym: string): Rendered | null {
       sub: "Ringkasan bulanan; buka tanggal untuk Wewaran lengkap.",
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/bulan/${key}`, label: key }],
       indexable: false,
-      body: `<section><div class="cal"><div class="h">Min</div><div class="h">Sen</div><div class="h">Sel</div><div class="h">Rab</div><div class="h">Kam</div><div class="h">Jum</div><div class="h">Sab</div>${blanks}${body}</div></section>
+      body: `${baliModeNav("gregorian", key + "-01")}<section><div class="cal"><div class="h">Min</div><div class="h">Sen</div><div class="h">Sel</div><div class="h">Rab</div><div class="h">Kam</div><div class="h">Jum</div><div class="h">Sab</div>${blanks}${body}</div></section>
 <section><p><a href="${BP}/bulan/${prev.year}-${String(prev.month).padStart(2, "0")}">← bulan sebelumnya</a> · <a href="${BP}/bulan/${next.year}-${String(next.month).padStart(2, "0")}">bulan berikutnya →</a></p></section>`,
       footer: BALI_NOTE,
+      ...(ctx.flags.baliPwa ? { pwa: { manifest: "/bali-calendar/manifest.webmanifest", appName: "Bali Calendar", script: "/bali-calendar/pwa.js" } } : {}),
     }),
   };
 }
@@ -427,9 +428,15 @@ function baliToday(ctx: Ctx): Rendered {
   return {
     status: 200, maxAge: "midnight", tz: BALI_TZ, indexable: true,
     html: page({
-      site: ctx.site, path: BP, lang: "id", title: `Kalender Bali hari ini: ${p.saptawara} ${p.pancawara} ${p.wuku.name} — wuku, wewaran dan hari raya`,
-      description: `Hari ini menurut Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}. Wewaran lengkap, hari raya Galungan, Kuningan, Saraswati dan kalkulator otonan.`,
-      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), hero: baliHero(today).art, lede: baliHero(today).lede, crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliAppFace(ctx, today) + baliDayBody(ctx, today, today) + baliSubscriptionSection(ctx, Number(today.slice(0, 4))), footer: BALI_NOTE,
+      site: ctx.site, path: BP, lang: "id",
+      title: `Kalender Bali Tika Pawukon hari ini — ${p.saptawara} ${p.pancawara} ${p.wuku.name}`,
+      description: `Tika Pawukon 210 hari: posisi hari ini ${p.cycleDay}/210, ${p.saptawara} ${p.pancawara}, Wuku ${p.wuku.name}; Palelintangan, Sasih/Saka, Otonan, Piodalan dan hari raya.`,
+      h1: "Kalender Bali · Tika Pawukon",
+      sub: `${esc(idDate(today))} · ${esc(p.combination)}`,
+      crumbs: [{ href: BP, label: "Kalender Bali" }],
+      indexable: true,
+      body: baliAppFace(ctx, today) + baliDayBody(ctx, today, today) + baliSubscriptionSection(ctx, Number(today.slice(0, 4))),
+      footer: BALI_NOTE,
       ...(ctx.flags.baliPwa ? { pwa: { manifest: "/bali-calendar/manifest.webmanifest", appName: "Bali Calendar", script: "/bali-calendar/pwa.js" } } : {}),
     }),
   };
@@ -440,12 +447,20 @@ function baliDate(ctx: Ctx, iso: string): Rendered | null {
   const today = todayIn(BALI_TZ, ctx.now);
   const p = pawukon(isoToJdn(iso));
   const ix = indexableDate(iso, today);
+  const ring = baliHero(iso);
   return {
     status: 200, maxAge: 86400 * 7, indexable: ix,
     html: page({
-      site: ctx.site, path: `${BP}/${iso}`, lang: "id", title: `Kalender Bali ${idDate(iso)}: ${p.saptawara} ${p.pancawara} ${p.wuku.name}`,
-      description: `${idDate(iso)} dalam Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}${pawukonEvents(isoToJdn(iso)).length ? ", " + pawukonEvents(isoToJdn(iso)).join(", ") : ""}.`,
-      h1: esc(`Kalender Bali ${idDate(iso)}`), hero: baliHero(iso).art, lede: baliHero(iso).lede, crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/${iso}`, label: iso }], indexable: ix, body: baliDayBody(ctx, iso, today) + baliSubscriptionSection(ctx, Number(iso.slice(0, 4))), footer: BALI_NOTE,
+      site: ctx.site, path: `${BP}/${iso}`, lang: "id",
+      title: `Kalender Bali ${idDate(iso)}: ${p.saptawara} ${p.pancawara} ${p.wuku.name}`,
+      description: `${idDate(iso)} dalam Kalender Bali: ${p.saptawara} ${p.pancawara}, Wuku ${p.wuku.name}, posisi ${p.cycleDay}/210${pawukonEvents(isoToJdn(iso)).length ? ", " + pawukonEvents(isoToJdn(iso)).join(", ") : ""}.`,
+      h1: esc(`Hari Bali · ${p.combination}`),
+      sub: esc(idDate(iso)),
+      crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/${iso}`, label: iso }],
+      indexable: ix,
+      body: `${baliModeNav("pawukon", iso)}${baliDayBody(ctx, iso, today)}<details class="bali-cycle-explainer"><summary>Lihat diagram pendidikan siklus 30 Wuku</summary><div class="bali-small-ring">${ring.art}</div><p>${ring.lede}</p></details>${baliSubscriptionSection(ctx, Number(iso.slice(0, 4)))}`,
+      footer: BALI_NOTE,
+      ...(ctx.flags.baliPwa ? { pwa: { manifest: "/bali-calendar/manifest.webmanifest", appName: "Bali Calendar", script: "/bali-calendar/pwa.js" } } : {}),
     }),
   };
 }
@@ -819,6 +834,8 @@ function baliEnglishGuide(ctx: Ctx): Rendered {
 
 export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
+  if (rest.length === 1 && rest[0] === "palelintangan") return baliPalelintanganPage(ctx);
+  if (rest.length === 1 && rest[0] === "sasih-saka") return baliSasihSakaPage(ctx);
   if (ctx.flags.baliIcsFeeds && rest[0] === "feed") return baliFeedRoute(ctx, rest);
   if (ctx.flags.baliRerainanSearch && rest.length === 1 && rest[0] === "cari") return baliRerainanSearch(ctx);
   if (ctx.flags.baliLearningGuides && rest.length === 1 && rest[0] === "wewaran") return wewaranGuide(ctx);
