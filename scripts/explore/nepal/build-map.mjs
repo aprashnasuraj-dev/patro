@@ -318,6 +318,7 @@ const exportsJs = await readFile(join(HERE, "map/exports.mjs"), "utf8");
 const mobileSheetJs = await readFile(join(HERE, "map/mobile-sheet.js"), "utf8");
 const itineraryJs = await readFile(join(HERE, "map/itinerary.js"), "utf8");
 const correctionsUiJs = await readFile(join(HERE, "map/corrections-ui.js"), "utf8");
+const emergencyJs = await readFile(join(HERE, "map/emergency.js"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -333,10 +334,11 @@ await writeFile(join(OUT, "nepalmap/exports.mjs"), exportsJs);
 await writeFile(join(OUT, "nepalmap/mobile-sheet.js"), mobileSheetJs);
 await writeFile(join(OUT, "nepalmap/itinerary.js"), itineraryJs);
 await writeFile(join(OUT, "nepalmap/corrections-ui.js"), correctionsUiJs);
+await writeFile(join(OUT, "nepalmap/emergency.js"), emergencyJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + mobileSheetJs + itineraryJs + correctionsUiJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + mobileSheetJs + itineraryJs + correctionsUiJs + emergencyJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
@@ -394,7 +396,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <div class="np-explore">
 <div class="np-search"><input id="np-q" type="search" placeholder="Search a temple, peak, village, palika or ward…" autocomplete="off" aria-label="Search the map"><ul id="np-results" hidden></ul></div>
 <div class="np-scroll">
-<div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button" aria-describedby="np-location-privacy">📍 Near me</button>${ROADMAP_FLAGS.nepalOfflinePacks ? `<button id="np-offline-save" type="button" disabled>Save district offline</button>` : ""}<button id="np-reset" type="button">Reset</button></div>
+<div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button" aria-describedby="np-location-privacy">📍 Near me</button>${ROADMAP_FLAGS.nepalEmergency ? `<button id="np-emergency-toggle" type="button" aria-pressed="false">🛟 Resilience</button>` : ""}${ROADMAP_FLAGS.nepalOfflinePacks ? `<button id="np-offline-save" type="button" disabled>Save district offline</button>` : ""}<button id="np-reset" type="button">Reset</button></div>
 <p id="np-location-privacy" class="np-note np-privacy">Privacy: “Near me” asks your browser for precise location only after a disclosure. It stays in this tab and is not sent to AafnaiPatro analytics.</p>
 <a id="np-district-link" hidden></a>
 <div id="np-cats" role="group" aria-label="What to show"></div>
@@ -419,6 +421,7 @@ ${ROADMAP_FLAGS.nepalExports ? `<script type="module" src="/nepalmap/exports.mjs
 ${ROADMAP_FLAGS.nepalMobileSheetV2 ? `<script src="/nepalmap/mobile-sheet.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalItinerary ? `<script src="/nepalmap/itinerary.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalCorrectionsUi ? `<script src="/nepalmap/corrections-ui.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalEmergency ? `<script src="/nepalmap/emergency.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
