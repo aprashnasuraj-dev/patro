@@ -104,7 +104,7 @@ if (ROADMAP_FLAGS.nepalOfflinePacks && !SELF_HOST_MAPLIBRE) {
   throw new Error("NEPALMAP_OFFLINE_PACKS=1 requires NEPALMAP_SELF_HOST_MAPLIBRE=1 so the saved map shell does not depend on a CDN runtime.");
 }
 if (SELF_HOST_MAPLIBRE) {
-  const vendorRoot = join(ROOT, "public/vendor/nepalmap/maplibre-4.7.1");
+  const vendorRoot = join(OUT, "vendor/nepalmap/maplibre-4.7.1");
   try {
     await Promise.all([
       access(join(vendorRoot, "maplibre-gl-csp.js")),
@@ -116,7 +116,7 @@ if (SELF_HOST_MAPLIBRE) {
   }
 }
 if (ROADMAP_FLAGS.nepalPmtiles) {
-  try { await access(join(ROOT, "public/vendor/nepalmap/pmtiles-4.5.0/pmtiles.js")); }
+  try { await access(join(OUT, "vendor/nepalmap/pmtiles-4.5.0/pmtiles.js")); }
   catch { throw new Error("NEPALMAP_PMTILES=1 requires the pinned PMTiles runtime. Run scripts/explore/nepal/vendor-map-runtime.sh first."); }
 }
 

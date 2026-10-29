@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/../../.."
 ROOT="$PWD"
-OUT="$ROOT/public/vendor/nepalmap"
+OUT="${NEPALMAP_VENDOR_OUT:-$ROOT/public/vendor/nepalmap}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$OUT/maplibre-4.7.1" "$OUT/pmtiles-4.5.0"

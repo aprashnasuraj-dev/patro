@@ -37,7 +37,9 @@ case "$ACTION" in
   promote)
     [[ -n "$VALUE" ]] || { echo "usage: $0 promote <snapshot-label>" >&2; exit 2; }
     target="$(readlink -f "$DATA/releases/$VALUE" 2>/dev/null || true)"
-    [[ -n "$target" && -f "$target/source-lock.json" && -f "$target/valhalla_tiles.tar" ]] || { echo "release is incomplete: $VALUE" >&2; exit 3; }
+    [[ -n "$target" && -f "$target/source-lock.json" && -f "$target/valhalla.json" ]] || { echo "release is incomplete: $VALUE" >&2; exit 3; }
+    graph_artifact="$(find "$target" -maxdepth 2 \( -type f -name '*tiles*.tar' -o -type d -name '*tiles*' \) -print -quit)"
+    [[ -n "$graph_artifact" ]] || { echo "release has no routing graph artifact: $VALUE" >&2; exit 3; }
     old="$(current_target || true)"
     if [[ -n "$old" ]]; then switch_link "$DATA/previous" "$old"; fi
     switch_link "$DATA/current" "$target"
