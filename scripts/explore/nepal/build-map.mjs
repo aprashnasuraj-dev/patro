@@ -419,7 +419,7 @@ const wardLink = (r) => {
   return d ? { href: d.path, text: `${d.en} District` } : null;
 };
 
-function shell({ path, title, description, h1, intro, preset, content, schema }) {
+async function shell({ path, title, description, h1, intro, preset, content, schema }) {
   const canonical = SITE + path;
   const terrain = ROADMAP_FLAGS.nepalTerrain ? {
     tilejson: process.env.NEPALMAP_DEM_TILEJSON || "/data/nepalmap/dem/tilejson.json",
@@ -515,7 +515,7 @@ const totalPlaces = [...rowsByCat.values()].reduce((s, r) => s + r.length, 0);
 const pages = [];
 pages.push({
   path: "/nepalmap",
-  html: shell({
+  html: await shell({
     path: "/nepalmap",
     title: "Nepal Map: Temples, Gumbas, Mountains, Lakes, Villages & Wards | आफ्नै पात्रो",
     description: `Interactive map of Nepal with ${fmt(countOf("worship"))} temples, gumbas, mosques and churches, ${fmt(countOf("peak"))} peaks, ${fmt(countOf("lake"))} lakes, ${fmt(countOf("village"))} villages and every ward. Search, filter by district and get directions.`,
@@ -554,7 +554,7 @@ for (const l of LANDINGS) {
   const path = `/nepalmap/${l.slug}`;
   pages.push({
     path,
-    html: shell({
+    html: await shell({
       path,
       title: `${l.h1} (${fmt(rows.length)}) · ${l.ne} | आफ्नै पात्रो`,
       description: `Map of ${fmt(rows.length)} ${l.noun} in Nepal from OpenStreetMap, by district, palika and ward${top ? `; most in ${top}` : ""}. Search, filter and get directions.`,
@@ -634,7 +634,7 @@ if (ROADMAP_FLAGS.nepalPoiPages) {
     ];
     pages.push({
       path,
-      html: shell({
+      html: await shell({
         path,
         title: `${name} — map, ward, coordinates and source | आफ्नै पात्रो`,
         description: `${name} in Nepal: map location, ${where?.text || d?.en || "administrative area"}, coordinates${r[ROW_INDEX.ele] ? ", elevation " + fmt(r[ROW_INDEX.ele], 0) + " m" : ""}, OpenStreetMap source and correction links.`,
