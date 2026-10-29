@@ -6,6 +6,8 @@ on:
     branches: [wip/roadmap-final-integration]
     paths:
       - ".github/workflows/roadmap-final-verify.yml"
+      - "PR_READY.md"
+      - "docs/verification/**"
       - "scripts/a11y.sh"
       - "scripts/verify.sh"
       - "scripts/explore/nepal/**"
