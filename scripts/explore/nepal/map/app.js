@@ -31,6 +31,7 @@
   var admin = null;
   var map;
   var popup;
+  var mobileSheet = null;
   var styleReady = false;
   var $ = function (s) { return document.querySelector(s); };
   var esc = function (v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
@@ -438,7 +439,7 @@
     CATS.forEach(function (c) { if (layers[c.id] && layers[c.id].loaded && map.getSource("s-" + c.id)) map.getSource("s-" + c.id).setData(geojson(c.id)); });
     renderChips(); renderList(); writeUrl(); closePanelOnMobile();
   }
-  function closePanelOnMobile() { if (window.matchMedia("(max-width: 760px)").matches) document.body.classList.remove("np-panel-open"); }
+  function closePanelOnMobile() { if (!window.matchMedia("(max-width: 760px)").matches) return; if (mobileSheet) mobileSheet.set("peek"); else document.body.classList.remove("np-panel-open"); }
   function showError(e) { console.error(e); var h = $("#np-list-head"); if (h) h.textContent = "Could not load map data. Please reload."; }
 
 
@@ -806,6 +807,9 @@
     var opts = { container: el, style: STYLE, maxBounds: [[76, 24], [92, 33]], attributionControl: false };
     if (ll) { opts.center = [ll[1], ll[0]]; opts.zoom = ll[2]; } else { opts.bounds = NEPAL; opts.fitBoundsOptions = { padding: 20 }; }
     map = new maplibregl.Map(opts);
+    if (CFG.flags && CFG.flags.nepalMobileSheetV2 && window.AafnaiMobileSheet) {
+      mobileSheet = window.AafnaiMobileSheet.mount({ panel: document.querySelector(".np-panel"), handle: $("#np-toggle"), map: map });
+    }
     map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Places © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="https://openfreemap.org">OpenFreeMap</a>' }));
     map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
     var geo = new maplibregl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: false, showUserLocation: true });
@@ -996,7 +1000,7 @@
       map.getCanvas().style.cursor = "";
       setPoint(which, { lat: e.lngLat.lat, lng: e.lngLat.lng, label: "Pinned point " + e.lngLat.lat.toFixed(4) + ", " + e.lngLat.lng.toFixed(4) });
     });
-    $("#np-toggle").addEventListener("click", function () { document.body.classList.toggle("np-panel-open"); });
+    if (!mobileSheet) $("#np-toggle").addEventListener("click", function () { document.body.classList.toggle("np-panel-open"); });
     $("#np-reset").addEventListener("click", function () {
       state.district = ""; state.religion.clear(); state.minEle = 0; $("#np-q").value = "";
       document.querySelectorAll("#np-religion input").forEach(function (x) { x.checked = false; });
