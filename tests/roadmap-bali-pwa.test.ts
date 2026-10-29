@@ -87,7 +87,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(js).toContain('nextOton');
     expect(js).toContain('state.lastVisit=Date.now()');
     expect(js).toContain("state.puras");
-    expect(js).toContain('data-next');
+    expect(js).toContain("option.dataset.next");
     const sw=read("public/bali-calendar-sw.js");
     expect(sw).toContain('const CACHE="bali-calendar-shell-v4"');
     for(const path of ["/bali-calendar/palelintangan","/bali-calendar/sasih-saka","/bali-calendar/otonan","/bali-calendar/piodalan","/bali-calendar/hari-raya"])expect(sw).toContain('"'+path+'"');
