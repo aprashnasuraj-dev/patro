@@ -23,7 +23,10 @@ const ROOT = resolve(HERE, "../../..");
 const args = process.argv.slice(2);
 const OUT = resolve(ROOT, args.includes("--out") ? args[args.indexOf("--out") + 1] : "public");
 const SITE = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").replace(/\/+$/, "");
-const MAPLIBRE = "https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl";
+const SELF_HOST_MAPLIBRE = process.env.NEPALMAP_SELF_HOST_MAPLIBRE === "1";
+const MAPLIBRE_JS = SELF_HOST_MAPLIBRE ? "/vendor/nepalmap/maplibre-4.7.1/maplibre-gl-csp.js" : "https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js";
+const MAPLIBRE_CSS = SELF_HOST_MAPLIBRE ? "/vendor/nepalmap/maplibre-4.7.1/maplibre-gl.css" : "https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css";
+const MAPLIBRE_WORKER = SELF_HOST_MAPLIBRE ? "/vendor/nepalmap/maplibre-4.7.1/maplibre-gl-csp-worker.js" : null;
 const LEGACY_LASTMOD = "2026-10-11";
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -241,7 +244,7 @@ const wardLink = (r) => {
 
 function shell({ path, title, description, h1, intro, preset, content, schema }) {
   const canonical = SITE + path;
-  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(preset ? { preset } : {}) };
+  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(preset ? { preset } : {}) };
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
@@ -250,7 +253,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:type" content="website"><meta property="og:image" content="${SITE}/og-default.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
-<link rel="stylesheet" href="${MAPLIBRE}.css">
+<link rel="stylesheet" href="${MAPLIBRE_CSS}">
 <link rel="stylesheet" href="/nepalmap/style.css?v=${version}">
 <script type="application/ld+json">${jsonLd(schema)}</script>
 </head><body>
@@ -292,7 +295,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <main class="np-content">${content}</main>
 <footer>Places © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> (ODbL), matched to wards by Aafnai Patro. Base map © <a href="https://openfreemap.org" rel="nofollow noopener">OpenFreeMap</a>. Routes © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a>, computed by <a href="https://project-osrm.org/" rel="nofollow noopener">OSRM</a> on <a href="https://routing.openstreetmap.de/about.html" rel="nofollow noopener">FOSSGIS</a> servers. Last updated ${LASTMOD}. Spotted a missing temple or a wrong place? Add or fix it on OpenStreetMap and it appears here after the next monthly refresh, or <a href="/corrections">tell us</a>.</footer>
 <script>window.NEPALMAP=${JSON.stringify(config).replace(/</g, "\\u003c")};</script>
-<script src="${MAPLIBRE}.js" defer></script>
+<script src="${MAPLIBRE_JS}" defer></script>
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
