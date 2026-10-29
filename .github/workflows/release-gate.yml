@@ -396,9 +396,27 @@ jobs:
           ARCHIVE_CHANGED: ${{ steps.scope.outputs.archive }}
         run: |
           set -euo pipefail
-          for path in / /tools /convert /time-machine /on-this-day /tools/astro /janmapatro/ /janmapatro/milan.html /jyotish/china /jyotish/matchmaking /advancetools/ /advancetools/web-tools/ /calculators/semver-range-calculator /generators/cors-config-generator /converters/json-to-zod-schema /validators/webcam-mic-test; do
+          for path in / /tools /convert /time-machine /on-this-day /tools/astro /janmapatro/ /janmapatro/milan.html /jyotish/china /jyotish/matchmaking /advancetools/ /advancetools/web-tools/ /calculators/semver-range-calculator /generators/cors-config-generator /converters/json-to-zod-schema /validators/webcam-mic-test /bali-calendar /bali-calendar/palelintangan /bali-calendar/sasih-saka /bali-calendar/otonan /bali-calendar/piodalan /bali-calendar/1929-01-01 /bali-calendar/2129-12-31 /bali-calendar/manifest.webmanifest /bali-calendar/pwa.js /bali-calendar-sw.js; do
             curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com${path}" >/dev/null
           done
+          bali_root="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar)"
+          grep -Fq 'class="tika-month-grid"' <<<"$bali_root" || { echo "::error::Bali root missing monthly Tika grid"; exit 1; }
+          grep -Fq 'id="my-bali"' <<<"$bali_root" || { echo "::error::Bali root missing My Bali Calendar hub"; exit 1; }
+          grep -Fq '1929–2129' <<<"$bali_root" || { echo "::error::Bali root missing dynamic 1929–2129 support marker"; exit 1; }
+
+          bali_palelintangan="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/palelintangan)"
+          grep -Fq 'Kala Sungsang' <<<"$bali_palelintangan" || { echo "::error::Palelintangan missing sourced lintang data"; exit 1; }
+          grep -Fq 'ᬭᬤᬶᬢᬾ' <<<"$bali_palelintangan" || { echo "::error::Palelintangan missing sourced Aksara Bali Saptawara label"; exit 1; }
+
+          bali_far="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/2129-12-31)"
+          grep -Fq 'Konteks Bulan astronomis' <<<"$bali_far" || { echo "::error::2129 Bali page missing astronomical lunar context"; exit 1; }
+          grep -Fq 'tidak menggantikan penetapan Purnama, Tilem, Sasih' <<<"$bali_far" || { echo "::error::2129 Bali page missing fail-closed lunar disclaimer"; exit 1; }
+
+          bali_manifest="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/manifest.webmanifest)"
+          grep -Fq '"id": "/bali-calendar"' <<<"$bali_manifest" || { echo "::error::Bali manifest id/scope contract missing"; exit 1; }
+          bali_pwa="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsS https://aafnaipatro.com/bali-calendar/pwa.js)"
+          grep -Fq 'REV="bali-calendar-pwa-v4"' <<<"$bali_pwa" || { echo "::error::Bali PWA v4 runtime not live"; exit 1; }
+
           sitemap_body=/tmp/sitemap-mm530.xml
           sitemap_headers=/tmp/sitemap-mm530.headers
           sitemap_code="$(curl --retry 5 --retry-delay 2 --retry-all-errors --max-redirs 0 -sS -D "$sitemap_headers" -o "$sitemap_body" -w '%{http_code}' https://aafnaipatro.com/sitemap-mm530.xml)"
