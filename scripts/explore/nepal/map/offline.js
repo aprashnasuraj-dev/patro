@@ -5,7 +5,7 @@
 
   async function register(){
     if(!("serviceWorker" in navigator)) return null;
-    return navigator.serviceWorker.register("/nepalmap/offline-sw.js",{scope:"/nepalmap/"});
+    return navigator.serviceWorker.register("/nepalmap-offline-sw.js",{scope:"/nepalmap"});
   }
   async function index(){
     try {

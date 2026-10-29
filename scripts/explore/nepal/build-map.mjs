@@ -376,6 +376,7 @@ await writeFile(join(OUT, "nepalmap/pmtiles-poc.js"), pmtilesPocJs);
 await writeFile(join(OUT, "nepalmap/terrain.js"), terrainJs);
 await writeFile(join(OUT, "nepalmap/offline.js"), offlineJs);
 await writeFile(join(OUT, "nepalmap/offline-sw.js"), offlineSwJs);
+await writeFile(join(OUT, "nepalmap-offline-sw.js"), offlineSwJs);
 await writeFile(join(OUT, "nepalmap/export-core.mjs"), exportCoreJs);
 await writeFile(join(OUT, "nepalmap/exports.mjs"), exportsJs);
 await writeFile(join(OUT, "nepalmap/mobile-sheet.js"), mobileSheetJs);

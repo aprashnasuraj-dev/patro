@@ -12,6 +12,15 @@ describe("Nepal district offline-pack contract",()=>{
     expect(ui).toContain("Array.isArray(e.data.failed)");
   });
 
+  it("registers a root-level worker whose scope includes canonical /nepalmap",()=>{
+    const ui=read("scripts/explore/nepal/map/offline.js");
+    const build=read("scripts/explore/nepal/build-map.mjs");
+    const wrangler=read("wrangler.jsonc");
+    expect(ui).toContain('register("/nepalmap-offline-sw.js",{scope:"/nepalmap"})');
+    expect(build).toContain('writeFile(join(OUT, "nepalmap-offline-sw.js"), offlineSwJs)');
+    expect(wrangler).toContain('"!/nepalmap-offline-sw.js"');
+  });
+
   it("can serve cached same-origin vendor and data resources to a controlled offline map",()=>{
     const sw=read("scripts/explore/nepal/map/offline-sw.js");
     expect(sw).not.toContain('url.origin!==self.location.origin||!url.pathname.startsWith("/nepalmap/")');

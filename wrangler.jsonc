@@ -50,6 +50,7 @@
       "!/nepal/trek-weather/*",
       "!/nepalmap",
       "!/nepalmap/*",
+      "!/nepalmap-offline-sw.js",
       "!/embed/nepalmap/*",
       "!/embed/nepalmap-widget.js",
       "!/sitemap-nepalmap.xml",
