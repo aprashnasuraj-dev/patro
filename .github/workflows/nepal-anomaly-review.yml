@@ -54,5 +54,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: nepal-osm-anomaly-review
-          path: docs/verification/nepal-*review*.json
+          path: |
+            docs/verification/nepal-rebuild-audit-review.json
+            docs/verification/nepal-anomaly-triage.json
+            docs/verification/nepal-disappeared-osm-status.json
           retention-days: 30
