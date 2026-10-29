@@ -715,7 +715,7 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
       ? `${item.rule.lunar_day} Sasih ${item.rule.sasih}`
       : `${item.rule.rahina} pada ${item.rule.date} (occurrence-only)`;
   const favoriteAction = ctx.flags.baliPwa && item.rule.type === "pawukon"
-    ? (() => { const next = nextPawukonPiodalan(item.rule, isoToJdn(today) + 1, 1)[0]; return `<div class="bali-day-actions"><button type="button" class="bali-save-pura" data-bali-save-pura="${esc(item.slug)}" data-bali-pura-name="${esc(item.name)}" data-bali-pura-locality="${esc(item.locality)}" data-bali-pura-next="${esc(jdnToIso(next))}">Simpan ke My Pura</button><a href="${BP}#my-bali">Lihat My Bali Calendar</a></div>`; })()
+    ? (() => { const next = nextPawukonPiodalan(item.rule, isoToJdn(today) + 1, 1)[0], feed=`${BP}/feed/piodalan/${item.slug}.ics`, webcal=ctx.site.replace(/^https?:/,"webcal:")+feed; return `<div class="bali-day-actions"><button type="button" class="bali-save-pura" data-bali-save-pura="${esc(item.slug)}" data-bali-pura-name="${esc(item.name)}" data-bali-pura-locality="${esc(item.locality)}" data-bali-pura-next="${esc(jdnToIso(next))}">Simpan ke My Pura</button><a href="${feed}">Piodalan .ics</a><a href="${esc(webcal)}">Berlangganan</a><a href="${BP}#my-bali">Lihat My Bali Calendar</a></div>`; })()
     : "";
   return {
     status: 200, maxAge: 86400 * 7, indexable: true,
