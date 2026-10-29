@@ -12,7 +12,7 @@
 // Same data and the same page paths as the /nepal explore pages (scripts/explore/families/nepal.mjs → nepalData()).
 // Places: © OpenStreetMap contributors (ODbL). Base map tiles: OpenFreeMap (no key).
 import { createHash } from "node:crypto";
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { nepalData } from "../families/nepal.mjs";
@@ -95,6 +95,23 @@ const ROADMAP_FLAGS = {
   nepalPmtiles: process.env.NEPALMAP_PMTILES === "1",
   nepalEmbeds: process.env.NEPALMAP_EMBEDS === "1",
 };
+
+if (SELF_HOST_MAPLIBRE) {
+  const vendorRoot = join(ROOT, "public/vendor/nepalmap/maplibre-4.7.1");
+  try {
+    await Promise.all([
+      access(join(vendorRoot, "maplibre-gl-csp.js")),
+      access(join(vendorRoot, "maplibre-gl-csp-worker.js")),
+      access(join(vendorRoot, "maplibre-gl.css")),
+    ]);
+  } catch {
+    throw new Error("NEPALMAP_SELF_HOST_MAPLIBRE=1 requires the pinned vendor runtime. Run scripts/explore/nepal/vendor-map-runtime.sh first.");
+  }
+}
+if (ROADMAP_FLAGS.nepalPmtiles) {
+  try { await access(join(ROOT, "public/vendor/nepalmap/pmtiles-4.5.0/pmtiles.js")); }
+  catch { throw new Error("NEPALMAP_PMTILES=1 requires the pinned PMTiles runtime. Run scripts/explore/nepal/vendor-map-runtime.sh first."); }
+}
 
 let stablePlaceIds = null;
 if (ROADMAP_FLAGS.nepalStablePlaceIds) {
