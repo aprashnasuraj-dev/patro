@@ -445,7 +445,9 @@ function piodalanIndex(ctx: Ctx): Rendered {
   const body = rows.map((x) => {
     const rule = x.rule.type === "pawukon"
       ? `${x.rule.saptawara} ${x.rule.pancawara}, Wuku ${x.rule.wuku} · berulang 210 hari`
-      : `${x.rule.lunar_day} Sasih ${x.rule.sasih} · kalender Sasih tahunan`;
+      : x.rule.type === "sasih"
+        ? `${x.rule.lunar_day} Sasih ${x.rule.sasih} · kalender Sasih tahunan`
+        : `${x.rule.rahina} · occurrence ${x.rule.date}; recurrence belum disimpulkan`;
     return `<tr><td><a href="${BP}/piodalan/${x.slug}">${esc(x.name)}</a><br><span class="note">${esc(x.locality)}</span></td><td>${esc(rule)}</td><td>${ROADMAP_FLAGS.provenanceUi ? sourceBadge(x.source.status, x.source.authority) : esc(x.source.authority)}</td></tr>`;
   }).join("");
   return {
@@ -474,13 +476,17 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
   if (item.rule.type === "pawukon") {
     const next = nextPawukonPiodalan(item.rule, isoToJdn(today), 6);
     schedule = `<section><h2>Piodalan berikutnya menurut aturan Pawukon</h2><table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>${esc(item.rule.saptawara)} ${esc(item.rule.pancawara)} · Wuku ${esc(item.rule.wuku)}</td></tr>`).join("")}</tbody></table><p class="note">Status: calculated from the source-backed Pawukon recurrence rule; the temple rule itself is ${esc(item.source.status)}.</p></section>`;
-  } else {
+  } else if (item.rule.type === "sasih") {
     const known = (item.known_occurrences || []).slice().sort().reverse();
     schedule = `<section><h2>Aturan Sasih</h2><p><b>${esc(item.rule.lunar_day)} Sasih ${esc(item.rule.sasih)}</b>.</p>${known.length ? `<p>Occurrence(s) explicitly supported by the source record: ${known.map((d) => `<a href="${BP}/${d}">${esc(idDate(d))}</a>`).join(" · ")}.</p>` : ""}<p class="note">AafnaiPatro does not project an unsourced future Gregorian date for a Sasih-based Piodalan. Future dates appear only after the annual Sasih/Purnama mapping is sourced.</p></section>`;
+  } else {
+    schedule = `<section><h2>Occurrence terverifikasi</h2><p><a href="${BP}/${item.rule.date}">${esc(idDate(item.rule.date))}</a> · <b>${esc(item.rule.rahina)}</b>.</p><p class="note">Sumber membuktikan occurrence ini, tetapi tidak cukup untuk menyimpulkan pola recurrence. Karena itu AafnaiPatro tidak membuat tanggal berikutnya.</p></section>`;
   }
   const ruleText = item.rule.type === "pawukon"
     ? `${item.rule.saptawara} ${item.rule.pancawara}, Wuku ${item.rule.wuku}`
-    : `${item.rule.lunar_day} Sasih ${item.rule.sasih}`;
+    : item.rule.type === "sasih"
+      ? `${item.rule.lunar_day} Sasih ${item.rule.sasih}`
+      : `${item.rule.rahina} pada ${item.rule.date} (occurrence-only)`;
   return {
     status: 200, maxAge: 86400 * 7, indexable: true,
     html: page({
