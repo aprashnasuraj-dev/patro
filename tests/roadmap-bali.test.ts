@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { baliMonthModel, otonanPossibilities, rerainanSearch } from "../worker/worldcal/pages/bali-weton";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
+import { pawukonEvents } from "../worker/worldcal/engines/pawukon";
+import { isoToJdn } from "../worker/worldcal/dates";
+import { NYEPI } from "../worker/worldcal/data/bali-saka";
 
 describe("Bali roadmap product model", () => {
   it("builds June 2026 month cells from the existing deterministic/source layers", () => {
@@ -8,6 +11,18 @@ describe("Bali roadmap product model", () => {
     expect(cells).toHaveLength(30);
     const galungan = cells.find((c) => c.gregorian_date === "2026-06-17");
     expect(galungan?.signals.some((s) => s.ref === "Hari Raya Galungan" && s.source_status === "calculated")).toBe(true);
+  });
+
+  it("cross-checks 2026 Hindu dates against the official Kemenag schedule", () => {
+    expect(NYEPI[2026]).toMatchObject({date:"2026-03-19",status:"official"});
+    for (const [date,name] of [
+      ["2026-04-04","Hari Raya Saraswati"],
+      ["2026-04-08","Pagerwesi"],
+      ["2026-06-17","Hari Raya Galungan"],
+      ["2026-06-27","Hari Raya Kuningan"],
+      ["2026-10-31","Hari Raya Saraswati"],
+      ["2026-11-04","Pagerwesi"],
+    ] as const) expect(pawukonEvents(isoToJdn(date)),date).toContain(name);
   });
 
   it("keeps published lunar facts distinct from calculated Pawukon", () => {
