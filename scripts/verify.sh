@@ -36,6 +36,7 @@ run_gate provenance_schema node scripts/roadmap/validate-schemas.mjs
 run_gate privacy_assertions node scripts/roadmap/privacy-assertions.mjs
 run_gate production_build npm run build
 run_gate static_budget node scripts/verify-static-file-budget.mjs
+run_gate seo_policy node scripts/roadmap/seo-policy.mjs
 run_gate e2e bash scripts/e2e.sh
 run_gate benchmark bash scripts/bench.sh
 run_gate accessibility bash scripts/a11y.sh
