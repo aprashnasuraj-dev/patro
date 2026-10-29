@@ -51,6 +51,15 @@ test("My Bali persists family Otonan and saved dates across reloads", async ({ p
   expect(download.suggestedFilename()).toBe("aafnai-bali-calendar-backup.json");
 });
 
+test("direct date jump reaches the supported historical and future window", async ({ page }) => {
+  await page.goto("/bali-calendar", { waitUntil: "domcontentloaded" });
+  await expect(page.locator(".bali-date-jump")).toBeVisible();
+  await page.locator('.bali-date-jump input[name="tanggal"]').fill("1929-01-01");
+  await page.locator(".bali-date-jump button").click();
+  await expect(page).toHaveURL(/\/bali-calendar\/1929-01-01$/);
+  await expect(page.locator("body")).toContainText("Wewaran lengkap");
+});
+
 test("Palelintangan and long-range dynamic pages remain rich and fail-closed correctly", async ({ page }) => {
   await page.goto("/bali-calendar/palelintangan", { waitUntil: "domcontentloaded" });
   await expect(page.locator("body")).toContainText("Kala Sungsang");
