@@ -63,10 +63,11 @@ function canonicalDateRedirect(request: Request): Response | null {
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    const requestUrl = new URL(request.url);
     const nepalApiStart = performance.now();
     const nepalApi = await nepalApiResponse(request, env as any);
     if (nepalApi) {
-      logRoadmapHttp({ product: "nepalmap", surface: "api", pathname: url.pathname, method: request.method, status: nepalApi.status, duration_ms: performance.now() - nepalApiStart });
+      logRoadmapHttp({ product: "nepalmap", surface: "api", pathname: requestUrl.pathname, method: request.method, status: nepalApi.status, duration_ms: performance.now() - nepalApiStart });
       return nepalApi;
     }
     const myTime = await myTimeResponse(request, env);
@@ -88,8 +89,14 @@ const optimizedWorker = {
     if (placesCalendar) return placesCalendar;
     // World calendars own only /nameday, /ethiopian-calendar, /bali-calendar, /weton, /mondkalender, /calendario-lunar(e)
     // and /sitemap-worldcal.xml + /sitemap-wc-*.xml; null for everything else.
+    const worldcalStart = performance.now();
     const worldcal = await worldcalResponse(request, env as any, ctx);
-    if (worldcal) return worldcal;
+    if (worldcal) {
+      if (requestUrl.pathname === "/bali-calendar" || requestUrl.pathname.startsWith("/bali-calendar/")) {
+        logRoadmapHttp({ product: "bali", surface: "calendar", pathname: requestUrl.pathname, method: request.method, status: worldcal.status, duration_ms: performance.now() - worldcalStart });
+      }
+      return worldcal;
+    }
     const conversion = await conversionPageResponse(request, env as any);
     if (conversion) return conversion;
 
