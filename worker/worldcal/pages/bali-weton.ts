@@ -214,8 +214,13 @@ function upcomingBali(fromIso: string, n = 8): string {
   return `<table><tbody>${out.join("")}</tbody></table>`;
 }
 
-function otonanForm(): string {
-  return `<form class="inline" method="get" action="${BP}/otonan"><label>Tanggal lahir<input type="date" name="lahir" required></label><label><span><input type="checkbox" name="sebelum_subuh" value="1" style="width:auto"> lahir antara tengah malam dan matahari terbit</span></label><button>Hitung otonan</button></form>`;
+function otonanForm(lahir = "", waktu = "unknown"): string {
+  return `<form class="inline" method="get" action="${BP}/otonan"><label>Tanggal lahir<input type="date" name="lahir" value="${esc(lahir)}" required></label>
+<label>Waktu lahir relatif terhadap matahari terbit<select name="waktu">
+<option value="unknown"${waktu === "unknown" ? " selected" : ""}>Tidak tahu / tidak yakin</option>
+<option value="after"${waktu === "after" ? " selected" : ""}>Saat atau setelah matahari terbit</option>
+<option value="before"${waktu === "before" ? " selected" : ""}>Antara tengah malam dan sebelum matahari terbit</option>
+</select></label><button>Hitung otonan</button></form>`;
 }
 
 const RING_HOLIDAYS = [...PAWUKON_HOLIDAYS.filter((h) => ["banyu-pinaruh", "pagerwesi", "galungan", "kuningan", "saraswati"].includes(h.key)).map((h) => ({ day: h.day, name: h.id })), ...TUMPEK.filter((t) => t.day !== 83).map((t) => ({ day: t.day, name: t.id }))];
@@ -293,28 +298,45 @@ function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
   };
 }
 
+function otonanVariant(lahir: string, p: NonNullable<ReturnType<typeof parseIso>>, beforeSunrise: boolean, today: string, ctx: Ctx): string {
+  const birthJdn = gregorianToJdn(p.y, p.m, p.d) - (beforeSunrise ? 1 : 0);
+  const pw = pawukon(birthJdn);
+  const next = otonanDates(birthJdn, isoToJdn(today), 6);
+  const feedPath = `${BP}/feed/otonan.ics?lahir=${encodeURIComponent(lahir)}${beforeSunrise ? "&sebelum_subuh=1" : ""}`;
+  const subscribe = ROADMAP_FLAGS.baliSubscriptionUi && ROADMAP_FLAGS.baliIcsFeeds
+    ? `<p><a href="${feedPath}">Unduh / buka kalender Otonan (.ics)</a> · <a href="${ctx.site.replace(/^https?:/, "webcal:")}${feedPath}">Berlangganan di aplikasi kalender</a></p>`
+    : "";
+  return `<section><h2>${beforeSunrise ? "Kemungkinan A — lahir sebelum matahari terbit" : "Kemungkinan B — lahir saat/setelah matahari terbit"}</h2>
+<p class="big">${esc(pw.saptawara)} ${esc(pw.pancawara)} ${esc(pw.wuku.name)}</p>
+<p class="note">${beforeSunrise ? "Hari Bali memakai hari kalender sebelumnya untuk kelahiran antara tengah malam dan matahari terbit." : "Hari Bali memakai tanggal sipil yang dipilih jika kelahiran terjadi saat atau setelah matahari terbit."}</p>
+<table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>umur ${Math.round((j - birthJdn) / 210)} oton</td></tr>`).join("")}</tbody></table>${subscribe}</section>`;
+}
+
 function otonan(ctx: Ctx): Rendered {
   const lahir = ctx.url.searchParams.get("lahir") || "";
-  const beforeSunrise = ctx.url.searchParams.get("sebelum_subuh") === "1";
+  const legacyBefore = ctx.url.searchParams.get("sebelum_subuh") === "1";
+  let waktu = ctx.url.searchParams.get("waktu") || (legacyBefore ? "before" : "unknown");
+  if (!["before", "after", "unknown"].includes(waktu)) waktu = "unknown";
   const today = todayIn(BALI_TZ, ctx.now);
   let result = "";
   const p = parseIso(lahir);
   if (p && inRange(lahir)) {
-    // The Balinese day turns at sunrise: a birth between midnight and sunrise belongs to the previous Balinese day.
-    const birthJdn = gregorianToJdn(p.y, p.m, p.d) - (beforeSunrise ? 1 : 0);
-    const pw = pawukon(birthJdn);
-    const next = otonanDates(birthJdn, isoToJdn(today), 6);
-    result = `<section><h2>Otonan untuk kelahiran ${esc(idDate(lahir))}${beforeSunrise ? " (sebelum matahari terbit)" : ""}</h2><p class="big">${esc(pw.saptawara)} ${esc(pw.pancawara)} ${esc(pw.wuku.name)}</p>
-<table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>umur ${Math.round((j - birthJdn) / 210)} oton</td></tr>`).join("")}</tbody></table></section>`;
+    if (waktu === "unknown" && ROADMAP_FLAGS.baliOtonanDualResult) {
+      result = `<section><h2>Dua kemungkinan karena waktu lahir tidak diketahui</h2><p>Dalam perhitungan yang dipakai AafnaiPatro, pergantian hari Bali terjadi saat matahari terbit. Karena jam lahir belum diketahui, jangan pilih satu hasil secara diam-diam: bandingkan kedua kemungkinan di bawah dan konfirmasi dengan catatan keluarga/pemangku bila diperlukan.</p></section>` +
+        otonanVariant(lahir, p, true, today, ctx) + otonanVariant(lahir, p, false, today, ctx);
+    } else {
+      const beforeSunrise = waktu === "before";
+      result = `<section><h2>Otonan untuk kelahiran ${esc(idDate(lahir))}</h2></section>` + otonanVariant(lahir, p, beforeSunrise, today, ctx);
+    }
   }
   const isResult = Boolean(lahir);
   return {
     status: 200, maxAge: isResult ? 3600 : 86400, indexable: !isResult,
     html: page({
       site: ctx.site, path: `${BP}/otonan`, lang: "id", title: "Kalkulator otonan Bali — hitung hari otonan setiap 210 hari",
-      description: "Hitung otonan (hari kelahiran menurut Pawukon Bali) dari tanggal lahir: saptawara, pancawara dan wuku, serta tanggal otonan berikutnya.",
-      h1: "Kalkulator otonan", sub: "Otonan berulang setiap 210 hari pada saptawara, pancawara dan wuku yang sama.", crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/otonan`, label: "Otonan" }],
-      indexable: !isResult, body: `<section>${otonanForm()}</section>${result}`, footer: BALI_NOTE,
+      description: "Hitung otonan menurut Pawukon Bali dari tanggal lahir, termasuk dua kemungkinan bila waktu lahir terhadap matahari terbit tidak diketahui.",
+      h1: "Kalkulator otonan", sub: "Otonan berulang setiap 210 hari; kelahiran sebelum matahari terbit memakai hari Bali sebelumnya.", crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/otonan`, label: "Otonan" }],
+      indexable: !isResult, body: `<section>${otonanForm(lahir, waktu)}</section>${result}`, footer: BALI_NOTE,
     }),
   };
 }
