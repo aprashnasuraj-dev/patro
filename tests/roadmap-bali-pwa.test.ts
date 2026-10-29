@@ -18,7 +18,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(r?.html).toContain('class="bali-workspace bali-traditional-workspace"');
     expect(r?.html).toContain('class="tika-month-grid"');
     expect(r?.html).toContain("INGKEL");
-    expect((r?.html.match(/class="full-wuku/g)||[])).toHaveLength(30);
+    expect((r?.html.match(/class="full-wuku(?: current)?"/g)||[])).toHaveLength(30);
     expect(r?.html).not.toContain('id="bali-install"');
     expect(r?.html).not.toContain('rel="manifest" href="/bali-calendar/manifest.webmanifest"');
   });
