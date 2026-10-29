@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bali Calendar">
+<defs><radialGradient id="g" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#fff9e8"/><stop offset="1" stop-color="#d9a62e"/></radialGradient></defs>
+<rect width="512" height="512" rx="108" fill="#2b2118"/>
+<path d="M0 28h512v42H0z" fill="#8c1f1f"/><path d="M0 70h512v24H0z" fill="#d9a62e"/>
+<g transform="translate(256 284)">
+<circle r="158" fill="url(#g)" stroke="#f4e6b8" stroke-width="12"/>
+<circle r="122" fill="none" stroke="#2b2118" stroke-width="18" stroke-dasharray="18 18"/>
+<circle r="79" fill="#8c1f1f" stroke="#f5d77a" stroke-width="9"/>
+<path d="M0-61 18-18 61 0 18 18 0 61-18 18-61 0-18-18Z" fill="#f7e5a7"/>
+<circle r="21" fill="#2b2118"/>
+</g>
+<path d="M48 448h416" stroke="#f4efe0" stroke-width="20" stroke-dasharray="20 20"/>
+</svg>

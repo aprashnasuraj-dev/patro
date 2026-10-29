@@ -6,7 +6,7 @@
   "lang": "id",
   "dir": "ltr",
   "start_url": "/bali-calendar?source=pwa",
-  "scope": "/",
+  "scope": "/bali-calendar",
   "display": "standalone",
   "display_override": [
     "standalone",
@@ -22,6 +22,12 @@
   ],
   "prefer_related_applications": false,
   "icons": [
+    {
+      "src": "/bali-calendar/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
     {
       "src": "/icon-192.png",
       "sizes": "192x192",
@@ -56,16 +62,6 @@
       "name": "Piodalan Bali",
       "short_name": "Piodalan",
       "url": "/bali-calendar/piodalan"
-    },
-    {
-      "name": "Aafnai Tools",
-      "short_name": "Tools",
-      "url": "/tools"
-    },
-    {
-      "name": "Weton Jawa",
-      "short_name": "Weton",
-      "url": "/weton"
     }
   ]
 }

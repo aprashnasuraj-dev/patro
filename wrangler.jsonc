@@ -30,6 +30,7 @@
       "!/pwa-install-early.js",
       "!/bali-calendar/manifest.webmanifest",
       "!/bali-calendar/pwa.js",
+      "!/bali-calendar-sw.js",
       "!/sw.js",
       "!/patro-boot-recovery.js",
       "!/icon-192.png",

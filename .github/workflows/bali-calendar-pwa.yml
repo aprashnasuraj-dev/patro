@@ -50,9 +50,14 @@ jobs:
         run: |
           test -s dist/bali-calendar/manifest.webmanifest
           test -s dist/bali-calendar/pwa.js
+          test -s dist/bali-calendar-sw.js
+          test -s dist/bali-calendar/icon.svg
           grep -q '"id": "/bali-calendar"' dist/bali-calendar/manifest.webmanifest
-          grep -q 'WARM_BALI_PWA' dist/bali-calendar/pwa.js
-          grep -q 'aafnai-pwa-v20' dist/sw.js
+          grep -q 'bali-calendar-sw.js?rev=bali-calendar-pwa-v1' dist/bali-calendar/pwa.js
+          grep -q 'bali-calendar-shell-v1' dist/bali-calendar-sw.js
+          grep -q 'aafnai-pwa-v19' dist/sw.js
+          ! grep -q 'BALI_PWA_CORE' dist/sw.js
+          grep -q 'aafnai-pwa-v19' src/pwa.ts
       - name: Evidence summary
         run: |
           {
