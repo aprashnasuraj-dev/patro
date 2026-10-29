@@ -18,10 +18,11 @@ import { baliRoute, wetonRoute } from "./pages/bali-weton";
 import { moonRoute } from "./pages/moon";
 import { sitemapChild, sitemapIndex } from "./sitemap";
 import type { Ctx, Rendered } from "./types";
+import { ROADMAP_FLAGS, roadmapFlagsFromEnv, roadmapFlagSignature, type RoadmapFlags } from "../roadmap/flags";
 
 export { isWorldcalPath } from "./config";
 
-type Env = { PUBLIC_SITE_URL?: string };
+type Env = { PUBLIC_SITE_URL?: string; [key: string]: unknown };
 const QUERY_PATHS = /\/(search|convert|otonan|hitung|jodoh|cari|otonan\.ics)$/;
 type ExecCtx = { waitUntil(p: Promise<unknown>): void };
 
@@ -51,11 +52,13 @@ export async function worldcalResponse(request: Request, env: Env, ctx?: ExecCtx
     return Response.redirect(target.toString(), 301);
   }
   const site = (env.PUBLIC_SITE_URL || url.origin).replace(/\/+$/, "");
+  const flags = roadmapFlagsFromEnv(env);
 
   const cache: Cache | undefined = (globalThis as any).caches?.default;
   // Only the form endpoints read the query string; everything else is cached per path so random queries cannot fragment the cache.
   const keyUrl = new URL(url.toString());
   if (!QUERY_PATHS.test(clean)) keyUrl.search = "";
+  keyUrl.searchParams.set("__roadmap_flags", roadmapFlagSignature(flags));
   const cacheKey = new Request(keyUrl.toString(), { method: "GET" });
   if (cache) {
     try {
@@ -66,7 +69,7 @@ export async function worldcalResponse(request: Request, env: Env, ctx?: ExecCtx
 
   let response: Response;
   try {
-    response = render(clean, url, site, now);
+    response = render(clean, url, site, now, flags);
   } catch (error) {
     console.error("worldcal render failed", clean, error);
     return new Response(head ? null : "Temporarily unavailable", { status: 503, headers: { "retry-after": "300", "cache-control": "no-store", "content-type": "text/plain; charset=utf-8" } });
@@ -84,17 +87,17 @@ function finish(res: Response, head: boolean, state: string): Response {
   return new Response(head ? null : res.body, { status: res.status, headers });
 }
 
-export function render(path: string, url: URL, site: string, now: Date): Response {
-  if (path === SITEMAP_INDEX) return xml(sitemapIndex(site, now));
+export function render(path: string, url: URL, site: string, now: Date, flags: RoadmapFlags = { ...ROADMAP_FLAGS }): Response {
+  if (path === SITEMAP_INDEX) return xml(sitemapIndex(site, now, flags));
   const sm = path.match(SITEMAP_CHILD_RE);
   if (sm) {
-    const body = sitemapChild(sm[1], site, now);
+    const body = sitemapChild(sm[1], site, now, flags);
     return body ? xml(body) : new Response("Not Found", { status: 404, headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=600" } });
   }
   const family = familyForPath(path)!;
   const prefix = FAMILIES[family].prefix;
   const rest = path.slice(prefix.length).split("/").filter(Boolean);
-  const ctx: Ctx = { site, url, path, now };
+  const ctx: Ctx = { site, url, path, now, flags };
   const out = ROUTES[family](ctx, rest);
   if (!out) {
     return new Response(NOT_FOUND_HTML(prefix), { status: 404, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=600, s-maxage=3600", "x-robots-tag": "noindex, follow" } });
