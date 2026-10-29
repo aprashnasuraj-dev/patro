@@ -1,0 +1,265 @@
+name: "Nepal Valhalla runtime evidence"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [wip/roadmap-critical-path]
+    paths:
+      - ".github/workflows/nepal-valhalla-evidence.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nepal-valhalla-runtime-wip
+  cancel-in-progress: true
+
+jobs:
+  valhalla-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Runner capacity
+        run: |
+          docker version
+          docker compose version
+          nproc
+          free -h
+          df -h
+
+      - name: Build pinned graph and run direct fixtures
+        working-directory: infra/nepal-routing
+        env:
+          VALHALLA_THREADS: "2"
+        run: ./build-release.sh
+
+      - name: Exercise promote and rollback
+        working-directory: infra/nepal-routing
+        env:
+          VALHALLA_USE_TILES_IGNORE_PBF: "True"
+          VALHALLA_FORCE_REBUILD: "False"
+          VALHALLA_PORT: "8002"
+        run: |
+          set -euo pipefail
+          SNAPSHOT="2026-10-28"
+          rm -rf data/releases/ci-baseline data/current data/previous
+          cp -al "data/releases/$SNAPSHOT" data/releases/ci-baseline
+          ln -s releases/ci-baseline data/current
+          ./promote-release.sh promote "$SNAPSHOT" | tee reports/promote-ci.log
+          test "$(basename "$(readlink -f data/current)")" = "$SNAPSHOT"
+          test "$(basename "$(readlink -f data/previous)")" = "ci-baseline"
+          ./promote-release.sh rollback | tee reports/rollback-ci.log
+          test "$(basename "$(readlink -f data/current)")" = "ci-baseline"
+          docker compose -p aafnaipatro-nepal-routing -f docker-compose.yml down || true
+
+      - name: Start authenticated HTTPS gateway
+        working-directory: infra/nepal-routing
+        env:
+          VALHALLA_USE_TILES_IGNORE_PBF: "True"
+          VALHALLA_FORCE_REBUILD: "False"
+          VALHALLA_THREADS: "2"
+          VALHALLA_PORT: "8002"
+          NEPAL_ROUTING_HOST: "localhost"
+          NEPAL_ROUTING_TOKEN: "ci-nepal-routing-token"
+          CADDY_ACME_EMAIL: "ci@example.invalid"
+          NEPAL_ROUTING_HTTP_PORT: "18080"
+          NEPAL_ROUTING_HTTPS_PORT: "18443"
+        run: |
+          set -euo pipefail
+          cp Caddyfile Caddyfile.production
+          cat > Caddyfile <<'CADDY'
+          https://localhost {
+            tls internal
+            header -Server
+            @unauthorized {
+              not header Authorization "Bearer {$NEPAL_ROUTING_TOKEN}"
+            }
+            respond @unauthorized 401
+            handle /healthz {
+              rewrite * /status
+              reverse_proxy valhalla:8002 {
+                transport http {
+                  dial_timeout 2s
+                  response_header_timeout 15s
+                }
+              }
+            }
+            handle /route {
+              request_body {
+                max_size 64KB
+              }
+              reverse_proxy valhalla:8002 {
+                transport http {
+                  dial_timeout 2s
+                  response_header_timeout 15s
+                }
+              }
+            }
+            respond 404
+          }
+          CADDY
+
+          VALHALLA_DATA_DIR="$PWD/data/releases/2026-10-28" docker compose --profile gateway -p aafnaipatro-nepal-routing -f docker-compose.yml up -d
+
+          ready=0
+          for _ in $(seq 1 120); do
+            if curl -kfsS -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" https://localhost:18443/healthz > reports/gateway-health.json 2>/dev/null; then
+              ready=1
+              break
+            fi
+            sleep 2
+          done
+          test "$ready" = "1"
+          test "$(curl -ksS -o /dev/null -w '%{http_code}' https://localhost:18443/healthz)" = "401"
+          test "$(curl -ksS -o /dev/null -w '%{http_code}' -H 'Authorization: Bearer wrong' https://localhost:18443/healthz)" = "401"
+          test "$(curl -ksS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" https://localhost:18443/not-a-route)" = "404"
+          docker stats --no-stream --format '{{json .}}' > reports/docker-stats-ci.jsonl
+          du -sb data/releases/2026-10-28 > reports/release-disk-ci.txt
+          df -h > reports/runner-disk-ci.txt
+
+      - name: Run all route fixtures through HTTPS gateway
+        working-directory: infra/nepal-routing
+        env:
+          NEPAL_ROUTING_TOKEN: "ci-nepal-routing-token"
+        run: |
+          python3 - <<'PY'
+          import json, math, os, subprocess, time
+          from pathlib import Path
+
+          spec=json.load(open("fixtures/routes.json",encoding="utf-8"))
+          token=os.environ["NEPAL_ROUTING_TOKEN"]
+          base="https://localhost:18443"
+
+          def route(points,costing,max_ms):
+              payload={
+                  "locations":[{"lat":p["lat"],"lon":p["lon"],"type":"break"} for p in points],
+                  "costing":costing,
+                  "units":"kilometers",
+                  "format":"osrm",
+                  "shape_format":"geojson",
+                  "directions_type":"instructions",
+                  "banner_instructions":False,
+                  "voice_instructions":False,
+                  "alternates":0,
+              }
+              started=time.perf_counter()
+              cp=subprocess.run([
+                  "curl","-kfsS","--max-time",str(max(20,int(max_ms/1000)+5)),
+                  "-H","content-type: application/json",
+                  "-H","Authorization: Bearer "+token,
+                  "--data-binary",json.dumps(payload,separators=(",",":")),
+                  base+"/route",
+              ],check=True,capture_output=True,text=True)
+              elapsed=(time.perf_counter()-started)*1000
+              data=json.loads(cp.stdout)
+              routes=data.get("routes") if isinstance(data,dict) else None
+              if not routes:
+                  raise RuntimeError("missing routes[0]")
+              r=routes[0]
+              g=r.get("geometry")
+              if not isinstance(g,dict) or g.get("type")!="LineString" or len(g.get("coordinates") or [])<2:
+                  raise RuntimeError("invalid route geometry")
+              for key in ("distance","duration"):
+                  value=r.get(key)
+                  if not isinstance(value,(int,float)) or not math.isfinite(value) or value<=0:
+                      raise RuntimeError("invalid route "+key)
+              if elapsed>max_ms:
+                  raise RuntimeError("route exceeded fixture latency budget")
+              return {
+                  "elapsed_ms":round(elapsed,1),
+                  "distance":r["distance"],
+                  "duration_s":r["duration"],
+                  "geometry_points":len(g["coordinates"]),
+                  "legs":len(r.get("legs") or []),
+              }
+
+          results=[]
+          failures=0
+          for f in spec["fixtures"]:
+              row={"name":f["name"],"region":f.get("region"),"kind":f["kind"],"costing":f["costing"]}
+              try:
+                  if f["kind"]=="route":
+                      row["route"]=route(f["points"],f["costing"],f.get("max_ms",15000))
+                  else:
+                      base_route=route(f["base_points"],f["costing"],f.get("max_ms",15000))
+                      via_route=route(f["via_points"],f["costing"],f.get("max_ms",15000))
+                      added=via_route["duration_s"]-base_route["duration_s"]
+                      if added<0:
+                          raise RuntimeError("detour unexpectedly faster")
+                      row["base_route"]=base_route
+                      row["via_route"]=via_route
+                      row["detour"]={
+                          "added_duration_s":added,
+                          "added_distance":via_route["distance"]-base_route["distance"],
+                      }
+                  row["ok"]=True
+              except Exception as exc:
+                  row["ok"]=False
+                  row["error"]=str(exc)
+                  failures+=1
+              results.append(row)
+
+          report={
+              "schema_version":1,
+              "transport":"HTTPS via Caddy internal CA on ephemeral GitHub runner",
+              "authentication":"exact bearer token; missing and wrong tokens separately asserted 401",
+              "results":results,
+              "ok":failures==0,
+              "failure_count":failures,
+          }
+          Path("reports/gateway-routes-2026-10-28.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(report,indent=2))
+          raise SystemExit(1 if failures else 0)
+          PY
+
+      - name: Restore production config and summarize
+        if: always()
+        working-directory: infra/nepal-routing
+        run: |
+          if [[ -f Caddyfile.production ]]; then mv -f Caddyfile.production Caddyfile; fi
+          NEPAL_ROUTING_HOST=localhost NEPAL_ROUTING_TOKEN=ci-nepal-routing-token CADDY_ACME_EMAIL=ci@example.invalid NEPAL_ROUTING_HTTP_PORT=18080 NEPAL_ROUTING_HTTPS_PORT=18443 docker compose --profile gateway -p aafnaipatro-nepal-routing -f docker-compose.yml down || true
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          print("## First-party Nepal Valhalla runtime evidence")
+          for p in ["reports/build-2026-10-28.json","reports/routes-2026-10-28.json","reports/gateway-routes-2026-10-28.json"]:
+              if not os.path.exists(p):
+                  continue
+              d=json.load(open(p))
+              print("\n### "+os.path.basename(p))
+              if p.endswith("build-2026-10-28.json"):
+                  print("- graph build seconds:",d.get("generation_seconds"))
+                  print("- release bytes:",d.get("release_bytes"))
+                  print("- Valhalla status version:",(d.get("valhalla_status") or {}).get("version"))
+              else:
+                  rows=d.get("results") or (d.get("route_verification") or {}).get("results") or []
+                  print("- fixtures:",len(rows))
+                  print("- passing:",sum(1 for r in rows if r.get("ok")))
+                  times=[]
+                  for row in rows:
+                      for key in ("route","base_route","via_route"):
+                          val=row.get(key)
+                          if isinstance(val,dict) and isinstance(val.get("elapsed_ms"),(int,float)):
+                              times.append(val["elapsed_ms"])
+                  if times:
+                      print("- max measured route latency ms:",max(times))
+          PY
+
+      - name: Upload runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nepal-valhalla-runtime-evidence
+          path: |
+            infra/nepal-routing/reports/
+            infra/nepal-routing/data/releases/2026-10-28/source-lock.json
+            infra/nepal-routing/data/releases/2026-10-28/valhalla.json
+          if-no-files-found: warn
+          retention-days: 30
