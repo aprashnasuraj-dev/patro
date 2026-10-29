@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-afterEach(() => { delete (globalThis as any).AafnaiRoutingV2; vi.useRealTimers(); });
+afterEach(() => { delete (globalThis as any).AafnaiRoutingV2; vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 async function api() {
   await import("../scripts/explore/nepal/map/routing-v2.js?test=" + Math.random());
@@ -16,6 +16,32 @@ describe("Nepal routing v2 core", () => {
     await expect(client.route(req)).rejects.toMatchObject({ code: "upstream_5xx" });
     await expect(client.route(req)).rejects.toMatchObject({ code: "upstream_5xx" });
     await expect(client.route(req)).rejects.toMatchObject({ code: "circuit_open" });
+  });
+
+  it("uses the same-origin first-party Valhalla relay contract", async () => {
+    const R = await api();
+    const fetchMock = vi.fn(async (url:any, init:any) => {
+      expect(url).toBe("/api/nepal/v1/route");
+      expect(init.method).toBe("POST");
+      expect(init.credentials).toBe("same-origin");
+      expect(JSON.parse(init.body)).toEqual({
+        mode:"foot",
+        points:[{lat:27.7,lng:85.3},{lat:27.71,lng:85.31},{lat:27.72,lng:85.32}]
+      });
+      return new Response(JSON.stringify({
+        geometry:{type:"LineString",coordinates:[[85.3,27.7],[85.32,27.72]]},
+        distance:3200,duration:2400,legs:[],warnings:[],confidence:null
+      }),{status:200,headers:{"content-type":"application/json"}});
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const provider = new R.FirstPartyValhallaProvider("/api/nepal/v1/route");
+    const route = await provider.route({
+      mode:"foot",
+      points:[{lat:27.7,lng:85.3},{lat:27.71,lng:85.31},{lat:27.72,lng:85.32}]
+    });
+    expect(route.distance).toBe(3200);
+    expect(route.provenance.provider).toBe("aafnaipatro-valhalla");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   it("supports provider swap without changing the caller contract", async () => {
