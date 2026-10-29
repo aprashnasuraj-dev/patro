@@ -453,20 +453,21 @@ function baliSasihSakaPage(ctx: Ctx): Rendered {
   const pt = PURNAMA_TILEM[year];
   const annual = readiness.ready
     ? `<div class="tw"><table><thead><tr><th>Sasih</th><th>Purnama</th><th>Tilem</th></tr></thead><tbody>${mappings.map((m) => `<tr><th>${esc(m.sasih)}</th><td>${m.purnama ? `<a href="${BP}/${m.purnama}">${esc(m.purnama)}</a>` : "—"}</td><td>${m.tilem ? `<a href="${BP}/${m.tilem}">${esc(m.tilem)}</a>` : "—"}</td></tr>`).join("")}</tbody></table></div>`
-    : `<div class="bali-fail-closed"><strong>Pemetaan Sasih ${year} belum lengkap.</strong><p>AafnaiPatro tidak memproyeksikan tanggal Sasih yang tidak diterbitkan. Anchor resmi tetap ditampilkan sebagai bukti terpisah, bukan sebagai dasar interpolasi.</p></div>${anchors.length ? `<div class="tw"><table><thead><tr><th>Tanggal</th><th>Rahina</th><th>Sasih</th><th>Sumber</th></tr></thead><tbody>${anchors.map((a) => `<tr><td><a href="${BP}/${a.date}">${esc(a.date)}</a></td><td>${esc(a.lunar_day)}</td><td>${esc(a.sasih)}</td><td><a href="${esc(a.source_url)}" rel="nofollow noopener">${esc(a.authority)} ↗</a></td></tr>`).join("")}</tbody></table></div>` : ""}`;
+    : `<div class="bali-fail-closed"><strong>Kalender Sasih lengkap ${year} belum tersedia.</strong><p>AafnaiPatro hanya menampilkan tanggal Sasih, Purnama dan Tilem yang sudah tersedia untuk tahun tersebut.</p></div>${anchors.length ? `<div class="tw"><table><thead><tr><th>Tanggal</th><th>Rahina</th><th>Sasih</th></tr></thead><tbody>${anchors.map((a) => `<tr><td><a href="${BP}/${a.date}">${esc(a.date)}</a></td><td>${esc(a.lunar_day)}</td><td>${esc(a.sasih)}</td></tr>`).join("")}</tbody></table></div>` : ""}`;
+  const sourceDetails = `<details class="bali-about-data"><summary>Tentang kalender Sasih ${year}</summary><div>${source ? `<p>Kalender tahunan: ${esc(source.version)} · ${esc(source.publication_authority)}.</p><p><a href="${esc(source.source_url)}" rel="nofollow noopener">Lihat penerbit kalender ↗</a></p>` : "<p>Belum ada kalender tahunan lengkap yang tercatat untuk tahun ini.</p>"}</div></details>`;
   return {
     status: 200, maxAge: 86400, indexable: false,
     html: page({
       site: ctx.site, path: `${BP}/sasih-saka`, lang: "id",
-      title: `Kalender Sasih / Saka Bali ${year} — Purnama, Tilem dan sumber tahunan`,
-      description: `Lapisan Sasih/Saka Bali ${year} dipisahkan dari Pawukon: Purnama, Tilem, Nyepi dan status kesiapan sumber tahunan.`,
-      h1: "Sasih / Saka · lapisan lunar Bali",
-      sub: `${idDate(today)} · tahun Gregorian ${year}`,
+      title: `Kalender Sasih dan Saka Bali ${year} — Purnama, Tilem & Nyepi`,
+      description: `Kalender Sasih dan Saka Bali ${year}: lihat Purnama, Tilem, Nyepi, fase Bulan dan tanggal Sasih yang tersedia.`,
+      h1: "Kalender Sasih dan Saka Bali",
+      sub: `${idDate(today)} · ${year}`,
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/sasih-saka`, label: "Sasih / Saka" }],
       indexable: false,
-      body: `${baliModeNav("sasih", today)}<section><h2>Status sumber tahunan</h2><p><b>${readiness.ready ? "Siap digunakan" : "Fail-closed"}</b>${source ? ` · ${esc(source.publication_authority)} · ${esc(source.version)}` : ""}</p>${annual}</section>
-<section><h2>Purnama / Tilem yang diterbitkan</h2>${pt ? `<p><b>Purnama:</b> ${pt.purnama.map((d) => `<a class="chip" href="${BP}/${d}">${esc(d)}</a>`).join(" ")}</p><p><b>Tilem:</b> ${pt.tilem.map((d) => `<a class="chip" href="${BP}/${d}">${esc(d)}</a>`).join(" ")}</p><p class="note">Sumber: ${esc(pt.source)}</p>` : `<p>Belum ada tabel Purnama/Tilem terbit untuk tahun ini di dataset.</p>`}</section>
-${astronomicalLunarContext(today)}<section><h2>Nyepi</h2><p>${NYEPI[year] ? `<a href="${BP}/${NYEPI[year].date}">${esc(idDate(NYEPI[year].date))}</a> · ${esc(NYEPI[year].status)}` : "Belum tersedia."}</p></section>`,
+      body: `${baliModeNav("sasih", today)}<section><h2>Sasih, Purnama dan Tilem ${year}</h2><p>Gunakan halaman ini untuk melihat kalender bulan Bali pada tahun ${year}. Pawukon tetap dapat dibuka melalui mode Tika.</p>${annual}</section>
+<section><h2>Purnama & Tilem ${year}</h2>${pt ? `<p><b>Purnama:</b> ${pt.purnama.map((d) => `<a class="chip" href="${BP}/${d}">${esc(d)}</a>`).join(" ")}</p><p><b>Tilem:</b> ${pt.tilem.map((d) => `<a class="chip" href="${BP}/${d}">${esc(d)}</a>`).join(" ")}</p>` : `<p>Belum ada daftar Purnama dan Tilem lengkap untuk tahun ini.</p>`}</section>
+${astronomicalLunarContext(today)}<section><h2>Nyepi ${year}</h2><p>${NYEPI[year] ? `<a href="${BP}/${NYEPI[year].date}">${esc(idDate(NYEPI[year].date))}</a>` : "Tanggal Nyepi belum tersedia untuk tahun ini."}</p></section>${sourceDetails}`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
   };
@@ -521,7 +522,7 @@ function baliSubscriptionSection(ctx: Ctx, year: number): string {
   return `<section><h2>Tambahkan ke kalender</h2>
 <p><a href="${holidays}">Hari raya Bali ${year} (.ics)</a> · <a href="${webcal(holidays)}">Berlangganan hari raya</a></p>
 <p><a href="${moon}">Purnama & Tilem ${year} (.ics)</a> · <a href="${webcal(moon)}">Berlangganan Purnama & Tilem</a></p>
-<p class="note">Untuk Google Calendar, salin URL HTTPS feed lalu pilih Tambahkan kalender → Dari URL. Feed mempertahankan status sumber (official/published/calculated/provisional) pada deskripsi acara.</p></section>`;
+<p class="note">Untuk Google Calendar, salin URL kalender lalu pilih Tambahkan kalender → Dari URL. Pembaruan jadwal akan mengikuti feed yang sama.</p></section>`;
 }
 
 function baliHolidays(ctx: Ctx, gy: number): Rendered | null {
@@ -707,7 +708,7 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
   let schedule = "";
   if (item.rule.type === "pawukon") {
     const next = nextPawukonPiodalan(item.rule, isoToJdn(today), 6);
-    schedule = `<section><h2>Piodalan berikutnya menurut aturan Pawukon</h2><table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>${esc(item.rule.saptawara)} ${esc(item.rule.pancawara)} · Wuku ${esc(item.rule.wuku)}</td></tr>`).join("")}</tbody></table><p class="note">Status: calculated from the source-backed Pawukon recurrence rule; the temple rule itself is ${esc(item.source.status)}.</p></section>`;
+    schedule = `<section><h2>Piodalan berikutnya</h2><table><tbody>${next.map((j, i) => `<tr><td>${i === 0 ? "Berikutnya" : ""}</td><td><a href="${BP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>${esc(item.rule.saptawara)} ${esc(item.rule.pancawara)} · Wuku ${esc(item.rule.wuku)}</td></tr>`).join("")}</tbody></table><p class="note">Jadwal berulang mengikuti kombinasi Pawukon yang tercatat untuk Pura ini.</p></section>`;
   } else if (item.rule.type === "sasih") {
     const known = (item.known_occurrences || []).slice().sort().reverse();
     const year = Number(today.slice(0, 4));
@@ -719,14 +720,14 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
     const next = candidates.find((x) => x.date && x.date >= today);
     const annual = next?.readiness.source || candidates[0].readiness.source;
     const mapped = next?.date
-      ? `<p><b>Tanggal Gregorian dari sumber tahunan:</b> <a href="${BP}/${next.date}">${esc(idDate(next.date))}</a>. <span class="note">Status: published/official annual mapping, not a Pawukon extrapolation.</span></p>`
-      : `<p class="note">AafnaiPatro tidak memproyeksikan tanggal Gregorian masa depan untuk aturan Sasih ini karena tahun ${year}${candidates[1].readiness.source ? `/${year + 1}` : ""} belum memiliki pemetaan Sasih/Purnama/Tilem tahunan lengkap yang lolos syarat sumber.</p>`;
+      ? `<p><b>Tanggal yang tersedia:</b> <a href="${BP}/${next.date}">${esc(idDate(next.date))}</a>.</p>`
+      : `<p class="note">Tanggal berikutnya belum ditampilkan karena kalender Sasih untuk tahun ${year}${candidates[1].readiness.source ? `/${year + 1}` : ""} belum tersedia lengkap.</p>`;
     const annualSource = annual
-      ? `<p class="note">Lapisan tahunan: ${esc(annual.version)} · ${esc(annual.publication_authority)} · status ${esc(annual.source_status)} · mapping_complete=${annual.mapping_complete ? "yes" : "no"} · <a href="${esc(annual.source_url)}" rel="nofollow noopener">sumber ↗</a>.</p>`
-      : `<p class="note">Belum ada rekaman sumber tahunan untuk tahun ini.</p>`;
-    schedule = `<section><h2>Aturan Sasih</h2><p><b>${esc(item.rule.lunar_day)} Sasih ${esc(item.rule.sasih)}</b>.</p>${known.length ? `<p>Occurrence(s) explicitly supported by the temple source: ${known.map((d) => `<a href="${BP}/${d}">${esc(idDate(d))}</a>`).join(" · ")}.</p>` : ""}${mapped}${annualSource}</section>`;
+      ? `<details class="bali-about-data"><summary>Tentang kalender tahunan</summary><div><p>${esc(annual.version)} · ${esc(annual.publication_authority)}.</p><p><a href="${esc(annual.source_url)}" rel="nofollow noopener">Lihat penerbit ↗</a></p></div></details>`
+      : "";
+    schedule = `<section><h2>Jadwal berdasarkan Sasih</h2><p><b>${esc(item.rule.lunar_day)} Sasih ${esc(item.rule.sasih)}</b>.</p>${known.length ? `<p>Tanggal yang pernah tercatat: ${known.map((d) => `<a href="${BP}/${d}">${esc(idDate(d))}</a>`).join(" · ")}.</p>` : ""}${mapped}${annualSource}</section>`;
   } else {
-    schedule = `<section><h2>Occurrence terverifikasi</h2><p><a href="${BP}/${item.rule.date}">${esc(idDate(item.rule.date))}</a> · <b>${esc(item.rule.rahina)}</b>.</p><p class="note">Sumber membuktikan occurrence ini, tetapi tidak cukup untuk menyimpulkan pola recurrence. Karena itu AafnaiPatro tidak membuat tanggal berikutnya.</p></section>`;
+    schedule = `<section><h2>Tanggal Piodalan yang tercatat</h2><p><a href="${BP}/${item.rule.date}">${esc(idDate(item.rule.date))}</a> · <b>${esc(item.rule.rahina)}</b>.</p><p class="note">Belum ada pola berulang yang cukup jelas untuk menampilkan tanggal berikutnya.</p></section>`;
   }
   const ruleText = item.rule.type === "pawukon"
     ? `${item.rule.saptawara} ${item.rule.pancawara}, Wuku ${item.rule.wuku}`
