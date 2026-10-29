@@ -23,6 +23,7 @@
     tab: "explore",
     from: null, // {lat, lng, label}
     to: null,
+    stops: [],
     mode: "car",
   };
   var layers = {}; // id -> {rows, loaded, loading}
@@ -65,6 +66,7 @@
     state.query = q.get("q") || "";
     state.from = parsePoint(q.get("from"));
     state.to = parsePoint(q.get("to"));
+    state.stops = (q.get("via") || "").split("|").map(parsePoint).filter(Boolean).slice(0, 8);
     if (/^(car|bike|foot)$/.test(q.get("mode") || "")) state.mode = q.get("mode");
     if (state.from || state.to) state.tab = "route";
     var ll = (q.get("ll") || "").split(",").map(Number);
@@ -92,6 +94,7 @@
       if (state.minEle) q.set("ele", String(state.minEle));
       if (state.from) q.set("from", pointParam(state.from));
       if (state.to) q.set("to", pointParam(state.to));
+      if (state.stops.length) q.set("via", state.stops.map(pointParam).join("|"));
       if ((state.from || state.to) && state.mode !== "car") q.set("mode", state.mode);
       if (map) { var c = map.getCenter(); q.set("ll", c.lat.toFixed(4) + "," + c.lng.toFixed(4) + "," + map.getZoom().toFixed(1)); }
       var s = q.toString();
@@ -561,7 +564,9 @@
   function compass(b) { return ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"][Math.round(((b % 360) + 360) % 360 / 45) % 8]; }
   function googleUrl() {
     var tm = { car: "driving", bike: "two-wheeler", foot: "walking" }[state.mode];
-    return "https://www.google.com/maps/dir/?api=1&origin=" + state.from.lat + "," + state.from.lng + "&destination=" + state.to.lat + "," + state.to.lng + "&travelmode=" + (tm === "two-wheeler" ? "driving" : tm);
+    var url = "https://www.google.com/maps/dir/?api=1&origin=" + state.from.lat + "," + state.from.lng + "&destination=" + state.to.lat + "," + state.to.lng + "&travelmode=" + (tm === "two-wheeler" ? "driving" : tm);
+    if (state.stops.length) url += "&waypoints=" + encodeURIComponent(state.stops.map(function (p) { return p.lat + "," + p.lng; }).join("|"));
+    return url;
   }
   function computeRoute() {
     clearRoute();
