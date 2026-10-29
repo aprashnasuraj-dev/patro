@@ -124,13 +124,27 @@ export const BALI_ANNUAL_SASIH_SOURCES: AnnualSasihSource[] = [
         source_status:"official",
         note:"Provincial-government event record explicitly identifies 12 August 2026 as Tilem Sasih Karo.",
       },
+      {
+        date:"2026-07-29", lunar_day:"Purnama", sasih:"Karo",
+        authority:"Rumah Sakit Mata Bali Mandara, Pemerintah Provinsi Bali",
+        source_url:"https://rsmatabalimandara.baliprov.go.id/pelaksanaan-piodalan-padmasana-rumah-sakit-mata-bali-mandara-purnama-sasih-karo-hari-rabu-tanggal-29-juli-2026",
+        source_status:"official",
+        note:"The provincial hospital's Piodalan record explicitly identifies 29 July 2026 as Purnama Sasih Karo.",
+      },
+      {
+        date:"2026-09-26", lunar_day:"Purnama", sasih:"Kapat",
+        authority:"Pemerintah Provinsi Bali",
+        source_url:"https://www.baliprov.go.id/web/gubernur-wayan-koster-hadiri-puncak-karya-panca-wali-krama-ulun-danu-batur-rawat-kesucian-alam-bali",
+        source_status:"official",
+        note:"The provincial report explicitly states the 26 September 2026 Panca Wali Krama peak coincided with Purnama Sasih Kapat. This is a Sasih anchor, not a recurring Piodalan rule.",
+      },
     ],
     conflict_history: [],
     note: "The 22 May 2026 source documents the SKHDN TIKA deliberation process, not a complete published annual Sasih mapping. Isolated official anchors are stored for provenance/cross-checking but cannot unlock arbitrary Sasih-based future dates.",
   },
 ];
 
-const TRUSTED_ANNUAL_HOSTS=new Set(["bimashindu.kemenag.go.id","baliprov.go.id","www.baliprov.go.id"]);
+const TRUSTED_ANNUAL_HOSTS=new Set(["bimashindu.kemenag.go.id","baliprov.go.id","www.baliprov.go.id","rsmatabalimandara.baliprov.go.id"]);
 
 export function annualSasihSource(year: number): AnnualSasihSource | null {
   return BALI_ANNUAL_SASIH_SOURCES.find((x)=>x.year===year) || null;

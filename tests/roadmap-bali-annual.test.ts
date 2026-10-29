@@ -24,7 +24,11 @@ describe("Bali annual Sasih source layer",()=>{
   it("fails closed for 2026 despite isolated official anchors",()=>{
     const readiness=annualSasihReadiness(2026);
     expect(readiness.ready).toBe(false);
-    expect(readiness.source?.anchors.length).toBeGreaterThanOrEqual(2);
+    expect(readiness.source?.anchors.length).toBeGreaterThanOrEqual(4);
+    expect(readiness.source?.anchors).toEqual(expect.arrayContaining([
+      expect.objectContaining({date:"2026-07-29",lunar_day:"Purnama",sasih:"Karo"}),
+      expect.objectContaining({date:"2026-09-26",lunar_day:"Purnama",sasih:"Kapat"}),
+    ]));
     expect(sasihGregorianDate({type:"sasih",lunar_day:"Purnama",sasih:"Kedasa"},2026)).toBeNull();
     expect(sasihGregorianDate({type:"sasih",lunar_day:"Tilem",sasih:"Karo"},2026)).toBeNull();
   });
@@ -35,6 +39,9 @@ describe("Bali annual Sasih source layer",()=>{
     expect(result.count).toBeGreaterThanOrEqual(50);
     expect(BALI_PIODALAN.some((x)=>x.slug==="pura-ulun-subak-kelepekan-danginsema-tumbakbayuh"&&x.rule.type==="sasih")).toBe(true);
     expect(BALI_PIODALAN.some((x)=>x.slug==="pura-batur-beten-buni-tiying-tutul-tumbakbayuh"&&x.rule.type==="pawukon")).toBe(true);
+    expect(BALI_PIODALAN.some((x)=>x.slug==="pura-dalem-manukaya-let"&&x.rule.type==="sasih")).toBe(true);
+    expect(BALI_PIODALAN.some((x)=>x.slug==="pura-catur-manukaya-let"&&x.rule.type==="pawukon")).toBe(true);
+    expect(BALI_PIODALAN.some((x)=>x.slug==="padmasana-rs-mata-bali-mandara"&&x.rule.type==="occurrence")).toBe(true);
   });
 
   it("does not encode the unresolved Tumbakbayuh Sapu Jagat Sasih ambiguity",()=>{
