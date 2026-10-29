@@ -450,7 +450,7 @@ async function shell({ path, title, description, h1, intro, preset, content, sch
 <script type="application/ld+json">${jsonLd(schema)}</script>
 </head><body>
 <header class="np-top"><a class="home" href="/">आफ्नै पात्रो</a><nav><a href="/nepalmap">Nepal map</a><a href="/nepal">Nepal</a><a href="/nepalmap/temples">Temples</a><a href="/nepalmap/gumbas">Gumbas</a><a href="/nepalmap/mountains">Mountains</a><a href="/nepalmap/lakes">Lakes</a></nav></header>
-<div class="np-head"><h1>${esc(h1)}</h1><p>${esc(intro)}</p></div>
+<section class="np-head" aria-labelledby="np-page-title"><h1 id="np-page-title">${esc(h1)}</h1><p>${esc(intro)}</p></section>
 <div class="np-app">
 <aside class="np-panel" aria-label="Search and filters">
 <button id="np-toggle" type="button" aria-label="Show or hide the panel"></button>
