@@ -9,8 +9,10 @@ for (const f of families) {
   if (names.has(f.family)) throw new Error("duplicate SEO family: " + f.family);
   names.add(f.family);
 }
-const place = families.find((f) => f.family === "nepalmap-place");
-if (!place || place.indexable) throw new Error("Nepal place-page farm guard must remain non-indexable");
+const place = families.find((f) => f.family === "nepalmap-place-selected");
+if (!place || place.indexable !== true || !Number.isInteger(place.max_urls) || place.max_urls > 2000) {
+  throw new Error("Selective Nepal place-page policy must be indexable, stable-ID gated and capped at <=2000 URLs");
+}
 
 const dist = resolve("dist");
 if (!existsSync(dist)) throw new Error("dist/ missing; run production build before SEO roadmap gate");
@@ -45,8 +47,12 @@ const sitemapPath = join(dist, "sitemap-nepalmap.xml");
 if (!existsSync(sitemapPath)) throw new Error("sitemap-nepalmap.xml missing");
 const sitemap = readFileSync(sitemapPath, "utf8");
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-if (locs.length > 100) throw new Error("Nepal Map sitemap unexpectedly expanded to " + locs.length + " URLs");
-if (locs.some((u) => /\/nepalmap\/place\//.test(u))) throw new Error("place-page farm detected");
+const placeUrls = locs.filter((u) => /\/nepalmap\/place\//.test(u));
+const baseUrls = locs.filter((u) => !/\/nepalmap\/place\//.test(u));
+if (baseUrls.length > 100) throw new Error("Nepal Map non-place sitemap unexpectedly expanded to " + baseUrls.length + " URLs");
+if (placeUrls.length > place.max_urls) throw new Error("selective place-page cap exceeded: " + placeUrls.length + " > " + place.max_urls);
+const badPlace = placeUrls.find((u) => !/\/nepalmap\/place\/[0-9A-HJKMNP-TV-Z]{26}$/.test(u));
+if (badPlace) throw new Error("place URL is not a stable ULID: " + badPlace);
 for (const lastmod of [...sitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1])) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod)) throw new Error("invalid sitemap lastmod: " + lastmod);
 }
