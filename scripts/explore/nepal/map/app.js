@@ -224,13 +224,17 @@
     var p = palikaInfo(row[R.pid]);
     var village = id === "village" && row[R.vs] && p ? p.path + "/" + row[R.vs] : "";
     var wiki = row[R.wiki] ? "https://" + row[R.wiki].split(":")[0] + ".wikipedia.org/wiki/" + encodeURIComponent(row[R.wiki].slice(3).replace(/ /g, "_")) : "";
+    var sourceId = row[R.src] || "";
+    var osmKind = sourceId.charAt(0) === "n" ? "node" : sourceId.charAt(0) === "w" ? "way" : sourceId.charAt(0) === "r" ? "relation" : "";
+    var osmObjectUrl = osmKind ? "https://www.openstreetmap.org/" + osmKind + "/" + sourceId.slice(1) : "https://www.openstreetmap.org/?mlat=" + lat + "&mlon=" + lng + "#map=17/" + lat + "/" + lng;
     var dist = state.me ? " · " + fmtKm(km(state.me[0], state.me[1], lat, lng)) + " from you" : "";
     var html = '<div class="np-pop"><strong>' + esc(row[R.n] || row[R.ne]) + "</strong>" + (row[R.n] && row[R.ne] ? ' <span lang="ne">' + esc(row[R.ne]) + "</span>" : "") +
       '<div class="np-kind">' + esc(kindText(id, row)) + esc(dist) + "</div>" +
       (where ? '<div><a href="' + esc(where.href) + '">' + esc(where.text) + "</a></div>" : "") +
       '<div class="np-actions">' +
       '<a class="np-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + "," + lng + '">Directions</a>' +
-      '<a class="np-btn" target="_blank" rel="noopener" href="https://www.openstreetmap.org/?mlat=' + lat + "&mlon=" + lng + "#map=17/" + lat + "/" + lng + '">OpenStreetMap</a>' +
+      '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(osmObjectUrl) + '">OpenStreetMap</a>' +
+      (CFG.flags && CFG.flags.nepalCorrectionsUi && sourceId ? '<button class="np-btn" type="button" data-correct="' + esc(sourceId) + '" data-place-id="' + esc(row[R.place] || "") + '" data-osm="' + esc(osmObjectUrl) + '" data-name="' + esc(row[R.n] || row[R.ne]) + '">Report correction</button>' : "") +
       (village ? '<a class="np-btn" href="' + esc(village) + '">Village page</a>' : "") +
       (wiki ? '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(wiki) + '">Wikipedia</a>' : "") +
       '<button class="np-btn" type="button" data-share="' + lat + "," + lng + '">Copy link</button></div>' +
@@ -240,6 +244,16 @@
     popup = new maplibregl.Popup({ maxWidth: "300px", offset: 10 }).setLngLat([lng, lat]).setHTML(html).addTo(map);
   }
   document.addEventListener("click", function (e) {
+    var correction = e.target.closest && e.target.closest("[data-correct]");
+    if (correction && window.AafnaiCorrections) {
+      window.AafnaiCorrections.open({
+        source_id: correction.getAttribute("data-correct"),
+        place_id: correction.getAttribute("data-place-id") || null,
+        osm_url: correction.getAttribute("data-osm"),
+        name: correction.getAttribute("data-name")
+      });
+      return;
+    }
     var b = e.target.closest && e.target.closest("[data-share]");
     if (!b) return;
     var ll = b.getAttribute("data-share");
@@ -642,6 +656,7 @@
       (route.duration && state.mode === "foot" ? '<p class="np-note">Walking time on flat ground. On trekking trails, add time for climbs: roughly 1 hour per 300–400 m of ascent.</p>' : "") +
       '<div class="np-actions"><a class="np-btn" target="_blank" rel="noopener" href="' + esc(googleUrl()) + '">Navigate in Google Maps</a>' +
       '<button class="np-btn" type="button" id="np-route-share">Copy route link</button>' +
+      (CFG.flags && CFG.flags.nepalItinerary && window.AafnaiItinerary ? '<button class="np-btn" type="button" id="np-trip-save">Save trip</button><button class="np-btn" type="button" id="np-trip-manage">Saved trips</button>' : "") +
       (CFG.flags && CFG.flags.nepalExports ? '<button class="np-btn" type="button" data-export="gpx">GPX</button><button class="np-btn" type="button" data-export="geojson">GeoJSON</button><button class="np-btn" type="button" data-export="kml">KML</button>' : "") +
       (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<button class="np-btn" type="button" id="np-terrain-toggle">Terrain: ' + (state.terrainOn ? "on" : "off") + "</button>" : "") +
       '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>' +
@@ -961,6 +976,19 @@
           var link = location.href;
           (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(function () { btn.textContent = "Copied"; }, function () { prompt("Copy this link", link); });
         }, 450);
+      }
+      if (e.target.id === "np-trip-save" && window.AafnaiItinerary) {
+        try { window.AafnaiItinerary.save({ from: state.from, to: state.to, stops: state.stops.slice(), mode: state.mode }); e.target.textContent = "Saved"; }
+        catch (err) { console.warn("itinerary", err); }
+      }
+      if (e.target.id === "np-trip-manage" && window.AafnaiItinerary) {
+        window.AafnaiItinerary.showManager(function (trip) {
+          state.stops = (trip.stops || []).slice(0, 8);
+          state.mode = trip.mode || "car";
+          setPoint("from", trip.from, true); setPoint("to", trip.to, true);
+          document.querySelectorAll(".np-modes [data-mode]").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-mode") === state.mode); });
+          computeRoute();
+        });
       }
       var exporter = e.target.closest("[data-export]");
       if (exporter && window.AafnaiExports && routeData) {
