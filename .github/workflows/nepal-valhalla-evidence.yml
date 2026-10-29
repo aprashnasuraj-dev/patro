@@ -48,6 +48,9 @@ jobs:
           VALHALLA_USE_TILES_IGNORE_PBF: "True"
           VALHALLA_FORCE_REBUILD: "False"
           VALHALLA_PORT: "8002"
+          NEPAL_ROUTING_HOST: "localhost"
+          NEPAL_ROUTING_TOKEN: "ci-nepal-routing-token"
+          CADDY_ACME_EMAIL: "ci@example.invalid"
         run: |
           set -euo pipefail
           SNAPSHOT="2026-10-28"
