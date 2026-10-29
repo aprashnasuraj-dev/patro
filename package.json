@@ -76,6 +76,8 @@
     "test:growth-pages": "vitest run tests/growth-pages.test.ts",
     "test:explore": "vitest run tests/explore-engine.test.ts tests/nepalmap.test.ts",
     "test:worldcal": "vitest run tests/worldcal.test.ts",
+    "test:roadmap": "vitest run tests/roadmap-telemetry.test.ts tests/roadmap-provenance.test.ts tests/roadmap-bali.test.ts tests/roadmap-wariga.test.ts tests/roadmap-routing.test.ts tests/roadmap-search-worker.test.ts tests/roadmap-place-identity.test.ts tests/roadmap-boundary-confidence.test.ts tests/roadmap-export.test.ts tests/roadmap-road-safety.test.ts tests/roadmap-nepal-api.test.ts tests/roadmap-ops.test.ts tests/roadmap-ics.test.ts tests/roadmap-valhalla.test.ts tests/roadmap-data-generation.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-offline.test.ts tests/roadmap-map-quality.test.ts tests/roadmap-emergency.test.ts tests/roadmap-bali-pwa.test.ts",
+    "roadmap:phase1-report": "node --experimental-strip-types scripts/reports/phase1.ts",
     "advancetools:test": "node --test tools/advancetools/tests/*.test.mjs tests/advancetools-integration.test.mjs",
     "advancetools:build": "node tools/advancetools/scripts/build.mjs --repo",
     "nepalmap:build": "node scripts/explore/nepal/build-map.mjs",
@@ -157,12 +159,13 @@
     "@duckdb/duckdb-wasm": "1.28.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
-    "vitest": "5.0.5",
     "esbuild": "0.25.10",
-    "wrangler": "4.144.0",
-    "jsdom": "30.1.3"
+    "jsdom": "30.1.3",
+    "vitest": "5.0.5",
+    "wrangler": "4.144.0"
   },
   "overrides": {
     "sharp": "0.35.5",

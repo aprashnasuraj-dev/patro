@@ -1,0 +1,43 @@
+name: aafnaipatro-nepal-routing
+
+services:
+  valhalla:
+    image: ghcr.io/valhalla/valhalla-scripted:3.9.1@sha256:6238809f9dc3057743d70a20efd3911ec38e458bfa13a0601909b58f68dfd956
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${VALHALLA_PORT:-8002}:8002"
+    volumes:
+      - "${VALHALLA_DATA_DIR:-./data/current}:/custom_files"
+    environment:
+      use_tiles_ignore_pbf: "${VALHALLA_USE_TILES_IGNORE_PBF:-False}"
+      force_rebuild: "${VALHALLA_FORCE_REBUILD:-False}"
+      build_elevation: "False"
+      build_admins: "True"
+      build_time_zones: "True"
+      build_transit: "False"
+      build_tar: "True"
+      server_threads: "${VALHALLA_THREADS:-2}"
+      serve_tiles: "True"
+      tileset_name: nepal_valhalla_tiles
+
+  gateway:
+    profiles: ["gateway"]
+    image: caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+    restart: unless-stopped
+    depends_on:
+      - valhalla
+    ports:
+      - "${NEPAL_ROUTING_HTTP_PORT:-80}:80"
+      - "${NEPAL_ROUTING_HTTPS_PORT:-443}:443"
+    environment:
+      NEPAL_ROUTING_HOST: "${NEPAL_ROUTING_HOST:?set NEPAL_ROUTING_HOST}"
+      NEPAL_ROUTING_TOKEN: "${NEPAL_ROUTING_TOKEN:?set NEPAL_ROUTING_TOKEN}"
+      CADDY_ACME_EMAIL: "${CADDY_ACME_EMAIL:?set CADDY_ACME_EMAIL}"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

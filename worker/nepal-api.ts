@@ -1,0 +1,307 @@
+import { logDependency } from "./roadmap/ops";
+type Env = {
+  ASSETS?: { fetch(request: Request): Promise<Response> };
+  DB?: any;
+  NEPAL_API_ENABLED?: string;
+  NEPAL_CORRECTIONS_ENABLED?: string;
+  NEPAL_EMERGENCY_ENABLED?: string;
+  NEPAL_ROUTING_ENABLED?: string;
+  NEPAL_ROUTING_ORIGIN?: string;
+  NEPAL_ROUTING_TOKEN?: string;
+  BIPAD_API_BASE?: string;
+};
+
+const API = "/api/nepal/v1";
+const CATEGORIES = new Set(["worship","peak","lake","sight","waterfall","park","airport","village","school","health","bank","stay","services"]);
+const REASONS = new Set(["wrong_name","wrong_location","wrong_category","wrong_admin","closed_or_removed","duplicate","missing_detail","other"]);
+const ATTRIBUTION = "© OpenStreetMap contributors, ODbL 1.0";
+
+function json(data: unknown, status = 200, cache = "public, max-age=300, s-maxage=3600", extra?: Record<string,string>): Response {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      "content-type":"application/json; charset=utf-8",
+      "cache-control":cache,
+      "x-content-type-options":"nosniff",
+      "access-control-allow-origin":"*",
+      ...(extra || {}),
+    },
+  });
+}
+
+async function asset(env: Env, request: Request, path: string): Promise<Response> {
+  if (!env.ASSETS) return new Response("Assets unavailable",{status:503});
+  const url = new URL(request.url); url.pathname = path; url.search = "";
+  return env.ASSETS.fetch(new Request(url.toString(),{method:"GET"}));
+}
+async function assetJson(env: Env, request: Request, path: string): Promise<any | null> {
+  const r=await asset(env,request,path);
+  if(!r.ok) return null;
+  try{return await r.json();}catch{return null;}
+}
+function objectFromRow(fields:string[],row:any[]):Record<string,unknown>{
+  return Object.fromEntries(fields.map((f,i)=>[f,row[i]]));
+}
+async function prefix(id:string):Promise<string>{
+  const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(id));
+  return Array.from(new Uint8Array(b).slice(0,1),x=>x.toString(16).padStart(2,"0")).join("");
+}
+async function sha256Hex(value:string):Promise<string>{
+  const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,"0")).join("");
+}
+async function findPlace(env:Env,request:Request,id:string):Promise<{category:string,index:number,place:Record<string,unknown>}|null>{
+  const p=await prefix(id);
+  const bucket=await assetJson(env,request,`/data/nepalmap/v1/index/${p}.json`);
+  const loc=bucket&&bucket[id];
+  if(!loc||!CATEGORIES.has(loc[0])||!Number.isInteger(loc[1])) return null;
+  const layer=await assetJson(env,request,`/data/nepalmap/v1/${loc[0]}.json`);
+  if(!layer||!Array.isArray(layer.rows)||!layer.rows[loc[1]]) return null;
+  return {category:loc[0],index:loc[1],place:objectFromRow(layer.fields,layer.rows[loc[1]])};
+}
+
+async function places(request:Request,env:Env):Promise<Response>{
+  const url=new URL(request.url);
+  const rawCats=(url.searchParams.get("category")||"worship,peak,lake,village").split(",").map(x=>x.trim()).filter(x=>CATEGORIES.has(x)).slice(0,4);
+  if(!rawCats.length) return json({error:"invalid_category"},400,"no-store");
+  const q=(url.searchParams.get("q")||"").trim().toLocaleLowerCase().slice(0,80);
+  const districtSlug=(url.searchParams.get("district")||"").trim().slice(0,80);
+  const limit=Math.max(1,Math.min(100,Number(url.searchParams.get("limit")||25)||25));
+  const offset=Math.max(0,Math.min(10000,Number(url.searchParams.get("offset")||0)||0));
+  let did:number|null=null;
+  if(districtSlug){
+    const admin=await assetJson(env,request,"/data/nepalmap/v1/admin.json");
+    const d=admin?.districts?.find((x:any)=>x.slug===districtSlug);
+    if(!d) return json({error:"unknown_district"},400,"no-store");
+    did=d.id;
+  }
+  const out:any[]=[];
+  let matched=0;
+  for(const cat of rawCats){
+    const layer=await assetJson(env,request,`/data/nepalmap/v1/${cat}.json`);
+    if(!layer) continue;
+    const idx=Object.fromEntries(layer.fields.map((f:string,i:number)=>[f,i]));
+    for(let i=0;i<layer.rows.length&&out.length<limit;i++){
+      const row=layer.rows[i];
+      if(did!=null&&row[idx.district_id]!==did) continue;
+      const hay=(String(row[idx.name]||"")+" "+String(row[idx.name_ne]||"")+" "+String(row[idx.sub]||"")).toLocaleLowerCase();
+      if(q&&!hay.includes(q)) continue;
+      if(matched++<offset) continue;
+      out.push({category:cat,...objectFromRow(layer.fields,row)});
+    }
+    if(out.length>=limit) break;
+  }
+  return json({data:out,count:out.length,limit,offset,next_offset:out.length===limit?offset+out.length:null,attribution:ATTRIBUTION,license:"https://opendatacommons.org/licenses/odbl/1-0/"});
+}
+
+async function correction(request:Request,env:Env):Promise<Response>{
+  if(env.NEPAL_CORRECTIONS_ENABLED!=="1") return json({error:"corrections_disabled"},503,"no-store",{"access-control-allow-origin":"null"});
+  const origin=request.headers.get("origin");
+  const here=new URL(request.url).origin;
+  if(origin&&origin!==here) return json({error:"same_origin_required"},403,"no-store",{"access-control-allow-origin":"null"});
+  if(!env.DB) return json({error:"storage_unavailable"},503,"no-store",{"access-control-allow-origin":"null"});
+  const len=Number(request.headers.get("content-length")||0);
+  if(len>4096) return json({error:"payload_too_large"},413,"no-store",{"access-control-allow-origin":"null"});
+  let body:any;try{body=await request.json();}catch{return json({error:"invalid_json"},400,"no-store",{"access-control-allow-origin":"null"});}
+  if(body?.website) return json({accepted:true},202,"no-store",{"access-control-allow-origin":"null"});
+  const sourceId=String(body?.source_id||"");
+  const placeId=body?.place_id?String(body.place_id):null;
+  const reason=String(body?.reason||"");
+  const detail=String(body?.detail||"").trim().slice(0,500);
+  const pagePath=String(body?.page_path||"").slice(0,200);
+  if(!/^[nwr]\d+$/.test(sourceId)||!REASONS.has(reason)|| (placeId&&!/^[0-9A-HJKMNP-TV-Z]{26}$/.test(placeId)) || (pagePath&&!pagePath.startsWith("/nepalmap"))) {
+    return json({error:"invalid_correction"},400,"no-store",{"access-control-allow-origin":"null"});
+  }
+  const exists=await findPlace(env,request,placeId||sourceId);
+  if(!exists||String(exists.place.source_id)!==sourceId) return json({error:"unknown_place"},400,"no-store",{"access-control-allow-origin":"null"});
+  const now=Math.floor(Date.now()/1000),windowStart=now-3600;
+  const recent=await env.DB.prepare("SELECT COUNT(*) AS n FROM nepal_map_corrections WHERE source_id=? AND created_at>=?").bind(sourceId,windowStart).first();
+  if(Number(recent?.n||0)>=3) return json({error:"too_many_reports_for_place"},429,"no-store",{"access-control-allow-origin":"null","retry-after":"3600"});
+  const id=crypto.randomUUID();
+  await env.DB.prepare("INSERT INTO nepal_map_corrections(id,source_id,place_id,reason,detail,page_path,status,created_at,updated_at) VALUES(?,?,?,?,?,?,'reported',?,?)")
+    .bind(id,sourceId,placeId,reason,detail,pagePath,now,now).run();
+  return json({accepted:true,id,status:"reported",source_id:sourceId},202,"no-store",{"access-control-allow-origin":"null"});
+}
+
+async function correctionStatus(request:Request,env:Env,id:string):Promise<Response>{
+  if(!env.DB||!/^[0-9a-f-]{36}$/i.test(id)) return json({error:"not_found"},404,"no-store",{"access-control-allow-origin":"null"});
+  const row=await env.DB.prepare("SELECT id,source_id,place_id,status,created_at,updated_at FROM nepal_map_corrections WHERE id=?").bind(id).first();
+  return row?json(row,200,"no-store",{"access-control-allow-origin":"null"}):json({error:"not_found"},404,"no-store",{"access-control-allow-origin":"null"});
+}
+
+
+
+function sameOriginRequest(request: Request): boolean {
+  const origin = request.headers.get("origin");
+  const here = new URL(request.url).origin;
+  if (origin && origin !== here) return false;
+  const secFetchSite = request.headers.get("sec-fetch-site");
+  if (secFetchSite && !["same-origin","same-site","none"].includes(secFetchSite)) return false;
+  return true;
+}
+
+function privateJson(data: unknown, status = 200, cache = "no-store", extra?: Record<string,string>): Response {
+  return json(data, status, cache, { "access-control-allow-origin":"null", ...(extra || {}) });
+}
+
+async function routeWithValhalla(request: Request, env: Env): Promise<Response> {
+  if (env.NEPAL_ROUTING_ENABLED !== "1") return privateJson({ error:"routing_disabled" }, 503);
+  if (!sameOriginRequest(request)) return privateJson({ error:"same_origin_required" }, 403);
+  const len = Number(request.headers.get("content-length") || 0);
+  if (len > 4096) return privateJson({ error:"payload_too_large" }, 413);
+
+  let body:any;
+  try { body = await request.json(); } catch { return privateJson({ error:"invalid_json" }, 400); }
+  const mode = String(body?.mode || "");
+  if (!["car","bike","foot"].includes(mode)) return privateJson({ error:"invalid_mode" }, 400);
+  const points = Array.isArray(body?.points) ? body.points.slice(0, 11) : [];
+  if (points.length < 2 || points.length > 10) return privateJson({ error:"invalid_point_count" }, 400);
+  const clean = points.map((p:any) => ({ lat:Number(p?.lat), lng:Number(p?.lng) }));
+  const valid = clean.every((p:any) =>
+    Number.isFinite(p.lat) && Number.isFinite(p.lng) &&
+    p.lat >= 25.5 && p.lat <= 31.5 && p.lng >= 79.0 && p.lng <= 89.5
+  );
+  if (!valid) return privateJson({ error:"point_outside_nepal_bounds" }, 400);
+
+  if (env.DB) {
+    const ip = request.headers.get("cf-connecting-ip");
+    if (ip) {
+      const now = Math.floor(Date.now() / 1000);
+      const windowStart = Math.floor(now / 60) * 60;
+      const keyHash = await sha256Hex(String(env.NEPAL_ROUTING_TOKEN || "disabled") + ":" + ip);
+      await env.DB.prepare("INSERT INTO runtime_rate_buckets(scope,key_hash,window_start,count) VALUES('nepal-route',?,?,1) ON CONFLICT(scope,key_hash,window_start) DO UPDATE SET count=count+1")
+        .bind(keyHash,windowStart).run();
+      const bucket = await env.DB.prepare("SELECT count FROM runtime_rate_buckets WHERE scope='nepal-route' AND key_hash=? AND window_start=?")
+        .bind(keyHash,windowStart).first();
+      if (Number(bucket?.count || 0) > 30) return privateJson({ error:"route_rate_limited" }, 429, "no-store", { "retry-after":"60" });
+    }
+  }
+
+  let base:URL;
+  try { base = new URL(String(env.NEPAL_ROUTING_ORIGIN || "")); }
+  catch { return privateJson({ error:"routing_not_configured" }, 503); }
+  if (base.protocol !== "https:") return privateJson({ error:"routing_origin_must_be_https" }, 503);
+  if (!env.NEPAL_ROUTING_TOKEN) return privateJson({ error:"routing_token_missing" }, 503);
+
+  const target = new URL(base.toString().replace(/\/+$/, "") + "/route");
+  const costing = mode === "car" ? "auto" : mode === "bike" ? "bicycle" : "pedestrian";
+  const payload = {
+    locations: clean.map((p:any) => ({ lat:p.lat, lon:p.lng, type:"break" })),
+    costing,
+    units:"kilometers",
+    format:"osrm",
+    shape_format:"geojson",
+    directions_type:"instructions",
+    banner_instructions:false,
+    voice_instructions:false,
+    alternates:0,
+  };
+
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 15000);
+  const started = performance.now();
+  try {
+    const upstream = await fetch(target.toString(), {
+      method:"POST",
+      headers:{
+        "content-type":"application/json",
+        "accept":"application/json",
+        "authorization":`Bearer ${env.NEPAL_ROUTING_TOKEN}`,
+      },
+      body:JSON.stringify(payload),
+      signal:ctrl.signal,
+    });
+    logDependency({
+      product:"nepalmap", dependency:"valhalla", operation:mode,
+      outcome:upstream.ok ? "ok" : upstream.status === 429 ? "throttled" : "error",
+      status:upstream.status, duration_ms:performance.now()-started,
+    });
+    const raw:any = await upstream.json().catch(() => null);
+    if (!upstream.ok) {
+      return privateJson({ error:"routing_upstream", status:upstream.status, code:raw?.error_code || raw?.code || null }, upstream.status === 429 ? 429 : 502, "no-store", upstream.status === 429 ? {"retry-after":"1"} : undefined);
+    }
+    const route = raw?.routes?.[0];
+    if (!route || route.geometry?.type !== "LineString" || !Array.isArray(route.geometry.coordinates) || !Number.isFinite(route.distance)) {
+      return privateJson({ error:"routing_malformed_response" }, 502);
+    }
+    return privateJson({
+      geometry:route.geometry,
+      distance:route.distance,
+      duration:Number.isFinite(route.duration) ? route.duration : null,
+      legs:Array.isArray(route.legs) ? route.legs : [],
+      warnings:[],
+      confidence:null,
+      provider:"aafnaipatro-valhalla",
+      waypoint_count:clean.length,
+    }, 200);
+  } catch (error) {
+    const timeout = (error as any)?.name === "AbortError";
+    logDependency({ product:"nepalmap", dependency:"valhalla", operation:mode, outcome:timeout?"timeout":"error", duration_ms:performance.now()-started });
+    return privateJson({ error:timeout ? "routing_timeout" : "routing_unavailable" }, 502);
+  } finally { clearTimeout(timer); }
+}
+
+const BIPAD_ENDPOINTS:Record<string,string>={
+  incident:"incident",alert:"alert",earthquake:"earthquake",fire:"fire",
+  openspace:"openspace-detail",rain:"rain",river:"river"
+};
+async function emergency(request:Request,env:Env):Promise<Response>{
+  if(env.NEPAL_EMERGENCY_ENABLED!=="1") return json({error:"emergency_overlay_disabled"},503,"no-store");
+  const url=new URL(request.url),kind=(url.searchParams.get("kind")||"incident").toLowerCase();
+  const endpoint=BIPAD_ENDPOINTS[kind];
+  if(!endpoint) return json({error:"invalid_emergency_kind",allowed:Object.keys(BIPAD_ENDPOINTS)},400,"no-store");
+  const rawBase=env.BIPAD_API_BASE||"https://bipadportal.gov.np/api/v1";
+  let base:URL;
+  try{base=new URL(rawBase);}catch{return json({error:"invalid_bipad_base"},503,"no-store");}
+  if(base.protocol!=="https:"||!["bipadportal.gov.np","bipad.gov.np"].includes(base.hostname)) return json({error:"unapproved_bipad_host"},503,"no-store");
+  const target=new URL(base.toString().replace(/\/$/,"")+"/"+endpoint+"/");
+  const limit=Math.max(1,Math.min(100,Number(url.searchParams.get("limit")||50)||50));
+  target.searchParams.set("limit",String(limit));
+  const ordering=url.searchParams.get("ordering");
+  if(ordering&&/^-?[a-z_]{1,40}$/i.test(ordering)) target.searchParams.set("ordering",ordering);
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),8000),started=performance.now();
+  try{
+    const upstream=await fetch(target.toString(),{headers:{accept:"application/json"},signal:ctrl.signal});
+    logDependency({product:"nepalmap",dependency:"bipad",operation:kind,outcome:upstream.ok?"ok":upstream.status===429?"throttled":"error",status:upstream.status,duration_ms:performance.now()-started});
+    if(!upstream.ok) return json({error:"bipad_upstream",status:upstream.status,kind},502,"no-store");
+    const data=await upstream.json();
+    return json({kind,source:"BIPAD Portal",source_url:target.toString(),fetched_at:new Date().toISOString(),data},200,"public, max-age=120, s-maxage=300");
+  }catch(error){
+    logDependency({product:"nepalmap",dependency:"bipad",operation:kind,outcome:(error as any)?.name==="AbortError"?"timeout":"error",duration_ms:performance.now()-started});
+    return json({error:"bipad_unavailable",kind,message:error instanceof Error?error.message:String(error)},502,"no-store");
+  }finally{clearTimeout(timer);}
+}
+
+export async function nepalApiResponse(request:Request,env:Env):Promise<Response|null>{
+  const url=new URL(request.url);
+  if(!url.pathname.startsWith(API)) return null;
+  if(env.NEPAL_API_ENABLED!=="1") return json({error:"nepal_api_disabled"},503,"no-store");
+  if(request.method==="OPTIONS") return new Response(null,{status:204,headers:{"access-control-allow-origin":"*","access-control-allow-methods":"GET,HEAD,POST,OPTIONS","access-control-allow-headers":"content-type","access-control-max-age":"86400"}});
+  if(url.pathname===API||url.pathname===API+"/") return json({name:"AafnaiPatro Nepal Map API",version:"v1",attribution:ATTRIBUTION,endpoints:["/health","/manifest","/admin","/places","/place/{id}","/route","/emergency","/corrections"]});
+  if(request.method==="POST"&&url.pathname===API+"/route") return routeWithValhalla(request,env);
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/health"){
+    const [manifest,index]=await Promise.all([
+      assetJson(env,request,"/data/nepalmap/v1/manifest.json"),
+      assetJson(env,request,"/data/nepalmap/v1/index/manifest.json")
+    ]);
+    const ok=!!manifest&&!!index;
+    return json({ok,dataset_id:manifest?.dataset_id||null,snapshot_date:manifest?.snapshot_date||null,index_version:index?.version||null,corrections_storage:env.DB?"bound":"unbound"},ok?200:503,"no-store");
+  }
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/emergency") return emergency(request,env);
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/manifest"){
+    const data=await assetJson(env,request,"/data/nepalmap/v1/manifest.json");return data?json(data):json({error:"not_found"},404);
+  }
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/admin"){
+    const data=await assetJson(env,request,"/data/nepalmap/v1/admin.json");return data?json({...data,attribution:ATTRIBUTION}):json({error:"not_found"},404);
+  }
+  if((request.method==="GET"||request.method==="HEAD")&&url.pathname===API+"/places") return places(request,env);
+  const pm=url.pathname.match(/^\/api\/nepal\/v1\/place\/([^/]+)$/);
+  if((request.method==="GET"||request.method==="HEAD")&&pm){
+    const found=await findPlace(env,request,decodeURIComponent(pm[1]));
+    return found?json({...found,attribution:ATTRIBUTION,license:"https://opendatacommons.org/licenses/odbl/1-0/"}):json({error:"not_found"},404);
+  }
+  if(request.method==="POST"&&url.pathname===API+"/corrections") return correction(request,env);
+  const cm=url.pathname.match(/^\/api\/nepal\/v1\/corrections\/([0-9a-f-]+)$/i);
+  if(request.method==="GET"&&cm) return correctionStatus(request,env,cm[1]);
+  return json({error:"not_found"},404,"no-store");
+}
