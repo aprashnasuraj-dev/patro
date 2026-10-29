@@ -13,6 +13,7 @@ import { sourceBadge, type SourceStatus } from "../../roadmap/provenance";
 import { baliFeedRoute } from "./bali-feeds";
 import { BALI_PIODALAN, nextPawukonPiodalan } from "../data/bali-piodalan";
 import { astaDauh, merthaYoga, pancaDauh, PEWIWAHAN_SAPTAWARA, pitraImmediateRestrictions, sasihReference, WARIGA_DAUH_SOURCE } from "../engines/wariga";
+import { sunriseSunset } from "../../../src/patro-tools/core/astro";
 
 const BP = "/bali-calendar";
 const WP = "/weton";
@@ -496,31 +497,68 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
   };
 }
 
+const BALI_DAUH_REFERENCE = { lat: -8.65, lon: 115.2167, tz: BALI_TZ, height: 0 };
+
+const baliClock = (d: Date) => new Intl.DateTimeFormat("id-ID", {
+  timeZone: BALI_TZ, hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+}).format(d);
+
+function splitInstantWindow(start: Date, end: Date, count: 5 | 8) {
+  const span = end.getTime() - start.getTime();
+  if (!(span > 0)) throw new Error("invalid solar Dauh interval");
+  return Array.from({ length: count }, (_, i) => {
+    const a = new Date(start.getTime() + span * i / count);
+    const b = new Date(start.getTime() + span * (i + 1) / count);
+    return { dauh: i + 1, start: a, end: b, start_text: baliClock(a), end_text: baliClock(b) };
+  });
+}
+
+export function solarDauhWindows(iso: string, lat = BALI_DAUH_REFERENCE.lat, lon = BALI_DAUH_REFERENCE.lon) {
+  if (!parseIso(iso)) throw new RangeError("invalid ISO date");
+  if (!Number.isFinite(lat) || !Number.isFinite(lon) || lat < -9.2 || lat > -7.8 || lon < 114.3 || lon > 116.2) {
+    throw new RangeError("Dauh coordinates must be within the Bali reference bounds");
+  }
+  const loc = { lat, lon, tz: BALI_TZ, height: 0 };
+  const { sunrise, sunset } = sunriseSunset(iso, loc);
+  const nextSunrise = sunriseSunset(addDaysIso(iso, 1), loc).sunrise;
+  return {
+    location: { lat, lon, tz: BALI_TZ },
+    sunrise, sunset, next_sunrise: nextSunrise,
+    panca: { day: splitInstantWindow(sunrise, sunset, 5), night: splitInstantWindow(sunset, nextSunrise, 5) },
+    asta: { day: splitInstantWindow(sunrise, sunset, 8), night: splitInstantWindow(sunset, nextSunrise, 8) },
+  };
+}
+
 function dauhAyuPage(ctx: Ctx): Rendered {
   const today = todayIn(BALI_TZ, ctx.now);
   const tanggal = parseIso(ctx.url.searchParams.get("tanggal") || "") ? String(ctx.url.searchParams.get("tanggal")) : today;
   const phase = ctx.url.searchParams.get("fase") === "pangelong" ? "pangelong" : "penanggal";
   const rawSasih = Number(ctx.url.searchParams.get("sasih") || 0);
   const sasih = rawSasih >= 1 && rawSasih <= 12 ? rawSasih : null;
+  const rawLat = ctx.url.searchParams.has("lat") ? Number(ctx.url.searchParams.get("lat")) : BALI_DAUH_REFERENCE.lat;
+  const rawLon = ctx.url.searchParams.has("lon") ? Number(ctx.url.searchParams.get("lon")) : BALI_DAUH_REFERENCE.lon;
+  const lat = Number.isFinite(rawLat) && rawLat >= -9.2 && rawLat <= -7.8 ? rawLat : BALI_DAUH_REFERENCE.lat;
+  const lon = Number.isFinite(rawLon) && rawLon >= 114.3 && rawLon <= 116.2 ? rawLon : BALI_DAUH_REFERENCE.lon;
   const model = padewasanReferenceModel(tanggal, sasih, phase)!;
+  const solar = solarDauhWindows(tanggal, lat, lon);
   const p = model.pawukon;
-  const astaRows = model.asta_dauh.map((x) => `<tr><td>${x.dauh}</td><td><b>${x.quality === "ayu" ? "Ayu" : "Ala"}</b></td></tr>`).join("");
-  const pancaRows = model.panca_dauh.map((x) => `<tr><td>${x.dauh}</td><td>${esc(x.name)}</td><td>${x.quality === "ayu" ? "Ayu" : x.quality === "madya" ? "Madya" : "Ala"}</td></tr>`).join("");
+  const astaRows = model.asta_dauh.map((x, i) => `<tr><td>${x.dauh}</td><td><b>${x.quality === "ayu" ? "Ayu" : "Ala"}</b></td><td>${solar.asta.day[i].start_text}–${solar.asta.day[i].end_text}</td><td>${solar.asta.night[i].start_text}–${solar.asta.night[i].end_text}</td></tr>`).join("");
+  const pancaRows = model.panca_dauh.map((x, i) => `<tr><td>${x.dauh}</td><td>${esc(x.name)}</td><td>${x.quality === "ayu" ? "Ayu" : x.quality === "madya" ? "Madya" : "Ala"}</td><td>${solar.panca.day[i].start_text}–${solar.panca.day[i].end_text}</td><td>${solar.panca.night[i].start_text}–${solar.panca.night[i].end_text}</td></tr>`).join("");
   return {
     status: 200, maxAge: 3600, indexable: false,
     html: page({
       site: ctx.site, path: `${BP}/dauh-ayu`, lang: "id",
-      title: "Dauh Ayu Bali — Panca Dauh Sukaranti dan Asta Dauh dengan sumber",
-      description: "Referensi Dauh Ayu dari tabel Padewasan Kemdikbud: Asta Dauh menurut Saptawara dan Panca Dauh/Sukaranti menurut urip, dengan fase Penanggal/Pangelong.",
-      h1: "Dauh Ayu — referensi Panca & Asta Dauh",
-      sub: "Perhitungan transparan dari tabel pendidikan Kemdikbud; bukan pengganti TIKA tahunan atau keputusan pemangku.",
+      title: "Dauh Ayu Bali — Panca Dauh Sukaranti dan Asta Dauh dengan jam matahari",
+      description: "Referensi Dauh Ayu dari tabel Padewasan Kemdikbud dengan interval nyata matahari terbit–terbenam dan terbenam–terbit berikutnya untuk lokasi di Bali.",
+      h1: "Dauh Ayu — Panca & Asta Dauh astronomis",
+      sub: "Klasifikasi mengikuti tabel Kemdikbud; batas jam dibagi dari matahari terbit/terbenam yang dihitung untuk lokasi Bali.",
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/dauh-ayu`, label: "Dauh Ayu" }],
       indexable: false,
-      body: `<section><form class="inline" method="get" action="${BP}/dauh-ayu"><label>Tanggal<input type="date" name="tanggal" value="${esc(tanggal)}"></label><label>Fase<input type="select" hidden><select name="fase"><option value="penanggal"${phase === "penanggal" ? " selected" : ""}>Penanggal</option><option value="pangelong"${phase === "pangelong" ? " selected" : ""}>Pangelong</option></select></label><label>Sasih (opsional)<select name="sasih"><option value="">tidak dinilai</option>${Array.from({ length: 12 }, (_, i) => `<option value="${i + 1}"${sasih === i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></label><button>Hitung</button></form></section>
-<section><h2>Dasar hari ${esc(idDate(tanggal))}</h2><p>${esc(p.saptawara)} ${esc(p.pancawara)} · Wuku ${esc(p.wuku.name)} · urip <b>${p.urip}</b>.</p></section>
-<section><h2>Asta Dauh — ${esc(p.saptawara)}</h2><p class="note">Delapan bagian siang dihitung dari matahari terbit hingga terbenam; delapan bagian malam dari terbenam hingga terbit. Halaman ini tidak menampilkan jam tetap 06:00–18:00 sebagai fakta astronomis.</p><table><thead><tr><th>Dauh</th><th>Klasifikasi</th></tr></thead><tbody>${astaRows}</tbody></table></section>
-<section><h2>Panca Dauh / Sukaranti — urip ${p.urip}, ${phase}</h2><table><thead><tr><th>Dauh</th><th>Nama</th><th>Klasifikasi</th></tr></thead><tbody>${pancaRows}</tbody></table><p class="note">Pada Pangelong urutan 1–5 dibalik sesuai catatan sumber.</p></section>
-<section><h2>Sumber & batas penggunaan</h2><p><a href="${esc(WARIGA_DAUH_SOURCE.url)}" rel="nofollow noopener">${esc(WARIGA_DAUH_SOURCE.name)} ↗</a>. Penyusunan TIKA Bali juga melibatkan keputusan keagamaan dan lokal; gunakan hasil ini sebagai referensi Wariga yang dapat diaudit, bukan jaminan hasil upacara.</p></section>`,
+      body: `<section><form class="inline" method="get" action="${BP}/dauh-ayu"><label>Tanggal<input type="date" name="tanggal" value="${esc(tanggal)}"></label><label>Fase<select name="fase"><option value="penanggal"${phase === "penanggal" ? " selected" : ""}>Penanggal</option><option value="pangelong"${phase === "pangelong" ? " selected" : ""}>Pangelong</option></select></label><label>Latitude Bali<input type="number" name="lat" min="-9.2" max="-7.8" step="0.0001" value="${lat}"></label><label>Longitude Bali<input type="number" name="lon" min="114.3" max="116.2" step="0.0001" value="${lon}"></label><label>Sasih (opsional)<select name="sasih"><option value="">tidak dinilai</option>${Array.from({ length: 12 }, (_, i) => `<option value="${i + 1}"${sasih === i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></label><button>Hitung</button></form></section>
+<section><h2>Dasar hari ${esc(idDate(tanggal))}</h2><p>${esc(p.saptawara)} ${esc(p.pancawara)} · Wuku ${esc(p.wuku.name)} · urip <b>${p.urip}</b>.</p><p>Matahari terbit <b>${baliClock(solar.sunrise)}</b> · terbenam <b>${baliClock(solar.sunset)}</b> · terbit berikutnya <b>${baliClock(solar.next_sunrise)}</b> WITA, pada ${lat.toFixed(4)}, ${lon.toFixed(4)}.</p></section>
+<section><h2>Asta Dauh — ${esc(p.saptawara)}</h2><p class="note">Sesuai teks sumber, delapan bagian siang membagi matahari terbit→terbenam dan delapan bagian malam membagi terbenam→terbit berikutnya. Jam di bawah dihitung astronomis, bukan tabel jam tetap.</p><div class="tw"><table><thead><tr><th>Dauh</th><th>Klasifikasi</th><th>Siang</th><th>Malam</th></tr></thead><tbody>${astaRows}</tbody></table></div></section>
+<section><h2>Panca Dauh / Sukaranti — urip ${p.urip}, ${phase}</h2><div class="tw"><table><thead><tr><th>Dauh</th><th>Nama</th><th>Klasifikasi</th><th>Siang</th><th>Malam</th></tr></thead><tbody>${pancaRows}</tbody></table></div><p class="note">Lima bagian siang dan lima bagian malam mempunyai panjang yang menyesuaikan musim/lokasi. Pada Pangelong urutan klasifikasi 1–5 dibalik sesuai catatan sumber.</p></section>
+<section><h2>Sumber & batas penggunaan</h2><p><a href="${esc(WARIGA_DAUH_SOURCE.url)}" rel="nofollow noopener">${esc(WARIGA_DAUH_SOURCE.name)} ↗</a>. Matahari terbit/terbenam dihitung dengan astronomy-engine yang juga dipakai oleh alat astronomi AafnaiPatro. Penyusunan TIKA Bali tetap melibatkan keputusan keagamaan dan lokal; gunakan hasil ini sebagai referensi Wariga yang dapat diaudit, bukan jaminan hasil upacara.</p></section>`,
       footer: BALI_NOTE,
     }),
   };
