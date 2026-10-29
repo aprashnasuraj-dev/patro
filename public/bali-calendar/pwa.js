@@ -106,10 +106,12 @@ async function initMemory(){
       if(state.lastVisit){var diff=Math.max(0,Math.floor((Date.now()-state.lastVisit)/86400000));parts.push(diff===0?"Dibuka lagi hari ini":"Terakhir dibuka "+diff+" hari lalu")}
       parts.push(state.people.length+" orang tersimpan");parts.push(state.savedDates.length+" hari tersimpan");parts.push(state.puras.length+" Pura tersimpan");
       var soon=[];
-      state.people.forEach(function(p){nextOton(p.birthDate,p.boundary,today).forEach(function(d){var du=daysUntil(d,today);if(du!==null)soon.push({name:p.name,date:d,days:du})})});
-      soon.sort(function(a,b){return a.days-b.days});
+      state.people.forEach(function(p){nextOton(p.birthDate,p.boundary,today).forEach(function(d){var du=daysUntil(d,today);if(du!==null&&du>=0)soon.push({kind:"Otonan",name:p.name,date:d,days:du,href:ROOT+"/"+d})})});
+      state.puras.forEach(function(p){var du=daysUntil(p.nextDate,today);if(du!==null&&du>=0)soon.push({kind:"Piodalan",name:p.name,date:p.nextDate,days:du,href:ROOT+"/piodalan/"+encodeURIComponent(p.slug)})});
+      state.savedDates.forEach(function(x){var du=daysUntil(x.date,today);if(du!==null&&du>=0)soon.push({kind:"Tersimpan",name:x.label||"Hari penting",date:x.date,days:du,href:ROOT+"/"+x.date})});
+      soon.sort(function(a,b){return a.days-b.days||a.date.localeCompare(b.date)});
       var top=node("strong","",parts.join(" · "));summary.appendChild(top);
-      if(soon.length){var p=node("p","");p.appendChild(document.createTextNode("Otonan terdekat: "));var a=node("a","",soon[0].name+" · "+soon[0].date+" ("+soon[0].days+" hari)");a.href=ROOT+"/"+soon[0].date;p.appendChild(a);summary.appendChild(p)}
+      if(soon.length){var box=node("div","bali-personal-upcoming"),label=node("strong","","Yang terdekat untukmu");box.appendChild(label);soon.slice(0,3).forEach(function(x){var a=node("a","",x.kind+" · "+x.name+" · "+x.date+" ("+x.days+" hari)");a.href=x.href;box.appendChild(a)});summary.appendChild(box)}
       if(state.lastVisit&&Array.isArray(recentEvents)){var lastIso=baliIsoFromMs(state.lastVisit),passed=recentEvents.filter(function(x){return x&&x.date>lastIso&&x.date<today}).slice(-4);if(passed.length){var box=node("div","bali-since-last"),label=node("strong","","Sejak kunjungan terakhir");box.appendChild(label);passed.forEach(function(x){var a=node("a","",x.date.slice(5)+" · "+x.name);a.href=ROOT+"/"+x.date;box.appendChild(a)});summary.appendChild(box)}}
     }
     if(peopleList){
