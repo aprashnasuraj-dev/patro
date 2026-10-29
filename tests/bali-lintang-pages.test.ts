@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { palelintanganMatrix, pawukon } from "../worker/worldcal/engines/pawukon";
 import { isoToJdn } from "../worker/worldcal/dates";
+import { esc } from "../worker/worldcal/html";
 import { LINTANG_STORIES, lintangSlug } from "../worker/worldcal/data/bali-lintang-stories";
 import { baliRoute, baliUrls } from "../worker/worldcal/pages/bali-weton";
 import { sitemapChild } from "../worker/worldcal/sitemap";
@@ -46,8 +47,8 @@ describe("35 evergreen Balinese Lintang editorial profiles", () => {
       expect(r.html).toContain('<meta name="robots" content="index, follow');
       expect(r.html).toContain('<h1>Lintang ' + cell.lintang + " dalam Palelintangan Bali</h1>");
       expect(r.html).toContain(cell.lintangAksara);
-      expect(r.html).toContain(LINTANG_STORIES[lintangSlug(cell.lintang)].meaning);
-      expect(r.html).toContain(LINTANG_STORIES[lintangSlug(cell.lintang)].heritage);
+      expect(r.html).toContain(esc(LINTANG_STORIES[lintangSlug(cell.lintang)].meaning));
+      expect(r.html).toContain(esc(LINTANG_STORIES[lintangSlug(cell.lintang)].heritage));
       expect(r.html).toContain("bukan ramalan");
       expect(r.html).toContain('rel="manifest"');
       expect(r.html).toContain('"@type":"Article"');
