@@ -37,7 +37,8 @@ self.addEventListener("fetch",(event)=>{
   if(url.origin!==self.location.origin||!url.pathname.startsWith("/nepalmap/")) return;
   if(event.request.method!=="GET") return;
   event.respondWith(caches.open(CACHE_PREFIX).then(async(cache)=>{
-    const hit=await cache.match(event.request,{ignoreSearch:false});
+    const shell = url.pathname === "/nepalmap" || url.pathname === "/nepalmap/";
+    const hit=await cache.match(event.request,{ignoreSearch:shell});
     if(hit) return hit;
     try {
       const response=await fetch(event.request);
