@@ -3,6 +3,7 @@ import { esc } from "../html";
 import { NYEPI, OTHER_BALI_DAYS, PURNAMA_TILEM } from "../data/bali-saka";
 import { PANCAWARA, PAWUKON_CYCLE_DAYS, SAPTAWARA, SAPTAWARA_AKSARA, WUKU, palelintanganMatrix, pawukon, pawukonEvents } from "../engines/pawukon";
 import { annualSasihReadiness } from "../data/bali-annual-sources";
+import { BALI_PIODALAN, nextPawukonPiodalan } from "../data/bali-piodalan";
 import { PEWIWAHAN_SAPTAWARA, WARIGA_DAUH_SOURCE, merthaYoga, pitraImmediateRestrictions } from "../engines/wariga";
 import type { Ctx } from "../types";
 
@@ -72,11 +73,21 @@ function horizon(iso:string){
  }).join("")+'</div></section>';
 }
 
+function puraOptions(iso:string){
+ const from=isoToJdn(iso)+1;
+ return BALI_PIODALAN.filter(r=>r.rule.type==="pawukon").map(r=>{
+   const j=nextPawukonPiodalan(r.rule as any,from,1)[0];
+   const next=Number.isFinite(j)?jdnToIso(j):"";
+   return '<option value="'+esc(r.slug)+'" data-name="'+esc(r.name)+'" data-locality="'+esc(r.locality)+'" data-next="'+esc(next)+'">'+esc(r.name)+' · '+esc(r.locality)+(next?' · '+next:'')+'</option>';
+ }).join("");
+}
+
 function personalHub(iso:string){
  return '<section id="my-bali" class="bali-personal-hub" data-bali-today="'+esc(iso)+'"><div class="bali-section-heading"><div><span class="bali-face-kicker">My Bali Calendar</span><h2>Kalender yang mengingat orang dan hari pentingmu</h2></div><p>Data pribadi disimpan lokal di browser ini. Tambahkan keluarga sekali; AafnaiPatro akan menampilkan Otonan berikutnya dan membuka kembali konteks yang kamu simpan.</p></div>'+
  '<div id="bali-return-summary" class="bali-return-summary" aria-live="polite"></div>'+
  '<div class="bali-personal-grid"><section><h3>Orang & Otonan</h3><form id="bali-person-form" class="bali-memory-form"><label>Nama<input name="name" maxlength="60" required placeholder="Ibu / Ayah / Wayan"></label><label>Hubungan<select name="relation"><option value="self">Saya</option><option value="parent">Orang tua</option><option value="partner">Pasangan</option><option value="child">Anak</option><option value="family">Keluarga</option><option value="other">Lainnya</option></select></label><label>Tanggal lahir<input name="birthDate" type="date" min="1929-01-01" max="'+esc(iso)+'" required></label><label>Terhadap matahari terbit<select name="boundary"><option value="unknown">Tidak tahu</option><option value="before">Sebelum matahari terbit</option><option value="after">Saat/setelah matahari terbit</option></select></label><button type="submit">Simpan Otonan</button></form><div id="bali-people-list" class="bali-memory-list"></div></section>'+
- '<section><h3>Hari tersimpan</h3><form id="bali-date-form" class="bali-memory-form"><label>Tanggal<input name="date" type="date" min="1929-01-01" max="2129-12-31" value="'+esc(iso)+'" required></label><label>Catatan<input name="label" maxlength="100" placeholder="Piodalan keluarga / hari penting"></label><button type="submit">Simpan tanggal</button></form><div id="bali-saved-dates" class="bali-memory-list"></div></section></div>'+
+ '<section><h3>Hari tersimpan</h3><form id="bali-date-form" class="bali-memory-form"><label>Tanggal<input name="date" type="date" min="1929-01-01" max="2129-12-31" value="'+esc(iso)+'" required></label><label>Catatan<input name="label" maxlength="100" placeholder="Piodalan keluarga / hari penting"></label><button type="submit">Simpan tanggal</button></form><div id="bali-saved-dates" class="bali-memory-list"></div></section>'+
+ '<section class="bali-pura-memory"><h3>My Pura</h3><form id="bali-pura-form" class="bali-memory-form bali-pura-form"><label>Pura bersumber<select name="slug" required><option value="">Pilih Pura…</option>'+puraOptions(iso)+'</select></label><button type="submit">Simpan Pura</button></form><div id="bali-pura-list" class="bali-memory-list"></div><p class="note">Daftar ini hanya memakai Piodalan Pawukon dengan sumber pemerintah/keagamaan yang sudah dapat diproyeksikan. Piodalan berbasis Sasih tetap fail-closed bila tahun belum punya pemetaan terbit.</p></section></div>'+
  '<div class="bali-memory-tools"><button type="button" id="bali-export-memory">Export backup</button><label class="bali-import-label">Import backup<input id="bali-import-memory" type="file" accept="application/json"></label><button type="button" id="bali-clear-memory" class="bali-danger-secondary">Hapus data My Bali</button></div><p class="note">Backup JSON adalah cara pindah perangkat tanpa akun. Informasi ini tidak diperlukan untuk menghitung kalender publik dan tidak dikirim oleh fitur My Bali Calendar.</p></section>';
 }
 
