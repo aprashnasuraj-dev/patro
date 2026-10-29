@@ -82,8 +82,17 @@ function puraOptions(iso:string){
  }).join("");
 }
 
+function recentReturnEvents(iso:string){
+ const end=isoToJdn(iso),out:Array<{date:string;name:string}>=[];
+ for(let j=end-35;j<end;j++){
+   const date=jdnToIso(j);
+   for(const name of important(date))out.push({date,name});
+ }
+ return out.slice(-18);
+}
+
 function personalHub(iso:string){
- return '<section id="my-bali" class="bali-personal-hub" data-bali-today="'+esc(iso)+'"><div class="bali-section-heading"><div><span class="bali-face-kicker">My Bali Calendar</span><h2>Kalender yang mengingat orang dan hari pentingmu</h2></div><p>Data pribadi disimpan lokal di browser ini. Tambahkan keluarga sekali; AafnaiPatro akan menampilkan Otonan berikutnya dan membuka kembali konteks yang kamu simpan.</p></div>'+
+ return '<section id="my-bali" class="bali-personal-hub" data-bali-today="'+esc(iso)+'" data-bali-recent="'+esc(JSON.stringify(recentReturnEvents(iso)))+'"><div class="bali-section-heading"><div><span class="bali-face-kicker">My Bali Calendar</span><h2>Kalender yang mengingat orang dan hari pentingmu</h2></div><p>Data pribadi disimpan lokal di browser ini. Tambahkan keluarga sekali; AafnaiPatro akan menampilkan Otonan berikutnya dan membuka kembali konteks yang kamu simpan.</p></div>'+
  '<div id="bali-return-summary" class="bali-return-summary" aria-live="polite"></div>'+
  '<div class="bali-personal-grid"><section><h3>Orang & Otonan</h3><form id="bali-person-form" class="bali-memory-form"><label>Nama<input name="name" maxlength="60" required placeholder="Ibu / Ayah / Wayan"></label><label>Hubungan<select name="relation"><option value="self">Saya</option><option value="parent">Orang tua</option><option value="partner">Pasangan</option><option value="child">Anak</option><option value="family">Keluarga</option><option value="other">Lainnya</option></select></label><label>Tanggal lahir<input name="birthDate" type="date" min="1929-01-01" max="'+esc(iso)+'" required></label><label>Terhadap matahari terbit<select name="boundary"><option value="unknown">Tidak tahu</option><option value="before">Sebelum matahari terbit</option><option value="after">Saat/setelah matahari terbit</option></select></label><button type="submit">Simpan Otonan</button></form><div id="bali-people-list" class="bali-memory-list"></div></section>'+
  '<section><h3>Hari tersimpan</h3><form id="bali-date-form" class="bali-memory-form"><label>Tanggal<input name="date" type="date" min="1929-01-01" max="2129-12-31" value="'+esc(iso)+'" required></label><label>Catatan<input name="label" maxlength="100" placeholder="Piodalan keluarga / hari penting"></label><button type="submit">Simpan tanggal</button></form><div id="bali-saved-dates" class="bali-memory-list"></div></section>'+
