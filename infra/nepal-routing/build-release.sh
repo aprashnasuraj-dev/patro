@@ -16,11 +16,18 @@ mkdir -p "$RELEASE" "$REPORT_DIR"
 "$ROOT/fetch-pinned-osm.sh" "$RELEASE"
 
 cleanup() {
-  VALHALLA_DATA_DIR="$RELEASE" VALHALLA_PORT="$PORT" docker compose -p "$PROJECT" -f "$ROOT/docker-compose.yml" down >/dev/null 2>&1 || true
+  VALHALLA_DATA_DIR="$RELEASE" VALHALLA_PORT="$PORT" \
+    NEPAL_ROUTING_HOST="${NEPAL_ROUTING_HOST:-build-only.invalid}" \
+    NEPAL_ROUTING_TOKEN="${NEPAL_ROUTING_TOKEN:-build-only-not-used}" \
+    CADDY_ACME_EMAIL="${CADDY_ACME_EMAIL:-build-only@example.invalid}" \
+    docker compose -p "$PROJECT" -f "$ROOT/docker-compose.yml" down >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 
 VALHALLA_DATA_DIR="$RELEASE" VALHALLA_PORT="$PORT" VALHALLA_USE_TILES_IGNORE_PBF=False \
+  NEPAL_ROUTING_HOST="${NEPAL_ROUTING_HOST:-build-only.invalid}" \
+  NEPAL_ROUTING_TOKEN="${NEPAL_ROUTING_TOKEN:-build-only-not-used}" \
+  CADDY_ACME_EMAIL="${CADDY_ACME_EMAIL:-build-only@example.invalid}" \
   docker compose -p "$PROJECT" -f "$ROOT/docker-compose.yml" up -d valhalla
 
 ready=0
