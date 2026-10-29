@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { palelintanganMatrix, pawukonCycle } from "../worker/worldcal/engines/pawukon";
-import { baliRoute } from "../worker/worldcal/pages/bali-weton";
+import { palelintanganMatrix, pawukon, pawukonCycle } from "../worker/worldcal/engines/pawukon";
+import { isoToJdn } from "../worker/worldcal/dates";
+import { baliRoute, rerainanSearch } from "../worker/worldcal/pages/bali-weton";
 import { ROADMAP_FLAGS } from "../worker/roadmap/flags";
 
 function fnv1a(text:string){
@@ -35,6 +36,24 @@ describe("Bali traditional calendar workspace",()=>{
     expect(cycle[4].sangawara).toBe("Jangur");
   });
 
+  it("keeps Ingkel Pandakan and Jejepan on the canonical Pawukon day",()=>{
+    const p=pawukon(isoToJdn("1995-10-17"));
+    expect(p.saptawara).toBe("Anggara");
+    expect(p.pancawara).toBe("Wage");
+    expect(p.wuku.name).toBe("Sinta");
+    expect(p.ingkel).toBe("Wong");
+    expect(p.jejepan).toBe("Sato");
+  });
+
+  it("searches traditional Saptawara + Pancawara + Wuku combinations",()=>{
+    const hits=rerainanSearch("Buda Kliwon Dungulan","2026-01-01");
+    expect(hits).toContainEqual(expect.objectContaining({
+      date:"2026-06-17",
+      name:"Buda Kliwon Dungulan",
+      status:"calculated",
+    }));
+  });
+
   it("builds a unique structural 35-cell Palelintangan matrix",()=>{
     const cells=palelintanganMatrix();
     expect(cells).toHaveLength(35);
@@ -51,6 +70,9 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("Pawukon / Tika");
     expect(r.html).toContain("Palelintangan");
     expect(r.html).toContain("Sasih / Saka");
+    expect(r.html).toContain('id="tika-overlay-rerainan"');
+    expect(r.html).toContain('id="tika-overlay-lunar"');
+    expect(r.html).toContain('id="tika-overlay-piodalan"');
     expect(r.html).not.toContain("Jelajahi AafnaiPatro lainnya");
   });
 
@@ -59,6 +81,15 @@ describe("Bali traditional calendar workspace",()=>{
     expect((r.html.match(/class="pal-cell/g)||[])).toHaveLength(35);
     expect(r.html).toContain("7 Saptawara × 5 Pancawara = 35 kombinasi");
     expect(r.html).toContain("tidak diperlakukan sebagai pengganti Tika 210 hari");
+  });
+
+  it("shows Ingkel and source-backed Wariga context in the deep day view",()=>{
+    const r:any=baliRoute(ctx("/bali-calendar/2026-06-17"),["2026-06-17"]);
+    expect(r.html).toContain("Ingkel Pandakan");
+    expect(r.html).toContain("Jejepan");
+    expect(r.html).toContain("Mertha Yoga");
+    expect(r.html).toContain("Pewiwahan · Saptawara");
+    expect(r.html).toContain("Buda Kliwon Dungulan");
   });
 
   it("fails closed for incomplete 2026 Sasih mapping while exposing official anchors",()=>{
