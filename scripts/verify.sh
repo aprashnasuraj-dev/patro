@@ -34,6 +34,7 @@ run_gate explore_tests npm run test:explore
 run_gate worldcal_tests npm run test:worldcal
 run_gate provenance_schema node scripts/roadmap/validate-schemas.mjs
 run_gate privacy_assertions node scripts/roadmap/privacy-assertions.mjs
+run_gate enhancement_contract node scripts/roadmap/nepal-enhancement-contract.mjs
 run_gate roadmap_js_syntax bash -c 'node --check scripts/explore/nepal/build-map.mjs && node --check scripts/explore/nepal/build-pmtiles.mjs && node --check scripts/explore/nepal/boundary-confidence.mjs && node --check scripts/explore/nepal/place-id-core.mjs && node --check scripts/explore/nepal/place-anomalies.mjs && node --check scripts/explore/nepal/map/routing-v2.js && node --check scripts/explore/nepal/map/road-safety.js && node --check scripts/explore/nepal/map/terrain.js && node --check scripts/explore/nepal/map/offline.js && node --check scripts/explore/nepal/map/offline-sw.js && node --check scripts/explore/nepal/map/mobile-sheet.js && node --check scripts/explore/nepal/map/itinerary.js && node --check scripts/explore/nepal/map/corrections-ui.js && node --check scripts/explore/nepal/map/emergency.js && node --check scripts/explore/nepal/map/embed.js && node --check scripts/explore/nepal/map/embed-widget.js'
 run_gate roadmap_python_syntax python -m py_compile scripts/explore/nepal/osm_wards.py scripts/explore/nepal/osm_roads.py
 run_gate production_build npm run build
