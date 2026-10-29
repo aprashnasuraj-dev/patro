@@ -14,6 +14,8 @@ on:
       - "wrangler.jsonc"
       - "tests/roadmap-bali*.test.ts"
       - "tests/bali-traditional-workspace.test.ts"
+      - "tests/bali-memory.e2e.spec.ts"
+      - "playwright.bali.config.ts"
       - "tests/roadmap-wariga.test.ts"
       - "tests/roadmap-ics.test.ts"
       - "scripts/explore/nepal/build-map.mjs"
@@ -47,6 +49,23 @@ jobs:
           node -e 'const fs=require("fs"); const m=JSON.parse(fs.readFileSync("public/bali-calendar/manifest.webmanifest","utf8")); if(m.id!=="/bali-calendar"||m.start_url!=="/bali-calendar?source=pwa"||m.scope!=="/bali-calendar"||m.display!=="standalone") process.exit(2);'
       - name: Production build
         run: npm run build
+      - name: Browser persistence, Palelintangan and long-range QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx playwright install --with-deps chromium
+          npx wrangler dev --local --ip 127.0.0.1 --port 8788 --config wrangler.jsonc >/tmp/bali-wrangler.log 2>&1 &
+          server=$!
+          trap 'status=$?; kill "$server" 2>/dev/null || true; if [[ "$status" -ne 0 ]]; then cat /tmp/bali-wrangler.log; fi; exit "$status"' EXIT
+          ready=false
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:8788/bali-calendar >/dev/null 2>&1; then ready=true; break; fi
+            sleep 1
+          done
+          if [[ "$ready" != true ]]; then cat /tmp/bali-wrangler.log; exit 1; fi
+          BALI_BASE_URL=http://127.0.0.1:8788 npx playwright test --config=playwright.bali.config.ts
+          kill "$server" 2>/dev/null || true
+          trap - EXIT
       - name: Built Bali PWA delivery contract
         run: |
           test -s dist/bali-calendar/manifest.webmanifest
@@ -67,5 +86,6 @@ jobs:
             echo "- TypeScript: PASS"
             echo "- Full 210-day Tika + 35-cell Palelintangan + Bali/Wariga/annual/ICS/PWA tests: PASS"
             echo "- Production build: PASS"
+            echo "- Chromium persistence + 1929/2129 + Palelintangan QA: PASS"
             echo "- Dedicated manifest + install runtime present in dist: PASS"
           } >> "$GITHUB_STEP_SUMMARY"
