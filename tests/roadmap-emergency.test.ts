@@ -53,4 +53,14 @@ describe("Nepal resilience/BIPAD degradation reporting", () => {
     expect(result).toMatchObject({features:0,total_feeds:7,successful:0,failed:7,degraded:true,complete:false});
     expect(result.failed_kinds).toHaveLength(7);
   });
+
+  it("reports a complete fresh fetch and retrieval age", async () => {
+    vi.useFakeTimers();vi.setSystemTime(new Date("2026-10-29T00:05:00Z"));
+    vi.stubGlobal("fetch",vi.fn(async(url:any)=>{const kind=new URL(String(url),"https://aafnaipatro.com").searchParams.get("kind");return new Response(JSON.stringify({fetched_at:"2026-10-29T00:00:00Z",data:[{name:String(kind),longitude:85.3,latitude:27.7}]}),{status:200});}));
+    const map:any=fakeMap(),A=await api(),r=await A.setVisible(map,true);expect(r).toMatchObject({features:7,total_feeds:7,successful:7,failed:0,degraded:false,complete:true,retrieval_age_seconds:300});vi.useRealTimers();
+  });
+  it("exposes stale retrieval age without pretending the upstream failed", async () => {
+    vi.useFakeTimers();vi.setSystemTime(new Date("2026-10-29T06:00:00Z"));vi.stubGlobal("fetch",vi.fn(async()=>new Response(JSON.stringify({fetched_at:"2026-10-29T00:00:00Z",data:[]}),{status:200})));
+    const map:any=fakeMap(),A=await api(),r=await A.setVisible(map,true);expect(r.retrieval_age_seconds).toBe(21600);expect(r.complete).toBe(true);expect(r.failed).toBe(0);vi.useRealTimers();
+  });
 });

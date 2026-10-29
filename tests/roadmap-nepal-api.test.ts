@@ -111,4 +111,13 @@ describe("Nepal public API contract", () => {
     const bad = await nepalApiResponse(new Request("https://aafnaipatro.com/api/nepal/v1/places?category=not-real&limit=999"), env() as any);
     expect(bad?.status).toBe(400);
   });
+
+  it("proxies successful BIPAD responses with bounded cache metadata", async () => {
+    vi.stubGlobal("fetch",vi.fn(async()=>new Response(JSON.stringify({results:[{id:1}]}),{status:200,headers:{"content-type":"application/json"}})));
+    const r=await nepalApiResponse(new Request("https://aafnaipatro.com/api/nepal/v1/emergency?kind=incident&limit=5"),env({NEPAL_EMERGENCY_ENABLED:"1"}) as any);expect(r?.status).toBe(200);expect(r?.headers.get("cache-control")).toContain("max-age=120");const body:any=await r?.json();expect(body.kind).toBe("incident");expect(body.source).toBe("BIPAD Portal");expect(body.fetched_at).toBeTruthy();
+  });
+  it("returns a bounded timeout error when BIPAD does not answer", async () => {
+    vi.useFakeTimers();vi.stubGlobal("fetch",vi.fn((url:any,init:any)=>new Promise((resolve,reject)=>{init.signal.addEventListener("abort",()=>reject(new DOMException("aborted","AbortError")),{once:true});})));
+    const promise=nepalApiResponse(new Request("https://aafnaipatro.com/api/nepal/v1/emergency?kind=river"),env({NEPAL_EMERGENCY_ENABLED:"1"}) as any);await vi.advanceTimersByTimeAsync(8100);const r=await promise;expect(r?.status).toBe(502);expect(await r?.json()).toMatchObject({error:"bipad_unavailable",kind:"river"});vi.useRealTimers();
+  });
 });

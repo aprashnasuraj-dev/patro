@@ -1,0 +1,113 @@
+name: "Roadmap evidence — WIP"
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [wip/roadmap-critical-path]
+    paths:
+      - ".github/workflows/roadmap-evidence.yml"
+      - "infra/nepal-routing/**"
+      - "scripts/explore/nepal/**"
+      - "scripts/serve-dist.mjs"
+      - "worker/nepal-api.ts"
+      - "worker/worldcal/**"
+      - "tests/roadmap-*.test.ts"
+      - "tests/roadmap-nepal-generated.e2e.spec.ts"
+      - "playwright.nepal-qa.config.ts"
+      - "scripts/verify.sh"
+      - "package.json"
+      - "package-lock.json"
+permissions:
+  contents: read
+concurrency:
+  group: roadmap-evidence-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  full-verification:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: "npm", cache-dependency-path: "package-lock.json" }
+      - name: Full roadmap verification gate
+        run: ./scripts/verify.sh
+      - name: Preserve verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: roadmap-full-verification
+          path: |
+            docs/verification/
+            docs/perf/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 30
+  nepal-generated-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: "npm", cache-dependency-path: "package-lock.json" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: System dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gdal-bin libxml2-utils build-essential libsqlite3-dev zlib1g-dev
+          pip install osmium
+          git clone --depth 1 --branch 2.79.0 https://github.com/felt/tippecanoe.git /tmp/tippecanoe
+          make -C /tmp/tippecanoe -j2
+          sudo make -C /tmp/tippecanoe install
+      - name: Node dependencies
+        run: npm ci
+      - name: Fresh pinned OSM rebuild and true two-dataset comparison
+        env:
+          NEPAL_PREVIOUS_REF: ec3be0201826a86f770f88c341388b08d2a2f487
+        run: ./scripts/explore/nepal/generate-roadmap-data.sh --skip-terrain
+      - name: Resolve generated stage
+        run: |
+          stage="$(find .cache/nepalmap-generation -mindepth 2 -maxdepth 2 -type d -name public | sort | tail -1)"
+          test -n "$stage"
+          echo "QA_STATIC_ROOT=$stage" >> "$GITHUB_ENV"
+      - name: Boundary road and route-match evidence
+        run: |
+          node scripts/explore/nepal/boundary-review-report.mjs
+          node scripts/explore/nepal/road-coverage-report.mjs
+          node scripts/explore/nepal/measure-route-road-match.mjs
+      - name: Copernicus samples against CAAN AIP
+        run: python scripts/explore/nepal/elevation-sample.py
+      - name: Entity-page and JSON-LD cohort audit
+        run: node scripts/explore/nepal/entity-page-audit.mjs "$QA_STATIC_ROOT/nepalmap/place" docs/verification/nepal-entity-page-audit.json
+      - name: GPX KML GeoJSON interoperability
+        run: |
+          node scripts/explore/nepal/export-fixtures.mjs docs/verification/export-fixtures
+          ogrinfo -ro -al -so docs/verification/export-fixtures/route.geojson > docs/verification/export-geojson-ogr.txt
+          ogrinfo -ro -al -so docs/verification/export-fixtures/route.gpx > docs/verification/export-gpx-ogr.txt
+          ogrinfo -ro -al -so docs/verification/export-fixtures/route.kml > docs/verification/export-kml-ogr.txt
+          xmllint --noout docs/verification/export-fixtures/route.gpx
+          xmllint --noout docs/verification/export-fixtures/route.kml
+      - name: Browser prerequisites
+        run: |
+          npm install --no-save --package-lock=false @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+          PATRO_STATIC_ROOT="$QA_STATIC_ROOT" PORT=4174 node scripts/serve-dist.mjs >/tmp/nepal-qa-server.log 2>&1 &
+          for i in {1..60}; do curl -fsS http://127.0.0.1:4174/nepalmap >/dev/null && exit 0; sleep 1; done
+          cat /tmp/nepal-qa-server.log
+          exit 1
+      - name: PMTiles and offline browser evidence
+        env:
+          ROADMAP_BASE_URL: http://127.0.0.1:4174
+        run: npx playwright test --config=playwright.nepal-qa.config.ts
+      - name: Preserve Nepal evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nepal-generated-evidence
+          path: |
+            docs/verification/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 30
