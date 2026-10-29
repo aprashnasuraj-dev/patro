@@ -1,15 +1,76 @@
 {
   "version": 1,
   "families": [
-    {"family":"nepalmap-root","pattern":"/nepalmap","indexable":true,"criteria":"single canonical utility landing","lastmod_source":"OSM/admin source change"},
-    {"family":"nepalmap-curated-category","pattern":"/nepalmap/{curated-category}","indexable":true,"criteria":"only explicit LANDINGS entries with distinct category intent","lastmod_source":"OSM source change"},
-    {"family":"nepalmap-place","pattern":"/nepalmap/place/{id}","indexable":false,"criteria":"not generated until a unique-value gate and source identity are satisfied","lastmod_source":"place/source change"},
-    {"family":"bali-root","pattern":"/bali-calendar","indexable":true,"criteria":"canonical current-day utility","lastmod_source":"calendar engine/source release"},
-    {"family":"bali-date","pattern":"/bali-calendar/YYYY-MM-DD","indexable":true,"criteria":"only within configured INDEX_WINDOW","lastmod_source":"source or engine change"},
-    {"family":"bali-wuku","pattern":"/bali-calendar/wuku/{wuku}","indexable":true,"criteria":"30 finite educational pages","lastmod_source":"engine/content change"},
-    {"family":"bali-holidays","pattern":"/bali-calendar/hari-raya/{year}","indexable":true,"criteria":"only configured holiday-year window","lastmod_source":"year-source change"},
-    {"family":"bali-month","pattern":"/bali-calendar/bulan/YYYY-MM","indexable":false,"criteria":"launch noindex; reassess only after product/search evidence","lastmod_source":"year-source change"},
-    {"family":"bali-search","pattern":"/bali-calendar/cari","indexable":false,"criteria":"query utility; never index search-result variants","lastmod_source":"none"},
-    {"family":"bali-feed","pattern":"/bali-calendar/feed/*","indexable":false,"criteria":"machine subscription resources, not search documents","lastmod_source":"source/engine change"}
+    {
+      "family": "nepalmap-root",
+      "pattern": "/nepalmap",
+      "indexable": true,
+      "criteria": "single canonical utility landing",
+      "lastmod_source": "OSM/admin source change"
+    },
+    {
+      "family": "nepalmap-curated-category",
+      "pattern": "/nepalmap/{curated-category}",
+      "indexable": true,
+      "criteria": "only explicit LANDINGS entries with distinct category intent",
+      "lastmod_source": "OSM source change"
+    },
+    {
+      "family": "nepalmap-place-selected",
+      "pattern": "/nepalmap/place/{stable-ulid}",
+      "indexable": true,
+      "criteria": "only stable ULID entities passing the unique-value score; default cap 500, hard policy cap 2000; no mutable name slugs",
+      "lastmod_source": "place/source change",
+      "max_urls": 2000
+    },
+    {
+      "family": "bali-root",
+      "pattern": "/bali-calendar",
+      "indexable": true,
+      "criteria": "canonical current-day utility",
+      "lastmod_source": "calendar engine/source release"
+    },
+    {
+      "family": "bali-date",
+      "pattern": "/bali-calendar/YYYY-MM-DD",
+      "indexable": true,
+      "criteria": "only within configured INDEX_WINDOW",
+      "lastmod_source": "source or engine change"
+    },
+    {
+      "family": "bali-wuku",
+      "pattern": "/bali-calendar/wuku/{wuku}",
+      "indexable": true,
+      "criteria": "30 finite educational pages",
+      "lastmod_source": "engine/content change"
+    },
+    {
+      "family": "bali-holidays",
+      "pattern": "/bali-calendar/hari-raya/{year}",
+      "indexable": true,
+      "criteria": "only configured holiday-year window",
+      "lastmod_source": "year-source change"
+    },
+    {
+      "family": "bali-month",
+      "pattern": "/bali-calendar/bulan/YYYY-MM",
+      "indexable": false,
+      "criteria": "launch noindex; reassess only after product/search evidence",
+      "lastmod_source": "year-source change"
+    },
+    {
+      "family": "bali-search",
+      "pattern": "/bali-calendar/cari",
+      "indexable": false,
+      "criteria": "query utility; never index search-result variants",
+      "lastmod_source": "none"
+    },
+    {
+      "family": "bali-feed",
+      "pattern": "/bali-calendar/feed/*",
+      "indexable": false,
+      "criteria": "machine subscription resources, not search documents",
+      "lastmod_source": "source/engine change"
+    }
   ]
 }
