@@ -5,7 +5,7 @@
  */
 export const NYEPI: Record<number, { date: string; status: "official" | "published" | "provisional"; source: string }> = {
   2025: { date: "2025-03-29", status: "official", source: "SKB 3 Menteri 2025" },
-  2026: { date: "2026-03-19", status: "published", source: "detikBali Kalender Bali 2026" },
+  2026: { date: "2026-03-19", status: "official", source: "SKB 3 Menteri No. 5 Tahun 2025 / Ditjen Bimas Hindu — Nyepi Saka 1948" },
   2027: { date: "2027-03-08", status: "official", source: "SKB 3 Menteri 2027 (signed 15 Sep 2026)" },
   2028: { date: "2028-03-26", status: "provisional", source: "Wikipedia (not yet decreed)" },
   2029: { date: "2029-03-15", status: "provisional", source: "Wikipedia (not yet decreed)" },
@@ -28,5 +28,5 @@ export const PURNAMA_TILEM: Record<number, { purnama: string[]; tilem: string[];
 
 /** Other published Balinese Hindu days that are not Pawukon-derived. */
 export const OTHER_BALI_DAYS: Record<number, { date: string; name: string; source: string }[]> = {
-  2026: [{ date: "2026-01-17", name: "Siwaratri", source: "detikBali 2026" }],
+  2026: [{ date: "2026-01-17", name: "Siwaratri", source: "Ditjen Bimas Hindu Kemenag — Daftar Hari Raya Agama Hindu Tahun 2026" }],
 };
