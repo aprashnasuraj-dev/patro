@@ -96,6 +96,9 @@ const ROADMAP_FLAGS = {
   nepalEmbeds: process.env.NEPALMAP_EMBEDS === "1",
 };
 
+if (ROADMAP_FLAGS.nepalOfflinePacks && !SELF_HOST_MAPLIBRE) {
+  throw new Error("NEPALMAP_OFFLINE_PACKS=1 requires NEPALMAP_SELF_HOST_MAPLIBRE=1 so the saved map shell does not depend on a CDN runtime.");
+}
 if (SELF_HOST_MAPLIBRE) {
   const vendorRoot = join(ROOT, "public/vendor/nepalmap/maplibre-4.7.1");
   try {
