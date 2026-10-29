@@ -64,8 +64,28 @@ export type PalelintanganCell = {
   saptawaraUrip: number;
   pancawaraUrip: number;
   urip: number;
+  lintang: string;
+  patron: string;
   key: string;
 };
+
+export const PALELINTANGAN_LINTANG = [
+  ["Kala Sungsang", "Kelapa Sunda", "Kuda", "Tangis", "Sangkal Tikel", "Banyak Angrem", "Depat"],
+  ["Gajah", "Dupa", "Yuyu", "Gajahmina", "Salah Ukur", "Bubu Bosor", "Ru"],
+  ["Patrem", "Hulanjar", "Asu", "Lumbung", "Bade", "Prau Pegat", "Srengenge"],
+  ["Tenggala", "Lembu", "Perahu Sarat", "Kartika", "Kumba", "Rebut Utang", "Puwuh Atarung"],
+  ["Laweyan", "Pedati Suung", "Sidamalung", "Atiwa-tiwa", "Naga", "Udang", "Larung Paglangan"],
+] as const;
+
+export const PALELINTANGAN_PATRON = {
+  Redite: "Bhatara Indra",
+  Soma: "Bhatara Sri",
+  Anggara: "Bhatara Brahma",
+  Buda: "Bhatara Wisnu",
+  Wraspati: "Bhatara Guru / Sang Hyang Siwa",
+  Sukra: "Bhatari Uma",
+  Saniscara: "Bhatari Durga",
+} as const;
 
 /** Canonical 0..209 position of a civil JDN inside the Pawukon cycle. */
 export const pawukonDay = (jdn: number) => mod(jdn - PAWUKON_EPOCH_OFFSET, PAWUKON_CYCLE_DAYS);
@@ -135,6 +155,8 @@ export function palelintanganMatrix(): PalelintanganCell[] {
       saptawaraUrip: URIP_SAPTA[si],
       pancawaraUrip: URIP_PANCA[pi],
       urip: URIP_SAPTA[si] + URIP_PANCA[pi],
+      lintang: PALELINTANGAN_LINTANG[pi][si],
+      patron: PALELINTANGAN_PATRON[saptawara],
       key: `${saptawara.toLowerCase()}-${pancawara.toLowerCase()}`,
     })),
   );
