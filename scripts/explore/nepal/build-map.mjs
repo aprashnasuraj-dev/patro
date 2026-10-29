@@ -23,7 +23,7 @@ const args = process.argv.slice(2);
 const OUT = resolve(ROOT, args.includes("--out") ? args[args.indexOf("--out") + 1] : "public");
 const SITE = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").replace(/\/+$/, "");
 const MAPLIBRE = "https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl";
-const LASTMOD = "2026-10-11";
+const LEGACY_LASTMOD = "2026-10-11";
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const fmt = (n) => Number(n).toLocaleString("en-IN");
@@ -68,7 +68,14 @@ const LANDINGS = [
 ];
 
 const D = await nepalData(ROOT);
-const { province, district, palika, settlements, pois } = D;
+const { province, district, palika, settlements, pois, sourceMeta } = D;
+const LASTMOD = sourceMeta?.generated || LEGACY_LASTMOD;
+const OSM_SNAPSHOT = sourceMeta?.osm_timestamp || null;
+const ROADMAP_FLAGS = {
+  provenanceUi: process.env.ROADMAP_PROVENANCE_UI === "1",
+  nepalSearchWorker: process.env.NEPALMAP_SEARCH_WORKER === "1",
+  nepalRoutingProviderV2: process.env.NEPALMAP_ROUTING_V2 === "1",
+};
 
 // ---------- layer rows ----------
 // Row: [name, name_ne, lat, lng, sub, ele, palika_id, ward, district_id, village_slug, wikipedia]
@@ -77,11 +84,11 @@ const catOfPoi = new Map(CATEGORIES.flatMap((c) => c.from.map((f) => [f, c.id]))
 for (const p of pois) {
   const cat = catOfPoi.get(p.category);
   if (!cat || !p.did) continue;
-  rowsByCat.get(cat).push([p.name || "", p.name_ne || "", p.lat, p.lng, cat === "services" ? p.category : p.sub || "", p.ele || 0, p.palika_id || 0, p.ward || 0, p.did, "", p.wikipedia || ""]);
+  rowsByCat.get(cat).push([p.name || "", p.name_ne || "", p.lat, p.lng, cat === "services" ? p.category : p.sub || "", p.ele || 0, p.palika_id || 0, p.ward || 0, p.did, "", p.wikipedia || "", p.osm_id || p.id || ""]);
 }
 for (const s of settlements) {
   if (!s.did || !(s.name || s.name_ne)) continue;
-  rowsByCat.get("village").push([s.name || "", s.name_ne || "", s.lat, s.lng, s.place, s.ele || 0, s.palika_id || 0, s.ward || 0, s.did, s.slug || "", ""]);
+  rowsByCat.get("village").push([s.name || "", s.name_ne || "", s.lat, s.lng, s.place, s.ele || 0, s.palika_id || 0, s.ward || 0, s.did, s.slug || "", "", s.osm_id || s.id || ""]);
 }
 for (const rows of rowsByCat.values()) rows.sort((a, b) => a[8] - b[8] || (a[0] || a[1]).localeCompare(b[0] || b[1]));
 
@@ -93,7 +100,9 @@ for (const rows of rowsByCat.values()) for (const r of rows) {
 }
 const admin = {
   generated: LASTMOD,
-  licence: "Places © OpenStreetMap contributors (ODbL); local levels: local-states-nepal (MIT)",
+  osm_snapshot: OSM_SNAPSHOT,
+  source: sourceMeta?.source || "OpenStreetMap",
+  licence: sourceMeta?.licence || "Places © OpenStreetMap contributors (ODbL); local levels: local-states-nepal (MIT)",
   provinces: [...province.values()].map((p) => ({ id: p.id, slug: p.slug, name: p.en, ne: p.neName, path: p.path })),
   districts: [...district.values()].map((d) => ({ id: d.id, slug: d.slug, name: d.en, ne: d.neName, province: d.province_id, path: d.path, bbox: (bbox.get(d.id) || []).map((x) => Math.round(x * 1e4) / 1e4) })),
   palikas: Object.fromEntries([...palika.values()].map((m) => [m.id, [m.slug, m.en, m.neName, m.district_id, m.wardCount, m.geo?.c || null, m.name]])),
@@ -105,7 +114,7 @@ const dataDir = join(OUT, "data/nepalmap/v1");
 await rm(dataDir, { recursive: true, force: true });
 await mkdir(dataDir, { recursive: true });
 await mkdir(join(OUT, "nepalmap"), { recursive: true });
-const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia"];
+const fields = ["name", "name_ne", "lat", "lng", "sub", "ele", "palika_id", "ward", "district_id", "village_slug", "wikipedia", "source_id"];
 const sizes = {};
 for (const c of CATEGORIES) {
   const text = JSON.stringify({ fields, rows: rowsByCat.get(c.id) });
@@ -113,6 +122,26 @@ for (const c of CATEGORIES) {
   sizes[c.id] = text.length;
 }
 await writeFile(join(dataDir, "admin.json"), JSON.stringify(admin));
+await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
+  dataset_id: "nepalmap-osm-places-v1",
+  product: "nepalmap",
+  source: {
+    name: "OpenStreetMap contributors",
+    url: "https://www.openstreetmap.org/copyright",
+    id_namespace: "osm",
+    license: "ODbL 1.0",
+    license_url: "https://opendatacommons.org/licenses/odbl/1-0/",
+    attribution: "© OpenStreetMap contributors",
+  },
+  snapshot_date: OSM_SNAPSHOT ? String(OSM_SNAPSHOT).slice(0, 10) : LASTMOD,
+  build_date: LASTMOD,
+  transformation_version: "nepalmap-v1",
+  status: "published",
+  confidence: OSM_SNAPSHOT ? 1 : 0,
+  correction_route: { url: "/corrections", email: null },
+  boundaries_version: admin.generated,
+  notes: OSM_SNAPSHOT ? "Snapshot date is derived from the PBF osmosis replication timestamp captured by osm_wards.py." : "OSM extract timestamp unavailable; using legacy generated date and confidence 0.",
+}, null, 2));
 
 const appJs = await readFile(join(HERE, "map/app.js"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -134,7 +163,7 @@ const wardLink = (r) => {
 
 function shell({ path, title, description, h1, intro, preset, content, schema }) {
   const canonical = SITE + path;
-  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, ...(preset ? { preset } : {}) };
+  const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(preset ? { preset } : {}) };
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
