@@ -1,0 +1,62 @@
+name: "Bali Calendar PWA evidence"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [wip/bali-native-pwa-continuation]
+    paths:
+      - ".github/workflows/bali-calendar-pwa.yml"
+      - "worker/worldcal/**"
+      - "worker/roadmap/flags.ts"
+      - "public/bali-calendar/**"
+      - "public/sw.js"
+      - "src/pwa.ts"
+      - "wrangler.jsonc"
+      - "tests/roadmap-bali*.test.ts"
+      - "scripts/explore/nepal/build-map.mjs"
+      - "package.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bali-calendar-pwa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install dependencies
+        run: npm install --no-package-lock
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Bali source-backed and PWA tests
+        run: npx vitest run tests/roadmap-bali.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-bali-pwa.test.ts tests/roadmap-wariga.test.ts tests/roadmap-ics.test.ts
+      - name: Static PWA syntax and manifest
+        run: |
+          node --check public/bali-calendar/pwa.js
+          node -e 'const fs=require("fs"); const m=JSON.parse(fs.readFileSync("public/bali-calendar/manifest.webmanifest","utf8")); if(m.id!=="/bali-calendar"||m.start_url!=="/bali-calendar?source=pwa"||m.scope!=="/"||m.display!=="standalone") process.exit(2);'
+      - name: Production build
+        run: npm run build
+      - name: Built Bali PWA delivery contract
+        run: |
+          test -s dist/bali-calendar/manifest.webmanifest
+          test -s dist/bali-calendar/pwa.js
+          grep -q '"id": "/bali-calendar"' dist/bali-calendar/manifest.webmanifest
+          grep -q 'WARM_BALI_PWA' dist/bali-calendar/pwa.js
+          grep -q 'aafnai-pwa-v20' dist/sw.js
+      - name: Evidence summary
+        run: |
+          {
+            echo "## Bali Calendar PWA"
+            echo "- TypeScript: PASS"
+            echo "- Bali/Wariga/annual/ICS/PWA tests: PASS"
+            echo "- Production build: PASS"
+            echo "- Dedicated manifest + install runtime present in dist: PASS"
+          } >> "$GITHUB_STEP_SUMMARY"
