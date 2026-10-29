@@ -22,7 +22,7 @@ import type { Ctx, Rendered } from "./types";
 export { isWorldcalPath } from "./config";
 
 type Env = { PUBLIC_SITE_URL?: string };
-const QUERY_PATHS = /\/(search|convert|otonan|hitung|jodoh)$/;
+const QUERY_PATHS = /\/(search|convert|otonan|hitung|jodoh|cari)$/;
 type ExecCtx = { waitUntil(p: Promise<unknown>): void };
 
 const ROUTES: Record<FamilyId, (ctx: Ctx, rest: string[]) => Rendered | null> = {
