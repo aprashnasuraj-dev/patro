@@ -86,6 +86,7 @@ function nextOton(date,boundary,today){
   var a=one(true),b=one(false);return a===b?[a]:[a,b];
 }
 function daysUntil(iso,today){var a=dayNumber(iso),b=dayNumber(today);return a===null||b===null?null:a-b}
+function baliIsoFromMs(ms){try{var parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Makassar",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date(ms)),o={};parts.forEach(function(p){o[p.type]=p.value});return o.year+"-"+o.month+"-"+o.day}catch{return new Date(ms).toISOString().slice(0,10)}}
 function relationLabel(x){return({self:"Saya",parent:"Orang tua",partner:"Pasangan",child:"Anak",family:"Keluarga",other:"Lainnya"})[x]||"Keluarga"}
 function node(tag,cls,text){var el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el}
 function button(text,action){var b=node("button","bali-memory-remove",text);b.type="button";b.dataset.action=action;return b}
@@ -93,7 +94,7 @@ function button(text,action){var b=node("button","bali-memory-remove",text);b.ty
 async function initMemory(){
   var hub=document.getElementById("my-bali"),saveDayButtons=[].slice.call(document.querySelectorAll("[data-bali-save-date]"));
   if(!hub&&!saveDayButtons.length)return;
-  var db=await openMemoryDb(),state=await loadState(db);
+  var db=await openMemoryDb(),state=await loadState(db),recentEvents=hub?safeJson(hub.dataset.baliRecent||"[]",[]):[];
   var today=hub&&hub.dataset.baliToday?hub.dataset.baliToday:(location.pathname.match(/\/(\d{4}-\d{2}-\d{2})$/)||[])[1]||new Date().toISOString().slice(0,10);
   var peopleList=document.getElementById("bali-people-list"),dateList=document.getElementById("bali-saved-dates"),puraList=document.getElementById("bali-pura-list"),summary=document.getElementById("bali-return-summary");
 
@@ -109,6 +110,7 @@ async function initMemory(){
       soon.sort(function(a,b){return a.days-b.days});
       var top=node("strong","",parts.join(" · "));summary.appendChild(top);
       if(soon.length){var p=node("p","");p.appendChild(document.createTextNode("Otonan terdekat: "));var a=node("a","",soon[0].name+" · "+soon[0].date+" ("+soon[0].days+" hari)");a.href=ROOT+"/"+soon[0].date;p.appendChild(a);summary.appendChild(p)}
+      if(state.lastVisit&&Array.isArray(recentEvents)){var lastIso=baliIsoFromMs(state.lastVisit),passed=recentEvents.filter(function(x){return x&&x.date>lastIso&&x.date<today}).slice(-4);if(passed.length){var box=node("div","bali-since-last"),label=node("strong","","Sejak kunjungan terakhir");box.appendChild(label);passed.forEach(function(x){var a=node("a","",x.date.slice(5)+" · "+x.name);a.href=ROOT+"/"+x.date;box.appendChild(a)});summary.appendChild(box)}}
     }
     if(peopleList){
       peopleList.innerHTML="";
