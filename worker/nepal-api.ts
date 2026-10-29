@@ -46,6 +46,10 @@ async function prefix(id:string):Promise<string>{
   const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(id));
   return Array.from(new Uint8Array(b).slice(0,1),x=>x.toString(16).padStart(2,"0")).join("");
 }
+async function sha256Hex(value:string):Promise<string>{
+  const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,"0")).join("");
+}
 async function findPlace(env:Env,request:Request,id:string):Promise<{category:string,index:number,place:Record<string,unknown>}|null>{
   const p=await prefix(id);
   const bucket=await assetJson(env,request,`/data/nepalmap/v1/index/${p}.json`);
@@ -158,6 +162,20 @@ async function routeWithValhalla(request: Request, env: Env): Promise<Response> 
     p.lat >= 25.5 && p.lat <= 31.5 && p.lng >= 79.0 && p.lng <= 89.5
   );
   if (!valid) return privateJson({ error:"point_outside_nepal_bounds" }, 400);
+
+  if (env.DB) {
+    const ip = request.headers.get("cf-connecting-ip");
+    if (ip) {
+      const now = Math.floor(Date.now() / 1000);
+      const windowStart = Math.floor(now / 60) * 60;
+      const keyHash = await sha256Hex(String(env.NEPAL_ROUTING_TOKEN || "disabled") + ":" + ip);
+      await env.DB.prepare("INSERT INTO runtime_rate_buckets(scope,key_hash,window_start,count) VALUES('nepal-route',?,?,1) ON CONFLICT(scope,key_hash,window_start) DO UPDATE SET count=count+1")
+        .bind(keyHash,windowStart).run();
+      const bucket = await env.DB.prepare("SELECT count FROM runtime_rate_buckets WHERE scope='nepal-route' AND key_hash=? AND window_start=?")
+        .bind(keyHash,windowStart).first();
+      if (Number(bucket?.count || 0) > 30) return privateJson({ error:"route_rate_limited" }, 429, "no-store", { "retry-after":"60" });
+    }
+  }
 
   let base:URL;
   try { base = new URL(String(env.NEPAL_ROUTING_ORIGIN || "")); }
