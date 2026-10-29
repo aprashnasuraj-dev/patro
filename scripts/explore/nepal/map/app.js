@@ -4,7 +4,12 @@
  */
 (function () {
   "use strict";
+  var cfgMeta = document.querySelector('meta[name="aafnaipatro-nepalmap-config"]');
   var CFG = window.NEPALMAP || {};
+  if (cfgMeta && !window.NEPALMAP) {
+    try { CFG = JSON.parse(cfgMeta.getAttribute("content") || "{}"); }
+    catch (e) { console.error("Nepal Map config", e); CFG = {}; }
+  }
   var DATA = CFG.data || "/data/nepalmap/v1/";
   var VER = CFG.version || "1";
   var STYLE = CFG.style || "https://tiles.openfreemap.org/styles/liberty";
