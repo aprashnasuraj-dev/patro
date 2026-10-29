@@ -29,7 +29,7 @@ describe("Bali traditional calendar workspace",()=>{
     for(let w=0;w<30;w++)expect(new Set(cycle.slice(w*7,w*7+7).map((p)=>p.wuku.name)).size).toBe(1);
   });
 
-  it("matches independent published Pawukon rows including Dasawara",()=>{
+  it("matches all 30 independent published Pawukon golden rows including Dasawara",()=>{
     const rows=[
       [1,"-","Menga","Pasah","Sri","Paing","Tungleh","Redite","Sri","Dangu","Sri"],
       [2,"Luang","Pepet","Beteng","Laba","Pon","Aryang","Soma","Indra","Dangu","Pati"],
@@ -40,6 +40,12 @@ describe("Bali traditional calendar workspace",()=>{
       [7,"-","Menga","Pasah","Jaya","Pon","Tungleh","Saniscara","Kala","Nohan","Manusa"],
       [8,"Luang","Pepet","Beteng","Menala","Wage","Aryang","Redite","Uma","Ogan","Raksasa"],
       [9,"-","Menga","Kajeng","Sri","Kliwon","Urukung","Soma","Sri","Erangan","Suka"],
+      [12,"Luang","Pepet","Kajeng","Menala","Pon","Maulu","Wraspati","Yama","Dadi","Manuh"],
+      [17,"-","Menga","Beteng","Sri","Pon","Was","Anggara","Sri","Ogan","Pandita"],
+      [25,"-","Menga","Pasah","Sri","Umanis","Tungleh","Buda","Sri","Nohan","Suka"],
+      [29,"Luang","Pepet","Beteng","Sri","Kliwon","Was","Redite","Ludra","Tulus","Duka"],
+      [33,"-","Menga","Kajeng","Sri","Wage","Urukung","Wraspati","Sri","Gigis","Suka"],
+      [36,"-","Menga","Kajeng","Menala","Paing","Maulu","Redite","Yama","Erangan","Sri"],
       [64,"Luang","Pepet","Pasah","Menala","Kliwon","Paniron","Redite","Uma","Urungan","Duka"],
       [65,"Luang","Pepet","Beteng","Sri","Umanis","Was","Soma","Sri","Tulus","Raksasa"],
       [70,"-","Menga","Pasah","Laba","Umanis","Paniron","Saniscara","Brahma","Nohan","Sri"],
