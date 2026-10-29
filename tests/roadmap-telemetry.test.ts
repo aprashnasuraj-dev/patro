@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { NoopSink, TelemetryClient, sanitizeTelemetryProps, validateTelemetryEnvelope } from "../worker/roadmap/telemetry";
+import { describe, expect, it, vi } from "vitest";
+import { HttpSink, NoopSink, TelemetryClient, sanitizeTelemetryProps, validateTelemetryEnvelope, type TelemetryEnvelope, type TelemetrySink } from "../worker/roadmap/telemetry";
 
 describe("roadmap telemetry privacy contract", () => {
   it("strips precise-location and raw free-text fields recursively", () => {
@@ -23,5 +23,23 @@ describe("roadmap telemetry privacy contract", () => {
     const c = new TelemetryClient({ sink: new NoopSink() });
     expect(c.enqueue({ event: "bali.date.navigated", product: "bali", surface: "day", locale: "id", device_class: "mobile", country_code: null })).toBe(false);
     expect(c.queued()).toBe(0);
+  });
+
+  it("flushes a partial batch after the configured window", async () => {
+    vi.useFakeTimers();
+    const sent: TelemetryEnvelope[][] = [];
+    const sink: TelemetrySink = { async send(batch) { sent.push([...batch]); } };
+    const client = new TelemetryClient({ sink, consent: () => true, batchSize: 10, flushAfterMs: 250 });
+    client.enqueue({ event: "bali.date.navigated", product: "bali", surface: "day", locale: "id", device_class: "mobile", country_code: null });
+    expect(client.queued()).toBe(1);
+    await vi.advanceTimersByTimeAsync(251);
+    expect(sent).toHaveLength(1);
+    expect(client.queued()).toBe(0);
+    vi.useRealTimers();
+  });
+
+  it("refuses cross-origin HTTP telemetry endpoints", () => {
+    expect(() => new HttpSink("https://example.com/events")).toThrow("same-origin");
+    expect(() => new HttpSink("/api/telemetry")).not.toThrow();
   });
 });
