@@ -47,6 +47,47 @@
     };
   };
 
+
+  function FirstPartyValhallaProvider(endpoint) {
+    this.endpoint = String(endpoint || "/api/nepal/v1/route");
+    if (!this.endpoint.startsWith("/")) throw new RoutingError("invalid_provider", "first-party Valhalla endpoint must be same-origin");
+    this.name = "aafnaipatro-valhalla";
+  }
+  FirstPartyValhallaProvider.prototype.route = async function (req, signal) {
+    var points = Array.isArray(req.points) && req.points.length >= 2
+      ? req.points
+      : [req.from].concat(Array.isArray(req.stops) ? req.stops : []).concat([req.to]).filter(Boolean);
+    if (points.length < 2 || points.length > 10) throw new RoutingError("invalid_request", "routing needs 2 to 10 points");
+    var response;
+    try {
+      response = await fetch(this.endpoint, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "content-type": "application/json", "accept": "application/json" },
+        body: JSON.stringify({ mode: req.mode, points: points.map(function (p) { return { lat: p.lat, lng: p.lng }; }) }),
+        signal: signal
+      });
+    } catch (error) {
+      throw new RoutingError(error && error.name === "AbortError" ? "timeout" : "network", "first-party routing request failed", error);
+    }
+    if (response.status === 429) throw new RoutingError("throttled", "routing service throttled the request");
+    if (response.status >= 500) throw new RoutingError("upstream_5xx", "routing service failed");
+    if (!response.ok) throw new RoutingError("upstream_http", "routing service returned " + response.status);
+    var json;
+    try { json = await response.json(); } catch (error) { throw new RoutingError("malformed_response", "routing response was not valid JSON", error); }
+    if (!json || !json.geometry || !Number.isFinite(json.distance)) throw new RoutingError("no_route", (json && json.error) || "no route");
+    return {
+      geometry: json.geometry,
+      distance: json.distance,
+      duration: json.duration,
+      legs: json.legs || [],
+      warnings: json.warnings || [],
+      confidence: json.confidence == null ? null : json.confidence,
+      provenance: { provider: this.name, endpoint: this.endpoint, data: "OpenStreetMap" },
+      waypoint_count: points.length
+    };
+  };
+
   function TokenBucket(options) {
     options = options || {};
     this.capacity = Math.max(1, options.capacity || 1);
@@ -158,6 +199,7 @@
   global.AafnaiRoutingV2 = {
     RoutingError: RoutingError,
     PublicFossgisProvider: PublicFossgisProvider,
+    FirstPartyValhallaProvider: FirstPartyValhallaProvider,
     TokenBucket: TokenBucket,
     CircuitBreaker: CircuitBreaker,
     detourClass: detourClass,
