@@ -660,7 +660,8 @@
       (CFG.flags && CFG.flags.nepalExports ? '<button class="np-btn" type="button" data-export="gpx">GPX</button><button class="np-btn" type="button" data-export="geojson">GeoJSON</button><button class="np-btn" type="button" data-export="kml">KML</button>' : "") +
       (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<button class="np-btn" type="button" id="np-terrain-toggle">Terrain: ' + (state.terrainOn ? "on" : "off") + "</button>" : "") +
       '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>' +
-      (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<div id="np-elevation-profile" class="np-elevation" aria-live="polite">Loading elevation…</div>' : "");
+      (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<div id="np-elevation-profile" class="np-elevation" aria-live="polite">Loading elevation…</div>' : "") +
+      (CFG.flags && CFG.flags.nepalRoadSafety ? '<div id="np-road-safety" class="np-road-safety" aria-live="polite">Loading OSM road/trail metadata…</div>' : "");
     var steps = (route.legs[0] && route.legs[0].steps) || [];
     $("#np-steps-wrap").hidden = !steps.length;
     $("#np-steps").innerHTML = steps.map(function (st) {
@@ -673,6 +674,15 @@
         if (!target || routeData !== route) return;
         var profile = window.AafnaiTerrain.sampleProfile(map, coords, 120);
         target.innerHTML = profile ? window.AafnaiTerrain.renderProfile(profile) : '<span class="np-note">Elevation tiles are not fully available for this route yet.</span>';
+      });
+    }
+    if (CFG.flags && CFG.flags.nepalRoadSafety && window.AafnaiRoadSafety) {
+      map.once("idle", function () {
+        var target = $("#np-road-safety");
+        if (!target || routeData !== route) return;
+        var features = window.AafnaiPmtiles && CFG.pmtiles && CFG.pmtiles.roads ? window.AafnaiPmtiles.loadedRoadMetadata(map) : [];
+        var summary = window.AafnaiRoadSafety.summarizeForRoute(features, route);
+        target.innerHTML = window.AafnaiRoadSafety.renderSummary(summary);
       });
     }
     closePanelOnMobile();
@@ -853,7 +863,7 @@
         try { window.AafnaiTerrain.setup(map, CFG.terrain); } catch (e) { console.warn("terrain", e); state.terrainOn = false; }
       }
       if (CFG.flags && CFG.flags.nepalPmtiles && window.AafnaiPmtiles && CFG.pmtiles) {
-        window.AafnaiPmtiles.attach(map, { places: CFG.pmtiles.places, roads: CFG.pmtiles.roads, renderPlaces: false, renderRoads: false })
+        window.AafnaiPmtiles.attach(map, { places: CFG.pmtiles.places, roads: CFG.pmtiles.roads, renderPlaces: false, renderRoads: false, loadRoadsForMetadata: !!(CFG.flags && CFG.flags.nepalRoadSafety) })
           .then(function (meta) { window.__nepalmapPmtiles = meta; }).catch(function (e) { console.warn("pmtiles", e); });
       }
       res();
