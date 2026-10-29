@@ -45,13 +45,13 @@ jobs:
           export NEPAL_ROUTING_HTTPS_PORT=18443
           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway up -d
           for i in {1..90}; do
-            code="$(curl -sS -o /tmp/health.json -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://127.0.0.1:18080/healthz || true)"
+            code="$(curl -sS -o /tmp/health.json -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://localhost:18080/healthz || true)"
             if [[ "$code" == "200" ]]; then break; fi
             sleep 2
           done
-          test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:18080/healthz)" = "401"
-          test "$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://127.0.0.1:18080/not-allowed)" = "404"
-          python3 infra/nepal-routing/verify_routes.py             --base http://127.0.0.1:18080             --token "$NEPAL_ROUTING_TOKEN"             --health-path /healthz             --output infra/nepal-routing/reports/gateway-routes-2026-10-28.json
+          test "$(curl -sS -o /dev/null -w '%{http_code}' http://localhost:18080/healthz)" = "401"
+          test "$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://localhost:18080/not-allowed)" = "404"
+          python3 infra/nepal-routing/verify_routes.py             --base http://localhost:18080             --token "$NEPAL_ROUTING_TOKEN"             --health-path /healthz             --output infra/nepal-routing/reports/gateway-routes-2026-10-28.json
           docker stats --no-stream --format '{{json .}}' > infra/nepal-routing/reports/docker-stats-2026-10-28.jsonl
           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway ps > infra/nepal-routing/reports/gateway-ps-2026-10-28.txt
       - name: Preserve runtime evidence
