@@ -46,6 +46,18 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(js).toContain("Sejak kunjungan terakhir");
   });
 
+  it("keeps the Bali PWA runtime across Otonan and sourced Piodalan subpages",()=>{
+    for(const [path,rest] of [["/bali-calendar/otonan",["otonan"]],["/bali-calendar/piodalan",["piodalan"]],["/bali-calendar/piodalan/pura-luhur-batukaru",["piodalan","pura-luhur-batukaru"]]] as const){
+      const on:any=baseCtx(true);on.url=new URL("https://aafnaipatro.com"+path);on.path=path;
+      const r:any=baliRoute(on,[...rest]);
+      expect(r?.html).toContain('src="/bali-calendar/pwa.js"');
+      expect(r?.html).toContain('rel="manifest" href="/bali-calendar/manifest.webmanifest"');
+    }
+    const detail:any=baseCtx(true);detail.url=new URL("https://aafnaipatro.com/bali-calendar/piodalan/pura-luhur-batukaru");detail.path="/bali-calendar/piodalan/pura-luhur-batukaru";
+    const page:any=baliRoute(detail,["piodalan","pura-luhur-batukaru"]);
+    expect(page?.html).toContain("data-bali-save-pura");
+  });
+
   it("ships traditional-calendar shortcuts inside the dedicated scope",()=>{
     const m=JSON.parse(read("public/bali-calendar/manifest.webmanifest"));
     expect(m.id).toBe("/bali-calendar");
