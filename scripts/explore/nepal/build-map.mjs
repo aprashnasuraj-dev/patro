@@ -97,6 +97,14 @@ if (ROADMAP_FLAGS.nepalStablePlaceIds) {
 // ---------- layer rows ----------
 // Row: [name, name_ne, lat, lng, sub, ele, palika_id, ward, district_id, village_slug, wikipedia]
 const rowsByCat = new Map(CATEGORIES.map((c) => [c.id, []]));
+const sourceAdminConfidence = new Map();
+for (const p of pois.concat(settlements)) if (p.osm_id || p.id) {
+  sourceAdminConfidence.set(p.osm_id || p.id, {
+    confidence: p.admin_confidence || null,
+    boundary_distance_m: p.boundary_distance_m ?? null,
+    reason: p.admin_confidence_reason || null,
+  });
+}
 const catOfPoi = new Map(CATEGORIES.flatMap((c) => c.from.map((f) => [f, c.id])));
 for (const p of pois) {
   const cat = catOfPoi.get(p.category);
@@ -119,26 +127,37 @@ if (ROADMAP_FLAGS.nepalStablePlaceIds) {
 
 let boundaryAudit = null;
 if (ROADMAP_FLAGS.nepalBoundaryConfidence) {
-  const sourcePath = process.env.NEPAL_BOUNDARY_GEOJSON ? resolve(ROOT, process.env.NEPAL_BOUNDARY_GEOJSON) : null;
-  if (!sourcePath) throw new Error("NEPALMAP_BOUNDARY_CONFIDENCE=1 requires NEPAL_BOUNDARY_GEOJSON pointing at a pinned GeoJSON FeatureCollection.");
-  const fc = JSON.parse(await readFile(sourcePath, "utf8"));
-  if (fc?.type !== "FeatureCollection" || !Array.isArray(fc.features) || !fc.features.length) throw new Error("Boundary source must be a non-empty GeoJSON FeatureCollection.");
   const thresholds = {
     ambiguousKm: Number(process.env.NEPAL_BOUNDARY_AMBIGUOUS_KM || 0.25),
     mediumKm: Number(process.env.NEPAL_BOUNDARY_MEDIUM_KM || 1),
   };
   const summary = { high: 0, medium: 0, low: 0, unverified: 0, mismatches: 0, near_boundary: 0 };
+  const sourcePath = process.env.NEPAL_BOUNDARY_GEOJSON ? resolve(ROOT, process.env.NEPAL_BOUNDARY_GEOJSON) : null;
+  let fc = null;
+  if (sourcePath) {
+    fc = JSON.parse(await readFile(sourcePath, "utf8"));
+    if (fc?.type !== "FeatureCollection" || !Array.isArray(fc.features) || !fc.features.length) throw new Error("Boundary source must be a non-empty GeoJSON FeatureCollection.");
+  }
   for (const rows of rowsByCat.values()) for (const row of rows) {
-    const result = classifyBoundaryConfidence([row[3], row[2]], fc.features, { palika_id: row[6], ward: row[7] }, thresholds);
+    const native = sourceAdminConfidence.get(row[11]);
+    let result;
+    if (native?.confidence) {
+      result = { confidence: native.confidence, boundary_distance_m: native.boundary_distance_m, reason: native.reason };
+    } else if (fc) {
+      result = classifyBoundaryConfidence([row[3], row[2]], fc.features, { palika_id: row[6], ward: row[7] }, thresholds);
+    } else {
+      throw new Error(`Boundary confidence missing for source ${row[11]}. Refresh osm_wards.py output or provide NEPAL_BOUNDARY_GEOJSON for independent QA.`);
+    }
     row.push(result.confidence, result.boundary_distance_m, result.reason);
     summary[result.confidence] = (summary[result.confidence] || 0) + 1;
-    if (result.reason === "assignment_mismatch") summary.mismatches++;
-    if (result.reason === "near_boundary") summary.near_boundary++;
+    if (/mismatch/.test(result.reason || "")) summary.mismatches++;
+    if (/near_/.test(result.reason || "")) summary.near_boundary++;
   }
   boundaryAudit = {
-    source_path: process.env.NEPAL_BOUNDARY_GEOJSON,
-    source_revision: process.env.NEPAL_BOUNDARY_REVISION || "UNVERIFIED",
-    source_license: process.env.NEPAL_BOUNDARY_LICENSE || "UNVERIFIED",
+    primary_source: "OpenStreetMap ward/palika polygons used by osm_wards.py",
+    independent_qa_source: process.env.NEPAL_BOUNDARY_GEOJSON || null,
+    source_revision: OSM_SNAPSHOT || "UNVERIFIED",
+    source_license: "ODbL 1.0",
     thresholds,
     summary,
   };
