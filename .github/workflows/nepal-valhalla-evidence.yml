@@ -6,6 +6,7 @@ on:
     branches: [wip/roadmap-critical-path]
     paths:
       - ".github/workflows/nepal-valhalla-evidence.yml"
+      - "infra/nepal-routing/**"
 
 permissions:
   contents: read
