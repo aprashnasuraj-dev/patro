@@ -3,7 +3,7 @@ name: "Bali Calendar PWA evidence"
 on:
   workflow_dispatch: {}
   push:
-    branches: [wip/bali-native-pwa-continuation]
+    branches: [wip/bali-native-pwa-continuation, feat/bali-traditional-workspace-v2]
     paths:
       - ".github/workflows/bali-calendar-pwa.yml"
       - "worker/worldcal/**"
@@ -13,6 +13,7 @@ on:
       - "src/pwa.ts"
       - "wrangler.jsonc"
       - "tests/roadmap-bali*.test.ts"
+      - "tests/bali-traditional-workspace.test.ts"
       - "tests/roadmap-wariga.test.ts"
       - "tests/roadmap-ics.test.ts"
       - "scripts/explore/nepal/build-map.mjs"
@@ -39,7 +40,7 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
       - name: Bali source-backed and PWA tests
-        run: npx vitest run tests/roadmap-bali.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-bali-pwa.test.ts tests/roadmap-wariga.test.ts tests/roadmap-ics.test.ts
+        run: npx vitest run tests/bali-traditional-workspace.test.ts tests/roadmap-bali.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-bali-pwa.test.ts tests/roadmap-wariga.test.ts tests/roadmap-ics.test.ts
       - name: Static PWA syntax and manifest
         run: |
           node --check public/bali-calendar/pwa.js
@@ -53,8 +54,8 @@ jobs:
           test -s dist/bali-calendar-sw.js
           test -s dist/bali-calendar/icon.svg
           grep -q '"id": "/bali-calendar"' dist/bali-calendar/manifest.webmanifest
-          grep -q 'bali-calendar-sw.js?rev=bali-calendar-pwa-v1' dist/bali-calendar/pwa.js
-          grep -q 'bali-calendar-shell-v1' dist/bali-calendar-sw.js
+          grep -q 'bali-calendar-sw.js?rev=bali-calendar-pwa-v2' dist/bali-calendar/pwa.js
+          grep -q 'bali-calendar-shell-v2' dist/bali-calendar-sw.js
           grep -q 'aafnai-pwa-v19' dist/sw.js
           ! grep -q 'BALI_PWA_CORE' dist/sw.js
           grep -q 'aafnai-pwa-v19' src/pwa.ts
@@ -63,7 +64,7 @@ jobs:
           {
             echo "## Bali Calendar PWA"
             echo "- TypeScript: PASS"
-            echo "- Bali/Wariga/annual/ICS/PWA tests: PASS"
+            echo "- Full 210-day Tika + 35-cell Palelintangan + Bali/Wariga/annual/ICS/PWA tests: PASS"
             echo "- Production build: PASS"
             echo "- Dedicated manifest + install runtime present in dist: PASS"
           } >> "$GITHUB_STEP_SUMMARY"
