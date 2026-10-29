@@ -93,6 +93,7 @@ const ROADMAP_FLAGS = {
   nepalItinerary: process.env.NEPALMAP_ITINERARY === "1",
   nepalCorrectionsUi: process.env.NEPALMAP_CORRECTIONS_UI === "1",
   nepalPmtiles: process.env.NEPALMAP_PMTILES === "1",
+  nepalEmbeds: process.env.NEPALMAP_EMBEDS === "1",
 };
 
 let stablePlaceIds = null;
@@ -319,6 +320,9 @@ const mobileSheetJs = await readFile(join(HERE, "map/mobile-sheet.js"), "utf8");
 const itineraryJs = await readFile(join(HERE, "map/itinerary.js"), "utf8");
 const correctionsUiJs = await readFile(join(HERE, "map/corrections-ui.js"), "utf8");
 const emergencyJs = await readFile(join(HERE, "map/emergency.js"), "utf8");
+const embedJs = await readFile(join(HERE, "map/embed.js"), "utf8");
+const embedWidgetJs = await readFile(join(HERE, "map/embed-widget.js"), "utf8");
+const embedCss = await readFile(join(HERE, "map/embed.css"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -338,10 +342,29 @@ await writeFile(join(OUT, "nepalmap/emergency.js"), emergencyJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + mobileSheetJs + itineraryJs + correctionsUiJs + emergencyJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + offlineJs + offlineSwJs + exportCoreJs + exportsJs + mobileSheetJs + itineraryJs + correctionsUiJs + emergencyJs + embedJs + embedWidgetJs + embedCss + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
+
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
+if (ROADMAP_FLAGS.nepalEmbeds) {
+  if (!SELF_HOST_MAPLIBRE) throw new Error("NEPALMAP_EMBEDS=1 requires NEPALMAP_SELF_HOST_MAPLIBRE=1 so third-party embeds do not depend on a CDN runtime.");
+  const embedDir = join(OUT, "embed/nepalmap");
+  await mkdir(embedDir, { recursive: true });
+  await writeFile(join(embedDir, "embed.js"), embedJs);
+  await writeFile(join(embedDir, "embed.css"), embedCss);
+  await mkdir(join(OUT, "embed"), { recursive: true });
+  await writeFile(join(OUT, "embed/nepalmap-widget.js"), embedWidgetJs);
+  const embedConfig = {
+    data: "/data/nepalmap/v1/",
+    version,
+    categories: clientCats,
+    maplibreWorker: MAPLIBRE_WORKER,
+    style: "https://tiles.openfreemap.org/styles/liberty",
+  };
+  const embedHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Nepal Map embed · AafnaiPatro</title><link rel="stylesheet" href="${MAPLIBRE_CSS}"><link rel="stylesheet" href="/embed/nepalmap/embed.css?v=${version}"></head><body><div id="status">Loading Nepal Map…</div><div id="map" role="region" aria-label="Embedded Nepal map"></div><script>window.NEPAL_EMBED=${JSON.stringify(embedConfig).replace(/</g, "\\u003c")};</script><script src="${MAPLIBRE_JS}" defer></script><script src="/embed/nepalmap/embed.js?v=${version}" defer></script></body></html>`;
+  await writeFile(join(embedDir, "index.html"), embedHtml);
+}
 const countOf = (cat, religion) => rowsByCat.get(cat).filter((r) => !religion || religion.includes(r[4] || "other")).length;
 const districtName = (did) => district.get(did);
 const wardLink = (r) => {
