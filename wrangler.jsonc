@@ -135,6 +135,7 @@
       "NEPAL_API_ENABLED": "0",
       "NEPAL_CORRECTIONS_ENABLED": "0",
       "NEPAL_EMERGENCY_ENABLED": "0",
+      "NEPAL_ROUTING_ENABLED": "0",
       "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1"
     },
     "d1_databases": [
@@ -158,6 +159,7 @@
     "NEPAL_API_ENABLED": "0",
     "NEPAL_CORRECTIONS_ENABLED": "0",
     "NEPAL_EMERGENCY_ENABLED": "0",
+    "NEPAL_ROUTING_ENABLED": "0",
     "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1"
   },
   "triggers": {
