@@ -19,6 +19,7 @@ describe("Bali roadmap product model", () => {
       ["2026-04-04","Hari Raya Saraswati"],
       ["2026-04-08","Pagerwesi"],
       ["2026-06-17","Hari Raya Galungan"],
+      ["2026-06-18","Umanis Galungan"],
       ["2026-06-27","Hari Raya Kuningan"],
       ["2026-10-31","Hari Raya Saraswati"],
       ["2026-11-04","Pagerwesi"],
