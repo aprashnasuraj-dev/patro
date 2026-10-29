@@ -77,6 +77,11 @@
       "name": "Hari Raya Bali",
       "short_name": "Hari Raya",
       "url": "/bali-calendar/hari-raya"
+    },
+    {
+      "name": "My Bali Calendar",
+      "short_name": "My Bali",
+      "url": "/bali-calendar#my-bali"
     }
   ]
 }
