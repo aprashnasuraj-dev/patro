@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "note": "Coordinates are route smoke-test waypoints, not authoritative place centroids. No expected travel time is hard-coded; the runner records measured outputs.",
+  "fixtures": [
+    {
+      "name": "terai-biratnagar-itahari",
+      "region": "Terai",
+      "kind": "route",
+      "costing": "auto",
+      "points": [
+        {
+          "name": "Biratnagar",
+          "lat": 26.4525,
+          "lon": 87.2718
+        },
+        {
+          "name": "Itahari",
+          "lat": 26.6636,
+          "lon": 87.2749
+        }
+      ],
+      "max_ms": 15000
+    },
+    {
+      "name": "kathmandu-urban",
+      "region": "Kathmandu Valley",
+      "kind": "route",
+      "costing": "auto",
+      "points": [
+        {
+          "name": "Thamel",
+          "lat": 27.7154,
+          "lon": 85.3123
+        },
+        {
+          "name": "Boudhanath",
+          "lat": 27.7215,
+          "lon": 85.362
+        }
+      ],
+      "max_ms": 15000
+    },
+    {
+      "name": "hill-kathmandu-dhulikhel",
+      "region": "Hill road",
+      "kind": "route",
+      "costing": "auto",
+      "points": [
+        {
+          "name": "Kathmandu",
+          "lat": 27.7172,
+          "lon": 85.324
+        },
+        {
+          "name": "Dhulikhel",
+          "lat": 27.622,
+          "lon": 85.542
+        }
+      ],
+      "max_ms": 15000
+    },
+    {
+      "name": "mountain-pokhara-jomsom",
+      "region": "Mountain road",
+      "kind": "route",
+      "costing": "auto",
+      "points": [
+        {
+          "name": "Pokhara",
+          "lat": 28.2096,
+          "lon": 83.9856
+        },
+        {
+          "name": "Jomsom",
+          "lat": 28.7804,
+          "lon": 83.723
+        }
+      ],
+      "max_ms": 15000
+    },
+    {
+      "name": "trek-lukla-namche",
+      "region": "Himalayan trek",
+      "kind": "route",
+      "costing": "pedestrian",
+      "points": [
+        {
+          "name": "Lukla",
+          "lat": 27.6869,
+          "lon": 86.7297
+        },
+        {
+          "name": "Namche Bazaar",
+          "lat": 27.8053,
+          "lon": 86.7106
+        }
+      ],
+      "max_ms": 15000
+    },
+    {
+      "name": "kathmandu-bhaktapur-dhulikhel-multistop",
+      "region": "Multi-stop",
+      "kind": "route",
+      "costing": "auto",
+      "points": [
+        {
+          "name": "Kathmandu",
+          "lat": 27.7172,
+          "lon": 85.324
+        },
+        {
+          "name": "Bhaktapur",
+          "lat": 27.6721,
+          "lon": 85.428
+        },
+        {
+          "name": "Dhulikhel",
+          "lat": 27.622,
+          "lon": 85.542
+        }
+      ],
+      "max_ms": 15000
+    },
+    {
+      "name": "nagarkot-detour",
+      "region": "Detour",
+      "kind": "detour",
+      "costing": "auto",
+      "base_points": [
+        {
+          "name": "Kathmandu",
+          "lat": 27.7172,
+          "lon": 85.324
+        },
+        {
+          "name": "Dhulikhel",
+          "lat": 27.622,
+          "lon": 85.542
+        }
+      ],
+      "via_points": [
+        {
+          "name": "Kathmandu",
+          "lat": 27.7172,
+          "lon": 85.324
+        },
+        {
+          "name": "Nagarkot",
+          "lat": 27.7172,
+          "lon": 85.52
+        },
+        {
+          "name": "Dhulikhel",
+          "lat": 27.622,
+          "lon": 85.542
+        }
+      ],
+      "max_ms": 15000
+    }
+  ]
+}

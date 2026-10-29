@@ -1,0 +1,15 @@
+{
+  "dataset_id": "geofabrik-nepal-osm-2026-10-28",
+  "source_name": "Geofabrik Nepal OpenStreetMap extract",
+  "source_page": "https://download.geofabrik.de/asia/nepal.html",
+  "file_name": "nepal-261028.osm.pbf",
+  "url": "https://download.geofabrik.de/asia/nepal-261028.osm.pbf",
+  "md5_url": "https://download.geofabrik.de/asia/nepal-261028.osm.pbf.md5",
+  "snapshot_label": "2026-10-28",
+  "osm_data_timestamp": "2026-10-28T21:21:02Z",
+  "listed_modified": "2026-10-29 01:10",
+  "expected_bytes": 414755998,
+  "attribution": "© OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "lock_policy": "The acquisition script must validate Geofabrik's published MD5 and expected byte length, then record a locally computed SHA-256 in source-lock.json before graph build."
+}
