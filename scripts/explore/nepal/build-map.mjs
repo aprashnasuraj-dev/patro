@@ -230,15 +230,19 @@ await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
 
 const appJs = await readFile(join(HERE, "map/app.js"), "utf8");
 const routingV2Js = await readFile(join(HERE, "map/routing-v2.js"), "utf8");
+const roadSafetyJs = await readFile(join(HERE, "map/road-safety.js"), "utf8");
+const pmtilesPocJs = await readFile(join(HERE, "map/pmtiles-poc.js"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
 await writeFile(join(OUT, "nepalmap/app.js"), appJs);
 await writeFile(join(OUT, "nepalmap/routing-v2.js"), routingV2Js);
+await writeFile(join(OUT, "nepalmap/road-safety.js"), roadSafetyJs);
+await writeFile(join(OUT, "nepalmap/pmtiles-poc.js"), pmtilesPocJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
@@ -312,6 +316,8 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <footer>Places © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> (ODbL), matched to wards by Aafnai Patro. Base map © <a href="https://openfreemap.org" rel="nofollow noopener">OpenFreeMap</a>. Routes © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a>, computed by <a href="https://project-osrm.org/" rel="nofollow noopener">OSRM</a> on <a href="https://routing.openstreetmap.de/about.html" rel="nofollow noopener">FOSSGIS</a> servers. Last updated ${LASTMOD}. Spotted a missing temple or a wrong place? Add or fix it on OpenStreetMap and it appears here after the next monthly refresh, or <a href="/corrections">tell us</a>.</footer>
 <script>window.NEPALMAP=${JSON.stringify(config).replace(/</g, "\\u003c")};</script>
 <script src="${MAPLIBRE_JS}" defer></script>
+${ROADMAP_FLAGS.nepalPmtiles ? `<script src="/vendor/nepalmap/pmtiles-4.5.0/pmtiles.js" defer></script><script src="/nepalmap/pmtiles-poc.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalRoadSafety ? `<script src="/nepalmap/road-safety.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
