@@ -47,3 +47,41 @@ NEPALMAP_SEARCH_WORKER=0
 NEPALMAP_ROUTING_V2=0
 NEPALMAP_STABLE_IDS=0
 NEPALMAP_VISITOR_MODE=0
+
+# Nepal Map build-time enhancement gates. All remain OFF until scripts/verify.sh is green.
+NEPALMAP_BOUNDARY_CONFIDENCE=0
+# Optional independent QA source; primary confidence comes from osm_wards.py's actual OSM polygons.
+NEPAL_BOUNDARY_GEOJSON=
+NEPAL_BOUNDARY_REVISION=
+NEPAL_BOUNDARY_LICENSE=
+NEPAL_BOUNDARY_AMBIGUOUS_KM=0.25
+NEPAL_BOUNDARY_MEDIUM_KM=1
+NEPALMAP_DETOUR_ROUTING=0
+NEPALMAP_ROAD_SAFETY=0
+NEPALMAP_TERRAIN=0
+# Required and must be same-origin when NEPALMAP_TERRAIN=1.
+NEPALMAP_DEM_TILEJSON=
+NEPALMAP_DEM_ATTRIBUTION=
+NEPALMAP_OFFLINE_PACKS=0
+NEPALMAP_EXPORTS=0
+NEPALMAP_POI_PAGES=0
+NEPALMAP_MAX_POI_PAGES=500
+NEPALMAP_MOBILE_SHEET_V2=0
+NEPALMAP_EMERGENCY=0
+NEPALMAP_ITINERARY=0
+NEPALMAP_CORRECTIONS_UI=0
+NEPALMAP_PMTILES=0
+NEPALMAP_PMTILES_ROADS=0
+# Optional road GeoJSONSeq produced by scripts/explore/nepal/osm_roads.py for PMTiles build.
+NEPALMAP_ROADS_NDJSON=
+NEPALMAP_EMBEDS=0
+NEPALMAP_SELF_HOST_MAPLIBRE=0
+# Emits the 256-bucket static place lookup index consumed by /api/nepal/v1/place/:id.
+NEPALMAP_API_BUILD=0
+
+# Nepal Worker runtime gates. These are non-secret wrangler vars in production/preview and
+# intentionally default OFF in wrangler.jsonc as well.
+NEPAL_API_ENABLED=0
+NEPAL_CORRECTIONS_ENABLED=0
+NEPAL_EMERGENCY_ENABLED=0
+BIPAD_API_BASE=https://bipadportal.gov.np/api/v1
