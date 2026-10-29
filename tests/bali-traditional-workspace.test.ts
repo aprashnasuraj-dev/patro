@@ -151,7 +151,9 @@ describe("Bali traditional calendar workspace",()=>{
     const r:any=baliRoute(ctx("/bali-calendar/palelintangan"),["palelintangan"]);
     expect((r.html.match(/class="pal-cell/g)||[])).toHaveLength(35);
     expect(r.html).toContain("7 Saptawara × 5 Pancawara = 35 kombinasi");
-    expect(r.html).toContain("tidak diperlakukan sebagai pengganti Tika 210 hari");
+    expect(r.html).toContain("Setiap sel sekarang menampilkan nama lintang");
+    expect(r.html).toContain("Kala Sungsang");
+    expect(r.html).toContain("Bhatara Wisnu");
   });
 
   it("shows Ingkel and source-backed Wariga context in the deep day view",()=>{
