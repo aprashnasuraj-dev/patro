@@ -1,0 +1,19 @@
+{
+  "dataset_id":"nepalmap-osm-places-v1",
+  "product":"nepalmap",
+  "source":{
+    "name":"OpenStreetMap contributors",
+    "url":"https://www.openstreetmap.org/copyright",
+    "id_namespace":"osm",
+    "license":"ODbL 1.0",
+    "license_url":"https://opendatacommons.org/licenses/odbl/1-0/",
+    "attribution":"© OpenStreetMap contributors"
+  },
+  "snapshot_date":"2026-10-11",
+  "build_date":"2026-10-11",
+  "transformation_version":"nepalmap-v1",
+  "status":"published",
+  "confidence":0,
+  "correction_route":{"url":"/corrections","email":null},
+  "notes":"Legacy builder LASTMOD is 2026-10-11. Exact upstream OSM extract timestamp has not been independently verified; confidence remains 0 until the ingest snapshot is wired to manifest generation."
+}
