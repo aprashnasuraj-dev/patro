@@ -40,7 +40,7 @@ export function sakaYearForDate(iso:string){
 
 export type BaliView="pawukon"|"palelintangan"|"sasih"|"gregorian";
 export function baliModeNav(active:BaliView,iso:string){
- const month=iso.slice(0,7),items:Array<[BaliView,string,string]>=[["pawukon",BP,"Pawukon / Tika"],["palelintangan",BP+"/palelintangan","Palelintangan"],["sasih",BP+"/sasih-saka","Sasih / Saka"],["gregorian",BP+"/bulan/"+month,"Gregorian"]];
+ const month=iso.slice(0,7),q="?tanggal="+encodeURIComponent(iso),items:Array<[BaliView,string,string]>=[["pawukon",active==="pawukon"?BP:BP+"/"+iso,"Pawukon / Tika"],["palelintangan",BP+"/palelintangan"+q,"Palelintangan"],["sasih",BP+"/sasih-saka"+q,"Sasih / Saka"],["gregorian",BP+"/bulan/"+month,"Gregorian"]];
  return '<nav class="bali-mode-nav" aria-label="Mode Kalender Bali">'+items.map(x=>'<a href="'+x[1]+'"'+(x[0]===active?' aria-current="page" class="active"':'')+'>'+esc(x[2])+'</a>').join("")+'</nav>';
 }
 
