@@ -210,7 +210,15 @@ const admin = {
   generated: LASTMOD,
   osm_snapshot: OSM_SNAPSHOT,
   source: sourceMeta?.source || "OpenStreetMap",
-  licence: sourceMeta?.licence || "Places © OpenStreetMap contributors (ODbL); local levels: local-states-nepal (MIT)",
+  licence: sourceMeta?.licence || "Places © OpenStreetMap contributors (ODbL); local levels: local-states-nepal v2.1.0 (MIT)",
+  admin_source: {
+    name: "local-states-nepal",
+    version: "v2.1.0",
+    commit: "035cb3d2ce2420ad04d7aac1d0ce4d08960c57f0",
+    url: "https://github.com/sagautam5/local-states-nepal/tree/v2.1.0",
+    license: "MIT",
+    verification: "All six vendored provinces/districts/municipalities en+np JSON files are byte-identical to upstream v2.1.0.",
+  },
   provinces: [...province.values()].map((p) => ({ id: p.id, slug: p.slug, name: p.en, ne: p.neName, path: p.path })),
   districts: [...district.values()].map((d) => ({ id: d.id, slug: d.slug, name: d.en, ne: d.neName, province: d.province_id, path: d.path, bbox: (bbox.get(d.id) || []).map((x) => Math.round(x * 1e4) / 1e4) })),
   palikas: Object.fromEntries([...palika.values()].map((m) => [m.id, [m.slug, m.en, m.neName, m.district_id, m.wardCount, m.geo?.c || null, m.name]])),
@@ -285,8 +293,17 @@ await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
   status: "published",
   confidence: OSM_SNAPSHOT ? 1 : 0,
   correction_route: { url: "/corrections", email: null },
-  boundaries_version: admin.generated,
-  notes: OSM_SNAPSHOT ? "Snapshot date is derived from the PBF osmosis replication timestamp captured by osm_wards.py." : "OSM extract timestamp unavailable; using legacy generated date and confidence 0.",
+  boundaries_version: OSM_SNAPSHOT || admin.generated,
+  related_sources: [{
+    role: "administrative identifiers and local-level names",
+    name: "local-states-nepal",
+    url: "https://github.com/sagautam5/local-states-nepal/tree/v2.1.0",
+    version: "v2.1.0",
+    commit: "035cb3d2ce2420ad04d7aac1d0ce4d08960c57f0",
+    license: "MIT",
+    verification: "All six vendored provinces/districts/municipalities en+np JSON files are byte-identical to upstream v2.1.0."
+  }],
+  notes: OSM_SNAPSHOT ? "Snapshot date is derived from the PBF osmosis replication timestamp captured by osm_wards.py; administrative identifiers are pinned separately in related_sources." : "OSM extract timestamp unavailable; using legacy generated date and confidence 0.",
 }, null, 2));
 
 if (ROADMAP_FLAGS.nepalOfflinePacks) {
