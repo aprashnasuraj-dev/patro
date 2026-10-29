@@ -25,6 +25,7 @@
     to: null,
     stops: [],
     mode: "car",
+    terrainOn: true,
   };
   var layers = {}; // id -> {rows, loaded, loading}
   var admin = null;
@@ -631,13 +632,23 @@
       (route.duration && state.mode === "foot" ? '<p class="np-note">Walking time on flat ground. On trekking trails, add time for climbs: roughly 1 hour per 300–400 m of ascent.</p>' : "") +
       '<div class="np-actions"><a class="np-btn" target="_blank" rel="noopener" href="' + esc(googleUrl()) + '">Navigate in Google Maps</a>' +
       '<button class="np-btn" type="button" id="np-route-share">Copy route link</button>' +
-      '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>';
+      (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<button class="np-btn" type="button" id="np-terrain-toggle">Terrain: ' + (state.terrainOn ? "on" : "off") + "</button>" : "") +
+      '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>' +
+      (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain ? '<div id="np-elevation-profile" class="np-elevation" aria-live="polite">Loading elevation…</div>' : "");
     var steps = (route.legs[0] && route.legs[0].steps) || [];
     $("#np-steps-wrap").hidden = !steps.length;
     $("#np-steps").innerHTML = steps.map(function (st) {
       return "<li>" + esc(stepText(st)) + (st.distance > 30 && st.maneuver.type !== "arrive" ? ' <span class="np-n">' + fmtKm(st.distance / 1000) + "</span>" : "") + "</li>";
     }).join("");
     Promise.all(ALONG.map(ensure)).then(function () { alongTheWay(coords, straight); }).catch(showError);
+    if (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && state.terrainOn && !straight) {
+      map.once("idle", function () {
+        var target = $("#np-elevation-profile");
+        if (!target || routeData !== route) return;
+        var profile = window.AafnaiTerrain.sampleProfile(map, coords, 120);
+        target.innerHTML = profile ? window.AafnaiTerrain.renderProfile(profile) : '<span class="np-note">Elevation tiles are not fully available for this route yet.</span>';
+      });
+    }
     closePanelOnMobile();
     writeUrl();
   }
@@ -807,7 +818,17 @@
     geo.on("geolocate", function (e) { state.me = [e.coords.latitude, e.coords.longitude]; renderList(); });
     $("#np-near").addEventListener("click", function () { confirmLocationDisclosure("nearby", function () { geo.trigger(); }); });
 
-    var styled = new Promise(function (res) { map.on("load", function () { styleReady = true; res(); }); });
+    var styled = new Promise(function (res) { map.on("load", function () {
+      styleReady = true;
+      if (CFG.flags && CFG.flags.nepalTerrain && window.AafnaiTerrain && CFG.terrain) {
+        try { window.AafnaiTerrain.setup(map, CFG.terrain); } catch (e) { console.warn("terrain", e); state.terrainOn = false; }
+      }
+      if (CFG.flags && CFG.flags.nepalPmtiles && window.AafnaiPmtiles && CFG.pmtiles) {
+        window.AafnaiPmtiles.attach(map, { places: CFG.pmtiles.places, roads: CFG.pmtiles.roads, renderPlaces: false, renderRoads: false })
+          .then(function (meta) { window.__nepalmapPmtiles = meta; }).catch(function (e) { console.warn("pmtiles", e); });
+      }
+      res();
+    }); });
     var adminP = getJson("admin.json").then(function (a) {
       admin = a;
       a.districtById = {};
@@ -895,6 +916,19 @@
         computeRoute();
       }
       if (e.target.id === "np-route-clear") { state.stops = []; setPoint("from", null, true); setPoint("to", null, true); clearRoute(); computeRoute(); }
+      if (e.target.id === "np-terrain-toggle" && window.AafnaiTerrain) {
+        state.terrainOn = !state.terrainOn;
+        window.AafnaiTerrain.setEnabled(map, state.terrainOn);
+        e.target.textContent = "Terrain: " + (state.terrainOn ? "on" : "off");
+        if (state.terrainOn && routeData && routeData.geometry) {
+          map.once("idle", function () {
+            var target = $("#np-elevation-profile");
+            if (!target) return;
+            var profile = window.AafnaiTerrain.sampleProfile(map, routeData.geometry.coordinates, 120);
+            target.innerHTML = profile ? window.AafnaiTerrain.renderProfile(profile) : '<span class="np-note">Elevation tiles are not fully available for this route yet.</span>';
+          });
+        }
+      }
       if (e.target.id === "np-route-share") {
         var btn = e.target;
         writeUrl();
