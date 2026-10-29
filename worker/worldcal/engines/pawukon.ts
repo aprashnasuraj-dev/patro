@@ -85,6 +85,7 @@ export function pawukonFromDay(dayInput: number): PawukonDay {
   const asta = 1 + mod(Math.max(6, 4 + mod(day - 70, PAWUKON_CYCLE_DAYS)), 8);
   const catur = amod(asta, 4);
   const sanga = 1 + mod(Math.max(0, day - 3), 9);
+  // R&D 12.9 yields 0..9; name position 0 represents Raksasa (10), while 1..9 map normally.
   const dasa = mod(1 + URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1], 10);
   const saptawara = SAPTAWARA[sapta - 1];
   const pancawara = PANCAWARA[panca - 1];
@@ -103,7 +104,7 @@ export function pawukonFromDay(dayInput: number): PawukonDay {
     saptawara,
     astawara: ASTAWARA[asta - 1],
     sangawara: SANGAWARA[sanga - 1],
-    dasawara: DASAWARA[dasa],
+    dasawara: DASAWARA[amod(dasa, 10) - 1],
     urip: URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1],
     ingkel: INGKEL[(wuku.index - 1) % INGKEL.length],
     jejepan: JEJEPAN[day % JEJEPAN.length],
@@ -142,14 +143,23 @@ export function palelintanganMatrix(): PalelintanganCell[] {
 /** Pawukon-day holidays (recur every 210 days). */
 export const PAWUKON_HOLIDAYS: { day: number; key: string; id: string; en: string }[] = [
   { day: 0, key: "banyu-pinaruh", id: "Banyu Pinaruh", en: "Banyu Pinaruh (purification after Saraswati)" },
+  { day: 1, key: "soma-ribek", id: "Soma Ribek", en: "Soma Ribek" },
+  { day: 2, key: "sabuh-mas", id: "Sabuh Mas", en: "Sabuh Mas" },
   { day: 3, key: "pagerwesi", id: "Pagerwesi", en: "Pagerwesi" },
+  { day: 67, key: "sugihan-jawa", id: "Sugihan Jawa", en: "Sugihan Jawa" },
+  { day: 68, key: "sugihan-bali", id: "Sugihan Bali", en: "Sugihan Bali" },
   { day: 70, key: "penyekeban", id: "Penyekeban Galungan", en: "Penyekeban (Galungan preparations begin)" },
   { day: 71, key: "penyajaan", id: "Penyajaan Galungan", en: "Penyajaan (Galungan cakes)" },
   { day: 72, key: "penampahan", id: "Penampahan Galungan", en: "Penampahan (eve of Galungan)" },
   { day: 73, key: "galungan", id: "Hari Raya Galungan", en: "Galungan" },
-  { day: 74, key: "umanis-galungan", id: "Umanis Galungan", en: "Umanis Galungan" },
+  { day: 74, key: "umanis-galungan", id: "Manis Galungan", en: "Manis Galungan" },
+  { day: 76, key: "pemaridan-guru", id: "Pemaridan Guru", en: "Pemaridan Guru" },
+  { day: 77, key: "ulihan", id: "Ulihan", en: "Ulihan" },
+  { day: 78, key: "pemacekan-agung", id: "Pemacekan Agung", en: "Pemacekan Agung" },
+  { day: 80, key: "buda-pahing-kuningan", id: "Buda Pahing Kuningan", en: "Buda Pahing Kuningan" },
   { day: 82, key: "penampahan-kuningan", id: "Penampahan Kuningan", en: "Eve of Kuningan" },
   { day: 83, key: "kuningan", id: "Hari Raya Kuningan", en: "Kuningan" },
+  { day: 108, key: "pegat-wakan", id: "Pegat Wakan", en: "Pegat Wakan (end of the Galungan–Kuningan sequence)" },
   { day: 209, key: "saraswati", id: "Hari Raya Saraswati", en: "Saraswati (day of knowledge)" },
 ];
 export const TUMPEK = [
