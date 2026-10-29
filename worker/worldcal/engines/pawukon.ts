@@ -27,6 +27,8 @@ export const SAPTAWARA = ["Redite", "Soma", "Anggara", "Buda", "Wraspati", "Sukr
 export const ASTAWARA = ["Sri", "Indra", "Guru", "Yama", "Ludra", "Brahma", "Kala", "Uma"] as const;
 export const SANGAWARA = ["Dangu", "Jangur", "Gigis", "Nohan", "Ogan", "Erangan", "Urungan", "Tulus", "Dadi"] as const;
 export const DASAWARA = ["Pandita", "Pati", "Suka", "Duka", "Sri", "Manuh", "Manusa", "Raja", "Dewa", "Raksasa"] as const;
+export const INGKEL = ["Wong", "Sato", "Mina", "Manuk", "Taru", "Buku"] as const;
+export const JEJEPAN = ["Mina", "Taru", "Sato", "Patra", "Wong", "Paksi"] as const;
 
 /** Urip / neptu values (identical in Bali and Java). */
 export const URIP_PANCA = [5, 9, 7, 4, 8]; // Umanis/Legi, Paing/Pahing, Pon, Wage, Kliwon
@@ -46,6 +48,8 @@ export type Pawukon = {
   sangawara: (typeof SANGAWARA)[number];
   dasawara: (typeof DASAWARA)[number];
   urip: number; // pancawara urip + saptawara urip
+  ingkel: (typeof INGKEL)[number]; // weekly pandakan cycle, derived from Wuku number mod 6
+  jejepan: (typeof JEJEPAN)[number]; // daily 6-day paringkelan cycle
 };
 
 export type PawukonDay = Pawukon & {
@@ -101,6 +105,8 @@ export function pawukonFromDay(dayInput: number): PawukonDay {
     sangawara: SANGAWARA[sanga - 1],
     dasawara: DASAWARA[dasa],
     urip: URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1],
+    ingkel: INGKEL[(wuku.index - 1) % INGKEL.length],
+    jejepan: JEJEPAN[day % JEJEPAN.length],
     combination: `${saptawara} ${pancawara} ${wuku.name}`,
   };
 }
