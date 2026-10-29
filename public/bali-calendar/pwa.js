@@ -92,8 +92,8 @@ function node(tag,cls,text){var el=document.createElement(tag);if(cls)el.classNa
 function button(text,action){var b=node("button","bali-memory-remove",text);b.type="button";b.dataset.action=action;return b}
 
 async function initMemory(){
-  var hub=document.getElementById("my-bali"),saveDayButtons=[].slice.call(document.querySelectorAll("[data-bali-save-date]"));
-  if(!hub&&!saveDayButtons.length)return;
+  var hub=document.getElementById("my-bali"),saveDayButtons=[].slice.call(document.querySelectorAll("[data-bali-save-date]")),shareDayButtons=[].slice.call(document.querySelectorAll("[data-bali-share-date]"));
+  if(!hub&&!saveDayButtons.length&&!shareDayButtons.length)return;
   var db=await openMemoryDb(),state=await loadState(db),recentEvents=hub?safeJson(hub.dataset.baliRecent||"[]",[]):[];
   var today=hub&&hub.dataset.baliToday?hub.dataset.baliToday:(location.pathname.match(/\/(\d{4}-\d{2}-\d{2})$/)||[])[1]||new Date().toISOString().slice(0,10);
   var peopleList=document.getElementById("bali-people-list"),dateList=document.getElementById("bali-saved-dates"),puraList=document.getElementById("bali-pura-list"),summary=document.getElementById("bali-return-summary");
@@ -184,6 +184,14 @@ async function initMemory(){
     var existing=state.savedDates.find(function(x){return x.date===date});
     if(!existing)state.savedDates.push({id:id(),date:date,label:label,createdAt:Date.now()});
     b.textContent="Tersimpan";b.disabled=true;await persist();
+  })});
+  shareDayButtons.forEach(function(b){b.addEventListener("click",async function(){
+    var date=b.dataset.baliShareDate,label=b.dataset.baliShareLabel||"Kalender Bali",shareUrl=location.origin+ROOT+"/"+date,text=label+" · "+date+" · AafnaiPatro Bali Calendar";
+    try{
+      if(navigator.share){await navigator.share({title:label+" · Kalender Bali",text:text,url:shareUrl});return}
+      if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(shareUrl);b.textContent="Tautan disalin";return}
+      var ta=document.createElement("textarea");ta.value=shareUrl;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();b.textContent="Tautan disalin";
+    }catch(e){if(e&&e.name==="AbortError")return;b.textContent="Bagikan tautan"}
   })});
   var exp=document.getElementById("bali-export-memory");
   if(exp)exp.addEventListener("click",function(){
