@@ -21,7 +21,7 @@ const BP = "/bali-calendar";
 const WP = "/weton";
 const BALI_TZ = "Asia/Makassar";
 const JAVA_TZ = "Asia/Jakarta";
-const RANGE = { minYear: 1900, maxYear: 2100 };
+const RANGE = { minYear: 1929, maxYear: 2129 };
 const HOLIDAY_YEARS = { min: 2020, max: 2032 };
 
 const ID_DAYS = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -289,7 +289,7 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
       ).join("")}</div>`
     : `<p class="muted">Tidak ada Piodalan bersumber yang cocok dengan tanggal ini. Rule Sasih tetap fail-closed jika pemetaan tahunan belum lengkap.</p>`;
   return `<section class="bali-day-snapshot"><div class="bali-snapshot-head"><div><span class="bali-face-kicker">Hari Bali</span><h2>${esc(p.combination)}</h2><p>${esc(idDate(iso))} · hari ${p.cycleDay}/${PAWUKON_CYCLE_DAYS} · hari ${p.dayInWuku}/7 dalam Wuku ${esc(p.wuku.name)}</p></div><a class="bali-secondary" href="${BP}/wuku/${slug(p.wuku.name)}">Wuku ${esc(p.wuku.name)}</a></div>
-<div class="bali-event-row">${eventHtml}</div></section>
+<div class="bali-event-row">${eventHtml}</div><div class="bali-day-actions"><button type="button" class="bali-save-date" data-bali-save-date="${esc(iso)}" data-bali-save-label="${esc(p.combination)}">Simpan hari ini</button><a href="#my-bali">Buka My Bali Calendar</a></div></section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
 ${wariga ? `<section><h2>Ingkel & konteks Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan · Saptawara</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pitra restriction terpicu: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada Pitra restriction eksplisit yang terpicu pada rule set sumber saat ini."} <a href="${BP}/padewasan?tanggal=${iso}">Buka rincian Padewasan bersumber →</a></p></section>` : ""}
@@ -366,7 +366,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
     const cells = PANCAWARA.map((panca) => {
       const cell = matrix.find((x) => x.saptawara === sapta && x.pancawara === panca)!;
       const current = p.saptawara === sapta && p.pancawara === panca;
-      return `<details class="pal-cell${current ? " is-current" : ""}"><summary><span>${esc(panca)}</span><small>${cell.urip}</small></summary><p><b>${esc(sapta)} ${esc(panca)}</b></p><p>Urip ${cell.saptawaraUrip} + ${cell.pancawaraUrip} = <b>${cell.urip}</b>.</p>${current ? `<p><b>Ini kombinasi hari ini.</b></p>` : ""}</details>`;
+      return `<details class="pal-cell${current ? " is-current" : ""}"><summary><span>${esc(cell.lintang)}</span><small>${cell.urip}</small></summary><p><b>${esc(sapta)} ${esc(panca)}</b></p><p>Lintang: <b>${esc(cell.lintang)}</b></p><p>Patron Saptawara: ${esc(cell.patron)}</p><p>Urip ${cell.saptawaraUrip} + ${cell.pancawaraUrip} = <b>${cell.urip}</b>.</p>${current ? `<p><b>Ini kombinasi hari ini.</b></p>` : ""}</details>`;
     }).join("");
     return `<div class="pal-row-head">${esc(sapta)}</div>${cells}`;
   }).join("");
@@ -380,7 +380,7 @@ function baliPalelintanganPage(ctx: Ctx): Rendered {
       sub: `${p.saptawara} ${p.pancawara} adalah perpotongan hari ini`,
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/palelintangan`, label: "Palelintangan" }],
       indexable: false,
-      body: `${baliModeNav("palelintangan", today)}<section class="palelintangan-intro"><p>Palelintangan memakai perpotongan <b>7 Saptawara × 5 Pancawara = 35 kombinasi</b>. Tampilan ini sengaja tidak diperlakukan sebagai pengganti Tika 210 hari.</p><p class="note">Atribut simbolik seperti dewa, satwa, pohon atau figur wayang tidak diisi dengan tebakan. Dataset interpretatif hanya akan muncul jika setiap atribut mempunyai sumber budaya/akademik yang dapat diaudit.</p></section>
+      body: `${baliModeNav("palelintangan", today)}<section class="palelintangan-intro"><p>Palelintangan memakai perpotongan <b>7 Saptawara × 5 Pancawara = 35 kombinasi</b>. Setiap sel sekarang menampilkan nama lintang dari tabel Palelintangan yang ditelusuri ke Alfred Maaß (1929) dan kajian Museum Bali, plus patron Saptawara.</p><p class="note">Tradisi gambar dan beberapa pasangan nama dapat berbeda antar manuskrip/koleksi. Karena itu AafnaiPatro belum mengisi satwa, pohon, wayang, watak atau ramalan yang belum mempunyai sumber per-sel yang stabil. <a href="https://ase.exopla.net/index.php/Balinese_(All_Terms)" rel="nofollow noopener">Lihat tabel sumber 35 lintang ↗</a></p></section>
 <section><div class="pal-grid">${headers}${rows}</div></section>
 <section><h2>Hubungan dengan Pawukon</h2><p>Kombinasi hari ini adalah <b>${esc(p.combination)}</b>, tetapi Wuku ${esc(p.wuku.name)} dan seluruh Wewaran lain tetap berasal dari posisi 210-hari yang sama.</p><p><a href="${BP}">Lihat posisi ini di Tika Pawukon →</a></p></section>`,
       footer: BALI_NOTE,
