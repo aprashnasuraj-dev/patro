@@ -183,7 +183,7 @@ export const PAWUKON_HOLIDAYS: { day: number; key: string; id: string; en: strin
   { day: 71, key: "penyajaan", id: "Penyajaan Galungan", en: "Penyajaan (Galungan cakes)" },
   { day: 72, key: "penampahan", id: "Penampahan Galungan", en: "Penampahan (eve of Galungan)" },
   { day: 73, key: "galungan", id: "Hari Raya Galungan", en: "Galungan" },
-  { day: 74, key: "umanis-galungan", id: "Manis Galungan", en: "Manis Galungan" },
+  { day: 74, key: "umanis-galungan", id: "Umanis Galungan", en: "Umanis Galungan" },
   { day: 76, key: "pemaridan-guru", id: "Pemaridan Guru", en: "Pemaridan Guru" },
   { day: 77, key: "ulihan", id: "Ulihan", en: "Ulihan" },
   { day: 78, key: "pemacekan-agung", id: "Pemacekan Agung", en: "Pemacekan Agung" },
