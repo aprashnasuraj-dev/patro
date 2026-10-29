@@ -505,14 +505,22 @@
 
 
   // ---------- From → To routes ----------
-  // Roads and trails from OpenStreetMap, routed by OSRM on the FOSSGIS servers that openstreetmap.org itself uses
-  // (CORS-enabled, no key; fair use). If routing is unavailable we still show the straight line and hand off to
-  // Google Maps for turn-by-turn navigation.
+  // Primary production target is AafnaiPatro's same-origin relay to self-hosted Valhalla.
+  // Public FOSSGIS remains an explicit development/fallback provider. Provider failure never breaks the map:
+  // the app retains straight-line context and external navigation.
   var ROUTER = CFG.router || "https://routing.openstreetmap.de/";
+  var ROUTING_PROVIDER = CFG.routingProvider || "fossgis-public";
   var PROFILES = { car: ["routed-car", "driving"], bike: ["routed-bike", "driving"], foot: ["routed-foot", "driving"] };
-  var routingV2 = CFG.flags && CFG.flags.nepalRoutingProviderV2 && window.AafnaiRoutingV2
-    ? new window.AafnaiRoutingV2.Client(new window.AafnaiRoutingV2.PublicFossgisProvider(ROUTER), {
-        timeoutMs: 15000, rateLimit: { capacity: 1, refillMs: 1000 }, breaker: { threshold: 3, cooldownMs: 30000 }
+  var routingProvider = CFG.flags && CFG.flags.nepalRoutingProviderV2 && window.AafnaiRoutingV2
+    ? (ROUTING_PROVIDER === "valhalla-first-party"
+        ? new window.AafnaiRoutingV2.FirstPartyValhallaProvider("/api/nepal/v1/route")
+        : new window.AafnaiRoutingV2.PublicFossgisProvider(ROUTER))
+    : null;
+  var routingV2 = routingProvider
+    ? new window.AafnaiRoutingV2.Client(routingProvider, {
+        timeoutMs: 15000,
+        rateLimit: ROUTING_PROVIDER === "valhalla-first-party" ? { capacity: 3, refillMs: 250 } : { capacity: 1, refillMs: 1000 },
+        breaker: { threshold: 3, cooldownMs: 30000 }
       })
     : null;
   var ALONG = ["worship", "peak", "lake", "sight", "waterfall", "park", "airport", "village"];
@@ -651,7 +659,7 @@
     var seq = ++routeSeq;
     var a = state.from, b = state.to;
     var prof = PROFILES[state.mode];
-    msg.hidden = false; msg.textContent = "Finding the way… Route endpoints are sent to the external FOSSGIS routing service to calculate directions.";
+    msg.hidden = false; msg.textContent = ROUTING_PROVIDER === "valhalla-first-party" ? "Finding the way… Route coordinates are processed by AafnaiPatro's same-origin routing service." : "Finding the way… Route endpoints are sent to the external FOSSGIS routing service to calculate directions.";
     var routePromise;
     var ctrl = null, timer = null;
     if (routingV2) {
