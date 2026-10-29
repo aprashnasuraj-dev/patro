@@ -19,9 +19,9 @@ describe("35 evergreen Balinese Lintang editorial profiles", () => {
     expect(matrix).toHaveLength(35);
     expect(Object.keys(LINTANG_STORIES)).toHaveLength(35);
     expect(new Set(matrix.map((m) => lintangSlug(m.lintang))).size).toBe(35);
-    expect(new Set(Object.values(LINTANG_STORIES).map((s) => s.meaning))).toHaveLength(35);
-    expect(new Set(Object.values(LINTANG_STORIES).map((s) => s.heritage))).toHaveLength(35);
-    expect(new Set(Object.values(LINTANG_STORIES).map((s) => s.question))).toHaveLength(35);
+    expect(new Set(Object.values(LINTANG_STORIES).map((s) => s.meaning)).size).toBe(35);
+    expect(new Set(Object.values(LINTANG_STORIES).map((s) => s.heritage)).size).toBe(35);
+    expect(new Set(Object.values(LINTANG_STORIES).map((s) => s.question)).size).toBe(35);
     for (const m of matrix) {
       const story = LINTANG_STORIES[lintangSlug(m.lintang)];
       expect(story?.name).toBe(m.lintang);
