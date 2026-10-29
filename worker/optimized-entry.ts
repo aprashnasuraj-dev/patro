@@ -20,6 +20,7 @@ import { dictionaryResponse } from "./dictionary";
 import { myTimeResponse } from "./my-time";
 import { googleTagResponse } from "./google-tag";
 import { nepalApiResponse } from "./nepal-api";
+import { logRoadmapHttp } from "./roadmap/ops";
 
 const DIRECT_CLIENT_TOOL_ROUTE=/^\/tool\/[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -62,8 +63,12 @@ function canonicalDateRedirect(request: Request): Response | null {
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    const nepalApiStart = performance.now();
     const nepalApi = await nepalApiResponse(request, env as any);
-    if (nepalApi) return nepalApi;
+    if (nepalApi) {
+      logRoadmapHttp({ product: "nepalmap", surface: "api", pathname: url.pathname, method: request.method, status: nepalApi.status, duration_ms: performance.now() - nepalApiStart });
+      return nepalApi;
+    }
     const myTime = await myTimeResponse(request, env);
     if (myTime) return myTime;
     const normalizedDate = canonicalDateRedirect(request);
