@@ -144,7 +144,9 @@ async function initMemory(){
         var card=node("article","bali-memory-card"),head=node("div","bali-memory-card-head"),info=node("div","");
         var a=node("a","",x.name||x.slug);a.href=ROOT+"/piodalan/"+encodeURIComponent(x.slug);info.appendChild(a);
         info.appendChild(node("small","",(x.locality||"Bali")+(x.nextDate?" · berikutnya "+x.nextDate:"")));
-        head.appendChild(info);var del=button("Hapus","pura");del.dataset.id=x.id;head.appendChild(del);card.appendChild(head);puraList.appendChild(card);
+        head.appendChild(info);var del=button("Hapus","pura");del.dataset.id=x.id;head.appendChild(del);card.appendChild(head);
+        var links=node("div","bali-memory-links"),detail=node("a","","Detail");detail.href=ROOT+"/piodalan/"+encodeURIComponent(x.slug);links.appendChild(detail);
+        var feed=node("a","","Kalender Piodalan (.ics)");feed.href=ROOT+"/feed/piodalan/"+encodeURIComponent(x.slug)+".ics";links.appendChild(feed);card.appendChild(links);puraList.appendChild(card);
       });
     }
   }
