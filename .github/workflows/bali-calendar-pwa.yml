@@ -2,6 +2,12 @@ name: "Bali Calendar PWA evidence"
 
 on:
   workflow_dispatch: {}
+  pull_request:
+    branches: [main]
+    paths:
+      - "worker/worldcal/**"
+      - "tests/bali-lintang-pages.test.ts"
+      - ".github/workflows/bali-calendar-pwa.yml"
   push:
     branches: [wip/bali-native-pwa-continuation, feat/bali-traditional-workspace-v2, feat/bali-release-hardening]
     paths:
