@@ -53,6 +53,22 @@ test('retention index changes a real SQLite scan into a range search and preserv
   }finally{db.close();}
 });
 
+test('long-tail date fallback reuses public output while credentials and private responses stay isolated',async()=>{
+  const {default:worker}=await moduleFrom('extensions/date-pages/worker.mjs');
+  const previous=globalThis.caches,store=new Map();let calls=0;
+  globalThis.caches={default:{async match(key){return store.get(key.url)?.clone();},async put(key,value){store.set(key.url,value.clone());}}};
+  const env={ORIGIN:{async fetch(request){calls++;return new Response(request.headers.has('cookie')?'private':'panchang',{headers:{'cache-control':request.headers.has('cookie')?'private, no-store':'public, max-age=300'}});}}};
+  try{
+    const url='https://aafnaipatro.com/date/1950-01-01';
+    assert.equal(await(await worker.fetch(new Request(url),env)).text(),'panchang');
+    assert.equal(await(await worker.fetch(new Request(url),env)).text(),'panchang');assert.equal(calls,1);
+    assert.equal(await(await worker.fetch(new Request(url,{headers:{cookie:'session=private'}}),env)).text(),'private');assert.equal(calls,2);
+    const head=await worker.fetch(new Request(url,{method:'HEAD'}),env);assert.equal(await head.text(),'');assert.equal(calls,2);
+    await worker.fetch(new Request(url,{headers:{authorization:'Bearer private'}}),env);assert.equal(calls,3);
+    assert.equal(store.size,1);
+  }finally{globalThis.caches=previous;}
+});
+
 test('admin and auth schema initialize once; a cold isolate uses one version lookup instead of replaying DDL',async()=>{
   const sqlite=new DatabaseSync(':memory:'),DB=d1(sqlite);
   try{
