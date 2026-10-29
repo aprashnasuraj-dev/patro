@@ -73,3 +73,23 @@ footer{max-width:1000px;margin:0 auto;padding:0 16px 30px;color:var(--muted);fon
 .np-pin.a{background:#2e7d32}.np-pin.b{background:#c62828}
 .np-route-actions{margin-top:6px}.np-pop .np-btn-a{border-color:#2e7d32;color:#2e7d32}.np-pop .np-btn-b{border-color:#c62828;color:#c62828}
 @media (max-width:760px){.np-tabs{padding-top:6px}}
+
+/* Roadmap mobile sheet v2 / detour / terrain */
+.np-along-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:4px 0 10px 18px}
+.np-detour{font-size:.78rem;color:var(--muted)}
+.np-dot.via{background:#6b7280;color:#fff}
+.np-elevation{margin-top:10px}.np-elev-summary{font-size:.86rem}.np-elev-chart{display:block;width:100%;height:auto;max-height:130px;color:var(--accent);background:var(--bg);border:1px solid var(--line);border-radius:10px;margin-top:6px}
+@media (max-width:760px){
+  body[data-np-sheet] .np-panel{will-change:transform;max-height:88vh;transition:transform .24s ease}
+  body[data-np-sheet="peek"] .np-panel{transform:translateY(calc(100% - 118px + var(--np-sheet-drag,0px)))}
+  body[data-np-sheet="half"] .np-panel{transform:translateY(calc(48% + var(--np-sheet-drag,0px)))}
+  body[data-np-sheet="full"] .np-panel{transform:translateY(calc(12% + var(--np-sheet-drag,0px)))}
+  body[data-np-sheet] #np-toggle{display:block;touch-action:none;min-height:22px;background:transparent;position:relative}
+  body[data-np-sheet] #np-toggle:before{content:"";position:absolute;width:44px;height:5px;border-radius:3px;background:var(--line);left:50%;top:8px;transform:translateX(-50%)}
+  body[data-np-sheet] #np-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  body[data-np-sheet] .np-panel.np-sheet-dragging{transition:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .np-panel{transition:none!important}
+  *{scroll-behavior:auto!important}
+}
