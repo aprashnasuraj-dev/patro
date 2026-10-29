@@ -18,6 +18,7 @@ All user-visible roadmap work is reversible and defaults OFF until its phase gat
 | baliOtonanDualResult | off | 6 | sunrise-boundary dual-result fixtures + UX review | disable |
 | baliIcsFeeds | off | 7 | RFC 5545 + third-party parser validation | disable |
 | baliSubscriptionUi | off | 7 | feed parser verification + HTTPS/webcal UX checks | disable |
+| baliPwa | **on via environment after verified gate** | 7 | dedicated Bali PWA build/install/offline gate | set `BALI_PWA=0` |
 | nepalTerrain | off | 7/10 | same-origin DEM source/licensing + elevation benchmark | disable |
 | nepalOfflinePacks | off | 7 | district-pack size/offline E2E + attribution | disable |
 | nepalExports | off | 7 | GPX/KML/GeoJSON validation + attribution checks | disable |
@@ -41,4 +42,4 @@ All user-visible roadmap work is reversible and defaults OFF until its phase gat
 
 The TypeScript registry above is the product-level rollout inventory. Nepal Map static-build features are selected with the corresponding `NEPALMAP_*` variables documented in `.dev.vars.example`. Worker API/corrections/emergency routes are separately protected by `NEPAL_API_ENABLED`, `NEPAL_CORRECTIONS_ENABLED` and `NEPAL_EMERGENCY_ENABLED` in `wrangler.jsonc`, all defaulting to `0`.
 
-Bali feature flags currently remain compile-time constants in `worker/roadmap/flags.ts`. This is intentional until the local verification gate is green; enabling one is a reviewed code change rather than an untracked environment toggle.
+Most Bali product flags remain compile-time constants in `worker/roadmap/flags.ts`. `baliPwa` is the exception: the source default remains fail-closed, while `BALI_PWA` in `wrangler.jsonc` controls the reviewed runtime rollout. The dedicated Bali PWA gate passed before `BALI_PWA=1` was enabled in preview and production configuration.
