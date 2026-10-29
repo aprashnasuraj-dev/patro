@@ -52,7 +52,7 @@ jobs:
           set -euo pipefail
           SNAPSHOT="2026-10-28"
           rm -rf data/releases/ci-baseline data/current data/previous
-          cp -al "data/releases/$SNAPSHOT" data/releases/ci-baseline
+          cp -a --no-preserve=ownership "data/releases/$SNAPSHOT" data/releases/ci-baseline
           ln -s releases/ci-baseline data/current
           ./promote-release.sh promote "$SNAPSHOT" | tee reports/promote-ci.log
           test "$(basename "$(readlink -f data/current)")" = "$SNAPSHOT"
