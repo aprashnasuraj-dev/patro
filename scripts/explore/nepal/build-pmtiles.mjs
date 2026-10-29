@@ -14,7 +14,7 @@ function command(bin,args,opts={}) {
   const r=spawnSync(bin,args,{encoding:"utf8",stdio:opts.capture?"pipe":"inherit"});
   if(r.error) throw r.error;
   if(r.status!==0) throw new Error(`${bin} failed with ${r.status}: ${r.stderr||""}`);
-  return r.stdout||"";
+  return opts.capture ? [r.stdout||"",r.stderr||""].filter(Boolean).join("\n") : (r.stdout||"");
 }
 const version = command("tippecanoe",["--version"],{capture:true});
 const m = version.match(/(\d+)\.(\d+)/);
