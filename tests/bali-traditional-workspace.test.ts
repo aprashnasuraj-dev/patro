@@ -118,6 +118,12 @@ describe("Bali traditional calendar workspace",()=>{
     expect(baliRoute(ctx("/bali-calendar/2130-01-01"),["2130-01-01"])).toBeNull();
     expect((wetonRoute(ctx("/weton/1900-01-01"),["1900-01-01"]) as any)?.status).toBe(200);
     expect(wetonRoute(ctx("/weton/1899-12-31"),["1899-12-31"])).toBeNull();
+    const jump1929:any=ctx("/bali-calendar/go?tanggal=1929-01-01");jump1929.url=new URL("https://aafnaipatro.com/bali-calendar/go?tanggal=1929-01-01");
+    expect((baliRoute(jump1929,["go"]) as any)?.location).toBe("/bali-calendar/1929-01-01");
+    const jump2129:any=ctx("/bali-calendar/go?tanggal=2129-12-31");jump2129.url=new URL("https://aafnaipatro.com/bali-calendar/go?tanggal=2129-12-31");
+    expect((baliRoute(jump2129,["go"]) as any)?.location).toBe("/bali-calendar/2129-12-31");
+    const jumpBad:any=ctx("/bali-calendar/go?tanggal=2130-01-01");jumpBad.url=new URL("https://aafnaipatro.com/bali-calendar/go?tanggal=2130-01-01");
+    expect((baliRoute(jumpBad,["go"]) as any)?.location).toBe("/bali-calendar");
   });
 
   it("builds a unique structural 35-cell Palelintangan matrix",()=>{
@@ -153,6 +159,9 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("ᬭᬤᬶᬢᬾ");
     expect(r.html).toContain("ᬰᬦᬶᬰ᭄ᬘᬭ");
     expect(r.html).toContain('id="my-bali"');
+    expect(r.html).toContain('action="/bali-calendar/go"');
+    expect(r.html).toContain('min="1929-01-01"');
+    expect(r.html).toContain('max="2129-12-31"');
     expect(r.html).toContain("data-bali-recent=");
     expect(r.html).toContain("My Pura");
     expect(r.html).toContain('id="bali-pura-form"');
