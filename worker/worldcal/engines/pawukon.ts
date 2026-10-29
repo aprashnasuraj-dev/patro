@@ -9,6 +9,8 @@
 import { amod, gregorianToJdn, jdnToGregorian, mod } from "../dates";
 
 export const PAWUKON_EPOCH_OFFSET = 146;
+export const PAWUKON_CYCLE_DAYS = 210;
+export const WUKU_DAYS = 7;
 
 export const WUKU = [
   "Sinta", "Landep", "Ukir", "Kulantir", "Tolu", "Gumbreg", "Wariga", "Warigadean", "Julungwangi", "Sungsang",
@@ -46,31 +48,89 @@ export type Pawukon = {
   urip: number; // pancawara urip + saptawara urip
 };
 
-export const pawukonDay = (jdn: number) => mod(jdn - PAWUKON_EPOCH_OFFSET, 210);
+export type PawukonDay = Pawukon & {
+  cycleDay: number; // 1..210
+  dayInWuku: number; // 1..7
+  combination: string; // Saptawara + Pancawara + Wuku
+};
 
-export function pawukon(jdn: number): Pawukon {
-  const day = pawukonDay(jdn);
+export type PalelintanganCell = {
+  saptawara: (typeof SAPTAWARA)[number];
+  pancawara: (typeof PANCAWARA)[number];
+  saptawaraUrip: number;
+  pancawaraUrip: number;
+  urip: number;
+  key: string;
+};
+
+/** Canonical 0..209 position of a civil JDN inside the Pawukon cycle. */
+export const pawukonDay = (jdn: number) => mod(jdn - PAWUKON_EPOCH_OFFSET, PAWUKON_CYCLE_DAYS);
+
+/**
+ * Resolve a canonical Pawukon position without going through Gregorian time.
+ *
+ * Caturwara follows Astawara rather than day%4, and Astawara/Sangawara keep
+ * the traditional exceptional/repeated positions encoded by the
+ * Reingold-Dershowitz formulas. This function is therefore the single source
+ * for every Tika cell, date page, holiday rule and Otonan calculation.
+ */
+export function pawukonFromDay(dayInput: number): PawukonDay {
+  const day = mod(dayInput, PAWUKON_CYCLE_DAYS);
   const sapta = 1 + mod(day, 7);
   const panca = amod(day + 2, 5);
-  const asta = 1 + mod(Math.max(6, 4 + mod(day - 70, 210)), 8);
+  const asta = 1 + mod(Math.max(6, 4 + mod(day - 70, PAWUKON_CYCLE_DAYS)), 8);
   const catur = amod(asta, 4);
   const sanga = 1 + mod(Math.max(0, day - 3), 9);
   const dasa = mod(1 + URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1], 10);
+  const saptawara = SAPTAWARA[sapta - 1];
+  const pancawara = PANCAWARA[panca - 1];
+  const wuku = { index: 1 + Math.floor(day / WUKU_DAYS), name: WUKU[Math.floor(day / WUKU_DAYS)] };
   return {
     day,
-    wuku: { index: 1 + Math.floor(day / 7), name: WUKU[Math.floor(day / 7)] },
+    cycleDay: day + 1,
+    dayInWuku: 1 + mod(day, WUKU_DAYS),
+    wuku,
     ekawara: dasa % 2 === 0 ? "Luang" : null,
     dwiwara: DWIWARA[amod(dasa, 2) - 1],
     triwara: TRIWARA[mod(day, 3)],
     caturwara: CATURWARA[catur - 1],
-    pancawara: PANCAWARA[panca - 1],
+    pancawara,
     sadwara: SADWARA[mod(day, 6)],
-    saptawara: SAPTAWARA[sapta - 1],
+    saptawara,
     astawara: ASTAWARA[asta - 1],
     sangawara: SANGAWARA[sanga - 1],
     dasawara: DASAWARA[dasa],
     urip: URIP_PANCA[panca - 1] + URIP_SAPTA[sapta - 1],
+    combination: `${saptawara} ${pancawara} ${wuku.name}`,
   };
+}
+
+export function pawukon(jdn: number): PawukonDay {
+  return pawukonFromDay(pawukonDay(jdn));
+}
+
+/** Full canonical 210-day cycle, used by the Tika UI and whole-cycle tests. */
+export function pawukonCycle(): PawukonDay[] {
+  return Array.from({ length: PAWUKON_CYCLE_DAYS }, (_, day) => pawukonFromDay(day));
+}
+
+/**
+ * Structural Palelintangan matrix: 7 Saptawara × 5 Pancawara = 35 intersections.
+ *
+ * Symbolic deity/animal/tree/wayang interpretations are deliberately not
+ * invented here; those belong in a separately sourced cultural dataset.
+ */
+export function palelintanganMatrix(): PalelintanganCell[] {
+  return SAPTAWARA.flatMap((saptawara, si) =>
+    PANCAWARA.map((pancawara, pi) => ({
+      saptawara,
+      pancawara,
+      saptawaraUrip: URIP_SAPTA[si],
+      pancawaraUrip: URIP_PANCA[pi],
+      urip: URIP_SAPTA[si] + URIP_PANCA[pi],
+      key: `${saptawara.toLowerCase()}-${pancawara.toLowerCase()}`,
+    })),
+  );
 }
 
 /** Pawukon-day holidays (recur every 210 days). */
