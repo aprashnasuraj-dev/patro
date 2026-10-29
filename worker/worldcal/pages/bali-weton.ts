@@ -337,7 +337,6 @@ function tikaMatrix(iso: string): string {
 }
 
 function baliAppFace(ctx: Ctx, iso: string): string {
-  if (!ctx.flags.baliPwa) return "";
   const p = pawukon(isoToJdn(iso));
   const year = Number(iso.slice(0, 4));
   const readiness = annualSasihReadiness(year);
@@ -351,7 +350,7 @@ function baliAppFace(ctx: Ctx, iso: string): string {
   ];
   return `<section class="bali-workspace" aria-labelledby="bali-workspace-title">
 <div class="bali-workspace-head"><div><span class="bali-face-kicker">Tika · Wariga · Pawukon</span><h2 id="bali-workspace-title">Masuk ke sistem waktu Bali</h2><p>Hari ini bukan pusat kalender: ia adalah satu posisi di dalam siklus Pawukon 210 hari, dengan Wewaran yang berpotongan dan konteks Sasih yang dipisahkan dari perhitungan Pawukon.</p></div>
-<div class="bali-install-zone"><button id="bali-install" class="bali-install" type="button">Install Bali Calendar</button><p id="bali-install-status" class="bali-install-status" role="status" aria-live="polite"></p><div id="bali-install-guide" class="bali-install-guide" hidden><b>Instal manual:</b> iPhone/iPad: Safari → Share → Add to Home Screen. Android/desktop: Chrome/Edge menu → Install app / Add to Home screen.</div></div></div>
+${ctx.flags.baliPwa ? `<div class="bali-install-zone"><button id="bali-install" class="bali-install" type="button">Install Bali Calendar</button><p id="bali-install-status" class="bali-install-status" role="status" aria-live="polite"></p><div id="bali-install-guide" class="bali-install-guide" hidden><b>Instal manual:</b> iPhone/iPad: Safari → Share → Add to Home Screen. Android/desktop: Chrome/Edge menu → Install app / Add to Home screen.</div></div>` : ""}</div>
 ${baliModeNav("pawukon", iso)}
 <div class="bali-current-band"><div><span>Wuku</span><strong>${esc(p.wuku.name)}</strong><small>${p.wuku.index}/30</small></div><div><span>Wewaran utama</span><strong>${esc(p.saptawara)} · ${esc(p.pancawara)}</strong><small>${esc(p.triwara)} · ${esc(p.sadwara)}</small></div><div><span>Posisi Pawukon</span><strong>${p.cycleDay}/210</strong><small>hari ${p.dayInWuku}/7</small></div><div><span>Sasih tahunan</span><strong>${readiness.ready ? "pemetaan siap" : "fail-closed"}</strong><small>${readiness.source ? esc(readiness.source.version) : "belum ada sumber tahunan"}</small></div></div>
 <div class="bali-tika-section"><div class="bali-section-heading"><div><span class="bali-face-kicker">Tika Pawukon</span><h2>30 Wuku × 7 hari</h2></div><p>Pilih sel untuk membuka hari Bali lengkap. Wuku adalah struktur utama; Gregorian hanya membantu menerjemahkan posisi siklus ke tanggal sipil.</p></div>${tikaMatrix(iso)}</div>
