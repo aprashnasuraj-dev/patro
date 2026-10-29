@@ -24,6 +24,15 @@ export const CATURWARA = ["Sri", "Laba", "Jaya", "Menala"] as const;
 export const PANCAWARA = ["Umanis", "Paing", "Pon", "Wage", "Kliwon"] as const;
 export const SADWARA = ["Tungleh", "Aryang", "Urukung", "Paniron", "Was", "Maulu"] as const;
 export const SAPTAWARA = ["Redite", "Soma", "Anggara", "Buda", "Wraspati", "Sukra", "Saniscara"] as const;
+export const SAPTAWARA_AKSARA = {
+  Redite: "ᬭᬤᬶᬢᬾ",
+  Soma: "ᬲᭀᬫ",
+  Anggara: "ᬅᬗ᭄ᬕᬭ",
+  Buda: "ᬩᬸᬤ᭄ᬥ",
+  Wraspati: "ᬯᬺᬳᬲ᭄ᬧᬢᬶ",
+  Sukra: "ᬰᬸᬓ᭄ᬭ",
+  Saniscara: "ᬰᬦᬶᬰ᭄ᬘᬭ",
+} as const;
 export const ASTAWARA = ["Sri", "Indra", "Guru", "Yama", "Ludra", "Brahma", "Kala", "Uma"] as const;
 export const SANGAWARA = ["Dangu", "Jangur", "Gigis", "Nohan", "Ogan", "Erangan", "Urungan", "Tulus", "Dadi"] as const;
 export const DASAWARA = ["Pandita", "Pati", "Suka", "Duka", "Sri", "Manuh", "Manusa", "Raja", "Dewa", "Raksasa"] as const;
