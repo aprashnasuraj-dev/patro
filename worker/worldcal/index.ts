@@ -23,7 +23,7 @@ import { ROADMAP_FLAGS, roadmapFlagsFromEnv, roadmapFlagSignature, type RoadmapF
 export { isWorldcalPath } from "./config";
 
 type Env = { PUBLIC_SITE_URL?: string; [key: string]: unknown };
-const QUERY_PATHS = /\/(search|convert|otonan|hitung|jodoh|cari|otonan\.ics)$/;
+const QUERY_PATHS = /\/(search|convert|otonan|hitung|jodoh|cari|piodalan|dauh-ayu|padewasan|palelintangan|sasih-saka|go|otonan\.ics)$/;
 type ExecCtx = { waitUntil(p: Promise<unknown>): void };
 
 const ROUTES: Record<FamilyId, (ctx: Ctx, rest: string[]) => Rendered | null> = {
@@ -54,10 +54,13 @@ export async function worldcalResponse(request: Request, env: Env, ctx?: ExecCtx
   const site = (env.PUBLIC_SITE_URL || url.origin).replace(/\/+$/, "");
   const flags = roadmapFlagsFromEnv(env);
 
-  const cache: Cache | undefined = (globalThis as any).caches?.default;
-  // Only the form endpoints read the query string; everything else is cached per path so random queries cannot fragment the cache.
+  // Query-sensitive calculators/searches and date-context modes bypass the edge Cache API.
+  // This prevents one user's selected date/location from becoming the cached answer for another
+  // while also avoiding unbounded cache fragmentation from arbitrary query strings.
+  const querySensitive = QUERY_PATHS.test(clean);
+  const cache: Cache | undefined = querySensitive ? undefined : (globalThis as any).caches?.default;
   const keyUrl = new URL(url.toString());
-  if (!QUERY_PATHS.test(clean)) keyUrl.search = "";
+  if (!querySensitive) keyUrl.search = "";
   keyUrl.searchParams.set("__roadmap_flags", roadmapFlagSignature(flags));
   const cacheKey = new Request(keyUrl.toString(), { method: "GET" });
   if (cache) {
@@ -78,7 +81,7 @@ export async function worldcalResponse(request: Request, env: Env, ctx?: ExecCtx
     const put = cache.put(cacheKey, response.clone()).catch(() => undefined);
     if (ctx) ctx.waitUntil(put); else await put;
   }
-  return finish(response, head, "miss");
+  return finish(response, head, querySensitive ? "bypass" : "miss");
 }
 
 function finish(res: Response, head: boolean, state: string): Response {
