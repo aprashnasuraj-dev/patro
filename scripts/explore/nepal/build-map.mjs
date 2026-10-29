@@ -240,9 +240,22 @@ if (ROADMAP_FLAGS.nepalOfflinePacks) {
       categories[cat.id] = { fields, rows };
       places += rows.length;
     }
+    const districtPalikas = Object.fromEntries(Object.entries(admin.palikas).filter(([, p]) => p[3] === d.id));
+    const districtPalikaIds = new Set(Object.keys(districtPalikas));
+    const districtWards = Object.fromEntries(Object.entries(admin.wards).filter(([key]) => districtPalikaIds.has(key.split("-")[0])));
     const payload = {
       version: 1,
       district: { id: d.id, slug: d.slug, name: d.name, ne: d.ne, province: d.province },
+      admin: {
+        generated: admin.generated,
+        osm_snapshot: admin.osm_snapshot,
+        source: admin.source,
+        licence: admin.licence,
+        provinces: admin.provinces,
+        districts: [d],
+        palikas: districtPalikas,
+        wards: districtWards,
+      },
       generated: LASTMOD,
       snapshot_date: OSM_SNAPSHOT ? String(OSM_SNAPSHOT).slice(0, 10) : LASTMOD,
       attribution: "© OpenStreetMap contributors, ODbL 1.0",
