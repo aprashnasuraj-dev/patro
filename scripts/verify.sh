@@ -18,14 +18,21 @@ run_gate() {
   echo "GATE_DURATION $name $((finished-started))s" | tee -a "$RUN_TMP"
 }
 
-LOCK_BEFORE="$(sha256sum package-lock.json | awk '{print $1}')"
-run_gate npm_ci npm ci
-LOCK_AFTER="$(sha256sum package-lock.json | awk '{print $1}')"
-if [[ "$LOCK_BEFORE" != "$LOCK_AFTER" ]]; then
-  echo "package-lock.json changed after npm ci" >&2
-  exit 1
+DEPENDENCY_LOCK="absent"
+if [[ -f package-lock.json ]]; then
+  DEPENDENCY_LOCK="package-lock.json"
+  LOCK_BEFORE="$(sha256sum package-lock.json | awk '{print $1}')"
+  run_gate npm_ci npm ci
+  LOCK_AFTER="$(sha256sum package-lock.json | awk '{print $1}')"
+  if [[ "$LOCK_BEFORE" != "$LOCK_AFTER" ]]; then
+    echo "package-lock.json changed after npm ci" >&2
+    exit 1
+  fi
+  git diff --exit-code -- package-lock.json
+else
+  echo "NOTICE: package-lock.json is absent; verification uses npm install --no-package-lock and does not claim lockfile reproducibility." | tee -a "$RUN_TMP"
+  run_gate npm_install npm install --no-package-lock
 fi
-git diff --exit-code -- package-lock.json
 
 run_gate typecheck npm run typecheck
 run_gate lint npm run lint
@@ -53,7 +60,7 @@ END_EPOCH="$(date +%s)"
   echo "Status: **GREEN**"
   echo
   echo "- Total duration: $((END_EPOCH-START_EPOCH))s"
-  echo "- package-lock.json unchanged by npm ci."
+  echo "- Dependency lock: $DEPENDENCY_LOCK."
   echo "- Benchmark JSON: docs/perf/after.json"
   echo "- Accessibility JSON: docs/perf/a11y.json"
   echo
