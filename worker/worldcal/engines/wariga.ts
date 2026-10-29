@@ -87,3 +87,75 @@ export function formatDauhMinute(value: number) {
     day_offset: dayOffset,
   };
 }
+
+
+export const SASIH_NAMES = ["Kasa","Karo","Ketiga","Kapat","Kalima","Kanem","Kapitu","Kawulu","Kasanga","Kadasa","Jyestha","Sadha"] as const;
+
+export const YAJNA_SASIH_REFERENCE = {
+  dewa: [4, 5, 10],
+  bhuta: [6, 9],
+  pitra: [1, 2, 3],
+  memukur: [10],
+} as const;
+
+export const PEWIWAHAN_SAPTAWARA = {
+  Redite: { quality: "ala" as const, source_summary: "Buruk" },
+  Soma: { quality: "ayu" as const, source_summary: "Baik" },
+  Anggara: { quality: "ala" as const, source_summary: "Buruk" },
+  Buda: { quality: "ayu" as const, source_summary: "Amat baik" },
+  Wraspati: { quality: "ayu" as const, source_summary: "Baik" },
+  Sukra: { quality: "ayu" as const, source_summary: "Baik" },
+  Saniscara: { quality: "ala" as const, source_summary: "Sangat buruk" },
+} as const;
+
+/**
+ * Exact Mertha Yoga combinations printed by the Kemdikbud textbook.
+ * The source spells one Wuku "Taulu"; Pawukon's canonical list uses "Tolu".
+ * We preserve that fact in source_wuku instead of silently hiding the variant.
+ */
+export const MERTHA_YOGA = [
+  { saptawara: "Soma", pancawara: "Kliwon", wuku: "Landep", source_wuku: "Landep" },
+  { saptawara: "Soma", pancawara: "Umanis", wuku: "Tolu", source_wuku: "Taulu" },
+  { saptawara: "Soma", pancawara: "Wage", wuku: "Medangsia", source_wuku: "Medangsia" },
+  { saptawara: "Soma", pancawara: "Umanis", wuku: "Medangkungan", source_wuku: "Medangkungan" },
+  { saptawara: "Soma", pancawara: "Paing", wuku: "Menail", source_wuku: "Menail" },
+  { saptawara: "Soma", pancawara: "Pon", wuku: "Ugu", source_wuku: "Ugu" },
+  { saptawara: "Soma", pancawara: "Wage", wuku: "Dukut", source_wuku: "Dukut" },
+] as const;
+
+export function merthaYoga(p: { saptawara: string; pancawara: string; wuku: { name: string } | string }) {
+  const wuku = typeof p.wuku === "string" ? p.wuku : p.wuku.name;
+  return MERTHA_YOGA.some((x) => x.saptawara === p.saptawara && x.pancawara === p.pancawara && x.wuku === wuku);
+}
+
+export function pitraImmediateRestrictions(input: {
+  triwara: string;
+  saptawara: string;
+  pancawara: string;
+  events?: string[];
+  is_tilem?: boolean;
+  is_purwani_purnama?: boolean;
+}) {
+  const reasons: string[] = [];
+  if (input.triwara === "Pasah") reasons.push("Pasah");
+  if (input.saptawara === "Anggara" && input.pancawara === "Kliwon") reasons.push("Anggara Kasih");
+  if (input.saptawara === "Buda" && input.pancawara === "Wage") reasons.push("Buda Wage");
+  if (input.saptawara === "Buda" && input.pancawara === "Kliwon") reasons.push("Buda Kliwon");
+  if ((input.events || []).some((x) => /^Tumpek\b/.test(x))) reasons.push("Tumpek");
+  if (input.is_purwani_purnama) reasons.push("Purwani Purnama");
+  if (input.is_tilem) reasons.push("Tilem");
+  return { restricted: reasons.length > 0, reasons };
+}
+
+export function sasihReference(sasih: number) {
+  if (!Number.isInteger(sasih) || sasih < 1 || sasih > 12) throw new RangeError("sasih must be 1..12");
+  const has = (xs: readonly number[]) => xs.includes(sasih);
+  return {
+    sasih,
+    name: SASIH_NAMES[sasih - 1],
+    dewa_yajna: has(YAJNA_SASIH_REFERENCE.dewa),
+    bhuta_yajna: has(YAJNA_SASIH_REFERENCE.bhuta),
+    pitra_yajna: has(YAJNA_SASIH_REFERENCE.pitra),
+    memukur: has(YAJNA_SASIH_REFERENCE.memukur),
+  };
+}
