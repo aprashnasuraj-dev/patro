@@ -13,6 +13,8 @@ on:
       - "src/pwa.ts"
       - "wrangler.jsonc"
       - "tests/roadmap-bali*.test.ts"
+      - "tests/roadmap-wariga.test.ts"
+      - "tests/roadmap-ics.test.ts"
       - "scripts/explore/nepal/build-map.mjs"
       - "package.json"
 
