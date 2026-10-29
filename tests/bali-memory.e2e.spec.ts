@@ -37,6 +37,13 @@ test("My Bali persists family Otonan and saved dates across reloads", async ({ p
   await expect(page.locator("#bali-return-summary")).toContainText("1 Pura tersimpan");
   await expect(page.locator("#bali-pura-list article")).toHaveCount(1);
 
+  await page.goto("/bali-calendar/piodalan/pura-luhur-batukaru", { waitUntil: "domcontentloaded" });
+  await expect(page.locator('script[src="/bali-calendar/pwa.js"]')).toBeAttached();
+  await expect(page.locator("[data-bali-save-pura]")).toBeVisible();
+  await page.locator("[data-bali-save-pura]").click();
+  await page.goto("/bali-calendar#my-bali", { waitUntil: "domcontentloaded" });
+  await expect(page.locator("#bali-pura-list article")).toHaveCount(2);
+
   const downloadPromise = page.waitForEvent("download");
   await page.locator("#bali-export-memory").click();
   const download = await downloadPromise;
