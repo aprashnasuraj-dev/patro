@@ -680,22 +680,22 @@ function piodalanIndex(ctx: Ctx): Rendered {
       ? `${x.rule.saptawara} ${x.rule.pancawara}, Wuku ${x.rule.wuku} · berulang 210 hari`
       : x.rule.type === "sasih"
         ? `${x.rule.lunar_day} Sasih ${x.rule.sasih} · kalender Sasih tahunan`
-        : `${x.rule.rahina} · occurrence ${x.rule.date}; recurrence belum disimpulkan`;
-    return `<tr><td><a href="${BP}/piodalan/${x.slug}">${esc(x.name)}</a><br><span class="note">${esc(x.locality)}</span></td><td>${esc(rule)}</td><td>${ctx.flags.provenanceUi ? sourceBadge(x.source.status, x.source.authority) : esc(x.source.authority)}</td></tr>`;
+        : `${x.rule.rahina} · ${x.rule.date}`;
+    return `<tr><td><a href="${BP}/piodalan/${x.slug}">${esc(x.name)}</a></td><td>${esc(x.locality)}</td><td>${esc(rule)}</td></tr>`;
   }).join("");
   return {
     status: 200, maxAge: 86400, indexable: true,
     html: page({
       site: ctx.site, path: `${BP}/piodalan`, lang: "id",
-      title: "Piodalan pura Bali — direktori aturan Pawukon dan Sasih bersumber resmi",
-      description: "Direktori Piodalan Bali yang hanya memuat pura dengan sumber pemerintah, Kemenag, BPK atau dokumen Desa Adat; aturan Pawukon dihitung 210 hari, aturan Sasih tidak ditebak.",
-      h1: "Direktori Piodalan Bali",
-      sub: "Kurasi sumber resmi: bukan daftar hasil salin massal dan bukan tanggal buatan AI.",
+      title: "Kalender Piodalan Pura Bali — Jadwal Pawukon & Sasih",
+      description: "Cari jadwal Piodalan Pura di Bali berdasarkan Pawukon atau Sasih, lihat hari Piodalan berikutnya, Wuku, Saptawara dan Pancawara.",
+      h1: "Kalender Piodalan Pura Bali",
+      sub: "Cari Pura, rahina atau kombinasi Pawukon untuk melihat jadwal Piodalan.",
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/piodalan`, label: "Piodalan" }],
       indexable: true,
-      body: `<section><form class="inline" method="get" action="${BP}/piodalan"><label>Cari pura / rahina<input name="q" value="${esc(q)}" placeholder="Batukaru atau Buda Wage"></label><button>Cari</button></form></section>
-<section><h2>${rows.length} entri terverifikasi</h2><table><thead><tr><th>Pura</th><th>Aturan Piodalan</th><th>Sumber</th></tr></thead><tbody>${body}</tbody></table></section>
-<section><h2>Metode</h2><p>Aturan Pawukon diproyeksikan dari Saptawara + Pancawara + Wuku yang disebut oleh sumber resmi. Aturan Sasih hanya menampilkan tanggal Gregorian bila tabel Sasih/Purnama tahun tersebut sudah memiliki sumber terbitan; AafnaiPatro tidak mengubah “Purnama Karo” menjadi tanggal masa depan dengan perkiraan.</p></section>`,
+      body: `<section class="bali-seo-story"><div class="bali-section-heading"><div><span class="bali-face-kicker">Piodalan Bali</span><h2>Cari jadwal Piodalan Pura</h2></div><p>Piodalan adalah hari peringatan Pura. Sebagian mengikuti kombinasi Pawukon dan berulang dalam siklus 210 hari; sebagian lain mengikuti Purnama, Tilem atau Sasih.</p></div><form class="inline" method="get" action="${BP}/piodalan"><label>Cari Pura atau rahina<input name="q" value="${esc(q)}" placeholder="Batukaru, Buda Wage, Kuningan…"></label><button>Cari Piodalan</button></form></section>
+<section><h2>${rows.length} Pura dalam kalender</h2><div class="tw"><table><thead><tr><th>Pura</th><th>Lokasi</th><th>Hari Piodalan</th></tr></thead><tbody>${body}</tbody></table></div></section>
+<section><h2>Memahami jadwal Piodalan</h2><p><b>Piodalan Pawukon</b> mengikuti pertemuan Saptawara, Pancawara dan Wuku sehingga pola harinya kembali setiap 210 hari. <b>Piodalan Sasih</b> mengikuti kalender bulan Bali; tanggal Gregorian ditampilkan ketika kalender tahun tersebut tersedia.</p><p><a href="${BP}">Buka Kalender Bali</a> · <a href="${BP}/palelintangan">Palelintangan</a> · <a href="${BP}/sasih-saka">Sasih & Saka</a></p></section>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
   };
@@ -741,13 +741,14 @@ function piodalanDetail(ctx: Ctx, slugValue: string): Rendered | null {
     status: 200, maxAge: 86400 * 7, indexable: true,
     html: page({
       site: ctx.site, path: `${BP}/piodalan/${item.slug}`, lang: "id",
-      title: `${item.name}: Piodalan ${ruleText} — sumber dan tanggal berikutnya`,
-      description: `${item.name}, ${item.locality}: aturan Piodalan ${ruleText}, sumber ${item.source.authority}, dan tanggal berikutnya bila dapat dihitung tanpa menebak Sasih.`,
+      title: `${item.name} — Jadwal Piodalan, Rahina & Tanggal Berikutnya`,
+      description: `Jadwal Piodalan ${item.name} di ${item.locality}: ${ruleText}, tanggal berikutnya, rahina dan hubungan dengan Kalender Bali.`,
       h1: esc(item.name), sub: esc(item.locality),
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/piodalan`, label: "Piodalan" }, { href: `${BP}/piodalan/${item.slug}`, label: item.name }],
       indexable: true,
-      body: `<section><h2>Aturan yang diterbitkan</h2><p class="big">${esc(ruleText)}</p><p>${ctx.flags.provenanceUi ? sourceBadge(item.source.status, item.source.authority) : ""} <a href="${esc(item.source.url)}" rel="nofollow noopener">${esc(item.source.authority)} ↗</a>${item.source.published_date ? ` · ${esc(item.source.published_date)}` : ""}</p>${item.note ? `<p class="note">${esc(item.note)}</p>` : ""}${favoriteAction}</section>${schedule}
-<section><h2>Batas kepercayaan data</h2><p>Halaman ini menyatakan kapan sumber menempatkan Piodalan, bukan menetapkan tata upacara. Pelaksanaan lokal tetap mengikuti desa, kala, patra serta arahan pengempon/pemangku/sulinggih.</p></section>`,
+      body: `<section class="bali-day-snapshot"><div class="bali-snapshot-head"><div><span class="bali-face-kicker">Hari Piodalan</span><h2>${esc(ruleText)}</h2><p>${esc(item.locality)}</p></div></div>${favoriteAction}</section>${schedule}
+<section><h2>Tentang Piodalan di Pura ini</h2><p>Jadwal di atas membantu menemukan rahina dan tanggal Piodalan. Waktu serta tata upacara tetap mengikuti desa, kala, patra dan arahan pengempon, pemangku atau sulinggih setempat.</p></section>
+<details class="bali-about-data"><summary>Tentang catatan Piodalan</summary><div><p>${esc(item.source.authority)}${item.source.published_date ? ` · ${esc(item.source.published_date)}` : ""}.</p><p><a href="${esc(item.source.url)}" rel="nofollow noopener">Lihat catatan asal ↗</a></p>${item.note ? `<p>${esc(item.note)}</p>` : ""}</div></details>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
   };
@@ -835,27 +836,27 @@ function padewasanPage(ctx: Ctx): Rendered {
 <tr><th>Bhuta Yajña</th><td>${model.sasih.bhuta_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
 <tr><th>Wiwaha</th><td>${model.sasih.wiwaha_yajna ? "Ayu" : "Tidak ditandai Ayu"}</td></tr>
 <tr><th>Memukur</th><td>${model.sasih.memukur ? "Kedasa disebut baik untuk memukur" : "Tidak ditandai khusus"}</td></tr></tbody></table>
-<p class="note">Sumber matriks Sasih: ${esc(model.sasih.source.name)}.</p>` : '<p class="note">Sasih belum dipilih, jadi lapisan Sasih sengaja tidak dinilai.</p>';
+<p class="note">Sumber matriks Sasih: ${esc(model.sasih.source.name)}.</p>` : '<p class="note">Pilih Sasih bila ingin menambahkan pertimbangan Sasih pada tanggal ini.</p>';
   const lunarText = model.lunar.evaluated
     ? [model.lunar.is_purnama ? "Purnama" : "", model.lunar.is_tilem ? "Tilem" : "", model.lunar.is_purwani_purnama ? "Purwani Purnama" : ""].filter(Boolean).join(", ") || "Bukan Purnama/Tilem/Purwani Purnama pada tabel terbitan tahun ini"
-    : "Tabel Purnama/Tilem terbitan untuk tahun ini belum tersedia di dataset; faktor lunar tidak dinilai.";
+    : "Daftar Purnama/Tilem untuk tahun ini belum tersedia.";
   return {
     status: 200, maxAge: 3600, indexable: false,
     html: page({
       site: ctx.site, path: `${BP}/padewasan`, lang: "id",
-      title: "Padewasan Bali bersumber — Dewa, Pitra, Bhuta, Pewiwahan dan faktor yang dinilai",
-      description: "Referensi Padewasan yang menunjukkan aturan sumber, Pawukon, Pitra restriction, Mertha Yoga, Saptawara Pewiwahan dan Sasih opsional tanpa menyembunyikan faktor yang belum tersedia.",
-      h1: "Padewasan — referensi yang dapat diaudit",
-      sub: "AafnaiPatro menunjukkan rule yang terpicu, sumbernya, dan faktor yang belum dinilai.",
+      title: "Padewasan Bali — Panduan Hari Baik, Pewiwahan, Pitra & Wariga",
+      description: "Lihat Padewasan Bali untuk tanggal pilihan: Wuku, Wewaran, Pitra Yajña, Pewiwahan, Mertha Yoga, Sasih dan Dauh Ayu dalam satu halaman.",
+      h1: "Padewasan Bali · Panduan Membaca Hari",
+      sub: "Lihat unsur Wariga yang berkaitan dengan hari pilihanmu.",
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/padewasan`, label: "Padewasan" }],
       indexable: false,
       body: `<section><form class="inline" method="get" action="${BP}/padewasan"><label>Tanggal<input type="date" name="tanggal" value="${esc(tanggal)}"></label><label>Sasih (opsional)<select name="sasih"><option value="">tidak dinilai</option>${Array.from({ length: 12 }, (_, i) => `<option value="${i + 1}"${sasih === i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></label><button>Evaluasi</button></form></section>
 <section><h2>Pawukon</h2><p>${esc(p.saptawara)} ${esc(p.pancawara)} · Triwara ${esc(p.triwara)} · Wuku ${esc(p.wuku.name)} · urip ${p.urip}.</p></section>
-<section><h2>Pitra Yajña — larangan atiwa-tiwa segera</h2><p>${model.pitra.restricted ? `Terpicu: <b>${esc(model.pitra.reasons.join(", "))}</b>.` : "Tidak ada larangan Pawukon/lunar yang terpicu dari faktor yang berhasil dievaluasi."}</p><p class="note">Faktor lunar: ${esc(lunarText)}</p></section>
-<section><h2>Pewiwahan / Manusa Yajña</h2><table><tbody><tr><th>Saptawara</th><td>${esc(p.saptawara)} — <b>${marriage.quality === "ayu" ? "Ayu" : "Ala"}</b> (${esc(marriage.source_summary)})</td></tr><tr><th>Mertha Yoga</th><td>${model.pewiwahan.mertha_yoga ? "<b>Cocok dengan salah satu kombinasi Mertha Yoga sumber.</b>" : "Tidak cocok dengan tujuh kombinasi Mertha Yoga yang dicantumkan sumber."}</td></tr></tbody></table></section>
+<section><h2>Pitra Yajña</h2><p>${model.pitra.restricted ? `Pantangan yang perlu diperhatikan: <b>${esc(model.pitra.reasons.join(", "))}</b>.` : "Tidak ada pantangan Pitra khusus yang tercatat pada kombinasi hari ini."}</p><p class="note">Konteks bulan: ${esc(lunarText)}</p></section>
+<section><h2>Pewiwahan / Manusa Yajña</h2><table><tbody><tr><th>Saptawara</th><td>${esc(p.saptawara)} — <b>${marriage.quality === "ayu" ? "Ayu" : "Ala"}</b> (${esc(marriage.source_summary)})</td></tr><tr><th>Mertha Yoga</th><td>${model.pewiwahan.mertha_yoga ? "<b>Termasuk kombinasi Mertha Yoga.</b>" : "Tidak termasuk kombinasi Mertha Yoga pada panduan ini."}</td></tr></tbody></table></section>
 <section><h2>Lapisan Sasih</h2>${sasihHtml}</section>
 <section><h2>Dauh</h2><p><a href="${BP}/dauh-ayu?tanggal=${encodeURIComponent(tanggal)}">Buka Panca & Asta Dauh untuk tanggal ini →</a></p></section>
-<section><h2>Interpretasi</h2><p>Ini adalah mesin referensi rule, bukan satu skor “hari baik”. Buku sumber sendiri memperlakukan Padewasan sebagai gabungan Wewaran, Wuku, Penanggal/Pangelong, Sasih dan Dauh. Pelaksanaan Hindu juga mempertimbangkan desa, kala, patra. Karena itu AafnaiPatro tidak menutupi faktor yang belum tersedia dengan tebakan.</p><p><a href="${esc(WARIGA_DAUH_SOURCE.url)}" rel="nofollow noopener">Sumber Kemdikbud ↗</a></p></section>`,
+<section><h2>Cara membaca hasil Padewasan</h2><p>Hari baik tidak selalu ditentukan oleh satu tanda. Wewaran, Wuku, Penanggal/Pangelong, Sasih, Dauh dan kebutuhan upacara dapat dipertimbangkan bersama. Gunakan halaman ini sebagai panduan awal dan sesuaikan dengan desa, kala, patra serta arahan keluarga atau pemangku.</p></section><details class="bali-about-data"><summary>Tentang panduan Wariga</summary><div><p><a href="${esc(WARIGA_DAUH_SOURCE.url)}" rel="nofollow noopener">Lihat rujukan Wariga / Dauh ↗</a></p></div></details>`,
       footer: BALI_NOTE, ...baliPwaConfig(ctx),
     }),
   };
