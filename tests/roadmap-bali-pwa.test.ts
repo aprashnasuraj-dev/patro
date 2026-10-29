@@ -26,6 +26,7 @@ describe("Bali Calendar dedicated PWA surface",()=>{
   it("integrates installation without restoring generic tool promotion",()=>{
     const r:any=baliRoute(baseCtx(true),[]);
     for(const t of ['class="bali-workspace bali-traditional-workspace"','class="tika-month-grid"','class="bali-mode-nav"','class="dewasa-grid"','id="bali-install"','rel="manifest" href="/bali-calendar/manifest.webmanifest"','src="/bali-calendar/pwa.js"'])expect(r?.html).toContain(t);
+    for(const t of ['id="my-bali"','id="bali-person-form"','id="bali-date-form"','id="bali-export-memory"','class="bali-return-horizon"'])expect(r?.html).toContain(t);
     for(const h of ["/nepalmap","/tools/astro","/time-machine","/tools/nepali-typing"])expect(r?.html).not.toContain('href="'+h+'"');
     expect(r?.html).toContain('href="/advancetools/web-tools/"');
   });
@@ -47,10 +48,15 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(js).toContain('LAST_KEY="bali-calendar:last-path"');
     expect(js).toContain('location.replace(last)');
     expect(js).toContain('register("/bali-calendar-sw.js?rev="+REV');
-    expect(js).toContain('REV="bali-calendar-pwa-v2"');
+    expect(js).toContain('REV="bali-calendar-pwa-v3"');
     expect(js).toContain('button.addEventListener("click"');
+    expect(js).toContain('DB_NAME="aafnai-bali-calendar"');
+    expect(js).toContain('"indexedDB" in window');
+    expect(js).toContain('a.download="aafnai-bali-calendar-backup.json"');
+    expect(js).toContain('nextOton');
+    expect(js).toContain('state.lastVisit=Date.now()');
     const sw=read("public/bali-calendar-sw.js");
-    expect(sw).toContain('const CACHE="bali-calendar-shell-v2"');
+    expect(sw).toContain('const CACHE="bali-calendar-shell-v3"');
     for(const path of ["/bali-calendar/palelintangan","/bali-calendar/sasih-saka","/bali-calendar/otonan","/bali-calendar/piodalan","/bali-calendar/hari-raya"])expect(sw).toContain('"'+path+'"');
   });
 
