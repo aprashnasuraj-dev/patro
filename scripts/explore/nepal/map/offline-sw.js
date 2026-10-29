@@ -41,6 +41,18 @@ self.addEventListener("fetch",(event)=>{
   if(url.origin!==self.location.origin||event.request.method!=="GET") return;
   event.respondWith(caches.open(CACHE_PREFIX).then(async(cache)=>{
     const shell = url.pathname === "/nepalmap" || url.pathname === "/nepalmap/";
+    const packIndex = url.pathname === "/nepalmap/offline/index.json";
+    if(packIndex){
+      try {
+        const fresh=await fetch(event.request,{cache:"no-store"});
+        if(fresh.ok) await cache.put(event.request,fresh.clone());
+        return fresh;
+      } catch {
+        const cachedIndex=await cache.match(event.request,{ignoreSearch:true});
+        if(cachedIndex) return cachedIndex;
+        return new Response("Offline pack index unavailable",{status:503,headers:{"content-type":"text/plain;charset=utf-8"}});
+      }
+    }
     const hit=await cache.match(event.request,{ignoreSearch:shell});
     if(hit) return hit;
     try {

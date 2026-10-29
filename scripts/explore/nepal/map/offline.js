@@ -8,9 +8,17 @@
     return navigator.serviceWorker.register("/nepalmap/offline-sw.js",{scope:"/nepalmap/"});
   }
   async function index(){
-    var r=await fetch(INDEX,{credentials:"same-origin"});
-    if(!r.ok) throw new Error("offline pack index "+r.status);
-    return r.json();
+    try {
+      var r=await fetch(INDEX,{credentials:"same-origin",cache:"no-store"});
+      if(r.ok) return r.json();
+      throw new Error("offline pack index "+r.status);
+    } catch (e) {
+      if("caches" in global){
+        var cached=await caches.match(INDEX);
+        if(cached) return cached.json();
+      }
+      throw e;
+    }
   }
   function message(worker,data){
     return new Promise(function(resolve,reject){
@@ -42,7 +50,7 @@
     ];
     await message(worker,{type:"cache-pack",urls:urls});
     memo[slug]=null;
-    return { ...d, offline_url: "/nepalmap?d=" + encodeURIComponent(slug) };
+    return { ...d, offline_url: "/nepalmap?d=" + encodeURIComponent(slug), saved_revision: d.revision || null };
   }
   async function pack(slug){
     if(memo[slug]) return memo[slug];

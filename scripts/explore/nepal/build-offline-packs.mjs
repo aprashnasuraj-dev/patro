@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve, join } from "node:path";
+import { createHash } from "node:crypto";
 
 const root=process.cwd();
 const src=resolve(root,process.env.NEPALMAP_DATA_DIR||"public/data/nepalmap/v1");
@@ -38,8 +39,9 @@ for(const district of admin.districts){
   };
   const text=JSON.stringify(payload);
   const file=district.slug+".json";
+  const revision=createHash("sha256").update(text).digest("hex").slice(0,16);
   await writeFile(join(out,file),text);
-  index.push({slug:district.slug,name:district.name,ne:district.ne,places,bytes:Buffer.byteLength(text),url:"/nepalmap/offline/"+file});
+  index.push({slug:district.slug,name:district.name,ne:district.ne,places,bytes:Buffer.byteLength(text),revision,url:"/nepalmap/offline/"+file+"?v="+revision});
 }
 await writeFile(join(out,"index.json"),JSON.stringify({version:1,generated:manifest.build_date,basemap_included:false,districts:index},null,2)+"\n");
 console.log("offline district packs:",index.length,"total bytes",index.reduce((s,x)=>s+x.bytes,0));

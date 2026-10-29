@@ -26,4 +26,19 @@ describe("Nepal district offline-pack contract",()=>{
     expect(app).toContain("!offlineStyle && CFG.flags && CFG.flags.nepalTerrain");
     expect(app).toContain("!offlineStyle && CFG.flags && CFG.flags.nepalPmtiles");
   });
+
+  it("versions district packs by content and refreshes the online index before cached fallback",()=>{
+    const build=read("scripts/explore/nepal/build-map.mjs");
+    const standalone=read("scripts/explore/nepal/build-offline-packs.mjs");
+    const client=read("scripts/explore/nepal/map/offline.js");
+    const sw=read("scripts/explore/nepal/map/offline-sw.js");
+    expect(build).toContain('revision = createHash("sha256").update(text)');
+    expect(build).toContain('".json?v=" + revision');
+    expect(standalone).toContain('revision=createHash("sha256").update(text)');
+    expect(client).toContain('cache:"no-store"');
+    expect(client).toContain("saved_revision");
+    expect(sw).toContain('url.pathname === "/nepalmap/offline/index.json"');
+    expect(sw).toContain('fetch(event.request,{cache:"no-store"})');
+    expect(sw).toContain("cachedIndex");
+  });
 });

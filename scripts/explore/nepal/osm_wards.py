@@ -678,7 +678,7 @@ def main() -> None:
         sys.exit(1)
 
     args.out.mkdir(parents=True, exist_ok=True)
-    meta = {"generated": report["generated"], "osm_timestamp": stamp, "source": "OpenStreetMap via Geofabrik nepal-latest.osm.pbf",
+    meta = {"generated": report["generated"], "osm_timestamp": stamp, "source": f"OpenStreetMap via Geofabrik {args.pbf.name}",
             "licence": "© OpenStreetMap contributors, ODbL 1.0 — https://www.openstreetmap.org/copyright"}
     settlements.sort(key=lambda r: (r[6] or 0, r[7] or 0, r[1] or r[2]))
     pois.sort(key=lambda r: (r[6] or 0, r[7] or 0, r[0], r[1] or r[2]))

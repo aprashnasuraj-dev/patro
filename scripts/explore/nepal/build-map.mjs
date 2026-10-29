@@ -343,8 +343,9 @@ if (ROADMAP_FLAGS.nepalOfflinePacks) {
       categories,
     };
     const text = JSON.stringify(payload);
+    const revision = createHash("sha256").update(text).digest("hex").slice(0, 16);
     await writeFile(join(offlineDir, d.slug + ".json"), text);
-    offlineIndex.push({ slug: d.slug, name: d.name, ne: d.ne, places, bytes: Buffer.byteLength(text), url: "/nepalmap/offline/" + d.slug + ".json" });
+    offlineIndex.push({ slug: d.slug, name: d.name, ne: d.ne, places, bytes: Buffer.byteLength(text), revision, url: "/nepalmap/offline/" + d.slug + ".json?v=" + revision });
   }
   await writeFile(join(offlineDir, "index.json"), JSON.stringify({ version: 1, generated: LASTMOD, basemap_included: false, districts: offlineIndex }, null, 2));
 }
