@@ -114,3 +114,54 @@ The redesign adopts that information architecture but does not copy the artwork 
 A visually traditional-looking calendar can still be wrong if its data model is Gregorian-first or if it reduces Wariga to naive modulo cycles or a single "good day" score. Conversely, a mathematically correct 210-day engine can still be a poor Bali calendar if users cannot see Wuku, Wewaran, Ingkel, lunar context and activity-specific Dewasa factors together.
 
 Both engine correctness and information architecture are therefore release requirements.
+
+
+## Palelintangan 35-cell source upgrade
+
+The All Skies Encyclopaedia research index by Susanne M. Hoffmann and Youla Azkarrula publishes the full 5×7 Palelintangan table and traces its starting point to Alfred Maaß (1929), *Astrologische Kalender der Balinesen*. It also records Saptawara patron-deity associations and variant spellings from Museum Bali and other collections.
+
+Source:
+- https://ase.exopla.net/index.php/Balinese_(All_Terms)
+
+Implemented:
+- all 35 lintang names in the Pancawara × Saptawara matrix;
+- Saptawara patron context;
+- variant-sensitive caution in the product.
+
+Not implemented yet:
+- animal/tree/wayang/forecast fields unless a stable per-cell source is established.
+
+This caution is material: historical cataloguing notes that the relationship between a pictured constellation and a 5-day × 7-day date can vary across Palalintangan manuscripts/paintings. A visually plausible symbol is therefore not sufficient evidence for a canonical per-cell value.
+
+## Supported dynamic range
+
+The product support boundary is 1929-01-01 through 2129-12-31.
+
+Within this range the deterministic Pawukon/Wewaran/Ingkel/Palelintangan and Pawukon-recurring-event layers are calculated dynamically. Published/official annual lunar layers remain independent and fail closed when an authoritative year mapping is absent. The 1929–2129 boundary is a support/QA window, not a mathematical limit of the 210-day engine.
+
+## My Bali Calendar retention layer
+
+The first personal retention layer is browser-local and deliberately does not require an account.
+
+Stored locally:
+- named people / relationship;
+- birth date;
+- before/after/unknown sunrise-boundary assumption for Otonan;
+- saved Bali dates and notes;
+- last-visit timestamp.
+
+Return experience:
+- nearest personal Otonan on reopen;
+- 7-day, 35-day and 210-day public-calendar horizons;
+- direct links to the source-backed Otonan calculator and ICS reminder feed;
+- one-tap save from a deep day.
+
+Durability:
+- IndexedDB primary storage;
+- localStorage fallback;
+- explicit JSON export/import for device migration or recovery.
+
+Privacy:
+- My Bali data is not required for public calendar computation;
+- the first version does not upload the local memory object;
+- future account sync, if added, must be opt-in and separate from the local-first default.
