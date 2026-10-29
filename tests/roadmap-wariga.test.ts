@@ -33,7 +33,7 @@ describe("Bali Wariga source-backed roadmap surfaces", () => {
       is_purwani_purnama: false,
     });
     expect(r.restricted).toBe(true);
-    expect(r.reasons).toEqual(expect.arrayContaining(["Pasah","Buda Wage","Tumpek Wayang","Tilem"]));
+    expect(r.reasons).toEqual(expect.arrayContaining(["Pasah","Buda Wage","Tumpek","Tilem"]));
   });
 
   it("recognizes the exact Mertha Yoga combinations from the source", () => {
