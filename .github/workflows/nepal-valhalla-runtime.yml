@@ -44,13 +44,26 @@ jobs:
           export NEPAL_ROUTING_HTTP_PORT=18080
           export NEPAL_ROUTING_HTTPS_PORT=18443
           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway up -d
+          ready=false
           for i in {1..90}; do
             code="$(curl -sS -o /tmp/health.json -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://localhost:18080/healthz || true)"
-            if [[ "$code" == "200" ]]; then break; fi
+            if [[ "$code" == "200" ]]; then ready=true; break; fi
             sleep 2
           done
-          test "$(curl -sS -o /dev/null -w '%{http_code}' http://localhost:18080/healthz)" = "401"
-          test "$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://localhost:18080/not-allowed)" = "404"
+          if [[ "$ready" != true ]]; then
+            echo "Gateway never reached authorized health=200; last code=$code" >&2
+            docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway ps
+            docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway logs --no-color gateway valhalla || true
+            exit 1
+          fi
+          auth_health="$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://localhost:18080/healthz || true)"
+          unauth_health="$(curl -sS -o /dev/null -w '%{http_code}' http://localhost:18080/healthz || true)"
+          auth_unknown="$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NEPAL_ROUTING_TOKEN" http://localhost:18080/not-allowed || true)"
+          echo "gateway_codes auth_health=$auth_health unauth_health=$unauth_health auth_unknown=$auth_unknown"
+          docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway logs --no-color --tail=80 gateway || true
+          test "$auth_health" = "200"
+          test "$unauth_health" = "401"
+          test "$auth_unknown" = "404"
           python3 infra/nepal-routing/verify_routes.py             --base http://localhost:18080             --token "$NEPAL_ROUTING_TOKEN"             --health-path /healthz             --output infra/nepal-routing/reports/gateway-routes-2026-10-28.json
           docker stats --no-stream --format '{{json .}}' > infra/nepal-routing/reports/docker-stats-2026-10-28.jsonl
           docker compose -p nepal-routing-gateway-ci -f infra/nepal-routing/docker-compose.yml --profile gateway ps > infra/nepal-routing/reports/gateway-ps-2026-10-28.txt
