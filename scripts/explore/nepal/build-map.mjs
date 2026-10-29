@@ -362,7 +362,8 @@ if (ROADMAP_FLAGS.nepalEmbeds) {
     maplibreWorker: MAPLIBRE_WORKER,
     style: "https://tiles.openfreemap.org/styles/liberty",
   };
-  const embedHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Nepal Map embed · AafnaiPatro</title><link rel="stylesheet" href="${MAPLIBRE_CSS}"><link rel="stylesheet" href="/embed/nepalmap/embed.css?v=${version}"></head><body><div id="status">Loading Nepal Map…</div><div id="map" role="region" aria-label="Embedded Nepal map"></div><script>window.NEPAL_EMBED=${JSON.stringify(embedConfig).replace(/</g, "\\u003c")};</script><script src="${MAPLIBRE_JS}" defer></script><script src="/embed/nepalmap/embed.js?v=${version}" defer></script></body></html>`;
+  await writeFile(join(embedDir, "config.js"), "window.NEPAL_EMBED=" + JSON.stringify(embedConfig).replace(/</g, "\\u003c") + ";\n");
+  const embedHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Nepal Map embed · AafnaiPatro</title><link rel="stylesheet" href="${MAPLIBRE_CSS}"><link rel="stylesheet" href="/embed/nepalmap/embed.css?v=${version}"></head><body><div id="status">Loading Nepal Map…</div><div id="map" role="region" aria-label="Embedded Nepal map"></div><script src="/embed/nepalmap/config.js?v=${version}" defer></script><script src="${MAPLIBRE_JS}" defer></script><script src="/embed/nepalmap/embed.js?v=${version}" defer></script></body></html>`;
   await writeFile(join(embedDir, "index.html"), embedHtml);
 }
 const countOf = (cat, religion) => rowsByCat.get(cat).filter((r) => !religion || religion.includes(r[4] || "other")).length;
