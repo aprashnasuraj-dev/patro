@@ -91,10 +91,38 @@ export function formatDauhMinute(value: number) {
 
 export const SASIH_NAMES = ["Kasa","Karo","Ketiga","Kapat","Kalima","Kanem","Kapitu","Kawulu","Kasanga","Kadasa","Jyestha","Sadha"] as const;
 
+export const WARIGA_SASIH_SOURCE = {
+  name: "Kemdikbud, Pendidikan Agama Hindu dan Budi Pekerti SMA/SMK Kelas X, Edisi Revisi 2017",
+  isbn: "978-602-427-067-4",
+  url: "https://buku.kemendikdasmen.go.id/katalog/Pendidikan-Agama-Hindu-Dan-Budi-Pekerti-Kelas-X",
+  status: "published" as const,
+};
+
+type SasihActivity = "dewa" | "pitra" | "manusa" | "bhuta" | "wiwaha";
+type SasihMark = "ayu" | "not_marked";
+
+/** Exact Ala-Ayuning Sasih matrix from the revised government textbook. */
+const SASIH_ACTIVITY_MATRIX: Record<number, Record<SasihActivity, SasihMark>> = {
+  1:  { dewa:"ayu",        pitra:"ayu",        manusa:"ayu",        bhuta:"not_marked", wiwaha:"not_marked" },
+  2:  { dewa:"not_marked", pitra:"ayu",        manusa:"not_marked", bhuta:"not_marked", wiwaha:"not_marked" },
+  3:  { dewa:"not_marked", pitra:"ayu",        manusa:"not_marked", bhuta:"ayu",        wiwaha:"not_marked" },
+  4:  { dewa:"ayu",        pitra:"not_marked", manusa:"ayu",        bhuta:"not_marked", wiwaha:"ayu" },
+  5:  { dewa:"ayu",        pitra:"ayu",        manusa:"ayu",        bhuta:"not_marked", wiwaha:"ayu" },
+  6:  { dewa:"not_marked", pitra:"not_marked", manusa:"not_marked", bhuta:"not_marked", wiwaha:"not_marked" },
+  7:  { dewa:"ayu",        pitra:"ayu",        manusa:"ayu",        bhuta:"not_marked", wiwaha:"ayu" },
+  8:  { dewa:"not_marked", pitra:"not_marked", manusa:"not_marked", bhuta:"ayu",        wiwaha:"not_marked" },
+  9:  { dewa:"not_marked", pitra:"not_marked", manusa:"not_marked", bhuta:"ayu",        wiwaha:"not_marked" },
+  10: { dewa:"ayu",        pitra:"ayu",        manusa:"ayu",        bhuta:"not_marked", wiwaha:"ayu" },
+  11: { dewa:"not_marked", pitra:"not_marked", manusa:"not_marked", bhuta:"not_marked", wiwaha:"not_marked" },
+  12: { dewa:"not_marked", pitra:"not_marked", manusa:"not_marked", bhuta:"not_marked", wiwaha:"not_marked" },
+};
+
 export const YAJNA_SASIH_REFERENCE = {
-  dewa: [4, 5, 10],
-  bhuta: [6, 9],
-  pitra: [1, 2, 3],
+  dewa: [1, 4, 5, 7, 10],
+  pitra: [1, 2, 3, 5, 7, 10],
+  manusa: [1, 4, 5, 7, 10],
+  bhuta: [3, 8, 9],
+  wiwaha: [4, 5, 7, 10],
   memukur: [10],
 } as const;
 
@@ -149,13 +177,17 @@ export function pitraImmediateRestrictions(input: {
 
 export function sasihReference(sasih: number) {
   if (!Number.isInteger(sasih) || sasih < 1 || sasih > 12) throw new RangeError("sasih must be 1..12");
-  const has = (xs: readonly number[]) => xs.includes(sasih);
+  const row = SASIH_ACTIVITY_MATRIX[sasih];
   return {
     sasih,
     name: SASIH_NAMES[sasih - 1],
-    dewa_yajna: has(YAJNA_SASIH_REFERENCE.dewa),
-    bhuta_yajna: has(YAJNA_SASIH_REFERENCE.bhuta),
-    pitra_yajna: has(YAJNA_SASIH_REFERENCE.pitra),
-    memukur: has(YAJNA_SASIH_REFERENCE.memukur),
+    activities: { ...row },
+    dewa_yajna: row.dewa === "ayu",
+    pitra_yajna: row.pitra === "ayu",
+    manusa_yajna: row.manusa === "ayu",
+    bhuta_yajna: row.bhuta === "ayu",
+    wiwaha_yajna: row.wiwaha === "ayu",
+    memukur: sasih === 10,
+    source: WARIGA_SASIH_SOURCE,
   };
 }
