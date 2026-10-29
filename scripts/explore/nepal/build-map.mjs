@@ -409,6 +409,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <link rel="canonical" href="${esc(canonical)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:type" content="website"><meta property="og:image" content="${SITE}/og-default.png">
+<meta name="aafnaipatro-nepalmap-config" content="${esc(JSON.stringify(config))}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin>
 <link rel="stylesheet" href="${MAPLIBRE_CSS}">
@@ -452,7 +453,6 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 </div>
 <main class="np-content">${content}</main>
 <footer>Places © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> (ODbL), matched to wards by Aafnai Patro. Base map © <a href="https://openfreemap.org" rel="nofollow noopener">OpenFreeMap</a>. Routes © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a>, computed by <a href="https://project-osrm.org/" rel="nofollow noopener">OSRM</a> on <a href="https://routing.openstreetmap.de/about.html" rel="nofollow noopener">FOSSGIS</a> servers. Last updated ${LASTMOD}. Spotted a missing temple or a wrong place? Add or fix it on OpenStreetMap and it appears here after the next monthly refresh, or <a href="/corrections">tell us</a>.</footer>
-<script>window.NEPALMAP=${JSON.stringify(config).replace(/</g, "\\u003c")};</script>
 <script src="${MAPLIBRE_JS}" defer></script>
 ${ROADMAP_FLAGS.nepalPmtiles ? `<script src="/vendor/nepalmap/pmtiles-4.5.0/pmtiles.js" defer></script><script src="/nepalmap/pmtiles-poc.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoadSafety ? `<script src="/nepalmap/road-safety.js?v=${version}" defer></script>` : ""}
