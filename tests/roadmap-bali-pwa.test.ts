@@ -32,6 +32,20 @@ describe("Bali Calendar dedicated PWA surface",()=>{
     expect(r?.html).toContain('href="/advancetools/web-tools/"');
   });
 
+  it("gates deep-day memory/share controls with the Bali PWA runtime",()=>{
+    const off:any=baseCtx(false);off.url=new URL("https://aafnaipatro.com/bali-calendar/2026-10-29");off.path="/bali-calendar/2026-10-29";
+    const offPage:any=baliRoute(off,["2026-10-29"]);
+    expect(offPage?.html).not.toContain("data-bali-save-date");
+    expect(offPage?.html).not.toContain("data-bali-share-date");
+    const on:any=baseCtx(true);on.url=new URL("https://aafnaipatro.com/bali-calendar/2026-10-29");on.path="/bali-calendar/2026-10-29";
+    const onPage:any=baliRoute(on,["2026-10-29"]);
+    expect(onPage?.html).toContain("data-bali-save-date");
+    expect(onPage?.html).toContain("data-bali-share-date");
+    const js=read("public/bali-calendar/pwa.js");
+    expect(js).toContain("navigator.share");
+    expect(js).toContain("Sejak kunjungan terakhir");
+  });
+
   it("ships traditional-calendar shortcuts inside the dedicated scope",()=>{
     const m=JSON.parse(read("public/bali-calendar/manifest.webmanifest"));
     expect(m.id).toBe("/bali-calendar");
