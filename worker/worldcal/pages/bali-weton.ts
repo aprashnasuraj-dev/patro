@@ -10,6 +10,7 @@ import { PAWUKON_HOLIDAYS, TUMPEK } from "../engines/pawukon";
 import type { Ctx, Rendered } from "../types";
 import { ROADMAP_FLAGS } from "../../roadmap/flags";
 import { sourceBadge, type SourceStatus } from "../../roadmap/provenance";
+import { baliFeedRoute } from "./bali-feeds";
 
 const BP = "/bali-calendar";
 const WP = "/weton";
@@ -310,6 +311,7 @@ function wukuPage(ctx: Ctx, wslug: string): Rendered | null {
 
 export function baliRoute(ctx: Ctx, rest: string[]): Rendered | null {
   if (!rest.length) return baliToday(ctx);
+  if (ROADMAP_FLAGS.baliIcsFeeds && rest[0] === "feed") return baliFeedRoute(ctx, rest);
   if (ROADMAP_FLAGS.baliRerainanSearch && rest.length === 1 && rest[0] === "cari") return baliRerainanSearch(ctx);
   if (rest.length === 1 && rest[0] === "otonan") return otonan(ctx);
   if (ROADMAP_FLAGS.baliMonthGrid && rest.length === 2 && rest[0] === "bulan") return baliMonth(ctx, rest[1]);
