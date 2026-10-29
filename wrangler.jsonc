@@ -47,6 +47,8 @@
       "!/nepal/trek-weather/*",
       "!/nepalmap",
       "!/nepalmap/*",
+      "!/embed/nepalmap/*",
+      "!/embed/nepalmap-widget.js",
       "!/sitemap-nepalmap.xml",
       "!/us/*",
       "!/weather",
@@ -129,7 +131,11 @@
       "CALENDAR_COVERAGE_START": "1826-04-11",
       "CALENDAR_COVERAGE_END": "2037-04-13",
       "CALENDAR_SOURCE_VERSION": "patro-archive-v79",
-      "PUBLIC_REFERENCE_CACHE_VERSION": "public-reference-preview-v1"
+      "PUBLIC_REFERENCE_CACHE_VERSION": "public-reference-preview-v1",
+      "NEPAL_API_ENABLED": "0",
+      "NEPAL_CORRECTIONS_ENABLED": "0",
+      "NEPAL_EMERGENCY_ENABLED": "0",
+      "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1"
     },
     "d1_databases": [
       {
@@ -148,7 +154,11 @@
     "CALENDAR_COVERAGE_START": "1826-04-11",
     "CALENDAR_COVERAGE_END": "2037-04-13",
     "CALENDAR_SOURCE_VERSION": "patro-archive-v79",
-    "PUBLIC_REFERENCE_CACHE_VERSION": "public-reference-v1"
+    "PUBLIC_REFERENCE_CACHE_VERSION": "public-reference-v1",
+    "NEPAL_API_ENABLED": "0",
+    "NEPAL_CORRECTIONS_ENABLED": "0",
+    "NEPAL_EMERGENCY_ENABLED": "0",
+    "BIPAD_API_BASE": "https://bipadportal.gov.np/api/v1"
   },
   "triggers": {
     "crons": [
