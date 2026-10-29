@@ -42,7 +42,7 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
       - name: Bali source-backed and PWA tests
-        run: npx vitest run tests/bali-traditional-workspace.test.ts tests/roadmap-bali.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-bali-pwa.test.ts tests/roadmap-wariga.test.ts tests/roadmap-ics.test.ts
+        run: npx vitest run tests/bali-traditional-workspace.test.ts tests/bali-lintang-pages.test.ts tests/roadmap-bali.test.ts tests/roadmap-bali-annual.test.ts tests/roadmap-bali-pwa.test.ts tests/roadmap-wariga.test.ts tests/roadmap-ics.test.ts
       - name: Static PWA syntax and manifest
         run: |
           node --check public/bali-calendar/pwa.js
