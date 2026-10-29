@@ -215,6 +215,35 @@ for (const c of CATEGORIES) {
 }
 await writeFile(join(dataDir, "admin.json"), JSON.stringify(admin));
 if (boundaryAudit) await writeFile(join(dataDir, "boundary-confidence.json"), JSON.stringify(boundaryAudit, null, 2));
+if (process.env.NEPALMAP_API_BUILD === "1") {
+  const indexDir = join(dataDir, "index");
+  await mkdir(indexDir, { recursive: true });
+  const buckets = new Map();
+  for (const cat of CATEGORIES) {
+    const rows = rowsByCat.get(cat.id);
+    for (let i = 0; i < rows.length; i++) {
+      const ids = [rows[i][11], ROADMAP_FLAGS.nepalStablePlaceIds ? rows[i][12] : ""].filter(Boolean);
+      for (const id of ids) {
+        const prefix = createHash("sha256").update(String(id)).digest("hex").slice(0, 2);
+        if (!buckets.has(prefix)) buckets.set(prefix, {});
+        buckets.get(prefix)[id] = [cat.id, i];
+      }
+    }
+  }
+  for (let n = 0; n < 256; n++) {
+    const prefix = n.toString(16).padStart(2, "0");
+    await writeFile(join(indexDir, prefix + ".json"), JSON.stringify(buckets.get(prefix) || {}));
+  }
+  await writeFile(join(indexDir, "manifest.json"), JSON.stringify({
+    version: 1,
+    algorithm: "sha256-prefix-2",
+    buckets: 256,
+    keys: ROADMAP_FLAGS.nepalStablePlaceIds ? ["source_id", "place_id"] : ["source_id"],
+    generated: LASTMOD,
+    attribution: "© OpenStreetMap contributors, ODbL 1.0",
+  }, null, 2));
+}
+
 await writeFile(join(dataDir, "manifest.json"), JSON.stringify({
   dataset_id: "nepalmap-osm-places-v1",
   product: "nepalmap",
