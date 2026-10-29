@@ -60,6 +60,16 @@ for(const sourceId of activeNext){
 }
 const counts={};
 for(const a of anomalies) counts[a.code]=(counts[a.code]||0)+1;
+const severityFor=(code)=>({
+  missing_place_id:"critical",place_id_changed:"critical",
+  bulk_disappearance:"high",large_move:"high",probable_duplicate:"high",
+  disappeared:"medium",category_change:"medium",name_disappeared:"medium",bulk_addition:"medium",
+  added:"info",
+}[code]||"info");
+const reviewQueue=[
+  ...continuity.map((x)=>({...x,severity:severityFor(x.code),requires_human_review:true})),
+  ...anomalies.filter((x)=>x.code!=="added").map((x)=>({...x,severity:severityFor(x.code),requires_human_review:severityFor(x.code)!=="info"})),
+].sort((a,b)=>["critical","high","medium","info"].indexOf(a.severity)-["critical","high","medium","info"].indexOf(b.severity));
 const report={
   schema_version:1,
   compared_at:new Date().toISOString(),
@@ -69,6 +79,8 @@ const report={
   anomaly_counts:counts,
   anomalies,
   continuity_errors:continuity,
+  review_queue:reviewQueue,
+  review_summary:reviewQueue.reduce((acc,x)=>{acc[x.severity]=(acc[x.severity]||0)+1;return acc;},{}),
   policy:{
     moved_threshold_km:5,
     bulk_add_remove_threshold:100,

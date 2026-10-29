@@ -6,7 +6,7 @@ import { resolve, join, relative } from "node:path";
 const args=process.argv.slice(2);
 const get=(n)=>{const i=args.indexOf(n);if(i<0||!args[i+1])throw new Error("missing "+n);return resolve(args[i+1]);};
 const root=get("--root"), stage=get("--stage"), timings=get("--timings"), out=get("--out"), rebuild=get("--rebuild");
-const sourceLock=get("--source-lock");
+const sourceLock=get("--source-lock"), quality=get("--quality");
 
 async function json(p){return JSON.parse(await readFile(p,"utf8"));}
 async function walk(dir,base=dir,result=[]){
@@ -47,6 +47,7 @@ const result={
   selected_files:[...rawFiles.filter(x=>/osm-(admin|pois|settlements|report|roads)/.test(x.path)),...stageFiles.filter(x=>/(manifest\.json$|\.pmtiles$|offline\/index\.json$|dem\/tilejson\.json$)/.test(x.path))],
   osm_ingest:existsSync(osmReportPath)?await json(osmReportPath):null,
   rebuild_audit:await json(rebuild),
+  map_quality:await json(quality),
   boundary_confidence:existsSync(boundaryPath)?await json(boundaryPath):null,
   compact_manifest:existsSync(manifestPath)?await json(manifestPath):null,
   offline_index:existsSync(offlineIndex)?await json(offlineIndex):null,

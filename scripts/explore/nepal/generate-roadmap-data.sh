@@ -74,6 +74,8 @@ MAP_ENV=(
 )
 if [[ -n "${NEPAL_BOUNDARY_GEOJSON:-}" ]]; then MAP_ENV+=("NEPAL_BOUNDARY_GEOJSON=$NEPAL_BOUNDARY_GEOJSON"); fi
 run_step compact_map env "${MAP_ENV[@]}" node scripts/explore/nepal/build-map.mjs --out "$STAGE"
+run_step map_quality node scripts/explore/nepal/map-quality-report.mjs \
+  --data "$STAGE/data/nepalmap/v1" --rebuild "$WORK/rebuild-audit.json" --out "$WORK/map-quality.json"
 
 if [[ "$FULL_PMTILES" == "1" ]]; then
   run_step pmtiles env \
@@ -89,7 +91,7 @@ fi
 
 run_step report node scripts/explore/nepal/generation-report.mjs \
   --root "$ROOT" --stage "$STAGE" --timings "$TIMINGS" \
-  --source-lock "$SOURCE/source-lock.json" --rebuild "$WORK/rebuild-audit.json" --out "$REPORT"
+  --source-lock "$SOURCE/source-lock.json" --rebuild "$WORK/rebuild-audit.json" --quality "$WORK/map-quality.json" --out "$REPORT"
 
 echo "Nepal data generation completed."
 echo "Staged public artifacts: $STAGE"
