@@ -402,11 +402,17 @@ const wardLink = (r) => {
 function shell({ path, title, description, h1, intro, preset, content, schema }) {
   const canonical = SITE + path;
   const terrain = ROADMAP_FLAGS.nepalTerrain ? {
-    tilejson: process.env.NEPALMAP_DEM_TILEJSON || "",
-    attribution: process.env.NEPALMAP_DEM_ATTRIBUTION || "Elevation source must be configured",
+    tilejson: process.env.NEPALMAP_DEM_TILEJSON || "/data/nepalmap/dem/tilejson.json",
+    attribution: process.env.NEPALMAP_DEM_ATTRIBUTION || "produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+    encoding: "mapbox",
   } : null;
-  if (ROADMAP_FLAGS.nepalTerrain && !terrain.tilejson) throw new Error("NEPALMAP_TERRAIN=1 requires NEPALMAP_DEM_TILEJSON.");
   if (terrain && !terrain.tilejson.startsWith("/")) throw new Error("NEPALMAP_DEM_TILEJSON must be a same-origin path so the scoped CSP remains strict.");
+  if (terrain) {
+    const terrainFile = join(OUT, terrain.tilejson.replace(/^\/+/, ""));
+    try { await access(terrainFile); }
+    catch { throw new Error("NEPALMAP_TERRAIN=1 requires generated same-origin Copernicus terrain. Run scripts/explore/nepal/build-copernicus-dem.sh first."); }
+    if (!terrain.attribution.includes("Copernicus WorldDEM-30")) throw new Error("Terrain attribution must preserve the Copernicus WorldDEM-30 adapted-product notice.");
+  }
   const pmtiles = ROADMAP_FLAGS.nepalPmtiles ? { places: "/data/nepalmap/v2/places.pmtiles", roads: process.env.NEPALMAP_PMTILES_ROADS === "1" ? "/data/nepalmap/v2/roads.pmtiles" : null } : null;
   const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, routingProvider: ROUTING_PROVIDER, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(terrain ? { terrain } : {}), ...(pmtiles ? { pmtiles } : {}), ...(preset ? { preset } : {}) };
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
