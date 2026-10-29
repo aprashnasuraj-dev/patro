@@ -86,12 +86,19 @@ export function baliMonthModel(year: number, month: number): DayCell[] {
 }
 
 export function rerainanSearch(query: string, fromIso: string, limit = 40): { date: string; name: string; status: SourceStatus }[] {
-  const needle = query.trim().toLocaleLowerCase("id").replace(/^hari raya\s+/, "");
+  const needle = query.trim().toLocaleLowerCase("id").replace(/^hari raya\s+/, "").replace(/[·,]+/g, " ").replace(/\s+/g, " ");
   if (needle.length < 2 || !parseIso(fromIso)) return [];
   const out: { date: string; name: string; status: SourceStatus }[] = [];
   const start = isoToJdn(fromIso) - 210;
+  const comboSearch = needle.split(" ").filter(Boolean).length >= 2;
   for (let j = start; j <= start + 630 && out.length < limit; j++) {
     const iso = jdnToIso(j);
+    if (comboSearch) {
+      const p = pawukon(j);
+      const combo = p.combination.toLocaleLowerCase("id");
+      if (combo.includes(needle)) out.push({ date: iso, name: p.combination, status: "calculated" });
+      if (out.length >= limit) break;
+    }
     for (const signal of baliSignals(iso)) {
       if (signal.type === "wuku") continue;
       const normalized = signal.ref.toLocaleLowerCase("id").replace(/^hari raya\s+/, "");
@@ -151,12 +158,12 @@ function baliRerainanSearch(ctx: Ctx): Rendered {
     status: 200, maxAge: 3600, indexable: false,
     html: page({
       site: ctx.site, path: `${BP}/cari`, lang: "id",
-      title: "Cari rerainan Bali — Galungan, Kuningan, Tumpek dan hari penting",
-      description: "Cari tanggal rerainan Bali dari nama hari raya dan buka tanggal untuk rincian Pawukon.",
-      h1: "Cari rerainan Bali",
+      title: "Cari rerainan & kombinasi Pawukon Bali — Galungan atau Buda Kliwon Dungulan",
+      description: "Cari tanggal dari nama rerainan atau kombinasi Saptawara + Pancawara + Wuku seperti Buda Kliwon Dungulan.",
+      h1: "Cari rerainan / kombinasi Pawukon",
       crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/cari`, label: "Cari rerainan" }],
       indexable: false,
-      body: `<section><form class="inline" method="get" action="${BP}/cari"><label>Nama rerainan<input name="q" value="${esc(q)}" placeholder="Galungan" required></label><button>Cari</button></form></section>${q ? `<section><h2>Hasil untuk “${esc(q)}”</h2>${rows ? `<table><tbody>${rows}</tbody></table>` : "<p>Tidak ditemukan dalam jendela pencarian.</p>"}</section>` : ""}`,
+      body: `<section><form class="inline" method="get" action="${BP}/cari"><label>Nama rerainan<input name="q" value="${esc(q)}" placeholder="Galungan atau Buda Kliwon Dungulan" required></label><button>Cari</button></form></section>${q ? `<section><h2>Hasil untuk “${esc(q)}”</h2>${rows ? `<table><tbody>${rows}</tbody></table>` : "<p>Tidak ditemukan dalam jendela pencarian.</p>"}</section>` : ""}`,
       footer: BALI_NOTE,
     }),
   };
@@ -203,6 +210,7 @@ function pawukonTable(iso: string): string {
     ["Wuku", `<a href="${BP}/wuku/${slug(p.wuku.name)}">${esc(p.wuku.name)}</a> (ke-${p.wuku.index} dari 30)`],
     ["Saptawara", p.saptawara], ["Pancawara", p.pancawara], ["Triwara", p.triwara], ["Sadwara", p.sadwara], ["Caturwara", p.caturwara],
     ["Astawara", p.astawara], ["Sangawara", p.sangawara], ["Dasawara", p.dasawara], ["Dwiwara", p.dwiwara], ["Ekawara", p.ekawara || "—"],
+    ["Ingkel Pandakan", p.ingkel], ["Ingkel Jejepan", p.jejepan],
     ["Urip (saptawara + pancawara)", String(p.urip)], ["Hari ke- dalam Pawukon", `${p.day + 1} dari 210`],
   ];
   return `<table><tbody>${rows.map(([k, v]) => `<tr><th>${esc(k)}</th><td>${k === "Wuku" ? v : esc(v)}</td></tr>`).join("")}</tbody></table>`;
@@ -268,6 +276,7 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
   const p = pawukon(j);
   const events = [...pawukonEvents(j), ...sakaFacts(iso)];
   const piodalan = ctx.flags.baliPiodalan ? piodalanForDate(iso) : [];
+  const wariga = ctx.flags.baliPadewasan ? padewasanReferenceModel(iso, null, "penanggal") : null;
   const nextTumpek = nextNamedPawukonEvent(iso, (name) => /^Tumpek\b/.test(name));
   const nextKajeng = nextNamedPawukonEvent(iso, (name) => name === "Kajeng Kliwon");
   const eventHtml = events.length
@@ -282,6 +291,7 @@ function baliDayBody(ctx: Ctx, iso: string, today: string): string {
 <div class="bali-event-row">${eventHtml}</div></section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}${ctx.flags.baliLearningGuides ? `<p><a href="${BP}/wewaran">Pelajari Ekawara–Dasawara →</a></p>` : ""}</section>
 ${ctx.flags.baliPiodalan ? `<section><h2>Piodalan yang cocok</h2>${piodalanHtml}</section>` : ""}
+${wariga ? `<section><h2>Ingkel & konteks Wariga</h2><div class="bali-wariga-strip"><div><span>Ingkel Pandakan</span><strong>${esc(p.ingkel)}</strong></div><div><span>Jejepan</span><strong>${esc(p.jejepan)}</strong></div><div><span>Mertha Yoga</span><strong>${wariga.pewiwahan.mertha_yoga ? "ya" : "tidak"}</strong></div><div><span>Pewiwahan · Saptawara</span><strong>${esc(wariga.pewiwahan.saptawara.source_summary)}</strong></div></div><p class="note">${wariga.pitra.restricted ? `Pitra restriction terpicu: ${esc(wariga.pitra.reasons.join(", "))}.` : "Tidak ada Pitra restriction eksplisit yang terpicu pada rule set sumber saat ini."} <a href="${BP}/padewasan?tanggal=${iso}">Buka rincian Padewasan bersumber →</a></p></section>` : ""}
 <section><h2>Navigasi tradisional</h2><div class="bali-traditional-nav">
 <a href="${BP}/${addDaysIso(iso, -7)}">← 1 Wuku</a><a href="${BP}/${addDaysIso(iso, 7)}">+1 Wuku →</a>
 <a href="${BP}/${addDaysIso(iso, -210)}">← 1 Oton</a><a href="${BP}/${addDaysIso(iso, 210)}">+1 Oton →</a>
