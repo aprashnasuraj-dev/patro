@@ -256,7 +256,13 @@ async function data(root) {
     }
   }
 
-  cache = { province, district, palika, vdcs, formerByWard, admin, S, P, villages, sun, settlements, pois };
+  const sourceMeta = {
+    generated: poiFile.generated || settleFile.generated || null,
+    osm_timestamp: poiFile.osm_timestamp || settleFile.osm_timestamp || null,
+    source: poiFile.source || settleFile.source || null,
+    licence: poiFile.licence || settleFile.licence || null,
+  };
+  cache = { province, district, palika, vdcs, formerByWard, admin, S, P, villages, sun, settlements, pois, sourceMeta };
   return cache;
 }
 function push(map, key, value) {
