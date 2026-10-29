@@ -232,6 +232,7 @@ const appJs = await readFile(join(HERE, "map/app.js"), "utf8");
 const routingV2Js = await readFile(join(HERE, "map/routing-v2.js"), "utf8");
 const roadSafetyJs = await readFile(join(HERE, "map/road-safety.js"), "utf8");
 const pmtilesPocJs = await readFile(join(HERE, "map/pmtiles-poc.js"), "utf8");
+const terrainJs = await readFile(join(HERE, "map/terrain.js"), "utf8");
 const searchWorkerJs = await readFile(join(HERE, "map/search-worker.js"), "utf8");
 const searchCoreJs = await readFile(join(HERE, "map/search-core.mjs"), "utf8");
 const css = await readFile(join(HERE, "map/style.css"), "utf8");
@@ -239,10 +240,11 @@ await writeFile(join(OUT, "nepalmap/app.js"), appJs);
 await writeFile(join(OUT, "nepalmap/routing-v2.js"), routingV2Js);
 await writeFile(join(OUT, "nepalmap/road-safety.js"), roadSafetyJs);
 await writeFile(join(OUT, "nepalmap/pmtiles-poc.js"), pmtilesPocJs);
+await writeFile(join(OUT, "nepalmap/terrain.js"), terrainJs);
 await writeFile(join(OUT, "nepalmap/search-worker.js"), searchWorkerJs);
 await writeFile(join(OUT, "nepalmap/search-core.mjs"), searchCoreJs);
 await writeFile(join(OUT, "nepalmap/style.css"), css);
-const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
+const version = createHash("sha256").update(appJs + routingV2Js + roadSafetyJs + pmtilesPocJs + terrainJs + searchWorkerJs + searchCoreJs + css + JSON.stringify(admin) + Object.values(sizes).join(",")).digest("hex").slice(0, 10);
 
 // ---------- pages ----------
 const clientCats = CATEGORIES.map(({ from, ...c }) => ({ ...c, file: `${c.id}.json`, total: rowsByCat.get(c.id).length }));
@@ -263,6 +265,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
     attribution: process.env.NEPALMAP_DEM_ATTRIBUTION || "Elevation source must be configured",
   } : null;
   if (ROADMAP_FLAGS.nepalTerrain && !terrain.tilejson) throw new Error("NEPALMAP_TERRAIN=1 requires NEPALMAP_DEM_TILEJSON.");
+  if (terrain && !terrain.tilejson.startsWith("/")) throw new Error("NEPALMAP_DEM_TILEJSON must be a same-origin path so the scoped CSP remains strict.");
   const pmtiles = ROADMAP_FLAGS.nepalPmtiles ? { places: "/data/nepalmap/v2/places.pmtiles", roads: process.env.NEPALMAP_PMTILES_ROADS === "1" ? "/data/nepalmap/v2/roads.pmtiles" : null } : null;
   const config = { data: "/data/nepalmap/v1/", version, categories: clientCats, flags: ROADMAP_FLAGS, ...(MAPLIBRE_WORKER ? { maplibreWorker: MAPLIBRE_WORKER } : {}), ...(terrain ? { terrain } : {}), ...(pmtiles ? { pmtiles } : {}), ...(preset ? { preset } : {}) };
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -318,6 +321,7 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <script src="${MAPLIBRE_JS}" defer></script>
 ${ROADMAP_FLAGS.nepalPmtiles ? `<script src="/vendor/nepalmap/pmtiles-4.5.0/pmtiles.js" defer></script><script src="/nepalmap/pmtiles-poc.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoadSafety ? `<script src="/nepalmap/road-safety.js?v=${version}" defer></script>` : ""}
+${ROADMAP_FLAGS.nepalTerrain ? `<script src="/nepalmap/terrain.js?v=${version}" defer></script>` : ""}
 ${ROADMAP_FLAGS.nepalRoutingProviderV2 ? `<script src="/nepalmap/routing-v2.js?v=${version}" defer></script>` : ""}
 <script src="/nepalmap/app.js?v=${version}" defer></script>
 </body></html>`;
