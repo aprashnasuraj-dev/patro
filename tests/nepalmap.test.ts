@@ -42,6 +42,8 @@ describe("Nepal map pages", () => {
   it("ships compact layer files with thousands of places, each tied to a district", () => {
     const worship = JSON.parse(readFileSync(join(out, "data/nepalmap/v1/worship.json"), "utf8"));
     expect(worship.fields.slice(0, 4)).toEqual(["name", "name_ne", "lat", "lng"]);
+    expect(worship.fields.at(-1)).toBe("source_id");
+    expect(new Set(worship.rows.map((r: unknown[]) => r[11])).size).toBe(worship.rows.length);
     expect(worship.rows.length).toBeGreaterThan(5_000);
     expect(worship.rows.filter((r: unknown[]) => r[4] === "hindu").length).toBeGreaterThan(1_000);
     expect(worship.rows.filter((r: unknown[]) => r[4] === "buddhist").length).toBeGreaterThan(300);
@@ -50,6 +52,10 @@ describe("Nepal map pages", () => {
       expect(r[2]).toBeLessThan(31);
       expect(r[8]).toBeGreaterThan(0);
     }
+    const manifest = JSON.parse(readFileSync(join(out, "data/nepalmap/v1/manifest.json"), "utf8"));
+    expect(manifest.dataset_id).toBe("nepalmap-osm-places-v1");
+    expect(manifest.source.license).toBe("ODbL 1.0");
+    expect(["0", "1"]).toContain(String(manifest.confidence));
     const admin = JSON.parse(readFileSync(join(out, "data/nepalmap/v1/admin.json"), "utf8"));
     expect(admin.districts.length).toBe(77);
     expect(Object.keys(admin.palikas).length).toBe(753);
