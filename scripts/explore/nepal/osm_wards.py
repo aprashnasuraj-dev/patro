@@ -178,6 +178,48 @@ def km(lat1, lon1, lat2, lon2) -> float:
     return 12742 * math.asin(math.sqrt(a))
 
 
+def boundary_distance_km(lon: float, lat: float, rings) -> float:
+    """Shortest local-planar distance from a point to any polygon edge, in km.
+    Good for the sub-km/low-km ambiguity thresholds used here; not an area calculation."""
+    ref = math.radians(lat)
+    kx, ky = 111.320 * math.cos(ref), 110.574
+    px, py = lon * kx, lat * ky
+    best = float("inf")
+    for ring in rings:
+        if len(ring) < 2:
+            continue
+        for i in range(1, len(ring)):
+            x1, y1 = ring[i - 1][0] * kx, ring[i - 1][1] * ky
+            x2, y2 = ring[i][0] * kx, ring[i][1] * ky
+            dx, dy = x2 - x1, y2 - y1
+            den = dx * dx + dy * dy
+            t = 0 if den == 0 else max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / den))
+            best = min(best, math.hypot(px - (x1 + t * dx), py - (y1 + t * dy)))
+        if len(ring) > 2:
+            x1, y1 = ring[-1][0] * kx, ring[-1][1] * ky
+            x2, y2 = ring[0][0] * kx, ring[0][1] * ky
+            dx, dy = x2 - x1, y2 - y1
+            den = dx * dx + dy * dy
+            t = 0 if den == 0 else max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / den))
+            best = min(best, math.hypot(px - (x1 + t * dx), py - (y1 + t * dy)))
+    return best
+
+
+def boundary_confidence(distance_km: float | None, full_ward: bool) -> tuple[str, str]:
+    if distance_km is None or not math.isfinite(distance_km):
+        return "unverified", "boundary_unavailable"
+    if full_ward:
+        if distance_km <= 0.25:
+            return "low", "near_ward_boundary"
+        if distance_km <= 1.0:
+            return "medium", "moderately_near_ward_boundary"
+        return "high", "inside_ward_boundary"
+    # A palika-only assignment is spatially supported but cannot claim ward confidence.
+    if distance_km <= 0.25:
+        return "low", "near_palika_boundary_ward_unavailable"
+    return "medium", "inside_palika_boundary_ward_unavailable"
+
+
 class Grid:
     """Bounding-box grid index (0.1° cells) over polygons."""
 
@@ -560,17 +602,23 @@ def main() -> None:
         w = wgrid.find(lon, lat)
         if w:
             pid, n = w["ward_key"].split("-")
-            return int(pid), int(n), None
+            d = boundary_distance_km(lon, lat, w["rings"])
+            conf, reason = boundary_confidence(d, True)
+            return int(pid), int(n), None, conf, round(d * 1000), reason
         p = pgrid.find(lon, lat)
         if p:
-            return p["palika_id"], None, None
-        return None, None, district_at(lon, lat)
+            d = boundary_distance_km(lon, lat, p["rings"])
+            conf, reason = boundary_confidence(d, False)
+            return p["palika_id"], None, None, conf, round(d * 1000), reason
+        did = district_at(lon, lat)
+        return None, None, did, "unverified", None, "district_only_boundary_unavailable"
 
     settlements, pois = [], []
     place_counts = collections.Counter()
     assigned = collections.Counter()
+    confidence_counts = collections.Counter()
     for pt in points:
-        pid, n, did = locate(pt["lon"], pt["lat"])
+        pid, n, did, admin_confidence, boundary_distance_m, admin_confidence_reason = locate(pt["lon"], pt["lat"])
         if pid is None and did is None:
             continue  # outside Nepal (the extract has a small buffer)
         ele = None
@@ -584,7 +632,9 @@ def main() -> None:
         name = pt["name"] if not re.search(r"[ऀ-ॿ]", pt["name"] or "") else ""
         if not name and not name_ne:
             continue
-        row = [name, name_ne if name_ne != name else "", round(pt["lat"], 5), round(pt["lon"], 5), ele, pid, n, did]
+        row = [name, name_ne if name_ne != name else "", round(pt["lat"], 5), round(pt["lon"], 5), ele, pid, n, did,
+               admin_confidence, boundary_distance_m, admin_confidence_reason]
+        confidence_counts[admin_confidence] += 1
         if pt["kind"] == "settlement":
             place_counts[pt["place"]] += 1
             assigned["ward" if n else "palika" if pid else "district"] += 1
@@ -619,7 +669,8 @@ def main() -> None:
     report["settlements"] = {"total": len(settlements), "by_place": dict(place_counts), "assigned": dict(assigned)}
     report["pois"] = {"total": len(pois), "by_category": dict(collections.Counter(p[0] for p in pois))}
     report["district_hq_points"] = len(hq)
-    notice("notice", "Points", f"settlements={len(settlements)} {dict(place_counts)} assigned={dict(assigned)}; pois={len(pois)} {report['pois']['by_category']}")
+    report["admin_confidence"] = dict(confidence_counts)
+    notice("notice", "Points", f"settlements={len(settlements)} {dict(place_counts)} assigned={dict(assigned)}; pois={len(pois)} {report['pois']['by_category']}; confidence={dict(confidence_counts)}")
 
     if len(palika_out) < args.min_palikas or len(settlements) < args.min_palikas * 3:
         notice("error", "Too little data", f"palikas={len(palika_out)} settlements={len(settlements)}; refusing to write")
@@ -639,8 +690,8 @@ def main() -> None:
         (args.out / name).write_text(text + "\n", "utf8")
 
     dump("osm-admin.json", {**meta, "palikas": palika_out, "wards": wards, "district_hq": hq})
-    dump("osm-settlements.json", {**meta, "fields": ["place", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "population", "osm_id"], "rows": settlements})
-    dump("osm-pois.json", {**meta, "fields": ["category", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "sub", "osm_id", "wikipedia"], "rows": pois})
+    dump("osm-settlements.json", {**meta, "fields": ["place", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "admin_confidence", "boundary_distance_m", "admin_confidence_reason", "population", "osm_id"], "rows": settlements})
+    dump("osm-pois.json", {**meta, "fields": ["category", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "admin_confidence", "boundary_distance_m", "admin_confidence_reason", "sub", "osm_id", "wikipedia"], "rows": pois})
     (args.out / "osm-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n", "utf8")
     print("wrote", ", ".join(f"{f.name} {f.stat().st_size // 1024} KB" for f in sorted(args.out.glob("osm-*.json"))))
 
