@@ -80,13 +80,13 @@ jobs:
             sleep 2
           done
           node --input-type=module <<'NODE'
-          import { readFileSync } from "node:fs";
+          import { readFileSync, writeFileSync } from "node:fs";
           const c=JSON.parse(readFileSync("/tmp/library-catalog.json","utf8"));
           if(c.article_count!==2640) throw new Error("Production catalog count="+c.article_count);
           const a=c.articles[0];
           if(!a?.slug) throw new Error("No article slug in production catalog");
           console.log(a.slug);
-          require("node:fs").writeFileSync("/tmp/library-slug",a.slug);
+          writeFileSync("/tmp/library-slug",a.slug);
           NODE
           slug="$(cat /tmp/library-slug)"
           curl -fsS "https://aafnaipatro.com/article/$slug" -o /tmp/article.html
