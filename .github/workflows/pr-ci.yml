@@ -127,6 +127,10 @@ jobs:
           npm run test:core
           npm run test:homepage
 
+      - name: Browser analytics beacon and CSP regression
+        if: steps.changes.outputs.any == 'true'
+        run: node --experimental-strip-types --test tests/google-tag.test.mjs
+
       - name: UI / product build
         if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true'
         shell: bash
