@@ -25,6 +25,10 @@ test('real date and production asset routers bypass Worker for published assets 
       await mkdir(join(directory,path,'..'),{recursive:true});await writeFile(join(directory,path),text);
     }
     const config=JSON.parse(await readFile('wrangler.jsonc','utf8'));
+    assert.ok(config.assets.run_worker_first.length<=100,'Cloudflare routing rule limit');
+    for(const [path,text]of Object.entries({'bali-calendar/icon.svg':'<svg/>','llms.txt':'discovery','llms-full.txt':'full discovery','ai.txt':'policy','.well-known/agents.json':'{}','favicon.ico':'ico','favicon.svg':'<svg/>','icon-192.png':'192','icon-512.png':'512','nepalmap/index.html':'map','nepalmap/nearby.html':'nearby','nepalmap-offline-sw.js':'map offline worker'})){
+      await mkdir(join(directory,path,'..'),{recursive:true});await writeFile(join(directory,path),text);
+    }
     const script="export default {fetch(){return new Response('dynamic',{headers:{'x-worker-invoked':'1'}})}}";
     const worker=WorkerOptionsSchema.shape?.config
       ? {config:{name:'quota-router',compatibilityDate:'2026-09-30',manifest:{mainModule:'index.mjs',modules:{'index.mjs':{type:'esm',contents:script}}},assets:{directory,hasUserWorker:true,runWorkerFirst:['/api/*','/aap/settings.js','/me/*','/nepali-tools/index.html'],notFoundHandling:'none'}}}
@@ -42,10 +46,10 @@ test('real date and production asset routers bypass Worker for published assets 
       ? {config:{name:'production-router',compatibilityDate:'2026-09-30',manifest:{mainModule:'index.mjs',modules:{'index.mjs':{type:'esm',contents:script}}},assets:{directory,hasUserWorker:true,runWorkerFirst:config.assets.run_worker_first,notFoundHandling:'none'}}}
       : {name:'production-router',modules:true,script,compatibilityDate:'2026-09-30',assets:{directory,binding:'ASSETS',run_worker_first:config.assets.run_worker_first,assetConfig:{not_found_handling:'none'}}};
     mf=new Miniflare({workers:[production]});
-    for(const path of ['/robots.txt','/sitemap.xml','/aafnai-logo.png','/icons/calendar.svg','/fonts/calendar.woff2','/nepali-tools/core/roman.mjs']){
+    for(const path of ['/robots.txt','/sitemap.xml','/aafnai-logo.png','/icons/calendar.svg','/fonts/calendar.woff2','/nepali-tools/core/roman.mjs','/bali-calendar/icon.svg','/llms.txt','/llms-full.txt','/ai.txt','/.well-known/agents.json','/favicon.ico','/favicon.svg','/icon-192.png','/icon-512.png','/nepalmap','/nepalmap/nearby','/nepalmap-offline-sw.js']){
       const response=await mf.dispatchFetch('https://aafnaipatro.com'+path);assert.equal(response.status,200,path);assert.equal(response.headers.get('x-worker-invoked'),null,path);
     }
-    for(const path of ['/date/1940-01-01','/date/2026-2-30','/api/v1/me','/aap/settings.js','/me/notes','/nepali-tools/index.html']){
+    for(const path of ['/date/1940-01-01','/date/2026-2-30','/api/v1/me','/api/auth/me','/api/nepal/places','/bali-calendar/','/aap/settings.js','/me/notes','/nepali-tools/index.html']){
       const response=await mf.dispatchFetch('https://aafnaipatro.com'+path);assert.equal(response.headers.get('x-worker-invoked'),'1',path);
     }
   }finally{if(mf)await mf.dispose();await rm(directory,{recursive:true,force:true});}
