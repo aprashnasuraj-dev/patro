@@ -33,12 +33,10 @@
       "!/bali-calendar-sw.js",
       "!/sw.js",
       "!/patro-boot-recovery.js",
-      "!/icon-192.png",
-      "!/icon-512.png",
+      "!/icon-*.png",
       "!/maskable-512.png",
       "!/apple-touch-icon.png",
-      "!/favicon.svg",
-      "!/favicon.ico",
+      "!/favicon.*",
       "!/moon",
       "!/moon/*",
       "!/eclipse",
@@ -48,9 +46,7 @@
       "!/nepal/year",
       "!/nepal/trek-weather",
       "!/nepal/trek-weather/*",
-      "!/nepalmap",
-      "!/nepalmap/*",
-      "!/nepalmap-offline-sw.js",
+      "!/nepalmap*",
       "!/embed/nepalmap/*",
       "!/embed/nepalmap-widget.js",
       "!/sitemap-nepalmap.xml",
@@ -122,7 +118,11 @@
       "!/aafnai-logo.png",
       "!/icons/*",
       "!/fonts/*",
-      "!/nepali-tools/core/*"
+      "!/nepali-tools/core/*",
+      "!/bali-calendar/icon.svg",
+      "!/llms*.txt",
+      "!/ai.txt",
+      "!/.well-known/agents.json"
     ]
   },
   "d1_databases": [
