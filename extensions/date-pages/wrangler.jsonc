@@ -11,6 +11,5 @@
     "not_found_handling": "none"
   },
   "services": [{"binding": "ORIGIN", "service": "patro"}],
-  "routes": [{"pattern": "aafnaipatro.com/date/*", "zone_name": "aafnaipatro.com"}],
   "observability": {"enabled": true}
 }

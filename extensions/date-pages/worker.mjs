@@ -13,7 +13,8 @@ export default {
     if(publicDate&&cache){try{const hit=await cache.match(key);if(hit)return head(hit);}catch{}}
     const response=await env.ORIGIN.fetch(request);
     if(publicDate&&cache&&request.method==='GET'&&response.status===200&&!response.headers.has('set-cookie')&&!/private|no-store/i.test(response.headers.get('cache-control')||'')){
-      const cached=response.clone();cached.headers.set('cache-control','public, max-age=240, s-maxage=240');
+      // Fetch/service-binding response headers remain immutable after clone().
+      const cached=new Response(response.clone().body,response);cached.headers.set('cache-control','public, max-age=240, s-maxage=240');
       const put=cache.put(key,cached).catch(()=>{});if(ctx)ctx.waitUntil(put);else await put;
     }
     return head(response);
