@@ -1,4 +1,6 @@
 // One source for the build-time static pages and the dynamic Worker responses.
+// Cloudflare RUM is auto-injected at the zone edge. Permit its external script
+// and first-party beacon endpoint; never add a duplicate snippet.
 export const GOOGLE_TAG_ID = "G-KWLDWTSK14";
 export const GOOGLE_TAG_INIT = `
   window.dataLayer = window.dataLayer || [];
@@ -26,9 +28,9 @@ export function googleTagCsp(policy: string): string {
     const values = directives.get(name) || directives.get("script-src") || directives.get("default-src") || [];
     // Adding a hash beside unsafe-inline would disable the site's other inline scripts.
     const needsHash = !values.includes("'unsafe-inline'") || values.some(value => /^'(sha\d+-|nonce-)/.test(value));
-    allow(name, ["https://www.googletagmanager.com", ...(needsHash ? [GOOGLE_TAG_HASH] : [])], name === "script-src" ? "default-src" : "script-src");
+    allow(name, ["https://www.googletagmanager.com", "https://static.cloudflareinsights.com", ...(needsHash ? [GOOGLE_TAG_HASH] : [])], name === "script-src" ? "default-src" : "script-src");
   }
-  allow("connect-src", ["https://www.googletagmanager.com", "https://*.google-analytics.com", "https://*.analytics.google.com"]);
+  allow("connect-src", ["'self'", "https://www.googletagmanager.com", "https://*.google-analytics.com", "https://*.analytics.google.com", "https://cloudflareinsights.com"]);
   allow("img-src", ["https://*.google-analytics.com", "https://www.googletagmanager.com"]);
   return [...directives].map(([name, values]) => `${name} ${values.join(" ")}`).join("; ");
 }

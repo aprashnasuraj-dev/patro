@@ -34,6 +34,10 @@ test("strict CSP permits exactly the supplied initializer without enabling arbit
   assert.ok(csp.includes(GOOGLE_TAG_HASH));
   assert.ok(!csp.includes("'unsafe-inline'"));
   assert.ok(csp.includes("https://*.google-analytics.com"));
+  assert.ok(csp.includes("https://static.cloudflareinsights.com"));
+  assert.ok(csp.includes("https://cloudflareinsights.com"));
+  assert.match(csp, /connect-src 'self'/);
+  assert.equal((csp.match(/https:\/\/static\.cloudflareinsights\.com/g) || []).length, 1);
   assert.ok(csp.includes("object-src 'none'"));
   assert.equal(googleTagCsp(csp), csp);
   assert.match(googleTagCsp("default-src 'self'"), /script-src 'self' https:\/\/www.googletagmanager.com/);
@@ -46,6 +50,7 @@ test("existing inline scripts and script-src-elem policies remain functional", (
   assert.ok(!script.includes("sha256-"));
   assert.ok(elements.includes(GOOGLE_TAG_HASH));
   assert.ok(elements.includes("https://www.googletagmanager.com"));
+  assert.ok(elements.includes("https://static.cloudflareinsights.com"));
 });
 
 test("static finalizer covers standalone pages, adjusts CSP, and preserves manifest integrity", async () => {
@@ -63,6 +68,7 @@ test("static finalizer covers standalone pages, adjusts CSP, and preserves manif
     assert.equal(manifest.hashes["index.html"], createHash("sha256").update(html).digest("hex"));
     assert.equal(manifest.bytes, Buffer.byteLength(html));
     assert.ok((await readFile(join(root, "_headers"), "utf8")).includes(GOOGLE_TAG_HASH));
+    assert.ok((await readFile(join(root, "_headers"), "utf8")).includes("https://static.cloudflareinsights.com"));
     await installGoogleTagInBuild(root);
     assert.equal(await readFile(join(root, "advancetools/index.html"), "utf8"), html);
   } finally { await rm(root, { recursive: true, force: true }); }
@@ -87,6 +93,8 @@ test("real Workers HTMLRewriter adds dynamic tags and removes the prebuilt copy"
       const response = await mf.dispatchFetch(`https://example.com${path}`);
       checkTag(await response.text());
       assert.ok(response.headers.get("content-security-policy").includes(GOOGLE_TAG_HASH));
+      assert.ok(response.headers.get("content-security-policy").includes("https://static.cloudflareinsights.com"));
+      assert.ok(response.headers.get("content-security-policy").includes("https://cloudflareinsights.com"));
     }
     for (const path of ["/json", "/admin", "/api/example"]) {
       const response = await mf.dispatchFetch(`https://example.com${path}`);
