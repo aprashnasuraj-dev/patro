@@ -1,0 +1,22 @@
+{
+  "name": "aafnai-library-phase1",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "aafnaipatro.com/library*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/article/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/blogs/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/research/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/sitemap-library.xml", "zone_name": "aafnaipatro.com" }
+  ],
+  "r2_buckets": [
+    { "binding": "LIBRARY", "bucket_name": "aafnai-library" }
+  ],
+  "vars": {
+    "LIBRARY_RELEASE": "phase1",
+    "LIBRARY_ARTICLE_COUNT": "2640"
+  },
+  "observability": { "enabled": true }
+}
