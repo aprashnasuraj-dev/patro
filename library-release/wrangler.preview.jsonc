@@ -1,0 +1,15 @@
+{
+  "name": "aafnai-library-phase1",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "preview_urls": true,
+  "r2_buckets": [
+    { "binding": "LIBRARY", "bucket_name": "aafnai-library" }
+  ],
+  "vars": {
+    "LIBRARY_RELEASE": "phase1",
+    "LIBRARY_ARTICLE_COUNT": "2640"
+  },
+  "observability": { "enabled": true }
+}
