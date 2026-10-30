@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aafnai-library-pages",
+  "compatibility_date": "2026-10-30",
+  "routes": [
+    { "pattern": "aafnaipatro.com/article/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/research/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/blogs/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/library-data/*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/library-sitemap*", "zone_name": "aafnaipatro.com" },
+    { "pattern": "aafnaipatro.com/library-sitemaps/*", "zone_name": "aafnaipatro.com" }
+  ],
+  "assets": {
+    "directory": "./.aafnai-library/static",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
