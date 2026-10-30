@@ -68,7 +68,9 @@ test('long-tail date fallback reuses public output while credentials and private
   const {default:worker}=await moduleFrom('extensions/date-pages/worker.mjs');
   const previous=globalThis.caches,store=new Map();let calls=0;
   globalThis.caches={default:{async match(key){return store.get(key.url)?.clone();},async put(key,value){store.set(key.url,value.clone());}}};
-  const env={ORIGIN:{async fetch(request){calls++;return new Response(request.headers.has('cookie')?'private':'panchang',{headers:{'cache-control':request.headers.has('cookie')?'private, no-store':'public, max-age=300'}});}}};
+  // A native fetch response has immutable headers, just like a real service binding.
+  // Returning a newly constructed Response here used to hide the production failure.
+  const env={ORIGIN:{async fetch(request){calls++;return request.headers.has('cookie')?new Response('private',{headers:{'cache-control':'private, no-store'}}):fetch('data:text/plain,panchang');}}};
   try{
     const url='https://aafnaipatro.com/date/1950-01-01';
     assert.equal(await(await worker.fetch(new Request(url),env)).text(),'panchang');
@@ -76,7 +78,7 @@ test('long-tail date fallback reuses public output while credentials and private
     assert.equal(await(await worker.fetch(new Request(url,{headers:{cookie:'session=private'}}),env)).text(),'private');assert.equal(calls,2);
     const head=await worker.fetch(new Request(url,{method:'HEAD'}),env);assert.equal(await head.text(),'');assert.equal(calls,2);
     await worker.fetch(new Request(url,{headers:{authorization:'Bearer private'}}),env);assert.equal(calls,3);
-    assert.equal(store.size,1);
+    assert.equal(store.size,1);assert.equal([...store.values()][0].headers.get('cache-control'),'public, max-age=240, s-maxage=240');
   }finally{globalThis.caches=previous;}
 });
 
