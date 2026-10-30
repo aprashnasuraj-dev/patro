@@ -1,0 +1,107 @@
+name: Publish Aafnai Library Phase 1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'library-release/AafnaiLibrary_Phase1_2640.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aafnai-library-phase1
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      AAFNAI_LIBRARY_R2_BUCKET: aafnai-library
+      AAFNAI_LIBRARY_BUNDLE_ROOT: .aafnai-library-bundle
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+
+      - name: Require release archive
+        run: test -s library-release/AafnaiLibrary_Phase1_2640.zip
+
+      - name: Extract immutable Phase 1 handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .aafnai-library-bundle .aafnai-library
+          mkdir -p .aafnai-library-bundle .aafnai-library
+          unzip -q library-release/AafnaiLibrary_Phase1_2640.zip -d .aafnai-library-bundle
+
+      - name: Validate release receipt and static budget
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync, statSync } from "node:fs";
+          const receipt=JSON.parse(readFileSync(".aafnai-library-bundle/release-receipt.json","utf8"));
+          if(receipt.article_count!==2640) throw new Error("Expected 2640 articles; got "+receipt.article_count);
+          if(!(receipt.static_asset_count>0 && receipt.static_asset_count<20000)) throw new Error("Static asset budget invalid: "+receipt.static_asset_count);
+          if(!receipt.r2_object_count) throw new Error("R2 object manifest is empty");
+          console.log(receipt);
+          NODE
+          test -s .aafnai-library-bundle/static/library-data/catalog.json
+          test -s .aafnai-library-bundle/static/library-data/search-index.json
+          test -s .aafnai-library-bundle/r2-manifest.json
+
+      - name: Install Wrangler
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+
+      - name: Upload changed visuals and evidence to R2
+        run: node scripts/library/upload-r2.mjs
+
+      - name: Prepare dedicated static asset tree
+        run: cp -a .aafnai-library-bundle/static .aafnai-library/static
+
+      - name: Deploy Aafnai Library static routes
+        run: npx wrangler deploy --config wrangler.library.jsonc
+
+      - name: Production smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in {1..30}; do
+            if curl -fsS https://aafnaipatro.com/library-data/catalog.json -o /tmp/library-catalog.json; then break; fi
+            sleep 2
+          done
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const c=JSON.parse(readFileSync("/tmp/library-catalog.json","utf8"));
+          if(c.article_count!==2640) throw new Error("Production catalog count="+c.article_count);
+          const a=c.articles[0];
+          if(!a?.slug) throw new Error("No article slug in production catalog");
+          console.log(a.slug);
+          require("node:fs").writeFileSync("/tmp/library-slug",a.slug);
+          NODE
+          slug="$(cat /tmp/library-slug)"
+          curl -fsS "https://aafnaipatro.com/article/$slug" -o /tmp/article.html
+          grep -q '<h1' /tmp/article.html
+          grep -q 'AafnaiPatro Research Desk' /tmp/article.html
+          curl -fsS "https://aafnaipatro.com/research/$slug" -o /tmp/research.html
+          grep -q 'RESEARCH RECORD' /tmp/research.html
+          code="$(curl -sS -o /dev/null -w '%{http_code}' "https://aafnaipatro.com/blogs/$slug")"
+          test "$code" = "301"
+          curl -fsS https://aafnaipatro.com/library-sitemap.xml >/tmp/library-sitemap.xml
+          grep -q '<sitemapindex' /tmp/library-sitemap.xml
+
+      - name: Publish verdict
+        run: |
+          echo "Aafnai Library Phase 1 published: 2640 canonical article pages"
+          echo "Article HTML: Workers Static Assets"
+          echo "Research HTML: Workers Static Assets"
+          echo "Visual/evidence payloads: R2 aafnai-library"
