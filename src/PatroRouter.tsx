@@ -59,7 +59,6 @@ const ReadingLookup=lazy(()=>import("./features/dictionary/lookup"));
 const LOOKUP_ROUTES=/^\/(samachar|rashifal|on-this-day|time-machine|guides|date)(\/|$)/;
 const NepaliDictionary=lazy(()=>import("./features/dictionary/routes").then(m=>({default:m.DictionaryApp})));
 const GuidePage=lazy(()=>import("./growth/GuidePage").then(m=>({default:m.GuidePage})));
-const AafnaiLibrary=lazy(()=>import("./library/AafnaiLibrary"));
 const DiscoveryPanel=lazy(()=>import("./growth/DiscoveryPanel").then(m=>({default:m.DiscoveryPanel})));
 
 const DATE_ROUTE_PREFIX="/date/";
@@ -97,7 +96,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/library","/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish","/jyotish/china","/jyotish/matchmaking","/panchang","/muhurat","/planets","/nepal-calendar","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish","/jyotish/china","/jyotish/matchmaking","/panchang","/muhurat","/planets","/nepal-calendar","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
 function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||MM530_CANONICAL_ROUTE.test(p)||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")||p===DICTIONARY_ROUTE||p.startsWith(DICTIONARY_ROUTE+"/")}
 function currentPath(){return clean(window.location.pathname)}
@@ -109,7 +108,6 @@ export function PatroRouter(){
  useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.hasAttribute("download")||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||u.pathname.startsWith(DATE_ROUTE_PREFIX)||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);addEventListener("patro:navigation",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);removeEventListener("patro:navigation",onPop);document.removeEventListener("click",onClick)}},[]);
  const render=()=>{
    if(path==="/guides"||path.startsWith("/guides/"))return <GuidePage path={path}/>;
-   if(path==="/library")return <AafnaiLibrary/>;
    const legacy=LEGACY_REDIRECTS[path];if(legacy)return <Redirect to={legacy}/>;
    if(path==="/"||path==="/today")return <ReferenceHomePage/>;
    if(path==="/methodology")return <MethodologyPage/>;
