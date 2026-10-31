@@ -49,7 +49,7 @@ def update(path):
     if not paragraphs:
         quick=re.search(r'<aside\b[^>]*class=["\'][^"\']*\bquick\b[^"\']*["\'][^>]*>(.*?)</aside>',before,re.I|re.S)
         if quick: paragraphs=[plain(p) for p in PARAGRAPH.findall(quick.group(1))]
-    quick=re.search(r'<aside\\b[^>]*class=["\\\'][^"\\\']*\\bquick\\b[^"\\\']*["\\\'][^>]*>(.*?)</aside>',before,re.I|re.S)
+        quick=re.search(r'<aside\b[^>]*class=["\'][^"\']*\bquick\b[^"\']*["\'][^>]*>(.*?)</aside>',before,re.I|re.S)
     quick_paragraphs=[plain(p) for p in PARAGRAPH.findall(quick.group(1))] if quick else []
     existing_dek=plain(dek_match.group(2))
     new_dek=clean_dek(headline,existing_dek,paragraphs,slug=slug,quick_paragraphs=quick_paragraphs)
