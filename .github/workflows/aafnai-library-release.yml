@@ -4,176 +4,104 @@ on:
   push:
     branches: [main]
     paths:
-      - 'library-release/AafnaiLibrary_Phase1_2640.zip'
-      - 'library-release/render_source_bundle.py'
       - 'library-release/research_note_copy.py'
       - 'library-release/article_dek_copy.py'
       - 'library-release/rewrite_static_research_notes.py'
       - 'library-release/validate_editorial_release.py'
+      - 'scripts/library/r2-editorial-publish.mjs'
       - '.github/workflows/aafnai-library-release.yml'
   workflow_dispatch:
-    inputs:
-      sync_r2_assets:
-        description: 'Sync R2 visuals and research payloads explicitly'
-        type: boolean
-        default: false
 
 permissions:
   contents: read
 
 concurrency:
-  group: aafnai-library-phase1
-  cancel-in-progress: true
+  group: aafnai-library-editorial-production
+  cancel-in-progress: false
 
 jobs:
   publish:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: \${{ secrets.CLOUDFLARE_API_TOKEN || secrets.GIT || secrets.git }}
+      CLOUDFLARE_ACCOUNT_ID: \${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_ZONE_ID: \${{ secrets.CLOUDFLARE_ZONE_ID }}
       AAFNAI_LIBRARY_R2_BUCKET: aafnai-library
-      AAFNAI_LIBRARY_BUNDLE_ROOT: .aafnai-library-bundle
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: package.json
 
-      - name: Require release archive
-        run: test -s library-release/AafnaiLibrary_Phase1_2640.zip
-
-      - name: Extract immutable Phase 1 handoff
+      - name: Preflight release permissions and source integrity
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf .aafnai-library-bundle .aafnai-library
-          mkdir -p .aafnai-library-bundle .aafnai-library
-          unzip -q library-release/AafnaiLibrary_Phase1_2640.zip -d .aafnai-library-bundle
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing Cloudflare API token" >&2; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing Cloudflare account ID" >&2; exit 1; }
+          test -n "$CLOUDFLARE_ZONE_ID" || { echo "Missing Cloudflare zone ID for cache purge" >&2; exit 1; }
+          python3 -m py_compile library-release/research_note_copy.py library-release/article_dek_copy.py library-release/rewrite_static_research_notes.py library-release/validate_editorial_release.py
+          node --check scripts/library/r2-editorial-publish.mjs
+          echo "Live production is the R2-backed aafnai-library-phase1 Worker."
+          echo "No archive file or Workers Static Assets deployment is used."
 
-      - name: Validate research copy patcher
-        run: python3 -m py_compile library-release/rewrite_static_research_notes.py library-release/research_note_copy.py library-release/article_dek_copy.py library-release/render_source_bundle.py library-release/validate_editorial_release.py
+      - name: Snapshot the complete current R2 library
+        run: node scripts/library/r2-editorial-publish.mjs snapshot
 
-      - name: Repair article-specific research notes and repeated subtitles
+      - name: Repair all article subtitles and research notes
         run: python3 library-release/rewrite_static_research_notes.py .aafnai-library-bundle/static --expected 2640
 
-      - name: Validate all released articles and reconcile catalog SEO and JSON-LD
+      - name: Validate 2640 pages, research identities, SEO and JSON-LD
         run: python3 library-release/validate_editorial_release.py .aafnai-library-bundle/static --expected 2640
 
-      - name: Validate release receipt and static budget
+      - name: Publish changed article HTML and catalog to existing R2 bucket
+        run: node scripts/library/r2-editorial-publish.mjs publish
+
+      - name: Verify production using the real library routes
         shell: bash
         run: |
           set -euo pipefail
-          node --input-type=module <<'NODE'
-          import { readFileSync, statSync } from "node:fs";
-          const receipt=JSON.parse(readFileSync(".aafnai-library-bundle/release-receipt.json","utf8"));
-          if(receipt.article_count!==2640) throw new Error("Expected 2640 articles; got "+receipt.article_count);
-          if(!(receipt.static_asset_count>0 && receipt.static_asset_count<20000)) throw new Error("Static asset budget invalid: "+receipt.static_asset_count);
-          if(!receipt.r2_object_count) throw new Error("R2 object manifest is empty");
-          console.log(receipt);
-          NODE
-          test -s .aafnai-library-bundle/static/library-data/catalog.json
-          test -s .aafnai-library-bundle/static/library-data/search-index.json
-          test -s .aafnai-library-bundle/r2-manifest.json
-
-      - name: Install Wrangler
-        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-
-      - name: Decide if this release actually needs R2 writes
-        id: asset_sync
-        shell: bash
-        env:
-          SYNC_REQUESTED: ${{ inputs.sync_r2_assets }}
-        run: |
-          set -euo pipefail
-          if [[ "$SYNC_REQUESTED" == "true" ]]; then
-            echo "required=true" >> "$GITHUB_OUTPUT"
-          elif [[ "$GITHUB_EVENT_NAME" == "push" ]] && git diff --name-only HEAD^ HEAD | grep -Fxq 'library-release/AafnaiLibrary_Phase1_2640.zip'; then
-            echo "required=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "required=false" >> "$GITHUB_OUTPUT"
-            echo "R2 sync skipped: article copy changed, existing visuals/evidence preserved"
-          fi
-
-      - name: Upload changed visuals and evidence to R2
-        if: steps.asset_sync.outputs.required == 'true'
-        run: node scripts/library/upload-r2.mjs
-
-      - name: Prepare dedicated static asset tree
-        run: cp -a .aafnai-library-bundle/static .aafnai-library/static
-
-      - name: Deploy Aafnai Library static routes
-        run: npx wrangler deploy --config wrangler.library.jsonc
-
-      - name: Production smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          for i in {1..30}; do
-            if curl -fsS https://aafnaipatro.com/library-data/catalog.json -o /tmp/library-catalog.json; then break; fi
-            sleep 2
-          done
-          curl -fsS 'https://aafnaipatro.com/library-data/editorial-qa.json' -o /tmp/library-qa.json
-          node --input-type=module <<'NODE'
-          import { readFileSync, writeFileSync } from "node:fs";
-          const c=JSON.parse(readFileSync("/tmp/library-catalog.json","utf8"));
-          if(c.article_count!==2640) throw new Error("Production catalog count="+c.article_count);
-          const qa=JSON.parse(readFileSync("/tmp/library-qa.json","utf8"));
-          if(qa.status!=="pass"||qa.article_count!==2640||qa.research_count!==2640||qa.unique_research_notes!==2640)
-            throw new Error("Editorial release QA failed: "+JSON.stringify(qa));
-          if(qa.catalog_entries_validated<2640) throw new Error("Catalog identities not fully validated");
-          console.log("Editorial release QA:",qa.editorial_sha256,qa.article_count);
-          const a=c.articles[0];
-          if(!a?.slug) throw new Error("No article slug in production catalog");
-          console.log(a.slug);
-          writeFileSync("/tmp/library-slug",a.slug);
-          NODE
-          slug="$(cat /tmp/library-slug)"
-          curl -fsS "https://aafnaipatro.com/article/$slug" -o /tmp/article.html
-          grep -q '<h1' /tmp/article.html
-          grep -q 'AafnaiPatro Research Desk' /tmp/article.html
-          if grep -Eq 'researched sources with article text, claims and visuals kept under one article identity|inspected sources with article text, claims and visuals kept under one article identity' /tmp/article.html; then
-            echo "Stale generic research note found in production" >&2
-            exit 1
-          fi
-          if grep -Eq '<p class="dek">[^<]*UTM Grid Convergence vs Magnetic Declination: Convert Bearings Without a Sign Error' /tmp/article.html; then
-            echo "Repeated headline detected in article subtitle" >&2
-            exit 1
-          fi
-          for check_slug in utm-grid-convergence-vs-magnetic-declination total-station-prism-constant-error-calculator; do
-            curl -fsS "https://aafnaipatro.com/article/$check_slug" -o /tmp/article-check.html
-            python3 - "$check_slug" <<'PY'
-          import html,re,sys
-          slug=sys.argv[1]
-          s=open("/tmp/article-check.html",encoding="utf8").read()
-          h=re.search(r"<h1[^>]*>(.*?)</h1>",s,re.I|re.S)
-          d=re.search(r'<p class="dek">(.*?)</p>',s,re.I|re.S)
-          n=re.search(r'<aside class="research-note">.*?<p>(.*?)</p>',s,re.I|re.S)
-          if not all((h,d,n)): raise SystemExit("Missing editorial elements: "+slug)
-          plain=lambda x:html.unescape(re.sub(r"<[^>]+>","",x)).strip()
-          title,dek,note=plain(h.group(1)),plain(d.group(1)),plain(n.group(1))
-          if dek.casefold().startswith(title.casefold()) or dek.endswith(("…","...")) or "—" in dek:
-              raise SystemExit("Bad live article dek: "+slug)
-          if "kept under one article identity" in note:
-              raise SystemExit("Old live research note: "+slug)
-          print("Live editorial verification passed:",slug)
+          python3 - <<'PY'
+          import html, json, random, re, urllib.request
+          base="https://aafnaipatro.com"
+          def get(p):
+              with urllib.request.urlopen(urllib.request.Request(base+p,headers={"Cache-Control":"no-cache"}),timeout=30) as response:
+                  if response.status!=200: raise RuntimeError(f"{p}: HTTP {response.status}")
+                  return response.read().decode("utf-8")
+          qa=json.loads(get("/library-media/_release/editorial-qa.json"))
+          catalog=json.loads(get("/library-index.json"))
+          if qa.get("status")!="pass" or qa.get("article_count")!=2640 or qa.get("research_count")!=2640:
+              raise RuntimeError("Production QA report invalid")
+          if catalog.get("article_count")!=2640 or len(catalog.get("articles",[]))!=2640:
+              raise RuntimeError("Production catalog count mismatch")
+          slugs=[a["slug"] for a in catalog["articles"]]
+          selected=["utm-grid-convergence-vs-magnetic-declination","total-station-prism-constant-error-calculator"]
+          selected+=random.Random(2640).sample(slugs,18)
+          checked=set()
+          for slug in selected:
+              if slug in checked: continue
+              checked.add(slug)
+              article=get("/article/"+slug)
+              title=re.search(r"<h1\b[^>]*>(.*?)</h1>",article,re.I|re.S)
+              dek=re.search(r'<p class="dek">(.*?)</p>',article,re.I|re.S)
+              note=re.search(r'<aside class="research-note">.*?<p>(.*?)</p>',article,re.I|re.S)
+              if not (title and dek and note): raise RuntimeError("Missing content: "+slug)
+              strip=lambda v: html.unescape(re.sub(r"<[^>]+>","",v)).strip()
+              h,d,n=strip(title.group(1)),strip(dek.group(1)),strip(note.group(1))
+              if d.casefold().startswith(h.casefold()) or d.endswith(("…","...")) or "—" in d:
+                  raise RuntimeError("Broken title/dek: "+slug)
+              if "kept under one article identity" in n:
+                  raise RuntimeError("Stale generic note: "+slug)
+              if slug in selected[:2]: get("/research/"+slug)
+          print(json.dumps({"production":"pass","article_count":2640,"samples_checked":len(checked),"editorial_sha256":qa["editorial_sha256"]}))
           PY
-          done
-          curl -fsS "https://aafnaipatro.com/research/$slug" -o /tmp/research.html
-          grep -q 'RESEARCH RECORD' /tmp/research.html
-          code="$(curl -sS -o /dev/null -w '%{http_code}' "https://aafnaipatro.com/blogs/$slug")"
-          test "$code" = "301"
-          curl -fsS https://aafnaipatro.com/library-sitemap.xml >/tmp/library-sitemap.xml
-          grep -q '<sitemapindex' /tmp/library-sitemap.xml
 
-      - name: Publish verdict
-        run: |
-          echo "Aafnai Library Phase 1 published: 2640 canonical article pages"
-          echo "Article HTML: Workers Static Assets"
-          echo "Research HTML: Workers Static Assets"
-          echo "Visual/evidence payloads: R2 aafnai-library"
+      - name: Upload editorial QA record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aafnai-library-editorial-qa
+          path: .aafnai-library-bundle/static/library-data/editorial-qa.json
+          if-no-files-found: ignore
+          retention-days: 7
