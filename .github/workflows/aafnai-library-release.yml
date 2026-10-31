@@ -1,107 +1,17 @@
-name: Publish Aafnai Library Phase 1
+# Publication ownership: aprashnasuraj2-dev/includedagain.
+# Intentionally disabled in patro to prevent duplicate or unsafe Cloudflare release.
+# Historical workflow content remains in Git history.
+name: Aafnai Library Phase 1 (publishing delegated to includedagain)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'library-release/research_note_copy.py'
-      - 'library-release/article_dek_copy.py'
-      - 'library-release/rewrite_static_research_notes.py'
-      - 'library-release/validate_editorial_release.py'
-      - 'scripts/library/r2-editorial-publish.mjs'
-      - '.github/workflows/aafnai-library-release.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: aafnai-library-editorial-production
-  cancel-in-progress: false
-
 jobs:
-  publish:
+  publication-delegated:
+    if: false
     runs-on: ubuntu-latest
-    timeout-minutes: 90
-    env:
-      CLOUDFLARE_API_TOKEN: \${{ secrets.CLOUDFLARE_API_TOKEN || secrets.GIT || secrets.git }}
-      CLOUDFLARE_ACCOUNT_ID: \${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      CLOUDFLARE_ZONE_ID: \${{ secrets.CLOUDFLARE_ZONE_ID }}
-      AAFNAI_LIBRARY_R2_BUCKET: aafnai-library
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Preflight release permissions and source integrity
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing Cloudflare API token" >&2; exit 1; }
-          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing Cloudflare account ID" >&2; exit 1; }
-          test -n "$CLOUDFLARE_ZONE_ID" || { echo "Missing Cloudflare zone ID for cache purge" >&2; exit 1; }
-          python3 -m py_compile library-release/research_note_copy.py library-release/article_dek_copy.py library-release/rewrite_static_research_notes.py library-release/validate_editorial_release.py
-          node --check scripts/library/r2-editorial-publish.mjs
-          echo "Live production is the R2-backed aafnai-library-phase1 Worker."
-          echo "No archive file or Workers Static Assets deployment is used."
-
-      - name: Snapshot the complete current R2 library
-        run: node scripts/library/r2-editorial-publish.mjs snapshot
-
-      - name: Repair all article subtitles and research notes
-        run: python3 library-release/rewrite_static_research_notes.py .aafnai-library-bundle/static --expected 2640
-
-      - name: Validate 2640 pages, research identities, SEO and JSON-LD
-        run: python3 library-release/validate_editorial_release.py .aafnai-library-bundle/static --expected 2640
-
-      - name: Publish changed article HTML and catalog to existing R2 bucket
-        run: node scripts/library/r2-editorial-publish.mjs publish
-
-      - name: Verify production using the real library routes
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import html, json, random, re, urllib.request
-          base="https://aafnaipatro.com"
-          def get(p):
-              with urllib.request.urlopen(urllib.request.Request(base+p,headers={"Cache-Control":"no-cache"}),timeout=30) as response:
-                  if response.status!=200: raise RuntimeError(f"{p}: HTTP {response.status}")
-                  return response.read().decode("utf-8")
-          qa=json.loads(get("/library-media/_release/editorial-qa.json"))
-          catalog=json.loads(get("/library-index.json"))
-          if qa.get("status")!="pass" or qa.get("article_count")!=2640 or qa.get("research_count")!=2640:
-              raise RuntimeError("Production QA report invalid")
-          if catalog.get("article_count")!=2640 or len(catalog.get("articles",[]))!=2640:
-              raise RuntimeError("Production catalog count mismatch")
-          slugs=[a["slug"] for a in catalog["articles"]]
-          selected=["utm-grid-convergence-vs-magnetic-declination","total-station-prism-constant-error-calculator"]
-          selected+=random.Random(2640).sample(slugs,18)
-          checked=set()
-          for slug in selected:
-              if slug in checked: continue
-              checked.add(slug)
-              article=get("/article/"+slug)
-              title=re.search(r"<h1\b[^>]*>(.*?)</h1>",article,re.I|re.S)
-              dek=re.search(r'<p class="dek">(.*?)</p>',article,re.I|re.S)
-              note=re.search(r'<aside class="research-note">.*?<p>(.*?)</p>',article,re.I|re.S)
-              if not (title and dek and note): raise RuntimeError("Missing content: "+slug)
-              strip=lambda v: html.unescape(re.sub(r"<[^>]+>","",v)).strip()
-              h,d,n=strip(title.group(1)),strip(dek.group(1)),strip(note.group(1))
-              if d.casefold().startswith(h.casefold()) or d.endswith(("…","...")) or "—" in d:
-                  raise RuntimeError("Broken title/dek: "+slug)
-              if "kept under one article identity" in n:
-                  raise RuntimeError("Stale generic note: "+slug)
-              if slug in selected[:2]: get("/research/"+slug)
-          print(json.dumps({"production":"pass","article_count":2640,"samples_checked":len(checked),"editorial_sha256":qa["editorial_sha256"]}))
-          PY
-
-      - name: Upload editorial QA record
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: aafnai-library-editorial-qa
-          path: .aafnai-library-bundle/static/library-data/editorial-qa.json
-          if-no-files-found: ignore
-          retention-days: 7
+      - run: echo "Use aprashnasuraj2-dev/includedagain/.github/workflows/library-phase1-handoff.yml"
