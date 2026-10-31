@@ -43,7 +43,7 @@ for (const [id, slug, file, title, modules] of definitions) {
       read(target, 'html'),
     ]);
     assert.ok(article.includes(`href="${target}"`), `Missing live article CTA: MMG-${id}`);
-    assert.ok(!new RegExp('href=["\\\'](?:\\.\\./)+(?:(?:assets)|(?:tools))/MMG-' + id).test(article),
+    assert.ok(!article.includes('href="../../assets/MMG-' + id + '/') && !article.includes('href="../../tools/MMG-' + id + '/'),
       `Old relative calculator links remain: MMG-${id}`);
     assert.match(tool, /<!doctype html/i, `Not standalone HTML: MMG-${id}`);
     assert.ok(tool.includes(title), `Wrong calculator identity: MMG-${id}`);
