@@ -102,7 +102,7 @@ jobs:
           const qa=JSON.parse(readFileSync("/tmp/library-qa.json","utf8"));
           if(qa.status!=="pass"||qa.article_count!==2640||qa.research_count!==2640||qa.unique_research_notes!==2640)
             throw new Error("Editorial release QA failed: "+JSON.stringify(qa));
-          if(qa.catalog_fields_reconciled<2640) throw new Error("Catalog not reconciled with editorial output");
+          if(qa.catalog_entries_validated<2640) throw new Error("Catalog identities not fully validated");
           console.log("Editorial release QA:",qa.editorial_sha256,qa.article_count);
           const a=c.articles[0];
           if(!a?.slug) throw new Error("No article slug in production catalog");
@@ -124,21 +124,21 @@ jobs:
           for check_slug in utm-grid-convergence-vs-magnetic-declination total-station-prism-constant-error-calculator; do
             curl -fsS "https://aafnaipatro.com/article/$check_slug" -o /tmp/article-check.html
             python3 - "$check_slug" <<'PY'
-import html,re,sys
-slug=sys.argv[1]
-s=open("/tmp/article-check.html",encoding="utf8").read()
-h=re.search(r"<h1[^>]*>(.*?)</h1>",s,re.I|re.S)
-d=re.search(r'<p class="dek">(.*?)</p>',s,re.I|re.S)
-n=re.search(r'<aside class="research-note">.*?<p>(.*?)</p>',s,re.I|re.S)
-if not all((h,d,n)): raise SystemExit("Missing editorial elements: "+slug)
-plain=lambda x:html.unescape(re.sub(r"<[^>]+>","",x)).strip()
-title,dek,note=plain(h.group(1)),plain(d.group(1)),plain(n.group(1))
-if dek.casefold().startswith(title.casefold()) or dek.endswith(("…","...")) or "—" in dek:
-    raise SystemExit("Bad live article dek: "+slug)
-if "kept under one article identity" in note:
-    raise SystemExit("Old live research note: "+slug)
-print("Live editorial verification passed:",slug)
-PY
+          import html,re,sys
+          slug=sys.argv[1]
+          s=open("/tmp/article-check.html",encoding="utf8").read()
+          h=re.search(r"<h1[^>]*>(.*?)</h1>",s,re.I|re.S)
+          d=re.search(r'<p class="dek">(.*?)</p>',s,re.I|re.S)
+          n=re.search(r'<aside class="research-note">.*?<p>(.*?)</p>',s,re.I|re.S)
+          if not all((h,d,n)): raise SystemExit("Missing editorial elements: "+slug)
+          plain=lambda x:html.unescape(re.sub(r"<[^>]+>","",x)).strip()
+          title,dek,note=plain(h.group(1)),plain(d.group(1)),plain(n.group(1))
+          if dek.casefold().startswith(title.casefold()) or dek.endswith(("…","...")) or "—" in dek:
+              raise SystemExit("Bad live article dek: "+slug)
+          if "kept under one article identity" in note:
+              raise SystemExit("Old live research note: "+slug)
+          print("Live editorial verification passed:",slug)
+          PY
           done
           curl -fsS "https://aafnaipatro.com/research/$slug" -o /tmp/research.html
           grep -q 'RESEARCH RECORD' /tmp/research.html
