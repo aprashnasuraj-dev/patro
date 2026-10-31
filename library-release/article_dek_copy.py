@@ -14,7 +14,7 @@ def plain(value):
 
 def _remove_title(title, value):
     text=plain(value).replace("\u2014",", ")
-    name=plain(title)
+    name=plain(title).replace("\u2014",", ")
     if text.casefold().startswith(name.casefold()):
         text=text[len(name):].lstrip(" .:;,\u2013-")
     return text.strip()
