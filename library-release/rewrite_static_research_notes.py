@@ -54,6 +54,15 @@ def update(path):
     m=DEK.search(after)
     if not m: raise ValueError(f"{path}: subtitle lost after note rewrite")
     after=after[:m.start(2)]+html.escape(new_dek,quote=False)+after[m.end(2):]
+    # Correct stale duplicated titles in search and social snippets as well.
+    for attribute in ('name="description"','property="og:description"'):
+        meta_rx=re.compile(r'(<meta\\s+'+re.escape(attribute)+r'\\s+content=")([^"]*)(")',re.I)
+        def fix_meta(m):
+            current=html.unescape(m.group(2))
+            if current.casefold().startswith(headline.casefold()) or current.endswith(("…","...")):
+                return m.group(1)+html.escape(new_dek,quote=True)+m.group(3)
+            return m.group(0)
+        after=meta_rx.sub(fix_meta,after)
     if OLD.search(after):
         raise ValueError(f"{path}: old note survived rewrite")
     if new_dek.casefold().startswith(headline.casefold()):
