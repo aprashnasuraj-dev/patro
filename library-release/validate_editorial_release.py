@@ -74,7 +74,7 @@ def main():
     root=args.root
     article_dir=root/"article"
     research_dir=root/"research"
-    pages=sorted(article_dir.glob("*.html"))
+    pages=sorted(article_dir.rglob("*.html"))
     if len(pages)!=args.expected:
         raise SystemExit(f"Unsafe release: expected {args.expected} article files, found {len(pages)}")
     by_slug={}
@@ -82,7 +82,7 @@ def main():
     source_counts=Counter()
     output_hash=hashlib.sha256()
     for path in pages:
-        slug=path.stem
+        slug=path.stem if path.stem!="index" else path.parent.name
         source=path.read_text(encoding="utf-8")
         if slug in by_slug: raise SystemExit(f"Duplicate slug {slug}")
         heading=H1.findall(source)
@@ -94,7 +94,7 @@ def main():
             raise SystemExit(f"Incomplete page identity or research markup: {slug}")
         if len(set(refs))!=len(refs) or sorted(refs)!=list(range(1,len(refs)+1)):
             raise SystemExit(f"Bad reference numbering: {slug}")
-        if not (research_dir/(slug+".html")).is_file():
+        if not (research_dir/(slug+".html")).is_file() and not (research_dir/slug/"index.html").is_file():
             raise SystemExit(f"Missing research page: {slug}")
         if canonical.group(1).strip()!=f"https://aafnaipatro.com/article/{slug}":
             raise SystemExit(f"Incorrect canonical: {slug}")
@@ -144,7 +144,7 @@ def main():
         path.write_text(json.dumps(data,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     if catalogs_validated<args.expected: raise SystemExit("Catalog identity not fully validated")
     qa={
-        "status":"pass","article_count":len(by_slug),"research_count":len(list(research_dir.glob("*.html"))),
+        "status":"pass","article_count":len(by_slug),"research_count":len(list(research_dir.rglob("*.html"))),
         "unique_research_notes":len(research_notes),
         "catalog_fields_reconciled":catalogs_changed,
         "catalog_entries_validated":catalogs_validated,
