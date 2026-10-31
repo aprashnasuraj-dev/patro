@@ -12,13 +12,18 @@ on:
       - 'library-release/validate_editorial_release.py'
       - '.github/workflows/aafnai-library-release.yml'
   workflow_dispatch:
+    inputs:
+      sync_r2_assets:
+        description: 'Sync R2 visuals and research payloads explicitly'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 concurrency:
   group: aafnai-library-phase1
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   publish:
@@ -31,6 +36,8 @@ jobs:
       AAFNAI_LIBRARY_BUNDLE_ROOT: .aafnai-library-bundle
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - uses: actions/setup-node@v4
         with:
@@ -77,7 +84,24 @@ jobs:
       - name: Install Wrangler
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
 
+      - name: Decide if this release actually needs R2 writes
+        id: asset_sync
+        shell: bash
+        env:
+          SYNC_REQUESTED: ${{ inputs.sync_r2_assets }}
+        run: |
+          set -euo pipefail
+          if [[ "$SYNC_REQUESTED" == "true" ]]; then
+            echo "required=true" >> "$GITHUB_OUTPUT"
+          elif [[ "$GITHUB_EVENT_NAME" == "push" ]] && git diff --name-only HEAD^ HEAD | grep -Fxq 'library-release/AafnaiLibrary_Phase1_2640.zip'; then
+            echo "required=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "required=false" >> "$GITHUB_OUTPUT"
+            echo "R2 sync skipped: article copy changed, existing visuals/evidence preserved"
+          fi
+
       - name: Upload changed visuals and evidence to R2
+        if: steps.asset_sync.outputs.required == 'true'
         run: node scripts/library/upload-r2.mjs
 
       - name: Prepare dedicated static asset tree
