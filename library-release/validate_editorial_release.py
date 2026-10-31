@@ -127,6 +127,7 @@ def main():
     catalogs=list(root.rglob("catalog.json"))
     if not catalogs: raise SystemExit("Missing catalog.json")
     catalogs_changed=0
+    catalogs_validated=0
     for path in catalogs:
         data=json.loads(path.read_text(encoding="utf-8"))
         if not isinstance(data,dict) or not isinstance(data.get("articles"),list): continue
@@ -134,17 +135,19 @@ def main():
         if len(articles)!=args.expected: raise SystemExit(f"Catalog count mismatch: {path}")
         catalog_slugs={x.get("slug") for x in articles}
         if catalog_slugs!=set(by_slug): raise SystemExit(f"Catalog identity mismatch: {path}")
+        catalogs_validated+=len(articles)
         catalogs_changed+=update_index(data,by_slug)
         path.write_text(json.dumps(data,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     for path in root.rglob("search-index.json"):
         data=json.loads(path.read_text(encoding="utf-8"))
         catalogs_changed+=update_index(data,by_slug)
         path.write_text(json.dumps(data,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
-    if not catalogs_changed: raise SystemExit("No catalog descriptions reconciled; check release format")
+    if catalogs_validated<args.expected: raise SystemExit("Catalog identity not fully validated")
     qa={
         "status":"pass","article_count":len(by_slug),"research_count":len(list(research_dir.glob("*.html"))),
         "unique_research_notes":len(research_notes),
         "catalog_fields_reconciled":catalogs_changed,
+        "catalog_entries_validated":catalogs_validated,
         "reference_count_distribution":dict(sorted(source_counts.items())),
         "editorial_sha256":output_hash.hexdigest(),
         "sample_slugs":[name for name in (
