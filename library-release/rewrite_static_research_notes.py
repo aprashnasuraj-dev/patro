@@ -56,7 +56,7 @@ def update(path):
     after=after[:m.start(2)]+html.escape(new_dek,quote=False)+after[m.end(2):]
     # Correct stale duplicated titles in search and social snippets as well.
     for attribute in ('name="description"','property="og:description"'):
-        meta_rx=re.compile(r'(<meta\\s+'+re.escape(attribute)+r'\\s+content=")([^"]*)(")',re.I)
+        meta_rx=re.compile(r'(<meta\s+'+re.escape(attribute)+r'\s+content=")([^"]*)(")',re.I)
         def fix_meta(m):
             current=html.unescape(m.group(2))
             if current.casefold().startswith(headline.casefold()) or current.endswith(("…","...")):
