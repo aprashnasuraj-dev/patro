@@ -38,20 +38,32 @@ def _full_sentences(value):
         return result
     return ""
 
-def clean_dek(title,existing,paragraphs=(),slug=""):
+def clean_dek(title,existing,paragraphs=(),slug="",quick_paragraphs=()):
     if slug in OVERRIDES: return OVERRIDES[slug]
-    # Prefer editorial copy if it is complete and does not repeat the headline.
-    candidates=[existing]+list(paragraphs)
-    for candidate in candidates:
-        text=_remove_title(title,candidate)
-        if not text or text.casefold()==plain(title).casefold():
-            continue
-        text=_full_sentences(text)
-        if text and not text.casefold().startswith(plain(title).casefold()):
-            return text
-    # There is no justified way to invent a technical conclusion from the headline.
-    # Use a descriptive, topic-specific framing that does not make evidence claims.
-    topic=plain(title).replace("\u2014",", ").rstrip(".:")
-    if len(topic)>145:
-        topic=topic[:142].rsplit(" ",1)[0]
-    return "A practical guide to "+topic[0].lower()+topic[1:]+", with key concepts, examples and scope explained in the article."
+    heading=plain(title)
+    quick=[plain(x).casefold() for x in quick_paragraphs if plain(x)]
+    def usable(value):
+        text=_remove_title(heading,value)
+        sentence=_full_sentences(text)
+        if not sentence or sentence.casefold().startswith(heading.casefold()):
+            return ""
+        if sentence.casefold() in quick or any(x.startswith(sentence.casefold()) for x in quick):
+            return ""
+        return sentence
+
+    # Keep complete human-edited subtitles only when they do not duplicate
+    # the opening Quick Answer or the headline.
+    candidate=usable(existing)
+    if candidate: return candidate
+
+    # The first three article paragraphs often repeat the Quick Answer box.
+    # Use a later complete technical sentence instead of copying its lead.
+    for index,paragraph in enumerate(paragraphs):
+        if index<3: continue
+        candidate=usable(paragraph)
+        if candidate:
+            return candidate
+
+    # A conservative fallback avoids fabricating technical claims or
+    # repeating the title when the source lacks an independent subtitle.
+    return "Explore the definitions, practical examples and verification steps needed to apply the concepts in this article."
