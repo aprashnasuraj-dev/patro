@@ -9,6 +9,7 @@ on:
       - 'library-release/research_note_copy.py'
       - 'library-release/article_dek_copy.py'
       - 'library-release/rewrite_static_research_notes.py'
+      - 'library-release/validate_editorial_release.py'
       - '.github/workflows/aafnai-library-release.yml'
   workflow_dispatch:
 
@@ -49,10 +50,13 @@ jobs:
           unzip -q library-release/AafnaiLibrary_Phase1_2640.zip -d .aafnai-library-bundle
 
       - name: Validate research copy patcher
-        run: python3 -m py_compile library-release/rewrite_static_research_notes.py library-release/research_note_copy.py library-release/article_dek_copy.py library-release/render_source_bundle.py
+        run: python3 -m py_compile library-release/rewrite_static_research_notes.py library-release/research_note_copy.py library-release/article_dek_copy.py library-release/render_source_bundle.py library-release/validate_editorial_release.py
 
       - name: Repair article-specific research notes and repeated subtitles
         run: python3 library-release/rewrite_static_research_notes.py .aafnai-library-bundle/static --expected 2640
+
+      - name: Validate all released articles and reconcile catalog SEO and JSON-LD
+        run: python3 library-release/validate_editorial_release.py .aafnai-library-bundle/static --expected 2640
 
       - name: Validate release receipt and static budget
         shell: bash
@@ -90,10 +94,16 @@ jobs:
             if curl -fsS https://aafnaipatro.com/library-data/catalog.json -o /tmp/library-catalog.json; then break; fi
             sleep 2
           done
+          curl -fsS 'https://aafnaipatro.com/library-data/editorial-qa.json' -o /tmp/library-qa.json
           node --input-type=module <<'NODE'
           import { readFileSync, writeFileSync } from "node:fs";
           const c=JSON.parse(readFileSync("/tmp/library-catalog.json","utf8"));
           if(c.article_count!==2640) throw new Error("Production catalog count="+c.article_count);
+          const qa=JSON.parse(readFileSync("/tmp/library-qa.json","utf8"));
+          if(qa.status!=="pass"||qa.article_count!==2640||qa.research_count!==2640||qa.unique_research_notes!==2640)
+            throw new Error("Editorial release QA failed: "+JSON.stringify(qa));
+          if(qa.catalog_fields_reconciled<2640) throw new Error("Catalog not reconciled with editorial output");
+          console.log("Editorial release QA:",qa.editorial_sha256,qa.article_count);
           const a=c.articles[0];
           if(!a?.slug) throw new Error("No article slug in production catalog");
           console.log(a.slug);
@@ -111,6 +121,25 @@ jobs:
             echo "Repeated headline detected in article subtitle" >&2
             exit 1
           fi
+          for check_slug in utm-grid-convergence-vs-magnetic-declination total-station-prism-constant-error-calculator; do
+            curl -fsS "https://aafnaipatro.com/article/$check_slug" -o /tmp/article-check.html
+            python3 - "$check_slug" <<'PY'
+import html,re,sys
+slug=sys.argv[1]
+s=open("/tmp/article-check.html",encoding="utf8").read()
+h=re.search(r"<h1[^>]*>(.*?)</h1>",s,re.I|re.S)
+d=re.search(r'<p class="dek">(.*?)</p>',s,re.I|re.S)
+n=re.search(r'<aside class="research-note">.*?<p>(.*?)</p>',s,re.I|re.S)
+if not all((h,d,n)): raise SystemExit("Missing editorial elements: "+slug)
+plain=lambda x:html.unescape(re.sub(r"<[^>]+>","",x)).strip()
+title,dek,note=plain(h.group(1)),plain(d.group(1)),plain(n.group(1))
+if dek.casefold().startswith(title.casefold()) or dek.endswith(("…","...")) or "—" in dek:
+    raise SystemExit("Bad live article dek: "+slug)
+if "kept under one article identity" in note:
+    raise SystemExit("Old live research note: "+slug)
+print("Live editorial verification passed:",slug)
+PY
+          done
           curl -fsS "https://aafnaipatro.com/research/$slug" -o /tmp/research.html
           grep -q 'RESEARCH RECORD' /tmp/research.html
           code="$(curl -sS -o /dev/null -w '%{http_code}' "https://aafnaipatro.com/blogs/$slug")"
