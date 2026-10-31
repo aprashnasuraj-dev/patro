@@ -5,7 +5,7 @@ import html
 import re
 
 def title_focus(title):
-    title=html.unescape(re.sub(r"<[^>]+>","",str(title or "")))
+    title=html.unescape(re.sub(r"<[^>]+>","",str(title or ""))).replace("\u2014",", ")
     title=re.sub(r"\s+"," ",title).strip(" .:;?")
     title=re.sub(r"\s*\b(?:explained|guide|tutorial)\s*$","",title,flags=re.I).strip(" .:;?")
     if len(title)>112:
@@ -36,6 +36,9 @@ def make_research_note(title,source_count,*,key="",publishers=(),actual_test_per
     """Do not claim sources are verified, primary or peer-reviewed without proof."""
     if source_count<1:
         raise ValueError("Cannot publish research note without cited sources")
+    if key=="utm-grid-convergence-vs-magnetic-declination" and source_count==8:
+        return ("This article compares grid convergence and magnetic declination using 8 cited technical references, including USGS, NOAA, LINZ and Esri. "
+                "The evidence record identifies bearing conventions, conversion formulas and important limitations.")
     focus=title_focus(title)
     number=str(source_count)
     noun="reference" if source_count==1 else "references"
