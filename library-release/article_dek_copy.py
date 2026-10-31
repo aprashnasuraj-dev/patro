@@ -66,8 +66,8 @@ def clean_dek(title,existing,paragraphs=(),slug="",quick_paragraphs=()):
 
     # A conservative fallback avoids fabricating technical claims or
     # repeating the title when the source lacks an independent subtitle.
-    topic=heading.replace("\\u2014",", ").strip(" .:;")
-    topic=re.sub(r"\\s+"," ",topic)
+    topic=heading.replace(chr(0x2014),", ").strip(" .:;")
+    topic=re.sub(r"\s+"," ",topic)
     if len(topic)>125:
         topic=topic[:122].rsplit(" ",1)[0].rstrip(" ,:;")
     if not topic:
