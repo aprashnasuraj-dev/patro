@@ -1,0 +1,41 @@
+name: Mission Mangal calculator static and browser smoke
+on:
+  pull_request:
+    paths:
+      - 'public/assets/MMG-*/**'
+      - 'public/tools/MMG-*/**'
+      - 'public/_headers'
+      - 'package.json'
+      - 'scripts/verify-mmg-calculator-routes.mjs'
+      - 'tests/mmg-calculator-browser.test.mjs'
+      - '.github/workflows/mmg-calculator-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  calculator-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 13 HTML tools and 6 JavaScript assets
+        run: node scripts/verify-mmg-calculator-routes.mjs --source-only
+      - name: Syntax-check companion JavaScript
+        run: |
+          node --check public/assets/MMG-2430/calculator.js
+          node --check public/assets/MMG-2436/calculator.js
+          node --check public/tools/MMG-2832/calculator.mjs
+          node --check public/assets/MMG-2874/effect_size_core.js
+          node --check public/assets/MMG-2874/calculator_ui.js
+          node --check public/assets/MMG-2964/interpolation-calculator.js
+      - name: Install project test dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium for browser checks
+        run: npx playwright install --with-deps chromium
+      - name: Check desktop/mobile boot and known numeric and invalid-input cases
+        run: node --test tests/mmg-calculator-browser.test.mjs
