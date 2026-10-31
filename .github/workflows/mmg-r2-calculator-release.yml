@@ -1,0 +1,33 @@
+name: Mission Mangal R2 calculator release integrity
+
+on:
+  pull_request:
+    paths:
+      - 'library-release/render_source_bundle.py'
+      - 'library-release/tests/test_mmg_calculator_links.py'
+      - 'scripts/library/verify-mmg-r2-release.mjs'
+      - '.github/workflows/mmg-r2-calculator-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  published-calculator-integrity:
+    name: R2 calculator rebuild contract and live URLs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal renderer test dependencies
+        run: python -m pip install 'Markdown>=3.7,<4' 'beautifulsoup4>=4.12,<5'
+      - name: Test preservation of all 13 calculator URLs and missing CTAs
+        run: python -m unittest discover -s library-release/tests -p 'test_mmg_calculator_links.py' -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify live article-to-tool links, HTML identities and JS dependencies
+        run: node scripts/library/verify-mmg-r2-release.mjs
