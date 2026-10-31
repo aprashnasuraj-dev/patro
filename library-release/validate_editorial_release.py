@@ -13,21 +13,21 @@ import re
 def plain(s):
     return html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 
-H1=re.compile(r"<h1\\b[^>]*>(.*?)</h1>",re.I|re.S)
-DEK=re.compile(r'<p\\b[^>]*class=["\\\'][^"\\\']*\\bdek\\b[^"\\\']*["\\\'][^>]*>(.*?)</p>',re.I|re.S)
-NOTE=re.compile(r'<aside\\b[^>]*class=["\\\'][^"\\\']*\\bresearch-note\\b[^"\\\']*["\\\'][^>]*>.*?<p[^>]*>(.*?)</p>',re.I|re.S)
-QUICK=re.compile(r'<aside\\b[^>]*class=["\\\'][^"\\\']*\\bquick\\b[^"\\\']*["\\\'][^>]*>(.*?)</aside>',re.I|re.S)
-P=re.compile(r"<p\\b[^>]*>(.*?)</p>",re.I|re.S)
-REF=re.compile(r'<li\\b[^>]*id=["\\\']ref-(\\d+)["\\\']',re.I)
-CANONICAL=re.compile(r'<link\\s+rel=["\\\']canonical["\\\']\\s+href=["\\\']([^"\\\']+)',re.I)
-SCRIPT=re.compile(r'(<script\\s+type=["\\\']application/ld\\+json["\\\'][^>]*>)(.*?)(</script>)',re.I|re.S)
+H1=re.compile(r"<h1\b[^>]*>(.*?)</h1>",re.I|re.S)
+DEK=re.compile(r'<p\b[^>]*class=["\\'][^"\\']*\bdek\b[^"\\']*["\\'][^>]*>(.*?)</p>',re.I|re.S)
+NOTE=re.compile(r'<aside\b[^>]*class=["\\'][^"\\']*\bresearch-note\b[^"\\']*["\\'][^>]*>.*?<p[^>]*>(.*?)</p>',re.I|re.S)
+QUICK=re.compile(r'<aside\b[^>]*class=["\\'][^"\\']*\bquick\b[^"\\']*["\\'][^>]*>(.*?)</aside>',re.I|re.S)
+P=re.compile(r"<p\b[^>]*>(.*?)</p>",re.I|re.S)
+REF=re.compile(r'<li\b[^>]*id=["\\']ref-(\d+)["\\']',re.I)
+CANONICAL=re.compile(r'<link\s+rel=["\\']canonical["\\']\s+href=["\\']([^"\\']+)',re.I)
+SCRIPT=re.compile(r'(<script\s+type=["\\']application/ld\+json["\\'][^>]*>)(.*?)(</script>)',re.I|re.S)
 STALE=re.compile(r"(researched|inspected) sources? with article text, claims and visuals kept under one article identity",re.I)
 DESCRIPTION_FIELDS=("dek","description","summary")
 
 def change_metadata(text,dek):
     safe=html.escape(dek,quote=True)
     for key in ('name="description"','property="og:description"','name="twitter:description"'):
-        pattern=re.compile(r'(<meta\\s+'+re.escape(key)+r'\\s+content=")([^"]*)(")',re.I)
+        pattern=re.compile(r'(<meta\s+'+re.escape(key)+r'\s+content=")([^"]*)(")',re.I)
         text=pattern.sub(lambda m:m.group(1)+safe+m.group(3),text)
     def jsonld(m):
         try: data=json.loads(m.group(2))
@@ -40,7 +40,7 @@ def change_metadata(text,dek):
             elif isinstance(obj,list):
                 for v in obj: visit(v)
         visit(data)
-        encoded=json.dumps(data,ensure_ascii=False,separators=(",",":")).replace("<","\\u003c")
+        encoded=json.dumps(data,ensure_ascii=False,separators=(",",":")).replace("<",chr(92)+"u003c")
         return m.group(1)+encoded+m.group(3)
     return SCRIPT.sub(jsonld,text)
 
@@ -108,7 +108,7 @@ def main():
             leads=[plain(x).casefold() for x in P.findall(quick.group(1))]
             if dek.casefold() in leads or any(x.startswith(dek.casefold()) for x in leads):
                 raise SystemExit(f"Subtitle copied from Quick Answer: {slug}")
-        if STALE.search(source) or not re.search(r"\\b"+str(len(refs))+r"\\b",note):
+        if STALE.search(source) or not re.search(r"\b"+str(len(refs))+r"\b",note):
             raise SystemExit(f"Stale or inaccurate research note: {slug}")
         if "—" in note:
             raise SystemExit(f"Em dash in new research note: {slug}")
@@ -123,7 +123,7 @@ def main():
         if changed!=source: path.write_text(changed,encoding="utf-8")
         by_slug[slug]=dek
         source_counts[len(refs)]+=1
-        output_hash.update((slug+"\\0"+title+"\\0"+dek+"\\0"+note+"\\n").encode("utf-8"))
+        output_hash.update((slug+"\0"+title+"\0"+dek+"\0"+note+"\n").encode("utf-8"))
     catalogs=list(root.rglob("catalog.json"))
     if not catalogs: raise SystemExit("Missing catalog.json")
     catalogs_changed=0
@@ -157,6 +157,6 @@ def main():
     if qa["research_count"]!=args.expected: raise SystemExit("Research page count mismatch")
     qa_path=root/"library-data"/"editorial-qa.json"
     qa_path.parent.mkdir(parents=True,exist_ok=True)
-    qa_path.write_text(json.dumps(qa,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    qa_path.write_text(json.dumps(qa,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(qa,ensure_ascii=False))
 if __name__=="__main__": main()
