@@ -227,3 +227,43 @@
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=300, s-maxage=3600, must-revalidate
   X-Content-Type-Options: nosniff
+
+# Mission Mangal tools use stable, unversioned paths. Do not inherit /assets/* immutable 1-year caching.
+/tools/MMG-0174/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/tools/MMG-0300/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/tools/MMG-0330/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/tools/MMG-0360/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/tools/MMG-2832/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-0810/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-1608/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-2430/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-2436/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-2838/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-2844/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-2874/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/MMG-2964/*
+  Cache-Control: public, max-age=300, must-revalidate
