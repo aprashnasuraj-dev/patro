@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Camera Pixel Scale Calculator | Mission Mangal</title>
+<style>
+:root{font:16px/1.55 system-ui,sans-serif;color-scheme:light;background:#f2f6fa;color:#1a3147}*{box-sizing:border-box}main{max-width:880px;margin:2rem auto;padding:1.5rem;background:white;border-radius:18px;box-shadow:0 10px 40px #152f4520}h1{font-size:1.9rem;line-height:1.2}p{max-width:75ch}form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}label{display:grid;gap:.35rem;font-weight:600}input{font:inherit;padding:.7rem;border:1px solid #8ba4b8;border-radius:8px;max-width:100%;width:100%}input:focus{outline:3px solid #9bd3ec}button{font:inherit;font-weight:700;padding:.75rem 1.25rem;border:0;border-radius:9px;background:#145c80;color:white;cursor:pointer;align-self:end}button:hover{background:#0c405c}output{display:block;margin-top:1.5rem;padding:1.2rem;border-radius:12px;background:#edf7fb}output[hidden]{display:none}.warning{border-left:4px solid #b96922;padding-left:1rem}.error{color:#8a241e;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.6rem}.metric{padding:.8rem;background:white;border-radius:8px}.metric strong{display:block;font-size:1.3rem}small{color:#455e73}
+</style></head><body><main><h1>Camera pixel scale and field-of-view calculator</h1>
+<p>Browser-only geometric estimate. Original detector dimensions are physical pixels, not already-binned or resampled output pixels. Nothing is uploaded.</p>
+<form id="form">
+<label>Physical pixel pitch (µm)<input name="pitchUm" type="number" min="0.000001" step="any" value="3.76" required></label>
+<label>Base focal length (mm)<input name="focalMm" type="number" min="0.000001" step="any" value="1000" required></label>
+<label>Optical multiplier (0.8 reducer; 2 Barlow)<input name="multiplier" type="number" min="0.000001" step="any" value="1" required></label>
+<label>Original detector width (physical pixels)<input name="widthPx" type="number" min="1" step="1" value="3000" required></label>
+<label>Original detector height (physical pixels)<input name="heightPx" type="number" min="1" step="1" value="2000" required></label>
+<label>Binning x (integer)<input name="binX" type="number" min="1" step="1" value="1" required></label>
+<label>Binning y (integer)<input name="binY" type="number" min="1" step="1" value="1" required></label>
+<label>Optional pitch 1σ uncertainty (µm)<input name="pitchSigmaUm" type="number" min="0" step="any" value="0"></label>
+<label>Optional focal-length 1σ uncertainty (mm)<input name="focalSigmaMm" type="number" min="0" step="any" value="0"></label>
+<button type="submit">Calculate locally</button></form>
+<p id="error" class="error" role="alert" aria-live="assertive"></p>
+<output id="result" aria-live="polite" hidden></output>
+<p class="warning"><strong>Limit:</strong> Nominal small-angle geometry only. This does not solve a WCS or estimate real astrometric accuracy. Reducer factor assumed exact; field distortion and cropping not modeled.</p>
+<small>Equation: scale (arcsec/physical pixel) = (180×3600/π÷1000) × pitch(µm) ÷ [focal length(mm) × multiplier]. All calculations occur in this page's JavaScript.</small>
+</main><script type="module">
+import {calculatePixelScale} from './calculator.js';
+const form=document.getElementById('form'),error=document.getElementById('error'),out=document.getElementById('result');
+function metric(label,value){const div=document.createElement('div');div.className='metric';const s=document.createElement('span');s.textContent=label;const b=document.createElement('strong');b.textContent=value;div.append(s,b);return div}
+form.addEventListener('submit',event=>{event.preventDefault();error.textContent='';out.hidden=true;out.replaceChildren();
+try{const input=Object.fromEntries(new FormData(form).entries());for(const k of Object.keys(input))input[k]=Number(input[k]);const r=calculatePixelScale(input);const g=document.createElement('div');g.className='grid';const f=(x,n=5)=>Number(x).toFixed(n);[
+['Effective focal length',f(r.effectiveFocalMm,2)+' mm'],['Output grid',r.outputWidthPx+' × '+r.outputHeightPx+' px'],
+['X scale',f(r.scaleXArcsec)+' arcsec/output px'],['Y scale',f(r.scaleYArcsec)+' arcsec/output px'],
+['Equal-area square scale',f(r.equivalentSquareArcsec)+' arcsec/px'],
+['Field width',f(r.fieldWidthArcmin,3)+' arcmin'],['Field height',f(r.fieldHeightArcmin,3)+' arcmin'],
+['Optical relative 1σ',f(r.relativeSigma*100,4)+'%'],
+['X scale optical 1σ',f(r.scaleXSigmaArcsec,6)+' arcsec/output px']
+].forEach(([k,v])=>g.append(metric(k,v)));out.append(g);out.hidden=false;
+}catch(e){error.textContent=e instanceof Error?e.message:'Invalid input';}});
+form.requestSubmit();
+</script></body></html>
