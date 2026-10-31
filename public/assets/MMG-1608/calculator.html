@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synthetic PGA–PGV Frequency Explorer | Mission Mangal</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,Arial,sans-serif;color:#183047;background:#f4f7fb}
+body{max-width:1060px;margin:0 auto;padding:20px}h1{font-size:clamp(1.55rem,3vw,2.4rem);margin-bottom:4px}p{line-height:1.55}
+.card{background:white;border:1px solid #dce4ec;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 3px 15px #1232}
+.warning{border-left:5px solid #b65a18;padding:10px 16px;background:#fff3e6}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+label{display:block;font-weight:650;margin-bottom:7px}input,select,button{font:inherit;padding:10px;border-radius:8px;border:1px solid #a5b7c8;width:100%;box-sizing:border-box}
+button{width:auto;background:#135c80;color:white;border:0;cursor:pointer;font-weight:700}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f0a331;outline-offset:2px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}.metric{background:#eaf3f8;border-radius:10px;padding:13px}.metric b{font-size:1.45rem;display:block;margin-top:4px}
+#error{color:#9d1e1e;font-weight:700;min-height:1.5em}#plot{width:100%;height:auto;border:1px solid #dce4ec;background:#fff}
+small{color:#476071}code{background:#edf1f5;padding:2px 5px}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{padding:9px;border-bottom:1px solid #dce4ec;text-align:right}th:first-child,td:first-child{text-align:left}
+@media(max-width:600px){body{padding:10px}.card{padding:14px}}
+</style></head><body>
+<h1>PGA–PGV frequency explorer</h1><p>Explore a <strong>synthetic single-frequency sinusoid</strong> with transparent units. All calculations run locally in your browser; no data is uploaded.</p>
+<div class="warning" role="note"><strong>Not a real-earthquake PGA-to-PGV converter.</strong> The frequency is an assumption you provide. This output is not a site-specific hazard, intensity or building safety estimate.</div>
+<section class="card" aria-label="Inputs"><div class="controls">
+<div><label for="pga">Peak acceleration</label><input id="pga" type="number" min="0" step="any" value="0.2" required></div>
+<div><label for="unit">Acceleration unit</label><select id="unit"><option value="g">g</option><option value="mps2">m/s²</option><option value="cmps2">cm/s²</option></select></div>
+<div><label for="frequency">Assumed frequency (Hz)</label><input id="frequency" type="number" min="0.05" max="20" step="any" value="1" required></div>
+<div><label for="duration">Waveform display (seconds)</label><input id="duration" type="number" min="0.5" max="10" step="any" value="2" required></div>
+</div><p id="error" role="alert" aria-live="polite"></p></section>
+<section class="card"><h2>Calculated amplitudes</h2><div class="metrics">
+<div class="metric">PGV <small>(cm/s)</small><b id="velocity">—</b></div>
+<div class="metric">Displacement amplitude <small>(mm)</small><b id="displacement">—</b></div>
+<div class="metric">Period <small>(s)</small><b id="period">—</b></div>
+<div class="metric">PGV / PGA <small>(s)</small><b id="ratio">—</b></div></div>
+<p id="working" aria-live="polite"></p></section>
+<section class="card"><h2>Time histories, normalized to their own peak</h2><svg id="plot" viewBox="0 0 920 330" role="img" aria-label="Synthetic acceleration and velocity curves over time">
+<line x1="45" y1="155" x2="900" y2="155" stroke="#b7c8d6"/><line x1="45" y1="25" x2="45" y2="286" stroke="#b7c8d6"/>
+<path id="accLine" fill="none" stroke="#137f9c" stroke-width="2.8"/><path id="velLine" fill="none" stroke="#d77428" stroke-width="2.8"/>
+<text x="55" y="25" font-size="16">Acceleration (blue), velocity (orange), each normalized to ±1</text><text x="780" y="314" font-size="15">Time (seconds)</text></svg>
+<p><small>Curves show relative shape only. Vertical axes are normalized separately, so compare numerical amplitudes above rather than line heights.</small></p></section>
+<section class="card"><h2>Frequency sensitivity at current PGA</h2><p>For each frequency, the table uses the same acceleration amplitude. Export contains model inputs and deterministic calculated results only.</p><table><thead><tr><th>Frequency (Hz)</th><th>PGV (cm/s)</th><th>Displacement (mm)</th><th>Period (s)</th></tr></thead><tbody id="sweep"></tbody></table>
+<p><button id="export" type="button">Export synthetic CSV</button></p></section>
+<section class="card"><h2>Model and limits</h2><p><code>a(t)=A sin(2πft)</code>, <code>v(t)=−A cos(2πft)/(2πf)</code>, <code>u(t)=−A sin(2πft)/(2πf)²</code>. PGA is A; PGV is A/(2πf). Zero-mean periodic integration constants are assumed. Real records require baseline correction, instrument metadata and frequency content. Neither the calculator nor its CSV is a code-compliant structural analysis.</p><p>Sources: <a href="https://www.usgs.gov/programs/earthquake-hazards/science/earthquake-hazards-201-technical-qa">USGS technical Q&amp;A</a> and <a href="https://escweb.wr.usgs.gov/nsmp-data/processing.html">USGS NSMP processing</a>.</p></section>
+<script>
+'use strict';
+const G=9.80665,PI=Math.PI;
+function calculate(pga,unit,f){
+  if(!Number.isFinite(pga)||pga<0)throw new RangeError('PGA must be a finite non-negative number.');
+  if(!Number.isFinite(f)||f<0.05||f>20)throw new RangeError('Frequency must be from 0.05 to 20 Hz.');
+  const factor=unit==='g'?G:unit==='mps2'?1:unit==='cmps2'?.01:NaN;
+  if(!Number.isFinite(factor))throw new RangeError('Unsupported acceleration unit.');
+  const A=pga*factor;if(!Number.isFinite(A)||A>5*G)throw new RangeError('Input exceeds this educational tool\'s 5 g display limit.');
+  const w=2*PI*f;
+  return {A,w,pgv:A/w*100,displacement:A/(w*w)*1000,period:1/f,ratio:1/w,f};
+}
+const $=id=>document.getElementById(id);let rows=[];
+const fmt=x=>Number.isFinite(x)?Number(x.toPrecision(6)).toString():'—';
+function render(){
+  const pga=$('pga').valueAsNumber,f=$('frequency').valueAsNumber,duration=$('duration').valueAsNumber,unit=$('unit').value;
+  $('error').textContent='';
+  try{
+    if(!Number.isFinite(duration)||duration<0.5||duration>10)throw new RangeError('Display duration must be 0.5–10 seconds.');
+    const v=calculate(pga,unit,f);
+    $('velocity').textContent=fmt(v.pgv);$('displacement').textContent=fmt(v.displacement);$('period').textContent=fmt(v.period);$('ratio').textContent=fmt(v.ratio);
+    $('working').textContent=`Converted A = ${fmt(v.A)} m/s²; ω = 2π × ${fmt(f)} = ${fmt(v.w)} rad/s; PGV = 100A/ω = ${fmt(v.pgv)} cm/s; U = 1000A/ω² = ${fmt(v.displacement)} mm.`;
+    const N=480,acc=[],vel=[];
+    for(let i=0;i<=N;i++){
+      const t=i/N*duration,x=45+i/N*850;
+      acc.push(`${i?'L':'M'}${x.toFixed(2)} ${(155-120*Math.sin(v.w*t)).toFixed(2)}`);
+      vel.push(`${i?'L':'M'}${x.toFixed(2)} ${(155+120*Math.cos(v.w*t)).toFixed(2)}`);
+    }
+    $('accLine').setAttribute('d',acc.join(' '));$('velLine').setAttribute('d',vel.join(' '));
+    rows=[.5,1,2,4].map(ff=>calculate(pga,unit,ff));
+    $('sweep').replaceChildren(...rows.map(row=>{const tr=document.createElement('tr');for(const v of [row.f,row.pgv,row.displacement,row.period]){const td=document.createElement('td');td.textContent=fmt(v);tr.appendChild(td);}return tr;}));
+    $('export').disabled=false;
+  }catch(e){$('error').textContent=e.message;for(const id of ['velocity','displacement','period','ratio'])$(id).textContent='—';$('working').textContent='';$('accLine').setAttribute('d','');$('velLine').setAttribute('d','');$('sweep').replaceChildren();rows=[];$('export').disabled=true;}
+}
+for(const id of ['pga','unit','frequency','duration'])$(id).addEventListener('input',render);
+$('export').addEventListener('click',()=>{
+  if(!rows.length)return;
+  const head=['model','input_pga','input_unit','frequency_hz','acceleration_m_s2','pgv_cm_s','displacement_mm','period_s'];
+  const csv=[head.join(','),...rows.map(r=>['synthetic_sinusoid',$('pga').value,$('unit').value,r.f,r.A,r.pgv,r.displacement,r.period].join(','))].join('\r\n')+'\r\n';
+  const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='synthetic-pga-pgv-sensitivity.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+render();
+</script></body></html>
