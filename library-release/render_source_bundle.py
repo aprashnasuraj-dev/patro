@@ -5,6 +5,7 @@ from collections import Counter
 from datetime import date, datetime, timezone
 import markdown
 from bs4 import BeautifulSoup
+from research_note_copy import make_research_note
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SITE_ORIGIN=os.environ.get("LIBRARY_SITE_ORIGIN","https://aafnaipatro.com").rstrip("/")
@@ -84,15 +85,15 @@ def expertise(meta):
         key=str(raw).lower();label=mapping.get(key,key.replace("_"," "))
         if label and label not in labels: labels.append(label)
     return " · ".join(labels[:3] or ["evidence-based technical research"])
-def research_note(meta,count):
+def research_note(meta,sources,item):
     proof=meta.get("editorial_proof") or {}
-    text="Prepared from %d inspected source%s with article text, claims and visuals kept under one article identity."%(count,"" if count==1 else "s")
-    if proof.get("actual_test_performed") is True: text+=" The source package records executed calculations, code checks or visual verification where applicable."
-    limitations=str(proof.get("limitations") or "")
-    if limitations:
-        first=re.split(r"(?<=[.!?])\s+",limitations.strip())[0]
-        if first: text+=" "+first
-    return text
+    return make_research_note(
+        item.get("title") or meta.get("title") or "",
+        len(sources),
+        key=item.get("slug") or meta.get("topic_id") or "",
+        publishers=[row.get("publisher","") for row in sources],
+        actual_test_performed=proof.get("actual_test_performed") is True,
+    )
 def description(meta,markdown_text):
     p=meta.get("presentation") or {};seo=p.get("seo") or {}
     for value in (seo.get("description"),p.get("dek"),meta.get("description")):
@@ -175,7 +176,7 @@ def build_article(template,record,item,items):
     if hero_path: hero_html='<figure class="hero-figure"><img src="%s" alt="%s" width="%s" height="%s" fetchpriority="high"><figcaption><span>%s</span><small>Original AafnaiPatro Research Desk visual</small></figcaption></figure>'%(html.escape(hero_url,quote=True),html.escape(str(hero.get("alt") or item["title"]+" explanatory diagram"),quote=True),html.escape(str(hero.get("width") or 1200)),html.escape(str(hero.get("height") or 680)),html.escape(str(hero.get("caption") or "")))
     author=str(meta.get("author") or meta.get("byline") or AUTHOR_DEFAULT);canonical=SITE_ORIGIN+"/article/"+item["slug"]
     schema={"@context":"https://schema.org","@type":["Article","TechArticle"],"headline":item["title"],"description":item["description"],"mainEntityOfPage":canonical,"author":{"@type":"Organization","name":author},"publisher":{"@type":"Organization","name":"AafnaiPatro","url":SITE_ORIGIN},"articleSection":item["sector"],"about":{"@type":"Thing","name":item["topic"]},"image":[hero_url] if hero_path else [],"datePublished":str(date.today()),"dateModified":str(date.today())}
-    return replace(template,{"SEO_TITLE":html.escape(str(seo.get("title") or item["title"])),"META_DESCRIPTION":html.escape(item["description"],quote=True),"CANONICAL":html.escape(canonical,quote=True),"HERO_URL":html.escape(hero_url,quote=True),"ASSET_ORIGIN":html.escape(ASSET_ORIGIN,quote=True),"JSON_LD":json.dumps(schema,ensure_ascii=False,separators=(",",":")),"SECTOR":html.escape(item["sector"]),"TOPIC":html.escape(item["topic"]),"KICKER":html.escape(str(p.get("kicker") or item["sector"])),"TITLE":html.escape(item["title"]),"DEK":html.escape(item["dek"]),"AUTHOR":html.escape(author),"EXPERTISE":html.escape(expertise(meta)),"RESEARCH_NOTE":html.escape(research_note(meta,len(sources))),"RESEARCH_URL":html.escape(item["research_url"],quote=True),"TOPIC_ID":html.escape(item["topic_id"]),"TAGS":"".join("<span>%s</span>"%html.escape(str(tag)) for tag in p.get("tags") or []),"QUICK":"".join("<p>%s</p>"%html.escape(value) for value in quick_summary(meta,record["markdown"])),"HERO":hero_html,"BODY":article_body(record["markdown"],meta,assets,sources),"REFERENCES":references_html(sources),"RELATED":related_html(item,items)})
+    return replace(template,{"SEO_TITLE":html.escape(str(seo.get("title") or item["title"])),"META_DESCRIPTION":html.escape(item["description"],quote=True),"CANONICAL":html.escape(canonical,quote=True),"HERO_URL":html.escape(hero_url,quote=True),"ASSET_ORIGIN":html.escape(ASSET_ORIGIN,quote=True),"JSON_LD":json.dumps(schema,ensure_ascii=False,separators=(",",":")),"SECTOR":html.escape(item["sector"]),"TOPIC":html.escape(item["topic"]),"KICKER":html.escape(str(p.get("kicker") or item["sector"])),"TITLE":html.escape(item["title"]),"DEK":html.escape(item["dek"]),"AUTHOR":html.escape(author),"EXPERTISE":html.escape(expertise(meta)),"RESEARCH_NOTE":html.escape(research_note(meta,sources,item)),"RESEARCH_URL":html.escape(item["research_url"],quote=True),"TOPIC_ID":html.escape(item["topic_id"]),"TAGS":"".join("<span>%s</span>"%html.escape(str(tag)) for tag in p.get("tags") or []),"QUICK":"".join("<p>%s</p>"%html.escape(value) for value in quick_summary(meta,record["markdown"])),"HERO":hero_html,"BODY":article_body(record["markdown"],meta,assets,sources),"REFERENCES":references_html(sources),"RELATED":related_html(item,items)})
 def build_research(template,record,item):
     meta=record["article"];sources=source_rows(record["sources"]);by_id={row["id"]:row for row in sources};claims=[]
     for claim in list_payload(record["claims"],"claims"):
