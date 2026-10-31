@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binomial Confidence Interval Explorer | AafnaiPatro Research Desk</title>
+<style>
+:root { color-scheme: light; font-family: system-ui, sans-serif; background:#f4f8fa; color:#17354a; }
+* { box-sizing:border-box; }
+body { margin:0; padding:2rem 1rem; }
+main { max-width:880px; margin:auto; background:#fff; border:1px solid #d8e5eb; border-radius:18px; padding:1.8rem; box-shadow:0 8px 28px #1c43500d; }
+h1 { margin:0 0 .7rem; font-size:clamp(1.6rem,4vw,2.2rem); }
+p { line-height:1.6; }
+.controls { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; margin:1.4rem 0; }
+label { display:block; font-weight:700; font-size:.92rem; margin-bottom:.4rem; }
+input,select { display:block; width:100%; border:1px solid #8ca6b5; border-radius:8px; padding:.72rem; font:inherit; background:#fff; color:#17354a; }
+input:focus-visible,select:focus-visible,button:focus-visible { outline:3px solid #e1a84b; outline-offset:2px; }
+button { border:0; border-radius:9px; background:#116d79; color:#fff; font-weight:700; padding:.8rem 1.4rem; cursor:pointer; }
+.error { color:#ad2732; min-height:1.4rem; font-weight:700; }
+.output { padding:1rem 1.1rem; background:#eaf6f4; border-left:5px solid #116d79; border-radius:10px; min-height:5.5rem; }
+#chart { width:100%; height:auto; max-height:230px; margin-top:1rem; }
+.small { color:#526d7c; font-size:.9rem; }
+footer { margin-top:1.6rem; border-top:1px solid #d8e5eb; padding-top:1rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Binomial confidence interval explorer</h1>
+<p>Enter independent successes and trials. Compare Wilson, conservative exact binomial and ordinary Wald intervals. All displayed intervals are two-sided.</p>
+<form id="intervalForm" novalidate>
+<div class="controls">
+<div><label for="successes">Successes (k)</label><input id="successes" name="successes" type="number" min="0" max="2000" step="1" value="4" required></div>
+<div><label for="trials">Trials (n)</label><input id="trials" name="trials" type="number" min="1" max="2000" step="1" value="20" required></div>
+<div><label for="level">Confidence level</label><select id="level" name="level"><option value="0.90">90%</option><option value="0.95" selected>95%</option><option value="0.99">99%</option></select></div>
+<div><label for="method">Interval method</label><select id="method" name="method"><option value="wilson">Wilson score</option><option value="exact">Clopper-Pearson exact</option><option value="wald">Wald (comparison only)</option></select></div>
+</div>
+<button type="submit">Calculate interval</button>
+</form>
+<p class="error" id="error" role="alert"></p>
+<div class="output" id="result" aria-live="polite" aria-atomic="true">Enter values and select Calculate interval.</div>
+<svg id="chart" viewBox="0 0 780 210" role="img" aria-label="Interval range on a zero to one hundred percent axis">
+<rect x="0" y="0" width="780" height="210" fill="#fff"/>
+<line x1="65" y1="112" x2="725" y2="112" stroke="#607e8d" stroke-width="3"/>
+<g id="ticks"></g><g id="intervalBand"></g>
+<text x="390" y="192" text-anchor="middle" font-size="15" fill="#526d7c">Underlying probability, percent</text>
+</svg>
+<p class="small">Assumptions: a fixed number of independent Bernoulli trials with a common success probability. Confidence is repeated-sampling coverage, not a posterior probability. Inputs remain on your device. This draft asset is not published.</p>
+<footer class="small">Original client-side tool by AafnaiPatro Research Desk. Method details and test limitations are documented in the accompanying article and research package.</footer>
+</main>
+<script>
+'use strict';
+const Z = Object.freeze({'0.9':1.6448536269514722,'0.95':1.959963984540054,'0.99':2.5758293035489004});
+function validate(k,n,level,method) {
+  if (!Number.isInteger(k)||!Number.isInteger(n)||n<1||n>2000||k<0||k>n) throw new RangeError('Use integer counts with 0 <= successes <= trials <= 2000 and trials >= 1.');
+  if (!Object.prototype.hasOwnProperty.call(Z,String(level))) throw new RangeError('Select a supported confidence level.');
+  if (!['wilson','exact','wald'].includes(method)) throw new RangeError('Select a supported interval method.');
+}
+function wilson(k,n,z) {
+  const p=k/n, z2=z*z, d=1+z2/n;
+  const center=(p+z2/(2*n))/d;
+  const radius=z*Math.sqrt(p*(1-p)/n+z2/(4*n*n))/d;
+  return [Math.max(0,center-radius),Math.min(1,center+radius)];
+}
+function wald(k,n,z) {
+  const p=k/n, radius=z*Math.sqrt(p*(1-p)/n);
+  return [Math.max(0,p-radius),Math.min(1,p+radius)];
+}
+function logFactorials(n) {
+  const arr=new Float64Array(n+1);
+  for(let i=2;i<=n;i++) arr[i]=arr[i-1]+Math.log(i);
+  return arr;
+}
+function binomCDF(k,n,p,lf) {
+  if(k<0) return 0;
+  if(k>=n) return 1;
+  if(p<=0) return 1;
+  if(p>=1) return 0;
+  const lp=Math.log(p), lq=Math.log1p(-p), ln=lf[n];
+  let max=-Infinity;
+  for(let i=0;i<=k;i++) {
+    const v=ln-lf[i]-lf[n-i]+i*lp+(n-i)*lq;
+    if(v>max) max=v;
+  }
+  if(!Number.isFinite(max)) return 0;
+  let sum=0;
+  for(let i=0;i<=k;i++) {
+    const v=ln-lf[i]-lf[n-i]+i*lp+(n-i)*lq;
+    sum+=Math.exp(v-max);
+  }
+  return Math.max(0,Math.min(1,Math.exp(max)*sum));
+}
+function exact(k,n,level) {
+  const alpha=1-level;
+  if(k===0) return [0,-Math.expm1(Math.log(alpha/2)/n)];
+  if(k===n) return [Math.exp(Math.log(alpha/2)/n),1];
+  const lf=logFactorials(n);
+  // Lower root: P(X >= k) = alpha/2. Complement symmetry avoids 1-CDF cancellation.
+  let lo=0,hi=1;
+  for(let i=0;i<64;i++) {
+    const mid=(lo+hi)/2;
+    const sf=binomCDF(n-k,n,1-mid,lf);
+    if(sf<alpha/2) lo=mid; else hi=mid;
+  }
+  const lower=(lo+hi)/2;
+  // Upper root: P(X <= k) = alpha/2.
+  lo=0;hi=1;
+  for(let i=0;i<64;i++) {
+    const mid=(lo+hi)/2;
+    const cdf=binomCDF(k,n,mid,lf);
+    if(cdf>alpha/2) lo=mid; else hi=mid;
+  }
+  return [lower,(lo+hi)/2];
+}
+function calculate(k,n,level,method) {
+  validate(k,n,level,method);
+  const z=Z[String(level)];
+  const bounds=method==='wilson'?wilson(k,n,z):method==='wald'?wald(k,n,z):exact(k,n,level);
+  if(bounds.some(x=>!Number.isFinite(x))||bounds[0]<0||bounds[1]>1||bounds[0]>bounds[1]) throw new Error('The interval could not be calculated reliably.');
+  return {observed:k/n,lower:bounds[0],upper:bounds[1],width:bounds[1]-bounds[0],method,level};
+}
+function render(result) {
+  const fmt=x=>(100*x).toFixed(2)+'%';
+  document.getElementById('result').textContent=`Observed ${fmt(result.observed)}. ${Math.round(result.level*100)}% ${result.method} interval: ${fmt(result.lower)} to ${fmt(result.upper)}. Width: ${(100*result.width).toFixed(2)} percentage points.`;
+  const left=65,scale=660;
+  document.getElementById('intervalBand').innerHTML=`<line x1="${left+scale*result.lower}" y1="112" x2="${left+scale*result.upper}" y2="112" stroke="#0c7883" stroke-width="20" stroke-linecap="round"/><circle cx="${left+scale*result.observed}" cy="112" r="11" fill="#fff" stroke="#17354a" stroke-width="4"/><text x="${left+scale*result.observed}" y="73" text-anchor="middle" font-size="18" fill="#17354a">${fmt(result.observed)}</text>`;
+  document.getElementById('chart').setAttribute('aria-label',`${result.method} interval from ${fmt(result.lower)} to ${fmt(result.upper)}, observed ${fmt(result.observed)}`);
+}
+if(typeof document!=='undefined') {
+  const ticks=document.getElementById('ticks');
+  ticks.innerHTML=Array.from({length:6},(_,i)=>{const x=65+i*132;return `<line x1="${x}" y1="101" x2="${x}" y2="124" stroke="#607e8d"/><text x="${x}" y="149" text-anchor="middle" font-size="15" fill="#526d7c">${i*20}%</text>`;}).join('');
+  document.getElementById('intervalForm').addEventListener('submit',event=>{
+    event.preventDefault();
+    const error=document.getElementById('error');
+    error.textContent='';
+    try {
+      const rawK=document.getElementById('successes').value.trim();
+      const rawN=document.getElementById('trials').value.trim();
+      if(!rawK||!rawN) throw new RangeError('Enter both successes and trials.');
+      const k=Number(rawK),n=Number(rawN),level=Number(document.getElementById('level').value),method=document.getElementById('method').value;
+      render(calculate(k,n,level,method));
+    } catch(e) {
+      document.getElementById('result').textContent='No valid interval is available for these inputs.';
+      document.getElementById('intervalBand').innerHTML='';
+      error.textContent=e.message;
+    }
+  });
+  document.getElementById('intervalForm').dispatchEvent(new Event('submit',{cancelable:true}));
+}
+if(typeof module!=='undefined'&&module.exports) module.exports={validate,wilson,wald,binomCDF,exact,calculate};
+</script>
+</body>
+</html>
