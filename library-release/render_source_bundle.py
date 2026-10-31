@@ -12,6 +12,24 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 SITE_ORIGIN=os.environ.get("LIBRARY_SITE_ORIGIN","https://aafnaipatro.com").rstrip("/")
 ASSET_ORIGIN=os.environ.get("LIBRARY_ASSET_ORIGIN","https://library-assets.aafnaipatro.com/phase1").rstrip("/")
 AUTHOR_DEFAULT="AafnaiPatro Research Desk"
+# Explicit, verified October 2026 R2 calculator release inventory.
+# The first file is the clickable HTML tool; remaining files are linked modules.
+# Keep these URLs stable when the 2,640-article library is regenerated.
+MMG_CALCULATORS = {
+    "MMG-0174": ("air-correction.html",),
+    "MMG-0300": ("index.html",),
+    "MMG-0330": ("index.html",),
+    "MMG-0360": ("index.html",),
+    "MMG-0810": ("calculator.html",),
+    "MMG-1608": ("calculator.html",),
+    "MMG-2430": ("calculator.html", "calculator.js"),
+    "MMG-2436": ("calculator.html", "calculator.js"),
+    "MMG-2832": ("index.html", "calculator.mjs"),
+    "MMG-2838": ("calculator.html",),
+    "MMG-2844": ("calculator.html",),
+    "MMG-2874": ("calculator.html", "effect_size_core.js", "calculator_ui.js"),
+    "MMG-2964": ("interpolation-tool.html", "interpolation-calculator.js"),
+}
 RULES=[
  ("Storage, Hardware & Electronics",r"\b(ssd|nvme|smart|hard drive|disk|storage|flash|nand|battery|electronics|sensor|microcontroller|cpu|gpu|memory|ram)\b"),
  ("Surveying, Geospatial & Navigation",r"\b(survey|gnss|gps|rtk|total station|stakeout|resection|traverse|coordinate|datum|geodes|mapping|gis|level loop|prism height)\b"),
@@ -151,8 +169,30 @@ def article_body(markdown_text,meta,assets,sources):
         table["class"]="article-table";wrapper=soup.new_tag("div");wrapper["class"]="table-scroll";table.wrap(wrapper)
     for link in soup.find_all("a"):
         href=str(link.get("href") or "")
+        # Source drafts may point at ../../assets/MMG-NNNN or ../../tools/MMG-NNNN.
+        # These files are deployed to R2, NOT necessarily the main Patro SPA.
+        parts=normalize_path(href).split("/")
+        if len(parts)==3 and parts[0] in ("assets","tools") and parts[1] in MMG_CALCULATORS and parts[2] in MMG_CALCULATORS[parts[1]]:
+            link["href"]=ASSET_ORIGIN+"/tools/"+parts[1]+"/"+parts[2]
+            continue
         if href.startswith("tool/") or href.startswith("./tool/") or "/tool/" in href:
             filename=pathlib.PurePosixPath(href.split("#",1)[0]).name;link["href"]=ASSET_ORIGIN+"/tools/%s/%s"%(meta["topic_id"],filename);link["rel"]="nofollow"
+    # Some original articles described an offline calculator only in code text.
+    # Add one actual, accessible CTA when their standalone HTML exists in the
+    # verified R2 release, avoiding duplication for articles with an HTML link.
+    topic_id=str(meta.get("topic_id") or "")
+    files=MMG_CALCULATORS.get(topic_id)
+    if files:
+        calculator_url=ASSET_ORIGIN+"/tools/"+topic_id+"/"+files[0]
+        if not any(str(link.get("href") or "")==calculator_url for link in soup.find_all("a")):
+            callout=soup.new_tag("p");callout["class"]="mmg-calculator-cta"
+            label=soup.new_tag("strong");label.string="Interactive calculator: "
+            anchor=soup.new_tag("a",href=calculator_url)
+            anchor["target"]="_blank";anchor["rel"]="noopener noreferrer"
+            anchor.string="Open the browser-only calculator"
+            callout.append(label);callout.append(anchor)
+            callout.append(". Review assumptions and limitations in this article.")
+            soup.insert(0,callout)
     return str(soup)
 def references_html(sources):
     output=[]
