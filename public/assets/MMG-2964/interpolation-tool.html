@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local linear interpolation uncertainty calculator | AafnaiPatro</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#101a2e;color:#f3f8ff}
+body{max-width:900px;margin:auto;padding:1.2rem;line-height:1.55}h1{font-size:1.7rem}p{color:#d0ddec}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+label{display:flex;flex-direction:column;gap:.35rem;font-weight:600}input{background:#243954;color:#fff;border:1px solid #7f9bb9;border-radius:.4rem;padding:.7rem;font-size:1rem}
+button{background:#8ce9cc;color:#09232b;border:0;padding:.8rem 1.4rem;border-radius:.5rem;font-size:1rem;font-weight:700;margin-top:1rem;cursor:pointer}
+output{display:block;margin-top:1rem;padding:1rem;border:1px solid #55799b;border-radius:.5rem;white-space:pre-wrap}
+svg{width:100%;height:auto;background:#192942;border-radius:.5rem;margin-top:1rem} .warn{border-left:4px solid #ffcb92;padding:.8rem;background:#3b3240}
+</style></head><body>
+<h1>Linear interpolation with standard uncertainty</h1>
+<p>All values are illustrative. Use consistent x and y units. Endpoint x-coordinates are treated as exact. Nothing is transmitted or stored.</p>
+<form id="inputs">
+<label>x0<input name="x0" type="number" step="any" required value="0"></label>
+<label>y0<input name="y0" type="number" step="any" required value="20"></label>
+<label>u0, standard<input name="u0" type="number" min="0" step="any" required value="0.5"></label>
+<label>x1<input name="x1" type="number" step="any" required value="10"></label>
+<label>y1<input name="y1" type="number" step="any" required value="30"></label>
+<label>u1, standard<input name="u1" type="number" min="0" step="any" required value="0.8"></label>
+<label>Target x<input name="x" type="number" step="any" required value="4"></label>
+<label>Correlation rho<input name="rho" type="number" min="-1" max="1" step="any" required value="0"></label>
+<label>u(x), standard<input name="ux" type="number" min="0" step="any" required value="0"></label>
+</form>
+<button type="button" id="run">Calculate and plot</button>
+<output id="result" role="status" aria-live="polite"></output>
+<svg id="chart" viewBox="0 0 700 280" role="img" aria-label="Standard uncertainty versus interpolation weight"></svg>
+<p class="warn">This computes first-order propagated standard uncertainty, not a confidence interval or a physical error bound. It excludes curvature, endpoint x-coordinate errors and unmodeled systematic effects. The public release of this tool is not asserted.</p>
+<script src="./interpolation-calculator.js"></script>
+<script>
+'use strict';
+const form=document.getElementById('inputs'),result=document.getElementById('result'),chart=document.getElementById('chart');
+const ns='http://www.w3.org/2000/svg';
+function node(tag,attrs,text){const el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,String(v));if(text!==undefined)el.textContent=text;return el}
+function update(){
+ try{
+  const input={};for(const name of ['x0','y0','u0','x1','y1','u1','x','rho','ux']){
+   const el=form.elements.namedItem(name);if(!el||el.value.trim()==='')throw Error(name+' is required');input[name]=Number(el.value);
+  }
+  const calc=InterpolationUncertainty.compute(input),series=InterpolationUncertainty.series(input,81);
+  result.textContent=`Estimate y = ${calc.y.toFixed(6)}\nStandard uncertainty u = ${calc.u.toFixed(6)}\nWeight t = ${calc.t.toFixed(4)}\nEndpoint variance = ${(calc.variance0+calc.variance1+calc.covarianceTerm).toFixed(6)}\nTarget-x variance = ${calc.xVariance.toFixed(6)}\nNo curvature/model-discrepancy estimate included.`;
+  chart.replaceChildren();const max=Math.max(...series.map(p=>p.u),.001)*1.12;
+  const X=t=>55+600*t,Y=u=>240-190*u/max;
+  chart.appendChild(node('path',{d:'M55 32 V240 H660',stroke:'#aec7dd','stroke-width':2,fill:'none'}));
+  chart.appendChild(node('path',{d:series.map((p,i)=>(i?'L':'M')+X(i/(series.length-1)).toFixed(2)+' '+Y(p.u).toFixed(2)).join(' '),stroke:'#8ce9cc','stroke-width':4,fill:'none'}));
+  chart.appendChild(node('circle',{cx:X(calc.t),cy:Y(calc.u),r:8,fill:'#ffc88b'}));
+  chart.appendChild(node('text',{x:60,y:24,fill:'#fff','font-size':17},'u(y), standard uncertainty'));
+  chart.appendChild(node('text',{x:280,y:271,fill:'#fff','font-size':17},'interpolation weight t (0 to 1)'));
+  chart.appendChild(node('text',{x:565,y:24,fill:'#ffc88b','font-size':17},'Selected x'));
+ }catch(e){result.textContent='Input error: '+e.message;chart.replaceChildren()}
+}
+document.getElementById('run').addEventListener('click',update);update();
+</script></body></html>
