@@ -7,6 +7,7 @@ on:
       - 'library-release/AafnaiLibrary_Phase1_2640.zip'
       - 'library-release/render_source_bundle.py'
       - 'library-release/research_note_copy.py'
+      - 'library-release/article_dek_copy.py'
       - 'library-release/rewrite_static_research_notes.py'
       - '.github/workflows/aafnai-library-release.yml'
   workflow_dispatch:
@@ -47,7 +48,10 @@ jobs:
           mkdir -p .aafnai-library-bundle .aafnai-library
           unzip -q library-release/AafnaiLibrary_Phase1_2640.zip -d .aafnai-library-bundle
 
-      - name: Rewrite article-specific research notes from cited evidence
+      - name: Validate research copy patcher
+        run: python3 -m py_compile library-release/rewrite_static_research_notes.py library-release/research_note_copy.py library-release/article_dek_copy.py library-release/render_source_bundle.py
+
+      - name: Repair article-specific research notes and repeated subtitles
         run: python3 library-release/rewrite_static_research_notes.py .aafnai-library-bundle/static --expected 2640
 
       - name: Validate release receipt and static budget
@@ -101,6 +105,10 @@ jobs:
           grep -q 'AafnaiPatro Research Desk' /tmp/article.html
           if grep -Eq 'researched sources with article text, claims and visuals kept under one article identity|inspected sources with article text, claims and visuals kept under one article identity' /tmp/article.html; then
             echo "Stale generic research note found in production" >&2
+            exit 1
+          fi
+          if grep -Eq '<p class="dek">[^<]*UTM Grid Convergence vs Magnetic Declination: Convert Bearings Without a Sign Error' /tmp/article.html; then
+            echo "Repeated headline detected in article subtitle" >&2
             exit 1
           fi
           curl -fsS "https://aafnaipatro.com/research/$slug" -o /tmp/research.html
