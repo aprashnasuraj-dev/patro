@@ -6,7 +6,7 @@ const read=(file)=>readFileSync(new URL("../"+file,import.meta.url),"utf8");
 test("PWA assets are static and manifest meets Chromium's declared criteria",()=>{
   const routes=JSON.parse(read("wrangler.jsonc")).assets.run_worker_first;
   for(const path of ["manifest.webmanifest","sw.js","pwa-install-early.js","icon-192.png","icon-512.png","maskable-512.png"]) {
-    assert.ok(routes.includes("!/"+path),"/"+path+" must bypass the Worker");
+    assert.ok(routes.includes("!/"+path)||(path.startsWith("icon-")&&path.endsWith(".png")&&routes.includes("!/icon-*.png")),"/"+path+" must bypass the Worker");
   }
   const manifest=JSON.parse(read("public/manifest.webmanifest"));
   assert.equal(manifest.display,"standalone");
