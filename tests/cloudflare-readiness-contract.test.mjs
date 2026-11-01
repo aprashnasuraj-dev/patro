@@ -146,7 +146,7 @@ test("legacy Pages and deploy-wrapper artifacts are absent; preserved redirects 
 });
 
 test("static growth slash redirects preserve canonical routes",async()=>{
-  const rules=(await read("dist/_redirects")).trim().split("\n");
+  const rules=(await read("dist/_redirects")).split(/\r?\n/).map(line=>line.trim()).filter(line=>line&&!line.startsWith("#"));
   const sitemap=await read("dist/sitemap-growth.xml");
   const routes=[...sitemap.matchAll(/<loc>https:\/\/aafnaipatro\.com([^<]+)<\/loc>/g)].map(m=>m[1]);
   assert.equal(routes.length,337);
