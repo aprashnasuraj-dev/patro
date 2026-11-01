@@ -1,9 +1,29 @@
+import { GOOGLE_TAG_HTML, googleTagCsp } from "../shared/google-tag.ts";
+
 const HTML_HEADERS={
   "content-type":"text/html; charset=utf-8",
   "x-content-type-options":"nosniff",
   "referrer-policy":"strict-origin-when-cross-origin",
   "permissions-policy":"camera=(), microphone=(), geolocation=()"
 };
+function googleTagged(response){
+  if(!response||!(response.headers.get("content-type")||"").toLowerCase().includes("text/html")||!globalThis.HTMLRewriter)return response;
+  const headers=new Headers(response.headers);
+  const csp=headers.get("content-security-policy");
+  if(csp)headers.set("content-security-policy",googleTagCsp(csp));
+  headers.delete("content-length");
+  headers.delete("etag");
+  const html=new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+  return new HTMLRewriter()
+    .on("head",{element(el){el.prepend(GOOGLE_TAG_HTML,{html:true});}})
+    .on("script[data-patro-google-tag]",{element(el){el.remove();}})
+    .on("meta[http-equiv]",{element(el){
+      if((el.getAttribute("http-equiv")||"").toLowerCase()==="content-security-policy"){
+        el.setAttribute("content",googleTagCsp(el.getAttribute("content")||""));
+      }
+    }})
+    .transform(html);
+}
 function clean(path){return path.replace(/\/+$/,"")||"/"}
 function safeSlug(value){return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)}
 function typeFor(key){
@@ -20,7 +40,7 @@ async function r2(env,key,request,ctx,{immutable=false,html=false}={}){
   const cacheKey=new Request(request.url,{method:"GET"});
   if(request.method==="GET"){
     const hit=await cache.match(cacheKey);
-    if(hit)return hit;
+    if(hit)return html?googleTagged(hit):hit;
   }
   const object=await env.LIBRARY.get(key);
   if(!object)return new Response("Not found",{status:404,headers:{"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=60"}});
@@ -29,7 +49,8 @@ async function r2(env,key,request,ctx,{immutable=false,html=false}={}){
   headers.set("cache-control",immutable?"public, max-age=31536000, immutable":"public, max-age=300, s-maxage=86400, stale-while-revalidate=604800");
   headers.set("etag",object.httpEtag);
   if(html)for(const [k,v] of Object.entries(HTML_HEADERS))headers.set(k,v);
-  const response=new Response(request.method==="HEAD"?null:object.body,{headers});
+  const raw=new Response(request.method==="HEAD"?null:object.body,{headers});
+  const response=html?googleTagged(raw):raw;
   if(request.method==="GET")ctx.waitUntil(cache.put(cacheKey,response.clone()).catch(()=>{}));
   return response;
 }
