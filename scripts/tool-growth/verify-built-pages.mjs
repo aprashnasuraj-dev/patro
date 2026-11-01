@@ -17,7 +17,7 @@ const check=(html,route,title)=>{
  if(decode(heading)!==freeToolName(title))errors.push("Free H1 missing or mismatched "+route);
  const meta=html.match(/<title>([^<]*)<\/title>/i)?.[1]||"";
  if(!/^Free\s/i.test(meta.replaceAll("&amp;","&")))errors.push("Free SEO title missing "+route);
- if(!html.includes('src="/tool-analytics.mjs"'))errors.push("Tool analytics script missing "+route);
+ if(!html.includes('src="/assets/tool-analytics.mjs"'))errors.push("Tool analytics script missing "+route);
  if(/<meta\s+name="robots"\s+content="noindex/i.test(html))errors.push("Unexpected noindex "+route);
 };
 const clients=await loadClientTools(root);
