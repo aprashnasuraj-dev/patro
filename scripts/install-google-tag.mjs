@@ -19,8 +19,8 @@ export async function installGoogleTagInBuild(root) {
         const after = installGoogleTag(before);
         if (after !== before) await writeFile(path, after);
         if (hasHead) {
-          const loaderCount = (after.match(/googletagmanager\\.com\\/gtag\\/js\\?id=G-KWLDWTSK14/g) || []).length;
-          const configCount = (after.match(/gtag\\('config', 'G-KWLDWTSK14'\\)/g) || []).length;
+          const loaderCount = after.split("https://www.googletagmanager.com/gtag/js?id=G-KWLDWTSK14").length - 1;
+          const configCount = after.split("gtag('config', 'G-KWLDWTSK14')").length - 1;
           if (loaderCount !== 1 || configCount !== 1) {
             throw new Error(`Google tag build: expected exactly one managed tag in ${path}; loader=${loaderCount} config=${configCount}`);
           }
