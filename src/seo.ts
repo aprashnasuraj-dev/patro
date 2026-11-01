@@ -55,6 +55,11 @@ export function resolveRouteSeo(path:string){
   if (ENGLISH_FIRST[clean]) row = { ...row, ...ENGLISH_FIRST[clean] };
   if(clean==="/guides")row={title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति रूपान्तरण, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।"};
   if(clean==="/janmadin")row={title:"मेरो असली जन्मदिन · Three Birthdays",description:"AD, BS र तिथि जन्मदिन, निजी स्थानीय जन्म-पञ्चाङ्ग र नेपालका सांस्कृतिक पात्रो।"};
+  // Match the 29 public legacy-tool static SEO leaves after client-side navigation.
+  if(clean.startsWith("/tools/") && clean!=="/tools/api" && catalog[clean]){
+    row={...row,title:/^free\s/i.test(row.title)?row.title:`Free ${row.title}`,
+      description:/\bfree\b/i.test(row.description)?row.description:`Free online tool. ${row.description}`};
+  }
   const date=clean.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
   if(date)row={title:`${date[1]} नेपाली मिति · Date Details`,description:`${date[1]} को बिक्रम संवत्, तिथि, नेपाल संवत् र चाडपर्व विवरण।`};
   const privateRoute=/^\/(me|admin|auth|api|compat-api|notes|planner|settings|family|my-data|my-diary)(\/|$)/.test(clean);
