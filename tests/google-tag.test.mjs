@@ -85,6 +85,16 @@ test("static finalizer rejects a deployable HTML document without head", async (
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 
+test("independent HTML Workers bundle the canonical managed Google tag", async () => {
+  for (const entry of ["library-release/worker.mjs", "extensions/day-atlas/worker.mjs"]) {
+    const bundle = await build({ entryPoints: [entry], bundle: true, write: false, format: "esm", platform: "browser", logLevel: "silent" });
+    const code = bundle.outputFiles[0].text;
+    assert.ok(code.includes(GOOGLE_TAG_ID), `${entry} bundle is missing ${GOOGLE_TAG_ID}`);
+    assert.ok(code.includes("data-patro-google-tag"), `${entry} bundle is missing managed tag marker`);
+    assert.ok(code.includes("googletagmanager.com/gtag/js"), `${entry} bundle is missing gtag loader`);
+  }
+});
+
 test("real Workers HTMLRewriter adds dynamic tags and removes the prebuilt copy", async () => {
   const bundle = await build({ stdin: { contents: `
     import { googleTagResponse } from './worker/google-tag.ts';
