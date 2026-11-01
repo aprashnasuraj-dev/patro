@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { freeToolName, freeToolSeoTitle, freeToolDescription } from "../tool-growth/free-seo.mjs";
 
 const root=process.cwd();
 const dist=path.join(root,"dist");
@@ -78,36 +79,36 @@ function stripSpaBoot(html){
   .replace(/<script\b[^>]*src=["'][^"']*\/assets\/[^"']+\.js["'][^>]*>\s*<\/script>\s*/gi,"");
 }
 function leafHtml(tool,row,runtimeHtml){
- const canonical=origin+tool.route,description=row.description||tool.summary||`Use ${tool.title} directly in your browser.`;
+ const canonical=origin+tool.route,seoName=freeToolName(tool.title),seoTitle=freeToolSeoTitle(tool.title),description=freeToolDescription(row.description||tool.summary||`Use ${tool.title} directly in your browser.`);
  let html=stripSpaBoot(base).replace(/<html\b[^>]*lang=["'][^"']*["']/i,'<html lang="en"');
- html=html.replace(/<title>[\s\S]*?<\/title>/i,`<title>${esc(tool.title)} | Aafnai Patro</title>`);
+ html=html.replace(/<title>[\s\S]*?<\/title>/i,`<title>${esc(seoTitle)}</title>`);
  html=replaceMeta(html,"name","description",description);
  html=replaceMeta(html,"name","robots","index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
  html=replaceMeta(html,"name","googlebot","index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
- html=replaceMeta(html,"property","og:title",tool.title+" | Aafnai Patro");
+ html=replaceMeta(html,"property","og:title",seoTitle);
  html=replaceMeta(html,"property","og:description",description);
  html=replaceMeta(html,"property","og:url",canonical);
- html=replaceMeta(html,"name","twitter:title",tool.title+" | Aafnai Patro");
+ html=replaceMeta(html,"name","twitter:title",seoTitle);
  html=replaceMeta(html,"name","twitter:description",description);
  html=html.replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/i,`<link rel="canonical" href="${canonical}">`);
  html=html.replace(/<link\b[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>/gi,"");
  const appId=canonical+"#tool";
  const data={"@context":"https://schema.org","@graph":[
-  {"@type":"WebPage","@id":canonical+"#page","url":canonical,"name":tool.title,"description":description,"mainEntity":{"@id":appId},"breadcrumb":{"@id":canonical+"#breadcrumb"}},
+  {"@type":"WebPage","@id":canonical+"#page","url":canonical,"name":seoName,"description":description,"mainEntity":{"@id":appId},"breadcrumb":{"@id":canonical+"#breadcrumb"}},
   {"@type":"BreadcrumbList","@id":canonical+"#breadcrumb","itemListElement":[
    {"@type":"ListItem","position":1,"name":"Aafnai Patro","item":origin+"/"},
    {"@type":"ListItem","position":2,"name":"Advanced tools","item":origin+"/advancetools/"},
    {"@type":"ListItem","position":3,"name":"Web tools","item":origin+"/advancetools/web-tools/"},
    {"@type":"ListItem","position":4,"name":tool.categoryLabel,"item":origin+`/advancetools/web-tools/${tool.category}/`},
-   {"@type":"ListItem","position":5,"name":tool.title,"item":canonical}
+   {"@type":"ListItem","position":5,"name":seoName,"item":canonical}
   ]},
-  {"@type":"WebApplication","@id":appId,"name":tool.title,"url":canonical,"description":description,"applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Aafnai Patro","url":origin}}
+  {"@type":"WebApplication","@id":appId,"name":seoName,"url":canonical,"description":description,"applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"Aafnai Patro","url":origin}}
  ]};
  const schema=`<script type="application/ld+json" data-mm530-static="1">${JSON.stringify(data).replaceAll("<","\\u003c")}</script>`;
  const related=relatedLinks(tool);
  const editorial=editorialFromRuntime(runtimeHtml);
- const relatedHtml=related.length?`<section class="mm530-related" aria-labelledby="mm530-related-title"><h2 id="mm530-related-title">Related ${esc(tool.categoryLabel.toLowerCase())}</h2><div class="mm530-related-grid">${related.map(item=>`<a href="${esc(item.route)}"><strong>${esc(item.title)}</strong><span>${esc(item.summary||`Open this ${item.categoryLabel.toLowerCase()} tool.`)}</span></a>`).join("")}</div></section>`:"";
- const fallback=`<main class="mm530-static-fallback mm530-tool-page" data-mm530-static-fallback="1"><nav class="mm530-breadcrumb" aria-label="Breadcrumb"><a href="/">Aafnai Patro</a><span>›</span><a href="/advancetools/">Advanced tools</a><span>›</span><a href="/advancetools/web-tools/">Web tools</a><span>›</span><a href="/advancetools/web-tools/${esc(tool.category)}/">${esc(tool.categoryLabel)}</a><span>›</span><span aria-current="page">${esc(tool.title)}</span></nav><header class="mm530-tool-head"><span class="mm530-kicker">Browser tool · ${esc(tool.categoryLabel)}</span><h1>${esc(tool.title)}</h1><p>${esc(description)}</p></header><div class="mm530-frame-wrap"><iframe class="mm530-frame" src="/_mm530/${esc(tool.id)}/page.html" title="${esc(tool.title)}" loading="eager" referrerpolicy="same-origin" allow="${esc(iframePermissions(tool))}"></iframe></div>${editorial?`<div class="mm530-editorial" data-mm530-editorial="1">${editorial}</div>`:""}${relatedHtml}</main>`;
+ const relatedHtml=related.length?`<section class="mm530-related" aria-labelledby="mm530-related-title"><h2 id="mm530-related-title">Related ${esc(tool.categoryLabel.toLowerCase())}</h2><div class="mm530-related-grid">${related.map(item=>`<a href="${esc(item.route)}"><strong>${esc(freeToolName(item.title))}</strong><span>${esc(item.summary||`Open this ${item.categoryLabel.toLowerCase()} tool.`)}</span></a>`).join("")}</div></section>`:"";
+ const fallback=`<main class="mm530-static-fallback mm530-tool-page" data-mm530-static-fallback="1"><nav class="mm530-breadcrumb" aria-label="Breadcrumb"><a href="/">Aafnai Patro</a><span>›</span><a href="/advancetools/">Advanced tools</a><span>›</span><a href="/advancetools/web-tools/">Web tools</a><span>›</span><a href="/advancetools/web-tools/${esc(tool.category)}/">${esc(tool.categoryLabel)}</a><span>›</span><span aria-current="page">${esc(seoName)}</span></nav><header class="mm530-tool-head"><span class="mm530-kicker">Free online tool · ${esc(tool.categoryLabel)}</span><h1>${esc(seoName)}</h1><p>${esc(description)}</p></header><div class="mm530-frame-wrap"><iframe class="mm530-frame" src="/_mm530/${esc(tool.id)}/page.html" title="${esc(tool.title)}" loading="eager" referrerpolicy="same-origin" allow="${esc(iframePermissions(tool))}"></iframe></div>${editorial?`<div class="mm530-editorial" data-mm530-editorial="1">${editorial}</div>`:""}${relatedHtml}</main>`;
  html=html.replace('<div id="root"></div>',`<div id="root">${fallback}</div>`);
  return html.replace("</head>",shellCss+schema+"</head>");
 }
