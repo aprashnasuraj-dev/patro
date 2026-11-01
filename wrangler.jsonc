@@ -104,6 +104,7 @@
       "!/advancetools/fontconverters/*",
       "!/advancetools/printablepaper",
       "!/advancetools/printablepaper/*",
+      "!/tool-analytics.mjs",
       "!/client-tools/*",
       "!/sitemap-client-tools.xml",
       "!/converter/*",
