@@ -24,6 +24,10 @@ for(const line of redirects){
 }
 const children=Array.isArray(wrangler.assets?.run_worker_first)?wrangler.assets.run_worker_first:[];
 verify(children.includes("/*"),"Existing Worker-first configuration missing");
+verify(children.length<=100,"Cloudflare supports at most 100 run_worker_first rules; got "+children.length);
+verify(children.includes("!/assets/*"),"Shared tool analytics must reuse the existing static /assets/* rule");
+verify(!children.includes("!/tool-analytics.mjs"),"Do not add a separate analytics routing rule");
+try{const st=await stat(resolve(root,"public/assets/tool-analytics.mjs"));verify(st.isFile()&&st.size>0,"Tool analytics static asset is missing")}catch(e){if(e.code==="ENOENT")verify(false,"Tool analytics static asset is missing");else throw e}
 for(const p of children.filter(x=>x.startsWith("!")&&x!=="!/*")){
  const path=p.slice(1);
  verify(!isReserved(path),"Main Worker attempts to declare asset-first ownership of a foreign route: "+p);
