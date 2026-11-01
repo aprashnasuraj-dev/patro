@@ -12,7 +12,7 @@ verify(wrangler.name===expectedRoot.worker,"Main Worker name changed");
 verify(wrangler.main===expectedRoot.main,"Main Worker entry changed");
 verify(Array.isArray(wrangler.routes)&&wrangler.routes.length===1&&wrangler.routes[0].pattern===expectedRoot.hostname&&wrangler.routes[0].custom_domain===true,"Main Worker must own only its existing root custom domain");
 verify(ownership.foreignRoutes.length===8,"External Worker routes inventory changed unexpectedly");
-verify(ownership.foreignCustomDomains.length===6,"External custom domain inventory changed unexpectedly");
+verify(ownership.foreignCustomDomains.length===7,"External custom domain inventory changed unexpectedly");
 const prefixes=ownership.reservedPrefixes;
 const isReserved=p=>prefixes.some(prefix=>p.startsWith(prefix));
 const redirectText=await readFile(resolve(root,"public/_redirects"),"utf8");
