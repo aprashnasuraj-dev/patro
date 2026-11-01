@@ -43,9 +43,9 @@ test("generated production deploy can discover, require and attach KV plus R2",a
 
 test("Cloudflare deploy generates environment-aware bindings before Wrangler",async()=>{
   const pkg=await json("package.json");
-  assert.equal(pkg.scripts?.["deploy:cloudflare"],"npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc");
+  assert.equal(pkg.scripts?.["deploy:cloudflare"],"node scripts/tool-growth/verify-external-routing.mjs --live && npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc");
   assert.equal(pkg.cloudflare?.build_command,"npm run build");
-  assert.equal(pkg.cloudflare?.deploy_command,"npm run cloudflare:config && npx wrangler deploy --config wrangler.generated.jsonc");
+  assert.equal(pkg.cloudflare?.deploy_command,"node scripts/tool-growth/verify-external-routing.mjs --live && npm run cloudflare:config && npx wrangler deploy --config wrangler.generated.jsonc");
   assert.equal(pkg.cloudflare?.config,"wrangler.jsonc");
   assert.ok(pkg.cloudflare?.bindings?.CACHE);
   assert.ok(pkg.cloudflare?.bindings?.ARCHIVE);
@@ -132,12 +132,11 @@ test("Worker KV put operations are limited to approved small-state files",async(
   assert.deepEqual(offenders,[]);
 });
 
-test("legacy Pages and deploy-wrapper artifacts are absent; growth redirects are exact",async()=>{
+test("legacy Pages and deploy-wrapper artifacts are absent; preserved redirects are safe",async()=>{
   const obsolete=[
     "_routes.json",
     "public/_routes.json",
     "_redirects",
-    "public/_redirects",
     "wrangler.toml",
     "scripts/deploy-cloudflare.mjs"
   ];
@@ -151,7 +150,12 @@ test("static growth slash redirects preserve canonical routes",async()=>{
   const sitemap=await read("dist/sitemap-growth.xml");
   const routes=[...sitemap.matchAll(/<loc>https:\/\/aafnaipatro\.com([^<]+)<\/loc>/g)].map(m=>m[1]);
   assert.equal(routes.length,337);
-  assert.deepEqual(rules.sort(),routes.map(route=>`${route}/ ${route} 301`).sort());
+  const expectedGrowth=routes.map(route=>`${route}/ ${route} 301`);
+  const redirectSet=new Set(rules);
+  assert.equal(rules.length,347,"preserve 337 live growth redirects and 10 tool aliases");
+  assert.equal(redirectSet.size,rules.length,"redirect sources must be unique");
+  for(const rule of expectedGrowth)assert.ok(redirectSet.has(rule),"missing growth redirect: "+rule);
+  for(const rule of rules)assert.match(rule,/^\/\S+\s+\/\S+\s+301$/,"redirect must remain a permanent internal redirect");
 });
 
 test("legacy public aliases are handled by Worker redirects instead of static asset rules",async()=>{
