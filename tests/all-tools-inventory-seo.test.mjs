@@ -34,3 +34,20 @@ test("all 3,091 canonical tool/reference pages are in the SEO coverage registry"
     assert.ok(/\bfree\b/i.test(desc), "Free availability missing: " + tool.route);
   }
 });
+
+test("preserves existing Cloudflare production redirects while adding tool repairs", async () => {
+  const raw = await readFile(new URL("../public/_redirects",import.meta.url),"utf8");
+  const lines=raw.split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith("#"));
+  assert.ok(lines.length>=347,"337 production redirects plus 10 tool fixes must be preserved");
+  const from=new Set();
+  for(const line of lines){
+    const fields=line.split(/\s+/);
+    assert.equal(fields.length,3,"Invalid redirect line: "+line);
+    assert.equal(fields[2],"301","Keep permanent canonical redirects: "+line);
+    assert.ok(!from.has(fields[0]),"Duplicate source redirect "+fields[0]);
+    assert.notEqual(fields[0],fields[1],"Self redirect "+fields[0]);
+    from.add(fields[0]);
+  }
+  for(const path of ["/tools/land","/tools/fuel","/tools/typingtools","/tools/qr","/tools/convert","/tools/samudaya","/advancetools/web-tools/utilities/","/advancetools/web-tools/planners/","/advancetools/web-tools/timers/","/advancetools/web-tools/editors/"])
+    assert.ok(from.has(path),"Missing repaired obsolete route "+path);
+});
