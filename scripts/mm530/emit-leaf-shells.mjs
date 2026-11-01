@@ -125,6 +125,9 @@ for(const tool of registry){
  const runtimePath=path.join(dist,"_mm530",tool.id,"page.html"),runtimeHtml=await fs.readFile(runtimePath,"utf8");
  const target=path.join(dist,tool.route.replace(/^\//,"")+".html");
  const leaf=leafHtml(tool,row,runtimeHtml);
+ if(!leaf.includes(`<h1>${esc(freeToolName(tool.title))}</h1>`))throw new Error(`Free heading missing for ${tool.route}`);
+ if(!leaf.includes(`<title>${esc(freeToolSeoTitle(tool.title))}</title>`))throw new Error(`Free SEO title missing for ${tool.route}`);
+ if(!leaf.includes(`<link rel="canonical" href="${origin+tool.route}">`))throw new Error(`Canonical changed for ${tool.route}`);
  await fs.mkdir(path.dirname(target),{recursive:true});
  await fs.writeFile(target,leaf);
  const editorial=editorialFromRuntime(runtimeHtml);
