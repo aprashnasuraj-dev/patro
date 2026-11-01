@@ -12,7 +12,9 @@ const check=(html,route,title)=>{
  if(!html){errors.push("Missing HTML "+route);return}
  const canonical="https://aafnaipatro.com"+route;
  if(!html.includes('rel="canonical" href="'+canonical+'"'))errors.push("Canonical mismatch "+route);
- if(!html.includes("<h1>"+esc(freeToolName(title))+"</h1>"))errors.push("Free H1 missing "+route);
+ const heading=html.match(/<h1>([^<]*)<\/h1>/i)?.[1]||"";
+ const decode=value=>value.replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"\u0027").replace(/&lt;/g,"<").replace(/&gt;/g,">");
+ if(decode(heading)!==freeToolName(title))errors.push("Free H1 missing or mismatched "+route);
  const meta=html.match(/<title>([^<]*)<\/title>/i)?.[1]||"";
  if(!/^Free\s/i.test(meta.replaceAll("&amp;","&")))errors.push("Free SEO title missing "+route);
  if(!html.includes('src="/tool-analytics.mjs"'))errors.push("Tool analytics script missing "+route);
