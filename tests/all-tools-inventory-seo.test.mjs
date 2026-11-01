@@ -51,3 +51,12 @@ test("preserves existing Cloudflare production redirects while adding tool repai
   for(const path of ["/tools/land","/tools/fuel","/tools/typingtools","/tools/qr","/tools/convert","/tools/samudaya","/advancetools/web-tools/utilities/","/advancetools/web-tools/planners/","/advancetools/web-tools/timers/","/advancetools/web-tools/editors/"])
     assert.ok(from.has(path),"Missing repaired obsolete route "+path);
 });
+
+test("preserves Google tag and security headers present in the live Worker", async () => {
+  const raw=await readFile(new URL("../public/_headers",import.meta.url),"utf8");
+  assert.ok(raw.includes("https://www.googletagmanager.com"),"Google tag CSP source lost");
+  assert.ok(raw.includes("https://*.google-analytics.com"),"Analytics collect endpoint blocked");
+  assert.ok(raw.includes("X-Content-Type-Options: nosniff"),"Browser MIME guard lost");
+  assert.ok(raw.includes("Strict-Transport-Security:"),"HSTS security header lost");
+  assert.ok(raw.includes("/advancetools/*"),"Advanced Tools header family lost");
+});
