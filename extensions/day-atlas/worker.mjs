@@ -1,4 +1,5 @@
 import {adToBs,formatBsDate} from '../../packages/core/src/bsDate.ts';
+import {GOOGLE_TAG_HTML,googleTagCsp} from '../../shared/google-tag.ts';
 import cities from './cities.json' with {type:'json'};
 import {panchang,TITHIS} from './panchang.mjs';
 import annualMarkers from './annual-markers.json' with {type:'json'};
@@ -8,6 +9,18 @@ import {ORIGIN,BASE,DAYS,DAY,TOTAL,SHARD,dateAt,dateIndex,facts,midnight,clock,d
 export {ORIGIN,BASE,DAYS,DAY,TOTAL,SHARD,dateAt,dateIndex,facts,midnight};
 import {timingSection,VERSION} from './date-enrichment.mjs';
 export {timingSection,VERSION};
+function googleTagged(response){
+  if(!response||!(response.headers.get('content-type')||'').toLowerCase().includes('text/html')||!globalThis.HTMLRewriter)return response;
+  const headers=new Headers(response.headers),csp=headers.get('content-security-policy');
+  if(csp)headers.set('content-security-policy',googleTagCsp(csp));
+  headers.delete('content-length');headers.delete('etag');
+  const html=new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+  return new HTMLRewriter()
+    .on('head',{element(el){el.prepend(GOOGLE_TAG_HTML,{html:true});}})
+    .on('script[data-patro-google-tag]',{element(el){el.remove();}})
+    .on('meta[http-equiv]',{element(el){if((el.getAttribute('http-equiv')||'').toLowerCase()==='content-security-policy')el.setAttribute('content',googleTagCsp(el.getAttribute('content')||''));}})
+    .transform(html);
+}
 const bySlug=new Map(cities.map(c=>[c.slug,c])),ktm=bySlug.get('kathmandu');
 const canonicalFor=(c,d)=>c.slug==='kathmandu'?'/date/'+d:pathFor(c,d);
 const localStamp=(d,c)=>d?new Intl.DateTimeFormat('en-GB',{timeZone:c.tz,dateStyle:'medium',timeStyle:'short'}).format(new Date(Math.round(d.getTime()/60000)*60000)):'Unavailable';
@@ -82,4 +95,4 @@ export async function route(request,env={}){
   const day=p.match(/^\/atlas\/([a-z0-9-]+)\/(\d{4}-\d{2}-\d{2})(\/(?:calendar\.ics|data\.csv))?$/);if(day){const c=bySlug.get(day[1]),d=day[2];if(!c||dateIndex(d)<0)return notFound();if(day[3]==='/data.csv')return reply(csvData(c,d),'text/csv; charset=utf-8',200,{'content-disposition':`attachment; filename="${c.slug}-${d}.csv"`,'x-robots-tag':'noindex',link:'<https://creativecommons.org/licenses/by/4.0/>; rel="license"'});if(day[3])return reply(dayIcs(c,d),'text/calendar; charset=utf-8',200,{'content-disposition':`attachment; filename="${c.slug}-${d}.ics"`,'x-robots-tag':'noindex'});return reply(dayPage(c,d),'text/html; charset=utf-8',200,{'x-robots-tag':(c.slug==='kathmandu'?indexDate(d):inWindow(d))?'index,follow':'noindex,follow'});}
   return notFound();
 }
-export default {async fetch(request,env,ctx){const u=new URL(request.url);if(u.hostname!==new URL(ORIGIN).hostname)return Response.redirect(ORIGIN+u.pathname+u.search,301);const useCache=request.method==='GET'&&u.pathname.startsWith('/atlas/')&&u.pathname!=='/atlas/app.js';const key=new Request(ORIGIN+u.pathname+'?atlas_cache=30&day='+new Date().toISOString().slice(0,10),{method:'GET'}),cache=globalThis.caches?.default;if(useCache&&cache){const hit=await cache.match(key);if(hit)return hit;}const response=await route(request,env);if(useCache&&cache&&response.status===200&&ctx)ctx.waitUntil(cache.put(key,response.clone()));if(request.method==='HEAD')return new Response(null,{status:response.status,headers:response.headers});return response;}};
+export default {async fetch(request,env,ctx){const u=new URL(request.url);if(u.hostname!==new URL(ORIGIN).hostname)return Response.redirect(ORIGIN+u.pathname+u.search,301);const useCache=request.method==='GET'&&u.pathname.startsWith('/atlas/')&&u.pathname!=='/atlas/app.js';const key=new Request(ORIGIN+u.pathname+'?atlas_cache=30&day='+new Date().toISOString().slice(0,10),{method:'GET'}),cache=globalThis.caches?.default;if(useCache&&cache){const hit=await cache.match(key);if(hit)return googleTagged(hit);}const response=googleTagged(await route(request,env));if(useCache&&cache&&response.status===200&&ctx)ctx.waitUntil(cache.put(key,response.clone()));if(request.method==='HEAD')return new Response(null,{status:response.status,headers:response.headers});return response;}};
