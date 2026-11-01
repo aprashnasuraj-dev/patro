@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { freeToolName, freeToolDescription } from "./tool-growth/free-seo.mjs";
 import {
   SITE, BS_MONTHS, CORE_INDEX_ROUTES, TOOL_ROUTES, INDEXED_CALENDAR_YEARS,
   PRERENDER_CALENDAR_YEARS, calendarRoute, calendarRoutes, unique
@@ -64,7 +65,7 @@ function pageMeta(path) {
   if(path==="/janmadin")return {title:"Birthdays in AD, BS and Tithi | Aafnai Patro",description:"Calculate birthdays in the Gregorian calendar, Bikram Sambat, and by tithi, with cultural-calendar context.",aliases:[]};
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   if (match) return monthMeta(Number(match[1]), Number(match[2]));
-  if (INTENT_META[path]) return INTENT_META[path];
+  if (INTENT_META[path]) return TOOL_ROUTES.includes(path) ? {...INTENT_META[path], title:freeToolName(INTENT_META[path].title),description:freeToolDescription(INTENT_META[path].description)} : INTENT_META[path];
   const copy = CORE_COPY[path];
   if (copy) return { title: copy[0], description: copy[1], aliases: [] };
   return { title: "Nepali Calendar & Online Tools | Aafnai Patro", description: "Explore Nepal’s calendar, Bikram Sambat date conversion, tithi, festivals, astronomy, and useful online tools in English or Nepali.", aliases: [] };
@@ -175,7 +176,8 @@ function render(path, indexed) {
     `<meta property="og:type" content="website" />`,
     `<meta property="og:locale" content="ne_NP" />`,
     `<meta property="og:locale:alternate" content="en_US" />`,
-    `<script type="application/ld+json">${json(schemaFor(path, meta))}</script>`
+    `<script type="application/ld+json">${json(schemaFor(path, meta))}</script>`,
+    ...(TOOL_ROUTES.includes(path)?['<script type="module" src="/assets/tool-analytics.mjs"></script>']:[])
   ].join("\n  ");
   html = html.replace("</head>", `  ${head}\n</head>`);
   html = html.replace(/<div\s+id="root"\s*><\/div>/i, `<div id="root">${bodyFor(path, meta, indexed)}</div>`);

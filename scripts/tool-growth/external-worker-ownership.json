@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Prevent the main patro Worker and tool SEO release from claiming foreign-repository Worker routes or branded domains.",
+  "root": {
+    "hostname": "aafnaipatro.com",
+    "worker": "patro",
+    "main": "worker/optimized-entry.ts"
+  },
+  "foreignRoutes": [
+    {
+      "pattern": "aafnaipatro.com/atlas*",
+      "script": "patro-day-atlas"
+    },
+    {
+      "pattern": "aafnaipatro.com/sitemap-atlas*",
+      "script": "patro-day-atlas"
+    },
+    {
+      "pattern": "aafnaipatro.com/sitemap-library.xml",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/research/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/article/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/blogs/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/library*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/date/*",
+      "script": "patro-date-pages"
+    }
+  ],
+  "foreignCustomDomains": [
+    {
+      "hostname": "bali-tools.aafnaipatro.com",
+      "service": "aafnai-growth-bali-preview"
+    },
+    {
+      "hostname": "global-tools.aafnaipatro.com",
+      "service": "aafnai-growth-dst-western"
+    },
+    {
+      "hostname": "sitemaps.aafnaipatro.com",
+      "service": "aafnai-growth-sitemaps"
+    },
+    {
+      "hostname": "renovation-quotes.aafnaipatro.com",
+      "service": "aafnai-renovation-quotes-v10"
+    },
+    {
+      "hostname": "uposatha.aafnaipatro.com",
+      "service": "aafnai-uposatha-companion-v10"
+    },
+    {
+      "hostname": "school-transfer.aafnaipatro.com",
+      "service": "aafnai-school-transfer-v11"
+    }
+  ],
+  "reservedPrefixes": [
+    "/article/",
+    "/blogs/",
+    "/research/",
+    "/library",
+    "/date/",
+    "/atlas",
+    "/sitemap-atlas",
+    "/sitemap-library.xml"
+  ]
+}

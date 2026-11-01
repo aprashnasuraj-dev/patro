@@ -74,6 +74,8 @@ jobs:
           echo "heavy=$heavy" >> "$GITHUB_OUTPUT"
           echo "archive-sensitive validation=$archive"
           echo "heavy browser validation=$heavy"
+      - name: Verify external Worker routes are not claimed by the main release
+        run: node scripts/tool-growth/verify-external-routing.mjs
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:

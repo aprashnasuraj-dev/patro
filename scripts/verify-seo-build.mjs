@@ -133,3 +133,6 @@ expect(optimizedEntry.includes("historyEventPageResponse"), "production Worker d
 expect(optimizedEntry.indexOf("seoStaticResponse(request") < optimizedEntry.indexOf("historyEventPageResponse(request"), "SEO static routing must precede history dynamic routing");
 
 console.log(`SEO build verified: ${totalLocs} unique indexable URLs, including ${historyLocs} source-backed Time Machine pages and ${manifest.indexed_day_route_count} factual date pages across BS ${SITEMAP_MIN_BS_YEAR}-${SITEMAP_MAX_BS_YEAR}.`);
+
+// Final tool-level HTML checks run after all three page generators and legacy prerender.
+await import("./tool-growth/verify-built-pages.mjs");

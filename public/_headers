@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://pagead2.googlesyndication.com https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://pagead2.googlesyndication.com https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; img-src 'self' data: https: https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
@@ -40,12 +40,12 @@
 
 /embed/today
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; frame-ancestors *; base-uri 'none'; form-action 'self'
   X-Robots-Tag: noindex, nofollow
 
 /embed/converter
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; frame-ancestors *; base-uri 'none'; form-action 'self'
   X-Robots-Tag: noindex, nofollow
 
 /embed/nepal-miti-today.js
@@ -77,11 +77,11 @@
 
 /nepali-tools/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' https://cloudflareinsights.com; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://www.googletagmanager.com 'sha256-tcnd4K/edH7A3LzDRjFjIfm3GTH8JtfJOBjNzuzjydg='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
 
 /nepali-typing/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' https://cloudflareinsights.com; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://www.googletagmanager.com 'sha256-tcnd4K/edH7A3LzDRjFjIfm3GTH8JtfJOBjNzuzjydg='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
 
 /seo-manifest.json
   Cache-Control: public, max-age=3600
@@ -124,7 +124,7 @@
 # Nepal Map read-only partner embed: same-origin MapLibre runtime; deliberately frameable on HTTPS sites.
 /embed/nepalmap/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://tiles.openfreemap.org; img-src 'self' data: https://tiles.openfreemap.org; font-src 'self' data: https://tiles.openfreemap.org; worker-src 'self'; object-src 'none'; frame-ancestors https:; base-uri 'none'; form-action 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com 'sha256-tcnd4K/edH7A3LzDRjFjIfm3GTH8JtfJOBjNzuzjydg='; style-src 'self' 'unsafe-inline'; connect-src 'self' https://tiles.openfreemap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; img-src 'self' data: https://tiles.openfreemap.org https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://tiles.openfreemap.org; worker-src 'self'; object-src 'none'; frame-ancestors https:; base-uri 'none'; form-action 'none'
   Cache-Control: public, max-age=300, s-maxage=3600
   X-Robots-Tag: noindex, nofollow
 
@@ -140,12 +140,12 @@
 # Nepal map (scripts/explore/nepal/build-map.mjs): MapLibre CSS from jsDelivr and OpenFreeMap tiles, fonts and sprites.
 /nepalmap
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://tiles.openfreemap.org https://routing.openstreetmap.de https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://tiles.openfreemap.org https://routing.openstreetmap.de https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; img-src 'self' data: https: https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   Cache-Control: public, max-age=600, s-maxage=3600
 
 /nepalmap/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://tiles.openfreemap.org https://routing.openstreetmap.de https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://tiles.openfreemap.org https://routing.openstreetmap.de https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; img-src 'self' data: https: https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   Cache-Control: public, max-age=600, s-maxage=3600
 
 /data/nepalmap/*
@@ -155,7 +155,7 @@
 /advancetools/*
   Cache-Control: public, max-age=300, s-maxage=86400
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; media-src 'self' blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://www.googletagmanager.com 'sha256-tcnd4K/edH7A3LzDRjFjIfm3GTH8JtfJOBjNzuzjydg='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; media-src 'self' blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 /advancetools/assets/*
   Cache-Control: public, max-age=31536000, immutable
   X-Robots-Tag: noindex
@@ -202,7 +202,7 @@
 # MM530 browser-local runtimes: same-origin only, with scoped WASM/worker support.
 /_mm530/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' blob:; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; connect-src 'self' blob: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; img-src 'self' data: blob: https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self' data:; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
   Cache-Control: no-cache, max-age=0, must-revalidate
   X-Robots-Tag: noindex, nofollow
 
