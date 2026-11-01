@@ -133,6 +133,12 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
  if(!HTMLRewriterCtor)return response;
  const incoming=new URL(request.url);
  const path=cleanPath(incoming.pathname);
+ // Standalone /tool/<slug> HTML already has unique, verified Free titles,
+ // descriptions, canonical links and SoftwareApplication schema. The SPA SEO
+ // rewriter has no catalog entry for these pages and would replace that
+ // metadata with the generic AafnaiPatro homepage title. Preserve the
+ // generated head as-is. The dictionary is managed by its own route.
+ if(/^\/tool\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(path) && path!=="/tool/nepalidictionary")return response;
  const meta=connectedRouteMeta(path);
  const base=String(env.PUBLIC_SITE_URL||incoming.origin).replace(/\/+$/,"");
  const canonical=base+(meta.canonicalPath||path);
