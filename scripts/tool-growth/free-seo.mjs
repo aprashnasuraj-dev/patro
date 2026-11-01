@@ -29,7 +29,12 @@ export function freeToolDescription(description, { limit = 160 } = {}) {
     .filter(value => value.length >= 55 && value.length <= maxBody);
   if (sentences.length) return lead + sentences.at(-1);
   // If the first sentence alone is too long, shorten at a word boundary.
-  const bounded = original.slice(0, Math.max(1, maxBody - 1)).replace(/\s+\S*$/, "").replace(/[\s,;:—–-]+$/, "");
+  let bounded = original.slice(0, Math.max(1, maxBody - 1))
+    .replace(/\s+\S*$/, "").replace(/[\s,;:—–-]+$/, "");
+  // An incomplete conjunction or preposition is not a valid standalone sentence.
+  // Remove only the dangling ending; never introduce new claims or terminology.
+  const dangling = /(?:\s+|^)(?:and|or|an|a|the|to|for|with|of|in|on|by|from|as|at|into|via|under|without|versus|per|over|than|against|using|including|such|based|while|where|that|which|when|your)\s*$/i;
+  while (dangling.test(bounded)) bounded = bounded.replace(dangling, "").replace(/[\s,;:—–-]+$/, "");
   return lead + bounded + (/[.!?]$/.test(bounded) ? "" : ".");
 }
 
