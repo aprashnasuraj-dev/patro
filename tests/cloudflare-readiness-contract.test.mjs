@@ -151,11 +151,21 @@ test("static growth slash redirects preserve canonical routes",async()=>{
   const routes=[...sitemap.matchAll(/<loc>https:\/\/aafnaipatro\.com([^<]+)<\/loc>/g)].map(m=>m[1]);
   assert.equal(routes.length,337);
   const expectedGrowth=routes.map(route=>`${route}/ ${route} 301`);
+  const preserved=(await read("public/_redirects")).split(/\r?\n/).map(x=>x.trim()).filter(x=>x&&!x.startsWith("#"));
   const redirectSet=new Set(rules);
-  assert.equal(rules.length,347,"preserve 337 live growth redirects and 10 tool aliases");
-  assert.equal(redirectSet.size,rules.length,"redirect sources must be unique");
+  assert.equal(preserved.length,347,"337 production growth redirects plus 10 tool aliases must remain pinned");
+  assert.ok(rules.length>=347&&rules.length<=355,"generated redirects must preserve protected rules without unbounded additions");
+  assert.equal(redirectSet.size,rules.length,"redirect lines must be unique");
+  for(const rule of preserved)assert.ok(redirectSet.has(rule),"production redirect lost: "+rule);
   for(const rule of expectedGrowth)assert.ok(redirectSet.has(rule),"missing growth redirect: "+rule);
-  for(const rule of rules)assert.match(rule,/^\/\S+\s+\/\S+\s+301$/,"redirect must remain a permanent internal redirect");
+  const sourcePaths=new Set();
+  for(const rule of rules){
+    assert.match(rule,/^\/\S+\s+\/\S+\s+301$/,"redirect must remain permanent and internal");
+    const [from,to]=rule.split(/\s+/);
+    assert.ok(!sourcePaths.has(from),"duplicate redirect source: "+from);
+    sourcePaths.add(from);
+    assert.ok(!["/article/","/blogs/","/research/","/library","/date/","/atlas"].some(prefix=>from.startsWith(prefix)||to.startsWith(prefix)),"foreign Worker URL must not be redirected: "+rule);
+  }
 });
 
 test("legacy public aliases are handled by Worker redirects instead of static asset rules",async()=>{
