@@ -29,6 +29,17 @@ try {
     const head = await fetch(origin + path, {method:"HEAD"});
     assert.equal(head.status,200); assert.equal(head.headers.get("x-patro-day"),today); assert.equal(await head.text(), "");
   }
+  // Test real Worker-rendered HTML, not only dist/: the connected SPA SEO middleware
+  // must not erase the unique Free tool title, meta and canonical link.
+  const toolResponse = await fetch(origin + "/tool/guest-wi-fi-card");
+  assert.equal(toolResponse.status,200,"standalone browser tool returns 200");
+  const toolHtml = await toolResponse.text();
+  assert.match(toolHtml,/<title>Free Guest Wi-Fi Card(?: \| AafnaiPatro)?<\/title>/i,"unique Free search title preserved");
+  assert.match(toolHtml,/<meta name="description" content="Free to use online\./i,"unique Free tool meta description preserved");
+  assert.match(toolHtml,/<meta property="og:title" content="Free Guest Wi-Fi Card/i,"unique social title preserved");
+  assert.match(toolHtml,/<link rel="canonical" href="https:\/\/aafnaipatro\.com\/tool\/guest-wi-fi-card">/i,"canonical unchanged");
+  assert.ok(!toolHtml.includes('id="patro-edge-webpage-schema"'),"generic SPA schema must not replace standalone tool metadata");
+  assert.match(toolHtml,/"isAccessibleForFree":true/,"free software schema retained");
   const rashifal = await fetch(origin + "/rashifal?sign=aries");
   assert.equal(rashifal.status, 200);
   const horoscope = await rashifal.text();
