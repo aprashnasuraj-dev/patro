@@ -24,3 +24,5 @@ jobs:
           node-version: "24"
       - name: Verify free SEO and all 3,091 canonical tools
         run: node --test tests/all-tools-free-seo.test.mjs tests/all-tools-inventory-seo.test.mjs
+      - name: Protect independently deployed blogs, atlas, dates and custom domains
+        run: node scripts/tool-growth/verify-external-routing.mjs
