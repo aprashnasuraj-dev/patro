@@ -13,8 +13,9 @@ export async function installGoogleTagInBuild(root) {
         if (!["admin", "admin-console"].includes(entry.name)) await walk(path);
       } else if (entry.name.endsWith(".html")) {
         const before = await readFile(path, "utf8");
-        const isDocument = /<!doctype\\s+html|<html\\b/i.test(before);
-        const hasHead = /<head\\b[^>]*>/i.test(before);
+        const lower = before.toLowerCase();
+        const isDocument = lower.includes("<!doctype html") || lower.includes("<html");
+        const hasHead = lower.includes("<head");
         if (isDocument && !hasHead) throw new Error(`Google tag build: HTML document has no <head>: ${path}`);
         const after = installGoogleTag(before);
         if (after !== before) await writeFile(path, after);
