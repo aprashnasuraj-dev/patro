@@ -116,7 +116,7 @@ function leafHtml(tool,row,runtimeHtml){
  const relatedHtml=related.length?`<section class="mm530-related" aria-labelledby="mm530-related-title"><h2 id="mm530-related-title">Related ${esc(tool.categoryLabel.toLowerCase())}</h2><div class="mm530-related-grid">${related.map(item=>`<a href="${esc(item.route)}"><strong>${esc(freeToolName(item.title))}</strong><span>${esc(item.summary||`Open this ${item.categoryLabel.toLowerCase()} tool.`)}</span></a>`).join("")}</div></section>`:"";
  const fallback=`<main class="mm530-static-fallback mm530-tool-page" data-mm530-static-fallback="1"><nav class="mm530-breadcrumb" aria-label="Breadcrumb"><a href="/">Aafnai Patro</a><span>›</span><a href="/advancetools/">Advanced tools</a><span>›</span><a href="/advancetools/web-tools/">Web tools</a><span>›</span><a href="/advancetools/web-tools/${esc(tool.category)}/">${esc(tool.categoryLabel)}</a><span>›</span><span aria-current="page">${esc(seoName)}</span></nav><header class="mm530-tool-head"><span class="mm530-kicker">Free online tool · ${esc(tool.categoryLabel)}</span><h1>${esc(seoName)}</h1><p>${esc(description)}</p></header><div class="mm530-frame-wrap"><iframe class="mm530-frame" src="/_mm530/${esc(tool.id)}/page.html" title="${esc(tool.title)}" loading="eager" referrerpolicy="same-origin" allow="${esc(iframePermissions(tool))}"></iframe></div>${editorial?`<div class="mm530-editorial" data-mm530-editorial="1">${editorial}</div>`:""}${relatedHtml}</main>`;
  html=html.replace('<div id="root"></div>',`<div id="root">${fallback}</div>`);
- return html.replace("</head>",shellCss+schema+"</head>");
+ return html.replace("</head>",shellCss+schema+'<script type="module" src="/tool-analytics.mjs"></script>'+"</head>");
 }
 
 const urls=[],editorialStats=[];
