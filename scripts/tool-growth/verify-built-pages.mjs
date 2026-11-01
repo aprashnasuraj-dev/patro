@@ -24,7 +24,7 @@ const clients=await loadClientTools(root);
 for(const item of clients)check(await read(item.slug.slice(1)+"/index.html"),item.slug,item.h1);
 const mm=(JSON.parse(await readFile(resolve(root,"src/mm530/mm530-registry.json"),"utf8"))).tools;
 for(const item of mm)check(await read(item.route.slice(1)+".html"),item.route,item.title);
-const specialist=(JSON.parse(await readFile(resolve(root,"public/advancetools/module-manifest.json"),"utf8"))).routes.filter(r=>r.kind!=="hub");
+const specialist=(JSON.parse(await readFile(resolve(root,"public/advancetools/module-manifest.json"),"utf8"))).routes.filter(r=>!["hub","web-tools-hub","web-tools-category"].includes(r.kind));
 for(const item of specialist)check(await read(item.path.replace(/^\//,"")+"index.html"),item.path,item.title);
 const legacy=JSON.parse(await readFile(resolve(root,"seo/search-intents.json"),"utf8")).tools;
 for(const route of TOOL_ROUTES){
