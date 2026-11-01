@@ -177,7 +177,7 @@ function render(path, indexed) {
     `<meta property="og:locale" content="ne_NP" />`,
     `<meta property="og:locale:alternate" content="en_US" />`,
     `<script type="application/ld+json">${json(schemaFor(path, meta))}</script>`,
-    ...(TOOL_ROUTES.includes(path)?['<script type="module" src="/tool-analytics.mjs"></script>']:[])
+    ...(TOOL_ROUTES.includes(path)?['<script type="module" src="/assets/tool-analytics.mjs"></script>']:[])
   ].join("\n  ");
   html = html.replace("</head>", `  ${head}\n</head>`);
   html = html.replace(/<div\s+id="root"\s*><\/div>/i, `<div id="root">${bodyFor(path, meta, indexed)}</div>`);
