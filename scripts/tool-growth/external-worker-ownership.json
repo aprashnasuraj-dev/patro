@@ -64,6 +64,10 @@
     {
       "hostname": "school-transfer.aafnaipatro.com",
       "service": "aafnai-school-transfer-v11"
+    },
+    {
+      "hostname": "heat-rules.aafnaipatro.com",
+      "service": "aafnai-product-platform-v1"
     }
   ],
   "reservedPrefixes": [
