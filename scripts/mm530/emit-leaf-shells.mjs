@@ -49,16 +49,22 @@ function iframePermissions(tool){
  if(tool.id==="TOOL-0350")cap.push("camera","microphone");
  return cap.join("; ");
 }
+const RELATED_STOP_WORDS=new Set(["free","the","and","with","from","into","for","your","online","browser","utility","tool","generator","converter","calculator","planner","checker","editor","builder","maker","creator","advanced"]);
+function relatedTokens(value){
+ return new Set((String(value||"").toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>w.length>1&&!RELATED_STOP_WORDS.has(w)));
+}
 function relatedLinks(tool){
- const peers=registry.filter(x=>x.category===tool.category);
- const at=peers.findIndex(x=>x.id===tool.id);
- if(at<0||peers.length<2)return [];
- const out=[];
- for(const offset of [-3,-2,-1,1,2,3]){
-  const item=peers[(at+offset+peers.length)%peers.length];
-  if(item&&item.id!==tool.id&&!out.some(x=>x.id===item.id))out.push(item);
- }
- return out;
+ const current=relatedTokens(tool.title);
+ const peers=registry.filter(x=>x.id!==tool.id);
+ return peers.map(item=>{
+  const tokens=relatedTokens(item.title);
+  const overlap=[...tokens].filter(t=>current.has(t));
+  // Shared formats and tasks outweigh an unrelated adjacent registry ID.
+  const similarity=overlap.reduce((score,token)=>score+(token.length>=4?3:1),0);
+  const sameCategory=item.category===tool.category?2:0;
+  return {item,score:similarity+sameCategory,similarity};
+ }).sort((a,b)=>b.score-a.score||b.similarity-a.similarity||a.item.sequence-b.item.sequence)
+   .slice(0,6).map(row=>row.item);
 }
 const shellCss=`<style data-mm530-static-shell>
 .mm530-static-fallback{max-width:1180px;margin:0 auto;padding:20px 18px 56px;font-family:Inter,"Noto Sans Devanagari",system-ui,sans-serif;color:#17231b}
