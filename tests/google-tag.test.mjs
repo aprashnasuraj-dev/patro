@@ -74,6 +74,17 @@ test("static finalizer covers standalone pages, adjusts CSP, and preserves manif
   } finally { await rm(root, { recursive: true, force: true }); }
 });
 
+test("static finalizer rejects a deployable HTML document without head", async () => {
+  const root = await mkdtemp(join(tmpdir(), "patro-google-tag-bad-"));
+  try {
+    await mkdir(join(root, "advancetools"));
+    await writeFile(join(root, "index.html"), "<!doctype html><html><body>missing head</body></html>");
+    await writeFile(join(root, "advancetools/module-manifest.json"), JSON.stringify({ hashes: {}, bytes: 0 }));
+    await writeFile(join(root, "_headers"), "/*\n  Content-Security-Policy: default-src 'self'\n");
+    await assert.rejects(() => installGoogleTagInBuild(root), /HTML document has no <head>/);
+  } finally { await rm(root, { recursive: true, force: true }); }
+});
+
 test("real Workers HTMLRewriter adds dynamic tags and removes the prebuilt copy", async () => {
   const bundle = await build({ stdin: { contents: `
     import { googleTagResponse } from './worker/google-tag.ts';
