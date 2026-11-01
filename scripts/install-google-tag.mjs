@@ -13,9 +13,19 @@ export async function installGoogleTagInBuild(root) {
         if (!["admin", "admin-console"].includes(entry.name)) await walk(path);
       } else if (entry.name.endsWith(".html")) {
         const before = await readFile(path, "utf8");
+        const isDocument = /<!doctype\\s+html|<html\\b/i.test(before);
+        const hasHead = /<head\\b[^>]*>/i.test(before);
+        if (isDocument && !hasHead) throw new Error(`Google tag build: HTML document has no <head>: ${path}`);
         const after = installGoogleTag(before);
         if (after !== before) await writeFile(path, after);
-        if (after.includes("data-patro-google-tag")) count++;
+        if (hasHead) {
+          const loaderCount = (after.match(/googletagmanager\\.com\\/gtag\\/js\\?id=G-KWLDWTSK14/g) || []).length;
+          const configCount = (after.match(/gtag\\('config', 'G-KWLDWTSK14'\\)/g) || []).length;
+          if (loaderCount !== 1 || configCount !== 1) {
+            throw new Error(`Google tag build: expected exactly one managed tag in ${path}; loader=${loaderCount} config=${configCount}`);
+          }
+          count++;
+        }
       }
     }
   }
