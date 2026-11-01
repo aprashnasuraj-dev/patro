@@ -1,0 +1,11 @@
+# Verified obsolete tool and directory paths; retain existing canonical URLs.
+/tools/land /tools/landconverter 301
+/tools/fuel /tools/fuelprice 301
+/tools/typingtools /tools/nepali-typing 301
+/tools/qr /tools/nepaliqr 301
+/tools/convert /convert 301
+/tools/samudaya /samudaya 301
+/advancetools/web-tools/utilities/ /advancetools/category/general-utilities/ 301
+/advancetools/web-tools/planners/ /advancetools/category/time-planning/ 301
+/advancetools/web-tools/timers/ /advancetools/category/time-planning/ 301
+/advancetools/web-tools/editors/ /advancetools/category/text-language/ 301
