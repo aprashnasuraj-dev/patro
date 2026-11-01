@@ -1,7 +1,7 @@
 // Optional, privacy-conscious interaction events for AafnaiPatro tool pages.
 // Sends only the current public route and the event name, never form inputs/files.
 const route=location.pathname.replace(/\/+$/,"")||"/";
-const allowed=/^\/(?:tool|tools|advancetools|generators|converters|calculators|validators|planners|editors|formatters|visualizers|analyzers|utilities)(?:\/|$)/.test(route);
+const allowed=Boolean(document.querySelector("[data-mm530-static-fallback], #ct-tool, [data-page=tool], .seo-prerender"));
 if(allowed){
   const group=route.startsWith("/advancetools/")?"specialist":route.startsWith("/tool/")?"browser":route.startsWith("/tools/")?"legacy":"web";
   const emit=(name)=>{
