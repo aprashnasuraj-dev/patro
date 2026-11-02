@@ -38,6 +38,14 @@
     {
       "pattern": "aafnaipatro.com/date/*",
       "script": "patro-date-pages"
+    },
+    {
+      "pattern": "aafnaipatro.com/llms.txt",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/ai-discovery.json",
+      "script": "aafnai-library-phase1"
     }
   ],
   "foreignCustomDomains": [
@@ -78,6 +86,8 @@
     "/date/",
     "/atlas",
     "/sitemap-atlas",
-    "/sitemap-library.xml"
+    "/sitemap-library.xml",
+    "/llms.txt",
+    "/ai-discovery.json"
   ]
 }

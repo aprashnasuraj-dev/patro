@@ -1,3 +1,4 @@
+import { publicDiscoveryResponse, addCatalogueLink } from "./discovery.mjs";
 import { GOOGLE_TAG_HTML, googleTagCsp } from "../shared/google-tag.ts";
 
 const HTML_HEADERS={
@@ -57,9 +58,11 @@ async function r2(env,key,request,ctx,{immutable=false,html=false}={}){
 export default {
   async fetch(request,env,ctx){
     if(request.method!=="GET"&&request.method!=="HEAD")return new Response("Method not allowed",{status:405,headers:{allow:"GET, HEAD"}});
+    const discovery=await publicDiscoveryResponse(request,env,ctx);
+    if(discovery)return googleTagged(discovery);
     const url=new URL(request.url),path=clean(url.pathname);
 
-    if(path==="/library"||path==="/library/")return await r2(env,"phase1/library.html",request,ctx,{html:true});
+    if(path==="/library"||path==="/library/")return addCatalogueLink(await r2(env,"phase1/library.html",request,ctx,{html:true}));
     if(path==="/library-index.json")return await r2(env,"phase1/catalog.json",request,ctx);
     if(path==="/sitemap-library.xml")return await r2(env,"phase1/sitemap.xml",request,ctx);
 
