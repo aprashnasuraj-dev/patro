@@ -1717,6 +1717,40 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
+- id: peak-3480246724
+  name_en: 察玛桑斯
+  name_ne: 察玛桑斯
+  lat: 28.631994
+  lon: 85.184758
+  district: Gorkha
+  district_ne: गोरखा
+  province: Gandaki
+  source: osm
+  osm: node/3480246724
+  curated: false
+  coord_verified: true
+  kind: peak
+  height_m: 5740
+  range: ''
+  note_en: ''
+  note_ne: ''
+- id: peak-3480250900
+  name_en: 杰古贡斯
+  name_ne: 杰古贡斯
+  lat: 28.598156
+  lon: 85.173491
+  district: Gorkha
+  district_ne: गोरखा
+  province: Gandaki
+  source: osm
+  osm: node/3480250900
+  curated: false
+  coord_verified: true
+  kind: peak
+  height_m: 5510
+  range: ''
+  note_en: ''
+  note_ne: ''
 - id: yansa-tsenji
   name_en: Yansa Tsenji
   name_ne: Yansa Tsenji
@@ -2295,6 +2329,23 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
+- id: peak-3578217886
+  name_en: 卢古拉康日
+  name_ne: 卢古拉康日
+  lat: 28.896559
+  lon: 84.260071
+  district: Manang
+  district_ne: मनाङ
+  province: Gandaki
+  source: osm
+  osm: node/3578217886
+  curated: false
+  coord_verified: true
+  kind: peak
+  height_m: 6900
+  range: ''
+  note_en: ''
+  note_ne: ''
 - id: peak-3578218071
   name_en: 苟吉里
   name_ne: Gaugiri
@@ -2806,8 +2857,8 @@ peaks:
   note_en: ''
   note_ne: ''
 - id: ganesh-vi
-  name_en: Ganesh VI
-  name_ne: Ganesh VI
+  name_en: 色吉恰普康圭 Ganesh VI
+  name_ne: 色吉恰普康圭 Ganesh VI
   lat: 28.331245
   lon: 85.162826
   district: Rasuwa
@@ -4230,6 +4281,23 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 5296
+  range: ''
+  note_en: ''
+  note_ne: ''
+- id: peak-4568725139
+  name_en: 星美堆
+  name_ne: 星美堆
+  lat: 28.3345
+  lon: 85.664808
+  district: Rasuwa
+  district_ne: रसुवा
+  province: Bagmati
+  source: osm
+  osm: node/4568725139
+  curated: false
+  coord_verified: true
+  kind: peak
+  height_m: 6250
   range: ''
   note_en: ''
   note_ne: ''
@@ -6409,9 +6477,9 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: khayang-peak
-  name_en: Khayang peak
-  name_ne: Khayang peak
+- id: peak-11072613827
+  name_en: 木夺岗日
+  name_ne: 木夺岗日
   lat: 28.63342
   lon: 84.713424
   district: Gorkha
@@ -7528,6 +7596,23 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 4705
+  range: ''
+  note_en: ''
+  note_ne: ''
+- id: peak-14133196708
+  name_en: 朗杰日
+  name_ne: 朗杰日
+  lat: 28.345458
+  lon: 85.686207
+  district: Rasuwa
+  district_ne: रसुवा
+  province: Bagmati
+  source: osm
+  osm: node/14133196708
+  curated: false
+  coord_verified: true
+  kind: peak
+  height_m: 5964
   range: ''
   note_en: ''
   note_ne: ''
