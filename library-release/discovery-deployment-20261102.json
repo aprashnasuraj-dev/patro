@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "change": "Public discovery profile and crawlable article catalogue",
+  "observedAt": "2026-11-02T02:21:26.155Z",
+  "sourceCommit": "4f64576ae9359f452e38de9656a3c2f972782cb7",
+  "worker": "aafnai-library-phase1",
+  "deploymentId": "394afcabfaef4fe29da2a0fab85923c7",
+  "routesAdded": [
+    {
+      "pattern": "aafnaipatro.com/llms.txt",
+      "id": "476c4f0774f642a3b3084c9544e00fdc"
+    },
+    {
+      "pattern": "aafnaipatro.com/ai-discovery.json",
+      "id": "03721177f0504fe0b6ec81cf65b836cb"
+    }
+  ],
+  "publishedUrls": [
+    "https://aafnaipatro.com/llms.txt",
+    "https://aafnaipatro.com/ai-discovery.json",
+    "https://aafnaipatro.com/library/catalogue/"
+  ],
+  "verification": {
+    "unitTests": "7/7 native Node tests PASS",
+    "compiledHandlerRegression": "8 existing route responses preserved in executed before/after tests",
+    "syntax": "Updated source generator and actual deployed module pass Node syntax checks",
+    "liveCatalogue": "Browser observed 2640 articles, page1 of53,50 article links and50 research links",
+    "liveAnalytics": "Exactly one G-KWLDWTSK14 loader and one configuration script on catalogue page",
+    "liveSummary": "Browser observed updated 1080-tool/2640-article scope in /llms.txt",
+    "liveProfile": "Browser observed correct inventories in /ai-discovery.json",
+    "liveLibraryLink": "Browser observed visible /library/catalogue/ link on /library",
+    "bindingPreservation": "API readback matches original R2 and plain-text bindings",
+    "routePreservation": "Eight previous routes retained; exactly two metadata routes added"
+  },
+  "nonClaims": [
+    "No global model knowledge update",
+    "No guaranteed AI citation or referral increase",
+    "Counts describe dated public catalogue entries, not universal runtime or accuracy certification"
+  ],
+  "spend": {
+    "purchases": 0,
+    "newPaidServices": 0,
+    "accountPlanChanges": 0
+  },
+  "rollback": {
+    "source": "library-release/rollback/20261102-before-discovery.worker.mjs",
+    "settings": "library-release/rollback/20261102-before-discovery.settings.json",
+    "routes": "Remove only the two route IDs added by this change if rolling back; preserve all earlier routes."
+  }
+}
