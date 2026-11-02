@@ -1,3 +1,4 @@
+import { DISCOVERY_PROFILE, discoveryMarkdown } from "../library-release/discovery.mjs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import {
@@ -78,13 +79,14 @@ const robots = [
 const llms = [
   "# आफ्नै पात्रो · Aafnai Patro",
   "",
-  "> A bilingual Nepali calendar and utility service for Bikram Sambat (BS), Nepal date, tithi, festivals, BS↔AD conversion, astronomy, history, Rashifal, community calendars, FM and live TV.",
+  "> A bilingual web-tools and source-backed publishing platform, with 1,080 browser-tool entries, 2,640 library articles, Nepali calendars, language utilities, astronomy, history and cultural features. Counts observed 2 November 2026.",
   "",
   `Canonical site: ${SITE}/`,
   "Primary languages: Nepali (ne) and English (en content on canonical pages).",
   "Canonical brand: आफ्नै पात्रो / Aafnai Patro.",
   `Preferred citation: ${citation}`,
   "",
+  ...discoveryMarkdown({includeHeader:false}).trim().split("\n"),
   "## Best citation targets",
   `- [Today / आजको नेपाली मिति](${SITE}/today): Nepal date today and current Nepali calendar.`,
   `- [Methodology](${SITE}/methodology): how the calendar archive, conversion and verification rules are applied.`,
@@ -118,6 +120,7 @@ const llms = [
 
 const llmsFullLines = [
   "# Aafnai Patro full retrieval corpus",
+  discoveryMarkdown({includeHeader:false}),
   `# ${citation}`,
   ...CORE_INDEX_ROUTES.map((path) => `${SITE}${path === "/" ? "/" : path} — Canonical Aafnai Patro public page for ${path === "/" ? "today's Nepali calendar" : path.slice(1).replace(/[-/]/g," ")}.`),
   ...COMMUNITY_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro community-calendar page.`),
@@ -172,6 +175,7 @@ const agents = {
     {name:"festival_lookup",endpoint:"/api/agent/v1/festival"},
     {name:"sait_lookup",endpoint:"/api/agent/v1/sait"}
   ],
+  public_catalogues:DISCOVERY_PROFILE,
   languages:["ne","en"],contact:`${SITE}/contact`
 };
 const security = [
@@ -186,7 +190,7 @@ const security = [
 const humans = [
   "Aafnai Patro (आफ्नै पात्रो)",
   `Site: ${SITE}`,
-  "Purpose: Nepali calendar, date conversion and everyday Nepali utilities.",
+  "Purpose: browser tools, source-backed articles, Nepali calendars, date conversion, language utilities and cultural references.",
   "Languages: Nepali and English.",
   "Accuracy: calendar/tithi facts are sourced from the same validated local archive used by the product; static SEO copy never guesses daily panchang facts.",
   ""
@@ -210,6 +214,7 @@ await Promise.all([
   writeFile(resolve(root, "public/sitemap.xml"), sitemapIndex, "utf8"),
   ...sitemapFiles.map(([file, routes]) => writeFile(resolve(root, "public/" + file), urlset(routes), "utf8")),
   writeFile(resolve(root, "public/robots.txt"), robots, "utf8"),
+  writeFile(resolve(root, "public/ai-discovery.json"), JSON.stringify(DISCOVERY_PROFILE,null,2)+"\n", "utf8"),
   writeFile(resolve(root, "public/llms.txt"), llms, "utf8"),
   writeFile(resolve(root, "public/llms-full.txt"), llmsFull, "utf8"),
   writeFile(resolve(root, "public/ai.txt"), aiTxt, "utf8"),
