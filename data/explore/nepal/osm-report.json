@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-29",
- "osm_timestamp": "2026-10-28T21:21:02Z",
+ "generated": "2026-11-03",
+ "osm_timestamp": "2026-11-02T21:21:26Z",
  "level_counts": {
   "4": 7,
   "6": 77,
@@ -516,12 +516,12 @@
   }
  },
  "pois": {
-  "total": 54918,
+  "total": 54922,
   "by_category": {
    "bus": 291,
    "stay": 5001,
-   "peak": 578,
-   "worship": 7721,
+   "peak": 579,
+   "worship": 7722,
    "school": 24918,
    "market": 300,
    "bank": 5874,
@@ -530,7 +530,7 @@
    "office": 2833,
    "waterfall": 32,
    "health": 4481,
-   "post": 93,
+   "post": 95,
    "airport": 53,
    "park": 505,
    "lake": 750
@@ -538,9 +538,9 @@
  },
  "district_hq_points": 68,
  "admin_confidence": {
-  "low": 31383,
-  "medium": 34579,
-  "high": 8098,
+  "low": 31385,
+  "medium": 34580,
+  "high": 8099,
   "unverified": 159
  }
 }
