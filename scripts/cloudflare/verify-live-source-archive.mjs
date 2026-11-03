@@ -18,6 +18,7 @@ const names = new Set(inventory.workers.map(x => x.name));
 const seen = new Set();
 let originalBytes = 0;
 let compressedBytes = 0;
+const mismatches = [];
 for (const item of index.workers) {
   if (!names.has(item.name) || item.name === "patro" || seen.has(item.name)) fail("invalid or duplicate name " + item.name);
   seen.add(item.name);
@@ -26,8 +27,9 @@ for (const item of index.workers) {
   if (compressed.length < 3 || compressed[0] !== 0x1f || compressed[1] !== 0x8b) fail("not gzip: " + item.name);
   const body = gunzipSync(compressed);
   const digest = createHash("sha256").update(body).digest("hex");
-  if (body.length !== item.originalBytes || digest !== item.sourceSha256) fail("source mismatch: " + item.name);
+  if (body.length !== item.originalBytes || digest !== item.sourceSha256) mismatches.push({name:item.name,expectedBytes:item.originalBytes,actualBytes:body.length,expectedSha256:item.sourceSha256,actualSha256:digest});
   originalBytes += body.length;
   compressedBytes += compressed.length;
 }
+if (mismatches.length) fail("source mismatches: " + JSON.stringify(mismatches));
 console.log(JSON.stringify({ok:true,workers:seen.size,originalBytes,compressedBytes,routes:inventory.routes.length,domains:inventory.domains.length}));
