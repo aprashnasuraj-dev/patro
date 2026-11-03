@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-11-03",
+  "purpose": "Immutable, non-deploying source snapshots of 38 independently managed Workers; excludes main patro compiled JS (tracked via fingerprint and main Git sources)",
+  "format": "gzip of exact Worker content/v2 code payload (MIME wrapper extracted where present)",
+  "recordScope": "GitHub private patro repository",
+  "validation": "SHA-256 computed from returned original bytes; Git SHA is for the gzip blob",
+  "caveats": [
+    "Basic hardcoded-secret pattern scan only; perform full scanning before sharing or unpacking",
+    "Worker static asset bytes, R2 object bodies, KV and D1 contents are not included",
+    "Names are historical snapshots and must not be treated as source of deployment authority",
+    "Source identity must be matched to active deployment versions in production-inventory.json"
+  ],
+  "rootPatroWorker": {
+    "deployedSourceSha256": "15b5b5d4a46cd29b18b1e302711a506e41ef0f233f448c57cac4c5514855203a",
+    "deployedSourceBytes": 2453055,
+    "reasonNotArchived": "main app owns source via patro Git; compiled production bundle not imported automatically"
+  },
+  "workers": [
+    {
+      "name": "aafnai-advanced-audio-loop-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-audio-loop-v15.js.gz",
+      "sourceSha256": "c8d09df64c7ce9a6fe01ae8d679309682ea93d6de70eeaf61faf01899e75fa24",
+      "originalBytes": 40853
+    },
+    {
+      "name": "aafnai-advanced-bead-inventory-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-bead-inventory-v15.js.gz",
+      "sourceSha256": "f68d9fb1a7707cf974f4e55905d532d219f4c357905532aa00ddcc54d06da32b",
+      "originalBytes": 39792
+    },
+    {
+      "name": "aafnai-advanced-card-bundle-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-card-bundle-v15.js.gz",
+      "sourceSha256": "5f273d309f03d52ca4e8a0d121a9e2dcfadb4b9fc11e9e47245d1ddb7e232930",
+      "originalBytes": 39204
+    },
+    {
+      "name": "aafnai-advanced-chordpro-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-chordpro-v15.js.gz",
+      "sourceSha256": "5d7d2cd13ce319170e60a96959973e9329f6748cecdf94087f5b6705bae88d22",
+      "originalBytes": 39193
+    },
+    {
+      "name": "aafnai-advanced-coding-reconcile-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-coding-reconcile-v15.js.gz",
+      "sourceSha256": "306e289fe3a9c4afe246f27f7d9a2bcedc741aa804e67f584a38ec24552a67f5",
+      "originalBytes": 44928
+    },
+    {
+      "name": "aafnai-advanced-epub-diff-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-epub-diff-v15.js.gz",
+      "sourceSha256": "dc43420153d43a3fe8ff36aec45fb34820070861984364023bf952034999a15a",
+      "originalBytes": 39387
+    },
+    {
+      "name": "aafnai-advanced-exposure-sheet-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-exposure-sheet-v15.js.gz",
+      "sourceSha256": "18aa81d78c5bdfefb59998c0fb4aa96485ab49ed836b9b30b1400b3f97126a0c",
+      "originalBytes": 38295
+    },
+    {
+      "name": "aafnai-advanced-fabric-nesting-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-fabric-nesting-v15.js.gz",
+      "sourceSha256": "daaa5ed23eb5ce70165b097760fca1bec9fd2c2ba7b8db25e3b4d167d22078d7",
+      "originalBytes": 40462
+    },
+    {
+      "name": "aafnai-advanced-font-language-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-font-language-v15.js.gz",
+      "sourceSha256": "e5a005ec0094a57bcb291a30b3aea0e08c60f93f0f10b8d47dd615952de27c8a",
+      "originalBytes": 41729
+    },
+    {
+      "name": "aafnai-advanced-icu-validator-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-icu-validator-v15.js.gz",
+      "sourceSha256": "868bcebc1c5dfaa8ca6550bb7dae1a289de8b4400247dc2ab7fb5caab16f5b6b",
+      "originalBytes": 69019
+    },
+    {
+      "name": "aafnai-advanced-knit-gauge-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-knit-gauge-v15.js.gz",
+      "sourceSha256": "dbdfb78f9249bebc2cdcf3644370bbb43024a6d36083f8e3bf9cf9f47cf3866e",
+      "originalBytes": 39553
+    },
+    {
+      "name": "aafnai-advanced-pgn-diff-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-pgn-diff-v15.js.gz",
+      "sourceSha256": "05e38d16046fac70bde42cf09f6878e92741527deff987ea331e994a16bda2f0",
+      "originalBytes": 41136
+    },
+    {
+      "name": "aafnai-advanced-puzzle-hunt-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-puzzle-hunt-v15.js.gz",
+      "sourceSha256": "8f6ed03f799720dc93b1e93df588a8a87fd0a23b4efa444025fc405663082f9b",
+      "originalBytes": 14936
+    },
+    {
+      "name": "aafnai-advanced-qmk-simulator-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-qmk-simulator-v15.js.gz",
+      "sourceSha256": "2057d8cf4fd5dca5e911719d38d62bc7046fba8167354af2ddc5962cfdcb3a1b",
+      "originalBytes": 39387
+    },
+    {
+      "name": "aafnai-advanced-quiz-bank-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-quiz-bank-v15.js.gz",
+      "sourceSha256": "4cbfaec5f2d14d50ec245f92350ab999678e6aaaded85dfea9356d71a006fb73",
+      "originalBytes": 41127
+    },
+    {
+      "name": "aafnai-advanced-rehearsal-planner-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-rehearsal-planner-v15.js.gz",
+      "sourceSha256": "21d6e7c89d9e02d4ae92f3494aeb2fad4d0dfb500c869e508239b5df644a0e8f",
+      "originalBytes": 39889
+    },
+    {
+      "name": "aafnai-advanced-story-continuity-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-story-continuity-v15.js.gz",
+      "sourceSha256": "851b06f8c6607cd89ba977d4211f6f8990e5e8859692df340840b3f17127c782",
+      "originalBytes": 39448
+    },
+    {
+      "name": "aafnai-advanced-survey-branch-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-survey-branch-v15.js.gz",
+      "sourceSha256": "b873ca8a2b465a8c6e3a23e62999d9abb7f30d0eb52867da5b49cf0a7a0fc3d3",
+      "originalBytes": 40880
+    },
+    {
+      "name": "aafnai-advanced-tools-sitemap-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-tools-sitemap-v15.js.gz",
+      "sourceSha256": "108e3176c98e019c5aaed2d87622f4f8890029384d86aeaaed25ffeb1241b48e",
+      "originalBytes": 9474
+    },
+    {
+      "name": "aafnai-advanced-tournament-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-tournament-v15.js.gz",
+      "sourceSha256": "1aaf97697369ea5ef781cd7ea3f72518e5bd189627d27e74739bbda9d1ae9ea1",
+      "originalBytes": 40209
+    },
+    {
+      "name": "aafnai-advanced-warp-planner-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-advanced-warp-planner-v15.js.gz",
+      "sourceSha256": "793d041239f30f8f9e185423dfd030ea435a956803a676cbddf6a01f23315a12",
+      "originalBytes": 38834
+    },
+    {
+      "name": "aafnai-bali-sitemap-gateway-v1",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-bali-sitemap-gateway-v1.js.gz",
+      "sourceSha256": "969abf0698693023b1a5987aef3c62c6a12216993770b065ec9df173a6437248",
+      "originalBytes": 622
+    },
+    {
+      "name": "aafnai-factory-lab-migration-1101",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-factory-lab-migration-1101.js.gz",
+      "sourceSha256": "acdf370324cc7782c6e4752ad0a419ba14d38091313a01d87fcf580733540ae9",
+      "originalBytes": 38889
+    },
+    {
+      "name": "aafnai-growth-bali-preview",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-growth-bali-preview.js.gz",
+      "sourceSha256": "2cf80e190c4fe4767b9e25c8b920365e5f379dd5e4badb7ae90866515abcafeb",
+      "originalBytes": 16543
+    },
+    {
+      "name": "aafnai-growth-c02-preview",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-growth-c02-preview.js.gz",
+      "sourceSha256": "341fcdc2c9d90ef2cec994d971fadbe44648aa385038c5361c56466fbb44538a",
+      "originalBytes": 54125
+    },
+    {
+      "name": "aafnai-growth-dst-western",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-growth-dst-western.js.gz",
+      "sourceSha256": "983a5a00bc41bbf9162d0d6a6cfef111ca369797328025374fffab304538c2bb",
+      "originalBytes": 15311
+    },
+    {
+      "name": "aafnai-growth-sitemaps",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-growth-sitemaps.js.gz",
+      "sourceSha256": "e0367fd906ec360b77e09a5797c28f03d7f7f671ce7ca1b499054d3e2aa9eb85",
+      "originalBytes": 1739
+    },
+    {
+      "name": "aafnai-growth-sitemaps-v2",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-growth-sitemaps-v2.js.gz",
+      "sourceSha256": "25be21138df66b039f613f997e1877d1cb2ac44e1afe6070a3be1ee4607d3da3",
+      "originalBytes": 1331
+    },
+    {
+      "name": "aafnai-ha119-math-practice-v12",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-ha119-math-practice-v12.js.gz",
+      "sourceSha256": "3324b6536513670d3ace1e3a3df196f7f45b5c8982ba6bd2dceea7cdbc57cd00",
+      "originalBytes": 38837
+    },
+    {
+      "name": "aafnai-library-phase1",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-library-phase1.js.gz",
+      "sourceSha256": "2eb5a0bd76519257c2d17754d3f63af38baf842f91cd0d8cdd12b626f02f75ef",
+      "originalBytes": 18694
+    },
+    {
+      "name": "aafnai-localcaption-v15",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-localcaption-v15.js.gz",
+      "sourceSha256": "9eb2747da35342ff31758499767e17edbc753cc4e8218d91c0a48b4456def1d1",
+      "originalBytes": 77791
+    },
+    {
+      "name": "aafnai-product-platform-v1",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-product-platform-v1.js.gz",
+      "sourceSha256": "36c0c9c4d5a9596ab15f9133b42632c503b90cca1c0469f66b38da043b8bef31",
+      "originalBytes": 48618
+    },
+    {
+      "name": "aafnai-renovation-quotes-v10",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-renovation-quotes-v10.js.gz",
+      "sourceSha256": "e67039578d84043795ba14557cc6405f827000b068765f96174b88af6a0424c0",
+      "originalBytes": 22182
+    },
+    {
+      "name": "aafnai-school-transfer-v11",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-school-transfer-v11.js.gz",
+      "sourceSha256": "3b8beaa6502ed5f1a40040c62a959f70c05db913432d598e9341403bb5b25e65",
+      "originalBytes": 51100
+    },
+    {
+      "name": "aafnai-uposatha-companion-v10",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/aafnai-uposatha-companion-v10.js.gz",
+      "sourceSha256": "88403a58c84a3241949d12f4e30b50cc97c28765fdbb330f338974f88f2ccaf4",
+      "originalBytes": 24592
+    },
+    {
+      "name": "patro-date-pages",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/patro-date-pages.js.gz",
+      "sourceSha256": "e73964594045ff5729243c65f7a3d13114c5135c284955342d9cc101143b9c82",
+      "originalBytes": 1640
+    },
+    {
+      "name": "patro-day-atlas",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/patro-day-atlas.js.gz",
+      "sourceSha256": "8ffbd3941723ec27bdeeb4d23c4d75d5c502dec02738672af99262964107dc13",
+      "originalBytes": 221734
+    },
+    {
+      "name": "patro-growth-gate",
+      "path": "cloudflare/live-sync/2026-11-03/worker-sources/patro-growth-gate.js.gz",
+      "sourceSha256": "f09186ac63c3c3caaa99ceedff0d9b461e6079c5f9a74619d51bfc2fc768f6b2",
+      "originalBytes": 5167
+    }
+  ]
+}

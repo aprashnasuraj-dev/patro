@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 const root=process.cwd();
 const read=async p=>JSON.parse(await readFile(resolve(root,p),"utf8"));
 const ownership=await read("scripts/tool-growth/external-worker-ownership.json");
+const liveBaseline=await read(ownership.inventorySnapshot);
 const wrangler=await read("wrangler.jsonc");
 const errors=[];
 const verify=(valid,message)=>{if(!valid)errors.push(message)};
@@ -11,8 +12,16 @@ const expectedRoot=ownership.root;
 verify(wrangler.name===expectedRoot.worker,"Main Worker name changed");
 verify(wrangler.main===expectedRoot.main,"Main Worker entry changed");
 verify(Array.isArray(wrangler.routes)&&wrangler.routes.length===1&&wrangler.routes[0].pattern===expectedRoot.hostname&&wrangler.routes[0].custom_domain===true,"Main Worker must own only its existing root custom domain");
-verify(ownership.foreignRoutes.length===8,"External Worker routes inventory changed unexpectedly");
-verify(ownership.foreignCustomDomains.length===7,"External custom domain inventory changed unexpectedly");
+verify(ownership.foreignRoutes.length===liveBaseline.routes.length,"External route count differs from captured production");
+verify(ownership.foreignCustomDomains.length===liveBaseline.domains.filter(x=>x.hostname!==ownership.root.hostname).length,"External domain count differs from captured production");
+const routeKey=r=>r.pattern+" => "+r.script;
+const domainKey=d=>d.hostname+" => "+d.service;
+const baselineRoutes=new Set(liveBaseline.routes.map(routeKey));
+const baselineDomains=new Set(liveBaseline.domains.map(domainKey));
+for(const row of ownership.foreignRoutes)verify(baselineRoutes.has(routeKey(row)),"Uncaptured foreign route: "+routeKey(row));
+for(const row of ownership.foreignCustomDomains)verify(baselineDomains.has(domainKey(row)),"Uncaptured foreign domain: "+domainKey(row));
+verify(baselineRoutes.size===ownership.foreignRoutes.length,"Production route snapshot has missing or duplicate ownership");
+verify(baselineDomains.size===ownership.foreignCustomDomains.length+1,"Production domain snapshot has missing or duplicate ownership");
 const prefixes=ownership.reservedPrefixes;
 const isReserved=p=>prefixes.some(prefix=>p.startsWith(prefix));
 const redirectText=await readFile(resolve(root,"public/_redirects"),"utf8");
@@ -54,6 +63,10 @@ if(process.argv.includes("--live")){
   cloudflareGet("/zones/"+encodeURIComponent(zone)+"/workers/routes",token),
   cloudflareGet("/accounts/"+encodeURIComponent(account)+"/workers/domains",token)
  ]);
+ verify(routes.length===liveBaseline.routes.length,"Live Worker route count differs from captured production; reconcile before release");
+ verify(domains.length===liveBaseline.domains.length,"Live custom-domain count differs from captured production; reconcile before release");
+ for(const row of routes)verify(baselineRoutes.has(routeKey(row)),"Unrecognized production Worker route: "+routeKey(row));
+ for(const row of domains)verify(baselineDomains.has(domainKey(row)),"Unrecognized production Worker domain: "+domainKey(row));
  const routeMap=new Map((routes||[]).map(r=>[r.pattern,r.script]));
  const domainMap=new Map((domains||[]).map(r=>[r.hostname,r.service]));
  for(const row of ownership.foreignRoutes){

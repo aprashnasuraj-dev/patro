@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "recorded_date": "2026-11-03",
+  "secret_policy": "Secret values and plain-text variable values intentionally excluded; names and resource targets only",
+  "bindings": [
+    {
+      "name": "aafnai-advanced-audio-loop-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-bead-inventory-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-card-bundle-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-chordpro-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-coding-reconcile-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-epub-diff-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-exposure-sheet-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-fabric-nesting-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-font-language-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-icu-validator-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-knit-gauge-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-pgn-diff-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-puzzle-hunt-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-qmk-simulator-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-quiz-bank-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-rehearsal-planner-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-story-continuity-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-survey-branch-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-tools-sitemap-v15",
+      "bindings": [
+        {
+          "name": "APEX",
+          "type": "service",
+          "service": "patro"
+        }
+      ]
+    },
+    {
+      "name": "aafnai-advanced-tournament-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-advanced-warp-planner-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-bali-sitemap-gateway-v1",
+      "bindings": [
+        {
+          "name": "BALI",
+          "type": "service",
+          "service": "aafnai-growth-bali-preview"
+        }
+      ]
+    },
+    {
+      "name": "aafnai-factory-lab-migration-1101",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-growth-bali-preview",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-growth-c02-preview",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-growth-dst-western",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-growth-sitemaps",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-growth-sitemaps-v2",
+      "bindings": [
+        {
+          "name": "ORIGIN",
+          "type": "service",
+          "service": "aafnai-growth-sitemaps"
+        }
+      ]
+    },
+    {
+      "name": "aafnai-ha119-math-practice-v12",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-library-phase1",
+      "bindings": [
+        {
+          "name": "LIBRARY",
+          "type": "r2_bucket",
+          "bucket": "aafnai-library"
+        },
+        {
+          "name": "LIBRARY_ARTICLE_COUNT",
+          "type": "plain_text"
+        },
+        {
+          "name": "LIBRARY_RELEASE",
+          "type": "plain_text"
+        }
+      ]
+    },
+    {
+      "name": "aafnai-localcaption-v15",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-product-platform-v1",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-renovation-quotes-v10",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-school-transfer-v11",
+      "bindings": []
+    },
+    {
+      "name": "aafnai-uposatha-companion-v10",
+      "bindings": []
+    },
+    {
+      "name": "patro",
+      "bindings": [
+        {
+          "name": "AI",
+          "type": "ai"
+        },
+        {
+          "name": "ARCHIVE",
+          "type": "r2_bucket",
+          "bucket": "patro"
+        },
+        {
+          "name": "ASSETS",
+          "type": "assets"
+        },
+        {
+          "name": "BALI_DAUH_AYU",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_ENGLISH_GUIDE",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_ICS_FEEDS",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_LEARNING_GUIDES",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_MONTH_GRID",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_OTONAN_DUAL_RESULT",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_PADEWASAN",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_PIODALAN",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_PWA",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_RERAINAN_SEARCH",
+          "type": "plain_text"
+        },
+        {
+          "name": "BALI_SUBSCRIPTION_UI",
+          "type": "plain_text"
+        },
+        {
+          "name": "BIPAD_API_BASE",
+          "type": "plain_text"
+        },
+        {
+          "name": "CACHE",
+          "type": "kv_namespace",
+          "namespace_id": "03db09f2f5cb4985b87f02c459544215"
+        },
+        {
+          "name": "CALENDAR_COVERAGE_END",
+          "type": "plain_text"
+        },
+        {
+          "name": "CALENDAR_COVERAGE_START",
+          "type": "plain_text"
+        },
+        {
+          "name": "CALENDAR_SOURCE_VERSION",
+          "type": "plain_text"
+        },
+        {
+          "name": "DB",
+          "type": "d1",
+          "database_id": "fb25c860-01db-4ab0-9036-7f87b26ca64b"
+        },
+        {
+          "name": "GOOGLE_CLIENT_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "Googleauth",
+          "type": "secret_text"
+        },
+        {
+          "name": "MY_TIME_ENABLED",
+          "type": "secret_text"
+        },
+        {
+          "name": "NEPAL_API_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "NEPAL_CORRECTIONS_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "NEPAL_EMERGENCY_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "NEPAL_ROUTING_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "PATRO_HTML_BUILD_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "PUBLIC_REFERENCE_CACHE_VERSION",
+          "type": "plain_text"
+        },
+        {
+          "name": "PUBLIC_SITE_URL",
+          "type": "plain_text"
+        },
+        {
+          "name": "SUPABASE_COMPAT_ORIGIN",
+          "type": "plain_text"
+        },
+        {
+          "name": "VAPID_PRIVATE_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "VAPID_PUBLIC_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "VAPID_SUBJECT",
+          "type": "secret_text"
+        }
+      ]
+    },
+    {
+      "name": "patro-date-pages",
+      "bindings": [
+        {
+          "name": "ASSETS",
+          "type": "assets"
+        },
+        {
+          "name": "ORIGIN",
+          "type": "service",
+          "service": "patro"
+        }
+      ]
+    },
+    {
+      "name": "patro-day-atlas",
+      "bindings": [
+        {
+          "name": "ORIGIN",
+          "type": "service",
+          "service": "patro"
+        }
+      ]
+    },
+    {
+      "name": "patro-growth-gate",
+      "bindings": [
+        {
+          "name": "DB",
+          "type": "d1",
+          "database_id": "fb25c860-01db-4ab0-9036-7f87b26ca64b"
+        }
+      ]
+    }
+  ],
+  "assetRouting": [
+    {
+      "name": "patro",
+      "deployed_version_id": "40fceba4-fdff-4037-a7f6-1bdf9478cce1",
+      "has_asset_config": true,
+      "serve_directly": true,
+      "not_found_handling": "none",
+      "run_worker_first": [
+        "/*",
+        "!/assets/*",
+        "!/manifest.webmanifest",
+        "!/calendar/festivals.ics",
+        "!/pwa-install-early.js",
+        "!/bali-calendar/manifest.webmanifest",
+        "!/bali-calendar/pwa.js",
+        "!/bali-calendar-sw.js",
+        "!/sw.js",
+        "!/patro-boot-recovery.js",
+        "!/icon-*.png",
+        "!/maskable-512.png",
+        "!/apple-touch-icon.png",
+        "!/favicon.*",
+        "!/moon",
+        "!/moon/*",
+        "!/eclipse",
+        "!/eclipse/*",
+        "!/nepal",
+        "!/nepal/time",
+        "!/nepal/year",
+        "!/nepal/trek-weather",
+        "!/nepal/trek-weather/*",
+        "!/nepalmap*",
+        "!/embed/nepalmap/*",
+        "!/embed/nepalmap-widget.js",
+        "!/sitemap-nepalmap.xml",
+        "!/us/*",
+        "!/weather",
+        "!/weather/*",
+        "!/de/*",
+        "!/fr/*",
+        "!/es/*",
+        "!/it/*",
+        "!/sitemap-growth.xml",
+        "!/aap/runtime.js",
+        "!/aap/analytics.js",
+        "!/data/*",
+        "!/_mm530",
+        "!/_mm530/*",
+        "!/vendor/*",
+        "!/sitemap-mm530.xml",
+        "!/calculators/*",
+        "!/generators/*",
+        "!/converters/*",
+        "!/utilities/*",
+        "!/validators/*",
+        "!/editors/*",
+        "!/planners/*",
+        "!/extractors/*",
+        "!/analyzers/*",
+        "!/formatters/*",
+        "!/comparisons/*",
+        "!/timers/*",
+        "!/advancetools",
+        "!/advancetools/",
+        "!/advancetools/index.html",
+        "!/advancetools/web-tools",
+        "!/advancetools/web-tools/*",
+        "!/advancetools/category/*",
+        "!/advancetools/category",
+        "!/advancetools/sitemap.xml",
+        "!/advancetools/module-manifest.json",
+        "!/advancetools/assets",
+        "!/advancetools/assets/*",
+        "!/advancetools/downloads",
+        "!/advancetools/downloads/*",
+        "!/advancetools/licenses",
+        "!/advancetools/licenses/*",
+        "!/advancetools/methodology",
+        "!/advancetools/methodology/*",
+        "!/advancetools/knittingcalculators",
+        "!/advancetools/knittingcalculators/*",
+        "!/advancetools/chordlibrary",
+        "!/advancetools/chordlibrary/*",
+        "!/advancetools/workshopreference",
+        "!/advancetools/workshopreference/*",
+        "!/advancetools/fontconverters",
+        "!/advancetools/fontconverters/*",
+        "!/advancetools/printablepaper",
+        "!/advancetools/printablepaper/*",
+        "!/client-tools/*",
+        "!/sitemap-client-tools.xml",
+        "!/converter/*",
+        "!/calculator/*",
+        "!/tools/*",
+        "!/client-tools",
+        "!/converter",
+        "!/calculator",
+        "!/tools",
+        "!/robots.txt",
+        "!/sitemap.xml",
+        "!/aafnai-logo.png",
+        "!/icons/*",
+        "!/fonts/*",
+        "!/nepali-tools/core/*",
+        "!/bali-calendar/icon.svg",
+        "!/llms*.txt",
+        "!/ai.txt",
+        "!/.well-known/agents.json"
+      ],
+      "static_routing": {
+        "user_worker": [
+          "/*"
+        ],
+        "asset_worker": [
+          "/assets/*",
+          "/manifest.webmanifest",
+          "/calendar/festivals.ics",
+          "/pwa-install-early.js",
+          "/bali-calendar/manifest.webmanifest",
+          "/bali-calendar/pwa.js",
+          "/bali-calendar-sw.js",
+          "/sw.js",
+          "/patro-boot-recovery.js",
+          "/icon-*.png",
+          "/maskable-512.png",
+          "/apple-touch-icon.png",
+          "/favicon.*",
+          "/moon",
+          "/moon/*",
+          "/eclipse",
+          "/eclipse/*",
+          "/nepal",
+          "/nepal/time",
+          "/nepal/year",
+          "/nepal/trek-weather",
+          "/nepal/trek-weather/*",
+          "/nepalmap*",
+          "/embed/nepalmap/*",
+          "/embed/nepalmap-widget.js",
+          "/sitemap-nepalmap.xml",
+          "/us/*",
+          "/weather",
+          "/weather/*",
+          "/de/*",
+          "/fr/*",
+          "/es/*",
+          "/it/*",
+          "/sitemap-growth.xml",
+          "/aap/runtime.js",
+          "/aap/analytics.js",
+          "/data/*",
+          "/_mm530",
+          "/_mm530/*",
+          "/vendor/*",
+          "/sitemap-mm530.xml",
+          "/calculators/*",
+          "/generators/*",
+          "/converters/*",
+          "/utilities/*",
+          "/validators/*",
+          "/editors/*",
+          "/planners/*",
+          "/extractors/*",
+          "/analyzers/*",
+          "/formatters/*",
+          "/comparisons/*",
+          "/timers/*",
+          "/advancetools",
+          "/advancetools/",
+          "/advancetools/index.html",
+          "/advancetools/web-tools",
+          "/advancetools/web-tools/*",
+          "/advancetools/category/*",
+          "/advancetools/category",
+          "/advancetools/sitemap.xml",
+          "/advancetools/module-manifest.json",
+          "/advancetools/assets",
+          "/advancetools/assets/*",
+          "/advancetools/downloads",
+          "/advancetools/downloads/*",
+          "/advancetools/licenses",
+          "/advancetools/licenses/*",
+          "/advancetools/methodology",
+          "/advancetools/methodology/*",
+          "/advancetools/knittingcalculators",
+          "/advancetools/knittingcalculators/*",
+          "/advancetools/chordlibrary",
+          "/advancetools/chordlibrary/*",
+          "/advancetools/workshopreference",
+          "/advancetools/workshopreference/*",
+          "/advancetools/fontconverters",
+          "/advancetools/fontconverters/*",
+          "/advancetools/printablepaper",
+          "/advancetools/printablepaper/*",
+          "/client-tools/*",
+          "/sitemap-client-tools.xml",
+          "/converter/*",
+          "/calculator/*",
+          "/tools/*",
+          "/client-tools",
+          "/converter",
+          "/calculator",
+          "/tools",
+          "/robots.txt",
+          "/sitemap.xml",
+          "/aafnai-logo.png",
+          "/icons/*",
+          "/fonts/*",
+          "/nepali-tools/core/*",
+          "/bali-calendar/icon.svg",
+          "/llms*.txt",
+          "/ai.txt",
+          "/.well-known/agents.json"
+        ]
+      },
+      "base_path": "/"
+    },
+    {
+      "name": "patro-date-pages",
+      "deployed_version_id": "39c80dec-551b-4273-b303-9dcf545efe9a",
+      "has_asset_config": true,
+      "serve_directly": true,
+      "not_found_handling": "none",
+      "run_worker_first": false,
+      "base_path": "/"
+    },
+    {
+      "name": "patro-day-atlas",
+      "deployed_version_id": "3ff08d16-bc81-43ae-913a-3bcab85550dd",
+      "has_asset_config": false
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "purpose": "Prevent the main patro Worker and tool SEO release from claiming foreign-repository Worker routes or branded domains.",
+  "purpose": "Prevent main patro releases from claiming independently owned live production Worker routes or custom domains; generated from Cloudflare inventory 2026-11-03.",
   "root": {
     "hostname": "aafnaipatro.com",
     "worker": "patro",
@@ -8,8 +8,116 @@
   },
   "foreignRoutes": [
     {
+      "pattern": "aafnaipatro.com/advanced-tools/animation-exposure-sheet*",
+      "script": "aafnai-advanced-exposure-sheet-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/audio-loop-batch-editor*",
+      "script": "aafnai-advanced-audio-loop-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/bead-pattern-inventory-planner*",
+      "script": "aafnai-advanced-bead-inventory-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/board-game-card-generator*",
+      "script": "aafnai-advanced-card-bundle-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/chordpro-setlist-builder*",
+      "script": "aafnai-advanced-chordpro-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/epub-edition-comparison*",
+      "script": "aafnai-advanced-epub-diff-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/fabric-nesting-planner*",
+      "script": "aafnai-advanced-fabric-nesting-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/font-subsetter-language-checker*",
+      "script": "aafnai-advanced-font-language-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/icu-message-validator*",
+      "script": "aafnai-advanced-icu-validator-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/knitting-gauge-repeat-planner*",
+      "script": "aafnai-advanced-knit-gauge-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/pgn-repertoire-diff*",
+      "script": "aafnai-advanced-pgn-diff-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/puzzle-hunt-planner*",
+      "script": "aafnai-advanced-puzzle-hunt-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/qmk-keymap-simulator*",
+      "script": "aafnai-advanced-qmk-simulator-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/qualitative-coding-comparison*",
+      "script": "aafnai-advanced-coding-reconcile-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/quiz-bank-converter*",
+      "script": "aafnai-advanced-quiz-bank-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/story-continuity-checker*",
+      "script": "aafnai-advanced-story-continuity-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/survey-branching-tester*",
+      "script": "aafnai-advanced-survey-branch-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/theatre-rehearsal-scheduler*",
+      "script": "aafnai-advanced-rehearsal-planner-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/tournament-rescheduler*",
+      "script": "aafnai-advanced-tournament-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/weaving-warp-planner*",
+      "script": "aafnai-advanced-warp-planner-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/ai-discovery.json",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/article/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
       "pattern": "aafnaipatro.com/atlas*",
       "script": "patro-day-atlas"
+    },
+    {
+      "pattern": "aafnaipatro.com/blogs/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/date/*",
+      "script": "patro-date-pages"
+    },
+    {
+      "pattern": "aafnaipatro.com/library*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/llms.txt",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/research/*",
+      "script": "aafnai-library-phase1"
     },
     {
       "pattern": "aafnaipatro.com/sitemap-atlas*",
@@ -20,54 +128,122 @@
       "script": "aafnai-library-phase1"
     },
     {
-      "pattern": "aafnaipatro.com/research/*",
-      "script": "aafnai-library-phase1"
-    },
-    {
-      "pattern": "aafnaipatro.com/article/*",
-      "script": "aafnai-library-phase1"
-    },
-    {
-      "pattern": "aafnaipatro.com/blogs/*",
-      "script": "aafnai-library-phase1"
-    },
-    {
-      "pattern": "aafnaipatro.com/library*",
-      "script": "aafnai-library-phase1"
-    },
-    {
-      "pattern": "aafnaipatro.com/date/*",
-      "script": "patro-date-pages"
+      "pattern": "aafnaipatro.com/sitemap-tools.xml",
+      "script": "aafnai-advanced-tools-sitemap-v15"
     }
   ],
   "foreignCustomDomains": [
     {
+      "hostname": "audio-loop-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-audio-loop-v15"
+    },
+    {
       "hostname": "bali-tools.aafnaipatro.com",
-      "service": "aafnai-growth-bali-preview"
+      "service": "aafnai-bali-sitemap-gateway-v1"
+    },
+    {
+      "hostname": "bead-inventory-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-bead-inventory-v15"
+    },
+    {
+      "hostname": "captions.aafnaipatro.com",
+      "service": "aafnai-localcaption-v15"
+    },
+    {
+      "hostname": "card-bundle-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-card-bundle-v15"
+    },
+    {
+      "hostname": "chordpro-setlist-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-chordpro-v15"
+    },
+    {
+      "hostname": "coding-reconciliation-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-coding-reconcile-v15"
+    },
+    {
+      "hostname": "epub-diff-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-epub-diff-v15"
+    },
+    {
+      "hostname": "exposure-sheet-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-exposure-sheet-v15"
+    },
+    {
+      "hostname": "fabric-nesting-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-fabric-nesting-v15"
+    },
+    {
+      "hostname": "font-language-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-font-language-v15"
     },
     {
       "hostname": "global-tools.aafnaipatro.com",
       "service": "aafnai-growth-dst-western"
     },
     {
-      "hostname": "sitemaps.aafnaipatro.com",
-      "service": "aafnai-growth-sitemaps"
+      "hostname": "heat-rules.aafnaipatro.com",
+      "service": "aafnai-product-platform-v1"
+    },
+    {
+      "hostname": "incident-studio.aafnaipatro.com",
+      "service": "aafnai-growth-c02-preview"
+    },
+    {
+      "hostname": "knit-gauge-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-knit-gauge-v15"
+    },
+    {
+      "hostname": "math-practice.aafnaipatro.com",
+      "service": "aafnai-ha119-math-practice-v12"
+    },
+    {
+      "hostname": "pgn-diff-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-pgn-diff-v15"
+    },
+    {
+      "hostname": "qmk-simulator-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-qmk-simulator-v15"
+    },
+    {
+      "hostname": "quiz-bank-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-quiz-bank-v15"
+    },
+    {
+      "hostname": "rehearsal-planner-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-rehearsal-planner-v15"
     },
     {
       "hostname": "renovation-quotes.aafnaipatro.com",
       "service": "aafnai-renovation-quotes-v10"
     },
     {
-      "hostname": "uposatha.aafnaipatro.com",
-      "service": "aafnai-uposatha-companion-v10"
-    },
-    {
       "hostname": "school-transfer.aafnaipatro.com",
       "service": "aafnai-school-transfer-v11"
     },
     {
-      "hostname": "heat-rules.aafnaipatro.com",
-      "service": "aafnai-product-platform-v1"
+      "hostname": "sitemaps.aafnaipatro.com",
+      "service": "aafnai-growth-sitemaps-v2"
+    },
+    {
+      "hostname": "story-continuity-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-story-continuity-v15"
+    },
+    {
+      "hostname": "survey-branching-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-survey-branch-v15"
+    },
+    {
+      "hostname": "tournament-rescheduler-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-tournament-v15"
+    },
+    {
+      "hostname": "uposatha.aafnaipatro.com",
+      "service": "aafnai-uposatha-companion-v10"
+    },
+    {
+      "hostname": "warp-planner-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-warp-planner-v15"
     }
   ],
   "reservedPrefixes": [
@@ -79,5 +255,6 @@
     "/atlas",
     "/sitemap-atlas",
     "/sitemap-library.xml"
-  ]
+  ],
+  "inventorySnapshot": "cloudflare/live-sync/2026-11-03/production-inventory.json"
 }
