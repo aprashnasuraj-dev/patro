@@ -1,0 +1,964 @@
+{
+  "schemaVersion": 1,
+  "recorded_date": "2026-11-03",
+  "scope": "read-only Cloudflare production reference",
+  "zone": "aafnaipatro.com",
+  "github_repositories": {
+    "main": "aprashnasuraj-dev/patro",
+    "library_publisher": "aprashnasuraj2-dev/includedagain"
+  },
+  "source_of_truth": "Cloudflare API: /workers/scripts, /versions, /deployments, /workers/routes, /workers/domains, /r2/buckets/aafnai-library/domains/custom",
+  "limitations": [
+    "Asset contents and full static manifest not exported through this inventory",
+    "R2 object bytes and D1 rows not exported",
+    "API upload source does not identify originating repository",
+    "Source snapshots require separate explicit export and secret review"
+  ],
+  "workers": [
+    {
+      "name": "aafnai-advanced-audio-loop-v15",
+      "latest_version_id": "1b4ecda6-02d1-40ae-b3a7-6cf70ee6c59f",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:50:23.515542Z",
+      "active_versions": [
+        {
+          "id": "1b4ecda6-02d1-40ae-b3a7-6cf70ee6c59f",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:50:23.515542Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-bead-inventory-v15",
+      "latest_version_id": "6cd854f7-2309-4c85-beb1-283a78355e61",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:52:09.964651Z",
+      "active_versions": [
+        {
+          "id": "6cd854f7-2309-4c85-beb1-283a78355e61",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:52:09.964651Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-card-bundle-v15",
+      "latest_version_id": "1d277f59-b53b-434d-b27f-bd4e84df0070",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:55:58.307521Z",
+      "active_versions": [
+        {
+          "id": "1d277f59-b53b-434d-b27f-bd4e84df0070",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:55:58.307521Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-chordpro-v15",
+      "latest_version_id": "846060f3-fe16-4bb3-b7ae-c6fb30ea7246",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:57:11.301531Z",
+      "active_versions": [
+        {
+          "id": "846060f3-fe16-4bb3-b7ae-c6fb30ea7246",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:57:11.301531Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-coding-reconcile-v15",
+      "latest_version_id": "7e4f6b2b-1cb4-4d8e-b3ed-1eae14c93cbf",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:16:47.705427Z",
+      "active_versions": [
+        {
+          "id": "7e4f6b2b-1cb4-4d8e-b3ed-1eae14c93cbf",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:16:47.705427Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-epub-diff-v15",
+      "latest_version_id": "080c104f-a777-4135-9ab8-0659e093722a",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:01:26.994748Z",
+      "active_versions": [
+        {
+          "id": "080c104f-a777-4135-9ab8-0659e093722a",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:01:26.994748Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-exposure-sheet-v15",
+      "latest_version_id": "8e351adc-ce17-4050-9e1f-ecfbdb0439c0",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:15:15.344652Z",
+      "active_versions": [
+        {
+          "id": "8e351adc-ce17-4050-9e1f-ecfbdb0439c0",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:15:15.344652Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-fabric-nesting-v15",
+      "latest_version_id": "a2764837-f5a4-4035-9b3e-21ddff6de35f",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:48:19.737387Z",
+      "active_versions": [
+        {
+          "id": "a2764837-f5a4-4035-9b3e-21ddff6de35f",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:48:19.737387Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-font-language-v15",
+      "latest_version_id": "74508d7c-fd8d-44ff-a7c0-d325c4972676",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:58:19.134352Z",
+      "active_versions": [
+        {
+          "id": "74508d7c-fd8d-44ff-a7c0-d325c4972676",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:58:19.134352Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-icu-validator-v15",
+      "latest_version_id": "bc9714f3-3c91-45e1-9ada-7832bdae83df",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T10:35:08.230146Z",
+      "active_versions": [
+        {
+          "id": "bc9714f3-3c91-45e1-9ada-7832bdae83df",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T10:35:08.230146Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-knit-gauge-v15",
+      "latest_version_id": "3b94174f-4939-4187-bd10-6e82457856d4",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:43:02.010859Z",
+      "active_versions": [
+        {
+          "id": "3b94174f-4939-4187-bd10-6e82457856d4",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:43:02.010859Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-pgn-diff-v15",
+      "latest_version_id": "b27caac1-782b-4303-9f75-166bebd2e726",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:13:50.781064Z",
+      "active_versions": [
+        {
+          "id": "b27caac1-782b-4303-9f75-166bebd2e726",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:13:50.781064Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-puzzle-hunt-v15",
+      "latest_version_id": "a41177c6-ebc8-40cb-b2fc-7a01dab05b19",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T05:06:28.961744Z",
+      "active_versions": [
+        {
+          "id": "a41177c6-ebc8-40cb-b2fc-7a01dab05b19",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T05:06:28.961744Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-qmk-simulator-v15",
+      "latest_version_id": "4578e2c3-3454-4aaa-bdbf-a6fd3eb7502e",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:09:57.521995Z",
+      "active_versions": [
+        {
+          "id": "4578e2c3-3454-4aaa-bdbf-a6fd3eb7502e",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:09:57.521995Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-quiz-bank-v15",
+      "latest_version_id": "3109d5e2-9f6b-4140-b867-ce5ad34d74a7",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:02:44.545704Z",
+      "active_versions": [
+        {
+          "id": "3109d5e2-9f6b-4140-b867-ce5ad34d74a7",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:02:44.545704Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-rehearsal-planner-v15",
+      "latest_version_id": "e81555fd-f592-4f91-88fd-ac7e578efb63",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:08:41.080924Z",
+      "active_versions": [
+        {
+          "id": "e81555fd-f592-4f91-88fd-ac7e578efb63",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:08:41.080924Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-story-continuity-v15",
+      "latest_version_id": "8024b86c-c10c-4000-8fad-9f23fbd3dc01",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:07:23.140131Z",
+      "active_versions": [
+        {
+          "id": "8024b86c-c10c-4000-8fad-9f23fbd3dc01",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:07:23.140131Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-survey-branch-v15",
+      "latest_version_id": "ad98e651-12ba-4d17-baf6-04763e14fb1a",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:03:58.96779Z",
+      "active_versions": [
+        {
+          "id": "ad98e651-12ba-4d17-baf6-04763e14fb1a",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:03:58.96779Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-tools-sitemap-v15",
+      "latest_version_id": "845bafd7-ac70-4ce2-a5f8-293cea602681",
+      "latest_version_number": 10,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T10:38:57.070363Z",
+      "active_versions": [
+        {
+          "id": "845bafd7-ac70-4ce2-a5f8-293cea602681",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T10:38:57.070363Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-tournament-v15",
+      "latest_version_id": "d9e8b660-0729-42e3-b607-f22c32cc2c12",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:42:07.844058Z",
+      "active_versions": [
+        {
+          "id": "d9e8b660-0729-42e3-b607-f22c32cc2c12",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:42:07.844058Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-advanced-warp-planner-v15",
+      "latest_version_id": "6d02afa1-750c-4acd-9c01-c4f7e2c9f794",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T07:38:18.450161Z",
+      "active_versions": [
+        {
+          "id": "6d02afa1-750c-4acd-9c01-c4f7e2c9f794",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T07:38:18.450161Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-bali-sitemap-gateway-v1",
+      "latest_version_id": "96ed108e-c895-4a59-9340-f8996e797aaa",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T09:44:17.099485Z",
+      "active_versions": [
+        {
+          "id": "96ed108e-c895-4a59-9340-f8996e797aaa",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T09:44:17.099485Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-factory-lab-migration-1101",
+      "latest_version_id": "c61a1321-d13f-48f8-a0f3-62a73728844c",
+      "latest_version_number": 3,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T02:43:31.211307Z",
+      "active_versions": [
+        {
+          "id": "c61a1321-d13f-48f8-a0f3-62a73728844c",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T02:43:31.211307Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-growth-bali-preview",
+      "latest_version_id": "029f7038-1cfe-4900-b06a-60e2eb3d79a8",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-10-31T22:37:16.172983Z",
+      "active_versions": [
+        {
+          "id": "029f7038-1cfe-4900-b06a-60e2eb3d79a8",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-10-31T22:37:16.172983Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-growth-c02-preview",
+      "latest_version_id": "54d4570b-c912-4b8a-b6da-dca942fd8539",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:54:32.805412Z",
+      "active_versions": [
+        {
+          "id": "54d4570b-c912-4b8a-b6da-dca942fd8539",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:54:32.805412Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-growth-dst-western",
+      "latest_version_id": "c01044da-1ac4-4868-982c-77c385984f91",
+      "latest_version_number": 3,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:54:13.941789Z",
+      "active_versions": [
+        {
+          "id": "c01044da-1ac4-4868-982c-77c385984f91",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:54:13.941789Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-growth-sitemaps",
+      "latest_version_id": "22bf0180-41b9-491a-a196-ddb346ea5b0f",
+      "latest_version_number": 5,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T07:07:31.422329Z",
+      "active_versions": [
+        {
+          "id": "22bf0180-41b9-491a-a196-ddb346ea5b0f",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T07:07:31.422329Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-growth-sitemaps-v2",
+      "latest_version_id": "74c06a31-aaef-4db5-9ef4-8b3a6d4b8c51",
+      "latest_version_number": 3,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T05:25:09.979142Z",
+      "active_versions": [
+        {
+          "id": "74c06a31-aaef-4db5-9ef4-8b3a6d4b8c51",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T05:25:09.979142Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-ha119-math-practice-v12",
+      "latest_version_id": "c225bb63-be77-48a4-884d-816fdd9dc0c2",
+      "latest_version_number": 3,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:54:37.52469Z",
+      "active_versions": [
+        {
+          "id": "c225bb63-be77-48a4-884d-816fdd9dc0c2",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:54:37.52469Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-library-phase1",
+      "latest_version_id": "394afcab-faef-4fe2-9da2-a0fab85923c7",
+      "latest_version_number": 4,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T02:13:33.860961Z",
+      "active_versions": [
+        {
+          "id": "394afcab-faef-4fe2-9da2-a0fab85923c7",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T02:13:33.860961Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-localcaption-v15",
+      "latest_version_id": "a68c1dab-8ddd-40c9-a979-7089cb28c0d8",
+      "latest_version_number": 1,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-02T08:29:35.039981Z",
+      "active_versions": [
+        {
+          "id": "a68c1dab-8ddd-40c9-a979-7089cb28c0d8",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-02T08:29:35.039981Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-product-platform-v1",
+      "latest_version_id": "89f8c507-dc22-4c7d-aa0f-84172041b86b",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:54:28.125698Z",
+      "active_versions": [
+        {
+          "id": "89f8c507-dc22-4c7d-aa0f-84172041b86b",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:54:28.125698Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-renovation-quotes-v10",
+      "latest_version_id": "59e96764-c058-440a-91e8-895399302415",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:54:18.823605Z",
+      "active_versions": [
+        {
+          "id": "59e96764-c058-440a-91e8-895399302415",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:54:18.823605Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-school-transfer-v11",
+      "latest_version_id": "4991c3b8-eaaf-47ad-be25-4665b70c5032",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:54:23.413614Z",
+      "active_versions": [
+        {
+          "id": "4991c3b8-eaaf-47ad-be25-4665b70c5032",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:54:23.413614Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "aafnai-uposatha-companion-v10",
+      "latest_version_id": "ab6fbfef-cbbb-4dea-bc48-234c22a6a4cd",
+      "latest_version_number": 7,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:53:34.311272Z",
+      "active_versions": [
+        {
+          "id": "ab6fbfef-cbbb-4dea-bc48-234c22a6a4cd",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:53:34.311272Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "patro",
+      "latest_version_id": "40fceba4-fdff-4037-a7f6-1bdf9478cce1",
+      "latest_version_number": 406,
+      "latest_source": "wrangler",
+      "last_uploaded_at": "2026-11-01T12:08:19.741811Z",
+      "active_versions": [
+        {
+          "id": "40fceba4-fdff-4037-a7f6-1bdf9478cce1",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "wrangler",
+      "last_deployed_at": "2026-11-01T12:08:20.312142Z",
+      "has_native_assets": true,
+      "usage_model": "standard"
+    },
+    {
+      "name": "patro-date-pages",
+      "latest_version_id": "39c80dec-551b-4273-b303-9dcf545efe9a",
+      "latest_version_number": 5,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-10-30T03:43:17.328577Z",
+      "active_versions": [
+        {
+          "id": "39c80dec-551b-4273-b303-9dcf545efe9a",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-10-30T03:43:17.328577Z",
+      "has_native_assets": true,
+      "usage_model": "standard"
+    },
+    {
+      "name": "patro-day-atlas",
+      "latest_version_id": "3ff08d16-bc81-43ae-913a-3bcab85550dd",
+      "latest_version_number": 49,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-11-01T11:53:44.800214Z",
+      "active_versions": [
+        {
+          "id": "3ff08d16-bc81-43ae-913a-3bcab85550dd",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-11-01T11:53:44.800214Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    },
+    {
+      "name": "patro-growth-gate",
+      "latest_version_id": "da035acf-c195-4341-9ddb-85cab4d60028",
+      "latest_version_number": 2,
+      "latest_source": "api",
+      "last_uploaded_at": "2026-10-18T10:16:04.106316Z",
+      "active_versions": [
+        {
+          "id": "da035acf-c195-4341-9ddb-85cab4d60028",
+          "percent": 100
+        }
+      ],
+      "deploy_source": "api",
+      "last_deployed_at": "2026-10-18T10:16:04.106316Z",
+      "has_native_assets": false,
+      "usage_model": "standard"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/animation-exposure-sheet*",
+      "script": "aafnai-advanced-exposure-sheet-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/audio-loop-batch-editor*",
+      "script": "aafnai-advanced-audio-loop-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/bead-pattern-inventory-planner*",
+      "script": "aafnai-advanced-bead-inventory-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/board-game-card-generator*",
+      "script": "aafnai-advanced-card-bundle-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/chordpro-setlist-builder*",
+      "script": "aafnai-advanced-chordpro-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/epub-edition-comparison*",
+      "script": "aafnai-advanced-epub-diff-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/fabric-nesting-planner*",
+      "script": "aafnai-advanced-fabric-nesting-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/font-subsetter-language-checker*",
+      "script": "aafnai-advanced-font-language-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/icu-message-validator*",
+      "script": "aafnai-advanced-icu-validator-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/knitting-gauge-repeat-planner*",
+      "script": "aafnai-advanced-knit-gauge-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/pgn-repertoire-diff*",
+      "script": "aafnai-advanced-pgn-diff-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/puzzle-hunt-planner*",
+      "script": "aafnai-advanced-puzzle-hunt-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/qmk-keymap-simulator*",
+      "script": "aafnai-advanced-qmk-simulator-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/qualitative-coding-comparison*",
+      "script": "aafnai-advanced-coding-reconcile-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/quiz-bank-converter*",
+      "script": "aafnai-advanced-quiz-bank-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/story-continuity-checker*",
+      "script": "aafnai-advanced-story-continuity-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/survey-branching-tester*",
+      "script": "aafnai-advanced-survey-branch-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/theatre-rehearsal-scheduler*",
+      "script": "aafnai-advanced-rehearsal-planner-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/tournament-rescheduler*",
+      "script": "aafnai-advanced-tournament-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/advanced-tools/weaving-warp-planner*",
+      "script": "aafnai-advanced-warp-planner-v15"
+    },
+    {
+      "pattern": "aafnaipatro.com/ai-discovery.json",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/article/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/atlas*",
+      "script": "patro-day-atlas"
+    },
+    {
+      "pattern": "aafnaipatro.com/blogs/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/date/*",
+      "script": "patro-date-pages"
+    },
+    {
+      "pattern": "aafnaipatro.com/library*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/llms.txt",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/research/*",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/sitemap-atlas*",
+      "script": "patro-day-atlas"
+    },
+    {
+      "pattern": "aafnaipatro.com/sitemap-library.xml",
+      "script": "aafnai-library-phase1"
+    },
+    {
+      "pattern": "aafnaipatro.com/sitemap-tools.xml",
+      "script": "aafnai-advanced-tools-sitemap-v15"
+    }
+  ],
+  "domains": [
+    {
+      "hostname": "aafnaipatro.com",
+      "service": "patro",
+      "enabled": true
+    },
+    {
+      "hostname": "audio-loop-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-audio-loop-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "bali-tools.aafnaipatro.com",
+      "service": "aafnai-bali-sitemap-gateway-v1",
+      "enabled": true
+    },
+    {
+      "hostname": "bead-inventory-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-bead-inventory-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "captions.aafnaipatro.com",
+      "service": "aafnai-localcaption-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "card-bundle-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-card-bundle-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "chordpro-setlist-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-chordpro-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "coding-reconciliation-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-coding-reconcile-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "epub-diff-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-epub-diff-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "exposure-sheet-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-exposure-sheet-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "fabric-nesting-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-fabric-nesting-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "font-language-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-font-language-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "global-tools.aafnaipatro.com",
+      "service": "aafnai-growth-dst-western",
+      "enabled": true
+    },
+    {
+      "hostname": "heat-rules.aafnaipatro.com",
+      "service": "aafnai-product-platform-v1",
+      "enabled": true
+    },
+    {
+      "hostname": "incident-studio.aafnaipatro.com",
+      "service": "aafnai-growth-c02-preview",
+      "enabled": true
+    },
+    {
+      "hostname": "knit-gauge-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-knit-gauge-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "math-practice.aafnaipatro.com",
+      "service": "aafnai-ha119-math-practice-v12",
+      "enabled": true
+    },
+    {
+      "hostname": "pgn-diff-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-pgn-diff-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "qmk-simulator-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-qmk-simulator-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "quiz-bank-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-quiz-bank-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "rehearsal-planner-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-rehearsal-planner-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "renovation-quotes.aafnaipatro.com",
+      "service": "aafnai-renovation-quotes-v10",
+      "enabled": true
+    },
+    {
+      "hostname": "school-transfer.aafnaipatro.com",
+      "service": "aafnai-school-transfer-v11",
+      "enabled": true
+    },
+    {
+      "hostname": "sitemaps.aafnaipatro.com",
+      "service": "aafnai-growth-sitemaps-v2",
+      "enabled": true
+    },
+    {
+      "hostname": "story-continuity-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-story-continuity-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "survey-branching-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-survey-branch-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "tournament-rescheduler-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-tournament-v15",
+      "enabled": true
+    },
+    {
+      "hostname": "uposatha.aafnaipatro.com",
+      "service": "aafnai-uposatha-companion-v10",
+      "enabled": true
+    },
+    {
+      "hostname": "warp-planner-engine.aafnaipatro.com",
+      "service": "aafnai-advanced-warp-planner-v15",
+      "enabled": true
+    }
+  ],
+  "r2_custom_domains": {
+    "aafnai-library": [
+      {
+        "hostname": "library-assets.aafnaipatro.com",
+        "enabled": true,
+        "ssl": "active"
+      }
+    ]
+  }
+}

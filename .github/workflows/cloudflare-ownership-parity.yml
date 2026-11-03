@@ -1,0 +1,45 @@
+name: Production Cloudflare ownership preservation (read-only)
+on:
+  pull_request:
+    paths:
+      - 'cloudflare/live-sync/**'
+      - 'scripts/tool-growth/external-worker-ownership.json'
+      - 'scripts/tool-growth/verify-external-routing.mjs'
+      - 'scripts/cloudflare/verify-live-source-archive.mjs'
+      - '.github/workflows/cloudflare-ownership-parity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify all archived Worker sources against SHA-256
+        run: node scripts/cloudflare/verify-live-source-archive.mjs
+      - name: Check repository route and custom domain protection
+        run: node scripts/tool-growth/verify-external-routing.mjs
+  compare-live:
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline-archive
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: 8cbd02dbb38348565fe56e14fccf1710
+      CLOUDFLARE_ZONE_ID: 3056ed12f9ab1ea7d567f089ee6807be
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fail on any added, missing, or remapped independent route/domain
+        run: |
+          test -n "${CLOUDFLARE_API_TOKEN:-}" || { echo "::error::Missing Cloudflare read token"; exit 1; }
+          node scripts/tool-growth/verify-external-routing.mjs --live
