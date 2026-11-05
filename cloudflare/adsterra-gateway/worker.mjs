@@ -6,6 +6,6 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const response = await (url.pathname.startsWith('/date/') ? env.DATE : env.ORIGIN).fetch(request);
-    return dateNativeLayout(request, adsterraResponse(request, response));
+    return dateNativeLayout(request, adsterraResponse(request, response, env));
   },
 };

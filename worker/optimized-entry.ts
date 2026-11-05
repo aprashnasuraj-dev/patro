@@ -156,10 +156,10 @@ export default {
     const assets = env.ASSETS as { fetch(request: Request): Promise<Response> } | undefined;
     if ((request.method === "GET" || request.method === "HEAD") && assetPath(new URL(request.url).pathname) && assets) {
       const asset = await assets.fetch(request);
-      if (asset.status !== 404) return calendarNativeLayout(request, adsterraResponse(request, asset));
+      if (asset.status !== 404) return calendarNativeLayout(request, adsterraResponse(request, asset, env));
     }
     const response = googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
-    return calendarNativeLayout(request, adsterraResponse(request, response));
+    return calendarNativeLayout(request, adsterraResponse(request, response, env));
   },
 };
 

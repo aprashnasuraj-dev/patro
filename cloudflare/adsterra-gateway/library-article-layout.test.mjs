@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { libraryArticleLayout } from './library-article-layout.mjs';
+import { libraryArticleLayout, additionalNative } from './library-article-layout.mjs';
+import { adsterraSmartlink } from './patro-adsterra.mjs';
 
 // A small test double drives the two documented HTMLRewriter callbacks. Live
 // Worker verification checks the actual parser and served article markup.
@@ -14,9 +15,20 @@ class TestRewriter {
       const slot = /<aside\b[^>]*id="patro-native-ad-slot"[^>]*>[\s\S]*?<\/aside>/i;
       const remove = handlers.get('#patro-native-ad-slot');
       if (remove && slot.test(html)) remove.element({ remove() { html = html.replace(slot, ''); } });
+      const secondSlot = /<aside\b[^>]*id="patro-native-ad-second"[^>]*>[\s\S]*?<\/aside>/i;
+      const removeSecond = handlers.get('#patro-native-ad-second');
+      if (removeSecond && secondSlot.test(html)) removeSecond.element({remove() {html = html.replace(secondSlot, '');}});
+      const header = handlers.get('header.article-header');
+      if (header) html = html.replace(/<header class="article-header">[^]*?<\/header>/gi, (value) => {
+        let after = ''; header.element({after(s) { after = s; }}); return value + after;
+      });
       const related = /<section class="related">[^]*?<\/section>/i;
       const relatedHandler = handlers.get('section.related');
       if (relatedHandler && related.test(html)) relatedHandler.element({ remove() { html = html.replace(related, ''); } });
+      const research = handlers.get('main.research-page > article > section');
+      if (research) html = html.replace(/<section data-research="\d+">[^]*?<\/section>/g, value => {
+        let after = ''; research.element({after(s) {after = s;}}); return value + after;
+      });
       const paragraph = handlers.get('#article-body > p');
       if (paragraph) {
         const start = html.indexOf('<div id="article-body">');
@@ -44,6 +56,45 @@ class TestRewriter {
 
 const slot = '<aside id="patro-native-ad-slot"><div></div><script async data-patro-adsterra="native-loader"></script></aside>';
 const page = `<html><body>${slot}<main><div id="article-body"><p>One</p><p>Two</p><p>Three</p><p>Four</p></div></main></body></html>`;
+const newId = '0123456789abcdef0123456789abcdef';
+const second = JSON.stringify({src:`https://approved-ad-host.example/21/${newId}`,container:`container-${newId}`});
+
+test('uses the new publisher Smartlink for top and inline links and retains the old bottom link', () => {
+  assert.match(adsterraSmartlink('top'), /https:\/\/asiafilm\.org\/4\/b1871169a9878fda2bc2de21a208995a/);
+  assert.match(adsterraSmartlink('inline'), /https:\/\/asiafilm\.org\/4\/b1871169a9878fda2bc2de21a208995a/);
+  assert.match(adsterraSmartlink('bottom'), /https:\/\/araplhn\.org\/4\/c752b529eb7d6d4ebf1096d225dfb10a/);
+});
+
+test('accepts a separate validated native placement and rejects duplicate or malformed codes', () => {
+  assert.match(additionalNative(second), /data-patro-adsterra="native-second-loader"/);
+  for (const raw of [undefined, '', '{}', 'not-json', JSON.stringify({src:'https://bauval.org/21/b86f7b1b852ea7f8de7539079e6e7816',container:'container-b86f7b1b852ea7f8de7539079e6e7816'}), JSON.stringify({src:`http://approved-ad-host.example/21/${newId}`,container:`container-${newId}`}), JSON.stringify({src:`https://approved-ad-host.example/21/${newId}`,container:'wrong'})])
+    assert.equal(additionalNative(raw), null);
+});
+
+test('places the separate second native unit after paragraph eight on long articles', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const paragraphs = Array.from({length: 14}, (_, i) => `<p>Paragraph ${i+1}</p>`).join('');
+  const html = `<html><body>${slot}<main><header class="article-header">Title</header><div id="article-body">${paragraphs}</div></main></body></html>`;
+  const output = await (await libraryArticleLayout(new Request('https://aafnaipatro.com/article/example'), new Response(html,{headers:{'content-type':'text/html'}}), {ADSTERRA_NATIVE_SECOND:second})).text();
+  assert.ok(output.indexOf('Paragraph 3</p>') < output.indexOf(slot));
+  assert.ok(output.indexOf('Paragraph 8</p>') < output.indexOf('id="patro-native-ad-second"'));
+  assert.ok(output.indexOf('id="patro-native-ad-second"') < output.indexOf('Paragraph 9</p>'));
+  assert.equal((output.match(/native-second-loader/g)||[]).length, 1);
+  assert.equal((output.match(/smartlink-inline/g)||[]).length, 0);
+});
+
+test('places a second native unit after the known header of short articles and after research sections', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const article = `<html><body>${slot}<main><header class="article-header">Title</header><div id="article-body"><p>One</p><p>Two</p><p>Three</p></div></main></body></html>`;
+  const articleOut = await (await libraryArticleLayout(new Request('https://aafnaipatro.com/article/example'), new Response(article,{headers:{'content-type':'text/html'}}), {ADSTERRA_NATIVE_SECOND:second})).text();
+  assert.ok(articleOut.indexOf('</header>') < articleOut.indexOf('id="patro-native-ad-second"'));
+  assert.ok(articleOut.indexOf('id="patro-native-ad-second"') < articleOut.indexOf('<p>Three</p>'));
+  const research = `<html><body>${slot}<main class="research-page"><article><section data-research="1">Scope</section><section data-research="2">Evidence</section><section data-research="3">Sources</section></article></main></body></html>`;
+  const researchOut = await (await libraryArticleLayout(new Request('https://aafnaipatro.com/research/example'), new Response(research,{headers:{'content-type':'text/html'}}), {ADSTERRA_NATIVE_SECOND:second})).text();
+  assert.ok(researchOut.indexOf('Evidence</section>') < researchOut.indexOf('id="patro-native-ad-second"'));
+  assert.ok(researchOut.indexOf('id="patro-native-ad-second"') < researchOut.indexOf('Sources</section>'));
+  assert.equal((researchOut.match(/native-second-loader/g)||[]).length, 1);
+});
 
 test('moves the existing native unit after the third article paragraph', async () => {
   globalThis.HTMLRewriter = TestRewriter;

@@ -5,6 +5,6 @@ export * from './worker.js';
 export default {
   ...original,
   async fetch(request, env, ctx) {
-    return libraryArticleLayout(request, adsterraResponse(request, await original.fetch(request, env, ctx)));
+    return libraryArticleLayout(request, adsterraResponse(request, await original.fetch(request, env, ctx), env), env);
   },
 };
