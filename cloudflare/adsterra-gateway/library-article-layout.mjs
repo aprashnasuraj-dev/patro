@@ -1,6 +1,8 @@
 // Apply bounded, template-aware changes to published article pages. Unknown
 // layouts remain untouched; this never reads or republishes the R2 source.
 import { adsterraSmartlink } from './patro-adsterra.mjs';
+import { articleDiscoveryNav } from './library-discovery.mjs';
+import { relatedTool } from './related-tools.mjs';
 
 const ARTICLE_PATH = /^\/(?:article|blogs)\/[^/]+\/?$/i;
 const SLOT = /<aside\b(?=[^>]*\bid\s*=\s*["']patro-native-ad-slot["'])[^>]*>[\s\S]*?<\/aside\s*>/gi;
@@ -75,6 +77,8 @@ export async function libraryArticleLayout(request, response, env = {}) {
     const secondAtHeader = !!second && paragraphs < EXTRA_NATIVE_AFTER_PARAGRAPH + 1 && articleHeaders === 1;
     const secondInserted = !!second && (paragraphs >= EXTRA_NATIVE_AFTER_PARAGRAPH + 1 || secondAtHeader);
     if (!moveNative && !secondAtHeader) return response;
+    const discovery = articleHeaders === 1 && !html.includes('class="patro-discovery"')
+      ? articleDiscoveryNav(html, path.replace(/\/$/, ''), relatedTool(path.replace(/\/$/, ''))) : '';
     // Only move a single, simple related-reading section produced by the
     // library template, and only if it contains existing internal cards.
     const related = [...html.matchAll(RELATED)];
@@ -89,7 +93,10 @@ export async function libraryArticleLayout(request, response, env = {}) {
       .on('#patro-native-ad-slot', { element(el) { if (moveNative) el.remove(); } })
       .on('#patro-native-ad-second', { element(el) { el.remove(); } })
       .on('header.article-header > h1', { element(el) { if (nativeAtTitle) el.after(slots[0][0], {html:true}); } })
-      .on('header.article-header', { element(el) { if (secondAtHeader) el.after(second, {html:true}); } })
+      .on('header.article-header', { element(el) {
+        if (secondAtHeader) el.after(second, {html:true});
+        if (discovery) el.after(discovery, {html:true});
+      } })
       .on('section.related', { element(el) { if (moveRelated) el.remove(); } })
       .on('#article-body img', { element(el) {
         if (el.getAttribute('fetchpriority')?.toLowerCase() === 'high') return;

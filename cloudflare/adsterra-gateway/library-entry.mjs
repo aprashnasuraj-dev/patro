@@ -1,7 +1,8 @@
-import original from './worker.js';
+import original from './worker.live-snapshot.mjs';
 import { adsterraResponse } from './patro-adsterra.mjs';
 import { libraryArticleLayout } from './library-article-layout.mjs';
-export * from './worker.js';
+import { librarySubjectResponse, addSubjectIndexLink } from './library-discovery.mjs';
+export * from './worker.live-snapshot.mjs';
 const LIBRARY_STYLE = 'https://library-assets.aafnaipatro.com/phase1/static/library.css';
 export function addLibraryStyleHint(request, response) {
   if (!['GET','HEAD'].includes(request.method) || response.status !== 200 ||
@@ -15,7 +16,10 @@ export function addLibraryStyleHint(request, response) {
 export default {
   ...original,
   async fetch(request, env, ctx) {
-    const decorated = await libraryArticleLayout(request, adsterraResponse(request, await original.fetch(request, env, ctx), env), env);
-    return addLibraryStyleHint(request, decorated);
+    const subject = await librarySubjectResponse(request, env);
+    const base = subject || await original.fetch(request, env, ctx);
+    const decorated = await libraryArticleLayout(request, adsterraResponse(request, base), env);
+    return addLibraryStyleHint(request, addSubjectIndexLink(request, decorated));
   },
 };
+
