@@ -158,10 +158,10 @@ export default {
     const assets = env.ASSETS as { fetch(request: Request): Promise<Response> } | undefined;
     if ((request.method === "GET" || request.method === "HEAD") && assetPath(new URL(request.url).pathname) && assets) {
       const asset = await assets.fetch(request);
-      if (asset.status !== 404) return addToolDiscovery(request, calendarNativeLayout(request, adsterraResponse(request, asset, env)));
+      if (asset.status !== 404) return addToolDiscovery(request, await calendarNativeLayout(request, adsterraResponse(request, asset, env)));
     }
     const response = googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
-    return addToolDiscovery(request, calendarNativeLayout(request, adsterraResponse(request, response, env)));
+    return addToolDiscovery(request, await calendarNativeLayout(request, adsterraResponse(request, response, env)));
   },
 };
 

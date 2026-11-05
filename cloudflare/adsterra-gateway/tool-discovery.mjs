@@ -19,6 +19,6 @@ export function addToolDiscovery(request,response) {
   for (const key of ['content-length','etag','content-md5']) headers.delete(key);
   headers.set('x-patro-tool-discovery','1');
   let inserted=false;
-  return new HTMLRewriter().on('main',{element(el){if(!inserted){inserted=true;el.append(nav,{html:true});}}})
+  return new HTMLRewriter().on('body',{element(el){if(!inserted){inserted=true;el.append(nav,{html:true});}}})
     .transform(new Response(response.body,{status:response.status,statusText:response.statusText,headers}));
 }
