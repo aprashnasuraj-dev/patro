@@ -2,7 +2,7 @@
 
 Cloudflare versions recorded on 5 November 2026. The advanced-tool Workers were migrated from Service Worker syntax to an equivalent module fetch entry while preserving embedded source, existing ad units, bindings and runtime. A subsequent update added preconnect hints and a dismissible notice only when both the native and Social Bar script requests fail.
 
-The table is a rollback and reconciliation record, not a complete source snapshot. Future independent deployments must reconcile their live source or they can remove these changes. Knit Gauge, ICU and Puzzle Hunt Smartlink candidates, and the Knit Gauge recovery candidate, were checked using zero-percent version overrides before activation. No synthetic ad clicks or ad-refresh loops were used.
+The table is a rollback and reconciliation record. The original modules captured from these deployments are stored under `cloudflare/advanced-tool-workers/`; future independent deployments must still reconcile their current live source or they can remove changes made after this snapshot. Knit Gauge, ICU and Puzzle Hunt Smartlink candidates, and the Knit Gauge recovery candidate, were checked using zero-percent version overrides before activation. No synthetic ad clicks or ad-refresh loops were used.
 
 | Worker | Original version | Smartlink version | Recovery version |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ The library, root Worker and gateway have separate deployment entries and source
 
 ## Search discovery rollout
 
-The following 20 versions wrap the exact prior deployed Worker module with `advanced-tool-entry.mjs` and `advanced-tool-discovery.mjs`. The Knit Gauge candidate was checked at 0% traffic through its service binding before rollout. Each candidate retained its preceding Worker’s bindings, runtime and fetch handler. Existing versions remain available for rollback; the original independent Worker source is not fully mirrored by this table.
+The following 20 versions wrap the exact prior deployed Worker module with `advanced-tool-entry.mjs` and `advanced-tool-discovery.mjs`. The Knit Gauge candidate was checked at 0% traffic through its service binding before rollout. Each candidate retained its preceding Worker’s bindings, runtime and fetch handler. Existing versions remain available for rollback; source hashes and routes are recorded in `cloudflare/advanced-tool-workers/manifest.json`.
 
 | Worker | Previous recovery version | Discovery version |
 | --- | --- | --- |
