@@ -1,0 +1,211 @@
+{
+  "version": "2026-11-05-v1",
+  "rollbackVersions": [
+    {
+      "name": "patro",
+      "oldVersion": "40fceba4-fdff-4037-a7f6-1bdf9478cce1"
+    },
+    {
+      "name": "aafnai-advanced-knit-gauge-v15",
+      "oldVersion": "3b94174f-4939-4187-bd10-6e82457856d4"
+    },
+    {
+      "name": "aafnai-library-phase1",
+      "oldVersion": "394afcab-faef-4fe2-9da2-a0fab85923c7"
+    },
+    {
+      "name": "patro-day-atlas",
+      "oldVersion": "3ff08d16-bc81-43ae-913a-3bcab85550dd"
+    },
+    {
+      "name": "patro-date-pages",
+      "oldVersion": "39c80dec-551b-4273-b303-9dcf545efe9a"
+    },
+    {
+      "name": "aafnai-advanced-audio-loop-v15",
+      "oldVersion": "1b4ecda6-02d1-40ae-b3a7-6cf70ee6c59f"
+    },
+    {
+      "name": "aafnai-advanced-bead-inventory-v15",
+      "oldVersion": "6cd854f7-2309-4c85-beb1-283a78355e61"
+    },
+    {
+      "name": "aafnai-advanced-card-bundle-v15",
+      "oldVersion": "1d277f59-b53b-434d-b27f-bd4e84df0070"
+    },
+    {
+      "name": "aafnai-advanced-chordpro-v15",
+      "oldVersion": "846060f3-fe16-4bb3-b7ae-c6fb30ea7246"
+    },
+    {
+      "name": "aafnai-advanced-epub-diff-v15",
+      "oldVersion": "080c104f-a777-4135-9ab8-0659e093722a"
+    },
+    {
+      "name": "aafnai-advanced-fabric-nesting-v15",
+      "oldVersion": "a2764837-f5a4-4035-9b3e-21ddff6de35f"
+    },
+    {
+      "name": "aafnai-advanced-font-language-v15",
+      "oldVersion": "74508d7c-fd8d-44ff-a7c0-d325c4972676"
+    },
+    {
+      "name": "aafnai-advanced-qmk-simulator-v15",
+      "oldVersion": "4578e2c3-3454-4aaa-bdbf-a6fd3eb7502e"
+    },
+    {
+      "name": "aafnai-advanced-quiz-bank-v15",
+      "oldVersion": "3109d5e2-9f6b-4140-b867-ce5ad34d74a7"
+    },
+    {
+      "name": "aafnai-advanced-rehearsal-planner-v15",
+      "oldVersion": "e81555fd-f592-4f91-88fd-ac7e578efb63"
+    },
+    {
+      "name": "aafnai-advanced-story-continuity-v15",
+      "oldVersion": "8024b86c-c10c-4000-8fad-9f23fbd3dc01"
+    },
+    {
+      "name": "aafnai-advanced-survey-branch-v15",
+      "oldVersion": "ad98e651-12ba-4d17-baf6-04763e14fb1a"
+    },
+    {
+      "name": "aafnai-advanced-tournament-v15",
+      "oldVersion": "d9e8b660-0729-42e3-b607-f22c32cc2c12"
+    },
+    {
+      "name": "aafnai-advanced-warp-planner-v15",
+      "oldVersion": "6d02afa1-750c-4acd-9c01-c4f7e2c9f794"
+    },
+    {
+      "name": "aafnai-advanced-coding-reconcile-v15",
+      "oldVersion": "7e4f6b2b-1cb4-4d8e-b3ed-1eae14c93cbf"
+    },
+    {
+      "name": "aafnai-advanced-exposure-sheet-v15",
+      "oldVersion": "8e351adc-ce17-4050-9e1f-ecfbdb0439c0"
+    },
+    {
+      "name": "aafnai-advanced-pgn-diff-v15",
+      "oldVersion": "b27caac1-782b-4303-9f75-166bebd2e726"
+    },
+    {
+      "name": "aafnai-advanced-icu-validator-v15",
+      "oldVersion": "bc9714f3-3c91-45e1-9ada-7832bdae83df"
+    },
+    {
+      "name": "aafnai-advanced-puzzle-hunt-v15",
+      "oldVersion": "a41177c6-ebc8-40cb-b2fc-7a01dab05b19"
+    }
+  ],
+  "gatewayRoutes": [
+    {
+      "pattern": "aafnaipatro.com/tools*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/advancetools*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/nepal*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/calculator*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/converter*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/utilities*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/generator*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/validator*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/editor*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/planner*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/extractor*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/analyzer*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/formatter*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/comparison*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/timer*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/client-tools*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/moon*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/eclipse*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/weather*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/us/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/de/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/fr/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/es/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/it/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/_mm530*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/nepalmap*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/date/*",
+      "zone_name": "aafnaipatro.com"
+    }
+  ]
+}

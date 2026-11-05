@@ -37,7 +37,8 @@
     },
     {
       "pattern": "aafnaipatro.com/date/*",
-      "script": "patro-date-pages"
+      "script": "patro-adsterra-gateway",
+      "backendScript": "patro-date-pages"
     }
   ],
   "foreignCustomDomains": [
@@ -79,5 +80,41 @@
     "/atlas",
     "/sitemap-atlas",
     "/sitemap-library.xml"
-  ]
+  ],
+  "adsterraGateway": {
+    "worker": "patro-adsterra-gateway",
+    "routes": [
+      "aafnaipatro.com/tools*",
+      "aafnaipatro.com/advancetools*",
+      "aafnaipatro.com/nepal*",
+      "aafnaipatro.com/calculator*",
+      "aafnaipatro.com/converter*",
+      "aafnaipatro.com/utilities*",
+      "aafnaipatro.com/generator*",
+      "aafnaipatro.com/validator*",
+      "aafnaipatro.com/editor*",
+      "aafnaipatro.com/planner*",
+      "aafnaipatro.com/extractor*",
+      "aafnaipatro.com/analyzer*",
+      "aafnaipatro.com/formatter*",
+      "aafnaipatro.com/comparison*",
+      "aafnaipatro.com/timer*",
+      "aafnaipatro.com/client-tools*",
+      "aafnaipatro.com/moon*",
+      "aafnaipatro.com/eclipse*",
+      "aafnaipatro.com/weather*",
+      "aafnaipatro.com/us/*",
+      "aafnaipatro.com/de/*",
+      "aafnaipatro.com/fr/*",
+      "aafnaipatro.com/es/*",
+      "aafnaipatro.com/it/*",
+      "aafnaipatro.com/_mm530*",
+      "aafnaipatro.com/nepalmap*",
+      "aafnaipatro.com/date/*"
+    ],
+    "backendServices": [
+      "patro",
+      "patro-date-pages"
+    ]
+  }
 }
