@@ -22,6 +22,10 @@ class TestRewriter {
       if (header) html = html.replace(/<header class="article-header">[^]*?<\/header>/gi, (value) => {
         let after = ''; header.element({after(s) { after = s; }}); return value + after;
       });
+      const title = handlers.get('header.article-header > h1');
+      if (title) html = html.replace(/(<header class="article-header">[^]*?)(<h1>[^]*?<\/h1>)/gi, (_, before, h1) => {
+        let after = ''; title.element({after(s) { after = s; }}); return before + h1 + after;
+      });
       const related = /<section class="related">[^]*?<\/section>/i;
       const relatedHandler = handlers.get('section.related');
       if (relatedHandler && related.test(html)) relatedHandler.element({ remove() { html = html.replace(related, ''); } });
@@ -81,6 +85,18 @@ test('places the separate second native unit after paragraph eight on long artic
   assert.ok(output.indexOf('id="patro-native-ad-second"') < output.indexOf('Paragraph 9</p>'));
   assert.equal((output.match(/native-second-loader/g)||[]).length, 1);
   assert.equal((output.match(/smartlink-inline/g)||[]).length, 0);
+});
+
+test('places the existing native unit immediately after the article headline', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const paragraphs = Array.from({length: 12}, (_, i) => `<p>Paragraph ${i+1}</p>`).join('');
+  const html = `<html><body>${slot}<main><header class="article-header"><h1>Title</h1><p>Introduction</p></header><div id="article-body">${paragraphs}</div></main></body></html>`;
+  const result = await libraryArticleLayout(new Request('https://aafnaipatro.com/article/example'), new Response(html,{headers:{'content-type':'text/html'}}));
+  const output = await result.text();
+  assert.equal(result.headers.get('x-patro-ad-layout'), 'article-headline-1');
+  assert.ok(output.indexOf('<h1>Title</h1>') < output.indexOf(slot));
+  assert.ok(output.indexOf(slot) < output.indexOf('<p>Introduction</p>'));
+  assert.equal(output.split(slot).length-1, 1);
 });
 
 test('places a second native unit after the known header of short articles and after research sections', async () => {

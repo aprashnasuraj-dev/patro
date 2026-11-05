@@ -64,12 +64,14 @@ export async function libraryArticleLayout(request, response, env = {}) {
     if (html === null) return response;
     const slots = [...html.matchAll(SLOT)];
     if (slots.length !== 1) return response;
-    let paragraphs = 0, articleHeaders = 0;
+    let paragraphs = 0, articleHeaders = 0, articleTitles = 0;
     const inspect = new HTMLRewriter()
       .on('#article-body > p', { element() { paragraphs++; } })
-      .on('header.article-header', { element() { articleHeaders++; } });
+      .on('header.article-header', { element() { articleHeaders++; } })
+      .on('header.article-header > h1', { element() { articleTitles++; } });
     await inspect.transform(new Response(html)).text();
-    const moveNative = paragraphs >= PLACEMENT_AFTER_PARAGRAPH;
+    const nativeAtTitle = articleTitles === 1;
+    const moveNative = nativeAtTitle || paragraphs >= PLACEMENT_AFTER_PARAGRAPH;
     const secondAtHeader = !!second && paragraphs < EXTRA_NATIVE_AFTER_PARAGRAPH + 1 && articleHeaders === 1;
     const secondInserted = !!second && (paragraphs >= EXTRA_NATIVE_AFTER_PARAGRAPH + 1 || secondAtHeader);
     if (!moveNative && !secondAtHeader) return response;
@@ -81,11 +83,12 @@ export async function libraryArticleLayout(request, response, env = {}) {
       /<a\b[^>]*class=["']related-card["'][^>]*href=["']\/article\//i.test(related[0][0]);
     const headers = new Headers(response.headers);
     headers.delete('content-length'); headers.delete('etag'); headers.delete('content-md5');
-    headers.set('x-patro-ad-layout', secondInserted ? 'article-inline-configured-2' : 'article-inline-1');
+    headers.set('x-patro-ad-layout', secondInserted ? 'article-configured-2' : nativeAtTitle ? 'article-headline-1' : 'article-inline-1');
     let seen = 0;
     return new HTMLRewriter()
       .on('#patro-native-ad-slot', { element(el) { if (moveNative) el.remove(); } })
       .on('#patro-native-ad-second', { element(el) { el.remove(); } })
+      .on('header.article-header > h1', { element(el) { if (nativeAtTitle) el.after(slots[0][0], {html:true}); } })
       .on('header.article-header', { element(el) { if (secondAtHeader) el.after(second, {html:true}); } })
       .on('section.related', { element(el) { if (moveRelated) el.remove(); } })
       .on('#article-body img', { element(el) {
@@ -95,7 +98,7 @@ export async function libraryArticleLayout(request, response, env = {}) {
       } })
       .on('#article-body > p', { element(el) {
         seen++;
-        if (seen === PLACEMENT_AFTER_PARAGRAPH && moveNative) el.after(slots[0][0], { html: true });
+        if (seen === PLACEMENT_AFTER_PARAGRAPH && moveNative && !nativeAtTitle) el.after(slots[0][0], { html: true });
         if (seen === EXTRA_NATIVE_AFTER_PARAGRAPH && secondInserted && !secondAtHeader) el.after(second, {html:true});
         if (seen === SMARTLINK_AFTER_PARAGRAPH && !secondInserted && paragraphs >= SMARTLINK_AFTER_PARAGRAPH + 2)
           el.after(adsterraSmartlink('inline'), { html: true });
