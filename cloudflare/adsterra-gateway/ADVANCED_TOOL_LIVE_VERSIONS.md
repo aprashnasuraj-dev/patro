@@ -29,3 +29,30 @@ The table is a rollback and reconciliation record, not a complete source snapsho
 | patro-day-atlas | 6023f463-45c0-4f3c-807b-d0252ae473df | 0bb3e18f-4fdb-4704-beb8-cb9d3572e6ae | 00a6db43-18f3-4405-94e6-4923fd0b4f61 |
 
 The library, root Worker and gateway have separate deployment entries and source snapshots. Preserve their configuration, routes and root assets as described in README.md.
+
+## Search discovery rollout
+
+The following 20 versions wrap the exact prior deployed Worker module with `advanced-tool-entry.mjs` and `advanced-tool-discovery.mjs`. The Knit Gauge candidate was checked at 0% traffic through its service binding before rollout. Each candidate retained its preceding Worker’s bindings, runtime and fetch handler. Existing versions remain available for rollback; the original independent Worker source is not fully mirrored by this table.
+
+| Worker | Previous recovery version | Discovery version |
+| --- | --- | --- |
+| aafnai-advanced-audio-loop-v15 | 294d0603-10fe-45ba-bdac-35d2ce18d6dc | 6afbf742-82d7-4225-b672-c4c491856521 |
+| aafnai-advanced-bead-inventory-v15 | 22fd2447-30ce-49ed-8a34-7f848164f312 | efe10d8e-c02e-460a-8fa4-680c13464008 |
+| aafnai-advanced-card-bundle-v15 | 6beda88c-ad6e-4137-a139-8c9d316de17c | 4aec597b-d238-4bd4-a10f-3cf28911d978 |
+| aafnai-advanced-chordpro-v15 | 7d15f673-1c03-4f3f-a7aa-cf443486575d | e5dc8cd3-739d-4fc8-98b6-acfb13eef91e |
+| aafnai-advanced-coding-reconcile-v15 | ab7cc97c-c544-4323-851b-5e6c4e28b8f7 | b5f80474-ea6a-4a3a-81ea-183bcfd2419d |
+| aafnai-advanced-epub-diff-v15 | 8c6d9bd6-9155-4d8d-9786-3da49a727e34 | 10c0b61e-5810-4330-b061-603f6cf847c1 |
+| aafnai-advanced-exposure-sheet-v15 | a32bb5b9-8551-4a36-a535-d2430474510a | 86709b67-9b8f-4e0a-8d39-cb0aed569fbc |
+| aafnai-advanced-fabric-nesting-v15 | d3b030bb-9bfc-4046-80a4-04b36fc02689 | c0acd189-4c00-4dde-b63d-1539469b2d82 |
+| aafnai-advanced-font-language-v15 | 72479a1d-34e3-4edc-8566-effee002f1e7 | 77f0c2c0-220c-4294-9937-af3e322a6f4c |
+| aafnai-advanced-icu-validator-v15 | d44ba6c3-2812-4c7c-91a1-cbaf25204ef6 | b1c148e7-6260-4cbc-9b26-35e10d9db6ce |
+| aafnai-advanced-knit-gauge-v15 | 2409524e-6776-4929-8503-c7acb5ebd86e | 5d128c44-6230-4bbb-b373-8837374c0f4a |
+| aafnai-advanced-pgn-diff-v15 | 3063dd56-8cae-4c78-b1cc-161949c31662 | bd476796-151f-4024-9ceb-cb28ed185a7b |
+| aafnai-advanced-puzzle-hunt-v15 | 3f853d4c-5d93-4b2f-b35a-bbe0eca57cd1 | 458d0aeb-130a-4318-9939-0ba09d3deeb4 |
+| aafnai-advanced-qmk-simulator-v15 | 340bdeec-00dc-430c-afb9-b7cb0fc33d37 | 99b91f14-7420-4cf6-a3ec-323cda6c85b6 |
+| aafnai-advanced-quiz-bank-v15 | 63a1ed53-eff0-47f9-9021-3666dc9f341a | 4541420d-a85a-4573-8b11-2627961d9f95 |
+| aafnai-advanced-rehearsal-planner-v15 | 86c1f51d-8694-4d0b-89d4-fe60db70c3fa | 036bb7b8-ff6f-4344-b0bd-6504ed62859d |
+| aafnai-advanced-story-continuity-v15 | 33466df5-0185-4261-b459-3e8e5fc588a2 | 163ab53b-88b2-4e42-b2b6-4fecea310794 |
+| aafnai-advanced-survey-branch-v15 | feefa059-a0fa-4a86-a569-4e7648f902ab | 6a6fc540-54d7-485c-89bf-c052ee4321b2 |
+| aafnai-advanced-tournament-v15 | 52f18eec-c082-420f-97a0-809a11a193de | 26d9d0b4-02a4-4c95-947f-879b66e576c9 |
+| aafnai-advanced-warp-planner-v15 | b80eeb4a-6c47-41d7-990a-9fdedf64d6d0 | ae06455d-e023-46c6-9fca-d6f19f1e3219 |
