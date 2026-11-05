@@ -1,10 +1,12 @@
 /** One managed instance of each publisher-supplied unit per HTML document. */
-export const ADSTERRA_VERSION = "2026-11-05-v1";
+export const ADSTERRA_VERSION = "2026-11-05-v2";
 export const ADSTERRA_POPUNDER = "https://abscloud.org/1/fe7eda2cd06bda210f4e85075df3069c";
 export const ADSTERRA_SOCIAL = "https://bauval.org/14/d526bb158baa587de984d6036f99adaf";
 export const ADSTERRA_NATIVE = "https://bauval.org/21/b86f7b1b852ea7f8de7539079e6e7816";
 export const ADSTERRA_SMARTLINK = "https://araplhn.org/4/c752b529eb7d6d4ebf1096d225dfb10a";
 export const ADSTERRA_CONTAINER = "container-b86f7b1b852ea7f8de7539079e6e7816";
+// The ad scripts are asynchronous; establish their connections early as well.
+const ADSTERRA_CONNECTIONS = '<link data-patro-adsterra-preconnect rel="preconnect" href="https://abscloud.org"><link data-patro-adsterra-preconnect rel="preconnect" href="https://bauval.org">';
 const managed = /abscloud\.org|bauval\.org|araplhn\.org|patro-support\.js/i;
 const script = (src        , kind        ) => `<script async data-cfasync="false" data-patro-adsterra="${kind}" src="${src}"></script>`;
 export const ADSTERRA_HEAD = script(ADSTERRA_POPUNDER, "popunder");
@@ -51,6 +53,8 @@ export function installAdsterra(html        )         {
     if (!/http-equiv\s*=\s*["']content-security-policy["']/i.test(tag)) return tag;
     return tag.replace(/\bcontent\s*=\s*(["'])([\s\S]*?)\1/i, (_, quote, policy) => `content=${quote}${adsterraCsp(policy)}${quote}`);
   });
+  out = out.replace(/<link\b[^>]*data-patro-adsterra-preconnect[^>]*>/gi, "");
+  out = out.replace(/<head\b[^>]*>/i, tag => tag + ADSTERRA_CONNECTIONS);
   out = out.replace(/<\/head\s*>/i, ADSTERRA_HEAD + "</head>");
   out = out.replace(/<body\b[^>]*>/i, tag => tag + adsterraSmartlink("top") + ADSTERRA_NATIVE_HTML);
   return out.replace(/<\/body\s*>/i, adsterraSmartlink("bottom") + ADSTERRA_SOCIAL_HTML + "</body>");
@@ -60,6 +64,7 @@ export function installAdsterra(html        )         {
 export function adsterraResponse(request         , response          )           {
   if (request.method !== "GET" || response.status !== 200 || !response.headers.get("content-type")?.toLowerCase().includes("text/html") || !adsterraEligible(new URL(request.url).pathname)) return response;
   if (response.headers.get("x-patro-adsterra") === ADSTERRA_VERSION) return response;
+  const isToolPage = /^\/tool\/[a-z0-9-]+\/?$/i.test(new URL(request.url).pathname);
   const headers = new Headers(response.headers);
   const csp = headers.get("content-security-policy");
   if (csp) headers.set("content-security-policy", adsterraCsp(csp));
@@ -74,7 +79,9 @@ export function adsterraResponse(request         , response          )          
     .on(`#${ADSTERRA_CONTAINER}`, {element(el     ) {el.remove();}})
     .on("a[href]", {element(el     ) {if (managed.test(el.getAttribute("href") || "")) el.remove();}})
     .on("meta[http-equiv]", {element(el     ) {if ((el.getAttribute("http-equiv") || "").toLowerCase() === "content-security-policy") el.setAttribute("content", adsterraCsp(el.getAttribute("content") || "default-src 'self'"));}})
-    .on("head", {element(el     ) {el.append(ADSTERRA_HEAD, {html:true});}})
+    .on("link[data-patro-adsterra-preconnect]", {element(el     ) {el.remove();}})
+    .on("head", {element(el     ) {el.prepend(ADSTERRA_CONNECTIONS, {html:true});el.append(ADSTERRA_HEAD, {html:true});}})
+    .on("#ct-tool", {element(el     ) {if (isToolPage) el.after(adsterraSmartlink("tool-after"), {html:true});}})
     .on("body", {element(el     ) {el.prepend(adsterraSmartlink("top") + ADSTERRA_NATIVE_HTML, {html:true});el.append(adsterraSmartlink("bottom") + ADSTERRA_SOCIAL_HTML, {html:true});}})
     .transform(result);
 }

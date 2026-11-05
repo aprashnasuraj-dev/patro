@@ -14,12 +14,21 @@ class TestRewriter {
       const slot = /<aside\b[^>]*id="patro-native-ad-slot"[^>]*>[\s\S]*?<\/aside>/i;
       const remove = handlers.get('#patro-native-ad-slot');
       if (remove && slot.test(html)) remove.element({ remove() { html = html.replace(slot, ''); } });
+      const related = /<section class="related">[^]*?<\/section>/i;
+      const relatedHandler = handlers.get('section.related');
+      if (relatedHandler && related.test(html)) relatedHandler.element({ remove() { html = html.replace(related, ''); } });
       const paragraph = handlers.get('#article-body > p');
       if (paragraph) {
         const start = html.indexOf('<div id="article-body">');
         const end = html.indexOf('</div>', start);
         if (start >= 0 && end > start) {
           let body = html.slice(start, end), count = 0;
+          const image = handlers.get('#article-body img');
+          if (image) body = body.replace(/<img([^>]*)>/g, (_, attributes) => {
+            const attrs = new Map([...attributes.matchAll(/([\w-]+)="([^"]*)"/g)].map(x => [x[1], x[2]]));
+            image.element({ getAttribute(name) { return attrs.has(name) ? attrs.get(name) : null; }, setAttribute(name, value) { attrs.set(name, value); } });
+            return '<img ' + [...attrs].map(([key, value]) => `${key}="${value}"`).join(' ') + '>';
+          });
           body = body.replace(/<p>[^]*?<\/p>/g, (p) => {
             let after = ''; paragraph.element({ after(value) { after = value; } }); count++;
             return p + after;
@@ -47,6 +56,35 @@ test('moves the existing native unit after the third article paragraph', async (
   assert.ok(html.indexOf('<p>Three</p>') < html.indexOf(slot));
   assert.ok(html.indexOf(slot) < html.indexOf('<p>Four</p>'));
   assert.equal(html.split(slot).length-1,1);
+});
+
+test('adds a voluntary inline sponsor link, repositions existing related cards and defers body images on long articles', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const paragraphs = Array.from({length: 14}, (_, i) => `<p>Paragraph ${i+1}${i===3?' <img src="diagram.png">':''}</p>`).join('');
+  const cards = '<section class="related"><h2>Related reading</h2><a class="related-card" href="/article/related">Related article</a></section>';
+  const html = `<html><body>${slot}<main><div id="article-body">${paragraphs}</div>${cards}</main></body></html>`;
+  const result = await libraryArticleLayout(new Request('https://aafnaipatro.com/article/example'), new Response(html,{headers:{'content-type':'text/html'}}));
+  const output = await result.text();
+  assert.ok(output.indexOf('Paragraph 3</p>') < output.indexOf(slot));
+  assert.ok(output.indexOf('Paragraph 7</p>') < output.indexOf('data-patro-adsterra="smartlink-inline"'));
+  assert.ok(output.indexOf('data-patro-adsterra="smartlink-inline"') < output.indexOf('Paragraph 8</p>'));
+  assert.ok(output.indexOf('Paragraph 10</p>') < output.indexOf(cards));
+  assert.ok(output.indexOf(cards) < output.indexOf('Paragraph 11</p>'));
+  assert.equal(output.split(cards).length-1, 1);
+  assert.match(output, /<img src="diagram.png" loading="lazy" decoding="async">/);
+});
+
+test('preserves related sections when the section is duplicated or is not a known internal-card layout', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const paragraphs = Array.from({length: 14}, (_, i) => `<p>Paragraph ${i+1}</p>`).join('');
+  const cards = '<section class="related"><h2>Related</h2><a class="related-card" href="/article/related">Read</a></section>';
+  for (const sections of [cards+cards, '<section class="related"><p>No internal cards</p></section>']) {
+    const html = `<html><body>${slot}<main><div id="article-body">${paragraphs}</div>${sections}</main></body></html>`;
+    const result = await libraryArticleLayout(new Request('https://aafnaipatro.com/article/example'), new Response(html,{headers:{'content-type':'text/html'}}));
+    const output = await result.text();
+    assert.ok(output.includes(sections));
+    assert.ok(output.indexOf(sections) > output.indexOf('Paragraph 14'));
+  }
 });
 
 test('leaves short articles, duplicate slots, other routes and partial requests alone', async () => {
