@@ -5,6 +5,7 @@ import {mkdtemp,copyFile,writeFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {pathToFileURL} from 'node:url';
+import gateway from './worker.mjs';
 const req=p=>new Request('https://aafnaipatro.com'+p);
 test('renders relevant article links and a library directory for recognized tools',()=>{
   let s=toolDiscoveryNav('/calculators/moon-phase-calculator');
@@ -42,4 +43,15 @@ test('the root wrapper waits for calendar processing before adding tool navigati
     assert.equal(result.headers.get('x-patro-tool-discovery'),'1');
     assert.match(inserted,/Browse articles by subject/);
   } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('the gateway adds links when static assets bypass the root Worker',async()=>{
+  let inserted='';
+  globalThis.HTMLRewriter=class {
+    on(selector,handler){if(selector==='body')this.body=handler;return this}
+    transform(response){if(this.body)this.body.element({append(s){inserted=s},prepend(){}});return response}
+  };
+  const env={ORIGIN:{async fetch(){return new Response('<html><body><div id="root"></div></body></html>',{headers:{'content-type':'text/html'}})}},DATE:{}};
+  const result=await gateway.fetch(req('/calculators/moon-phase-calculator'),env,{});
+  assert.equal(result.headers.get('x-patro-tool-discovery'),'1');
+  assert.match(inserted,/moon-phase-angle/);
 });
