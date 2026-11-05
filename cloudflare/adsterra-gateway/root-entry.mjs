@@ -1,0 +1,9 @@
+import original from "./optimized-entry.js";
+import {adsterraResponse} from "./patro-adsterra.mjs";
+import {calendarNativeLayout} from "./calendar-native-layout.mjs";
+export * from "./optimized-entry.js";
+const assetPaths=["/favicon.*","/moon","/moon/*","/eclipse","/eclipse/*","/nepal","/nepal/time","/nepal/year","/nepal/trek-weather","/nepal/trek-weather/*","/nepalmap*","/embed/nepalmap/*","/us/*","/weather","/weather/*","/de/*","/fr/*","/es/*","/it/*","/_mm530","/calculators/*","/generators/*","/converters/*","/utilities/*","/validators/*","/editors/*","/planners/*","/extractors/*","/analyzers/*","/formatters/*","/comparisons/*","/timers/*","/advancetools","/advancetools/","/advancetools/index.html","/advancetools/web-tools","/advancetools/web-tools/*","/advancetools/category/*","/advancetools/category","/advancetools/methodology","/advancetools/methodology/*","/advancetools/knittingcalculators","/advancetools/knittingcalculators/*","/advancetools/chordlibrary","/advancetools/chordlibrary/*","/advancetools/workshopreference","/advancetools/workshopreference/*","/advancetools/fontconverters","/advancetools/fontconverters/*","/advancetools/printablepaper","/advancetools/printablepaper/*","/client-tools/*","/converter/*","/calculator/*","/tools/*","/client-tools","/converter","/calculator","/tools"];
+function assetPath(path){return assetPaths.some(rule=>{const i=rule.indexOf('*');return i<0?path===rule:path.startsWith(rule.slice(0,i))&&path.endsWith(rule.slice(i+1));});}
+export default {...original,async fetch(request,env,ctx){if(["GET","HEAD"].includes(request.method)&&assetPath(new URL(request.url).pathname)&&env.ASSETS){const asset=await env.ASSETS.fetch(request);if(asset.status!==404)return calendarNativeLayout(request,adsterraResponse(request,asset));}
+return calendarNativeLayout(request,adsterraResponse(request,await original.fetch(request,env,ctx)));}};
+
