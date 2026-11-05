@@ -30,7 +30,7 @@ test('injects once for eligible HTML and passes unrelated or partial requests th
 test('the root wrapper waits for calendar processing before adding tool navigation',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'patro-tool-test-'));
   try {
-    for (const name of ['root-entry.mjs','patro-adsterra.mjs','calendar-native-layout.mjs','tool-discovery.mjs','related-articles.mjs'])
+    for (const name of ['root-entry.mjs','patro-adsterra.mjs','calendar-native-layout.mjs','tool-discovery.mjs','related-articles.mjs','ad-diagnostics.mjs'])
       await copyFile(new URL(name,import.meta.url),join(dir,name));
     await writeFile(join(dir,'package.json'),'{"type":"module"}');
     await writeFile(join(dir,'optimized-entry.js'),'export default { async fetch() { return new Response("<html><body><main>tool</main></body></html>", {headers:{"content-type":"text/html"}}); } };');

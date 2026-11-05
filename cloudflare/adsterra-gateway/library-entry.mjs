@@ -2,6 +2,7 @@ import original from './worker.live-snapshot.mjs';
 import { adsterraResponse } from './patro-adsterra.mjs';
 import { libraryArticleLayout } from './library-article-layout.mjs';
 import { librarySubjectResponse, addSubjectIndexLink } from './library-discovery.mjs';
+import { addAdDiagnostics } from './ad-diagnostics.mjs';
 export * from './worker.live-snapshot.mjs';
 const LIBRARY_STYLE = 'https://library-assets.aafnaipatro.com/phase1/static/library.css';
 export function addLibraryStyleHint(request, response) {
@@ -19,7 +20,7 @@ export default {
     const subject = await librarySubjectResponse(request, env);
     const base = subject || await original.fetch(request, env, ctx);
     const decorated = await libraryArticleLayout(request, adsterraResponse(request, base), env);
-    return addLibraryStyleHint(request, addSubjectIndexLink(request, decorated));
+    return addAdDiagnostics(request, addLibraryStyleHint(request, addSubjectIndexLink(request, decorated)));
   },
 };
 
