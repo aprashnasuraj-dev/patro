@@ -1,6 +1,6 @@
 // Site-side diagnostics only: never invoke an ad URL or change navigation.
 // The ad network remains the authority for billable impressions and clicks.
-export const AD_DIAGNOSTICS_VERSION = '2026-11-06-v1';
+export const AD_DIAGNOSTICS_VERSION = '2026-11-06-v2';
 export const AD_DIAGNOSTICS_JS = `(()=>{
   'use strict';
   const pending=[];
@@ -100,6 +100,14 @@ export const AD_DIAGNOSTICS_JS = `(()=>{
 })();`;
 
 const DIAGNOSTICS_HTML = `<script data-patro-ad-diagnostics>${AD_DIAGNOSTICS_JS}</script>`;
+// Start downloading the exact publisher scripts as soon as the head is parsed.
+// Matching classic script requests can reuse these fetches; this does not
+// execute, refresh, duplicate, or alter the ad units.
+export const AD_EARLY_SCRIPT_HINTS = [
+  ['popunder','https://abscloud.org/1/fe7eda2cd06bda210f4e85075df3069c'],
+  ['native','https://bauval.org/21/b86f7b1b852ea7f8de7539079e6e7816'],
+  ['social','https://bauval.org/14/d526bb158baa587de984d6036f99adaf'],
+].map(([kind,src])=>`<link data-patro-ad-preload="${kind}" rel="preload" as="script" href="${src}">`).join('');
 export const AD_DIAGNOSTICS_HASH = "'sha256-TuXcaD4KS4TzzG7Xud7yn5B5jBNSSHuXi7utr6ymd/U='";
 
 // A hash makes 'unsafe-inline' ineffective in CSP3. Add ours only where a
@@ -130,7 +138,8 @@ export function addAdDiagnostics(request, response) {
   const result = new Response(response.body, {status:response.status,statusText:response.statusText,headers});
   return new HTMLRewriter()
     .on('script[data-patro-ad-diagnostics]', {element(el){el.remove();}})
+    .on('link[data-patro-ad-preload]', {element(el){el.remove();}})
     .on('meta[http-equiv]', {element(el){if((el.getAttribute('http-equiv')||'').toLowerCase()==='content-security-policy') el.setAttribute('content',adDiagnosticsCsp(el.getAttribute('content')||''));}})
-    .on('head', {element(el){el.prepend(DIAGNOSTICS_HTML,{html:true});}})
+    .on('head', {element(el){el.prepend(AD_EARLY_SCRIPT_HINTS+DIAGNOSTICS_HTML,{html:true});}})
     .transform(result);
 }

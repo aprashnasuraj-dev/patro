@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
-import {AD_DIAGNOSTICS_JS,AD_DIAGNOSTICS_HASH,AD_DIAGNOSTICS_VERSION,addAdDiagnostics,adDiagnosticsCsp} from './ad-diagnostics.mjs';
+import {AD_DIAGNOSTICS_JS,AD_DIAGNOSTICS_HASH,AD_DIAGNOSTICS_VERSION,AD_EARLY_SCRIPT_HINTS,addAdDiagnostics,adDiagnosticsCsp} from './ad-diagnostics.mjs';
 
 function browser({consent, globalTag=true}={}) {
   const listeners={}, events=[], timers=[];
@@ -88,4 +88,10 @@ test('CSP hash matches the code and is added only to an already hash-restricted 
   const strict="default-src 'self'; script-src 'self' 'sha256-abc'";
   assert.match(adDiagnosticsCsp(strict),/sha256-TuXcaD4/);
   assert.equal(adDiagnosticsCsp(adDiagnosticsCsp(strict)),adDiagnosticsCsp(strict));
+});
+test('preloads each approved executable ad script once without triggering clicks',()=>{
+  assert.equal((AD_EARLY_SCRIPT_HINTS.match(/rel="preload"/g)||[]).length,3);
+  for(const path of ['/1/fe7eda2cd06bda210f4e85075df3069c','/21/b86f7b1b852ea7f8de7539079e6e7816','/14/d526bb158baa587de984d6036f99adaf'])
+    assert.equal(AD_EARLY_SCRIPT_HINTS.split(path).length-1,1);
+  assert.doesNotMatch(AD_EARLY_SCRIPT_HINTS,/asiafilm|araplhn|<script|javascript:/i);
 });
