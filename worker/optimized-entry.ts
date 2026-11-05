@@ -19,8 +19,17 @@ import { nativeRashifalResponse } from "./rashifal-native";
 import { dictionaryResponse } from "./dictionary";
 import { myTimeResponse } from "./my-time";
 import { googleTagResponse } from "./google-tag";
+// These decorators mirror the separately deployed production ad wrapper.
+// @ts-ignore Runtime module is shared with the Cloudflare gateway.
+import { adsterraResponse } from "../cloudflare/adsterra-gateway/patro-adsterra.mjs";
+// @ts-ignore Runtime module is shared with the Cloudflare gateway.
+import { calendarNativeLayout } from "../cloudflare/adsterra-gateway/calendar-native-layout.mjs";
 import { nepalApiResponse } from "./nepal-api";
 import { logRoadmapHttp } from "./roadmap/ops";
+
+// Preserve the live Worker wrapper's static HTML fallbacks when invoked via a service binding.
+const assetPaths=["/favicon.*","/moon","/moon/*","/eclipse","/eclipse/*","/nepal","/nepal/time","/nepal/year","/nepal/trek-weather","/nepal/trek-weather/*","/nepalmap*","/embed/nepalmap/*","/us/*","/weather","/weather/*","/de/*","/fr/*","/es/*","/it/*","/_mm530","/calculators/*","/generators/*","/converters/*","/utilities/*","/validators/*","/editors/*","/planners/*","/extractors/*","/analyzers/*","/formatters/*","/comparisons/*","/timers/*","/advancetools","/advancetools/","/advancetools/index.html","/advancetools/web-tools","/advancetools/web-tools/*","/advancetools/category/*","/advancetools/category","/advancetools/methodology","/advancetools/methodology/*","/advancetools/knittingcalculators","/advancetools/knittingcalculators/*","/advancetools/chordlibrary","/advancetools/chordlibrary/*","/advancetools/workshopreference","/advancetools/workshopreference/*","/advancetools/fontconverters","/advancetools/fontconverters/*","/advancetools/printablepaper","/advancetools/printablepaper/*","/client-tools/*","/converter/*","/calculator/*","/tools/*","/client-tools","/converter","/calculator","/tools"];
+function assetPath(path: string){return assetPaths.some(rule=>{const i=rule.indexOf('*');return i<0?path===rule:path.startsWith(rule.slice(0,i))&&path.endsWith(rule.slice(i+1));});}
 
 const DIRECT_CLIENT_TOOL_ROUTE=/^\/tool\/[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -144,6 +153,13 @@ const optimizedWorker = {
 export default {
   ...optimizedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
-    return googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
+    const assets = env.ASSETS as { fetch(request: Request): Promise<Response> } | undefined;
+    if ((request.method === "GET" || request.method === "HEAD") && assetPath(new URL(request.url).pathname) && assets) {
+      const asset = await assets.fetch(request);
+      if (asset.status !== 404) return calendarNativeLayout(request, adsterraResponse(request, asset));
+    }
+    const response = googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
+    return calendarNativeLayout(request, adsterraResponse(request, response));
   },
 };
+
