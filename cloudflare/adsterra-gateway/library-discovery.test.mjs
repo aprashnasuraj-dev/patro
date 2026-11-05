@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {librarySubjectResponse, articleDiscoveryNav, subjectSlug} from './library-discovery.mjs';
+import {relatedTool} from './related-tools.mjs';
 const articles=Array.from({length:55},(_,i)=>({url:'/article/entry-'+(i+1),title:i===0?'A <safe> title':'Article '+(i+1),dek:'A useful description',sector:'Physics & Measurement'}));
 articles.push({url:'/article/business',title:'Business',dek:'Example',sector:'Business'});
 articles.push({url:'https://evil.example/',title:'bad',sector:'Business'});
@@ -35,4 +36,9 @@ test('article navigation uses its own metadata and only safe known paths',()=>{
   assert.equal(articleDiscoveryNav(source,'/elsewhere',null),'');
   assert.equal(articleDiscoveryNav('no metadata','/article/entry-1',null),'');
   assert.equal(subjectSlug('Earth Science, Geology & Hazards'),'earth-science-geology-hazards');
+});
+test('related tool links include matching published article topics',()=>{
+  assert.equal(relatedTool('/article/gpon-optical-power-budget-calculator-explained')?.path,'/tool/pon-splitter-cascade-optical-budget-calculator');
+  assert.equal(relatedTool('/article/how-macro-effective-aperture-works-in-practice')?.path,'/tool/macro-effective-aperture-and-diffraction-planner');
+  assert.equal(relatedTool('/article/unrelated-example'),null);
 });

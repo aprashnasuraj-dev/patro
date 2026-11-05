@@ -10,6 +10,7 @@ const req=p=>new Request('https://aafnaipatro.com'+p);
 test('renders relevant article links and a library directory for recognized tools',()=>{
   let s=toolDiscoveryNav('/calculators/moon-phase-calculator');
   assert.match(s,/href="\/article\/moon-phase-angle/);assert.match(s,/href="\/library\/subjects\/"/);
+  assert.match(toolDiscoveryNav('/tool/pon-splitter-cascade-optical-budget-calculator'),/gpon-optical-power-budget/);
   s=toolDiscoveryNav('/tool/example');assert.match(s,/library\/catalogue/);
   assert.equal(toolDiscoveryNav('/api/example'),'');assert.equal(toolDiscoveryNav('/article/example'),'');
 });
