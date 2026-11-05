@@ -1,0 +1,126 @@
+{
+  "name": "patro-adsterra-gateway",
+  "main": "worker/adsterra-gateway.ts",
+  "compatibility_date": "2026-09-30",
+  "workers_dev": false,
+  "services": [
+    {
+      "binding": "ORIGIN",
+      "service": "patro"
+    },
+    {
+      "binding": "DATE",
+      "service": "patro-date-pages"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "aafnaipatro.com/tools*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/advancetools*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/nepal*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/calculator*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/converter*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/utilities*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/generator*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/validator*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/editor*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/planner*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/extractor*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/analyzer*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/formatter*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/comparison*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/timer*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/client-tools*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/moon*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/eclipse*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/weather*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/us/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/de/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/fr/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/es/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/it/*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/_mm530*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/nepalmap*",
+      "zone_name": "aafnaipatro.com"
+    },
+    {
+      "pattern": "aafnaipatro.com/date/*",
+      "zone_name": "aafnaipatro.com"
+    }
+  ]
+}

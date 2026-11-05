@@ -1,0 +1,481 @@
+{
+  "checkedAt": "2026-11-05T07:19:46Z",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 26320,
+      "final": "https://aafnaipatro.com/"
+    },
+    {
+      "path": "/tools/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 19549,
+      "final": "https://aafnaipatro.com/tools/"
+    },
+    {
+      "path": "/tools/bstoad",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 11903,
+      "final": "https://aafnaipatro.com/tools/bstoad/"
+    },
+    {
+      "path": "/tools/nepali-typing",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 12396,
+      "final": "https://aafnaipatro.com/tools/nepali-typing/"
+    },
+    {
+      "path": "/nepali-tools/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 20251,
+      "final": "https://aafnaipatro.com/nepali-tools/"
+    },
+    {
+      "path": "/nepalmap",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 31394,
+      "final": "https://aafnaipatro.com/nepalmap"
+    },
+    {
+      "path": "/nepal/dolakha",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 29636,
+      "final": "https://aafnaipatro.com/nepal/dolakha"
+    },
+    {
+      "path": "/panchang",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 29266,
+      "final": "https://aafnaipatro.com/panchang"
+    },
+    {
+      "path": "/mytime",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 22399,
+      "final": "https://aafnaipatro.com/mytime"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 28845,
+      "final": "https://aafnaipatro.com/about"
+    },
+    {
+      "path": "/library",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 5168,
+      "final": "https://aafnaipatro.com/library"
+    },
+    {
+      "path": "/atlas/charikot",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 10440,
+      "final": "https://aafnaipatro.com/atlas/charikot"
+    },
+    {
+      "path": "/date/2026-11-05",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9338,
+      "final": "https://aafnaipatro.com/date/2026-11-05"
+    },
+    {
+      "path": "/advanced-tools/knitting-gauge-repeat-planner/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9817,
+      "final": "https://aafnaipatro.com/advanced-tools/knitting-gauge-repeat-planner/"
+    },
+    {
+      "path": "/advanced-tools/tournament-rescheduler/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9735,
+      "final": "https://aafnaipatro.com/advanced-tools/tournament-rescheduler/"
+    },
+    {
+      "path": "/advanced-tools/weaving-warp-planner/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9719,
+      "final": "https://aafnaipatro.com/advanced-tools/weaving-warp-planner/"
+    },
+    {
+      "path": "/advanced-tools/audio-loop-batch-editor/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9730,
+      "final": "https://aafnaipatro.com/advanced-tools/audio-loop-batch-editor/"
+    },
+    {
+      "path": "/advanced-tools/fabric-nesting-planner/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9749,
+      "final": "https://aafnaipatro.com/advanced-tools/fabric-nesting-planner/"
+    },
+    {
+      "path": "/advanced-tools/board-game-card-generator/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9730,
+      "final": "https://aafnaipatro.com/advanced-tools/board-game-card-generator/"
+    },
+    {
+      "path": "/advanced-tools/bead-pattern-inventory-planner/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9781,
+      "final": "https://aafnaipatro.com/advanced-tools/bead-pattern-inventory-planner/"
+    },
+    {
+      "path": "/advanced-tools/chordpro-setlist-builder/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9743,
+      "final": "https://aafnaipatro.com/advanced-tools/chordpro-setlist-builder/"
+    },
+    {
+      "path": "/advanced-tools/font-subsetter-language-checker/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9799,
+      "final": "https://aafnaipatro.com/advanced-tools/font-subsetter-language-checker/"
+    },
+    {
+      "path": "/advanced-tools/epub-edition-comparison/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9697,
+      "final": "https://aafnaipatro.com/advanced-tools/epub-edition-comparison/"
+    },
+    {
+      "path": "/advanced-tools/quiz-bank-converter/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9653,
+      "final": "https://aafnaipatro.com/advanced-tools/quiz-bank-converter/"
+    },
+    {
+      "path": "/advanced-tools/survey-branching-tester/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9680,
+      "final": "https://aafnaipatro.com/advanced-tools/survey-branching-tester/"
+    },
+    {
+      "path": "/advanced-tools/story-continuity-checker/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9689,
+      "final": "https://aafnaipatro.com/advanced-tools/story-continuity-checker/"
+    },
+    {
+      "path": "/advanced-tools/theatre-rehearsal-scheduler/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9665,
+      "final": "https://aafnaipatro.com/advanced-tools/theatre-rehearsal-scheduler/"
+    },
+    {
+      "path": "/advanced-tools/qmk-keymap-simulator/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9682,
+      "final": "https://aafnaipatro.com/advanced-tools/qmk-keymap-simulator/"
+    },
+    {
+      "path": "/advanced-tools/pgn-repertoire-diff/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9630,
+      "final": "https://aafnaipatro.com/advanced-tools/pgn-repertoire-diff/"
+    },
+    {
+      "path": "/advanced-tools/animation-exposure-sheet/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9529,
+      "final": "https://aafnaipatro.com/advanced-tools/animation-exposure-sheet/"
+    },
+    {
+      "path": "/advanced-tools/qualitative-coding-comparison/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9830,
+      "final": "https://aafnaipatro.com/advanced-tools/qualitative-coding-comparison/"
+    },
+    {
+      "path": "/advanced-tools/icu-message-validator/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 9199,
+      "final": "https://aafnaipatro.com/advanced-tools/icu-message-validator/"
+    },
+    {
+      "path": "/advanced-tools/puzzle-hunt-planner/",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 5564,
+      "final": "https://aafnaipatro.com/advanced-tools/puzzle-hunt-planner/"
+    },
+    {
+      "path": "/article/dns-negative-caching-nxdomain-ttl-troubleshooting",
+      "status": 200,
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "pass": true,
+      "hasGoogleTag": true,
+      "bytes": 25879,
+      "final": "https://aafnaipatro.com/article/dns-negative-caching-nxdomain-ttl-troubleshooting"
+    }
+  ]
+}

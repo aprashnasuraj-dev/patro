@@ -1,0 +1,17 @@
+name: Adsterra placement
+on:
+  pull_request:
+    paths: ['shared/adsterra.ts', 'worker/adsterra-gateway.ts', 'scripts/install-adsterra.mjs', 'tests/adsterra-placement.test.mjs', '.github/workflows/adsterra-placement.yml']
+  push:
+    branches: [main]
+    paths: ['shared/adsterra.ts', 'worker/adsterra-gateway.ts', 'scripts/install-adsterra.mjs', 'tests/adsterra-placement.test.mjs', '.github/workflows/adsterra-placement.yml']
+jobs:
+  placement:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --experimental-strip-types --test tests/adsterra-placement.test.mjs
+      - run: node --check scripts/install-adsterra.mjs && node --check scripts/adsterra/cloudflare-content-patch.js

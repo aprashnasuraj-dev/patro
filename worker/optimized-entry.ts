@@ -1,3 +1,4 @@
+import { adsterraResponse } from "../shared/adsterra";
 import { growthPageResponse } from "./growth";
 import { exploreResponse } from "./explore";
 import { placesCalendarResponse } from "./places-calendar";
@@ -144,6 +145,7 @@ const optimizedWorker = {
 export default {
   ...optimizedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
-    return googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
+    return adsterraResponse(request, googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx)));
   },
 };
+

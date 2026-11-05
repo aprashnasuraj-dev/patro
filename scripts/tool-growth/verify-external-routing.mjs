@@ -59,6 +59,9 @@ if(process.argv.includes("--live")){
  for(const row of ownership.foreignRoutes){
   verify(routeMap.get(row.pattern)===row.script,"External route changed: "+row.pattern+" expected "+row.script);
  }
+ for(const pattern of ownership.adsterraGateway?.routes||[]){
+  verify(routeMap.get(pattern)===ownership.adsterraGateway.worker,"Adsterra gateway route changed: "+pattern);
+ }
  for(const row of ownership.foreignCustomDomains){
   verify(domainMap.get(row.hostname)===row.service,"Independent custom domain changed: "+row.hostname);
  }
@@ -70,3 +73,4 @@ if(errors.length){
 }else{
  console.log("External Worker ownership PASS: "+ownership.foreignRoutes.length+" dedicated routes, "+ownership.foreignCustomDomains.length+" independent subdomains, 347+ redirects protected; live="+process.argv.includes("--live"));
 }
+
