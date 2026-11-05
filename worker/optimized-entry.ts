@@ -24,6 +24,8 @@ import { googleTagResponse } from "./google-tag";
 import { adsterraResponse } from "../cloudflare/adsterra-gateway/patro-adsterra.mjs";
 // @ts-ignore Runtime module is shared with the Cloudflare gateway.
 import { calendarNativeLayout } from "../cloudflare/adsterra-gateway/calendar-native-layout.mjs";
+// @ts-ignore Runtime module is shared with the Cloudflare gateway.
+import { addToolDiscovery } from "../cloudflare/adsterra-gateway/tool-discovery.mjs";
 import { nepalApiResponse } from "./nepal-api";
 import { logRoadmapHttp } from "./roadmap/ops";
 
@@ -156,10 +158,10 @@ export default {
     const assets = env.ASSETS as { fetch(request: Request): Promise<Response> } | undefined;
     if ((request.method === "GET" || request.method === "HEAD") && assetPath(new URL(request.url).pathname) && assets) {
       const asset = await assets.fetch(request);
-      if (asset.status !== 404) return calendarNativeLayout(request, adsterraResponse(request, asset, env));
+      if (asset.status !== 404) return addToolDiscovery(request, calendarNativeLayout(request, adsterraResponse(request, asset, env)));
     }
     const response = googleTagResponse(request, await optimizedWorker.fetch(request, env, ctx));
-    return calendarNativeLayout(request, adsterraResponse(request, response, env));
+    return addToolDiscovery(request, calendarNativeLayout(request, adsterraResponse(request, response, env)));
   },
 };
 
