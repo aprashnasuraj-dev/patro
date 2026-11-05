@@ -1,0 +1,9 @@
+# Adsterra gateway: source snapshot and date-page layout
+
+This directory records the gateway that was serving the `aafnaipatro.com/date/*` and several tool routes on 5 November 2026. `patro-adsterra.mjs` is a snapshot of the pre-existing deployed module; it is not evidence of Adsterra account approval, consent compliance, or successful paid impressions. Its broad advertising CSP allowances predate this change and need separate, traffic-tested security review.
+
+The gateway retains its `DATE` and `ORIGIN` service bindings. On a successful, uncompressed `/date/YYYY-MM-DD` HTML GET, `date-native-layout.mjs` moves the existing single native slot after the date facts and before date navigation. It does not add ad requests or change the existing Popunder or Social Bar units. Unknown templates, duplicates, partial requests, errors, non-HTML, compressed and large responses pass through unchanged. Cache policy is retained; body validators are removed when HTML changes. The `x-patro-ad-layout: date-inline-1` response header identifies a changed response.
+
+Run `node --test date-native-layout.test.mjs` from this directory. Deployment must preserve the existing service bindings and all unrelated Worker routes and must verify the live date page and non-date pass-through. This is a gateway-specific source snapshot; the root Worker, atlas, library and separately deployed advanced tools have independent deployments. Do not deploy or replace their assets from this directory.
+
+This placement change does not implement a consent-management platform, configure advertiser categories, or measure fill. Use the publisher dashboard and a suitable consent implementation where required before treating the overall setup as compliant. Do not count page views, script loads, tests or bot requests as paid ad impressions.
