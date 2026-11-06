@@ -1,6 +1,6 @@
 // Shared ad delivery and site-side diagnostics. Never invoke an ad URL or
 // change navigation; Adsterra remains the authority for paid events.
-export const AD_DIAGNOSTICS_VERSION = '2026-11-06-v3';
+export const AD_DIAGNOSTICS_VERSION = '2026-11-06-v4';
 export const AD_DIAGNOSTICS_JS = `(()=>{
   'use strict';
   const pending=[];
@@ -65,7 +65,7 @@ export const AD_DIAGNOSTICS_JS = `(()=>{
       try { url=new URL(anchor.getAttribute('href'),location.href); } catch { return; }
       if(!smartlinks.has(url.href)) return;
       const position=kind.slice('smartlink-'.length);
-      if(!['top','bottom','inline','tool-after'].includes(position)) return;
+      if(!['top','bottom','inline','tool-after','rail'].includes(position)) return;
       send('adsterra_smartlink_click',{ad_format:'smartlink',ad_position:position});
       return;
     }
@@ -108,7 +108,7 @@ export const AD_EARLY_SCRIPT_HINTS = [
   ['native','https://bauval.org/21/b86f7b1b852ea7f8de7539079e6e7816'],
   ['social','https://bauval.org/14/d526bb158baa587de984d6036f99adaf'],
 ].map(([kind,src])=>`<link data-patro-ad-preload="${kind}" rel="preload" as="script" href="${src}">`).join('');
-export const AD_DIAGNOSTICS_HASH = "'sha256-TuXcaD4KS4TzzG7Xud7yn5B5jBNSSHuXi7utr6ymd/U='";
+export const AD_DIAGNOSTICS_HASH = "'sha256-FLlqFVwK6USn8O/9xwXZu05FncKQ8N8LXusmGYo+to4='";
 export const AD_EARLY_CONNECTIONS = [
   '<https://abscloud.org>; rel=preconnect',
   '<https://bauval.org>; rel=preconnect',
@@ -167,6 +167,7 @@ export function addAdDiagnostics(request, response) {
     .on('script[data-patro-ad-diagnostics]', {element(el){el.remove();}})
     .on('link[data-patro-ad-preload]', {element(el){el.remove();}})
     .on('aside[data-patro-adsterra="smartlink-inline"] > a[href]',smartlinkPresentation)
+    .on('aside[data-patro-adsterra="smartlink-rail"] > a[href]',smartlinkPresentation)
     .on('aside[data-patro-adsterra="smartlink-tool-after"] > a[href]',smartlinkPresentation)
     .on('aside[data-patro-adsterra="smartlink-bottom"] > a[href]',smartlinkPresentation)
     .on('meta[http-equiv]', {element(el){if((el.getAttribute('http-equiv')||'').toLowerCase()==='content-security-policy') el.setAttribute('content',adDiagnosticsCsp(el.getAttribute('content')||''));}})

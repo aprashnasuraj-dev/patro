@@ -66,16 +66,19 @@ export async function libraryArticleLayout(request, response, env = {}) {
     if (html === null) return response;
     const slots = [...html.matchAll(SLOT)];
     if (slots.length !== 1) return response;
-    let paragraphs = 0, articleHeaders = 0, articleTitles = 0;
+    let paragraphs = 0, articleHeaders = 0, articleTitles = 0, articleRails = 0;
     const inspect = new HTMLRewriter()
       .on('#article-body > p', { element() { paragraphs++; } })
       .on('header.article-header', { element() { articleHeaders++; } })
-      .on('header.article-header > h1', { element() { articleTitles++; } });
+      .on('header.article-header > h1', { element() { articleTitles++; } })
+      .on('aside.rail', { element() { articleRails++; } });
     await inspect.transform(new Response(html)).text();
     const nativeAtTitle = articleTitles === 1;
     const moveNative = nativeAtTitle || paragraphs >= PLACEMENT_AFTER_PARAGRAPH;
     const secondAtHeader = !!second && paragraphs < EXTRA_NATIVE_AFTER_PARAGRAPH + 1 && articleHeaders === 1;
     const secondInserted = !!second && (paragraphs >= EXTRA_NATIVE_AFTER_PARAGRAPH + 1 || secondAtHeader);
+    const addRailLink = articleRails === 1 && paragraphs >= SMARTLINK_AFTER_PARAGRAPH + 2 &&
+      !/data-patro-adsterra\s*=\s*["']smartlink-rail["']/i.test(html);
     if (!moveNative && !secondAtHeader) return response;
     const discovery = articleHeaders === 1 && !html.includes('class="patro-discovery"')
       ? articleDiscoveryNav(html, path.replace(/\/$/, ''), relatedTool(path.replace(/\/$/, ''))) : '';
@@ -96,6 +99,9 @@ export async function libraryArticleLayout(request, response, env = {}) {
       .on('header.article-header', { element(el) {
         if (secondAtHeader) el.after(second, {html:true});
         if (discovery) el.after(discovery, {html:true});
+      } })
+      .on('aside.rail', { element(el) {
+        if (addRailLink) el.prepend(adsterraSmartlink('rail'), {html:true});
       } })
       .on('section.related', { element(el) { if (moveRelated) el.remove(); } })
       .on('#article-body img', { element(el) {

@@ -33,8 +33,10 @@ test('records only trusted, approved voluntary smartlink interactions without ch
   assert.equal(b.events.length,0);
   b.emit('doc','click',{isTrusted:true,button:0,target});
   b.emit('doc','auxclick',{isTrusted:true,button:1,target:smartlink('https://araplhn.org/4/c752b529eb7d6d4ebf1096d225dfb10a','bottom')});
-  assert.deepEqual(b.events.map(e=>e[1]),['adsterra_smartlink_click','adsterra_smartlink_click']);
+  b.emit('doc','click',{isTrusted:true,button:0,target:smartlink('https://asiafilm.org/4/b1871169a9878fda2bc2de21a208995a','rail')});
+  assert.deepEqual(b.events.map(e=>e[1]),['adsterra_smartlink_click','adsterra_smartlink_click','adsterra_smartlink_click']);
   assert.equal(b.events[0][2].ad_position,'top'); assert.equal(b.events[1][2].ad_position,'bottom');
+  assert.equal(b.events[2][2].ad_position,'rail');
 });
 test('records native link interactions as observations rather than paid clicks',()=>{
   const b=browser(); b.emit('doc','click',{isTrusted:true,button:0,target:nativeAnchor()});
@@ -86,7 +88,7 @@ test('CSP hash matches the code and is added only to an already hash-restricted 
   const loose="default-src 'self'; script-src 'self' 'unsafe-inline'";
   assert.equal(adDiagnosticsCsp(loose),loose);
   const strict="default-src 'self'; script-src 'self' 'sha256-abc'";
-  assert.match(adDiagnosticsCsp(strict),/sha256-TuXcaD4/);
+  assert.ok(adDiagnosticsCsp(strict).includes(AD_DIAGNOSTICS_HASH));
   assert.equal(adDiagnosticsCsp(adDiagnosticsCsp(strict)),adDiagnosticsCsp(strict));
 });
 test('preloads each approved executable ad script once without triggering clicks',()=>{

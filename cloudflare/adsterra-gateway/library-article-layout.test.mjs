@@ -26,6 +26,10 @@ class TestRewriter {
       if (title) html = html.replace(/(<header class="article-header">[^]*?)(<h1>[^]*?<\/h1>)/gi, (_, before, h1) => {
         let after = ''; title.element({after(s) { after = s; }}); return before + h1 + after;
       });
+      const rail = handlers.get('aside.rail');
+      if (rail) html = html.replace(/<aside class="rail">/gi, (tag) => {
+        let before = ''; rail.element({prepend(s) { before += s; }}); return tag + before;
+      });
       const related = /<section class="related">[^]*?<\/section>/i;
       const relatedHandler = handlers.get('section.related');
       if (relatedHandler && related.test(html)) relatedHandler.element({ remove() { html = html.replace(related, ''); } });
@@ -97,6 +101,31 @@ test('places the existing native unit immediately after the article headline', a
   assert.ok(output.indexOf('<h1>Title</h1>') < output.indexOf(slot));
   assert.ok(output.indexOf(slot) < output.indexOf('<p>Introduction</p>'));
   assert.equal(output.split(slot).length-1, 1);
+});
+
+test('adds one labelled sponsored link to the existing rail on long articles', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const paras = Array.from({length:12},(_,i)=>`<p>Paragraph ${i+1}</p>`).join('');
+  const html = `<html><body>${slot}<main><header class="article-header"><h1>Title</h1></header><div id="article-body">${paras}</div><aside class="rail"><a href="/research/example">Sources</a></aside></main></body></html>`;
+  const req = new Request('https://aafnaipatro.com/article/example');
+  const response = await libraryArticleLayout(req,new Response(html,{headers:{'content-type':'text/html'}}));
+  const output = await response.text();
+  assert.equal((output.match(/data-patro-adsterra="smartlink-rail"/g)||[]).length,1);
+  assert.ok(output.indexOf('<aside class="rail">') < output.indexOf('data-patro-adsterra="smartlink-rail"'));
+  assert.match(output,/Sponsored · विज्ञापन/);assert.match(output,/https:\/\/asiafilm\.org\/4\/b1871169a9878fda2bc2de21a208995a/);
+  assert.equal(output.split(slot).length-1,1);
+  const repeated = await libraryArticleLayout(req,new Response(output,{headers:{'content-type':'text/html'}}));
+  assert.equal(((await repeated.text()).match(/data-patro-adsterra="smartlink-rail"/g)||[]).length,1);
+});
+
+test('does not add a rail link to short or ambiguous article layouts', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  for (const [count,rails] of [[3,1],[12,2]]) {
+    const paras=Array.from({length:count},()=>'<p>Text</p>').join('');
+    const html=`<html><body>${slot}<header class="article-header"><h1>Title</h1></header><div id="article-body">${paras}</div>${'<aside class="rail">Sources</aside>'.repeat(rails)}</body></html>`;
+    const result=await libraryArticleLayout(new Request('https://aafnaipatro.com/article/example'),new Response(html,{headers:{'content-type':'text/html'}}));
+    assert.doesNotMatch(await result.text(),/smartlink-rail/);
+  }
 });
 
 test('places a second native unit after the known header of short articles and after research sections', async () => {
