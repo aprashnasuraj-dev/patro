@@ -110,3 +110,30 @@ The following versions retain the previous ad units and start the approved Popun
 | aafnai-advanced-survey-branch-v15 | 344d9798-20e8-41a7-8058-6e1f0dcdd59e | b0bdcfa8-a02f-401e-b866-9e5502fbe8e8 |
 | aafnai-advanced-tournament-v15 | 5847da9f-7349-43b5-a630-ac4d32e4017f | 7ecaf8e0-1dc4-4907-9f30-b374666bd259 |
 | aafnai-advanced-warp-planner-v15 | 6eb0b38f-8c34-4800-a3e5-2fdfe1a1bf93 | f1fe52fb-dc38-4453-bc80-ee64136a3375 |
+
+## Earlier connections and mobile link targets
+
+These versions retain the existing ad placements and add public-response preconnect hints and more usable sponsored links. Earlier versions remain available for rollback.
+
+| Worker | Previous version | Current version |
+| --- | --- | --- |
+| aafnai-advanced-audio-loop-v15 | afc3a3d1-0a3f-43d7-8f8b-cce836da5452 | 44ee77be-f2fe-4be3-9730-0b1bb5fee40d |
+| aafnai-advanced-bead-inventory-v15 | e758abfc-5018-438c-9c86-aa2641ad50b4 | a703666a-cd6d-450f-88c1-2eb50b616c5c |
+| aafnai-advanced-card-bundle-v15 | 4e3ade27-3dba-4190-b15d-9786ec25f18a | 9928be11-53bb-4ea2-996f-188648857b3d |
+| aafnai-advanced-chordpro-v15 | 138a9cf8-992f-416b-9b2f-99c19dbd39af | b0b19da1-89f7-4784-9551-515346564f09 |
+| aafnai-advanced-coding-reconcile-v15 | 9800edb5-04fa-40f1-8fc6-a41b3b5bf7b4 | 8f722237-0024-4541-b7b6-54610ddd4382 |
+| aafnai-advanced-epub-diff-v15 | a58a42cc-1c62-45d0-b7a3-1a935e9c546e | f257576f-cf76-4c29-abc4-ec00e8cd32b1 |
+| aafnai-advanced-exposure-sheet-v15 | 20ccd7d5-499e-49c0-a881-dec7da65d6c5 | c2f3f83f-e763-4327-8d25-e8509f5a2eef |
+| aafnai-advanced-fabric-nesting-v15 | d28ab3e2-bc4b-453f-aaaa-8a520f39bb5b | 1a050260-8c65-4516-8e44-4059ca8b2dd2 |
+| aafnai-advanced-font-language-v15 | 819ddd6d-7a09-4e93-84b0-e974f52d6bbd | 705ecc2a-1cb4-478d-832c-67fee2ba4f30 |
+| aafnai-advanced-icu-validator-v15 | bd83a447-d1d5-4618-941d-6e16411b409a | 9a097184-eed9-4c9e-81f2-87363b1e11db |
+| aafnai-advanced-knit-gauge-v15 | a9a2d380-6866-48ce-a4a7-a98a0d60ff61 | a754847a-334d-49df-9d5a-4aa61f7de533 |
+| aafnai-advanced-pgn-diff-v15 | 02bdd599-638e-4555-b48a-271958fc15fa | 31a9c60e-dadb-4399-909f-f01d67fe2d93 |
+| aafnai-advanced-puzzle-hunt-v15 | aeea4d90-a26e-4bd0-ab02-06cb158143ab | 387a47ab-69af-46f4-8cac-983ce4804e97 |
+| aafnai-advanced-qmk-simulator-v15 | 275cf4d0-32f6-4ed7-b56f-f3eb5c549d67 | e6914e6c-aa41-4be3-972b-4dbee3fbb98f |
+| aafnai-advanced-quiz-bank-v15 | 3eb445e9-1dce-4e8b-91e3-1c4ee9abe3bd | b1db62ec-419d-4fb4-973a-47eafdc98d82 |
+| aafnai-advanced-rehearsal-planner-v15 | c216dc8c-ecfd-404e-8e8c-89cc0777500c | aabe4109-035f-42b1-bc09-11bfad36375c |
+| aafnai-advanced-story-continuity-v15 | 1c47eca5-1ee2-429a-afc9-a8c061a7cdba | ed6ed696-1b54-439e-a211-9e70e6379165 |
+| aafnai-advanced-survey-branch-v15 | b0bdcfa8-a02f-401e-b866-9e5502fbe8e8 | 5e8cf22d-81db-492d-b04c-e707b15fc32f |
+| aafnai-advanced-tournament-v15 | 7ecaf8e0-1dc4-4907-9f30-b374666bd259 | 9eab9045-48d5-4c23-8b7a-7bb466be75a4 |
+| aafnai-advanced-warp-planner-v15 | f1fe52fb-dc38-4453-bc80-ee64136a3375 | ca567026-f3d6-474e-abea-840a907df540 |

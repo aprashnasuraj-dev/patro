@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
-import {AD_DIAGNOSTICS_JS,AD_DIAGNOSTICS_HASH,AD_DIAGNOSTICS_VERSION,AD_EARLY_SCRIPT_HINTS,addAdDiagnostics,adDiagnosticsCsp} from './ad-diagnostics.mjs';
+import {AD_DIAGNOSTICS_JS,AD_DIAGNOSTICS_HASH,AD_DIAGNOSTICS_VERSION,AD_EARLY_SCRIPT_HINTS,AD_EARLY_CONNECTIONS,addAdDiagnostics,addPublicAdConnectionHints,adDiagnosticsCsp} from './ad-diagnostics.mjs';
 
 function browser({consent, globalTag=true}={}) {
   const listeners={}, events=[], timers=[];
@@ -94,4 +94,26 @@ test('preloads each approved executable ad script once without triggering clicks
   for(const path of ['/1/fe7eda2cd06bda210f4e85075df3069c','/21/b86f7b1b852ea7f8de7539079e6e7816','/14/d526bb158baa587de984d6036f99adaf'])
     assert.equal(AD_EARLY_SCRIPT_HINTS.split(path).length-1,1);
   assert.doesNotMatch(AD_EARLY_SCRIPT_HINTS,/asiafilm|araplhn|<script|javascript:/i);
+});
+test('preserves other Link headers and limits early ad connections to public responses',()=>{
+  const headers=new Headers({'cache-control':'public, max-age=300','link':'</library.css>; rel=preload; as=style'});
+  addPublicAdConnectionHints(headers); addPublicAdConnectionHints(headers);
+  assert.match(headers.get('link'),/library\.css/);
+  for(const hint of AD_EARLY_CONNECTIONS) assert.equal(headers.get('link').split(hint).length-1,1);
+  const privateHeaders=new Headers({'cache-control':'private, no-store'});
+  addPublicAdConnectionHints(privateHeaders); assert.equal(privateHeaders.get('link'),null);
+});
+test('improves only approved sponsored Smartlinks without changing their destination',()=>{
+  let smartlink;
+  globalThis.HTMLRewriter=class {
+    on(selector,handler){if(selector==='aside[data-patro-adsterra="smartlink-tool-after"] > a[href]')smartlink=handler;return this;}
+    transform(response){return response;}
+  };
+  const request=new Request('https://aafnaipatro.com/article/example');
+  addAdDiagnostics(request,new Response('',{headers:{'content-type':'text/html','x-patro-adsterra':'v5'}}));
+  const attrs={href:'https://asiafilm.org/4/b1871169a9878fda2bc2de21a208995a'},original=attrs.href;
+  let text='';smartlink.element({getAttribute:k=>attrs[k],setAttribute:(k,v)=>attrs[k]=v,setInnerContent:v=>text=v});
+  assert.equal(attrs.href,original);assert.match(text,/sponsored/i);assert.match(text,/विज्ञापन/);assert.match(attrs.style,/min-height:44px/);
+  const other={href:'https://example.com/'};smartlink.element({getAttribute:k=>other[k],setAttribute:(k,v)=>other[k]=v,setInnerContent:()=>{throw Error('unrelated link modified');}});
+  assert.deepEqual(other,{href:'https://example.com/'});delete globalThis.HTMLRewriter;
 });

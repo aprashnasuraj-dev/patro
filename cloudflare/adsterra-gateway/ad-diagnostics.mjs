@@ -1,6 +1,6 @@
-// Site-side diagnostics only: never invoke an ad URL or change navigation.
-// The ad network remains the authority for billable impressions and clicks.
-export const AD_DIAGNOSTICS_VERSION = '2026-11-06-v2';
+// Shared ad delivery and site-side diagnostics. Never invoke an ad URL or
+// change navigation; Adsterra remains the authority for paid events.
+export const AD_DIAGNOSTICS_VERSION = '2026-11-06-v3';
 export const AD_DIAGNOSTICS_JS = `(()=>{
   'use strict';
   const pending=[];
@@ -109,6 +109,32 @@ export const AD_EARLY_SCRIPT_HINTS = [
   ['social','https://bauval.org/14/d526bb158baa587de984d6036f99adaf'],
 ].map(([kind,src])=>`<link data-patro-ad-preload="${kind}" rel="preload" as="script" href="${src}">`).join('');
 export const AD_DIAGNOSTICS_HASH = "'sha256-TuXcaD4KS4TzzG7Xud7yn5B5jBNSSHuXi7utr6ymd/U='";
+export const AD_EARLY_CONNECTIONS = [
+  '<https://abscloud.org>; rel=preconnect',
+  '<https://bauval.org>; rel=preconnect',
+];
+const AD_SMARTLINK_URLS = new Set([
+  'https://asiafilm.org/4/b1871169a9878fda2bc2de21a208995a',
+  'https://araplhn.org/4/c752b529eb7d6d4ebf1096d225dfb10a',
+]);
+const SMARTLINK_STYLE = 'display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:6px 10px;color:#176f3b;font:700 15px/1.4 system-ui,sans-serif;text-decoration:underline';
+const smartlinkPresentation = {element(el){
+  if (!AD_SMARTLINK_URLS.has(el.getAttribute('href'))) return;
+  el.setAttribute('style',SMARTLINK_STYLE);
+  el.setInnerContent('View sponsored offers · विज्ञापन हेर्नुहोस् ↗');
+}};
+
+// Cloudflare can emit cached 103 hints before the HTML. Restrict those hints
+// to explicitly public responses, and retain existing Link headers such as
+// the library stylesheet preload. A preconnect never invokes an ad URL.
+export function addPublicAdConnectionHints(headers) {
+  const cache = headers.get('cache-control') || '';
+  if (!/(?:^|,)\s*public(?:\s|,|$)/i.test(cache) || /(?:^|,)\s*(?:private|no-store)(?:\s|,|$)/i.test(cache)) return headers;
+  for (const hint of AD_EARLY_CONNECTIONS) {
+    if (!(headers.get('link') || '').includes(hint)) headers.append('link',hint);
+  }
+  return headers;
+}
 
 // A hash makes 'unsafe-inline' ineffective in CSP3. Add ours only where a
 // nonce or hash already has that effect, so existing scripts are unaffected.
@@ -132,6 +158,7 @@ export function addAdDiagnostics(request, response) {
   if (response.headers.get('x-patro-ad-diagnostics') === AD_DIAGNOSTICS_VERSION) return response;
   const headers = new Headers(response.headers);
   headers.set('x-patro-ad-diagnostics', AD_DIAGNOSTICS_VERSION);
+  addPublicAdConnectionHints(headers);
   const csp=headers.get('content-security-policy');
   if(csp) headers.set('content-security-policy',adDiagnosticsCsp(csp));
   headers.delete('content-length'); headers.delete('etag'); headers.delete('content-md5');
@@ -139,6 +166,9 @@ export function addAdDiagnostics(request, response) {
   return new HTMLRewriter()
     .on('script[data-patro-ad-diagnostics]', {element(el){el.remove();}})
     .on('link[data-patro-ad-preload]', {element(el){el.remove();}})
+    .on('aside[data-patro-adsterra="smartlink-inline"] > a[href]',smartlinkPresentation)
+    .on('aside[data-patro-adsterra="smartlink-tool-after"] > a[href]',smartlinkPresentation)
+    .on('aside[data-patro-adsterra="smartlink-bottom"] > a[href]',smartlinkPresentation)
     .on('meta[http-equiv]', {element(el){if((el.getAttribute('http-equiv')||'').toLowerCase()==='content-security-policy') el.setAttribute('content',adDiagnosticsCsp(el.getAttribute('content')||''));}})
     .on('head', {element(el){el.prepend(AD_EARLY_SCRIPT_HINTS+DIAGNOSTICS_HTML,{html:true});}})
     .transform(result);
