@@ -1,5 +1,5 @@
 /** One managed instance of each publisher-supplied unit per HTML document. */
-export const ADSTERRA_VERSION = "2026-11-05-v5";
+export const ADSTERRA_VERSION = "2026-11-06-v6";
 export const ADSTERRA_POPUNDER = "https://abscloud.org/1/fe7eda2cd06bda210f4e85075df3069c";
 export const ADSTERRA_SOCIAL = "https://bauval.org/14/d526bb158baa587de984d6036f99adaf";
 export const ADSTERRA_NATIVE = "https://bauval.org/21/b86f7b1b852ea7f8de7539079e6e7816";
@@ -80,8 +80,17 @@ export function installAdsterra(html        )         {
 export function adsterraResponse(request         , response          , env = {})           {
   if (request.method !== "GET" || response.status !== 200 || !response.headers.get("content-type")?.toLowerCase().includes("text/html") || !adsterraEligible(new URL(request.url).pathname)) return response;
   if (response.headers.get("x-patro-adsterra") === ADSTERRA_VERSION) return response;
-  const isToolPage = /^\/tool\/[a-z0-9-]+\/?$/i.test(new URL(request.url).pathname);
+  const path = new URL(request.url).pathname;
+  const isClientTool = /^\/tool\/[a-z0-9-]+\/?$/i.test(path);
+  const isMMTool = /^\/(?:calculators|generators|converters|utilities|validators|editors|planners|extractors|analyzers|formatters|comparisons|timers)\/[a-z0-9-]+\/?$/i.test(path);
+  const isToolPage = isClientTool || isMMTool;
   const secondNative = isToolPage ? additionalNative(env.ADSTERRA_NATIVE_SECOND) : null;
+  let toolPlacementAdded = false;
+  const afterTool = el => {
+    if (toolPlacementAdded) return;
+    toolPlacementAdded = true;
+    el.after(secondNative || adsterraSmartlink("tool-after"), {html:true});
+  };
   const headers = new Headers(response.headers);
   const csp = headers.get("content-security-policy");
   if (csp) headers.set("content-security-policy", adsterraCsp(csp));
@@ -98,7 +107,8 @@ export function adsterraResponse(request         , response          , env = {})
     .on("meta[http-equiv]", {element(el     ) {if ((el.getAttribute("http-equiv") || "").toLowerCase() === "content-security-policy") el.setAttribute("content", adsterraCsp(el.getAttribute("content") || "default-src 'self'"));}})
     .on("link[data-patro-adsterra-preconnect]", {element(el     ) {el.remove();}})
     .on("head", {element(el     ) {el.prepend(ADSTERRA_CONNECTIONS + ADSTERRA_RECOVERY_HTML, {html:true});el.append(ADSTERRA_HEAD, {html:true});}})
-    .on("#ct-tool", {element(el     ) {if (isToolPage) el.after(secondNative || adsterraSmartlink("tool-after"), {html:true});}})
+    .on("#ct-tool", {element(el     ) {if (isClientTool) afterTool(el);}})
+    .on(".mm530-frame-wrap", {element(el     ) {if (isMMTool) afterTool(el);}})
     .on("body", {element(el     ) {el.prepend(adsterraSmartlink("top") + ADSTERRA_NATIVE_HTML, {html:true});el.append(adsterraSmartlink("bottom") + ADSTERRA_SOCIAL_HTML, {html:true});}})
     .transform(result);
 }

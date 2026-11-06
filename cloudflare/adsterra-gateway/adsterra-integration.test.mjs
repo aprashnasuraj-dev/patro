@@ -67,3 +67,20 @@ test('a labelled sponsor link is positioned after the known tool container only 
   assert.match(inserted, /data-patro-adsterra="native-second-loader"/);
   assert.doesNotMatch(inserted, /smartlink-tool-after/);
 });
+
+test('adds one approved after-tool placement to recognized MM530 tool templates',()=>{
+  let inserts=[];
+  globalThis.HTMLRewriter=class {
+    on(selector,handler){if(selector==='#ct-tool')this.client=handler;if(selector==='.mm530-frame-wrap')this.mm=handler;return this;}
+    transform(response){const el={after(value){inserts.push(value)}};this.client.element(el);this.mm.element(el);this.mm.element(el);return response;}
+  };
+  for(const prefix of ['calculators','generators','converters','utilities','validators','editors','planners','extractors','analyzers','formatters','comparisons','timers']){
+    inserts=[];adsterraResponse(new Request(`https://aafnaipatro.com/${prefix}/example`),new Response('<html></html>',{headers:{'content-type':'text/html'}}));
+    assert.equal(inserts.length,1);assert.match(inserts[0],/smartlink-tool-after/);assert.match(inserts[0],/Sponsored/);
+  }
+  const id='0123456789abcdef0123456789abcdef';
+  const unit=JSON.stringify({src:`https://approved-ad-host.example/21/${id}`,container:`container-${id}`});
+  inserts=[];adsterraResponse(new Request('https://aafnaipatro.com/calculators/example'),new Response('<html></html>',{headers:{'content-type':'text/html'}}),{ADSTERRA_NATIVE_SECOND:unit});
+  assert.equal(inserts.length,1);assert.match(inserts[0],/native-second-loader/);
+  inserts=[];adsterraResponse(new Request('https://aafnaipatro.com/calculators/'),new Response('<html></html>',{headers:{'content-type':'text/html'}}));assert.equal(inserts.length,0);
+});
