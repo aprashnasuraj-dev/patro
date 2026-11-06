@@ -6,6 +6,7 @@ import { relatedTool } from './related-tools.mjs';
 
 const ARTICLE_PATH = /^\/(?:article|blogs)\/[^/]+\/?$/i;
 const SLOT = /<aside\b(?=[^>]*\bid\s*=\s*["']patro-native-ad-slot["'])[^>]*>[\s\S]*?<\/aside\s*>/gi;
+const TOP_SMARTLINK = /<aside\b(?=[^>]*\bdata-patro-adsterra\s*=\s*["']smartlink-top["'])[^>]*>[\s\S]*?<\/aside\s*>/gi;
 const RELATED = /<section\b(?=[^>]*\bclass\s*=\s*["'][^"']*\brelated\b[^"']*["'])[^>]*>[\s\S]*?<\/section\s*>/gi;
 const MAX_BYTES = 512 * 1024;
 const PLACEMENT_AFTER_PARAGRAPH = 3;
@@ -75,6 +76,11 @@ export async function libraryArticleLayout(request, response, env = {}) {
     await inspect.transform(new Response(html)).text();
     const nativeAtTitle = articleTitles === 1;
     const moveNative = nativeAtTitle || paragraphs >= PLACEMENT_AFTER_PARAGRAPH;
+    // Keep the existing sponsor link, but avoid placing it ahead of the
+    // native unit on narrow viewports. Only move one unambiguous managed link.
+    const topLinks = [...html.matchAll(TOP_SMARTLINK)];
+    const moveTopLink = moveNative && topLinks.length === 1 && topLinks[0].index < slots[0].index;
+    const nativeWithTopLink = slots[0][0] + (moveTopLink ? topLinks[0][0] : '');
     const secondAtHeader = !!second && paragraphs < EXTRA_NATIVE_AFTER_PARAGRAPH + 1 && articleHeaders === 1;
     const secondInserted = !!second && (paragraphs >= EXTRA_NATIVE_AFTER_PARAGRAPH + 1 || secondAtHeader);
     const addRailLink = articleRails === 1 && paragraphs >= SMARTLINK_AFTER_PARAGRAPH + 2 &&
@@ -94,8 +100,9 @@ export async function libraryArticleLayout(request, response, env = {}) {
     let seen = 0;
     return new HTMLRewriter()
       .on('#patro-native-ad-slot', { element(el) { if (moveNative) el.remove(); } })
+      .on('aside[data-patro-adsterra="smartlink-top"]', { element(el) { if (moveTopLink) el.remove(); } })
       .on('#patro-native-ad-second', { element(el) { el.remove(); } })
-      .on('header.article-header > h1', { element(el) { if (nativeAtTitle) el.after(slots[0][0], {html:true}); } })
+      .on('header.article-header > h1', { element(el) { if (nativeAtTitle) el.after(nativeWithTopLink, {html:true}); } })
       .on('header.article-header', { element(el) {
         if (secondAtHeader) el.after(second, {html:true});
         if (discovery) el.after(discovery, {html:true});
@@ -111,7 +118,7 @@ export async function libraryArticleLayout(request, response, env = {}) {
       } })
       .on('#article-body > p', { element(el) {
         seen++;
-        if (seen === PLACEMENT_AFTER_PARAGRAPH && moveNative && !nativeAtTitle) el.after(slots[0][0], { html: true });
+        if (seen === PLACEMENT_AFTER_PARAGRAPH && moveNative && !nativeAtTitle) el.after(nativeWithTopLink, { html: true });
         if (seen === EXTRA_NATIVE_AFTER_PARAGRAPH && secondInserted && !secondAtHeader) el.after(second, {html:true});
         if (seen === SMARTLINK_AFTER_PARAGRAPH && !secondInserted && paragraphs >= SMARTLINK_AFTER_PARAGRAPH + 2)
           el.after(adsterraSmartlink('inline'), { html: true });

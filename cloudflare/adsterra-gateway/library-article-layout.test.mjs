@@ -15,6 +15,13 @@ class TestRewriter {
       const slot = /<aside\b[^>]*id="patro-native-ad-slot"[^>]*>[\s\S]*?<\/aside>/i;
       const remove = handlers.get('#patro-native-ad-slot');
       if (remove && slot.test(html)) remove.element({ remove() { html = html.replace(slot, ''); } });
+      const topLink = /<aside\b(?=[^>]*data-patro-adsterra="smartlink-top")[^>]*>[\s\S]*?<\/aside>/gi;
+      const removeTopLink = handlers.get('aside[data-patro-adsterra="smartlink-top"]');
+      if (removeTopLink) html = html.replace(topLink, value => {
+        let removed = false;
+        removeTopLink.element({remove() {removed = true;}});
+        return removed ? '' : value;
+      });
       const secondSlot = /<aside\b[^>]*id="patro-native-ad-second"[^>]*>[\s\S]*?<\/aside>/i;
       const removeSecond = handlers.get('#patro-native-ad-second');
       if (removeSecond && secondSlot.test(html)) removeSecond.element({remove() {html = html.replace(secondSlot, '');}});
@@ -101,6 +108,42 @@ test('places the existing native unit immediately after the article headline', a
   assert.ok(output.indexOf('<h1>Title</h1>') < output.indexOf(slot));
   assert.ok(output.indexOf(slot) < output.indexOf('<p>Introduction</p>'));
   assert.equal(output.split(slot).length-1, 1);
+});
+
+test('keeps the native unit ahead of the top sponsor link on recognized articles', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const top = adsterraSmartlink('top');
+  const paragraphs = Array.from({length:12}, (_, i) => `<p>Paragraph ${i+1}</p>`).join('');
+  const request = new Request('https://aafnaipatro.com/article/example');
+  const html = `<html><body>${top}${slot}<main><header class="article-header"><h1>Title</h1><p>Intro</p></header><div id="article-body">${paragraphs}</div></main></body></html>`;
+  const response = await libraryArticleLayout(request, new Response(html,{headers:{'content-type':'text/html'}}));
+  const output = await response.text();
+  assert.ok(output.indexOf('<h1>Title</h1>') < output.indexOf(slot));
+  assert.ok(output.indexOf(slot) < output.indexOf(top));
+  assert.ok(output.indexOf(top) < output.indexOf('<p>Intro</p>'));
+  assert.equal(output.split(slot).length-1,1);
+  assert.equal(output.split(top).length-1,1);
+  const again = await libraryArticleLayout(request,new Response(output,{headers:{'content-type':'text/html'}}));
+  const repeated = await again.text();
+  assert.equal(repeated.split(slot).length-1,1);
+  assert.equal(repeated.split(top).length-1,1);
+  assert.ok(repeated.indexOf(slot)<repeated.indexOf(top));
+});
+
+test('preserves ambiguous sponsor links and handles the paragraph fallback', async () => {
+  globalThis.HTMLRewriter = TestRewriter;
+  const top = adsterraSmartlink('top');
+  const request = new Request('https://aafnaipatro.com/article/example');
+  for (const links of [top,top+top]) {
+    const input = `<html><body>${links}${slot}<main><div id="article-body"><p>One</p><p>Two</p><p>Three</p><p>Four</p></div></main></body></html>`;
+    const response = await libraryArticleLayout(request,new Response(input,{headers:{'content-type':'text/html'}}));
+    const output = await response.text();
+    assert.equal(output.split(top).length-1,links===top ? 1 : 2);
+    assert.equal(output.split(slot).length-1,1);
+    assert.ok(output.indexOf('<p>Three</p>') < output.indexOf(slot));
+    if (links===top) assert.ok(output.indexOf(slot)<output.indexOf(top));
+    else assert.ok(output.indexOf(top)<output.indexOf(slot));
+  }
 });
 
 test('adds one labelled sponsored link to the existing rail on long articles', async () => {
