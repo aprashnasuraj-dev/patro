@@ -1,5 +1,5 @@
 /** One managed instance of each publisher-supplied unit per HTML document. */
-export const ADSTERRA_VERSION = "2026-11-06-v6";
+export const ADSTERRA_VERSION = "2026-11-06-v7";
 export const ADSTERRA_POPUNDER = "https://abscloud.org/1/fe7eda2cd06bda210f4e85075df3069c";
 export const ADSTERRA_SOCIAL = "https://bauval.org/14/d526bb158baa587de984d6036f99adaf";
 export const ADSTERRA_NATIVE = "https://bauval.org/21/b86f7b1b852ea7f8de7539079e6e7816";
@@ -72,7 +72,7 @@ export function installAdsterra(html        )         {
   out = out.replace(/<link\b[^>]*data-patro-adsterra-preconnect[^>]*>/gi, "");
   out = out.replace(/<head\b[^>]*>/i, tag => tag + ADSTERRA_CONNECTIONS + ADSTERRA_RECOVERY_HTML);
   out = out.replace(/<\/head\s*>/i, ADSTERRA_HEAD + "</head>");
-  out = out.replace(/<body\b[^>]*>/i, tag => tag + adsterraSmartlink("top") + ADSTERRA_NATIVE_HTML);
+  out = out.replace(/<body\b[^>]*>/i, tag => tag + ADSTERRA_NATIVE_HTML + adsterraSmartlink("top"));
   return out.replace(/<\/body\s*>/i, adsterraSmartlink("bottom") + ADSTERRA_SOCIAL_HTML + "</body>");
 }
 
@@ -109,7 +109,7 @@ export function adsterraResponse(request         , response          , env = {})
     .on("head", {element(el     ) {el.prepend(ADSTERRA_CONNECTIONS + ADSTERRA_RECOVERY_HTML, {html:true});el.append(ADSTERRA_HEAD, {html:true});}})
     .on("#ct-tool", {element(el     ) {if (isClientTool) afterTool(el);}})
     .on(".mm530-frame-wrap", {element(el     ) {if (isMMTool) afterTool(el);}})
-    .on("body", {element(el     ) {el.prepend(adsterraSmartlink("top") + ADSTERRA_NATIVE_HTML, {html:true});el.append(adsterraSmartlink("bottom") + ADSTERRA_SOCIAL_HTML, {html:true});}})
+    .on("body", {element(el     ) {el.prepend(ADSTERRA_NATIVE_HTML + adsterraSmartlink("top"), {html:true});el.append(adsterraSmartlink("bottom") + ADSTERRA_SOCIAL_HTML, {html:true});}})
     .transform(result);
 }
 

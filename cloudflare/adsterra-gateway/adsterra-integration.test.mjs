@@ -14,8 +14,23 @@ test('repeated decoration keeps one of each ad script and preserves the Google t
   assert.equal((output.match(/https:\/\/asiafilm\.org\/4\/b1871169a9878fda2bc2de21a208995a/g)||[]).length,1);
   assert.equal((output.match(/https:\/\/araplhn\.org\/4\/c752b529eb7d6d4ebf1096d225dfb10a/g)||[]).length,1);
   assert.equal((output.match(/googletagmanager\.com\/gtag\/js/g)||[]).length,1);
+  assert.ok(output.indexOf('id="patro-native-ad-slot"') < output.indexOf('data-patro-adsterra="smartlink-top"'));
   const moved = moveNativeIntoCalendar(output);
   assert.ok(moved && moved.indexOf('</header>') < moved.indexOf('id="patro-native-ad-slot"'));
+});
+
+test('puts the native slot before the top Smartlink in streamed HTML', () => {
+  let prepend = '';
+  globalThis.HTMLRewriter = class {
+    on(selector,handler) {if (selector === 'body') this.body = handler; return this;}
+    transform(response) {this.body.element({prepend(value) {prepend=value;},append() {}});return response;}
+  };
+  const response = new Response('<html><body></body></html>',{headers:{'content-type':'text/html'}});
+  adsterraResponse(new Request('https://aafnaipatro.com/calculators/example'),response);
+  assert.ok(prepend.indexOf('id="patro-native-ad-slot"') >= 0);
+  assert.ok(prepend.indexOf('id="patro-native-ad-slot"') < prepend.indexOf('data-patro-adsterra="smartlink-top"'));
+  assert.equal((prepend.match(/native-loader/g)||[]).length,1);
+  delete globalThis.HTMLRewriter;
 });
 
 test('shows a dismissible notice only after both ad scripts fail', () => {
