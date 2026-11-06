@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "captured_at": "2026-11-06",
+  "timezone": "Asia/Kathmandu",
+  "description": "Original recovery-era modules are preserved as source snapshots; active versions also include discovery and ad-delivery wrappers. Compare production before any release.",
+  "entry_module": "cloudflare/adsterra-gateway/advanced-tool-entry.mjs",
+  "discovery_module": "cloudflare/adsterra-gateway/advanced-tool-discovery.mjs",
+  "workers": [
+    {
+      "name": "aafnai-advanced-audio-loop-v15",
+      "route": "aafnaipatro.com/advanced-tools/audio-loop-batch-editor*",
+      "active_version": "44ee77be-f2fe-4be3-9730-0b1bb5fee40d",
+      "previous_version": "afc3a3d1-0a3f-43d7-8f8b-cce836da5452",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-audio-loop-v15/original.mjs",
+      "source_sha256": "8a28ebc884e631006bbf4536754ac54985bc9f33e51519c51d724de9f2a66f39",
+      "source_bytes": 49508
+    },
+    {
+      "name": "aafnai-advanced-bead-inventory-v15",
+      "route": "aafnaipatro.com/advanced-tools/bead-pattern-inventory-planner*",
+      "active_version": "a703666a-cd6d-450f-88c1-2eb50b616c5c",
+      "previous_version": "e758abfc-5018-438c-9c86-aa2641ad50b4",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-bead-inventory-v15/original.mjs",
+      "source_sha256": "60773d05459af8849e283d62fb31fb40137e7da838b0d995eb4e2bca3d1de46b",
+      "source_bytes": 48447
+    },
+    {
+      "name": "aafnai-advanced-card-bundle-v15",
+      "route": "aafnaipatro.com/advanced-tools/board-game-card-generator*",
+      "active_version": "9928be11-53bb-4ea2-996f-188648857b3d",
+      "previous_version": "4e3ade27-3dba-4190-b15d-9786ec25f18a",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-card-bundle-v15/original.mjs",
+      "source_sha256": "1c722f029904931869abe68e85246a8bb86a890e3a879cd5f5c4d7cea807cc21",
+      "source_bytes": 47859
+    },
+    {
+      "name": "aafnai-advanced-chordpro-v15",
+      "route": "aafnaipatro.com/advanced-tools/chordpro-setlist-builder*",
+      "active_version": "b0b19da1-89f7-4784-9551-515346564f09",
+      "previous_version": "138a9cf8-992f-416b-9b2f-99c19dbd39af",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-chordpro-v15/original.mjs",
+      "source_sha256": "d590a4aaf00e5627122646ca3db9ec666b078790516d21ce512ceb0c180cc612",
+      "source_bytes": 47848
+    },
+    {
+      "name": "aafnai-advanced-coding-reconcile-v15",
+      "route": "aafnaipatro.com/advanced-tools/qualitative-coding-comparison*",
+      "active_version": "8f722237-0024-4541-b7b6-54610ddd4382",
+      "previous_version": "9800edb5-04fa-40f1-8fc6-a41b3b5bf7b4",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-coding-reconcile-v15/original.mjs",
+      "source_sha256": "53ca161c36ecf85508d7aeee6f700b1847312d3cabb08d41a1c2b6d9662c7718",
+      "source_bytes": 53583
+    },
+    {
+      "name": "aafnai-advanced-epub-diff-v15",
+      "route": "aafnaipatro.com/advanced-tools/epub-edition-comparison*",
+      "active_version": "f257576f-cf76-4c29-abc4-ec00e8cd32b1",
+      "previous_version": "a58a42cc-1c62-45d0-b7a3-1a935e9c546e",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-epub-diff-v15/original.mjs",
+      "source_sha256": "87f62225b38c4c1917207ede666e03c353b0c25a9afea223353bc70a0d9b0f91",
+      "source_bytes": 48042
+    },
+    {
+      "name": "aafnai-advanced-exposure-sheet-v15",
+      "route": "aafnaipatro.com/advanced-tools/animation-exposure-sheet*",
+      "active_version": "c2f3f83f-e763-4327-8d25-e8509f5a2eef",
+      "previous_version": "20ccd7d5-499e-49c0-a881-dec7da65d6c5",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-exposure-sheet-v15/original.mjs",
+      "source_sha256": "a2f559a173e3e03af59be14f142b11c1e03a4d90544bb82a55c1b09670f8bb40",
+      "source_bytes": 46950
+    },
+    {
+      "name": "aafnai-advanced-fabric-nesting-v15",
+      "route": "aafnaipatro.com/advanced-tools/fabric-nesting-planner*",
+      "active_version": "1a050260-8c65-4516-8e44-4059ca8b2dd2",
+      "previous_version": "d28ab3e2-bc4b-453f-aaaa-8a520f39bb5b",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-fabric-nesting-v15/original.mjs",
+      "source_sha256": "9c9693d4df0418ef38f3c39354d13e486761cb3d55dce578644f2ce6835ad7d6",
+      "source_bytes": 49117
+    },
+    {
+      "name": "aafnai-advanced-font-language-v15",
+      "route": "aafnaipatro.com/advanced-tools/font-subsetter-language-checker*",
+      "active_version": "705ecc2a-1cb4-478d-832c-67fee2ba4f30",
+      "previous_version": "819ddd6d-7a09-4e93-84b0-e974f52d6bbd",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-font-language-v15/original.mjs",
+      "source_sha256": "2240f2083366ac0749ed72953ac552d00d9eefb5dd12a41b4ffc672c38d4d302",
+      "source_bytes": 50384
+    },
+    {
+      "name": "aafnai-advanced-icu-validator-v15",
+      "route": "aafnaipatro.com/advanced-tools/icu-message-validator*",
+      "active_version": "9a097184-eed9-4c9e-81f2-87363b1e11db",
+      "previous_version": "bd83a447-d1d5-4618-941d-6e16411b409a",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-icu-validator-v15/original.mjs",
+      "source_sha256": "ac185ef7d6da46b4cb8a5c9432378b4e55e7b5c0b40629850e3b99f3a5f01b50",
+      "source_bytes": 77953
+    },
+    {
+      "name": "aafnai-advanced-knit-gauge-v15",
+      "route": "aafnaipatro.com/advanced-tools/knitting-gauge-repeat-planner*",
+      "active_version": "a754847a-334d-49df-9d5a-4aa61f7de533",
+      "previous_version": "a9a2d380-6866-48ce-a4a7-a98a0d60ff61",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-knit-gauge-v15/original.mjs",
+      "source_sha256": "0ba247236dc629c667a44b25c398ca2d176a9457f1933306ebaca933d2a04824",
+      "source_bytes": 48208
+    },
+    {
+      "name": "aafnai-advanced-pgn-diff-v15",
+      "route": "aafnaipatro.com/advanced-tools/pgn-repertoire-diff*",
+      "active_version": "31a9c60e-dadb-4399-909f-f01d67fe2d93",
+      "previous_version": "02bdd599-638e-4555-b48a-271958fc15fa",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-pgn-diff-v15/original.mjs",
+      "source_sha256": "989fa3970831f345d98f6f2999ee2b15f5d1d7d814a1ca8a9b081387d68aa361",
+      "source_bytes": 49791
+    },
+    {
+      "name": "aafnai-advanced-puzzle-hunt-v15",
+      "route": "aafnaipatro.com/advanced-tools/puzzle-hunt-planner*",
+      "active_version": "387a47ab-69af-46f4-8cac-983ce4804e97",
+      "previous_version": "aeea4d90-a26e-4bd0-ab02-06cb158143ab",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-puzzle-hunt-v15/original.mjs",
+      "source_sha256": "8a0e3f3cd3a3dd582c50be1317d5430787e044e349ba5c9692ff323f4634d51c",
+      "source_bytes": 23960
+    },
+    {
+      "name": "aafnai-advanced-qmk-simulator-v15",
+      "route": "aafnaipatro.com/advanced-tools/qmk-keymap-simulator*",
+      "active_version": "e6914e6c-aa41-4be3-972b-4dbee3fbb98f",
+      "previous_version": "275cf4d0-32f6-4ed7-b56f-f3eb5c549d67",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-qmk-simulator-v15/original.mjs",
+      "source_sha256": "dd872b1abe0d12890f03f4be04da0a28b93580aa637b238d15a83e8ef2a57210",
+      "source_bytes": 48042
+    },
+    {
+      "name": "aafnai-advanced-quiz-bank-v15",
+      "route": "aafnaipatro.com/advanced-tools/quiz-bank-converter*",
+      "active_version": "b1db62ec-419d-4fb4-973a-47eafdc98d82",
+      "previous_version": "3eb445e9-1dce-4e8b-91e3-1c4ee9abe3bd",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-quiz-bank-v15/original.mjs",
+      "source_sha256": "2c045fe9b87fa500515ee9c5e3d8a9a2b748d75c2b301144238e04b0bbf56a6e",
+      "source_bytes": 49782
+    },
+    {
+      "name": "aafnai-advanced-rehearsal-planner-v15",
+      "route": "aafnaipatro.com/advanced-tools/theatre-rehearsal-scheduler*",
+      "active_version": "aabe4109-035f-42b1-bc09-11bfad36375c",
+      "previous_version": "c216dc8c-ecfd-404e-8e8c-89cc0777500c",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-rehearsal-planner-v15/original.mjs",
+      "source_sha256": "3ea337000824866b05d5a8a7590f3b4d32df9e4ee4bcf514d491b712273dc576",
+      "source_bytes": 48544
+    },
+    {
+      "name": "aafnai-advanced-story-continuity-v15",
+      "route": "aafnaipatro.com/advanced-tools/story-continuity-checker*",
+      "active_version": "ed6ed696-1b54-439e-a211-9e70e6379165",
+      "previous_version": "1c47eca5-1ee2-429a-afc9-a8c061a7cdba",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-story-continuity-v15/original.mjs",
+      "source_sha256": "3c7ae119313209dbfacad42ccd3a2fe8cda327a6a256ac2a74a9c0af20d60be1",
+      "source_bytes": 48103
+    },
+    {
+      "name": "aafnai-advanced-survey-branch-v15",
+      "route": "aafnaipatro.com/advanced-tools/survey-branching-tester*",
+      "active_version": "5e8cf22d-81db-492d-b04c-e707b15fc32f",
+      "previous_version": "b0bdcfa8-a02f-401e-b866-9e5502fbe8e8",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-survey-branch-v15/original.mjs",
+      "source_sha256": "76d612f2b378edf76abeeeffff2675e5c762c9e414aa60cde053121366c4e967",
+      "source_bytes": 49535
+    },
+    {
+      "name": "aafnai-advanced-tournament-v15",
+      "route": "aafnaipatro.com/advanced-tools/tournament-rescheduler*",
+      "active_version": "9eab9045-48d5-4c23-8b7a-7bb466be75a4",
+      "previous_version": "7ecaf8e0-1dc4-4907-9f30-b374666bd259",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-tournament-v15/original.mjs",
+      "source_sha256": "03709e2aa127f21804def0b2d29080b8b04483f692483ca32e94af8cb60eda4f",
+      "source_bytes": 48864
+    },
+    {
+      "name": "aafnai-advanced-warp-planner-v15",
+      "route": "aafnaipatro.com/advanced-tools/weaving-warp-planner*",
+      "active_version": "ca567026-f3d6-474e-abea-840a907df540",
+      "previous_version": "f1fe52fb-dc38-4453-bc80-ee64136a3375",
+      "source": "cloudflare/advanced-tool-workers/aafnai-advanced-warp-planner-v15/original.mjs",
+      "source_sha256": "1910e91aef2a61d5071bb0e248f9d6399c70a5180ee83575bd5789221bea582e",
+      "source_bytes": 47489
+    }
+  ],
+  "diagnostics_module": "cloudflare/adsterra-gateway/ad-diagnostics.mjs"
+}

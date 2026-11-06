@@ -103,4 +103,7 @@
   <sitemap><loc>https://aafnaipatro.com/sitemap-community-archives.xml</loc><lastmod>2026-09-30</lastmod></sitemap>
   <sitemap><loc>https://aafnaipatro.com/sitemap-community-events.xml</loc><lastmod>2026-09-30</lastmod></sitemap>
   <sitemap><loc>https://aafnaipatro.com/sitemap-growth.xml</loc><lastmod>2026-10-09</lastmod></sitemap>
+  <sitemap><loc>https://aafnaipatro.com/sitemap-library.xml</loc></sitemap>
+  <sitemap><loc>https://aafnaipatro.com/library/catalogue/sitemap.xml</loc></sitemap>
+  <sitemap><loc>https://aafnaipatro.com/library/subjects/sitemap.xml</loc></sitemap>
 </sitemapindex>
