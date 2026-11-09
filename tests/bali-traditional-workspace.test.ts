@@ -161,6 +161,7 @@ describe("Bali traditional calendar workspace",()=>{
     expect(r.html).toContain("Tentang perhitungan dan data kalender");
     expect(r.html).not.toContain("Dasar tampilan");
     expect(r.html).not.toContain("fail-closed");
+    expect(r.html).not.toContain("bali-tika-2026-process-and-anchors-v1");
     expect(r.html).toContain("ᬭᬤᬶᬢᬾ");
     expect(r.html).toContain("ᬰᬦᬶᬰ᭄ᬘᬭ");
     expect(r.html).toContain('id="my-bali"');
