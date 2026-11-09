@@ -18,22 +18,10 @@ Static content needs little operational work, but it still needs occasional chec
 
 ## Advertising
 
-Ads are disabled in `src/ad-config.mjs`. The page template provides one reserved placement after the useful content. `src/ads.mjs` accepts a consent event with `detail.granted === true`, validates the account/slot identifiers, then mounts a responsive AdSense placement and loads Google's script once. The consent event must come from a correctly integrated CMP. This adapter is not itself a CMP, does not determine consent requirements, and does not grant consent.
-
-After the site/account is approved, set enabled, client and slot in the source, integrate your certified CMP where required, and rebuild. Read `integration/advertising.md` first: the restrictive default CSP deliberately blocks Google's third-party script until an advertising policy is configured and tested. Configure the existing site-level ads.txt with the exact account-provided record; do not create a conflicting module-level ads.txt. Existing account advertisements, privacy policy and CMP should be reconciled at the site level.
-
-Do not put ads inside calculation controls, converter buttons, download buttons or chord diagrams. Do not simulate a download with an ad link. Do not create forced clicks, auto-refresh ads or self-click to test earnings. Keep useful page content visible and functioning when advertising is blocked.
-
-Revenue modelling uses page RPM: revenue = monetized page views / 1,000 × observed page RPM. The RPM depends on actual audience, ad demand, consent and viewability; no fixed earnings forecast is supplied. For example, 100,000 monetized views at an assumed $2 RPM would be $200, but that is arithmetic, not a forecast.
-
-## Primary policy references
+Advertising code and placements have been removed from this module.\n\n## Primary policy references
 
 Reviewed during preparation, October 2026; recheck before release:
 
 - Google Search spam/scaled-content policies: https://developers.google.com/search/docs/essentials/spam-policies
-- Google Publisher Policies: https://support.google.com/publisherpolicies/answer/11112688
-- AdSense RPM definition: https://support.google.com/adsense/answer/112030
-- AdSense consent-management requirements: https://support.google.com/adsense/answer/13554116?hl=en
-- AdSense responsive ad code: https://support.google.com/adsense/answer/9183460?hl=en
 - Cloudflare asset-first routing: https://developers.cloudflare.com/workers/static-assets/routing/worker-script/
 - Cloudflare static redirects: https://developers.cloudflare.com/workers/static-assets/redirects/
