@@ -1,0 +1,13 @@
+# Routing, sitemap and non-interference contract
+
+- Existing site **must remain** Vite/React + Cloudflare Worker `patro` + static assets + D1, with production branch `main`. No Cloudflare Pages migration.
+- Mission Mangal article canonicals are permanently namespaced `https://aafnaipatro.com/blogs/{unique-slug}/`. Every record has a stable ID, unique slug, canonical and state. Maximum registry size: **2,000**; retired slugs stay reserved to avoid accidental reuse.
+- `/facts`, `/facts/*`, existing fact APIs and daily fact features belong to the existing application, **never** the new engine. Do not modify them, their routes, their data or their caches.
+- This branch intentionally adds **no live Worker route, root build script, robots.txt edit, root sitemap edit or cron trigger**. Future integration should insert generated static pages into existing `dist/blogs/*` after Vite builds and only then serve through the existing Worker static assets; test Worker `ASSETS.fetch` precedence before enabling. A separate reviewed integration change may append exactly `Sitemap: https://aafnaipatro.com/sitemap-missionmangal.xml` to robots.txt without replacing current directives.
+- A single **dedicated sitemap** `/sitemap-missionmangal.xml` covers up to 2,000 *published* blog URLs, never empty placeholders. The 2,000 cap refers to approved articles eventually rendered; before approval sitemap correctly lists fewer than 2,000. Do not claim Google indexing or submit unpublished URLs.
+- Existing sitemap families are not modified. No nested sitemap index. Generate canonical URLs from normalized slug, never an LLM-authored arbitrary URL.
+- Build steps: reserve unique IDs/URLs, gather evidence, enforce all gates, approval, render approved content, then generate sitemap from rendered records. Keep sitemap and rendered page set atomic in a staging directory prior to optional production integration. Test direct article HTTP 200, canonical, image rights, references and sitemap coverage; test existing Facts unchanged.
+- No secrets are read in normal PR build. All adapters default disabled. Cloudflare and GitHub secrets are separate; a new Worker binding requires an explicitly reviewed deploy.
+
+## Updated routing decision
+The above blogs-only routing convention is superseded by the implemented four-family scheme: `/articles/{slug}/`, `/blogs/{slug}/`, `/facts/{slug}/`, and `/what/{slug}/`. All 2,000 approved rendered article packages share one `sitemap-missionmangal.xml`; existing `/facts` endpoints and pages are protected by a mandatory future route collision audit. Author: **AafnaiPatro Editor Team**. This update does not change the host Worker, Facts handlers or production build.

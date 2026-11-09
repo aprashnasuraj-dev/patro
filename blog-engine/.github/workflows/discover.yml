@@ -1,0 +1,11 @@
+name: Mission Mangal discovery (manual template)
+on: workflow_dispatch
+permissions: {contents: read}
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate discovery and ledger modules
+        run: cd blog-engine && python -m unittest discover -s tests -v
+# Stored under blog-engine/.github: not active in the host repository.

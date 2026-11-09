@@ -1,0 +1,10 @@
+{
+  "name":"missionmangal-quota-coordinator",
+  "main":"./worker.mjs",
+  "compatibility_date":"2026-10-16",
+  "workers_dev":false,
+  "durable_objects":{"bindings":[{"name":"MANGAL_QUOTAS","class_name":"QuotaCoordinator"}]},
+  "migrations":[{"tag":"v1","new_sqlite_classes":["QuotaCoordinator"]}]
+}
+// Separate Worker project; never replace root wrangler.jsonc.
+// Configure MANGAL_COORDINATOR_TOKEN as secret via explicit secure deployment.
