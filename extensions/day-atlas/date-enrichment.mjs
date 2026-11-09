@@ -7,8 +7,8 @@ export const VERSION='3.0.0';
 const ktm=cities.find(c=>c.slug==='kathmandu');
 const localStamp=(d,c)=>d?new Intl.DateTimeFormat('en-GB',{timeZone:c.tz,dateStyle:'medium',timeStyle:'short'}).format(new Date(Math.round(d.getTime()/60000)*60000)):'Unavailable';
 const difference=m=>m===0?'Same clock time as Nepal':`${duration(Math.abs(m))} ${m>0?'ahead of':'behind'} Nepal`;
-export function timingSection(c,d,f=facts(c,d)){
-  const p=panchang(c,d,f),t=p.tithi;
+export function timingSection(c,d,f=facts(c,d),p=panchang(c,d,f)){
+  const t=p.tithi;
   return `<section id="local-panchang" data-atlas-version="${VERSION}"><h2>${esc(c.name)} local sunrise panchang</h2><table><tbody><tr><th>Tithi at local sunrise · तिथि</th><td>${t?`${t.ne} · ${t.name} (${t.index}/30)`:'Unavailable: no local sunrise'}</td></tr><tr><th>Paksha · पक्ष</th><td>${t?`${t.pakshaNe} · ${t.paksha}`:'Unavailable'}</td></tr><tr><th>Tithi ends, local time</th><td>${localStamp(t?.end,c)}</td></tr><tr><th>Sunrise · सूर्योदय</th><td>${clock(f.rise,c)}</td></tr><tr><th>Sunset · सूर्यास्त</th><td>${clock(f.set,c)}</td></tr><tr><th>Rahu Kaal · राहु काल</th><td>${p.rahu?`${clock(p.rahu.start,c)}–${clock(p.rahu.end,c)}`:'Unavailable: no sunrise-to-sunset interval'}</td></tr><tr><th>Time difference at sunrise</th><td>${difference(p.nepalDifferenceMinutes)}</td></tr><tr><th>Nepal time at this sunrise</th><td>${p.nepalAtSunrise||'Unavailable'}</td></tr><tr><th>Moonrise / moonset</th><td>${clock(f.moonrise,c)} / ${clock(f.moonset,c)}</td></tr><tr><th>Moon illumination, local-day midpoint</th><td>${(100*f.illumination).toFixed(1)}%</td></tr></tbody></table><p>Times use ${esc(c.tz)} at city-centre coordinates ${c.lat}, ${c.lon}. <a href="/atlas/methodology">Methods and cross-checks</a>.</p></section>`;
 }
 
