@@ -29,20 +29,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  seed:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
-      CF_R2_PREVIEW_BUCKET_NAME: ${{ vars.CF_R2_PREVIEW_BUCKET_NAME || secrets.CF_R2_PREVIEW_BUCKET_NAME }}
-      CF_KV_NAMESPACE_ID: ${{ vars.CF_KV_NAMESPACE_ID || secrets.CF_KV_NAMESPACE_ID }}
-      CF_KV_PREVIEW_NAMESPACE_ID: ${{ vars.CF_KV_PREVIEW_NAMESPACE_ID || secrets.CF_KV_PREVIEW_NAMESPACE_ID }}
-      CF_CACHE_AUTO_PROVISION: '0'
-      PUBLIC_REFERENCE_CACHE_VERSION: public-reference-v1
+  prepare:
+    name: Build and validate without production credentials
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -50,22 +45,6 @@ jobs:
           cache-dependency-path: package.json
       - name: Install Wrangler
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-      - name: Resolve production R2 bucket
-        run: |
-          set -euo pipefail
-          if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
-            echo '::error::Cloudflare credentials are required to seed R2.'
-            exit 1
-          fi
-          node scripts/prepare-cloudflare-config.mjs
-          node --input-type=module <<'NODE'
-          import { readFileSync, writeFileSync } from 'node:fs';
-          const cfg=JSON.parse(readFileSync('wrangler.generated.jsonc','utf8'));
-          const row=cfg.r2_buckets?.find(x=>x.binding==='ARCHIVE');
-          if(!row?.bucket_name) throw new Error('ARCHIVE R2 bucket could not be resolved');
-          writeFileSync('/tmp/patro-r2-bucket',String(row.bucket_name));
-          console.log(`ARCHIVE bucket=${row.bucket_name}`);
-          NODE
       - name: Generate archive discovery prerequisites
         run: |
           set -euo pipefail
@@ -90,6 +69,70 @@ jobs:
           if(!Array.isArray(community.primary_families)||community.primary_families.length!==6) throw new Error('community manifest must contain exactly six archive families');
           for(const family of ['nepal-sambat','lhosar','tharu','mithila','kirat','hijri']) if(!community.primary_families.includes(family)) throw new Error(`missing community family ${family}`);
           console.log(JSON.stringify({ok:true,history_rows:history.row_count,calendar_rows:calendar.row_count,calendar_objects:calendar.files.length,community_objects:community.files.length,calendar_source_version:calendar.source_version,community_source_version:community.source_version}));
+          NODE
+      - name: Package validated artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          paths=()
+          for path in dist .cloudflare; do
+            if [[ -d "$path" ]]; then paths+=("$path"); fi
+          done
+          [[ "${#paths[@]}" -gt 0 ]]
+          tar -czf "$RUNNER_TEMP/validated-artifacts.tgz" "${paths[@]}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archives-${{ github.sha }}
+          path: ${{ runner.temp }}/validated-artifacts.tgz
+          retention-days: 1
+          if-no-files-found: error
+  deploy:
+    name: Approved production operation
+    needs: prepare
+    if: github.repository == 'aprashnasuraj-dev/patro' && github.ref == 'refs/heads/main' && vars.PATRO_PRODUCTION_APPROVAL_CONFIGURED == '1'
+    environment: production
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
+      CF_R2_PREVIEW_BUCKET_NAME: ${{ vars.CF_R2_PREVIEW_BUCKET_NAME || secrets.CF_R2_PREVIEW_BUCKET_NAME }}
+      CF_KV_NAMESPACE_ID: ${{ vars.CF_KV_NAMESPACE_ID || secrets.CF_KV_NAMESPACE_ID }}
+      CF_KV_PREVIEW_NAMESPACE_ID: ${{ vars.CF_KV_PREVIEW_NAMESPACE_ID || secrets.CF_KV_PREVIEW_NAMESPACE_ID }}
+      CF_CACHE_AUTO_PROVISION: '0'
+      PUBLIC_REFERENCE_CACHE_VERSION: public-reference-v1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install deployment dependencies without lifecycle scripts
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          name: archives-${{ github.sha }}
+          path: ${{ runner.temp }}/validated-download
+      - name: Restore artifacts from this workflow run
+        run: tar -xzf "$RUNNER_TEMP/validated-download/validated-artifacts.tgz"
+      - name: Resolve production R2 bucket
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
+            echo '::error::Cloudflare credentials are required to seed R2.'
+            exit 1
+          fi
+          node scripts/prepare-cloudflare-config.mjs
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const cfg=JSON.parse(readFileSync('wrangler.generated.jsonc','utf8'));
+          const row=cfg.r2_buckets?.find(x=>x.binding==='ARCHIVE');
+          if(!row?.bucket_name) throw new Error('ARCHIVE R2 bucket could not be resolved');
+          writeFileSync('/tmp/patro-r2-bucket',String(row.bucket_name));
+          console.log(`ARCHIVE bucket=${row.bucket_name}`);
           NODE
       - name: Upload immutable history source to R2
         run: |

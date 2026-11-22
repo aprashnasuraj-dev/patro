@@ -1,0 +1,8 @@
+# Deployment and security controls require the repository owner's review.
+/.github/ @aprashnasuraj-dev
+/wrangler*.json* @aprashnasuraj-dev
+/scripts/cloudflare/ @aprashnasuraj-dev
+/scripts/prepare-cloudflare-config.mjs @aprashnasuraj-dev
+/worker/ @aprashnasuraj-dev
+/cloudflare/ @aprashnasuraj-dev
+/extensions/**/wrangler*.json* @aprashnasuraj-dev

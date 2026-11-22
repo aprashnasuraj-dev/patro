@@ -11,7 +11,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  preflight:
+    name: Validate database import archive without production credentials
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Validate SQL archive structure
+        run: |
+          python3 - <<'PY'
+          import zipfile
+          with zipfile.ZipFile('databse.zip.zip') as archive:
+              sql = [x for x in archive.infolist() if not x.is_dir() and x.filename.lower().endswith('.sql') and not x.filename.startswith('__MACOSX/')]
+              assert len(sql) == 1, 'Expected exactly one SQL source'
+              assert not sql[0].flag_bits & 1, 'Encrypted SQL is not supported'
+              print('SQL archive structure validated; no database was contacted')
+          PY
   import:
+    needs: preflight
+    if: github.repository == 'aprashnasuraj-dev/patro' && github.ref == 'refs/heads/main' && vars.PATRO_PRODUCTION_APPROVAL_CONFIGURED == '1' && github.event_name == 'workflow_dispatch'
+    environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -25,6 +48,9 @@ jobs:
     steps:
       - name: Download repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
 
       - name: Set up Node.js on GitHub
         uses: actions/setup-node@v4
