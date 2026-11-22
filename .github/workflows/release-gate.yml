@@ -16,6 +16,8 @@ concurrency:
 jobs:
   validate:
     name: Full release validation
+    outputs:
+      archive: ${{ steps.scope.outputs.archive }}
     # Playwright 1.56.1 Chromium is not supported by the current ubuntu-26.04 latest image.
     # Keep the release validation on the same supported LTS image as PR browser regressions.
     runs-on: ubuntu-24.04
@@ -316,11 +318,50 @@ jobs:
             echo "lighthouse=skipped (focused release)"
           fi
           exit "$failures"
+      - name: Package validated artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          paths=()
+          for path in dist .cloudflare; do
+            if [[ -d "$path" ]]; then paths+=("$path"); fi
+          done
+          [[ "${#paths[@]}" -gt 0 ]]
+          tar -czf "$RUNNER_TEMP/validated-artifacts.tgz" "${paths[@]}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ github.sha }}
+          path: ${{ runner.temp }}/validated-artifacts.tgz
+          retention-days: 1
+          if-no-files-found: error
+  deploy:
+    name: Approved production release
+    needs: validate
+    if: github.repository == 'aprashnasuraj-dev/patro' && github.ref == 'refs/heads/main' && vars.PATRO_PRODUCTION_APPROVAL_CONFIGURED == '1' && github.event_name == 'push' && vars.PATRO_ROOT_ASSET_PARITY_VERIFIED == '1'
+    environment: production
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install deployment dependencies without lifecycle scripts
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-${{ github.sha }}
+          path: ${{ runner.temp }}/validated-download
+      - name: Restore artifacts from this workflow run
+        run: tar -xzf "$RUNNER_TEMP/validated-download/validated-artifacts.tgz"
       - name: Optional On This Day D1 snapshot refresh
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SYNC_HISTORY_D1 == '1' && vars.PATRO_ROOT_ASSET_PARITY_VERIFIED == '1'
         shell: bash
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_D1_DATABASE_ID: fb25c860-01db-4ab0-9036-7f87b26ca64b
           ALLOW_D1_QUOTA_DEFER: "1"
@@ -336,8 +377,8 @@ jobs:
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.PATRO_ROOT_ASSET_PARITY_VERIFIED == '1'
         shell: bash
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_D1_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.GIT || secrets.git }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_D1_API_TOKEN: ${{ secrets.CLOUDFLARE_D1_API_TOKEN || secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_ZONE_ID: 3056ed12f9ab1ea7d567f089ee6807be
           PATRO_DEPLOY_DATE_WORKER: ${{ vars.PATRO_DEPLOY_DATE_WORKER || '0' }}
@@ -396,7 +437,7 @@ jobs:
             echo "Independent date-pages Worker unchanged"
           fi
       - name: Prime annual On This Day cache
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.scope.outputs.archive == 'true' && vars.PATRO_ROOT_ASSET_PARITY_VERIFIED == '1'
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.validate.outputs.archive == 'true' && vars.PATRO_ROOT_ASSET_PARITY_VERIFIED == '1'
         env:
           PUBLIC_SITE_URL: https://aafnaipatro.com
           HISTORY_PRIME_CONCURRENCY: "8"
@@ -406,7 +447,7 @@ jobs:
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.PATRO_ROOT_ASSET_PARITY_VERIFIED == '1'
         shell: bash
         env:
-          ARCHIVE_CHANGED: ${{ steps.scope.outputs.archive }}
+          ARCHIVE_CHANGED: ${{ needs.validate.outputs.archive }}
         run: |
           set -euo pipefail
           for path in / /tools /convert /time-machine /on-this-day /tools/astro /janmapatro/ /janmapatro/milan.html /jyotish/china /jyotish/matchmaking /advancetools/ /advancetools/web-tools/ /calculators/semver-range-calculator /generators/cors-config-generator /converters/json-to-zod-schema /validators/webcam-mic-test /bali-calendar /bali-calendar/palelintangan /bali-calendar/sasih-saka /bali-calendar/otonan /bali-calendar/piodalan /bali-calendar/1929-01-01 /bali-calendar/2129-12-31 /bali-calendar/manifest.webmanifest /bali-calendar/pwa.js /bali-calendar-sw.js; do
