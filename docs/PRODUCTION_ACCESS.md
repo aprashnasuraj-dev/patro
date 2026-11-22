@@ -40,10 +40,11 @@ variable `PATRO_PRODUCTION_APPROVAL_CONFIGURED` unset or `0`.
    workflows from all outside collaborators. Keep write tokens and secrets
    unavailable to pull requests from forks.
 6. Confirm Cloudflare's independent Git build/deploy route stays disabled.
-   On 2026-11-22, the `patro` Worker production build and deploy commands were
-   replaced with immediate failures; previews were disabled. The Git connection
-   remains present and auto-build events can still be created, but do not run
-   repository code or deploy. There were no deploy hooks for that Worker.
+   On 2026-11-22, the `patro` Worker Git build configuration and triggers were
+   removed. A fresh API read returned zero triggers and confirmed that the live
+   Worker still exists with its assets. Do not reconnect automatic Git builds;
+   production changes must use the approved GitHub environment. There were no
+   deploy hooks for that Worker.
 7. Only after settings and secret scopes are verified, set
    `PATRO_PRODUCTION_APPROVAL_CONFIGURED=1`. This is a setup latch, not a
    substitute for GitHub's environment protection. Never enable
