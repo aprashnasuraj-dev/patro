@@ -107,7 +107,9 @@ test("annual On This Day primer is edge/R2-only and never depends on KV",async()
   const release=await read(".github/workflows/release-gate.yml");
   assert.match(release,/REQUIRE_QUOTA_CACHE: "1"/);
   assert.match(release,/prime-history-cache\.mjs/);
-  assert.match(release,/secrets\.git \|\| secrets\.GIT \|\| secrets\.CLOUDFLARE_API_TOKEN/);
+  assert.match(release,/CLOUDFLARE_API_TOKEN: \$\{\{ secrets\.CLOUDFLARE_API_TOKEN \}\}/);
+  assert.doesNotMatch(release,/secrets\.(?:git|GIT)\b/);
+  assert.match(release,/environment: production/);
 });
 
 async function listTsFiles(relativeDir){
